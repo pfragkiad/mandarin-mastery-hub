@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "a68e080252f61fb8ea4555fd98980b243e82e2a943e50c978b1cbfee9ec40f2b",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "014",
   "translations": {
@@ -41,7 +61,7 @@
       "uncertain": false
     },
     "shuowen:1303": {
-      "text": "The sound of teeth splitting bone. Formed from 齒, with 𠛱 indicating the sound. Pronounced like 剌.",
+      "text": "The sound of teeth splitting bone. Formed from 齒, with 𠛱 indicating the sound. Read like 剌.",
       "sourceTextSha256": "df6ad20139b7cec647389ea9c16aeb50eca55dc00ee523ba3eb97e2116bddff7",
       "uncertain": false
     },
@@ -51,7 +71,7 @@
       "uncertain": false
     },
     "shuowen:1305": {
-      "text": "Uneven teeth. Formed from 齒, with 屑 indicating the sound. Pronounced like 切.",
+      "text": "Uneven teeth. Formed from 齒, with 屑 indicating the sound. Read like 切.",
       "sourceTextSha256": "209f524ebdb9691ae9f655e9d2bc0202c9b5f110426dff3f04127671d17adeff",
       "uncertain": false
     },
@@ -61,9 +81,9 @@
       "uncertain": false
     },
     "shuowen:1307": {
-      "text": "The teeth described as 𪙌牙, apparently grinding teeth. Formed from 齒, with 豈 indicating the sound. [The rare gloss is uncertain.]",
+      "text": "Unevenly arranged or projecting teeth. Formed from 齒, with 豈 indicating the sound.",
       "sourceTextSha256": "2e21c78caa6bc9dea80a89f426fe34b743f140d22cffa93d7172afb1a619c564",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1308": {
       "text": "To bring food back up and chew it. Formed from 齒, with 台 indicating the sound. The Erya says: “For cattle this is called 齝.”",
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:1312": {
-      "text": "Teeth hurt by sourness. Formed from 齒, with 所 indicating the sound. Pronounced like 楚.",
+      "text": "Teeth hurt by sourness. Formed from 齒, with 所 indicating the sound. Read like 楚.",
       "sourceTextSha256": "ad6f8fc93a54bb0e44fdbe275cdd83792bdae755ee3b16cb57fa482f116a8938",
       "uncertain": false
     },
@@ -136,12 +156,12 @@
       "uncertain": false
     },
     "shuowen:1322": {
-      "text": "Large or principal teeth. It depicts upper and lower teeth interlocking. All characters in the 牙 category are formed from 牙.",
+      "text": "Large back teeth (molars). The graph is said to depict upper and lower teeth interlocking. All characters in the 牙 category are formed from 牙. [Duan argues that received 牡齒 is a corruption of 壯齒, “large/strong teeth,” not a reference to male teeth.]",
       "sourceTextSha256": "3c7919cef11b418b6b797da17589bc7885ec61f9b074c5d2315b631d6983efca",
       "uncertain": true
     },
     "shuowen:1323": {
-      "text": "武牙, a projecting or strong tooth. Formed from 牙 and 奇; 奇 also indicates the sound. [The exact sense of 武牙 is uncertain.]",
+      "text": "A projecting canine tooth, or a fang conspicuously standing out. Formed from 牙 and 奇; 奇 also indicates the sound. [Duan argues received 武牙 originally read 虎牙.]",
       "sourceTextSha256": "a0f72ccaddcf281f0a7df1be1aea8a51684e40c01b791a66d31febe7bdd7f2a4",
       "uncertain": true
     },
@@ -203,7 +223,7 @@
     "shuowen:1335": {
       "text": "To walk with long shins or extended legs. Formed from 足, with 㫺 indicating the sound. Another explanation: the cautious gait 踧踖.",
       "sourceTextSha256": "e90b52f8f13950b021e82c102355f9a2efe62994f4321ba8ab21525256f9f2d5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1336": {
       "text": "The appearance of walking alone and apart. Formed from 足, with 禹 indicating the sound. The Odes says: “Walking alone, solitary.”",
@@ -268,7 +288,7 @@
     "shuowen:1348": {
       "text": "To kick or tread. Another explanation: to crouch low and curl up. Formed from 足, with 全 indicating the sound.",
       "sourceTextSha256": "c3452b61fac19036d7a985d04c7c27947f04fdca16cf832d65f98497511f10c1",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1349": {
       "text": "To tread upon. Formed from 足, with 就 indicating the sound.",
@@ -331,9 +351,9 @@
       "uncertain": false
     },
     "shuowen:1361": {
-      "text": "To guard or tread, 躛. Formed from 足, with 是 indicating the sound. [The exact force of the cross-gloss is uncertain.]",
+      "text": "To stamp or tread with the foot; to give a small kick. Formed from 足, with 是 indicating the sound.",
       "sourceTextSha256": "3bb36b9774e220f434178df28523d056652a351be000d03969b9ce7767ae16a4",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1362": {
       "text": "To guard. Formed from 足, with 衞 indicating the sound.",
@@ -341,9 +361,9 @@
       "uncertain": false
     },
     "shuowen:1363": {
-      "text": "Feet described as 䠟足, apparently drawn together. Formed from 足, with 執 indicating the sound. [The description is not further explained.]",
+      "text": "To tread or step, especially in the historical expression for wading through blood that stains the feet. Formed from 足, with 執 indicating the sound.",
       "sourceTextSha256": "6ecac8e43dab2a17914ade31238406b5d3813753fb68cb1d0f3d229ff7419d32",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1364": {
       "text": "To stand upright. Formed from 足, with 氏 indicating the sound.",
@@ -363,7 +383,7 @@
     "shuowen:1367": {
       "text": "To strike against. Formed from 足, with 卒 indicating the sound. Another explanation: to startle; another: the expression 蒼踤. [The final expression is unexplained.]",
       "sourceTextSha256": "8a586856b2dccbb3a0e0e60a777b7d3832ecc04f1264b3ae8eab5b2bd45eac08",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1368": {
       "text": "To fall prostrate. Formed from 足, with 厥 indicating the sound. Another explanation: to jump. Also pronounced like 橜.",
@@ -411,9 +431,9 @@
       "uncertain": false
     },
     "shuowen:1377": {
-      "text": "To walk with a faltering, stumbling gait. Formed from 足, with 貝 indicating the sound. [The descriptive gloss 獵跋 is uncertain.]",
+      "text": "To trample or tread over something while walking. Formed from 足, with 貝 indicating the sound.",
       "sourceTextSha256": "b826b43cc1b23cfc928ca8c5ced635f14f66e1ac95ad123f710d026a8e5d21e6",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1378": {
       "text": "To stumble. Formed from 足, with 質 indicating the sound. The Odes says: “It stumbles on its tail.”",
@@ -426,7 +446,7 @@
       "uncertain": false
     },
     "shuowen:1380": {
-      "text": "To proceed, 述. Formed from 足, with 丗 indicating the sound.",
+      "text": "To pass over, leap beyond or traverse. Formed from 足, with 丗 indicating the sound. [Duan proposes reading the received gloss 述 as a corrupted graph 𨒋.]",
       "sourceTextSha256": "718ba293caa71be651831d26490847b82cd3645206a21f788eaed8232101ade1",
       "uncertain": true
     },
@@ -471,7 +491,7 @@
       "uncertain": false
     },
     "shuowen:1389": {
-      "text": "The feet moving in the manner 躩如, apparently quickly and cautiously. Formed from 足, with 矍 indicating the sound. [The precise sense remains uncertain.]",
+      "text": "To move one’s feet in a careful, shifting or ceremonially constrained manner. Formed from 足, with 矍 indicating the sound. [The precise movement described by 躩如 remains context-dependent.]",
       "sourceTextSha256": "580c1e4e3045472c6ebad77ab5acc03188b1a75822a78035535fea855b749c37",
       "uncertain": true
     },
@@ -481,7 +501,7 @@
       "uncertain": false
     },
     "shuowen:1391": {
-      "text": "To walk unevenly. Formed from 足, with 皮 indicating the sound. Another explanation: to push with the foot. Pronounced like 彼.",
+      "text": "To walk unevenly. Formed from 足, with 皮 indicating the sound. Another explanation: to push with the foot. Read like 彼.",
       "sourceTextSha256": "ecb6a3b73517dfce3a08ba0a8003e1bd751cff40e1a06ebf90729eece7156c6f",
       "uncertain": false
     },
@@ -491,12 +511,12 @@
       "uncertain": false
     },
     "shuowen:1393": {
-      "text": "Feet not straight. Formed from 足, with 扁 indicating the sound. Another explanation: a horse dragging its hind feet. Pronounced like 苹; some say like 徧.",
+      "text": "Feet not straight. Formed from 足, with 扁 indicating the sound. Another explanation: a horse dragging its hind feet. Read like 苹; some say like 徧.",
       "sourceTextSha256": "88deca700b347319c053189ac0b3900f8c4b6f48450a60c242073d477941c96c",
       "uncertain": false
     },
     "shuowen:1394": {
-      "text": "Flesh of the shank. Another explanation: a bent shank. Formed from 足, with 𢌳 indicating the sound. Pronounced like 逵.",
+      "text": "Flesh of the shank. Another explanation: a bent shank. Formed from 足, with 𢌳 indicating the sound. Read like 逵.",
       "sourceTextSha256": "668c3ace01960518e845a62d0825a778472c055675053b5eb21ae985e27c2690",
       "uncertain": false
     },

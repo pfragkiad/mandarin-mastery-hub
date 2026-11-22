@@ -77,4 +77,66 @@ describe("Shuowen source and English disclosure", () => {
     expect(screen.getByText(entry.text)).toBeVisible();
     expect(screen.queryByText(/English drafts above/)).toBeNull();
   });
+  it("discloses a different editorial headword and preserves both Chinese readings", () => {
+    const reviewed: EtymologyEntry = {
+      ...entry,
+      id: "shuowen:2118",
+      headword: "钉",
+      text: "蔽人視也。",
+      translation: {
+        ...entry.translation!,
+        text: "To obstruct another person's view.",
+        editorialReview: {
+          reviewId: "test-review",
+          status: "partial-editorial-review",
+          changes: ["translation", "source-reading"],
+          sourceReading: {
+            headword: "䀘",
+            text: "蔽人視也。",
+            textSha256: "b".repeat(64),
+            classification: "verified_alternative_witness",
+            note: "The supplied review identifies the eye-radical headword.",
+            evidenceUrls: ["https://example.test/witness"],
+          },
+        },
+      },
+    };
+    render(<ShuowenSection entries={[reviewed]} />);
+    expect(screen.getByText(/partial editorial corrections; not fully verified/)).toBeVisible();
+    expect(screen.getByText(/Review headword:/)).toHaveTextContent("䀘");
+    expect(screen.getByText(/Review headword:/)).toHaveTextContent("钉");
+    expect(screen.queryByText(reviewed.text)).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
+    expect(screen.getByText(reviewed.text)).toBeVisible();
+    expect(screen.getByText("䀘 — 蔽人視也。")).toBeVisible();
+    expect(screen.getByText(/The supplied review identifies/)).toBeVisible();
+  });
+  it("attributes a retained uncertainty assessment to the supplied reviewer", () => {
+    const reviewed: EtymologyEntry = {
+      ...entry,
+      translation: {
+        ...entry.translation!,
+        uncertain: true,
+        editorialReview: {
+          reviewId: "external-v3-test",
+          status: "partial-editorial-review",
+          changes: ["review-assessment"],
+          caseEvidence: {
+            decision: "checked_retained",
+            checkedInSuppliedReview: true,
+            reviewerNote: "The final quoted phrase remains unresolved in the supplied commentary.",
+            sourceUrls: ["https://example.test/entry"],
+          },
+        },
+      },
+    };
+    render(<ShuowenSection entries={[reviewed]} />);
+    expect(screen.getByText(/This passage is uncertain/)).toBeVisible();
+    expect(screen.queryByText(/The final quoted phrase remains/)).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
+    expect(screen.getByText(/Supplied reviewer assessment/)).toHaveTextContent(
+      "uncertainty retained",
+    );
+    expect(screen.getByText(/The final quoted phrase remains/)).toBeVisible();
+  });
 });

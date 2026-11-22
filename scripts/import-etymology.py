@@ -117,6 +117,29 @@ def attach_shuowen_translations(entries, manifest):
     inputs = {}
     uncertain = 0
     directory = SOURCES / 'translations'
+    review_directory = directory / 'review'
+    review = None
+    if (review_directory / 'manifest.json').exists():
+        review_script = ROOT / 'scripts/import-shuowen-review.py'
+        spec = importlib.util.spec_from_file_location('shuowen_editorial_review', review_script)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        review = module.load_saved(expected, review_directory)
+        for review_path in [review_directory / 'manifest.json', review_directory / 'handoff.zip', review_script]:
+            raw = review_path.read_bytes()
+            inputs[review_path.relative_to(ROOT).as_posix()] = digest(raw if review_path.suffix == '.zip' else raw.replace(b'\r\n', b'\n'))
+        if 'followup' in review:
+            for review_path in [review_directory / 'uncertain-followup.json', review_directory / 'uncertain-followup.zip']:
+                raw = review_path.read_bytes()
+                inputs[review_path.relative_to(ROOT).as_posix()] = digest(raw if review_path.suffix == '.zip' else raw.replace(b'\r\n', b'\n'))
+        if 'fullV2' in review:
+            for review_path in [review_directory / 'full-v2.json', review_directory / 'uncertainty-reviewed-v2.txt']:
+                raw = review_path.read_bytes()
+                inputs[review_path.relative_to(ROOT).as_posix()] = digest(raw if review_path.suffix == '.txt' else raw.replace(b'\r\n', b'\n'))
+        if 'externalV3' in review:
+            for review_path in [review_directory / 'external-v3.json', review_directory / 'external-v3.zip']:
+                raw = review_path.read_bytes()
+                inputs[review_path.relative_to(ROOT).as_posix()] = digest(raw if review_path.suffix == '.zip' else raw.replace(b'\r\n', b'\n'))
     upstream = next(item for item in manifest['sources'] if item['id'] == 'shuowen')
     archive = next(item for item in upstream['files'] if item['path'].endswith('/upstream.zip'))
     provenance = {'source_url': upstream['repository'], 'source_revision': upstream['revision'],
@@ -131,6 +154,10 @@ def attach_shuowen_translations(entries, manifest):
         source = json.loads(source_raw)
         payload = json.loads(path.read_text(encoding='utf-8'))
         meta = payload['dataset_metadata']
+        if meta.get('editorial_review') and not review:
+            raise ValueError(f'English batch requires its missing editorial review input: {path.name}')
+        if review and meta.get('editorial_review') != module.batch_reference(review):
+            raise ValueError(f'English batch has missing or changed review provenance: {path.name}')
         if source['format'] != 'mandarin-shuowen-translation-source-batch' or source['schemaVersion'] != 1 or source['batch'] != path.stem:
             raise ValueError(f'Invalid translation source envelope: {path.name}')
         if payload['format'] != 'mandarin-shuowen-english-draft-batch' or payload['schemaVersion'] != 1 or payload['batch'] != path.stem:
@@ -160,15 +187,50 @@ def attach_shuowen_translations(entries, manifest):
                 raise ValueError(f'Possible encoding loss in English translation: {entry_id}')
             if type(draft['uncertain']) is not bool:
                 raise ValueError(f'Invalid uncertainty flag: {entry_id}')
+            if review and (text, draft['uncertain']) != (review['after'][entry_id]['english'], review['after'][entry_id]['uncertain']):
+                raise ValueError(f'English draft differs from recorded editorial working copy: {entry_id}')
             uncertain += int(draft['uncertain'])
             entry['translation'] = {'language': 'en', 'text': text, 'method': 'ai-generated',
                 'reviewStatus': 'unreviewed-ai-draft', 'sourceTextSha256': source_hash, 'uncertain': draft['uncertain']}
+            if review and entry_id in review['changes']:
+                entry['translation']['editorialReview'] = copy.deepcopy(review['changes'][entry_id])
         inputs[path.relative_to(ROOT).as_posix()] = digest(path.read_bytes())
         inputs[source_path.relative_to(ROOT).as_posix()] = digest(source_raw)
     if seen != set(expected):
         raise ValueError(f'English translation collection incomplete: {len(seen)}/{len(expected)} records; {len(set(expected) - seen)} missing')
-    return inputs, {'language': 'en', 'method': 'ai-generated', 'review_status': 'unreviewed-ai-draft',
-                    'record_count': len(seen), 'uncertain_record_count': uncertain, 'version': '1.0.0'}
+    version = '1.0.0'
+    if review:
+        version = '1.1.0'
+        for stage, stage_version in [('followup', '1.1.1'), ('fullV2', '1.1.2'), ('externalV3', '1.2.0')]:
+            if stage in review:
+                version = stage_version
+    summary = {'language': 'en', 'method': 'ai-generated', 'review_status': 'unreviewed-ai-draft',
+               'record_count': len(seen), 'uncertain_record_count': uncertain, 'version': version}
+    if review:
+        summary['editorial_review'] = {'review_id': module.REVIEW_ID, 'status': 'partial-editorial-review',
+            'archive_sha256': review['archiveSha256'], 'translation_edited_entries': review['statistics']['translation_edited_entries'],
+            'source_reading_entries': review['statistics']['source_edited_entries'],
+            'resolved_uncertainties': review['statistics']['resolved_flags'], 'changed_entry_count': len(review['changes'])}
+        if 'followup' in review:
+            followup = review['followup']
+            summary['editorial_review']['followup'] = {'review_id': module.FOLLOWUP_ID, 'archive_sha256': followup['archiveSha256'],
+                'reported_uncertain_entries': followup['statistics']['reported_uncertain_entries'],
+                'translation_edited_entries': followup['statistics']['translation_edited_entries'],
+                'omitted_uncertain_count': len(followup['statistics']['omitted_uncertain_keys'])}
+        if 'fullV2' in review:
+            full = review['fullV2']
+            summary['editorial_review']['followup']['full_review'] = {'review_id': module.FULL_V2_ID,
+                'file_sha256': full['fileSha256'], 'translation_edited_entries': full['statistics']['translation_edited_entries'],
+                'resolved_uncertainties': full['statistics']['resolved_flags'], 'remaining_uncertainties': full['statistics']['uncertain_after']}
+        if 'externalV3' in review:
+            stage = review['externalV3']
+            summary['editorial_review']['external_v3'] = {'review_id': module.EXTERNAL_V3_ID,
+                'archive_sha256': stage['archiveSha256'], 'cases_reported_checked': stage['statistics']['cases_reported_checked'],
+                'translation_edited_entries': stage['statistics']['translation_edited_entries'],
+                'resolved_uncertainties': stage['statistics']['resolved_flags'],
+                'remaining_uncertainties': stage['statistics']['uncertain_after'],
+                'not_checked_this_pass': stage['statistics']['not_checked_this_pass']}
+    return inputs, summary
 
 
 def association(target, entries):
@@ -206,7 +268,8 @@ def build(snapshot, manifest):
     entries = source_entries(manifest)
     translation_inputs, translation_summary = attach_shuowen_translations(entries, manifest)
     metadata = copy.deepcopy(manifest['dataset_metadata'])
-    metadata['version'] = '1.1.0'
+    metadata['version'] = {'1.0.0': '1.1.0', '1.1.0': '1.2.0', '1.1.1': '1.2.1',
+                           '1.1.2': '1.2.2', '1.2.0': '1.3.0'}[translation_summary['version']]
     metadata['translation_layer'] = translation_summary
     metadata['source_name'] = 'Mandarin etymology association handoff'
     metadata['license_scope'] += ' Graphical references retain separate BabelStone provenance; no font rights or stroke bindings are granted by this export.'
@@ -304,7 +367,9 @@ def build(snapshot, manifest):
             'Component and radical roles require review; exact-headword associations alone never establish those roles.',
             'Only current-tree-bound direct-G graphical relations are exported. Geometry is not loaded, validated or exported.',
             'Numbered/unknown tokens are not lexical identities; suggested substitutions are never applied.',
-            'Original source text remains unchanged. Shuowen English is a separately source-bound AI draft, not scholarly reviewed.']}
+            ('Original source text remains unchanged. Shuowen English has explicitly scoped partial editorial corrections; no corpus-wide scholarly verification or headword remapping is implied.'
+             if 'editorial_review' in translation_summary else
+             'Original source text remains unchanged. Shuowen English is a separately source-bound AI draft, not scholarly reviewed.') ]}
     outputs[REPORT] = serialized(report)
     return outputs, report
 

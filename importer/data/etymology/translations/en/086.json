@@ -26,22 +26,42 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "59a5c0e83d7149b555ed41e82972367fee1ce0ea631d15826ede9b26ff40e144",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "086",
   "translations": {
     "shuowen:8501": {
-      "text": "When silk becomes worn, it is 紿, frayed or slack. Formed from 糸, with 台 indicating the sound.",
+      "text": "Silk thread that has become worn or exhausted through use, as though slack and fatigued. Formed from 糸, with 台 indicating the sound.",
       "sourceTextSha256": "88a95998c6c0aa8b0d7780d40377979142537684a90d2092245214193e6aaf63",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8502": {
-      "text": "Silk damp and clinging. Formed from 糸, with 内 indicating the sound.",
+      "text": "The damp, clinging appearance of wet silk, called 納納. Formed from 糸, with 内 indicating the sound.",
       "sourceTextSha256": "3c43988968827f7421c4611a2cdb6307eed50d2eba29cf90060d066f29c3cf72",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8503": {
-      "text": "To work silk into a net, apparently. Formed from 糸, with 方 indicating the sound.",
+      "text": "To spin silk thread. Formed from 糸, with 方 indicating the sound. [The transmitted 網絲 and other recensions conflict; Duan reconstructs 紡絲也.]",
       "sourceTextSha256": "a745ac74c6d0dad60ac9091417b3211d74e9c3e8015f53d07f0530356b03ff97",
       "uncertain": true
     },
@@ -91,7 +111,7 @@
       "uncertain": false
     },
     "shuowen:8513": {
-      "text": "Silk worn or tangled by working. Formed from 糸, with 然 indicating the sound.",
+      "text": "Silk thread worn or entangled through handling. Formed from 糸, with 然 indicating the sound. [Duan proposes that 勞 may be an error for 縈, “entwined”.]",
       "sourceTextSha256": "ebfe0d7a6dddf68185d99ba02f62ee3794c38b2f686a54889f66fa65dc21f967",
       "uncertain": true
     },
@@ -116,17 +136,17 @@
       "uncertain": false
     },
     "shuowen:8518": {
-      "text": "Silk for a yak-tail ornament. Formed from 糸, with 苗 indicating the sound. The Book of Zhou says: 'For the 緢 there is examination.'",
+      "text": "Fine tail hairs from a yak or similar bovine, used like silk for ornaments. Formed from 糸, with 苗 indicating the sound. The Documents quotation uses an old graph in a passage about exact scrutiny. [The transmitted 旄 and quotation differ from Duan’s proposed 氂 and another textual reading.]",
       "sourceTextSha256": "a9ddf4e004cd9d07908b39d96baa8f9f8f104bd9cb295dedd8855871a80643d8",
       "uncertain": true
     },
     "shuowen:8519": {
-      "text": "The unevenness expressed by 參縒. Formed from 糸, with 差 indicating the sound.",
+      "text": "Uneven or disordered strands of silk, as in the phrase 參縒 (“of unequal length”). Formed from 糸, with 差 indicating the sound.",
       "sourceTextSha256": "0c1f1e877c09e8b8fa85bcf47900a5cc66c71d78b0231f05a15a5e17baa372c2",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8520": {
-      "text": "A ceremonial cap, according to the recorded 冕 gloss. Formed from 糸, with 番 indicating the sound.",
+      "text": "Tangled or disordered silk, in a rare old expression. Formed from 糸, with 番 indicating the sound. [The received 冕 (“ceremonial cap”) is disputed; Duan reconstructs an older expression meaning disorder.]",
       "sourceTextSha256": "639ec522052be9a2cb304a31c4f06c16c7ab13947a560b1f96b8b23059c3c7b4",
       "uncertain": true
     },
@@ -181,9 +201,9 @@
       "uncertain": false
     },
     "shuowen:8531": {
-      "text": "A snare or net. Formed from 糸, with 瞏 indicating the sound.",
+      "text": "To encircle, wrap or bind around, as with a cord. Formed from 糸, with 瞏 indicating the sound.",
       "sourceTextSha256": "6e07dd64aa93041d7192f65e8d9eb3d33a7b1c3ca95c2a65abcd60b5a2693c0a",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8532": {
       "text": "To intertwine. Formed from 糸, with 辡 indicating the sound.",

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "f0df0c758eea183461cd7fa8201626d4899e26b0d935981caa6350b1cb2e7d1f",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "099",
   "translations": {
@@ -91,7 +111,7 @@
       "uncertain": false
     },
     "shuowen:9813": {
-      "text": "Millet wine. Formed from 酉, with 也 indicating the sound. Alternatively, sweet. Attendant Jia says 酏 is the clear liquid of gruel.",
+      "text": "Millet wine. Formed from 酉, with 也 indicating the sound. Alternatively, sweet. Palace Attendant Jia says 酏 is the clear liquid of gruel.",
       "sourceTextSha256": "2be2193050172e594816ccadff6d812f2291615b27f800a82e07b408caa3781c",
       "uncertain": false
     },
@@ -183,7 +203,7 @@
     "shuowen:9831": {
       "text": "A wine vessel. Formed from 酋, with 廾 offering it up. The Rites of Zhou lists six zun vessels: sacrificial-animal, elephant, zhu, jar, great, and mountain vessels, for the rites of sacrifice and entertaining guests.",
       "sourceTextSha256": "ac69ef92ed1dbc19f117b401b4c9fdd2942f701cf5a4e4f601ef2371ee2c7585",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9832": {
       "text": "To extinguish. In the ninth month yang vital energy is faint, all things have fully matured, and yang descends into the earth. Among the five phases, earth is born at 戊 and flourishes at 戌. Formed from 戊 containing 一. All characters in this group are formed from 戌.",

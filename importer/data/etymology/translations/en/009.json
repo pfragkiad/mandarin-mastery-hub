@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "d8a0a789336ec07e4fcaa2876ce0a72fbf95eb3e5d40c95f3da76f5e93f4d619",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "009",
   "translations": {
@@ -43,10 +63,10 @@
     "shuowen:803": {
       "text": "To taste. Formed from 口, with 叕 indicating the sound. Another explanation: a mouth or beak.",
       "sourceTextSha256": "1e16d26f72dfd632582989693fa3d40b4b5ac807d6dcf5c01cd61511b1aed008",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:804": {
-      "text": "To chew. Formed from 口, with 集 indicating the sound. Pronounced like 集.",
+      "text": "To chew. Formed from 口, with 集 indicating the sound. Read like 集.",
       "sourceTextSha256": "5f4a2c00b89f043335bff8075deba3bd9e1e212185b974a2ff6bf958cc2aa5f2",
       "uncertain": false
     },
@@ -66,7 +86,7 @@
       "uncertain": false
     },
     "shuowen:808": {
-      "text": "To drink a little. Formed from 口, with 率 indicating the sound. Pronounced like 㕞.",
+      "text": "To drink a little. Formed from 口, with 率 indicating the sound. Read like 㕞.",
       "sourceTextSha256": "d237ed762771aecf00a9dcd307bd35d4e0ca1923ec75a03052b145f921d64ce8",
       "uncertain": false
     },
@@ -78,7 +98,7 @@
     "shuowen:810": {
       "text": "To eat; a mouth or beak. Formed from 口, with 筮 indicating the sound.",
       "sourceTextSha256": "463432b22530fdb69161f76e4dc6fbf12eb2caabae19d892fef3b77860ece96b",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:811": {
       "text": "To eat. Formed from 口, with 臽 indicating the sound. Pronounced the same as 含.",
@@ -111,9 +131,9 @@
       "uncertain": false
     },
     "shuowen:817": {
-      "text": "The exclamation 嚛 when eating something pungent. Formed from 口, with 樂 indicating the sound.",
+      "text": "A harsh, biting or burning sensation from eating something pungent. Formed from 口, with 樂 indicating the sound.",
       "sourceTextSha256": "63af5a660b04b8c1155dc7e7d59650d99ec32134fdd01f4c74044a7e4c7dd179",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:818": {
       "text": "A mouth full of food. Formed from 口, with 窡 indicating the sound.",
@@ -141,7 +161,7 @@
       "uncertain": false
     },
     "shuowen:823": {
-      "text": "The Eastern Yi call breathing 呬. Formed from 口, with 四 indicating the sound. The Odes says: “The 犬夷 have come to rest.”",
+      "text": "To breathe or rest, called 呬 in a regional eastern dialect. Formed from 口, with 四 indicating the sound. The cited Odes line uses an alternative written tradition. [Duan argues that 東夷 should read 東齊 and that the transmitted Odes characters differ.]",
       "sourceTextSha256": "f7fa7193121f1f64514321bf0fd4e093c00d201ecc505550b08fe16a3ec90ec9",
       "uncertain": true
     },
@@ -176,19 +196,19 @@
       "uncertain": false
     },
     "shuowen:830": {
-      "text": "Breath from the mouth. Formed from 口, with 𦎫 indicating the sound. The Odes says: “The great carriage moves 啍啍.”",
+      "text": "Breath issuing from the mouth. Formed from 口, with 𦎫 indicating the sound. The Odes describes a great cart moving heavily and slowly, extending the sense to slow, labored movement.",
       "sourceTextSha256": "a76d6d460535dd51bfd681570bedfac7e9da9a059f34ccc9ed1bdda30881f484",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:831": {
       "text": "A release of breath on becoming aware, a sneeze. Formed from 口, with 疐 indicating the sound. The Odes says: “When I long for you, I sneeze.”",
       "sourceTextSha256": "3d1979483d19a86f0f8fc30a096a1184684da4925e8f9d6e0c5509a0f4192a9f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:832": {
-      "text": "A term used in rustic speech. Formed from 口, with 質 indicating the sound.",
+      "text": "Speech characteristic of an uncultivated or rustic person. Formed from 口, with 質 indicating the sound.",
       "sourceTextSha256": "faec52446bfc995822332d7d46ed49a205621f9834457d8ee353101b32ca1444",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:833": {
       "text": "A mouth constrained in speaking. Formed from 口, with 金 indicating the sound.",
@@ -286,7 +306,7 @@
       "uncertain": false
     },
     "shuowen:852": {
-      "text": "A repeated sound written 𡂢𡂢, whose quality is not further explained. Formed from 口, with 䲷 indicating the sound. [The descriptive sense is uncertain.]",
+      "text": "A repeated loud calling or shouted invocation, written 𡂢𡂢. Formed from 口, with 䲷 indicating the sound. [The exact historical phonetic form and transmitted graph are disputed.]",
       "sourceTextSha256": "c1c5e149a4542d5bb514b1e49c9335c0c8f3c3db3b9cc489a1693dfda368be34",
       "uncertain": true
     },
@@ -296,7 +316,7 @@
       "uncertain": false
     },
     "shuowen:854": {
-      "text": "To answer. Formed from 口, with 矣 indicating the sound. Pronounced like 埃.",
+      "text": "To answer. Formed from 口, with 矣 indicating the sound. Read like 埃.",
       "sourceTextSha256": "63289b8686d79ec667919f3a8a2cdf027edcffa6e3e6057a700ff16c8ac95738",
       "uncertain": false
     },
@@ -331,7 +351,7 @@
       "uncertain": false
     },
     "shuowen:861": {
-      "text": "To laugh heartily. Formed from 口, with 奉 indicating the sound. Pronounced like 菶菶 in the Odes' “Melons and little melons flourish.”",
+      "text": "To laugh heartily. Formed from 口, with 奉 indicating the sound. Read like 菶菶 in the Odes' “Melons and little melons flourish.”",
       "sourceTextSha256": "752116ca2ee4480603d77b6d52d2cfbb3e8335a4da40333a6c172f1cd1a767e6",
       "uncertain": false
     },
@@ -396,9 +416,9 @@
       "uncertain": false
     },
     "shuowen:874": {
-      "text": "Used in the expression 不啻 in speech. Formed from 口, with 帝 indicating the sound. Another explanation: 啻 means 諟, to affirm. Pronounced like 鞮. [The first gloss is elliptical.]",
+      "text": "Only; merely, often used in expressions such as 不啻 (“no less than”). Formed from 口, with 帝 indicating the sound. Another explanation equates 啻 with 諟 (“to affirm”); read like 鞮.",
       "sourceTextSha256": "ad266160024a9f9f8bd8d841d50c833a8251e8062f29c325ba7a0ed157e85646",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:875": {
       "text": "Good. Formed from 士 and 口.",
@@ -476,7 +496,7 @@
       "uncertain": false
     },
     "shuowen:890": {
-      "text": "Speech obstructed by the tongue. Formed from 口, with 更 indicating the sound. Pronounced like 綆, a well rope.",
+      "text": "Speech obstructed by the tongue. Formed from 口, with 更 indicating the sound. Read like 綆, a well rope.",
       "sourceTextSha256": "30e5c09bf80bb3eb09bffcfba01fb46ec35443ee9ce217ff7ca1b92b8b341639",
       "uncertain": false
     },
@@ -491,14 +511,14 @@
       "uncertain": false
     },
     "shuowen:893": {
-      "text": "A flattering tone. Formed from 口, with 圭 indicating the sound. Pronounced like 醫.",
+      "text": "A flattering tone. Formed from 口, with 圭 indicating the sound. Read like 醫.",
       "sourceTextSha256": "6bc9f09e27ab84aae63c64031c8eb015523a61533e418c24d43b00dc98ee0049",
       "uncertain": false
     },
     "shuowen:894": {
-      "text": "Speech in mutual rebuke and resistance. Formed from 口 opposed to 䇂; 䇂 is an unpleasant sound. Pronounced like 櫱.",
+      "text": "Speech in mutual rebuke and resistance. Formed from 口 opposed to 䇂; 䇂 is an unpleasant sound. Read like 櫱.",
       "sourceTextSha256": "94f09c3d80e969e43fd54203810c5df8b606676e46b49c180dc2599b747d61e9",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:895": {
       "text": "讘吺: much speech. Formed from 口, with abbreviated 投 indicating the sound.",
@@ -521,12 +541,12 @@
       "uncertain": false
     },
     "shuowen:899": {
-      "text": "Reckless or false speech. Formed from 口, with 夾 indicating the sound. Pronounced like 莢.",
+      "text": "Reckless or false speech. Formed from 口, with 夾 indicating the sound. Read like 莢.",
       "sourceTextSha256": "41de459937be7f1c2cc6c9ad4b3a8fe0d63b5707241269509bad9c4b9dda4278",
       "uncertain": false
     },
     "shuowen:900": {
-      "text": "Much speech. Formed from 口, with 盍 indicating the sound. Pronounced like 甲.",
+      "text": "Much speech. Formed from 口, with 盍 indicating the sound. Read like 甲.",
       "sourceTextSha256": "eb5b4d592f7b0f332f933d06c205d5d5543212aa1f3f132204b56aac75c6260c",
       "uncertain": false
     }

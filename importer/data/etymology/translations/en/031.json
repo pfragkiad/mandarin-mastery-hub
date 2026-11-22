@@ -26,37 +26,57 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "46396e6ff09ec2abb109259db063306fde2049aee4da24c690e0f6eeef2a0a18",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "031",
   "translations": {
     "shuowen:3001": {
-      "text": "A hair-guiding comb, now commonly called 篦. From 竹; 𣬉 supplies the sound.",
+      "text": "A hair-guiding comb, now commonly called 篦. Formed from 竹, with 𣬉 indicating the sound.",
       "sourceTextSha256": "de5abe1ea8b21bf4b8fda2837d1ac79da7cbec63cf4f76efc724395728625c4c",
       "uncertain": false
     },
     "shuowen:3002": {
-      "text": "That with which one propels a boat. From 竹; 高 supplies the sound.",
+      "text": "That with which one propels a boat. Formed from 竹, with 高 indicating the sound.",
       "sourceTextSha256": "60bdc0be53454ce542be774923da8b24d4ffce9a1b490903f86c494596b9f4fa",
       "uncertain": false
     },
     "shuowen:3003": {
-      "text": "To winnow. From 竹; 𠀠 depicts the form, with 丌 as its base below. All graphs in this category contain 箕.",
+      "text": "To winnow. From 竹; 𠀠 depicts the form, with 丌 as its base below. All graphs in the 箕 group contain 箕.",
       "sourceTextSha256": "3a0f750e6b4f2046637b3221a062a83aed137d0545c1ab82dc97f801750aeec5",
       "uncertain": false
     },
     "shuowen:3004": {
-      "text": "To toss rice and remove its husks. From 箕; 皮 supplies the sound.",
+      "text": "To toss rice and remove its husks. Formed from 箕, with 皮 indicating the sound.",
       "sourceTextSha256": "af6b9568958ffa602b88d6bdc12da044cd3d55c0ecab12b4c50343ab6fe72f82",
       "uncertain": false
     },
     "shuowen:3005": {
-      "text": "A base beneath, a stand supporting objects. A pictograph. All graphs in this category contain 丌. Pronounced the same as 箕.",
+      "text": "A base beneath, a stand supporting objects. A pictograph. All graphs in the 丌 group contain 丌. Pronounced the same as 箕.",
       "sourceTextSha256": "18627552ead0e89f1d6926b1cd747f14c2498a4a162bfbd7fe18b9729bda3668",
       "uncertain": false
     },
     "shuowen:3006": {
-      "text": "The ancient herald who used a wooden-clapper bell to record poems and words. From 辵 and 丌; 丌 also supplies the sound. Pronounced the same as 記.",
+      "text": "The ancient herald who used a wooden-clapper bell to record poems and words. Formed from 辵 and 丌, with 丌 also indicating the sound. Pronounced the same as 記.",
       "sourceTextSha256": "83c32cf26658eea5d0151f7109acff1198945108e04524c7f67d137c12192dde",
       "uncertain": false
     },
@@ -71,12 +91,12 @@
       "uncertain": false
     },
     "shuowen:3009": {
-      "text": "To hand and give to one another; a binding placed on a stand. From 丌; 甶 supplies the sound. [The clause 約在閣上 is uncertain.]",
+      "text": "To hand and give to one another; a binding placed on a stand. Formed from 丌, with 甶 indicating the sound. [The clause 約在閣上 is uncertain.]",
       "sourceTextSha256": "dcf98d887b2f2eb5a1dd8ddf67da5a1296534622de4f41b07af7833a4c0e4434",
       "uncertain": true
     },
     "shuowen:3010": {
-      "text": "Complete or provided. From 丌; 𠨎 supplies the sound.",
+      "text": "Complete or provided. Formed from 丌, with 𠨎 indicating the sound.",
       "sourceTextSha256": "e510f78c2858757c1b931f04d2a187994bad08665c8daad3fe72ef24006af79a",
       "uncertain": false
     },
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:3012": {
-      "text": "Hands assisting one another. From 𠂇 and 工. All graphs in this category contain 左.",
+      "text": "Hands assisting one another. From 𠂇 and 工. All graphs in the 左 group contain 左.",
       "sourceTextSha256": "3eee1d856dc21457a427d7d5e96b487abdbfd2aff9228b0705841349c303a84a",
       "uncertain": false
     },
@@ -96,17 +116,17 @@
       "uncertain": true
     },
     "shuowen:3014": {
-      "text": "Skillful workmanship and ornament. It depicts a person possessing compass and square. It shares the idea of 巫. All graphs in this category contain 工.",
+      "text": "Skillful workmanship and ornament. It depicts a person possessing compass and square. It shares the idea of 巫. All graphs in the 工 group contain 工.",
       "sourceTextSha256": "ba4945f6c4afb441ed068c2fd38964f099c1d742b5dd74f0c54145fd15b32653",
       "uncertain": false
     },
     "shuowen:3015": {
-      "text": "A rule or model. From 工; 弋 supplies the sound.",
+      "text": "A rule or model. Formed from 工, with 弋 indicating the sound.",
       "sourceTextSha256": "dad4b543d6e4a96f5e682a2f056e7ef2696b785d9f6a788ee720c058b1a33df9",
       "uncertain": false
     },
     "shuowen:3016": {
-      "text": "Skill. From 工; 丂 supplies the sound.",
+      "text": "Skill. Formed from 工, with 丂 indicating the sound.",
       "sourceTextSha256": "750eb64a65344c80315ecc4a9f81c8191888f8da555bdec10875ad3ce7b3fb9f",
       "uncertain": false
     },
@@ -116,7 +136,7 @@
       "uncertain": false
     },
     "shuowen:3018": {
-      "text": "To display something with the utmost skill. From four 工. All graphs in this category contain 㠭. [The action 極巧視之 is uncertain.]",
+      "text": "To display something with the utmost skill. From four 工. All graphs in the 㠭 group contain 㠭. [The action 極巧視之 is uncertain.]",
       "sourceTextSha256": "7775c5c977ec397e359645fdc416a85b976c4567fe5c7e630fb4f70ab49157dd",
       "uncertain": true
     },
@@ -126,7 +146,7 @@
       "uncertain": false
     },
     "shuowen:3020": {
-      "text": "An invocator: a woman able to serve the formless and bring spirits down through dance. It depicts a person dancing with two sleeves and shares the idea of 工. Anciently Wu Xian first became a 巫. All graphs in this category contain 巫.",
+      "text": "An invocator: a woman able to serve the formless and bring spirits down through dance. It depicts a person dancing with two sleeves and shares the idea of 工. Anciently Wu Xian first became a 巫. All graphs in the 巫 group contain 巫.",
       "sourceTextSha256": "7efdf1bf364852acf88446c4075044e8ab52c87a0b1821e1d66493bf83d5a156",
       "uncertain": false
     },
@@ -136,7 +156,7 @@
       "uncertain": false
     },
     "shuowen:3022": {
-      "text": "Delicious or sweet. From 口 containing 一; 一 is the Way. All graphs in this category contain 甘.",
+      "text": "Delicious or sweet. From 口 containing 一; 一 is the Way. All graphs in the 甘 group contain 甘.",
       "sourceTextSha256": "a1c98a97ff075b1fe9677f0a7a39f47f6b0a48b14c6d84ad9c29420d52f3c5d1",
       "uncertain": false
     },
@@ -146,7 +166,7 @@
       "uncertain": false
     },
     "shuowen:3024": {
-      "text": "Harmony. From 甘 and 麻; 麻 means to harmonize. 甘 also supplies the sound. Pronounced like 函.",
+      "text": "Harmony. From 甘 and 麻; 麻 means to harmonize. 甘 also supplies the sound. Read like 函.",
       "sourceTextSha256": "525ca4d18f2d6316733e9cbc77b2275ccfc16422ac235364a386f49f877ef764",
       "uncertain": false
     },
@@ -161,17 +181,17 @@
       "uncertain": true
     },
     "shuowen:3027": {
-      "text": "A word or utterance. From 口; 乙 supplies the sound. It also depicts breath emerging from the mouth. All graphs in this category contain 曰.",
+      "text": "A word or utterance. Formed from 口, with 乙 indicating the sound. It also depicts breath emerging from the mouth. All graphs in the 曰 group contain 曰.",
       "sourceTextSha256": "15bb4e5249fa50a4d7acb1f5c4b3e0d0ac01f35633b30565c18dea92caa535f6",
       "uncertain": false
     },
     "shuowen:3028": {
-      "text": "To announce. From 曰 and 冊; 冊 also supplies the sound.",
+      "text": "To announce. Formed from 曰 and 冊, with 冊 also indicating the sound.",
       "sourceTextSha256": "56ef3ceb9ab4fbf893bd9c84d86058fc54bdc8eee1cb8a1c803a901c7ec8d92a",
       "uncertain": false
     },
     "shuowen:3029": {
-      "text": "What or how. From 曰; 匃 supplies the sound.",
+      "text": "What or how. Formed from 曰, with 匃 indicating the sound.",
       "sourceTextSha256": "6e9049cfc9b4fa650330617b3369451ecdbbbfe999bcf5dbf2459b35ca541a2d",
       "uncertain": false
     },
@@ -181,7 +201,7 @@
       "uncertain": false
     },
     "shuowen:3031": {
-      "text": "Once or formerly, 曾. From 曰; 兓 supplies the sound. The Odes says: “Could he not fear the light？”",
+      "text": "Once or formerly, 曾. Formed from 曰, with 兓 indicating the sound. The Odes says: “Could he not fear the light?”",
       "sourceTextSha256": "8b3f0fa3b407d1f491fb772a2bc8ff94efad9ac3d8cc3de603f3fb9985fa8558",
       "uncertain": false
     },
@@ -201,19 +221,19 @@
       "uncertain": false
     },
     "shuowen:3035": {
-      "text": "A sound of alarm. From abbreviated 乃; 西 supplies the sound. The large-seal form 𠧟 does not abbreviate. Some say 𠧟 means to go. Pronounced like 仍.",
+      "text": "A sound of alarm. Formed from abbreviated 乃, with 西 indicating the sound. The large-seal form 𠧟 does not abbreviate. Some say 𠧟 means to go. Read like 仍.",
       "sourceTextSha256": "e3a4c01518f98bfa697dfd8249cf80ba39871e55deb4eae7a29a034e12150f99",
       "uncertain": false
     },
     "shuowen:3036": {
-      "text": "The appearance of breath moving. From 乃; 𠧪 supplies the sound. Pronounced like 攸.",
+      "text": "The appearance of breath moving. Formed from 乃, with 𠧪 indicating the sound. Read like 攸.",
       "sourceTextSha256": "04c7037c50ada9dfd9d0cebf3de0b902b66bf3cacafe6402b837cd1d390a8fab",
       "uncertain": false
     },
     "shuowen:3037": {
-      "text": "Breath seeking to emerge freely but obstructed above by 一. Ancient writing uses 丂 for 亏 and also for 巧. All graphs in this category contain 丂. [The source writes 纸 in the upper obstruction clause.]",
+      "text": "Breath seeking to emerge freely but obstructed above by 一. Ancient writing uses 丂 for 亏 and also for 巧. All graphs in the 丂 group contain 丂.",
       "sourceTextSha256": "d3472e359bce473bd682e2ed333c812f2ed27cd2a4e29ea72a39a95b1d0cc800",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:3038": {
       "text": "An urgent utterance. From 丂 and 由. Some say 甹 means chivalrous; the Three Capital Regions call those who care little for wealth 甹.",
@@ -221,17 +241,17 @@
       "uncertain": false
     },
     "shuowen:3039": {
-      "text": "A word expressing a wish. From 丂; 寍 supplies the sound.",
+      "text": "A word expressing a wish. Formed from 丂, with 寍 indicating the sound.",
       "sourceTextSha256": "2c8d2395c2e3c6ef9d38240eb81bf06aa0fb8c15818a341e7d04015b1f7a22d8",
       "uncertain": false
     },
     "shuowen:3040": {
-      "text": "Reversed 丂. Pronounced like 呵.",
+      "text": "Reversed 丂. Read like 呵.",
       "sourceTextSha256": "d14ffc85facc0844c831da52baf108d9206662fec814e8087715914e13322778",
       "uncertain": false
     },
     "shuowen:3041": {
-      "text": "The quality 𦘫, apparently agreeable or permissible. From 口 and 丂; 丂 also supplies the sound. All graphs in this category contain 可. [The rare cross-gloss is unresolved.]",
+      "text": "The quality 𦘫, apparently agreeable or permissible. Formed from 口 and 丂, with 丂 also indicating the sound. All graphs in the 可 group contain 可. [The rare cross-gloss is unresolved.]",
       "sourceTextSha256": "6073c15a1540c093beab9bf1fc5fba200574ddea088aa8ad31c1827ff17e5239",
       "uncertain": true
     },
@@ -241,7 +261,7 @@
       "uncertain": false
     },
     "shuowen:3043": {
-      "text": "Permissible or satisfactory. From 可; 加 supplies the sound. The Odes says: “Well it is for the rich.”",
+      "text": "Permissible or satisfactory. Formed from 可, with 加 indicating the sound. The Odes says: “Well it is for the rich.”",
       "sourceTextSha256": "1d502e06f60ef43ba97bcca9c82cfa60ae29045036c69ab2ff18595c6353f1a6",
       "uncertain": false
     },
@@ -256,17 +276,17 @@
       "uncertain": false
     },
     "shuowen:3046": {
-      "text": "A pause in speech. From 丂; 八 depicts breath passing beyond 亏. All graphs in this category contain 兮.",
+      "text": "A pause in speech. From 丂; 八 depicts breath passing beyond 亏. All graphs in the 兮 group contain 兮.",
       "sourceTextSha256": "13c04cd193ec64e9e48c8f07f16eefcb2cd9aee91cf3a066dfb32e72a64c5505",
       "uncertain": true
     },
     "shuowen:3047": {
-      "text": "An exclamation of alarm. From 兮; 旬 supplies the sound.",
+      "text": "An exclamation of alarm. Formed from 兮, with 旬 indicating the sound.",
       "sourceTextSha256": "812e6c1b1de0fa109867d9dac65cccb3f966f935d7cb36988b8e8f86e2085833",
       "uncertain": false
     },
     "shuowen:3048": {
-      "text": "Breath or vapor. From 兮; 義 supplies the sound.",
+      "text": "Breath or vapor. Formed from 兮, with 義 indicating the sound.",
       "sourceTextSha256": "d365d7b1be14e187b72a7f7e7eb226a825e237369ac42845c6105ea0e6a5dc52",
       "uncertain": false
     },
@@ -276,7 +296,7 @@
       "uncertain": true
     },
     "shuowen:3050": {
-      "text": "A sound of pain. From 口 above 丂. All graphs in this category contain 号.",
+      "text": "A sound of pain. From 口 above 丂. All graphs in the 号 group contain 号.",
       "sourceTextSha256": "f2d76c5ce8022c9e06b6ba2272114309378846a7c2b93ddad1c8668836bee76e",
       "uncertain": false
     },
@@ -286,12 +306,12 @@
       "uncertain": false
     },
     "shuowen:3052": {
-      "text": "The same as 於. It depicts breath spreading out. From 丂 and 一; 一 levels the breath. All graphs in this category contain 亏. (Clerical writing now changes it to 于.)",
+      "text": "The same as 於. It depicts breath spreading out. From 丂 and 一; 一 levels the breath. All graphs in the 亏 group contain 亏. (Clerical writing now changes it to 于.)",
       "sourceTextSha256": "b092adbd8ddd891bea80e630eb4b5f5b72f04edb4866d5b737e56df621bd4f7f",
       "uncertain": false
     },
     "shuowen:3053": {
-      "text": "Diminution of breath. From 亏; 雐 supplies the sound.",
+      "text": "Diminution of breath. Formed from 亏, with 雐 indicating the sound.",
       "sourceTextSha256": "ae215fc7a41d27a8630d72d0870bb978c90f43dcc4399fdec909a0784a95980d",
       "uncertain": false
     },
@@ -301,7 +321,7 @@
       "uncertain": false
     },
     "shuowen:3055": {
-      "text": "Speech of alarm. From 口 and 亏; 亏 also supplies the sound.",
+      "text": "Speech of alarm. Formed from 口 and 亏, with 亏 also indicating the sound.",
       "sourceTextSha256": "2ce83c238296e4bef25d453b81b0b76e7ec30ee4229ef0d1622d6a9798d6d781",
       "uncertain": false
     },
@@ -311,122 +331,122 @@
       "uncertain": false
     },
     "shuowen:3057": {
-      "text": "Delicious. From 甘; 匕 supplies the sound. All graphs in this category contain 旨.",
+      "text": "Delicious. Formed from 甘, with 匕 indicating the sound. All graphs in the 旨 group contain 旨.",
       "sourceTextSha256": "5083a5dd600b8d2017d155730f6c98bc72df4f76d8c30d46f8810386ec0559b8",
       "uncertain": false
     },
     "shuowen:3058": {
-      "text": "To taste with the mouth. From 旨; 尚 supplies the sound.",
+      "text": "To taste with the mouth. Formed from 旨, with 尚 indicating the sound.",
       "sourceTextSha256": "59a7917321f8c9b53192acf2d58116a5f98f41502840680f8018738408c3e733",
       "uncertain": false
     },
     "shuowen:3059": {
-      "text": "Joy. From 壴 and 口. All graphs in this category contain 喜.",
+      "text": "Joy. From 壴 and 口. All graphs in the 喜 group contain 喜.",
       "sourceTextSha256": "5eba7151ae404f6e15ff5cabcf918bc191678adc4e0eb971819bb13898dbf2fc",
       "uncertain": false
     },
     "shuowen:3060": {
-      "text": "Pleased. From 心 and 喜; 喜 also supplies the sound.",
+      "text": "Pleased. Formed from 心 and 喜, with 喜 also indicating the sound.",
       "sourceTextSha256": "9683ee5f1df5fb0ede9ad72db5905010de7acdde9973918a9090ce4c3bef9b2d",
       "uncertain": false
     },
     "shuowen:3061": {
-      "text": "Great. From 喜; 否 supplies the sound. The Spring and Autumn commentary says: “Wu had Grand Steward Pi.”",
+      "text": "Great. Formed from 喜, with 否 indicating the sound. The Spring and Autumn commentary says: “Wu had Grand Steward Pi.”",
       "sourceTextSha256": "0ea0c4c260b03046ed5623862330043fcd31a3322fb39dff0e4012bd3c0ee163",
       "uncertain": false
     },
     "shuowen:3062": {
-      "text": "Music set out upright and visible above. From 屮 and 豆. All graphs in this category contain 壴.",
+      "text": "Music set out upright and visible above. From 屮 and 豆. All graphs in the 壴 group contain 壴.",
       "sourceTextSha256": "1840b0b0f208c7ea7a303b1469b48bca933496d86f4e646d2e5588af6bffda45",
       "uncertain": true
     },
     "shuowen:3063": {
-      "text": "To stand upright. From 壴 and 寸, holding it. Pronounced like 駐.",
+      "text": "To stand upright. From 壴 and 寸, holding it. Read like 駐.",
       "sourceTextSha256": "55658de5cf01315919e63f7756a6f800b47f7b0632d940c6218259de25010d1c",
       "uncertain": false
     },
     "shuowen:3064": {
-      "text": "The night-watch drum. From 壴; 蚤 supplies the sound. The Rites: four rounds at dusk are the great drum; three at midnight announce the coming morning; five at daybreak announce daylight. Pronounced like 戚.",
+      "text": "The night-watch drum. Formed from 壴, with 蚤 indicating the sound. The Rites: four rounds at dusk are the great drum; three at midnight announce the coming morning; five at daybreak announce daylight. Read like 戚.",
       "sourceTextSha256": "219f06912323dec768fae76a40c9b419b7e9cdac901b33c4b891fd929906fffe",
       "uncertain": true
     },
     "shuowen:3065": {
-      "text": "A drum's sound. From 壴; 彡 supplies the sound.",
+      "text": "A drum's sound. Formed from 壴, with 彡 indicating the sound.",
       "sourceTextSha256": "62637e4dfc8f3f0de7f2b00a1d31e0ee1eff5b9fe7fd7bfe236d91cc1408cfbe",
       "uncertain": false
     },
     "shuowen:3066": {
-      "text": "Beautiful or excellent. From 壴; 加 supplies the sound.",
+      "text": "Beautiful or excellent. Formed from 壴, with 加 indicating the sound.",
       "sourceTextSha256": "259713746411b9819d88fe758782895e82f8f8f5282abd7db92d4d4d47acdeb0",
       "uncertain": false
     },
     "shuowen:3067": {
-      "text": "To expand outward. The sound of the spring equinox: the myriad things break through their skins and shells and emerge, hence called 鼓. From 壴; 支 depicts the hand striking it. The Rites of Zhou has six drums: 靁鼓, eight faces; 靈鼓, six; 路鼓, four; 鼖鼓, 臯鼓 and 晉鼓, each two. All graphs in this category contain 鼓.",
+      "text": "To expand outward. The sound of the spring equinox: the myriad things break through their skins and shells and emerge, hence called 鼓. From 壴; 支 depicts the hand striking it. The Rites of Zhou has six drums: 靁鼓, eight faces; 靈鼓, six; 路鼓, four; 鼖鼓, 臯鼓 and 晉鼓, each two. All graphs in the 鼓 group contain 鼓.",
       "sourceTextSha256": "f62a1784dfcc90be4aedf5ec835a283e9b13af00e98541a27a2a3b262388ff56",
       "uncertain": true
     },
     "shuowen:3068": {
-      "text": "A large drum. From 鼓; 咎 supplies the sound. The Odes says: “The great drum cannot prevail.”",
+      "text": "A large drum. Formed from 鼓, with 咎 indicating the sound. The Odes says: “The great drum cannot prevail.”",
       "sourceTextSha256": "b6d06191583c75e1c41c84944d98af2fca8d96575b912ad9235f23ed0cee6d63",
       "uncertain": false
     },
     "shuowen:3069": {
-      "text": "A large drum is called 鼖, eight feet across and two-faced, used for military drumming. From 鼓; abbreviated 賁 supplies the sound.",
+      "text": "A large drum is called 鼖, eight feet across and two-faced, used for military drumming. Formed from 鼓, with abbreviated 賁 indicating the sound.",
       "sourceTextSha256": "85350ec7ab80895f8fdc96d183bcca1a7719ae89fdd1c8c487b3616ad440e158",
       "uncertain": false
     },
     "shuowen:3070": {
-      "text": "A mounted drum. From 鼓; 卑 supplies the sound.",
+      "text": "A mounted drum. Formed from 鼓, with 卑 indicating the sound.",
       "sourceTextSha256": "90f2d500a8dd7715cb98064514fe4885bf7c662166e0f6e0ed6293cbb9afafc1",
       "uncertain": false
     },
     "shuowen:3071": {
-      "text": "A drum's sound. From 鼓; 隆 supplies the sound.",
+      "text": "A drum's sound. Formed from 鼓, with 隆 indicating the sound.",
       "sourceTextSha256": "8969f36a15383248c682cc991abb864a1020ea1ae2aaa06da41788448cc3b6a3",
       "uncertain": false
     },
     "shuowen:3072": {
-      "text": "A drum's sound. From 鼓; 𣶒 supplies the sound. The Odes says: “The hand drums rumble.”",
+      "text": "A drum's sound. Formed from 鼓, with 𣶒 indicating the sound. The Odes says: “The hand drums rumble.”",
       "sourceTextSha256": "bb5d1d8eb78e323dcaad285c4ad4b0fdbba3b0eabe8a6e43d2a2cc0485b1c815",
       "uncertain": false
     },
     "shuowen:3073": {
-      "text": "A drum's sound. From 鼓; 堂 supplies the sound. The Odes says: “Beat the drum: its booming.”",
+      "text": "A drum's sound. Formed from 鼓, with 堂 indicating the sound. The Odes says: “Beat the drum: its booming.”",
       "sourceTextSha256": "0e0798f08317b6f352aeef3cc0276454cd7518adf68a631b509c8368b7b09d89",
       "uncertain": false
     },
     "shuowen:3074": {
-      "text": "A drum's sound. From 鼓; 合 supplies the sound.",
+      "text": "A drum's sound. Formed from 鼓, with 合 indicating the sound.",
       "sourceTextSha256": "a05c27532369cd90f0090d5f1dd63464f46a50c25f79c0cddd80588ce8aeb840",
       "uncertain": false
     },
     "shuowen:3075": {
-      "text": "A drum without sound. From 鼓; 咠 supplies the sound.",
+      "text": "A drum without sound. Formed from 鼓, with 咠 indicating the sound.",
       "sourceTextSha256": "473bc6be8db0760aa0c7f8bcdc2966013f7cf130b456a62201ced12f4de9fbbd",
       "uncertain": false
     },
     "shuowen:3076": {
-      "text": "The sound of drums. From 鼓; 缶 supplies the sound.",
+      "text": "The sound of drums. Formed from 鼓, with 缶 indicating the sound.",
       "sourceTextSha256": "82d13b1b17e381e9587f45f414871da6c000e219f499448e4b0807befe63b54c",
       "uncertain": false
     },
     "shuowen:3077": {
-      "text": "Music for returning troops and arranging the army. Another explanation: desire; ascent. From 豆; abbreviated 微 supplies the sound. All graphs in this category contain 豈.",
+      "text": "Music for returning troops and arranging the army. Another explanation: desire; ascent. Formed from 豆, with abbreviated 微 indicating the sound. All graphs in the 豈 group contain 豈.",
       "sourceTextSha256": "0c98f6ed42eccfe4618a0029c0ed97304b9d2f1721fb8ff362ca51a70d5b5f3f",
       "uncertain": false
     },
     "shuowen:3078": {
-      "text": "Peaceful ease. From 心 and 豈; 豈 also supplies the sound.",
+      "text": "Peaceful ease. Formed from 心 and 豈, with 豈 also indicating the sound.",
       "sourceTextSha256": "24c1d2800879412fdae8adc79079cf78c5e41bd221ab3c9b8e53dabcd6fe6f70",
       "uncertain": false
     },
     "shuowen:3079": {
-      "text": "The quality 㡮: music on completing affairs. From 豈; 幾 supplies the sound. [The rare cross-gloss is unresolved.]",
+      "text": "The quality 㡮: music on completing affairs. Formed from 豈, with 幾 indicating the sound. [The rare cross-gloss is unresolved.]",
       "sourceTextSha256": "47569c6fec31d096df6d4c2445b7b4f84249ae2942fc272558233dc42c916673",
       "uncertain": true
     },
     "shuowen:3080": {
-      "text": "An ancient vessel for eating meat. From 口; pictographic. All graphs in this category contain 豆.",
+      "text": "An ancient vessel for eating meat. From 口; pictographic. All graphs in the 豆 group contain 豆.",
       "sourceTextSha256": "b86cce035446022eb1397ccf161e1adf5f72e6a7380fa40e3c996acd23eaa7b2",
       "uncertain": false
     },
@@ -436,17 +456,17 @@
       "uncertain": false
     },
     "shuowen:3082": {
-      "text": "A ladle or gourd vessel, 蠡. From 豆; abbreviated 蒸 supplies the sound.",
+      "text": "A ladle or gourd vessel, 蠡. Formed from 豆, with abbreviated 蒸 indicating the sound.",
       "sourceTextSha256": "10d26b8b43dbf1cde966ab48357621495f062fa743a04177e85b12cb709e018e",
       "uncertain": false
     },
     "shuowen:3083": {
-      "text": "A kind of 豆 vessel. From 豆; 𢍏 supplies the sound.",
+      "text": "A kind of 豆 vessel. Formed from 豆, with 𢍏 indicating the sound.",
       "sourceTextSha256": "e537e95cbf90065ee2f7cfca5db35d5eb87b44e98bdbcd81f366a330bfc02af7",
       "uncertain": false
     },
     "shuowen:3084": {
-      "text": "The food 豆飴, apparently bean malt-sugar. From 豆; 夗 supplies the sound. [The gloss is uncertain.]",
+      "text": "The food 豆飴, apparently bean malt-sugar. Formed from 豆, with 夗 indicating the sound. [The gloss is uncertain.]",
       "sourceTextSha256": "cc11a848ef56f33bb20195663f58519dd06bbe9e5ed55edbc5c0b6628da05587",
       "uncertain": true
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:3086": {
-      "text": "A vessel for performing rites. From 豆; pictographic. All graphs in this category contain 豊. Pronounced the same as 禮.",
+      "text": "A vessel for performing rites. From 豆; pictographic. All graphs in the 豊 group contain 豊. Pronounced the same as 禮.",
       "sourceTextSha256": "cff00019b8e3224d59fe3e0657ecc0b0a799d4d491668d6ffe3f9cb2df82f530",
       "uncertain": false
     },
@@ -466,7 +486,7 @@
       "uncertain": false
     },
     "shuowen:3088": {
-      "text": "A 豆 vessel filled abundantly. From 豆; pictographic. Another explanation: the district drinking rite has a 豐侯 object. All graphs in this category contain 豐.",
+      "text": "A 豆 vessel filled abundantly. From 豆; pictographic. Another explanation: the district drinking rite has a 豐侯 object. All graphs in the 豐 group contain 豐.",
       "sourceTextSha256": "a482021e615157b682b3698ba96bd95ab41682241ea4eda59657d29b42751740",
       "uncertain": true
     },
@@ -476,47 +496,47 @@
       "uncertain": false
     },
     "shuowen:3090": {
-      "text": "An ancient earthenware vessel. From 豆; 虍 supplies the sound. All graphs in this category contain 䖒.",
+      "text": "An ancient earthenware vessel. Formed from 豆, with 虍 indicating the sound. All graphs in the 䖒 group contain 䖒.",
       "sourceTextSha256": "0caf83eaebc52c6d78cfc19ff72ad9ab7ba982625f8f57bca83eaa188e00a7c2",
       "uncertain": false
     },
     "shuowen:3091": {
-      "text": "An earthenware cooking pot. From 䖒; 号 supplies the sound. Pronounced like 鎬.",
+      "text": "An earthenware cooking pot. Formed from 䖒, with 号 indicating the sound. Read like 鎬.",
       "sourceTextSha256": "9d4df52b5ac618116b8d964a87ac1cc0eef11099c3510d5dd615c2f3921a0ac7",
       "uncertain": false
     },
     "shuowen:3092": {
-      "text": "A vessel. From 䖒 and 㿾; 㿾 also supplies the sound. The explanation is incomplete.",
+      "text": "A vessel. Formed from 䖒 and 㿾, with 㿾 also indicating the sound. The explanation is incomplete.",
       "sourceTextSha256": "cb6fd5bc8270c3c014251dd9a02ecff077022ee56d0648da5018df7d935c9b4c",
       "uncertain": false
     },
     "shuowen:3093": {
-      "text": "A tiger's markings. A pictograph. All graphs in this category contain 虍.",
+      "text": "A tiger's markings. A pictograph. All graphs in the 虍 group contain 虍.",
       "sourceTextSha256": "c1d3f25a906f7431d463dbe86b32254b22be30f025e13aded9f8d247f2f99fe2",
       "uncertain": false
     },
     "shuowen:3094": {
-      "text": "The 騶虞: a white tiger with black markings, its tail longer than its body. A benevolent beast, eating only naturally dead flesh. From 虍; 吳 supplies the sound. The Odes says: “Ah, the 騶虞!”",
+      "text": "The 騶虞: a white tiger with black markings, its tail longer than its body. A benevolent beast, eating only naturally dead flesh. Formed from 虍, with 吳 indicating the sound. The Odes says: “Ah, the 騶虞!”",
       "sourceTextSha256": "fc2dce697dd0b624dd091778f970a1386521480b517daea3ab955e5ed64183e9",
       "uncertain": false
     },
     "shuowen:3095": {
-      "text": "The appearance of a tiger. From 虍; 必 supplies the sound.",
+      "text": "The appearance of a tiger. Formed from 虍, with 必 indicating the sound.",
       "sourceTextSha256": "77cec23585e45fa836d855774cc45104f03332af181f37cf220d4ce384da69a3",
       "uncertain": false
     },
     "shuowen:3096": {
-      "text": "A tiger's gait. From 虍; 文 supplies the sound. Pronounced like 矜.",
+      "text": "A tiger's gait. Formed from 虍, with 文 indicating the sound. Read like 矜.",
       "sourceTextSha256": "1bfe47922bdede4b71c89bd513931df5494427cca48fbd3d562f25cce8ab9f65",
       "uncertain": false
     },
     "shuowen:3097": {
-      "text": "A tiger ungentle and untrustworthy. From 虍; 且 supplies the sound. Pronounced like 䣜 county.",
+      "text": "A tiger ungentle and untrustworthy. Formed from 虍, with 且 indicating the sound. Read like 䣜 county.",
       "sourceTextSha256": "09b05556d8dade9310b9e334f7f2fe4b1b6f52a5b4cc4e571d7aa9c5417acf5d",
       "uncertain": false
     },
     "shuowen:3098": {
-      "text": "A roar or howl. From 虍; 𠀒 supplies the sound.",
+      "text": "A roar or howl. Formed from 虍, with 𠀒 indicating the sound.",
       "sourceTextSha256": "d02480917034a6053681e9d62c7b466754f2335122aace50e9e30f15e24ddbeb",
       "uncertain": false
     },
@@ -526,7 +546,7 @@
       "uncertain": false
     },
     "shuowen:3100": {
-      "text": "Tiger markings, 彪. From 虍; 彬 supplies the sound.",
+      "text": "Tiger markings, 彪. Formed from 虍, with 彬 indicating the sound.",
       "sourceTextSha256": "0f4b6c1a183c22e53a0252a77b6890f20fc72da091e9a1f831b6a961ec145a44",
       "uncertain": false
     }

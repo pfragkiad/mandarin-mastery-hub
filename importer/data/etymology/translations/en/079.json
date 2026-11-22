@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "871d6a9e47bccf0a49d3efd9fef90247f8e261db6bcd4eecad9da7b0d206d4e4",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "079",
   "translations": {
@@ -481,14 +501,14 @@
       "uncertain": false
     },
     "shuowen:7891": {
-      "text": "To strike. Formed from 手, with 票 indicating the sound. Alternatively, a door-lifting strongman, apparently; the phrase 挈門壯 is uncertain.",
+      "text": "To strike. Formed from 手, with 票 indicating the sound. Alternatively, to lift a gate-bolt.",
       "sourceTextSha256": "d1a471362bc52bd818a4a64a1b5faf68665494275351177c651824f6a5783e63",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7892": {
-      "text": "To disturb or stir. Formed from 手, with 兆 indicating the sound. Alternatively, to agitate. The Discourses of the States says: 'Xi Zhi challenged 夭,' the final name or wording being uncertain.",
+      "text": "To disturb or stir. Formed from 手, with 兆 indicating the sound. Alternatively, to agitate. The Discourses of the States says: “Xi Zhi challenged Heaven.”",
       "sourceTextSha256": "5bcad705c4c9cc25434523384c9f4edb1ebb904c641ba90bf75a83452aff3f73",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7893": {
       "text": "To pick or pry. Formed from 手, with 夬 indicating the sound.",

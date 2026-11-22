@@ -26,507 +26,527 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "d524ada07aa76c8409b7f4aaef8b3c1502a96c13ec10603db24495f0442d5009",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "071",
   "translations": {
     "shuowen:7001": {
-      "text": "A river rising in 宛陵, 丹陽, and flowing northwest into the 江. From 水, with 令 as phonetic.",
+      "text": "A river rising in 宛陵, 丹陽, and flowing northwest into the 江. Formed from 水, with 令 indicating the sound.",
       "sourceTextSha256": "f003c521f007d6ccb02e3dcff61c808c1cb0d240c8c5ff50192e0cc926359eda",
       "uncertain": false
     },
     "shuowen:7002": {
-      "text": "A river in 丹陽. From 水, with 箄 as phonetic.",
+      "text": "A river in 丹陽. Formed from 水, with 箄 indicating the sound.",
       "sourceTextSha256": "5bf5d7f16c961e6cf1b6f01999ef668e5cb301ea6835b9f227134fd66dfd3e93",
       "uncertain": false
     },
     "shuowen:7003": {
-      "text": "A river rising in 溧陽 county, 丹陽. From 水, with 栗 as phonetic.",
+      "text": "A river rising in 溧陽 county, 丹陽. Formed from 水, with 栗 indicating the sound.",
       "sourceTextSha256": "718ee72000dff7716a29b0a81d8f398c44acd652278da0c07a18126fcbd33988",
       "uncertain": false
     },
     "shuowen:7004": {
-      "text": "A river rising at Mount 陽海 in 零陵 and flowing north into the 江. From 水, with 相 as phonetic.",
+      "text": "A river rising at Mount 陽海 in 零陵 and flowing north into the 江. Formed from 水, with 相 indicating the sound.",
       "sourceTextSha256": "15d9d65f7113cdf8d45e8674e766cfe8d8ab659df589d3f56c926a79c31aa15b",
       "uncertain": false
     },
     "shuowen:7005": {
-      "text": "The 汨羅 deep in 長沙: the water in which Qu Yuan drowned himself. From 水, with abbreviated 冥 as phonetic.",
+      "text": "The 汨羅 deep in 長沙: the water in which Qu Yuan drowned himself. Formed from 水, with abbreviated 冥 indicating the sound.",
       "sourceTextSha256": "ee3dc8ff98b36e40319a0ec4cb81341502e721eb28abefc4e0ef525478e72f21",
       "uncertain": false
     },
     "shuowen:7006": {
-      "text": "A river rising in 臨武, 桂陽, and entering the 匯. From 水, with 秦 as phonetic.",
+      "text": "A river rising in 臨武, 桂陽, and entering the 匯. Formed from 水, with 秦 indicating the sound.",
       "sourceTextSha256": "5cb7e6a418527c969841eb816c310cd41f977c61d34956b9adfef894768fe7e1",
       "uncertain": false
     },
     "shuowen:7007": {
-      "text": "A river rising in 南平, 桂陽, and flowing west into 營道. From 水, with 罙 as phonetic.",
+      "text": "A river rising in 南平, 桂陽, and flowing west into 營道. Formed from 水, with 罙 indicating the sound.",
       "sourceTextSha256": "e0ab7a7c20d8a26eaa479d575af99a49b6096bbdb72c5805719d057636a2433a",
       "uncertain": false
     },
     "shuowen:7008": {
-      "text": "A river rising at Mount 玉 in 鐔成, 武陵, and flowing east into 鬱林. From 水, with 覃 as phonetic.",
+      "text": "A river rising at Mount 玉 in 鐔成, 武陵, and flowing east into 鬱林. Formed from 水, with 覃 indicating the sound.",
       "sourceTextSha256": "be5b08310860001a5aa520d22be48dc192b566c6ac64b79488076e900da7b0e0",
       "uncertain": false
     },
     "shuowen:7009": {
-      "text": "A river rising west of 孱陵, 武陵, and flowing southeast into the 江. From 水, with 由 as phonetic.",
+      "text": "A river rising west of 孱陵, 武陵, and flowing southeast into the 江. Formed from 水, with 由 indicating the sound.",
       "sourceTextSha256": "e26a1668f0de345491a55388eba53ab2f8a5b8475cd9295a23e6880907a05506",
       "uncertain": false
     },
     "shuowen:7010": {
-      "text": "A river rising in 艾 county, 豫章, and flowing west into the 湘. From 水, with 買 as phonetic.",
+      "text": "A river rising in 艾 county, 豫章, and flowing west into the 湘. Formed from 水, with 買 indicating the sound.",
       "sourceTextSha256": "87e51915c97cddd35a345c2d81e5df87b72b7c2b318a284eb07e8524812ec902",
       "uncertain": false
     },
     "shuowen:7011": {
-      "text": "A river rising in 龍川, 南海, and flowing west into the 溱. From 水, with 貞 as phonetic.",
+      "text": "A river rising in 龍川, 南海, and flowing west into the 溱. Formed from 水, with 貞 indicating the sound.",
       "sourceTextSha256": "9466fb34c90fcdec051e07380a3ce3b3776c5c9dba202f48bffb2b5876df7ecf",
       "uncertain": false
     },
     "shuowen:7012": {
-      "text": "A river rising in 鬱林 commandery. From 水, with 畱 as phonetic.",
+      "text": "A river rising in 鬱林 commandery. Formed from 水, with 畱 indicating the sound.",
       "sourceTextSha256": "a45bd30ae51f5cc051823bc03a1cc285b4c2bd3007563c77afb93c54727f5059",
       "uncertain": false
     },
     "shuowen:7013": {
-      "text": "A river rising in Mi county, Henan, and flowing east into the 潁. From 水, with 翼 as phonetic.",
+      "text": "A river rising in Mi county, Henan, and flowing east into the 潁. Formed from 水, with 翼 indicating the sound.",
       "sourceTextSha256": "2313c014ca1cf1f91a0d490905988604da140ed9746780b52726ce9c46e24aff",
       "uncertain": false
     },
     "shuowen:7014": {
-      "text": "A river rising in 舞陽, 南陽, and flowing east into the 潁. From 水, with 無 as phonetic.",
+      "text": "A river rising in 舞陽, 南陽, and flowing east into the 潁. Formed from 水, with 無 indicating the sound.",
       "sourceTextSha256": "dca67c481b32a956fbe18a01aaaa93b5cbd7293b25b32984e8089332b668c6a5",
       "uncertain": false
     },
     "shuowen:7015": {
-      "text": "A river rising in 魯陽, 南陽, and entering 城父. From 水, with 敖 as phonetic.",
+      "text": "A river rising in 魯陽, 南陽, and entering 城父. Formed from 水, with 敖 indicating the sound.",
       "sourceTextSha256": "c1081fb090a89260aa5d2cc5fc9ef66210b5066e2da7b5f76326d612fcd9023e",
       "uncertain": false
     },
     "shuowen:7016": {
-      "text": "A river rising at Mount 中陽 in 舞陽, 南陽, and entering the 潁. From 水, with 親 as phonetic.",
+      "text": "A river rising at Mount 中陽 in 舞陽, 南陽, and entering the 潁. Formed from 水, with 親 indicating the sound.",
       "sourceTextSha256": "1d7a410749beb8aa4aa0b81ae8fdcd7f065fa0648507ccebd9d10b763c8a2863",
       "uncertain": false
     },
     "shuowen:7017": {
-      "text": "A river rising at Mount 桐柏大復 in 平氏, 南陽, and flowing southeast into the sea. From 水, with 隹 as phonetic.",
+      "text": "A river rising at Mount 桐柏大復 in 平氏, 南陽, and flowing southeast into the sea. Formed from 水, with 隹 indicating the sound.",
       "sourceTextSha256": "2a00cadcc004f0b03179e56e4e7cb6da378d65f7f2b9c23691ab164ed30d0fe0",
       "uncertain": false
     },
     "shuowen:7018": {
-      "text": "A river rising at Mount 堯 in 魯陽, 南陽, and flowing northeast into the 汝. From 水, with 蚩 as phonetic.",
+      "text": "A river rising at Mount 堯 in 魯陽, 南陽, and flowing northeast into the 汝. Formed from 水, with 蚩 indicating the sound.",
       "sourceTextSha256": "8f3be7b9ab70a6b65fe938f2efcf7c6ffa9c8b31cc46216509332d4e844cf9c2",
       "uncertain": false
     },
     "shuowen:7019": {
-      "text": "A river rising at Mount 衡 in 雉, 南陽, and flowing east into the 汝. From 水, with 豊 as phonetic.",
+      "text": "A river rising at Mount 衡 in 雉, 南陽, and flowing east into the 汝. Formed from 水, with 豊 indicating the sound.",
       "sourceTextSha256": "480f2eaf0022ba8dda0e8e28bb4e6f7aec244092f106ecdd588da399b14c0f76",
       "uncertain": false
     },
     "shuowen:7020": {
-      "text": "A river rising in 蔡陽, 南陽, and flowing east into the 夏 water. From 水, with 員 as phonetic.",
+      "text": "A river rising in 蔡陽, 南陽, and flowing east into the 夏 water. Formed from 水, with 員 indicating the sound.",
       "sourceTextSha256": "5af8d529af01e37e547026635d0446faa8a055361bd3e7d311985dfa77db3131",
       "uncertain": false
     },
     "shuowen:7021": {
-      "text": "A river rising at Mount 垂 in 弋陽, 汝南, and flowing east into the 淮. From 水, with 𢌿 as phonetic.",
+      "text": "A river rising at Mount 垂 in 弋陽, 汝南, and flowing east into the 淮. Formed from 水, with 𢌿 indicating the sound.",
       "sourceTextSha256": "08c3acc4164e21cd38f6a886ea426fc3469a88369c61b3452316caaca4b0020b",
       "uncertain": false
     },
     "shuowen:7022": {
-      "text": "A river rising in 黑閭 ravine, 上蔡, 汝南, and entering the 汝. From 水, with 意 as phonetic.",
+      "text": "A river rising in 黑閭 ravine, 上蔡, 汝南, and entering the 汝. Formed from 水, with 意 indicating the sound.",
       "sourceTextSha256": "5ffcc01eaa0d2bd5dc96c553752943e212beb8fbbe8b6dfa667892781083c7ff",
       "uncertain": false
     },
     "shuowen:7023": {
-      "text": "A river rising in 新郪, 汝南, and entering the 潁. From 水, with 囟 as phonetic.",
+      "text": "A river rising in 新郪, 汝南, and entering the 潁. Formed from 水, with 囟 indicating the sound.",
       "sourceTextSha256": "2d788239b0a0d22fbb83d513bbb871cde398e29c86ab69306a41fcbb6bdd144c",
       "uncertain": false
     },
     "shuowen:7024": {
-      "text": "A river rising in 吳房, 汝南, and entering the 瀙. From 水, with 瞿 as phonetic.",
+      "text": "A river rising in 吳房, 汝南, and entering the 瀙. Formed from 水, with 瞿 indicating the sound.",
       "sourceTextSha256": "e33a09c7b82c46863b19f59a5a698ded9022dd6e34451ca550848f4f0feed347",
       "uncertain": false
     },
     "shuowen:7025": {
-      "text": "A river rising at Mount 乾 in 陽城, 潁川, and flowing east into the 淮; a major watercourse of 豫州. From 水, with 頃 as phonetic.",
+      "text": "A river rising at Mount 乾 in 陽城, 潁川, and flowing east into the 淮; a major watercourse of 豫州. Formed from 水, with 頃 indicating the sound.",
       "sourceTextSha256": "143c3c49ad3b0a26ce19f585d5c8180e3b375890fdcdbc12f22d4235f69a611a",
       "uncertain": false
     },
     "shuowen:7026": {
-      "text": "A river rising in the mountains of 陽城, 潁川, and flowing southeast into the 潁. From 水, with 有 as phonetic.",
+      "text": "A river rising in the mountains of 陽城, 潁川, and flowing southeast into the 潁. Formed from 水, with 有 indicating the sound.",
       "sourceTextSha256": "6621a9cfa71a59428219944c4aae2eff6ae4986d82a298737c2ae471d15976a5",
       "uncertain": false
     },
     "shuowen:7027": {
-      "text": "A river rising at Mount 少室 in 陽城, 潁川, and flowing east into the 潁. From 水, with 㥯 as phonetic.",
+      "text": "A river rising at Mount 少室 in 陽城, 潁川, and flowing east into the 潁. Formed from 水, with 㥯 indicating the sound.",
       "sourceTextSha256": "261965ba280b5b6c11d71616925d52a4b74ebe76a0ad18b0fe8c9afa5d186c90",
       "uncertain": false
     },
     "shuowen:7028": {
-      "text": "A river receiving the 浪湯 canal at 扶溝, 淮陽, and flowing east into the 淮. From 水, with 過 as phonetic.",
+      "text": "A river receiving the 浪湯 canal at 扶溝, 淮陽, and flowing east into the 淮. Formed from 水, with 過 indicating the sound.",
       "sourceTextSha256": "307503bb48cf4cffe75451991e39cb65d25f7f843fa335bc23e674cfe10e5594",
       "uncertain": false
     },
     "shuowen:7029": {
-      "text": "A river receiving the 洵波 at 博安, 九江, and flowing north into the 氐. From 水, with 丗 as phonetic.",
+      "text": "A river receiving the 洵波 at 博安, 九江, and flowing north into the 氐. Formed from 水, with 丗 indicating the sound.",
       "sourceTextSha256": "1a2de7148325297e687ee8944cb968298f4c728c9ea47a565e613e0939f4a99b",
       "uncertain": false
     },
     "shuowen:7030": {
-      "text": "A river receiving the 陰 ditch at 浚儀, 陳畱; at 蒙 it becomes the 雝 water and flows east into the 泗. From 水, with 反 as phonetic.",
+      "text": "A river receiving the 陰 ditch at 浚儀, 陳畱; at 蒙 it becomes the 雝 water and flows east into the 泗. Formed from 水, with 反 indicating the sound.",
       "sourceTextSha256": "d253e534cebc67d454b134c8b7b725e2748f300a7e05b9a99f64c175c51371e8",
       "uncertain": false
     },
     "shuowen:7031": {
-      "text": "A river rising in the state of Zheng. From 水, with 曾 as phonetic. The Odes says: 'The 潧 and 洧 are flowing in full spate.'",
+      "text": "A river rising in the state of Zheng. Formed from 水, with 曾 indicating the sound. The Odes says: 'The 潧 and 洧 are flowing in full spate.'",
       "sourceTextSha256": "ac50f7e71bc5aecc6df4d3e5785ebbc93d78e853624b4af2373791f4e7b334c8",
       "uncertain": false
     },
     "shuowen:7032": {
-      "text": "A river in 臨淮. From 水, with 夌 as phonetic.",
+      "text": "A river in 臨淮. Formed from 水, with 夌 indicating the sound.",
       "sourceTextSha256": "4f41816429eebda7e418e7af30132d979347cb1f9067a35163e3c0da8ed5d905",
       "uncertain": false
     },
     "shuowen:7033": {
-      "text": "A river rising in 濮陽, 東郡, and flowing south into 鉅野. From 水, with 僕 as phonetic.",
+      "text": "A river rising in 濮陽, 東郡, and flowing south into 鉅野. Formed from 水, with 僕 indicating the sound.",
       "sourceTextSha256": "e7fee761c2de7928cf39c78ffe2a9b9ee66afc31effe09ca2613d170badba3c2",
       "uncertain": false
     },
     "shuowen:7034": {
-      "text": "A river between Qi and Lu. From 水, with 樂 as phonetic. The Spring and Autumn Commentary says: 'The duke met the marquis of Qi at the 濼.'",
+      "text": "A river between Qi and Lu. Formed from 水, with 樂 indicating the sound. The Spring and Autumn Commentary says: 'The duke met the marquis of Qi at the 濼.'",
       "sourceTextSha256": "4b22fa614f8045ed0d0f9cd296c7f88c0afb702101a6df06a17c73ed1456fb16",
       "uncertain": false
     },
     "shuowen:7035": {
-      "text": "A river in Lu. From 水, with 郭 as phonetic.",
+      "text": "A river in Lu. Formed from 水, with 郭 indicating the sound.",
       "sourceTextSha256": "728d28aa80f2425edfc065e709bd4eb8ecd097a815bf246a0751acf9812363c7",
       "uncertain": false
     },
     "shuowen:7036": {
-      "text": "The moat at Lu's northern city gate. From 水, with 爭 as phonetic.",
+      "text": "The moat at Lu's northern city gate. Formed from 水, with 爭 indicating the sound.",
       "sourceTextSha256": "3cf647e7801aafbb0cf9017fd0641a092dac34881d7214ebccbd11b4a66cd4bb",
       "uncertain": false
     },
     "shuowen:7037": {
-      "text": "A river rising in 東武陽, 東郡, and entering the sea. From 水, with 㬎 as phonetic. Sang Qin says it rises in 高唐, 平原.",
+      "text": "A river rising in 東武陽, 東郡, and entering the sea. Formed from 水, with 㬎 indicating the sound. Sang Qin says it rises in 高唐, 平原.",
       "sourceTextSha256": "f6030277c26e7986aaaad79c18325bdde7bb7d1e465fca018cd677659930a3e9",
       "uncertain": false
     },
     "shuowen:7038": {
-      "text": "A river rising in 平樂, 山陽, and flowing northeast into the 泗. From 水, with 包 as phonetic.",
+      "text": "A river rising in 平樂, 山陽, and flowing northeast into the 泗. Formed from 水, with 包 indicating the sound.",
       "sourceTextSha256": "086349dd70c8e6bfb2e838d0e7e1f04138a8c47a774ed41d5176d6ac9956fc73",
       "uncertain": false
     },
     "shuowen:7039": {
-      "text": "The waters of 菏澤, in 胡陵, 山陽. The Tribute of Yu says: 'Float along the 淮 and 泗, reaching the 菏.' From 水, with 苛 as phonetic.",
+      "text": "The waters of 菏澤, in 胡陵, 山陽. The Tribute of Yu says: 'Float along the 淮 and 泗, reaching the 菏.' Formed from 水, with 苛 indicating the sound.",
       "sourceTextSha256": "bef6d12b4065a1e0d2628662a8002bd5f5fb19da25d8046013ad3fcf365760ae",
       "uncertain": false
     },
     "shuowen:7040": {
-      "text": "It receives the 泲 water and flows east into the 淮. From 水, with 四 as phonetic.",
+      "text": "It receives the 泲 water and flows east into the 淮. Formed from 水, with 四 indicating the sound.",
       "sourceTextSha256": "e1f4883ba489b12ff68aa9a43dc25572cc0ebfb3d7c28e8da3eb5797d43c0f7d",
       "uncertain": false
     },
     "shuowen:7041": {
-      "text": "A river between Qi and Lu. From 水, with 亘 as phonetic.",
+      "text": "A river between Qi and Lu. Formed from 水, with 亘 indicating the sound.",
       "sourceTextSha256": "16ae1bcf270d37085868e5bbd4f03ad1c39c3efe327b8b1e9070bebc08a66bf2",
       "uncertain": false
     },
     "shuowen:7042": {
-      "text": "The 河灉 river, in Song. From 水, with 雝 as phonetic.",
+      "text": "The 河灉 river, in Song. Formed from 水, with 雝 indicating the sound.",
       "sourceTextSha256": "8e6006863da3236926e8827f7fbea47f72e67c73cb73d6fa67ef266f88ada88b",
       "uncertain": false
     },
     "shuowen:7043": {
-      "text": "The 澶淵 water, in Song. From 水, with 亶 as phonetic.",
+      "text": "The 澶淵 water, in Song. Formed from 水, with 亶 indicating the sound.",
       "sourceTextSha256": "b998c10fcca3949414cfef88d2d1ee97b772794a6ef9e0b1b95fe81820c9f89b",
       "uncertain": false
     },
     "shuowen:7044": {
-      "text": "A river rising at Mount 臨樂 in 蓋, 泰山, and flowing north into the 泗. From 水, with 朱 as phonetic.",
+      "text": "A river rising at Mount 臨樂 in 蓋, 泰山, and flowing north into the 泗. Formed from 水, with 朱 indicating the sound.",
       "sourceTextSha256": "d86f07b1fb682da88422dd56d8724eb1f85e5c2e6ae90f90668491d75a1f23fd",
       "uncertain": false
     },
     "shuowen:7045": {
-      "text": "A river; the source calls it a major watercourse of 青州. From 水, with 术 as phonetic.",
+      "text": "The Shu River, recorded as a major watercourse of Qingzhou. Duan reconstructs an omitted source description locating it in the old Dongguan region, flowing south toward the Si River. Formed from 水, with 术 indicating the sound. [The received source location is truncated.]",
       "sourceTextSha256": "43a74f85c96637473d9eb66b86bb397dfaa71012dc164a01fa76cc3bd803bef4",
       "uncertain": true
     },
     "shuowen:7046": {
-      "text": "A river rising east of 費, 東海, and flowing west into the 泗. From 水, with 斤 as phonetic. Another account says the 沂 rises in 蓋, 泰山, and is a major watercourse of 青州.",
+      "text": "A river rising east of 費, 東海, and flowing west into the 泗. Formed from 水, with 斤 indicating the sound. Another account says the 沂 rises in 蓋, 泰山, and is a major watercourse of 青州.",
       "sourceTextSha256": "f5cb62f443ac5c5c11762799b7cbc6ee86781f313e0586a03d17a1add4450ffe",
       "uncertain": false
     },
     "shuowen:7047": {
-      "text": "A river rising at Mount 高 in 臨朐, Qi, and flowing northeast into 鉅定. From 水, with 羊 as phonetic.",
+      "text": "A river rising at Mount 高 in 臨朐, Qi, and flowing northeast into 鉅定. Formed from 水, with 羊 indicating the sound.",
       "sourceTextSha256": "2eae5f01d5537df8ed048f4da7c30a0423ebbf6770e583ce9608eb461c967ffe",
       "uncertain": false
     },
     "shuowen:7048": {
-      "text": "A river rising at Mount 厲嬀 in Qi commandery and flowing northeast into 鉅定. From 水, with 蜀 as phonetic.",
+      "text": "A river rising at Mount 厲嬀 in Qi commandery and flowing northeast into 鉅定. Formed from 水, with 蜀 indicating the sound.",
       "sourceTextSha256": "236490c47a6d0d18fafa0a8e8278bb3302be5f3ef4a7191583aa4d0bf6db72a5",
       "uncertain": false
     },
     "shuowen:7049": {
-      "text": "A river rising at Mount 覆甑 in 桑瀆, 東海, and flowing northeast into the sea. Alternatively, to pour or irrigate. From 水, with 旣 as phonetic.",
+      "text": "A river rising at Mount 覆甑 in 桑瀆, 東海, and flowing northeast into the sea. Alternatively, to pour or irrigate. Formed from 水, with 旣 indicating the sound.",
       "sourceTextSha256": "45c515aec871e7744140a5c700b41a387da9b8f69a30970416f00c1dafd2c8fa",
       "uncertain": false
     },
     "shuowen:7050": {
-      "text": "A river rising at Mount 箕屋 in 琅邪 and flowing east into the sea; a major watercourse of 徐州. The Book of Xia says: 'The 濰 and 淄 follow their courses.' From 水, with 維 as phonetic.",
+      "text": "A river rising at Mount 箕屋 in 琅邪 and flowing east into the sea; a major watercourse of 徐州. The Book of Xia says: 'The 濰 and 淄 follow their courses.' Formed from 水, with 維 indicating the sound.",
       "sourceTextSha256": "44fafd5867d646ba13f14e3c726d3893b9218735cc2d97ad6ba9da8e28578e0d",
       "uncertain": false
     },
     "shuowen:7051": {
-      "text": "A river rising at Mount 壺 in 靈門, 琅邪, and flowing northeast into the 濰. From 水, with 吾 as phonetic.",
+      "text": "A river rising at Mount 壺 in 靈門, 琅邪, and flowing northeast into the 濰. Formed from 水, with 吾 indicating the sound.",
       "sourceTextSha256": "30022936563ebc973ae82b72ed3a45d8558a8b629fc1b8415914482ec0e97b8c",
       "uncertain": false
     },
     "shuowen:7052": {
-      "text": "A river rising at Mount 東泰 in 朱虛, 琅邪, and flowing east into the 濰. From 水, with 文 as phonetic. Sang Qin says the 汶 rises in 萊蕪, 泰山, and flows southwest into the 泲.",
+      "text": "The name of two historically distinguished Wen rivers: the eastern Wen, rising near Zhu Xu in Langya and flowing into the Wei, and another Wen River, rising near Laiwu on Mount Tai and flowing southwest toward the Ji River. Formed from 水, with 文 indicating the sound.",
       "sourceTextSha256": "7e289eaf4e46b00627a10c6024334e705520a0e3d22d38237afcae7231a31690",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7053": {
-      "text": "A river rising at Mount 陽丘 in 曲城, 東萊, and flowing south into the sea. From 水, with 台 as phonetic.",
+      "text": "A river rising at Mount 陽丘 in 曲城, 東萊, and flowing south into the sea. Formed from 水, with 台 indicating the sound.",
       "sourceTextSha256": "f2f01d137ef694af79fc4ae21b7e80b465402c1a36bc9762a63f82d85768aeac",
       "uncertain": false
     },
     "shuowen:7054": {
-      "text": "A river rising in 武安, 魏郡, and flowing northeast into the 呼沱 water. From 水, with 𡩠 as phonetic. 𡩠 is the large-seal form of 𡪢.",
+      "text": "A river rising in 武安, 魏郡, and flowing northeast into the 呼沱 water. Formed from 水, with 𡩠 indicating the sound. 𡩠 is the large-seal form of 𡪢.",
       "sourceTextSha256": "b9f6a9a74492744411d363368de3dfa7f37d8b6fc93dbca6b85308d8cf64ba9c",
       "uncertain": false
     },
     "shuowen:7055": {
-      "text": "A river rising in the western mountains of 襄國, Zhao, and flowing northeast into the 寖. From 水, with 禺 as phonetic.",
+      "text": "A river rising in the western mountains of 襄國, Zhao, and flowing northeast into the 寖. Formed from 水, with 禺 indicating the sound.",
       "sourceTextSha256": "dca59fc1dd91618f431f3850fda9243752b2198f73e7de2dce1f5ad881e962ce",
       "uncertain": false
     },
     "shuowen:7056": {
-      "text": "A river rising in 襄國, Zhao, and flowing east into the 湡. From 水, with 虒 as phonetic.",
+      "text": "A river rising in 襄國, Zhao, and flowing east into the 湡. Formed from 水, with 虒 indicating the sound.",
       "sourceTextSha256": "ebf562215566b08f400124f91d774f0033aa49ff12df4c87e141311dfceaaa3c",
       "uncertain": false
     },
     "shuowen:7057": {
-      "text": "A river at Mount 逢 in 中丘, 常山, flowing east into the 湡. From 水, with 者 as phonetic. The Erya says: 'A small islet is called 渚.'",
+      "text": "A river at Mount 逢 in 中丘, 常山, flowing east into the 湡. Formed from 水, with 者 indicating the sound. The Erya says: 'A small islet is called 渚.'",
       "sourceTextSha256": "f4e8053124808134863f2b8b863cf96d36594f35c6ed6a945188002e3dd66438",
       "uncertain": false
     },
     "shuowen:7058": {
-      "text": "A river rising at 井陘 in 石邑, 常山, and flowing southeast into the 泜. From 水, with 交 as phonetic. There is a 洨 county in 𨙶 state.",
+      "text": "A river rising at 井陘 in 石邑, 常山, and flowing southeast into the 泜. Formed from 水, with 交 indicating the sound. There is a 洨 county in 𨙶 state.",
       "sourceTextSha256": "a36c9813cdf82c7859ecdebafae1552a7f5f6d56096e519611c5d30c76f757c0",
       "uncertain": false
     },
     "shuowen:7059": {
-      "text": "A river rising at Mount 贊皇 in 房子, 常山, and flowing east into the 泜. From 水, with 齊 as phonetic.",
+      "text": "A river rising at Mount 贊皇 in 房子, 常山, and flowing east into the 泜. Formed from 水, with 齊 indicating the sound.",
       "sourceTextSha256": "57659b1fdc34cb5a7353b217a1336156fa1e0349d168f27da246763682924535",
       "uncertain": false
     },
     "shuowen:7060": {
-      "text": "A river in 常山. From 水, with 氐 as phonetic.",
+      "text": "A river in 常山. Formed from 水, with 氐 indicating the sound.",
       "sourceTextSha256": "bd9a55da60b1afea62a4441c9b29a8fd093caa9f24a8e625e64a91b9d7d02ee5",
       "uncertain": false
     },
     "shuowen:7061": {
-      "text": "A river rising in 故安, 涿 commandery, and flowing east into the 漆涑. From 水, with 需 as phonetic.",
+      "text": "A river rising in 故安, 涿 commandery, and flowing east into the 漆涑. Formed from 水, with 需 indicating the sound.",
       "sourceTextSha256": "cdb385baf3eaae365762bc2768535bf7eb8ab30a9459cbb5954251966019b408",
       "uncertain": false
     },
     "shuowen:7062": {
-      "text": "A river rising in 浚靡, 右北平, and flowing southeast into the 庚. From 水, with 壘 as phonetic.",
+      "text": "A river rising in 浚靡, 右北平, and flowing southeast into the 庚. Formed from 水, with 壘 indicating the sound.",
       "sourceTextSha256": "bd0674adab0a0b0ad38b9d4ee1afef88dabf73b9a1b828db922e294d177c399b",
       "uncertain": false
     },
     "shuowen:7063": {
-      "text": "A river rising beyond the frontier of 漁陽 and flowing east into the sea. From 水, with 古 as phonetic.",
+      "text": "A river rising beyond the frontier of 漁陽 and flowing east into the sea. Formed from 水, with 古 indicating the sound.",
       "sourceTextSha256": "a8187f899b58c229adcc62c3c7ea947d56060caac1a8fc32d5fa5273ae640f4d",
       "uncertain": false
     },
     "shuowen:7064": {
-      "text": "A river rising beyond the frontier of 番汗, 遼東, and flowing southwest into the sea. From 水, with 巿 as phonetic.",
+      "text": "A river rising beyond the frontier of 番汗, 遼東, and flowing southwest into the sea. Formed from 水, with 巿 indicating the sound.",
       "sourceTextSha256": "a070c24d9acda6f5a03f60d6a16f4f94ad00a0cd199ff2275ce20f39e52c3f6c",
       "uncertain": false
     },
     "shuowen:7065": {
-      "text": "A river rising in 鏤方, 樂浪, and flowing east into the sea. From 水, with 貝 as phonetic. Another account says it rises in 浿水 county.",
+      "text": "A river rising in 鏤方, 樂浪, and flowing east into the sea. Formed from 水, with 貝 indicating the sound. Another account says it rises in 浿水 county.",
       "sourceTextSha256": "bd0a16680613a53147f744ab0b4e473cefe97146651f5f57e2f600e4dcb6a47e",
       "uncertain": false
     },
     "shuowen:7066": {
-      "text": "A northern river. From 水, with 褱 as phonetic.",
+      "text": "A northern river. Formed from 水, with 褱 indicating the sound.",
       "sourceTextSha256": "c317c7947d703b21a9be66420bdd5d128e69fb7170511cb0901563cfca1101b0",
       "uncertain": false
     },
     "shuowen:7067": {
-      "text": "A river rising at Mount 累頭 in 陰館, 鴈門, and flowing east into the sea. Some say it is the 治 river. From 水, with 纍 as phonetic.",
+      "text": "A river rising at Mount 累頭 in 陰館, 鴈門, and flowing east into the sea. Some say it is the 治 river. Formed from 水, with 纍 indicating the sound.",
       "sourceTextSha256": "ea04f609f29e2380e6c00f1ad80d64da15e041ed1e1cb1df4b29421a3851f3e1",
       "uncertain": false
     },
     "shuowen:7068": {
-      "text": "A river rising west of 直路, 北地, and flowing east into the 洛. From 水, with 虘 as phonetic.",
+      "text": "A river rising west of 直路, 北地, and flowing east into the 洛. Formed from 水, with 虘 indicating the sound.",
       "sourceTextSha256": "d5be62990c745f06845f9647597845ee86081a3042c42810b34d90e6a109acfc",
       "uncertain": false
     },
     "shuowen:7069": {
-      "text": "A river beginning at Mount 戍夫 in 葰人, 雁門, and flowing northeast into the sea. From 水, with 瓜 as phonetic.",
+      "text": "A river beginning at Mount 戍夫 in 葰人, 雁門, and flowing northeast into the sea. Formed from 水, with 瓜 indicating the sound.",
       "sourceTextSha256": "f6c9036be1539e25e7af0db66008b331aba54fe57311dfde873d7ed5b23e3dc5",
       "uncertain": false
     },
     "shuowen:7070": {
-      "text": "A river beginning in 靈丘, 北地, and flowing east into the 河. From 水, with 寇 as phonetic. The 滱 is the 漚夷 water, a river of 并州.",
+      "text": "A river beginning in 靈丘, 北地, and flowing east into the 河. Formed from 水, with 寇 indicating the sound. The 滱 is the 漚夷 water, a river of 并州.",
       "sourceTextSha256": "4fcbcd5718c5dccef1194d6197eadb81d61bca316c6f047af58dbbae69664d8a",
       "uncertain": false
     },
     "shuowen:7071": {
-      "text": "A river beginning in 廣昌, 北地, and flowing east into the 河; a major watercourse of 幷州. From 水, with 來 as phonetic.",
+      "text": "A river beginning in 廣昌, 北地, and flowing east into the 河; a major watercourse of 幷州. Formed from 水, with 來 indicating the sound.",
       "sourceTextSha256": "d64f80f7c83a1289dbb2d260a9b8817429fc932a456daaa036fef2c2fec111c9",
       "uncertain": false
     },
     "shuowen:7072": {
-      "text": "A river rising among the northern Man of 郁郅, 北地. From 水, with 尼 as phonetic.",
+      "text": "A river rising among the northern Man of 郁郅, 北地. Formed from 水, with 尼 indicating the sound.",
       "sourceTextSha256": "7f32b44ef71051a52fa5a955720e3214b481ae0841d1d314aaac1c9cd8a7b275",
       "uncertain": false
     },
     "shuowen:7073": {
-      "text": "A river northeast of 美稷𠈃 in 西河, apparently. From 水, with 南 as phonetic.",
+      "text": "The old Nan River, a stream recorded as rising near Meiji in Xihe Commandery, northeast of a fortified settlement, and flowing toward the Yellow River. Formed from 水, with 南 indicating the sound. [The exact modern watercourse remains unidentified.]",
       "sourceTextSha256": "bd2dc20f4c0846ed49c7e98f059b13287bfe5dd0941f44ed77c84d9218c1f4e0",
       "uncertain": true
     },
     "shuowen:7074": {
-      "text": "A river rising at 北沙 in 中陽, 西河, and flowing south into the 河. From 水, with 焉 as phonetic.",
+      "text": "A river rising at 北沙 in 中陽, 西河, and flowing south into the 河. Formed from 水, with 焉 indicating the sound.",
       "sourceTextSha256": "af03e89bd308be68332f28d04ead43677e7a922e27dbb2a7eb13eea6999e4418",
       "uncertain": false
     },
     "shuowen:7075": {
-      "text": "A ferry on the 河, west of 西河. From 水, with 𡍮 as phonetic.",
+      "text": "A ferry on the 河, west of 西河. Formed from 水, with 𡍮 indicating the sound.",
       "sourceTextSha256": "71dc47f9de2db0cd6f11850eec440225ff54fd5998e8ee83153baaf7662df52c",
       "uncertain": false
     },
     "shuowen:7076": {
-      "text": "A river. From 水, with 旟 as phonetic.",
+      "text": "A river. Formed from 水, with 旟 indicating the sound.",
       "sourceTextSha256": "a0f03d02b4cddd636b639d7cb9639788c7770e0d540f7bc9ca5fad279b9c2f17",
       "uncertain": false
     },
     "shuowen:7077": {
-      "text": "To cross through water. From 水, with 旬 as phonetic.",
+      "text": "To cross through water. Formed from 水, with 旬 indicating the sound.",
       "sourceTextSha256": "857bc9a6c5aa6c8078284f9cb30737905b87a2356d4847daaee7a7741f9596cf",
       "uncertain": false
     },
     "shuowen:7078": {
-      "text": "A river rising at Mount 北嚻 and entering 邙澤. From 水, with 舍 as phonetic.",
+      "text": "A river rising at Mount 北嚻 and entering 邙澤. Formed from 水, with 舍 indicating the sound.",
       "sourceTextSha256": "f02699844577aa63d96f680248507510e630fc564237e63a8d711822aa7ff484",
       "uncertain": false
     },
     "shuowen:7079": {
-      "text": "A river. From 水, with 刃 as phonetic.",
+      "text": "A river. Formed from 水, with 刃 indicating the sound.",
       "sourceTextSha256": "9756e89ce35eb43b323e9ba02c064e23fc258ccc7ccce0bb61a9c0d25c5270ed",
       "uncertain": false
     },
     "shuowen:7080": {
-      "text": "A river. From 水, with 直 as phonetic.",
+      "text": "A river. Formed from 水, with 直 indicating the sound.",
       "sourceTextSha256": "0b2037695419f1d753fb681131b0f73b30244eabbd9b329d7aad8424b728a9b1",
       "uncertain": false
     },
     "shuowen:7081": {
-      "text": "A river. From 水, with 妾 as phonetic.",
+      "text": "A river. Formed from 水, with 妾 indicating the sound.",
       "sourceTextSha256": "7c794f39bc18b170c15a7ac8c415c9664f9ade3462edc1f97e5e9d9f77162c1c",
       "uncertain": false
     },
     "shuowen:7082": {
-      "text": "A river. From 水, with 居 as phonetic.",
+      "text": "A river. Formed from 水, with 居 indicating the sound.",
       "sourceTextSha256": "ea2e849ac78c1f6e6e7f05fb00e92e59a239d9cab8aa085dfdec30fc784af626",
       "uncertain": false
     },
     "shuowen:7083": {
-      "text": "A river. From 水, with 臮 as phonetic.",
+      "text": "A river. Formed from 水, with 臮 indicating the sound.",
       "sourceTextSha256": "faeef38be9ebe9005e51bb69fa4af00484636902302f8e1b5e1c464726ba53cb",
       "uncertain": false
     },
     "shuowen:7084": {
-      "text": "A river. From 水, with 尤 as phonetic.",
+      "text": "A river. Formed from 水, with 尤 indicating the sound.",
       "sourceTextSha256": "ad342a30c4b5bb12eac566be51912d6a208f06174f3a1c8889c6f9312af0d48d",
       "uncertain": false
     },
     "shuowen:7085": {
-      "text": "A river. From 水, with 因 as phonetic.",
+      "text": "A river. Formed from 水, with 因 indicating the sound.",
       "sourceTextSha256": "07fa4ea0279907f2b57cf1ed2a12bf59461a50c2abc8273ede6ef95c9427b25b",
       "uncertain": false
     },
     "shuowen:7086": {
-      "text": "A river. From 水, with 果 as phonetic.",
+      "text": "A river. Formed from 水, with 果 indicating the sound.",
       "sourceTextSha256": "6614c50e08d9ddb179cd6f4f67540765fbf4c31947d61accccb03b0e84c35a98",
       "uncertain": false
     },
     "shuowen:7087": {
-      "text": "A river. From 水, with 𧴪 as phonetic. Read like 瑣.",
+      "text": "A river. Formed from 水, with 𧴪 indicating the sound. Read like 瑣.",
       "sourceTextSha256": "bfb3a31cc90d9fa9d18811f726d7889c66629635d5205cddb355386011a3525d",
       "uncertain": false
     },
     "shuowen:7088": {
-      "text": "A river. From 水, with 尨 as phonetic.",
+      "text": "A river. Formed from 水, with 尨 indicating the sound.",
       "sourceTextSha256": "f63042c2d72aefb7bd1f269edf4c8a5ef8e7f354c911c0980094151ddc192286",
       "uncertain": false
     },
     "shuowen:7089": {
-      "text": "A river. From 水, with 乳 as phonetic.",
+      "text": "A river. Formed from 水, with 乳 indicating the sound.",
       "sourceTextSha256": "567c7c425bc93b268a9ad0adaf88f66ba105271a4f2fe63f099468851da85468",
       "uncertain": false
     },
     "shuowen:7090": {
-      "text": "A river. From 水, with 夂 as phonetic. 夂 is ancient-script 終.",
+      "text": "A river. Formed from 水, with 夂 indicating the sound. 夂 is ancient-script 終.",
       "sourceTextSha256": "f9ce2ee3868c8beb6405139ebb60943fcaa9e6217972db381b14dab856daba72",
       "uncertain": false
     },
     "shuowen:7091": {
-      "text": "Shallow water. From 水, with 百 as phonetic.",
+      "text": "Shallow water. Formed from 水, with 百 indicating the sound.",
       "sourceTextSha256": "5707dfd0f5fbe565911605ceedb18b7096d1df50a1f71568464f04ba28677e50",
       "uncertain": false
     },
     "shuowen:7092": {
-      "text": "A river. From 水, with 千 as phonetic.",
+      "text": "A river. Formed from 水, with 千 indicating the sound.",
       "sourceTextSha256": "3ec7107ed15b60fb4895cfd7cfc92eee307713bcb25db6cac9102a9e78a27d9c",
       "uncertain": false
     },
     "shuowen:7093": {
-      "text": "A river. From 水, with 𦣞 as phonetic. The Odes says: 'The 江 has 洍.'",
+      "text": "The name of a watercourse. Formed from 水, with 𦣞 indicating the sound. The Odes quotation uses 洍 as a textual variant of 汜 in “The river has a tributary channel.” [Duan considers the cited form a loan, not a definition of the river’s location.]",
       "sourceTextSha256": "127a31ce75da52659206816427492374c9bfaaec9a36d0705bf819e6e5fd865c",
       "uncertain": true
     },
     "shuowen:7094": {
-      "text": "郣澥 is an arm of the sea. From 水, with 解 as phonetic. Another explanation: 澥 is precisely 澥谷.",
+      "text": "The Bohai, a great branch or inlet of the sea rather than the open sea itself. Formed from 水, with 解 indicating the sound. Another explanation refers to a valley called 澥谷.",
       "sourceTextSha256": "66657037a73d72aabde8205e39f0f765b10437494461e0f0ac36997eca3be293",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7095": {
-      "text": "The northern drifting sands. Alternatively, clear. From 水, with 莫 as phonetic.",
+      "text": "The northern drifting sands. Alternatively, clear. Formed from 水, with 莫 indicating the sound.",
       "sourceTextSha256": "89af1ade4d1efae0b680ac60325910a6efd756101abf4fcc405376981e331fe7",
       "uncertain": false
     },
     "shuowen:7096": {
-      "text": "Heaven's pool, which receives the hundred rivers. From 水, with 每 as phonetic.",
+      "text": "Heaven's pool, which receives the hundred rivers. Formed from 水, with 每 indicating the sound.",
       "sourceTextSha256": "b498bc750ea12650b0aa96726f884cdc44c15f32b3e1294a35fd66c5105719b6",
       "uncertain": false
     },
     "shuowen:7097": {
-      "text": "Great. From 水, with 尃 as phonetic.",
+      "text": "Great. Formed from 水, with 尃 indicating the sound.",
       "sourceTextSha256": "a7580d970242590115a61b8f6d86ffc052918a4942d0b7505179ab912fc80442",
       "uncertain": false
     },
     "shuowen:7098": {
-      "text": "Water arriving in great volume. From 水, with 闇 as phonetic.",
+      "text": "Water arriving in great volume. Formed from 水, with 闇 indicating the sound.",
       "sourceTextSha256": "245e6c3dd77e3607449dd03fe77e87781cac1f354c6cb385f9f4092431b08118",
       "uncertain": false
     },
     "shuowen:7099": {
-      "text": "Floodwaters. From 水, with 共 as phonetic.",
+      "text": "Floodwaters. Formed from 水, with 共 indicating the sound.",
       "sourceTextSha256": "8fa9e9ce4a138aec27ca4878cc20fc513d6144985ca0dffa84fa3a08c428b45a",
       "uncertain": false
     },
     "shuowen:7100": {
-      "text": "Water that does not follow its course. Alternatively, to descend. From 水, with 夅 as phonetic.",
+      "text": "Water that does not follow its course. Alternatively, to descend. Formed from 水, with 夅 indicating the sound.",
       "sourceTextSha256": "a9732cbd100ecdd3ec4772e33b003c4b5f5aa3844a950c4543e80bb03650e637",
       "uncertain": false
     }

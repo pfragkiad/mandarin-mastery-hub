@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "dbd2375f923aafd96e69781fe3317256795b36557041378cffc03a2bb2fff6a8",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "032",
   "translations": {
@@ -36,32 +56,32 @@
       "uncertain": false
     },
     "shuowen:3102": {
-      "text": "Lord of the mountain beasts. From 虍; a tiger's feet resemble human feet. A pictograph. All graphs in this category contain 虎.",
+      "text": "Lord of the mountain beasts. From 虍; a tiger's feet resemble human feet. A pictograph. All graphs in the 虎 group contain 虎.",
       "sourceTextSha256": "8c69e2036a644dd7dcb9d562cef5f9dff752171426d2531c0fad7ec27f5b8981",
       "uncertain": false
     },
     "shuowen:3103": {
-      "text": "A tiger's sound. From 虎; 毄 supplies the sound. Pronounced like 隔.",
+      "text": "A tiger's sound. Formed from 虎, with 毄 indicating the sound. Read like 隔.",
       "sourceTextSha256": "40f2c9816f600b609550ebde85f0077d83a92526188e6b85d273d6fed4c4b2e2",
       "uncertain": false
     },
     "shuowen:3104": {
-      "text": "A white tiger. From 虎; abbreviated 昔 supplies the sound. Pronounced like 鼏.",
+      "text": "A white tiger. Formed from 虎, with abbreviated 昔 indicating the sound. Read like 鼏.",
       "sourceTextSha256": "fa7d375f0bd93f96f3ad548ae1692c14927b9f8a4ac4b26113ee9c0fc9a811d0",
       "uncertain": false
     },
     "shuowen:3105": {
-      "text": "A kind of white tiger, 䖑. From 虎; 去 supplies the sound.",
+      "text": "A kind of white tiger, 䖑. Formed from 虎, with 去 indicating the sound.",
       "sourceTextSha256": "8347d45ff37e5d13967396d5d9eac51b052d7af87fd20ef1679313dd5d1a9155",
       "uncertain": false
     },
     "shuowen:3106": {
-      "text": "A black tiger. From 虎; 儵 supplies the sound.",
+      "text": "A black tiger. Formed from 虎, with 儵 indicating the sound.",
       "sourceTextSha256": "2a5119b7025aa71c912131e3df19f14aa95d585896d25a6bc94e8390733ccd56",
       "uncertain": false
     },
     "shuowen:3107": {
-      "text": "A tiger with pale-colored fur is called 虦苗. From 虎; 戔 supplies the sound. 竊 means light or shallow.",
+      "text": "A tiger with pale-colored fur is called 虦苗. Formed from 虎, with 戔 indicating the sound. 竊 means light or shallow.",
       "sourceTextSha256": "712461c0fc38b3f3ef2e5eab66cce4a17e77fd87d63a434cca0b011962375d8c",
       "uncertain": false
     },
@@ -71,42 +91,42 @@
       "uncertain": false
     },
     "shuowen:3109": {
-      "text": "The appearance of a tiger. From 虎; 乂 supplies the sound.",
+      "text": "The appearance of a tiger. Formed from 虎, with 乂 indicating the sound.",
       "sourceTextSha256": "5e6635e2bdcf7b12e679ada9b74362a84d341a3524fc90539ef4e3d31c0925d2",
       "uncertain": false
     },
     "shuowen:3110": {
-      "text": "The appearance of a tiger. From 虎; 气 supplies the sound.",
+      "text": "The appearance of a tiger. Formed from 虎, with 气 indicating the sound.",
       "sourceTextSha256": "858a586a14084be073554b4a7b0412bc11e69928984431d81308e91b5ce528ef",
       "uncertain": false
     },
     "shuowen:3111": {
-      "text": "A tiger's roar. Another explanation: a lion. From 虎; 九 supplies the sound.",
+      "text": "A tiger's roar. Another explanation: a lion. Formed from 虎, with 九 indicating the sound.",
       "sourceTextSha256": "f1babea14788475b086f3790ef9a5a2efec59d5bdbcf1105073729517e481af3",
       "uncertain": false
     },
     "shuowen:3112": {
-      "text": "A tiger's sound. From 虎; 斤 supplies the sound.",
+      "text": "A tiger's sound. Formed from 虎, with 斤 indicating the sound.",
       "sourceTextSha256": "4b3ae810efaf55b4da129917f97dd31cbbc28bf1d638220091acc08538cff5ae",
       "uncertain": false
     },
     "shuowen:3113": {
-      "text": "The Changes says: “Treading on a tiger's tail, fearful.” Fear. Another explanation: a fly-tiger spider. From 虎; 𡭴 supplies the sound.",
+      "text": "The Changes says: “Treading on a tiger's tail, fearful.” Fear. Another explanation: a fly-tiger spider. Formed from 虎, with 𡭴 indicating the sound.",
       "sourceTextSha256": "c60a4be5a16425f36293c3cd0cfd928b9309d3e4fe3c1f92de113feb4fc8f202",
       "uncertain": false
     },
     "shuowen:3114": {
-      "text": "Clear marks scratched by a tiger. From 虎; 寽 supplies the sound.",
+      "text": "Clear marks scratched by a tiger. Formed from 虎, with 寽 indicating the sound.",
       "sourceTextSha256": "56c66404e4d6bea14a2b61080605c46c384baaef4e05701fac3b6c7334aa6021",
       "uncertain": false
     },
     "shuowen:3115": {
-      "text": "委虒, a tiger with horns. From 虎; 𠂆 supplies the sound.",
+      "text": "委虒, a tiger with horns. Formed from 虎, with 𠂆 indicating the sound.",
       "sourceTextSha256": "74804d08342e4e02cb36c34b0fb0b599ec90016a5ecd08d1ad8582fd714177cf",
       "uncertain": false
     },
     "shuowen:3116": {
-      "text": "A black tiger. From 虎; 騰 supplies the sound.",
+      "text": "A black tiger. Formed from 虎, with 騰 indicating the sound.",
       "sourceTextSha256": "25129275956e006188d9d1df0fcbb66f0e57436d197e927f5961191f49988c3a",
       "uncertain": false
     },
@@ -116,97 +136,97 @@
       "uncertain": false
     },
     "shuowen:3118": {
-      "text": "People of Chu call a tiger 烏䖘. From 虎; 兔 supplies the sound.",
+      "text": "People of Chu call a tiger 烏䖘. Formed from 虎, with 兔 indicating the sound.",
       "sourceTextSha256": "b34d68f130567c4ff25c3c92f2fffba40d78267d3cf32445f2e2684296a47bdd",
       "uncertain": false
     },
     "shuowen:3119": {
-      "text": "A tiger's anger. From two 虎. All graphs in this category contain 虤.",
+      "text": "A tiger's anger. From two 虎. All graphs in the 虤 group contain 虤.",
       "sourceTextSha256": "ddc898a055fcaf3ad9d3e96f0f9b4c51c1e931dc8f742d40563e1197b054203a",
       "uncertain": false
     },
     "shuowen:3120": {
-      "text": "The sound of two tigers fighting. From 虤 and 曰. Pronounced like 憖.",
+      "text": "The sound of two tigers fighting. From 虤 and 曰. Read like 憖.",
       "sourceTextSha256": "61b7a566a96257f5f8d84996b9ac7687feabb24250a0256c9ac36e359a8cef03",
       "uncertain": false
     },
     "shuowen:3121": {
-      "text": "To divide or distinguish. From 虤 facing each other and contending over 貝. Pronounced like 迴.",
+      "text": "To divide or distinguish. From 虤 facing each other and contending over 貝. Read like 迴.",
       "sourceTextSha256": "0170253db92a1a3c57cb8afab4dd9d3cfed27c9b0aa588653ffc3826a8297301",
       "uncertain": true
     },
     "shuowen:3122": {
-      "text": "A vessel for food. A pictograph, sharing the idea of 豆. All graphs in this category contain 皿. Pronounced like 猛.",
+      "text": "A vessel for food. A pictograph, sharing the idea of 豆. All graphs in the 皿 group contain 皿. Read like 猛.",
       "sourceTextSha256": "befb6b2822bf01e205013a3ce40fbdfd9ea3f7f399c94fe33a0abc381d725cf7",
       "uncertain": false
     },
     "shuowen:3123": {
-      "text": "A food vessel. From 皿; 亏 supplies the sound.",
+      "text": "A food vessel. Formed from 皿, with 亏 indicating the sound.",
       "sourceTextSha256": "3e18ceecd030d2cf11875debaf64159b940c806dda8d79e8a386df4b059a4b09",
       "uncertain": false
     },
     "shuowen:3124": {
-      "text": "A small bowl. From 皿; 夗 supplies the sound.",
+      "text": "A small bowl. Formed from 皿, with 夗 indicating the sound.",
       "sourceTextSha256": "144ba52705e81e99aa63da8c517b131d901ba1b16b501731066de8695c43a9fc",
       "uncertain": false
     },
     "shuowen:3125": {
-      "text": "Millet in a vessel for sacrifice. From 皿; 成 supplies the sound.",
+      "text": "Millet in a vessel for sacrifice. Formed from 皿, with 成 indicating the sound.",
       "sourceTextSha256": "abaa9eeeb4043e37aaeb8a786687989c9d47e2ca4cb1ecdcfa1d50bf1d0ddaaf",
       "uncertain": false
     },
     "shuowen:3126": {
-      "text": "Millet in a vessel for sacrifice. From 皿; 齊 supplies the sound.",
+      "text": "Millet in a vessel for sacrifice. Formed from 皿, with 齊 indicating the sound.",
       "sourceTextSha256": "0747043ba01b71cb3f3819e3a4d4ee2c4e24bb131e44698cf150824a68944191",
       "uncertain": false
     },
     "shuowen:3127": {
-      "text": "A small bowl. From 皿; 有 supplies the sound. Pronounced like 灰; another pronunciation is like 賄.",
+      "text": "A small bowl. Formed from 皿, with 有 indicating the sound. Read like 灰; another pronunciation is like 賄.",
       "sourceTextSha256": "5c1537339b5aaf0dce2f7ff880481bec32213f5108313c6195f5bb25a1c71558",
       "uncertain": false
     },
     "shuowen:3128": {
-      "text": "A food vessel. From 皿; 𧇄 supplies the sound.",
+      "text": "A food vessel. Formed from 皿, with 𧇄 indicating the sound.",
       "sourceTextSha256": "b744e2399f679d4a47f1dd99a80209d71ee2a9e4e58a5ccf416682409d1e9412",
       "uncertain": false
     },
     "shuowen:3129": {
-      "text": "A vessel. From 皿 and 缶; 古 supplies the sound.",
+      "text": "A vessel. Formed from 皿 and 缶, with 古 indicating the sound.",
       "sourceTextSha256": "c405ba50ef17ba6e21361d36bd0e18d4e12e0e4dce61bc3c18716dec2fcbb934",
       "uncertain": false
     },
     "shuowen:3130": {
-      "text": "A vessel. From 皿; 弔 supplies the sound.",
+      "text": "A vessel. Formed from 皿, with 弔 indicating the sound.",
       "sourceTextSha256": "7659eed721d3da1a20b1800f88921f2464c49347c99cd549b0258cdba57b1814",
       "uncertain": false
     },
     "shuowen:3131": {
-      "text": "A basin. From 皿; 央 supplies the sound.",
+      "text": "A basin. Formed from 皿, with 央 indicating the sound.",
       "sourceTextSha256": "67d86aa4262d8606c8a48214f0052875187cf9a2ac2f021be9d0fa341fe1a616",
       "uncertain": false
     },
     "shuowen:3132": {
-      "text": "A basin. From 皿; 分 supplies the sound.",
+      "text": "A basin. Formed from 皿, with 分 indicating the sound.",
       "sourceTextSha256": "a6894af53e22851143296840dde93e47f9150f8479121fbcebd511495ef2f4ce",
       "uncertain": false
     },
     "shuowen:3133": {
-      "text": "A vessel. From 皿; 宁 supplies the sound.",
+      "text": "A vessel. Formed from 皿, with 宁 indicating the sound.",
       "sourceTextSha256": "ec047c6bc6862d6f0587b06e50f71cb90a609f6ce0b17e69b002b93307faecd6",
       "uncertain": false
     },
     "shuowen:3134": {
-      "text": "㯯盨, a vessel carried on the back or head. From 皿; 須 supplies the sound.",
+      "text": "㯯盨, a vessel carried on the back or head. Formed from 皿, with 須 indicating the sound.",
       "sourceTextSha256": "076d699b68094bbc44920593604a30b280add8e58d5964bf819160a795d094de",
       "uncertain": false
     },
     "shuowen:3135": {
-      "text": "A vessel. From 皿; 漻 supplies the sound.",
+      "text": "A vessel. Formed from 皿, with 漻 indicating the sound.",
       "sourceTextSha256": "0e462c10df00e1b09d2bace69ce7818100ca2872c76c1623811cc18a9de1fe25",
       "uncertain": false
     },
     "shuowen:3136": {
-      "text": "An implement or vessel. From 皿; 必 supplies the sound.",
+      "text": "An implement or vessel. Formed from 皿, with 必 indicating the sound.",
       "sourceTextSha256": "925632be8643ea7221e0456fbb3f89c91686efe6abd648f92839f9e3e73a738b",
       "uncertain": false
     },
@@ -216,7 +236,7 @@
       "uncertain": true
     },
     "shuowen:3138": {
-      "text": "To blend flavors. From 皿; 禾 supplies the sound.",
+      "text": "To blend flavors. Formed from 皿, with 禾 indicating the sound.",
       "sourceTextSha256": "82d8ccbbe27c9315eb1e9a00704eedb2f8ceec4d29899b8170808dc8da40ca06",
       "uncertain": false
     },
@@ -231,17 +251,17 @@
       "uncertain": false
     },
     "shuowen:3141": {
-      "text": "A vessel empty within. From 皿; 㶳 supplies the sound.",
+      "text": "A vessel empty within. Formed from 皿, with 㶳 indicating the sound.",
       "sourceTextSha256": "bef79c2e5af42b87dc152fcbda3ace434a1ce6e292dcc64a075cfe03b786e584",
       "uncertain": false
     },
     "shuowen:3142": {
-      "text": "A vessel empty. From 皿; 中 supplies the sound. The Laozi says: “The Way is empty, yet one uses it.”",
+      "text": "A vessel empty. Formed from 皿, with 中 indicating the sound. The Laozi says: “The Way is empty, yet one uses it.”",
       "sourceTextSha256": "862acfd033fb9881a3b5ec58446879b4667c4d0f1a1a203c7212b96474fbc655",
       "uncertain": false
     },
     "shuowen:3143": {
-      "text": "To cover. From 皿; 酓 supplies the sound.",
+      "text": "To cover. Formed from 皿, with 酓 indicating the sound.",
       "sourceTextSha256": "4fe69ccaed416e28c06b3e498b8637e646555b6edb816e1cd40493be89c5d55c",
       "uncertain": false
     },
@@ -256,97 +276,97 @@
       "uncertain": false
     },
     "shuowen:3146": {
-      "text": "To wash vessels. From 皿; 湯 supplies the sound.",
+      "text": "To wash vessels. Formed from 皿, with 湯 indicating the sound.",
       "sourceTextSha256": "ca0d068cf549061452413bf5dc3c1d52583f327c7bdeffa570db34fe71c28817",
       "uncertain": false
     },
     "shuowen:3147": {
-      "text": "The 盋 vessel, a kind of bowl. From 皿; 犮 supplies the sound. Alternatively from 金 and 本.",
+      "text": "The 盋 vessel, a kind of bowl. Formed from 皿, with 犮 indicating the sound. Alternatively from 金 and 本.",
       "sourceTextSha256": "ac6f305bf6aaed023b2a206767ac9bb6a512bcc113c59a755505e6519695ab8b",
       "uncertain": false
     },
     "shuowen:3148": {
-      "text": "𠙴盧, a food vessel made of willow. A pictograph. All graphs in this category contain 𠙴.",
+      "text": "𠙴盧, a food vessel made of willow. A pictograph. All graphs in the 𠙴 group contain 𠙴.",
       "sourceTextSha256": "490c92d16240ff0f4d5b16fbd3006814987592488756e1010d1fedaeb5dcc700",
       "uncertain": false
     },
     "shuowen:3149": {
-      "text": "People separating from one another. From 大; 凵 supplies the sound. All graphs in this category contain 去.",
+      "text": "People separating from one another. Formed from 大, with 凵 indicating the sound. All graphs in the 去 group contain 去.",
       "sourceTextSha256": "9cedecf8a7024204d35e88f80de1a1ad8ab6448deb0c44393fcf9f85fb6a2cdc",
       "uncertain": false
     },
     "shuowen:3150": {
-      "text": "To go away. From 去; 曷 supplies the sound.",
+      "text": "To go away. Formed from 去, with 曷 indicating the sound.",
       "sourceTextSha256": "be893aafcd5a7f34d741ff9b860045bc4489fc129dd359baaf0310d528a79c8b",
       "uncertain": false
     },
     "shuowen:3151": {
-      "text": "To go away. From 去; 夌 supplies the sound. Pronounced like 陵.",
+      "text": "To go away. Formed from 去, with 夌 indicating the sound. Read like 陵.",
       "sourceTextSha256": "fd303dcc228172e00f6b95ea7e9e2f1bcabfaba6b6013f34085626da04f48d1d",
       "uncertain": false
     },
     "shuowen:3152": {
-      "text": "The blood of a sacrificial victim presented in sacrifice. From 皿; 一 depicts blood. All graphs in this category contain 血.",
+      "text": "The blood of a sacrificial victim presented in sacrifice. From 皿; 一 depicts blood. All graphs in the 血 group contain 血.",
       "sourceTextSha256": "febfc7ea0c4b5b94695b7cf5f2aa99256fc6f23beb912907a41ab578d3c52bcf",
       "uncertain": false
     },
     "shuowen:3153": {
-      "text": "Blood. From 血; 亡 supplies the sound. The Spring and Autumn commentary says: “The man stabbed the sheep, yet there was no blood.”",
+      "text": "Blood. Formed from 血, with 亡 indicating the sound. The Spring and Autumn commentary says: “The man stabbed the sheep, yet there was no blood.”",
       "sourceTextSha256": "769c16011bafbf13740dba23d790cb74e634908707548ad2188d0cf61ee5a31c",
       "uncertain": false
     },
     "shuowen:3154": {
-      "text": "Congealed blood. From 血; 不 supplies the sound.",
+      "text": "Congealed blood. Formed from 血, with 不 indicating the sound.",
       "sourceTextSha256": "2c4d92cf0fb8d30a6e9a009a61b40214aac7a8b1cdda42dd6ac9f56102197325",
       "uncertain": false
     },
     "shuowen:3155": {
-      "text": "Vital fluid. From 血; 𦘔 supplies the sound.",
+      "text": "Vital fluid. Formed from 血, with 𦘔 indicating the sound.",
       "sourceTextSha256": "03b0d47402e82cce69fac0764ae67ed998e28bbeac66657e3961a69124850bf6",
       "uncertain": false
     },
     "shuowen:3156": {
-      "text": "To settle one's breathing. From 血; abbreviated 甹 supplies the sound. Pronounced like 亭.",
+      "text": "To settle one's breathing. Formed from 血, with abbreviated 甹 indicating the sound. Read like 亭.",
       "sourceTextSha256": "c6b31e0a8eeccf856b4efccfdd0a40cb859a4b599d8b45338db3704bcf7dffad",
       "uncertain": false
     },
     "shuowen:3157": {
-      "text": "Blood issuing from the nose. From 血; 丑 supplies the sound.",
+      "text": "Blood issuing from the nose. Formed from 血, with 丑 indicating the sound.",
       "sourceTextSha256": "b61eedec02070d5bec268390a757f8a2a40382b364b4d6ba358e3a47f1a806f8",
       "uncertain": false
     },
     "shuowen:3158": {
-      "text": "Swollen or pooled blood. From 血; abbreviated 䢉 supplies the sound.",
+      "text": "Swollen or pooled blood. Formed from 血, with abbreviated 䢉 indicating the sound.",
       "sourceTextSha256": "9ac034dcd58277211d43278b62a5f06b1cfb0841ee7b8c69f059b67bb021d466",
       "uncertain": true
     },
     "shuowen:3159": {
-      "text": "Blood sauce. From 血; 䏙 supplies the sound. The Record of Rites has 𧖺醢, made with dried beef, fine grain, 𥶶, salt and wine.",
+      "text": "Blood sauce. Formed from 血, with 䏙 indicating the sound. The Record of Rites has 𧖺醢, made with dried beef, fine grain, 𥶶, salt and wine.",
       "sourceTextSha256": "7eefa0db63e746cefce4df55014929d05cb4f10568ccb48d916138390612a47c",
       "uncertain": true
     },
     "shuowen:3160": {
-      "text": "Meat sauce. From 血; 菹 supplies the sound.",
+      "text": "Meat sauce. Formed from 血, with 菹 indicating the sound.",
       "sourceTextSha256": "a62194c0f099fd0ea5d0ece8572407d6124305a165d3c239176f2bdd2901fc77",
       "uncertain": false
     },
     "shuowen:3161": {
-      "text": "A sacrifice in which blood is cut out and smeared on something. From 血; 幾 supplies the sound.",
+      "text": "A sacrifice in which blood is cut out and smeared on something. Formed from 血, with 幾 indicating the sound.",
       "sourceTextSha256": "95018a96820be3e6fedd9a0dadef500a4c974a89bbcb271321884b0ed2dc0aa1",
       "uncertain": false
     },
     "shuowen:3162": {
-      "text": "To worry. From 血; 卩 supplies the sound. Another explanation: scarce or few.",
+      "text": "To worry. Formed from 血, with 卩 indicating the sound. Another explanation: scarce or few.",
       "sourceTextSha256": "ac9f4fb0895c1a1843b7db23a67f32378d3ee1c9befd5679a1aed126e3ba769e",
       "uncertain": false
     },
     "shuowen:3163": {
-      "text": "Grief and pain. From 血 and 聿; 皕 supplies the sound. The Book of Zhou says: “None of the people fail to feel grief that wounds the heart.”",
+      "text": "Grief and pain. Formed from 血 and 聿, with 皕 indicating the sound. The Book of Zhou says: “None of the people fail to feel grief that wounds the heart.”",
       "sourceTextSha256": "fb695b032639d8a009fe6758783b5920f7d69a1633aaf5be341e0a1a94bd3e12",
       "uncertain": false
     },
     "shuowen:3164": {
-      "text": "Congealed sheep's blood. From 血; 臽 supplies the sound.",
+      "text": "Congealed sheep's blood. Formed from 血, with 臽 indicating the sound.",
       "sourceTextSha256": "5bdfa084247fe644344f25b223058d4505449edf7ffa2fb939f48188b7386ff7",
       "uncertain": false
     },
@@ -356,12 +376,12 @@
       "uncertain": false
     },
     "shuowen:3166": {
-      "text": "Defiled blood. From 血; 蔑 supplies the sound.",
+      "text": "Defiled blood. Formed from 血, with 蔑 indicating the sound.",
       "sourceTextSha256": "c8d7d3e25566c3b7957ae5fbbea5a2a73bad7f1923069f1965b24436c1ee623d",
       "uncertain": false
     },
     "shuowen:3167": {
-      "text": "Where something ends or stops, a dot marks it. All graphs in this category contain 丶.",
+      "text": "Where something ends or stops, a dot marks it. All graphs in the 丶 group contain 丶.",
       "sourceTextSha256": "7e723eb355422bab236313d0186b9aca6e2b3e4d715f589bcb0e2cca1c892f24",
       "uncertain": false
     },
@@ -371,17 +391,17 @@
       "uncertain": true
     },
     "shuowen:3169": {
-      "text": "When speaking to one another, to spit and refuse acceptance. From 丶 and 否; 否 also supplies the sound.",
+      "text": "When speaking to one another, to spit and refuse acceptance. Formed from 丶 and 否, with 否 also indicating the sound.",
       "sourceTextSha256": "d415020a8f765b07528700498adfbad82262c934d50460f0bed053e041b845ac",
       "uncertain": false
     },
     "shuowen:3170": {
-      "text": "A red stone from Ba and Yue. It depicts a cinnabar-mining well; 一 depicts the cinnabar. All graphs in this category contain 丹.",
+      "text": "A red stone from Ba and Yue. It depicts a cinnabar-mining well; 一 depicts the cinnabar. All graphs in the 丹 group contain 丹.",
       "sourceTextSha256": "72f5942abeb8016115145ece41efdc1454004f188ccd022bc01b88aa660daec2",
       "uncertain": false
     },
     "shuowen:3171": {
-      "text": "Good cinnabar pigment. From 丹; 蒦 supplies the sound. The Book of Zhou says: “Only the preparation of red pigment.” Pronounced like 隺.",
+      "text": "Good cinnabar pigment. Formed from 丹, with 蒦 indicating the sound. The Book of Zhou says: “Only the preparation of red pigment.” Read like 隺.",
       "sourceTextSha256": "c6466a4fb7a1931e68bf6c85d055de373008ac406518419a0c2284f9e2273045",
       "uncertain": true
     },
@@ -391,27 +411,27 @@
       "uncertain": false
     },
     "shuowen:3173": {
-      "text": "The color of the east. Wood produces fire, hence from 生 and 丹. The steadfastness of cinnabar and blue-green is expressed by this form. All graphs in this category contain 青. [The phrase 丹青之信言象然 is uncertain.]",
+      "text": "The color of the east. Wood produces fire, hence from 生 and 丹. The steadfastness of cinnabar and blue-green is expressed by this form. All graphs in the 青 group contain 青. [The phrase 丹青之信言象然 is uncertain.]",
       "sourceTextSha256": "dc54cb62abdb06b46c08ee3ea99b642b153361aa6c02ae671fed6ef5d83c43b5",
       "uncertain": true
     },
     "shuowen:3174": {
-      "text": "Careful examination. From 青; 爭 supplies the sound.",
+      "text": "Careful examination. Formed from 青, with 爭 indicating the sound.",
       "sourceTextSha256": "8fe9b35b2d62bfaf320d53e10274ff11df86ac089152c5710bccafb7cacfbdac",
       "uncertain": false
     },
     "shuowen:3175": {
-      "text": "Eight households share one well. It depicts the constructed well-curb; • depicts the bucket 𦉥. Anciently Boyi first made wells. All graphs in this category contain 井.",
+      "text": "Eight households share one well. It depicts the constructed well-curb; • depicts the bucket 𦉥. Anciently Boyi first made wells. All graphs in the 井 group contain 井.",
       "sourceTextSha256": "43ded88f21e28a333c0ca68afae3122d46e9d9e4f7557a7fe5a3dbf37c6b8b82",
       "uncertain": false
     },
     "shuowen:3176": {
-      "text": "A deep pool. From 井; abbreviated 瑩 supplies the sound.",
+      "text": "A deep pool. Formed from 井, with abbreviated 瑩 indicating the sound.",
       "sourceTextSha256": "7a128296eb1426f630e4fd0f5851758e64af0c42e3077e1b01e10425506e9391",
       "uncertain": false
     },
     "shuowen:3177": {
-      "text": "A pitfall. From 𨸏 and 井; 井 also supplies the sound.",
+      "text": "A pitfall. Formed from 𨸏 and 井, with 井 also indicating the sound.",
       "sourceTextSha256": "9821e895e37c0437b2d2de7dc3019b27fba557987a2a4bfb4de33d1ac4b59174",
       "uncertain": false
     },
@@ -421,32 +441,32 @@
       "uncertain": false
     },
     "shuowen:3179": {
-      "text": "To establish laws and begin undertakings. From 井; 刅 supplies the sound. Pronounced like 創.",
+      "text": "To establish laws and begin undertakings. Formed from 井, with 刅 indicating the sound. Read like 創.",
       "sourceTextSha256": "ec7ac9ddb7ceed2b81da7ce06cc0c0bdb037578b10e0306c553d9ce62c711e40",
       "uncertain": false
     },
     "shuowen:3180": {
-      "text": "The fragrance of grain. It depicts fine grain within a wrapping; 匕 is used to scoop it. Another account: 皀 is one grain. All graphs in this category contain 皀. Also pronounced like 香.",
+      "text": "The fragrance of grain. It depicts fine grain within a wrapping; 匕 is used to scoop it. Another account: 皀 is one grain. All graphs in the 皀 group contain 皀. Also pronounced like 香.",
       "sourceTextSha256": "f0ab05325cc70ae8dbe1ec90dbd615ff1ded99eac01560b84a4af711d355b6fa",
       "uncertain": false
     },
     "shuowen:3181": {
-      "text": "To approach food. From 皀; 卪 supplies the sound.",
+      "text": "To approach food. Formed from 皀, with 卪 indicating the sound.",
       "sourceTextSha256": "ea59ba5286aae8e38eb0886b2e047a05c4e0564bff7a66139ae8393b0cf06f38",
       "uncertain": false
     },
     "shuowen:3182": {
-      "text": "To eat a little. From 皀; 旡 supplies the sound. The Analects says: “He did not allow it to exceed the staple food.” [The quoted wording is difficult.]",
+      "text": "To eat a little. Formed from 皀, with 旡 indicating the sound. The Analects says: “He did not allow it to exceed the staple food.” [The quoted wording is difficult.]",
       "sourceTextSha256": "41ed09cb7652348b98b2f2e6c506adcc82bb05ad8aa777c84c81228d2da31623",
       "uncertain": true
     },
     "shuowen:3183": {
-      "text": "Rice unevenly hard and soft, sticking together. From 皀; 冂 supplies the sound. Pronounced like 適.",
+      "text": "Rice unevenly hard and soft, sticking together. Formed from 皀, with 冂 indicating the sound. Read like 適.",
       "sourceTextSha256": "22b929ecf807df62890a7b0f694fa02451ed0f1bda90f843cd925cec01b9fa04",
       "uncertain": false
     },
     "shuowen:3184": {
-      "text": "Black millet brewed with 𩰪 herb: its fragrance spreads, bringing down spirits. From 凵, a vessel; the middle depicts rice, and 匕 scoops it. The Changes says: “Not losing the ladle and fragrant wine.” All graphs in this category contain 鬯.",
+      "text": "Black millet brewed with 𩰪 herb: its fragrance spreads, bringing down spirits. From 凵, a vessel; the middle depicts rice, and 匕 scoops it. The Changes says: “Not losing the ladle and fragrant wine.” All graphs in the 鬯 group contain 鬯.",
       "sourceTextSha256": "d48b668237506c07aa149e5167e115f8aacf9ea4cbcc0fa1f856f3447a3c6b8c",
       "uncertain": false
     },
@@ -461,72 +481,72 @@
       "uncertain": true
     },
     "shuowen:3187": {
-      "text": "Black millet, two grains within one husk, used for brewing. From 鬯; 矩 supplies the sound.",
+      "text": "Black millet, two grains within one husk, used for brewing. Formed from 鬯, with 矩 indicating the sound.",
       "sourceTextSha256": "ed1dfac643d990c535ed852c76e67725b42fcabf9dcd1e91c0184fff0df0c49f",
       "uncertain": false
     },
     "shuowen:3188": {
-      "text": "To arrange in ranks. From 鬯; 吏 supplies the sound. Pronounced like 迅.",
+      "text": "To arrange in ranks. Formed from 鬯, with 吏 indicating the sound. Read like 迅.",
       "sourceTextSha256": "6b9fe8439f85c293174ba922584c47a5c79dbeff5d94e189ba794cd921ba2d03",
       "uncertain": false
     },
     "shuowen:3189": {
-      "text": "A portion of rice. From 皀; 亼 supplies the sound. Another account: 亼 and 皀 combined. All graphs in this category contain 食.",
+      "text": "A portion of rice. Formed from 皀, with 亼 indicating the sound. Another account: 亼 and 皀 combined. All graphs in the 食 group contain 食.",
       "sourceTextSha256": "48ce4d9d8bca68f19c8a8efc71a45e54ae120442c7fe8df2295289b7c796117d",
       "uncertain": true
     },
     "shuowen:3190": {
-      "text": "Soaked rice. From 食; 𠦪 supplies the sound.",
+      "text": "Soaked rice. Formed from 食, with 𠦪 indicating the sound.",
       "sourceTextSha256": "3a97a544a46186d3c50e25a6ecc33ac8e7dc5595110ed95fce62a93e088efc6f",
       "uncertain": false
     },
     "shuowen:3191": {
-      "text": "Rice vapor steaming upward. From 食; 畱 supplies the sound.",
+      "text": "Rice vapor steaming upward. Formed from 食, with 畱 indicating the sound.",
       "sourceTextSha256": "d93cf6b7c648cc7e7975346956a5d4e1c8c5fb39caa953318ab01310611559f3",
       "uncertain": false
     },
     "shuowen:3192": {
-      "text": "Thoroughly cooked. From 食; 壬 supplies the sound.",
+      "text": "Thoroughly cooked. Formed from 食, with 壬 indicating the sound.",
       "sourceTextSha256": "fcbdcfca0128b8c664f4842ea7ea5fb071cdc825d3abf27cf8e4279e94c9fa60",
       "uncertain": false
     },
     "shuowen:3193": {
-      "text": "Cooked food. From 食; 雝 supplies the sound.",
+      "text": "Cooked food. Formed from 食, with 雝 indicating the sound.",
       "sourceTextSha256": "e98d0dfd02d55fce7b1b9732de8cc94f464ed9f40c434506b54a36c101f7539d",
       "uncertain": false
     },
     "shuowen:3194": {
-      "text": "Rice malt boiled down. From 食; 台 supplies the sound.",
+      "text": "Rice malt boiled down. Formed from 食, with 台 indicating the sound.",
       "sourceTextSha256": "c12cdae1039eeac04855d2ef8c4e274dee19d9a85ee092983b215f97b133b953",
       "uncertain": false
     },
     "shuowen:3195": {
-      "text": "Malt syrup mixed with fried dough strands. From 食; 易 supplies the sound.",
+      "text": "Malt syrup mixed with fried dough strands. Formed from 食, with 易 indicating the sound.",
       "sourceTextSha256": "027fc36a2aef2de07f8000b58427cbaa740e90f41bda9b98364f7d7e7f6227fe",
       "uncertain": false
     },
     "shuowen:3196": {
-      "text": "Roasted rice grain, 粻䅣. From 食; 𢿱 supplies the sound. [The food term is uncertain.]",
+      "text": "Roasted rice grain, 粻䅣. Formed from 食, with 𢿱 indicating the sound. [The food term is uncertain.]",
       "sourceTextSha256": "326ad04523ba7156314d6943f7823b273826d9c97e60e9c3cb6f05eee0ae1b61",
       "uncertain": true
     },
     "shuowen:3197": {
-      "text": "A cake made from flour. From 食; 并 supplies the sound.",
+      "text": "A cake made from flour. Formed from 食, with 并 indicating the sound.",
       "sourceTextSha256": "7befbae67cd3de4c23cefa1c303c454d52b08970007064242566ef8fb207e046",
       "uncertain": false
     },
     "shuowen:3198": {
-      "text": "A rice cake. From 食; 次 supplies the sound.",
+      "text": "A rice cake. Formed from 食, with 次 indicating the sound.",
       "sourceTextSha256": "90149a5ec0b5b6e0a7a63fcc84acd78d664b062b7d434c1664fe886195594200",
       "uncertain": false
     },
     "shuowen:3199": {
-      "text": "Thick gruel. From 食; 亶 supplies the sound. Zhou calls it 饘; Song calls it 餬.",
+      "text": "Thick gruel. Formed from 食, with 亶 indicating the sound. Zhou calls it 饘; Song calls it 餬.",
       "sourceTextSha256": "8f5cd98b02519e45685668d5f47ffa823f2d52b4b25f9a9ce7e756912237a256",
       "uncertain": false
     },
     "shuowen:3200": {
-      "text": "Dry provisions. From 食; 矦 supplies the sound. The Book of Zhou says: “Store your dry provisions.”",
+      "text": "Dry provisions. Formed from 食, with 矦 indicating the sound. The Book of Zhou says: “Store your dry provisions.”",
       "sourceTextSha256": "cb7d037c006dee90990201a496f30d6cd6d24ffa80f0560a3980af5fc50d0f18",
       "uncertain": false
     }

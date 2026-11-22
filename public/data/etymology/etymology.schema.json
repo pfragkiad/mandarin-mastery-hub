@@ -146,7 +146,7 @@
           "format": "date"
         },
         "version": {
-          "enum": ["1.0.0", "1.1.0"]
+          "enum": ["1.0.0", "1.1.0", "1.2.0", "1.2.1", "1.2.2", "1.3.0"]
         },
         "disclaimer": {
           "type": "string",
@@ -192,7 +192,158 @@
               "minimum": 0
             },
             "version": {
-              "const": "1.0.0"
+              "enum": ["1.0.0", "1.1.0", "1.1.1", "1.1.2", "1.2.0"]
+            },
+            "editorial_review": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "review_id",
+                "status",
+                "archive_sha256",
+                "translation_edited_entries",
+                "source_reading_entries",
+                "resolved_uncertainties",
+                "changed_entry_count"
+              ],
+              "properties": {
+                "review_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "const": "partial-editorial-review"
+                },
+                "archive_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "translation_edited_entries": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "source_reading_entries": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "resolved_uncertainties": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "changed_entry_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "followup": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "review_id",
+                    "archive_sha256",
+                    "reported_uncertain_entries",
+                    "translation_edited_entries",
+                    "omitted_uncertain_count"
+                  ],
+                  "properties": {
+                    "review_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "archive_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "reported_uncertain_entries": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "translation_edited_entries": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "omitted_uncertain_count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "full_review": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "review_id",
+                        "file_sha256",
+                        "translation_edited_entries",
+                        "resolved_uncertainties",
+                        "remaining_uncertainties"
+                      ],
+                      "properties": {
+                        "review_id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "file_sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "translation_edited_entries": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "resolved_uncertainties": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "remaining_uncertainties": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                "external_v3": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "review_id",
+                    "archive_sha256",
+                    "cases_reported_checked",
+                    "translation_edited_entries",
+                    "resolved_uncertainties",
+                    "remaining_uncertainties",
+                    "not_checked_this_pass"
+                  ],
+                  "properties": {
+                    "review_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "archive_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "cases_reported_checked": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "translation_edited_entries": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "resolved_uncertainties": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "remaining_uncertainties": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "not_checked_this_pass": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -1054,6 +1205,93 @@
         },
         "uncertain": {
           "type": "boolean"
+        },
+        "editorialReview": {
+          "$ref": "#/$defs/editorialReview"
+        }
+      }
+    },
+    "editorialSourceReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["headword", "text", "textSha256", "classification", "note", "evidenceUrls"],
+      "properties": {
+        "headword": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1
+        },
+        "text": {
+          "type": "string"
+        },
+        "textSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "classification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceUrls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "editorialReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewId", "status", "changes"],
+      "properties": {
+        "reviewId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "const": "partial-editorial-review"
+        },
+        "changes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["translation", "uncertainty", "source-reading", "review-assessment"]
+          }
+        },
+        "sourceReading": {
+          "$ref": "#/$defs/editorialSourceReading"
+        },
+        "caseEvidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["decision", "checkedInSuppliedReview", "reviewerNote", "sourceUrls"],
+          "properties": {
+            "decision": {
+              "enum": ["clear", "checked_retained", "revised_retained"]
+            },
+            "checkedInSuppliedReview": {
+              "const": true
+            },
+            "reviewerNote": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sourceUrls": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
         }
       }
     }

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "92e4371b156bdfecb8d3bbb652edfdb0ea238eb4021e81750905dae65c0ba589",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "043",
   "translations": {
@@ -306,7 +326,7 @@
       "uncertain": false
     },
     "shuowen:4256": {
-      "text": "Bright. Formed from 日 appearing above 一; 一 is the ground. All characters in this group follow 旦.",
+      "text": "Bright. Formed from 日 appearing above 一; 一 is the ground. All characters in this group are formed from 旦.",
       "sourceTextSha256": "42cd9dd567058851b94a4cea5583c97d053064141ae90a0577378dfe8587e88b",
       "uncertain": false
     },
@@ -316,7 +336,7 @@
       "uncertain": false
     },
     "shuowen:4258": {
-      "text": "The sun first rising, its light 倝倝. Formed from 旦, with 㫃 indicating the sound. All characters in this group follow 倝.",
+      "text": "The sun first rising, its light 倝倝. Formed from 旦, with 㫃 indicating the sound. All characters in this group are formed from 倝.",
       "sourceTextSha256": "fa5af699dd466604f6b698a469702aaa148cb915c7eb5ee4d1a4681c6c161c97",
       "uncertain": false
     },
@@ -446,7 +466,7 @@
       "uncertain": false
     },
     "shuowen:4284": {
-      "text": "Dark. Formed from 日 and 六, with 冖 indicating the sound. The count of days is ten; on the sixteenth day the moon begins to wane and darken. All characters in this group follow 冥.",
+      "text": "Dark. Formed from 日 and 六, with 冖 indicating the sound. The count of days is ten; on the sixteenth day the moon begins to wane and darken. All characters in this group are formed from 冥.",
       "sourceTextSha256": "da819c45891b3f7c9baff6932ecf8359bc36bda614560da83447ec060ddc4da8",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:4286": {
-      "text": "Pure brilliance. Formed from three 日. All characters in this group follow 晶.",
+      "text": "Pure brilliance. Formed from three 日. All characters in this group are formed from 晶.",
       "sourceTextSha256": "9f62a42e265e27256d2c82fe05a5def028b0f3eb64bad40e6f21eaca6da2ff7d",
       "uncertain": false
     },
@@ -481,7 +501,7 @@
       "uncertain": false
     },
     "shuowen:4291": {
-      "text": "Deficient or waning: the essence of the great yin. Pictographic. All characters in this group follow 月.",
+      "text": "Deficient or waning: the essence of the great yin. Pictographic. All characters in this group are formed from 月.",
       "sourceTextSha256": "259ee3222c39eadf5788a28d72a92464f0ddedbdcb031edbef00e798e6d8f8c6",
       "uncertain": false
     },

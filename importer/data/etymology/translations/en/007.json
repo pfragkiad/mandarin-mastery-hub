@@ -26,12 +26,32 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "63ab2b86304e23e2458a2d3a714a5da10896ff08d6fb23a3d952b90b2291144a",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "007",
   "translations": {
     "shuowen:601": {
-      "text": "To fill a gap with plants. Formed from 艸, with 㐁 indicating the sound. Pronounced like 陸. Some take it as 綴, to join; another explanation: to bind across an opening.",
+      "text": "To fill a gap with plants. Formed from 艸, with 㐁 indicating the sound. Read like 陸. Some take it as 綴, to join; another explanation: to bind across an opening.",
       "sourceTextSha256": "890bd11a240ede33dc7a4d58bb31813466f4f16eeb8937aefd53efbf64a26b89",
       "uncertain": true
     },
@@ -276,7 +296,7 @@
       "uncertain": false
     },
     "shuowen:650": {
-      "text": "An aquatic plant. Formed from 艸 and 水, with 巢 indicating the sound. The Odes says: “Where shall we gather 薻？”",
+      "text": "An aquatic plant. Formed from 艸 and 水, with 巢 indicating the sound. The Odes says: “Where shall we gather 薻?”",
       "sourceTextSha256": "ac0983c4824bccc3263348b395291568d982a7e52e49f3daeaa0d2b1ec5912c7",
       "uncertain": false
     },
@@ -421,9 +441,9 @@
       "uncertain": false
     },
     "shuowen:679": {
-      "text": "草斗, the fruit of an oak. Another explanation: the cup of an acorn. Formed from 艸, with 早 indicating the sound.",
+      "text": "The cupule or cup-shaped covering of an acorn, called 草斗. Another name is 象斗子. Formed from 艸, with 早 indicating the sound.",
       "sourceTextSha256": "84339b660bee29dd01794cc221eeda90af015237c5f655863e1e346e95acfe0d",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:680": {
       "text": "Hemp stalks. Formed from 艸, with 取 indicating the sound. Another explanation: bedding.",

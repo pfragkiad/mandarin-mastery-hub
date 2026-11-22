@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "adc8af2b224f1ae07dfa7ba8589ef1e7ecc602074096f3241585d721ae2038b2",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "003",
   "translations": {
@@ -46,9 +66,9 @@
       "uncertain": false
     },
     "shuowen:204": {
-      "text": "Jade left or bestowed. Formed from 玉, with 𣣸 indicating the sound. [The precise sense of 遺 is uncertain.]",
+      "text": "Jade presented as a funerary gift to the dead. Formed from 玉, with 𣣸 indicating the sound.",
       "sourceTextSha256": "ffbbbe875460dcdf2081046607e1b9acbbd0b6541a09fc594624af3db21fb147",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:205": {
       "text": "Fine metal, the same color as jade. Formed from 玉, with 湯 indicating the sound. The Rites says: “For feudal lords' worn knives, the upper fitting is 璗 and the lower 璆.”",
@@ -156,9 +176,9 @@
       "uncertain": false
     },
     "shuowen:226": {
-      "text": "To serve or undertake affairs. Numbers begin at one and end at ten. Formed from 一 and 十. Confucius said: “Extending through ten and uniting them in one makes 士.” All characters in the 士 category are formed from 士.",
+      "text": "A person entrusted with affairs or duties. Numbers begin at one and end at ten. Formed from 一 and 十. Confucius is quoted as saying: “To bring ten together under one is to make 士.” All characters in the 士 category are formed from 士.",
       "sourceTextSha256": "6f75647ca049839dc0776be012761c93c08df6060b6736667b90117310fe5589",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:227": {
       "text": "A husband. Formed from 士, with 胥 indicating the sound. The Odes says: “The woman did not err; the man was double in his conduct.” 士 here means husband. Pronounced the same as 細.",
@@ -191,7 +211,7 @@
       "uncertain": false
     },
     "shuowen:233": {
-      "text": "Plants first sprouting. It depicts a 丨 emerging, with branches and stem. Ancient writing sometimes uses it for 艸. Pronounced like 徹. All characters in the 屮 category are formed from 屮. This explanation is Yin Tong's.",
+      "text": "Plants first sprouting. It depicts a 丨 emerging, with branches and stem. Ancient writing sometimes uses it for 艸. Read like 徹. All characters in the 屮 category are formed from 屮. This explanation is Yin Tong's.",
       "sourceTextSha256": "19efae4bbab272e9ed9a40fe5a33a6139d9f9598a86f32c36fcbf64498e663fa",
       "uncertain": false
     },
@@ -206,7 +226,7 @@
       "uncertain": false
     },
     "shuowen:236": {
-      "text": "Intense or thick. Plants harmful to people grow here and there. Formed from 屮 and 毒.",
+      "text": "Abundance or intensity; the text links the meaning to harmful plants growing prolifically. The received graphic formula says “formed from 屮 and 毒”; Duan instead analyzes 屮 as the plant component and 毒 as the phonetic. [Received graphical formula is self-referential and disputed.]",
       "sourceTextSha256": "221e8b85a03cd740b42f1279a69311f0dbbabbe3d013bbd98ae23fe3f50d636c",
       "uncertain": true
     },
@@ -286,7 +306,7 @@
       "uncertain": false
     },
     "shuowen:252": {
-      "text": "The weed 莠 grows beneath grain and millet. Formed from 艸, with 秀 indicating the sound. Pronounced like 酉.",
+      "text": "The weed 莠 grows beneath grain and millet. Formed from 艸, with 秀 indicating the sound. Read like 酉.",
       "sourceTextSha256": "febee23d28b642c82d14b53b47c63d80ccef55e3012c85554a58a0ec49fee848",
       "uncertain": false
     },
@@ -296,9 +316,9 @@
       "uncertain": false
     },
     "shuowen:254": {
-      "text": "The mother plant of hemp. Formed from 艸, with 子 indicating the sound. Another explanation: 芓 is simply 枲, hemp.",
+      "text": "A female, seed-bearing hemp plant. Formed from 艸, with 子 indicating the sound. Another explanation uses 芓 as equivalent to 枲, hemp.",
       "sourceTextSha256": "d628fe1a0241f43b30d64cb671882f297349ebb2ff63b413a5631706866d26e8",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:255": {
       "text": "The hemp plant 芓. Formed from 艸, with 異 indicating the sound.",
@@ -441,7 +461,7 @@
       "uncertain": false
     },
     "shuowen:283": {
-      "text": "A plant that makes people forget sorrow. Formed from 艸, with 憲 indicating the sound. The Odes says: “Where can I find 藼 grass？”",
+      "text": "A plant that makes people forget sorrow. Formed from 艸, with 憲 indicating the sound. The Odes says: “Where can I find 藼 grass?”",
       "sourceTextSha256": "61c28858160fa9063376a6481bc466b6ba4252d2a39df16ba99b1d5b4f93bd26",
       "uncertain": false
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:295": {
-      "text": "Water 萹茿. Formed from 艸 and 水, with 毒 indicating the sound. Pronounced like 督.",
+      "text": "Water 萹茿. Formed from 艸 and 水, with 毒 indicating the sound. Read like 督.",
       "sourceTextSha256": "ffbedf849e99226a5c3959c1bbe347ddde32002758307daee2de908de256c576",
       "uncertain": false
     },

@@ -26,357 +26,377 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e60916df1e028fa908e4f146d0a3ce2bee54fbd6bce643e761c284447fd211f9",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "025",
   "translations": {
     "shuowen:2401": {
-      "text": "The bird 烏鸔. From 鳥; 暴 supplies the sound.",
+      "text": "The bird 烏鸔. Formed from 鳥, with 暴 indicating the sound.",
       "sourceTextSha256": "cb6d8f302dd7965a46d3bd7d3ebc958a38bfab67ccc9d0b2fd670250f663076b",
       "uncertain": false
     },
     "shuowen:2402": {
-      "text": "It calls in the nine marshes, its voice heard in heaven. From 鳥; 隺 supplies the sound.",
+      "text": "It calls in the nine marshes, its voice heard in heaven. Formed from 鳥, with 隺 indicating the sound.",
       "sourceTextSha256": "b9886d2a158f43b5dbf85f079d034e43cb7f83948f5a1e4ef9954d27f1da3800",
       "uncertain": false
     },
     "shuowen:2403": {
-      "text": "The white egret. From 鳥; 路 supplies the sound.",
+      "text": "The white egret. Formed from 鳥, with 路 indicating the sound.",
       "sourceTextSha256": "0b6b56c5a7455f8c73821ae1e771fe9367855dba7518c55459600d579f9a13ee",
       "uncertain": false
     },
     "shuowen:2404": {
-      "text": "The bird 鴻鵠. From 鳥; 告 supplies the sound.",
+      "text": "The bird 鴻鵠. Formed from 鳥, with 告 indicating the sound.",
       "sourceTextSha256": "8f5a6e80513b1b7408a1ebd6d98f233ed624dd53f3d1a64cea34ff6f942f7ee1",
       "uncertain": false
     },
     "shuowen:2405": {
-      "text": "The bird 鴻鵠. From 鳥; 江 supplies the sound.",
+      "text": "The bird 鴻鵠. Formed from 鳥, with 江 indicating the sound.",
       "sourceTextSha256": "58796f9e766213d0005a525e80b321a5f9d912a2fddf01fb250ef18ba7442f44",
       "uncertain": false
     },
     "shuowen:2406": {
-      "text": "The bird 禿𪀖. From 鳥; 尗 supplies the sound.",
+      "text": "The bird 禿𪀖. Formed from 鳥, with 尗 indicating the sound.",
       "sourceTextSha256": "26057d9beb6c12289056025b45d974463d54a66f6a6337ac2c55e5a5fe2de553",
       "uncertain": false
     },
     "shuowen:2407": {
-      "text": "The mandarin duck, 鴛鴦. From 鳥; 夗 supplies the sound.",
+      "text": "The mandarin duck, 鴛鴦. Formed from 鳥, with 夗 indicating the sound.",
       "sourceTextSha256": "acceb9ca9cbffadff9cdba63e623aadcf9405adff7fe329413566f4ce5f9aa57",
       "uncertain": false
     },
     "shuowen:2408": {
-      "text": "The mandarin duck, 鴛鴦. From 鳥; 央 supplies the sound.",
+      "text": "The mandarin duck, 鴛鴦. Formed from 鳥, with 央 indicating the sound.",
       "sourceTextSha256": "390cd5dc9b415be7e42843f4c1815c850d8b96164702be33a4c2beb5e7e962b9",
       "uncertain": false
     },
     "shuowen:2409": {
-      "text": "The bird 鵽鳩. From 鳥; 叕 supplies the sound.",
+      "text": "The bird 鵽鳩. Formed from 鳥, with 叕 indicating the sound.",
       "sourceTextSha256": "ee15986ffa9f900e06f783297de21c2976fcd9cbcc0d5ace5d34a840f86ff8cf",
       "uncertain": false
     },
     "shuowen:2410": {
-      "text": "The goose 蔞鵝. From 鳥; 坴 supplies the sound.",
+      "text": "The goose 蔞鵝. Formed from 鳥, with 坴 indicating the sound.",
       "sourceTextSha256": "717ce87b415b66d4fc1c3ecb62d8bd486eab0ad091b1cd060f31e1c0d16230d1",
       "uncertain": false
     },
     "shuowen:2411": {
-      "text": "The goose 鴚鵝. From 鳥; 可 supplies the sound.",
+      "text": "The goose 鴚鵝. Formed from 鳥, with 可 indicating the sound.",
       "sourceTextSha256": "94c0c7104916c4423010c57bce56bd081e0eda518dc310d3978e749e0fbf2035",
       "uncertain": false
     },
     "shuowen:2412": {
-      "text": "The goose 鴚鵝. From 鳥; 我 supplies the sound.",
+      "text": "The goose 鴚鵝. Formed from 鳥, with 我 indicating the sound.",
       "sourceTextSha256": "9a67682aff5ac79c96d8dfc73d65bc59bbcc33bcd6e42946a6f89a43444fe803",
       "uncertain": false
     },
     "shuowen:2413": {
-      "text": "A goose, 䳘. From 鳥 and 人; 厂 supplies the sound.",
+      "text": "A goose, 䳘. Formed from 鳥 and 人, with 厂 indicating the sound.",
       "sourceTextSha256": "9bf9080bccefb50512663825c9dcaf3bda8c1e439bab7bf2ea78e59590981f8c",
       "uncertain": false
     },
     "shuowen:2414": {
-      "text": "The duck 舒鳧. From 鳥; 敄 supplies the sound.",
+      "text": "The duck 舒鳧. Formed from 鳥, with 敄 indicating the sound.",
       "sourceTextSha256": "1939a92e758680c864d1d4ad33ebc59da5891dca4dc3aef9ecfdae8f7e5d129c",
       "uncertain": false
     },
     "shuowen:2415": {
-      "text": "A kind of duck. From 鳥; 殹 supplies the sound. The Odes says: “Ducks and 鷖 at the fish weir.”",
+      "text": "A kind of duck. Formed from 鳥, with 殹 indicating the sound. The Odes says: “Ducks and 鷖 at the fish weir.”",
       "sourceTextSha256": "79b8c03e5ee2ed18a5ef961bdc1b67aa38c9c16518f21c0ff6d037bd7f025659",
       "uncertain": false
     },
     "shuowen:2416": {
-      "text": "𪃈𪇷, a kind of duck. From 鳥; 契 supplies the sound.",
+      "text": "𪃈𪇷, a kind of duck. Formed from 鳥, with 契 indicating the sound.",
       "sourceTextSha256": "57e6c8ff269068af9dc41d18b45a50b5881fbb259d5675fb0d27f074cd715417",
       "uncertain": false
     },
     "shuowen:2417": {
-      "text": "The bird 𪃈𪇷. From 鳥; 辥 supplies the sound.",
+      "text": "The bird 𪃈𪇷. Formed from 鳥, with 辥 indicating the sound.",
       "sourceTextSha256": "dd840a73582342fbd3485801a102b08a1da424393797bf520cf1cfb6ab31e85c",
       "uncertain": false
     },
     "shuowen:2418": {
-      "text": "A waterbird. From 鳥; 蒙 supplies the sound.",
+      "text": "A waterbird. Formed from 鳥, with 蒙 indicating the sound.",
       "sourceTextSha256": "135bfeda8802cc77d1367c0d31e8aa6858259d87a6c47061d4023d4743ba1392",
       "uncertain": false
     },
     "shuowen:2419": {
-      "text": "A bird that knows when rain is coming. From 鳥; 矞 supplies the sound. The Record of Rites says: “Those who know heavenly patterns wear 鷸 feathers on their caps.”",
+      "text": "A bird that knows when rain is coming. Formed from 鳥, with 矞 indicating the sound. The Record of Rites says: “Those who know heavenly patterns wear 鷸 feathers on their caps.”",
       "sourceTextSha256": "ef921c57cd6138c176a1e07c94be591c94c67fe10b242ec70b23c024b01a4c49",
       "uncertain": false
     },
     "shuowen:2420": {
-      "text": "The bird 𪇊鷈. From 鳥; 辟 supplies the sound.",
+      "text": "The bird 𪇊鷈. Formed from 鳥, with 辟 indicating the sound.",
       "sourceTextSha256": "03e4aa1b17b4a44b39b4b2715fb334057da54c8737071b64bb796ac505c635e6",
       "uncertain": false
     },
     "shuowen:2421": {
-      "text": "The bird 𪇊鷈. From 鳥; 虒 supplies the sound.",
+      "text": "The bird 𪇊鷈. Formed from 鳥, with 虒 indicating the sound.",
       "sourceTextSha256": "df9adc406bc0dc0eb72b5006a7dedd90fb5acf4206c37b178fda06eaef0d40da",
       "uncertain": false
     },
     "shuowen:2422": {
-      "text": "The bird 𪈒鷀. From 鳥; 盧 supplies the sound.",
+      "text": "The bird 𪈒鷀. Formed from 鳥, with 盧 indicating the sound.",
       "sourceTextSha256": "3662a74086701ebb943bbfdeab63ea820f9bdad624eeee07a7fa4c73b6109ecc",
       "uncertain": false
     },
     "shuowen:2423": {
-      "text": "The bird 𪈒鷀. From 鳥; 兹 supplies the sound.",
+      "text": "The bird 𪈒鷀. Formed from 鳥, with 兹 indicating the sound.",
       "sourceTextSha256": "b7beea50cac47a29cd4b308a797a85b098324d09ecb07ad8ea9df86b4d4381bc",
       "uncertain": false
     },
     "shuowen:2424": {
-      "text": "The bird 鷀. From 鳥; 壹 supplies the sound.",
+      "text": "The bird 鷀. Formed from 鳥, with 壹 indicating the sound.",
       "sourceTextSha256": "3772a57595a6e2b67e124836d9f83394b1ad0eadb88a4dd66b1243995f8fe43d",
       "uncertain": false
     },
     "shuowen:2425": {
-      "text": "The bird 𪀐绉. From 鳥; 乏 supplies the sound.",
+      "text": "The bird 𪀐鵖. Formed from 鳥, with 乏 indicating the sound.",
       "sourceTextSha256": "314c7fbff778f8003237482d2e3d772105c2caea02c7129345d4a5b72e100042",
       "uncertain": false
     },
     "shuowen:2426": {
-      "text": "The bird 𪀐绉. From 鳥; 皀 supplies the sound. [The recorded headword 绉 does not match the described formation.]",
+      "text": "The bird 𪀐鵖. Formed from 鳥, with 皀 indicating the sound.",
       "sourceTextSha256": "034d33632672c802a5dc50a04e0e2bdb1b5c3bb697e81b3846299e7ca99c487d",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:2427": {
-      "text": "A bird whose flesh protrudes a foot at the breast. From 鳥; 𠤏 supplies the sound. [The phrase 肉出尺𦛹 is uncertain.]",
+      "text": "A bird whose flesh protrudes a foot at the breast. Formed from 鳥, with 𠤏 indicating the sound. [The phrase 肉出尺𦛹 is uncertain.]",
       "sourceTextSha256": "ea01ef92576370f07e65b0291c7ac54efba2b82a02cc93dd5acb2bab8ff7cf7c",
       "uncertain": true
     },
     "shuowen:2428": {
-      "text": "The bird 𪄉𪆫. From 鳥; 渠 supplies the sound.",
+      "text": "The bird 𪄉𪆫. Formed from 鳥, with 渠 indicating the sound.",
       "sourceTextSha256": "34238be1f190ac1fcbd8c5a7f3cddd4c0172ca7b8f7a4ab8c333fb21821d2954",
       "uncertain": false
     },
     "shuowen:2429": {
-      "text": "A water owl. From 鳥; 區 supplies the sound.",
+      "text": "A water owl. Formed from 鳥, with 區 indicating the sound.",
       "sourceTextSha256": "b55b790797b52de469ae4016c242abbb80fc790323d35d446d902faa54ce089b",
       "uncertain": false
     },
     "shuowen:2430": {
-      "text": "A bird. From 鳥; 犮 supplies the sound. Pronounced like 撥.",
+      "text": "A bird. Formed from 鳥, with 犮 indicating the sound. Read like 撥.",
       "sourceTextSha256": "39db6ec4be368234134f17ce5112081aeab246e6051379c48cd49380e5851f5e",
       "uncertain": false
     },
     "shuowen:2431": {
-      "text": "A bird. From 鳥; 庸 supplies the sound.",
+      "text": "A bird. Formed from 鳥, with 庸 indicating the sound.",
       "sourceTextSha256": "3d2e1bc3686081cc56eb2da4415544646666130c7b1aa6e04e9394adf40a872e",
       "uncertain": false
     },
     "shuowen:2432": {
-      "text": "A bird. From 鳥; 兒 supplies the sound. The Spring and Autumn commentary says: “Six 鶃 flew backward.”",
+      "text": "A bird. Formed from 鳥, with 兒 indicating the sound. The Spring and Autumn commentary says: “Six 鶃 flew backward.”",
       "sourceTextSha256": "b5eb2e645d4f0f00c8e7be7573f3ba1f2ba83e1d63226f30a54acf9b13cd71fd",
       "uncertain": false
     },
     "shuowen:2433": {
-      "text": "鴺胡, namely 污澤. From 鳥; 夷 supplies the sound.",
+      "text": "鴺胡, namely 污澤. Formed from 鳥, with 夷 indicating the sound.",
       "sourceTextSha256": "e2e558984337d517cb0eb886e71fd2b5c1d05507e7409cda5d92b15a96b07cb7",
       "uncertain": false
     },
     "shuowen:2434": {
-      "text": "The bird 天狗. From 鳥; 立 supplies the sound.",
+      "text": "The bird 天狗. Formed from 鳥, with 立 indicating the sound.",
       "sourceTextSha256": "b2b4df51cdd1b7b70b8a32366eb154b4a8f01541fd224486e94a99d1bda9b2ff",
       "uncertain": false
     },
     "shuowen:2435": {
-      "text": "The bird 麋鴰. From 鳥; 倉 supplies the sound.",
+      "text": "The bird 麋鴰. Formed from 鳥, with 倉 indicating the sound.",
       "sourceTextSha256": "92340d3e84a4fc23efb64f26eee44a57cea7e5f94abdc954495f1f808e6b8c17",
       "uncertain": false
     },
     "shuowen:2436": {
-      "text": "The bird 麋鴰. From 鳥; 𠯑 supplies the sound.",
+      "text": "The bird 麋鴰. Formed from 鳥, with 𠯑 indicating the sound.",
       "sourceTextSha256": "d309cec5e16a4205112be1621e29d8ac98bd6605693d724155c117237c864edb",
       "uncertain": false
     },
     "shuowen:2437": {
-      "text": "The bird 𪁉𪂴. From 鳥; 交 supplies the sound. Another name is 𪁉𪈒.",
+      "text": "The bird 𪁉𪂴. Formed from 鳥, with 交 indicating the sound. Another name is 𪁉𪈒.",
       "sourceTextSha256": "1fc754e6bb8c13d773b0fd2b3f232eac471c875d820f80b7cc63a5f0f1a51ca7",
       "uncertain": false
     },
     "shuowen:2438": {
-      "text": "The bird 𪁉𪂴. From 鳥; 青 supplies the sound.",
+      "text": "The bird 𪁉𪂴. Formed from 鳥, with 青 indicating the sound.",
       "sourceTextSha256": "6343d8149f3a279b79d7b77fad1239f4ca6ebcb6cb4d64bfa12958a7099a539b",
       "uncertain": false
     },
     "shuowen:2439": {
-      "text": "The bird 𪁉𪂴. From 鳥; 幵 supplies the sound.",
+      "text": "The bird 𪁉𪂴. Formed from 鳥, with 幵 indicating the sound.",
       "sourceTextSha256": "55dff461a1446db549154089b255e0f7cc19d92306cce2c938a0fc160178f7c7",
       "uncertain": false
     },
     "shuowen:2440": {
-      "text": "The bird 𪈁鴜. From 鳥; 箴 supplies the sound.",
+      "text": "The bird 𪈁鴜. Formed from 鳥, with 箴 indicating the sound.",
       "sourceTextSha256": "4d01bdf82303fc085e15ade7739364a4e7369757f4f01fb4cc8fff494dc0e662",
       "uncertain": false
     },
     "shuowen:2441": {
-      "text": "The bird 𪈁鴜. From 鳥; 此 supplies the sound.",
+      "text": "The bird 𪈁鴜. Formed from 鳥, with 此 indicating the sound.",
       "sourceTextSha256": "4616f55bd2ba55be0b9e0fe73bb2f991da71a075c86d2cdb2f5eb33d6b54a9e6",
       "uncertain": false
     },
     "shuowen:2442": {
-      "text": "An eagle, 雕. From 鳥; 敦 supplies the sound. The Odes says: “Neither eagle nor hawk.”",
+      "text": "An eagle, 雕. Formed from 鳥, with 敦 indicating the sound. The Odes says: “Neither eagle nor hawk.”",
       "sourceTextSha256": "51670e159843c6628b83381824d497ff092218e482da43bdc9790bc1211e1e60",
       "uncertain": false
     },
     "shuowen:2443": {
-      "text": "A bird of prey. From 鳥; 屰 supplies the sound.",
+      "text": "A bird of prey. Formed from 鳥, with 屰 indicating the sound.",
       "sourceTextSha256": "7b927ee1a23dcc25631b426be8e5d29ba9766c468c37077442b66312a36802d0",
       "uncertain": false
     },
     "shuowen:2444": {
-      "text": "An owl. From 鳥; 閒 supplies the sound.",
+      "text": "An owl. Formed from 鳥, with 閒 indicating the sound.",
       "sourceTextSha256": "2cef280c79ae655179bcc962e3c980050a26acbc755087be658f125a80a53ec6",
       "uncertain": false
     },
     "shuowen:2445": {
-      "text": "A bird of prey. From 鳥; 䍃 supplies the sound.",
+      "text": "A bird of prey. Formed from 鳥, with 䍃 indicating the sound.",
       "sourceTextSha256": "c2a17baee552e7f371d6f958091d599c367057957277979ce67f570b02b28874",
       "uncertain": false
     },
     "shuowen:2446": {
-      "text": "白鷢, the bird 王鴡. From 鳥; 厥 supplies the sound.",
+      "text": "白鷢, the bird 王鴡. Formed from 鳥, with 厥 indicating the sound.",
       "sourceTextSha256": "3495e58c9db018e080a32bfcfed3eefe77bbd2598a98e8eda993f2e550a50e9c",
       "uncertain": false
     },
     "shuowen:2447": {
-      "text": "The bird 王鴡. From 鳥; 且 supplies the sound.",
+      "text": "The bird 王鴡. Formed from 鳥, with 且 indicating the sound.",
       "sourceTextSha256": "a778c9d3347338c029c04331a6aaa9744f0659fabba0cc98489d811dc1a0761e",
       "uncertain": false
     },
     "shuowen:2448": {
-      "text": "鸛專, namely 畐蹂. Like a magpie, with a short tail; when shot at, it takes the arrow in its beak and shoots it at people. From 鳥; 雚 supplies the sound.",
+      "text": "鸛專, namely 畐蹂. Like a magpie, with a short tail; when shot at, it takes the arrow in its beak and shoots it at people. Formed from 鳥, with 雚 indicating the sound.",
       "sourceTextSha256": "95c9a7d981423a9a138a956be03a0b2d70e99da4d2c187df8bfc5d9316af8406",
       "uncertain": false
     },
     "shuowen:2449": {
-      "text": "The bird 鷐風. From 鳥; 亶 supplies the sound.",
+      "text": "The bird 鷐風. Formed from 鳥, with 亶 indicating the sound.",
       "sourceTextSha256": "be608c87be58328f4705f11d7f04168984b02235ab1f698edb7333b998f97807",
       "uncertain": false
     },
     "shuowen:2450": {
-      "text": "The bird 鷐風. From 鳥; 晨 supplies the sound.",
+      "text": "The bird 鷐風. Formed from 鳥, with 晨 indicating the sound.",
       "sourceTextSha256": "3087c8407ed92e92350bc0a1bf0326160bed02a3159ddd68ed2d958ba1f17673",
       "uncertain": false
     },
     "shuowen:2451": {
-      "text": "A bird that strikes and kills. From 鳥; 執 supplies the sound.",
+      "text": "A bird that strikes and kills. Formed from 鳥, with 執 indicating the sound.",
       "sourceTextSha256": "df9cac1b9259858544fe804cf6fdadf53469f0319db217250e3fed018d0cf9f2",
       "uncertain": false
     },
     "shuowen:2452": {
-      "text": "The appearance of a 鸇 in flight. From 鳥; 穴 supplies the sound. The Odes says: “Swiftly flies that 晨風.”",
+      "text": "The appearance of a 鸇 in flight. Formed from 鳥, with 穴 indicating the sound. The Odes says: “Swiftly flies that 晨風.”",
       "sourceTextSha256": "9cb1156079280bd0960cf4fac310ad0e531295f6d8e39b99212c38f942cd7db5",
       "uncertain": false
     },
     "shuowen:2453": {
-      "text": "A bird. From 鳥; abbreviated 榮 supplies the sound. The Odes says: “Brilliant are its feathers.”",
+      "text": "A bird. Formed from 鳥, with abbreviated 榮 indicating the sound. The Odes says: “Brilliant are its feathers.”",
       "sourceTextSha256": "c617bda3904bfd9132a51831ab53235d4e5af2cbf1c26d8203e2af759574e783",
       "uncertain": false
     },
     "shuowen:2454": {
-      "text": "The myna, 鴝鵒. From 鳥; 句 supplies the sound.",
+      "text": "The myna, 鴝鵒. Formed from 鳥, with 句 indicating the sound.",
       "sourceTextSha256": "86fd6aeadb166c983da936e3a82ec7d3e69d913f7e1a5f6ad1d5ec932300bb2d",
       "uncertain": false
     },
     "shuowen:2455": {
-      "text": "The myna, 鴝鵒. From 鳥; 谷 supplies the sound. Anciently mynas did not cross the Ji River.",
+      "text": "The myna, 鴝鵒. Formed from 鳥, with 谷 indicating the sound. Anciently mynas did not cross the Ji River.",
       "sourceTextSha256": "db409d2022b94d95b126fa5e2a16130746b49f4c0c5df1881e7b405482001e56",
       "uncertain": false
     },
     "shuowen:2456": {
-      "text": "A red pheasant. From 鳥; 敝 supplies the sound. The Rites of Zhou says: “The high dignitary wears the pheasant-patterned robe and crown.”",
+      "text": "A red pheasant. Formed from 鳥, with 敝 indicating the sound. The Rites of Zhou says: “The high dignitary wears the pheasant-patterned robe and crown.”",
       "sourceTextSha256": "c2415e19680ccb6a4e0b277df4536c365838441f544d069c0b3afc9e6ccaec8e",
       "uncertain": false
     },
     "shuowen:2457": {
-      "text": "鵔鸃, the pheasant 鷩. From 鳥; 夋 supplies the sound.",
+      "text": "鵔鸃, the pheasant 鷩. Formed from 鳥, with 夋 indicating the sound.",
       "sourceTextSha256": "462d2c91ce91dcc8dcc115c7ed0069c3af7514392e82464cc2045f2c1075b22e",
       "uncertain": false
     },
     "shuowen:2458": {
-      "text": "The bird 鵔鸃. From 鳥; 義 supplies the sound. In early Qin and Han, palace attendants wore caps with 鵔鸃 feathers.",
+      "text": "The bird 鵔鸃. Formed from 鳥, with 義 indicating the sound. In early Qin and Han, palace attendants wore caps with 鵔鸃 feathers.",
       "sourceTextSha256": "368e197136fb09448347206bbf5e40c88dbabb65e9ae2ae9ae16c28a3f996258",
       "uncertain": false
     },
     "shuowen:2459": {
-      "text": "A kind of pheasant, a foolish bird. From 鳥; abbreviated 𨗁 supplies the sound.",
+      "text": "A kind of pheasant, a foolish bird. Formed from 鳥, with abbreviated 𨗁 indicating the sound.",
       "sourceTextSha256": "c83a1e50d5e310d56cf00671115d517469921c48a67b9b7e3fbab74bc3308661",
       "uncertain": false
     },
     "shuowen:2460": {
-      "text": "Resembles a pheasant; found in Shangdang. From 鳥; 曷 supplies the sound.",
+      "text": "Resembles a pheasant; found in Shangdang. Formed from 鳥, with 曷 indicating the sound.",
       "sourceTextSha256": "555c92ce451a451340858b77e43d18eb5d0e61c1bbe177c860c2fe2f203f6f06",
       "uncertain": false
     },
     "shuowen:2461": {
-      "text": "A bird resembling 鶡 but blue-green, found among the Qiang. From 鳥; 介 supplies the sound.",
+      "text": "A bird resembling 鶡 but blue-green, found among the Qiang. Formed from 鳥, with 介 indicating the sound.",
       "sourceTextSha256": "fe6718211386ee9ece118ff63889b762d5735928c8ff8a8f8c22273649be5f01",
       "uncertain": false
     },
     "shuowen:2462": {
-      "text": "鸚䳇, a bird able to speak. From 鳥; 嬰 supplies the sound.",
+      "text": "鸚䳇, a bird able to speak. Formed from 鳥, with 嬰 indicating the sound.",
       "sourceTextSha256": "78dda518fab4534ce60bef574290771cf6b54ee156bec8c73cb2f495a0e18df1",
       "uncertain": false
     },
     "shuowen:2463": {
-      "text": "The parrot 鸚䳇. From 鳥; 母 supplies the sound.",
+      "text": "The parrot 鸚䳇. Formed from 鳥, with 母 indicating the sound.",
       "sourceTextSha256": "010f890ca263753ceaafd4bbd51c0062249a81d7e0cc9cb7fc11c486709b0aa4",
       "uncertain": false
     },
     "shuowen:2464": {
-      "text": "A long-tailed pheasant that calls while running. For the imperial carriage its feathers make a 防釳 ornament attached to a horse's head. From 鳥; 喬 supplies the sound.",
+      "text": "A long-tailed pheasant that calls while running. For the imperial carriage its feathers make a 防釳 ornament attached to a horse's head. Formed from 鳥, with 喬 indicating the sound.",
       "sourceTextSha256": "778717ae30ff9433b31c53c8535ecba7243593f8611c1e44e02e2d7df9b4c91a",
       "uncertain": false
     },
     "shuowen:2465": {
-      "text": "A female pheasant's call. From 鳥; 唯 supplies the sound. The Odes says: “The pheasant calls 鷕.”",
+      "text": "A female pheasant's call. Formed from 鳥, with 唯 indicating the sound. The Odes says: “The pheasant calls 鷕.”",
       "sourceTextSha256": "23fe6aaaaaa2cd2278fa8db9f66b18d3bbfa6216eaf82f4ad931f3d75a06e5c6",
       "uncertain": false
     },
     "shuowen:2466": {
-      "text": "A mouse-shaped bird that flies, runs and suckles its young. From 鳥; 畾 supplies the sound.",
+      "text": "A mouse-shaped bird that flies, runs and suckles its young. Formed from 鳥, with 畾 indicating the sound.",
       "sourceTextSha256": "62a7e367e918fde192c517053e6b461fa040b5f075e6c0f67f30587ac7a06a00",
       "uncertain": false
     },
     "shuowen:2467": {
-      "text": "A plump pheasant with a 鶾 voice. From 鳥; 倝 supplies the sound. At Lu's suburban sacrifice a red chicken is invoked: “With this 鶾 voice and red feathers, remove the lord of Lu's fault.” [The precise vocal description is uncertain.]",
+      "text": "A plump pheasant with a 鶾 voice. Formed from 鳥, with 倝 indicating the sound. At Lu's suburban sacrifice a red chicken is invoked: “With this 鶾 voice and red feathers, remove the lord of Lu's fault.” [The precise vocal description is uncertain.]",
       "sourceTextSha256": "e178bc517500b50d8925e05eda56cf51b4b25700b601766c34aeee8818c4377f",
       "uncertain": true
     },
     "shuowen:2468": {
-      "text": "The bird 雇. From 鳥; 安 supplies the sound.",
+      "text": "The bird 雇. Formed from 鳥, with 安 indicating the sound.",
       "sourceTextSha256": "dcc93ebdffc7ccd180f2ef7649da24bc7b7cbffa897fad5b418f3650e57bbab6",
       "uncertain": false
     },
     "shuowen:2469": {
-      "text": "A poisonous bird. From 鳥; 冘 supplies the sound. Also called 運日.",
+      "text": "A poisonous bird. Formed from 鳥, with 冘 indicating the sound. Also called 運日.",
       "sourceTextSha256": "3996f46af04b7d7d076a6871b05fab1df2d236abaaabf1d369a34e1841f5b63d",
       "uncertain": false
     },
     "shuowen:2470": {
-      "text": "A young bird fed by its parents after hatching. From 鳥; 𣪊 supplies the sound.",
+      "text": "A young bird fed by its parents after hatching. Formed from 鳥, with 𣪊 indicating the sound.",
       "sourceTextSha256": "2ad3a72ffc496407b4dd8b34139d387a190047beaac1b48708b7581214f669c1",
       "uncertain": false
     },
@@ -386,37 +406,37 @@
       "uncertain": false
     },
     "shuowen:2472": {
-      "text": "The appearance of flight. From 鳥; abbreviated 寒 supplies the sound.",
+      "text": "The appearance of flight. Formed from 鳥, with abbreviated 寒 indicating the sound.",
       "sourceTextSha256": "559c3ac2c48de0a39874ee9cb743f16cb609ffdb3098069cf7f7ec6ad951978e",
       "uncertain": false
     },
     "shuowen:2473": {
-      "text": "The appearance of birds gathering. Another explanation: a manner of flight. From 鳥; 分 supplies the sound.",
+      "text": "The appearance of birds gathering. Another explanation: a manner of flight. Formed from 鳥, with 分 indicating the sound.",
       "sourceTextSha256": "1355e40b1382dddaace7814537770c110b379deaa51e9f34c47ea19a3795bd7c",
       "uncertain": false
     },
     "shuowen:2474": {
-      "text": "鷓鴣, the name of a bird. From 鳥; 庶 supplies the sound.",
+      "text": "鷓鴣, the name of a bird. Formed from 鳥, with 庶 indicating the sound.",
       "sourceTextSha256": "04aedc8b8cb6c3380b1623cd247e4ff8096fedfdff878ca1acfcedfac69c21cc",
       "uncertain": false
     },
     "shuowen:2475": {
-      "text": "The bird 鷓鴣. From 鳥; 古 supplies the sound.",
+      "text": "The bird 鷓鴣. Formed from 鳥, with 古 indicating the sound.",
       "sourceTextSha256": "a5c94e71e9e4926af1a849b5a2d1667b8a1e6d86eb000893b1b9f20fbf63746b",
       "uncertain": false
     },
     "shuowen:2476": {
-      "text": "The duck 鶩, commonly called 鴨. From 鳥; 甲 supplies the sound.",
+      "text": "The duck 鶩, commonly called 鴨. Formed from 鳥, with 甲 indicating the sound.",
       "sourceTextSha256": "d2aee0e4daa0c812ca637555935d9e689a3712babbe867878914a08116a3f342",
       "uncertain": false
     },
     "shuowen:2477": {
-      "text": "谿𪀦, a waterbird. From 鳥; 式 supplies the sound.",
+      "text": "谿𪀦, a waterbird. Formed from 鳥, with 式 indicating the sound.",
       "sourceTextSha256": "c09f98e6f8f1b40d66c9ecdfc27a171e207eda497bfe0702a61ce586afb48de8",
       "uncertain": false
     },
     "shuowen:2478": {
-      "text": "A filial bird. A pictograph. Confucius said: “烏 is 𥃳呼.” Taking its assistance in vocal breath, it is used in 烏呼, an exclamation. All graphs in this category contain 烏. [The quoted gloss is difficult.]",
+      "text": "A filial bird. A pictograph. Confucius said: “烏 is 𥃳呼.” Taking its assistance in vocal breath, it is used in 烏呼, an exclamation. All graphs in the 烏 group contain 烏. [The quoted gloss is difficult.]",
       "sourceTextSha256": "b25eb8048151ed9a38f629a8ee81180b93bb6c281ba39fbf224b7bac01b98027",
       "uncertain": true
     },
@@ -431,7 +451,7 @@
       "uncertain": true
     },
     "shuowen:2481": {
-      "text": "A kind of winnowing basket, an implement for pushing away and discarding things. A pictograph. All graphs in this category contain 𠦒. Guan Pu's explanation.",
+      "text": "A kind of winnowing basket, an implement for pushing away and discarding things. A pictograph. All graphs in the 𠦒 group contain 𠦒. Guan Pu's explanation.",
       "sourceTextSha256": "17ce666392ed0d297b5a3a2034ea29c1a13c9c0a3f190c7e6ec29e3a4928ffab",
       "uncertain": false
     },
@@ -451,7 +471,7 @@
       "uncertain": false
     },
     "shuowen:2485": {
-      "text": "Timbers stacked crosswise. It depicts opposed, intersecting forms. All graphs in this category contain 冓.",
+      "text": "Timbers stacked crosswise. It depicts opposed, intersecting forms. All graphs in the 冓 group contain 冓.",
       "sourceTextSha256": "ddaf43e027260896190aa88f5d89c02e391550ba194dbcf23b6938f580903cff",
       "uncertain": false
     },
@@ -466,7 +486,7 @@
       "uncertain": false
     },
     "shuowen:2488": {
-      "text": "Small. It depicts a newborn child. All graphs in this category contain 幺.",
+      "text": "Small. It depicts a newborn child. All graphs in the 幺 group contain 幺.",
       "sourceTextSha256": "ec5322acaf026cc62acab56354474b776ffc8050251adf99c77e4ed32a3b0d58",
       "uncertain": false
     },
@@ -476,17 +496,17 @@
       "uncertain": false
     },
     "shuowen:2490": {
-      "text": "Fine or minute. From 幺; 麻 supplies the sound.",
+      "text": "Fine or minute. Formed from 幺, with 麻 indicating the sound.",
       "sourceTextSha256": "0cea50feb306c24b7d6d3bb2aecc3fa9d158ba4efec1ac8825c37aa2306c8dac",
       "uncertain": false
     },
     "shuowen:2491": {
-      "text": "Minute. From two 幺. All graphs in this category contain 𢆶.",
+      "text": "Minute. From two 幺. All graphs in the 𢆶 group contain 𢆶.",
       "sourceTextSha256": "90ab67b245a69e806f3d9ca8572203377f98d87b56baee0505594106d50ec588",
       "uncertain": false
     },
     "shuowen:2492": {
-      "text": "Hidden. From 𢆶 within 山; 𢆶 also supplies the sound.",
+      "text": "Hidden. Formed from 𢆶 within 山, with 𢆶 also indicating the sound.",
       "sourceTextSha256": "bf7e2fc37d41d4ed39a645948c3821b66c3986bd748fd3aa1e1cf3e08fd4b50f",
       "uncertain": false
     },
@@ -496,7 +516,7 @@
       "uncertain": false
     },
     "shuowen:2494": {
-      "text": "Single-minded, minute and cautious. From abbreviated 幺; 屮 means just appearing, and also supplies the sound. All graphs in this category contain 叀.",
+      "text": "Single-minded, minute and cautious. Formed from abbreviated 幺, with 屮 means just appearing, and also indicating the sound. All graphs in the 叀 group contain 叀.",
       "sourceTextSha256": "0b4d9250edba8315ac5921a9d6614b0fce30060fb6f116b3250bcc725bb10d6d",
       "uncertain": true
     },
@@ -511,22 +531,22 @@
       "uncertain": true
     },
     "shuowen:2497": {
-      "text": "Hidden and far-reaching. Black with a reddish color is 玄. It depicts something hidden entering a covering. All graphs in this category contain 玄.",
+      "text": "Hidden and far-reaching. Black with a reddish color is 玄. It depicts something hidden entering a covering. All graphs in the 玄 group contain 玄.",
       "sourceTextSha256": "03dbaca7d6d9d40ccf3763391b8d726e4f86bf21b9b4c129a3f110ede830e22b",
       "uncertain": false
     },
     "shuowen:2498": {
-      "text": "Black. From two 玄. The Spring and Autumn commentary says: “Why make our water black？”",
+      "text": "Black. From two 玄. The Spring and Autumn commentary says: “Why make our water black?”",
       "sourceTextSha256": "b22d5b8bac71a9401bff03377320a84c71065222ff5c6761ff533c95f9f49cbd",
       "uncertain": false
     },
     "shuowen:2499": {
-      "text": "Black color. From 玄; abbreviated 旅 supplies the sound. For this meaning, 黸 should be used.",
+      "text": "Black color. Formed from 玄, with abbreviated 旅 indicating the sound. For this meaning, 黸 should be used.",
       "sourceTextSha256": "6650b7fdd4aad2ff90e900fd046519c9652d2dfc1db575299e390d56e695afd1",
       "uncertain": false
     },
     "shuowen:2500": {
-      "text": "To push toward and give. It depicts mutual giving. All graphs in this category contain 予.",
+      "text": "To push toward and give. It depicts mutual giving. All graphs in the 予 group contain 予.",
       "sourceTextSha256": "e5fd5a923bafe8d1fac6ab2490f45e8a5bdf09509e544fc7d245e80cb622ca59",
       "uncertain": false
     }

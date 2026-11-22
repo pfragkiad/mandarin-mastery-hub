@@ -26,12 +26,32 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "45e7cbfa06bb3f2179d8fd441871e226f6397823445b03ca5b79a60f7bc48785",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "006",
   "translations": {
     "shuowen:501": {
-      "text": "Yellow flowers. Formed from 艸, with 黊 indicating the sound. Pronounced like 壞.",
+      "text": "Yellow flowers. Formed from 艸, with 黊 indicating the sound. Read like 壞.",
       "sourceTextSha256": "0bccd9c96a629ac2d6644ba16a7fb0eef445a69e6d68a4e87e87d0967b2326a8",
       "uncertain": false
     },
@@ -46,7 +66,7 @@
       "uncertain": false
     },
     "shuowen:504": {
-      "text": "Abundant flowers. Formed from 艸, with 爾 indicating the sound. The Odes says: “What is that flourishing thing？”",
+      "text": "Abundant flowers. Formed from 艸, with 爾 indicating the sound. The Odes says: “What is that flourishing thing?”",
       "sourceTextSha256": "59082c0adf1426f6d3a944f9be2c12d303a2b4d741900f3ccd6ef3cb439212f0",
       "uncertain": false
     },
@@ -101,9 +121,9 @@
       "uncertain": false
     },
     "shuowen:515": {
-      "text": "The attachment of a melon. Formed from 艸, with 帶 indicating the sound.",
+      "text": "The stalk or attachment at the base of a melon or other fruit (its pedicel). Formed from 艸, with 帶 indicating the sound.",
       "sourceTextSha256": "6a7d94c7c1abdbfacab390ad6da1d64e258a5db627f99ea5c7c92928c212faec",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:516": {
       "text": "Plant roots. Formed from 艸, with 亥 indicating the sound.",
@@ -126,7 +146,7 @@
       "uncertain": false
     },
     "shuowen:520": {
-      "text": "Flowers and leaves spreading out. Formed from 艸, with 傅 indicating the sound. Pronounced like 傅.",
+      "text": "Flowers and leaves spreading out. Formed from 艸, with 傅 indicating the sound. Read like 傅.",
       "sourceTextSha256": "e4bbac58bd0136d54a29e0a30e0f4365c78b2b0101bd83cdca1c01e079da37fe",
       "uncertain": false
     },
@@ -196,7 +216,7 @@
       "uncertain": false
     },
     "shuowen:534": {
-      "text": "芮芮: the appearance of plants growing. Formed from 艸, with 内 indicating the sound. Pronounced like 汭.",
+      "text": "芮芮: the appearance of plants growing. Formed from 艸, with 内 indicating the sound. Read like 汭.",
       "sourceTextSha256": "0bd51996063867708b60f251565bcc33c0c4aa7cf4c0e3e216fc92797d07139c",
       "uncertain": false
     },
@@ -216,9 +236,9 @@
       "uncertain": false
     },
     "shuowen:538": {
-      "text": "Plants covering and spreading. Formed from 艸, with 毛 indicating the sound. The Odes says: “Gather it to left and right.”",
+      "text": "Plants spreading across and covering the ground. Formed from 艸, with 毛 indicating the sound. The Odes says: “Gather and select it to left and right.” [The quotation uses the derived sense of selecting edible plants.]",
       "sourceTextSha256": "885be79520dc2aa36af8371fd2c8121d9fa5e9808b93b27f14d466ca0741e2d6",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:539": {
       "text": "The color of plants. Formed from 艸, with 倉 indicating the sound.",
@@ -226,12 +246,12 @@
       "uncertain": false
     },
     "shuowen:540": {
-      "text": "The appearance of plants receiving the wind. Formed from 艸 and 風. Pronounced like 婪.",
+      "text": "The appearance of plants receiving the wind. Formed from 艸 and 風. Read like 婪.",
       "sourceTextSha256": "92c3b398a377a65ab980c55c5db781215ef0ce1cfe78d7ba04e5f3063c59c709",
       "uncertain": false
     },
     "shuowen:541": {
-      "text": "The appearance of plants. Formed from 艸, with 卒 indicating the sound. Pronounced like 瘁.",
+      "text": "The appearance of plants. Formed from 艸, with 卒 indicating the sound. Read like 瘁.",
       "sourceTextSha256": "87d2744d85877375a4ada3ba3a7ed64254f872df5767548bf84e536a86d180b1",
       "uncertain": false
     },
@@ -301,7 +321,7 @@
       "uncertain": false
     },
     "shuowen:555": {
-      "text": "Stifled or withered. Formed from 艸, with 於 indicating the sound. Another explanation: wilted, 𣨙.",
+      "text": "To wilt, become limp or withered. Formed from 艸, with 於 indicating the sound. Another explanation describes a sickly or languishing condition. [Duan argues that 鬱 in the received text should instead be 𩰪.]",
       "sourceTextSha256": "4fbb6d5d915eb5e266020384ac4dad491248d224d09a44926d0c23295d20a0f9",
       "uncertain": true
     },
@@ -366,9 +386,9 @@
       "uncertain": false
     },
     "shuowen:568": {
-      "text": "To plow ground thick with plants. Formed from 艸 and 耒; 耒 also indicates the sound.",
+      "text": "To plow land thickly overgrown with grass. Formed from 艸 and 耒; 耒 also indicates the sound.",
       "sourceTextSha256": "dfa4d3c08db8593e43295fa607c2fea09f72ffbbf2c3abe9416b65ac463e7fdc",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:569": {
       "text": "Large plants. Formed from 艸, with 致 indicating the sound.",
@@ -376,9 +396,9 @@
       "uncertain": false
     },
     "shuowen:570": {
-      "text": "Plants growing together in enclosing clusters. Formed from 艸, with 斬 indicating the sound. The Documents says: “Plants and trees grow in clusters.” [The precise sense of 蔪苞 is uncertain.]",
+      "text": "Dense plants growing together in intertwining clumps. Formed from 艸, with 斬 indicating the sound. The Documents describes grasses and trees becoming densely intertwined.",
       "sourceTextSha256": "cf400f9359f6d5a9ec9476537533883408c5f4d16334915f8f066e7183f0d4d5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:571": {
       "text": "A road so overgrown with plants that it cannot be traveled. Formed from 艸, with 弗 indicating the sound.",
@@ -486,7 +506,7 @@
       "uncertain": false
     },
     "shuowen:592": {
-      "text": "Crisp pickled mustard. Formed from 艸, with 全 indicating the sound.",
+      "text": "A crisp mustard-green preparation; Duan Yucai relates it to finely chopped mustard greens (芥荃). Formed from 艸, with 全 indicating the sound. [Exact preparation uncertain.]",
       "sourceTextSha256": "966ddd7f4812720b4e1446a7c9cea123f196e7efb79b111c98c9b1f79de99ed2",
       "uncertain": true
     },
@@ -511,7 +531,7 @@
       "uncertain": false
     },
     "shuowen:597": {
-      "text": "Boiled-down 茱萸. Formed from 艸, with 𩕺 indicating the sound. Han regulations: Kuaiji presents one peck of 𧆈.",
+      "text": "A seasoning or food preparation made by cooking 茱萸, the aromatic fruit of edible prickly ash. Formed from 艸, with 𩕺 indicating the sound. The text records a Han-era requirement for Kuaiji to present one dou of it. [The received attribution 漢津 is likely corrupt for 漢律.]",
       "sourceTextSha256": "e2cb6e30e1b3f80e532c3bc6ea1f864059808772a5c6bdea79839d58e872aced",
       "uncertain": true
     },

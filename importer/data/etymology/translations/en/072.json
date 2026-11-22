@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "06f346be28a1f778652e2fec2157081b7f11a3aee7457c8528a98432ed110fc1",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "072",
   "translations": {
@@ -41,32 +61,32 @@
       "uncertain": false
     },
     "shuowen:7103": {
-      "text": "Water veins coursing underground in a flowing manner. From 水, with 夤 as phonetic.",
+      "text": "Water veins coursing underground in a flowing manner. Formed from 水, with 夤 indicating the sound.",
       "sourceTextSha256": "347985ae8e9d3c4a1bcbfd5e7577dde110cd0b6277aeeb6b6ea070b8b888852f",
       "uncertain": false
     },
     "shuowen:7104": {
-      "text": "The appearance of water spreading vast and broad. From 水, with 舀 as phonetic.",
+      "text": "The appearance of water spreading vast and broad. Formed from 水, with 舀 indicating the sound.",
       "sourceTextSha256": "d715ef63c21d91f0a869a281460892d8edf75eaf408f9a46a8e0b183ffc085bc",
       "uncertain": false
     },
     "shuowen:7105": {
-      "text": "A small stream. From 水, with 肙 as phonetic. The Erya says: 'The 汝 is called 涓.'",
+      "text": "A small stream. Formed from 水, with 肙 indicating the sound. The Erya says: 'The 汝 is called 涓.'",
       "sourceTextSha256": "b07695c0f02faf202749a7cff5c0b37248c04e9b8a625c64b00651bb4d89c688",
       "uncertain": false
     },
     "shuowen:7106": {
-      "text": "Abundant flow. From 水, with 昆 as phonetic.",
+      "text": "Abundant flow. Formed from 水, with 昆 indicating the sound.",
       "sourceTextSha256": "12ead0efd78b8ebf0fc70bdb599dd21316584624547f327a89832e677c546feb",
       "uncertain": false
     },
     "shuowen:7107": {
-      "text": "Water broad and surging, as in 潒瀁. From 水, with 象 as phonetic. Read like 蕩.",
+      "text": "Water broad and surging, as in 潒瀁. Formed from 水, with 象 indicating the sound. Read like 蕩.",
       "sourceTextSha256": "4c1de2fee29b520c9b052da08cd78ae9536e572fd3c8dde676d33f95b4bf8f05",
       "uncertain": false
     },
     "shuowen:7108": {
-      "text": "To follow the current. Alternatively, a river's name. From 水, with 𠩺 as phonetic.",
+      "text": "To follow the current. Alternatively, a river's name. Formed from 水, with 𠩺 indicating the sound.",
       "sourceTextSha256": "e149ee1a2afafb16ace99706ce77bf094c49d1c51c41e1fd49c83933f3fcf0f6",
       "uncertain": false
     },
@@ -76,82 +96,82 @@
       "uncertain": false
     },
     "shuowen:7110": {
-      "text": "Deep and clear. From 水, with 肅 as phonetic.",
+      "text": "Deep and clear. Formed from 水, with 肅 indicating the sound.",
       "sourceTextSha256": "e310264dc0fb4d9d8354bda4987a9b14d2584896b4caa510a8e60633619e4352",
       "uncertain": false
     },
     "shuowen:7111": {
-      "text": "A long stream. Alternatively, a river's name. From 水, with 寅 as phonetic.",
+      "text": "A long stream. Alternatively, a river's name. Formed from 水, with 寅 indicating the sound.",
       "sourceTextSha256": "c57c4c6a2f2118aa21b8248d8a1cfbd0200d17b2b5a64c507d98f35fb6523e45",
       "uncertain": false
     },
     "shuowen:7112": {
-      "text": "To flow and disperse. From 水, with 奐 as phonetic.",
+      "text": "To flow and disperse. Formed from 水, with 奐 indicating the sound.",
       "sourceTextSha256": "b8c57901aa5ead45ab1898971780ecb963c0d4f1a2156d42f3975cc5c19c276c",
       "uncertain": false
     },
     "shuowen:7113": {
-      "text": "A confined stream, perhaps. From 水, with 必 as phonetic.",
+      "text": "A rapid or nimble-flowing stream. Formed from 水, with 必 indicating the sound.",
       "sourceTextSha256": "b99da828ba21820fa435cee0c78c27906f1b78ddc5a1c35a5ea06d869643050b",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7114": {
-      "text": "The sound of flowing water. From 水, with 𠯑 as phonetic.",
+      "text": "The sound of flowing water. Formed from 水, with 𠯑 indicating the sound.",
       "sourceTextSha256": "01a863dea1d10ada6dd97c0913e0c01ec7aa94f43011db7cae65e0474329e450",
       "uncertain": false
     },
     "shuowen:7115": {
-      "text": "Water flowing continuously. From 水, with 皆 as phonetic. Alternatively, 湝湝 means cold. The Odes says: 'Wind and rain, cold and continuous.'",
+      "text": "Water flowing continuously. Formed from 水, with 皆 indicating the sound. Alternatively, 湝湝 means cold. The Odes says: 'Wind and rain, cold and continuous.'",
       "sourceTextSha256": "f02b0198a03d8ed389122c797b4887b8df26e4600b08565dd2347ddc84b69ca4",
       "uncertain": false
     },
     "shuowen:7116": {
-      "text": "Water flowing continuously. From 水, with 玄 as phonetic. There is a 泫氏 county in 上黨.",
+      "text": "Water flowing continuously. Formed from 水, with 玄 indicating the sound. There is a 泫氏 county in 上黨.",
       "sourceTextSha256": "c0dfd4f320a903dffc74f8115d8019204a66a1976c5c8566056393a7956b34c7",
       "uncertain": false
     },
     "shuowen:7117": {
-      "text": "The appearance of flowing water. From 水, with abbreviated 彪 as phonetic. The Odes says: 'The 淲沱 flows north.'",
+      "text": "The appearance of flowing water. Formed from 水, with abbreviated 彪 indicating the sound. The Odes says: 'The 淲沱 flows north.'",
       "sourceTextSha256": "0497293bed4a79f2123f20f0c78e39f411c9d08b2b9e3b7f59145c65cb46ca4c",
       "uncertain": false
     },
     "shuowen:7118": {
-      "text": "A swift stream. From 水, with 或 as phonetic.",
+      "text": "A swift stream. Formed from 水, with 或 indicating the sound.",
       "sourceTextSha256": "64a9cf5172558f564c30088cd2f6ad4a78c7ba5db86ea5b71b8fae822303a998",
       "uncertain": false
     },
     "shuowen:7119": {
-      "text": "The appearance of clear flowing water. From 水, with 劉 as phonetic. The Odes says: 'How clear it flows!'",
+      "text": "The appearance of clear flowing water. Formed from 水, with 劉 indicating the sound. The Odes says: 'How clear it flows!'",
       "sourceTextSha256": "ee3284e4790372dbbfff8aa3705e45ed05e57afeffb74786149a37c845b5acd7",
       "uncertain": false
     },
     "shuowen:7120": {
-      "text": "To obstruct a stream. From 水, with 薉 as phonetic. The Odes says: 'Set the nets across the obstructed flow.'",
+      "text": "The turbulent, splashing movement of water where nets hinder but do not stop its flow. Formed from 水, with 薉 indicating the sound. The Odes describes fishing nets set amid rushing water. [Duan argues the true headword and poem variant are 濊 rather than the transmitted 𤃴.]",
       "sourceTextSha256": "35b1c858e9308fa42038009c9880aa2d8c6eb2380e517c012d37178265a4fb92",
       "uncertain": true
     },
     "shuowen:7121": {
-      "text": "Copious. From 水, with 㫄 as phonetic.",
+      "text": "Copious. Formed from 水, with 㫄 indicating the sound.",
       "sourceTextSha256": "c1df3146bfe244e6b5e8aca2f77f312824253e13f3191c68b73860cecb6006c7",
       "uncertain": false
     },
     "shuowen:7122": {
-      "text": "Deep and broad. From 水, with 王 as phonetic. Alternatively, 汪 is a pool.",
+      "text": "Deep and broad. Formed from 水, with 王 indicating the sound. Alternatively, 汪 is a pool.",
       "sourceTextSha256": "ba44db3d0a45782831a5ba93b6231f103e5465d4948a6e08339420794fdf0048",
       "uncertain": false
     },
     "shuowen:7123": {
-      "text": "Clear and deep. From 水, with 翏 as phonetic.",
+      "text": "Clear and deep. Formed from 水, with 翏 indicating the sound.",
       "sourceTextSha256": "4d309c9f02ff16e2efe0d12887511965374f280ec1e8d593c6789956176fb419",
       "uncertain": false
     },
     "shuowen:7124": {
-      "text": "Clear. From 水, with 此 as phonetic.",
+      "text": "Clear. Formed from 水, with 此 indicating the sound.",
       "sourceTextSha256": "f873b577ae3a8c8ff892f31cb1ca49be24678525a4d2b6bb962b2de03f4c4bf3",
       "uncertain": false
     },
     "shuowen:7125": {
-      "text": "Cold water. From 水, with 兄 as phonetic.",
+      "text": "Cold water. Formed from 水, with 兄 indicating the sound.",
       "sourceTextSha256": "3111254b128489047414d34ff324f4ccfa948610486f7039d093be668ba77dd2",
       "uncertain": false
     },
@@ -161,22 +181,22 @@
       "uncertain": false
     },
     "shuowen:7127": {
-      "text": "The appearance of floating. From 水, with 凡 as phonetic.",
+      "text": "The appearance of floating. Formed from 水, with 凡 indicating the sound.",
       "sourceTextSha256": "0b4bc4d1cfc550870f928d58dc586e0a3f9c6ef2df05708e5d16ef474a511e5c",
       "uncertain": false
     },
     "shuowen:7128": {
-      "text": "A swirling stream. From 水, with 云 as phonetic. Read like 混.",
+      "text": "A swirling stream. Formed from 水, with 云 indicating the sound. Read like 混.",
       "sourceTextSha256": "f23954d1d8bad46165d5d2c0b72259a9dca5564f0d4d4345714d7674c25e1d5c",
       "uncertain": false
     },
     "shuowen:7129": {
-      "text": "To pour or inundate. From 水, with 告 as phonetic. The Book of Yu says: 'The floodwaters are vast and overflowing.'",
+      "text": "To pour or inundate. Formed from 水, with 告 indicating the sound. The Book of Yu says: 'The floodwaters are vast and overflowing.'",
       "sourceTextSha256": "b8b86d20e97e1592a8f7f655964660a09508176df605b1f452bfe9894c676b91",
       "uncertain": false
     },
     "shuowen:7130": {
-      "text": "莽沆 means vast waters. From 水, with 亢 as phonetic. Alternatively, the appearance of a great marsh.",
+      "text": "莽沆 means vast waters. Formed from 水, with 亢 indicating the sound. Alternatively, the appearance of a great marsh.",
       "sourceTextSha256": "9abee5dff1c9fb45cbac2a14f75618820dd0bb4f51a688f918eb0bc8e3fea0ff",
       "uncertain": false
     },
@@ -186,27 +206,27 @@
       "uncertain": false
     },
     "shuowen:7132": {
-      "text": "The sound of water suddenly arriving. From 水, with 鼻 as phonetic.",
+      "text": "The sound of water suddenly arriving. Formed from 水, with 鼻 indicating the sound.",
       "sourceTextSha256": "4dabc097e40e98e1f4ea422a7b483922c0a213b8ce6ae6a80b3044d052c34ed1",
       "uncertain": false
     },
     "shuowen:7133": {
-      "text": "A faint sound of water. From 水, with 爵 as phonetic.",
+      "text": "A faint sound of water. Formed from 水, with 爵 indicating the sound.",
       "sourceTextSha256": "eb0ef8dfff68817b984705d982e3b55bea6bf51ce591a18a7cda7af84256f68a",
       "uncertain": false
     },
     "shuowen:7134": {
-      "text": "The sound of rushing water. From 水, with 翕 as phonetic.",
+      "text": "The sound of rushing water. Formed from 水, with 翕 indicating the sound.",
       "sourceTextSha256": "d84176afc56cc3ef08ac377331f6aeaed87a967b088cc88e4e6c97fcf2f6ea93",
       "uncertain": false
     },
     "shuowen:7135": {
-      "text": "Water leaping and surging. From 水, with 朕 as phonetic.",
+      "text": "Water leaping and surging. Formed from 水, with 朕 indicating the sound.",
       "sourceTextSha256": "759bc8a23939c0b6321ef1b3bf45c75103f0a46b72a35820098e7c42b6430c38",
       "uncertain": false
     },
     "shuowen:7136": {
-      "text": "To gush out. Alternatively, a man-made shoal in water is called 潏. Another explanation: the 潏 river is in 杜陵, 京兆. From 水, with 矞 as phonetic.",
+      "text": "To gush out. Alternatively, a man-made shoal in water is called 潏. Another explanation: the 潏 river is in 杜陵, 京兆. Formed from 水, with 矞 indicating the sound.",
       "sourceTextSha256": "0c01d9595b95f03894a6b0a370a4a3382243a528320d6d2b763882cbec753199",
       "uncertain": false
     },
@@ -216,182 +236,182 @@
       "uncertain": false
     },
     "shuowen:7138": {
-      "text": "Water surging and flowing. From 水, with 皮 as phonetic.",
+      "text": "Water surging and flowing. Formed from 水, with 皮 indicating the sound.",
       "sourceTextSha256": "e2e8dd9fbcfad47e0a1027b0f5f451a1b2e85e4515d1ebde61455ab39eafc3d3",
       "uncertain": false
     },
     "shuowen:7139": {
-      "text": "A great wave in the 江 is called 澐. From 水, with 雲 as phonetic.",
+      "text": "A great wave in the 江 is called 澐. Formed from 水, with 雲 indicating the sound.",
       "sourceTextSha256": "e5884b29e55c4bd67d8cd1dcfdda375ac6ffd9b61a0b56ce6978a34f7f504465",
       "uncertain": false
     },
     "shuowen:7140": {
-      "text": "A great wave is called 瀾. From 水, with 闌 as phonetic.",
+      "text": "A great wave is called 瀾. Formed from 水, with 闌 indicating the sound.",
       "sourceTextSha256": "0b51c2a2698187004d85858065dbc2164e02eb2896b9e047d11a339a57b25b75",
       "uncertain": false
     },
     "shuowen:7141": {
-      "text": "A small wave is called 淪. From 水, with 侖 as phonetic. The Odes says: 'The 河's waters are clear and rippling.' Alternatively, to submerge.",
+      "text": "A small wave is called 淪. Formed from 水, with 侖 indicating the sound. The Odes says: 'The 河's waters are clear and rippling.' Alternatively, to submerge.",
       "sourceTextSha256": "49e3b93a5db9a8c463f20a135da3dc5960c896e8c10eb41a081bc74aea8250c3",
       "uncertain": false
     },
     "shuowen:7142": {
-      "text": "To float. From 水, with 票 as phonetic.",
+      "text": "To float. Formed from 水, with 票 indicating the sound.",
       "sourceTextSha256": "aebc0a0089a686e66fe525ad8cdcee89c23d299a6d33b2e33e7929cfac067014",
       "uncertain": false
     },
     "shuowen:7143": {
-      "text": "To float or spread over water. From 水, with 孚 as phonetic.",
+      "text": "To float or spread over water. Formed from 水, with 孚 indicating the sound.",
       "sourceTextSha256": "a6bf5ffe47cf158a27c79a7d805b98de0d0446184aa248fcc246590f47987b84",
       "uncertain": false
     },
     "shuowen:7144": {
-      "text": "To overflow. From 水, with 監 as phonetic. Alternatively, wetting above and reaching below. The Odes says: 'A welling, boiling, overflowing spring.' Alternatively, clear.",
+      "text": "To overflow or spread broadly. Another meaning is to soak downward from above. A further separate meaning is “clear.” Formed from 水, with 監 indicating the sound. The Odes describes a spring bubbling up and overflowing.",
       "sourceTextSha256": "01bd49c06c0ccaec74518c0cd8c1664f0cf0df76ecf73b41285d3be1b2f0d0ae",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:7145": {
-      "text": "To overflow. From 水, with 㔾 as phonetic.",
+      "text": "To overflow. Formed from 水, with 㔾 indicating the sound.",
       "sourceTextSha256": "f45de914e6c63b6960d35fbe4669d116492b3c8c6085499413c3277a75e4db93",
       "uncertain": false
     },
     "shuowen:7146": {
-      "text": "The appearance of depth below. From 水, with 弘 as phonetic.",
+      "text": "The appearance of depth below. Formed from 水, with 弘 indicating the sound.",
       "sourceTextSha256": "84e87caa1f3435a72c84d67536dc23b07aeeab6df4fdf335cc24c6194f705b93",
       "uncertain": false
     },
     "shuowen:7147": {
-      "text": "To circle back. From 水, with 韋 as phonetic.",
+      "text": "To circle back. Formed from 水, with 韋 indicating the sound.",
       "sourceTextSha256": "b5ef7b77bcb95a0dd33509a739dc87d5438719157de40dac7f8fd200b076eaec",
       "uncertain": false
     },
     "shuowen:7148": {
-      "text": "The extent of depth. From 水, with 則 as phonetic.",
+      "text": "The extent of depth. Formed from 水, with 則 indicating the sound.",
       "sourceTextSha256": "c7760b2ed7780d275c2cdcf75fd82cd48c9ce29149730c15f87856e27cdeda3f",
       "uncertain": false
     },
     "shuowen:7149": {
-      "text": "Swift rapids. From 水, with 耑 as phonetic.",
+      "text": "Swift rapids. Formed from 水, with 耑 indicating the sound.",
       "sourceTextSha256": "262d6233b855c8b8e94b246df7bf2bc93c33de49930f44a2dd4d44145299e0d5",
       "uncertain": false
     },
     "shuowen:7150": {
-      "text": "The sound of water. From 水, with 宗 as phonetic.",
+      "text": "The sound of water. Formed from 水, with 宗 indicating the sound.",
       "sourceTextSha256": "cb24d10848d6b5ec043f1c9da4c94234d67779ac320a958d1b0172d00d1fdd61",
       "uncertain": false
     },
     "shuowen:7151": {
-      "text": "Swift waves caused by water meeting an obstruction and turning aside. From 水, with 敫 as phonetic. Alternatively, to block halfway.",
+      "text": "Swift waves caused by water meeting an obstruction and turning aside. Formed from 水, with 敫 indicating the sound. Alternatively, to block halfway.",
       "sourceTextSha256": "3e2eab9558e2896dd999e14ed0e572d28862eb26de49263c2fd2117d717eefb5",
       "uncertain": false
     },
     "shuowen:7152": {
-      "text": "A swift stream. From 水, with 同 as phonetic.",
+      "text": "A swift stream. Formed from 水, with 同 indicating the sound.",
       "sourceTextSha256": "e2a9e9540a47acd430024f58c9be937447e6c8acd570953799f03440c842f78f",
       "uncertain": false
     },
     "shuowen:7153": {
-      "text": "A great wave. From 水, with 旛 as phonetic.",
+      "text": "A great wave. Formed from 水, with 旛 indicating the sound.",
       "sourceTextSha256": "3c89b14f01debc9d5ab73a3506c5d176644e8e5d8f41cacaae1e6cbc5ad05c3b",
       "uncertain": false
     },
     "shuowen:7154": {
-      "text": "To surge. From 水, with 匈 as phonetic.",
+      "text": "To surge. Formed from 水, with 匈 indicating the sound.",
       "sourceTextSha256": "b7e7898facf001d653bd19d8d533c627e97559df3520c10c7d55ac1708011931",
       "uncertain": false
     },
     "shuowen:7155": {
-      "text": "To surge upward. From 水, with 甬 as phonetic. Alternatively, the 涌 river is in Chu.",
+      "text": "To surge upward. Formed from 水, with 甬 indicating the sound. Alternatively, the 涌 river is in Chu.",
       "sourceTextSha256": "4fc298a6c8c150d00e20328aa7103df85c3b250cc9db9d08c6f9d9bf092bf235",
       "uncertain": false
     },
     "shuowen:7156": {
-      "text": "湁湒 means boiling or bubbling, as in 𩰾. From 水, with 拾 as phonetic.",
+      "text": "湁湒 means boiling or bubbling, as in 𩰾. Formed from 水, with 拾 indicating the sound.",
       "sourceTextSha256": "3561b1cec5241b2a36a928152c8289e235776ae02c549b180eb571c35316bb37",
       "uncertain": true
     },
     "shuowen:7157": {
-      "text": "To flow straight. From 水, with 空 as phonetic.",
+      "text": "To flow straight. Formed from 水, with 空 indicating the sound.",
       "sourceTextSha256": "df65b37185f654d1b07f6e30dd2c7487444ea794efd504d7150d2f5f88b60a0e",
       "uncertain": false
     },
     "shuowen:7158": {
-      "text": "The sound of splashing water. From 水, with 勺 as phonetic. A well that alternately has and lacks water is called 瀱汋.",
+      "text": "The sound of splashing water. Formed from 水, with 勺 indicating the sound. A well that alternately has and lacks water is called 瀱汋.",
       "sourceTextSha256": "2522287dd665bac148c509ff6a8db4d2553b9e12b77171050642706aaa51f6ed",
       "uncertain": false
     },
     "shuowen:7159": {
-      "text": "A well that alternately has and lacks water is called 瀱汋. From 水, with 罽 as phonetic.",
+      "text": "A well that alternately has and lacks water is called 瀱汋. Formed from 水, with 罽 indicating the sound.",
       "sourceTextSha256": "d8588c601449c7696776318edddb2bd3280f887cb75ac682c1e99403abfb3db9",
       "uncertain": false
     },
     "shuowen:7160": {
-      "text": "The sound of mixed, rushing streams. From 水, with 軍 as phonetic. Alternatively, a low-lying, sunken appearance.",
+      "text": "The sound of mixed, rushing streams. Formed from 水, with 軍 indicating the sound. Alternatively, a low-lying, sunken appearance.",
       "sourceTextSha256": "3fb171547a1018b9a734ae8fd8176555ba876218ff84055ef1beee494075327e",
       "uncertain": false
     },
     "shuowen:7161": {
-      "text": "Clear water. From 水, with 列 as phonetic. The Changes says: 'The well is clear; its cold spring is fit to drink.'",
+      "text": "Clear water. Formed from 水, with 列 indicating the sound. The Changes says: 'The well is clear; its cold spring is fit to drink.'",
       "sourceTextSha256": "98b857411bf9bb0acf0b7d9d35c6966716e5f400e451c90d4377ac12f12b68a0",
       "uncertain": false
     },
     "shuowen:7162": {
-      "text": "Clear and deep. From 水, with 叔 as phonetic.",
+      "text": "Clear and deep. Formed from 水, with 叔 indicating the sound.",
       "sourceTextSha256": "a688d146c65a0ba9218f5a7f1f706caad021355f9bfe56443a8a524db87440cb",
       "uncertain": false
     },
     "shuowen:7163": {
-      "text": "Abundant water. From 水, with 容 as phonetic.",
+      "text": "Abundant water. Formed from 水, with 容 indicating the sound.",
       "sourceTextSha256": "8c06a218364f9026c6eb39ebcc89794ed58da2f90365eefb71626dd7679bae0c",
       "uncertain": false
     },
     "shuowen:7164": {
-      "text": "Clear. From 水, with abbreviated 徵 as phonetic.",
+      "text": "Clear. Formed from 水, with abbreviated 徵 indicating the sound.",
       "sourceTextSha256": "fd83f6c332e9cf9e66e40e82424f63fda378b8fce29a232601f35f818df3e2fe",
       "uncertain": false
     },
     "shuowen:7165": {
-      "text": "Bright; the appearance of settled, clear water. From 水, with 青 as phonetic.",
+      "text": "Bright; the appearance of settled, clear water. Formed from 水, with 青 indicating the sound.",
       "sourceTextSha256": "6bd33cf58d1de65e8e193117daf8f4f8308887214faf6dceda55a0c138252587",
       "uncertain": false
     },
     "shuowen:7166": {
-      "text": "Water clear enough to see the bottom. From 水, with 是 as phonetic. The Odes says: 'Clear where it rests.'",
+      "text": "Water clear enough to see the bottom. Formed from 水, with 是 indicating the sound. The Odes says: 'Clear where it rests.'",
       "sourceTextSha256": "5a85eb648fe3e688f67264a78340bfc9b04d76c3fc949e14b3f1e333350c8950",
       "uncertain": false
     },
     "shuowen:7167": {
-      "text": "The appearance of water flowing broadly and gently. From 水, with 閔 as phonetic.",
+      "text": "The appearance of water flowing broadly and gently. Formed from 水, with 閔 indicating the sound.",
       "sourceTextSha256": "285d4c57c31bc5d9f866e58ce9620add6c1b0ec1aa40d8800b48c4adb4421de6",
       "uncertain": true
     },
     "shuowen:7168": {
-      "text": "To filter downward. From 水, with 參 as phonetic.",
+      "text": "To filter downward. Formed from 水, with 參 indicating the sound.",
       "sourceTextSha256": "6bfa785a7b8e64f1e53e3b4dcc4ee688316403c1ab647c73fd01b73be87505a5",
       "uncertain": false
     },
     "shuowen:7169": {
-      "text": "Stagnant and turbid. From 水, with 圍 as phonetic.",
+      "text": "Stagnant and turbid. Formed from 水, with 圍 indicating the sound.",
       "sourceTextSha256": "5a550955539556cc0a431348034e264395c2bcdc3a3ba2156d669a4c9d3e6952",
       "uncertain": false
     },
     "shuowen:7170": {
-      "text": "Confused. Alternatively, the appearance of turbid water. From 水, with 圂 as phonetic.",
+      "text": "Confused. Alternatively, the appearance of turbid water. Formed from 水, with 圂 indicating the sound.",
       "sourceTextSha256": "1bbfa2057f9f082f210433834a738b9e3d0ca7972cdd59c072a9dc50477443ae",
       "uncertain": false
     },
     "shuowen:7171": {
-      "text": "Turbid. From 水, with 屈 as phonetic. Alternatively, thick mud; alternatively, the appearance of water emerging.",
+      "text": "Turbid. Formed from 水, with 屈 indicating the sound. Alternatively, thick mud; alternatively, the appearance of water emerging.",
       "sourceTextSha256": "fae6b65fd3af6db8d2caf2b0b2bd65d7fb3a7d1b9dfb86a5741d7eb003f8c8dd",
       "uncertain": false
     },
     "shuowen:7172": {
-      "text": "A swirling spring. From 水, with abbreviated 旋 as phonetic.",
+      "text": "A swirling spring. Formed from 水, with abbreviated 旋 indicating the sound.",
       "sourceTextSha256": "a2ace9b8568bb43759d73cfba8f6a16aac77225be02c29d4b5c77c3eff9b3ea6",
       "uncertain": false
     },
     "shuowen:7173": {
-      "text": "Deep. From 水, with 崔 as phonetic. The Odes says: 'There is a deep pool.'",
+      "text": "Deep. Formed from 水, with 崔 indicating the sound. The Odes says: 'There is a deep pool.'",
       "sourceTextSha256": "d5cebb82e035b90b798ff082de1cd1636b4a884b9eec061be43a61966417953f",
       "uncertain": false
     },
@@ -401,132 +421,132 @@
       "uncertain": false
     },
     "shuowen:7175": {
-      "text": "Full. From 水, with 爾 as phonetic.",
+      "text": "Full. Formed from 水, with 爾 indicating the sound.",
       "sourceTextSha256": "db5a21a89f292232f406ebee720827dcaab67ef321b8b8fb6b8621f25e9d8911",
       "uncertain": false
     },
     "shuowen:7176": {
-      "text": "Water swaying. From 水, with 詹 as phonetic.",
+      "text": "Water swaying. Formed from 水, with 詹 indicating the sound.",
       "sourceTextSha256": "ce3cc603aceef9c101b469a61108808f55f803f1df06609bdcd8587cd45b5ed9",
       "uncertain": false
     },
     "shuowen:7177": {
-      "text": "Depth beside the bank. From 水, with 尋 as phonetic.",
+      "text": "Depth beside the bank. Formed from 水, with 尋 indicating the sound.",
       "sourceTextSha256": "1357019c0dc70f3f3e76ea783d656fb8d20a4bb28b105ea5a7aef584fd4f0b2d",
       "uncertain": true
     },
     "shuowen:7178": {
-      "text": "A valley. From 水, with 平 as phonetic.",
+      "text": "A valley. Formed from 水, with 平 indicating the sound.",
       "sourceTextSha256": "94efc9cde027c44e8ac8313c55b3bb46bedb220bd37b40266f02d57b1bda0f16",
       "uncertain": false
     },
     "shuowen:7179": {
-      "text": "The appearance of water. From 水, with 出 as phonetic. Read like 窋.",
+      "text": "The appearance of water. Formed from 水, with 出 indicating the sound. Read like 窋.",
       "sourceTextSha256": "b05a4141472cd70ee5859f3b818978d78aaaf5efa7e266cbfd7d8126dfa42b18",
       "uncertain": false
     },
     "shuowen:7180": {
-      "text": "Water arriving. From 水, with 薦 as phonetic. Read like 尊.",
+      "text": "Water arriving. Formed from 水, with 薦 indicating the sound. Read like 尊.",
       "sourceTextSha256": "8ff7d19d36a39ad841adc99d2a060ae06ba01d1075233ba91ef0eb2a62862a83",
       "uncertain": false
     },
     "shuowen:7181": {
-      "text": "Soil becoming wet and sodden with water. From 水, with 𥏼 as phonetic. Read like 䵂.",
+      "text": "Soil becoming wet and sodden with water. Formed from 水, with 𥏼 indicating the sound. Read like 䵂.",
       "sourceTextSha256": "a6fa671b62d73607cdb1a67ab870b9f2f9cc2d114b23c3cd3d1d7483928592dd",
       "uncertain": false
     },
     "shuowen:7182": {
-      "text": "Full and overflowing. From 水, with 㒼 as phonetic.",
+      "text": "Full and overflowing. Formed from 水, with 㒼 indicating the sound.",
       "sourceTextSha256": "312b8821ed24ded9f17d587cdbd966df3c465019739dc095b69b73a61551693b",
       "uncertain": false
     },
     "shuowen:7183": {
-      "text": "Smooth. From 水, with 骨 as phonetic.",
+      "text": "Smooth. Formed from 水, with 骨 indicating the sound.",
       "sourceTextSha256": "6ad99801d2c6ee8705759860d21df17a551f10c91f44f96f2f31931be979e992",
       "uncertain": false
     },
     "shuowen:7184": {
-      "text": "Not smooth. From 水, with 嗇 as phonetic.",
+      "text": "Not smooth. Formed from 水, with 嗇 indicating the sound.",
       "sourceTextSha256": "e6dc85b4e877c5de60d50d2c998bbd2eaf367768bb3d8075af95b59e54191cff",
       "uncertain": false
     },
     "shuowen:7185": {
-      "text": "Glossy and moist. From 水, with 睪 as phonetic.",
+      "text": "Glossy and moist. Formed from 水, with 睪 indicating the sound.",
       "sourceTextSha256": "b71633b4d7e8fae03ab8e20ddeb1d358434987371de47a6a7541363dc8e6e56f",
       "uncertain": false
     },
     "shuowen:7186": {
-      "text": "To seep gradually along the grain. From 水, with 㸒 as phonetic. Alternatively, prolonged rain is called 淫.",
+      "text": "To seep gradually along the grain. Formed from 水, with 㸒 indicating the sound. Alternatively, prolonged rain is called 淫.",
       "sourceTextSha256": "ef0391925a1bbd18609acc6f9b5bd6a873def9d8bbb41b7d2084e84d3be26410",
       "uncertain": false
     },
     "shuowen:7187": {
-      "text": "To soak. From 水, with 韱 as phonetic. The Erya says: 'A spring that appears intermittently is called 瀸.'",
+      "text": "To soak. Formed from 水, with 韱 indicating the sound. The Erya says: 'A spring that appears intermittently is called 瀸.'",
       "sourceTextSha256": "1373f295c7f5156c4db3f3e716b096b4c105ae356ea28d001c40fd6e26e916bd",
       "uncertain": false
     },
     "shuowen:7188": {
-      "text": "Water sweeping out and overflowing. From 水, with 失 as phonetic.",
+      "text": "Water sweeping out and overflowing. Formed from 水, with 失 indicating the sound.",
       "sourceTextSha256": "ea079c7fc97b27b1ca3c5242e037305454dbf8cd909e3bdf3aa3459b1a9710b2",
       "uncertain": false
     },
     "shuowen:7189": {
-      "text": "To leak. From 水, with 貴 as phonetic.",
+      "text": "To leak. Formed from 水, with 貴 indicating the sound.",
       "sourceTextSha256": "7d2f5dcc16e199f2356f3c7d476e6f0fc4b06bea10e1265cc144bfcb59ff94dc",
       "uncertain": false
     },
     "shuowen:7190": {
-      "text": "Water failing to flow properly. From 水, with 㐱 as phonetic. The Commentary on the Five Phases says: 'When its harmful influence arises.'",
+      "text": "Water failing to flow properly. Formed from 水, with 㐱 indicating the sound. The Commentary on the Five Phases says: 'When its harmful influence arises.'",
       "sourceTextSha256": "dddee3dbad79221234f99f7a02b1bed4a8e3560c6801020d24b91b29c696ab2a",
       "uncertain": true
     },
     "shuowen:7191": {
-      "text": "Not deep. From 水, with 戔 as phonetic.",
+      "text": "Not deep. Formed from 水, with 戔 indicating the sound.",
       "sourceTextSha256": "82d8f1a31623591c440d6a33c677a50c521acf31bcbc31cb3cca156ccad7309f",
       "uncertain": false
     },
     "shuowen:7192": {
-      "text": "Water that has temporarily risen and stopped, not yet receding. From 水, with 寺 as phonetic.",
+      "text": "Water that has temporarily risen and stopped, not yet receding. Formed from 水, with 寺 indicating the sound.",
       "sourceTextSha256": "d1272c895c4d07582d3907a54703ed20322b1d71f6ec2c2cd77ca046f956cde3",
       "uncertain": false
     },
     "shuowen:7193": {
-      "text": "To diminish slightly. Alternatively, a water gate. Also, water emerging before a hill is called 渻丘. From 水, with 省 as phonetic.",
+      "text": "To diminish slightly. Alternatively, a water gate. Also, water emerging before a hill is called 渻丘. Formed from 水, with 省 indicating the sound.",
       "sourceTextSha256": "d15a6e0e6c2e6544fe6ed7ad5f6248e87a2087181552fd6db4db62bf54460249",
       "uncertain": false
     },
     "shuowen:7194": {
-      "text": "Mud. From 水, with 卓 as phonetic.",
+      "text": "Mud. Formed from 水, with 卓 indicating the sound.",
       "sourceTextSha256": "fbd15ec6dd1c890fddeead37bbfe8b65683645d9a855727e1d46e1df90166174",
       "uncertain": false
     },
     "shuowen:7195": {
-      "text": "Slightly damp. From 水, with 翠 as phonetic.",
+      "text": "Slightly damp. Formed from 水, with 翠 indicating the sound.",
       "sourceTextSha256": "4869b33c42c063a519e22dda5d8efa917ded26595e02d6c3694c15144aeee76c",
       "uncertain": false
     },
     "shuowen:7196": {
-      "text": "Humid heat. From 水, with 辱 as phonetic.",
+      "text": "Humid heat. Formed from 水, with 辱 indicating the sound.",
       "sourceTextSha256": "46d0d80a3bf78f57ab6540721dda9910ba0dde6da8118157b14745c15d694719",
       "uncertain": false
     },
     "shuowen:7197": {
-      "text": "Black earth in water. From 水 and 土, with 日 as phonetic.",
+      "text": "Black earth in water. Formed from 水 and 土, with 日 indicating the sound.",
       "sourceTextSha256": "128088981dbbe532ebaebbea3295108fe948f29364d39c1242001c815c9c1999",
       "uncertain": false
     },
     "shuowen:7198": {
-      "text": "To increase. From 水, with 兹 as phonetic. Alternatively, the 滋 river rises in 白陘 valley at Mount 牛飲 and flows east into the 呼沱.",
+      "text": "To increase. Formed from 水, with 兹 indicating the sound. Alternatively, the 滋 river rises in 白陘 valley at Mount 牛飲 and flows east into the 呼沱.",
       "sourceTextSha256": "e75d895f509abd6b18b39ddc8e94ad746e9897019974e2b1d8009aba311f7280",
       "uncertain": false
     },
     "shuowen:7199": {
-      "text": "A dark blue-black color. From 水, with 曶 as phonetic.",
+      "text": "A dark blue-black color. Formed from 水, with 曶 indicating the sound.",
       "sourceTextSha256": "dc7cc192b9f2ec316ef0a693d88b1c1e7c9379f2733dce0f23cb7f6aac37d89f",
       "uncertain": false
     },
     "shuowen:7200": {
-      "text": "Wet. From 水, with 邑 as phonetic.",
+      "text": "Wet. Formed from 水, with 邑 indicating the sound.",
       "sourceTextSha256": "a398c947feb03a429023de82297f588e1620b4e809314672471827f3fdd7d25c",
       "uncertain": false
     }

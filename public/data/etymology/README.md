@@ -114,12 +114,54 @@ original fields/commentary stay in the archived sources. Japanese readings,
 shinjitai, Shuowen indexes/components and seal-font codes are not imported as
 Mandarin pronunciation, catalogue identity, graphical decomposition or geometry.
 
-The handoff packaging version is `1.1.0`; the independent translation layer is
-`1.0.0`, and the JSON envelope `schemaVersion` remains `1`. The source collection's
+The handoff packaging version is `1.3.0`; the independent translation layer is
+`1.2.0`, and the JSON envelope `schemaVersion` remains `1`. The source collection's
 own version/revision is preserved separately. Regeneration requires complete
 English coverage of the 9,833 original Shuowen IDs, including source-only forms.
 Translation fields remain additive/optional in schema version 1 for older
-payloads; the `1.1.0` generator and coverage tests require the complete new layer.
+payloads; the current generator and coverage tests require the complete layer.
+
+The [supplied partial editorial review](../../../importer/data/etymology/translations/review/README.md)
+changes 1,938 English drafts and clears 16 flags, leaving 899 uncertain at that stage. It is
+not full scholarly certification. Changed entries have `translation.editorialReview`
+with a review ID, explicit partial status and changed-field list. For 28 entries,
+`sourceReading` preserves the review's alternative Chinese headword/text, its
+own text SHA-256, supplied classification, rationale and evidence URLs. The
+original `entry.headword`, `entry.text`, source locators and associations remain
+untouched. English stays hash-bound to that original source entry; an explicit
+editorial reading has its own hash, checked separately by the browser.
+
+Show partial-review wording for corrected entries, not “fully verified” or a
+blanket claim that every draft was reviewed. Explain when English follows an
+editorial Chinese reading, show both readings under Advanced, and explicitly
+identify the seven changed review headwords. Do not silently reuse the corrected
+headword for library links, pronunciations or associations. Citation URLs remain
+evidence metadata. Root `translation_layer.editorial_review` records the review
+archive hash and scope/counts; the complete ZIP is an importer-only input.
+
+Its optional `editorial_review.followup` records the later 884-entry uncertainty
+extract and six additional English edits. All included flags remain uncertain;
+15 other uncertain IDs were omitted, so that stage retained 899. Changed entries
+can have the follow-up review ID without changing the partial-review status.
+Both raw ZIPs and the omission list remain in the importer review inputs.
+
+`editorial_review.followup.full_review` records the subsequently supplied complete
+v2 file: 11 further English edits and 15 explicitly cleared flags, leaving the
+total at **884** at that stage. Its full-file hash and the resolved IDs are preserved
+in the importer inputs; its uncertain keys/English must match the subset exactly.
+Cleared flags reflect the supplied individual editorial decisions and never
+promote the whole corpus to verified. All earlier source-reading apparatus stays
+attached, with original Chinese and catalogue identities unchanged.
+
+`editorial_review.external_v3` records the next supplied pass: 222 reported checked
+cases, 166 English revisions, 109 cleared flags, and **775 currently uncertain**.
+Of those, 113 were checked but remain unresolved and 662 were not checked this
+pass. `editorialReview.caseEvidence` retains the decision/reason/URLs for the 222
+checked entries; the `review-assessment` change kind also records unchanged
+checked cases. These are attributed reviewer assessments, not corpus-wide or
+modern paleographic verification. No review pinyin becomes lexical pronunciation.
+Reasons are shown under Advanced with the original Chinese; evidence URLs stay
+metadata. The supplied archive and all case details remain importer-only inputs.
 
 Render source text as text, preserving notation, punctuation and cross-reference
 markers such as Howell's `#`. Do not execute markup, feed historical wording into

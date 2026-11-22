@@ -30,8 +30,15 @@ const indexSchema = z.object({ format: z.literal('mandarin-etymology-index'), sc
   shards: z.record(z.string(), z.object({ sha256: checksum, bytes: z.number().int().positive() }).passthrough()),
   records: z.record(z.string(), recordTarget), radicalForms: z.record(z.string(), formTarget) });
 export type EtymologyIndex = z.infer<typeof indexSchema>;
+const editorialReviewSchema = z.object({ reviewId: z.string().min(1), status: z.literal('partial-editorial-review'),
+  changes: z.array(z.enum(['translation', 'uncertainty', 'source-reading', 'review-assessment'])).min(1),
+  sourceReading: z.object({ headword: z.string().min(1), text: z.string(), textSha256: checksum,
+    classification: z.string().min(1), note: z.string().min(1), evidenceUrls: z.array(z.string().url()) }).optional(),
+  caseEvidence: z.object({ decision: z.enum(['clear', 'checked_retained', 'revised_retained']),
+    checkedInSuppliedReview: z.literal(true), reviewerNote: z.string().min(1), sourceUrls: z.array(z.string().url()).min(1) }).optional() });
 const translationSchema = z.object({ language: z.literal('en'), text: z.string().min(1), method: z.literal('ai-generated'),
-  reviewStatus: z.literal('unreviewed-ai-draft'), sourceTextSha256: checksum, uncertain: z.boolean() });
+  reviewStatus: z.literal('unreviewed-ai-draft'), sourceTextSha256: checksum, uncertain: z.boolean(),
+  editorialReview: editorialReviewSchema.optional() });
 const entrySchema = z.object({ id: z.string(), sourceId: z.enum(['howell', 'shuowen']), headword: z.string(),
   contentKind: z.string(), language: z.string(), text: z.string(), reviewStatus: z.string(), sourceUrl: z.string(),
   translation: translationSchema.optional() }).passthrough();
@@ -162,12 +169,14 @@ function loadShard(index: EtymologyIndex, file: string) {
   shards.set(file, promise);
   return promise;
 }
-/** English drafts are usable only for their exact original Chinese text. A stale
- * draft is dropped independently, preserving the source and its original identity. */
+/** English stays bound to its imported entry; an explicit editorial reading has its
+ * own checksum. A stale draft is dropped independently, preserving the original. */
 export async function validateEtymologyTranslations(character: EtymologyCharacter): Promise<EtymologyCharacter> {
   const entries = await Promise.all(character.entries.map(async entry => {
     if (!entry.translation) return entry;
-    if (entry.sourceId === 'shuowen' && await sha256(new TextEncoder().encode(entry.text).buffer) === entry.translation.sourceTextSha256) return entry;
+    const reading = entry.translation.editorialReview?.sourceReading;
+    const readingMatches = !reading || await sha256(new TextEncoder().encode(reading.text).buffer) === reading.textSha256;
+    if (entry.sourceId === 'shuowen' && readingMatches && await sha256(new TextEncoder().encode(entry.text).buffer) === entry.translation.sourceTextSha256) return entry;
     const { translation: _translation, ...original } = entry;
     return original;
   }));

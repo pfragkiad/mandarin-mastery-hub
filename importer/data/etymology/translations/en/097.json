@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "1ab7a538bde3fc0395035295257e147350c703536dbc01dc2c975b1e96055004",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "097",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:9602": {
-      "text": "Dangerous. Formed from 𨸏 and abbreviated 毀. Xu Xun takes 隉 as ominous; Attendant Jia says a rule or standard; Ban Gu says unsettled. The Book of Zhou says: 'The state's instability.' Read like 蜺 in 虹蜺.",
+      "text": "Dangerous. Formed from 𨸏 and abbreviated 毀. Xu Xun takes 隉 as ominous; Palace Attendant Jia says a rule or standard; Ban Gu says unsettled. The Book of Zhou says: 'The state's instability.' Read like 蜺 in 虹蜺.",
       "sourceTextSha256": "3beb2f0a89a11b747d2b6b6353d6032e0ad816fe3e00e567b50a1348ef8f2e04",
       "uncertain": false
     },
@@ -356,9 +376,9 @@
       "uncertain": false
     },
     "shuowen:9666": {
-      "text": "Cramped and narrow, as in 𨹟. Formed from 𨺅, with 纷 indicating the sound. 纷 is the large-seal character 嗌, according to the recorded component notation.",
+      "text": "Cramped and narrow, as in 𨹟. Formed from 𨺅, with 䒣 indicating the sound. 𠍳 is a large-seal form of 嗌.",
       "sourceTextSha256": "453d158b59eaa489438f33dcec7d1c2cc24c3d6f4ec6fa7972ea12b3c1d904d5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9667": {
       "text": "One who guards beacon fires at a frontier watch-post. Formed from 𨺅 and 火, with 遂 indicating the sound.",
@@ -406,7 +426,7 @@
       "uncertain": false
     },
     "shuowen:9676": {
-      "text": "Ugly. It depicts a person with a hunched back. Attendant Jia says it means rank or sequence. All characters in this group are formed from 亞.",
+      "text": "Ugly. It depicts a person with a hunched back. Palace Attendant Jia says it means rank or sequence. All characters in this group are formed from 亞.",
       "sourceTextSha256": "e544a47805f8288bb67caab19cf41ec7a221eb01f3354fcf90ef82ad81dc2a71",
       "uncertain": false
     },

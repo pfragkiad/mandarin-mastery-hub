@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "c7cc334e001923384168e415f25ec8e5978ade59e7495e76bcb768c218a6d468",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "083",
   "translations": {
@@ -66,7 +86,7 @@
       "uncertain": false
     },
     "shuowen:8208": {
-      "text": "To arrive. Formed from 女, with 執 indicating the sound. The Book of Zhou says: 'The great mandate does not arrive again.' Pronounced like 摯. Another explanation cites 雉𡠗 in the Book of Yu.",
+      "text": "To arrive. Formed from 女, with 執 indicating the sound. The Book of Zhou says: 'The great mandate does not arrive again.' Read like 摯. Another explanation cites 雉𡠗 in the Book of Yu.",
       "sourceTextSha256": "2e84da43c6d52ad54394cd7c03decb32b5cb32bcaede997f3d173e51f1dbb314",
       "uncertain": true
     },

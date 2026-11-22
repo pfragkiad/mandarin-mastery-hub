@@ -26,17 +26,37 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "362bd819f3d10b83209904eed365a9d8b5dd984ee8685c2de6dab4bba87c557f",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "011",
   "translations": {
     "shuowen:1001": {
-      "text": "A manner of running. Formed from 走, with 㕡 indicating the sound. Pronounced like 紃.",
+      "text": "A manner of running. Formed from 走, with 㕡 indicating the sound. Read like 紃.",
       "sourceTextSha256": "a02de6ef95f61a155aa3cd0269fd5620e15950036a8683c713563d7186d34d1e",
       "uncertain": false
     },
     "shuowen:1002": {
-      "text": "The sense of running. Formed from 走, with 薊 indicating the sound. Pronounced like 結 in 髽結, tying up the hair.",
+      "text": "The sense of running. Formed from 走, with 薊 indicating the sound. Read like 結 in 髽結, tying up the hair.",
       "sourceTextSha256": "4a9dc12547922b7159fc245b92bdfb7b8a6ea1f790fed1d252c29c48b41553fa",
       "uncertain": false
     },
@@ -61,22 +81,22 @@
       "uncertain": false
     },
     "shuowen:1007": {
-      "text": "To run. Formed from 走, with 𢧜 indicating the sound. Pronounced like 秩秩 in the Odes' “Dignified and orderly in bearing.”",
+      "text": "To run. Formed from 走, with 𢧜 indicating the sound. Read like 秩秩 in the Odes' “Dignified and orderly in bearing.”",
       "sourceTextSha256": "b0f753f81abc2225dd99c4629be751812f31dbefe52ca91d5cc746b08042264c",
       "uncertain": false
     },
     "shuowen:1008": {
-      "text": "To run. Formed from 走, with 有 indicating the sound. Pronounced like 又.",
+      "text": "To run. Formed from 走, with 有 indicating the sound. Read like 又.",
       "sourceTextSha256": "ebe65556381405f62890acf9578fdaa840f4dc34fc2818fad7c88c8e733e8eb7",
       "uncertain": false
     },
     "shuowen:1009": {
-      "text": "To run lightly. Formed from 走, with 烏 indicating the sound. Pronounced like 鄔.",
+      "text": "To run lightly. Formed from 走, with 烏 indicating the sound. Read like 鄔.",
       "sourceTextSha256": "c1b5d2ea49b3c724d0f75963ec2b8668b3fde24fd9130a144863aa4c51312936",
       "uncertain": false
     },
     "shuowen:1010": {
-      "text": "The appearance of running while looking back. Formed from 走, with 瞿 indicating the sound. Pronounced like 劬.",
+      "text": "The appearance of running while looking back. Formed from 走, with 瞿 indicating the sound. Read like 劬.",
       "sourceTextSha256": "fd9471bb1a81f892f4751b5d10b0a5e1a44887867bd02a7523644c93abd45ade",
       "uncertain": false
     },
@@ -88,7 +108,7 @@
     "shuowen:1012": {
       "text": "Doubting and hesitating before departing. Formed from 走, with 才 indicating the sound.",
       "sourceTextSha256": "154f08044d1a3f009661345438473ac7d2337c53257a2d80cca638f35d8f7c07",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1013": {
       "text": "To ford shallow water. Formed from 走, with 此 indicating the sound.",
@@ -96,7 +116,7 @@
       "uncertain": false
     },
     "shuowen:1014": {
-      "text": "To walk alone. Formed from 走, with 勻 indicating the sound. Pronounced like 煢.",
+      "text": "To walk alone. Formed from 走, with 勻 indicating the sound. Read like 煢.",
       "sourceTextSha256": "a88e8fc486382acade03df1d1b11876385cb3a19034ea596ececbf25b6ddad67",
       "uncertain": false
     },
@@ -111,7 +131,7 @@
       "uncertain": false
     },
     "shuowen:1017": {
-      "text": "The sense of lingering. Formed from 走, with 里 indicating the sound. Pronounced like 孩, a small child.",
+      "text": "The sense of lingering. Formed from 走, with 里 indicating the sound. Read like 孩, a small child.",
       "sourceTextSha256": "60eaed9e6c901525b16dc758d4c28c5640f81a9fba642054c84e0312f77a0eb8",
       "uncertain": false
     },
@@ -136,7 +156,7 @@
       "uncertain": false
     },
     "shuowen:1022": {
-      "text": "Swift. Formed from 走, with 瞏 indicating the sound. Pronounced like 讙.",
+      "text": "Swift. Formed from 走, with 瞏 indicating the sound. Read like 讙.",
       "sourceTextSha256": "5b79857a9d830ff9ee33a6f6ba33c1585d1cd7cbf05c20ad6bcc8f52afce2e85",
       "uncertain": false
     },
@@ -156,7 +176,7 @@
       "uncertain": false
     },
     "shuowen:1026": {
-      "text": "The sound of walking. Another explanation: the appearance of not walking. Formed from 走, with 異 indicating the sound. Pronounced like 敕.",
+      "text": "The sound of walking. Another explanation: the appearance of not walking. Formed from 走, with 異 indicating the sound. Read like 敕.",
       "sourceTextSha256": "749e95adbe603298148f95538270de6107ca9954ea81f656cda71844764dd6ad",
       "uncertain": false
     },
@@ -166,22 +186,22 @@
       "uncertain": false
     },
     "shuowen:1028": {
-      "text": "趨趙: lasting a long time. Formed from 走, with 多 indicating the sound.",
+      "text": "In the expression 趨趙: to walk slowly or linger. Formed from 走, with 多 indicating the sound. [The transmitted gloss 久 is disputed; commentary favors 夂, “a slow gait.”]",
       "sourceTextSha256": "af5b6d20041a39a368f0bdf69328656c3cdfbd424c61817b75e72ed5761531f8",
       "uncertain": true
     },
     "shuowen:1029": {
-      "text": "The expression 趨趙. Formed from 走, with 肖 indicating the sound.",
+      "text": "To walk slowly or linger, as in the old expression 趨趙. Formed from 走, with 肖 indicating the sound.",
       "sourceTextSha256": "af7d900acf71251a823fe3bc063c52ad18a90cbaa3ef0806f452909303f7beeb",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1030": {
-      "text": "To walk with difficulty. Formed from 走, with 斤 indicating the sound. Pronounced like 堇.",
+      "text": "To walk with difficulty. Formed from 走, with 斤 indicating the sound. Read like 堇.",
       "sourceTextSha256": "b970778d977cc5bb1f49f765bf1c58644a6215c05b663ca35dde4d29ac0252a4",
       "uncertain": false
     },
     "shuowen:1031": {
-      "text": "The sense of running. Formed from 走, with 夐 indicating the sound. Pronounced like 繘.",
+      "text": "The sense of running. Formed from 走, with 夐 indicating the sound. Read like 繘.",
       "sourceTextSha256": "ff059113409ea0d01dca85a82e89b18dfd5190fa8e43e2756f3b14f7bdf16702",
       "uncertain": false
     },
@@ -203,7 +223,7 @@
     "shuowen:1035": {
       "text": "To leap exceptionally far or high. Formed from 走, with 契 indicating the sound.",
       "sourceTextSha256": "c1ce78e90363b1fe6ef520eb7225a9c5de6f6dc8004ec7096f1dd353e458cd76",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1036": {
       "text": "To run. Formed from 走, with 幾 indicating the sound.",
@@ -226,7 +246,7 @@
       "uncertain": false
     },
     "shuowen:1040": {
-      "text": "To run. Formed from 走, with 出 indicating the sound. Pronounced like 屈 meaning without a tail.",
+      "text": "To run. Formed from 走, with 出 indicating the sound. Read like 屈 meaning without a tail.",
       "sourceTextSha256": "f06869e30e686d5d49f4dbe2eb02701ac28de79334f622461c52312e13043741",
       "uncertain": false
     },
@@ -246,7 +266,7 @@
       "uncertain": false
     },
     "shuowen:1044": {
-      "text": "A limping gait, 𧽐𧽐. Formed from 走, with 虔 indicating the sound. Pronounced like 愆.",
+      "text": "A limping gait, 𧽐𧽐. Formed from 走, with 虔 indicating the sound. Read like 愆.",
       "sourceTextSha256": "1540be16a0e39e399cb7f7d8e9ad0ab5875ddfe0113da86d455b34f5f1e3f4b1",
       "uncertain": false
     },
@@ -261,9 +281,9 @@
       "uncertain": false
     },
     "shuowen:1047": {
-      "text": "Walking in the manner 趚䞭. Formed from 走, with 夋 indicating the sound.",
+      "text": "To move or run rapidly, especially in the reduplicated expression 䞭䞭. Formed from 走, with 夋 indicating the sound.",
       "sourceTextSha256": "ae0a7d3574bb8a07bb4bf228172a846ce21fb82896b7b51b3c60a4bc37690550",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1048": {
       "text": "To walk sideways. Formed from 走, with 朿 indicating the sound. The Odes says: “Though the earth is said to be thick, I dare not fail to step cautiously.”",
@@ -276,22 +296,22 @@
       "uncertain": false
     },
     "shuowen:1050": {
-      "text": "䞾騭: frivolous or flighty. Formed from 走, with 虒 indicating the sound. Pronounced like 池.",
+      "text": "䞾騭: frivolous or flighty. Formed from 走, with 虒 indicating the sound. Read like 池.",
       "sourceTextSha256": "a9b82c04d322e018240c23179b61c75b53bedfa1f6a54a73717c4cf023b19458",
       "uncertain": false
     },
     "shuowen:1051": {
-      "text": "To fall prostrate. Formed from 走, with 咅 indicating the sound. Pronounced like 匐.",
+      "text": "To fall prostrate. Formed from 走, with 咅 indicating the sound. Read like 匐.",
       "sourceTextSha256": "e5b8717c58071bf78f3abccefedeb1219ed88ec64707823eb70d015477ae0268",
       "uncertain": false
     },
     "shuowen:1052": {
-      "text": "To resist. Formed from 走, with abbreviated 㡿 indicating the sound. Han ordinances say: “A hundred men to resist and draw bows.” [The quoted phrase is uncertain.]",
+      "text": "To brace or tread forcefully, particularly in the Han military expression for drawing a strong crossbow with the feet. Formed from 走, with an abbreviated 㡿 indicating the sound. A Han ordinance mentions a hundred crossbow-drawers. [Duan discusses conflicting readings 䞣張 and 蹶張 and competing glyph analyses.]",
       "sourceTextSha256": "4069aaf1c6c1dfdc3ed0daa62bd8cda04d697495e3104fa0a61475687782dff1",
       "uncertain": true
     },
     "shuowen:1053": {
-      "text": "To move. Formed from 走, with 樂 indicating the sound. Pronounced like 䟏 in the Spring and Autumn commentary's “Fu Luo.”",
+      "text": "To move. Formed from 走, with 樂 indicating the sound. Read like 䟏 in the Spring and Autumn commentary's “Fu Luo.”",
       "sourceTextSha256": "2608b0ed4d60d1f2fde581e83b5943fa08926208809bb39ceeabf2ed0eedbc4e",
       "uncertain": false
     },
@@ -301,19 +321,19 @@
       "uncertain": false
     },
     "shuowen:1055": {
-      "text": "𧻚田: to change one's residence. Formed from 走, with 亘 indicating the sound.",
+      "text": "To rotate or exchange cultivated plots and the associated place of residence under an ancient system of reallocating farmland. Formed from 走, with 亘 indicating the sound.",
       "sourceTextSha256": "d55547eed1e49dee5e81b01d115bf99ccc11dbf9d352221e3962c4b34d768d60",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1056": {
-      "text": "To stumble while running. Formed from 走, with 眞 indicating the sound. Pronounced like 顚.",
+      "text": "To stumble while running. Formed from 走, with 眞 indicating the sound. Read like 顚.",
       "sourceTextSha256": "76b680e518d69621b9e2b9bc20a9e7b44e31d01a7fd17218a0850111fe23cc22",
       "uncertain": false
     },
     "shuowen:1057": {
-      "text": "The funeral stamping called 辟𧻹. Formed from 走, with 甬 indicating the sound.",
+      "text": "To stamp or leap in a mourning rite, often in the expression 擗踊. Formed from 走, with 甬 indicating the sound.",
       "sourceTextSha256": "3f20651b194e7a037598f9a1e311c1ad43ca04eaa3d0b378ea6bb4ae99659e74",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1058": {
       "text": "To halt movement. Another explanation: the name of a sacrifice at the stove. Formed from 走, with 畢 indicating the sound.",
@@ -351,14 +371,14 @@
       "uncertain": false
     },
     "shuowen:1065": {
-      "text": "To stop or resist, 歫. Formed from 止, with 尚 indicating the sound.",
+      "text": "To brace, prop up, or resist. Formed from 止, with 尚 indicating the sound.",
       "sourceTextSha256": "c79e0900ef04a828cde173337178e8a0081c48cdf154fb65dbbce473d9f3e9b9",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1066": {
       "text": "To hesitate, 䠧. Formed from 止, with 寺 indicating the sound.",
       "sourceTextSha256": "b05ee9926fa8adfa54138ea18f439d82c039bbba6d1da3f748d6a9bed3d42566",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1067": {
       "text": "To stop. Formed from 止, with 巨 indicating the sound. Another explanation: to thrust; another: to leap across, 超歫.",
@@ -401,7 +421,7 @@
       "uncertain": false
     },
     "shuowen:1075": {
-      "text": "To tread. Formed from reversed 止. Pronounced like 撻.",
+      "text": "To tread. Formed from reversed 止. Read like 撻.",
       "sourceTextSha256": "9eec74b1e3ec5b6a9719891d1c84595924016b46e66e9943f48f32d2b0a8c351",
       "uncertain": false
     },
@@ -411,7 +431,7 @@
       "uncertain": false
     },
     "shuowen:1077": {
-      "text": "Feet spread apart. Formed from 止 and 𣥂. All characters in the 癶 category are formed from 癶. Pronounced like 撥.",
+      "text": "Feet spread apart. Formed from 止 and 𣥂. All characters in the 癶 category are formed from 癶. Read like 撥.",
       "sourceTextSha256": "9592bc1df67bd7f16ce3620d0f41577198d448725278eb4cbfef8c3c0594268f",
       "uncertain": false
     },
@@ -476,12 +496,12 @@
       "uncertain": false
     },
     "shuowen:1090": {
-      "text": "This is few; 尟 means that both remain. Formed from 是 and 少. Palace Attendant Jia's explanation. [The wording is difficult and the sense uncertain.]",
+      "text": "Lacking this particular thing; “it is this that is few or absent,” although other things remain present. Formed from 是 and 少. This explanation is attributed to Palace Attendant Jia.",
       "sourceTextSha256": "6b37699d8b2e275ae94348839f0a467476100de4ea66a17ac4fb1a5c578e973e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1091": {
-      "text": "To walk and stop by turns. Formed from 彳 and 止. All characters in the 辵 category are formed from 辵. Pronounced like 辵 in the Gongyang Spring and Autumn commentary's “Leap the steps and run.”",
+      "text": "To walk and stop by turns. Formed from 彳 and 止. All characters in the 辵 category are formed from 辵. Read like 辵 in the Gongyang Spring and Autumn commentary's “Leap the steps and run.”",
       "sourceTextSha256": "141ea41202d11e647de494654739b16cc2be9d11aef0950597c9d0ba13ee1b00",
       "uncertain": false
     },
@@ -491,7 +511,7 @@
       "uncertain": false
     },
     "shuowen:1093": {
-      "text": "Without disobedience. Formed from 辵, with 𤛉 indicating the sound. Pronounced like 害.",
+      "text": "Without disobedience. Formed from 辵, with 𤛉 indicating the sound. Read like 害.",
       "sourceTextSha256": "525d1704f40f1efae781b1ecf0342ed646e4b6e39670618b4237d19cb236c1f7",
       "uncertain": false
     },
@@ -511,7 +531,7 @@
       "uncertain": false
     },
     "shuowen:1097": {
-      "text": "To walk respectfully and carefully. Formed from 辵, with 㲃 indicating the sound. Pronounced like 九.",
+      "text": "To walk respectfully and carefully. Formed from 辵, with 㲃 indicating the sound. Read like 九.",
       "sourceTextSha256": "d9c9eadaee30454482b738ba5b32a91c1d5a0aa268ed92518c28968443ab007c",
       "uncertain": false
     },
@@ -521,14 +541,14 @@
       "uncertain": false
     },
     "shuowen:1099": {
-      "text": "To travel by a circuitous path. Formed from 辵, with 䌛 indicating the sound.",
+      "text": "To travel along a path or shortcut. Formed from 辵, with 䌛 indicating the sound. [Duan questions the received wording 行邎徑 and favors 行徑 or 行由徑.]",
       "sourceTextSha256": "3949b726b179f6b555c874b792c82dd1402a34d906743cc52ca901478789af83",
       "uncertain": true
     },
     "shuowen:1100": {
       "text": "To proceed correctly. Formed from 辵, with 正 indicating the sound.",
       "sourceTextSha256": "dfeb2a7542bf334505293eea30c997cb80e2962b3f289829cf42576a2a8f14e8",
-      "uncertain": true
+      "uncertain": false
     }
   }
 }

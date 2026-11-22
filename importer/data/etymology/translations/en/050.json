@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "a7a472ef2d8a86c1ac8e9ae8f45613dcfb54f27773e7bbce5713ae7bfbfcf253",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "050",
   "translations": {
@@ -41,17 +61,17 @@
       "uncertain": false
     },
     "shuowen:4903": {
-      "text": "A ceremonial apron. In remote antiquity clothing only covered the front; 巿 depicts this. The Son of Heaven has a vermilion apron, feudal lords a red one, grand officers a green crosspiece. Formed from 巾, depicting an attached belt. All characters in this group follow 巿.",
+      "text": "A ceremonial apron. In remote antiquity clothing only covered the front; 巿 depicts this. The Son of Heaven has a vermilion apron, feudal lords a red one, grand officers a green crosspiece. Formed from 巾, depicting an attached belt. All characters in this group are formed from 巿.",
       "sourceTextSha256": "aec1355af945e55cbc584f771472be2b6f82e499d2ee2ca7a4ce2bf1668083b1",
       "uncertain": false
     },
     "shuowen:4904": {
-      "text": "Officers have no 巿 but have 𢂷, shaped like 榼 with four corners cut away. With the jue-cap costume it is madder-red; lower rank may not match the skirt’s color. The Minister of Agriculture says: “The skirt is light red.” Formed from 巿, with 合 indicating the sound. The comparison to 榼 is uncertain.",
+      "text": "A reddish leather ceremonial apron worn with a scholar-official’s jue-cap ritual costume instead of the higher-rank apron. It was cut into a distinctive four-cornered shape, and its color differed from the wearer’s skirt. Formed from 巿, with 合 indicating the sound.",
       "sourceTextSha256": "508522bd5f8929fd93f736273219f8ef0c50c03ec5def80b66d6af2cf49dd4f3",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:4905": {
-      "text": "Silk fabric. Formed from 巾, with 白 indicating the sound. All characters in this group follow 帛.",
+      "text": "Silk fabric. Formed from 巾, with 白 indicating the sound. All characters in this group are formed from 帛.",
       "sourceTextSha256": "da3141cd46e4e662772c0faec2a7fa0c8ad175fd44e71e767b18ad094ca56fdc",
       "uncertain": false
     },
@@ -61,7 +81,7 @@
       "uncertain": false
     },
     "shuowen:4907": {
-      "text": "The color of the west. When yin governs, things turn white. Formed from 入 joined with 二; 二 is a yin number. All characters in this group follow 白.",
+      "text": "The color of the west. When yin governs, things turn white. Formed from 入 joined with 二; 二 is a yin number. All characters in this group are formed from 白.",
       "sourceTextSha256": "7155983999f7e5bb54e7c57948c0c85973a4628b81b88f64c855d2fc0d8ea569",
       "uncertain": false
     },
@@ -116,7 +136,7 @@
       "uncertain": false
     },
     "shuowen:4918": {
-      "text": "Worn-out clothing. Formed from 巾, depicting clothing worn out. All characters in this group follow 㡀.",
+      "text": "Worn-out clothing. Formed from 巾, depicting clothing worn out. All characters in this group are formed from 㡀.",
       "sourceTextSha256": "f285d612a69bcee1f9233d02b5b547e9d25d044f1191ba0bba24819150f2ec77",
       "uncertain": false
     },
@@ -126,7 +146,7 @@
       "uncertain": false
     },
     "shuowen:4920": {
-      "text": "Sewing clothing with needle and thread. Formed from 㡀 and abbreviated 丵. All characters in this group follow 黹.",
+      "text": "Sewing clothing with needle and thread. Formed from 㡀 and abbreviated 丵. All characters in this group are formed from 黹.",
       "sourceTextSha256": "7422a9bef684afd9c91d3f408c5fb29e614522070ea24de1e1b6b3376e4d0281",
       "uncertain": false
     },
@@ -156,7 +176,7 @@
       "uncertain": false
     },
     "shuowen:4926": {
-      "text": "The most precious being endowed by Heaven and Earth. This is the large-seal form, depicting arms and shins. All characters in this group follow 人.",
+      "text": "The most precious being endowed by Heaven and Earth. This is the large-seal form, depicting arms and shins. All characters in this group are formed from 人.",
       "sourceTextSha256": "92e53160e48c469bf63b36c3df7d4cf1c5c8979d93f02d9150a0bb6551265f24",
       "uncertain": false
     },
@@ -321,9 +341,9 @@
       "uncertain": false
     },
     "shuowen:4959": {
-      "text": "Refinement and substance encroaching upon one another; the recorded gloss 文質僣 is uncertain. Formed from 人, with 分 indicating the sound. The Analects says: “Refinement and substance in balanced harmony.”",
+      "text": "Natural substance and cultivated refinement blended harmoniously. Formed from 人, with 分 indicating the sound. The Analects says: “Refinement and substance in balanced harmony.” [The received gloss 文質僣 has a textual variant; Duan interprets it as intermingling.]",
       "sourceTextSha256": "fc9641d575081aae9c9b7c49993df0050deaa3f6d07f83116d63eceafae38991",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:4960": {
       "text": "A pleasing appearance. Formed from 人, with 尞 indicating the sound.",
@@ -376,7 +396,7 @@
       "uncertain": false
     },
     "shuowen:4970": {
-      "text": "A large appearance. Formed from 人, with 同 indicating the sound. The Odes says: “The spirit is not so unknowing.”",
+      "text": "A large appearance. Formed from 人, with 同 indicating the sound. The Odes says: “The spirits were not grieved.”",
       "sourceTextSha256": "ac7c0ee7cf871c1d47e316137a46dd590941c60fa86077739f3604a82ce7fe29",
       "uncertain": false
     },
@@ -396,9 +416,9 @@
       "uncertain": false
     },
     "shuowen:4974": {
-      "text": "Swift. Formed from 人, with 單 indicating the sound. The Rites of Zhou says: “Hooked weapons should have no 僤,” perhaps uncontrolled movement; the technical sense is uncertain.",
+      "text": "Rapid or swift. Formed from 人, with 單 indicating the sound. The Rites of Zhou says that hooked weapons should not be too quick or springy in action.",
       "sourceTextSha256": "aa820f6403638adc5214f5762413442e2091bdcfe68451520c04b28455de0c84",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:4975": {
       "text": "Strong or a match for another. Formed from 人, with 建 indicating the sound.",

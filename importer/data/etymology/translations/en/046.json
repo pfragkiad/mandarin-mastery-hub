@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e8a96894834f1e521c1a4e4dd4c7354e106598d698eef35fbf654612cf30a86d",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "046",
   "translations": {
@@ -51,7 +71,7 @@
       "uncertain": false
     },
     "shuowen:4505": {
-      "text": "Evil or ill-omened. Depicts a hole in the ground, with crossing lines sunk inside it. All characters in this group follow 凶.",
+      "text": "Evil or ill-omened. Depicts a hole in the ground, with crossing lines sunk inside it. All characters in this group are formed from 凶.",
       "sourceTextSha256": "43911ca229d64819ba0ac57d57a13ff56667eb12fdc3f7665a0fc1efec1f2906",
       "uncertain": false
     },
@@ -61,7 +81,7 @@
       "uncertain": false
     },
     "shuowen:4507": {
-      "text": "Separating hemp-stalk bark. Formed from 屮, with 八 depicting the bark and stalks of hemp. All characters in this group follow 朩. Read like 髕.",
+      "text": "Separating hemp-stalk bark. Formed from 屮, with 八 depicting the bark and stalks of hemp. All characters in this group are formed from 朩. Read like 髕.",
       "sourceTextSha256": "ae3b7aeb987ff933f8bd9604ef8205c6d473b33b0355dd1ca5559ecd2a20eb1c",
       "uncertain": false
     },
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:4509": {
-      "text": "A general name for flowers. The word 𣏟 conveys fineness: fine fibers accomplish the work. Pictographic. All characters in this group follow 𣏟. The connection between flowers and fibers in the recorded text is uncertain.",
+      "text": "A general name for flowers. The word 𣏟 conveys fineness: fine fibers accomplish the work. Pictographic. All characters in this group are formed from 𣏟. The connection between flowers and fibers in the recorded text is uncertain.",
       "sourceTextSha256": "2072a3976a833d50f9514cf1cd76fa7f6fd47478d5d7d0ace83665599d58e789",
       "uncertain": true
     },
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:4512": {
-      "text": "The same as 𣏟, processed by people under a roof. Formed from 广 and 𣏟. All characters in this group follow 麻.",
+      "text": "The same as 𣏟, processed by people under a roof. Formed from 广 and 𣏟. All characters in this group are formed from 麻.",
       "sourceTextSha256": "27bf828c9fb4ccfb6883da83eb0048a89530930ec7cee62271780c45c1bf1788",
       "uncertain": false
     },
@@ -106,7 +126,7 @@
       "uncertain": false
     },
     "shuowen:4516": {
-      "text": "Beans. Depicts beans growing. All characters in this group follow 尗.",
+      "text": "Beans. Depicts beans growing. All characters in this group are formed from 尗.",
       "sourceTextSha256": "968d74ec69c41c30c023b0e96a982a5bba84684cfbeab9efd95c10fb30052514",
       "uncertain": false
     },
@@ -116,12 +136,12 @@
       "uncertain": true
     },
     "shuowen:4518": {
-      "text": "The top of a thing at its first growth. The upper part depicts growth, the lower its roots. All characters in this group follow 耑.",
+      "text": "The top of a thing at its first growth. The upper part depicts growth, the lower its roots. All characters in this group are formed from 耑.",
       "sourceTextSha256": "a1a35833532d2a88c939e4e700d5aab43f7c8c881b2e85325fa41707d222010f",
       "uncertain": false
     },
     "shuowen:4519": {
-      "text": "A vegetable name. Once planted, it lasts long, hence called 韭. Pictographic, above 一; 一 is the ground. This uses the same principle as 耑. All characters in this group follow 韭.",
+      "text": "A vegetable name. Once planted, it lasts long, hence called 韭. Pictographic, above 一; 一 is the ground. This uses the same principle as 耑. All characters in this group are formed from 韭.",
       "sourceTextSha256": "76ea99a7384c4e910d9238a197b15063d5e5fcd9f3117d9d2aacd0d18a2b9f2c",
       "uncertain": false
     },
@@ -151,7 +171,7 @@
       "uncertain": false
     },
     "shuowen:4525": {
-      "text": "A gourd, 㼌. Pictographic. All characters in this group follow 瓜.",
+      "text": "A gourd, 㼌. Pictographic. All characters in this group are formed from 瓜.",
       "sourceTextSha256": "a06752a1e950874c32670925e5048115189071cfb2d8bfee7221b55ce9cfdd4f",
       "uncertain": false
     },
@@ -186,7 +206,7 @@
       "uncertain": false
     },
     "shuowen:4532": {
-      "text": "A bottle gourd. Formed from 瓜, with 夸 indicating the sound. All characters in this group follow 瓠.",
+      "text": "A bottle gourd. Formed from 瓜, with 夸 indicating the sound. All characters in this group are formed from 瓠.",
       "sourceTextSha256": "73c3c16c977ee84162a02307979a2b2d0e26a5f784213b3cdcdbd331a950d2e3",
       "uncertain": false
     },
@@ -196,7 +216,7 @@
       "uncertain": false
     },
     "shuowen:4534": {
-      "text": "A deep building covered by intersecting roof slopes. Pictographic. All characters in this group follow 宀.",
+      "text": "A deep building covered by intersecting roof slopes. Pictographic. All characters in this group are formed from 宀.",
       "sourceTextSha256": "f959b94e868050bf395fabec67f0a0add1ba8b79041673b5d10284251f70906f",
       "uncertain": false
     },

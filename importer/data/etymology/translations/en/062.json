@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e4d8fddb13f42ee5f903d197e789685e2d2e49c072f6cac6114364a1bbeef9fd",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "062",
   "translations": {
@@ -36,27 +56,27 @@
       "uncertain": false
     },
     "shuowen:6102": {
-      "text": "Like a wild ox, but blue-green. Pictographic; its head is the same as in 禽 and 离. All characters in this group follow 𤉡.",
+      "text": "Like a wild ox, but blue-green. Pictographic; its head is the same as in 禽 and 离. All characters in this group are formed from 𤉡.",
       "sourceTextSha256": "9678f5ac4c4af3201ca450bdb136c7fbcb06022d30fc1b916004d1dd2685bd8a",
       "uncertain": false
     },
     "shuowen:6103": {
-      "text": "The lizard, 蜥易 or 蝘蜓, also called 守宮. Pictographic. The Secret Writings explains: 日 and 月 make 易, representing yin and yang. Another explanation: it follows 勿. All characters in this group follow 易.",
+      "text": "The lizard, 蜥易 or 蝘蜓, also called 守宮. Pictographic. The Secret Writings explains: 日 and 月 make 易, representing yin and yang. Another explanation: it follows 勿. All characters in this group are formed from 易.",
       "sourceTextSha256": "2a64dd8c33770e04161e67d8d2581732c47c2569b62d95ebf9cb04423da83f05",
       "uncertain": false
     },
     "shuowen:6104": {
-      "text": "A great beast of Southern Yue with a long trunk and tusks, bearing young once in three years. Depicts ears, tusks and four feet. All characters in this group follow 象.",
+      "text": "A great beast of Southern Yue with a long trunk and tusks, bearing young once in three years. Depicts ears, tusks and four feet. All characters in this group are formed from 象.",
       "sourceTextSha256": "f5628aec8b79ff17bd8a85bf00be98bc5e08e00be41fd554cfa1565d0c799669",
       "uncertain": false
     },
     "shuowen:6105": {
-      "text": "A large elephant. Attendant Jia explains: not harming other things. Formed from 象, with 予 indicating the sound.",
+      "text": "A large elephant. Palace Attendant Jia explains: not harming other things. Formed from 象, with 予 indicating the sound.",
       "sourceTextSha256": "6f0554e580c24926071dd8c096c8bcf80d64249fecf9d969bde4e4df14802b6a",
       "uncertain": false
     },
     "shuowen:6106": {
-      "text": "Anger; martial strength. Depicts a horse’s head, mane, tail and four feet. All characters in this group follow 馬.",
+      "text": "Anger; martial strength. Depicts a horse’s head, mane, tail and four feet. All characters in this group are formed from 馬.",
       "sourceTextSha256": "5c620f964406451c35ec54932c7346559127b5264d291e39e624e21547bd759c",
       "uncertain": false
     },

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "c5ea8cafed166e6adb64adbb4ef0c3c918667847706cdc6ce7e8cdbc691c8a8f",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "037",
   "translations": {
@@ -91,7 +111,7 @@
       "uncertain": false
     },
     "shuowen:3613": {
-      "text": "A pillar base, formerly wood, now stone. Formed from 木, with 耆 indicating the sound. The Changes says: “Persisting in deep-rooted constancy brings misfortune.”",
+      "text": "A pillar base, formerly wood, now stone. Formed from 木, with 耆 indicating the sound. The Changes says: “Restless persistence brings misfortune.”",
       "sourceTextSha256": "deaafc57e1e5ca21fd0bd817db958334daae346730d58f37120e4269c34159d0",
       "uncertain": false
     },
@@ -176,9 +196,9 @@
       "uncertain": false
     },
     "shuowen:3630": {
-      "text": "The front of a roof’s eave timber. Formed from 木, with 覃 indicating the sound. Another explanation: a silkworm-raising mallet, 蠶槌; its precise use is uncertain.",
+      "text": "A timber in front of the roof’s eaves, between the eaves-beam and its front edge. Another meaning: a mallet used in sericulture. Formed from 木, with 覃 indicating the sound.",
       "sourceTextSha256": "f2fd9043e6841e859b63f6bd94110b245af5b39aa937830bd15c6cc9ff130271",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:3631": {
       "text": "The lintel above a doorway. Formed from 木, with 啻 indicating the sound. The Erya says: “檐 is called 樀.” Read like 滴.",
@@ -326,9 +346,9 @@
       "uncertain": false
     },
     "shuowen:3660": {
-      "text": "桱桯, called 蕩 in the east. Formed from 木, with 坙 indicating the sound. The exact furnishing is uncertain.",
+      "text": "A low stand or small table placed at the front of a bed, also called 簜 in eastern dialects. Formed from 木, with 坙 indicating the sound.",
       "sourceTextSha256": "0a4f65bd66143036260f7bfc689166e61fb3fdc78af1e4b78a0f911b23677fa9",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:3661": {
       "text": "A seat for resting the body. Formed from 木, with 爿 indicating the sound.",
@@ -376,12 +396,12 @@
       "uncertain": false
     },
     "shuowen:3670": {
-      "text": "A two-edged spade. Formed from 木; 绂 is pictographic. Song and Wei call it 㭉.",
+      "text": "A two-edged spade. Formed from 木; 𦫳 is pictographic. Song and Wei call it 㭉.",
       "sourceTextSha256": "7c9166ac6ea32fff4e9286361143cf8170ef1e18e39235e3190323404b9a4cf3",
       "uncertain": false
     },
     "shuowen:3671": {
-      "text": "A spade. Formed from 木, with 㠯 indicating the sound. Another explanation: a tool for moving earth, in Qi speech; the wording 纪 is uncertain.",
+      "text": "A digging tool, spade or shovel. Formed from 木, with 㠯 indicating the sound. Another use in the Qi dialect refers to an implement for moving earth, potentially a soil-carrying tray or barrow. [The source’s 纪 is corrupt, and Duan suggests rearranging the alternative-gloss wording.]",
       "sourceTextSha256": "e71cddd1e6c7491338e7a0acf10f35538177acde8b2269d4155cdd69d6e9a8ee",
       "uncertain": true
     },
@@ -486,9 +506,9 @@
       "uncertain": false
     },
     "shuowen:3692": {
-      "text": "Defined as 钌, perhaps a container; the recorded gloss is uncertain. Formed from 木, with 咸 indicating the sound.",
+      "text": "A box or chest. Formed from 木, with 咸 indicating the sound.",
       "sourceTextSha256": "20fecd7682650f0c90915c8dc2d0d4c971f637b255eb6ea873d934c5ac712de7",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:3693": {
       "text": "A ladle. Formed from 木 and 斗.",

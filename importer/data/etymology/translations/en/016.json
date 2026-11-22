@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "3c34d848a29a810e225f9a3ee067bc0baef48d2df2142452767384a471cda0e0",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "016",
   "translations": {
@@ -311,7 +331,7 @@
       "uncertain": false
     },
     "shuowen:1557": {
-      "text": "Together or shared. Another explanation: to shout or boast, 譀. Formed from 言, with 同 indicating the sound. The Book of Zhou says: “In the shared affairs of the Xia sovereign.”",
+      "text": "Shared or in common; another explanation is excessive or boastful speech. Formed from 言, with 同 indicating the sound. The Documents cites its use in an early Zhou passage. [Duan documents significant textual variants in the cited phrase.]",
       "sourceTextSha256": "6df4f586bcf052c73d36e23fb92fcc624516dffdb0ec37ac8f6e3c14565568bf",
       "uncertain": true
     },
@@ -331,7 +351,7 @@
       "uncertain": false
     },
     "shuowen:1561": {
-      "text": "Great. Another explanation: people assisting one another. Formed from 言, with 甫 indicating the sound. Pronounced like 逋.",
+      "text": "Great. Another explanation: people assisting one another. Formed from 言, with 甫 indicating the sound. Read like 逋.",
       "sourceTextSha256": "675c4dbd07dea25cf1cf77fd094c49810ddc5c7d8e958f2de03fff87d87dea81",
       "uncertain": false
     },
@@ -351,9 +371,9 @@
       "uncertain": false
     },
     "shuowen:1565": {
-      "text": "The source gloss is “纤” in parentheses, apparently textually corrupt; tentatively, fine or slender. Formed from 言, with 與 indicating the sound. [The intended gloss cannot be established here.]",
+      "text": "Praise or commendation. Formed from 言, with 與 indicating the sound.",
       "sourceTextSha256": "e4e4efee6b41b23f4382aa7643f4ffcfc9c546d9d6d1f555c2def76ebb5a7275",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1566": {
       "text": "To spread or proclaim, 𢾭. Formed from 言, with 番 indicating the sound. The Book of Shang says: “The king proclaimed and announced it.”",
@@ -403,12 +423,12 @@
     "shuowen:1575": {
       "text": "To receive one another. Formed from 言, with 牙 indicating the sound. The Rites of Zhou says: “Feudal lords have a minister to receive arrivals.”",
       "sourceTextSha256": "fd90e7d2cbd76b1322ae0d6db7d05bc7009e0f5fccb2a4824e34e91fe8b9b755",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1576": {
-      "text": "To attend and arrive. Formed from 言, with 旨 indicating the sound.",
+      "text": "To arrive at a place deliberately, as at an appointment or specific destination. Formed from 言, with 旨 indicating the sound.",
       "sourceTextSha256": "b620417533cf22942df733b0c7a2e457c798a3098009fc2faee066591c4dfc69",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1577": {
       "text": "To reconcile. Formed from 言, with 冓 indicating the sound.",
@@ -436,7 +456,7 @@
       "uncertain": true
     },
     "shuowen:1582": {
-      "text": "To wait. Formed from 言, with 伿 indicating the sound. Pronounced like 䭆.",
+      "text": "To wait. Formed from 言, with 伿 indicating the sound. Read like 䭆.",
       "sourceTextSha256": "abf13daffcab8ad098ad8480c86f33e08cadcd2284b03b95dd030036cb8b9190",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:1586": {
-      "text": "A loud sound. Formed from 言, with 昔 indicating the sound. Pronounced like 笮.",
+      "text": "A loud sound. Formed from 言, with 昔 indicating the sound. Read like 笮.",
       "sourceTextSha256": "ba59e7b466b7ea89b572514877a6975cdbccc547a9dcf5bd161407818657d425",
       "uncertain": false
     },
@@ -511,12 +531,12 @@
       "uncertain": true
     },
     "shuowen:1597": {
-      "text": "The expression 謰謱, apparently entangled or rambling speech. Formed from 言, with 連 indicating the sound. [The descriptive sense is uncertain.]",
+      "text": "Entangled, contentious or over-complicated speech, as in the paired expression 謰謱. Formed from 言, with 連 indicating the sound.",
       "sourceTextSha256": "f4d7fe18fdddb48f0617cea0f1945e391ca467560021e4ae958a3f508bbcbecf",
       "uncertain": true
     },
     "shuowen:1598": {
-      "text": "The expression 謰謱, apparently entangled or rambling speech. Formed from 言, with 婁 indicating the sound. [The descriptive sense is uncertain.]",
+      "text": "Entangled, contentious or over-complicated speech, as in the paired expression 謰謱. Formed from 言, with 婁 indicating the sound.",
       "sourceTextSha256": "f9d28132b5a6d3e314662c51b3072c4371eec4d3e08b700341bdd700c8d25ca0",
       "uncertain": true
     },

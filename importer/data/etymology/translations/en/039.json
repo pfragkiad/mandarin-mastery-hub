@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "c19dc074f5b529b3c17de095875606770915842a329fb96394bd835c4f96a97e",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "039",
   "translations": {
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:3828": {
-      "text": "To move. Formed from 木. Guan Pu explains it as 日 inside 木. All characters in this group follow 東.",
+      "text": "To move. Formed from 木. Guan Pu explains it as 日 inside 木. All characters in this group are formed from 東.",
       "sourceTextSha256": "4347c8531ab16e100b555456e8c10d32e5e903b4c4524c101810942f84ebaecb",
       "uncertain": false
     },
@@ -176,7 +196,7 @@
       "uncertain": false
     },
     "shuowen:3830": {
-      "text": "A cluster of trees on level ground is called 林. Formed from two 木. All characters in this group follow 林.",
+      "text": "A cluster of trees on level ground is called 林. Formed from two 木. All characters in this group are formed from 林.",
       "sourceTextSha256": "965209448871c142a1b1f2fbead530b876a1690cca51ffda59265c1de5e7d704",
       "uncertain": false
     },
@@ -226,12 +246,12 @@
       "uncertain": false
     },
     "shuowen:3840": {
-      "text": "The first emergence of plants. Formed from 丨 piercing 一 upward, about to produce branches and leaves; 一 is the ground. All characters in this group follow 才.",
+      "text": "The first emergence of plants. Formed from 丨 piercing 一 upward, about to produce branches and leaves; 一 is the ground. All characters in this group are formed from 才.",
       "sourceTextSha256": "d5aac84fa712f3f7a84983c8504cf376cc2a8fa3968c790fdb637f317d39008e",
       "uncertain": false
     },
     "shuowen:3841": {
-      "text": "When the sun first emerges from Tang Valley in the east, the 榑桑 on which it rises is the 叒 tree. Pictographic. All characters in this group follow 叒.",
+      "text": "When the sun first emerges from Tang Valley in the east, the 榑桑 on which it rises is the 叒 tree. Pictographic. All characters in this group are formed from 叒.",
       "sourceTextSha256": "280a6ec3df91cb3433d225e968488a576358688e16034bd316a964a1f818ca75",
       "uncertain": false
     },
@@ -241,7 +261,7 @@
       "uncertain": false
     },
     "shuowen:3843": {
-      "text": "To emerge. Depicts grass growing beyond 屮, its branches and stems enlarging and extending somewhere. 一 is the ground. All characters in this group follow 之.",
+      "text": "To emerge. Depicts grass growing beyond 屮, its branches and stems enlarging and extending somewhere. 一 is the ground. All characters in this group are formed from 之.",
       "sourceTextSha256": "10776db1abaca612c707a36cc0310fad12c47bc9080bfc92d7d9633e8e980ba7",
       "uncertain": false
     },
@@ -251,7 +271,7 @@
       "uncertain": false
     },
     "shuowen:3845": {
-      "text": "To encircle. Formed from reversed 之, going all around. All characters in this group follow 帀. This is Zhou Sheng’s explanation.",
+      "text": "To encircle. Formed from reversed 之, going all around. All characters in this group are formed from 帀. This is Zhou Sheng’s explanation.",
       "sourceTextSha256": "04ceadf4d771fcbec7f1acc8ea463c03960ba5c86f1faa68cd8e2000fc28053c",
       "uncertain": false
     },
@@ -261,7 +281,7 @@
       "uncertain": false
     },
     "shuowen:3847": {
-      "text": "To advance. Depicts plants growing ever more luxuriantly and emerging upward. All characters in this group follow 出.",
+      "text": "To advance. Depicts plants growing ever more luxuriantly and emerging upward. All characters in this group are formed from 出.",
       "sourceTextSha256": "f8b6396399cbca0ad0ba08ffc9ce355750b92a4ce1a682fb79333616288165f9",
       "uncertain": false
     },
@@ -286,7 +306,7 @@
       "uncertain": false
     },
     "shuowen:3852": {
-      "text": "Plants flourishing, 𣎵𣎵. Pictographic, with 八 indicating the sound. All characters in this group follow 𣎵. Read like 輩.",
+      "text": "Plants flourishing, 𣎵𣎵. Pictographic, with 八 indicating the sound. All characters in this group are formed from 𣎵. Read like 輩.",
       "sourceTextSha256": "f1826e25d9bf8042408dcbc81eb92666c749d6d5e4ab5669bc73e8cacc02f56e",
       "uncertain": false
     },
@@ -316,7 +336,7 @@
       "uncertain": true
     },
     "shuowen:3858": {
-      "text": "To advance. Depicts plants growing out above the soil. All characters in this group follow 生.",
+      "text": "To advance. Depicts plants growing out above the soil. All characters in this group are formed from 生.",
       "sourceTextSha256": "9e477cc6e834082db0454518ee8ed6d25b32f69ef4441fb0e9648e3e5c8fd57b",
       "uncertain": false
     },
@@ -346,17 +366,17 @@
       "uncertain": false
     },
     "shuowen:3864": {
-      "text": "A plant leaf. Formed from a drooping ear, piercing 一 above, with roots below. Pictographic. All characters in this group follow 乇.",
+      "text": "A plant leaf. Formed from a drooping ear, piercing 一 above, with roots below. Pictographic. All characters in this group are formed from 乇.",
       "sourceTextSha256": "561e53f1e5a56c4299c586245e4bfaefdc24acb3194708e855a1b29eb54254db",
       "uncertain": false
     },
     "shuowen:3865": {
-      "text": "The drooping flowers and leaves of plants. Pictographic. All characters in this group follow 𠂹.",
+      "text": "The drooping flowers and leaves of plants. Pictographic. All characters in this group are formed from 𠂹.",
       "sourceTextSha256": "d8310f9a61ddcbe8999730724906ec3fec49d15b78644d48a90e16dffb9f3196",
       "uncertain": false
     },
     "shuowen:3866": {
-      "text": "The flowers of plants. Formed from 𠂹, with 亏 indicating the sound. All characters in this group follow 𠌶.",
+      "text": "The flowers of plants. Formed from 𠂹, with 亏 indicating the sound. All characters in this group are formed from 𠌶.",
       "sourceTextSha256": "d40ed1447913ef95985f5161ab7a11c1cf84f2aa75b6e1778fb220d77397dd00",
       "uncertain": false
     },
@@ -366,7 +386,7 @@
       "uncertain": false
     },
     "shuowen:3868": {
-      "text": "Blossoming. Formed from 艸 and 𠌶. All characters in this group follow 華.",
+      "text": "Blossoming. Formed from 艸 and 𠌶. All characters in this group are formed from 華.",
       "sourceTextSha256": "1406362a545924a7c139e17f24f0a0e99d06337a6ba194ddd23ba45956c76226",
       "uncertain": false
     },
@@ -376,7 +396,7 @@
       "uncertain": false
     },
     "shuowen:3870": {
-      "text": "The bent top of a tree, stopped and unable to rise further. All characters in this group follow 𥝌.",
+      "text": "The bent top of a tree, stopped and unable to rise further. All characters in this group are formed from 𥝌.",
       "sourceTextSha256": "ae3c26c72a9fd8b60b308987844441809658488b177e115784e128ad7c06d592",
       "uncertain": false
     },
@@ -391,7 +411,7 @@
       "uncertain": false
     },
     "shuowen:3873": {
-      "text": "To remain and stop. Formed from 𥝌 and 尤, with 旨 indicating the sound. All characters in this group follow 稽.",
+      "text": "To remain and stop. Formed from 𥝌 and 尤, with 旨 indicating the sound. All characters in this group are formed from 稽.",
       "sourceTextSha256": "1b4ebb73e292af08186c8a5f422c30528369fb48f75499c3e64386989565aed0",
       "uncertain": false
     },
@@ -401,12 +421,12 @@
       "uncertain": false
     },
     "shuowen:3875": {
-      "text": "To stop hesitantly, 𥢑䅓. Formed from abbreviated 稽, with 咎 indicating the sound. Read like 皓. Attendant Jia says 稽, 𥢔 and 𥢑 are all tree names.",
+      "text": "To stop hesitantly, 𥢑䅓. Formed from abbreviated 稽, with 咎 indicating the sound. Read like 皓. Palace Attendant Jia says 稽, 𥢔 and 𥢑 are all tree names.",
       "sourceTextSha256": "2999a4918325add706b5bf33fbaed3a391fe43fa48455a10673e8abb1dbde2a2",
       "uncertain": false
     },
     "shuowen:3876": {
-      "text": "A bird’s dwelling in a tree is 巢; in a hole, 窠. Formed from 木; pictographic. All characters in this group follow 巢.",
+      "text": "A bird’s dwelling in a tree is 巢; in a hole, 窠. Formed from 木; pictographic. All characters in this group are formed from 巢.",
       "sourceTextSha256": "65f3f22141e48c2b3c9edc55d3e628c8302bf732b96ed0e15c12d6bcfc80075b",
       "uncertain": false
     },
@@ -416,7 +436,7 @@
       "uncertain": false
     },
     "shuowen:3878": {
-      "text": "Tree sap, usable for coating objects. Pictographic: lacquer drips down like water. All characters in this group follow 桼.",
+      "text": "Tree sap, usable for coating objects. Pictographic: lacquer drips down like water. All characters in this group are formed from 桼.",
       "sourceTextSha256": "83ad777e9ce95ac9e4928d3579bfca5f44c3c47677e6b32fc0be8be00e3b41ea",
       "uncertain": false
     },
@@ -431,7 +451,7 @@
       "uncertain": false
     },
     "shuowen:3881": {
-      "text": "To bind. Formed from 囗 and 木. All characters in this group follow 束.",
+      "text": "To bind. Formed from 囗 and 木. All characters in this group are formed from 束.",
       "sourceTextSha256": "c4e2459dae2c0865e5d70d0f2b0d1d5a27dde902719580799814b62581e245e8",
       "uncertain": false
     },
@@ -451,7 +471,7 @@
       "uncertain": false
     },
     "shuowen:3885": {
-      "text": "A sack. Formed from 束, with 圂 indicating the sound. All characters in this group follow 㯻.",
+      "text": "A sack. Formed from 束, with 圂 indicating the sound. All characters in this group are formed from 㯻.",
       "sourceTextSha256": "946c1ef59b6f3e21231196f9db50fbe592330a3d98ce425cd46f83570248881e",
       "uncertain": false
     },
@@ -476,7 +496,7 @@
       "uncertain": false
     },
     "shuowen:3890": {
-      "text": "To surround. Depicts encircling. All characters in this group follow 囗.",
+      "text": "To surround. Depicts encircling. All characters in this group are formed from 囗.",
       "sourceTextSha256": "7e896205f53de2b2f846fa58867624371dc0696a4f1aff98dad64e5b744590be",
       "uncertain": false
     },

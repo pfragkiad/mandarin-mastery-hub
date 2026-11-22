@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "bf650da0d1b6437bcc06dd7af67c4587f4a627740705ce2c74c71c5d552036f3",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "060",
   "translations": {
@@ -261,7 +281,7 @@
       "uncertain": false
     },
     "shuowen:5947": {
-      "text": "A rocky mountain cliff where people can dwell. Pictographic. All characters in this group follow 厂.",
+      "text": "A rocky mountain cliff where people can dwell. Pictographic. All characters in this group are formed from 厂.",
       "sourceTextSha256": "1804491e6ff6b3e1486cf62d9f5d38baaf88f654c28e2113944f20db79f741c9",
       "uncertain": false
     },
@@ -396,7 +416,7 @@
       "uncertain": false
     },
     "shuowen:5974": {
-      "text": "A round thing that tilts and rolls. Formed from reversed 仄. All characters in this group follow 丸.",
+      "text": "A round thing that tilts and rolls. Formed from reversed 仄. All characters in this group are formed from 丸.",
       "sourceTextSha256": "b8590df836534d9fcf78a09a3fd2ce9eb286d45230dcca52b65f7d6531f2ce1c",
       "uncertain": false
     },
@@ -416,7 +436,7 @@
       "uncertain": false
     },
     "shuowen:5978": {
-      "text": "Being high up and afraid. Formed from 厃, stopping oneself with 卪. All characters in this group follow 危.",
+      "text": "Being high up and afraid. Formed from 厃, stopping oneself with 卪. All characters in this group are formed from 危.",
       "sourceTextSha256": "cbaf37a2906413df5a5e09f48494a1befd09ecbd95707053771854e20357b733",
       "uncertain": false
     },
@@ -426,7 +446,7 @@
       "uncertain": false
     },
     "shuowen:5980": {
-      "text": "Mountain stone. Beneath 厂, 囗 depicts its form. All characters in this group follow 石.",
+      "text": "Mountain stone. Beneath 厂, 囗 depicts its form. All characters in this group are formed from 石.",
       "sourceTextSha256": "12a2329d903d53798e63f20779f42bba49d854104b67f94dcc9eae5524ab121e",
       "uncertain": false
     },

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "756e608ad20e711130e3699f2575e70c61229dbb9b4d1dc659747951dc47006f",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "034",
   "translations": {
@@ -66,7 +86,7 @@
       "uncertain": false
     },
     "shuowen:3308": {
-      "text": "Where buying and selling take place. A market has enclosing walls. Formed from 冂 and 绁; 绁 is ancient-script 及, depicting goods reaching one another. Abbreviated 之 indicates the sound.",
+      "text": "Where buying and selling take place. A market has enclosing walls. Formed from 冂 and 乁; 乁 is ancient-script 及, depicting goods reaching one another. Abbreviated 之 indicates the sound.",
       "sourceTextSha256": "1bf94de570c277b14aee3282d2bc10212e42893e6b420359ed19f1c8cc1b0aac",
       "uncertain": false
     },
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:3312": {
-      "text": "A measured enclosure, where people measure out their dwelling places. Formed from 回, depicting the double walls of a city, with two towers facing each other. Some forms use only 囗. Pronounced 韋. All characters in this group follow 𩫖.",
+      "text": "A measured enclosure, where people measure out their dwelling places. Formed from 回, depicting the double walls of a city, with two towers facing each other. Some forms use only 囗. Pronounced 韋. All characters in this group are formed from 𩫖.",
       "sourceTextSha256": "fd354523312603d6fb522c9c5f601635ffad1fb20a5b1880ae72dc37bb31fd5a",
       "uncertain": false
     },
@@ -96,7 +116,7 @@
       "uncertain": false
     },
     "shuowen:3314": {
-      "text": "An exceptionally high mound made by people. Formed from abbreviated 高, with | depicting height. All characters in the 京 group follow 京.",
+      "text": "An exceptionally high mound made by people. Formed from abbreviated 高, with 丨 depicting height. All characters in the 京 group follow 京.",
       "sourceTextSha256": "bc42978f1a5f3395e27385069705e9277f93a96fce93dc072be065f285a0cf54",
       "uncertain": false
     },
@@ -106,7 +126,7 @@
       "uncertain": false
     },
     "shuowen:3316": {
-      "text": "To offer. Formed from abbreviated 高; 曰 depicts presenting cooked food. The Classic of Filial Piety says: “When sacrifices are offered, the spirits enjoy them.” All characters in this group follow 亯.",
+      "text": "To offer. Formed from abbreviated 高; 曰 depicts presenting cooked food. The Classic of Filial Piety says: “When sacrifices are offered, the spirits enjoy them.” All characters in this group are formed from 亯.",
       "sourceTextSha256": "f8f1eb32e222f018528f004d5d622b602daab871564dee0758bebe6c173060e4",
       "uncertain": false
     },
@@ -141,7 +161,7 @@
       "uncertain": false
     },
     "shuowen:3323": {
-      "text": "Full. Formed from abbreviated 高, depicting height and thickness. All characters in this group follow 畗. Read like 伏.",
+      "text": "Full. Formed from abbreviated 高, depicting height and thickness. All characters in this group are formed from 畗. Read like 伏.",
       "sourceTextSha256": "ec9f68a4d83e54689ee4ba804a31dcefcf6436f5db1c51c5dc4d6b514a1bc56f",
       "uncertain": false
     },
@@ -151,7 +171,7 @@
       "uncertain": false
     },
     "shuowen:3325": {
-      "text": "Where grain is shaken in. For grain offerings in ancestral temples, one hurriedly takes grain from the granary; hence it is called 㐭. Formed from 入; 回 depicts a building with doors and windows inside. All characters in this group follow 㐭.",
+      "text": "Where grain is shaken in. For grain offerings in ancestral temples, one hurriedly takes grain from the granary; hence it is called 㐭. Formed from 入; 回 depicts a building with doors and windows inside. All characters in this group are formed from 㐭.",
       "sourceTextSha256": "a1137883b4b205cd8df54e35a2320e74aee102636a4c49328e9867d5c86274ee",
       "uncertain": false
     },
@@ -171,7 +191,7 @@
       "uncertain": false
     },
     "shuowen:3329": {
-      "text": "To cherish and conserve. Formed from 來 and 㐭: what comes is stored in a granary. Hence the agricultural official is called 嗇夫. All characters in this group follow 嗇.",
+      "text": "To cherish and conserve. Formed from 來 and 㐭: what comes is stored in a granary. Hence the agricultural official is called 嗇夫. All characters in this group are formed from 嗇.",
       "sourceTextSha256": "aaf9de8141bf9a73e83a995768ae6887289b5620d3fd94be3f8214d3594e25b3",
       "uncertain": false
     },
@@ -181,7 +201,7 @@
       "uncertain": false
     },
     "shuowen:3331": {
-      "text": "The auspicious wheat, 來麰, received by Zhou. One 來 has two seams, depicting awns and spikes. It came from Heaven, so it also serves as 來 meaning “to come.” The Odes says: “They bequeathed us wheat and barley.” All characters in this group follow 來.",
+      "text": "The auspicious wheat, 來麰, received by Zhou. One 來 has two seams, depicting awns and spikes. It came from Heaven, so it also serves as 來 meaning “to come.” The Odes says: “They bequeathed us wheat and barley.” All characters in this group are formed from 來.",
       "sourceTextSha256": "983ed4007890839c6a7d96ecb7f1fea72811ec71ca66a2d8d60dbe090e3c5de8",
       "uncertain": false
     },
@@ -191,7 +211,7 @@
       "uncertain": true
     },
     "shuowen:3333": {
-      "text": "An awned grain, planted in autumn and buried deeply, hence called 麥. Wheat belongs to Metal: it grows when Metal rules and dies when Fire rules. Formed from 來, the ear-bearing plant, and 夊. All characters in this group follow 麥.",
+      "text": "An awned grain, planted in autumn and buried deeply, hence called 麥. Wheat belongs to Metal: it grows when Metal rules and dies when Fire rules. Formed from 來, the ear-bearing plant, and 夊. All characters in this group are formed from 麥.",
       "sourceTextSha256": "a17cbc0171b25adda7d124c6d382205d816e61d17f97ac48875236c21c289469",
       "uncertain": false
     },
@@ -256,7 +276,7 @@
       "uncertain": false
     },
     "shuowen:3346": {
-      "text": "To walk slowly, dragging the feet, 夊夊. Depicts a person whose two shins tread upon something. All characters in this group follow 夊.",
+      "text": "To walk slowly, dragging the feet, 夊夊. Depicts a person whose two shins tread upon something. All characters in this group are formed from 夊.",
       "sourceTextSha256": "2b0b5068060b23bea6ec03651e3062006d8eaa6470acf8916c54b6edfb549055",
       "uncertain": false
     },
@@ -336,7 +356,7 @@
       "uncertain": false
     },
     "shuowen:3362": {
-      "text": "To lie facing opposite ways. Formed from 夊 and 𡕒 with their backs to each other. All characters in this group follow 舛.",
+      "text": "To lie facing opposite ways. Formed from 夊 and 𡕒 with their backs to each other. All characters in this group are formed from 舛.",
       "sourceTextSha256": "4b3304b79b7095f62b2d44e860f5a8d061a67088b900675f8d8d1af6d454238a",
       "uncertain": false
     },
@@ -361,7 +381,7 @@
       "uncertain": false
     },
     "shuowen:3367": {
-      "text": "To turn away from one another. Formed from 舛, with 囗 indicating the sound. Animal hide can bind things that bend and turn away from one another; hence the graph is borrowed for leather. All characters in this group follow 韋.",
+      "text": "To turn away from one another. Formed from 舛, with 囗 indicating the sound. Animal hide can bind things that bend and turn away from one another; hence the graph is borrowed for leather. All characters in this group are formed from 韋.",
       "sourceTextSha256": "bb344ddb3ce5b4b7ff08c8739e08ef045e542c366ea4964e1c0efb963f34ccad",
       "uncertain": false
     },
@@ -446,7 +466,7 @@
       "uncertain": false
     },
     "shuowen:3384": {
-      "text": "The successive turns of a leather binding. Based on the shape of an ancient graph. All characters in this group follow 弟.",
+      "text": "The successive turns of a leather binding. Based on the shape of an ancient graph. All characters in this group are formed from 弟.",
       "sourceTextSha256": "bd5588e5a32a24c74ad76955701acc293c913a14a0ad4810285410f06965ed4f",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:3386": {
-      "text": "To arrive from behind. Depicts someone propelling a person from behind the two shins. All characters in this group follow 夂. Read like 黹.",
+      "text": "To arrive from behind. Depicts someone propelling a person from behind the two shins. All characters in this group are formed from 夂. Read like 黹.",
       "sourceTextSha256": "4f8f2ed133a630b3267f8402beae811b261d59e5adccb15841092454f65f5484",
       "uncertain": false
     },
@@ -486,12 +506,12 @@
       "uncertain": false
     },
     "shuowen:3392": {
-      "text": "To brace from behind. Depicts a support behind a person’s two shins. The Rites of Zhou says: “Brace them against a wall to observe their bending.” All characters in this group follow 久.",
+      "text": "To brace from behind. Depicts a support behind a person’s two shins. The Rites of Zhou says: “Brace them against a wall to observe their bending.” All characters in this group are formed from 久.",
       "sourceTextSha256": "243086ba7f727eb9d555546481824a46e23e6e6b60e817bc17600622e668a9e3",
       "uncertain": false
     },
     "shuowen:3393": {
-      "text": "To dismember and expose. Formed from 舛 upon 木. All characters in this group follow 桀.",
+      "text": "To dismember and expose. Formed from 舛 upon 木. All characters in this group are formed from 桀.",
       "sourceTextSha256": "99a2533e57ce2db01e175d9b1aded378daf9a7f8bb4e9a00831f82189fce2360",
       "uncertain": false
     },
@@ -506,7 +526,7 @@
       "uncertain": true
     },
     "shuowen:3396": {
-      "text": "To emerge: growing up through the ground. The phase of the east. Formed from 屮, with roots depicted below. All characters in this group follow 木.",
+      "text": "To emerge: growing up through the ground. The phase of the east. Formed from 屮, with roots depicted below. All characters in this group are formed from 木.",
       "sourceTextSha256": "f1a7361f5e0b42ef326a877e52754738611c3660008a1b4e86b27abefaf485d3",
       "uncertain": false
     },

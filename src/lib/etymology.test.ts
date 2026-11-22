@@ -119,5 +119,19 @@ describe('source-bound Shuowen English', () => {
     input.entries[0]!.sourceId = 'howell';
     expect((await validateEtymologyTranslations(input)).entries[0]?.translation).toBeUndefined();
   });
+  it('checks the editorial reading independently while preserving the imported original', async () => {
+    vi.stubGlobal('crypto', webcrypto);
+    const input = record();
+    const reading = { headword: '舌', text: '別條原文。',
+      textSha256: createHash('sha256').update('別條原文。').digest('hex'),
+      classification: 'documented_duan_emendation', note: 'Review supplied an alternative reading.', evidenceUrls: [] };
+    input.entries[0]!.translation!.editorialReview = { reviewId: 'test-review', status: 'partial-editorial-review',
+      changes: ['source-reading'], sourceReading: reading };
+    expect((await validateEtymologyTranslations(input)).entries[0]?.translation).toBeDefined();
+    reading.text += '變';
+    const checked = await validateEtymologyTranslations(input);
+    expect(checked.entries[0]?.translation).toBeUndefined();
+    expect(checked.entries[0]?.text).toBe('在口所以言也。');
+  });
 });
 

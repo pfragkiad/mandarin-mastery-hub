@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shuowen partial editorial review provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "schemaVersion", "dataset_metadata", "archive", "statistics"],
+  "properties": {
+    "format": {
+      "const": "mandarin-shuowen-editorial-review"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "dataset_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "version", "review_id", "review_date", "status", "disclaimer"],
+      "properties": {
+        "source_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "review_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "const": "partial-editorial-review"
+        },
+        "disclaimer": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "sha256", "members"],
+      "properties": {
+        "file": {
+          "const": "handoff.zip"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "members": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entries",
+        "initial_uncertainties",
+        "remaining_uncertainties",
+        "source_edited_entries",
+        "translation_edited_entries",
+        "resolved_flags",
+        "overall_changed_entries",
+        "source_patch_operations",
+        "additional_translation_operations",
+        "edited_export_sha256"
+      ],
+      "properties": {
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "initial_uncertainties": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "remaining_uncertainties": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_edited_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "translation_edited_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resolved_flags": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "overall_changed_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_patch_operations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "additional_translation_operations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "edited_export_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}

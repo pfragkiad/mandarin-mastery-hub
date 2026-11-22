@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "566a399d3b09f0267a4e00815e596d9f231ca2109cd72f5e6417d472f8cd494e",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "008",
   "translations": {
@@ -48,7 +68,7 @@
     "shuowen:704": {
       "text": "The minuteness of things. Formed from 八, with 丨 appearing and dividing it. All characters in the 小 category are formed from 小.",
       "sourceTextSha256": "e84b77d18a797aaab330e3aae8e3e6a49cbe324d9a5215e98b4187c2fcad874b",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:705": {
       "text": "Not many. Formed from 小, with 丿 indicating the sound.",
@@ -56,7 +76,7 @@
       "uncertain": false
     },
     "shuowen:706": {
-      "text": "Few. Formed from 小, with 乀 indicating the sound. Pronounced like 輟.",
+      "text": "Few. Formed from 小, with 乀 indicating the sound. Read like 輟.",
       "sourceTextSha256": "b474423293db7e5554d9f2711e1de884d6e041d72bc5160daae12729b729767e",
       "uncertain": false
     },
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:709": {
-      "text": "A particle expressing certainty. Formed from 入, | and 八; 八 depicts the dispersal of vapor.",
+      "text": "A particle expressing certainty. Formed from 入, 丨 and 八; 八 depicts the dispersal of vapor.",
       "sourceTextSha256": "cdbba9ae630a91fc95a79aa8a259c900909f093f9cafb8dce1e95fa19282a489",
       "uncertain": false
     },
@@ -111,9 +131,9 @@
       "uncertain": false
     },
     "shuowen:717": {
-      "text": "To divide to the utmost. Formed from 八 and 弋; 弋 also indicates the sound.",
+      "text": "A dividing standard or boundary marker. Formed from 八 and 弋, with 弋 also indicating the sound; by extension, “necessary” or “certain.”",
       "sourceTextSha256": "8be701cf2c215e1a36330ef160a2e4e3940173b244e399b73d734c2869ce0e53",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:718": {
       "text": "An extended utterance. Formed from 八, with abbreviated 舍 indicating the sound.",
@@ -121,7 +141,7 @@
       "uncertain": false
     },
     "shuowen:719": {
-      "text": "To distinguish. It depicts the separated toes and claws of a beast. All characters in the 釆 category are formed from 釆. Pronounced like 辨.",
+      "text": "To distinguish. It depicts the separated toes and claws of a beast. All characters in the 釆 category are formed from 釆. Read like 辨.",
       "sourceTextSha256": "8274297b9ac520d4b622d95408d36da971d610bf2f1b205f533ce99456ca410e",
       "uncertain": false
     },
@@ -161,7 +181,7 @@
       "uncertain": false
     },
     "shuowen:727": {
-      "text": "A large sacrificial animal. 牛 suggests 件; 件 means the ordering of affairs. It depicts horns, head, three parts, a raised back and tail. All characters in the 牛 category are formed from 牛. [The pictographic wording is uncertain.]",
+      "text": "Cattle, a major animal for sacrifice and agricultural work. The text offers an early interpretive association with 件, or the ordering of affairs, and describes a form depicting horns, head and body. All characters in the 牛 category are formed from 牛. [Duan argues that some transmitted explanatory wording is a later interpolation.]",
       "sourceTextSha256": "efd7615d46039a4cc19fc601b2c60a3a784d6842242ae94fe260dd46da4e13bc",
       "uncertain": true
     },
@@ -226,7 +246,7 @@
       "uncertain": false
     },
     "shuowen:740": {
-      "text": "A yellow ox with tiger markings. Formed from 牛, with 余 indicating the sound. Pronounced like 塗.",
+      "text": "A yellow ox with tiger markings. Formed from 牛, with 余 indicating the sound. Read like 塗.",
       "sourceTextSha256": "a26fcd2525d50a0316050347795533dcd1132444d2b27659ea9f9a6e9244ca46",
       "uncertain": false
     },
@@ -266,7 +286,7 @@
       "uncertain": false
     },
     "shuowen:748": {
-      "text": "An ox walking slowly. Formed from 牛, with 𠬢 indicating the sound. Pronounced like 滔.",
+      "text": "An ox walking slowly. Formed from 牛, with 𠬢 indicating the sound. Read like 滔.",
       "sourceTextSha256": "21e37d3f22f2b35a88070d9a064f3137fd6dbdb98e92a23c5546c61c8c5211ba",
       "uncertain": false
     },
@@ -283,7 +303,7 @@
     "shuowen:751": {
       "text": "Livestock of unblemished, uniform appearance. Formed from 牛, with 産 indicating the sound.",
       "sourceTextSha256": "fdd6fcaac28d603aa51a2437ad6abb7dfe01c2b1b862c98d1f709e101f19bda6",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:752": {
       "text": "An ox complete and unblemished. Formed from 牛, with 生 indicating the sound.",
@@ -311,7 +331,7 @@
       "uncertain": false
     },
     "shuowen:757": {
-      "text": "To rear cattle on fodder stalks. Formed from 牛 and 芻; 芻 also indicates the sound. The Spring and Autumn Discourses of the States says: “How many fodder-fed and grain-fed animals？”",
+      "text": "To rear cattle on fodder stalks. Formed from 牛 and 芻; 芻 also indicates the sound. The Spring and Autumn Discourses of the States says: “How many fodder-fed and grain-fed animals?”",
       "sourceTextSha256": "cd0ee49bd0c07e68fb1abab418da8d8680072068f519ee1d0b87989f54d5d482",
       "uncertain": false
     },
@@ -331,12 +351,12 @@
       "uncertain": false
     },
     "shuowen:761": {
-      "text": "To plow both sides. Formed from 牛, with 非 indicating the sound. Another explanation: to plow over again and sow. Pronounced like 匪.",
+      "text": "Two oxen plowing inward from opposite sides of a field. Formed from 牛, with 非 indicating the sound. Another explanation: to plow a field again and sow it. Pronounced like 匪.",
       "sourceTextSha256": "0ac681660a204969a4158f2cce08901717bcd7ae95a3a633947f6a9c6b7b0b67",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:762": {
-      "text": "Cattle or sheep without offspring. Formed from 牛, with 𠷎 indicating the sound. Pronounced like 糗 in 糗糧, dry provisions.",
+      "text": "Cattle or sheep without offspring. Formed from 牛, with 𠷎 indicating the sound. Read like 糗 in 糗糧, dry provisions.",
       "sourceTextSha256": "f64c56d9800735b4b8709420a3fd03badf7e7248dc39b4cd67093abaeb6c389c",
       "uncertain": false
     },
@@ -351,7 +371,7 @@
       "uncertain": false
     },
     "shuowen:765": {
-      "text": "An obstinate ox that refuses to be led. Formed from 牛 and 臤; 臤 also indicates the sound. Another explanation: a large appearance. Pronounced like 賢.",
+      "text": "An obstinate ox that refuses to be led. Formed from 牛 and 臤; 臤 also indicates the sound. Another explanation: a large appearance. Read like 賢.",
       "sourceTextSha256": "36d0033f5bb2f1d5f7e7d38fc0282f2229ff265d759645a191aeb71d05c5e8ef",
       "uncertain": false
     },
@@ -408,7 +428,7 @@
     "shuowen:776": {
       "text": "Stiff, curled hair usable as padding to raise clothing. Formed from abbreviated 犛, with 來 indicating the sound.",
       "sourceTextSha256": "75ce8805a09416a102e66ea98e56a80e2c5a295cae29fab1f66761936c4afdd1",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:777": {
       "text": "When an ox butts people, a crosspiece is attached to its horns to warn them. Formed from 口 and 牛. The Changes says: “The young ox's horn restraint.” All characters in the 告 category are formed from 告.",
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:786": {
-      "text": "The throat, 咽. Formed from 口, with 會 indicating the sound. Pronounced like 快. Another explanation: 嚵 means 噲. [The final gloss is uncertain.]",
+      "text": "The throat, where breath and voice converge. Formed from 口, with 會 indicating the sound. Read like 快. Another explanation relates it to voracious or greedy eating. [The transmitted wording of the alternative gloss differs between editions.]",
       "sourceTextSha256": "66c82704c05d320169eb9c8baa350f3bc5f8e2349318d14a77ee7308ac2bf27b",
       "uncertain": true
     },

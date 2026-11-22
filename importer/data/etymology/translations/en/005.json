@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "9fcfe2180c586c4375cca846647aa7b8c9f160d5d285100881631d997995c8f1",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "005",
   "translations": {
@@ -51,7 +71,7 @@
       "uncertain": false
     },
     "shuowen:405": {
-      "text": "The plant 地黃. Formed from 艸, with 下 indicating the sound. This is the term in the Record of Rites: “For meat stews: beef with 藿; mutton with 芐; pork with 薇.”",
+      "text": "The medicinal plant called 地黃 (rehmannia). Formed from 艸, with 下 indicating the sound. The cited ritual food text specifies different herbs served with beef, mutton and pork. [Classical witnesses differ over the precise mutton-herb reading.]",
       "sourceTextSha256": "1d521a1b201250606dd14b4846e6b74b545e9234ca20502103fec1c3a01f0734",
       "uncertain": true
     },
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:409": {
-      "text": "The plant 鹿藿. Formed from 艸, with 麃 indicating the sound. Pronounced like 剽. Another explanation: a kind of 𦳋.",
+      "text": "The plant 鹿藿. Formed from 艸, with 麃 indicating the sound. Read like 剽. Another explanation: a kind of 𦳋.",
       "sourceTextSha256": "82ac5349a77e712b14577e5336dd3bca0767ffc872710781ea8c01a9660c57f0",
       "uncertain": false
     },
@@ -466,9 +486,9 @@
       "uncertain": false
     },
     "shuowen:488": {
-      "text": "The outer husk enclosing the fruit of 茮 and 樧. Formed from 艸, with 求 indicating the sound.",
+      "text": "Clusters of spiny protrusions on the outer surface of the fruits of 茮 and 樧. Formed from 艸, with 求 indicating the sound.",
       "sourceTextSha256": "cc3b6bedb892b1e8d22e155f3d6b647559d6de714fd8d04a6bfa87d9344bc77b",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:489": {
       "text": "The tree 楚, thorn or vitex. Formed from 艸, with 刑 indicating the sound.",
@@ -496,9 +516,9 @@
       "uncertain": false
     },
     "shuowen:494": {
-      "text": "The supporting stalk of a branch. Formed from 艸, with 巠 indicating the sound.",
+      "text": "The main stem supporting a plant’s branches. Formed from 艸, with 巠 indicating the sound.",
       "sourceTextSha256": "60d7cc4f81bd7cee50f8c688ee4451678aeb7b83e318b6edf74eff201629a204",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:495": {
       "text": "A stalk. Formed from 艸, with 廷 indicating the sound.",
@@ -511,7 +531,7 @@
       "uncertain": false
     },
     "shuowen:497": {
-      "text": "Small plants. Formed from 艸, with 㓹 indicating the sound. 㓹 is the ancient form of 銳. Pronounced like 芮.",
+      "text": "Small plants. Formed from 艸, with 㓹 indicating the sound. 㓹 is the ancient form of 銳. Read like 芮.",
       "sourceTextSha256": "fd9218108750cf6b477f0022579fb6141e760360490ab2cc3600a4071d4bb82b",
       "uncertain": false
     },

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "7bcaf2efdc801e1220ad9f022edaadc6c9292c2cc607645730207f48cb76bbfe",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "051",
   "translations": {
@@ -211,7 +231,7 @@
       "uncertain": false
     },
     "shuowen:5037": {
-      "text": "儃何, perhaps a leisurely or lingering manner; the gloss is uncertain. Formed from 人, with 亶 indicating the sound.",
+      "text": "The rare expression 儃何, perhaps referring to circling, lingering or turning about. Formed from 人, with 亶 indicating the sound. [Duan says the received gloss is unexplained and proposes a possible connection with 儃佪 in classical poetry.]",
       "sourceTextSha256": "b27ddeb4431cdb5d02c22c8ecf9a9e2e40e14b8f22d4c9dcc03ae1dccf445553",
       "uncertain": true
     },
@@ -371,7 +391,7 @@
       "uncertain": false
     },
     "shuowen:5069": {
-      "text": "Whole. The Lost Book of Zhou says: “I truly lack understanding, thereby 俒 my elder uncle,” perhaps “keeping him whole”; the quotation is uncertain. Formed from 人 and 完.",
+      "text": "To be complete or whole. In the quoted Lost Book of Zhou passage the character appears to be a loan meaning “to trouble or inconvenience”: “I have lacked understanding and have troubled my uncle.” Formed from 人 and 完. [Textual variants and the original line’s context remain uncertain.]",
       "sourceTextSha256": "464e10c0489234fc267f3b718170c87a403982cfa031e51725071d67901ea526",
       "uncertain": true
     },
@@ -406,9 +426,9 @@
       "uncertain": false
     },
     "shuowen:5076": {
-      "text": "To direct or employ, glossed 伶; the recorded gloss is uncertain. Formed from 人, with 吏 indicating the sound.",
+      "text": "To order, command or dispatch someone. Formed from 人, with 吏 indicating the sound. [The received source has 伶 for 令, which Duan identifies as a scribal error.]",
       "sourceTextSha256": "e48a0f7d097d703e58f4b9572865ecaa492043c9367d88a07bd93e44b2d144ef",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:5077": {
       "text": "To look both left and right. Formed from 人, with 癸 indicating the sound.",

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "ef6fb225d8e28bd501524d0356f32d3670f03d8485d3dd2bfd2be56a32e746de",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "012",
   "translations": {
@@ -46,7 +66,7 @@
       "uncertain": false
     },
     "shuowen:1104": {
-      "text": "To go. Formed from 辵, with 折 indicating the sound. Pronounced like 誓.",
+      "text": "To go. Formed from 辵, with 折 indicating the sound. Read like 誓.",
       "sourceTextSha256": "21c0b52ee22fa349852a9a5262a3f9f8688c8bbc4a81f9c3e711c65f6e6361d9",
       "uncertain": false
     },
@@ -101,14 +121,14 @@
       "uncertain": false
     },
     "shuowen:1115": {
-      "text": "To come together, 䢔. Formed from 辵, with 眔 indicating the sound.",
+      "text": "To reach, overtake or catch up with someone or something. Formed from 辵, with 眔 indicating the sound.",
       "sourceTextSha256": "c1ea54de3aeb5c7dfc667b1e08d8857c18a29053e4e9242abee78e7e4633adf9",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1116": {
-      "text": "To come together, 遝. Formed from 辵, with 合 indicating the sound.",
+      "text": "To reach or catch up with, the same as 遝. Formed from 辵, with 合 indicating the sound.",
       "sourceTextSha256": "bdbe4264c9210095349f4a69ce78d826caf5e148b1771b25ee14fa9d1d15dd5e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1117": {
       "text": "迮迮: to rise. Formed from 辵, with abbreviated 作 indicating the sound.",
@@ -116,7 +136,7 @@
       "uncertain": false
     },
     "shuowen:1118": {
-      "text": "The expression 迹逪, a manner of movement. Formed from 辵, with 昔 indicating the sound. [The precise sense is uncertain.]",
+      "text": "To cross or move obliquely, especially in alternating or intersecting paths. Formed from 辵, with 昔 indicating the sound. [Duan argues that the received 迹逪 should instead read 䢒逪.]",
       "sourceTextSha256": "22bb51f121f3df9025482ec7d26dfa3188343626927fc4a2024615d79e837244",
       "uncertain": true
     },
@@ -258,7 +278,7 @@
     "shuowen:1146": {
       "text": "唐逮: to reach. Formed from 辵, with 隶 indicating the sound.",
       "sourceTextSha256": "ee4cf6b247c70577ad7dfc69efb755c24407e61444eaf2f0c0b7b653d6376261",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1147": {
       "text": "To walk slowly. Formed from 辵, with 犀 indicating the sound. The Odes says: “Traveling the road slowly.”",
@@ -281,7 +301,7 @@
       "uncertain": false
     },
     "shuowen:1151": {
-      "text": "Not to walk. Formed from 辵, with 𩣷 indicating the sound. Pronounced like 住.",
+      "text": "Not to walk. Formed from 辵, with 𩣷 indicating the sound. Read like 住.",
       "sourceTextSha256": "803af9ded0f6377b9a32dbc716587d7a1df6fd6a6c4ef8ae3bbc57aaa9acb532",
       "uncertain": false
     },
@@ -361,19 +381,19 @@
       "uncertain": false
     },
     "shuowen:1167": {
-      "text": "To join in a continuous round. Formed from 辵 and 車. [The gloss 員連 is uncertain.]",
+      "text": "Originally, a carriage drawn or pulled along by a person, related to the old form of 輦; later, things joined in an unbroken sequence. Formed from 辵 and 車. [Duan argues the transmitted gloss 員連 is corrupt for 負車.]",
       "sourceTextSha256": "fc3a59c7dfb07a21c0f23711691004e6f6fba971dbafd290dbfcca21d0dce910",
       "uncertain": true
     },
     "shuowen:1168": {
-      "text": "To collect and gather. Formed from 辵, with 求 indicating the sound. The Book of Yu says: “Seek widely to complete the achievements.” It also says: “A resentful mate is called 逑.” [The final quotation is difficult.]",
+      "text": "To collect or gather. Formed from 辵, with 求 indicating the sound. The Book of Yu says: “Seek widely to complete the achievements.” A separate saying states: “A hostile or ill-matched partner is called 逑.” This latter use corresponds to 仇 in a parallel textual tradition.",
       "sourceTextSha256": "76005cd678bf9790ea522c69a6bb477a0bb5a443abd58ea150ae42ff1ad2df8f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1169": {
       "text": "To defeat or ruin, 𣀩. Formed from 辵, with 貝 indicating the sound. The Book of Zhou says: “We rise to receive its defeat.”",
       "sourceTextSha256": "2a6125659822501cd99d12cad2cb17cd4bdb4d330bb0ae651a66be8e1743c04e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1170": {
       "text": "To escape. Formed from 辵, with 官 indicating the sound.",
@@ -398,7 +418,7 @@
     "shuowen:1174": {
       "text": "To perish or go away. Formed from 辵, with 㒸 indicating the sound.",
       "sourceTextSha256": "88444b1241780ff323817dae0297792bf06e56f6fe6f0152543fe486b1523c4a",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1175": {
       "text": "To flee. Formed from 辵, with 兆 indicating the sound.",
@@ -426,7 +446,7 @@
       "uncertain": false
     },
     "shuowen:1180": {
-      "text": "To draw together, 搚. Formed from 辵, with 巤 indicating the sound.",
+      "text": "To compress, fold or draw together. Formed from 辵, with 巤 indicating the sound.",
       "sourceTextSha256": "a421853000d43c553661901a8191c6850f4b7e363cbbf6dfffa3d3bbdf43bfb5",
       "uncertain": true
     },
@@ -446,7 +466,7 @@
       "uncertain": false
     },
     "shuowen:1184": {
-      "text": "To stop gently or slightly. Formed from 辵, with 曷 indicating the sound. Pronounced like 蝎, the mulberry insect.",
+      "text": "To stop gently or slightly. Formed from 辵, with 曷 indicating the sound. Read like 蝎, the mulberry insect.",
       "sourceTextSha256": "c8d31be26d7034b2bd63f7633e3abbf05e3d443e3a6f97f57aa4cae214d28076",
       "uncertain": false
     },
@@ -461,7 +481,7 @@
       "uncertain": false
     },
     "shuowen:1187": {
-      "text": "To bar the way, 迾. Jin and Zhao call it 迣. Formed from 辵, with 丗 indicating the sound. Pronounced like 寘.",
+      "text": "To bar the way, 迾. Jin and Zhao call it 迣. Formed from 辵, with 丗 indicating the sound. Read like 寘.",
       "sourceTextSha256": "a377ed26f9f0f1cac4e8a1dc327c63b3ffa9a801737e0138757652e6984d79f2",
       "uncertain": false
     },
@@ -471,7 +491,7 @@
       "uncertain": false
     },
     "shuowen:1189": {
-      "text": "To advance. Formed from 辵, with 干 indicating the sound. Pronounced like 干.",
+      "text": "To advance. Formed from 辵, with 干 indicating the sound. Read like 干.",
       "sourceTextSha256": "33f08dae26406eba86e7a7ad7a0d5c15c9e9e8721a0bd4e10763f5280ec2a2d9",
       "uncertain": false
     },
@@ -481,12 +501,12 @@
       "uncertain": false
     },
     "shuowen:1191": {
-      "text": "The continuous manner 連遱. Formed from 辵, with 婁 indicating the sound.",
+      "text": "To continue or move in an unbroken succession. Formed from 辵, with 婁 indicating the sound.",
       "sourceTextSha256": "fc41ca052d9a5ea406cbc4085c2b973c532c56f19f65b24420e0101137ece32e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1192": {
-      "text": "To hold one's head forward and raised. Formed from 辵, with 巿 indicating the sound. Palace Attendant Jia gives one pronunciation like 㭘, another like 郅. [The gloss 前頡 is uncertain.]",
+      "text": "To move forward with the face or head thrust out, as in a particular way of running or moving. Formed from 辵, with 巿 indicating the sound. Palace Attendant Jia offers readings like 㭘 or 郅. [Duan discusses a competing graph and the gloss 䢡走也.]",
       "sourceTextSha256": "47cdf3f3f3a36962cee6446f8ee5b41121a619e8f9794c96a06419c9dbb48ad7",
       "uncertain": true
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:1195": {
-      "text": "To pass through. Formed from 辵, with 呈 indicating the sound. Chu calls rapid walking 逞. The Spring and Autumn commentary says: “Where would he not gratify his desires？”",
+      "text": "To pass through. Formed from 辵, with 呈 indicating the sound. Chu calls rapid walking 逞. The Spring and Autumn commentary says: “Where would he not gratify his desires?”",
       "sourceTextSha256": "2482049939324e5e6e9b089f037b11c5d8b5aca248508c8647ef0b237bd829e9",
       "uncertain": false
     },
@@ -526,7 +546,7 @@
       "uncertain": false
     },
     "shuowen:1200": {
-      "text": "Far. Formed from 辵, with 卓 indicating the sound. Another explanation: lame. Pronounced like 棹 in 棹苕.",
+      "text": "Far. Formed from 辵, with 卓 indicating the sound. Another explanation: lame. Read like 棹 in 棹苕.",
       "sourceTextSha256": "5d66552253f82b846285c6a46147f799afeddf7f1403ded47d93008b7c0522a2",
       "uncertain": false
     }

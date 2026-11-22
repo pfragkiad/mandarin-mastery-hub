@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "6a28d6c266cbef7c9b8dcca4844a77af973f23ebdb5ee899324e9cea552e7336",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "020",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:1902": {
-      "text": "To harmonize. Formed from 言, 又 and 炎. The large-seal form 𤎬 contains 𢆉; 𢆉 is pronounced 飪. Pronounced like 溼.",
+      "text": "To harmonize. Formed from 言, 又 and 炎. The large-seal form 𤎬 contains 𢆉; 𢆉 is pronounced 飪. Read like 溼.",
       "sourceTextSha256": "a61d3d017d373e9c8f7141a9a25d1fb8a392ca17f72d2e5e0a77ff0849aa544f",
       "uncertain": false
     },
@@ -51,9 +71,9 @@
       "uncertain": false
     },
     "shuowen:1905": {
-      "text": "To divide and decide. Formed from 又; the curved stroke depicts separation. [The source writes 纡 in describing that stroke.]",
+      "text": "To divide or cut apart decisively. Formed from 又; an additional curved stroke depicts the act of splitting or separation.",
       "sourceTextSha256": "a77db504fe5f3556ffc8c3332975d5c210e8de021ed348e1ab0f90d33cffc0cc",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1906": {
       "text": "To govern. Formed from 又 and 丿: one who grasps affairs.",
@@ -61,7 +81,7 @@
       "uncertain": false
     },
     "shuowen:1907": {
-      "text": "A lowered hand. Formed from 又, with 虘 indicating the sound.",
+      "text": "To reach down and take something by hand; by extension, to retrieve something from mud or a ditch. Formed from 又, with 虘 indicating the sound. [Duan corrects the received 又卑, comparing the character 叉 and an older variant.]",
       "sourceTextSha256": "b7276bbed5633b430294ec207e85841bf135cca88ea2ff402e045c612ef100b6",
       "uncertain": true
     },
@@ -96,12 +116,12 @@
       "uncertain": false
     },
     "shuowen:1914": {
-      "text": "Smooth or slippery. The Odes says: “𠬢 and 達.” Formed from 又 and 屮. Another explanation: to take.",
+      "text": "Moving freely or smoothly, as in an old Odes expression for coming and going; another meaning is “to take.” Formed from 又 and 屮. [Duan argues for alternative source characters in the Odes quotation.]",
       "sourceTextSha256": "22c71f08844729ba3da413bc1ef151b857b926b92a0524c9ddac6e415612342b",
       "uncertain": true
     },
     "shuowen:1915": {
-      "text": "People of Chu call divining about good and ill fortune 𠭥. Formed from 又 holding 祟; 祟 also indicates the sound. Pronounced like 贅.",
+      "text": "People of Chu call divining about good and ill fortune 𠭥. Formed from 又 holding 祟; 祟 also indicates the sound. Read like 贅.",
       "sourceTextSha256": "1de5766a0640b06b53c2fdc455b367ea7856a4e77503bbcab3418d73b77f85a7",
       "uncertain": false
     },
@@ -111,7 +131,7 @@
       "uncertain": false
     },
     "shuowen:1917": {
-      "text": "To enter water and take something. Formed from 又 beneath 囘. 囘 is the ancient form of 回; 回 means deep water. Pronounced like 沫.",
+      "text": "To enter water and take something. Formed from 又 beneath 囘. 囘 is the ancient form of 回; 回 means deep water. Read like 沫.",
       "sourceTextSha256": "dbf6649b319645214eb6f029bcd66af27961492aa990337355e486517d201640",
       "uncertain": false
     },
@@ -131,9 +151,9 @@
       "uncertain": false
     },
     "shuowen:1921": {
-      "text": "Those sharing the same intention are friends. Formed from two 又, expressing friendship with one another. [The source writes 𢖽 in the opening phrase.]",
+      "text": "People sharing the same aims or commitments are friends. Depicts two hands, representing mutual connection.",
       "sourceTextSha256": "9a63bb688e223cc654c0af67fc921f2c6107042e3a73bdcf02fbbaf285b214d5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1922": {
       "text": "Laws and standards. Formed from 又, with abbreviated 庶 indicating the sound.",
@@ -196,7 +216,7 @@
       "uncertain": false
     },
     "shuowen:1934": {
-      "text": "Ornamentation with a brush. Formed from 聿 and 彡. Common speech calls fine writing 𦘔. Pronounced like 𣸁.",
+      "text": "Ornamentation with a brush. Formed from 聿 and 彡. Common speech calls fine writing 𦘔. Read like 𣸁.",
       "sourceTextSha256": "6752f9191ad592a214a7c8779da9d435d063038ebcc74bf62b7e71b440c5a300",
       "uncertain": false
     },
@@ -231,7 +251,7 @@
       "uncertain": false
     },
     "shuowen:1941": {
-      "text": "Firm. Formed from 又, with 臣 indicating the sound. All characters in the 臤 category are formed from 臤. Pronounced like 鏗 in 鏗鏘. Ancient writing uses it for 賢.",
+      "text": "Firm. Formed from 又, with 臣 indicating the sound. All characters in the 臤 category are formed from 臤. Read like 鏗 in 鏗鏘. Ancient writing uses it for 賢.",
       "sourceTextSha256": "a975cc369ef2b68d7113e9cb29f26401684dea335d526bc1b379048e9260b7d0",
       "uncertain": false
     },
@@ -256,7 +276,7 @@
       "uncertain": false
     },
     "shuowen:1946": {
-      "text": "To diverge. Formed from two 臣 facing away from one another. Pronounced like 誑.",
+      "text": "To diverge. Formed from two 臣 facing away from one another. Read like 誑.",
       "sourceTextSha256": "1b9fb2bbce977557d78b1372c6e95eaee94fc8da6cb81c4d7e4db5660ec9f059",
       "uncertain": false
     },
@@ -266,14 +286,14 @@
       "uncertain": false
     },
     "shuowen:1948": {
-      "text": "An implement used to strike people apart. The Rites says: “The 殳 is of layered bamboo, eight-sided, one zhang and two feet long, mounted on a war chariot; the chariot guards go ahead as vanguard.” Formed from 又, with 几 indicating the sound. All characters in the 殳 category are formed from 殳.",
+      "text": "A staff-like weapon used to strike or keep an opponent at a distance, traditionally a long, many-sided bamboo pole carried on a military carriage; its name was associated with separating people. Formed from 又, with 几 indicating the sound. All characters in the 殳 category are formed from 殳. [Duan questions received wording and cites weapon dimensions from Zhouli.]",
       "sourceTextSha256": "5df4aa8b4336f02ea07676e7644fa54f141e2d742887b0762d8b19222533d973",
       "uncertain": true
     },
     "shuowen:1949": {
       "text": "A 殳 staff. Formed from 殳, with 示 indicating the sound. Another account: at city walls, markets and lanes a sheepskin is hung high; when someone not entitled to enter tries to do so, it is briefly lowered to frighten cattle and horses, called 祋. Hence formed from 示 and 殳. The Odes says: “Carrying dagger-axes and 祋.”",
       "sourceTextSha256": "04ca989b148dc01b9a2dcaf7a0e14747b326da317e631a738468fb898910a3f8",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1950": {
       "text": "The 殳 staff carried by soldiers in an army. Formed from 木 and 殳. The Methods of the Sima says: “Hold feathers and follow with staffs.”",
@@ -296,7 +316,7 @@
       "uncertain": false
     },
     "shuowen:1954": {
-      "text": "To strike with a swinging motion. Formed from 殳, with 豆 indicating the sound. The ancient form of 祋 is like this.",
+      "text": "To strike someone or something from a distance. Formed from 殳, with 豆 indicating the sound. [Duan treats the received “ancient form of 祋” as a corruption of 投 and distinguishes this from the hand-radical character.]",
       "sourceTextSha256": "9f18a264a4512be975db1ca5cccd34a9941204600957e66cec0d7ea418cb858c",
       "uncertain": true
     },
@@ -376,7 +396,7 @@
       "uncertain": false
     },
     "shuowen:1970": {
-      "text": "A short-feathered bird flying in the manner 𠘧𠘧. A pictograph. All characters in the 𠘧 category are formed from 𠘧. Pronounced like 殊. [The precise flight description is uncertain.]",
+      "text": "A short-feathered bird flying in the manner 𠘧𠘧. A pictograph. All characters in the 𠘧 category are formed from 𠘧. Read like 殊. [The precise flight description is uncertain.]",
       "sourceTextSha256": "695c4057c8ac17c565c9ef7bf81841320dc4762b17345c1a1698c7f0edb06586",
       "uncertain": true
     },
@@ -411,7 +431,7 @@
       "uncertain": false
     },
     "shuowen:1977": {
-      "text": "A six-inch tablet. Formed from 寸, with 叀 indicating the sound. Another explanation: 專 is a spindle whorl.",
+      "text": "A narrow writing tablet used for recording an official’s notes; the transmitted text describes it as six cun long. Formed from 寸, with 叀 indicating the sound. Another meaning is a spindle whorl used in spinning. [Duan argues the tablet was a 笏 and queries the transmitted length.]",
       "sourceTextSha256": "5139a1ce561aa3fa21317572816c089afe94965dd7ab3b4badc578cb95eb4196",
       "uncertain": true
     },
@@ -451,7 +471,7 @@
       "uncertain": false
     },
     "shuowen:1985": {
-      "text": "To soften leather. Formed from 北, abbreviated 皮 and abbreviated 敻. All characters in the 㼱 category are formed from 㼱. Pronounced like 耎; another pronunciation is like 雋.",
+      "text": "To soften leather. Formed from 北, abbreviated 皮 and abbreviated 敻. All characters in the 㼱 category are formed from 㼱. Read like 耎; another pronunciation is like 雋.",
       "sourceTextSha256": "9c2144895ebf391168b9eeefae3036c1ddeff54ede39b945d75bedc32c7339a9",
       "uncertain": false
     },
@@ -496,7 +516,7 @@
       "uncertain": false
     },
     "shuowen:1994": {
-      "text": "To press or constrain. Formed from 攴, with 白 indicating the sound. The Book of Zhou says: “The regular 敀 and the regular appointees.” [The quoted office term is uncertain.]",
+      "text": "To cause to rise or press into action. Formed from 攴, with 白 indicating the sound. The quotation from the Documents has a graphic loan apparently corresponding to an official rank/title, “the regular senior officials.” [The received reading differs from the transmitted 尚書.]",
       "sourceTextSha256": "d838c8010de44c0545f7ccf2348e8b938bc945c8cfd38dc037b9f63b7092a81c",
       "uncertain": true
     },

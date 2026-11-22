@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shuowen still-uncertain subset review provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "schemaVersion",
+    "dataset_metadata",
+    "base_review_archive_sha256",
+    "archive",
+    "changed_keys",
+    "statistics"
+  ],
+  "properties": {
+    "format": {
+      "const": "mandarin-shuowen-uncertainty-followup"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "dataset_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "version", "review_id", "status", "disclaimer"],
+      "properties": {
+        "source_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "review_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "const": "partial-editorial-review"
+        },
+        "disclaimer": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "base_review_archive_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "sha256", "member", "member_sha256"],
+      "properties": {
+        "file": {
+          "const": "uncertain-followup.zip"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "member": {
+          "const": "shuowen-still-uncertain-only.txt"
+        },
+        "member_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "changed_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^shuowen:[1-9][0-9]*$"
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reported_uncertain_entries",
+        "translation_edited_entries",
+        "uncertain_before",
+        "uncertain_after",
+        "resolved_flags",
+        "omitted_uncertain_keys"
+      ],
+      "properties": {
+        "reported_uncertain_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "translation_edited_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertain_before": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertain_after": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resolved_flags": {
+          "const": 0
+        },
+        "omitted_uncertain_keys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^shuowen:[1-9][0-9]*$"
+          }
+        }
+      }
+    }
+  }
+}

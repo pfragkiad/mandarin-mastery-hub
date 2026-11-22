@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "64f6f8d23003d2c6a556490169ccf016df2d7f981a4c59c58b374b829495d58d",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "058",
   "translations": {
@@ -231,7 +251,7 @@
       "uncertain": false
     },
     "shuowen:5741": {
-      "text": "A ruler succeeding to the throne. Depicts a person issuing commands to the four quarters, hence 厂. Formed from 一 and 口: the one issuing commands is the ruler. All characters in this group follow 后.",
+      "text": "A ruler succeeding to the throne. Depicts a person issuing commands to the four quarters, hence 厂. Formed from 一 and 口: the one issuing commands is the ruler. All characters in this group are formed from 后.",
       "sourceTextSha256": "d77acef66bce2eb592ee0639960c79e9b32e3f60f7b9f3baf411d1045dc752c8",
       "uncertain": false
     },
@@ -241,7 +261,7 @@
       "uncertain": false
     },
     "shuowen:5743": {
-      "text": "A minister administering affairs outside. Formed from reversed 后. All characters in this group follow 司.",
+      "text": "A minister administering affairs outside. Formed from reversed 后. All characters in this group are formed from 司.",
       "sourceTextSha256": "6e882af488ea76926404112ed55b2c42d6439f3a6584b81b677aa67bd6df1e7a",
       "uncertain": false
     },
@@ -296,7 +316,7 @@
       "uncertain": false
     },
     "shuowen:5754": {
-      "text": "科厄, a knot in wood. Formed from 卪, with 厂 indicating the sound. Attendant Jia explains 厄 as wrapping. Another explanation: covering.",
+      "text": "科厄, a knot in wood. Formed from 卪, with 厂 indicating the sound. Palace Attendant Jia explains 厄 as wrapping. Another explanation: covering.",
       "sourceTextSha256": "45f76f8e9a9f48d62435d76347c53eb8d0b155606fa9765dd00534bbb11b6e91",
       "uncertain": false
     },
@@ -331,7 +351,7 @@
       "uncertain": false
     },
     "shuowen:5761": {
-      "text": "The credential held by those exercising authority. Formed from 爪 and 卪. All characters in this group follow 印.",
+      "text": "The credential held by those exercising authority. Formed from 爪 and 卪. All characters in this group are formed from 印.",
       "sourceTextSha256": "d93d9a8b33f9d809cd155122eb422b1bec0d401a13ada8d28de021007fbadfd3",
       "uncertain": false
     },
@@ -341,7 +361,7 @@
       "uncertain": false
     },
     "shuowen:5763": {
-      "text": "The expression or complexion of the face. Formed from 人 and 卪. All characters in this group follow 色.",
+      "text": "The expression or complexion of the face. Formed from 人 and 卪. All characters in this group are formed from 色.",
       "sourceTextSha256": "7c2ef40c26239a1236be4619e148afa1c65456fc3ee510030ada84e2756b2c9a",
       "uncertain": false
     },
@@ -356,7 +376,7 @@
       "uncertain": false
     },
     "shuowen:5766": {
-      "text": "The regulation of affairs. Formed from 卩 and 㔿. All characters in this group follow 𠨍. Further explanation is missing.",
+      "text": "The regulation of affairs. Formed from 卩 and 㔿. All characters in this group are formed from 𠨍. Further explanation is missing.",
       "sourceTextSha256": "563e193eb1c1a06df6e27406eef7634ae9c9458ea85ae3cdddfd81381cf12263",
       "uncertain": false
     },
@@ -366,7 +386,7 @@
       "uncertain": false
     },
     "shuowen:5768": {
-      "text": "Law. Formed from 卩 and 辛, regulating crimes, and 口, representing the one applying the law. All characters in this group follow 辟.",
+      "text": "Law. Formed from 卩 and 辛, regulating crimes, and 口, representing the one applying the law. All characters in this group are formed from 辟.",
       "sourceTextSha256": "df1f5479098bfd21c0799250861022e68f4bea3896a33214c3d8e73659209110",
       "uncertain": false
     },
@@ -381,7 +401,7 @@
       "uncertain": false
     },
     "shuowen:5771": {
-      "text": "To wrap. Depicts a bent person enclosing something. All characters in this group follow 勹.",
+      "text": "To wrap. Depicts a bent person enclosing something. All characters in this group are formed from 勹.",
       "sourceTextSha256": "ff58fdb826b5ae28526acb2fdb8bd56653342823135b492396b67107df24eda6",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:5786": {
-      "text": "Depicts a pregnant person, with 巳 inside representing a child not yet fully formed. Primal qi begins at 子; a child is what people produce. The male moves leftward for thirty, the female rightward for twenty; both stand at 巳 and become husband and wife. Pregnancy begins at 巳; 巳 becomes 子, and birth occurs after ten months. The male starts at 巳 and reaches 寅; the female starts at 巳 and reaches 申. Hence male years begin at 寅, female years at 申. All characters in this group follow 包.",
+      "text": "Depicts a pregnant person, with 巳 inside representing a child not yet fully formed. Primal qi begins at 子; a child is what people produce. The male moves leftward for thirty, the female rightward for twenty; both stand at 巳 and become husband and wife. Pregnancy begins at 巳; 巳 becomes 子, and birth occurs after ten months. The male starts at 巳 and reaches 寅; the female starts at 巳 and reaches 申. Hence male years begin at 寅, female years at 申. All characters in this group are formed from 包.",
       "sourceTextSha256": "f834c25f145f4445ed4847e54361885340b594efe0791251bccc95f017aaf901",
       "uncertain": false
     },
@@ -471,7 +491,7 @@
       "uncertain": false
     },
     "shuowen:5789": {
-      "text": "To urge and admonish oneself urgently. Formed from abbreviated 羊 and abbreviated 包, together with 口, conveying caution in speech. 羊 uses the same principle as 義, 善 and 美. All characters in this group follow 茍.",
+      "text": "To urge and admonish oneself urgently. Formed from abbreviated 羊 and abbreviated 包, together with 口, conveying caution in speech. 羊 uses the same principle as 義, 善 and 美. All characters in this group are formed from 茍.",
       "sourceTextSha256": "69e63e33ae1bcfbf909eccdea3994f8e748a3b32fa98106eec46d7a2cf0ec5af",
       "uncertain": false
     },
@@ -481,7 +501,7 @@
       "uncertain": false
     },
     "shuowen:5791": {
-      "text": "What people return to becomes 鬼. Formed from 人, depicting a ghost’s head. Ghosts’ yin qi harms, hence 厶. All characters in this group follow 鬼.",
+      "text": "What people return to becomes 鬼. Formed from 人, depicting a ghost’s head. Ghosts’ yin qi harms, hence 厶. All characters in this group are formed from 鬼.",
       "sourceTextSha256": "fe38c3a92122f06bf2e2f6a3a93251253514c84c039a15bfecf793ce1d39d979",
       "uncertain": false
     },

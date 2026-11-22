@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "5b899e328602d95fbe2ebc1a9db2a1eb447d679f390dc8a8428ca8bbc93206a2",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "002",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:102": {
-      "text": "Decayed jade. Formed from 玉, with 有 indicating the sound. Pronounced like 畜 in 畜牧, livestock husbandry.",
+      "text": "Decayed jade. Formed from 玉, with 有 indicating the sound. Read like 畜 in 畜牧, livestock husbandry.",
       "sourceTextSha256": "5041fb0499774b1785c8a5c5b2565bd678b1fc4c00a19f15449b01940a27f625",
       "uncertain": false
     },
@@ -93,7 +113,7 @@
     "shuowen:113": {
       "text": "A jade tablet with a rounded end. Formed from 玉, with 宛 indicating the sound.",
       "sourceTextSha256": "ea9ec983c718b8afe204faf0d61467a7465c9e8ee2670dfd6d44155aeaff3bbf",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:114": {
       "text": "A tablet sharpened at the top is 圭; half a 圭 is 璋. Formed from 玉, with 章 indicating the sound. The Rites lists six paired gifts: 圭 with horses, 璋 with hides, 璧 with silk, 琮 with brocade, 琥 with embroidery, 璜 with axe-patterned cloth.",
@@ -196,7 +216,7 @@
       "uncertain": false
     },
     "shuowen:134": {
-      "text": "Jade ornamentation patterned like aquatic plants. Formed from 玉, with 喿 indicating the sound. The Book of Yu says: “Aquatic plants, fire and grains of rice.”",
+      "text": "Jade ornamentation patterned like aquatic plants. Formed from 玉, with 喿 indicating the sound. The Book of Yu says: “Aquatic plants, fire, and powdered-rice emblems.”",
       "sourceTextSha256": "500576b48e488115ec9d38dc14ab456920cfcc3710253adefc937b17fcc3ed5e",
       "uncertain": false
     },
@@ -206,7 +226,7 @@
       "uncertain": false
     },
     "shuowen:136": {
-      "text": "A jade vessel. Formed from 玉, with 𠷎 indicating the sound. Pronounced like 淑.",
+      "text": "A jade vessel. Formed from 玉, with 𠷎 indicating the sound. Read like 淑.",
       "sourceTextSha256": "038b4929f790e1a8e4fc0f5337577aeba878b945948323254a7d66feadd75a38",
       "uncertain": false
     },
@@ -311,7 +331,7 @@
       "uncertain": false
     },
     "shuowen:157": {
-      "text": "Stone next in quality to jade, used to suspend a jade disc. Formed from 玉, with 丰 indicating the sound. Pronounced like 菶菶 in the Odes' “Melons and little melons flourish.” Another pronunciation is like 蚌 in 𧊧蚌.",
+      "text": "Stone next in quality to jade, used to suspend a jade disc. Formed from 玉, with 丰 indicating the sound. Read like 菶菶 in the Odes' “Melons and little melons flourish.” Another pronunciation is like 蚌 in 𧊧蚌.",
       "sourceTextSha256": "076942f86fbe29ed02bcd8e6b6b4835ec071b6c76657fc1f11c5f8b51346cdbd",
       "uncertain": false
     },
@@ -336,12 +356,12 @@
       "uncertain": false
     },
     "shuowen:162": {
-      "text": "A black stone next in quality to jade. Formed from 玉, with 久 indicating the sound. The Odes says: “She gives me pendant 玖.” Pronounced like 芑; some say like 句 in “a person's bent spine,” 句脊.",
+      "text": "A black stone next in quality to jade. Formed from 玉, with 久 indicating the sound. The Odes says: “She gives me pendant 玖.” Read like 芑; some say like 句 in “a person's bent spine,” 句脊.",
       "sourceTextSha256": "2b0756f02661c54917e092f54fe25b2c5816b91ee25b3fb99136c253de82056f",
       "uncertain": false
     },
     "shuowen:163": {
-      "text": "Stone resembling jade. Formed from 玉, with 𦣞 indicating the sound. Pronounced like 貽.",
+      "text": "Stone resembling jade. Formed from 玉, with 𦣞 indicating the sound. Read like 貽.",
       "sourceTextSha256": "fff68a76be367071383170d1e7050b77f8b08d90c794792a4aff0b66abe29f87",
       "uncertain": false
     },
@@ -361,7 +381,7 @@
       "uncertain": false
     },
     "shuowen:167": {
-      "text": "Stone resembling jade. Formed from 玉, with 進 indicating the sound. Pronounced like 津.",
+      "text": "Stone resembling jade. Formed from 玉, with 進 indicating the sound. Read like 津.",
       "sourceTextSha256": "51f9da70e5e1f87dc394857d2887c7273bd9c562f746b2fa25eb278358d65868",
       "uncertain": false
     },
@@ -371,17 +391,17 @@
       "uncertain": false
     },
     "shuowen:169": {
-      "text": "Stone resembling jade. Formed from 玉, with 悤 indicating the sound. Pronounced like 蔥.",
+      "text": "Stone resembling jade. Formed from 玉, with 悤 indicating the sound. Read like 蔥.",
       "sourceTextSha256": "246e43e76e17df515519618d58ed9936d4328d724fcc934919bc763e7a071514",
       "uncertain": false
     },
     "shuowen:170": {
-      "text": "Stone resembling jade. Formed from 玉, with 號 indicating the sound. Pronounced like 鎬.",
+      "text": "Stone resembling jade. Formed from 玉, with 號 indicating the sound. Read like 鎬.",
       "sourceTextSha256": "39762f12841dd65716b01c73674a1a6c5f6900bfa97947e847e65202a009c3c5",
       "uncertain": false
     },
     "shuowen:171": {
-      "text": "Stone resembling jade. Formed from 玉, with 舝 indicating the sound. Pronounced like 曷.",
+      "text": "Stone resembling jade. Formed from 玉, with 舝 indicating the sound. Read like 曷.",
       "sourceTextSha256": "74d27948878676626554ed3432bb12d8d1ac58b1517ae0c958c9ad7a4c398aa4",
       "uncertain": false
     },
@@ -396,7 +416,7 @@
       "uncertain": false
     },
     "shuowen:174": {
-      "text": "Stone next in quality to jade. Formed from 玉, with 句 indicating the sound. Pronounced like 苟.",
+      "text": "Stone next in quality to jade. Formed from 玉, with 句 indicating the sound. Read like 苟.",
       "sourceTextSha256": "c5faf0cd0564b96201bc55f521adbda5d8aaa59910aac781673099df1fd7c8a0",
       "uncertain": false
     },
@@ -411,7 +431,7 @@
       "uncertain": false
     },
     "shuowen:177": {
-      "text": "Stone resembling jade. Formed from 玉, with 隹 indicating the sound. Pronounced like 維.",
+      "text": "Stone resembling jade. Formed from 玉, with 隹 indicating the sound. Read like 維.",
       "sourceTextSha256": "d58b24c5e6683a3890b657e9ec6a51264e9e8acfc69ea2ca96bdd3a853453899",
       "uncertain": false
     },
@@ -421,7 +441,7 @@
       "uncertain": false
     },
     "shuowen:179": {
-      "text": "Stone resembling jade. Formed from 玉, with 眉 indicating the sound. Pronounced like 眉.",
+      "text": "Stone resembling jade. Formed from 玉, with 眉 indicating the sound. Read like 眉.",
       "sourceTextSha256": "84274aed2299b20310c16a38a3b0c655b7fa95685c3f397824d96e6b1ab563c2",
       "uncertain": false
     },
@@ -441,12 +461,12 @@
       "uncertain": false
     },
     "shuowen:183": {
-      "text": "A kind of jade. Formed from 玉, with 𠬸 indicating the sound. Pronounced like 沒.",
+      "text": "A kind of jade. Formed from 玉, with 𠬸 indicating the sound. Read like 沒.",
       "sourceTextSha256": "38e490e5298a446184e99471e7b86f3371f6144d54c11ec65fec15e0ac4c47ec",
       "uncertain": false
     },
     "shuowen:184": {
-      "text": "A black stone resembling jade. Formed from 玉, with 皆 indicating the sound. Pronounced like 諧.",
+      "text": "A black stone resembling jade. Formed from 玉, with 皆 indicating the sound. Read like 諧.",
       "sourceTextSha256": "770c8d4e12956c57e313a45bd797067ba8d439c26b56476a238b6b4d93dab70e",
       "uncertain": false
     },
@@ -486,7 +506,7 @@
       "uncertain": false
     },
     "shuowen:192": {
-      "text": "A pearl. Formed from 玉, with 比 indicating the sound. Song Hong says: “玭 pearls occur in the Huai River.” 玭 is a pearl that makes a sound.",
+      "text": "A pearl. Formed from 玉, with 比 indicating the sound. Song Hong says: “玭 pearls occur in the Huai River.” The transmitted final clause literally describes 玭 as a “sounding pearl”; Duan Yucai instead argues for a reading referring to a kind of shellfish. [Textual interpretation disputed.]",
       "sourceTextSha256": "621fa806ec0b8e4d31bdc7eedd857a0e6596ecd8def7040d98d52bb4711216ed",
       "uncertain": true
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:195": {
-      "text": "The precious material 火齊, namely 玫瑰. Another explanation: beautiful stone. Formed from 玉, with 文 indicating the sound.",
+      "text": "A precious red or yellow-red mineral material associated with 火齊 and 玫瑰. Another explanation: a fine stone. Formed from 玉, with 文 indicating the sound. [The precise identification and relationship of these historical mineral terms remain uncertain.]",
       "sourceTextSha256": "61cf414ef68436d15c2e2e9b400148691783aeb33b8b35852bb346122bc6da54",
       "uncertain": true
     },

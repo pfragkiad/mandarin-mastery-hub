@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "6ddb851ed9800927bf48743f609e1ac76024df4e79de900f151302bb7557145b",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "045",
   "translations": {
@@ -236,7 +256,7 @@
       "uncertain": false
     },
     "shuowen:4442": {
-      "text": "Suitably spaced and sparse. Formed from two 禾. All characters in this group follow 秝. Read like 歷.",
+      "text": "Suitably spaced and sparse. Formed from two 禾. All characters in this group are formed from 秝. Read like 歷.",
       "sourceTextSha256": "eb4351b57e3f799ecb2e6a6fcfa1ab44316c0ab65a664067a7865d170bae733a",
       "uncertain": false
     },
@@ -246,7 +266,7 @@
       "uncertain": false
     },
     "shuowen:4444": {
-      "text": "A sticky cereal. Planted at the great heat, hence called 黍. Formed from 禾, with abbreviated 雨 indicating the sound. Confucius says: “Millet can make wine: grain entering water.” All characters in this group follow 黍.",
+      "text": "A sticky cereal. Planted at the great heat, hence called 黍. Formed from 禾, with abbreviated 雨 indicating the sound. Confucius says: “Millet can make wine: grain entering water.” All characters in this group are formed from 黍.",
       "sourceTextSha256": "fe474aa36f85e8a7edfa5913553c979f62562f660b5ffa09f423c318cdcee835",
       "uncertain": false
     },
@@ -286,7 +306,7 @@
       "uncertain": false
     },
     "shuowen:4452": {
-      "text": "Fragrant. Formed from 黍 and 甘. The Spring and Autumn Commentary says: “The millet and grain are fragrant.” All characters in this group follow 香.",
+      "text": "Fragrant. Formed from 黍 and 甘. The Spring and Autumn Commentary says: “The millet and grain are fragrant.” All characters in this group are formed from 香.",
       "sourceTextSha256": "f4242a3aa8707be4659e8dc75eed5fd3e556a544ccff01db96063961cdbfa936",
       "uncertain": false
     },
@@ -301,7 +321,7 @@
       "uncertain": false
     },
     "shuowen:4455": {
-      "text": "Grain kernels. Depicts the kernels of grain. All characters in this group follow 米.",
+      "text": "Grain kernels. Depicts the kernels of grain. All characters in this group are formed from 米.",
       "sourceTextSha256": "16558f8661d4001796c87f2a95018818f903213d311b77b3fb70c6fbb2bc2e83",
       "uncertain": false
     },
@@ -511,7 +531,7 @@
       "uncertain": false
     },
     "shuowen:4497": {
-      "text": "One hu of grain pounded down to eight dou. Formed from 䊆 and 殳. All characters in this group follow 毇.",
+      "text": "One hu of grain pounded down to eight dou. Formed from 䊆 and 殳. All characters in this group are formed from 毇.",
       "sourceTextSha256": "9c61d3cac6af72a73d7bf396faab6b0d91aa89bbbfd65f567fb9b80d72ae4e1e",
       "uncertain": false
     },
@@ -521,7 +541,7 @@
       "uncertain": false
     },
     "shuowen:4499": {
-      "text": "To pound. Ancient people dug a mortar into the ground; later they hollowed wood or stone. Pictographic; the middle represents grain. All characters in this group follow 臼.",
+      "text": "To pound. Ancient people dug a mortar into the ground; later they hollowed wood or stone. Pictographic; the middle represents grain. All characters in this group are formed from 臼.",
       "sourceTextSha256": "20c4de2f1df299d06bfc9767dbf62447dc760bb3b37a97aa60597cd8c5196444",
       "uncertain": false
     },

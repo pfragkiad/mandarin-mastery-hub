@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e9615e54c75e3bf23661839af455347b29db6ae1510621be39ecb0f07f5cd1f0",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "010",
   "translations": {
@@ -136,7 +156,7 @@
       "uncertain": false
     },
     "shuowen:922": {
-      "text": "Strange or divergent speech. Formed from 口, with 尨 indicating the sound. Another explanation: mixed speech. Pronounced like 尨.",
+      "text": "Strange or divergent speech. Formed from 口, with 尨 indicating the sound. Another explanation: mixed speech. Read like 尨.",
       "sourceTextSha256": "ace554b39b290d3f270be6ebdd57cd31db245d5f1c5171fc6d144f70b6f15d31",
       "uncertain": false
     },
@@ -158,7 +178,7 @@
     "shuowen:926": {
       "text": "To sigh with swallowed breath. Formed from 口, with abbreviated 歎 indicating the sound. Another explanation: a deep sigh.",
       "sourceTextSha256": "b7a0d99fc39edae6e15dddfc822bada0350a11bb54d95d9c174668e08a75f4c1",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:927": {
       "text": "Thirst, 㵣. Formed from 口, with 曷 indicating the sound.",
@@ -166,9 +186,9 @@
       "uncertain": false
     },
     "shuowen:928": {
-      "text": "Unable to contain or accommodate. Formed from 口, with 肖 indicating the sound.",
+      "text": "Narrow or insufficiently capacious; unable to contain something. Formed from 口, with 肖 indicating the sound.",
       "sourceTextSha256": "3c4aa4e0d24454f4d6e6aa980d26101ce27528798460638d325df2c3dab1eead",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:929": {
       "text": "To move. Formed from 口, with 化 indicating the sound. The Odes says: “Still sleeping, without stirring.”",
@@ -223,12 +243,12 @@
     "shuowen:939": {
       "text": "The state 嗼, silence. Formed from 口, with 叔 indicating the sound.",
       "sourceTextSha256": "51fc039319c9de8dba8a784edfb6c7b1490f67efccd97f286fbea7c9175ce061",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:940": {
       "text": "𠴫嗼, a state of silence. Formed from 口, with 莫 indicating the sound.",
       "sourceTextSha256": "1a559faea81356777a46a6146171de4878ddca5e5a6447ccfb46bbc597dfb645",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:941": {
       "text": "That which blocks the mouth. Formed from 口, with abbreviated 氒 indicating the sound. 氒 is pronounced 厥.",
@@ -291,7 +311,7 @@
       "uncertain": false
     },
     "shuowen:953": {
-      "text": "A crying sound. Another explanation: a tiger's sound. Formed from 口 and 虎. Pronounced like 暠.",
+      "text": "A crying sound. Another explanation: a tiger's sound. Formed from 口 and 虎. Read like 暠.",
       "sourceTextSha256": "218a5cda6613669a21bd88c129f876228b82c9c7d61bf6033faf73f820c9d18d",
       "uncertain": false
     },
@@ -301,9 +321,9 @@
       "uncertain": false
     },
     "shuowen:955": {
-      "text": "The appearance of herds of deer gathering their mouths together. Formed from 口, with 虞 indicating the sound. The Odes says: “The does gather, 噳噳.”",
+      "text": "A crowded herd of deer, gathered closely together. Formed from 口, with 虞 indicating the sound. The Odes says: “The deer gather in a throng.”",
       "sourceTextSha256": "a0f35558ead25900511fd585eac009594b48ea8fe5580f40d0e5dabf59ab22b6",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:956": {
       "text": "A fish's mouth appearing above the water. Formed from 口, with 禺 indicating the sound.",
@@ -316,9 +336,9 @@
       "uncertain": false
     },
     "shuowen:958": {
-      "text": "Sunken muddy ground between mountains. Formed from 口 and the appearance of water breaking down the ground. Pronounced like 沇 in Yanzhou. This is the wet land of the nine provinces, hence named 沇.",
+      "text": "Sunken muddy ground between mountains. Formed from 口 and the appearance of water breaking down the ground. Read like 沇 in Yanzhou. This is the wet land of the nine provinces, hence named 沇.",
       "sourceTextSha256": "7a326d34ddb047b7c85cd8e1299a377d11021647cff41e5ca9753514dde1755d",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:959": {
       "text": "To chant or moan. Formed from 口, with 我 indicating the sound.",
@@ -376,12 +396,12 @@
       "uncertain": false
     },
     "shuowen:970": {
-      "text": "To cry out in alarm. Formed from two 口. All characters in the 吅 category are formed from 吅. Pronounced like 讙.",
+      "text": "To cry out in alarm. Formed from two 口. All characters in the 吅 category are formed from 吅. Read like 讙.",
       "sourceTextSha256": "1bf7a57c376736f269501f0fb421be6a651608b576676824417fa90e6ec76a7a",
       "uncertain": false
     },
     "shuowen:971": {
-      "text": "Disorder. Formed from 爻, 工, 交 and 吅. Another explanation: obstruction, 窒𤕦. Pronounced like 禳.",
+      "text": "Disorder. Formed from 爻, 工, 交 and 吅. Another explanation: obstruction, 窒𤕦. Read like 禳.",
       "sourceTextSha256": "e2cfd50f105faa7b4b3c07a6a31402edf6fd5f90bd45dcd080d6e39533cf4a8c",
       "uncertain": true
     },
@@ -396,12 +416,12 @@
       "uncertain": false
     },
     "shuowen:974": {
-      "text": "Great. Formed from 吅 and 红; 吅 also indicates the sound. The explanation is incomplete.",
+      "text": "Great or loud, perhaps originally referring to loud speech. Formed from 吅 and 𠦆, with 吅 also indicating the sound; the remaining graphical explanation is missing. [Duan proposes that the received gloss 大也 omitted 言, but the Chinese working text preserves it.]",
       "sourceTextSha256": "2778d398af897be9c48520b55fd6dff1d80687e8256d6e79015b4b99d68699cd",
       "uncertain": true
     },
     "shuowen:975": {
-      "text": "A repeated call to chickens. Formed from 吅, with 州 indicating the sound. Pronounced like 祝.",
+      "text": "A repeated call to chickens. Formed from 吅, with 州 indicating the sound. Read like 祝.",
       "sourceTextSha256": "2b8a24066832975b866b81f04ab589d13d88855457dc5591e12dc40d1e791f6a",
       "uncertain": false
     },
@@ -441,12 +461,12 @@
       "uncertain": false
     },
     "shuowen:983": {
-      "text": "Skill and ability at climbing trees and running. Formed from 走, with 喬 indicating the sound. Pronounced like 蹻 in Wangzi Qiao.",
+      "text": "Skill and ability at climbing trees and running. Formed from 走, with 喬 indicating the sound. Read like 蹻 in Wangzi Qiao.",
       "sourceTextSha256": "20d29fcf4f4c2502fe47cc6e030597f2ce4820b72709287cc43adc401ed3fc3c",
       "uncertain": false
     },
     "shuowen:984": {
-      "text": "Nimble, strong, and endowed with strength and ability. Formed from 走, with 丩 indicating the sound. Pronounced like 鐈.",
+      "text": "Nimble, strong, and endowed with strength and ability. Formed from 走, with 丩 indicating the sound. Read like 鐈.",
       "sourceTextSha256": "58987ea6e09ecdea3f5f63fca450f93baaa329b800a5c866a5bc9f20cb42c0e4",
       "uncertain": false
     },
@@ -476,12 +496,12 @@
       "uncertain": false
     },
     "shuowen:990": {
-      "text": "To follow or pursue, 𧾍. Formed from 走, with 㐱 indicating the sound. Pronounced like 塵.",
+      "text": "A manner of moving with difficulty or making slow progress (in a paired expression with 𧾍). Formed from 走, with 㐱 indicating the sound. Read like 塵. [Duan rejects the later common sense “to pursue” as a gloss of the original usage.]",
       "sourceTextSha256": "fb44b377e2f035ae4bc6d729e9523912e76fa5338caa490582c5ca95c519e4f0",
       "uncertain": true
     },
     "shuowen:991": {
-      "text": "To follow or pursue, 趁. Formed from 走, with 亶 indicating the sound.",
+      "text": "A manner of moving with difficulty or making slow progress, paired with 趁. Formed from 走, with 亶 indicating the sound. [Duan argues the two entries originally formed a compound expression.]",
       "sourceTextSha256": "0278e266b6776b5c2632d8fa588eb2f4db8ad6b1d49431aa4a419901e5c2a447",
       "uncertain": true
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:995": {
-      "text": "Hasty or sudden. Formed from 走, with 𠂔 indicating the sound. Pronounced like 資.",
+      "text": "Hasty or sudden. Formed from 走, with 𠂔 indicating the sound. Read like 資.",
       "sourceTextSha256": "5f34876e22985b57627a092670a053a4d92ef1cc21662f5ec9201137cede4086",
       "uncertain": false
     },
@@ -511,7 +531,7 @@
       "uncertain": false
     },
     "shuowen:997": {
-      "text": "A manner of walking. Formed from 走, with 臤 indicating the sound. Pronounced like 菣.",
+      "text": "A manner of walking. Formed from 走, with 臤 indicating the sound. Read like 菣.",
       "sourceTextSha256": "16ae49c43332a658a42038d40cb291060e7726129deb0acc0e0c9eb19d03a75e",
       "uncertain": false
     },
@@ -521,12 +541,12 @@
       "uncertain": false
     },
     "shuowen:999": {
-      "text": "A manner of walking. Formed from 走, with 蜀 indicating the sound. Pronounced like 燭.",
+      "text": "A manner of walking. Formed from 走, with 蜀 indicating the sound. Read like 燭.",
       "sourceTextSha256": "e5aef4ed191c4d1eadbf3d004501705df21d6f1b50ee4b3b11a5d90c53032631",
       "uncertain": false
     },
     "shuowen:1000": {
-      "text": "A manner of walking. Formed from 走, with 匠 indicating the sound. Pronounced like 匠.",
+      "text": "A manner of walking. Formed from 走, with 匠 indicating the sound. Read like 匠.",
       "sourceTextSha256": "446341390990df5ba19109b2b6b995677f46cf642f997472e7e22de00fb0dbdc",
       "uncertain": false
     }

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supplied Shuowen external v3 case review provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "schemaVersion",
+    "dataset_metadata",
+    "baseline_full_v2_sha256",
+    "archive",
+    "checked_keys",
+    "unchecked_keys",
+    "changed_english_keys",
+    "resolved_keys",
+    "statistics"
+  ],
+  "properties": {
+    "format": {
+      "const": "mandarin-shuowen-external-review-v3"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "dataset_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "version", "review_id", "status", "disclaimer"],
+      "properties": {
+        "source_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "const": "1.0.0"
+        },
+        "review_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "const": "partial-editorial-review"
+        },
+        "disclaimer": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "baseline_full_v2_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "sha256", "members"],
+      "properties": {
+        "file": {
+          "const": "external-v3.zip"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "members": {
+          "type": "object",
+          "minProperties": 5,
+          "maxProperties": 5,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "checked_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^shuowen:[1-9][0-9]*$"
+      }
+    },
+    "unchecked_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^shuowen:[1-9][0-9]*$"
+      }
+    },
+    "changed_english_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^shuowen:[1-9][0-9]*$"
+      }
+    },
+    "resolved_keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^shuowen:[1-9][0-9]*$"
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entries",
+        "uncertain_before",
+        "cases_reported_checked",
+        "resolved_flags",
+        "revised_retained",
+        "checked_retained",
+        "not_checked_this_pass",
+        "translation_edited_entries",
+        "changed_entry_count",
+        "uncertain_after",
+        "source_edited_entries"
+      ],
+      "properties": {
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertain_before": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cases_reported_checked": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resolved_flags": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revised_retained": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "checked_retained": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_checked_this_pass": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "translation_edited_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "changed_entry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertain_after": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_edited_entries": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

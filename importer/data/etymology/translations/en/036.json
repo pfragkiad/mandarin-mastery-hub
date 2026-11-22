@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "96be68c3fa0d0b79b81e35eb7bbe9fe9786f731014d50d470c3e738cc58a73b1",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "036",
   "translations": {
@@ -81,7 +101,7 @@
       "uncertain": false
     },
     "shuowen:3511": {
-      "text": "A tree. Formed from 木, with 牙 indicating the sound. Another explanation: the junction of a cart’s 𨊾; the part is uncertain.",
+      "text": "A kind of palm-like tree whose fruits hang at the top; another sense refers to the joining of the curved wooden rim of a chariot wheel. Formed from 木, with 牙 indicating the sound. [Precise historical botanical identification is not certain.]",
       "sourceTextSha256": "5ceb808699afb1a6bdc80d1b6e265d281392beaf8caf43174dc008a8959513c9",
       "uncertain": true
     },
@@ -96,7 +116,7 @@
       "uncertain": false
     },
     "shuowen:3514": {
-      "text": "The fruit of 櫟. Another explanation: the head of a 𨯳 implement. Formed from 木, with 求 indicating the sound; the implement is uncertain.",
+      "text": "The clustered or cup-like seed casing of certain trees, traditionally described as the fruit of 櫟. Another explanation: the wooden head or handle of a boring implement. Formed from 木, with 求 indicating the sound. [The botanical and tool identifications vary among commentaries.]",
       "sourceTextSha256": "dd2bca94df5ed56f386c189df888e9a0fc67d67ea5e69990cc106b144f309c6b",
       "uncertain": true
     },
@@ -156,7 +176,7 @@
       "uncertain": false
     },
     "shuowen:3526": {
-      "text": "Mountain 枌 elm, having thorns and pods usable as 蕪夷. Formed from 木, with 更 indicating the sound; the preparation 蕪夷 is uncertain.",
+      "text": "A spiny variety of mountain elm whose seed pods can be processed to make 蕪夷, a traditional aromatic medicinal preparation. Formed from 木, with 更 indicating the sound. [Commentaries differ over the exact elm species.]",
       "sourceTextSha256": "ac3301bc3edd8a229d47f8422798491d7b629c5e18af8cadb2d62c37db42f120",
       "uncertain": true
     },
@@ -346,7 +366,7 @@
       "uncertain": false
     },
     "shuowen:3564": {
-      "text": "Numerous and flourishing. Formed from 木, with 驫 indicating the sound. The Lost Book of Zhou says: “Doubt obstructs affairs.” Further explanation is missing; the quotation’s connection is uncertain.",
+      "text": "Numerous and flourishing. Formed from 木, with 驫 indicating the sound. In a quotation from the Lost Documents of Zhou, the graph may refer to accumulating doubts that impede affairs. [Duan regards the final 闕 as a later addition and disputes parts of the transmitted quotation.]",
       "sourceTextSha256": "bbd4dbc1df482a3e826dc0eaf59e19e55f812273c60ca3bb7e887161fc0099b2",
       "uncertain": true
     },
@@ -416,7 +436,7 @@
       "uncertain": false
     },
     "shuowen:3578": {
-      "text": "A tree spreading, 檹施. Formed from 木, with 旖 indicating the sound. Attendant Jia says 檹 is the 椅 tree, usable for making zithers.",
+      "text": "A tree spreading, 檹施. Formed from 木, with 旖 indicating the sound. Palace Attendant Jia says 檹 is the 椅 tree, usable for making zithers.",
       "sourceTextSha256": "86e5715e70d3a02fcfdce4074449ed4578b9e7a2feedc1dce2705015a57c95ac",
       "uncertain": false
     },

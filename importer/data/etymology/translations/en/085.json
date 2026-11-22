@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "79b38f86a1246d3f73e4e39ead29301cc52e1e25f12df4fa30d96f436fa6fa5e",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "085",
   "translations": {
@@ -206,9 +226,9 @@
       "uncertain": false
     },
     "shuowen:8436": {
-      "text": "With something near, to reach far. A pictograph. In antiquity Hui made bows. The Rites of Zhou lists six bows: 王 and 弧 bows for shooting very hard armor and leather; 夾 and 庾 bows for shields, targets, birds, and beasts; 唐 and 大 bows for learners of archery. All characters in this group are formed from 弓.",
+      "text": "With something near, to reach far. A pictograph. In antiquity Hui made bows. The Rites of Zhou lists six bows: 王 and 弧 bows for shooting leather armor and wooden target-blocks; 夾 and 庾 bows for shields, targets, birds, and beasts; 唐 and 大 bows for learners of archery. All characters in this group are formed from 弓.",
       "sourceTextSha256": "10b357aec628edbf27c0b1bd1c0d1a20a09d94991fd4a5eefe92fd77cf82cdb8",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8437": {
       "text": "A painted bow. Formed from 弓, with 𦎫 indicating the sound.",
@@ -476,9 +496,9 @@
       "uncertain": false
     },
     "shuowen:8490": {
-      "text": "A weaving expression recorded in a 樂浪 regulation, apparently; the wording 樂浪挈令織 is obscure. Formed from 糸 and 式.",
+      "text": "The Lelang Commandery carved statutes write the character 織 using this graph. Formed from 糸 and 式.",
       "sourceTextSha256": "a597512c8b06fd6148cf1ee7306119c0273dc052fbd1009a1e69544266a8c125",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:8491": {
       "text": "Loom threads. Formed from 糸, with 壬 indicating the sound.",

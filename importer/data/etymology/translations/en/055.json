@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "27a9be4cc05b4ae08b2233fd9cdcb3c8265a8cc6ccadd6f4985297e14bd47647",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "055",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:5402": {
-      "text": "Small or fine. Formed from inverted 毛 behind 尸. Some ancient people tied on tails as ornaments; the southwestern Yi do likewise. All characters in this group follow 尾. The present clerical transformation is 尾.",
+      "text": "Small or fine. Formed from inverted 毛 behind 尸. Some ancient people tied on tails as ornaments; the southwestern Yi do likewise. All characters in this group are formed from 尾. The present clerical transformation is 尾.",
       "sourceTextSha256": "a1266aa207847750162fb936afa88ca5579a4d13f23a78ad6326c733b5023212",
       "uncertain": false
     },
@@ -56,7 +76,7 @@
       "uncertain": false
     },
     "shuowen:5406": {
-      "text": "What the feet rest upon. Formed from 尸, 彳 and 夊; 舟 depicts the shoe’s shape. Another explanation: 尸 indicates the sound. All characters in this group follow 履.",
+      "text": "What the feet rest upon. Formed from 尸, 彳 and 夊; 舟 depicts the shoe’s shape. Another explanation: 尸 indicates the sound. All characters in this group are formed from 履.",
       "sourceTextSha256": "60ad33247b2663402c09c70f73143526a7a4f45947d283342b5cad351d583c95",
       "uncertain": false
     },
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:5412": {
-      "text": "A boat. In antiquity Gonggu and Huodi hollowed wood into boats and sharpened wood into oars to cross otherwise impassable places. Pictographic. All characters in this group follow 舟.",
+      "text": "A boat. In antiquity Gonggu and Huodi hollowed wood into boats and sharpened wood into oars to cross otherwise impassable places. Pictographic. All characters in this group are formed from 舟.",
       "sourceTextSha256": "df872fe6f3d5c1684f1a49d88e3d936db047688dafc52f744f62543354bf217e",
       "uncertain": false
     },
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:5428": {
-      "text": "Boats joined side by side. Depicts two abbreviated 舟 with their bows joined. All characters in this group follow 方.",
+      "text": "Boats joined side by side. Depicts two abbreviated 舟 with their bows joined. All characters in this group are formed from 方.",
       "sourceTextSha256": "b8647a7f0a1c2f2da813aa6eb394c2954712b824aa998ebfdbf23e7d898dbf27",
       "uncertain": false
     },
@@ -176,7 +196,7 @@
       "uncertain": false
     },
     "shuowen:5430": {
-      "text": "A benevolent person; an unusual ancient-script form of 人. Pictographic. Confucius says: “Being below others, therefore bent.” All characters in this group follow 儿.",
+      "text": "A benevolent person; an unusual ancient-script form of 人. Pictographic. Confucius says: “Being below others, therefore bent.” All characters in this group are formed from 儿.",
       "sourceTextSha256": "39e2c439db39284ff57333e02e22a336d0dcb248fbcebd3bd083bae109c8c940",
       "uncertain": false
     },
@@ -206,7 +226,7 @@
       "uncertain": false
     },
     "shuowen:5436": {
-      "text": "Elder. Formed from 儿 and 口. All characters in this group follow 兄.",
+      "text": "Elder. Formed from 儿 and 口. All characters in this group are formed from 兄.",
       "sourceTextSha256": "33f9ef6155e3494f3b1787a9fb597a7232827a1f8173b413634669f9d098c683",
       "uncertain": false
     },
@@ -216,7 +236,7 @@
       "uncertain": false
     },
     "shuowen:5438": {
-      "text": "A hairpin for the head. Formed from 人, with 匕 depicting a hairpin. All characters in this group follow 兂.",
+      "text": "A hairpin for the head. Formed from 人, with 匕 depicting a hairpin. All characters in this group are formed from 兂.",
       "sourceTextSha256": "0e8c9257ef7b3e0102e2ef620873e985d7f2d7f1ab51246c6d9e48b686accfc6",
       "uncertain": false
     },
@@ -226,7 +246,7 @@
       "uncertain": false
     },
     "shuowen:5440": {
-      "text": "Facial appearance and bearing. Formed from 人, with 白 depicting a person’s face. All characters in this group follow 皃.",
+      "text": "Facial appearance and bearing. Formed from 人, with 白 depicting a person’s face. All characters in this group are formed from 皃.",
       "sourceTextSha256": "bd89c1be05fe4b595b55c6601ffe7d94dbf6ab259d20fadd269d4ffdd5453ff9",
       "uncertain": false
     },
@@ -236,7 +256,7 @@
       "uncertain": false
     },
     "shuowen:5442": {
-      "text": "To obstruct and cover. Formed from 人, depicting both sides covered. All characters in this group follow 𠑹. Read like 瞽.",
+      "text": "To obstruct and cover. Formed from 人, depicting both sides covered. All characters in this group are formed from 𠑹. Read like 瞽.",
       "sourceTextSha256": "a8b6235148edba6b8255cebccd5ad3890a43e0fabf527cd53eee11d4e1f7883f",
       "uncertain": false
     },
@@ -246,7 +266,7 @@
       "uncertain": false
     },
     "shuowen:5444": {
-      "text": "To advance ahead. Formed from 儿 and 之. All characters in this group follow 先.",
+      "text": "To advance ahead. Formed from 儿 and 之. All characters in this group are formed from 先.",
       "sourceTextSha256": "db3ab15e5ad3cf2dcc0703a63e58697dc3a10ed8881d8d8c01e345fb06116cc6",
       "uncertain": false
     },
@@ -256,7 +276,7 @@
       "uncertain": false
     },
     "shuowen:5446": {
-      "text": "Without hair. Formed from 人, with the upper part depicting grain and taking its sound. All characters in this group follow 禿. Wang Yu says Cangjie went out and saw a bald man crouching in grain, and made the graph from this. Its accuracy is unknown.",
+      "text": "Without hair. Formed from 人, with the upper part depicting grain and taking its sound. All characters in this group are formed from 禿. Wang Yu says Cangjie went out and saw a bald man crouching in grain, and made the graph from this. Its accuracy is unknown.",
       "sourceTextSha256": "120effe720b7c0beb2faf99038fad2ddc91141e7001cbbc176c7adf874245289",
       "uncertain": false
     },
@@ -266,7 +286,7 @@
       "uncertain": false
     },
     "shuowen:5448": {
-      "text": "To see. Formed from 儿 and 目. All characters in this group follow 見.",
+      "text": "To see. Formed from 儿 and 目. All characters in this group are formed from 見.",
       "sourceTextSha256": "0b81658b46a0ccf28ee42a1c34aee04e273191e0158808262b183a3f9d15f424",
       "uncertain": false
     },
@@ -486,7 +506,7 @@
       "uncertain": false
     },
     "shuowen:5492": {
-      "text": "Dirt obscuring the eyes. Formed from 見, with 𠁁 indicating the sound. Read like 钙.",
+      "text": "Dirt obscuring the eyes. Formed from 見, with 𠁁 indicating the sound. Read like 兜.",
       "sourceTextSha256": "d97d21114c55e772e6240317368f6a8e2a40e55c5f81614e2bccee7e0972fd4c",
       "uncertain": false
     },
@@ -496,7 +516,7 @@
       "uncertain": false
     },
     "shuowen:5494": {
-      "text": "To look side by side. Formed from two 見. All characters in this group follow 覞.",
+      "text": "To look side by side. Formed from two 見. All characters in this group are formed from 覞.",
       "sourceTextSha256": "da39a700841cc2641b739a2814a60be417c138154fc44d590ef0bacff33c5e28",
       "uncertain": false
     },
@@ -511,7 +531,7 @@
       "uncertain": true
     },
     "shuowen:5497": {
-      "text": "Opening the mouth and releasing breath; the wording 气悟 is uncertain. Depicts breath rising out of a person. All characters in this group follow 欠.",
+      "text": "Opening the mouth and releasing breath; the wording 气悟 is uncertain. Depicts breath rising out of a person. All characters in this group are formed from 欠.",
       "sourceTextSha256": "b3d0f768f20b474cc0e21a5a3faceb3f998c4c21e8200ff8760024b3bfac046e",
       "uncertain": true
     },

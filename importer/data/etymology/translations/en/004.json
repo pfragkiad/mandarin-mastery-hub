@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e09254a588128547ee71a10d52adf898533c26a7aef34b8a1782650a7f9f0096",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "004",
   "translations": {
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:309": {
-      "text": "A plant. Formed from 艸, with 里 indicating the sound. Pronounced like 釐.",
+      "text": "A plant. Formed from 艸, with 里 indicating the sound. Read like 釐.",
       "sourceTextSha256": "b9912110c3a5fae555950b92b3f48a013d7747eaed7db29caa62547803d5a2b0",
       "uncertain": false
     },
@@ -81,7 +101,7 @@
       "uncertain": false
     },
     "shuowen:311": {
-      "text": "The plant 堇艸. Formed from 艸, with 及 indicating the sound. Pronounced like 急.",
+      "text": "The plant 堇艸. Formed from 艸, with 及 indicating the sound. Read like 急.",
       "sourceTextSha256": "b451781c6e283d5a8fd038fa1c051ea39cff47d49c028006b83d12c166e82e3b",
       "uncertain": false
     },
@@ -151,9 +171,9 @@
       "uncertain": false
     },
     "shuowen:325": {
-      "text": "The plant 薏苢. Formed from 艸, with 𠶷 indicating the sound. Another name is 𦺳英.",
+      "text": "The plant 薏苢 (Job’s tears). Formed from 艸, with 𠶷 indicating the sound. An alternative name is 𦺳英.",
       "sourceTextSha256": "7ca7f6ee7d2ce1e113272542fda033a97ff28718f7798542932705a366e5498c",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:326": {
       "text": "The grass 菅. Formed from 艸, with 矛 indicating the sound.",
@@ -216,7 +236,7 @@
       "uncertain": false
     },
     "shuowen:338": {
-      "text": "Well weed, 井藻. Formed from 艸, with 君 indicating the sound. Pronounced like 威.",
+      "text": "Well weed, 井藻. Formed from 艸, with 君 indicating the sound. Read like 威.",
       "sourceTextSha256": "01a194dd274f38648c3eaa306d59e5c4f6c05613d9d7bacdf9643a7d7ce036f2",
       "uncertain": false
     },
@@ -331,7 +351,7 @@
       "uncertain": false
     },
     "shuowen:361": {
-      "text": "The plant 綦月爾. Formed from 艸, with 綦 indicating the sound.",
+      "text": "An edible fern-like plant called 紫藄 or 月爾, identified in a traditional commentary as a purple fern. Formed from 艸, with 綦 indicating the sound. [Duan proposes a substantially different ancient gloss 士夫也; the received text is disputed.]",
       "sourceTextSha256": "efb8bda02c7d0237b9734f2d3563e12d4827815a7f573950e02d6228cd0636df",
       "uncertain": true
     },
@@ -341,7 +361,7 @@
       "uncertain": false
     },
     "shuowen:363": {
-      "text": "The plant 灌渝. Formed from 艸, with 夢 indicating the sound. Pronounced like 萌.",
+      "text": "The plant 灌渝. Formed from 艸, with 夢 indicating the sound. Read like 萌.",
       "sourceTextSha256": "9ef98d701f83275e4666e7fe7fc309cc92f4eda2bf900729b4f030e39b565221",
       "uncertain": false
     },
@@ -361,7 +381,7 @@
       "uncertain": false
     },
     "shuowen:367": {
-      "text": "A grass, namely 葍, also called 蕣. Formed from 艸, with 夐 indicating the sound.",
+      "text": "A grass-like plant identified as 藑茅, belonging to the 葍 group. Formed from 艸, with 夐 indicating the sound. [The received alternative name 蕣 is challenged by Duan Yucai.]",
       "sourceTextSha256": "c6a6abe41969d7d00ca315477a9dbecfe418542dd1e259fe0c2f7167ab76897a",
       "uncertain": true
     },
@@ -516,9 +536,9 @@
       "uncertain": false
     },
     "shuowen:398": {
-      "text": "䒷婁, a creeping fruit-bearing plant. Formed from 艸, with 𠯑 indicating the sound.",
+      "text": "The plant 䒷婁 (also 栝樓/瓜蔞), a gourd-bearing climbing vine. Formed from 艸, with 𠯑 indicating the sound.",
       "sourceTextSha256": "1941de5014b72435271e42e464032ead1c07b6f98b86a2e241cd408402242c98",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:399": {
       "text": "The plant 須從. Formed from 艸, with 封 indicating the sound.",

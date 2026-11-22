@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "45c6e32911346d6687006a590ea18529eef546e292f976bf259c72c3535567bb",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "057",
   "translations": {
@@ -351,7 +371,7 @@
       "uncertain": false
     },
     "shuowen:5665": {
-      "text": "The head. Pictographic. All characters in this group follow 𦣻.",
+      "text": "The head. Pictographic. All characters in this group are formed from 𦣻.",
       "sourceTextSha256": "c1cab63f8ce0bf0db52ba6e9d60a169ed85a9e3f8cd26c5ad8ad8dc0962e695b",
       "uncertain": false
     },
@@ -361,7 +381,7 @@
       "uncertain": false
     },
     "shuowen:5667": {
-      "text": "The front of the head. Formed from 𦣻, depicting a person’s face. All characters in this group follow 面.",
+      "text": "The front of the head. Formed from 𦣻, depicting a person’s face. All characters in this group are formed from 面.",
       "sourceTextSha256": "1e3e73dc1835851414f3e642ca6f9eaf2ef3082f96f52b268158a562bdfc8df9",
       "uncertain": false
     },
@@ -386,7 +406,7 @@
       "uncertain": false
     },
     "shuowen:5672": {
-      "text": "Not visible. Depicts obstruction and covering. All characters in this group follow 丏.",
+      "text": "Not visible. Depicts obstruction and covering. All characters in this group are formed from 丏.",
       "sourceTextSha256": "64c36e2c51439071a724ce43b83b36d41771a8d6d1fa137c5dd51697510d27ea",
       "uncertain": false
     },
@@ -406,7 +426,7 @@
       "uncertain": false
     },
     "shuowen:5676": {
-      "text": "An inverted head. Attendant Jia says this graph means a severed head hung upside down. All characters in this group follow 𥄉.",
+      "text": "An inverted head. Palace Attendant Jia says this graph means a severed head hung upside down. All characters in this group are formed from 𥄉.",
       "sourceTextSha256": "a74c3d8074a736bcc9874dfe143f0ca19b83bfecde79c1e4ede77257e6f78892",
       "uncertain": false
     },
@@ -416,7 +436,7 @@
       "uncertain": false
     },
     "shuowen:5678": {
-      "text": "Facial hair. Formed from 頁 and 彡. All characters in this group follow 須.",
+      "text": "Facial hair. Formed from 頁 and 彡. All characters in this group are formed from 須.",
       "sourceTextSha256": "b9b3f1019a6ba5760f39fa69a0bc43f2ac7f3494d73a5662be025546a53e1265",
       "uncertain": false
     },
@@ -441,7 +461,7 @@
       "uncertain": false
     },
     "shuowen:5683": {
-      "text": "Hair ornaments and painted patterns. Pictographic. All characters in this group follow 彡.",
+      "text": "Hair ornaments and painted patterns. Pictographic. All characters in this group are formed from 彡.",
       "sourceTextSha256": "409177bce6ba4689e11129596498e310028b7dcd9f2b1901e94fcc7a3435b7a1",
       "uncertain": false
     },
@@ -491,7 +511,7 @@
       "uncertain": false
     },
     "shuowen:5693": {
-      "text": "Patterned or adorned. Formed from 彡 and 文. All characters in this group follow 彣.",
+      "text": "Patterned or adorned. Formed from 彡 and 文. All characters in this group are formed from 彣.",
       "sourceTextSha256": "8076a1439952e51e4c76ba5ab80c1c4e5b23c6ea2f5b6df658d112e4ea5113a2",
       "uncertain": false
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:5695": {
-      "text": "Intersecting strokes. Depicts crossing patterns. All characters in this group follow 文.",
+      "text": "Intersecting strokes. Depicts crossing patterns. All characters in this group are formed from 文.",
       "sourceTextSha256": "fb76c9378542b8a4a5b7dc85cac9b3103a4cbe1cfed800327d4c235f5f7bdd6e",
       "uncertain": false
     },
@@ -521,7 +541,7 @@
       "uncertain": false
     },
     "shuowen:5699": {
-      "text": "Long hair flowing, 猋猋. Formed from 長 and 彡. All characters in this group follow 髟.",
+      "text": "Long hair flowing, 猋猋. Formed from 長 and 彡. All characters in this group are formed from 髟.",
       "sourceTextSha256": "aef8f6122770cfabd822591ee303a9517f841972563ea81af6a39171d619d6b2",
       "uncertain": false
     },

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "9fb19ef33edf7b02de85283c6edadf62928dbe7eac7cb4799e6a27600326b06c",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "047",
   "translations": {
@@ -66,7 +86,7 @@
       "uncertain": false
     },
     "shuowen:4608": {
-      "text": "A chamber. Formed from 宀, with abbreviated 躳 indicating the sound. All characters in this group follow 宮.",
+      "text": "A chamber. Formed from 宀, with abbreviated 躳 indicating the sound. All characters in this group are formed from 宮.",
       "sourceTextSha256": "52b0d709cdcbc135a84d4610918a127954fdd029ed07f96c34bca84d291267b1",
       "uncertain": false
     },
@@ -76,7 +96,7 @@
       "uncertain": false
     },
     "shuowen:4610": {
-      "text": "The spinal bones. Pictographic. Long ago Taiyue served Yu as his heart-and-backbone minister, and was therefore enfeoffed as Marquis of Lü. All characters in this group follow 呂.",
+      "text": "The spinal bones. Pictographic. Long ago Taiyue served Yu as his heart-and-backbone minister, and was therefore enfeoffed as Marquis of Lü. All characters in this group are formed from 呂.",
       "sourceTextSha256": "448d521aea3d644b3eab910453af2525927fd71ce56f2f6916c37bde10920e5c",
       "uncertain": false
     },
@@ -86,7 +106,7 @@
       "uncertain": false
     },
     "shuowen:4612": {
-      "text": "An earthen chamber. Formed from 宀, with 八 indicating the sound. All characters in this group follow 穴.",
+      "text": "An earthen chamber. Formed from 宀, with 八 indicating the sound. All characters in this group are formed from 穴.",
       "sourceTextSha256": "bfd159cd7128049fc7fa57d582780bb575965cf39dc6fe1077ae79eefa11d33a",
       "uncertain": false
     },
@@ -341,7 +361,7 @@
       "uncertain": false
     },
     "shuowen:4663": {
-      "text": "Having awareness while asleep. Formed from 宀 and 疒, with 夢 indicating the sound. The Rites of Zhou says: “By the sun, moon, stars and constellations divine the fortune of six dreams: regular, startling, thought-induced, waking, joyful and fearful dreams.” All characters in this group follow 㝱.",
+      "text": "Having awareness while asleep. Formed from 宀 and 疒, with 夢 indicating the sound. The Rites of Zhou says: “By the sun, moon, stars and constellations divine the fortune of six dreams: regular, startling, thought-induced, waking, joyful and fearful dreams.” All characters in this group are formed from 㝱.",
       "sourceTextSha256": "43fae213920a4646e5e82f1a9cc8902606be36be4450a7593a036007f9cb596e",
       "uncertain": false
     },
@@ -391,7 +411,7 @@
       "uncertain": false
     },
     "shuowen:4673": {
-      "text": "To lean. When a person is ill, this depicts leaning against a support. All characters in this group follow 疒.",
+      "text": "To lean. When a person is ill, this depicts leaning against a support. All characters in this group are formed from 疒.",
       "sourceTextSha256": "e5262bef3460d6df422d9c588963765d437fb961720a8fd27b132da6f4114d44",
       "uncertain": false
     },

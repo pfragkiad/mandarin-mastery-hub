@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "b2f5082bfd1d04c6a3976a50a02a097f71991b424bade0a0d7e108d46dcbf5fc",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "094",
   "translations": {
@@ -76,7 +96,7 @@
       "uncertain": false
     },
     "shuowen:9310": {
-      "text": "A large 𨮯 metal implement. Formed from 金, with 召 indicating the sound. A sickle is called 鉊, according to Zhang Che.",
+      "text": "A metal implement, possibly an awl or sickle, with a regional designation 鉊. Formed from 金, with 召 indicating the sound. [Duan notes disagreement among 方言, 廣雅 and the received text over the precise implement.]",
       "sourceTextSha256": "a2878eddf9dc748530ae77aa2bd37c65adceedd51a3467f471a6adc924bed449",
       "uncertain": true
     },
@@ -91,9 +111,9 @@
       "uncertain": false
     },
     "shuowen:9313": {
-      "text": "Metal pincers. Formed from 金, with 占 indicating the sound. Another explanation gives 膏車𨮯鉆, apparently a metal implement for greasing a carriage.",
+      "text": "Metal pincers or tongs; alternatively, a metal fitting or tool used to apply grease within the axle hub of a vehicle. Formed from 金, with 占 indicating the sound.",
       "sourceTextSha256": "c5a0b0caf11bea15b33ce7fcb713a6da22b739ca33a1be9b32249cd2cdb73352",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9314": {
       "text": "Pincers. Formed from 金, with 𦔮 indicating the sound.",
@@ -111,9 +131,9 @@
       "uncertain": false
     },
     "shuowen:9317": {
-      "text": "The implement called 槍唐, apparently a saw. Formed from 金, with 居 indicating the sound.",
+      "text": "A saw, called 槍唐 in an older regional term. Formed from 金, with 居 indicating the sound.",
       "sourceTextSha256": "c91e60bb617725f61f3167f5c32b3a9cc02fb8e3be19e58b18ecc76eb07bf228",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9318": {
       "text": "Something used to fasten things together. Formed from 金, with 朁 indicating the sound.",
@@ -156,7 +176,7 @@
       "uncertain": false
     },
     "shuowen:9326": {
-      "text": "A weight equal to the weight of ten portions of millet, according to the recorded 十分黍 wording. Formed from 金, with 朱 indicating the sound.",
+      "text": "A zhū, an ancient unit of weight equivalent in one Han-era standard to 100 millet grains (24 zhū to one liǎng). Formed from 金, with 朱 indicating the sound. [The transmitted “ten parts of millet” is defective; Duan reconstructs 十絫黍.]",
       "sourceTextSha256": "f3ef0c8c87de64f2eed98c6a05be502d04dbafb33bb9fd78c68234cd48cf571f",
       "uncertain": true
     },
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:9328": {
-      "text": "A 鋝 weight. Formed from 金, with 爰 indicating the sound. The Book of Punishments says: 'Set out one hundred 鍰.'",
+      "text": "A 鋝 weight. Formed from 金, with 爰 indicating the sound. The text cited as 罰書 states: “A hundred huan are listed.”",
       "sourceTextSha256": "21910796fb7169f0ab179a53329b8fc80c80fe31dcd1cfdfb39853c3a708ed6c",
       "uncertain": false
     },
@@ -186,7 +206,7 @@
       "uncertain": false
     },
     "shuowen:9332": {
-      "text": "A war carriage. Alternatively, 𨮯 metal. The Methods of the Sima says: 'Morning and night bring in the 鈀 carriages.' Formed from 金, with 巴 indicating the sound.",
+      "text": "A military carriage, according to one gloss; alternatively, a metal tool. The Methods of the Sima mentions bringing in 鈀 carriages. Formed from 金, with 巴 indicating the sound. [The quotation does not survive in the extant Sima Fa, and other sources describe a metal bladed implement.]",
       "sourceTextSha256": "2397a0e1bc0c73a26475f11638685587b7a383e70a73929ad70964428a31b034",
       "uncertain": true
     },
@@ -216,7 +236,7 @@
       "uncertain": false
     },
     "shuowen:9338": {
-      "text": "A large bell of the 湻于 kind, used to answer bells and chime stones. Two are arranged in a 堵; during metal music, the 鏄 is struck in response. Formed from 金, with 薄 indicating the sound.",
+      "text": "A large, separately suspended musical bell that responds to sets of bells and stone chimes, likened to a 錞于. Formed from 金, with 薄 indicating the sound. [The passage on the number of bell-and-chime sets contains transmitted errors; Duan proposes a reconstruction.]",
       "sourceTextSha256": "bf3f6f18d1df4ecf0c082b5f5aca5e524610aa5d1792e5b0ba655edaa6704459",
       "uncertain": true
     },
@@ -231,14 +251,14 @@
       "uncertain": false
     },
     "shuowen:9341": {
-      "text": "A square bell or bell-shaped vessel. Formed from 金, with 方 indicating the sound.",
+      "text": "A square-shaped bronze bell or bell-shaped metal vessel. Formed from 金, with 方 indicating the sound.",
       "sourceTextSha256": "3d8db83d197922727cbe2e4070c256f621331c5263beacacb631cfc41aa3fe8e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9342": {
-      "text": "鎛鱗: a metal floral ornament on the crossbeam above a bell. Alternatively, an agricultural implement. Formed from 金, with 尃 indicating the sound. The Odes says: 'Prepare your 錢 and 鎛 tools.'",
+      "text": "A metal floral ornament attached to the wooden beam above suspended bells; alternatively, an agricultural hoe. Formed from 金, with 尃 indicating the sound. The Odes says: “Prepare your spades and hoes.”",
       "sourceTextSha256": "181ece91c3c837c1a8ca3ee964fab711f91fb87eb14387ba74560d70df6445ad",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9343": {
       "text": "The sound of bells. Formed from 金, with 皇 indicating the sound. The Odes says: 'Bells and drums ring out.'",
@@ -251,7 +271,7 @@
       "uncertain": false
     },
     "shuowen:9345": {
-      "text": "The sound expressed by 鎗鍃. Alternatively, a large chisel for leveling wood. Formed from 金, with 悤 indicating the sound.",
+      "text": "A resonant clang or clash, as of a bell. Alternatively, a large chisel used to cut into timber. Formed from 金, with 悤 indicating the sound. [Duan disputes the transmitted 平木者 and reconstructs 中木, “boring into wood”.]",
       "sourceTextSha256": "de3106e7c7f4e43654a3e92e42b4e809594e82b29ce3f70a57963da4976a5748",
       "uncertain": true
     },
@@ -271,9 +291,9 @@
       "uncertain": false
     },
     "shuowen:9349": {
-      "text": "The projecting guard of a sword, apparently. Formed from 金, with 覃 indicating the sound.",
+      "text": "The metal end or pommel of a sword hilt, with a projection or opening, traditionally called its “nose.” Formed from 金, with 覃 indicating the sound.",
       "sourceTextSha256": "7612e6357dcabf2e55da14a9ae22488db94c849527acfd4b2b76043d0954bda8",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9350": {
       "text": "The sword called 鏌釾. Formed from 金, with 莫 indicating the sound.",
@@ -286,9 +306,9 @@
       "uncertain": false
     },
     "shuowen:9352": {
-      "text": "The bronze fitting at the end of a knife sheath, apparently. Formed from 金, with 㶾 indicating the sound.",
+      "text": "A copper or bronze end fitting on a knife sheath, rather than the knife blade itself. Formed from 金, with 㶾 indicating the sound.",
       "sourceTextSha256": "d4e38932caa9195fe432f590dd6a2f939274e920e4225fcee7b558c1003aae5d",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9353": {
       "text": "A short spear. Formed from 金, with 及 indicating the sound.",
@@ -328,7 +348,7 @@
     "shuowen:9360": {
       "text": "The bronze below the shaft of a spear or halberd: a butt ferrule. Formed from 金, with 𦎫 indicating the sound. The Odes says: 'Three-edged spears with gleaming ferrules.'",
       "sourceTextSha256": "91dbede10128a8a4dcf0a56a9225614f689f741c36ebb1439f64ee452fd7e934",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9361": {
       "text": "Bronze below a weapon shaft. Formed from 金, with 尊 indicating the sound.",
@@ -336,12 +356,12 @@
       "uncertain": false
     },
     "shuowen:9362": {
-      "text": "A crossbow's 'brow' fitting. Alternatively, the finest gold. Formed from 金, with 翏 indicating the sound.",
+      "text": "A fitting at the “brow” of a crossbow; alternatively, exceptionally fine gold. Formed from 金, with 翏 indicating the sound.",
       "sourceTextSha256": "ba8dea1fb3e7c2c09d071296c3e105177903f15fe9b7894ada9c6ef528547f5f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:9363": {
-      "text": "An arrow. A metal arrowhead with trimmed feathers is called 鏃, according to the source wording. Formed from 金, with 矦 indicating the sound.",
+      "text": "An arrow with a metal head and trimmed fletching, described in traditional arrow typology. Formed from 金, with 矦 indicating the sound. [Duan argues this entry is absent from the earlier Xiao Xu edition and that the received explanatory headword 鏃 is corrupt.]",
       "sourceTextSha256": "e6d27fa396fe69fc20ba1d8736ed66b69a76cdc54e9e4fd538e8c39a5b85cbec",
       "uncertain": true
     },
@@ -381,12 +401,12 @@
       "uncertain": false
     },
     "shuowen:9371": {
-      "text": "A fastening of the carriage's frame. Alternatively, copper producing five colors. Formed from 金, with 折 indicating the sound. Read like 誓.",
+      "text": "A metal joint or fastening associated with the bracing of a carriage frame; alternatively, the multicolored patina that develops on bronze. Formed from 金, with 折 indicating the sound. Pronounced like 誓. [The exact form of the carriage fixture remains unknown.]",
       "sourceTextSha256": "0252b9197edc093aac34c3b0f7fab7fd717321a0e927de10d58416d6be7915ad",
       "uncertain": true
     },
     "shuowen:9372": {
-      "text": "An anti-catching fitting on the heads of imperial carriage horses. Pheasant tails and metal stems are inserted like horns, to ward off and dislodge entangling nets; the repeated source token 𨥊 is obscure. Formed from 金, with 气 indicating the sound.",
+      "text": "A horn-like metal anti-entanglement fitting on an imperial carriage horse, decorated with pheasant-tail feathers to deflect nets or dangling gear. Formed from 金, with 气 indicating the sound. [Sources differ on whether the fitting sat on the horse’s head or near the front of the carriage pole.]",
       "sourceTextSha256": "9c99c21d8bd85f361cd878bc0f1e0d6ba85e2156cde9438b530d330983fd0887",
       "uncertain": true
     },

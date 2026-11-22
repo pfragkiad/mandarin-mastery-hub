@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "369b0a388a1cfdb247caf138609b4941f94800cfcd4f6a4b273f56260650108b",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "021",
   "translations": {
@@ -46,9 +66,9 @@
       "uncertain": false
     },
     "shuowen:2004": {
-      "text": "To work iron by striking and refining it. Formed from 攴 and 湅. [The expression 辟𣿊 is uncertain.]",
+      "text": "To repeatedly fold, forge and refine iron in making steel. Formed from 攴 and 湅.",
       "sourceTextSha256": "1f1bbbb832214a9139a164f9704ee2af712cccde500e287b267d9ee31c506ada",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:2005": {
       "text": "Diligent and intent. Formed from 攴, with 子 indicating the sound. The Book of Zhou says: “Diligent without slackening.”",
@@ -56,17 +76,17 @@
       "uncertain": false
     },
     "shuowen:2006": {
-      "text": "To divide or distribute. Formed from 攴, with 分 indicating the sound. The Book of Zhou says: “It is then the young child's distribution.” Also pronounced the same as 彬.",
+      "text": "To divide or distribute. Formed from 攴, with 分 indicating the sound. The Documents quotation writes a form that corresponds to 頒 in later editions. Also pronounced like 彬. [The quoted sentence requires textual collation before translation.]",
       "sourceTextSha256": "cf715bbcb5f2d6fa43b7b5006de9f0ff0f146207c1dbe323298fb4cb6d24f395",
       "uncertain": true
     },
     "shuowen:2007": {
-      "text": "To stop. Formed from 攴, with 旱 indicating the sound. The Book of Zhou says: “Stop me amid difficulty.”",
+      "text": "To fend off, restrain or defend against something. Formed from 攴, with 旱 indicating the sound. The Documents quotation uses this character for later 扞, “protect or defend me in difficulties.” [The received quotation needs collation.]",
       "sourceTextSha256": "4177e6df8e3c8181602bf7603668ccc912c65d2d82f0c6a023da83a05d2b8e9f",
       "uncertain": true
     },
     "shuowen:2008": {
-      "text": "To undertake some ordering. Formed from 攴, with 豈 indicating the sound. Pronounced like 豤.",
+      "text": "To undertake some ordering. Formed from 攴, with 豈 indicating the sound. Read like 豤.",
       "sourceTextSha256": "808cebe4a72a917fc4afbdbd52ae3079f90a30227f6ff3b86c5208a63632db74",
       "uncertain": false
     },
@@ -116,7 +136,7 @@
       "uncertain": false
     },
     "shuowen:2018": {
-      "text": "To tie and join. Formed from 攴, with 喬 indicating the sound. The Book of Zhou says: “Attach cords to your shields.” Pronounced like 矯.",
+      "text": "To tie and join. Formed from 攴, with 喬 indicating the sound. The Book of Zhou says: “Attach cords to your shields.” Read like 矯.",
       "sourceTextSha256": "38cc4c06d28870f90aa04ad9f8f2cf0a7ac320d14f1c2d56425c53b433105e67",
       "uncertain": false
     },
@@ -156,9 +176,9 @@
       "uncertain": false
     },
     "shuowen:2026": {
-      "text": "Flowing water. Formed from 攴, 人 and abbreviated 水.",
+      "text": "The gentle, orderly flow of water. Formed from 攴 and 人, with a reduced water element.",
       "sourceTextSha256": "84a08d82736424fb9fba8a062a07e5bae9c0ee777af0b9cef6cab5361413e3b8",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:2027": {
       "text": "To soothe. Formed from 攴, with 亾 indicating the sound. Pronounced the same as 撫.",
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:2028": {
-      "text": "To soothe. Formed from 攴, with 米 indicating the sound. The Book of Zhou says: “Still unable to secure the duke's achievements.” Pronounced like 弭.",
+      "text": "To soothe. Formed from 攴, with 米 indicating the sound. The Book of Zhou says: “Still unable to secure the duke's achievements.” Read like 弭.",
       "sourceTextSha256": "939a580fc0492d36f9f61990aab604e6ff36dc194cc52892ee538ab274b1c01e",
       "uncertain": false
     },
@@ -181,7 +201,7 @@
       "uncertain": false
     },
     "shuowen:2031": {
-      "text": "Anger; to rebuke. Another explanation: to challenge with “who goes there？” Formed from 攴, with 𦎫 indicating the sound.",
+      "text": "Anger; to rebuke. Another explanation: to challenge with “who goes there?” Formed from 攴, with 𦎫 indicating the sound.",
       "sourceTextSha256": "4f20fc7ea8c2cd0560dc9cf36d7c01803392274acb26601be8e33b28d12eef12",
       "uncertain": false
     },
@@ -211,7 +231,7 @@
       "uncertain": false
     },
     "shuowen:2037": {
-      "text": "To close. Formed from 攴, with 度 indicating the sound. Pronounced like 杜.",
+      "text": "To close. Formed from 攴, with 度 indicating the sound. Read like 杜.",
       "sourceTextSha256": "4b47d16f0494bd63fd8e9db84357d881c381e4ad5ff0639074e02f631b8f7278",
       "uncertain": false
     },
@@ -241,7 +261,7 @@
       "uncertain": false
     },
     "shuowen:2043": {
-      "text": "To strike. Formed from 攴, with 句 indicating the sound. Pronounced like 扣.",
+      "text": "To strike. Formed from 攴, with 句 indicating the sound. Read like 扣.",
       "sourceTextSha256": "25d75c6eff4b8d7108d02eeda7fb3f9ef38af0004cd3f41a6225d0c43641f4f4",
       "uncertain": false
     },
@@ -251,9 +271,9 @@
       "uncertain": false
     },
     "shuowen:2045": {
-      "text": "To strike or throw sideways. Formed from 攴, with 高 indicating the sound.",
+      "text": "To strike or hit sideways, for example by swinging or throwing a stick. Formed from 攴, with 高 indicating the sound.",
       "sourceTextSha256": "1aeb3bab072756928a8b30a7c28e91c5df88af22c48a78fd92abe377baca04e7",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:2046": {
       "text": "To strike. Formed from 攴, with 豖 indicating the sound.",
@@ -291,7 +311,7 @@
       "uncertain": true
     },
     "shuowen:2053": {
-      "text": "To hold. Formed from 攴, with 金 indicating the sound. Pronounced like 琴.",
+      "text": "To hold. Formed from 攴, with 金 indicating the sound. Read like 琴.",
       "sourceTextSha256": "1b7ab637a3c33631a6b3a1ddfb70e3c7fc3a0d98780a34169c83381d97856c52",
       "uncertain": false
     },
@@ -306,7 +326,7 @@
       "uncertain": false
     },
     "shuowen:2056": {
-      "text": "㱾改, a large 剛卯 amulet for driving away ghosts and spirits. Formed from 攴, with 巳 indicating the sound. Pronounced like 巳.",
+      "text": "㱾改, a large 剛卯 amulet for driving away ghosts and spirits. Formed from 攴, with 巳 indicating the sound. Read like 巳.",
       "sourceTextSha256": "d1856e6bb879d44c79c92d2d2f28d01e1d2a5be89c5efdee6268a5f3bcc35f50",
       "uncertain": false
     },
@@ -446,7 +466,7 @@
       "uncertain": false
     },
     "shuowen:2084": {
-      "text": "To raise the eyes to direct someone. Formed from 攴 and 目. All characters in the 𡕥 category are formed from 𡕥. Pronounced like 𩖶.",
+      "text": "To raise the eyes to direct someone. Formed from 攴 and 目. All characters in the 𡕥 category are formed from 𡕥. Read like 𩖶.",
       "sourceTextSha256": "35ed79d6d3ed66d3db91f0c165cc984f78e40a8d073a29eeda4e5269d3c5c896",
       "uncertain": false
     },
@@ -461,7 +481,7 @@
       "uncertain": false
     },
     "shuowen:2087": {
-      "text": "To look broadly or intently. Formed from 大 and 𡕥. Pronounced like 齤.",
+      "text": "To look broadly or intently. Formed from 大 and 𡕥. Read like 齤.",
       "sourceTextSha256": "b8c8520dfd385e754c4a07dd23861f397846a0f4bc5ca266501226cf7d587612",
       "uncertain": true
     },
@@ -501,7 +521,7 @@
       "uncertain": false
     },
     "shuowen:2095": {
-      "text": "The essence of the eye's pupil. Formed from 目, with 喜 indicating the sound. Pronounced like 禧.",
+      "text": "The essence of the eye's pupil. Formed from 目, with 喜 indicating the sound. Read like 禧.",
       "sourceTextSha256": "ac99165ab33626f89ea106c0632b5ac46f0408041b309348fb35b28aad026508",
       "uncertain": false
     },

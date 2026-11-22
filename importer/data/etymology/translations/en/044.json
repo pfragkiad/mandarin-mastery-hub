@@ -26,12 +26,32 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "99a5405ad003010597992afc450a4477ce19cb8a608694a6648f47a6e613b345",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "044",
   "translations": {
     "shuowen:4301": {
-      "text": "Something that ought not to occur. The Spring and Autumn Commentary says: “The sun or moon suffers an eclipse.” Formed from 月, with 又 indicating the sound. All characters in this group follow 有.",
+      "text": "Something that ought not to occur. The Spring and Autumn Commentary says: “The sun or moon suffers an eclipse.” Formed from 月, with 又 indicating the sound. All characters in this group are formed from 有.",
       "sourceTextSha256": "31fc3a61de0c60933bd0506a8ddf8d2c43bf5e7cab8990e785ba380bd305a05b",
       "uncertain": false
     },
@@ -46,7 +66,7 @@
       "uncertain": false
     },
     "shuowen:4304": {
-      "text": "To illuminate. Formed from 月 and 囧. All characters in this group follow 朙.",
+      "text": "To illuminate. Formed from 月 and 囧. All characters in this group are formed from 朙.",
       "sourceTextSha256": "8ca4a864cd57349ffa77d04411c52f82e20284aa495f2c5834ef7c2fdcb7426a",
       "uncertain": false
     },
@@ -56,7 +76,7 @@
       "uncertain": false
     },
     "shuowen:4306": {
-      "text": "A lattice window opened to the light. Pictographic. All characters in this group follow 囧. Read like 獷. Attendant Jia says it is pronounced the same as 明.",
+      "text": "A lattice window opened to the light. Pictographic. All characters in this group are formed from 囧. Read like 獷. Palace Attendant Jia says it is pronounced the same as 明.",
       "sourceTextSha256": "eeed93f26e90cd304a113468efae9675bb417625fd33a8e0fe03972c86d4f3a9",
       "uncertain": false
     },
@@ -66,7 +86,7 @@
       "uncertain": false
     },
     "shuowen:4308": {
-      "text": "Evening. Formed from half-visible 月. All characters in this group follow 夕.",
+      "text": "Evening. Formed from half-visible 月. All characters in this group are formed from 夕.",
       "sourceTextSha256": "f7e2c9950dfeda0e2a909252eb11aa85df3aeaa8639d32352a2d0f8bdcb2dd36",
       "uncertain": false
     },
@@ -111,7 +131,7 @@
       "uncertain": false
     },
     "shuowen:4317": {
-      "text": "Repeated. Formed from repeated 夕; 夕 succeeds another, hence “many.” Repeated 夕 makes 多; repeated 日 makes 曡. All characters in this group follow 多.",
+      "text": "Repeated. Formed from repeated 夕; 夕 succeeds another, hence “many.” Repeated 夕 makes 多; repeated 日 makes 曡. All characters in this group are formed from 多.",
       "sourceTextSha256": "000a71188dcff62eee87ed949939d7ea6cacd9d4110ecd27eb132dddeede04e2",
       "uncertain": false
     },
@@ -131,7 +151,7 @@
       "uncertain": false
     },
     "shuowen:4321": {
-      "text": "To pierce something and hold it. A single horizontal stroke pierces through, depicting valuables. All characters in this group follow 毌. Read like 冠.",
+      "text": "To pierce something and hold it. A single horizontal stroke pierces through, depicting valuables. All characters in this group are formed from 毌. Read like 冠.",
       "sourceTextSha256": "70862b1a8dd1c0b8ab541c3f9eef82ad6fc6ae904d793e968eec069003365002",
       "uncertain": false
     },
@@ -146,7 +166,7 @@
       "uncertain": false
     },
     "shuowen:4324": {
-      "text": "Contained, 嘾: plant flowers still unopened and enclosed. Pictographic. All characters in this group follow 𢎘. Read like 含.",
+      "text": "Contained, 嘾: plant flowers still unopened and enclosed. Pictographic. All characters in this group are formed from 𢎘. Read like 含.",
       "sourceTextSha256": "b8ef9a28516f3ec313682100fb6ec9d7595706a36cd021def5b47f2e8513c584",
       "uncertain": false
     },
@@ -156,7 +176,7 @@
       "uncertain": true
     },
     "shuowen:4326": {
-      "text": "A tree producing shoots. Formed from 𢎘, with 由 indicating the sound. The Book of Shang says: “Like a fallen tree having 织枿”; the ancient text writes 由枿. The recorded phrase is uncertain.",
+      "text": "A tree putting forth new shoots. Formed from 𢎘, with 由 indicating the sound. The Book of Shang says: “Like a fallen tree putting forth fresh shoots.” The transmitted graph sequence in this digital file (织枿) is probably corrupt; comparative witnesses have alternative new-shoots graphs.",
       "sourceTextSha256": "98e5bcd569973c063d3170f06e576de2bf9f0ae8615493ddb730266b12ec9467",
       "uncertain": true
     },
@@ -171,7 +191,7 @@
       "uncertain": false
     },
     "shuowen:4329": {
-      "text": "A tree with drooping flowers and fruit. Formed from 木 and 𢎘; 𢎘 also indicates the sound. All characters in this group follow 𣐺.",
+      "text": "A tree with drooping flowers and fruit. Formed from 木 and 𢎘; 𢎘 also indicates the sound. All characters in this group are formed from 𣐺.",
       "sourceTextSha256": "fd308d39c5f625f61ae49032fba0122acf9682f1b1ffd9f1f1d37933be39865a",
       "uncertain": false
     },
@@ -181,7 +201,7 @@
       "uncertain": false
     },
     "shuowen:4331": {
-      "text": "Plant fruits hanging down, 𠧪𠧪. Pictographic. All characters in this group follow 𠧪. Read like 調.",
+      "text": "Plant fruits hanging down, 𠧪𠧪. Pictographic. All characters in this group are formed from 𠧪. Read like 調.",
       "sourceTextSha256": "30ac39dd6f649d929932aeea4fd5222811b5c1116568b121806cad36ebaf7033",
       "uncertain": false
     },
@@ -206,7 +226,7 @@
       "uncertain": false
     },
     "shuowen:4336": {
-      "text": "A tree’s thorn. Pictographic. All characters in this group follow 朿. Read like 刺.",
+      "text": "A tree’s thorn. Pictographic. All characters in this group are formed from 朿. Read like 刺.",
       "sourceTextSha256": "d288e7146bd5b801b7d344ae1ddbab639f388a4b5db8f94a54a2cb40f1a4e6d5",
       "uncertain": false
     },
@@ -221,7 +241,7 @@
       "uncertain": false
     },
     "shuowen:4339": {
-      "text": "Split wood. Formed from half of 木. All characters in this group follow 片.",
+      "text": "Split wood. Formed from half of 木. All characters in this group are formed from 片.",
       "sourceTextSha256": "ba0c8e9aee190a98353292dc0ec0c5d14448b6a6b894f37966944bac3c662bac",
       "uncertain": false
     },
@@ -261,7 +281,7 @@
       "uncertain": false
     },
     "shuowen:4347": {
-      "text": "A precious vessel with three legs and two handles for blending the five flavors. Long ago Yu collected metal from the nine regional governors and cast tripods beneath Mount Jing; entering mountains, forests, rivers and marshes, one would encounter none of the 螭, 魅 or 蝄蜽 spirits, thereby receiving Heaven’s blessings in harmony. In the Changes, Xun-wood below makes the 鼎 hexagram, depicting split wood for cooking. The large-seal script uses 鼎 for 貞. All characters in this group follow 鼎.",
+      "text": "A precious vessel with three legs and two handles for blending the five flavors. Long ago Yu collected metal from the nine regional governors and cast tripods beneath Mount Jing; entering mountains, forests, rivers and marshes, one would encounter none of the 螭, 魅 or 蝄蜽 spirits, thereby receiving Heaven’s blessings in harmony. In the Changes, Xun-wood below makes the 鼎 hexagram, depicting split wood for cooking. The large-seal script uses 鼎 for 貞. All characters in this group are formed from 鼎.",
       "sourceTextSha256": "435fe34fd4359fff43f0369d0c0ad58e3ea11b50d4d5ad8bb9d0505c249514d7",
       "uncertain": false
     },
@@ -281,7 +301,7 @@
       "uncertain": false
     },
     "shuowen:4351": {
-      "text": "To shoulder. Depicts cutting wood beneath a roof. All characters in this group follow 克.",
+      "text": "To shoulder. Depicts cutting wood beneath a roof. All characters in this group are formed from 克.",
       "sourceTextSha256": "6a79b5ec2143577fa7500afbfbdb2d3c5608df508a073e5d4b7aafeafd68ad05",
       "uncertain": false
     },
@@ -291,7 +311,7 @@
       "uncertain": false
     },
     "shuowen:4353": {
-      "text": "A fine cereal. It begins growing in the second month and ripens in the eighth, obtaining the seasonal mean, hence called 禾. Grain belongs to Wood: it grows when Wood rules and dies when Metal rules. Formed from 木 and abbreviated 𠂹; 𠂹 depicts its ear. All characters in this group follow 禾.",
+      "text": "A fine cereal. It begins growing in the second month and ripens in the eighth, obtaining the seasonal mean, hence called 禾. Grain belongs to Wood: it grows when Wood rules and dies when Metal rules. Formed from 木 and abbreviated 𠂹; 𠂹 depicts its ear. All characters in this group are formed from 禾.",
       "sourceTextSha256": "c52a4e7096ea0f8c07cdcec9a5b6b0de49841fe52b0ab42f25c467644ae9df1a",
       "uncertain": false
     },

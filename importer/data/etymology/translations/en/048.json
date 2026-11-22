@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "ce038199def2da1fd3b4d20cc7e9aae6a749d6a30dde4868849778f02c275d38",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "048",
   "translations": {
@@ -401,7 +421,7 @@
       "uncertain": false
     },
     "shuowen:4775": {
-      "text": "To cover. Formed from 一 hanging down. All characters in this group follow 冖.",
+      "text": "To cover. Formed from 一 hanging down. All characters in this group are formed from 冖.",
       "sourceTextSha256": "20a3cfb9a15ac79232deab66f74f6810ead8851af6cadd0ca5b8d36a1455c765",
       "uncertain": false
     },
@@ -421,7 +441,7 @@
       "uncertain": false
     },
     "shuowen:4779": {
-      "text": "A double covering. Formed from 冂 and 一. All characters in this group follow 𠔼. Read like 苺 in 艸苺苺.",
+      "text": "A double covering. Formed from 冂 and 一. All characters in this group are formed from 𠔼. Read like 苺 in 艸苺苺.",
       "sourceTextSha256": "a6eb7248097100ec3a6e5a2c3646ce1e94882a9ce2bd02e108ea5a1f422eb0c2",
       "uncertain": false
     },
@@ -441,7 +461,7 @@
       "uncertain": false
     },
     "shuowen:4783": {
-      "text": "Headwear of children and the Man and Yi peoples. Formed from 冂; 二 is its ornament. All characters in this group follow 冃.",
+      "text": "Headwear of children and the Man and Yi peoples. Formed from 冂; 二 is its ornament. All characters in this group are formed from 冃.",
       "sourceTextSha256": "c5f74959ec58ed37ddbff06807129d7fd502e957f03b2c51a192bd7795e08ca6",
       "uncertain": false
     },
@@ -466,7 +486,7 @@
       "uncertain": false
     },
     "shuowen:4788": {
-      "text": "Twice. Formed from 冂; further analysis is missing. The Changes says: “Give Heaven three and Earth two.” All characters in this group follow 㒳.",
+      "text": "Twice. Formed from 冂; further analysis is missing. The Changes says: “Give Heaven three and Earth two.” All characters in this group are formed from 㒳.",
       "sourceTextSha256": "43addfba433f4917549174e18d4232a281d619da13a6f8b2fcdbc5e34c004364",
       "uncertain": false
     },
@@ -481,7 +501,7 @@
       "uncertain": true
     },
     "shuowen:4791": {
-      "text": "The knotted cords with which Paoxi fished. Formed from 冂, with the lower part depicting a net’s crossing strands. All characters in this group follow 网. The classics now use the clerically transformed 䍏.",
+      "text": "The knotted cords with which Paoxi fished. Formed from 冂, with the lower part depicting a net’s crossing strands. All characters in this group are formed from 网. The classics now use the clerically transformed 䍏.",
       "sourceTextSha256": "fce4b5c28327de027fc60680bcd20adc0fc3a8a7eac99945fe0f16bc758c62e0",
       "uncertain": false
     },

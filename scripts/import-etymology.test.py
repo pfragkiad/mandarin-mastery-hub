@@ -118,7 +118,22 @@ class EtymologyHandoffTests(unittest.TestCase):
         meta = self.index['dataset_metadata']['translation_layer']
         self.assertEqual(meta['record_count'], drafts)
         self.assertEqual(meta['uncertain_record_count'], uncertain)
-        self.assertEqual(self.index['dataset_metadata']['version'], '1.1.0')
+        self.assertEqual(self.index['dataset_metadata']['version'], '1.3.0')
+        self.assertEqual(uncertain, 775)
+        self.assertEqual(meta['editorial_review']['translation_edited_entries'], 1938)
+        reviews = [entry['translation']['editorialReview'] for entry in self.entries.values()
+                   if entry.get('translation', {}).get('editorialReview')]
+        self.assertEqual(len(reviews), meta['editorial_review']['changed_entry_count'])
+        self.assertEqual(sum('sourceReading' in review for review in reviews), 28)
+        self.assertEqual(meta['editorial_review']['followup']['reported_uncertain_entries'], 884)
+        self.assertEqual(meta['editorial_review']['followup']['omitted_uncertain_count'], 15)
+        self.assertEqual(meta['editorial_review']['followup']['full_review']['resolved_uncertainties'], 15)
+        self.assertEqual(meta['editorial_review']['followup']['full_review']['remaining_uncertainties'], 884)
+        self.assertEqual(meta['editorial_review']['external_v3']['cases_reported_checked'], 222)
+        self.assertEqual(meta['editorial_review']['external_v3']['remaining_uncertainties'], 775)
+        evidence = [review['caseEvidence'] for review in reviews if 'caseEvidence' in review]
+        self.assertEqual(len(evidence), 222)
+        self.assertEqual(sum(row['decision'] == 'clear' for row in evidence), 109)
 
     def test_babelstone_paths_tokens_regions_and_fail_closed_boundaries(self):
         for character in self.characters.values():

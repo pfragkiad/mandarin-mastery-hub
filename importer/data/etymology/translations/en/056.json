@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "4bc2fb14f9cf043de9a1d4a810ee5c769dc6b81d7df12d8e96a572055763e0fc",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "056",
   "translations": {
@@ -151,7 +171,7 @@
       "uncertain": false
     },
     "shuowen:5525": {
-      "text": "钐钐, the appearance of breath issuing. Formed from 欠, with 䍃 indicating the sound.",
+      "text": "𣣳𣣳, the appearance of breath issuing. Formed from 欠, with 䍃 indicating the sound.",
       "sourceTextSha256": "08a39f81c45e0d7b5b1cbef12de1a0bed2f882bc85d63379aa50da65ed8e5058",
       "uncertain": false
     },
@@ -341,7 +361,7 @@
       "uncertain": false
     },
     "shuowen:5563": {
-      "text": "To drink. Formed from 欠, with 酓 indicating the sound. All characters in this group follow 㱃.",
+      "text": "To drink. Formed from 欠, with 酓 indicating the sound. All characters in this group are formed from 㱃.",
       "sourceTextSha256": "cb7a85097f971c0ba6af763f7195201107c0f66a708484fa0ea7cd767499b19f",
       "uncertain": false
     },
@@ -351,7 +371,7 @@
       "uncertain": false
     },
     "shuowen:5565": {
-      "text": "Mouth fluid from longing and desire. Formed from 欠 and 水. All characters in this group follow 㳄.",
+      "text": "Mouth fluid from longing and desire. Formed from 欠 and 水. All characters in this group are formed from 㳄.",
       "sourceTextSha256": "0884fb743f03673371bbc41702969e4247bdb9b2d72f1cea14750bc258ba0a5d",
       "uncertain": false
     },
@@ -386,7 +406,7 @@
       "uncertain": false
     },
     "shuowen:5572": {
-      "text": "The head. Formed from 𦣻 and 几. The ancient graph for bowing the head has this form. All characters in this group follow 頁. 𦣻 is the graph for bowing the head.",
+      "text": "The head. Formed from 𦣻 and 几. The ancient graph for bowing the head has this form. All characters in this group are formed from 頁. 𦣻 is the graph for bowing the head.",
       "sourceTextSha256": "baae052594b3feebccc0cb597e0355fa82803938a2d9092e631fd3a32652dc23",
       "uncertain": false
     },

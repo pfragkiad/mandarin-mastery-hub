@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "ba190ce173fcec8394f92aedf142cd9f360e845530165c6197c843c4ed00d7f8",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "041",
   "translations": {
@@ -91,7 +111,7 @@
       "uncertain": false
     },
     "shuowen:4013": {
-      "text": "Heyang County, 郃陽, in Left Pingyi. Formed from 邑, with 合 indicating the sound. The Odes says: “On the sunny side of the He.”",
+      "text": "Heyang County, 郃陽, in Left Fengyi. Formed from 邑, with 合 indicating the sound. The Odes says: “On the sunny side of the He.”",
       "sourceTextSha256": "fbc0c50ac87ad7bc1be3cca47396f8c14308a45561a1594136454f329b7112c7",
       "uncertain": false
     },
@@ -106,22 +126,22 @@
       "uncertain": false
     },
     "shuowen:4016": {
-      "text": "A county in Left Pingyi. Formed from 邑, with 麃 indicating the sound.",
+      "text": "A county in Left Fengyi. Formed from 邑, with 麃 indicating the sound.",
       "sourceTextSha256": "f0af9f0da479a48abc19df3014b3663a2a887c5d2f2e613485763856fb0dbbca",
       "uncertain": false
     },
     "shuowen:4017": {
-      "text": "䣝陽 Pavilion in Left Pingyi. Formed from 邑, with 屠 indicating the sound.",
+      "text": "䣝陽 Pavilion in Left Fengyi. Formed from 邑, with 屠 indicating the sound.",
       "sourceTextSha256": "a1fc69ddde71b056909ed978eb893bd6c467e54c8724b476453e099abeae98ad",
       "uncertain": false
     },
     "shuowen:4018": {
-      "text": "A place in Gaoling, Left Pingyi. Formed from 邑, with 由 indicating the sound.",
+      "text": "A place in Gaoling, Left Fengyi. Formed from 邑, with 由 indicating the sound.",
       "sourceTextSha256": "557caed1062b813f228f785fccfd3827b8317e113db6b6d6e7727901c1fc1f87",
       "uncertain": false
     },
     "shuowen:4019": {
-      "text": "A township in Gukou, Left Pingyi. Formed from 邑, with 秊 indicating the sound. Read like 寕.",
+      "text": "A township in Gukou, Left Fengyi. Formed from 邑, with 秊 indicating the sound. Read like 寕.",
       "sourceTextSha256": "f86d728e736d14b38cd6295ab22ed6e7a2a5de33e78b36f880b29ff7a9c6b523",
       "uncertain": false
     },
@@ -286,7 +306,7 @@
       "uncertain": false
     },
     "shuowen:4052": {
-      "text": "A county in Changshan, where the Founding Ancestor took the throne; now called Gaoyi. Formed from 邑, with 高 indicating the sound.",
+      "text": "A county in Changshan, where Emperor Shizu (Guangwu of Han) took the throne; now called Gaoyi. Formed from 邑, with 高 indicating the sound.",
       "sourceTextSha256": "d9ea22477a6a04edb642f863b74a9f4a33436c0da5ec6241b34eb259661a56bc",
       "uncertain": false
     },
@@ -466,7 +486,7 @@
       "uncertain": false
     },
     "shuowen:4088": {
-      "text": "存䣕, a county in Qianwei. Formed from 邑, with 馬 indicating the sound.",
+      "text": "存䣕, a county in Jianwei. Formed from 邑, with 馬 indicating the sound.",
       "sourceTextSha256": "cca8729ae819c4a46347dabc41d385de80e2920f23cf76a2d6e89ab975552ae4",
       "uncertain": false
     },

@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "7faebad151e670d6cca81e340ae20b3d787968be87d7fa57bd910d7945839dad",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "022",
   "translations": {
@@ -46,7 +66,7 @@
       "uncertain": true
     },
     "shuowen:2104": {
-      "text": "Large eyes. Formed from 目 and 侖. The Spring and Autumn commentary has Duke Gun of Zheng.",
+      "text": "Large eyes. Formed from 目 and 侖. The Spring and Autumn commentary has Earl Gun of Zheng.",
       "sourceTextSha256": "5554328fbaf0efae40ce4531690c8c4a9b52e97c1b05b18811c9a7056d9fd2d3",
       "uncertain": false
     },
@@ -106,7 +126,7 @@
       "uncertain": false
     },
     "shuowen:2116": {
-      "text": "To look straight. Formed from 目, with 必 indicating the sound. Pronounced like 泌 in the Odes' “Flowing is that spring water.”",
+      "text": "To look straight. Formed from 目, with 必 indicating the sound. Read like 泌 in the Odes' “Flowing is that spring water.”",
       "sourceTextSha256": "31c3d640b928be6ea3c22acd39c3294557038c10f116a2a00d21bc313a234f97",
       "uncertain": false
     },
@@ -116,9 +136,9 @@
       "uncertain": false
     },
     "shuowen:2118": {
-      "text": "To obstruct another person's view. Formed from 目, with 幵 indicating the sound. Pronounced like 攜 in 攜手. Another explanation: to look straight. [The recorded headword 钉 does not match the described components.]",
+      "text": "To obstruct another person's view. Formed from 目, with 幵 indicating the sound. Read like 攜 in 攜手. Another explanation: to look straight.",
       "sourceTextSha256": "ab481ae2114674ad02361431489322fee3965a6f9e2bae00bfac4534d530a0b2",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:2119": {
       "text": "睌䁂: the appearance of looking. Formed from 目, with 免 indicating the sound. [The compound is not further explained.]",
@@ -141,7 +161,7 @@
       "uncertain": false
     },
     "shuowen:2123": {
-      "text": "The appearance of looking upward. Formed from 目, with 戉 indicating the sound. Pronounced like 濊濊 in the Odes' “Casting the great nets with a splash.”",
+      "text": "The appearance of looking upward. Formed from 目, with 戉 indicating the sound. Read like 濊濊 in the Odes' “Casting the great nets with a splash.”",
       "sourceTextSha256": "29f9ee9e4cead749ad116122f0ee650cabc6ec20bc12d6dce4f3af2bd8e87bb0",
       "uncertain": false
     },
@@ -306,7 +326,7 @@
       "uncertain": false
     },
     "shuowen:2156": {
-      "text": "To look carefully with the eyes. Formed from 目, with 鳥 indicating the sound. Pronounced like 雕.",
+      "text": "To look carefully with the eyes. Formed from 目, with 鳥 indicating the sound. Read like 雕.",
       "sourceTextSha256": "70e8e0596c9ee06bd91ed972136f17d77837c78010a56cad356e99bc23a53177",
       "uncertain": false
     },
@@ -321,12 +341,12 @@
       "uncertain": false
     },
     "shuowen:2159": {
-      "text": "The appearance of deep-set eyes. Formed from 目 and 窅. Pronounced like 䘏 in the Changes' “Do not worry.”",
+      "text": "The appearance of deep-set eyes. Formed from 目 and 窅. Read like 䘏 in the Changes' “Do not worry.”",
       "sourceTextSha256": "2a994b2f0b21c7c23695313d2a93a7a02cb5bde026baf96883617a970ed31931",
       "uncertain": false
     },
     "shuowen:2160": {
-      "text": "To look toward someone approaching. Formed from 目, with 是 indicating the sound. Pronounced like 瑱 in 珥瑱, ear ornaments.",
+      "text": "To look toward someone approaching. Formed from 目, with 是 indicating the sound. Read like 瑱 in 珥瑱, ear ornaments.",
       "sourceTextSha256": "077e5c14c26ab30c8ee4c4eaba8585dea095f3233405eaf23907bccdfeda3be9",
       "uncertain": false
     },
@@ -431,7 +451,7 @@
       "uncertain": false
     },
     "shuowen:2181": {
-      "text": "A cautious sideways glance. Formed from 目, with 彔 indicating the sound. Pronounced like 鹿.",
+      "text": "A cautious sideways glance. Formed from 目, with 彔 indicating the sound. Read like 鹿.",
       "sourceTextSha256": "070c7bcf3bdd9bba78912507d10694610df3a657cb7de173cd154edebeb98368",
       "uncertain": false
     },

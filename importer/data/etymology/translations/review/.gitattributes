@@ -1,0 +1,3 @@
+# Preserve exact bytes of checksum-bound supplied review inputs on every checkout.
+*.zip -text
+uncertainty-reviewed-v2.txt -text

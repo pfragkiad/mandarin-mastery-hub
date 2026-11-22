@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "7545ea033fef6b49177035994ac4cfdf5f84e0a600427e82feac9a4b32811463",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "059",
   "translations": {
@@ -81,7 +101,7 @@
       "uncertain": false
     },
     "shuowen:5811": {
-      "text": "A ghost’s head. Pictographic. All characters in this group follow 甶.",
+      "text": "A ghost’s head. Pictographic. All characters in this group are formed from 甶.",
       "sourceTextSha256": "3d53febcfb35911ace5a53b7b8405d5e968ee72f96a008f73bbb7bd6393ddf23",
       "uncertain": false
     },
@@ -96,7 +116,7 @@
       "uncertain": false
     },
     "shuowen:5814": {
-      "text": "Wicked and crooked. Han Fei says: “When Cangjie made characters, acting for oneself was 厶.” All characters in this group follow 厶.",
+      "text": "Wicked and crooked. Han Fei says: “When Cangjie made characters, acting for oneself was 厶.” All characters in this group are formed from 厶.",
       "sourceTextSha256": "38317479548773c8db43f57943b2572f719bf58aa896f9e42e9086a67a5ad59d",
       "uncertain": false
     },
@@ -111,7 +131,7 @@
       "uncertain": false
     },
     "shuowen:5817": {
-      "text": "High and uneven. Formed from 山, with 鬼 indicating the sound. All characters in this group follow 嵬.",
+      "text": "High and uneven. Formed from 山, with 鬼 indicating the sound. All characters in this group are formed from 嵬.",
       "sourceTextSha256": "76ec1aeca51bf67ea6b47b762947419baa83d95632f682801809488124b8b70d",
       "uncertain": false
     },
@@ -121,7 +141,7 @@
       "uncertain": false
     },
     "shuowen:5819": {
-      "text": "To spread: spreading qi, dispersing it and producing all things; stony and high. Pictographic. All characters in this group follow 山.",
+      "text": "To spread: spreading qi, dispersing it and producing all things; stony and high. Pictographic. All characters in this group are formed from 山.",
       "sourceTextSha256": "f9df28f9699c6362f22a787fc62fdb45beba629ac78280f6f7757bcfe5348053",
       "uncertain": false
     },
@@ -171,7 +191,7 @@
       "uncertain": false
     },
     "shuowen:5829": {
-      "text": "Mount 巀𡾦 in Chiyang, Pingyi. Formed from 山, with 𢧵 indicating the sound.",
+      "text": "Mount 巀𡾦 in Chiyang, Fengyi. Formed from 山, with 𢧵 indicating the sound.",
       "sourceTextSha256": "1ebbe354270cacd389573b719cd9e48514ee88817b7e02c20f194fa0452f1f96",
       "uncertain": false
     },
@@ -366,7 +386,7 @@
       "uncertain": false
     },
     "shuowen:5868": {
-      "text": "Mount Jiuzong in Gukou, Pingyi. Formed from 山, with 㚇 indicating the sound.",
+      "text": "Mount Jiuzong in Gukou, Fengyi. Formed from 山, with 㚇 indicating the sound.",
       "sourceTextSha256": "f9cb27d70daf3b2b267a751556a826fea40218ccb998f53ba9fe20ae0fe4702e",
       "uncertain": false
     },
@@ -446,7 +466,7 @@
       "uncertain": false
     },
     "shuowen:5884": {
-      "text": "Two mountains. All characters in this group follow 屾.",
+      "text": "Two mountains. All characters in this group are formed from 屾.",
       "sourceTextSha256": "de3e6c51129494f3b0d9f5170b603668b76ff87cf93046cf0f2fe85fd04b7dda",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:5886": {
-      "text": "A high bank. Formed from 山 and 厂; 厂 also indicates the sound. All characters in this group follow 屵.",
+      "text": "A high bank. Formed from 山 and 厂; 厂 also indicates the sound. All characters in this group are formed from 屵.",
       "sourceTextSha256": "fc360b6059aaf553c7a55e58181a74a7bf4ae299cbae40810a5f670b29b9f90b",
       "uncertain": false
     },
@@ -486,7 +506,7 @@
       "uncertain": false
     },
     "shuowen:5892": {
-      "text": "Making a dwelling against a shelter, depicting a tall building facing and projecting outward; the graphical wording is uncertain. All characters in this group follow 广. Read like 儼 in 儼然.",
+      "text": "Making a dwelling against a shelter, depicting a tall building facing and projecting outward; the graphical wording is uncertain. All characters in this group are formed from 广. Read like 儼 in 儼然.",
       "sourceTextSha256": "63a276de16009d4d3e0ddce31991caee6fe8585ede477c15112c59657f62e959",
       "uncertain": true
     },

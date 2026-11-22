@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "565dae5a52bc3277226bb5d0cf17ccb951b550e96f3e23ee4b9c8fc26af9526b",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "019",
   "translations": {
@@ -41,9 +61,9 @@
       "uncertain": false
     },
     "shuowen:1803": {
-      "text": "The object called 鞀遼, apparently a hand drum. Formed from 革, with 召 indicating the sound. [The compound is unexplained.]",
+      "text": "A small hand drum shaken by its handle, whose side pellets strike its faces. Formed from 革, with 召 indicating the sound.",
       "sourceTextSha256": "b686e025c3e0a9b71d5c3a8759ab2b481b39640ece41e415ce3657fc9c7c009c",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1804": {
       "text": "A vessel for measuring things. Another explanation: a bucket for drawing water from a well; anciently made of leather. Formed from 革, with 冤 indicating the sound.",
@@ -61,7 +81,7 @@
       "uncertain": false
     },
     "shuowen:1807": {
-      "text": "A carriage's front crossbar. Formed from 革, with 弘 indicating the sound. The Odes says: “A leather-covered crossbar and a shallow carriage cover.” Pronounced like 穹.",
+      "text": "A carriage's front crossbar. Formed from 革, with 弘 indicating the sound. The Odes says: “A leather-covered crossbar and a shallow carriage cover.” Read like 穹.",
       "sourceTextSha256": "6ffb709267d1ce320498fe1a6bc0a3be41f232553cab170e637c6ae5ddc03ac7",
       "uncertain": false
     },
@@ -76,7 +96,7 @@
       "uncertain": false
     },
     "shuowen:1810": {
-      "text": "The three bindings of a carriage's crossbar: a curved shaft has a 𩎈 binding, a straight shaft a 𨏉 binding. Formed from 革, with 爨 indicating the sound. Pronounced like 鑽 in the Analects' “drilling a fire-stick.”",
+      "text": "The leather bindings fitted to a carriage pole or crossbar. The received text distinguishes bent and straight shafts. Formed from 革, with 爨 indicating the sound; pronounced like 鑽 in the Analects. [Duan argues the received numeral three should be five, and that the technical descriptions are damaged.]",
       "sourceTextSha256": "0c621dbd71debf261fa83f33eddbff946fec08eab928c2d9cd019814fec31cbe",
       "uncertain": true
     },
@@ -91,9 +111,9 @@
       "uncertain": false
     },
     "shuowen:1813": {
-      "text": "A bridle fitting. Formed from 革, with 弇 indicating the sound. Pronounced like 譍. Another explanation: something winding around a dragon's head. [The object is not precisely identified.]",
+      "text": "A bridle, particularly the straps encircling a horse’s head. Formed from 革, with 弇 indicating the sound. Read like 譍.",
       "sourceTextSha256": "473ac6e92445a393b9a33779ab12a5fdc6407624eb52ced1473610f6b15e3d80",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1814": {
       "text": "The leather of a bridle. Formed from 革, with 巴 indicating the sound.",
@@ -101,7 +121,7 @@
       "uncertain": false
     },
     "shuowen:1815": {
-      "text": "A harness loop attached at the flanks. Formed from 革, with 顯 indicating the sound. [The exact fitting is uncertain.]",
+      "text": "Leather harness straps that pass beneath or near a horse’s flanks. Formed from 革, with 顯 indicating the sound. [Duan argues both the anatomical term and the cross-referenced strap-name in the received text are corrupted.]",
       "sourceTextSha256": "b4f454ffa185ff2a701490123066462d1e485f5af763345ab7d6be84652c6cdb",
       "uncertain": true
     },
@@ -111,7 +131,7 @@
       "uncertain": false
     },
     "shuowen:1817": {
-      "text": "Harness for an outer team horse. Formed from 革, with 𧈪 indicating the sound. Pronounced like 騁蜃. [The recorded pronunciation formula is unusual.]",
+      "text": "Harness equipment for a side horse in a team. Formed from 革, with 𧈪 indicating the sound. The text gives readings resembling 騁 and 蜃. [Duan finds the second pronunciation clause corrupt.]",
       "sourceTextSha256": "f00aa04e45c21adafdb0005d04679b4c30e5ceb44e7e4a8b9d2a4d394030f641",
       "uncertain": true
     },
@@ -131,7 +151,7 @@
       "uncertain": false
     },
     "shuowen:1821": {
-      "text": "A leather ring inside an axle cap. Formed from 革, with 于 indicating the sound.",
+      "text": "A leather loop or strap fitted within a carriage axle cap. Formed from 革, with 于 indicating the sound. [Duan questions the transmitted first component-name 輨.]",
       "sourceTextSha256": "52fd7cf1c6fa894f226892d1f935997303ced3944ab5d46919e6e164196281d1",
       "uncertain": true
     },
@@ -186,7 +206,7 @@
       "uncertain": false
     },
     "shuowen:1832": {
-      "text": "A leather shoe or strap, 鞮. Formed from 革, with 今 indicating the sound. [The intended sense of 鞮 is uncertain here.]",
+      "text": "A leather shoe or strap, related to 鞮 or 鞻. Formed from 革, with 今 indicating the sound. [Duan suspects the entry may be a later insertion into Shuowen.]",
       "sourceTextSha256": "fc91fdf96378e7c2cd81b6f9423b9d2ec5a90730938c6673afd1de8c33b948c3",
       "uncertain": true
     },
@@ -266,7 +286,7 @@
       "uncertain": false
     },
     "shuowen:1848": {
-      "text": "A three-legged cauldron with a handle and spout. Pronounced like 嬀. Formed from 鬲, with 規 indicating the sound.",
+      "text": "A three-legged cauldron with a handle and spout. Read like 嬀. Formed from 鬲, with 規 indicating the sound.",
       "sourceTextSha256": "99f129f21c5287d42bba706d95dd5123372e15fe8c474a441630f48b4d4d3132",
       "uncertain": false
     },
@@ -276,12 +296,12 @@
       "uncertain": false
     },
     "shuowen:1850": {
-      "text": "In Qin, an earthenware cauldron is called 𩰫. Formed from 鬲, with 𡕒 indicating the sound. Pronounced like 過.",
+      "text": "In Qin, an earthenware cauldron is called 𩰫. Formed from 鬲, with 𡕒 indicating the sound. Read like 過.",
       "sourceTextSha256": "557f8115f2f1828d70ec403216cccb2303e3feb5c0cd5d7c3aace8903379bb07",
       "uncertain": false
     },
     "shuowen:1851": {
-      "text": "A large cauldron. Another explanation: a tripod broad above and narrow below, like a steamer, is called 鬵. Formed from 鬲, with 兓 indicating the sound. Pronounced like 岑.",
+      "text": "A large cauldron. Another explanation: a tripod broad above and narrow below, like a steamer, is called 鬵. Formed from 鬲, with 兓 indicating the sound. Read like 岑.",
       "sourceTextSha256": "c0335db6d750f8a85f9b74a85837a35695534a14fe5be80f9831110f2e31b51a",
       "uncertain": false
     },
@@ -321,7 +341,7 @@
       "uncertain": false
     },
     "shuowen:1859": {
-      "text": "A cooking vessel, 㽁. Also an ancient form of 鬲. It depicts vapor rising as the five flavors are cooked. All characters in the 䰜 category are formed from 𩰲.",
+      "text": "A vessel for cooking, also an archaic form of 鬲. It depicts cooking vapors rising from the vessel. All characters in the 䰜 category are formed from the same cooking-vessel graph. [Duan considers the transmitted initial 㽁 gloss an interpolation.]",
       "sourceTextSha256": "f17287a758d796a55f8a63326a92a3501f0a949d92301b51ffa9c3f590cf0e45",
       "uncertain": true
     },
@@ -346,7 +366,7 @@
       "uncertain": false
     },
     "shuowen:1864": {
-      "text": "Contents of a tripod, only reeds and rushes. In Chenliu, thick gruel is called 𩱫. Formed from 𩰲, with 速 indicating the sound. [The first sentence is difficult.]",
+      "text": "The vegetable ingredients placed in a cooking cauldron, such as bamboo shoots and cattail shoots; in Chenliu dialect it could refer to a rice-based stew or thick porridge. Formed from 𩰲, with 速 indicating the sound. [Duan regards the transmitted 葦 (“reeds”) as a variant of 筍 (“bamboo shoots”), and the source gloss is damaged.]",
       "sourceTextSha256": "dc6264d2d0873d2d1030d9e2245438380ddcfb357220016816b0eb917fcfb784",
       "uncertain": true
     },
@@ -376,7 +396,7 @@
       "uncertain": false
     },
     "shuowen:1870": {
-      "text": "To cook, glossed 孚. Formed from 𩰲, with 者 indicating the sound. [The recorded gloss 孚 is uncertain here.]",
+      "text": "To boil or cook food in a vessel. Formed from 𩰲, with 者 indicating the sound. [Duan suggests that the transmitted gloss 孚 is corrupt and should refer to cooking (𩰱).]",
       "sourceTextSha256": "9b4c8331add5e5e324bc0a46a883dcf6a4f209b5643489e3d1c2a466652d7912",
       "uncertain": true
     },
@@ -406,14 +426,14 @@
       "uncertain": false
     },
     "shuowen:1876": {
-      "text": "To hold. It depicts a hand grasping and taking hold of something. All characters in the 丮 category are formed from 丮. Pronounced like 𢧢.",
+      "text": "To hold. It depicts a hand grasping and taking hold of something. All characters in the 丮 category are formed from 丮. Read like 𢧢.",
       "sourceTextSha256": "43fcf8e242c806cc4a38b69814f7737f8fe9cb77365e759eaea6dfff004c9196",
       "uncertain": false
     },
     "shuowen:1877": {
-      "text": "To plant. Formed from 坴 and 丮: holding and urgently planting it. The Documents says: “We plant millet.”",
+      "text": "To sow or cultivate plants, especially grain. Formed from 坴 and 丮, depicting hands taking seeds and planting them. The Documents says: “I sowed millet and panicled millet.”",
       "sourceTextSha256": "b07ecfeab532153e741291411972222f5f3b33ca55a3f4f54f20bcb49c0b8a34",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1878": {
       "text": "Cooked food. Formed from 丮, with 𦎫 indicating the sound. The Changes says: “Cooked food.”",
@@ -421,7 +441,7 @@
       "uncertain": false
     },
     "shuowen:1879": {
-      "text": "To set out cooked food. Formed from 丮 and 食, with 才 indicating the sound. Pronounced like 載.",
+      "text": "To set out cooked food. Formed from 丮 and 食, with 才 indicating the sound. Read like 載.",
       "sourceTextSha256": "cbf6835bea0d625e6adf56d1476893353b908c1c48caa2ac05ad94f0e70e2d83",
       "uncertain": false
     },
@@ -431,12 +451,12 @@
       "uncertain": false
     },
     "shuowen:1881": {
-      "text": "To support or prop against one another. Formed from 丮, with 𧮫 indicating the sound. [The gloss 相踦 is uncertain.]",
+      "text": "To prop, grasp or pull against something, in the sense of 掎 (“to hold back or pull”). Formed from 丮, with 𧮫 indicating the sound. [Duan corrects the transmitted 踦 to 掎.]",
       "sourceTextSha256": "9020526daa68b295441e73446a0b2deb1cc5c7de341487187149fe1570485203",
       "uncertain": true
     },
     "shuowen:1882": {
-      "text": "To strike the ankle. Formed from 丮 and 戈. Pronounced like 踝.",
+      "text": "To strike the ankle. Formed from 丮 and 戈. Read like 踝.",
       "sourceTextSha256": "f7a3eaaa535387fd0bd6c37e9e63e8366e1abb4e4b175814b983d12e79d75f50",
       "uncertain": false
     },
@@ -466,7 +486,7 @@
       "uncertain": false
     },
     "shuowen:1888": {
-      "text": "To contend and take. Formed from 鬥, with 龜 indicating the sound. Pronounced like 糾, a three-stranded rope.",
+      "text": "To contend and take. Formed from 鬥, with 龜 indicating the sound. Read like 糾, a three-stranded rope.",
       "sourceTextSha256": "59d1dc956e95fd3659f5e5000c0b43b032fc8a6ec66bee7f5ec670b8426ebada",
       "uncertain": false
     },
@@ -481,7 +501,7 @@
       "uncertain": false
     },
     "shuowen:1891": {
-      "text": "To fight. Formed from 鬥, with abbreviated 賓 indicating the sound. Pronounced like 賓.",
+      "text": "To fight. Formed from 鬥, with abbreviated 賓 indicating the sound. Read like 賓.",
       "sourceTextSha256": "6eb2e112bab20957c4057612dfdff4b0e22a0a73f66fff2ef81b7e98cdb24cf3",
       "uncertain": false
     },
@@ -491,7 +511,7 @@
       "uncertain": false
     },
     "shuowen:1893": {
-      "text": "A hammer used to test a strongman's strength. Formed from 鬥 and 戈; alternatively from abbreviated 戰. Pronounced like 縣.",
+      "text": "A hammer used to test a strongman's strength. Formed from 鬥 and 戈; alternatively from abbreviated 戰. Read like 縣.",
       "sourceTextSha256": "5cc7514e385ddb1596836c97617d7a7d9a050544e3e2f40f16f1cfb57b1f5ab1",
       "uncertain": false
     },

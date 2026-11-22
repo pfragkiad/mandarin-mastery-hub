@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "8132cfac2d6c37e905954f601498171e9563d9473d8353317182541f4cca7404",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "049",
   "translations": {
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:4828": {
-      "text": "To cover. Formed from 冂, covered above and below. All characters in this group follow 襾. Read like 𣇩.",
+      "text": "To cover. Formed from 冂, covered above and below. All characters in this group are formed from 襾. Read like 𣇩.",
       "sourceTextSha256": "828aa04dc2701a32d1aff56435f25a07af361a087153f308a8305a70caef5a51",
       "uncertain": false
     },
@@ -186,7 +206,7 @@
       "uncertain": false
     },
     "shuowen:4832": {
-      "text": "A cloth worn at the belt. Formed from 冂, with 丨 depicting thread. All characters in this group follow 巾.",
+      "text": "A cloth worn at the belt. Formed from 冂, with 丨 depicting thread. All characters in this group are formed from 巾.",
       "sourceTextSha256": "9d8e0ae2680ddcde808dd7b5886cefcc29c33f5cf00ac6f5a7805826eb6a3dc5",
       "uncertain": false
     },
@@ -236,9 +256,9 @@
       "uncertain": false
     },
     "shuowen:4842": {
-      "text": "A coloring craftsman who processes silk and scours it. Formed from 巾, with 𡿬 indicating the sound. Another explanation: 𢂩隔, a covering or partition; the term is uncertain. Read like 荒.",
+      "text": "A craftsman who prepares, scours and bleaches silk thread and woven silk. Formed from 巾, with 𡿬 indicating the sound. Alternatively, a covering or netting placed above something. Pronounced like 荒.",
       "sourceTextSha256": "06e131e3f79c2175566bdbb3daa2190757f494179ca132ff04023b43c4cc67af",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:4843": {
       "text": "A sash. Men wear leather belts, women silk ones. Depicts tying on pendants. A pendant must have a cloth, hence 巾.",
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:4886": {
-      "text": "To sweep the ground and wipe it with a cloth. Formed from 巾, with 夒 indicating the sound. Read like 㬮 in 水溫㬮, referring to warm water; the reading phrase is uncertain. Another explanation: to attach.",
+      "text": "To smooth or wipe a freshly plastered surface with cloth, as a skilled plasterer would. Formed from 巾, with a phonetic graph transmitted as 夒. Another sense: to apply or affix something. [The headword, phonetic graph and rare pronunciation gloss have a complex textual history.]",
       "sourceTextSha256": "891096bed19e7d97b1e7c2de8861732b7f93ae07f1a23782861c164a9637f3ec",
       "uncertain": true
     },

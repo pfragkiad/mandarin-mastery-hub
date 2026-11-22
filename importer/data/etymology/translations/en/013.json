@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "2bae68259de3997cc8fcdab3745dfc384c6c463884d5a126587000b607b5d212",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "013",
   "translations": {
@@ -36,9 +56,9 @@
       "uncertain": false
     },
     "shuowen:1202": {
-      "text": "To advance the eyes to their limit. Formed from 辵, with 𦘔 indicating the sound. [The gloss is uncertain.]",
+      "text": "To advance or arrive at the furthest point. Formed from 辵, with 𦘔 indicating the sound.",
       "sourceTextSha256": "2b1f383e39b68307a2bfec3e6cff2671a3e3cde37b4dd8e72c7809b4629ce8b6",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1203": {
       "text": "A high, level plain that people ascend. Formed from 辵, 备 and 录. The explanation is incomplete.",
@@ -226,7 +246,7 @@
       "uncertain": false
     },
     "shuowen:1240": {
-      "text": "To send or employ. Formed from 彳, with 夆 indicating the sound. Pronounced like 螽.",
+      "text": "To send or employ. Formed from 彳, with 夆 indicating the sound. Read like 螽.",
       "sourceTextSha256": "f23e68516b55791a2a5a5343bf0a9465c439482a6647a6cd4f77a1becbbfda29",
       "uncertain": false
     },
@@ -251,7 +271,7 @@
       "uncertain": false
     },
     "shuowen:1245": {
-      "text": "A manner of walking described by the repetition 㣙㣙. Formed from 彳, with 由 indicating the sound. [The source gives no further description; its precise sense is uncertain.]",
+      "text": "To walk calmly or on level ground, in the repeated expression 㣙㣙. Formed from 彳, with 由 indicating the sound. [Duan identifies this as an interpretation of an obscure reduplicated form.]",
       "sourceTextSha256": "fe259d710af517aab049ef3f61512a6f78150fdfc2f0f50fe6c6f2b015c397f6",
       "uncertain": true
     },
@@ -276,7 +296,7 @@
       "uncertain": false
     },
     "shuowen:1250": {
-      "text": "Long-lasting. Formed from 彳, with 犀 indicating the sound. Pronounced like 遲.",
+      "text": "Long-lasting. Formed from 彳, with 犀 indicating the sound. Read like 遲.",
       "sourceTextSha256": "44126e148b7ff1b39533722d3bfe1692e367e724526e8942d4d3d49cbe7d99a8",
       "uncertain": false
     },
@@ -296,14 +316,14 @@
       "uncertain": false
     },
     "shuowen:1254": {
-      "text": "To raise the leg in crossing water. Formed from 彳, with 奇 indicating the sound.",
+      "text": "To cross water on a line of stepping-stones, lifting one’s legs to step over. Formed from 彳, with 奇 indicating the sound.",
       "sourceTextSha256": "2544d24e96c845adad6d3c152ccd79c226516d4033fdbe441bfea5c95f385513",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1255": {
-      "text": "To go about displaying something. Formed from 彳, with 勻 indicating the sound. The Methods of the Sima says: “Execute and display as a warning.”",
+      "text": "To make a circuit of a military formation displaying or proclaiming an execution or order. Formed from 彳, with 勻 indicating the sound. The Methods of Sima says: “Execute and display it to the troops.”",
       "sourceTextSha256": "b98eb1f95480c65d77fec2d84ddb34670bff208d23531bfe25f2e227fe13c4a5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1256": {
       "text": "To distribute evenly. Formed from 彳, with 聿 indicating the sound.",
@@ -316,7 +336,7 @@
       "uncertain": false
     },
     "shuowen:1258": {
-      "text": "To halt one's steps. Formed from reversed 彳. Pronounced like 畜.",
+      "text": "To halt one's steps. Formed from reversed 彳. Read like 畜.",
       "sourceTextSha256": "4a39772fdc740790ed5b4ab9cc84f9f87c6508d212182c938e1e3054294fc4bc",
       "uncertain": false
     },
@@ -431,7 +451,7 @@
       "uncertain": false
     },
     "shuowen:1281": {
-      "text": "Teeth pressing against one another. Another explanation: the appearance of an open mouth showing teeth. Formed from 齒, with abbreviated 柴 indicating the sound. Pronounced like 柴.",
+      "text": "Teeth that are uneven or set against one another; another explanation is the appearance of bared teeth. Formed from 齒, with an abbreviated 柴 indicating the sound. Read like 柴. [Duan proposes 齘 in place of transmitted 齗.]",
       "sourceTextSha256": "81a38f6e71110a863311b5849d69230bdc7aa3ab8604cfb5701d189d70800205",
       "uncertain": true
     },
@@ -451,7 +471,7 @@
       "uncertain": false
     },
     "shuowen:1285": {
-      "text": "Teeth bent or pressed together. Another explanation: to bite; another: chewed mash in a horse's mouth. Formed from 齒, with 芻 indicating the sound.",
+      "text": "Teeth pressed or crowded together, or biting. Another explanation concerns a hard object in a horse’s mouth. Formed from 齒, with 芻 indicating the sound. [The transmitted clause 馬口中糜 is disputed.]",
       "sourceTextSha256": "ea65cf0008c0c368e9d52f821f289be41730215d1bce275e1075713760d618f4",
       "uncertain": true
     },
@@ -481,7 +501,7 @@
       "uncertain": false
     },
     "shuowen:1291": {
-      "text": "Missing teeth. Another explanation: crooked teeth. Formed from 齒, with 𢍏 indicating the sound. Pronounced like 權.",
+      "text": "Missing teeth. Another explanation: crooked teeth. Formed from 齒, with 𢍏 indicating the sound. Read like 權.",
       "sourceTextSha256": "c491e684f49ea745137af66520039c550a53ce3fabe89cb2810c8d96d37572af",
       "uncertain": false
     },

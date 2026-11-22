@@ -1,0 +1,39 @@
+{
+  "format": "mandarin-shuowen-editorial-review",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "User-supplied Shuowen editorial review handoff",
+    "version": "1.0.0",
+    "review_id": "shuowen-editorial-2026-11-22",
+    "review_date": "2026-11-22",
+    "status": "partial-editorial-review",
+    "disclaimer": "Partial editorial corrections, not full philological certification. Original Chinese and headword associations are preserved; alternative readings are explicitly separate."
+  },
+  "archive": {
+    "file": "handoff.zip",
+    "sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+    "members": {
+      "shuowen-translation-review-final.md": "d45e45518aa35ad3a4792f042524a3a691de3fc2689cbc994eb6f47cf98851be",
+      "shuowen-english-corrected.txt": "4b9dfd6dc1082a0972f3689d5752c4a210b92c57b4d0f2fc07966e9ece9936e2",
+      "shuowen-reviewed-entry-diff.csv": "95899789502937c141f10972cf2a782131b081bf2a539867e66d1867e043e8d0",
+      "shuowen-source-restorations.csv": "ca224e7a08aa704767ef5ea3f01dd58e0d2b003102c9240a9aac7dc3451d051c",
+      "shuowen-editorial-changes.jsonl": "ab54f36886b1884a1c843094a224b39143664b7df5c9eb4e2b17f85d8a93dd2c",
+      "shuowen-review-changes.jsonl": "bf195adef1a80399f6be3b07413684053cc8faf115bc031e3fd6eaf8a52e4eeb",
+      "shuowen-final-review-statistics.json": "4e40df260b0c280301080aaa0c7d69f65eeb58fa3234abc5c2b56c47eb623d46",
+      "shuowen-english-review.txt": "fc932c152546e56e1fa8d2b0a3905f812a7746cfd1d9d8d5a43e3ac6a2d183e6",
+      "shuowen_jiezi_english_translation_review_report.md": "8f2cbd7dcdc4bc3b6384cedf003fdc790cdd4f580f29980b04e12463e850fdb1"
+    }
+  },
+  "statistics": {
+    "entries": 9833,
+    "initial_uncertainties": 915,
+    "remaining_uncertainties": 899,
+    "source_edited_entries": 28,
+    "translation_edited_entries": 1938,
+    "resolved_flags": 16,
+    "overall_changed_entries": 1943,
+    "source_patch_operations": 28,
+    "additional_translation_operations": 25,
+    "edited_export_sha256": "4b9dfd6dc1082a0972f3689d5752c4a210b92c57b4d0f2fc07966e9ece9936e2"
+  }
+}

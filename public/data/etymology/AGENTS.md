@@ -32,6 +32,18 @@
   unchanged Classical Chinese behind its remembered Advanced disclosure. No
   pronunciation or geometry may be generated from either text. The importer
   requires complete coverage and rejects stale or corrupted batches.
+- The supplied partial review is preserved under the translation guide's
+  [review input](../../../importer/data/etymology/translations/review/README.md).
+  Its English corrections do not authorize replacing original Chinese or
+  remapping headwords. Preserve `editorialReview.sourceReading` and its separate
+  hash/notes; disclose changed headwords and edition-dependent readings. Use
+  partial-review labels, retain unresolved flags, and never promote all entries
+  to verified. Regeneration validates the corrected working copy and review ZIP.
+- V3's `caseEvidence` records supplied per-entry decisions/reasons/citations for
+  222 checked cases; the other 662 prior uncertainties were not checked in that
+  pass. Keep this distinction, show assessment attribution under Advanced, and
+  never treat review pinyin as recorded lexical pronunciation or a geometry
+  binding. Clearing an uncertainty flag is not global scholarly verification.
 - BabelStone references describe graphical membership only. Keep raw tokens,
   regional qualifiers, occurrence paths and tree checksum checks. Numbered/PUA
   forms retain source identities; descriptions/substitutions are not lexical IDs.

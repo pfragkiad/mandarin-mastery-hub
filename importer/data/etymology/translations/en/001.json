@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "a5418e6f62fc492686504cdcedd7090e3f792db666ce543737499e499166526b",
-    "created_date": "2026-11-21"
+    "created_date": "2026-11-21",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "001",
   "translations": {
@@ -196,9 +216,9 @@
       "uncertain": false
     },
     "shuowen:34": {
-      "text": "祔 and 祪 concern ancestors. Formed from 示, with 危 indicating the sound.",
+      "text": "An ancestor represented in a discontinued or dismantled ancestral temple (contrasted with 祔, associated with a new ancestral temple). Formed from 示, with 危 indicating the sound.",
       "sourceTextSha256": "dc800666f9a3fe32577f9bbd985704ea613f7c687bb269aee3b52a219272c49f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:35": {
       "text": "For one who has died later to share sacrificial offerings with earlier ancestors. Formed from 示, with 付 indicating the sound.",
@@ -256,7 +276,7 @@
       "uncertain": false
     },
     "shuowen:46": {
-      "text": "Repeated sacrifices. Formed from 示, with 毳 indicating the sound. Pronounced like 䄟 in “pounding wheat into 䄟.”",
+      "text": "Repeated sacrifices. Formed from 示, with 毳 indicating the sound. Read like 䄟 in “pounding wheat into 䄟.”",
       "sourceTextSha256": "694f923245d8112d2da350131fbc88451a075720cc43ef4e64a1c36352ccef8c",
       "uncertain": false
     },
@@ -266,9 +286,9 @@
       "uncertain": false
     },
     "shuowen:48": {
-      "text": "The expression 祝𥛽, a ritual invocation. Formed from 示, with 畱 indicating the sound.",
+      "text": "A ritual invocation used in healing, corresponding to 祝由. Formed from 示, with 畱 indicating the sound.",
       "sourceTextSha256": "cb72baca760408250bf20de6911ec62fdd0190ec251b0c8a8a5a50deb9612ebc",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:49": {
       "text": "A sacrifice to remove evil. Formed from 示, with 犮 indicating the sound.",
@@ -291,7 +311,7 @@
       "uncertain": false
     },
     "shuowen:53": {
-      "text": "An expiatory sacrifice with dismembered victims, removing pestilence and calamity. In antiquity it was devised by Yingzi of the Suiren clan. Formed from 示, with 襄 indicating the sound.",
+      "text": "An apotropaic sacrifice involving dismembered victims to ward off pestilence and calamity. The text attributes its invention to Suiren, in connection with a rite to avert disaster from his son; Duan Yucai remarks that the story is otherwise unattested. Formed from 示, with 襄 indicating the sound.",
       "sourceTextSha256": "fd266c2d33d5bb94ad7b874df56e5145588226dd5ec64e00c3f699ac94893cb8",
       "uncertain": true
     },
@@ -356,9 +376,9 @@
       "uncertain": false
     },
     "shuowen:66": {
-      "text": "Essential vapors responding as portents. Formed from 示, with abbreviated 㑴 indicating the sound. The Spring and Autumn commentary says: “He saw red and black 𥛆 vapors.”",
+      "text": "Omen-bearing vapors, especially inauspicious atmospheric manifestations. Formed from 示, with an abbreviated 㑴 indicating the sound. The Spring and Autumn commentary speaks of seeing red and black portentous vapors.",
       "sourceTextSha256": "76485b27ec89b89c2a24163791d0c7fcff0c60316bcad5b7019462211735cd57",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:67": {
       "text": "Harm: the spirits do not bestow blessing. Formed from 示, with 咼 indicating the sound.",
@@ -376,7 +396,7 @@
       "uncertain": false
     },
     "shuowen:70": {
-      "text": "To examine clearly and calculate. Formed from two 示. The Lost Book of Zhou says: “The officers apportion the people's 祘”; that is, divide equally by calculation. Pronounced like 筭.",
+      "text": "To examine clearly and calculate. Formed from two 示. The Lost Book of Zhou says: “The officers apportion the people's 祘”; that is, divide equally by calculation. Read like 筭.",
       "sourceTextSha256": "0cb96c63b8e542a130d39edf5794a20aaf663fde04ef37e51b0001599d442553",
       "uncertain": false
     },
@@ -431,7 +451,7 @@
       "uncertain": false
     },
     "shuowen:81": {
-      "text": "Beautiful stone. It has five virtues: warm moist luster embodies benevolence; its internal texture can be known from outside, embodying righteousness; its expansive, spreading sound is heard afar, embodying wisdom; breaking rather than bending embodies courage; sharp edges that do not injure embody purity. It depicts three linked pieces of jade; | is their string. All characters in the 玉 category are formed from 玉. [Yangbing said: “The three strokes are evenly spaced, like strung jade.”]",
+      "text": "Beautiful stone. It has five virtues: warm moist luster embodies benevolence; its internal texture can be known from outside, embodying righteousness; its expansive, spreading sound is heard afar, embodying wisdom; breaking rather than bending embodies courage; sharp edges that do not injure embody purity. It depicts three linked pieces of jade; 丨 is their string. All characters in the 玉 category are formed from 玉. [Yangbing said: “The three strokes are evenly spaced, like strung jade.”]",
       "sourceTextSha256": "7c29662aa9b022d866e6100f58a8c2e89d6c1e7615b40250389cc578a052b198",
       "uncertain": false
     },
@@ -456,19 +476,19 @@
       "uncertain": false
     },
     "shuowen:86": {
-      "text": "Jade. Formed from 玉, with 夒 indicating the sound. Pronounced like 柔.",
+      "text": "Jade. Formed from 玉, with 夒 indicating the sound. Read like 柔.",
       "sourceTextSha256": "d21569cbe7b3885c13d678cff4272123f4d69f7e9272369520612a1282762eb0",
       "uncertain": false
     },
     "shuowen:87": {
-      "text": "Jade. Formed from 玉, with 毄 indicating the sound. Pronounced like 鬲.",
+      "text": "Jade. Formed from 玉, with 毄 indicating the sound. Read like 鬲.",
       "sourceTextSha256": "af89cf9296b401afa8df37f5eae893394e996ee6c5e6a9b9e4c922898784ba7f",
       "uncertain": false
     },
     "shuowen:88": {
       "text": "璵璠, the precious jade of Lu. Formed from 玉, with 番 indicating the sound. Confucius said: “Beautiful is 璵璠! Seen from afar, it is radiant; viewed closely, it is lustrous. In one respect its texture excels; in another its luster excels.”",
       "sourceTextSha256": "1a0fde27cf1442d01a8bf8b79d468c06682ae15a67a9a5f64d98ea0bb9db3f80",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:89": {
       "text": "The jade called 璵璠. Formed from 玉, with 與 indicating the sound.",

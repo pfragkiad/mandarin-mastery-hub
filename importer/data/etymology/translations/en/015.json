@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "272ea576c32c535283ea1b1f52e6a0f8063ed07e3a487b61f39c10dbffe0ec7c",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "015",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:1402": {
-      "text": "Amputation of a foot, 跀. Formed from 足, with 非 indicating the sound. Pronounced like 匪.",
+      "text": "Amputation of a foot, 跀. Formed from 足, with 非 indicating the sound. Read like 匪.",
       "sourceTextSha256": "f7550a5976f9ec83c353ceef4e9b5f9b0387b2b17cd7551cbabf1151d54d601c",
       "uncertain": false
     },
@@ -56,9 +76,9 @@
       "uncertain": false
     },
     "shuowen:1406": {
-      "text": "An animal's foot raised on tiptoe. Formed from 足, with 幵 indicating the sound.",
+      "text": "An animal’s hooves or feet raised on tiptoe, especially when climbing. Formed from 足, with 幵 indicating the sound.",
       "sourceTextSha256": "24bdafe9c3d62c9b546144d326befe6a0eebd1e007a58b4ac75b81173b681e0f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1407": {
       "text": "A road. Formed from 足 and 各.",
@@ -111,12 +131,12 @@
       "uncertain": false
     },
     "shuowen:1417": {
-      "text": "A foot. The upper part depicts the calf; the lower part is 止. The Duties of Disciples says: “Ask where the 疋 rests.” Ancient writing uses it for the 疋 of the Odes' Greater Elegantiae and also for 足. Some say it is 胥. Another explanation: 疋 means to record. All characters in the 疋 category are formed from 疋.",
+      "text": "The foot or lower leg; the upper part is said to depict the calf, and the lower part derives from 止. The Duties of Disciples asks where to place the feet of the bedding. The graph was also borrowed for 雅, “elegant” or the title of the Major Odes, and for 胥; another sense is “to record.” All characters in this category are formed from 疋. [Duan says the transmitted title 大疋 is a corruption of 大雅.]",
       "sourceTextSha256": "fdaca3e2a6cac143554c10a3a98895c114993971fb83b4e1b9bb8d855742fffb",
       "uncertain": true
     },
     "shuowen:1418": {
-      "text": "An open lattice window in a doorway. Formed from 疋; 疋 also indicates the sound. 囪 depicts its form. Pronounced like 疏.",
+      "text": "An open lattice window in a doorway. Formed from 疋; 疋 also indicates the sound. 囪 depicts its form. Read like 疏.",
       "sourceTextSha256": "43557b4a847ade77b94ee6cbfa08f483442bb5c76cd7f08a70e737805f0e7837",
       "uncertain": false
     },
@@ -181,7 +201,7 @@
       "uncertain": false
     },
     "shuowen:1431": {
-      "text": "Many mouths. Formed from four 口. All characters in the 㗊 category are formed from 㗊. Pronounced like 戢; also like 呶.",
+      "text": "Many mouths. Formed from four 口. All characters in the 㗊 category are formed from 㗊. Read like 戢; also like 呶.",
       "sourceTextSha256": "9d5f1b6be428da7b8cf3248b6da1685e18835322fa075358e3ccb97cd46026d3",
       "uncertain": false
     },
@@ -201,7 +221,7 @@
       "uncertain": false
     },
     "shuowen:1435": {
-      "text": "To call out. Formed from 㗊, with 萈 indicating the sound. Pronounced like 讙.",
+      "text": "To call out. Formed from 㗊, with 萈 indicating the sound. Read like 讙.",
       "sourceTextSha256": "fd94741bdb4b3e2a6a9e9162cd83e2b0f54d57324da29583acbd810555fb83df",
       "uncertain": false
     },
@@ -231,14 +251,14 @@
       "uncertain": false
     },
     "shuowen:1441": {
-      "text": "To push or reach, 㨖. Formed from 干. 入 with one line makes 干; 入 with two makes 𢆉. Pronounced like 能. It expresses a somewhat greater degree.",
+      "text": "To pierce or strike further into something than the related graph 干; its form is explained as entering through two strokes rather than one. Read like 飪. [The received gloss 㨖 and reading 若能 require textual correction in Duan’s analysis.]",
       "sourceTextSha256": "5405ab81dc16a4f209906efc224356d34ad02eabd0df4d521ea4a3aa007b4f37",
       "uncertain": true
     },
     "shuowen:1442": {
       "text": "Not compliant. Formed from 干 with 屮 below, reversing it.",
       "sourceTextSha256": "8e95a5707a27443f9c444e6700f95be62acea86001c215b6314a1b2155b20587",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1443": {
       "text": "The upper arch of the mouth. Formed from 口, with the upper part depicting its texture. All characters in the 𧮫 category are formed from 𧮫.",
@@ -256,7 +276,7 @@
       "uncertain": false
     },
     "shuowen:1446": {
-      "text": "Sound. Formed from 只, with 甹 indicating the sound. Pronounced like 聲.",
+      "text": "Sound. Formed from 只, with 甹 indicating the sound. Read like 聲.",
       "sourceTextSha256": "de5db8d128ecfee01fa6c7b9f2e0ec935a70c07ad474f9ff5267fa96e7f1079f",
       "uncertain": false
     },
@@ -268,7 +288,7 @@
     "shuowen:1448": {
       "text": "To pierce something with an awl. Formed from 矛 and 㕯. Another explanation: something emerging from fullness.",
       "sourceTextSha256": "31f46c8bc2ce31baa2126ca45d66e29dd81b680532963bbb8bfed00f85228ac5",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1449": {
       "text": "To know the inside from the outside. Formed from 㕯, with abbreviated 章 indicating the sound.",
@@ -313,7 +333,7 @@
     "shuowen:1457": {
       "text": "Old or former. Formed from 十 and 口: remembering earlier words. All characters in the 古 category are formed from 古.",
       "sourceTextSha256": "ead31d9d00c6d84d73885be4fcc809dfa2a0c81bb47ee03f41c1282099c29d77",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1458": {
       "text": "Great and far-reaching. Formed from 古, with 叚 indicating the sound.",
@@ -321,7 +341,7 @@
       "uncertain": false
     },
     "shuowen:1459": {
-      "text": "The completeness of numbers. 一 represents east and west; | represents south and north, thus the four directions and center are complete. All characters in the 十 category are formed from 十.",
+      "text": "The completeness of numbers. 一 represents east and west; 丨 represents south and north, thus the four directions and center are complete. All characters in the 十 category are formed from 十.",
       "sourceTextSha256": "91525dc39dbd724fda6bfd5f7db77550931233ff30c8b2f56003620b5ba4dc7d",
       "uncertain": false
     },
@@ -361,7 +381,7 @@
       "uncertain": false
     },
     "shuowen:1467": {
-      "text": "Speech described as 𠦫. Formed from 十, with 咠 indicating the sound. [The source supplies no further explanation of the descriptive word.]",
+      "text": "Speech brought together or harmonized, associated with the older wording of an Odes line later transmitted with 輯. Formed from 十, with 咠 indicating the sound. [Duan proposes textual corrections to the received gloss 詞之𠦫矣.]",
       "sourceTextSha256": "40024689cb27b29cc475703da6ea92c28277a56deb9af04e0cf70a68e86d185c",
       "uncertain": true
     },
@@ -476,9 +496,9 @@
       "uncertain": false
     },
     "shuowen:1490": {
-      "text": "Pleasant or quick. Formed from 言 and 中.",
+      "text": "Words that please or bring satisfaction. Formed from 言 and 中.",
       "sourceTextSha256": "a955684030ab32607b1d30ed7af25154b5e58bee9cfa3669d2c819ba3bc359bd",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1491": {
       "text": "To explain and instruct. Formed from 言, with 川 indicating the sound.",
@@ -491,9 +511,9 @@
       "uncertain": false
     },
     "shuowen:1493": {
-      "text": "To teach exclusively or intently. Formed from 言, with 巽 indicating the sound.",
+      "text": "To teach with focused or undivided attention; another early interpretation relates it to fine or fitting speech. Formed from 言, with 巽 indicating the sound.",
       "sourceTextSha256": "36ef43edcaf168de2ad5576d25b3102244d8eb8e7d94b9dbafcd4b011bca977e",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1494": {
       "text": "To illustrate or explain. Formed from 言, with 辟 indicating the sound.",
@@ -521,7 +541,7 @@
       "uncertain": false
     },
     "shuowen:1499": {
-      "text": "To inform and explain thoroughly. Formed from 言, with 𦎫 indicating the sound. Pronounced like 庉.",
+      "text": "To inform and explain thoroughly. Formed from 言, with 𦎫 indicating the sound. Read like 庉.",
       "sourceTextSha256": "505e7bb09bf0e97f982be4df9bbffb2e2c4347b8af8202b4bc7cf91644a0e6a1",
       "uncertain": false
     },

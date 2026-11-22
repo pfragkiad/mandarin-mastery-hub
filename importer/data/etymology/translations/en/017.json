@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "fcefc3b5f5d0a85132eea89e526da63d929d84086c1c96bc90358b8609ca9997",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "017",
   "translations": {
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:1609": {
-      "text": "To deceive, 詶. Formed from 言, with 壽 indicating the sound. Pronounced like 醻. The Book of Zhou says: “Let none fabricate deceptions to create illusions.”",
+      "text": "To deceive, 詶. Formed from 言, with 壽 indicating the sound. Read like 醻. The Book of Zhou says: “Let none fabricate deceptions to create illusions.”",
       "sourceTextSha256": "7238c5fecfdc9bdc5429b7ecd08ce6f243ca176fd757048bb3ff5447cafa3003",
       "uncertain": false
     },
@@ -86,12 +106,12 @@
       "uncertain": true
     },
     "shuowen:1612": {
-      "text": "The action called 詶, apparently cursing or deceiving. Formed from 言, with 由 indicating the sound. [The cross-gloss is uncertain.]",
+      "text": "A speech-act cross-referenced by the obscure graph 詶; possibly ritual invocation or cursing. Formed from 言, with 由 indicating the sound. [Duan suggests a relation to a blessing/invocation graph 祝䄂, but this does not settle the meaning.]",
       "sourceTextSha256": "035cf2162ec6003cf6335d5fda3197dd4cf4f11497df42e2ffb0f6b5d41b634e",
       "uncertain": true
     },
     "shuowen:1613": {
-      "text": "To part and separate. Formed from 言, with 多 indicating the sound. Pronounced like 跢 in the Analects' “My foot shifted.” King Jing of Zhou built the Yi Terrace at Luoyang.",
+      "text": "To part and separate. Formed from 言, with 多 indicating the sound. Read like 跢 in the Analects' “My foot shifted.” King Jing of Zhou built the Yi Terrace at Luoyang.",
       "sourceTextSha256": "c4b31cc1b237f03c55818b824eb8b2c9eff4eefc0b0ffe86fe81044308aa5a38",
       "uncertain": false
     },
@@ -116,9 +136,9 @@
       "uncertain": false
     },
     "shuowen:1618": {
-      "text": "A word expressing dislike. Formed from 言, with 矣 indicating the sound. Another explanation: the manner 誒然. The Spring and Autumn commentary says: “誒誒, out, out!”",
+      "text": "An interjection expressing dislike, regret or an exasperated sigh. Formed from 言, with 矣 indicating the sound. Another sense is an affirmative exclamation; the Spring and Autumn commentary records a repeated exclamation.",
       "sourceTextSha256": "13bb2da599e401e9c89bbda1ad6d4640372b90e0e5d222bc2d76f0f9c6f5497d",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1619": {
       "text": "Pain. Formed from 言, with 喜 indicating the sound.",
@@ -126,7 +146,7 @@
       "uncertain": false
     },
     "shuowen:1620": {
-      "text": "A full, bold voice raised above others. Formed from 言, with 自 indicating the sound. Pronounced like 睞 in “glaring at one another.”",
+      "text": "A full, bold voice raised above others. Formed from 言, with 自 indicating the sound. Read like 睞 in “glaring at one another.”",
       "sourceTextSha256": "e723ce7336bd7036dee43f93cca7b8e17b4eb7c03d945054b54d7417ca513c77",
       "uncertain": false
     },
@@ -141,9 +161,9 @@
       "uncertain": false
     },
     "shuowen:1623": {
-      "text": "To express one's mind without considering it. Formed from 言, with 此 indicating the sound. The Odes says: “Gathering together in slander.” [The opening gloss is uncertain.]",
+      "text": "To speak against someone without considering how to repay their favors or honor their position; in the Odes, repeated 訿訿 describes the failure to discharge duties. Formed from 言, with 此 indicating the sound.",
       "sourceTextSha256": "02d2da8098afa3ae72d2d29f9bf1685907936d91bff3fc5c2b1cb07970c20c03",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1624": {
       "text": "Words passing back and forth. Another explanation: an infant not yet able to speak correctly; another: to invoke in prayer. Formed from 言, with 匋 indicating the sound.",
@@ -171,7 +191,7 @@
       "uncertain": false
     },
     "shuowen:1629": {
-      "text": "The appearance of forceful speech. Another explanation: repeatedly becoming angry with one another. Formed from 言, with 巂 indicating the sound. Pronounced like 畫.",
+      "text": "The appearance of forceful speech. Another explanation: repeatedly becoming angry with one another. Formed from 言, with 巂 indicating the sound. Read like 畫.",
       "sourceTextSha256": "b97c2280b50e399f23c8b5229ecddcd85f3716af804c7d1a311cf4481f31cd33",
       "uncertain": false
     },
@@ -191,14 +211,14 @@
       "uncertain": false
     },
     "shuowen:1633": {
-      "text": "To inquire or approach, as when seeking a wife one first makes connected inquiries. Formed from 言 and 口; 口 also indicates the sound. [The wording is uncertain.]",
+      "text": "To sound someone out or make inquiries, as when approaching a prospective marriage and first making connected inquiries. Formed from 言 and 口; 口 also indicates the sound.",
       "sourceTextSha256": "ebd5cd091e8abcf7d15bbd167cd1f9c5c105ba73fd09ccfd4c1ae3e7b2609ecc",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1634": {
-      "text": "To investigate one another in speech. Formed from 言, with 兒 indicating the sound. [The expression 誽司 is uncertain.]",
+      "text": "To probe or investigate what another person says; figuratively, to spy or pry. Formed from 言, with 兒 indicating the sound.",
       "sourceTextSha256": "c134a7f9a6147d203354aaac519b10d5b5cef73cf07d0643318207cd448504c9",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1635": {
       "text": "To call and entice one another. Formed from 言, with 兆 indicating the sound.",
@@ -246,7 +266,7 @@
       "uncertain": false
     },
     "shuowen:1644": {
-      "text": "A hostile or twisted look. Formed from 言, with 𥃩 indicating the sound.",
+      "text": "Difficult, harsh or awkward speech. Formed from 言, with 𥃩 indicating the sound. [The transmitted gloss 眼戾 contrasts with the dictionary interpretation 難語貌.]",
       "sourceTextSha256": "d328d6adc35f4290dec0bf07a9ada96ffdc57da9ea9fb0ed8850dde950286d9b",
       "uncertain": true
     },
@@ -336,7 +356,7 @@
       "uncertain": false
     },
     "shuowen:1662": {
-      "text": "訬 means disturbance. Another explanation: 訬 means crafty. Formed from 言, with 少 indicating the sound. Pronounced like 毚.",
+      "text": "訬 means disturbance. Another explanation: 訬 means crafty. Formed from 言, with 少 indicating the sound. Read like 毚.",
       "sourceTextSha256": "06193c1f8b471dcf967242e41db402b9c7937fd0fad9b060b9c93cb790468a26",
       "uncertain": false
     },
@@ -356,7 +376,7 @@
       "uncertain": false
     },
     "shuowen:1666": {
-      "text": "Deceptive falsehood. Formed from 言, with 于 indicating the sound. Another explanation: 訏 means 𧪰; Qi and Chu call trustworthiness 訏.",
+      "text": "Deceptive or distorted speech. Formed from 言, with 于 indicating the sound. Another explanation concerns an exclamation; in a regional usage it means “great” or “large.” [Duan proposes 大 in place of received 信.]",
       "sourceTextSha256": "148de95071bed923a11ecee0b782e61c6c98046eba0d8377e1fc14f6d91c09b7",
       "uncertain": true
     },
@@ -416,7 +436,7 @@
       "uncertain": false
     },
     "shuowen:1678": {
-      "text": "To accuse to one's face. Formed from 言, with 臣 indicating the sound. Pronounced like 指.",
+      "text": "To accuse to one's face. Formed from 言, with 臣 indicating the sound. Read like 指.",
       "sourceTextSha256": "ae941f2017d878958c77ea6197d608188addebccfe68420e763312ed6f51692e",
       "uncertain": false
     },
@@ -451,7 +471,7 @@
       "uncertain": false
     },
     "shuowen:1685": {
-      "text": "To reproach. Another explanation: to blame one another. Formed from 言, with 耑 indicating the sound. Pronounced like 專.",
+      "text": "To reproach. Another explanation: to blame one another. Formed from 言, with 耑 indicating the sound. Read like 專.",
       "sourceTextSha256": "a32fdf0dac99880d94e1287fe5b50cf0edcd12fef0294770179a65301000ffe6",
       "uncertain": false
     },
@@ -461,7 +481,7 @@
       "uncertain": false
     },
     "shuowen:1687": {
-      "text": "To harangue and scold. Formed from 言, with 焦 indicating the sound. Pronounced like 嚼.",
+      "text": "To harangue and scold. Formed from 言, with 焦 indicating the sound. Read like 嚼.",
       "sourceTextSha256": "6a0dbfef94a9b8cba85a0c8f9381ec4b3830de29770708e13f2cb7f61555bb8e",
       "uncertain": false
     },
@@ -498,7 +518,7 @@
     "shuowen:1694": {
       "text": "To question and confound, 詰詘. Another explanation: to bend and fold. Formed from 言, with 出 indicating the sound.",
       "sourceTextSha256": "1d201ccf4363b4f64650e2754936a5a55d122d8f780bc8036d85f1f84e5f3f98",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:1695": {
       "text": "To comfort. Formed from 言, with 夗 indicating the sound.",
@@ -526,7 +546,7 @@
       "uncertain": false
     },
     "shuowen:1700": {
-      "text": "To adorn. Another explanation: to change. Formed from 言, with 革 indicating the sound. Pronounced like 戒.",
+      "text": "To adorn. Another explanation: to change. Formed from 言, with 革 indicating the sound. Read like 戒.",
       "sourceTextSha256": "987ee3f91dc7fc257bf3c0d00af6780b894af093a38d9adbc6109544a7154f19",
       "uncertain": false
     }

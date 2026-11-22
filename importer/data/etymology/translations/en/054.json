@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "c116b82f589509f32ab6ec8b45ffe137d51c59ffd6e1c755e60b7a92c3bf53fd",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "054",
   "translations": {
@@ -271,7 +291,7 @@
       "uncertain": false
     },
     "shuowen:5349": {
-      "text": "A hide garment. Formed from 衣, with 求 indicating the sound. Another explanation: pictographic, using the same principle as 衰. All characters in this group follow 裘.",
+      "text": "A hide garment. Formed from 衣, with 求 indicating the sound. Another explanation: pictographic, using the same principle as 衰. All characters in this group are formed from 裘.",
       "sourceTextSha256": "afe0e720376a5442146feda6a15ef6295e95d0fc5cd117edbdc643c6082f8846",
       "uncertain": false
     },
@@ -281,7 +301,7 @@
       "uncertain": false
     },
     "shuowen:5351": {
-      "text": "Old. Seventy years is called 老. Formed from 人, 毛 and 匕, indicating beard and hair turning white. All characters in this group follow 老.",
+      "text": "Old. Seventy years is called 老. Formed from 人, 毛 and 匕, indicating beard and hair turning white. All characters in this group are formed from 老.",
       "sourceTextSha256": "26e9ec6f564c8a792274b3ab56dc28dd0f05e6ea115dcc3516bbdd3ad2c74514",
       "uncertain": false
     },
@@ -331,7 +351,7 @@
       "uncertain": false
     },
     "shuowen:5361": {
-      "text": "Eyebrows, hair and the like, and animal hair. Pictographic. All characters in this group follow 毛.",
+      "text": "Eyebrows, hair and the like, and animal hair. Pictographic. All characters in this group are formed from 毛.",
       "sourceTextSha256": "35fe151bde0b4e166933bd45307789f35861edab365c6dd00f57f3f2a90774d2",
       "uncertain": false
     },
@@ -396,7 +416,7 @@
       "uncertain": false
     },
     "shuowen:5374": {
-      "text": "Fine animal hair. Formed from three 毛. All characters in this group follow 毳.",
+      "text": "Fine animal hair. Formed from three 毛. All characters in this group are formed from 毳.",
       "sourceTextSha256": "5ada965f9517133505a626c4af8c1ae03162c77177b8ea464fc101cea27a05c2",
       "uncertain": false
     },
@@ -406,7 +426,7 @@
       "uncertain": false
     },
     "shuowen:5376": {
-      "text": "To lay out. Depicts lying down. All characters in this group follow 尸.",
+      "text": "To lay out. Depicts lying down. All characters in this group are formed from 尸.",
       "sourceTextSha256": "fca5266cca971fa18c2f9a9dd4b836bf4b6528678b548596885a12d49bb3fefd",
       "uncertain": false
     },
@@ -526,7 +546,7 @@
       "uncertain": false
     },
     "shuowen:5400": {
-      "text": "Ten cun. On the human hand, the moving pulse ten divisions back forms the cun-opening; ten cun make one chi. Chi is used to indicate measures and regulate affairs. Formed from 尸 and 乙; 乙 is the marker. Under Zhou, cun, chi, zhi, xun, chang, ren and other measures all took the human body as their standard. All characters in this group follow 尺. The anatomical wording is uncertain.",
+      "text": "Ten cun. On the human hand, the moving pulse ten divisions back forms the cun-opening; ten cun make one chi. Chi is used to indicate measures and regulate affairs. Formed from 尸 and 乙; 乙 is the marker. Under Zhou, cun, chi, zhi, xun, chang, ren and other measures all took the human body as their standard. All characters in this group are formed from 尺. The anatomical wording is uncertain.",
       "sourceTextSha256": "374efa81bb845975e53b9e4f625b3e2190a664b080be03be94cd3c3889c3ee79",
       "uncertain": true
     }

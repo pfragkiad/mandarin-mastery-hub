@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "e02b63c5a3fb1373c537871afa8ec67a1ff6c99db59eda4fff0f42702a83aac6",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "040",
   "translations": {
@@ -106,7 +126,7 @@
       "uncertain": false
     },
     "shuowen:3916": {
-      "text": "The number of things. Formed from 貝, with 囗 indicating the sound. All characters in this group follow 員.",
+      "text": "The number of things. Formed from 貝, with 囗 indicating the sound. All characters in this group are formed from 員.",
       "sourceTextSha256": "322ab2db350bfd0bb7e7fe66aae4919762f28d040817cd92bf1db1833f2c55a7",
       "uncertain": false
     },
@@ -116,7 +136,7 @@
       "uncertain": false
     },
     "shuowen:3918": {
-      "text": "A shelled sea creature; on land called 猋, in water 蜬. Pictographic. In antiquity shells served as currency and tortoises as treasures. Under Zhou there were 泉 coins; Qin abolished shells and circulated money. All characters in this group follow 貝.",
+      "text": "A shelled sea creature; on land called 猋, in water 蜬. Pictographic. In antiquity shells served as currency and tortoises as treasures. Under Zhou there were 泉 coins; Qin abolished shells and circulated money. All characters in this group are formed from 貝.",
       "sourceTextSha256": "b13d0c34ffb164783e3f8ca8b93470625c0972137535d704902d3066324063a5",
       "uncertain": false
     },
@@ -456,7 +476,7 @@
       "uncertain": false
     },
     "shuowen:3986": {
-      "text": "A state or settlement. Formed from 囗; under the former kings’ system, higher and lower ranks had larger and smaller settlements, hence 卪. All characters in this group follow 邑.",
+      "text": "A state or settlement. Formed from 囗; under the former kings’ system, higher and lower ranks had larger and smaller settlements, hence 卪. All characters in this group are formed from 邑.",
       "sourceTextSha256": "33c9d34e42c8c6e8b6f3611e9058c623b1425c8f6a6d979d5cae5d79223d38f3",
       "uncertain": false
     },

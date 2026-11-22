@@ -16,6 +16,9 @@ entries, exact target associations, unreviewed written-form suggestions, source
 comparison coverage and optional BabelStone textual occurrence evidence.
 Shuowen entries additionally carry separate unreviewed English AI drafts, bound
 to their original Chinese text hashes; the original `text` remains unchanged.
+Supplied partial corrections add `translation.editorialReview`; alternative
+Chinese readings are separately hash-bound and never replace original headwords,
+text or associations. The renderer labels their narrower editorial scope.
 The shared [schema](../etymology.schema.json) defines the envelope and the
 [frontend guide](../README.md) defines status/display rules.
 

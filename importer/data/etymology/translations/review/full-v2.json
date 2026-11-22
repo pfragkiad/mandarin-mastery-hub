@@ -1,0 +1,57 @@
+{
+  "format": "mandarin-shuowen-full-uncertainty-review",
+  "schemaVersion": 1,
+  "dataset_metadata": {
+    "source_name": "User-supplied complete uncertainty-reviewed v2 working copy",
+    "version": "1.0.0",
+    "review_id": "shuowen-full-uncertainty-review-v2",
+    "status": "partial-editorial-review",
+    "disclaimer": "Complete entry coverage with explicitly supplied editorial flags; not full philological certification."
+  },
+  "base_review_archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+  "subset_archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+  "file": {
+    "path": "uncertainty-reviewed-v2.txt",
+    "sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f"
+  },
+  "changed_english_keys": [
+    "shuowen:66",
+    "shuowen:254",
+    "shuowen:325",
+    "shuowen:398",
+    "shuowen:488",
+    "shuowen:494",
+    "shuowen:679",
+    "shuowen:761",
+    "shuowen:874",
+    "shuowen:1168",
+    "shuowen:4959"
+  ],
+  "resolved_keys": [
+    "shuowen:66",
+    "shuowen:113",
+    "shuowen:254",
+    "shuowen:325",
+    "shuowen:398",
+    "shuowen:488",
+    "shuowen:494",
+    "shuowen:679",
+    "shuowen:751",
+    "shuowen:761",
+    "shuowen:831",
+    "shuowen:874",
+    "shuowen:1168",
+    "shuowen:4959",
+    "shuowen:7357"
+  ],
+  "new_uncertain_keys": [],
+  "statistics": {
+    "entries": 9833,
+    "translation_edited_entries": 11,
+    "uncertain_before": 899,
+    "uncertain_after": 884,
+    "resolved_flags": 15,
+    "new_uncertain_flags": 0,
+    "changed_entry_count": 15
+  }
+}

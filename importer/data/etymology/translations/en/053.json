@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "9d96263b36963fe029c8d63f513fd21f10e2b4689ab0caee6ae55677abb37e13",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "053",
   "translations": {
@@ -36,7 +56,7 @@
       "uncertain": false
     },
     "shuowen:5202": {
-      "text": "To heed one another. Formed from two 人. All characters in this group follow 从.",
+      "text": "To heed one another. Formed from two 人. All characters in this group are formed from 从.",
       "sourceTextSha256": "09e78b75d15836d38b160e6d3c8ec20bbff2117b87630f5c576af4ebb1612dfb",
       "uncertain": false
     },
@@ -51,7 +71,7 @@
       "uncertain": false
     },
     "shuowen:5205": {
-      "text": "Close. Two 人 make 从; reversing 从 makes 比. All characters in this group follow 比.",
+      "text": "Close. Two 人 make 从; reversing 从 makes 比. All characters in this group are formed from 比.",
       "sourceTextSha256": "eeb8526745615d3a73985b759d172d8341c775ea2cdf8554da51078679b51d0c",
       "uncertain": false
     },
@@ -61,7 +81,7 @@
       "uncertain": true
     },
     "shuowen:5207": {
-      "text": "To turn one’s back. Formed from two people back to back. All characters in this group follow 北.",
+      "text": "To turn one’s back. Formed from two people back to back. All characters in this group are formed from 北.",
       "sourceTextSha256": "79758bd21401222f8d9270d860bcdb183bd224af6b73273011298bc7353c6757",
       "uncertain": false
     },
@@ -71,7 +91,7 @@
       "uncertain": false
     },
     "shuowen:5209": {
-      "text": "A natural rise of earth, not made by people. Formed from 北 and 一; 一 is the ground. People live south of hills, hence 北. The central states lie southeast of Kunlun. Another explanation: high on four sides and low in the middle is 丘. Pictographic. All characters in this group follow 丘. The present clerical transformation is 丘.",
+      "text": "A natural rise of earth, not made by people. Formed from 北 and 一; 一 is the ground. People live south of hills, hence 北. The central states lie southeast of Kunlun. Another explanation: high on four sides and low in the middle is 丘. Pictographic. All characters in this group are formed from 丘. The present clerical transformation is 丘.",
       "sourceTextSha256": "51d0cd2fff52b1abd1cac38821c365dfd481ef14f9c1733a5510cbb0346051fd",
       "uncertain": false
     },
@@ -106,7 +126,7 @@
       "uncertain": false
     },
     "shuowen:5216": {
-      "text": "Good. Formed from 人 and 士; 士 means service. Another explanation: depicting things emerging upright from the earth. All characters in this group follow 𡈼.",
+      "text": "Good. Formed from 人 and 士; 士 means service. Another explanation: depicting things emerging upright from the earth. All characters in this group are formed from 𡈼.",
       "sourceTextSha256": "51c3ba806de728c68367e2defad920dca2621eda68c9b6e1b6fde17258f1574b",
       "uncertain": false
     },
@@ -126,7 +146,7 @@
       "uncertain": false
     },
     "shuowen:5220": {
-      "text": "Thick or weighty. Formed from 壬, with 東 indicating the sound. All characters in this group follow 重.",
+      "text": "Thick or weighty. Formed from 壬, with 東 indicating the sound. All characters in this group are formed from 重.",
       "sourceTextSha256": "76525b7387e60007877be894230c6202b8705ac2fb4555e0280d359548be9543",
       "uncertain": false
     },
@@ -136,7 +156,7 @@
       "uncertain": false
     },
     "shuowen:5222": {
-      "text": "To rest. Formed from 人 and 臣, taking the sense of lying prostrate. All characters in this group follow 臥.",
+      "text": "To rest. Formed from 人 and 臣, taking the sense of lying prostrate. All characters in this group are formed from 臥.",
       "sourceTextSha256": "507678c4f0161e0a95a04d28e0de9d6fe6a658385b8e954d7dedcd7ff37cfc30",
       "uncertain": false
     },
@@ -156,7 +176,7 @@
       "uncertain": false
     },
     "shuowen:5226": {
-      "text": "The body. Depicts a person’s body. Formed from 人, with 𠂆 indicating the sound. All characters in this group follow 身.",
+      "text": "The body. Depicts a person’s body. Formed from 人, with 𠂆 indicating the sound. All characters in this group are formed from 身.",
       "sourceTextSha256": "58cf7c5f45b748628df34c43f195c6915e8f4111df9ec1c5f7540071b4336374",
       "uncertain": false
     },
@@ -166,7 +186,7 @@
       "uncertain": false
     },
     "shuowen:5228": {
-      "text": "To return. Formed from reversed 身. All characters in this group follow 㐆.",
+      "text": "To return. Formed from reversed 身. All characters in this group are formed from 㐆.",
       "sourceTextSha256": "9b3b0dd00b7e382a3d32b62194be2ac1448145d6b38071d9490604ca582bf7d3",
       "uncertain": false
     },
@@ -176,7 +196,7 @@
       "uncertain": false
     },
     "shuowen:5230": {
-      "text": "What one relies on for covering. The upper garment is 衣, the lower 裳. Depicts covering two people. All characters in this group follow 衣.",
+      "text": "What one relies on for covering. The upper garment is 衣, the lower 裳. Depicts covering two people. All characters in this group are formed from 衣.",
       "sourceTextSha256": "eb37dca3445ad99a6a3138f45066bf9f6911dd9dec9001cded04deb473e789c8",
       "uncertain": false
     },

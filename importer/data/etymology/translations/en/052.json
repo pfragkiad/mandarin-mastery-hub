@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "d3c47d4ca291903c919ec009808bb157039b70ba89d858508d99333033b41276",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "052",
   "translations": {
@@ -46,9 +66,9 @@
       "uncertain": false
     },
     "shuowen:5104": {
-      "text": "Pleasure or ease, 愉; the recorded gloss is uncertain. Formed from 人, with 兆 indicating the sound. The Odes says: “He regards the people without frivolity.”",
+      "text": "Frivolous, careless or lacking seriousness. Formed from 人, with 兆 indicating the sound. The Odes says: “He does not treat the people frivolously.”",
       "sourceTextSha256": "a8713e5c9301b52286f646d611bc5eb4010faf57a04ae9a6960483ffc32bb92f",
-      "uncertain": true
+      "uncertain": false
     },
     "shuowen:5105": {
       "text": "To avoid. Formed from 人, with 辟 indicating the sound. The Odes says: “As if bending to the left.” Another explanation: pulling from the side.",
@@ -351,7 +371,7 @@
       "uncertain": false
     },
     "shuowen:5165": {
-      "text": "A Man or Yi people of Qianwei. Formed from 人, with 棘 indicating the sound.",
+      "text": "A Man or Yi people of Jianwei. Formed from 人, with 棘 indicating the sound.",
       "sourceTextSha256": "85a0e607b259006c7dde18289948525a69f9a28ba79450bcff6380acf00168d1",
       "uncertain": false
     },
@@ -471,7 +491,7 @@
       "uncertain": false
     },
     "shuowen:5189": {
-      "text": "To change. Formed from inverted 人. All characters in this group follow 𠤎.",
+      "text": "To change. Formed from inverted 人. All characters in this group are formed from 𠤎.",
       "sourceTextSha256": "ddce75a2e5997be929d201cba9933efdaf1272571e64bab091cacb81c9cb9b17",
       "uncertain": false
     },
@@ -491,7 +511,7 @@
       "uncertain": false
     },
     "shuowen:5193": {
-      "text": "To compare and arrange with one another. Formed from reversed 人. 匕 is also used to take food by close scooping; another name is 柶. All characters in this group follow 匕.",
+      "text": "To compare and arrange with one another. Formed from reversed 人. 匕 is also used to take food by close scooping; another name is 柶. All characters in this group are formed from 匕.",
       "sourceTextSha256": "3f8a32c1d12c8ab61c826c017b4cac0fb56b34a025766d6161e4143d1680d103",
       "uncertain": false
     },

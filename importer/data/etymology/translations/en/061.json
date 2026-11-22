@@ -26,7 +26,27 @@
     "method": "ai-generated",
     "review_status": "unreviewed-ai-draft",
     "source_batch_sha256": "006a0bb7e1f0674aea7999fa759c1a46b648dc5f31d9088c7232f56a1deac3de",
-    "created_date": "2026-11-22"
+    "created_date": "2026-11-22",
+    "editorial_review": {
+      "review_id": "shuowen-editorial-2026-11-22",
+      "archive_sha256": "790069b42bec08d958e37d6fab1bc5ae0aed662a4cb07dc223a14d60587ee114",
+      "status": "partial-editorial-review",
+      "followup": {
+        "review_id": "shuowen-uncertainty-followup-v2",
+        "archive_sha256": "ba1387b71d2e34212b7ef5e2067f5ada4824d5abc3b6ca7e8b9e23ac96cf30e5",
+        "status": "partial-editorial-review",
+        "full_review": {
+          "review_id": "shuowen-full-uncertainty-review-v2",
+          "file_sha256": "3d6cab0aa32856da7a6089753965304f978076a57aa805622b29dd518287636f",
+          "status": "partial-editorial-review"
+        }
+      },
+      "external_v3": {
+        "review_id": "shuowen-external-review-v3",
+        "archive_sha256": "ba36c26357262a13d4ae8b3bde3f5291eb17862dd895bc146be90b58f1be8f42",
+        "status": "partial-editorial-review"
+      }
+    }
   },
   "batch": "061",
   "translations": {
@@ -216,7 +236,7 @@
       "uncertain": false
     },
     "shuowen:6038": {
-      "text": "Long in time or distance. Formed from 兀 and 匕; 兀 conveys height and distance. Over time things change. 亾 indicates the sound; 纼 is inverted 亾. All characters in this group follow 長. The recorded identification of 纼 is uncertain.",
+      "text": "Long in time or distance. Formed from 兀 and 匕; 兀 conveys height and distance. Over time things change. 亾 indicates the sound; 纼 is inverted 亾. All characters in this group are formed from 長. The recorded identification of 纼 is uncertain.",
       "sourceTextSha256": "b4f1f304e780a836476645712427ce15eb8b0a4c6c79c16b13ebcf29400433d6",
       "uncertain": true
     },
@@ -236,7 +256,7 @@
       "uncertain": true
     },
     "shuowen:6042": {
-      "text": "A flag erected in districts and neighborhoods. Depicts its staff and three streamers, of mixed silks with each half-width different. It urges the people on; hence haste is called 勿勿. All characters in this group follow 勿.",
+      "text": "A flag erected in districts and neighborhoods. Depicts its staff and three streamers, of mixed silks with each half-width different. It urges the people on; hence haste is called 勿勿. All characters in this group are formed from 勿.",
       "sourceTextSha256": "05e6b86f560c80360bd0723bcf470a98af79901668f86ceeaa6baeed87db4f69",
       "uncertain": false
     },
@@ -246,12 +266,12 @@
       "uncertain": false
     },
     "shuowen:6044": {
-      "text": "Hair drooping, 冄冄. Pictographic. All characters in this group follow 冄.",
+      "text": "Hair drooping, 冄冄. Pictographic. All characters in this group are formed from 冄.",
       "sourceTextSha256": "32a344bd5c844024d7dc62c9ba7ec600de0efdc05935ba7d2e5daacd4c12b27f",
       "uncertain": false
     },
     "shuowen:6045": {
-      "text": "Cheek hair. Depicts hair. The Rites of Zhou says: “Make its scales and its beard.” All characters in this group follow 而.",
+      "text": "Cheek hair. Depicts hair. The Rites of Zhou says: “Make its scales and its beard.” All characters in this group are formed from 而.",
       "sourceTextSha256": "7f745b12e1a81946677c9e0987bbdb880b9610a65830fbd39bfc9ba2e0a3a710",
       "uncertain": false
     },
@@ -261,7 +281,7 @@
       "uncertain": false
     },
     "shuowen:6047": {
-      "text": "A pig, 彘. Its tail ends, hence called 豕; the phrase 竭其尾 is uncertain. Depicts hair, feet and a tail behind. Pronounced the same as 豨. Note: contemporary writing wrongly uses 豕 for 彘 and 彘 for 豕. How is this clear? 啄 and 琢 follow 豕, while 蟸 follows 彘; all take their sounds from these, making the distinction clear. All characters in this group follow 豕.",
+      "text": "A pig, 彘. Its tail ends, hence called 豕; the phrase 竭其尾 is uncertain. Depicts hair, feet and a tail behind. Pronounced the same as 豨. Note: contemporary writing wrongly uses 豕 for 彘 and 彘 for 豕. How is this clear? 啄 and 琢 follow 豕, while 蟸 follows 彘; all take their sounds from these, making the distinction clear. All characters in this group are formed from 豕.",
       "sourceTextSha256": "56b11da3ceeeaed569f161d73b3d3d9db5623b6f90e69bf65378a99590046c14",
       "uncertain": true
     },
@@ -371,7 +391,7 @@
       "uncertain": false
     },
     "shuowen:6069": {
-      "text": "A long-bristled beast. Another explanation: Henei’s name for a pig. Formed from 彑, with the lower part depicting hairy feet. All characters in this group follow 㣇. Read like 弟.",
+      "text": "A long-bristled beast. Another explanation: Henei’s name for a pig. Formed from 彑, with the lower part depicting hairy feet. All characters in this group are formed from 㣇. Read like 弟.",
       "sourceTextSha256": "d39ecb2065bc8b4ab8820efdefdb56a4592a3dcddb4b86c7596c778794467ea8",
       "uncertain": false
     },
@@ -396,7 +416,7 @@
       "uncertain": false
     },
     "shuowen:6074": {
-      "text": "A pig’s head, depicting its pointed shape seen above. All characters in this group follow 彑. Read like 罽.",
+      "text": "A pig’s head, depicting its pointed shape seen above. All characters in this group are formed from 彑. Read like 罽.",
       "sourceTextSha256": "627b2adda2e5856682a297c9c7c3704c18c5d3e500c4292de70ee35d3a396c60",
       "uncertain": false
     },
@@ -421,7 +441,7 @@
       "uncertain": false
     },
     "shuowen:6079": {
-      "text": "A small pig. Formed from abbreviated 彖; pictographic. Also formed from 又 holding 肉, to supply sacrifices. All characters in this group follow 豚.",
+      "text": "A small pig. Formed from abbreviated 彖; pictographic. Also formed from 又 holding 肉, to supply sacrifices. All characters in this group are formed from 豚.",
       "sourceTextSha256": "86a80efc56715812cc6d7e1963221117f912f19b2fa2ead1d1c7be0d940c0658",
       "uncertain": false
     },
@@ -431,7 +451,7 @@
       "uncertain": false
     },
     "shuowen:6081": {
-      "text": "A long-backed beast moving stealthily, 豸豸, as if watching to kill something. All characters in this group follow 豸. In 司殺, 司 is read like 伺 in 伺候.",
+      "text": "A long-backed beast moving stealthily, 豸豸, as if watching to kill something. All characters in this group are formed from 豸. In 司殺, 司 is read like 伺 in 伺候.",
       "sourceTextSha256": "22a5d99332ca3d764a85a4c9a3554574b39ade303662cecb023d3fb3a39aa244",
       "uncertain": false
     },
