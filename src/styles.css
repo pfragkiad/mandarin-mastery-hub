@@ -202,10 +202,18 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .flash-pinyin-row > button { pointer-events: auto; flex-shrink: 0; width: 32px; height: 32px; }
 .flash-pinyin { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 .flash-face.back { transform: rotateY(180deg); background: var(--secondary); }
+/* Back face: the pinyin answers together with the translation, so it matches .flash-word
+   and its speaker grows in step (the front face keeps the small optional pinyin). */
+.flash-face.back .flash-pinyin { font-size: 30px; }
+.flash-face.back .flash-pinyin-row > button { width: 46px; height: 46px; }
+.flash-face.back .flash-pinyin-row > button svg { width: 24px; height: 24px; }
+/* Multi-reading cards render one speaker per reading inside .multi-reading, not as a direct row child. */
+.flash-face.back .multi-reading button { width: 46px; height: 46px; }
+.flash-face.back .multi-reading button svg { width: 24px; height: 24px; }
 .flash-big { font-family: var(--font-hanzi); font-size: min(88px, calc(100cqi / var(--flash-chars, 1))); line-height: 1.2; max-width: 100%; }
 .flash-word { font-family: var(--font-display); font-size: 30px; font-weight: 400; line-height: 1.4; text-align: center; width: 100%; min-width: 0; white-space: normal; overflow-wrap: anywhere; text-wrap: pretty; }
 .flash-face > .flash-hint { font-size: 10px; color: var(--muted-foreground); letter-spacing: 1px; position: absolute; bottom: 14px; }
-@media(max-width:580px) { .flash-word { font-size: 23px; } .flash-face { padding-inline: 20px; } }
+@media(max-width:580px) { .flash-word { font-size: 23px; } .flash-face.back .flash-pinyin { font-size: 23px; } .flash-face { padding-inline: 20px; } }
 .flash-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 /* Details link in the answer side's top-right corner, clickable above the flip area. */
 .flash-face.back > .flash-details { position: absolute; top: 10px; right: 10px; pointer-events: auto; gap: 6px; color: var(--muted-foreground); }
