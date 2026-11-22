@@ -1,6 +1,8 @@
 import { useId, useState, type ReactNode, type SyntheticEvent } from 'react';
 import { ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
+import { LessonHintsProvider, useLessonHints } from './lesson-hints';
+import { useWorkspace } from './workspace';
 
 /**
  * The shared "In a sentence" section of word and character detail cards.
@@ -23,7 +25,7 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
         Find more examples<ExternalExamplesIcon/>
       </a>}
     </div>
-    {hasExamples ? children : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}
+    {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}
   </section>;
 }
 
@@ -71,4 +73,17 @@ export function TileExamplesLink({ hanzi }: { hanzi: string }) {
   const open = (event: SyntheticEvent) => { event.stopPropagation(); event.preventDefault(); window.open(source.url, '_blank', 'noopener,noreferrer'); };
   return <span role="link" tabIndex={0} className="examples-link is-tile" aria-label={label} title={label}
     onClick={open} onKeyDown={event => { if (event.key === 'Enter') open(event); }}><ExternalExamplesIcon/></span>;
+}
+
+/**
+ * Detail-card sentences get the same quick-card popups as lessons (one shared
+ * LessonHintsProvider, same remembered "Character hints" switch, absent = on), so tapping
+ * a character in "In a sentence" opens its mini card with the containing word. Inside a
+ * lesson (a provider already above) nothing is added, so there is never a second popup.
+ */
+function SentenceHints({ backLabel, children }: { backLabel: string; children: ReactNode }) {
+  const parent = useLessonHints();
+  const { preferences } = useWorkspace();
+  if (parent) return <>{children}</>;
+  return <LessonHintsProvider enabled={preferences.lessonHints !== false} backLabel={backLabel}>{children}</LessonHintsProvider>;
 }

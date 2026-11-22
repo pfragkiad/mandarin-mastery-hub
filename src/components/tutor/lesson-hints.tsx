@@ -6,7 +6,7 @@ import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover'
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
 import { lessonGlyphHint, lessonGlyphHintById } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
-import { segmentLessonExpression } from '@/lib/lesson-segments';
+import { useSentenceWords } from './use-sentence-words';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -39,7 +39,7 @@ import { MeaningText } from './meaning-text';
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string, wholeFirst?: boolean) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
 
 const Ctx = stableContext<HintsContext | null>('lessonHints', null);
 export const useLessonHints = () => useContext(Ctx);
@@ -50,29 +50,8 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
-  // Exact headword → its single Vocabulary entry; ambiguous headwords stay unmatched.
-  const words = useMemo(() => {
-    const map = new Map<string, Word | null>();
-    for (const w of items) map.set(w.hanzi, map.has(w.hanzi) ? null : w);
-    return map;
-  }, [items]);
-  const wordFor = useCallback((hanzi: string): HintWord | null => {
-    if (Array.from(hanzi).length < 2) return null;
-    const w = words.get(hanzi);
-    return w ? { hanzi: w.hanzi, pinyin: w.pinyin, meaning: w.meaning, search: { tab: vocabularyKind(w), word: w.id }, audio: w.audio ?? null } : null;
-  }, [words]);
-  // Per-character word context for a run: whole-run match first, else words-first segments.
-  const wordsFor = useCallback((text: string): (HintWord | null)[] => {
-    const chars = Array.from(text);
-    const whole = wordFor(text);
-    if (whole) return chars.map(() => whole);
-    const out: (HintWord | null)[] = [];
-    for (const seg of segmentLessonExpression(text, h => words.get(h)?.id ?? null)) {
-      const w = seg.kind === 'word' && Array.from(seg.text).length > 1 ? wordFor(seg.text) : null;
-      for (const _ of Array.from(seg.text)) out.push(w);
-    }
-    return out;
-  }, [wordFor, words]);
+  // Shared words-first rule (use-sentence-words.ts), identical to detail-card sentences.
+  const { wordFor, wordsFor } = useSentenceWords();
   const close = useCallback(() => setState(null), []);
   const open = useCallback((el: HTMLElement, glyph: string, word: HintWord | null) => {
     setState(current => current?.el === el ? null : { el, glyph, word });
@@ -183,7 +162,7 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       </div>
     </div>
     {word && <div className="lesson-hint-word">
-      <span className="lesson-hint-word-label">In the word</span>
+      <span className="lesson-hint-word-label">{Array.from(word.hanzi).length === 1 ? 'As a word' : 'In the word'}</span>
       <span className="lesson-hint-word-row">
         <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
         {/* Speaker stays outside the link so listening never navigates. */}

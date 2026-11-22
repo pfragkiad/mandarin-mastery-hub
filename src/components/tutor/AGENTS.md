@@ -92,3 +92,6 @@
 - Hanzi finder match tiles follow the display size like library cards: Comfortable rules in styles.css widen the auto-fill track and enlarge glyph box, header and text (about ×1.35), so results never stay Compact-sized.
 - A Sound chart card reached from another page (the history entry before the chart's mount has a different pathname) opens in PinyinSoundSheet at every width, and its Close goes back through history to that page, mirroring DetailSheet's closeTarget; opened from the chart itself it keeps the side card.
 - Returning to a grid from a Sound card focuses the originating card (soundOrigin in selection-scroll.ts, set only by tile SoundChartLinks); a global pointerover blurs a focused card once another card is hovered, shared by Details, Practice and Sound returns.
+- Example sentences (SentenceExample, lessons and detail cards) and lesson hints share one words-first rule, use-sentence-words.ts, so grouped hover and word navigation behave identically everywhere.
+- Detail-card "In a sentence" examples reuse LessonHintsProvider (SentenceSection's SentenceHints) for the same quick-card popups as lessons, governed by the same lessonHints preference.
+- One-character Vocabulary words (unique headword) count as words in use-sentence-words.ts, so a lone 我 links/hints its HSK word entry before the plain character.

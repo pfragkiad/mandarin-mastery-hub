@@ -11,6 +11,7 @@ import { alignSentencePinyin, isHanziChar } from '@/lib/sentence-align';
 import { alignSentenceEnding } from '@/lib/data-contract';
 import { alignSentence } from '@/lib/phrase-pinyin-align';
 import { useSyllableInventory } from './use-syllable-inventory';
+import { useSentenceWords } from './use-sentence-words';
 
 /**
  * One recorded example sentence: pinyin line with its speaker, the hanzi line
@@ -40,7 +41,10 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
 
   // Lesson pages: identified words (words-first, lesson-segments.ts via the hints provider)
   // give each character its popup word and group the hover, so 学生 and xuésheng ring together.
-  const words = useMemo(() => hints ? hints.wordsFor(sentence) : null, [hints, sentence]);
+  // Everywhere (lessons and detail cards) the same shared words-first rule groups the hover
+  // and, outside lesson hints, sends a word's characters to that word's Vocabulary card.
+  const { wordsFor } = useSentenceWords();
+  const words = useMemo(() => wordsFor(sentence, false), [wordsFor, sentence]);
   const pairKey = useMemo(() => {
     const keys = new Map<number, number>();
     if (pairing && words) {
@@ -78,8 +82,10 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
       const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
       if (hints) return hints.enabled && isHanziChar(ch)
-        ? <HintChar key={i} glyph={ch} word={words?.[i] ?? null} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>
+        ? <HintChar key={i} glyph={ch} word={words[i] ?? null} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...pairProps}>{ch}</span>;
+      const word = words[i];
+      if (word) return <Link key={i} to="/vocabulary" search={word.search} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(word.hanzi, word.search.tab)} onClick={onNavigate} {...pairProps}>{ch}</Link>;
       const dest = isHanziChar(ch) ? libraryDestination(ch, preferences.includeTraditional) : undefined;
       return dest
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
