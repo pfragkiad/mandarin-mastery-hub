@@ -4375,3 +4375,8 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* :where keeps this at the .vocabulary-parts weight, so Comfortable's shared tile size still wins. */
 :where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
 :where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph strong { font-size: 40px; }
+/* Detail drawer label row: the tab label starts exactly --detail-section-pad below the divider,
+   like every section heading. The tab keeps only its bottom padding (room for the open
+   underline) and the collapse chevron overhangs the row instead of making it taller. */
+.detail-tabs .stroke-tab { padding-top: 0; }
+.detail-tabs .stroke-tabs-collapse { margin-block: -10px; }
