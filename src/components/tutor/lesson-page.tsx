@@ -1,5 +1,9 @@
 import { LessonFitGrid } from './lesson-fit-grid';
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
+import { markLessonOpened, markQuestionAnswered } from '@/lib/lesson-progress';
+
+/** Progress hook for QuestionCards: a card reports its id once answered or revealed. */
+const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -110,6 +114,12 @@ function useActiveSection(ids: string[]) {
 
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
+  // Progress counts the lesson's required questions (topic plans: the "Check what you can do"
+  // set; the optional recall quiz still records answers but is not required), keyed by question id.
+  const allQuestions = S.practice?.enabled ? S.practice.questions : [];
+  const requiredIds = (lesson.topic?.plan ? allQuestions.filter(q => q.id.startsWith('applied-')) : allQuestions).map(q => q.id);
+  const progress = useRef({ answer: (k: string) => markQuestionAnswered(summary.id, k) }).current;
+  useEffect(() => { markLessonOpened(summary.id, requiredIds.length); }, [summary.id]); // eslint-disable-line react-hooks/exhaustive-deps
   const [hidePinyin, setHidePinyin] = useState(false);
   // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
   // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
@@ -375,7 +385,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
   </label>;
 
-  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <QuestionProgress.Provider value={progress}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
@@ -424,7 +434,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </div>
   {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
   {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{hanziToggle}{pinyinToggle}{translationsToggle}{hintsToggle(true)}</div>}
-  </LessonHintsProvider>;
+  </LessonHintsProvider></QuestionProgress.Provider>;
 }
 
 /** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
@@ -511,6 +521,8 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
   const [open, setOpen] = useState(false);
   const [picked, setPicked] = useState<number[]>([]);
   const [checked, setChecked] = useState(false);
+  const progressCtx = useContext(QuestionProgress);
+  const progressKey = question.id;
   const correctChoices = correctLessonChoices(question);
   const graded = correctChoices.length > 0;
   const multi = graded && question.kind === 'multi_selection';
@@ -525,6 +537,7 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
     else { setPicked([i]); setOpen(true); }
   };
   const check = () => { setChecked(true); setOpen(true); };
+  useEffect(() => { if (answered || open) progressCtx?.answer(progressKey); }, [answered, open, progressCtx, progressKey]);
   const retry = () => { setPicked([]); setChecked(false); setOpen(false); };
   const choiceState = (i: number) => {
     const on = picked.includes(i);

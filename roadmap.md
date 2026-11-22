@@ -107,3 +107,11 @@
 - [x] Lessons: one search box with scope (All lessons / one course), matching everything in each lesson (titles, topics, hanzi, pinyin, English)
 - [x] Lesson search: numbered pinyin queries (ma1, xue2sheng1, lv4) match tone-marked text
 - [x] Lessons: speaker (TTS) buttons don't play on lesson pages (e.g. convm-choices-alternatives)
+
+## Lessons index redesign (mockups 816/817)
+- [x] Tags inside card footer (max 3), equal heights
+- [x] Topic icon hanzi + colour per topic
+- [x] Cookie progress: bar per card, Continue card, unit x/y, course x of y
+- [x] Course path: connectors, Up next, dim not-started, collapsible units
+- [x] Learner copy; caveats in (i); no Pimsleur/ID notes
+- [ ] Estimated time — blocked: lessons record no duration

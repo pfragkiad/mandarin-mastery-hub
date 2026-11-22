@@ -3738,8 +3738,38 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lessons-unit h4 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 15px; font-weight: 600; }
 .lessons-unit-number { font-size: 11px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--primary); }
 .lessons-path { list-style: none; padding: 0; margin-bottom: 0; }
-.lesson-index-item { display: flex; flex-direction: column; gap: 8px; min-width: 0; height: 100%; }
-.lesson-index-item > .lesson-index-card { flex: 1; }
+.lesson-index-item { display: flex; flex-direction: column; min-width: 0; height: 100%; border: 1px solid var(--border); border-radius: 7px; background: var(--card); transition: border-color .2s, transform .2s, box-shadow .2s, opacity .2s; }
+.lesson-index-item:hover, .lesson-index-item:focus-within { border-color: var(--primary); box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+.lesson-index-item > .lesson-index-card { flex: 1; border: 0; background: transparent; box-shadow: none; transform: none; }
+.lesson-index-item.is-next { border-color: color-mix(in oklab, var(--primary) 70%, transparent); }
+.lesson-index-item.is-dim { opacity: .62; }
+.lesson-index-item.is-dim:hover, .lesson-index-item.is-dim:focus-within { opacity: 1; }
+.lesson-index-foot { display: flex; flex-direction: column; gap: 10px; padding: 0 16px 14px; margin-top: auto; }
+.lesson-state { color: var(--primary); font-weight: 600; }
+.lesson-progress { display: block; height: 4px; border-radius: 999px; background: color-mix(in oklab, var(--foreground) 12%, transparent); overflow: hidden; }
+.lesson-progress > span { display: block; height: 100%; background: var(--primary); border-radius: inherit; transition: width .3s; }
+.lesson-index-glyph.tone-jade { color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
+.lesson-index-glyph.tone-amber { color: oklch(0.8 0.13 75); background: oklch(0.8 0.13 75 / .12); }
+.lesson-index-glyph.tone-sky { color: oklch(0.78 0.11 235); background: oklch(0.78 0.11 235 / .12); }
+.lesson-index-glyph.tone-rose { color: oklch(0.75 0.14 15); background: oklch(0.75 0.14 15 / .12); }
+.lesson-index-glyph.tone-violet { color: oklch(0.76 0.11 290); background: oklch(0.76 0.11 290 / .12); }
+.lesson-index-glyph.tone-neutral { color: var(--muted-foreground); }
+.lesson-continue { display: flex; align-items: center; gap: 18px; margin: 18px 0 6px; padding: 16px 20px; border: 1px solid color-mix(in oklab, var(--primary) 45%, var(--border)); border-radius: 9px; background: color-mix(in oklab, var(--primary) 7%, var(--card)); color: inherit; text-decoration: none; }
+.lesson-continue .lesson-index-glyph { width: 64px; height: 64px; font-size: 38px; flex: none; }
+.lesson-continue-copy { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; max-width: 520px; }
+.lesson-continue-copy small { font-size: 12px; color: var(--primary); }
+.lesson-continue-copy strong { font-family: var(--font-display); font-weight: 400; font-size: 21px; }
+.lesson-continue-action { margin-left: auto; padding: 9px 20px; border-radius: 7px; background: var(--primary); color: var(--primary-foreground); font-weight: 600; }
+.lesson-continue:hover .lesson-continue-action { filter: brightness(1.08); }
+.lesson-course-progress { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; width: min(260px, 40%); font-size: 12px; color: var(--muted-foreground); }
+.lesson-course-progress .lesson-progress { width: 100%; }
+.lessons-unit > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 10px; }
+.lessons-unit > summary::-webkit-details-marker { display: none; }
+.lessons-unit-count { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; color: var(--muted-foreground); }
+.lessons-unit-count svg { width: 15px; height: 15px; transition: transform .2s; }
+.lessons-unit:not([open]) .lessons-unit-count svg { transform: rotate(-90deg); }
+.lessons-path > li { position: relative; }
+.lessons-path > li + li::before { content: ''; position: absolute; left: -14px; top: 50%; width: 14px; border-top: 2px solid var(--border); }
 .lesson-index-number { font-family: var(--font-display); font-size: 30px; color: var(--primary); }
 .lesson-index-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 4px; }
 .lesson-topic-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0 4px; }
