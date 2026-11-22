@@ -60,25 +60,35 @@ function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string })
 /** Separate drafts and supplied editorial readings from the unchanged Chinese.
  * Duplicate headwords retain source IDs; changed review headwords are disclosed
  * without changing library associations, pronunciation or geometry. */
+/** Per-entry review wording: English counts as corrected only when the supplied review
+ * changed the translation itself; flag-only or assessment-only reviews leave it unchanged. */
+const corrected = (entry: EtymologyEntry) => entry.translation?.editorialReview?.changes.includes('translation') ?? false;
+const DECISION_LABEL = { clear: 'uncertainty flag cleared', revised_retained: 'English revised, uncertainty retained', checked_retained: 'checked, English unchanged, uncertainty retained' } as const;
+
 export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   const panelId = useId();
   const [open, toggle] = useClassicalOpen();
   const translated = entries.some(entry => entry.translation);
   const editorial = entries.some(entry => entry.translation?.editorialReview);
+  const hasReading = entries.some(entry => entry.translation?.editorialReview?.sourceReading);
   return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}${translated ? ' has-translation' : ''}`}>
     <div className="etymology-entry-head">
       <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
       <span className="etymology-source-kind">historical dictionary</span>
     </div>
     {translated && <>
-      <p className="etymology-advanced-note">{editorial ? 'English translation · AI-generated draft with partial editorial corrections; not fully verified.' : 'English translation · AI-generated draft, not reviewed.'}</p>
+      <p className="etymology-advanced-note">{editorial ? 'English translation · AI-generated draft; not fully verified.' : 'English translation · AI-generated draft, not reviewed.'}</p>
       {entries.map(entry => entry.translation && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
         {entry.translation.editorialReview?.sourceReading && <p className="etymology-advanced-note">
           This translation follows an editorial Chinese reading shown under Advanced.
           {entry.translation.editorialReview.sourceReading.headword !== entry.headword && <> Review headword: <span lang="lzh">{entry.translation.editorialReview.sourceReading.headword}</span>; source headword: <span lang="lzh">{entry.headword}</span>. These notes concern the review headword.</>}
         </p>}
         <p className="etymology-text" lang="en">{entry.translation.text}</p>
-        {entry.translation.uncertain && <p className="etymology-advanced-note">This passage is uncertain; consult the original Chinese.</p>}
+        {/* Only when some entry on this card was reviewed: each passage states its own status. */}
+        {editorial && <p className="etymology-advanced-note">{corrected(entry) ? 'English partly corrected in a supplied editorial review.' : entry.translation.editorialReview ? 'English unchanged by the supplied editorial review.' : 'Not reviewed.'}</p>}
+        {entry.translation.uncertain && <p className="etymology-advanced-note">{entry.translation.editorialReview?.caseEvidence
+          ? 'This passage is uncertain; the latest review checked it and kept the flag. Consult the original Chinese.'
+          : 'This passage is uncertain and was not checked in the latest review; consult the original Chinese.'}</p>}
       </div>)}
     </>}
     <button type="button" className="etymology-advanced-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={toggle}>
@@ -88,7 +98,7 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
       <span className="etymology-advanced-action">{open ? 'Hide' : 'Show'}</span>
     </button>
     {open && <div id={panelId} className="etymology-advanced-body more-examples-panel">
-      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (editorial ? ' English drafts follow the original entry or the separate editorial reading identified below. Historical accounts are not verified modern etymology.' : ' English drafts above are translations of these exact source entries, not verified modern etymology.')}</p>
+      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (hasReading ? ' English drafts follow the original entry or the separate editorial reading identified below. Historical accounts are not verified modern etymology.' : ' English drafts above are translations of these exact source entries, not verified modern etymology.')}</p>
       {entries.map(entry => <div key={entry.id}>
         <p className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>
         {entry.translation?.editorialReview?.sourceReading && <>
@@ -97,7 +107,7 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
           <p className="etymology-advanced-note">{entry.translation.editorialReview.sourceReading.note}</p>
         </>}
         {entry.translation?.editorialReview?.caseEvidence && <>
-          <p className="etymology-advanced-note">Supplied reviewer assessment · {entry.translation.editorialReview.caseEvidence.decision === 'clear' ? 'uncertainty flag cleared' : 'uncertainty retained'}</p>
+          <p className="etymology-advanced-note">Supplied reviewer assessment · {DECISION_LABEL[entry.translation.editorialReview.caseEvidence.decision]}</p>
           <p className="etymology-advanced-note">{entry.translation.editorialReview.caseEvidence.reviewerNote}</p>
         </>}
       </div>)}
@@ -140,7 +150,7 @@ export function EtymologyInfo({ view }: { view: EtymologyView }) {
     {meta.disclaimer}<br/>
     {COVERAGE[view.coverage] && <>{COVERAGE[view.coverage]}<br/></>}
     {view.entries.map(entry => <span key={entry.id}>{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
-    {view.entries.some(entry => entry.translation) && <>{view.entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
+    {view.entries.some(entry => entry.translation) && <>{view.entries.some(corrected) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : view.entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft, checked in a partial editorial review (English unchanged)' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
     {licenses.join(' · ')}<br/>
     Imported {meta.import_date}
   </SourceInfo>;

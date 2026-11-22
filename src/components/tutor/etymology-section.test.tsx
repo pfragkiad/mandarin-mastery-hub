@@ -64,7 +64,7 @@ describe("Shuowen source and English disclosure", () => {
     expect(container.querySelector('[data-source-entry="shuowen:1437"]')).toHaveTextContent(
       second.translation!.text,
     );
-    expect(screen.getByText(/This passage is uncertain/)).toBeVisible();
+    expect(screen.getByText(/uncertain and was not checked in the latest review/)).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(entry.text)).toBeVisible();
     expect(screen.getByText(second.text)).toBeVisible();
@@ -102,7 +102,8 @@ describe("Shuowen source and English disclosure", () => {
       },
     };
     render(<ShuowenSection entries={[reviewed]} />);
-    expect(screen.getByText(/partial editorial corrections; not fully verified/)).toBeVisible();
+    expect(screen.getByText(/AI-generated draft; not fully verified/)).toBeVisible();
+    expect(screen.getByText("English partly corrected in a supplied editorial review.")).toBeVisible();
     expect(screen.getByText(/Review headword:/)).toHaveTextContent("䀘");
     expect(screen.getByText(/Review headword:/)).toHaveTextContent("钉");
     expect(screen.queryByText(reviewed.text)).toBeNull();
@@ -110,6 +111,24 @@ describe("Shuowen source and English disclosure", () => {
     expect(screen.getByText(reviewed.text)).toBeVisible();
     expect(screen.getByText("䀘 — 蔽人視也。")).toBeVisible();
     expect(screen.getByText(/The supplied review identifies/)).toBeVisible();
+  });
+  it("labels a revised-but-still-uncertain passage separately from a checked one", () => {
+    const revised: EtymologyEntry = {
+      ...entry,
+      translation: {
+        ...entry.translation!,
+        uncertain: true,
+        editorialReview: {
+          reviewId: "external-v3-test",
+          status: "partial-editorial-review",
+          changes: ["translation", "review-assessment"],
+          caseEvidence: { decision: "revised_retained", checkedInSuppliedReview: true, reviewerNote: "Revised wording.", sourceUrls: ["https://example.test/entry"] },
+        },
+      },
+    };
+    render(<ShuowenSection entries={[revised]} />);
+    fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
+    expect(screen.getByText(/Supplied reviewer assessment/)).toHaveTextContent("English revised, uncertainty retained");
   });
   it("attributes a retained uncertainty assessment to the supplied reviewer", () => {
     const reviewed: EtymologyEntry = {
@@ -131,12 +150,17 @@ describe("Shuowen source and English disclosure", () => {
       },
     };
     render(<ShuowenSection entries={[reviewed]} />);
-    expect(screen.getByText(/This passage is uncertain/)).toBeVisible();
+    expect(screen.getByText(/latest review checked it and kept the flag/)).toBeVisible();
+    // An assessment-only review never claims the English was corrected.
+    expect(screen.getByText("English unchanged by the supplied editorial review.")).toBeVisible();
+    expect(screen.queryByText(/partly corrected/)).toBeNull();
     expect(screen.queryByText(/The final quoted phrase remains/)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Original Classical Chinese/ }));
     expect(screen.getByText(/Supplied reviewer assessment/)).toHaveTextContent(
-      "uncertainty retained",
+      "checked, English unchanged, uncertainty retained",
     );
+    // No editorial reading on this entry, so the intro never points to one.
+    expect(screen.queryByText(/separate editorial reading/)).toBeNull();
     expect(screen.getByText(/The final quoted phrase remains/)).toBeVisible();
   });
 });
