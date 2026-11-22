@@ -2960,10 +2960,10 @@ html[data-display-size='comfortable'] .search-field:has(.search-trailing .search
   .catalog-card .catalog-card-indicators, .word-grid .word-card.headword-card .catalog-card-indicators { margin-right: 5px; }
 }
 /* Comfortable cards (every width, Glyphs and Vocabulary): the indicators line up with the
-   bookmark on the pinyin line — a 36px box with a 22px icon, so the icon sits
-   7px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
+   bottom-right bookmark — a 40px box with a 19px icon, so the icon sits (40 − 19) / 2 =
+   10.5px in. Glyph indicator slots widen to the 17px icon so the box edge is the icon edge. */
 .library-list-view .catalog-card .catalog-card-indicators > span { width: 17px; flex-basis: 17px; }
-:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 7px; }
+:is(.word-grid, .catalog-entry-grid).library-list-view .word-card .catalog-card-indicators { margin-right: 10.5px; }
 
 /* Header section switcher (section-picker.tsx): on Glyphs, Vocabulary and the games
    the breadcrumb's last step is a dropdown button ("Components ▾") replacing the

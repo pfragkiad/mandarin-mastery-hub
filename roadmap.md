@@ -70,3 +70,4 @@
 
 - [x] HSK 2 word recordings: upload 164 verified clips to the CDN, attach 166 entries, verify playback, remove temporary MP3s
 - [x] Returning to a grid (from Sound card, Details or Practice) focuses the card clicked from; hovering another card clears it.
+- [x] Card corner icon and bottom-right bookmark share one right edge in every card grid (Compact and Comfortable)
