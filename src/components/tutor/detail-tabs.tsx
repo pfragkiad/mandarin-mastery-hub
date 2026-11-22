@@ -79,7 +79,12 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
     rootRef.current?.scrollIntoView?.({ block: 'start' });
   }, [returnedToEtymology, remembered.entry]);
   if (!tab) return null;
-  const select = (next: DetailTab) => { entryTabs.set(remembered.entry, next); rerender(n => n + 1); setOpen(true); };
+  // Clicking the tab that is already open collapses the drawer (same as the chevron);
+  // any other tab selects it and opens. While collapsed, a tab click selects and reopens.
+  const select = (next: DetailTab) => {
+    if (next === tab && open) { setOpen(false); return; }
+    entryTabs.set(remembered.entry, next); rerender(n => n + 1); setOpen(true);
+  };
   const tabId = (name: DetailTab) => `${drawerId}-${name}`;
   // Until the saved choice is read, the row shows but no drawer mounts (its breakdown fetches its own data).
   const showDecomposition = known && open && tab === 'decomposition' && decomposition;

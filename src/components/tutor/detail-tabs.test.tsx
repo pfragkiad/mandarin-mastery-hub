@@ -73,6 +73,21 @@ describe('Glyph detail drawer tabs', () => {
     expect(etymology.calls).toBe(0);
   });
 
+  it('collapses when the open tab is clicked again, and reopens on the next click', async () => {
+    etymology.result = howellView;
+    render(<GlyphDetailTabs cardKey="Characters:toggle" decomposition={decomposition} etymology={request}/>);
+    await flush();
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.queryByText('breakdown body')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Expand details' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
+    // Switching to the other tab keeps the drawer open.
+    fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
+    expect(screen.getAllByText('ancient').length).toBeGreaterThan(0);
+  });
+
   it('hides the Etymology tab once the card turns out to have no notes', async () => {
     render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
