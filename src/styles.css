@@ -4397,3 +4397,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
    underline) and the collapse chevron overhangs the row instead of making it taller. */
 .detail-tabs .stroke-tab { padding-top: 0; }
 .detail-tabs .stroke-tabs-collapse { margin-block: -10px; }
+
+/* Lesson word/expression cards (lesson-fit-grid.tsx): only when a single full-width card is still
+   narrower than a reading may the pinyin line wrap; otherwise the grid drops columns instead. */
+.lesson-vocab-grid[data-reading-wraps] .lesson-term-reading { white-space: normal; flex-wrap: wrap; overflow-wrap: anywhere; }

@@ -1,3 +1,4 @@
+import { LessonFitGrid } from './lesson-fit-grid';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
@@ -204,10 +205,10 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (applied.length) sections.push({ id: 'practice', title: 'Check what you can do', hint: count(applied.length, 'question'), body: <div className="lesson-stack">{applied.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div> });
     if (p.review.can_do.length || topic.items.length) sections.push({ id: 'review', title: 'Review', hint: 'What you can do now', body: <>
       {p.review.can_do.length > 0 && <ul className="lesson-objectives">{p.review.can_do.map(x => <li key={x}><LessonText text={x}/></li>)}</ul>}
-      {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><div className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}</div></>}
+      {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><LessonFitGrid className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}</LessonFitGrid></>}
       {topic.items.length > 0 && <details className="lesson-details">
         <summary>Word bank ({topic.items.length}) — examples are on each Vocabulary card</summary>
-        <div className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</div>
+        <LessonFitGrid className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid>
       </details>}
       {recall.length > 0 && <details className="lesson-details">
         <summary>Optional word recall quiz ({recall.length})</summary>
@@ -231,9 +232,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         {g.example && <SentenceExample sentence={g.example.hanzi} pinyin={g.example.pinyin} translation={g.example.english} heading=""/>}
       </div>)}
     </div> });
-    if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <div className="lesson-grid lesson-vocab-grid">
+    if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
       {topic.related.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}
-    </div> });
+    </LessonFitGrid> });
   }
 
   // General lessons (e.g. Conversational Mandarin dialogue lessons): blocks in recorded order.
@@ -252,9 +253,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {g.example.teaching_note && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
   </div>)}</div> });
   for (const b of blocks) {
-    if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <div className="lesson-grid lesson-vocab-grid">
+    if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
       {b.items.map((item, i) => <div key={`${item.hanzi}-${i}`} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/></div>)}
-    </div> });
+    </LessonFitGrid> });
   }
 
   const vocab = topic ? [] : S.vocabulary?.items ?? [];
@@ -267,7 +268,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <Button size="sm" variant={priority ? 'outline' : 'default'} aria-pressed={!priority} onClick={() => onPriority(undefined)}>All {vocab.length}</Button>
         {levels.map(p => <Button key={p} size="sm" variant={priority === p ? 'default' : 'outline'} aria-pressed={priority === p} onClick={() => onPriority(p)}>Priority {p} · {vocab.filter(v => v.priority === p).length}</Button>)}
       </div>}
-      <div className="lesson-grid lesson-vocab-grid">{shown.map(v => <VocabCard key={v.id} item={v}/>)}</div>
+      <LessonFitGrid className="lesson-grid lesson-vocab-grid">{shown.map(v => <VocabCard key={v.id} item={v}/>)}</LessonFitGrid>
       {S.vocabulary?.notes && <p className="lesson-note"><LessonText text={S.vocabulary.notes}/></p>}
     </> });
   }
