@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Audit/import the owner's complete HSK 3.0 Level 2 course package.
 
-Source: importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip
+Source: importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1_rev2.zip
 (preserved byte-for-byte). It holds 25 nested four-file topic-lesson ZIPs under hsk3/level2/
 and curricula/HSK3_2025_LEVEL1_LEVEL2.json, one HSK 3.0 course whose Level 1 section must be
 deep-equal to the current Level 1 course (so no Level 1 placement changes) and whose Level 2
@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
 from lesson_cards import card_counts, cards_document  # noqa: E402
 
-PACKAGE = ROOT / 'importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip'
+PACKAGE = ROOT / 'importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1_rev2.zip'
 LESSONS = ROOT / 'src/data/study_lessons/lessons'
 CORE = ROOT / 'src/data/study_lessons/core'
 TARGET = LESSONS / 'hsk3/level2'
@@ -34,11 +34,10 @@ OLD_CURRICULUM = LESSONS / 'curricula/HSK3_2025_LEVEL2.json'
 OLD_LESSON = TARGET / 'TOPIC_LESSON_MAKING_PLANS_TOGETHER'
 VOCAB = ROOT / 'src/data/vocabulary'
 # Owner-visible typo fixes: (lesson stem, example id, field, supplied, corrected-to-word-card).
-CORRECTIONS = [('TOPIC_LESSON_SCIENCE_TECHNOLOGY', 'ex-036-1', 'pinyin',
-                'wǒ zài diànnǎo shàngxué xí.', 'wǒ zài diànnǎo shàng xuéxí.')]
+CORRECTIONS = []  # rev2 fixed the #36 pinyin erratum at source; nothing to align.
 
 # Owner-flagged authoring exceptions: a teaching sentence that repeats a word-card example.
-ALLOWED_OVERLAP = {'TOPIC_LESSON_PLACES_DIRECTIONS_MOVEMENT_AND_DIRECTION': ['你什么时候回来？']}
+ALLOWED_OVERLAP = {}  # rev2 replaced the reused word-card sentences; no exceptions.
 
 
 def sha(raw): return hashlib.sha256(raw).hexdigest()

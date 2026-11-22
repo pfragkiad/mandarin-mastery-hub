@@ -1,6 +1,6 @@
 {
-  "package": "importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
-  "sha256": "3129da6b0ca0511f9ee8accb59fdee5bbf1bf1b7427f1b13895e1e3ef26ceffa",
+  "package": "importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1_rev2.zip",
+  "sha256": "ea455614f84e00b1a78366238dd56518b3b59f28d32dc2a80c86ff23826a8ec8",
   "lessons": {
     "topic-talking-about-meanings-and-situations": {
       "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ABSTRACT_CONCEPTS",
@@ -479,14 +479,7 @@
         189
       ],
       "examples_matched": 10,
-      "corrections": [
-        {
-          "example": "ex-036-1",
-          "field": "pinyin",
-          "supplied": "wǒ zài diànnǎo shàngxué xí.",
-          "corrected": "wǒ zài diànnǎo shàng xuéxí."
-        }
-      ],
+      "corrections": [],
       "required_checkpoints": 15,
       "optional_checkpoints": 2
     },

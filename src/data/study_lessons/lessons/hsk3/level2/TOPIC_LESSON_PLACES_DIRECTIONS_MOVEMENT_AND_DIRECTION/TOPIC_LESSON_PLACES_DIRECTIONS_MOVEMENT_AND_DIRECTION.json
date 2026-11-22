@@ -138,6 +138,7 @@
     "路": "Characters:路",
     "边": "Characters:边",
     "过": "Characters:过",
+    "还": "Characters:还",
     "这": "Characters:这",
     "进": "Characters:进",
     "那": "Characters:那",
@@ -1098,9 +1099,9 @@
           },
           {
             "speaker": "A",
-            "hanzi": "你什么时候回来？",
-            "pinyin": "Nǐ shénme shíhou huílái?",
-            "english": "When will you come back?"
+            "hanzi": "你出去以后，还回来吗？",
+            "pinyin": "Nǐ chūqù yǐhòu, hái huílái ma?",
+            "english": "Will you come back after you go out?"
           },
           {
             "speaker": "B",
@@ -1176,11 +1177,11 @@
           },
           {
             "id": "build-3",
-            "cue_en": "Say in Mandarin: When will you come back?",
+            "cue_en": "Say in Mandarin: Will you come back after you go out?",
             "model_answer": {
-              "hanzi": "你什么时候回来？",
-              "pinyin": "Nǐ shénme shíhou huílái?",
-              "english": "When will you come back?"
+              "hanzi": "你出去以后，还回来吗？",
+              "pinyin": "Nǐ chūqù yǐhòu, hái huílái ma?",
+              "english": "Will you come back after you go out?"
             }
           }
         ]
@@ -1319,7 +1320,7 @@
           {
             "id": "topic-entering-leaving-and-returning--reveal-build-3",
             "kind": "reveal",
-            "label": "Say in Mandarin: When will you come back?",
+            "label": "Say in Mandarin: Will you come back after you go out?",
             "optional": false,
             "target_id": "build-3"
           }

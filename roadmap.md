@@ -134,3 +134,6 @@
 - [x] Lessons: "Start over" text link at the top (only with progress) + "Practice this lesson again" outline button at the end, same confirm + Undo
 - [x] Lessons: phone Settings "Reset this section" row under Progress (Undo toast)
 - [x] Lessons: first HSK 3.0 Level 2 lesson (Making Plans Together) in its own Level 2 course card after Level 1
+
+- [x] Lessons: import corrected HSK Level 2 package (rev2)
+- [x] Lessons: each course level (Level 1, Level 2) folds open/closed like units

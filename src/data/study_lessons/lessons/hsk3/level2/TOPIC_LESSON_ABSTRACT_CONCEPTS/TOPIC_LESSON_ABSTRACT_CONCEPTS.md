@@ -20,7 +20,7 @@ Ask about a word’s meaning and explain an everyday situation or problem.
 
 **B:** 好的，是什么事情？ (Hǎo de, shì shénme shìqing?) — Okay, what is it about?
 
-**A:** 这个词是什么意思？ (Zhè ge cí shì shénme yìsi?) — What does this word mean?
+**A:** 我不明白老师说的那个词。 (Wǒ bù míngbai lǎoshī shuō de nà ge cí.) — I do not understand the word the teacher said.
 
 **B:** 我告诉你它的意思，然后一起看看例子。 (Wǒ gàosu nǐ tā de yìsi, ránhòu yìqǐ kànkan lìzi.) — I’ll tell you what it means, and then we’ll look at examples together.
 
@@ -74,11 +74,11 @@ I do not understand what this sentence means.
 *Zhè jiàn shìqing hěn zhòngyào.*
 This matter is important.
 
-**Change 3: Say in Mandarin: What does this word mean?**
+**Change 3: Say in Mandarin: I do not understand the word the teacher said.**
 
-*Model response:* **这个词是什么意思？**
-*Zhè ge cí shì shénme yìsi?*
-What does this word mean?
+*Model response:* **我不明白老师说的那个词。**
+*Wǒ bù míngbai lǎoshī shuō de nà ge cí.*
+I do not understand the word the teacher said.
 
 ## 4. Read for meaning — Talking About Meanings and Situations — short reading
 
@@ -170,7 +170,7 @@ Mark completed tasks; optional recall does not affect core completion.
 ### Build new sentences
 - [ ] Say in Mandarin: I do not understand what this sentence means. — `topic-talking-about-meanings-and-situations--reveal-build-1`
 - [ ] Say in Mandarin: This matter is important. — `topic-talking-about-meanings-and-situations--reveal-build-2`
-- [ ] Say in Mandarin: What does this word mean? — `topic-talking-about-meanings-and-situations--reveal-build-3`
+- [ ] Say in Mandarin: I do not understand the word the teacher said. — `topic-talking-about-meanings-and-situations--reveal-build-3`
 
 ### Reading comprehension
 - [ ] What do we learn about the people or situation in the first part of the reading? — `topic-talking-about-meanings-and-situations--read-reading-q-1`

@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { lessonCategories, lessonSummaries, lessonSummary, type LessonSummary } from '@/lib/lessons';
 import { courses, projectIndependentLessons, sectionPlacements, type Course } from '@/lib/lesson-curricula';
 import { LessonText } from './lesson-text';
-import { readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
+import { levelFoldId, readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
 import { HintBody, SourceInfo } from './source-info';
 import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
 import { ResetProgressButton } from './reset-progress-button';
@@ -92,12 +92,13 @@ export function LessonsIndex({ view, category, tag, q = '', scope, onSearch }: {
   </div>;
 }
 
-/** Remembered open/collapsed flag for one course drawer. Drawers start COLLAPSED on a
- *  first visit (the list is long), then the visitor's own fold/unfold choice is kept in
- *  localStorage per drawer id. Read after mount so server and first client render agree. */
-function useLessonFold(id: string): [boolean, (open: boolean) => void] {
-  const [open, setOpen] = useState(false);
-  useEffect(() => { setOpen(Boolean(readLessonFolds()[id])); }, [id]);
+/** Remembered open/collapsed flag for one drawer. Course drawers start COLLAPSED on a
+ *  first visit (the list is long); a level passes its own first-visit default. Afterwards
+ *  the visitor's own fold/unfold choice is kept in localStorage per drawer id. Read after
+ *  mount so server and first client render agree. */
+function useLessonFold(id: string, fallback = false): [boolean, (open: boolean) => void] {
+  const [open, setOpen] = useState(fallback);
+  useEffect(() => { setOpen(readLessonFolds()[id] ?? fallback); }, [id, fallback]);
   const update = (next: boolean) => { setOpen(next); setLessonFold(id, next); };
   return [open, update];
 }
@@ -181,20 +182,49 @@ function CourseOutline({ course, progress }: { course: Course; progress: LessonP
     aside={<span className="lesson-course-progress"><small>{done} of {all.length} lessons done{working > 0 && ` · ${working} in progress`}</small><ProgressBar fraction={fraction}/></span>}>
     {course.sections.map(section => {
       const flat = sectionPlacements(section);
-      return <div key={section.id} className="lessons-level">
-        {course.sections.length > 1 && <h3>{section.title}<span className="lessons-level-count">{flat.length} {flat.length === 1 ? 'lesson' : 'lessons'}</span></h3>}
-        {section.units.map((unit, u) => {
-          const unitDone = unit.placements.filter(p => isDone(progress, p.lesson.id)).length;
-          return <details key={unit.id} className="lessons-unit" open>
-            <summary><h4><span className="lessons-unit-number">Unit {u + 1}</span>{unit.title}</h4><span className="lessons-unit-count">{unitDone} / {unit.placements.length}<ChevronDown aria-hidden="true"/></span></summary>
-            <ol className="lessons-grid lessons-path">{unit.placements.map(p => <li key={p.id}>
-              <LessonCard lesson={p.lesson} number={flat.indexOf(p) + 1} after={p.prerequisites} progress={progress} upNext={p.lesson.id === next}/>
-            </li>)}</ol>
-          </details>;
-        })}
-      </div>;
+      const units = <LevelUnits section={section} flat={flat} progress={progress} next={next}/>;
+      // A one-level course shows its units directly; each level of a multi-level course
+      // (HSK Level 1, Level 2…) is its own drawer, since each is a large body of study.
+      return course.sections.length > 1
+        ? <LevelFold key={section.id} id={levelFoldId(course.id, section.id)} section={section} flat={flat} progress={progress} defaultOpen={flat.some(p => p.lesson.id === next)}>{units}</LevelFold>
+        : <div key={section.id} className="lessons-level">{units}</div>;
     })}
   </LessonFold>;
+}
+
+type Section = Course['sections'][number];
+type Placement = ReturnType<typeof sectionPlacements>[number];
+
+/** One level's units (each a collapsible <details>, open by default) → numbered lessons on
+ *  a path. Inputs: the level, its placements in order (`flat`, which numbers the lessons
+ *  through the whole level), progress, and the course's "up next" lesson id. */
+function LevelUnits({ section, flat, progress, next }: { section: Section; flat: Placement[]; progress: LessonProgressMap; next: string | undefined }) {
+  return <>{section.units.map((unit, u) => {
+    const unitDone = unit.placements.filter(p => isDone(progress, p.lesson.id)).length;
+    return <details key={unit.id} className="lessons-unit" open>
+      <summary><h4><span className="lessons-unit-number">Unit {u + 1}</span>{unit.title}</h4><span className="lessons-unit-count">{unitDone} / {unit.placements.length}<ChevronDown aria-hidden="true"/></span></summary>
+      <ol className="lessons-grid lessons-path">{unit.placements.map(p => <li key={p.id}>
+        <LessonCard lesson={p.lesson} number={flat.indexOf(p) + 1} after={p.prerequisites} progress={progress} upNext={p.lesson.id === next}/>
+      </li>)}</ol>
+    </details>;
+  })}</>;
+}
+
+/** One level of a multi-level course as its own remembered drawer, with that level's
+ *  lessons-done count and bar in the heading. First visit: only the level holding the
+ *  course's "up next" lesson starts open (`defaultOpen`). As with the course drawer, only
+ *  this element's own toggle is stored, so a unit's arrow never folds the level. */
+function LevelFold({ id, section, flat, progress, defaultOpen, children }: { id: string; section: Section; flat: Placement[]; progress: LessonProgressMap; defaultOpen: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = useLessonFold(id, defaultOpen);
+  const done = flat.filter(p => isDone(progress, p.lesson.id)).length;
+  const fraction = flat.length ? flat.reduce((sum, p) => sum + lessonState(progress[p.lesson.id]).fraction, 0) / flat.length : 0;
+  return <details className="lessons-level lessons-level-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
+    <summary>
+      <h3>{section.title}<span className="lessons-level-count">{flat.length} {flat.length === 1 ? 'lesson' : 'lessons'}</span></h3>
+      <span className="lesson-course-progress"><small>{done} of {flat.length} done</small><ProgressBar fraction={fraction}/></span>
+    </summary>
+    {children}
+  </details>;
 }
 
 /** By topic: lessons under their primary registry topic; a topic filter also matches

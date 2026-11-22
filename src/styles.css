@@ -4563,6 +4563,15 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lessons-fold[open] > summary::before { transform: rotate(45deg); }
 .lessons-fold[open] > summary { margin-bottom: .75rem; }
 .lessons-fold > summary:hover h2 { color: var(--primary); }
+/* A level (HSK Level 1, Level 2…) inside a multi-level course: its own drawer with the same
+   chevron as the course, a divider above and the level's own progress at the right. */
+.lessons-level-fold { padding-top: 14px; border-top: 1px solid var(--border); }
+.lessons-level-fold > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.lessons-level-fold > summary::-webkit-details-marker { display: none; }
+.lessons-level-fold > summary::before { content: ''; flex: none; width: .45rem; height: .45rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; opacity: .7; }
+.lessons-level-fold[open] > summary::before { transform: rotate(45deg); }
+.lessons-level-fold > summary > h3 { margin: 0; }
+.lessons-level-fold > summary:hover > h3 { color: var(--primary); }
 
 /* Lesson prose: an identified word (words-first) rings as one unit on hover. */
 .lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }

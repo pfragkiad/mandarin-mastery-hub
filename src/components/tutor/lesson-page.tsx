@@ -12,7 +12,7 @@ const QuestionProgress = createContext<{ answer: (key: string) => void } | null>
  *  read by the "Mark as done" ticks on pattern cards, at section ends and in the finish box. */
 const CheckpointTicks = createContext<{ plan: CheckpointPlan; done: ReadonlySet<string>; toggle: (c: LessonCheckpoint) => void } | null>(null);
 import { Link, useNavigate } from '@tanstack/react-router';
-import { setLessonFold } from '@/lib/lesson-fold';
+import { levelFoldId, setLessonFold } from '@/lib/lesson-fold';
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
@@ -175,12 +175,13 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
   const lessonDone = Boolean(progressEntry?.completed);
   // Complete lesson marks it done and returns to where it is listed: its course (the drawer
-  // is opened first so the course shows unfolded), or the topic view of its main topic.
+  // and its level are opened first so they show unfolded), or the topic view of its main topic.
   const navigate = useNavigate();
   const complete = () => {
     markLessonCompleted(summary.id);
-    const course = positionsOf(summary.id)[0]?.course;
-    if (course) { setLessonFold(course.id, true); void navigate({ to: '/lessons' }); }
+    const position = positionsOf(summary.id)[0];
+    // Open the course and the lesson's own level, so the learner lands on the path they left.
+    if (position) { setLessonFold(position.course.id, true); setLessonFold(levelFoldId(position.course.id, position.section.id), true); void navigate({ to: '/lessons' }); }
     else void navigate({ to: '/lessons', search: summary.primaryCategory ? { view: 'topic', category: summary.primaryCategory.id } : { view: 'topic' } });
   };
   const [hidePinyin, setHidePinyin] = useState(false);

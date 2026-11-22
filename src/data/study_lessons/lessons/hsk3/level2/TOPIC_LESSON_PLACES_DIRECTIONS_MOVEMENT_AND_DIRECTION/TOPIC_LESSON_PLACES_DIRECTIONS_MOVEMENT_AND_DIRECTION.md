@@ -22,7 +22,7 @@ Distinguish movement toward and away from the speaker when entering, exiting or 
 
 **B:** 可以，进来吧！我正要出去。 (Kěyǐ, jìnlái ba! Wǒ zhèng yào chūqù.) — Yes, come in! I’m just about to go out.
 
-**A:** 你什么时候回来？ (Nǐ shénme shíhou huílái?) — When will you come back?
+**A:** 你出去以后，还回来吗？ (Nǐ chūqù yǐhòu, hái huílái ma?) — Will you come back after you go out?
 
 **B:** 我一会儿就回来。你先上去等我。 (Wǒ yíhuìr jiù huílái. Nǐ xiān shàngqù děng wǒ.) — I’ll be back soon. Go upstairs and wait for me.
 
@@ -76,11 +76,11 @@ Please come over and help me.
 *Lǎoshī zǒu jìn jiàoshì, xuéshēngmen dōu zhàn qǐlái.*
 The teacher walks into the classroom, and all the students stand up.
 
-**Change 3: Say in Mandarin: When will you come back?**
+**Change 3: Say in Mandarin: Will you come back after you go out?**
 
-*Model response:* **你什么时候回来？**
-*Nǐ shénme shíhou huílái?*
-When will you come back?
+*Model response:* **你出去以后，还回来吗？**
+*Nǐ chūqù yǐhòu, hái huílái ma?*
+Will you come back after you go out?
 
 ## 4. Read for meaning — Entering, Leaving and Returning — short reading
 
@@ -206,7 +206,7 @@ Mark completed tasks; optional recall does not affect core completion.
 ### Build new sentences
 - [ ] Say in Mandarin: Please come over and help me. — `topic-entering-leaving-and-returning--reveal-build-1`
 - [ ] Say in Mandarin: The teacher walks into the classroom, and all the students stand up. — `topic-entering-leaving-and-returning--reveal-build-2`
-- [ ] Say in Mandarin: When will you come back? — `topic-entering-leaving-and-returning--reveal-build-3`
+- [ ] Say in Mandarin: Will you come back after you go out? — `topic-entering-leaving-and-returning--reveal-build-3`
 
 ### Reading comprehension
 - [ ] What do we learn about the people or situation in the first part of the reading? — `topic-entering-leaving-and-returning--read-reading-q-1`

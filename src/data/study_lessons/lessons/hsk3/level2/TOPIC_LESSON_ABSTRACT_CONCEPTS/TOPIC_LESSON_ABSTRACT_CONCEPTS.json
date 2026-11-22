@@ -98,6 +98,7 @@
     "课": "Characters:课",
     "起": "Characters:起",
     "这": "Characters:这",
+    "那": "Characters:那",
     "释": "Characters:释",
     "重": "Characters:重",
     "问": "Characters:问",
@@ -406,9 +407,9 @@
           },
           {
             "speaker": "A",
-            "hanzi": "这个词是什么意思？",
-            "pinyin": "Zhè ge cí shì shénme yìsi?",
-            "english": "What does this word mean?"
+            "hanzi": "我不明白老师说的那个词。",
+            "pinyin": "Wǒ bù míngbai lǎoshī shuō de nà ge cí.",
+            "english": "I do not understand the word the teacher said."
           },
           {
             "speaker": "B",
@@ -484,11 +485,11 @@
           },
           {
             "id": "build-3",
-            "cue_en": "Say in Mandarin: What does this word mean?",
+            "cue_en": "Say in Mandarin: I do not understand the word the teacher said.",
             "model_answer": {
-              "hanzi": "这个词是什么意思？",
-              "pinyin": "Zhè ge cí shì shénme yìsi?",
-              "english": "What does this word mean?"
+              "hanzi": "我不明白老师说的那个词。",
+              "pinyin": "Wǒ bù míngbai lǎoshī shuō de nà ge cí.",
+              "english": "I do not understand the word the teacher said."
             }
           }
         ]
@@ -614,7 +615,7 @@
           {
             "id": "topic-talking-about-meanings-and-situations--reveal-build-3",
             "kind": "reveal",
-            "label": "Say in Mandarin: What does this word mean?",
+            "label": "Say in Mandarin: I do not understand the word the teacher said.",
             "optional": false,
             "target_id": "build-3"
           }
