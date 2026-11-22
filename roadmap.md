@@ -86,3 +86,7 @@
 - [x] Lessons: "Hide hanzi" side switch
 - [x] Lessons: sentence lines (conversation etc.) group hover/popups per identified word (学生)
 - [x] Shuowen section: English + ⚠ for uncertain passages visible; every review note in one (i) popup
+- [x] Omit self-links in sentence popups (word link + Open full card)
+- [x] Single-character popups: show both "As a word" and "As a character" rows
+- [x] Kind row label follows record kind: As a character / component / radical
+- [x] Self-pointing popup rows hidden entirely (no plain-text remnant)

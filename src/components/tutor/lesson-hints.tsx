@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState, type HTMLAttributes, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
 import { stableContext } from '@/lib/stable-context';
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
@@ -125,10 +125,16 @@ export function HintGlyphs({ text, focusable = true, wordHanzi }: { text: string
   return <>{out}</>;
 }
 
-/** The popup body: minimal facts for one exact record, plus the containing word. */
+/** The popup body: minimal facts for one exact record, plus the containing word.
+ *  A row that would reopen the card the popup sits on (the same word or glyph
+ *  record in the URL) is hidden entirely — only rows linking to a different card
+ *  show, so navigating to self is never offered. */
 function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | null; onClose: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
   const hints = useLessonHints();
+  const location = useLocation();
+  const currentSearch = location.search as Record<string, unknown>;
+  const wordIsCurrent = word != null && location.pathname === '/vocabulary' && currentSearch.word === word.search.word;
   // Leaving the lesson for a full card records one Back step (like Practice does),
   // so the details window's Back returns here. Keyed by history entry, not URL.
   const rememberReturn = () => detailTrail.replace({ label: hints?.backLabel ?? 'Lesson', href: historyEntry() });
@@ -143,6 +149,13 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   }, [glyph, preferences.includeTraditional, catalogVersion, hints]);
   const traditional = hint?.script === 'Traditional';
   const facts = hint ? [hint.rank ? `Rank #${hint.rank}` : null, hint.strokes ? `${hint.strokes} ${hint.strokes === 1 ? 'stroke' : 'strokes'}` : null].filter(Boolean).join(' · ') : '';
+  const cardIsCurrent = hint != null && location.pathname === '/characters' && currentSearch.id === hint.search.id;
+  // A single character that is also a word gets both destinations side by side
+  // ("As a word" above, "As a character/component/radical" here), so reaching the
+  // other card never takes a detour; the bottom "Open full card" would duplicate
+  // this row, so it stays only for characters without a word entry.
+  const singleCharWord = word != null && Array.from(word.hanzi).length === 1;
+  const kindLabel = hint?.kind === 'Components' ? 'As a component' : hint?.kind === 'Radicals' ? 'As a radical' : 'As a character';
   return <div className="lesson-hint-body">
     <button type="button" className="lesson-hint-close" aria-label="Close" onClick={onClose}><X size={14} aria-hidden="true"/></button>
     <div className="lesson-hint-head">
@@ -161,7 +174,7 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
         {facts && <p className="lesson-hint-facts">{facts}</p>}
       </div>
     </div>
-    {word && <div className="lesson-hint-word">
+    {word && !wordIsCurrent && <div className="lesson-hint-word">
       <span className="lesson-hint-word-label">{Array.from(word.hanzi).length === 1 ? 'As a word' : 'In the word'}</span>
       <span className="lesson-hint-word-row">
         <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
@@ -170,6 +183,12 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       </span>
       {word.meaning && <span className="lesson-hint-word-meaning"><MeaningText text={word.meaning}/></span>}
     </div>}
-    {hint && <Link to="/characters" search={hint.search} className="lesson-hint-open" onClick={rememberReturn}>Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
+    {singleCharWord && hint && !cardIsCurrent && <div className="lesson-hint-word">
+      <span className="lesson-hint-word-label">{kindLabel}</span>
+      <span className="lesson-hint-word-row">
+        <Link to="/characters" search={hint.search} className="lesson-hint-word-link" title={`Open the ${hint.kind === 'Components' ? 'component' : hint.kind === 'Radicals' ? 'radical' : 'character'} ${glyph}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{glyph}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
+      </span>
+    </div>}
+    {hint && !cardIsCurrent && !singleCharWord && <Link to="/characters" search={hint.search} className="lesson-hint-open" onClick={rememberReturn}>Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
   </div>;
 }
