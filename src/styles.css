@@ -3674,6 +3674,8 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hint-word-link svg { align-self: center; }
 .lesson-hint-word-hanzi { font-family: var(--font-hanzi); font-size: 22px; line-height: 1.2; border-radius: 4px; padding: 0 2px; }
 .lesson-hint-word-link .pinyin { font-size: 14px; }
+/* Self-entry: the popup sits on this very card, so the row shows for completeness but is not a link. */
+.lesson-hint-word-link.is-current { color: inherit; cursor: default; }
 .lesson-hint-word-row .example-listen { width: 28px; height: 28px; }
 .lesson-hint-word-meaning { font-size: 13px; line-height: 1.4; }
 .lesson-hint-open { align-self: flex-end; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; padding: 4px 10px; border-radius: 999px; transition: background .12s ease; }

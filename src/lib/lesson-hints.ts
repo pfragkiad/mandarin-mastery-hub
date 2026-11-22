@@ -68,6 +68,19 @@ export function lessonGlyphHint(glyph: string, includeTraditional: boolean): Les
   return null;
 }
 
+/** Every exact record for one written form, one per library that has it (Characters,
+ *  Components, Radicals) — 八 exists in all three. Same exact-form lookup rules as
+ *  lessonGlyphHint, so no identity is inferred across kinds; presentation only. */
+export function lessonGlyphHints(glyph: string, includeTraditional: boolean): LessonGlyphHint[] {
+  if (Array.from(glyph).length !== 1) return [];
+  const out: LessonGlyphHint[] = [];
+  for (const kind of ORDER) {
+    const entry = libraryEntries(kind).find(item => item.hanzi === glyph);
+    if (entry) out.push(hintForEntry(kind, entry, includeTraditional));
+  }
+  return out;
+}
+
 /** Hint for a lesson's recorded catalog_character_refs ID ("Characters:次"). The ID's kind
  *  and glyph must match a real entry exactly; anything else fails closed to null so the
  *  caller can fall back to the written-form lookup. */

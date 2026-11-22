@@ -90,3 +90,5 @@
 - [x] Single-character popups: show both "As a word" and "As a character" rows
 - [x] Kind row label follows record kind: As a character / component / radical
 - [x] Self-pointing popup rows hidden entirely (no plain-text remnant)
+- [x] Popup offers every existing record for the exact glyph (character/component/radical rows)
+- [x] Self rows visible again but without a link
