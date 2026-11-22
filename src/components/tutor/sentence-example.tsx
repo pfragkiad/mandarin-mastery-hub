@@ -38,14 +38,34 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   const inventory = useMemo(() => (syllables ? new Set(syllables.map(s => s.base)) : null), [syllables]);
   const pairing = useMemo(() => (pinyin ? alignSentence(sentence, pinyin, inventory) : null), [sentence, pinyin, inventory]);
 
-  const pairHandlers = (pair: number) => ({
-    onMouseEnter: () => setHoveredPair(pair),
-    onMouseLeave: () => setHoveredPair(current => (current === pair ? null : current)),
-    onFocus: () => setHoveredPair(pair),
-    onBlur: () => setHoveredPair(current => (current === pair ? null : current)),
-  });
+  // Lesson pages: identified words (words-first, lesson-segments.ts via the hints provider)
+  // give each character its popup word and group the hover, so 学生 and xuésheng ring together.
+  const words = useMemo(() => hints ? hints.wordsFor(sentence) : null, [hints, sentence]);
+  const pairKey = useMemo(() => {
+    const keys = new Map<number, number>();
+    if (pairing && words) {
+      let group = -1; let prev: unknown = null;
+      Array.from(sentence).forEach((_, i) => {
+        const w = words[i] ?? null;
+        if (w && w !== prev) group = Math.min(group, -1) - 1;
+        prev = w;
+        const pair = pairing.glyphPairs[i];
+        if (w && pair != null) keys.set(pair, group);
+      });
+    }
+    return (pair: number) => keys.get(pair) ?? pair;
+  }, [pairing, words, sentence]);
+  const pairHandlers = (pair: number) => {
+    const key = pairKey(pair);
+    return {
+      onMouseEnter: () => setHoveredPair(key),
+      onMouseLeave: () => setHoveredPair(current => (current === key ? null : current)),
+      onFocus: () => setHoveredPair(key),
+      onBlur: () => setHoveredPair(current => (current === key ? null : current)),
+    };
+  };
   const pairClass = (pair: number | null | undefined) =>
-    pair != null && hoveredPair === pair ? ' sentence-pair-hover' : '';
+    pair != null && hoveredPair === pairKey(pair) ? ' sentence-pair-hover' : '';
 
   {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
       the pinyin with its speaker and the translation. The row wraps, so the translation
@@ -58,7 +78,7 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
       const pair = pairing?.glyphPairs[i] ?? undefined;
       const pairProps = pair !== undefined ? pairHandlers(pair) : {};
       if (hints) return hints.enabled && isHanziChar(ch)
-        ? <HintChar key={i} glyph={ch} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>
+        ? <HintChar key={i} glyph={ch} word={words?.[i] ?? null} focusable={false} className={`sentence-char${pairClass(pair)}`} {...pairProps}/>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...pairProps}>{ch}</span>;
       const dest = isHanziChar(ch) ? libraryDestination(ch, preferences.includeTraditional) : undefined;
       return dest

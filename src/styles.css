@@ -3760,6 +3760,9 @@ a.lesson-word-link { text-decoration: none; }
 /* "Hide pinyin" study switch: readings blur until hovered or focused (speakers stay usable). */
 .lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child { filter: blur(5px); transition: filter .15s; }
 .lesson-hide-pinyin .pinyin:not(.sentence-pinyin):hover, .lesson-hide-pinyin .sentence-pinyin > span:first-child:hover { filter: none; }
+/* "Hide hanzi": recorded Chinese lines and terms blur until hovered or focused. */
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi) { filter: blur(6px); transition: filter .15s; }
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi):is(:hover, :focus-within) { filter: none; }
 /* "Hide translations": English renderings blur the same way until hovered or focused. */
 .lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); transition: filter .15s; }
 .lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation):is(:hover, :focus-within) { filter: none; }

@@ -83,3 +83,5 @@
 - [x] Lessons: word popup hints with details arrow, like character hints
 - [x] Lessons: hover/pinyin pairing groups per identified word (whole word + its syllables), all lessons
 - [x] Lessons: "Hide translations" side switch beside Hide pinyin
+- [x] Lessons: "Hide hanzi" side switch
+- [x] Lessons: sentence lines (conversation etc.) group hover/popups per identified word (学生)
