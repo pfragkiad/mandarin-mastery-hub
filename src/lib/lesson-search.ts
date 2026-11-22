@@ -10,11 +10,15 @@
  *
  * Matching is a plain substring test, never a guess: case-insensitive, and tone-insensitive
  * while the query has no tone marks (`xianzai` finds xiànzài); a query typed with tone marks
- * (`xiànzài`) matches only that exact tone spelling. Curly quotes read as straight ones.
+ * (`xiànzài`) matches only that exact tone spelling. Tone numbers count as tone marks
+ * (`ma1` = mā, `xue2sheng1` = xuéshēng, `lv4` = lǜ, 5 = neutral); a number is read as a tone only
+ * right after a real pinyin syllable, so `lesson 2` stays plain text. Spaced numbered syllables
+ * (`xue2 sheng1`) also match the joined word. Curly quotes read as straight ones.
  * Each hit carries the original text of the first matching passage, with the match position,
  * so the results can show where the lesson says it.
  */
 import type { LessonSummary } from './lessons';
+import { parsePinyin, toneMark } from './pinyin-guide';
 
 /** One passage of searchable text, with its folded form and a map back to the original. */
 type Passage = { text: string; folded: string; exactFolded: string; map: number[]; exactMap: number[]; headline: boolean };
@@ -86,12 +90,26 @@ export function lessonSearchEntry(lesson: LessonSummary, raw: unknown): LessonSe
 }
 
 const TONED = /[\u0300-\u0304\u030c]/;
-/** The query as matched: trimmed, folded, and whether it asks for exact tones. */
-export function lessonQuery(query: string): { text: string; exactTones: boolean } | null {
-  const trimmed = quotes(query.trim()).toLowerCase();
-  if (!trimmed) return null;
-  const exactTones = TONED.test(trimmed.normalize('NFD'));
-  return { text: exactTones ? trimmed.normalize('NFC') : trimmed.normalize('NFD').replace(MARKS, ''), exactTones };
+/** Rewrites tone-number syllables as tone marks (`xue2sheng1` → xuéshēng); anything that is
+ *  not a real syllable followed by 1–5 is left exactly as typed. */
+export function numberedToMarks(query: string): string {
+  return query.replace(/([a-zü:v]+?)([1-5])(?![0-9])/g, (whole, letters: string, digit: string) => {
+    const syllable = letters.replace(/u:|v/g, 'ü');
+    const parsed = parsePinyin(syllable + digit);
+    return parsed && parsed.tone ? toneMark(syllable, parsed.tone) : whole;
+  });
+}
+/** The query as matched: trimmed, folded, and whether it asks for exact tones. `texts` holds
+ *  the folded query plus, for spaced numbered pinyin, the same syllables joined. */
+export function lessonQuery(query: string): { texts: string[]; exactTones: boolean } | null {
+  const typed = quotes(query.trim()).toLowerCase();
+  if (!typed) return null;
+  const numbered = /[a-zü:v][1-5]/.test(typed);
+  const trimmed = numbered ? numberedToMarks(typed).normalize('NFC') : typed;
+  const exactTones = TONED.test(trimmed.normalize('NFD')) || (numbered && trimmed !== typed);
+  const text = exactTones ? trimmed.normalize('NFC') : trimmed.normalize('NFD').replace(MARKS, '');
+  const joined = numbered && /\s/.test(text) ? text.replace(/\s+/g, '') : null;
+  return { texts: joined ? [text, joined] : [text], exactTones };
 }
 
 const SNIPPET = 60;
@@ -102,10 +120,11 @@ export function matchLesson(entry: LessonSearchEntry, query: string): LessonSear
   for (const p of entry.passages) {
     const folded = q.exactTones ? p.exactFolded : p.folded;
     const map = q.exactTones ? p.exactMap : p.map;
-    const at = folded.indexOf(q.text);
-    if (at < 0) continue;
+    const needle = q.texts.find(t => folded.includes(t));
+    if (!needle) continue;
+    const at = folded.indexOf(needle);
     const start = map[at] ?? 0;
-    const end = map[at + q.text.length] ?? p.text.length;
+    const end = map[at + needle.length] ?? p.text.length;
     const from = Math.max(0, start - SNIPPET);
     const to = Math.min(p.text.length, end + SNIPPET);
     return { lesson: entry.lesson, snippet: {
@@ -124,5 +143,5 @@ export function searchLessons(entries: LessonSearchEntry[], query: string): Less
 }
 function isHeadlineHit(entry: LessonSearchEntry, query: string): boolean {
   const q = lessonQuery(query);
-  return Boolean(q && entry.passages.some(p => p.headline && (q.exactTones ? p.exactFolded : p.folded).includes(q.text)));
+  return Boolean(q && entry.passages.some(p => p.headline && q.texts.some(t => (q.exactTones ? p.exactFolded : p.folded).includes(t))));
 }

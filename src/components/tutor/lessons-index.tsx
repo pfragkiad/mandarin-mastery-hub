@@ -50,7 +50,7 @@ function LessonSearchForm({ q, scope, onApply }: { q: string; scope: string | un
         <option value="">All lessons</option>
         {lessonScopes.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
       </select>}>
-      {({ draft, patch }) => <div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label="Search lessons" placeholder="Search lessons: 学生, xuesheng, student…" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}
+      {({ draft, patch }) => <div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label="Search lessons" placeholder="Search lessons: 学生, xue2sheng1, xuesheng, student…" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}
     </DraftFilterForm>
   </div>;
 }
