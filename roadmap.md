@@ -99,3 +99,5 @@
 - [x] Flashcards: "Lesson" deck choice (Characters from recorded catalog refs, Words from course syllabus IDs), URL-backed
 - [x] Flashcards: card back links to lessons that teach that exact record
 - [x] Rename the "Collection" dropdown to "Topic" on Flashcards, Drawing and Vocabulary
+- [x] Detail cards: lines only around the facts row and above the action buttons
+- [x] Detail cards: one section gap; half gap after facts line, before and after the action line

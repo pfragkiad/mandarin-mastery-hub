@@ -1696,17 +1696,34 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 /* Detail sheet: tighter vertical rhythm than the practice detail column — the
    floating window reads as one compact card, so section gaps shrink. */
 .detail-sheet .catalog-detail-title { margin-bottom: 14px; }
-.detail-sheet .word-detail-actions { margin: 2px 0 4px; }
-/* One section rhythm for the whole floating detail window, set only here:
-   --detail-section-gap above each divider, --detail-section-pad from divider to heading.
-   Used by the facts row, "In a sentence", Lessons, the Decomposition | Etymology drawer
-   (.detail-tabs) and the bottom actions row, so the gap below any section's last line equals
-   the gap below every other section's last line. */
-.detail-sheet { --detail-section-gap: 16px; --detail-section-pad: 14px; }
+.detail-sheet .word-detail-actions { margin: 0 0 4px; }
+/* One section rhythm for the whole floating detail window: --detail-section-pad is the half gap;
+   --detail-section-gap (two half gaps) is derived from it in the divider rules further below. */
+.detail-sheet { --detail-section-pad: 14px; }
 /* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
-.detail-sheet .catalog-facts { margin-top: var(--detail-section-gap); padding: var(--detail-section-pad) 0 0; }
+.detail-sheet .catalog-facts { margin-top: 16px; padding: var(--detail-section-pad) 0 0; }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
 .detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
+/* Dividers and spacing in the detail window. Only the facts row (Part of speech, Topic, Rank,
+   Strokes…) is framed above and below, and the bottom actions row keeps its top line as a footer;
+   other sections (In a sentence, Lessons, Decomposition | Etymology drawer, radical family) are
+   separated by whitespace alone, so bordered content such as lesson cards never stacks against an
+   extra hairline. One unit, --detail-section-pad (the "half gap"), sets every distance:
+     facts content ↔ its lines, facts line → first section, last section → action line,
+     action line → buttons: one half gap each;
+     between two sections: two half gaps (--detail-section-gap). */
+.detail-sheet { --detail-section-gap: calc(2 * var(--detail-section-pad)); }
+.detail-sheet .catalog-detail .catalog-facts { border-bottom: 1px solid var(--border); padding-bottom: var(--detail-section-pad); }
+.detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section, .detail-sheet .radical-family-section, .detail-sheet .catalog-detail .detail-tabs { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
+.detail-sheet .catalog-detail .catalog-facts + :not(.detail-reference-row) { margin-top: var(--detail-section-pad); }
+.detail-sheet .catalog-detail .detail-reference-row { margin-top: var(--detail-section-pad); padding-top: var(--detail-section-pad); }
+/* A trailing "Show N more examples" toggle keeps its padded click area, but that padding must not
+   widen the gap to the next section (block-level, so no inline line box adds its own leading). */
+.detail-sheet .glyph-usage-section > .more-examples-toggle { display: flex; width: fit-content; }
+.detail-sheet .glyph-usage-section > .more-examples-toggle:last-child { margin-bottom: -4px; }
+/* The sentence speaker button (26px) is taller than the pinyin line (~21px); letting it overhang the
+   line keeps a sentence-final section's last line exactly one section gap from the next heading. */
+.detail-sheet .sentence-reading .sentence-pinyin > button { margin-block: -3px; }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
