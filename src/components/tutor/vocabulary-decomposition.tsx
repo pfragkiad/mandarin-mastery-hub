@@ -13,14 +13,22 @@ import { CharacterDecomposition } from './character-enrichment';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 
+/** The breakdown's source ⓘ note, shown beside the Decomposition drawer tab (word detail
+ *  cards) exactly as the glyph cards show theirs. Phrases and words carry different notes. */
+export function VocabularyDecompositionInfo({ word }: { word: Word }) {
+  const phrase = vocabularyKind(word) === 'phrase';
+  return <SourceInfo inline className="detail-footnote decomposition-footnote">{phrase ? <>Source · {word.entry?.sourceName ?? 'Added this session'}<br/>Text matched to vocabulary records · not a verified grammatical analysis</> : <>Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</>}</SourceInfo>;
+}
+
 /** Shared vocabulary breakdown: matched phrase words keep their own record/readings/audio,
- * while individual glyph boxes link independently to character records. */
-export function VocabularyDecomposition({ word }: { word: Word }) {
+ * while individual glyph boxes link independently to character records. `bare` drops the
+ * section heading when the breakdown already sits inside the Decomposition drawer tab. */
+export function VocabularyDecomposition({ word, bare = false }: { word: Word; bare?: boolean }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const phrase = vocabularyKind(word) === 'phrase';
   const characters = wordCharacters(word);
     return <div className="decomposition-section vocabulary-decomposition">
-    <h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<SourceInfo inline className="detail-footnote decomposition-footnote">{phrase ? <>Source · {word.entry?.sourceName ?? 'Added this session'}<br/>Text matched to vocabulary records · not a verified grammatical analysis</> : <>Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</>}</SourceInfo></h3>
+    {!bare && <h3 className="eyebrow"><GitBranch size={13} aria-hidden="true"/>DECOMPOSITION<VocabularyDecompositionInfo word={word}/></h3>}
     {phrase ? <>
       <ul className="decomposition-tree vocabulary-parts">{phraseParts(word, items).filter(part => part.word || isChineseGlyph(part.text)).map((part, index) => {
         // Without a matching word, a single glyph can still have a recorded character card,

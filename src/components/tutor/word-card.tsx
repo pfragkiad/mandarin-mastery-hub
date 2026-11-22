@@ -15,7 +15,8 @@ import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
 import { TileSpeaker } from './tile-speaker';
 import { SoundChartLink } from './sound-chart-link';
-import { VocabularyDecomposition } from './vocabulary-decomposition';
+import { VocabularyDecomposition, VocabularyDecompositionInfo } from './vocabulary-decomposition';
+import { GlyphDetailTabs } from './detail-tabs';
 import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './lesson-links';
 import { SentenceExample } from './sentence-example';
 import { MoreExamples, SentenceSection, TileExamplesLink } from './sentence-section';
@@ -78,7 +79,10 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </SentenceSection>}
     {/* Course lessons that teach this exact HSK word (recorded entry number, never spelling). */}
     <WordLessonsSection word={word}/>
-    <VocabularyDecomposition word={word}/>
+    {/* Same collapsed Decomposition drawer as the character cards (detail-tabs.tsx), sharing
+        the remembered open choice; words and phrases have no etymology tab. */}
+    <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={null}
+      decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
     <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
   </>;
