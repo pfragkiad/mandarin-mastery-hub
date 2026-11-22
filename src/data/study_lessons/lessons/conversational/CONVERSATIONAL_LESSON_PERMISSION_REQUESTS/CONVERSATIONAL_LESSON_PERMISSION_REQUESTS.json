@@ -82,7 +82,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice ask whether someone can do something. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -288,7 +288,7 @@
           {
             "id": "convm-permission-requests--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -302,7 +302,7 @@
           {
             "id": "convm-permission-requests--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -316,14 +316,14 @@
           {
             "id": "convm-permission-requests--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-permission-requests--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: 给 (gěi) can mean to give something to someone.",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -337,7 +337,7 @@
           {
             "id": "convm-permission-requests--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -351,7 +351,7 @@
           {
             "id": "convm-permission-requests--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Ask politely for an item and respond with permission, refusal or thanks.",
             "optional": false,
             "target_id": "guided-speaking"
           }

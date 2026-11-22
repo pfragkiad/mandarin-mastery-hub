@@ -10,7 +10,7 @@ Practice ask and tell the time. Transcript-referenced conversational Mandarin st
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Negotiate a dinner time by proposing six, seven or eight o’cloc
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-clock-scheduling--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-clock-scheduling--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-clock-scheduling--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-clock-scheduling--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-clock-scheduling--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-clock-scheduling--grammar--grammar-2`
+- [ ] Understand: 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration. — ID: `convm-clock-scheduling--grammar--grammar-1`
+- [ ] Understand: Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng). — ID: `convm-clock-scheduling--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-clock-scheduling--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-clock-scheduling--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-clock-scheduling--guided-speaking--guided-speaking`
+- [ ] Negotiate a dinner time by proposing six, seven or eight o’clock. — ID: `convm-clock-scheduling--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-clock-scheduling--quiz--q-dialogue`

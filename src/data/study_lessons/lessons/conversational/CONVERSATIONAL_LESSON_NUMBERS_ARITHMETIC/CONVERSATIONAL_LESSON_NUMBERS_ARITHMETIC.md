@@ -10,7 +10,7 @@ Practice recognize numbers from one to forty-plus. Transcript-referenced convers
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice recognize numbers from one to forty-plus. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Ask and answer three addition questions in Mandarin.
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-numbers-arithmetic--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-numbers-arithmetic--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-numbers-arithmetic--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-numbers-arithmetic--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-numbers-arithmetic--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-numbers-arithmetic--grammar--grammar-2`
+- [ ] Understand: Use 加 (jiā) for addition; 多少 (duōshao) asks for the result. — ID: `convm-numbers-arithmetic--grammar--grammar-1`
+- [ ] Understand: Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit. — ID: `convm-numbers-arithmetic--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-numbers-arithmetic--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-numbers-arithmetic--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-numbers-arithmetic--guided-speaking--guided-speaking`
+- [ ] Ask and answer three addition questions in Mandarin. — ID: `convm-numbers-arithmetic--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-numbers-arithmetic--quiz--q-dialogue`

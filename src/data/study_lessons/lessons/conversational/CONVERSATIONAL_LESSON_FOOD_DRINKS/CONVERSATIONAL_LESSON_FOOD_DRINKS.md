@@ -12,7 +12,7 @@ Practice express what you would like to eat or drink. Transcript-referenced conv
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice express what you would like to eat or drink. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -103,20 +103,20 @@ Speaking task: Order a drink, specify the number of glasses, and choose between 
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-food-drinks--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-food-drinks--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-food-drinks--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-food-drinks--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-food-drinks--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-food-drinks--grammar--grammar-2`
+- [ ] Understand: Use 还是 (háishi) to present alternatives in a question. — ID: `convm-food-drinks--grammar--grammar-1`
+- [ ] Understand: 杯 (bēi) counts cups or glasses of drinks. — ID: `convm-food-drinks--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-food-drinks--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-food-drinks--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-food-drinks--guided-speaking--guided-speaking`
+- [ ] Order a drink, specify the number of glasses, and choose between two options. — ID: `convm-food-drinks--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-food-drinks--quiz--q-dialogue`

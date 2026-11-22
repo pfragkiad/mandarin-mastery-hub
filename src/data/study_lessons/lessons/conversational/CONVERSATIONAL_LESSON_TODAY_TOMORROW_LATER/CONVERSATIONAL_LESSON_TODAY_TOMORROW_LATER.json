@@ -79,7 +79,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -290,7 +290,7 @@
           {
             "id": "convm-today-tomorrow-later--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -304,7 +304,7 @@
           {
             "id": "convm-today-tomorrow-later--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -318,14 +318,14 @@
           {
             "id": "convm-today-tomorrow-later--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: Time words often precede the main verb or follow the topic.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-today-tomorrow-later--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -339,7 +339,7 @@
           {
             "id": "convm-today-tomorrow-later--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -353,7 +353,7 @@
           {
             "id": "convm-today-tomorrow-later--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Postpone plans from tonight to tomorrow, or from now to later.",
             "optional": false,
             "target_id": "guided-speaking"
           }

@@ -84,7 +84,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -290,7 +290,7 @@
           {
             "id": "convm-clock-scheduling--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -304,7 +304,7 @@
           {
             "id": "convm-clock-scheduling--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -318,14 +318,14 @@
           {
             "id": "convm-clock-scheduling--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-clock-scheduling--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -339,7 +339,7 @@
           {
             "id": "convm-clock-scheduling--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -353,7 +353,7 @@
           {
             "id": "convm-clock-scheduling--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Negotiate a dinner time by proposing six, seven or eight o’clock.",
             "optional": false,
             "target_id": "guided-speaking"
           }

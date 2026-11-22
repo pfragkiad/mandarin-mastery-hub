@@ -10,7 +10,7 @@ Practice say that you do or do not understand. Transcript-referenced conversatio
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice say that you do or do not understand. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -95,20 +95,20 @@ Speaking task: Tell someone you do not understand and ask what they said.
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-understanding-clarification--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-understanding-clarification--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-understanding-clarification--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-understanding-clarification--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-understanding-clarification--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-understanding-clarification--grammar--grammar-2`
+- [ ] Understand: Negate a mental state using 不 (bù); the next syllable is not fourth tone here. — ID: `convm-understanding-clarification--grammar--grammar-1`
+- [ ] Understand: 什么 (shénme) occupies the position of the unknown thing in the sentence. — ID: `convm-understanding-clarification--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-understanding-clarification--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-understanding-clarification--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-understanding-clarification--guided-speaking--guided-speaking`
+- [ ] Tell someone you do not understand and ask what they said. — ID: `convm-understanding-clarification--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-understanding-clarification--quiz--q-dialogue`

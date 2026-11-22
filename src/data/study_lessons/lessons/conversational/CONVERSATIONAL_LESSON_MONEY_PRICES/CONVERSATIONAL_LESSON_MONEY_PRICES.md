@@ -10,7 +10,7 @@ Practice ask how much something costs. Transcript-referenced conversational Mand
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice ask how much something costs. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Ask the price of tea or beer; answer with a simple amount in RMB 
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-money-prices--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-money-prices--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-money-prices--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-money-prices--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-money-prices--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-money-prices--grammar--grammar-2`
+- [ ] Understand: 多少钱 (duōshao qián) asks for the price. — ID: `convm-money-prices--grammar--grammar-1`
+- [ ] Understand: 块 (kuài) is the colloquial unit used to count yuan or a currency amount. — ID: `convm-money-prices--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-money-prices--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-money-prices--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-money-prices--guided-speaking--guided-speaking`
+- [ ] Ask the price of tea or beer; answer with a simple amount in RMB or dollars. — ID: `convm-money-prices--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-money-prices--quiz--q-dialogue`

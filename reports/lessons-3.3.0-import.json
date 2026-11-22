@@ -5,31 +5,27 @@
       "sha256": "e0088c00715faeb4dfe7583fd198f1a03bf02282f1f4b5eb16436b213e7bf161"
     },
     "hsk": {
-      "file": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
-      "sha256": "2eefe312a98a2ac5e8cf0b477ec3988193d6be230c66adb0c7039a673fe53afb"
+      "file": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip",
+      "sha256": "0f7357e1a61d2c5e610ebde6683ae2248a36fa50a1b05d61a92d8a39c23b7f10"
     },
     "other": {
-      "file": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip",
-      "sha256": "ea113939b3a49cf0239f1181f047e97a634a6b986a331dbb49326d7726f2c6c6"
+      "file": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev2.zip",
+      "sha256": "35bd7c5561b3b67a1d823ad04e067da84bf46cb2369d80ef5c889dc371336257"
     }
   },
   "lessons": {
     "topic-abilities-interests": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ABILITIES_INTERESTS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "e2477bf16f8ae2494f6b914c7a06958f5c60b843082aa2aec2f48ce9fb32547b",
+      "nested_sha256": "37e46da8b020dc292517ba84dcac8cb912db7639416a97c34369f5cb0c40adf8",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 写",
-        "catalog ref added back: 字",
-        "catalog ref added back: 习"
-      ]
+      "kept_current": []
     },
     "topic-animals-and-weather": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ANIMALS_AND_WEATHER",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "7d43004b693feded1bf152c103c975da982cc856d9694b8210e3dad003e0436c",
+      "nested_sha256": "4537f77a8422be2eb41b4dafa7d47a419e70c40ab2f53da7665716e7fe3f0f84",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -37,31 +33,23 @@
     "topic-basic-negation-particles": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_BASIC_NEGATION_PARTICLES",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "c79e1fc7d8d7210467edf1a582524391c6a753fbd24126e1631d1a6eca1cb13b",
+      "nested_sha256": "e7a579476b1b48bfc2a9b44ee33a047ad831e73cc794a4496f6dfb9536275bee",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 八",
-        "catalog ref added back: 点",
-        "catalog ref added back: 半",
-        "catalog ref added back: 开",
-        "catalog ref added back: 始"
-      ]
+      "kept_current": []
     },
     "topic-clock-and-day": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CLOCK_AND_DAY",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "2a2e8b5d782a9097faa642fe8411ef228e6745288a02e79a875dd8f8bb3a7cc4",
+      "nested_sha256": "6216f15d59e905d69491465e6e48343c112c5f176e90fd52620e54ffbb1ab6e9",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 生"
-      ]
+      "kept_current": []
     },
     "topic-connecting-ideas": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CONNECTING_IDEAS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "dbc8ca4211eca361cf97e3169071a40470a6667d6a93254cf9b2842da5ef7541",
+      "nested_sha256": "2f9a67f8f0631a4c3cb8d899431af1fd9c1082422fad243b7787440da80dace8",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -69,7 +57,7 @@
     "topic-counting-numbers": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_COUNTING_NUMBERS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "91e81902b0afde568c0c37fb44d4b050d4d0ddf16ad4ac7e48caf6e62c0ba130",
+      "nested_sha256": "9f4888479b13390b314d5008f9dcc0de12119a060967cd5668bc028323567cfa",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -77,22 +65,15 @@
     "topic-dates-calendar": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DATES_CALENDAR",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "1e3fd10d0cbb2a2759aada2bb0bf5a8209b6805e573edef6e229742829eae5c8",
+      "nested_sha256": "9e4003907cee9fcc1267e15b04ee311682703b7d95f9d2ecbf577efba877320b",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 老",
-        "catalog ref added back: 师",
-        "catalog ref added back: 说",
-        "catalog ref added back: 请",
-        "catalog ref added back: 问",
-        "catalog ref added back: 吗"
-      ]
+      "kept_current": []
     },
     "topic-describing-feelings": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DESCRIBING_FEELINGS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "22918213457950cd9cd7937452eb9ed3a0f3f0619f833416a78a2e8a33a62d82",
+      "nested_sha256": "956764196efa7cbc358fb174e0863dcfd9611ed8479f0c6b8e627a1df9d44a74",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -100,7 +81,7 @@
     "topic-everyday-actions": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_EVERYDAY_ACTIONS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "67d642f8903cd5b176d82bd237ddd77d6cd378d3b497c18785f0c306944a183e",
+      "nested_sha256": "bd2e1d625d2e09fd35e42952d52373da11bc6b07b400a9a580b4ce69ccb41bae",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -108,26 +89,15 @@
     "topic-family-and-friends": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FAMILY_AND_FRIENDS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "44255fa0491fc69ac82d7409b9f3a4cb54a781d223fb9551cfa4d39af6223fc2",
+      "nested_sha256": "61e67290f5a3a321589673d9d472b998d8bce5dd6bebb756e58fd3077ff64086",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 星",
-        "catalog ref added back: 期",
-        "catalog ref added back: 去",
-        "catalog ref added back: 超",
-        "catalog ref added back: 市",
-        "catalog ref added back: 买",
-        "catalog ref added back: 东",
-        "catalog ref added back: 西",
-        "catalog ref added back: 八",
-        "catalog ref added back: 点"
-      ]
+      "kept_current": []
     },
     "topic-food-and-meals": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FOOD_AND_MEALS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "eee505beb6d1184fa2452527806a48e2ed42770959af82a3a19ac4fd4918a79e",
+      "nested_sha256": "f06e7af39b71bd09479847d22dccf10ce1abd0ef2020bfcf8edb07eeda8ae37b",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -135,7 +105,7 @@
     "topic-getting-around": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_GETTING_AROUND",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "86600ec3f931b335c8ac634b9ff11d9ee8d5a1a38fe6e7d34762b8f571b1ee14",
+      "nested_sha256": "eadd3620c7bdcb9184b462caa4b974642c7007e7a0e8f58fdc71b662c6da356c",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -143,20 +113,15 @@
     "topic-health-and-rest": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_HEALTH_AND_REST",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "34d4e0f040122073b66fa315d36d496fc6c25f60795855c4eaf5bc8cd80e5e30",
+      "nested_sha256": "5774de1cd224cada48d4c01d75cd67a8678e66bcf9ed64cdd66baa7ad6ba9800",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 气",
-        "catalog ref added back: 热",
-        "catalog ref added back: 回",
-        "catalog ref added back: 们"
-      ]
+      "kept_current": []
     },
     "topic-people-and-work": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PEOPLE_AND_WORK",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "60c01d939a49b273733091f188f1207fe429ad477be02275be1fc4f71fead3c2",
+      "nested_sha256": "26ef2b9ea78996878eb8eb60db3ccb938467d021b90cf4aa2592b64cde32e126",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -164,44 +129,31 @@
     "topic-personal-pronouns": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PERSONAL_PRONOUNS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "050c597e2990a0a8ed8caf2688d99bc9933fd685cae41a0458c4a9d13bbba928",
+      "nested_sha256": "d68b1fda61cb25533cd19e33d27db5c3193e5ee0eee7d54025d70e85188dc8de",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 年"
-      ]
+      "kept_current": []
     },
     "topic-quantities-classifiers": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUANTITIES_CLASSIFIERS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "387faa97a8ae06beec18bd015b4511ebfe25bb5331815dff6e9cc5237fc7346c",
+      "nested_sha256": "9db1e604cd4975ceb20e43175052ca8b3d9d8c46026a0c707304fb87487e4283",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 商",
-        "catalog ref added back: 很",
-        "catalog ref added back: 漂",
-        "catalog ref added back: 亮",
-        "catalog ref added back: 他",
-        "catalog ref added back: 家",
-        "catalog ref added back: 她"
-      ]
+      "kept_current": []
     },
     "topic-questions-and-pointing": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUESTIONS_AND_POINTING",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "b6aa221b02059e35930d2bf9f146c25e170feae15a755f31c24e63abb0531620",
+      "nested_sha256": "f9a28d9b2e08069673beb032a24d76bab9b3a2b7d0873ceaee41306b8d6f000a",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 们",
-        "catalog ref added back: 菜"
-      ]
+      "kept_current": []
     },
     "topic-school-people-places": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "52710c680083139df817b0ac5889b0b50931a71c7127c0c72932b368bc3c78a9",
+      "nested_sha256": "99e0f93930e940d2ecef1fc55d77a0b9536a4c350dde228d2927c5329791a5b4",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -209,19 +161,15 @@
     "topic-shopping-and-things": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SHOPPING_AND_THINGS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "59f61c9d485ea60f53fabcfe9ea7c9456aed82dcdd3af48dfd9dd1212fb12c8b",
+      "nested_sha256": "d5fc1b35ff938e7c69ea2ee5260ce36c96885471ef2e9db7a0b718709d358011",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 她",
-        "catalog ref added back: 说",
-        "catalog ref added back: 问"
-      ]
+      "kept_current": []
     },
     "topic-social-conversation": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SOCIAL_CONVERSATION",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "589c84908afd9e94bafb6ee657b8779a1dc2f70b657a02257ec5ba83146fa591",
+      "nested_sha256": "6fda01a65947f556903b95b9dfcbb2c330738702b71d0c35a25cae148a3ca2f7",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -229,12 +177,10 @@
     "topic-studying-and-language": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_STUDYING_AND_LANGUAGE",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "07f5d72280288f8a07733931ddfbfec921f354cdb6fce6946fc1dba013826401",
+      "nested_sha256": "5d612557519c766bf724316bbe62890a490e407cd36c4f28514922ba95c4fc5c",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "catalog ref added back: 来"
-      ]
+      "kept_current": []
     },
     "char-6B21": {
       "directory": "src/data/study_lessons/lessons/independent/CHARACTER_LESSON_CI",
@@ -255,7 +201,7 @@
     "convm-asking-directions": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "efa15fcf28d9cb8739ea608cf7416a8a55c27287f37200550a5bb88ce2ef0295",
+      "nested_sha256": "931dafc40d3f8e4114cc8f5028cc8879e474a412be1f2f2881fa9e42a10ed90b",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -263,7 +209,7 @@
     "convm-choices-alternatives": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "ea7b82b22c0fd25e903adca8dd384cadf31040c409d751e5f1cffbe2195f1a75",
+      "nested_sha256": "1daac0d59b92305bbe7153f49dce1c714d9019fea5ac5bdab5810791b2b81939",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -271,7 +217,7 @@
     "convm-clock-scheduling": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "678d3a8840b71a56a64a1c1bec6f1d0d852675e3d26c5dbf0f3957c06fba1c31",
+      "nested_sha256": "78cd9d192ea94445c4a74ccc2c6315e6aacf2449ad3e301a9f7138979c02ee67",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -279,7 +225,7 @@
     "convm-food-drinks": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "570f4bbe52d66927e8f8aa0858d63d314d05caf17614039fc7c55f3ba41d30e6",
+      "nested_sha256": "903f632850a53c4a6b0050c92d455ae092e1969fe858ed6ab3a3a5731838de4b",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -287,7 +233,7 @@
     "convm-greetings-politeness": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "819eb9e52bc9784dbe6ee90cb32c36e090cb1aa0e6d22e0b94265aa26efb8c27",
+      "nested_sha256": "67b692fb4c30b505a64ff43fbb6dd6de926093b4dc16e555575265c61d2d6755",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -295,7 +241,7 @@
     "convm-money-prices": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "14fcf0bfe9098a7aaacbe7ba735d7074eaf13d532288bce3aae7a23f0a264d67",
+      "nested_sha256": "4c93aaaddbf78b80b45f11371ccdc7bbe52c3c4fd5317918fbeb8bf8c9511eea",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -303,7 +249,7 @@
     "convm-numbers-arithmetic": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "e6e4058c4b6fe5de590fc9645c2145e79a1698f38c926225c857df519addde65",
+      "nested_sha256": "ee98da3a46424fb2811982c93363c9708e6230b39ec4e11c017259ee6e959874",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -311,7 +257,7 @@
     "convm-people-identity": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "865263cdee234083fe6be87d637e4f621e63ae37edf0d023a710fae30cc5fed4",
+      "nested_sha256": "f0b8007055f820b38a29e8171c2c4035d380dc57b0edab611fc2624e1f00a5fe",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -319,7 +265,7 @@
     "convm-permission-requests": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "cc7eb020c47b3574a41059fe9a057dcc7e28f33aa4b4048f4f3f73e9dd86a00b",
+      "nested_sha256": "0573c7582d69a9159a346914c649341fbcccf491cba6f3fc0397ed5a8fd2ba08",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -327,7 +273,7 @@
     "convm-places-to-meet": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "2dedee72cba47d7250ee0514f1624c9599d654760c9d639f30942a8bfdacff4c",
+      "nested_sha256": "38ff13e49655c30134cd59e425a21c90a301524dc60a0500da49f3d82ba46ccd",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -335,7 +281,7 @@
     "convm-speaking-languages": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "1dc51492cd1fc63b74144a8d6f8808b0849c8b52419ca060b628c5eecf2947c0",
+      "nested_sha256": "56157bc40d202928f64ba0c8b1c82bf0839364815a72030afaaae214bc0b8b7c",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -343,7 +289,7 @@
     "convm-today-tomorrow-later": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "ed668e50487bbb90ec541ebf9c08ec22e1ad25d1e8247eb81c92132131f3b554",
+      "nested_sha256": "ca05f6f8d6159e2effdbab38f009740a2f429fcdf4b82a846bacecc141f76bdf",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -351,7 +297,7 @@
     "convm-understanding-clarification": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "0fa16d9d9bdcb1177226997e07eb156f8b5e64db67aeb1e45b71ef434a752179",
+      "nested_sha256": "462355221cabd44e3ed1ee19d41cfe1a18d6c2ebc0ede978acac30fd28ae65d6",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -359,7 +305,7 @@
     "convm-wants-intentions": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "016debb97fad689397759e1625f0dee4fdc08462bbb11fed7483c37d1361b440",
+      "nested_sha256": "1d01ef0605779efc719e83df16cdca8b98deef901119e9550eca4702550ef33d",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -367,7 +313,7 @@
     "convm-with-someone": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "86fd3ab3496996fba8d597b02ade0cb53d954ea2ab0bfcc042cb6e0549f065bb",
+      "nested_sha256": "103f57afe412d8d59c67a4ec5ba18ebc8634df59cf4ef5ba96e84ac55ee5d5fb",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -375,12 +321,10 @@
   },
   "curricula": {
     "HSK3_2025_LEVEL1.json": {
-      "taken_from_package": [
-        "description"
-      ]
+      "taken_from_package": []
     },
     "CONVERSATIONAL_MANDARIN.json": {
-      "kept_current": [
+      "taken_from_package": [
         "description",
         "edition"
       ]

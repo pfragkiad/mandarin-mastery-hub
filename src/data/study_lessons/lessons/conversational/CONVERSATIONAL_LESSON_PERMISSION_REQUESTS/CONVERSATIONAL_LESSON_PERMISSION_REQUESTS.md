@@ -10,7 +10,7 @@ Practice ask whether someone can do something. Transcript-referenced conversatio
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice ask whether someone can do something. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Ask politely for an item and respond with permission, refusal or 
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-permission-requests--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-permission-requests--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-permission-requests--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-permission-requests--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-permission-requests--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-permission-requests--grammar--grammar-2`
+- [ ] Understand: An A-not-A form of 可以 (kěyǐ) asks about possibility or permission. — ID: `convm-permission-requests--grammar--grammar-1`
+- [ ] Understand: 给 (gěi) can mean to give something to someone. — ID: `convm-permission-requests--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-permission-requests--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-permission-requests--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-permission-requests--guided-speaking--guided-speaking`
+- [ ] Ask politely for an item and respond with permission, refusal or thanks. — ID: `convm-permission-requests--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-permission-requests--quiz--q-dialogue`

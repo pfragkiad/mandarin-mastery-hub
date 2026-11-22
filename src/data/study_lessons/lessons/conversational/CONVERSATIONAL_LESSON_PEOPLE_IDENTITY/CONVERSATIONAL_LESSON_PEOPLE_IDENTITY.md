@@ -10,7 +10,7 @@ Practice say who you are and ask where another person is from. Transcript-refere
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice say who you are and ask where another person is from. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -103,20 +103,20 @@ Speaking task: Introduce yourself, ask whether someone is Chinese or American, a
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-people-identity--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-people-identity--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-people-identity--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-people-identity--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-people-identity--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-people-identity--grammar--grammar-2`
+- [ ] Understand: Use 是 (shì) to identify nationality or identity. — ID: `convm-people-identity--grammar--grammar-1`
+- [ ] Understand: 不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì). — ID: `convm-people-identity--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-people-identity--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-people-identity--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-people-identity--guided-speaking--guided-speaking`
+- [ ] Introduce yourself, ask whether someone is Chinese or American, and ask “And you?” — ID: `convm-people-identity--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-people-identity--quiz--q-dialogue`

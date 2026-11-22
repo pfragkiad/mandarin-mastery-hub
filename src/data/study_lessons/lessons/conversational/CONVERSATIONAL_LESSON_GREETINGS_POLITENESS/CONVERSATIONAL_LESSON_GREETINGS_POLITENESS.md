@@ -10,7 +10,7 @@ Practice start a polite conversation. Transcript-referenced conversational Manda
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice start a polite conversation. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -91,20 +91,20 @@ Speaking task: Greet a stranger politely, ask a simple question, then thank them
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-greetings-politeness--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-greetings-politeness--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-greetings-politeness--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-greetings-politeness--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-greetings-politeness--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-greetings-politeness--grammar--grammar-2`
+- [ ] Understand: The neutral-tone question particle 吗 (ma) can form a yes–no question. — ID: `convm-greetings-politeness--grammar--grammar-1`
+- [ ] Understand: A polite way to introduce a request for information. — ID: `convm-greetings-politeness--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-greetings-politeness--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-greetings-politeness--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-greetings-politeness--guided-speaking--guided-speaking`
+- [ ] Greet a stranger politely, ask a simple question, then thank them. — ID: `convm-greetings-politeness--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-greetings-politeness--quiz--q-dialogue`

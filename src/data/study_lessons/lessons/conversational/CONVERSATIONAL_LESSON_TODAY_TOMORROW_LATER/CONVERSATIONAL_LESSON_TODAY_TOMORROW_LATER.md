@@ -10,7 +10,7 @@ Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced co
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -103,20 +103,20 @@ Speaking task: Postpone plans from tonight to tomorrow, or from now to later.
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-today-tomorrow-later--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-today-tomorrow-later--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-today-tomorrow-later--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-today-tomorrow-later--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-today-tomorrow-later--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-today-tomorrow-later--grammar--grammar-2`
+- [ ] Understand: Time words often precede the main verb or follow the topic. — ID: `convm-today-tomorrow-later--grammar--grammar-1`
+- [ ] Understand: This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì). — ID: `convm-today-tomorrow-later--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-today-tomorrow-later--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-today-tomorrow-later--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-today-tomorrow-later--guided-speaking--guided-speaking`
+- [ ] Postpone plans from tonight to tomorrow, or from now to later. — ID: `convm-today-tomorrow-later--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-today-tomorrow-later--quiz--q-dialogue`

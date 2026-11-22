@@ -34,8 +34,8 @@ PACKAGES = {
     'core': SRC / 'Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0.zip',
     # Corrected owner release synced to vocabulary v1.7.1 (supersedes the first v3.3.0 HSK ZIP,
     # which was built from vocab v1.7.0 and kept only for the regression record).
-    'hsk': SRC / 'Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip',
-    'other': SRC / 'Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip',
+    'hsk': SRC / 'Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip',  # rev2: catalog refs repaired
+    'other': SRC / 'Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev2.zip',  # rev2: learner-facing intros/labels
 }
 # Nested lesson ZIP prefix in each package → current runtime directory.
 PLACES = {('hsk', 'hsk3/level1/'): 'hsk3/level1', ('other', 'independent/'): 'independent',
@@ -163,9 +163,9 @@ def main():
                 cur = json.loads(path.read_bytes())
                 differ = sorted(k for k in set(new) | set(cur) if new.get(k) != cur.get(k))
                 require(set(differ) <= {'description', 'edition'}, f'{name}: unexpected curriculum change {differ}')
-                # The corrected HSK release rewrote its description for learners; take it. The
-                # first handoff's reverted developer copy stays rejected.
-                take = key == 'hsk' and 'Later levels' not in new.get('description', '') and 'not reproduced' not in new.get('description', '')
+                # Corrected releases rewrote descriptions for learners; take them. The first
+                # handoff's reverted developer copy stays rejected.
+                take = 'Later levels' not in new.get('description', '') and 'not reproduced' not in new.get('description', '')
                 v.checks_curriculum(new if take else cur)
                 if take and differ: writes[path] = z.read(name)
                 report['curricula'][path.name] = {'taken_from_package' if take else 'kept_current': differ}

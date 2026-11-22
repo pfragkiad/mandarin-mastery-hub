@@ -87,7 +87,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice choose between two options in a question. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -283,7 +283,7 @@
           {
             "id": "convm-choices-alternatives--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -297,7 +297,7 @@
           {
             "id": "convm-choices-alternatives--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -311,14 +311,14 @@
           {
             "id": "convm-choices-alternatives--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: 还是 (háishi) is normal in questions that present a choice.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-choices-alternatives--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: 或者 (huòzhě) commonly offers alternatives in statements.",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -332,7 +332,7 @@
           {
             "id": "convm-choices-alternatives--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -346,7 +346,7 @@
           {
             "id": "convm-choices-alternatives--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
             "optional": false,
             "target_id": "guided-speaking"
           }

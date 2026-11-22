@@ -10,7 +10,7 @@ Practice ask where a street or place is. Transcript-referenced conversational Ma
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice ask where a street or place is. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Role-play asking for Xueyuan Road and Chang’an Street; answer h
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-asking-directions--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-asking-directions--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-asking-directions--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-asking-directions--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-asking-directions--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-asking-directions--grammar--grammar-2`
+- [ ] Understand: Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma). — ID: `convm-asking-directions--grammar--grammar-1`
+- [ ] Understand: Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在. — ID: `convm-asking-directions--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-asking-directions--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-asking-directions--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-asking-directions--guided-speaking--guided-speaking`
+- [ ] Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here. — ID: `convm-asking-directions--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-asking-directions--quiz--q-dialogue`

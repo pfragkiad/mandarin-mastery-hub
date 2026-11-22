@@ -66,7 +66,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice say who you are and ask where another person is from. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -277,7 +277,7 @@
           {
             "id": "convm-people-identity--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -291,7 +291,7 @@
           {
             "id": "convm-people-identity--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -305,14 +305,14 @@
           {
             "id": "convm-people-identity--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: Use 是 (shì) to identify nationality or identity.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-people-identity--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: 不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -326,7 +326,7 @@
           {
             "id": "convm-people-identity--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -340,7 +340,7 @@
           {
             "id": "convm-people-identity--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”",
             "optional": false,
             "target_id": "guided-speaking"
           }

@@ -10,7 +10,7 @@ Practice invite another person to eat or drink with you. Transcript-referenced c
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice invite another person to eat or drink with you. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -93,20 +93,20 @@ Speaking task: Invite someone to lunch, accept or decline, and decide where to g
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-with-someone--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-with-someone--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-with-someone--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-with-someone--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-with-someone--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-with-someone--grammar--grammar-2`
+- [ ] Understand: 跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together. — ID: `convm-with-someone--grammar--grammar-1`
+- [ ] Understand: 也 (yě) adds agreement or another participant doing the same thing. — ID: `convm-with-someone--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-with-someone--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-with-someone--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-with-someone--guided-speaking--guided-speaking`
+- [ ] Invite someone to lunch, accept or decline, and decide where to go together. — ID: `convm-with-someone--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-with-someone--quiz--q-dialogue`

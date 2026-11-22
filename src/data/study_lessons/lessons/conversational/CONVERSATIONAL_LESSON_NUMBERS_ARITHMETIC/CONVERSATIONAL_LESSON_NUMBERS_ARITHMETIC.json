@@ -62,7 +62,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+        "text": "Practice recognize numbers from one to forty-plus. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -268,7 +268,7 @@
           {
             "id": "convm-numbers-arithmetic--introduction--lesson-intro",
             "kind": "section",
-            "label": "Introduction — lesson-intro",
+            "label": "Understand the lesson goal",
             "optional": false,
             "target_id": "lesson-intro"
           }
@@ -282,7 +282,7 @@
           {
             "id": "convm-numbers-arithmetic--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Conversation — Model conversation",
+            "label": "Practise the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -296,14 +296,14 @@
           {
             "id": "convm-numbers-arithmetic--grammar--grammar-1",
             "kind": "section",
-            "label": "Grammar patterns — grammar-1",
+            "label": "Understand: Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.",
             "optional": false,
             "target_id": "grammar-1"
           },
           {
             "id": "convm-numbers-arithmetic--grammar--grammar-2",
             "kind": "section",
-            "label": "Grammar patterns — grammar-2",
+            "label": "Understand: Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.",
             "optional": false,
             "target_id": "grammar-2"
           }
@@ -317,7 +317,7 @@
           {
             "id": "convm-numbers-arithmetic--review--key-expressions",
             "kind": "section",
-            "label": "Expression review — key-expressions",
+            "label": "Review the key expressions",
             "optional": false,
             "target_id": "key-expressions"
           }
@@ -331,7 +331,7 @@
           {
             "id": "convm-numbers-arithmetic--guided-speaking--guided-speaking",
             "kind": "section",
-            "label": "Guided speaking — guided-speaking",
+            "label": "Ask and answer three addition questions in Mandarin.",
             "optional": false,
             "target_id": "guided-speaking"
           }

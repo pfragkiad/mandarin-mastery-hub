@@ -10,7 +10,7 @@ Practice suggest where to go. Transcript-referenced conversational Mandarin stud
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice suggest where to go. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -99,20 +99,20 @@ Speaking task: Invite a friend to a café, restaurant or hotel; decline one plac
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-places-to-meet--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-places-to-meet--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-places-to-meet--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-places-to-meet--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-places-to-meet--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-places-to-meet--grammar--grammar-2`
+- [ ] Understand: Combine destination and purpose in one sentence. — ID: `convm-places-to-meet--grammar--grammar-1`
+- [ ] Understand: Use 在 (zài) before a place to say where an action happens. — ID: `convm-places-to-meet--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-places-to-meet--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-places-to-meet--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-places-to-meet--guided-speaking--guided-speaking`
+- [ ] Invite a friend to a café, restaurant or hotel; decline one place and suggest another. — ID: `convm-places-to-meet--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-places-to-meet--quiz--q-dialogue`

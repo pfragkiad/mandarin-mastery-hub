@@ -10,7 +10,7 @@ Practice ask whether somebody speaks a language. Transcript-referenced conversat
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice ask whether somebody speaks a language. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -101,20 +101,20 @@ Speaking task: Ask a partner what language they speak; answer using 会 (huì), 
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-speaking-languages--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-speaking-languages--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-speaking-languages--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-speaking-languages--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-speaking-languages--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-speaking-languages--grammar--grammar-2`
+- [ ] Understand: 会 (huì) expresses acquired ability; add a language after 说 (shuō). — ID: `convm-speaking-languages--grammar--grammar-1`
+- [ ] Understand: 得 (de) introduces how well the action is performed. — ID: `convm-speaking-languages--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-speaking-languages--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-speaking-languages--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-speaking-languages--guided-speaking--guided-speaking`
+- [ ] Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn). — ID: `convm-speaking-languages--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-speaking-languages--quiz--q-dialogue`

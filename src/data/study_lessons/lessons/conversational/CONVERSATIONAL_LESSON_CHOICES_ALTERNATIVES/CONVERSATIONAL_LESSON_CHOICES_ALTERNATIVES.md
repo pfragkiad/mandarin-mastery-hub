@@ -10,7 +10,7 @@ Practice choose between two options in a question. Transcript-referenced convers
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice choose between two options in a question. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -97,20 +97,20 @@ Speaking task: Ask three choice questions: drinks, location, and time. Answer us
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-choices-alternatives--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-choices-alternatives--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-choices-alternatives--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-choices-alternatives--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-choices-alternatives--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-choices-alternatives--grammar--grammar-2`
+- [ ] Understand: 还是 (háishi) is normal in questions that present a choice. — ID: `convm-choices-alternatives--grammar--grammar-1`
+- [ ] Understand: 或者 (huòzhě) commonly offers alternatives in statements. — ID: `convm-choices-alternatives--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-choices-alternatives--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-choices-alternatives--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-choices-alternatives--guided-speaking--guided-speaking`
+- [ ] Ask three choice questions: drinks, location, and time. Answer using a complete sentence. — ID: `convm-choices-alternatives--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-choices-alternatives--quiz--q-dialogue`

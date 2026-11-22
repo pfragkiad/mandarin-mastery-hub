@@ -127,4 +127,5 @@
 - [x] Lessons v3.3: regression report on word-card examples (handoff vs current) — which version is newer
 - [x] Lessons v3.3: wire checkpoint progress, estimated minutes and icon glyph into lesson pages and cards
 - [x] Lessons v3.3: re-import the corrected HSK lesson package (vocab v1.7.1)
-- [ ] Lessons v3.3: import Other Lessons rev2 + Core rev2 (named in the owner report, not yet uploaded)
+- [x] Lessons v3.3: import Other Lessons rev2
+- [ ] Lessons v3.3: Core rev2 (named in the owner reports, not yet uploaded)

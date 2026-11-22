@@ -12,7 +12,7 @@ Practice use 想 and 要 for wants and intentions. Transcript-referenced convers
 
 ## Explanation
 
-Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript.
+Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -103,20 +103,20 @@ Speaking task: Offer food and drink, accept one offer and politely decline anoth
 Track completed checkpoints, not time spent. Optional items are bonuses.
 
 ### Introduction
-- [ ] Introduction — lesson-intro — ID: `convm-wants-intentions--introduction--lesson-intro`
+- [ ] Understand the lesson goal — ID: `convm-wants-intentions--introduction--lesson-intro`
 
 ### Conversation
-- [ ] Conversation — Model conversation — ID: `convm-wants-intentions--dialogue--model-dialogue`
+- [ ] Practise the model conversation — ID: `convm-wants-intentions--dialogue--model-dialogue`
 
 ### Grammar patterns
-- [ ] Grammar patterns — grammar-1 — ID: `convm-wants-intentions--grammar--grammar-1`
-- [ ] Grammar patterns — grammar-2 — ID: `convm-wants-intentions--grammar--grammar-2`
+- [ ] Understand: 想 (xiǎng) expresses a wish or desire followed by a verb. — ID: `convm-wants-intentions--grammar--grammar-1`
+- [ ] Understand: An A-not-A question asks whether someone wants to do something. — ID: `convm-wants-intentions--grammar--grammar-2`
 
 ### Expression review
-- [ ] Expression review — key-expressions — ID: `convm-wants-intentions--review--key-expressions`
+- [ ] Review the key expressions — ID: `convm-wants-intentions--review--key-expressions`
 
 ### Guided speaking
-- [ ] Guided speaking — guided-speaking — ID: `convm-wants-intentions--guided-speaking--guided-speaking`
+- [ ] Offer food and drink, accept one offer and politely decline another. — ID: `convm-wants-intentions--guided-speaking--guided-speaking`
 
 ### Practice
 - [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-wants-intentions--quiz--q-dialogue`
