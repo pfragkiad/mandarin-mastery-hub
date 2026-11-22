@@ -180,8 +180,8 @@ Do not reverse the English month/day order: 十号五月 is not a normal calenda
 **Comprehension:** In the example “今天是十月十四号。” (jīntiān shì shí yuè shísì hào.), what is happening?
 **Answer:** Today is October 14.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “October 5 is a Monday.”
-**Answer:** 十月五号是星期一。 (shí yuè wǔ hào shì xīngqīyī.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: The teacher said, “There’s no class on October 5.”
+**Answer:** 老师说：“十月五号不上课。” (lǎoshī shuō: “shí yuè wǔ hào bú shàngkè.”). Compare your answer with the example and its tone-marked pinyin.
 
 
 ## Learning checkpoints
@@ -220,7 +220,7 @@ Track completed checkpoints, not time spent. Optional items are bonuses.
 - [ ] Which expression means “day”? *(optional)* — ID: `topic-dates-calendar--quiz--q-08-2`
 - [ ] Which expression means “yesterday”? *(optional)* — ID: `topic-dates-calendar--quiz--q-08-3`
 - [ ] In the example “今天是十月十四号。” (jīntiān shì shí yuè shísì hào.), what is happening? — ID: `topic-dates-calendar--quiz--q-08-4`
-- [ ] Write this in Mandarin: “October 5 is a Monday.” — ID: `topic-dates-calendar--quiz--q-08-5`
+- [ ] Write this in Mandarin: The teacher said, “There’s no class on October 5.” — ID: `topic-dates-calendar--quiz--q-08-5`
 - [ ] Reading comprehension: What does Xiao Li want to do on Saturday? — ID: `topic-dates-calendar--quiz--applied-reading-1`
 - [ ] Reading comprehension: What will he do on Sunday? — ID: `topic-dates-calendar--quiz--applied-reading-2`
 - [ ] Say this aloud: Ask someone what day of the week it is. — ID: `topic-dates-calendar--quiz--applied-speaking-1`

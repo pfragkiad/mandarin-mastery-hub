@@ -184,8 +184,8 @@ Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choos
 **Comprehension:** In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening?
 **Answer:** I can speak Chinese.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “My younger sister can sing.”
-**Answer:** 我妹妹会唱歌。 (wǒ mèimei huì chàng gē.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “She can write many Chinese characters.”
+**Answer:** 她会写很多汉字。 (tā huì xiě hěn duō hànzì.). Compare your answer with the example and its tone-marked pinyin.
 
 
 ## Learning checkpoints
@@ -224,7 +224,7 @@ Track completed checkpoints, not time spent. Optional items are bonuses.
 - [ ] Which expression means “have”? *(optional)* — ID: `topic-abilities-interests--quiz--q-17-2`
 - [ ] Which expression means “fun”? *(optional)* — ID: `topic-abilities-interests--quiz--q-17-3`
 - [ ] In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening? — ID: `topic-abilities-interests--quiz--q-17-4`
-- [ ] Write this in Mandarin: “My younger sister can sing.” — ID: `topic-abilities-interests--quiz--q-17-5`
+- [ ] Write this in Mandarin: “She can write many Chinese characters.” — ID: `topic-abilities-interests--quiz--q-17-5`
 - [ ] Reading comprehension: Why can Xiaoming not go to the cinema today? — ID: `topic-abilities-interests--quiz--applied-reading-1`
 - [ ] Reading comprehension: When does he want to go? — ID: `topic-abilities-interests--quiz--applied-reading-2`
 - [ ] Say this aloud: Ask a friend which activity they would like to do today. — ID: `topic-abilities-interests--quiz--applied-speaking-1`

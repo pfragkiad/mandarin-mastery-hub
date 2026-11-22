@@ -5,8 +5,8 @@
       "sha256": "e0088c00715faeb4dfe7583fd198f1a03bf02282f1f4b5eb16436b213e7bf161"
     },
     "hsk": {
-      "file": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0.zip",
-      "sha256": "fd3a1e9c870d7e0d7b829b4a4b4db55473bf1b8f47853758e262ce32dbd353f0"
+      "file": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "sha256": "2eefe312a98a2ac5e8cf0b477ec3988193d6be230c66adb0c7039a673fe53afb"
     },
     "other": {
       "file": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip",
@@ -17,54 +17,51 @@
     "topic-abilities-interests": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ABILITIES_INTERESTS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "8c462a411331b14d0d6056e379f0f03414b8a13324b2853f9a84720b9692f03e",
+      "nested_sha256": "e2477bf16f8ae2494f6b914c7a06958f5c60b843082aa2aec2f48ce9fb32547b",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-082 会",
-        "examples kept: w-145 能",
-        "examples kept: w-075 好玩儿",
-        "question kept: q-17-5"
+        "catalog ref added back: 写",
+        "catalog ref added back: 字",
+        "catalog ref added back: 习"
       ]
     },
     "topic-animals-and-weather": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ANIMALS_AND_WEATHER",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "3ccb06eb85bef0f1c2d2267149fdc26ef112981e07a30092fef205a91029662b",
+      "nested_sha256": "7d43004b693feded1bf152c103c975da982cc856d9694b8210e3dad003e0436c",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "examples kept: w-267 雨"
-      ]
+      "kept_current": []
     },
     "topic-basic-negation-particles": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_BASIC_NEGATION_PARTICLES",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "fa1669f8942e5ebef1d7941bbe7c8db0d1043c2d82565803b6d4a72d515cd0bd",
+      "nested_sha256": "c79e1fc7d8d7210467edf1a582524391c6a753fbd24126e1631d1a6eca1cb13b",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-108 了"
+        "catalog ref added back: 八",
+        "catalog ref added back: 点",
+        "catalog ref added back: 半",
+        "catalog ref added back: 开",
+        "catalog ref added back: 始"
       ]
     },
     "topic-clock-and-day": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CLOCK_AND_DAY",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "3cbc6c00ca427fe127f859fc36dcd6f03821f010b74f814d550e2505eccf635e",
+      "nested_sha256": "2a2e8b5d782a9097faa642fe8411ef228e6745288a02e79a875dd8f8bb3a7cc4",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-005 白天",
-        "question kept: q-07-5"
+        "catalog ref added back: 生"
       ]
     },
     "topic-connecting-ideas": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CONNECTING_IDEAS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "bdaf2d0bc6e1beebac5662b894e724c1dc0799a2013588fdf21bdfb3bf61820a",
+      "nested_sha256": "dbc8ca4211eca361cf97e3169071a40470a6667d6a93254cf9b2842da5ef7541",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -72,7 +69,7 @@
     "topic-counting-numbers": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_COUNTING_NUMBERS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "5f5bf19e9b35ab84e81f3c9b100556a3afec0058cdd333715ff75841dec9cae9",
+      "nested_sha256": "91e81902b0afde568c0c37fb44d4b050d4d0ddf16ad4ac7e48caf6e62c0ba130",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -80,20 +77,22 @@
     "topic-dates-calendar": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DATES_CALENDAR",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "a922e892e51a70d9669480372d3518777020ab0f0ca388cd0081903aafd0bb70",
+      "nested_sha256": "1e3fd10d0cbb2a2759aada2bb0bf5a8209b6805e573edef6e229742829eae5c8",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-076 号",
-        "examples kept: w-172 日",
-        "question kept: q-08-5"
+        "catalog ref added back: 老",
+        "catalog ref added back: 师",
+        "catalog ref added back: 说",
+        "catalog ref added back: 请",
+        "catalog ref added back: 问",
+        "catalog ref added back: 吗"
       ]
     },
     "topic-describing-feelings": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DESCRIBING_FEELINGS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "e74921ea0533dba79f4f03fa2774081e09a06af7387db81cccd388c9a22e6b26",
+      "nested_sha256": "22918213457950cd9cd7937452eb9ed3a0f3f0619f833416a78a2e8a33a62d82",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -101,7 +100,7 @@
     "topic-everyday-actions": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_EVERYDAY_ACTIONS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "d7b7eb3d10e61739fefe0b5cb1740697b6f2a262a614c06e7f51ae1f00ecdf14",
+      "nested_sha256": "67d642f8903cd5b176d82bd237ddd77d6cd378d3b497c18785f0c306944a183e",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -109,105 +108,100 @@
     "topic-family-and-friends": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FAMILY_AND_FRIENDS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "68d22046cdf8c2466ff0ea80fd770dac4b11c11181d34d7cf3a7811418a30494",
+      "nested_sha256": "44255fa0491fc69ac82d7409b9f3a4cb54a781d223fb9551cfa4d39af6223fc2",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-086 家",
-        "examples kept: w-087 家人",
-        "examples kept: w-092 姐姐"
+        "catalog ref added back: 星",
+        "catalog ref added back: 期",
+        "catalog ref added back: 去",
+        "catalog ref added back: 超",
+        "catalog ref added back: 市",
+        "catalog ref added back: 买",
+        "catalog ref added back: 东",
+        "catalog ref added back: 西",
+        "catalog ref added back: 八",
+        "catalog ref added back: 点"
       ]
     },
     "topic-food-and-meals": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FOOD_AND_MEALS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "ee088f39b1cd3125e50f5b27bd28aecc1a911c85dad630f9e21b2c73d0166bde",
+      "nested_sha256": "eee505beb6d1184fa2452527806a48e2ed42770959af82a3a19ac4fd4918a79e",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "examples kept: w-072 好吃",
-        "examples kept: w-127 面条儿"
-      ]
+      "kept_current": []
     },
     "topic-getting-around": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_GETTING_AROUND",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "9e5384cde3a36997759295406901bb53c4c2a9f88165842bd9d267bd5b6252bd",
+      "nested_sha256": "86600ec3f931b335c8ac634b9ff11d9ee8d5a1a38fe6e7d34762b8f571b1ee14",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "examples kept: w-226 下"
-      ]
+      "kept_current": []
     },
     "topic-health-and-rest": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_HEALTH_AND_REST",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "f1555d6604e33f9d0c2cc53a6064f549911ea4dee67dd5b0b3831a58aa1cef9e",
+      "nested_sha256": "34d4e0f040122073b66fa315d36d496fc6c25f60795855c4eaf5bc8cd80e5e30",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-104 口",
-        "examples kept: w-161 起床"
+        "catalog ref added back: 气",
+        "catalog ref added back: 热",
+        "catalog ref added back: 回",
+        "catalog ref added back: 们"
       ]
     },
     "topic-people-and-work": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PEOPLE_AND_WORK",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "0ed473c4677e9c1409ac655465f5c96beb88deb83f7ded9cf8d37f490d2a4300",
+      "nested_sha256": "60c01d939a49b273733091f188f1207fe429ad477be02275be1fc4f71fead3c2",
       "required": 18,
       "optional": 3,
-      "kept_current": [
-        "examples kept: w-176 上班"
-      ]
+      "kept_current": []
     },
     "topic-personal-pronouns": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PERSONAL_PRONOUNS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "ecfd31eccd7c7e2ed1c64b32ef584aa69bc575b034644875f8948332acb7d730",
+      "nested_sha256": "050c597e2990a0a8ed8caf2688d99bc9933fd685cae41a0458c4a9d13bbba928",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-148 你们",
-        "examples kept: w-150 您",
-        "examples kept: w-221 我",
-        "examples kept: w-222 我们"
+        "catalog ref added back: 年"
       ]
     },
     "topic-quantities-classifiers": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUANTITIES_CLASSIFIERS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "6ea28ebc701cbc9f4699bca0cd51ebcc9cca2b0a288111e7c2d0853a8b60b133",
+      "nested_sha256": "387faa97a8ae06beec18bd015b4511ebfe25bb5331815dff6e9cc5237fc7346c",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-089 件",
-        "examples kept: w-258 一半",
-        "examples kept: w-261 一点儿",
-        "examples kept: w-265 有点儿"
+        "catalog ref added back: 商",
+        "catalog ref added back: 很",
+        "catalog ref added back: 漂",
+        "catalog ref added back: 亮",
+        "catalog ref added back: 他",
+        "catalog ref added back: 家",
+        "catalog ref added back: 她"
       ]
     },
     "topic-questions-and-pointing": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUESTIONS_AND_POINTING",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "f7f3ce5ec73d419b42b15533a681fe101acb381087bca95f5f954dda5fe75d3a",
+      "nested_sha256": "b6aa221b02059e35930d2bf9f146c25e170feae15a755f31c24e63abb0531620",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-131 哪",
-        "examples kept: w-140 那儿",
-        "examples kept: w-277 怎么样",
-        "examples kept: w-283 这儿"
+        "catalog ref added back: 们",
+        "catalog ref added back: 菜"
       ]
     },
     "topic-school-people-places": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "845771caebb9b90a81c7a0b2580258f9903d3a3e1799e33ab5c1360fc2ed42e7",
+      "nested_sha256": "52710c680083139df817b0ac5889b0b50931a71c7127c0c72932b368bc3c78a9",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -215,19 +209,19 @@
     "topic-shopping-and-things": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SHOPPING_AND_THINGS",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "8e538257c782c3160ce807565b62814426d8a7ac5a80a9af19c95692ad371a12",
+      "nested_sha256": "59f61c9d485ea60f53fabcfe9ea7c9456aed82dcdd3af48dfd9dd1212fb12c8b",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-105 块",
-        "examples kept: w-268 元"
+        "catalog ref added back: 她",
+        "catalog ref added back: 说",
+        "catalog ref added back: 问"
       ]
     },
     "topic-social-conversation": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SOCIAL_CONVERSATION",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "c57a351b74a621f5bfddadc7c6c42ea9942e428f72280aa0e3c22ffe329ee973",
+      "nested_sha256": "589c84908afd9e94bafb6ee657b8779a1dc2f70b657a02257ec5ba83146fa591",
       "required": 18,
       "optional": 3,
       "kept_current": []
@@ -235,12 +229,11 @@
     "topic-studying-and-language": {
       "directory": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_STUDYING_AND_LANGUAGE",
       "schema_version": "mandarin-topic-lesson/3.3.0",
-      "nested_sha256": "3b1e547d5a7d4cda288dfc4c7ca6bbceec518e6267f42bb78cf4b47d23c6fcff",
+      "nested_sha256": "07f5d72280288f8a07733931ddfbfec921f354cdb6fce6946fc1dba013826401",
       "required": 18,
       "optional": 3,
       "kept_current": [
-        "catalog_character_refs kept",
-        "examples kept: w-197 说话"
+        "catalog ref added back: 来"
       ]
     },
     "char-6B21": {
@@ -382,7 +375,7 @@
   },
   "curricula": {
     "HSK3_2025_LEVEL1.json": {
-      "kept_current": [
+      "taken_from_package": [
         "description"
       ]
     },

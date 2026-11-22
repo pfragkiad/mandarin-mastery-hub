@@ -881,7 +881,7 @@
         {
           "id": "q-08-5",
           "kind": "production",
-          "prompt": "Write this in Mandarin: “The teacher said, “There’s no class on October 5.””",
+          "prompt": "Write this in Mandarin: The teacher said, “There’s no class on October 5.”",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "老师说：“十月五号不上课。” (lǎoshī shuō: “shí yuè wǔ hào bú shàngkè.”)",
@@ -1262,7 +1262,7 @@
           {
             "id": "topic-dates-calendar--quiz--q-08-5",
             "kind": "practice",
-            "label": "Write this in Mandarin: “October 5 is a Monday.”",
+            "label": "Write this in Mandarin: The teacher said, “There’s no class on October 5.”",
             "optional": false,
             "target_id": "q-08-5"
           },

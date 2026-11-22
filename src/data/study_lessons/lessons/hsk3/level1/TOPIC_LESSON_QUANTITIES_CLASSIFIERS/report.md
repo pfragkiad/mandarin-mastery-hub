@@ -1,3 +1,14 @@
+# Current release source synchronization — topic-quantities-classifiers
+
+- Embedded HSK Level 1 word cards: `hsk3_level1_1.7.1.json` (data version **1.7.1**, 300 syllabus entries).
+- Topic taxonomy: `hsk3_topics(2).json` / taxonomy **v2.0.0**.
+- Lesson contract: `mandarin-topic-lesson/3.3.0`; stable `lesson_id`, checkpoints, and curriculum placements unchanged.
+- Source-card examples updated in this lesson for syllabus IDs: 89, 258, 261, 265.
+- Existing corrected segmentation for ID 36 `电脑` retained where applicable.
+- The historical input/provenance section below describes the original authoring baseline, **not** the current word-card release.
+
+---
+
 # Content report: Counting Real Things
 
 ## Input and provenance
