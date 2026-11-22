@@ -5,7 +5,7 @@ import { Volume2, Quote } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { vocabularyKind, words as vocabularyWords, type Word } from '@/lib/mandarin';
+import { vocabularyKind, wordCollections, words as vocabularyWords, type Word } from '@/lib/mandarin';
 import { phraseParts } from '@/lib/vocabulary-decomposition';
 import { matchedWordSpans, phraseTileLines } from '@/lib/phrase-tile-fit';
 import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
@@ -23,7 +23,7 @@ import { MoreExamples, SentenceHints, SentenceSection, TileExamplesLink } from '
 import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
 import { isHanziChar } from '@/lib/sentence-align';
 import { RecordDetailTitle } from './record-detail-title';
-import { RadicalPill } from './radical-pill';
+import { WordIdentityPills, wordHskPill } from './word-identity-pills';
 import { wordInk, wordRadicalNumber } from '@/lib/card-ink';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
@@ -31,15 +31,6 @@ import { useCardTopRowFit } from './use-card-top-row-fit';
 import { useCardFooterFit } from './use-card-footer-fit';
 import { usePhrasePairing } from './phrase-pairing';
 import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
-
-/** Recorded sentence style of a phrase (Conversational / Written) as a card or detail pill.
- *  Input: the phrase's Word. Unclassified phrases render nothing, so no pill implies a style
- *  that was never recorded. */
-function PhraseStylePill({ word }: { word: Word }) {
-  const style = phraseStyle(word.entry);
-  if (style === 'Unclassified') return null;
-  return <span className="word-hsk-id phrase-style-pill" title={`${style} style, as recorded with the sentence`}>{style}</span>;
-}
 
 /**
  * Detail heading glyphs of a multi-character word or phrase.
@@ -80,8 +71,11 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const bookmarked = saved.includes(word.id);
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
-  // Same Radical #N pill and gold ink as the grid card and the glyph's Characters card (card-ink.ts).
-  const detailRadical = wordRadicalNumber(word.hanzi);
+  // Same pills as the grid card's top row (word-identity-pills.tsx): merged HSK L<level>/#<id>,
+  // gold Radical #N, phrase style; Traditional comes from the title's own `script` pill.
+  const hskPill = wordHskPill(word);
+  const hasPills = hskPill !== null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
+  const topics = wordCollections(word).filter(Boolean);
   // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
   // Multi-character words pair the same way; single glyphs have nothing to pair.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
@@ -91,13 +85,15 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const headwordHints = true;
   // One hints provider for the whole card: the heading and "In a sentence" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
-    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified' ? { pill: <PhraseStylePill word={word}/> } : detailRadical !== undefined ? { pill: <span className="word-hsk-id" title="Sourced Kangxi radical identity of this character">Radical #{detailRadical}</span> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
-    <dl className="catalog-facts">
-      <div><dt>Level</dt><dd className="catalog-record-value">{word.level}{word.hskId != null && <span className="word-hsk-id hsk-level-pill" title={word.entry?.sentenceSource?.hskFromWord ? `HSK 3.0 ID recorded for ${word.entry.sentenceSource.hskFromWord}, the word this sentence comes from` : 'Official ID in the HSK 3.0 syllabus'}>ID {word.hskId}</span>}</dd></div>
-      <div><dt>Record</dt><dd className="catalog-record-value">{word.type}</dd></div>
-      {word.collection && <div><dt>Collection</dt><dd className="catalog-record-value">{word.collections?.join(' · ') || word.collection}</dd></div>}
-    </dl>
+    {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
+        row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
+    {(word.type || topics.length > 0 || !hskPill) && <dl className="catalog-facts">
+      {!hskPill && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
+      {word.type && <div><dt>Part of speech</dt><dd className="catalog-record-value">{word.type}</dd></div>}
+      {topics.length > 0 && <div><dt>{topics.length > 1 ? 'Topics' : 'Topic'}</dt><dd className="catalog-record-value">{topics.join(' · ')}</dd></div>}
+    </dl>}
     {word.entry?.studyMetadata?.posNote && <p className="library-note">{word.entry.studyMetadata.posNote}</p>}
     {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
         sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
@@ -195,10 +191,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // three in Comfortable) drops its last semicolon senses on the card only; the first always stays.
   const cardMeaning = useSenseTrim(bodyRef, word.meaning);
   useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView], { shrinkText: true, rowSync: true });
-  const hskPill = hskLevel != null || word.hskId != null ? `HSK${hskLevel != null ? ` L${hskLevel}` : ''}${word.hskId != null ? `${hskLevel != null ? '/' : ' '}#${word.hskId}` : ''}` : null;
-  // A sentence phrase shows the level and syllabus index recorded for its owning parent word.
-  const hskFrom = word.entry?.sentenceSource?.hskFromWord ?? null;
-  const hskTitle = hskFrom ? `HSK 3.0 level and ID recorded for ${hskFrom}, the word this sentence comes from` : 'HSK 3.0 level / official ID in the syllabus';
+  // The HSK, Radical, Traditional and phrase-style pills come from WordIdentityPills, shared with the detail card.
   // One-character words that are sourced radicals (八, 门) share their Characters card's gold
   // ink and Radical #N pill (card-ink.ts wordInk/wordRadicalNumber, the one central rule).
   const ink = wordInk(word);
@@ -216,7 +209,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}{wordStyleTop ? hskPill && <span className="word-hsk-id hsk-level-pill" title={hskTitle}>{hskPill}</span> : word.hskId != null && <span className="word-hsk-id hsk-level-pill" title="Official ID in the HSK 3.0 syllabus">ID {word.hskId}</span>}{radicalNumber !== undefined && <RadicalPill number={radicalNumber} title="Sourced Kangxi radical identity of this character"/>}{word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}{isPhrase && <PhraseStylePill word={word}/>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
+    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}<WordIdentityPills word={word}/></span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
