@@ -4361,8 +4361,12 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }
 .lesson-hint-run:hover { box-shadow: 0 0 0 1px color-mix(in oklch, var(--primary) 55%, transparent); }
 
-/* Word cards' Etymology tab (word-etymology.tsx): one block per character, divided like
-   the decomposition list, each headed by its tile, reading and meaning. */
-.etymology-section .etymology-word-parts { display: grid; gap: 16px; }
-.etymology-section .etymology-word-part { display: grid; gap: 10px; min-width: 0; }
-.etymology-section .etymology-word-part + .etymology-word-part { border-top: 1px solid var(--border); padding-top: 16px; }
+/* Word cards' Etymology tab (word-etymology.tsx): each character's heading copies the word
+   Decomposition list (.vocabulary-parts: 58px tile, 18px between characters). Only the heading
+   tile is sized here, so tiles inside the notes (related forms) keep their usual size. */
+.etymology-section .etymology-word-part { min-width: 0; }
+.etymology-section .etymology-word-parts > li + li { margin-top: 18px; }
+.etymology-section .etymology-word-part > .decomposition-part { min-height: 46px; }
+/* :where keeps this at the .vocabulary-parts weight, so Comfortable's shared tile size still wins. */
+:where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
+:where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph strong { font-size: 40px; }

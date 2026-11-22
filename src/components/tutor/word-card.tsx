@@ -76,12 +76,10 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   // a one-character word asks exactly like that character's card, so both show the same notes.
   const etymology = useMemo(() => {
     if (vocabularyKind(word) !== 'word') return null;
-    // 爸爸 still lists its one unique character under a heading: only a one-character word
-    // drops the heading, so a repeated character never reads as the whole word's notes.
-    const glyphs = wordCharacters(word).map(part => part.text);
-    const requests = wordEtymologyRequests(glyphs);
-    const [only] = requests;
-    return glyphs.length === 1 && only ? only : requests.length ? requests : null;
+    // Every word lists its characters under headings, as its Decomposition does — even a
+    // one-character word (百) and a repeated one (爸爸, listed once).
+    const requests = wordEtymologyRequests(wordCharacters(word).map(part => part.text));
+    return requests.length ? requests : null;
   }, [word]);
   // Same pills as the grid card's top row (word-identity-pills.tsx): merged HSK L<level>/#<id>,
   // gold Radical #N, phrase style; Traditional comes from the title's own `script` pill.
@@ -120,7 +118,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <WordLessonsSection word={word}/>
     {/* Same collapsed Decomposition | Etymology drawer as the character cards (detail-tabs.tsx),
         sharing the remembered open choice. Words inherit etymology from their characters
-        (one-character word: exactly that character's notes; longer: one block per unique character); phrases have none. */}
+        (one headed block per unique character, like the Decomposition list); phrases have none. */}
     <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={etymology}
       decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}

@@ -10,10 +10,11 @@ import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { EtymologyPanel, EtymologyRecordLink, EtymologySourcesInfo, etymologyHasContent } from './etymology-section';
 
 /**
- * Etymology tab body for a multi-character word card (owner-requested: inherited from the
- * word's characters, like its Decomposition). Howell and Shuowen Jiezi are indexed by single
+ * Etymology tab body for every word card (owner-requested: inherited from the word's
+ * characters and laid out like its Decomposition, which lists the character even for a
+ * one-character word such as 百). Howell and Shuowen Jiezi are indexed by single
  * characters, so each unique character of the word gets its own block, in word order:
- * - a heading row with the character tile, its own catalogue reading and speaker, and meaning;
+ * - the Decomposition's heading row: character tile, its own catalogue reading + speaker, meaning;
  * - that character's notes through the shared EtymologyPanel (exact `Characters:<glyph>`
  *   request only; any identity/integrity failure resolves null and reads "no entry");
  * - "No entry recorded" for characters the sources do not cover.
@@ -36,25 +37,29 @@ function CharacterHeading({ glyph, hasNotes }: { glyph: string; hasNotes: boolea
     : destination
       ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button>
       : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
-  return <div className="glyph-usage-reference etymology-word-heading">
+  // Same heading markup as the word Decomposition list (vocabulary-decomposition.tsx):
+  // tile, then reading + speaker over the meaning, so both tabs introduce a character alike.
+  return <div className="decomposition-part">
     {tile}
-    <span className="example-pinyin-row">{isMultiReading(reading)
-      ? <MultiReadingSpeakers spoken={glyph} reading={reading} variant="example"/>
-      : <><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</>}</span>
-    {facts?.meaning && <span className="glyph-usage-meaning">{facts.meaning}</span>}
+    <div className="vocabulary-part-facts">
+      <span className="example-pinyin-row">{isMultiReading(reading)
+        ? <MultiReadingSpeakers spoken={glyph} reading={reading} variant="example"/>
+        : <><span className="pinyin">{reading || '—'}</span>{reading && <ExamplePronunciation request={characterAudioRequest(glyph, reading)} label={`character ${glyph}`}/>}</>}</span>
+      <small>{facts?.meaning || 'Meaning not recorded'}</small>
+    </div>
   </div>;
 }
 
 export function WordEtymologyPanel({ requests, views }: { requests: readonly EtymologyRequest[]; views: (EtymologyView | null)[] | undefined }) {
   if (views === undefined) return <EtymologyPanel view={undefined}/>;
-  return <div className="etymology-word-parts">{requests.map((request, index) => {
+  return <ul className="decomposition-tree etymology-word-parts">{requests.map((request, index) => {
     const view = views[index] ?? null;
     const hasNotes = etymologyHasContent(view);
-    return <section key={request.recordId} className="etymology-word-part" aria-label={`Etymology of ${request.glyph}`}>
+    return <li key={request.recordId} className="etymology-word-part" aria-label={`Etymology of ${request.glyph}`}>
       <CharacterHeading glyph={request.glyph} hasNotes={hasNotes && view?.status === 'exact-headword'}/>
       {hasNotes ? <EtymologyPanel view={view}/> : <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{request.glyph}</span> in Howell or Shuowen Jiezi.</p>}
-    </section>;
-  })}</div>;
+    </li>;
+  })}</ul>;
 }
 
 /** Source ⓘ for the word tab: only characters with notes, each line prefixed by its character. */

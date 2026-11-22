@@ -106,8 +106,8 @@ describe('Glyph detail drawer tabs', () => {
     render(<GlyphDetailTabs cardKey="word-test-1" decomposition={decomposition} etymology={[{ recordId: 'Characters:古', glyph: '古' }, { recordId: 'Characters:们', glyph: '们' }]}/>);
     await flush();
     fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
-    expect(screen.getByRole('region', { name: 'Etymology of 古' })).toHaveTextContent('ancient');
-    expect(screen.getByRole('region', { name: 'Etymology of 们' })).toHaveTextContent('No entry for 们 in Howell or Shuowen Jiezi.');
+    expect(screen.getByRole('listitem', { name: 'Etymology of 古' })).toHaveTextContent('ancient');
+    expect(screen.getByRole('listitem', { name: 'Etymology of 们' })).toHaveTextContent('No entry for 们 in Howell or Shuowen Jiezi.');
   });
 
   it('hides the word Etymology tab when none of its characters has notes', async () => {
