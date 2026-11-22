@@ -18,6 +18,7 @@ import { isStaleBuildError, reloadForStaleBuild, STALE_BUILD_RELOAD_SCRIPT } fro
 import { TutorShell } from "@/components/tutor/shell";
 import { WorkspaceProvider } from "@/components/tutor/workspace";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -146,7 +147,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider delayDuration={160} skipDelayDuration={300} disableHoverableContent><WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider></TooltipProvider>
+      <TooltipProvider delayDuration={160} skipDelayDuration={300} disableHoverableContent><WorkspaceProvider><TutorShell><Outlet /></TutorShell></WorkspaceProvider><Toaster position="bottom-center" offset={{ bottom: "var(--toast-bottom)" }} mobileOffset={{ bottom: "var(--toast-bottom)" }}/></TooltipProvider>
     </QueryClientProvider>
   );
 }

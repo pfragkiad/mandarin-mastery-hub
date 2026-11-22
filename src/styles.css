@@ -4668,3 +4668,74 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-checkpoint-box svg { width: 13px; height: 13px; }
 .lesson-progress-time { font-size: inherit; font-weight: 400; color: var(--muted-foreground); }
 .lesson-index-facts { font-size: 12px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+
+/* Lesson sidebar (wide layout), the designer's three blocks: the progress card pinned at the
+   top, only the section list scrolls, display controls pinned at the bottom. The sidebar is a
+   fixed-height flex column (viewport minus its sticky offset) so the bottom controls never
+   fall out of view on short screens. */
+.lesson-page:not(.is-narrow) .lesson-toc { height: calc(100dvh - 104px); min-height: 320px; gap: 0; }
+.lesson-toc .lesson-toc-progress { flex: none; }
+.lesson-toc-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 4px; scrollbar-width: thin; }
+.lesson-toc-list .eyebrow { margin-bottom: 8px; }
+.lesson-toc-tools { flex: none; display: flex; flex-direction: column; gap: 12px; padding-top: 12px; margin-top: 12px; border-top: 1px solid var(--border); }
+.lesson-toc-tools .lesson-hints-toggle { margin-top: 0; }
+.lesson-toc-progress-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lesson-progress-menu { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 22px; margin: -4px -6px -4px 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted-foreground); cursor: pointer; transition: color .15s, background .15s; }
+.lesson-progress-menu:hover, .lesson-progress-menu:focus-visible, .lesson-progress-menu[data-state='open'] { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
+.lesson-progress-menu svg { width: 16px; height: 16px; }
+.lesson-progress-menu-list svg { width: 14px; height: 14px; }
+.lesson-progress-menu-list .is-destructive { color: var(--destructive); }
+.lesson-toc-progress.is-confirming { gap: 8px; border-color: color-mix(in oklab, var(--destructive) 55%, var(--border)); }
+.lesson-confirm-title { margin: 0; font-weight: 600; color: var(--foreground); }
+.lesson-confirm-copy { margin: 0; line-height: 1.4; }
+.lesson-confirm-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+/* One row of display toggles (on = shown): 汉 Hanzi · pīn Pinyin · EN. */
+.lesson-study-toggles { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.lesson-study-toggle { flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; padding: 7px 4px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 12px; cursor: pointer; transition: color .15s, background .15s; }
+.lesson-study-toggle + .lesson-study-toggle { border-left: 1px solid var(--border); }
+.lesson-study-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
+.lesson-study-toggle:hover, .lesson-study-toggle:focus-visible { color: var(--primary); outline: none; }
+.lesson-study-mark { font-size: 12px; color: inherit; opacity: .8; }
+
+/* Quiet resets at natural moments: "Start over" is plain text; "Practice this lesson again"
+   sits below the main Next action as a secondary outline button. */
+.lesson-reset-link { padding: 0; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 13px; cursor: pointer; transition: color .15s; }
+.lesson-reset-link:hover, .lesson-reset-link:focus-visible { color: var(--primary); }
+.lesson-finish-actions.is-stacked { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+/* Narrow layout: one sticky strip — the section in view, Sections / Settings, then the bar
+   and "2/15" (the app's own tab bar keeps the bottom of the screen). */
+.lesson-phone-strip { position: sticky; top: var(--lesson-sticky-top); z-index: 6; display: flex; flex-direction: column; gap: 6px; margin: 0 -16px 12px; padding: 8px 16px 10px; background: var(--background); border-bottom: 1px solid var(--border); }
+.lesson-phone-strip-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+.lesson-phone-strip-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; font-weight: 600; }
+.lesson-phone-strip-tools { display: flex; gap: 4px; }
+.lesson-phone-strip-tools button { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--foreground); font: inherit; font-size: 13px; cursor: pointer; transition: color .15s, border-color .15s; }
+.lesson-phone-strip-tools button:hover, .lesson-phone-strip-tools button:focus-visible { color: var(--primary); border-color: var(--primary); }
+.lesson-phone-strip-tools svg { width: 15px; height: 15px; }
+.lesson-phone-strip-row { display: flex; align-items: center; gap: 10px; }
+.lesson-phone-strip-row .lesson-progress { flex: 1 1 auto; }
+.lesson-phone-strip-count { flex: none; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
+.lesson-phone-strip-count svg { width: 15px; height: 15px; color: var(--primary); }
+.lesson-page.is-narrow .lesson-section { scroll-margin-top: calc(var(--lesson-sticky-top) + 82px); }
+/* Bottom sheets (Sections, Settings): 42px rows for comfortable touch targets. */
+.lesson-sheet { max-height: 85dvh; padding: 0 0 calc(16px + env(safe-area-inset-bottom, 0px)); }
+.lesson-sheet-head { padding: 12px 20px 6px; text-align: left; }
+.lesson-sheet-sections { display: flex; flex-direction: column; overflow-y: auto; padding: 0 12px 0 20px; }
+.lesson-sheet-sections button { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; padding: 8px 12px; border: 0; border-left: 2px solid var(--border); background: transparent; color: var(--foreground); font: inherit; font-size: 15px; text-align: left; cursor: pointer; }
+.lesson-sheet-sections button[aria-current] { border-left-color: var(--primary); font-weight: 600; }
+.lesson-sheet-sections button:hover { color: var(--primary); }
+.lesson-sheet-group { display: flex; flex-direction: column; padding: 4px 20px; }
+.lesson-sheet-group + .lesson-sheet-group { margin-top: 8px; }
+.lesson-sheet-caption { margin: 8px 0 2px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
+.lesson-sheet-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; font-size: 15px; cursor: pointer; }
+button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--border); background: transparent; font: inherit; font-size: 15px; text-align: left; }
+.lesson-sheet-row.is-destructive { color: var(--destructive); }
+.lesson-sheet-row.is-destructive:disabled { color: var(--muted-foreground); opacity: .6; cursor: default; }
+.lesson-sheet-row span { display: inline-flex; align-items: center; gap: 8px; }
+.lesson-sheet-row svg { width: 15px; height: 15px; }
+.lesson-reset-confirm, .lesson-reset-confirm:hover { background: var(--destructive); color: var(--background); border-color: var(--destructive); }
+/* Undo toasts sit above the phone tab bar. */
+:root { --toast-bottom: 24px; }
+@media (max-width: 850px) { :root { --toast-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); } }
+/* Toasts follow the app theme (sonner's own palette is light-only by default). */
+:root [data-sonner-toaster][data-sonner-theme] { --normal-bg: var(--card); --normal-text: var(--foreground); --normal-border: var(--border); }

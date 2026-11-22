@@ -159,3 +159,31 @@ export function useLessonProgress(): LessonProgressMap {
   }, []);
   return map;
 }
+
+/** A copy of one lesson's entry (or null when it has none), taken before a reset so Undo can
+ *  put back exactly what was there. */
+export function snapshotLesson(id: string): LessonProgressEntry | null {
+  const entry = readProgress()[id];
+  return entry ? { ...entry, answered: [...entry.answered], ...(entry.bonus ? { bonus: [...entry.bonus] } : {}) } : null;
+}
+
+/** Undo: restore a snapshot from snapshotLesson (null removes the entry again). */
+export function restoreLesson(id: string, snapshot: LessonProgressEntry | null) {
+  const map = readProgress();
+  if (snapshot) map[id] = { ...snapshot, at: Date.now() }; else delete map[id];
+  write(map);
+}
+
+/** Reset one section: clears just these task keys (required or bonus) and the manual
+ *  "Complete lesson" mark, since the lesson is no longer fully done. */
+export function resetLessonTasks(id: string, keys: readonly string[]) {
+  const map = readProgress();
+  const prev = map[id];
+  if (!prev) return;
+  const drop = new Set(keys);
+  const entry: LessonProgressEntry = { total: prev.total, answered: prev.answered.filter(k => !drop.has(k)), at: Date.now() };
+  const bonus = (prev.bonus ?? []).filter(k => !drop.has(k));
+  if (bonus.length) entry.bonus = bonus;
+  map[id] = entry;
+  write(map);
+}

@@ -130,3 +130,6 @@
 - [x] Lessons v3.3: import Other Lessons rev2
 - [x] Lessons v3.3: Core rev2 imported
 - [x] Lessons: conversation intros fixed (Other Lessons rev3)
+- [x] Lessons: designer sidebar (pinned progress card with ⋯ reset menu + inline confirm, scrolling list, pinned toggles) and phone strip with Sections/Settings sheets; Undo toast on every reset
+- [x] Lessons: "Start over" text link at the top (only with progress) + "Practice this lesson again" outline button at the end, same confirm + Undo
+- [x] Lessons: phone Settings "Reset this section" row under Progress (Undo toast)

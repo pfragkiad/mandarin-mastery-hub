@@ -1,6 +1,8 @@
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
+import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
+import { toast } from 'sonner';
+import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
 import { ResetProgressButton } from './reset-progress-button';
 
@@ -11,7 +13,7 @@ const QuestionProgress = createContext<{ answer: (key: string) => void } | null>
 const CheckpointTicks = createContext<{ plan: CheckpointPlan; done: ReadonlySet<string>; toggle: (c: LessonCheckpoint) => void } | null>(null);
 import { Link, useNavigate } from '@tanstack/react-router';
 import { setLessonFold } from '@/lib/lesson-fold';
-import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
@@ -168,7 +170,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const progressEntry = useLessonProgress()[summary.id];
   // A reset remounts the lesson body, closing every reveal and clearing picked answers.
   const [round, setRound] = useState(0);
-  const restart = () => { resetLesson(summary.id); setRound(r => r + 1); };
+  // Every reset snapshots first and offers Undo in a toast for 10 seconds (designer's proposal).
+  const undoToast = (message: string, snapshot: ReturnType<typeof snapshotLesson>) => toast(message, { duration: 10000, action: { label: 'Undo', onClick: () => restoreLesson(summary.id, snapshot) } });
+  const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
   const lessonDone = Boolean(progressEntry?.completed);
   // Complete lesson marks it done and returns to where it is listed: its course (the drawer
   // is opened first so the course shows unfolded), or the topic view of its main topic.
@@ -471,23 +475,44 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // Narrow layout state: which collapsible sections are open (the first one to begin with).
   const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set(ids.slice(0, 1)));
   const active = useActiveSection(ids);
-  const toc = useRef<HTMLElement>(null);
-  // Keep the active pill in view inside the horizontally scrolling pill row (never scrolls the page).
-  useEffect(() => {
-    const nav = toc.current;
-    const pill = nav?.querySelector<HTMLElement>(`a[data-section="${active}"]`);
-    if (!narrow || !nav || !pill) return;
-    if (pill.offsetLeft < nav.scrollLeft || pill.offsetLeft + pill.offsetWidth > nav.scrollLeft + nav.clientWidth) nav.scrollTo({ left: Math.max(0, pill.offsetLeft - 12), behavior: 'smooth' });
-  }, [active, narrow]);
   const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
 
-  const pinyinToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>;
-  const hanziToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hideHanzi} onClick={() => setHideHanzi(v => !v)}>{hideHanzi ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hideHanzi ? 'Show hanzi' : 'Hide hanzi'}</Button>;
-  const translationsToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hideTranslations} onClick={() => setHideTranslations(v => !v)}>{hideTranslations ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hideTranslations ? 'Show translations' : 'Hide translations'}</Button>;
-  // compact = the floating capsule's short label (its helper line is the label's title there).
-  const hintsToggle = (compact: boolean) => <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
-    <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-label={compact ? 'Character hints' : undefined} aria-describedby={compact ? undefined : 'lesson-hints-help'}/>
-    <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
+  // Shared numbers for the sidebar card and the phone strip.
+  const view = progressView(progressEntry, totalTasks);
+  const numbers: ProgressNumbers = { done: Math.min(progressEntry?.answered.length ?? 0, view.tasks), total: view.tasks, fraction: view.fraction, state: view.state };
+  const sectionLinks: SectionLink[] = sections.map(s => { const tasks = sectionTasks[s.id] ?? []; const done = tasks.filter(k => answeredSet.has(k)).length; return { id: s.id, title: s.title, done: lessonDone ? tasks.length : done, total: tasks.length, complete: tasks.length > 0 && (lessonDone || done === tasks.length) }; });
+  const activeSection = sections.find(s => s.id === active) ?? null;
+  // "Reset this section": every task key counted under the section in view (required and
+  // bonus checkpoints for checkpoint lessons, the page's own keys for older ones).
+  const sectionKeys = (id: string) => checkpointPlan ? [...checkpointPlan.pageOf].flatMap(([key, where]) => where === id ? [key] : []) : sectionTasks[id] ?? [];
+  const activeKeys = active ? sectionKeys(active) : [];
+  const resetSection = () => {
+    if (!activeSection) return;
+    const snapshot = snapshotLesson(summary.id);
+    resetLessonTasks(summary.id, activeKeys);
+    setRound(r => r + 1);
+    undoToast(`“${activeSection.title}” reset`, snapshot);
+  };
+  const studyView: StudyView = { hanzi: !hideHanzi, pinyin: !hidePinyin, translations: !hideTranslations };
+  const setStudyView = (next: StudyView) => { setHideHanzi(!next.hanzi); setHidePinyin(!next.pinyin); setHideTranslations(!next.translations); };
+  const setHints = (on: boolean) => setPreferences({ ...preferences, lessonHints: on });
+  // Phone Sections sheet: open the collapsed section, then scroll to it once the sheet has closed.
+  const jumpTo = (id: string) => {
+    setOpenIds(current => current.has(id) ? current : new Set([...current, id]));
+    // Scrolled by hand so the section starts just below the stuck strip (its sticky top + own
+    // height), whatever the page's global scroll padding.
+    window.setTimeout(() => {
+      const el = document.getElementById(`lesson-${id}`);
+      const strip = document.querySelector<HTMLElement>('.lesson-phone-strip');
+      if (!el) return;
+      const offset = strip ? (parseFloat(getComputedStyle(strip).top) || 0) + strip.offsetHeight + 8 : 0;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+    }, 320);
+  };
+
+  const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
+    <Switch checked={hintsOn} onCheckedChange={setHints} aria-describedby="lesson-hints-help"/>
+    <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
   </label>;
 
   return <QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
@@ -511,17 +536,22 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       {intro.learning_priority && <p><strong>Study order</strong><LessonText text={intro.learning_priority}/></p>}
     </div>}
     <div className="lesson-layout">
-      <nav ref={toc} className="lesson-toc" aria-label="Lesson sections">
-        {!narrow && <LessonTocProgress entry={progressEntry} total={totalTasks} onReset={restart}/>}
-        <span className="eyebrow">IN THIS LESSON</span>
-        {/* In-page jump links only (hash anchors scroll within this one page). In the
-            narrow layout a pill also opens its collapsed section before the jump. */}
-        {sections.map(s => { const tasks = sectionTasks[s.id]; const doneHere = tasks ? tasks.filter(k => answeredSet.has(k)).length : 0; return <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}{!narrow && tasks && tasks.length > 0 && <span className={`lesson-toc-count${lessonDone || doneHere === tasks.length ? ' is-done' : ''}`} aria-label={`${lessonDone ? tasks.length : doneHere} of ${tasks.length} done`}>{lessonDone || doneHere === tasks.length ? <Check aria-hidden="true"/> : `${doneHere}/${tasks.length}`}</span>}</a>; })}
-        {!narrow && hanziToggle}
-        {!narrow && pinyinToggle}
-        {!narrow && translationsToggle}
-        {!narrow && hintsToggle(false)}
-      </nav>
+      {/* Wide: a fixed-height sidebar in three blocks — progress card (pinned), the section
+          list (the only part that scrolls) and the display controls (pinned). Narrow: the
+          sticky strip with Sections / Settings sheets replaces it (lesson-controls.tsx). */}
+      {narrow ? <PhoneLessonBar numbers={numbers} activeTitle={activeSection?.title ?? summary.title} sections={sectionLinks} activeId={active} onJump={jumpTo} view={studyView} onView={setStudyView} hints={hintsOn} onHints={setHints} onResetLesson={restart} section={activeSection && activeKeys.length ? { title: activeSection.title, done: activeKeys.filter(k => answeredSet.has(k) || (progressEntry?.bonus ?? []).includes(k)).length } : null} onResetSection={resetSection}/>
+      : <nav className="lesson-toc" aria-label="Lesson sections">
+        {totalTasks > 0 || progressEntry?.completed ? <SidebarProgress numbers={numbers} section={activeSection && activeKeys.length ? { title: activeSection.title, done: activeKeys.filter(k => answeredSet.has(k) || (progressEntry?.bonus ?? []).includes(k)).length } : null} onResetSection={resetSection} onResetLesson={restart}/> : null}
+        <div className="lesson-toc-list">
+          <span className="eyebrow">IN THIS LESSON</span>
+          {/* In-page jump links only (hash anchors scroll within this one page). */}
+          {sectionLinks.map(s => <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined}>{s.title}{s.total > 0 && <span className={`lesson-toc-count${s.complete ? ' is-done' : ''}`} aria-label={`${s.done} of ${s.total} done`}>{s.complete ? <Check aria-hidden="true"/> : `${s.done}/${s.total}`}</span>}</a>)}
+        </div>
+        <div className="lesson-toc-tools">
+          <StudyToggles view={studyView} onChange={setStudyView}/>
+          {hintsToggle}
+        </div>
+      </nav>}
       <div className="lesson-main" key={round}>
         {sections.map(s => {
           if (!narrow) return <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}<SectionTicks where={s.id}/></section>;
@@ -534,13 +564,11 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
             <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}<SectionTicks where={s.id}/></div>
           </section>;
         })}
-        <LessonFinish entry={progressEntry} onComplete={complete} onReset={restart} next={positions[0]?.next}/>
+        <LessonFinish entry={progressEntry} total={totalTasks} onComplete={complete} onReset={restart} next={positions[0]?.next}/>
         <ReportProvenance lesson={lesson}/>
       </div>
     </div>
   </div>
-  {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
-  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{hanziToggle}{pinyinToggle}{translationsToggle}{hintsToggle(true)}</div>}
   </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider>;
 }
 
@@ -618,44 +646,35 @@ function SectionTicks({ where }: { where: string }) {
   return <div className="lesson-checkpoints" role="group" aria-label="Checklist">{list.map(c => <CheckpointButton key={c.id} checkpoint={c}/>)}</div>;
 }
 
-const resetCopy = { label: 'Reset progress', title: 'Reset this lesson?', description: 'Your answers and revealed answers in this lesson are cleared, and it no longer counts as done.' };
+/** One confirm wording for every whole-lesson reset (sidebar menu, phone Settings, Start over,
+ *  Practice this lesson again), each followed by the same Undo toast. */
+const resetCopy = (total: number) => ({ title: `Reset all ${total} ${total === 1 ? 'task' : 'tasks'}?`, description: 'This clears your answers and progress for this lesson.' });
 
-/** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and
- *  an always-visible Reset progress (disabled while there is nothing to clear). Inputs: the
- *  stored entry (absent until read after mount), the page's task count and `onReset`. */
+/** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and,
+ *  only once there is progress to clear, a quiet "Start over" text link (owner's choice: a
+ *  natural moment to reset, kept low-emphasis). Inputs: the stored entry (absent until read
+ *  after mount), the page's task count and `onReset`. */
 function LessonProgressStrip({ entry, total, minutes, onReset }: { entry: LessonProgressEntry | undefined; total: number; minutes: number | null; onReset: () => void }) {
   const { tasks, state, fraction, label } = progressView(entry, total);
   if (tasks === 0 && !entry?.completed) return null;
   return <div className={`lesson-progress-strip is-${state}`}>
     <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}{minutes && <small className="lesson-progress-time"> · about {minutes} min</small>}</span>
     <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    <ResetProgressButton {...resetCopy} disabled={!hasLessonProgress(entry)} onReset={onReset}/>
-  </div>;
-}
-
-/** Progress at the top of the left lesson menu (wide layout), which stays in view while the
- *  learner scrolls: the same numbers, bar and Reset as LessonProgressStrip. */
-function LessonTocProgress({ entry, total, onReset }: { entry: LessonProgressEntry | undefined; total: number; onReset: () => void }) {
-  const { tasks, state, fraction, label } = progressView(entry, total);
-  if (tasks === 0 && !entry?.completed) return null;
-  return <div className={`lesson-toc-progress is-${state}`}>
-    <span className="eyebrow">YOUR PROGRESS</span>
-    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}</span>
-    <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    <ResetProgressButton {...resetCopy} disabled={!hasLessonProgress(entry)} onReset={onReset}/>
+    {hasLessonProgress(entry) && <ResetProgressButton look="link" label="Start over" {...resetCopy(tasks)} onReset={onReset}/>}
   </div>;
 }
 
 /** End-of-lesson box: "Complete lesson" marks it done without opening every task; once done
- *  it reads Lesson complete with Reset progress and, in a course, the next lesson. */
-function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgressEntry | undefined; onComplete: () => void; onReset: () => void; next: LessonSummary | null | undefined }) {
+ *  it reads Lesson complete with, in a course, the next lesson as the main action and a
+ *  secondary outline "Practice this lesson again" below it. */
+function LessonFinish({ entry, total, onComplete, onReset, next }: { entry: LessonProgressEntry | undefined; total: number; onComplete: () => void; onReset: () => void; next: LessonSummary | null | undefined }) {
   const done = lessonState(entry).state === 'done' && Boolean(entry);
   return <div className={`lesson-finish${done ? ' is-done' : ''}`}>
     {done ? <>
       <p className="lesson-finish-title"><CheckCircle2 aria-hidden="true"/>Lesson complete</p>
-      <div className="lesson-finish-actions">
+      <div className="lesson-finish-actions is-stacked">
         {next && <Link to="/lessons/$lessonId" params={{ lessonId: next.id }} className="lesson-finish-next">Next: {next.title}<ArrowRight size={14} aria-hidden="true"/></Link>}
-        <ResetProgressButton {...resetCopy} onReset={onReset}/>
+        <ResetProgressButton label="Practice this lesson again" {...resetCopy(entry?.total || total)} onReset={onReset}/>
       </div>
     </> : <>
       <p className="lesson-finish-title">Finished this lesson?</p>
