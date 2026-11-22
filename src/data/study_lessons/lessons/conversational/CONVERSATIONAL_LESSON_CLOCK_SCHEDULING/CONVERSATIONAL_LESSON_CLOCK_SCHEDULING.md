@@ -10,7 +10,7 @@ Practice ask and tell the time. Transcript-referenced conversational Mandarin st
 
 ## Explanation
 
-Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask and tell the time. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

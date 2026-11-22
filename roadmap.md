@@ -129,4 +129,4 @@
 - [x] Lessons v3.3: re-import the corrected HSK lesson package (vocab v1.7.1)
 - [x] Lessons v3.3: import Other Lessons rev2
 - [x] Lessons v3.3: Core rev2 imported
-- [ ] Lessons: conversation intros still ungrammatical ("Practice ask…") and mention transcripts — waiting on a fixed Other Lessons package
+- [x] Lessons: conversation intros fixed (Other Lessons rev3)

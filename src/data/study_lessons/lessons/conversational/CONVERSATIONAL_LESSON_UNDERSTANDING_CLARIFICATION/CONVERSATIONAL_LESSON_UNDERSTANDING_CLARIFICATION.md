@@ -10,7 +10,7 @@ Practice say that you do or do not understand. Transcript-referenced conversatio
 
 ## Explanation
 
-Practice say that you do or do not understand. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to say that you do or do not understand. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

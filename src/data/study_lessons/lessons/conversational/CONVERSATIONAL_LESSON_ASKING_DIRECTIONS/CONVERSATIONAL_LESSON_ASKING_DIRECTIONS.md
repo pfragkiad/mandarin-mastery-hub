@@ -10,7 +10,7 @@ Practice ask where a street or place is. Transcript-referenced conversational Ma
 
 ## Explanation
 
-Practice ask where a street or place is. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask where a street or place is. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

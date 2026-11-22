@@ -12,7 +12,7 @@ Practice use 想 and 要 for wants and intentions. Transcript-referenced convers
 
 ## Explanation
 
-Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to use 想 and 要 for wants and intentions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

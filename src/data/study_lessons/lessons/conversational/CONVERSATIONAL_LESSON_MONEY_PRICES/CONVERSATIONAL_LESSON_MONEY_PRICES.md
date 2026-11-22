@@ -10,7 +10,7 @@ Practice ask how much something costs. Transcript-referenced conversational Mand
 
 ## Explanation
 
-Practice ask how much something costs. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask how much something costs. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

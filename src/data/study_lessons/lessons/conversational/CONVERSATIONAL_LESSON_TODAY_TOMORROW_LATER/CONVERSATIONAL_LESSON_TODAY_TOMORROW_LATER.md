@@ -10,7 +10,7 @@ Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced co
 
 ## Explanation
 
-Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to distinguish now, later, tonight, and tomorrow. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

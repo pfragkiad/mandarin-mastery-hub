@@ -35,7 +35,7 @@ PACKAGES = {
     # Corrected owner release synced to vocabulary v1.7.1 (supersedes the first v3.3.0 HSK ZIP,
     # which was built from vocab v1.7.0 and kept only for the regression record).
     'hsk': SRC / 'Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip',  # rev2: catalog refs repaired
-    'other': SRC / 'Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev2.zip',  # rev2: learner-facing intros/labels
+    'other': SRC / 'Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev3.zip',  # rev3: plain learner intros
 }
 # Nested lesson ZIP prefix in each package → current runtime directory.
 PLACES = {('hsk', 'hsk3/level1/'): 'hsk3/level1', ('other', 'independent/'): 'independent',

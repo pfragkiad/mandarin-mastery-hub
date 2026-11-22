@@ -10,7 +10,7 @@ Practice recognize numbers from one to forty-plus. Transcript-referenced convers
 
 ## Explanation
 
-Practice recognize numbers from one to forty-plus. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to recognize numbers from one to forty-plus. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

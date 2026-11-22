@@ -12,7 +12,7 @@ Practice express what you would like to eat or drink. Transcript-referenced conv
 
 ## Explanation
 
-Practice express what you would like to eat or drink. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to express what you would like to eat or drink. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

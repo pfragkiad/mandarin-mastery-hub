@@ -10,7 +10,7 @@ Practice start a polite conversation. Transcript-referenced conversational Manda
 
 ## Explanation
 
-Practice start a polite conversation. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to start a polite conversation. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

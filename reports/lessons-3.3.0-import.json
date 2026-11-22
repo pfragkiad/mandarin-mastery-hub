@@ -9,8 +9,8 @@
       "sha256": "0f7357e1a61d2c5e610ebde6683ae2248a36fa50a1b05d61a92d8a39c23b7f10"
     },
     "other": {
-      "file": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev2.zip",
-      "sha256": "35bd7c5561b3b67a1d823ad04e067da84bf46cb2369d80ef5c889dc371336257"
+      "file": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev3.zip",
+      "sha256": "cb0fd9137583c4092c1801ba10f069988fed4d20960cc7604d0c0db4092c29a2"
     }
   },
   "lessons": {
@@ -201,7 +201,7 @@
     "convm-asking-directions": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "931dafc40d3f8e4114cc8f5028cc8879e474a412be1f2f2881fa9e42a10ed90b",
+      "nested_sha256": "052ace5dba0c031ee824f2e1fa8077c8dcb9a3222b691549c212654afea38f08",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -209,7 +209,7 @@
     "convm-choices-alternatives": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "1daac0d59b92305bbe7153f49dce1c714d9019fea5ac5bdab5810791b2b81939",
+      "nested_sha256": "225628d5009f6d8d81051f718b33fa360c3f211ccf8d4043e020c07d95dfc64d",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -217,7 +217,7 @@
     "convm-clock-scheduling": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "78cd9d192ea94445c4a74ccc2c6315e6aacf2449ad3e301a9f7138979c02ee67",
+      "nested_sha256": "0e3373107a06cbc4041c50d16c86bf5aa0acfcf501a45314e2d4bc5124c85125",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -225,7 +225,7 @@
     "convm-food-drinks": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "903f632850a53c4a6b0050c92d455ae092e1969fe858ed6ab3a3a5731838de4b",
+      "nested_sha256": "f1f8453fefc9a9e4dbd9d30a78155dcf3ce4f575576e5974884cc48c0346f494",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -233,7 +233,7 @@
     "convm-greetings-politeness": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "67b692fb4c30b505a64ff43fbb6dd6de926093b4dc16e555575265c61d2d6755",
+      "nested_sha256": "a01a941336d6086917e9197e7da0d41c4138e434b80ed6784a7b977652763361",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -241,7 +241,7 @@
     "convm-money-prices": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "4c93aaaddbf78b80b45f11371ccdc7bbe52c3c4fd5317918fbeb8bf8c9511eea",
+      "nested_sha256": "28741cf642740f010cda1b11210090abbcfe2c6c9707d7dfea4cd140b179142c",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -249,7 +249,7 @@
     "convm-numbers-arithmetic": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "ee98da3a46424fb2811982c93363c9708e6230b39ec4e11c017259ee6e959874",
+      "nested_sha256": "088c40482418711d8234768c47d6973478f14613393c7a774e59a16f63965e65",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -257,7 +257,7 @@
     "convm-people-identity": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "f0b8007055f820b38a29e8171c2c4035d380dc57b0edab611fc2624e1f00a5fe",
+      "nested_sha256": "a23452ca1af77f1ab55798d5a5015c2adce2d4f245d14fb4ced8cfce06b52316",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -265,7 +265,7 @@
     "convm-permission-requests": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "0573c7582d69a9159a346914c649341fbcccf491cba6f3fc0397ed5a8fd2ba08",
+      "nested_sha256": "56a1026f0f5d870529f4a940f3f9e3647c75979179e8f59fae44122e817f2284",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -273,7 +273,7 @@
     "convm-places-to-meet": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "38ff13e49655c30134cd59e425a21c90a301524dc60a0500da49f3d82ba46ccd",
+      "nested_sha256": "7d4cfdae692afead8fd17f5220193224ea27074c5001b860f95f77917ec568ee",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -281,7 +281,7 @@
     "convm-speaking-languages": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "56157bc40d202928f64ba0c8b1c82bf0839364815a72030afaaae214bc0b8b7c",
+      "nested_sha256": "3499c7b77000fa0f9a672e558fde31d5a80a264ed440861c40b7bb374c19cda1",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -289,7 +289,7 @@
     "convm-today-tomorrow-later": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "ca05f6f8d6159e2effdbab38f009740a2f429fcdf4b82a846bacecc141f76bdf",
+      "nested_sha256": "f84eef6df37efaaf3371db06de3535de80455d9262866af4872ea89088372a02",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -297,7 +297,7 @@
     "convm-understanding-clarification": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "462355221cabd44e3ed1ee19d41cfe1a18d6c2ebc0ede978acac30fd28ae65d6",
+      "nested_sha256": "0c7800780340336fb33774702282835150d43689afa2899919d25f4147219b2b",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -305,7 +305,7 @@
     "convm-wants-intentions": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "1d01ef0605779efc719e83df16cdca8b98deef901119e9550eca4702550ef33d",
+      "nested_sha256": "6c745083fc14b690ef594934bea51671b40d8485c5e9876e16872ae6913333c2",
       "required": 10,
       "optional": 0,
       "kept_current": []
@@ -313,7 +313,7 @@
     "convm-with-someone": {
       "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE",
       "schema_version": "mandarin-general-lesson/3.2.0",
-      "nested_sha256": "103f57afe412d8d59c67a4ec5ba18ebc8634df59cf4ef5ba96e84ac55ee5d5fb",
+      "nested_sha256": "f6b88217b9a1071f3b3b932b351cd34e14e399ba827ed067803f67cf11e1fe24",
       "required": 10,
       "optional": 0,
       "kept_current": []

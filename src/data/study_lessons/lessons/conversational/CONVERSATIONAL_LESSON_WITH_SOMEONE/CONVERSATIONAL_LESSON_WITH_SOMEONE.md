@@ -10,7 +10,7 @@ Practice invite another person to eat or drink with you. Transcript-referenced c
 
 ## Explanation
 
-Practice invite another person to eat or drink with you. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to invite another person to eat or drink with you. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

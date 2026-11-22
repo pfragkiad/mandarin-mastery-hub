@@ -10,7 +10,7 @@ Practice ask whether somebody speaks a language. Transcript-referenced conversat
 
 ## Explanation
 
-Practice ask whether somebody speaks a language. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask whether somebody speaks a language. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 

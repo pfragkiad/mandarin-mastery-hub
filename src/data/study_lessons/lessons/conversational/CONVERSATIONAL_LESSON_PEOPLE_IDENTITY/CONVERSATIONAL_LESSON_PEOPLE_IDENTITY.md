@@ -10,7 +10,7 @@ Practice say who you are and ask where another person is from. Transcript-refere
 
 ## Explanation
 
-Practice say who you are and ask where another person is from. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to say who you are and ask where another person is from. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
