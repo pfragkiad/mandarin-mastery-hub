@@ -132,7 +132,8 @@ export function HintGlyphs({ text, focusable = true, wordHanzi }: { text: string
  *  all three of its cards. A row that points at the card the popup sits on (the same
  *  word or glyph record in the URL) stays visible for completeness but is not a link.
  *  Kind rows show their own pinyin + speaker and translation unless that exact text
- *  already appears in the word row. */
+ *  already appears in the word entry. A one-character word (我) is the head entry itself;
+ *  glyph rank/strokes then sit on the row of the record they belong to. */
 function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | null; onClose: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
   const hints = useLessonHints();
@@ -163,33 +164,52 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   // words are left to the row's own colour, so nothing new is implied for them.
   const wordHanziInk = word && wordInk({ hanzi: word.hanzi }) === 'card-ink-radical' ? 'card-ink-radical' : '';
   const kindLabel = (kind: string) => kind === 'Components' ? 'As a component' : kind === 'Radicals' ? 'As a radical' : 'As a character';
+  // Words first: when the tapped glyph is itself a one-character word (我), the word is the
+  // popup's main entry — its reading, recording and HSK translation lead, and the separate
+  // "As a word" row folds into the head. Multi-character words keep the glyph head and an
+  // "In the word" row, since the head then describes a different record than the word.
+  const wordLeads = word != null && Array.from(word.hanzi).length === 1 && word.hanzi === glyph;
+  const headInk = wordLeads && wordHanziInk ? wordHanziInk : hint?.ink ?? '';
   return <div className="lesson-hint-body">
     <button type="button" className="lesson-hint-close" aria-label="Close" onClick={onClose}><X size={14} aria-hidden="true"/></button>
     <div className="lesson-hint-head">
       {/* The glyph wears its record's identity ink (record-ink.ts), the same as its library card:
           八 is gold whichever record the popup describes. */}
-      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''} ${hint?.ink ?? ''}`.trim()}>{glyph}</span>
+      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''} ${headInk}`.trim()}>{glyph}</span>
       <div className="lesson-hint-reading">
+        {wordLeads && <span className="lesson-hint-word-label">Word</span>}
         {(traditional || hint?.radicalNumber) && <span className="lesson-hint-pills">
           {traditional && <span className="lesson-hint-pill is-traditional">繁 Traditional</span>}
           {hint?.radicalNumber && <span className="lesson-hint-pill is-radical">部 Radical #{hint.radicalNumber}</span>}
         </span>}
-        {hint?.pinyin ? (isMultiReading(hint.pinyin)
-          ? <span className="lesson-hint-pinyin"><MultiReadingSpeakers spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>
-          : <span className="lesson-hint-pinyin"><span className="pinyin">{hint.pinyin}</span><GlyphReadingSpeaker spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>)
-          : hint?.componentName ? <span className="lesson-hint-pinyin"><span className="pinyin">Name · {hint.componentName}</span></span> : null}
-        {hint ? <p className="lesson-hint-meaning"><MeaningText text={hint.meaning}/></p>
-          : <p className="lesson-hint-meaning is-absent">{catalogVersion ? 'No Glyphs card for this character yet.' : 'Loading…'}</p>}
-        {facts && <p className="lesson-hint-facts">{facts}</p>}
+        {wordLeads && word
+          ? <>
+            <span className="lesson-hint-pinyin">
+              {wordIsCurrent
+                ? <span className="pinyin">{word.pinyin}</span>
+                : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
+              {/* Speaker stays outside the link so listening never navigates. */}
+              {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
+            </span>
+            {word.meaning && <p className="lesson-hint-meaning"><MeaningText text={word.meaning}/></p>}
+          </>
+          : <>
+            {hint?.pinyin ? (isMultiReading(hint.pinyin)
+              ? <span className="lesson-hint-pinyin"><MultiReadingSpeakers spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>
+              : <span className="lesson-hint-pinyin"><span className="pinyin">{hint.pinyin}</span><GlyphReadingSpeaker spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>)
+              : hint?.componentName ? <span className="lesson-hint-pinyin"><span className="pinyin">Name · {hint.componentName}</span></span> : null}
+            {hint ? <p className="lesson-hint-meaning"><MeaningText text={hint.meaning}/></p>
+              : <p className="lesson-hint-meaning is-absent">{catalogVersion ? 'No Glyphs card for this character yet.' : 'Loading…'}</p>}
+            {facts && <p className="lesson-hint-facts">{facts}</p>}
+          </>}
       </div>
     </div>
-    {word && <div className="lesson-hint-word">
-      <span className="lesson-hint-word-label">{Array.from(word.hanzi).length === 1 ? 'As a word' : 'In the word'}</span>
+    {word && !wordLeads && <div className="lesson-hint-word">
+      <span className="lesson-hint-word-label">In the word</span>
       <span className="lesson-hint-word-row">
         {wordIsCurrent
           ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span></span>
           : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
-        {/* Speaker stays outside the link so listening never navigates. */}
         {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
       </span>
       {word.meaning && <span className="lesson-hint-word-meaning"><MeaningText text={word.meaning}/></span>}
@@ -208,6 +228,9 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       const inlineReading = showPinyin && !multi ? <span className="pinyin">{row.pinyin}</span>
         : showName ? <span className="pinyin">Name · {row.componentName}</span> : null;
       const glyphEl = <span lang="zh-CN" className={`lesson-hint-word-hanzi ${row.ink}`.trim()}>{row.glyph}</span>;
+      // With the word in the head, rank and stroke count (glyph facts, never word facts)
+      // move to the row of the record they were read from.
+      const rowFacts = wordLeads && row.id === hint?.id ? facts : '';
       return <div key={row.id} className="lesson-hint-word">
         <span className="lesson-hint-word-label">{kindLabel(row.kind)}</span>
         <span className="lesson-hint-word-row">
@@ -220,6 +243,7 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
             : <GlyphReadingSpeaker spoken={row.spoken} reading={row.pinyin} variant="example"/>)}
         </span>
         {showMeaning && <span className="lesson-hint-word-meaning"><MeaningText text={row.meaning}/></span>}
+        {rowFacts && <span className="lesson-hint-facts">{rowFacts}</span>}
       </div>;
     })}
   </div>;
