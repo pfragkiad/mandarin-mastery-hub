@@ -54,19 +54,20 @@ export function LessonsIndex({ view, category, tag, onSearch }: { view: LessonsV
 function CourseView() {
   return <>
     {courses.map(c => <CourseOutline key={c.id} course={c}/>)}
-    {projectIndependentLessons.length > 0 && <section className="lessons-group lessons-course" aria-labelledby="lessons-independent">
-      <h2 id="lessons-independent">Independent lessons</h2>
+    {projectIndependentLessons.length > 0 && <details className="lessons-group lessons-course lessons-fold" open>
+      <summary><h2 id="lessons-independent">Independent lessons</h2></summary>
       <p className="lesson-note">Lessons that stand on their own, outside any course. Open them in any order.</p>
       <div className="lessons-grid">{projectIndependentLessons.map(s => <LessonCard key={s.id} lesson={s}/>)}</div>
-    </section>}
+    </details>}
   </>;
 }
 
 /** One course: its levels (sections) → units → numbered lessons, all in recorded order.
  *  Lesson numbers count through the whole level, so "Lesson 5" matches the lesson page. */
 function CourseOutline({ course }: { course: Course }) {
-  return <section className="lessons-group lessons-course" aria-labelledby={`course-${course.id}`}>
-    <h2 id={`course-${course.id}`}>{course.title}</h2>
+  // Native <details> so each course folds independently (keyboard and screen readers included).
+  return <details className="lessons-group lessons-course lessons-fold" open>
+    <summary><h2 id={`course-${course.id}`}>{course.title}</h2></summary>
     {course.description && <p className="lesson-note">{course.description}</p>}
     {course.sections.map(section => {
       const flat = sectionPlacements(section);
@@ -81,7 +82,7 @@ function CourseOutline({ course }: { course: Course }) {
         </div>)}
       </div>;
     })}
-  </section>;
+  </details>;
 }
 
 /** By topic: lessons under their primary registry topic; a topic filter also matches

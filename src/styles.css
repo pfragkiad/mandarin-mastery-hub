@@ -4311,3 +4311,12 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 
 /* Search hits: recorded part of speech before a word's meaning. */
 .hero-search-hit .hit-pos { font-style: italic; opacity: .8; }
+
+/* Foldable course blocks on the Lessons page: the course title is the toggle, with a chevron. */
+.lessons-fold > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; }
+.lessons-fold > summary::-webkit-details-marker { display: none; }
+.lessons-fold > summary > h2 { margin: 0; }
+.lessons-fold > summary::before { content: ''; width: .5rem; height: .5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; opacity: .7; }
+.lessons-fold[open] > summary::before { transform: rotate(45deg); }
+.lessons-fold[open] > summary { margin-bottom: .75rem; }
+.lessons-fold > summary:hover h2 { color: var(--primary); }
