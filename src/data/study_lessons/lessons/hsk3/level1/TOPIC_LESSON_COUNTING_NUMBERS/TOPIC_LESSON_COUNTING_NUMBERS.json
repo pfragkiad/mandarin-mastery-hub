@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-counting-numbers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -17,7 +17,9 @@
       "basic-numbers",
       "counting"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Read the digits and basic round numbers.",
@@ -26,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -146,7 +148,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 2
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-006",
@@ -186,7 +191,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 6
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-049",
@@ -226,7 +234,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 49
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-095",
@@ -266,7 +277,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 95
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-112",
@@ -306,7 +320,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 112
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-113",
@@ -346,7 +363,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 113
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-160",
@@ -386,7 +406,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 160
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-162",
@@ -426,7 +449,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 162
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-173",
@@ -466,7 +492,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 173
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-184",
@@ -506,7 +535,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 184
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-198",
@@ -546,7 +578,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 198
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-223",
@@ -586,7 +621,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 223
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-254",
@@ -626,7 +664,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 254
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         }
       ],
       "related_entries": []

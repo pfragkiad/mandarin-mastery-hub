@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-family-and-friends",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "family",
       "relationships"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify common relatives and relationship words.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -173,7 +175,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 1
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-003",
@@ -214,7 +219,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 3
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-032",
@@ -255,7 +263,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 32
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-048",
@@ -296,7 +307,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 48
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-059",
@@ -337,7 +351,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 59
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-068",
@@ -378,7 +395,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 68
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-086",
@@ -421,7 +441,10 @@
               "entry_id": 86
             }
           ],
-          "pos_note": "Home/family noun; also a classifier for businesses/families."
+          "pos_note": "Home/family noun; also a classifier for businesses/families.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-087",
@@ -462,7 +485,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 87
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-092",
@@ -503,7 +529,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 92
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-114",
@@ -544,7 +573,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 114
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-123",
@@ -585,7 +617,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 123
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-143",
@@ -626,7 +661,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 143
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-153",
@@ -667,7 +705,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 153
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-154",
@@ -708,7 +749,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 154
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-156",
@@ -749,7 +793,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 156
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-235",
@@ -790,7 +837,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 235
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         }
       ],
       "related_entries": []

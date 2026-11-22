@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-clock-and-day",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "time-of-day",
       "schedule"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Tell the time with hours and minutes.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -163,7 +165,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 5
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-033",
@@ -206,7 +211,10 @@
               "entry_id": 33
             }
           ],
-          "pos_note": "Classifier and time unit in clock readings; also a noun for a point."
+          "pos_note": "Classifier and time unit in clock readings; also a noun for a point.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-055",
@@ -250,7 +258,10 @@
               "entry_id": 55
             }
           ],
-          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts."
+          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-056",
@@ -292,7 +303,10 @@
               "entry_id": 56
             }
           ],
-          "pos_note": "Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time."
+          "pos_note": "Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-178",
@@ -332,7 +346,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 178
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-185",
@@ -372,7 +389,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 185
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-186",
@@ -412,7 +432,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 186
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-215",
@@ -452,7 +475,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 215
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-217",
@@ -492,7 +518,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 217
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-230",
@@ -532,7 +561,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 230
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-232",
@@ -573,7 +605,10 @@
               "entry_id": 232
             }
           ],
-          "pos_note": "Temporal noun meaning now, not a verb."
+          "pos_note": "Temporal noun meaning now, not a verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-236",
@@ -614,7 +649,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 236
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-273",
@@ -654,7 +692,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 273
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-275",
@@ -694,7 +735,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 275
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-291",
@@ -734,7 +778,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 291
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         }
       ],
       "related_entries": []

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-studying-and-language",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -20,7 +20,9 @@
       "writing",
       "speaking"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Describe language learning activities.",
@@ -29,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -174,7 +176,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 42
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-043",
@@ -215,7 +220,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 43
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-069",
@@ -255,7 +263,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 69
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-070",
@@ -295,7 +306,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 70
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-103",
@@ -335,7 +349,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 103
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-107",
@@ -377,7 +394,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 107
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-177",
@@ -417,7 +437,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 177
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-190",
@@ -457,7 +480,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 190
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-191",
@@ -499,7 +525,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 191
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-196",
@@ -540,7 +569,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 196
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-197",
@@ -581,7 +613,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 197
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-209",
@@ -622,7 +657,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 209
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-210",
@@ -663,7 +701,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 210
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-229",
@@ -704,7 +745,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 229
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-240",
@@ -746,7 +790,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 240
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-247",
@@ -786,7 +833,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 247
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-249",
@@ -827,7 +877,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 249
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-290",
@@ -867,7 +920,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 290
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-296",
@@ -907,7 +963,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 296
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         }
       ],
       "related_entries": []

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-everyday-actions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -17,7 +17,12 @@
       "routine",
       "actions"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "everyday-routines",
+      "physical-actions"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Describe common everyday actions.",
@@ -26,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -180,7 +185,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 23
             }
-          ]
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-061",
@@ -222,7 +232,10 @@
               "entry_id": 61
             }
           ],
-          "pos_note": "Verb meaning give, and a coverb/preposition meaning for/to."
+          "pos_note": "Verb meaning give, and a coverb/preposition meaning for/to.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-088",
@@ -262,7 +275,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 88
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-091",
@@ -304,7 +320,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 91
             }
-          ]
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-097",
@@ -346,7 +367,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 97
             }
-          ]
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-099",
@@ -387,7 +413,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 99
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-101",
@@ -427,7 +456,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 101
             }
-          ]
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-214",
@@ -468,7 +502,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 214
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-278",
@@ -508,7 +545,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 278
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-288",
@@ -549,7 +589,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 288
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-294",
@@ -590,7 +633,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 294
             }
-          ]
+          ],
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-298",
@@ -630,7 +678,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 298
             }
-          ]
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-299",
@@ -670,7 +723,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 299
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         }
       ],
       "related_entries": []

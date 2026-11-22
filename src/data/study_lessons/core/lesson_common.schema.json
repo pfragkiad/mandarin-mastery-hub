@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin/v3/lesson_common.schema.json",
-  "title": "Mandarin lessons v3.0.0 - shared contracts and reusable definitions",
-  "description": "Specification module: use its $defs in type-specific lesson schemas; the module is not itself a lesson.",
+  "$id": "https://example.invalid/mandarin/v3.2/lesson_common.schema.json",
+  "title": "Mandarin shared metadata and quiz contracts, taxonomy extension v3.2.0",
+  "description": "Specification module: use its $defs in type-specific lesson schemas; the module is not itself a lesson. Optional global subtopics are validated against the shared taxonomy.",
   "$defs": {
     "classification": {
       "type": "object",
@@ -60,6 +60,23 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
         }
       },
       "allOf": [
@@ -131,7 +148,8 @@
           ]
         },
         "template_version": {
-          "const": "3.0.0"
+          "type": "string",
+          "pattern": "^3\\.[0-9]+\\.[0-9]+$"
         },
         "audience": {
           "type": "string",

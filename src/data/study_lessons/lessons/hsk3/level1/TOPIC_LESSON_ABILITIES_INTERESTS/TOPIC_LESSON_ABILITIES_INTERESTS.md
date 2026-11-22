@@ -1,5 +1,7 @@
 # What I Can and Want to Do
 
+**Subtopics:** arts-entertainment
+
 Express what you can do, what you want and what you enjoy doing in free time.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

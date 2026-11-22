@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.1.0",
   "lesson_id": "review-greetings",
   "lesson_type": "review",
   "lesson": {
@@ -16,14 +16,16 @@
     "tags": [
       "review"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Recall previously learned greetings without introducing new vocabulary."
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.1.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null

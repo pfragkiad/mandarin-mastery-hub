@@ -1,13 +1,13 @@
 # Lesson documents
 
-Lessons package v3.1.0 plus the Conversational Mandarin collection. Each `*_LESSON_*` directory holds one canonical
+Lessons package v3.2.0 (topic taxonomy v2.0.0) plus the Conversational Mandarin collection. Each `*_LESSON_*` directory holds one canonical
 lesson JSON plus its generated Markdown/HTML companions and an editorial `report.md`:
 
 | Path | Purpose | Consumer |
 | --- | --- | --- |
-| `hsk3/level1/TOPIC_LESSON_*/` | 21 HSK 3.0 Level 1 topic lessons (`mandarin-topic-lesson/3.1.0`) with a required `sections.teaching_plan`; 300 syllabus words whose 600 source examples stay in the JSON but are not shown on the lesson page. | `src/lib/lessons.ts` (summary keys eagerly, whole file lazily on its page). |
+| `hsk3/level1/TOPIC_LESSON_*/` | 21 HSK 3.0 Level 1 topic lessons (`mandarin-topic-lesson/3.2.0`, each vocabulary item with recorded topic and subtopic IDs) with a required `sections.teaching_plan`; 300 syllabus words whose 600 source examples stay in the JSON but are not shown on the lesson page. | `src/lib/lessons.ts` (summary keys eagerly, whole file lazily on its page). |
 | `independent/CHARACTER_LESSON_CI/`, `independent/CHARACTER_LESSON_YI/` | Character lessons 次 (cì) and 以 (yǐ), migrated to `mandarin-character-lesson/3.0.0`, IDs unchanged. | `src/lib/lessons.ts`; in no course, so listed under "Independent lessons". |
-| [`conversational/`](conversational/README.md) | 15 Conversational Mandarin dialogue lessons (`mandarin-general-lesson/3.0.0`, `lesson_type: dialogue`), organised by communicative topic. | `src/lib/lessons.ts`; placed by `curricula/CONVERSATIONAL_MANDARIN.json`. |
+| [`conversational/`](conversational/README.md) | 15 Conversational Mandarin dialogue lessons (`mandarin-general-lesson/3.0.0`; Food & drinks and Wants & intentions reclassified as 3.1.0, `lesson_type: dialogue`), organised by communicative topic. | `src/lib/lessons.ts`; placed by `curricula/CONVERSATIONAL_MANDARIN.json`. |
 | `curricula/CONVERSATIONAL_MANDARIN.json` | Conversational Mandarin course: one section of 15 topic units, one lesson each, independent of HSK. | `src/lib/lesson-curricula.ts`. |
 | `curricula/HSK3_2025_LEVEL1.json` | Course placement manifest: levels → units → placements (lesson ID, order, prerequisites, syllabus entries). | `src/lib/lesson-curricula.ts` (By course view, lesson position). |
 | `legacy/` | Pre-v3 copies of the two character lessons, kept for migration only. | Not loaded (excluded from the lesson globs, would duplicate lesson IDs). |

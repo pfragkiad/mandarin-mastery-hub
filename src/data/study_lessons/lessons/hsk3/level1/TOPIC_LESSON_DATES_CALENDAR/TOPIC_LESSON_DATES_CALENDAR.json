@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-dates-calendar",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "calendar",
       "age"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Use day, month, year and week words.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -155,7 +157,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 76
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-093",
@@ -195,7 +200,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 93
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-094",
@@ -235,7 +243,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 94
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-128",
@@ -275,7 +286,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 128
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-129",
@@ -315,7 +329,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 129
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-149",
@@ -357,7 +374,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 149
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-168",
@@ -397,7 +417,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 168
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-172",
@@ -440,7 +463,10 @@
               "entry_id": 172
             }
           ],
-          "pos_note": "Day/date word; also a measure word for dates."
+          "pos_note": "Day/date word; also a measure word for dates.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-199",
@@ -482,7 +508,10 @@
               "entry_id": 199
             }
           ],
-          "pos_note": "Measure word for age."
+          "pos_note": "Measure word for age.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-207",
@@ -525,7 +554,10 @@
               "entry_id": 207
             }
           ],
-          "pos_note": "Day as a time noun; also a measure word for duration."
+          "pos_note": "Day as a time noun; also a measure word for duration.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-243",
@@ -565,7 +597,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 243
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-244",
@@ -605,7 +640,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 244
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-245",
@@ -645,7 +683,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 245
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-269",
@@ -685,7 +726,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 269
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-297",
@@ -725,7 +769,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 297
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         }
       ],
       "related_entries": []

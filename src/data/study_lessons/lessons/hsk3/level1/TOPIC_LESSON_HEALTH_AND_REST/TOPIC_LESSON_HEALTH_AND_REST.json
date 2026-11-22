@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-health-and-rest",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "illness",
       "rest"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Express basic illness and health needs.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -153,7 +155,10 @@
               "entry_id": 12
             }
           ],
-          "pos_note": "Illness as a noun; also occurs in verbal uses."
+          "pos_note": "Illness as a noun; also occurs in verbal uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-100",
@@ -194,7 +199,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 100
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-104",
@@ -236,7 +244,10 @@
               "entry_id": 104
             }
           ],
-          "pos_note": "Noun for mouth; also classifier in expressions such as population count."
+          "pos_note": "Noun for mouth; also classifier in expressions such as population count.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-161",
@@ -277,7 +288,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 161
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-183",
@@ -317,7 +331,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 183
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-194",
@@ -358,7 +375,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 194
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-195",
@@ -399,7 +419,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 195
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-246",
@@ -440,7 +463,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 246
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-256",
@@ -482,7 +508,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 256
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-257",
@@ -523,7 +552,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 257
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         }
       ],
       "related_entries": []

@@ -3,7 +3,7 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The library uses core v3.1.0: 21 HSK 3.0 Level 1 topic lessons (schema mandarin-topic-lesson/3.1.0, whose required `sections.teaching_plan` the lesson page renders as its teaching path, with the words as a collapsed word bank) placed by
+The library uses core v3.2.0 (topic taxonomy v2.0.0): 21 HSK 3.0 Level 1 topic lessons (schema mandarin-topic-lesson/3.2.0, whose required `sections.teaching_plan` the lesson page renders as its teaching path, with the words as a collapsed word bank) placed by
 a course manifest, plus two independent character lessons (次, 以). Learner content only;
 editorial references live in each lesson's `report.md`, which the app never loads.
 
@@ -18,7 +18,7 @@ See [core/README.md](core/README.md) for schemas and templates and
 
 | Path | Purpose | Consumer |
 | --- | --- | --- |
-| `core/lesson_categories.json` | Shared topic registry (`id`, `label`, `description`, `status`). Lessons reference topics by ID; only `active` entries are shown. | Static import in `lessons.ts` (By topic grouping and filter). |
+| `core/lesson_categories.json` | Shared topic registry (`id`, `label`, `description`, `status`, `kind`, `parent_topic_id`). Lessons reference topics by ID; only `active` top-level topics (`kind: topic`) are shown — subtopics are recorded in lessons but not grouped by. | Static import in `lessons.ts` (By topic grouping and filter). |
 | `core/lesson_categories.schema.json` | JSON Schema for the registry. | Reference only. |
 | `core/*.schema.json`, `core/*_TEMPLATE.*` | v3 schemas (character, topic, general, curriculum, common) and blank templates; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
 | `core/generate_lesson.py`, `core/validate_core.py` | Supplied generator and validator for the Markdown/HTML companions. | Authoring tools; not loaded. |

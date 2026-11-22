@@ -1,5 +1,7 @@
 # Things We Do Every Day
 
+**Subtopics:** everyday-routines, physical-actions
+
 Recognize and use common verbs for everyday actions and routines.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

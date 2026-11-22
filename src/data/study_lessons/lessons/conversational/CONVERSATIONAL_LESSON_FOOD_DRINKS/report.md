@@ -27,3 +27,11 @@
 | 我想要一点茶 | Track 8, 10:59 (line 128) | source-extracted |
 | 我想要一杯啤酒 | Track 13, 27:03 (line 254) | source-extracted |
 | 我想喝一点东西 | Track 5, 20:51 (line 206) | source-extracted |
+
+## Source-taxonomy synchronization (2026-11-22)
+- JSON Schema and Core version unchanged at v3.2.0.
+- Shared taxonomy synchronized with user-supplied hsk-topics/2.0.0 (25 active subtopics).
+- All original communicative teaching material, stable lesson IDs, and curriculum placements preserved.
+- Only topic/subtopic classifications were synchronized. Original word-card example pairs were not rewritten.
+- Classification and teaching-content validation passed.
+

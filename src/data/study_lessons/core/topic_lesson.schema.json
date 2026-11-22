@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin/v3.1/topic_lesson.schema.json",
+  "$id": "https://example.invalid/mandarin/v3.2/topic_lesson.schema.json",
   "title": "Mandarin topic / communicative lesson — v3.1.0 (reads v3.0.0)",
   "type": "object",
   "additionalProperties": false,
@@ -19,7 +19,8 @@
     "schema_version": {
       "enum": [
         "mandarin-topic-lesson/3.0.0",
-        "mandarin-topic-lesson/3.1.0"
+        "mandarin-topic-lesson/3.1.0",
+        "mandarin-topic-lesson/3.2.0"
       ]
     },
     "lesson_id": {
@@ -73,7 +74,8 @@
         "template_version": {
           "enum": [
             "3.0.0",
-            "3.1.0"
+            "3.1.0",
+            "3.2.0"
           ]
         },
         "audience": {
@@ -256,6 +258,23 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
         }
       },
       "allOf": [
@@ -432,6 +451,30 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
+        },
+        "primary_topic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
         }
       }
     },
@@ -486,6 +529,23 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
         }
       }
     },
@@ -1081,7 +1141,7 @@
       }
     }
   },
-  "description": "Lesson learning path: dialogue, explicit grammar, controlled production, contextual reading, speaking, and formative assessment. Source example pairs are stored as vocabulary-card data but not repeated in learner lesson views.",
+  "description": "Lesson learning path: dialogue, explicit grammar, controlled production, contextual reading, speaking, and formative assessment. Source example pairs are stored as vocabulary-card data but not repeated in learner lesson views. Optional global subtopics are validated against the shared taxonomy.",
   "allOf": [
     {
       "if": {
@@ -1130,6 +1190,34 @@
                 "const": "3.0.0"
               }
             }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-topic-lesson/3.2.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.2.0"
+              }
+            }
+          },
+          "sections": {
+            "required": [
+              "teaching_plan"
+            ]
           }
         }
       }

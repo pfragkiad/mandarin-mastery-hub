@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-personal-pronouns",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "pronouns",
       "personal-reference"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify first-, second- and third-person pronouns.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -162,7 +164,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 26
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-146",
@@ -202,7 +207,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 146
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-148",
@@ -242,7 +250,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 148
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-150",
@@ -282,7 +293,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 150
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-200",
@@ -322,7 +336,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 200
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-201",
@@ -362,7 +379,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 201
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-202",
@@ -402,7 +422,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 202
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-203",
@@ -442,7 +465,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 203
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-204",
@@ -482,7 +508,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 204
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-205",
@@ -522,7 +551,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 205
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-221",
@@ -562,7 +594,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 221
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-222",
@@ -602,7 +637,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 222
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-getting-around",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,11 @@
       "directions",
       "locations"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "position-direction"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Name common modes of transport.",
@@ -28,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -188,7 +192,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 20
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-022",
@@ -228,7 +235,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 22
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-029",
@@ -268,7 +278,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 29
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-054",
@@ -308,7 +321,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 54
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-081",
@@ -349,7 +365,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 81
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-083",
@@ -389,7 +408,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 83
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-098",
@@ -430,7 +452,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 98
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-106",
@@ -470,7 +495,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 106
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-167",
@@ -510,7 +538,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 167
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-011",
@@ -552,7 +583,10 @@
               "entry_id": 11
             }
           ],
-          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-066",
@@ -592,7 +626,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 66
             }
-          ]
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-080",
@@ -635,7 +674,12 @@
               "entry_id": 80
             }
           ],
-          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-110",
@@ -677,7 +721,12 @@
               "entry_id": 110
             }
           ],
-          "pos_note": "Localizer meaning inside, traditionally also categorized as a location noun."
+          "pos_note": "Localizer meaning inside, traditionally also categorized as a location noun.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-163",
@@ -719,7 +768,12 @@
               "entry_id": 163
             }
           ],
-          "pos_note": "Before/in front of; a time or place localizer."
+          "pos_note": "Before/in front of; a time or place localizer.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-175",
@@ -762,7 +816,12 @@
               "entry_id": 175
             }
           ],
-          "pos_note": "On/above as a localizer or verb for ascending/attending, depending on context."
+          "pos_note": "On/above as a localizer or verb for ascending/attending, depending on context.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-212",
@@ -802,7 +861,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 212
             }
-          ]
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-213",
@@ -842,7 +906,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 213
             }
-          ]
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-226",
@@ -885,7 +954,12 @@
               "entry_id": 226
             }
           ],
-          "pos_note": "Below/under as a localizer, but verb and measure-word uses also exist."
+          "pos_note": "Below/under as a localizer, but verb and measure-word uses also exist.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-289",
@@ -925,7 +999,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 289
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "places-directions"
         }
       ],
       "related_entries": []

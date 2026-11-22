@@ -1,5 +1,7 @@
 # Asking and Pointing
 
+**Subtopics:** position-direction
+
 Ask who, what, where and how, and identify people and objects as here or there.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

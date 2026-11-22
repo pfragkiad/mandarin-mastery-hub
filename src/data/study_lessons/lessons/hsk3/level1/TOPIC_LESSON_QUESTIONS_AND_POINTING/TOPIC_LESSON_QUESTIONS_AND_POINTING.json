@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-questions-and-pointing",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,11 @@
       "demonstratives",
       "pointing"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "position-direction"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Ask basic information questions.",
@@ -28,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -189,7 +193,10 @@
               "entry_id": 47
             }
           ],
-          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun."
+          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-131",
@@ -229,7 +236,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 131
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-132",
@@ -269,7 +279,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 132
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-133",
@@ -309,7 +322,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 133
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-134",
@@ -349,7 +365,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 134
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-135",
@@ -389,7 +408,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 135
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-136",
@@ -431,7 +453,10 @@
               "entry_id": 136
             }
           ],
-          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses."
+          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-137",
@@ -471,7 +496,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 137
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-138",
@@ -511,7 +539,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 138
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-139",
@@ -551,7 +582,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 139
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-140",
@@ -591,7 +625,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 140
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-141",
@@ -631,7 +668,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 141
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-181",
@@ -671,7 +711,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 181
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-182",
@@ -711,7 +754,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 182
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-276",
@@ -753,7 +799,10 @@
               "entry_id": 276
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-277",
@@ -795,7 +844,10 @@
               "entry_id": 277
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-279",
@@ -835,7 +887,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 279
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-280",
@@ -875,7 +930,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 280
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-281",
@@ -915,7 +973,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 281
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-282",
@@ -955,7 +1016,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 282
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-283",
@@ -995,7 +1059,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 283
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-284",
@@ -1035,7 +1102,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 284
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []

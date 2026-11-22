@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-describing-feelings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,12 @@
       "feelings",
       "evaluation"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "emotions-attitudes",
+      "judgments-evaluation"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Describe appearance, size and quality.",
@@ -27,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -172,7 +177,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 25
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-044",
@@ -215,7 +223,12 @@
               "entry_id": 44
             }
           ],
-          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages."
+          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages.",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-046",
@@ -257,7 +270,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 46
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-057",
@@ -297,7 +313,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 57
             }
-          ]
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-071",
@@ -338,7 +359,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 71
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-073",
@@ -378,7 +404,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 73
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-074",
@@ -419,7 +450,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 74
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-118",
@@ -460,7 +494,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 118
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-158",
@@ -500,7 +537,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 158
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-180",
@@ -541,7 +583,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 180
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-234",
@@ -582,7 +627,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 234
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-242",
@@ -622,7 +670,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 242
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         }
       ],
       "related_entries": []

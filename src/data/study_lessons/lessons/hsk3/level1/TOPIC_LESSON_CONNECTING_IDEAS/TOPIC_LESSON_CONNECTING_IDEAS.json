@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-connecting-ideas",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -20,7 +20,9 @@
       "progressive",
       "connectives"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Express degree and emphasis.",
@@ -29,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -170,7 +172,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 41
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-053",
@@ -211,7 +216,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 53
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-067",
@@ -251,7 +259,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 67
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-078",
@@ -293,7 +304,10 @@
               "entry_id": 78
             }
           ],
-          "pos_note": "Connects nouns and nominal phrases as and; with is a prepositional use."
+          "pos_note": "Connects nouns and nominal phrases as and; with is a prepositional use.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-079",
@@ -334,7 +348,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 79
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-206",
@@ -375,7 +392,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 206
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-253",
@@ -415,7 +435,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 253
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-270",
@@ -455,7 +478,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 270
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-271",
@@ -498,7 +524,10 @@
               "entry_id": 271
             }
           ],
-          "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb."
+          "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-285",
@@ -541,7 +570,10 @@
               "entry_id": 285
             }
           ],
-          "pos_note": "Degree adverb truly/really, sometimes adjectival."
+          "pos_note": "Degree adverb truly/really, sometimes adjectival.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-286",
@@ -581,7 +613,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 286
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         }
       ],
       "related_entries": []

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin/v3/character_lesson.schema.json",
+  "$id": "https://example.invalid/mandarin/v3.1/character_lesson.schema.json",
   "title": "Mandarin character-usage lesson (v2 compatibility + v3.0.0)",
-  "description": "v3 adds course-neutral classification, learning objectives and type; previous character schemas remain supported for migration.",
+  "description": "v3 adds course-neutral classification, learning objectives and type; previous character schemas remain supported for migration. Optional global subtopics are validated against the shared taxonomy.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -26,8 +26,7 @@
         "mandarin-character-lesson/2.6.1",
         "mandarin-character-lesson/2.7.0",
         "mandarin-character-lesson/3.0.0",
-        "mandarin-character-lesson/3.0.0",
-        "mandarin-character-lesson/3.0.0"
+        "mandarin-character-lesson/3.1.0"
       ]
     },
     "lesson_id": {
@@ -67,8 +66,7 @@
             "2.6.1",
             "2.7.0",
             "3.0.0",
-            "3.0.0",
-            "3.0.0"
+            "3.1.0"
           ]
         },
         "audience": {
@@ -635,6 +633,23 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
         }
       },
       "allOf": [
@@ -2298,7 +2313,7 @@
       "if": {
         "properties": {
           "schema_version": {
-            "const": "mandarin-character-lesson/3.0.0"
+            "const": "mandarin-character-lesson/3.1.0"
           }
         },
         "required": [
@@ -2317,95 +2332,7 @@
           "metadata": {
             "properties": {
               "template_version": {
-                "const": "3.0.0"
-              }
-            }
-          },
-          "lesson": {
-            "required": [
-              "title",
-              "description",
-              "slug"
-            ],
-            "not": {
-              "anyOf": [
-                {
-                  "required": [
-                    "categories"
-                  ]
-                },
-                {
-                  "required": [
-                    "primary_category_id"
-                  ]
-                },
-                {
-                  "required": [
-                    "tags"
-                  ]
-                }
-              ]
-            }
-          }
-        },
-        "not": {
-          "anyOf": [
-            {
-              "required": [
-                "report_intake"
-              ]
-            },
-            {
-              "properties": {
-                "sections": {
-                  "anyOf": [
-                    {
-                      "required": [
-                        "sources"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "checklist"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "writing"
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "schema_version": {
-            "const": "mandarin-character-lesson/3.0.0"
-          }
-        },
-        "required": [
-          "schema_version"
-        ]
-      },
-      "then": {
-        "required": [
-          "lesson",
-          "lesson_type",
-          "classification",
-          "learning_objectives",
-          "catalog_character_refs"
-        ],
-        "properties": {
-          "metadata": {
-            "properties": {
-              "template_version": {
-                "const": "3.0.0"
+                "const": "3.1.0"
               }
             }
           },

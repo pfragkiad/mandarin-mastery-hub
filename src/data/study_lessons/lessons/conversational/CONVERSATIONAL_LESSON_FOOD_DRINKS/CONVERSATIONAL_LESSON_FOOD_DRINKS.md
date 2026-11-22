@@ -1,5 +1,7 @@
 # Ordering Food and Drinks
 
+**Subtopics:** shopping-commerce
+
 Practice express what you would like to eat or drink. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
 
 ## Learning objectives

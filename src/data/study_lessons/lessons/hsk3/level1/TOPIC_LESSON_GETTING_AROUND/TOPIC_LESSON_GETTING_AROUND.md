@@ -1,5 +1,7 @@
 # Getting Around
 
+**Subtopics:** position-direction
+
 Talk about travelling, moving between places and locating people and objects.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

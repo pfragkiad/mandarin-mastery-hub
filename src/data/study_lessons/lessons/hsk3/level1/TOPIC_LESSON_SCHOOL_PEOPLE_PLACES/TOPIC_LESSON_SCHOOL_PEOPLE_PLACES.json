@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-school-people-places",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "university",
       "students"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Distinguish types of schools.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -146,7 +148,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 27
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-028",
@@ -187,7 +192,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 28
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-179",
@@ -227,7 +235,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 179
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-211",
@@ -268,7 +279,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 211
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-237",
@@ -309,7 +323,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 237
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-238",
@@ -350,7 +367,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 238
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-248",
@@ -391,7 +411,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 248
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-250",
@@ -432,7 +455,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 250
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-292",
@@ -472,7 +498,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 292
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-293",
@@ -513,7 +542,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 293
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         }
       ],
       "related_entries": []

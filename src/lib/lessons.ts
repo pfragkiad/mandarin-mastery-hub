@@ -171,8 +171,11 @@ export function lessonKindFor(schemaVersion: string): LessonKind {
   return 'topic';
 }
 
-export const lessonCategories: LessonCategory[] = (categoryRegistry.categories ?? [])
-  .filter(c => c.status === 'active')
+/* Registry v3.2 lists top-level topics and their parented subtopics side by side (`kind`).
+   Lessons are grouped and filtered by top-level topics only; an entry without `kind`
+   (registries before v3.2) is a topic. */
+export const lessonCategories: LessonCategory[] = (categoryRegistry.categories as { id: string; label: string; description: string; status: string; kind?: string }[] ?? [])
+  .filter(c => c.status === 'active' && (c.kind ?? 'topic') === 'topic')
   .map(c => ({ id: c.id, label: c.label, description: c.description }));
 
 /** One summary from a lesson's top-level keys; categories resolve only through the shared registry. */

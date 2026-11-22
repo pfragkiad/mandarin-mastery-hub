@@ -1,5 +1,7 @@
 # Expressing Wants and Intentions
 
+**Subtopics:** everyday-routines
+
 Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
 
 ## Learning objectives

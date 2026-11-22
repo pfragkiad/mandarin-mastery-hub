@@ -101,3 +101,5 @@
 - [x] Rename the "Collection" dropdown to "Topic" on Flashcards, Drawing and Vocabulary
 - [x] Detail cards: lines only around the facts row and above the action buttons
 - [x] Detail cards: one section gap; half gap after facts line, before and after the action line
+- [x] Lessons: import v3.2.0 taxonomy-v2 sync (core registry + 21 HSK L1 + 2 conversational lessons)
+- [ ] Vocabulary: Subtopic dropdown beside Topic, filtering by recorded subtopic IDs
