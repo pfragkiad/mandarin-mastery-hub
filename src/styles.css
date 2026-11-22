@@ -1846,7 +1846,7 @@ html[data-display-size='comfortable'] .help-link { font-size: 14px; min-height: 
 /* Large screens give the docked Comfortable menu enough width for its
    longest label on one line; narrower menus fall back to wrapping above. */
 @media(min-width:1151px) { html[data-display-size='comfortable'] .workspace.nav-full { --sidebar-width: 256px; } }
-html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs, .detail-footnote, .source-note) { font-size: 12px; letter-spacing: 0; }
+html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs, .detail-footnote, .source-note, .stroke-tab) { font-size: 12px; letter-spacing: 0; }
 /* The floating reference uses the same readable scale across all library kinds.
    Shared square boxes enlarge examples, source checks and both breakdown types
    together; only recorded multi-character boxes may grow wider. */
