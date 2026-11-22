@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildCourse, courses, independentLessons, lessonPositions, projectIndependentLessons, sectionPlacements, unresolvedPlacements } from './lesson-curricula';
+import { buildCourse, courses, independentLessons, lessonPositions, projectIndependentLessons, sectionPlacements, unresolvedPlacements, wordLessonPlacements } from './lesson-curricula';
 import { loadLesson, lessonSummaries, syllabusEntryFor, type LessonSummary } from './lessons';
 import { words } from './mandarin';
 
@@ -74,5 +74,34 @@ describe('topic-lesson words and Vocabulary records', () => {
   it('a number whose headword differs, or an unknown course, matches nothing', () => {
     expect(syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 1 }] }, entries)).toBeNull();
     expect(syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'pimsleur', entry_id: 33 }] }, entries)).toBeNull();
+  });
+});
+
+describe('course lessons on word cards', () => {
+  const word = (hsk_index: number | null, over: Partial<{ entryKind: string; hskVersion: string | null }> = {}) => ({ entryKind: 'word', hskVersion: '3.0', hsk_index, ...over });
+  it('the manifest names exactly the HSK entries each lesson teaches', async () => {
+    for (const p of sectionPlacements(courses.find(c => c.id === 'hsk3-2025')!.sections[0]!)) {
+      const items = (await loadLesson(p.lesson.id))!.topic!.items;
+      expect([...p.introducedEntryIds, ...p.reviewedEntryIds].sort((a, b) => a - b), p.lesson.id).toEqual(items.flatMap(i => i.syllabus_refs.map(r => r.entry_id)).sort((a, b) => a - b));
+    }
+  });
+  it('会 (HSK 3.0 #82) is taught by "What I Can and Want to Do", lesson 17 of 21', () => {
+    const [p, ...rest] = wordLessonPlacements(courses, word(82));
+    expect(rest).toEqual([]);
+    expect(p?.placement.lesson.id).toBe('topic-abilities-interests');
+    expect(p?.index).toBe(17);
+    expect(p?.introduced).toBe(true);
+  });
+  it('every Level 1 word has exactly one lesson; other levels have none yet', () => {
+    const level1 = words.filter(w => w.entry?.entryKind === 'word' && w.entry.hskLevel === 1);
+    expect(level1.length).toBe(300);
+    for (const w of level1) expect(wordLessonPlacements(courses, w.entry!), w.hanzi).toHaveLength(1);
+    const level2 = words.find(w => w.entry?.entryKind === 'word' && w.entry.hskLevel === 2)!;
+    expect(wordLessonPlacements(courses, level2.entry!)).toEqual([]);
+  });
+  it('example phrases with their parent word\'s number, other editions and unnumbered words get no lessons', () => {
+    expect(wordLessonPlacements(courses, word(82, { entryKind: 'phrase' }))).toEqual([]);
+    expect(wordLessonPlacements(courses, word(82, { hskVersion: '2.0' }))).toEqual([]);
+    expect(wordLessonPlacements(courses, word(null))).toEqual([]);
   });
 });

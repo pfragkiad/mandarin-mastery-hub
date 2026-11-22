@@ -234,7 +234,7 @@ export function toTopicContent(rawSections: unknown): TopicContent {
 
 /** Syllabus editions a curriculum ID stands for, as recorded by its manifest (hsk3-2025 is the
  *  CLEC HSK 3.0 syllabus, edition 2025-11, the same source as the Vocabulary entries). */
-const SYLLABUS_VERSION: Record<string, '3.0'> = { 'hsk3-2025': '3.0' };
+export const SYLLABUS_VERSION: Record<string, '3.0'> = { 'hsk3-2025': '3.0' };
 type SyllabusEntry = { id: string; simplified: string; entryKind: string; hskVersion: string | null; hsk_index: number | null };
 /** The one Vocabulary entry a topic-lesson word stands for: same syllabus edition, same HSK
  *  entry number AND the exact same headword. Anything else (unknown curriculum, no match, a

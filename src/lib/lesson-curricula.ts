@@ -12,10 +12,11 @@
  * dropped (fail closed) and reported in `unresolved`, never shown as a fabricated card.
  * Lessons that no curriculum places are the independent lessons (次, 以 today).
  *
- * Kept apart from lessons.ts because only the Lessons pages need it; character cards and
- * the menu import lessons.ts without pulling every manifest into their bundles.
+ * Kept apart from lessons.ts so character cards and the menu import lessons.ts without the
+ * manifests; the Lessons pages and the Vocabulary word cards (lessonsForWord: which course
+ * lessons teach this exact HSK word) import this module.
  */
-import { lessonSummaries, lessonSummary, type LessonSummary } from './lessons';
+import { SYLLABUS_VERSION, lessonSummaries, lessonSummary, type LessonSummary } from './lessons';
 
 export type CoursePlacement = {
   id: string;
@@ -81,6 +82,30 @@ export function lessonPositions(courses: Course[], lessonId: string): LessonPosi
   }));
 }
 
+/** The vocabulary-record identity a course placement can name: an official syllabus word. */
+export type SyllabusWord = { entryKind: string; hskVersion: string | null; hsk_index: number | null };
+export type WordLessonPlacement = LessonPosition & { introduced: boolean };
+/**
+ * Course lessons that teach one exact Vocabulary word: placements whose recorded
+ * introduced/reviewed syllabus entry IDs contain the word's official HSK entry number, in a
+ * course whose syllabus edition is the word's own (SYLLABUS_VERSION). Only `word` records
+ * count — example-sentence phrases carry their parent word's number but are not that word —
+ * and a word without an HSK number, or from another edition, has no course lessons.
+ */
+export function wordLessonPlacements(all: Course[], word: SyllabusWord): WordLessonPlacement[] {
+  if (word.entryKind !== 'word' || word.hsk_index == null || !word.hskVersion) return [];
+  const id = word.hsk_index;
+  return all.filter(c => SYLLABUS_VERSION[c.id] === word.hskVersion).flatMap(course => course.sections.flatMap(section => {
+    const flat = sectionPlacements(section);
+    return flat.flatMap((placement, i): WordLessonPlacement[] => {
+      const introduced = placement.introducedEntryIds.includes(id);
+      if (!introduced && !placement.reviewedEntryIds.includes(id)) return [];
+      const unit = section.units.find(u => u.placements.includes(placement))!;
+      return [{ course, section, unit, placement, index: i + 1, total: flat.length, previous: flat[i - 1]?.lesson ?? null, next: flat[i + 1]?.lesson ?? null, introduced }];
+    });
+  }));
+}
+
 /* ---------- Project data ---------- */
 const manifests = import.meta.glob<RawCurriculum>('/src/data/study_lessons/lessons/curricula/*.json', { eager: true, import: 'default' });
 /** Placements whose lesson_id matched no lesson (should stay empty; checked by tests). */
@@ -91,3 +116,4 @@ export const courses: Course[] = Object.keys(manifests).sort().flatMap(path => {
 });
 export const projectIndependentLessons = independentLessons(courses, lessonSummaries);
 export const positionsOf = (lessonId: string) => lessonPositions(courses, lessonId);
+export const lessonsForWord = (word: SyllabusWord) => wordLessonPlacements(courses, word);
