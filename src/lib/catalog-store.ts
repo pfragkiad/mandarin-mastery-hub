@@ -115,28 +115,32 @@ export function loadCatalog(): Promise<void> {
 // across every glyph binding until its source audio is corrected; preserve raw
 // imported provenance and choose labelled Mandarin TTS before playback instead.
 const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
-// Neutral-tone syllables (no tone mark, e.g. 吧 ba, 啊 a) never play the catalogue's
+// Neutral-tone syllables (no tone mark, e.g. 吧 ba, 地 de) never play the catalogue's
 // syllable bindings: the imported tone-5 clips turned out to be unrelated French speech
 // and were removed. The only neutral recordings are the Sound chart's exact word
 // recordings (neutral-audio.json: a single-character word recorded in that toneless
-// reading), so a glyph speaks one only when it IS that word and the reading matches
-// exactly (吧 ba → 吧's own recording); every other neutral reading stays labelled TTS.
+// reading). Like the toned syllable clips every glyph shares, that clip IS the chart's
+// neutral syllable, so any glyph whose recorded reading is exactly that toneless syllable
+// speaks it (地 de and 的 de both play the chart's "de"); a toned reading never borrows
+// it, and neutral syllables with no recording (le, a, guo…) stay labelled TTS.
 const TONE_MARK = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]|[\u0304\u0301\u030C\u0300]/i;
 type NeutralRecording = { word: string; reading: string; url: string; source: string; license: string; recordingKind?: string };
-/** Exact neutral word recordings keyed by their glyph; only the speaking word itself (never
- * `alsoRecordedIn` words, whose own clips are not in the file) and only toneless readings. */
-const neutralWordAudio = new Map<string, CharacterReadingAudio[]>();
+/** Neutral syllable recordings keyed by their exact toneless syllable (lower-case NFC), the
+ * same key the Sound chart plays for tone 5. */
+const neutralSyllableAudio = new Map<string, AudioAttachment>();
 for (const r of Object.values(neutralAudio.recordings as Record<string, NeutralRecording>)) {
   if (!r.url || [...r.word].length !== 1 || !isNeutralReading(r.reading)) continue;
-  const entry: CharacterReadingAudio = { url: r.url, source: r.source, license: r.license, recordingKind: r.recordingKind ?? 'word', glyph: r.word, reading: r.reading.normalize('NFC') };
-  neutralWordAudio.set(r.word, [...(neutralWordAudio.get(r.word) ?? []), entry]);
+  neutralSyllableAudio.set(r.reading.normalize('NFC').toLowerCase(), { url: r.url, source: r.source, license: r.license, recordingKind: r.recordingKind ?? 'word' });
 }
 export function isNeutralReading(reading: string) { return /[a-zü]/i.test(reading) && !TONE_MARK.test(reading.normalize('NFC')) && !TONE_MARK.test(reading.normalize('NFD')); }
 export function characterAudioRequest(glyph: string, reading?: string | null): AudioRequest {
   const readings = catalog.readingAudio[glyph] ?? {};
   const chosen = reading ?? null;
   const characterAudio = Object.entries(readings).flatMap(([r, id]) => { const a = id && !excludedCharacterRecordings.has(id) && !isNeutralReading(r) ? catalog.audio[id] : undefined; return a ? [{ ...a, glyph, reading: r }] : []; });
-  characterAudio.push(...(neutralWordAudio.get(glyph) ?? []));
+  // Neutral readings: offer the chart's neutral recording for exactly the reading asked
+  // for (the card's own speaker for "de"), plus any toneless reading the glyph records.
+  const neutralReadings = new Set([chosen, ...Object.keys(readings)].filter((r): r is string => Boolean(r) && isNeutralReading(r!)).map(r => r.normalize('NFC')));
+  for (const r of neutralReadings) { const a = neutralSyllableAudio.get(r.toLowerCase()); if (a) characterAudio.push({ ...a, glyph, reading: r }); }
   return { text: glyph, reading: chosen, characterAudio };
 }
 

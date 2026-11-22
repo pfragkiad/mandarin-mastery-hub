@@ -60,17 +60,22 @@ describe('Neutral-tone character readings', () => {
     expect(isNeutralReading('ba')).toBe(true);
     expect(isNeutralReading('bā')).toBe(false);
   });
-  it('reuses the exact neutral word recording only for that word in that toneless reading', () => {
-    hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
+  it('plays the Sound chart neutral recording for any glyph read in exactly that toneless syllable', () => {
+    hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5' }, '地': { 'dì': 'cmn-syl-di4' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-di4': { url: '/di4.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
     const ba = characterRecording('吧', 'ba');
     expect(ba?.url).toMatch(/cmn-5e672cf35336\.mp3$/);
     expect(ba?.license).toBe('CC BY-SA 3.0 US');
     expect(characterRecording('吗', 'ma')?.url).toMatch(/cmn-efb8320d2b52\.mp3$/);
-    // Another character with the same toneless syllable never borrows it.
-    expect(characterRecording('罢', 'ba')).toBeNull();
-    // A different reading of the recorded word never borrows it either.
+    // 地 de, 嘛 ma and 著 zhe share the chart's neutral de / ma / zhe recordings.
+    expect(characterRecording('地', 'de')?.url).toMatch(/cmn-6b192093367f\.mp3$/);
+    expect(characterRecording('嘛', 'ma')?.url).toMatch(/cmn-efb8320d2b52\.mp3$/);
+    expect(characterRecording('著', 'zhe')?.url).toMatch(/hsk2-d0c1708fa56e7cbf\.mp3$/);
+    // The toned reading keeps its own syllable clip.
+    expect(characterRecording('地', 'dì')?.url).toBe('/di4.mp3');
+    // A toned reading never borrows the neutral recording.
     expect(characterRecording('吧', 'bā')).toBeNull();
-    // Neutral words with no exact recording stay on TTS.
+    // Neutral syllables with no recording stay on TTS.
     expect(characterRecording('了', 'le')).toBeNull();
+    expect(characterRecording('过', 'guo')).toBeNull();
   });
 });
