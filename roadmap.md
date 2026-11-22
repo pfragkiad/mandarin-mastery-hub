@@ -106,4 +106,4 @@
 - [x] Lessons: Key expressions cards wrap so long pinyin never overflows
 - [x] Lessons: one search box with scope (All lessons / one course), matching everything in each lesson (titles, topics, hanzi, pinyin, English)
 - [x] Lesson search: numbered pinyin queries (ma1, xue2sheng1, lv4) match tone-marked text
-- [ ] Lessons: speaker (TTS) buttons don't play on lesson pages (e.g. convm-choices-alternatives)
+- [x] Lessons: speaker (TTS) buttons don't play on lesson pages (e.g. convm-choices-alternatives)
