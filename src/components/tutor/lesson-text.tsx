@@ -10,6 +10,7 @@ import { HintChar, HintGlyphs, useLessonHints } from './lesson-hints';
 import { usePhrasePairing } from './phrase-pairing';
 import type { AudioRequest } from '@/lib/audio';
 import type { Word } from '@/lib/mandarin';
+import { segmentLessonExpression, type LessonSegment } from '@/lib/lesson-segments';
 
 /**
  * Shared text pieces for study lessons (lesson-page.tsx, lessons-index.tsx).
@@ -52,11 +53,19 @@ const HAN_CHAR = /^\p{Script=Han}$/u;
  */
 export function useLessonPairing(hanzi: string, pinyin: string | null | undefined, focusable = true) {
   const hints = useLessonHints();
-  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin), true);
-  const word = hints?.enabled ? hints.wordFor(hanzi) : null;
+  // Identified words (words-first, lesson-segments.ts) group the hover: hovering any
+  // character rings the whole word and its syllables, with hints on or off.
+  const allWords = useMemo(() => hints ? hints.wordsFor(hanzi) : null, [hints, hanzi]);
+  const groups = useMemo(() => {
+    if (!allWords) return undefined;
+    let id = 0; let prev: unknown = null;
+    return allWords.map(w => { if (!w) { prev = null; return null; } if (w !== prev) { id++; prev = w; } return id; });
+  }, [allWords]);
+  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin), true, groups);
+  const words = hints?.enabled ? allWords : null;
   const hanziBody = Array.from(hanzi).map((ch, i) => {
     if (!HAN_CHAR.test(ch)) return ch;
-    if (hints?.enabled) return <HintChar key={i} glyph={ch} word={word} focusable={focusable} {...pairing.glyphProps(i)}/>;
+    if (hints?.enabled) return <HintChar key={i} glyph={ch} word={words?.[i] ?? null} focusable={focusable} {...pairing.glyphProps(i)}/>;
     return pairing.paired ? pairing.glyph(ch, i) : ch;
   });
   return { hanziBody, pinyinBody: pairing.pinyinText };
@@ -191,6 +200,11 @@ const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
  */
 export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined }) {
   const fallback = useHanziTarget(hanzi);
+  const segments = useLessonSegments(hanzi);
+  // On a lesson page an expression no single record matches uses the hint popups (word + arrow).
+  const hints = useLessonHints();
+  const pair = useLessonPairing(hanzi, pinyin);
+  const segmented = hints != null && record === undefined && !fallback && segments.some(s => s.kind !== 'text');
   const target: HanziTarget | null = record === undefined ? fallback
     : record ? { kind: 'word', search: { tab: vocabularyKind(record), word: record.id }, audio: record.audio ?? null } : null;
   // A recording is borrowed only from a record read exactly as the lesson reads it, whether the
@@ -203,10 +217,36 @@ export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; 
     ? <Link to="/characters" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
     : target?.kind === 'word'
       ? <Link to="/vocabulary" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
-      : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
+      : record === undefined && segments.some(s => s.kind !== 'text')
+        ? <span className="lesson-hanzi lesson-word-segments" lang="zh-CN">{hints ? pair.hanziBody : segments.map((s, i) => <SegmentLink key={i} segment={s}/>)}</span>
+        : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
   return <span className="lesson-term is-lg">
     {head}
-    <span className="lesson-term-reading"><span className="pinyin">{pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>
+    <span className="lesson-term-reading"><span className="pinyin">{segmented ? pair.pinyinBody : pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>
     {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
   </span>;
+}
+
+/** Unique-headword segmentation of an expression no single record matches (lesson-segments.ts). */
+function useLessonSegments(hanzi: string): LessonSegment[] {
+  const { items } = useWorkspace();
+  return useMemo(() => {
+    const byHead = new Map<string, string | null>();
+    for (const w of items) byHead.set(w.hanzi, byHead.has(w.hanzi) ? null : w.id);
+    return segmentLessonExpression(hanzi, h => byHead.get(h) ?? null);
+  }, [hanzi, items]);
+}
+
+/** One piece of a segmented expression: its exact word record, else its Glyphs record, else plain. */
+function SegmentLink({ segment }: { segment: LessonSegment }) {
+  const { items, preferences } = useWorkspace();
+  if (segment.kind === 'word') {
+    const word = items.find(w => w.id === segment.id);
+    if (word) { const tab = vocabularyKind(word); return <Link to="/vocabulary" search={{ tab, word: word.id }} className="is-linked lesson-word-link" title={openDetailsHint(segment.text, tab)}>{segment.text}</Link>; }
+  }
+  if (segment.kind === 'char') {
+    const dest = libraryDestination(segment.text, preferences.includeTraditional);
+    if (dest) return <Link to="/characters" search={dest} className="is-linked lesson-word-link" title={openDetailsHint(segment.text, dest.tab)}>{segment.text}</Link>;
+  }
+  return <>{segment.text}</>;
 }

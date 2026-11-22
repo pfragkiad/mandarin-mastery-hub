@@ -78,3 +78,8 @@
 - [x] Lessons index: By Course (default; Course → Level → Unit → Lesson) / By Topic (shared topics + tags), Independent lessons section, URL-backed
 - [x] 电脑 example pinyin (shàng xuéxí) fixed in the word list, plus the same slip in HSK 3 学生在网站上学习汉语
 - [x] Word cards/details: Lessons section + book icon for lessons that teach that exact HSK word (owner: HSK lessons only)
+
+- [x] Lesson key expressions: split into words first, characters last (对不起请问)
+- [x] Lessons: word popup hints with details arrow, like character hints
+- [x] Lessons: hover/pinyin pairing groups per identified word (whole word + its syllables), all lessons
+- [x] Lessons: "Hide translations" side switch beside Hide pinyin

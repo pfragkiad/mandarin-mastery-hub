@@ -3760,6 +3760,9 @@ a.lesson-word-link { text-decoration: none; }
 /* "Hide pinyin" study switch: readings blur until hovered or focused (speakers stay usable). */
 .lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child { filter: blur(5px); transition: filter .15s; }
 .lesson-hide-pinyin .pinyin:not(.sentence-pinyin):hover, .lesson-hide-pinyin .sentence-pinyin > span:first-child:hover { filter: none; }
+/* "Hide translations": English renderings blur the same way until hovered or focused. */
+.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); transition: filter .15s; }
+.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation):is(:hover, :focus-within) { filter: none; }
 @container lesson-page (max-width: 760px) {
   .lesson-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .lesson-toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -4320,3 +4323,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lessons-fold[open] > summary::before { transform: rotate(45deg); }
 .lessons-fold[open] > summary { margin-bottom: .75rem; }
 .lessons-fold > summary:hover h2 { color: var(--primary); }
+
+/* Lesson prose: an identified word (words-first) rings as one unit on hover. */
+.lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }
+.lesson-hint-run:hover { box-shadow: 0 0 0 1px color-mix(in oklch, var(--primary) 55%, transparent); }

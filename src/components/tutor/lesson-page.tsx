@@ -18,7 +18,7 @@ import { useWorkspace } from './workspace';
  * topic lesson; the headword box appears only when a headword is recorded).
  *
  * Inputs: `lesson` — the loaded document; `priority` / `onPriority` — the URL-backed
- * vocabulary priority filter (A/B/C or all). Local state: the "Hide pinyin" study switch
+ * vocabulary priority filter (A/B/C or all). Local state: the "Hide pinyin" and "Hide translations" study switches
  * and each practice card's revealed answer (both reset when the page is left). The
  * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
@@ -110,6 +110,9 @@ function useActiveSection(ids: string[]) {
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
   const [hidePinyin, setHidePinyin] = useState(false);
+  // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
+  // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
+  const [hideTranslations, setHideTranslations] = useState(false);
   const { preferences, setPreferences, items } = useWorkspace();
   const topic = lesson.topic;
   // Exact Vocabulary records for this topic lesson's words (HSK entry number + headword).
@@ -317,7 +320,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     {S.historical.intro && <p className="lesson-note"><LessonText text={S.historical.intro}/></p>}
     {S.historical.items.map(h => <div key={h.id} className="lesson-card">
       <p className="lesson-pattern-line"><LessonPairedLine hanzi={h.hanzi} pinyin={h.pinyin}/></p>
-      <p className="lesson-card-title"><LessonText text={h.translation_en}/></p>
+      <p className="lesson-card-title lesson-translation"><LessonText text={h.translation_en}/></p>
       <p><LessonText text={h.function_en}/></p>
       <p className="lesson-muted"><LessonText text={h.explanation}/></p>
     </div>)}
@@ -361,13 +364,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
 
   const pinyinToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hidePinyin} onClick={() => setHidePinyin(v => !v)}>{hidePinyin ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hidePinyin ? 'Show pinyin' : 'Hide pinyin'}</Button>;
+  const translationsToggle = <Button size="sm" variant="outline" className="lesson-pinyin-toggle" aria-pressed={hideTranslations} onClick={() => setHideTranslations(v => !v)}>{hideTranslations ? <Eye aria-hidden="true"/> : <EyeOff aria-hidden="true"/>}{hideTranslations ? 'Show translations' : 'Hide translations'}</Button>;
   // compact = the floating capsule's short label (its helper line is the label's title there).
   const hintsToggle = (compact: boolean) => <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
     <Switch checked={hintsOn} onCheckedChange={on => setPreferences({ ...preferences, lessonHints: on })} aria-label={compact ? 'Character hints' : undefined} aria-describedby={compact ? undefined : 'lesson-hints-help'}/>
     <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
   </label>;
 
-  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
@@ -393,6 +397,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
             narrow layout a pill also opens its collapsed section before the jump. */}
         {sections.map(s => <a key={s.id} href={`#lesson-${s.id}`} data-section={s.id} aria-current={active === s.id ? 'true' : undefined} onClick={() => { if (narrow) setOpenIds(current => current.has(s.id) ? current : new Set([...current, s.id])); }}>{s.title}</a>)}
         {!narrow && pinyinToggle}
+        {!narrow && translationsToggle}
         {!narrow && hintsToggle(false)}
       </nav>
       <div className="lesson-main">
@@ -413,7 +418,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>
   </div>
   {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
-  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{pinyinToggle}{hintsToggle(true)}</div>}
+  {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{pinyinToggle}{translationsToggle}{hintsToggle(true)}</div>}
   </LessonHintsProvider>;
 }
 

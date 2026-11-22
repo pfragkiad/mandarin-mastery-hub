@@ -6,6 +6,7 @@ import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover'
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
 import { lessonGlyphHint, lessonGlyphHintById } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
+import { segmentLessonExpression } from '@/lib/lesson-segments';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -28,15 +29,17 @@ import { MeaningText } from './meaning-text';
  *   gated) it renders plain text — no ring, no popup, no link. Outside a provider callers
  *   keep their own rendering (useLessonHints() returns null).
  *
- * Word context uses only an exact, unique Vocabulary headword match for the whole recorded
- * field/run (same rule as lesson links); sentences never guess a segmentation.
+ * Word context: an exact, unique Vocabulary headword for the whole recorded field/run first;
+ * otherwise (owner-requested) the run is split words-first by segmentLessonExpression
+ * (greedy longest unique headword, lesson-segments.ts) and each character gets the 2+-character
+ * word it falls in, or no word. Presentation only — the recorded text is never changed.
  * The popup is transient UI (not a library selection), so it is not stored in the URL;
  * closing it (Esc, ×, outside click) returns focus to the character without scrolling.
  */
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; refFor: (glyph: string) => string | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
 
 const Ctx = stableContext<HintsContext | null>('lessonHints', null);
 export const useLessonHints = () => useContext(Ctx);
@@ -58,6 +61,18 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
     const w = words.get(hanzi);
     return w ? { hanzi: w.hanzi, pinyin: w.pinyin, meaning: w.meaning, search: { tab: vocabularyKind(w), word: w.id }, audio: w.audio ?? null } : null;
   }, [words]);
+  // Per-character word context for a run: whole-run match first, else words-first segments.
+  const wordsFor = useCallback((text: string): (HintWord | null)[] => {
+    const chars = Array.from(text);
+    const whole = wordFor(text);
+    if (whole) return chars.map(() => whole);
+    const out: (HintWord | null)[] = [];
+    for (const seg of segmentLessonExpression(text, h => words.get(h)?.id ?? null)) {
+      const w = seg.kind === 'word' && Array.from(seg.text).length > 1 ? wordFor(seg.text) : null;
+      for (const _ of Array.from(seg.text)) out.push(w);
+    }
+    return out;
+  }, [wordFor, words]);
   const close = useCallback(() => setState(null), []);
   const open = useCallback((el: HTMLElement, glyph: string, word: HintWord | null) => {
     setState(current => current?.el === el ? null : { el, glyph, word });
@@ -73,7 +88,7 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
   useEffect(() => { if (!enabled) setState(null); }, [enabled]);
   // The lesson's recorded catalog_character_refs: an exact record ID per character, or null.
   const refFor = useCallback((glyph: string) => characterRefs?.[glyph] ?? null, [characterRefs]);
-  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, refFor }), [enabled, backLabel, open, wordFor, refFor]);
+  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, wordsFor, refFor }), [enabled, backLabel, open, wordFor, wordsFor, refFor]);
   return <Ctx.Provider value={value}>
     {children}
     <Popover open={Boolean(state)} onOpenChange={next => { if (!next) close(); }}>
@@ -111,8 +126,24 @@ export function HintChar({ glyph, word, focusable = true, className = '', ...res
 export function HintGlyphs({ text, focusable = true, wordHanzi }: { text: string; focusable?: boolean; wordHanzi?: string }) {
   const hints = useLessonHints();
   if (!hints?.enabled) return <>{text}</>;
-  const word = hints.wordFor(wordHanzi ?? text);
-  return <>{Array.from(text).map((ch, i) => HAN_CHAR.test(ch) ? <HintChar key={i} glyph={ch} word={word} focusable={focusable}/> : ch)}</>;
+  const fixed = wordHanzi ? hints.wordFor(wordHanzi) : undefined;
+  const perChar = fixed === undefined ? hints.wordsFor(text) : null;
+  const chars = Array.from(text);
+  const wordAt = (i: number) => perChar ? perChar[i] ?? null : fixed ?? null;
+  // Consecutive characters of one identified word sit in one .lesson-hint-word span, so
+  // hovering any of them rings the whole word (each character still opens its own card).
+  const out: ReactNode[] = [];
+  for (let i = 0; i < chars.length;) {
+    const ch = chars[i]!;
+    if (!HAN_CHAR.test(ch)) { out.push(ch); i++; continue; }
+    const w = wordAt(i);
+    let end = i + 1;
+    while (w && end < chars.length && HAN_CHAR.test(chars[end]!) && wordAt(end) === w) end++;
+    const run = chars.slice(i, end).map((c, k) => <HintChar key={i + k} glyph={c} word={w} focusable={focusable}/>);
+    out.push(end - i > 1 ? <span key={`w${i}`} className="lesson-hint-run">{run}</span> : run);
+    i = end;
+  }
+  return <>{out}</>;
 }
 
 /** The popup body: minimal facts for one exact record, plus the containing word. */
