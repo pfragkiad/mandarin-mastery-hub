@@ -357,3 +357,15 @@ export async function loadLesson(id: string): Promise<LessonDocument | null> {
   if (!summary || !load) return null;
   return toLessonDocument(await load(), summary);
 }
+
+/** Every lesson's whole raw JSON (each its own lazy chunk), loaded once and only for search
+ *  (src/lib/lesson-search.ts). Lessons that fail to load are left out, never guessed. */
+let allRaw: Promise<{ summary: LessonSummary; raw: unknown }[]> | null = null;
+export function loadAllLessonsForSearch(): Promise<{ summary: LessonSummary; raw: unknown }[]> {
+  allRaw ??= Promise.all(lessonSummaries.map(async summary => {
+    const path = index.pathById.get(summary.id);
+    const load = path ? loaders[path] : undefined;
+    try { return load ? [{ summary, raw: await load() as unknown }] : []; } catch { return []; }
+  })).then(list => list.flat());
+  return allRaw;
+}

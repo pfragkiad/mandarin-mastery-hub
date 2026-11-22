@@ -104,3 +104,4 @@
 - [x] Lessons: import v3.2.0 taxonomy-v2 sync (core registry + 21 HSK L1 + 2 conversational lessons)
 - [x] Vocabulary: Subtopic dropdown beside Topic, filtering by recorded subtopic IDs
 - [x] Lessons: Key expressions cards wrap so long pinyin never overflows
+- [x] Lessons: one search box with scope (All lessons / one course), matching everything in each lesson (titles, topics, hanzi, pinyin, English)

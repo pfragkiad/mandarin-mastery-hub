@@ -4401,3 +4401,11 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* Lesson word/expression cards (lesson-fit-grid.tsx): only when a single full-width card is still
    narrower than a reading may the pinyin line wrap; otherwise the grid drops columns instead. */
 .lesson-vocab-grid[data-reading-wraps] .lesson-term-reading { white-space: normal; flex-wrap: wrap; overflow-wrap: anywhere; }
+
+/* Lessons search (lessons-index.tsx LessonSearchForm, lesson-search-results.tsx). */
+.lesson-search { margin: 4px 0 10px; }
+.lesson-search .search-field { flex: 1 1 280px; min-width: 0; }
+.lesson-search-snippet { font-size: 13px; line-height: 1.5; color: var(--muted-foreground); overflow-wrap: anywhere; }
+.lesson-search-snippet mark { background: color-mix(in oklab, var(--primary) 22%, transparent); color: var(--foreground); border-radius: 3px; padding: 0 2px; }
+.lesson-search-results h2 .lessons-level-count { margin-left: 10px; }
+.lesson-search .filter-select { width: auto; max-width: 100%; }
