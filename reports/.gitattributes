@@ -1,0 +1,3 @@
+# Preserve the supplied lesson audit bytes across platforms.
+hsk-level1-lessons-classification-changes.csv -text
+hsk-level1-lessons-source-example-discrepancies.json -text

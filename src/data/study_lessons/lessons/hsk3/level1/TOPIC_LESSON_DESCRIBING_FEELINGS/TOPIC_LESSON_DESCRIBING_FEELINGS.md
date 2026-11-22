@@ -1,5 +1,7 @@
 # Describing People and Things
 
+**Subtopics:** emotions-attitudes, judgments-evaluation
+
 Use common adjectives and evaluative language to describe people and objects.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

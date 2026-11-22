@@ -1,0 +1,73 @@
+{
+  "source": {
+    "path": "importer/hsk/hsk3_level1_1.7.1.json",
+    "sha256": "825b7b60f91fd55dc79b856f419cc240a327b38195936af064113e8efd821c49",
+    "dataVersion": "1.7.1"
+  },
+  "topics": {
+    "path": "importer/hsk/hsk3_topics.json",
+    "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+    "version": "2.0.0",
+    "count": 22,
+    "subtopicCount": 25,
+    "matchesEmbeddedTaxonomy": true
+  },
+  "beforeEntries": 3601,
+  "afterEntries": 3601,
+  "replacedWords": 300,
+  "removedLevel1Phrases": 0,
+  "preservedWordRecordings": 276,
+  "preservedExampleIds": 567,
+  "examples": 600,
+  "alignedHeadwords": 300,
+  "alignedExamples": 600,
+  "primaryTopicCounts": {
+    "numbers-quantities": 29,
+    "time-calendar": 30,
+    "family-relationships": 16,
+    "people-identity": 6,
+    "reference-questions": 34,
+    "food-drink": 21,
+    "school-language": 29,
+    "work-jobs": 4,
+    "shopping-money": 10,
+    "home-objects": 6,
+    "travel-transport": 9,
+    "health-wellbeing": 10,
+    "animals-weather": 8,
+    "daily-actions": 19,
+    "leisure-media": 6,
+    "places-directions": 10,
+    "communication-social": 13,
+    "qualities-feelings": 13,
+    "grammar-functions": 22,
+    "abstract-concepts": 2,
+    "science-technology": 3,
+    "society-government-law": 0
+  },
+  "assignedPrimarySubtopics": 49,
+  "secondaryTopicWords": 98,
+  "verification": {
+    "scope": "Beginner suitability and structural validation for 600 sentences; sentence pinyin and English added in v1.6.0. Examples/translations are not individually corpus-attested or native-speaker certified.",
+    "status": "beginner_editorial_review_not_native_certified",
+    "word_id_source": "Entry IDs 1–300 are carried over unchanged from the supplied v1.3.0 dataset. This export does NOT independently certify that these numbers match the November 2025 official syllabus serial numbers.",
+    "conversational_examples": "300 original conversational examples retained except targeted corrections for naturalness and beginner vocabulary.",
+    "written_examples": "Most second examples replaced with short everyday descriptions, classroom instructions, or written dialogue, instead of advanced/literary formal language.",
+    "register_policy": "written=plain written descriptions or classroom notices, not high-register Chinese. Spoken particles and greetings appear in written dialogue when formal prose would be unnatural.",
+    "difficulty_policy": "Prefer HSK 3.0 2025 Level 1; allow common Level 2 vocabulary and grammar. Transparent compounds and proper names may be present. No Level 3 把 disposal construction or chair classifier, 需要, 应该, 如果.",
+    "vocabulary_reference": "https://github.com/uranbekanarbaev/hsk-3.0-vocabulary-dataset (2025-11 HSK 1 and 2 lists)",
+    "grammar_reference": "https://github.com/krmanik/HSK-3.0 (2025-11 HSK grammar level tables)",
+    "translation_and_pinyin": "300 headword meanings come directly from the original XLSX-derived v1.1.0 dataset. For sentences unchanged from original XLSX, pinyin and English are reused from the original. For rewritten/new sentences, pinyin and translations are editorial enrichments (using ICU Han-Latin lexicon with curated lexical readings and sandhi), not independently native-speaker certified; manual review is recommended.",
+    "vocabulary_boundary_policy": "Hard ceiling: November 2025 HSK 3.0 Level 2 cumulative vocabulary (IDs 1–500). Level 1 examples may use Level 2 items; Level 3+ standalone vocabulary is not intentionally introduced. Normal grammar particles and contracted negative 没 (short form of 没有) are allowed; orthographic parts inside a listed word are not treated as separate unlisted vocabulary. Original lexical lists do not encode every compositional collocation. Independent linguistic/native-speaker verification has not been performed.",
+    "vocabulary_boundary_audit": "A vocabulary-token segmentation screen was applied to 100% of example sentences; all characters in Hanzi sentences are covered by Level 1/2 headwords, except standalone 没 (a grammatically licensed short form of 没有). This is a segmentation heuristic, not a conclusive proof of lexical or grammar-level compliance. This statement describes the earlier vocabulary screen and does not cover the v1.7.1 revisions.",
+    "sentence_revision": "v1.7.1: Applied the supplied register and naturalness patch to 33 sentences across 32 Level 1 entries. Updated pinyin, translations, notes and register for those examples. ID 127 uses the non-erhua written counterpart of the headword. Vocabulary compliance of the revised sentences was not independently verified."
+  },
+  "checks": {
+    "entryIdsAndOrderPreserved": true,
+    "wordRecordingsPreserved": true,
+    "otherLevelsPreserved": true,
+    "repeatImportIdempotent": true
+  },
+  "changedSourceExamples": 33,
+  "changedSourceEntries": 32
+}

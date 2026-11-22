@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-family-and-friends",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "family",
       "relationships"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify common relatives and relationship words.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -125,7 +127,17 @@
     "那": "Characters:那",
     "都": "Characters:都",
     "院": "Characters:院",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "星": "Characters:星",
+    "期": "Characters:期",
+    "去": "Characters:去",
+    "超": "Characters:超",
+    "市": "Characters:市",
+    "买": "Characters:买",
+    "东": "Characters:东",
+    "西": "Characters:西",
+    "八": "Characters:八",
+    "点": "Characters:点"
   },
   "sections": {
     "overview": {
@@ -173,7 +185,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 1
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-003",
@@ -214,7 +229,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 3
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-032",
@@ -255,7 +273,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 32
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-048",
@@ -296,7 +317,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 48
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-059",
@@ -337,7 +361,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 59
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-068",
@@ -378,7 +405,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 68
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-086",
@@ -408,10 +438,10 @@
               "id": "ex-086-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我家有四个人。",
-              "pinyin": "wǒ jiā yǒu sì gè rén.",
-              "english": "There are four people in my family.",
-              "teaching_note": ""
+              "hanzi": "他的家在学校旁边。",
+              "pinyin": "tā de jiā zài xuéxiào pángbiān.",
+              "english": "His home is next to the school.",
+              "teaching_note": "Here the target word refers to the place where he lives."
             }
           ],
           "learning_role": "introduced",
@@ -421,7 +451,10 @@
               "entry_id": 86
             }
           ],
-          "pos_note": "Home/family noun; also a classifier for businesses/families."
+          "pos_note": "Home/family noun; also a classifier for businesses/families.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-087",
@@ -450,10 +483,10 @@
               "id": "ex-087-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我的家人都在中国。",
-              "pinyin": "wǒ de jiārén dōu zài Zhōngguó.",
-              "english": "All my family members are in China.",
-              "teaching_note": ""
+              "hanzi": "星期天，他和家人一起去超市买东西。",
+              "pinyin": "xīngqītiān, tā hé jiārén yìqǐ qù chāoshì mǎi dōngxi.",
+              "english": "On Sunday, he went shopping at the supermarket with his family.",
+              "teaching_note": "The target word means family members collectively."
             }
           ],
           "learning_role": "introduced",
@@ -462,7 +495,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 87
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-092",
@@ -491,10 +527,10 @@
               "id": "ex-092-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我的姐姐今年二十岁。",
-              "pinyin": "wǒ de jiějie jīnnián èr shí suì.",
-              "english": "My older sister is twenty years old this year.",
-              "teaching_note": ""
+              "hanzi": "姐姐每天上午八点去公司上班。",
+              "pinyin": "jiějie měitiān shàngwǔ bā diǎn qù gōngsī shàngbān.",
+              "english": "My older sister goes to work at the office at eight every morning.",
+              "teaching_note": "The family term can stand on its own when the relationship is understood."
             }
           ],
           "learning_role": "introduced",
@@ -503,7 +539,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 92
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-114",
@@ -544,7 +583,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 114
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-123",
@@ -585,7 +627,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 123
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-143",
@@ -626,7 +671,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 143
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-153",
@@ -667,7 +715,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 153
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-154",
@@ -708,7 +759,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 154
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-156",
@@ -749,7 +803,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 156
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         },
         {
           "id": "w-235",
@@ -790,7 +847,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 235
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "family-relationships"
         }
       ],
       "related_entries": []

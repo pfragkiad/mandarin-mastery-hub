@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-food-and-meals",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "drinks",
       "meals"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify foods, drinks and meals.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -159,7 +161,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 8
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-016",
@@ -199,7 +204,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 16
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-017",
@@ -239,7 +247,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 17
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-021",
@@ -280,7 +291,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 21
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-050",
@@ -320,7 +334,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 50
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-051",
@@ -362,7 +379,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 51
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-072",
@@ -390,10 +410,10 @@
               "id": "ex-072-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这家饭店的面条儿很好吃。",
-              "pinyin": "zhè jiā fàndiàn de miàntiáor hěn hǎochī.",
+              "hanzi": "这家饭店的面条很好吃。",
+              "pinyin": "zhè jiā fàndiàn de miàntiáo hěn hǎochī.",
               "english": "The noodles at this restaurant are delicious.",
-              "teaching_note": ""
+              "teaching_note": "The adjective describes how the noodles taste."
             }
           ],
           "learning_role": "introduced",
@@ -402,7 +422,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 72
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-077",
@@ -443,7 +466,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 77
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-084",
@@ -483,7 +509,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 84
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-090",
@@ -523,7 +552,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 90
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-125",
@@ -563,7 +595,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 125
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-126",
@@ -603,7 +638,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 126
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-127",
@@ -631,10 +669,10 @@
               "id": "ex-127-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这家店的面条儿很好吃。",
-              "pinyin": "zhè jiā diàn de miàntiáor hěn hǎochī.",
+              "hanzi": "这家店的面条很好吃。",
+              "pinyin": "zhè jiā diàn de miàntiáo hěn hǎochī.",
               "english": "The noodles at this shop are delicious.",
-              "teaching_note": ""
+              "teaching_note": "This example uses the written form without the erhua ending."
             }
           ],
           "learning_role": "introduced",
@@ -643,7 +681,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 127
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-151",
@@ -683,7 +724,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 151
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-159",
@@ -723,7 +767,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 159
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-192",
@@ -764,7 +811,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 192
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-193",
@@ -804,7 +854,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 193
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-216",
@@ -844,7 +897,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 216
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-224",
@@ -884,7 +940,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 224
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-274",
@@ -924,7 +983,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 274
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-300",
@@ -965,7 +1027,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 300
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         }
       ],
       "related_entries": []

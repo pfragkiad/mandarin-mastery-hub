@@ -8,7 +8,7 @@ import { importLevel1 } from './import-hsk-level1.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.7.0.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.7.1.json', 'utf8');
 const source = JSON.parse(sourceRaw);
 const topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
@@ -21,7 +21,7 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level1_1.7.0.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  const paths = { sourcePath: join(directory, 'hsk3_level1_1.7.1.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }

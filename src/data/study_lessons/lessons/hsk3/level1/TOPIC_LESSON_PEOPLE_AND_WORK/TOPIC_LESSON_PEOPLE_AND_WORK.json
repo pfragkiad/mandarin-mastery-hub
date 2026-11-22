@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-people-and-work",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "jobs",
       "work"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Introduce people by name or title.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -164,7 +166,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 130
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-142",
@@ -205,7 +210,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 142
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-152",
@@ -246,7 +254,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 152
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-155",
@@ -286,7 +297,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 155
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-170",
@@ -326,7 +340,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 170
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-231",
@@ -366,7 +383,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 231
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-062",
@@ -407,7 +427,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 62
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-063",
@@ -449,7 +472,10 @@
               "entry_id": 63
             }
           ],
-          "pos_note": "Can be the verb work or the noun work/job."
+          "pos_note": "Can be the verb work or the noun work/job.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-176",
@@ -477,10 +503,10 @@
               "id": "ex-176-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我的哥哥早上八点上班。",
-              "pinyin": "wǒ de gēge zǎoshang bā diǎn shàngbān.",
-              "english": "My older brother goes to work at eight in the morning.",
-              "teaching_note": ""
+              "hanzi": "很多人每天早上八点上班。",
+              "pinyin": "hěn duō rén měitiān zǎoshang bā diǎn shàngbān.",
+              "english": "Many people start work at eight every morning.",
+              "teaching_note": "The time phrase states when the workday starts."
             }
           ],
           "learning_role": "introduced",
@@ -489,7 +515,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 176
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-228",
@@ -530,7 +559,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 228
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         }
       ],
       "related_entries": []

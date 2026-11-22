@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin/v3/general_lesson.schema.json",
+  "$id": "https://example.invalid/mandarin/v3.1/general_lesson.schema.json",
   "title": "General grammar, dialogue and review lessons v3.0.0",
   "type": "object",
   "additionalProperties": false,
@@ -17,7 +17,10 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "mandarin-general-lesson/3.0.0"
+      "enum": [
+        "mandarin-general-lesson/3.0.0",
+        "mandarin-general-lesson/3.1.0"
+      ]
     },
     "lesson_id": {
       "type": "string",
@@ -113,6 +116,23 @@
               }
             }
           }
+        },
+        "primary_subtopic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional primary global subtopic; must belong to an assigned topic parent."
+        },
+        "subtopic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "Optional stable global subtopic IDs from the topic registry."
         }
       },
       "allOf": [
@@ -166,7 +186,10 @@
           ]
         },
         "template_version": {
-          "const": "3.0.0"
+          "enum": [
+            "3.0.0",
+            "3.1.0"
+          ]
         },
         "audience": {
           "type": "string",
@@ -803,6 +826,53 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-general-lesson/3.0.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.0.0"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-general-lesson/3.1.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.1.0"
+              }
+            }
+          }
+        }
+      }
     }
-  ]
+  ],
+  "description": " Optional global subtopics are validated against the shared taxonomy."
 }

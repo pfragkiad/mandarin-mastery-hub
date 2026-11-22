@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-social-conversation",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "politeness",
       "social-expressions"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Greet someone and say goodbye.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -176,7 +178,10 @@
               "entry_id": 14
             }
           ],
-          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately."
+          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-024",
@@ -217,7 +222,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 24
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-045",
@@ -258,7 +266,10 @@
               "entry_id": 45
             }
           ],
-          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression."
+          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-120",
@@ -299,7 +310,10 @@
               "entry_id": 120
             }
           ],
-          "pos_note": "Fixed reply meaning it is all right/it does not matter."
+          "pos_note": "Fixed reply meaning it is all right/it does not matter.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-121",
@@ -340,7 +354,10 @@
               "entry_id": 121
             }
           ],
-          "pos_note": "Fixed reassurance meaning nothing is wrong/no problem; other verbal uses exist."
+          "pos_note": "Fixed reassurance meaning nothing is wrong/no problem; other verbal uses exist.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-147",
@@ -380,7 +397,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 147
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-165",
@@ -421,7 +441,10 @@
               "entry_id": 165
             }
           ],
-          "pos_note": "Polite request/please, grammaticalized use of the verb invite/ask."
+          "pos_note": "Polite request/please, grammaticalized use of the verb invite/ask.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-166",
@@ -461,7 +484,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 166
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-171",
@@ -501,7 +527,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 171
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-218",
@@ -542,7 +571,10 @@
               "entry_id": 218
             }
           ],
-          "pos_note": "Attention-getting interjection; phone usage may be wéi or wèi depending on context."
+          "pos_note": "Attention-getting interjection; phone usage may be wéi or wèi depending on context.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-219",
@@ -582,7 +614,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 219
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-220",
@@ -594,8 +629,8 @@
             "noun"
           ],
           "topic_ids": [
-            "communication-social",
-            "abstract-concepts"
+            "abstract-concepts",
+            "communication-social"
           ],
           "examples": [
             {
@@ -623,7 +658,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 220
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "abstract-concepts"
         },
         {
           "id": "w-241",
@@ -663,7 +701,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 241
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-272",
@@ -705,7 +746,10 @@
               "entry_id": 272
             }
           ],
-          "pos_note": "Conventional farewell used as a fixed social expression; also analyzable as a verb."
+          "pos_note": "Conventional farewell used as a fixed social expression; also analyzable as a verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-187",
@@ -746,7 +790,10 @@
               "entry_id": 187
             }
           ],
-          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb."
+          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "abstract-concepts"
         }
       ],
       "related_entries": []

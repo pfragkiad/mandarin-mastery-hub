@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-dates-calendar",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "calendar",
       "age"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Use day, month, year and week words.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -106,7 +108,13 @@
     "超": "Characters:超",
     "这": "Characters:这",
     "里": "Characters:里",
-    "雨": "Characters:雨"
+    "雨": "Characters:雨",
+    "老": "Characters:老",
+    "师": "Characters:师",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "问": "Characters:问",
+    "吗": "Characters:吗"
   },
   "sections": {
     "overview": {
@@ -142,11 +150,11 @@
             {
               "id": "ex-076-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "十月五号是星期一。",
-              "pinyin": "shí yuè wǔ hào shì xīngqīyī.",
-              "english": "October 5 is a Monday.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "老师说：“十月五号不上课。”",
+              "pinyin": "lǎoshī shuō: “shí yuè wǔ hào bú shàngkè.”",
+              "english": "The teacher said, “There’s no class on October 5.”",
+              "teaching_note": "The day of the month uses hào in the teacher’s speech."
             }
           ],
           "learning_role": "introduced",
@@ -155,7 +163,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 76
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-093",
@@ -195,7 +206,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 93
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-094",
@@ -235,7 +249,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 94
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-128",
@@ -275,7 +292,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 128
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-129",
@@ -315,7 +335,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 129
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-149",
@@ -357,7 +380,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 149
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-168",
@@ -397,7 +423,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 168
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-172",
@@ -417,11 +446,11 @@
             {
               "id": "ex-172-1",
               "style": "conversational",
-              "register": "formal",
-              "hanzi": "今天是十月十四日。",
-              "pinyin": "jīntiān shì shí yuè shísì rì.",
-              "english": "Today is October 14.",
-              "teaching_note": "日 is used for the day of a month in more formal or written dates; 号 is common in speech."
+              "register": "polite",
+              "hanzi": "请问，今天是十月十四日吗？",
+              "pinyin": "qǐngwèn, jīntiān shì shí yuè shísì rì ma?",
+              "english": "Excuse me, is today October 14?",
+              "teaching_note": "A polite question gives the date in a more formal style."
             },
             {
               "id": "ex-172-2",
@@ -440,7 +469,10 @@
               "entry_id": 172
             }
           ],
-          "pos_note": "Day/date word; also a measure word for dates."
+          "pos_note": "Day/date word; also a measure word for dates.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-199",
@@ -482,7 +514,10 @@
               "entry_id": 199
             }
           ],
-          "pos_note": "Measure word for age."
+          "pos_note": "Measure word for age.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-207",
@@ -525,7 +560,10 @@
               "entry_id": 207
             }
           ],
-          "pos_note": "Day as a time noun; also a measure word for duration."
+          "pos_note": "Day as a time noun; also a measure word for duration.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-243",
@@ -565,7 +603,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 243
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-244",
@@ -605,7 +646,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 244
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-245",
@@ -645,7 +689,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 245
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-269",
@@ -685,7 +732,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 269
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-297",
@@ -725,7 +775,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 297
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         }
       ],
       "related_entries": []
@@ -828,10 +881,10 @@
         {
           "id": "q-08-5",
           "kind": "production",
-          "prompt": "Write this in Mandarin: “October 5 is a Monday.”",
+          "prompt": "Write this in Mandarin: “The teacher said, “There’s no class on October 5.””",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "十月五号是星期一。 (shí yuè wǔ hào shì xīngqīyī.)",
+          "answer": "老师说：“十月五号不上课。” (lǎoshī shuō: “shí yuè wǔ hào bú shàngkè.”)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
         },
         {

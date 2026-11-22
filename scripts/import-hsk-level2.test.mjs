@@ -8,7 +8,7 @@ import { importLevel2 } from './import-hsk-level2.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.0.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.1.json', 'utf8');
 const source = JSON.parse(sourceRaw), topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
 
@@ -20,7 +20,7 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.0.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.1.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }
@@ -57,6 +57,19 @@ test('replaces every legacy example even with matching text, preserving entry ki
     assert.ok(entry.examples.every(ex => !ex.id.startsWith('legacy-') && ex.audio === null));
     assert.ok(entry.secondarySources.some(s => s.sourceName === 'HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx'));
   }
+});
+
+test('a sentence reading revision preserves its identity but excludes the previous recording', t => {
+  const recorded = vocabulary.entries.find(e => e.hskLevel === 2 && e.audio);
+  const paths = fixture(t, inputs => {
+    const example = inputs.vocabulary.entries.find(e => e.id === recorded.id).examples[0];
+    example.pinyinDisplay = 'previous reading';
+    example.audio = { url: 'previous-sentence-recording' };
+  });
+  const entry = importLevel2(paths).data.entries.find(e => e.id === recorded.id);
+  assert.equal(entry.examples[0].id, recorded.examples[0].id);
+  assert.equal(entry.examples[0].audio, null);
+  assert.deepEqual(entry.audio, recorded.audio);
 });
 
 const invalid = [

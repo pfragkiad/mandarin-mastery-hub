@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { importLevel3 } from './import-hsk-level3.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level3_1.1.0.json';
+const sourcePath = 'importer/hsk/hsk3_level3_1.1.2.json';
 const topicsPath = 'importer/hsk/hsk3_topics.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
@@ -38,8 +38,8 @@ test('creates all Level 3 records and reimports them without changing any record
     assert.equal(entry.studyMetadata.verificationStatus, source.verification.status);
     assert.deepEqual(entry.studyMetadata.posIds, recorded.pos_ids);
     assert.equal(entry.studyMetadata.primaryPosId, recorded.primary_pos_id);
-    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english]), recorded.examples.map(e =>
-      [e.hanzi, recorded.id === 873 && e.style === 'written' ? 'xuéshēng zài wǎngzhàn shàng xuéxí Hànyǔ.' : e.pinyin, e.english]));
+    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english, e.notes, e.register, e.reviewStatus]), recorded.examples.map(e =>
+      [e.hanzi, recorded.id === 873 && e.style === 'written' ? 'xuéshēng zài wǎngzhàn shàng xuéxí Hànyǔ.' : e.pinyin, e.english, e.note, e.register, e.review_status]));
     assert.ok(entry.examples.every(e => e.audio === null && e.tokens.map(t => t.text).join('') === e.simplified));
   }
   const homographs = entries.filter(e => e.simplified === '得');

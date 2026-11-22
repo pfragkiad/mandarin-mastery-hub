@@ -1,5 +1,7 @@
 # What I Can and Want to Do
 
+**Subtopics:** arts-entertainment
+
 Express what you can do, what you want and what you enjoy doing in free time.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -182,5 +184,5 @@ Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choos
 **Comprehension:** In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening?
 **Answer:** I can speak Chinese.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “My younger sister can sing.”
-**Answer:** 我妹妹会唱歌。 (wǒ mèimei huì chàng gē.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “She can write many Chinese characters.”
+**Answer:** 她会写很多汉字。 (tā huì xiě hěn duō hànzì.). Compare your answer with the example and its tone-marked pinyin.

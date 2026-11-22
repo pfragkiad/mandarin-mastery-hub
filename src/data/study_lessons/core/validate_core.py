@@ -35,12 +35,27 @@ def checks_lesson(lesson,catalog=None):
     check_schema(expected,lesson)
     cl=lesson['classification'];primary=cl['primary_topic_id'];topics=cl['topic_ids']
     if primary is not None and primary not in topics:raise ValueError('primary_topic_id must occur in topic_ids')
-    registry={c['id']:c for c in load(HERE/'lesson_categories.json')['categories']}
+    taxonomy=load(HERE/'lesson_categories.json')
+    registry={c['id']:c for c in taxonomy['categories']}
     for topic in topics:
         if topic not in registry:raise ValueError('unknown global topic '+topic)
+        if registry[topic].get('kind','topic')!='topic':raise ValueError('subtopic used as a top-level topic '+topic)
         if registry[topic]['status']=='deprecated':raise ValueError('v3 lessons must not use deprecated topic '+topic)
     seen_refs=set()
     for n in each_dict(lesson):
+        if 'subtopic_ids' in n:
+            # Exact recorded parent links; subtopics never replace global parent topics.
+            subtopics={s['id']:s for s in taxonomy['categories'] if s.get('kind')=='subtopic' and s['status']=='active'}
+            parents=n.get('topic_ids',[])
+            if any(parent not in registry or registry[parent].get('kind','topic')!='topic' or registry[parent]['status']!='active' for parent in parents):
+                raise ValueError('unknown, deprecated or non-parent topic in classification')
+            for sid in n['subtopic_ids']:
+                if sid not in subtopics or subtopics[sid]['parent_topic_id'] not in parents:
+                    raise ValueError('unknown or unrelated subtopic '+sid)
+            primary_sub=n.get('primary_subtopic_id')
+            if primary_sub is not None and (primary_sub not in n['subtopic_ids'] or
+                    subtopics[primary_sub]['parent_topic_id']!=n.get('primary_topic_id')):
+                raise ValueError('primary_subtopic_id must match its recorded primary parent')
         if 'correct_choice_ids' in n:
             cid=[c['id'] for c in n.get('choices',[])]
             if len(cid)!=len(set(cid)):raise ValueError('duplicate quiz choice ID: '+n.get('id',''))
@@ -74,7 +89,7 @@ def checks_lesson(lesson,catalog=None):
             if len(hanzi)==1 and catalog.get(hanzi) and lesson['metadata']['catalog_character_id']!=catalog[hanzi]:
                 raise ValueError('headword catalog character ID mismatch')
     # Pedagogical v3.1 integrity rules beyond JSON Schema.
-    if lesson['schema_version']=='mandarin-topic-lesson/3.1.0':
+    if lesson['schema_version'] in ('mandarin-topic-lesson/3.1.0','mandarin-topic-lesson/3.2.0'):
         t=lesson['sections']['teaching_plan']
         intro={ref['entry_id'] for v in lesson['sections']['vocabulary']['items']
                for ref in v.get('syllabus_refs',[]) if v.get('learning_role')=='introduced'}
@@ -106,14 +121,14 @@ def checks_lesson(lesson,catalog=None):
             if not example.get('pinyin') or not example.get('english'):
                 raise ValueError('missing pinyin/English in new teaching example')
     # Authoring: do not allow source/provenance in learner-facing source blocks.
-    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0')):
+    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0','/3.2.0')):
         forbidden={'report_intake','source_files','original_video','extraction_stats'}
         bad=[key for node in each_dict(lesson) for key in node if key in forbidden]
         if bad:raise ValueError('report-only field(s) in learner lesson: '+str(bad))
 
 def checks_curriculum(doc,library=None):
     check_schema('curriculum.schema.json',doc)
-    glob={t['id'] for t in load(HERE/'lesson_categories.json')['categories'] if t['status']=='active'}
+    glob={t['id'] for t in load(HERE/'lesson_categories.json')['categories'] if t['status']=='active' and t.get('kind','topic')=='topic'}
     private={t['id'] for t in doc['course_topics']}
     if len(private)!=len(doc['course_topics']):raise ValueError('duplicate private course topic ID')
     for t in doc['course_topics']:
@@ -157,8 +172,9 @@ def run_test():
         if file.startswith('CURRICULUM_'):checks_curriculum(load(HERE/file))
         print('OK',file)
     cats=load(HERE/'lesson_categories.json')['categories']
-    assert sum(c['status']=='active' for c in cats)==20
-    print('All self-tests passed; 20 active global topics')
+    assert sum(c['status']=='active' and c.get('kind','topic')=='topic' for c in cats)==22
+    assert sum(c['status']=='active' and c.get('kind')=='subtopic' for c in cats)==25
+    print('All self-tests passed; 22 active global topics and 25 active subtopics')
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--self-test',action='store_true')

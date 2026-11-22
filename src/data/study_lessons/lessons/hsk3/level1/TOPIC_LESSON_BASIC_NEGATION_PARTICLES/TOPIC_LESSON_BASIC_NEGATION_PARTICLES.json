@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-basic-negation-particles",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "sentence-particles",
       "basic-syntax"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Negate a simple statement or request.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -110,7 +112,12 @@
     "都": "Characters:都",
     "里": "Characters:里",
     "问": "Characters:问",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "八": "Characters:八",
+    "点": "Characters:点",
+    "半": "Characters:半",
+    "开": "Characters:开",
+    "始": "Characters:始"
   },
   "sections": {
     "overview": {
@@ -158,7 +165,10 @@
               "entry_id": 4
             }
           ],
-          "pos_note": "Sentence-final suggestion or softening particle."
+          "pos_note": "Sentence-final suggestion or softening particle.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-013",
@@ -198,7 +208,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 13
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-015",
@@ -240,7 +253,10 @@
               "entry_id": 15
             }
           ],
-          "pos_note": "Negative request/prohibition: 不 + 要; an expression rather than a single lexical category."
+          "pos_note": "Negative request/prohibition: 不 + 要; an expression rather than a single lexical category.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-030",
@@ -281,7 +297,10 @@
               "entry_id": 30
             }
           ],
-          "pos_note": "Structural particle marking modification/possession and other constructions."
+          "pos_note": "Structural particle marking modification/possession and other constructions.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-108",
@@ -309,10 +328,10 @@
               "id": "ex-108-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我已经吃了早饭。",
-              "pinyin": "wǒ yǐjīng chī le zǎofàn.",
-              "english": "I have already eaten breakfast.",
-              "teaching_note": ""
+              "hanzi": "现在八点半了，学生们已经开始上课了。",
+              "pinyin": "xiànzài bā diǎn bàn le, xuéshengmen yǐjīng kāishǐ shàngkè le.",
+              "english": "It’s eight thirty now, and the students have already started class.",
+              "teaching_note": "Both clause endings mark an update to the situation."
             }
           ],
           "learning_role": "introduced",
@@ -322,7 +341,10 @@
               "entry_id": 108
             }
           ],
-          "pos_note": "Aspect particle after verbs and sentence-final particle are related but different uses."
+          "pos_note": "Aspect particle after verbs and sentence-final particle are related but different uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-115",
@@ -363,7 +385,10 @@
               "entry_id": 115
             }
           ],
-          "pos_note": "Yes–no question particle."
+          "pos_note": "Yes–no question particle.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-122",
@@ -405,7 +430,10 @@
               "entry_id": 122
             }
           ],
-          "pos_note": "Verb expressing absence or non-possession (我没有手机); negative adverbial 没(有) before a verb expresses nonoccurrence (我没有去). Both roles are kept, but the current examples illustrate non-possession/absence."
+          "pos_note": "Verb expressing absence or non-possession (我没有手机); negative adverbial 没(有) before a verb expresses nonoccurrence (我没有去). Both roles are kept, but the current examples illustrate non-possession/absence.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-124",
@@ -446,7 +474,10 @@
               "entry_id": 124
             }
           ],
-          "pos_note": "Plural suffix for personal pronouns and people nouns."
+          "pos_note": "Plural suffix for personal pronouns and people nouns.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-144",
@@ -487,7 +518,10 @@
               "entry_id": 144
             }
           ],
-          "pos_note": "Sentence-final particle for follow-up, topic continuation, or ongoing action."
+          "pos_note": "Sentence-final particle for follow-up, topic continuation, or ongoing action.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-188",
@@ -528,7 +562,10 @@
               "entry_id": 188
             }
           ],
-          "pos_note": "Copular verb, not a general-purpose adjective."
+          "pos_note": "Copular verb, not a general-purpose adjective.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         }
       ],
       "related_entries": []

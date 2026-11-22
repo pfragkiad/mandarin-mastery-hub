@@ -26,3 +26,19 @@
 - Original five short word-recall questions preserved as optional practice; four more comprehension/production questions created.
 - Quality status: editorial draft only. Native-speaker review, full lexical level audit and final tone/word-segmentation proofreading remain necessary.
 - Any references to higher-level vocabulary in newly authored activities are scaffolding, not silently added Level 1 syllabus entries.
+
+## Source-taxonomy synchronization (2026-11-22)
+- JSON Schema and Core version unchanged at v3.2.0.
+- Shared taxonomy synchronized with user-supplied hsk-topics/2.0.0 (25 active subtopics).
+- All original communicative teaching material, stable lesson IDs, and curriculum placements preserved.
+- Only topic/subtopic classifications were synchronized. Original word-card example pairs were not rewritten.
+- HSK Level 1 entry classifications follow hsk3_level1_1.7.0 source JSON by syllabus ID.
+- Classification and teaching-content validation passed.
+
+
+## Vocabulary synchronization to v1.7.1
+
+- Current vocabulary source: `hsk3_level1_1.7.1.json`.
+- Canonical word-card examples revised: 0.
+- Linked quiz prompts and answers revised in all three lesson formats: 0.
+- Lesson schema: `mandarin-topic-lesson/3.2.0`. Topic taxonomy: v2.0.0.

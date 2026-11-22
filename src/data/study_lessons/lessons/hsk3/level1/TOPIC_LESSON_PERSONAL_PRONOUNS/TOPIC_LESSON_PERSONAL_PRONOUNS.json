@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-personal-pronouns",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "pronouns",
       "personal-reference"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify first-, second- and third-person pronouns.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -115,7 +117,8 @@
     "进": "Characters:进",
     "都": "Characters:都",
     "里": "Characters:里",
-    "问": "Characters:问"
+    "问": "Characters:问",
+    "年": "Characters:年"
   },
   "sections": {
     "overview": {
@@ -162,7 +165,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 26
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-146",
@@ -202,7 +208,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 146
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-148",
@@ -229,11 +238,11 @@
             {
               "id": "ex-148-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "你们明天上午九点来。",
-              "pinyin": "nǐmen míngtiān shàngwǔ jiǔ diǎn lái.",
-              "english": "You all come tomorrow at nine in the morning.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "老师说：“你们明天上午九点来上课。”",
+              "pinyin": "lǎoshī shuō: “nǐmen míngtiān shàngwǔ jiǔ diǎn lái shàngkè.”",
+              "english": "The teacher said, “Come to class tomorrow at nine in the morning.”",
+              "teaching_note": "The teacher addresses a group directly in the quotation."
             }
           ],
           "learning_role": "introduced",
@@ -242,7 +251,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 148
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-150",
@@ -269,11 +281,11 @@
             {
               "id": "ex-150-2",
               "style": "written",
-              "register": "polite_instruction",
-              "hanzi": "您好，请进。",
-              "pinyin": "nín hǎo, qǐng jìn.",
-              "english": "Hello, please come in.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“您好，请进。”老师说。",
+              "pinyin": "“nín hǎo, qǐng jìn.” lǎoshī shuō.",
+              "english": "“Hello, please come in,” the teacher said.",
+              "teaching_note": "The respectful form of “you” is part of the greeting."
             }
           ],
           "learning_role": "introduced",
@@ -282,7 +294,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 150
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-200",
@@ -322,7 +337,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 200
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-201",
@@ -362,7 +380,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 201
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-202",
@@ -402,7 +423,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 202
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-203",
@@ -442,7 +466,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 203
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-204",
@@ -482,7 +509,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 204
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-205",
@@ -522,7 +552,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 205
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-221",
@@ -549,11 +582,11 @@
             {
               "id": "ex-221-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "我每天上午学习汉语。",
-              "pinyin": "wǒ měitiān shàngwǔ xuéxí Hànyǔ.",
-              "english": "I study Chinese every morning.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“我每天上午在学校学习汉语。”她说。",
+              "pinyin": "“wǒ měitiān shàngwǔ zài xuéxiào xuéxí hànyǔ.” tā shuō.",
+              "english": "“I study Chinese at school every morning,” she said.",
+              "teaching_note": "The first-person pronoun refers to the quoted speaker."
             }
           ],
           "learning_role": "introduced",
@@ -562,7 +595,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 221
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-222",
@@ -590,10 +626,10 @@
               "id": "ex-222-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我们每天一起读书。",
-              "pinyin": "wǒmen měitiān yìqǐ dúshū.",
-              "english": "We read together every day.",
-              "teaching_note": ""
+              "hanzi": "去年，我们一起在这个学校学习。",
+              "pinyin": "qùnián, wǒmen yìqǐ zài zhè ge xuéxiào xuéxí.",
+              "english": "Last year, we studied together at this school.",
+              "teaching_note": "The opening time word places this first-person account in the past."
             }
           ],
           "learning_role": "introduced",
@@ -602,7 +638,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 222
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []

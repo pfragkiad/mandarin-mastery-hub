@@ -1,92 +1,65 @@
-# Mandarin Tutor — Core package v3.1.0 (topic teaching schema v3.1.0)
+# Mandarin Tutor — Core Project Sources v3.2.0
 
-**Purpose:** a multi-course Mandarin learning library that can support HSK 3.0, Pimsleur Mandarin, independent character-usage lessons and future courses without duplicate lesson content.
+This 19-file Project Source package is the **canonical authoring contract**. The Core version tracks JSON Schema/validation changes only, never Python generator changes or lesson-content updates.
 
-## The model
+## Architecture
 
-- **Lesson**: an independently identifiable teaching object. Stable `lesson_id`, typed content, learning objectives, global topics and tags. Not owned by any course.
-- **Global category**: one of the 20 active shared semantic categories in `lesson_categories.json`. Global categories are not lessons or course units.
-- **Tag**: unrestricted controlled slug for cross-course discovery. Suitable for `frequency`, `tone-sandhi`, `negation`, etc.
-- **Course-private topic**: defined in a particular curriculum manifest, with optional mapping to shared global topics; it must not silently expand the global taxonomy.
-- **Curriculum**: HSK, Pimsleur or custom ordered collection of sections → units → placements. Multiple curricula can reference the **same lesson ID**, each in its own position, with its own prerequisites and learning level.
-- **HSK vocabulary entry**: an independently identified syllabus item; written Hanzi alone does not uniquely identify its HSK sense/entry. `catalog_character_refs` identifies graphic characters, not word senses or pronunciation.
+- **Vocabulary entry:** a syllabus item identified by an exact HSK entry ID and sense; Hanzi alone is not a unique lexical ID.
+- **Lesson:** a reusable typed instructional object (`lesson_id` stable across curriculum placements).
+- **Curriculum:** an ordered set of course placements (course > level/section > unit > lesson); multiple curricula can place one lesson without duplicating it.
+- **Global topic:** one of **22 active top-level categories**. The original 20 IDs are preserved, plus `science-technology` and `society-government-law`.
+- **Subtopic:** one of **25 optional hierarchical subdivisions**, with one unambiguous `parent_topic_id` and stable ID. No need to invent subtopics for every topic.
+- **Deprecated category:** `time-frequency-repetition` or `vocabulary-grammar-patterns`; preserved for interpreting old lessons, never assigned to new content.
+- **Course-private topic:** defined inside a curriculum manifest and optionally mapped to global topics. It does not expand the global registry.
+- **Tag:** lightweight cross-course metadata such as `frequency` or `pronunciation`. It does not substitute for topic or curriculum placement.
 
-**Do not encode the sole course ownership or placement as `lesson.course_id`, `lesson.hsk.level`, HSK tags or lesson ID prefix.** `metadata.hsk` is preserved on v3 *character lessons* solely as a character/headword syllabus fact, not as the lesson's curriculum membership. The HSK level studied comes from the course's section placement.
+## Current schema versions
 
-## Core files
+| Contract | Current version | Older versions |
+|---|---|---|
+| Topic / teaching lesson | `mandarin-topic-lesson/3.2.0` | 3.0.0, 3.1.0 accepted |
+| Character usage lesson | `mandarin-character-lesson/3.1.0` | 3.0.0 and existing v2 character versions accepted where applicable |
+| General / dialogue / grammar / review | `mandarin-general-lesson/3.1.0` | 3.0.0 accepted |
+| Curriculum | `mandarin-curriculum/3.0.0` | Unchanged |
+| Global category registry | 3.2.0 | 22 active top-level, 2 deprecated top-level, 25 active subtopics (plus one deprecated subtopic alias) |
 
-| File | Purpose |
-| --- | --- |
-| `lesson_common.schema.json` | Shared metadata and quiz definitions |
-| `character_lesson.schema.json` | Character lessons, supporting old v2.8 and new v3 |
-| `CHARACTER_LESSON_TEMPLATE.json`, `.md` | Character authoring templates |
-| `topic_lesson.schema.json` | Course-neutral topic/vocabulary lessons v3.0.0 and **teaching v3.1.0** |
-| `TOPIC_LESSON_TEMPLATE.json`, `.md` | Topic authoring templates and examples |
-| `general_lesson.schema.json` | Typed grammar, dialogue, review or generic lessons |
-| `GRAMMAR_…`, `DIALOGUE_…`, `REVIEW_…`, `GENERIC_…` JSON templates | New lesson-type examples |
-| `curriculum.schema.json` | Curriculum manifest, sections, units and placements |
-| `CURRICULUM_HSK3_TEMPLATE.json` | HSK 3.0 course structure, Levels 1–6 |
-| `CURRICULUM_PIMSLEUR_TEMPLATE.json` | Pimsleur study index with private topic taxonomy |
-| `lesson_categories.json`, `lesson_categories.schema.json` | 20 shared topics + 2 deprecated migration aliases |
-| `validate_core.py` | Schema, quiz, taxonomy, catalog and curriculum checks |
-| `generate_lesson.py` | v3 JSON → synchronized HTML, Markdown, and four-file ZIP for character, topic, grammar, dialogue, review, and generic lessons |
-| `legacy/…` | Previous schema snapshots for migration |
+## The 19 Project Source files
 
-## New in v3.1.0: lessons that teach, not duplicate cards
+Six reusable JSON Schema documents: `lesson_common.schema.json`, `character_lesson.schema.json`, `topic_lesson.schema.json`, `general_lesson.schema.json`, `curriculum.schema.json`, `lesson_categories.schema.json`.
 
-The v3.1.0 topic template introduces required `sections.teaching_plan`. It presents, in this order:
+One canonical category registry: `lesson_categories.json`.
 
-1. A situational dialogue of at least four original, contextual turns, each with Chinese, word-separated tone-marked pinyin and English.
-2. At least two explained grammar/usage patterns, each supported by two newly authored worked examples.
-3. Guided sentence production: one worked model and two controlled substitutions.
-4. A coherent reading passage with at least two comprehension checks.
-5. At least two open-ended speaking scenarios with suggested model answers.
-6. One specific common-pitfall note and pronunciation focus.
-7. Applied comprehension/production checks, followed by an optional original vocabulary-recall quiz and a review checklist.
+Eight JSON authoring templates: `CHARACTER_LESSON_TEMPLATE.json`, `TOPIC_LESSON_TEMPLATE.json`, `DIALOGUE_LESSON_TEMPLATE.json`, `GRAMMAR_LESSON_TEMPLATE.json`, `REVIEW_LESSON_TEMPLATE.json`, `GENERIC_LESSON_TEMPLATE.json`, `CURRICULUM_HSK3_TEMPLATE.json`, `CURRICULUM_PIMSLEUR_TEMPLATE.json`.
 
-**Do not repeat existing word-card examples on lesson pages.** The canonical JSON retains these source pairs for backwards compatibility; HTML/Markdown shows a compact collapsible word bank with the exact HSK syllabus IDs. This means the lesson is useful even when the user has already studied the individual vocabulary cards.
+Four Markdown authoring guides: `README.md`, `CHARACTER_LESSON_TEMPLATE.md`, `TOPIC_LESSON_TEMPLATE.md`, `GENERAL_LESSON_TEMPLATE.md`.
 
-The v3.1.0 schema is intentionally stricter than v3.0.0; the generator keeps reading prior v3.0.0 topic/character/general lessons. The two independent lessons, 次 (cì) and 以 (yǐ), remain in their specialist character-usage format. The HSK manifest controls order, while shared categories and tags support browsing.
+Python generation and migration tools are shipped **separately**, not as Project Source files, and their revisions do not trigger Core schema versioning.
 
-**Scope and quality:** enriched HSK Level 1 lesson content is new draft educational writing (not official examples and not yet native-speaker certified). A JSON Schema pass does not certify tone accuracy, idiomaticity or level compliance; all three still require substantive review.
+## Classification rules
 
-## Existing lessons and categories
+Every lesson has at most one primary global topic; `classification.topic_ids` can include meaningful additional topics. Add `classification.primary_subtopic_id` (or `null`) and `classification.subtopic_ids` (possibly empty) when appropriate. If present, the primary subtopic must be listed, and **every** chosen subtopic's parent must be one of `topic_ids`. Subtopics are not POS tags. Unknown or deprecated IDs must not appear in new teaching content. Course-private topics are `course_topic_refs`, not global topics.
 
-The two existing character lessons remain **independent**: `char-6b21` is 次 (cì) and `char-4ee5` is 以 (yǐ). Both can be referenced from multiple course manifests without copying them.
+Topic lesson vocabulary items also support `primary_subtopic_id` and `subtopic_ids`; preserve their established `topic_ids` and HSK syllabus references. **Do not change headword, original pinyin, examples or source IDs merely because taxonomy changes.**
 
-Suggested classification:
+## Teaching requirements
 
-- 次 (cì): primary `numbers-quantities`; additional `time-calendar`; tags `frequency`, `repetition`, `classifiers`, `tone-sandhi`.
-- 以 (yǐ): primary `grammar-functions`; additional `time-calendar` when appropriate; tags `lexicalization`, `prepositions`, `formal-register`.
+Topic lessons are **not** displays of the two examples already on each word card. The v3.2.0 topic lesson keeps the v3.1 instructional plan: 4+ situational dialogue turns, at least two explained language patterns and fresh worked examples, guided sentence construction, contextual reading with comprehension, speaking tasks, common pitfalls, pronunciation and review/assessment. The source vocabulary-card examples remain in canonical JSON only for reference and are not duplicated in lesson HTML or Markdown.
 
-The two former high-level categories `time-frequency-repetition` and `vocabulary-grammar-patterns` are **deprecated**, not deleted, so existing v2.8 lessons remain interpretable. Do not use them on new lessons. Use global categories and narrower tags instead.
+Character usage, grammar, dialogue, review and generic lessons retain their specialised teaching structures. Do not manufacture additional material when migrating classifications.
 
-## Character IDs and spelling
+## Chinese writing, integrity and packaging
 
-`catalog_ids.json` stays a **separate authoritative Project Source** (approximately 9.5k characters). Never invent IDs. Build `catalog_character_refs` only from exact single-character matches. Simplified and Traditional characters get their own mapped IDs where supplied. A written character ID must **not** be assumed to determine contextual pinyin, HSK vocabulary identity, or word pronunciation (e.g. 一 [yī] in 一次 [yí cì]). Word-catalog IDs, where available, are separate data.
+Provide correct tone-marked pinyin adjacent to Chinese characters; use a local Kai-style font stack for Chinese text. Keep exact graphic character refs from the external `catalog_ids.json` Project Source; do not infer word IDs from character IDs.
 
-## Full lesson packaging
+Every finished lesson ZIP contains exactly four root-level files: **one canonical JSON, one generated HTML, one generated Markdown and `report.md`**. Input/transcript references and extraction/provenance belong in `report.md` rather than learner JSON/HTML/Markdown.
 
-Preserve the exact four-root-file contract for a finished lesson: `<LESSON_NAME>.json`, `<LESSON_NAME>.html`, `<LESSON_NAME>.md`, `report.md`. Input reports, source videos, transcripts, provenance and extraction stats belong **only** in `report.md`, not in any learner-facing file. Curriculum manifests are stored separately at the library level and are not one of the four files.
+Global taxonomy and curriculum are orthogonal; HSK, Pimsleur, Conversational Mandarin and independent lessons can reuse classifications without owning them. No paid APIs, remotely hosted fonts, proprietary external resources or commercial dependencies are required.
 
-## Migration and rendering
+## Migration
 
-- Do not replace the contents of existing v2.8 lesson JSONs without a content-preserving migration. The v2.8 character and v1.0 topic schemas are saved under `legacy/`.
-- Move old `lesson.categories` / `lesson.primary_category_id` / `lesson.tags` to the v3 `classification` object and change `schema_version`, `metadata.template_version`, and `lesson_type` accordingly. For v3, don't keep parallel copies of classification fields inside `lesson`.
-- Existing HSK topic lessons organized as one category per lesson should be **re-curated** into smaller lesson units; they are not automatically reclassified as new v3 units.
-- The included `generate_lesson.py` renders v3 lesson JSON to synchronized, offline HTML and Markdown and assembles the four-file ZIP. The generator covers the five instructional types plus generic lessons. Curriculum manifests are separate and should be read by your app for course navigation. Legacy v2.x JSON should first be migrated to v3; the new generator does not silently coerce old versions.
-- Curriculum identifiers, lesson IDs, topic IDs and optional syllabus IDs are pedagogical identifiers; course-source processing remains in `report.md`.
+The companion taxonomy migration tools release provides an idempotent dry-run/apply migration, HTML/Markdown regeneration, cross-file validation, and a detailed machine-readable classification change report. Historical lessons remain readable by the updated schemas, but **migration of a specific completed lesson is content-preserving**. When an HSK Level 5 source is provided, assign its classifications from this registry rather than creating a competing HSK-specific taxonomy. Existing TXT export formats are unaffected.
 
-Run `python validate_core.py --self-test` (requires `jsonschema`). You can validate an authored lesson with `python validate_core.py --lesson lesson.json --schema character_lesson.schema.json --catalog-ids path/to/catalog_ids.json` or validate a course manifest with `--curriculum curriculum.json`.
 
-## v3.1 rendering example
+## Taxonomy content synchronization — 2026-11-22
 
-After extracting `core.zip`, keep the `catalog_ids.json` Project Source available at its actual location. For an authored v3 lesson JSON:
-
-```bash
-python generate_lesson.py --lesson my_lesson.json --catalog-ids /path/to/catalog_ids.json --report report.md --out-dir ./generated --zip
-```
-
-This writes the canonical JSON, HTML and Markdown into `generated/` and a ZIP containing exactly those three files plus `report.md` alongside `generated/`. The `--report` input is deliberately separate. `jsonschema` is required by `validate_core.py`. HTML loads no web fonts or paid/CDN dependencies and prefers system Kai fonts.
-
-**Distribution convention:** `core.zip` contains reusable schemas/templates/tools only; `lessons.zip` contains actual finished lessons plus a curriculum placement manifest. Both use the same v3 schemas and can be versioned separately.
+The JSON Schema contract stays at **Core v3.2.0**. Topic registry data now agrees with the user-provided `hsk3_topics.json` **hsk-topics/2.0.0** (22 active topics and 25 active subtopics). The former `animals` subtopic is retained as deprecated for reading older data; use `animals-wildlife` for newly authored material. The 2 original deprecated top-level categories remain unchanged. The primary subtopic, when non-null, must be a child of the primary topic, not merely a secondary topic. Changing registry contents or generator code does not increment the schema version.

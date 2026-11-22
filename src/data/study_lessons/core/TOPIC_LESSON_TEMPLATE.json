@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -20,7 +20,9 @@
       "preferences",
       "entertainment"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Express ability and intention.",
@@ -29,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -185,7 +187,9 @@
               "entry_id": 82
             }
           ],
-          "pos_note": "Modal use for learned ability; the full word has other uses."
+          "pos_note": "Modal use for learned ability; the full word has other uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-096",
@@ -225,7 +229,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 96
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-102",
@@ -267,7 +273,9 @@
               "entry_id": 102
             }
           ],
-          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use."
+          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-145",
@@ -307,7 +315,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 145
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-225",
@@ -348,7 +358,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 225
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-233",
@@ -390,7 +402,9 @@
               "entry_id": 233
             }
           ],
-          "pos_note": "Modal sense want/would like, also lexical verb think/miss."
+          "pos_note": "Modal sense want/would like, also lexical verb think/miss.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-252",
@@ -432,7 +446,9 @@
               "entry_id": 252
             }
           ],
-          "pos_note": "Modal of intention/need, also a lexical verb meaning want."
+          "pos_note": "Modal of intention/need, also a lexical verb meaning want.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-263",
@@ -472,7 +488,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 263
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-018",
@@ -513,7 +531,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 18
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-037",
@@ -553,7 +573,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 37
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-038",
@@ -593,7 +615,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 38
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-039",
@@ -634,7 +658,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 39
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-058",
@@ -675,7 +701,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 58
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-075",
@@ -715,7 +743,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 75
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         }
       ],
       "related_entries": []

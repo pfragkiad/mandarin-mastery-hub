@@ -1,0 +1,2597 @@
+{
+  "level": 5,
+  "handoff": {
+    "file": "hsk3_level5_1.0.0.json",
+    "sha256": "ef3481e9dd8d0cb7f122fbfb03963216c7536cd75d8cb2aa4be38472677d7143"
+  },
+  "source": {
+    "name": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "speaker": "Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "repository": "https://github.com/hugolpz/audio-cmn",
+    "commit": "f759a0f18f27690742957619e1248ed91e9b3f2c",
+    "quality": "64k/hsk",
+    "metadataUrl": "https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/mp3/index.xml",
+    "metadataSha256": "59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6",
+    "noticeUrl": "https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/readme.txt",
+    "noticeSha256": "11584998323723287f6922af24006a794efcb02d0fc1ded75e9c6589e18ff95b"
+  },
+  "entries": 1600,
+  "counts": {
+    "matched": 1306,
+    "reading_mismatch": 42,
+    "missing": 252
+  },
+  "uniqueClips": 1304,
+  "package": {
+    "file": "hsk-level-5-audio.zip",
+    "bytes": 13234156,
+    "sha256": "5d4332747fd4b4cb31884ee1c6bb942fc3b1226ab1d6e06fa8a00e4ff5520e9e"
+  },
+  "state": "Verified ZIP prepared for owner CDN upload; no Level 5 audio attached.",
+  "exclusions": [
+    {
+      "entryId": "164b4084-348c-5027-b40c-0cb33a8f14eb",
+      "hskIndex": 2003,
+      "headword": "唉",
+      "reading": "ài",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "āi",
+          "file": "cmn-d121bfc3.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "ba660c0d-0d4c-5669-8ded-8b99141e2672",
+      "hskIndex": 2006,
+      "headword": "安全带",
+      "reading": "ānquándài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4fe1c85b-e3d8-504a-bdd7-8864afddf3ac",
+      "hskIndex": 2010,
+      "headword": "熬夜",
+      "reading": "áoyè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8bc5f26f-93c7-57cd-a406-a64d69f3a6e4",
+      "hskIndex": 2022,
+      "headword": "保安",
+      "reading": "bǎo’ān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3d5064e1-f95c-5097-953e-66f1f5fdd0e9",
+      "hskIndex": 2029,
+      "headword": "保质期",
+      "reading": "bǎozhìqī",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a00a5285-6a3c-5227-ba04-b7d25ce8b579",
+      "hskIndex": 2033,
+      "headword": "报警",
+      "reading": "bàojǐng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "bc9c41d3-743d-5424-8c43-1db4da6f66f3",
+      "hskIndex": 2041,
+      "headword": "本地",
+      "reading": "běndì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5bb6a4c1-a066-5df2-a1a7-0ff5f48e513c",
+      "hskIndex": 2059,
+      "headword": "便利店",
+      "reading": "biànlìdiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9b5fd699-b6b3-50bc-a267-9466fbcf522c",
+      "hskIndex": 2070,
+      "headword": "拨打",
+      "reading": "bōdǎ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "953dcefe-a06f-53a1-9d65-1dfc96767dd2",
+      "hskIndex": 2073,
+      "headword": "不利",
+      "reading": "búlì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "bùlì",
+          "file": "cmn-f0eace40.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "f11c728e-20a1-59fd-b98d-cb246eeb4787",
+      "hskIndex": 2074,
+      "headword": "不幸",
+      "reading": "búxìng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "bùxìng",
+          "file": "cmn-5c07e900.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "36877778-35ce-591f-ae66-cd7f4fed6c8b",
+      "hskIndex": 2075,
+      "headword": "不要紧",
+      "reading": "búyàojǐn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "bùyàojǐn",
+          "file": "cmn-59223b3c.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "c39d7a98-7624-59a8-a86a-221b71882a4f",
+      "hskIndex": 2078,
+      "headword": "不符",
+      "reading": "bùfú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6b5f09b7-4ccd-50eb-8c17-1e5a7afdd6aa",
+      "hskIndex": 2090,
+      "headword": "餐饮",
+      "reading": "cānyǐn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3a950c94-53e4-5a6c-8d7b-249e67c2168a",
+      "hskIndex": 2108,
+      "headword": "长处",
+      "reading": "chángchù",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "chángchu",
+          "file": "cmn-53e931da.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "9279ef34-fff9-5e95-b227-50b8272766b1",
+      "hskIndex": 2120,
+      "headword": "超速",
+      "reading": "chāosù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2d29cab2-d0b4-5469-9c4e-fa68fb2e292a",
+      "hskIndex": 2124,
+      "headword": "车祸",
+      "reading": "chēhuò",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0d6c8a69-4fb9-5de2-9008-6ea91b012070",
+      "hskIndex": 2125,
+      "headword": "车库",
+      "reading": "chēkù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8bf85726-0cdb-5b65-a855-7398d8f183c4",
+      "hskIndex": 2128,
+      "headword": "车主",
+      "reading": "chēzhǔ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "ee927f9f-75ed-50e4-9dfa-d6886a2b87ad",
+      "hskIndex": 2134,
+      "headword": "称为",
+      "reading": "chēngwéi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f7c4576d-6549-520c-90b8-ad66f87399ac",
+      "hskIndex": 2143,
+      "headword": "成年",
+      "reading": "chéngnián",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6842e46e-a5aa-5661-84c1-ac982cd5945c",
+      "hskIndex": 2144,
+      "headword": "城区",
+      "reading": "chéngqū",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0befe67d-a743-5c37-beb8-b0c18d4106c9",
+      "hskIndex": 2153,
+      "headword": "橙子",
+      "reading": "chéngzi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1f706d69-272e-5b6c-baa5-9cac9d1aba68",
+      "hskIndex": 2159,
+      "headword": "充电",
+      "reading": "chōngdiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "de929d55-39d5-5625-8c82-ee47ce3a95b1",
+      "hskIndex": 2162,
+      "headword": "充值",
+      "reading": "chōngzhí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1fa8ee37-68ba-59ba-8b7f-f24b4847e919",
+      "hskIndex": 2166,
+      "headword": "宠物",
+      "reading": "chǒngwù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "42e701a3-f128-537d-8495-82b598724f5c",
+      "hskIndex": 2177,
+      "headword": "出自",
+      "reading": "chūzì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6d5b4cdb-e94d-5e7b-b794-b766d61b8088",
+      "hskIndex": 2179,
+      "headword": "处",
+      "reading": "chǔ",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "chù",
+          "file": "cmn-70d6f58d.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "aba09e89-6d8e-56b4-9001-b46d9996a683",
+      "hskIndex": 2197,
+      "headword": "此前",
+      "reading": "cǐqián",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "325af163-111a-5ea1-b966-292d63b9344e",
+      "hskIndex": 2200,
+      "headword": "从不",
+      "reading": "cóng bù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0f141c90-08c6-58bd-a026-0c032818beac",
+      "hskIndex": 2206,
+      "headword": "促销",
+      "reading": "cùxiāo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "16a6e38f-58ce-5720-b06f-277d2b155078",
+      "hskIndex": 2214,
+      "headword": "打包",
+      "reading": "dǎbāo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d795a95e-49d1-5d35-a45c-7752c49602ea",
+      "hskIndex": 2215,
+      "headword": "打断",
+      "reading": "dǎduàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f1b9f91b-0e14-569e-b8bb-45caa74b1bec",
+      "hskIndex": 2222,
+      "headword": "大妈",
+      "reading": "dàmā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "635438c7-4a04-5e20-8e4b-24e4938ee68e",
+      "hskIndex": 2227,
+      "headword": "大事",
+      "reading": "dàshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "618cdb59-2240-5264-b6b9-5f0556621d44",
+      "hskIndex": 2228,
+      "headword": "大象",
+      "reading": "dàxiàng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6cdf1127-1936-5b27-9042-ed807dd972cb",
+      "hskIndex": 2230,
+      "headword": "大爷",
+      "reading": "dàye",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "58e52431-72a0-5570-a1e1-3fcb3f30fe17",
+      "hskIndex": 2241,
+      "headword": "单一",
+      "reading": "dānyī",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4c566795-b84e-5a6f-9a7b-0146b94680f4",
+      "hskIndex": 2243,
+      "headword": "胆小",
+      "reading": "dǎnxiǎo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "30ba29ed-12d5-521c-b1ec-e78118d07400",
+      "hskIndex": 2245,
+      "headword": "当地",
+      "reading": "dāngdì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "dāngdi",
+          "file": "cmn-0955cdac.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+      "hskIndex": 2250,
+      "headword": "当",
+      "reading": "dàng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "dāng",
+          "file": "cmn-6805d952.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "31845164-3857-5576-bf6e-882f008b30ca",
+      "hskIndex": 2251,
+      "headword": "当成",
+      "reading": "dàngchéng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "c1ad9e02-25b1-5a00-9e05-e39d6644a340",
+      "hskIndex": 2252,
+      "headword": "当作",
+      "reading": "dàngzuò",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "92e8fa12-8526-528e-b51c-f983e3d82271",
+      "hskIndex": 2260,
+      "headword": "灯光",
+      "reading": "dēngguāng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "87eeae26-00bc-539d-a7de-7899fa6712f8",
+      "hskIndex": 2262,
+      "headword": "登录",
+      "reading": "dēnglù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a88c6a3a-8a4d-5e1c-9c67-afbeca53a2c2",
+      "hskIndex": 2266,
+      "headword": "低头",
+      "reading": "dītóu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a66c0465-6b01-59b4-97ee-983e7996909e",
+      "hskIndex": 2277,
+      "headword": "点赞",
+      "reading": "diǎnzàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e805f99f-61e0-576b-81fd-8a55ac23bc3e",
+      "hskIndex": 2279,
+      "headword": "电动",
+      "reading": "diàndòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2628e969-4ddf-56ee-8138-ea99e18beef2",
+      "hskIndex": 2281,
+      "headword": "电商",
+      "reading": "diànshāng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "99ebb8ba-ff8c-5d59-bacd-f39b841e3cc8",
+      "hskIndex": 2283,
+      "headword": "电子版",
+      "reading": "diànzǐbǎn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d224e272-5d83-599e-8bcb-c342e13975eb",
+      "hskIndex": 2285,
+      "headword": "调研",
+      "reading": "diàoyán",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7e4633b9-f6a1-546a-a9dd-b96e9c914300",
+      "hskIndex": 2290,
+      "headword": "动画",
+      "reading": "dònghuà",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "35db202f-bdf8-56b6-a005-1a9caaf37bc5",
+      "hskIndex": 2297,
+      "headword": "读音",
+      "reading": "dúyīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "558f5d15-b626-55af-84f3-9f36887b5ce5",
+      "hskIndex": 2301,
+      "headword": "短处",
+      "reading": "duǎnchù",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "duǎnchu",
+          "file": "cmn-d943d71f.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "e455c786-c788-5207-b43d-e61cfbd4b9e4",
+      "hskIndex": 2314,
+      "headword": "二手",
+      "reading": "èrshǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d58a3db6-1b91-5572-858a-fb25e7c65cec",
+      "hskIndex": 2315,
+      "headword": "二维码",
+      "reading": "èrwéimǎ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "80ee322e-7626-52ad-94f4-0865c6d39e83",
+      "hskIndex": 2323,
+      "headword": "发音",
+      "reading": "fāyīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5e3003ce-d0b5-53c1-b623-cb6fb7b23722",
+      "hskIndex": 2346,
+      "headword": "飞行员",
+      "reading": "fēixíngyuán",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "28eee372-3ab1-5119-91d2-5ce7cfdff7cc",
+      "hskIndex": 2347,
+      "headword": "非洲",
+      "reading": "Fēizhōu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "c4373e13-3213-5ce0-ac37-1b76e9ed2bda",
+      "hskIndex": 2354,
+      "headword": "分手",
+      "reading": "fēnshǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "45da1b1c-6fb8-5515-8479-cc28e51cdb10",
+      "hskIndex": 2356,
+      "headword": "分享",
+      "reading": "fēnxiǎng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "498fd84a-d8fe-5325-b3d1-dfb3d1271e12",
+      "hskIndex": 2358,
+      "headword": "丰富多彩",
+      "reading": "fēngfù-duōcǎi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5df627f8-58d5-5d75-a0e7-559f383b9efd",
+      "hskIndex": 2379,
+      "headword": "改天",
+      "reading": "gǎitiān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a6fb5a33-4134-525c-8eb6-1e9e77f5ef7b",
+      "hskIndex": 2385,
+      "headword": "刚好",
+      "reading": "gānghǎo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "18b7c3c1-08e7-5827-9f13-f8e2cfac2576",
+      "hskIndex": 2386,
+      "headword": "高大",
+      "reading": "gāodà",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "gāodù",
+          "file": "cmn-d27ad1c8.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "f9c26fe1-7cfd-5c52-91f2-d6ac6a3822e2",
+      "hskIndex": 2388,
+      "headword": "高度",
+      "reading": "gāodù",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "gāndù",
+          "file": "cmn-713cde81.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "42d0995b-19f0-5d48-aee8-6a2c58817220",
+      "hskIndex": 2390,
+      "headword": "高科技",
+      "reading": "gāokējì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "627948c8-bdaa-5ae5-a9a5-7020a65876a3",
+      "hskIndex": 2391,
+      "headword": "高效",
+      "reading": "gāoxiào",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "86716da2-ffc3-5227-9a98-a4bfb3c31ad6",
+      "hskIndex": 2394,
+      "headword": "歌词",
+      "reading": "gēcí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "be1f580a-e108-56c4-ba3c-7a29047ae1e8",
+      "hskIndex": 2399,
+      "headword": "各行各业",
+      "reading": "gèháng-gèyè",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "gèhánggèyè",
+          "file": "cmn-523c0404.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "69cb395d-b939-5bde-9f98-1a336b704810",
+      "hskIndex": 2413,
+      "headword": "公务员",
+      "reading": "gōngwùyuán",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2320a04e-712f-5e7f-a186-003f0ef53ebb",
+      "hskIndex": 2414,
+      "headword": "恭喜",
+      "reading": "gōngxǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d334984c-bfe5-5046-8557-43d95fcce2c5",
+      "hskIndex": 2416,
+      "headword": "工艺",
+      "reading": "gōngyì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "36f6deaa-3dc2-5cc5-b7d8-bc26628ff809",
+      "hskIndex": 2417,
+      "headword": "公寓",
+      "reading": "gōngyù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "ffc881bc-e744-5d15-842c-20fe22663e7e",
+      "hskIndex": 2419,
+      "headword": "共享",
+      "reading": "gòngxiǎng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d2d32043-7f43-5fb1-80d3-062778cd3d5e",
+      "hskIndex": 2450,
+      "headword": "国画",
+      "reading": "guóhuà",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "af412366-69b8-52b2-bad1-999279da3534",
+      "hskIndex": 2451,
+      "headword": "国庆",
+      "reading": "guóqìng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "c98f9c53-2f8c-55f1-9149-d42b276262af",
+      "hskIndex": 2456,
+      "headword": "过敏",
+      "reading": "guòmǐn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b46c6df6-cf5f-5322-a592-3d16793c0aab",
+      "hskIndex": 2457,
+      "headword": "过期",
+      "reading": "guòqī",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5a948359-e928-5e7d-ba61-e561decae836",
+      "hskIndex": 2459,
+      "headword": "哈",
+      "reading": "hā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "eae9d900-5bb0-5ac4-879e-05349cf9fc5c",
+      "hskIndex": 2462,
+      "headword": "海鲜",
+      "reading": "hǎixiān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6034de8e-89fd-5a20-8b6d-4418210395c1",
+      "hskIndex": 2466,
+      "headword": "汗水",
+      "reading": "hànshuǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+      "hskIndex": 2467,
+      "headword": "行",
+      "reading": "háng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "xíng",
+          "file": "cmn-0ba21aa9.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "dcd85568-b3db-50f1-97fd-0ead3a443ce8",
+      "hskIndex": 2469,
+      "headword": "好评",
+      "reading": "hǎopíng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "74e85184-5858-5485-9f22-fa283cc11597",
+      "hskIndex": 2470,
+      "headword": "好运",
+      "reading": "hǎoyùn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+      "hskIndex": 2472,
+      "headword": "好",
+      "reading": "hào",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "hǎo",
+          "file": "cmn-36c84cc4.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "71e0300b-b0c1-57f5-804c-d95cae77276b",
+      "hskIndex": 2476,
+      "headword": "盒饭",
+      "reading": "héfàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "db107463-2ac0-5dae-a90a-777e1ac91c4a",
+      "hskIndex": 2479,
+      "headword": "合同",
+      "reading": "hétóng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "hétong",
+          "file": "cmn-34c6c50c.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "de7f7dea-036d-5c2d-8e85-1517ccfea966",
+      "hskIndex": 2480,
+      "headword": "合影",
+      "reading": "héyǐng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9eb297d5-2024-5aa9-82d1-63eab0b8ce80",
+      "hskIndex": 2492,
+      "headword": "互动",
+      "reading": "hùdòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a3b76373-1e0a-5790-bcc8-f9829abeebba",
+      "hskIndex": 2493,
+      "headword": "户外",
+      "reading": "hùwài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7da287a0-b1bf-582b-b612-12406b4b1458",
+      "hskIndex": 2496,
+      "headword": "划",
+      "reading": "huá",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "huà",
+          "file": "cmn-bd332b72.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "0f8bd2de-4de8-5446-9cc4-f40b1b0501e4",
+      "hskIndex": 2498,
+      "headword": "话费",
+      "reading": "huàfèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5e6486f5-1376-5c84-b3de-4b179ce3ec0f",
+      "hskIndex": 2503,
+      "headword": "缓解",
+      "reading": "huǎnjiě",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d8ed6780-f039-5d5a-962b-b2fa6c68b672",
+      "hskIndex": 2505,
+      "headword": "黄瓜",
+      "reading": "huángguā",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "huánggua",
+          "file": "cmn-8add3313.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "682144bf-c386-500b-8a3d-8646d0207e85",
+      "hskIndex": 2510,
+      "headword": "灰色",
+      "reading": "huīsè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+      "hskIndex": 2513,
+      "headword": "婚礼",
+      "reading": "hūnlǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "08983892-3951-522a-a2e3-42651a27d265",
+      "hskIndex": 2516,
+      "headword": "火锅",
+      "reading": "huǒguō",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "671feacb-5e1c-538a-b27b-93fc9d6e812e",
+      "hskIndex": 2523,
+      "headword": "机器人",
+      "reading": "jīqìrén",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "hskIndex": 2525,
+      "headword": "及",
+      "reading": "jí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7a48626a-b7e0-558d-9b79-d83a8f888cb6",
+      "hskIndex": 2536,
+      "headword": "急诊",
+      "reading": "jízhěn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+      "hskIndex": 2539,
+      "headword": "系",
+      "reading": "jì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "xì",
+          "file": "cmn-c0b78848.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "e2d376b0-e705-508e-af96-b7ced907cb2f",
+      "hskIndex": 2542,
+      "headword": "纪录",
+      "reading": "jìlù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a20f7cc8-243e-546c-83c0-72b9cca7a38b",
+      "hskIndex": 2543,
+      "headword": "纪录片",
+      "reading": "jìlùpiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "614fdbb2-2d83-5b39-880f-2cf735c700e3",
+      "hskIndex": 2546,
+      "headword": "纪念日",
+      "reading": "jìniànrì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "368abde4-46f0-5802-ad71-c775f63f36ea",
+      "hskIndex": 2551,
+      "headword": "嘉宾",
+      "reading": "jiābīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "beaa9f99-074e-56b5-9150-bf4e82ba6a55",
+      "hskIndex": 2552,
+      "headword": "家电",
+      "reading": "jiādiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f16a3bb3-0357-5198-b00f-8733cde82d19",
+      "hskIndex": 2562,
+      "headword": "驾照",
+      "reading": "jiàzhào",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e61cb440-b2dc-5f75-b243-af1dcbb1fd75",
+      "hskIndex": 2569,
+      "headword": "减肥",
+      "reading": "jiǎnféi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5dc068bd-950e-5688-a0a9-defc855348bf",
+      "hskIndex": 2570,
+      "headword": "简历",
+      "reading": "jiǎnlì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "89bc4f76-10d9-5cca-ba2f-57f52bfbe84f",
+      "hskIndex": 2573,
+      "headword": "键",
+      "reading": "jiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "bfc294c5-a5a6-5a47-904b-f3050351319e",
+      "hskIndex": 2586,
+      "headword": "降水",
+      "reading": "jiàngshuǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3a7d1340-9422-5fae-b84b-4781d6e23d88",
+      "hskIndex": 2610,
+      "headword": "尽量",
+      "reading": "jǐnliàng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "jìnliàng",
+          "file": "cmn-a762ced3.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "55c7ba37-be07-512a-ba14-32cfa413abef",
+      "hskIndex": 2617,
+      "headword": "近年来",
+      "reading": "jìnnián lái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f3d2b730-5b5d-511a-bba1-bae9a9dccbd2",
+      "hskIndex": 2619,
+      "headword": "近日",
+      "reading": "jìnrì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5425d473-821b-5639-8ab8-2ed1686e21ba",
+      "hskIndex": 2620,
+      "headword": "进一步",
+      "reading": "jìnyíbù",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "jìnyībù",
+          "file": "cmn-d5bf443b.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "89675cda-481b-5aae-b640-b9b3529880a3",
+      "hskIndex": 2623,
+      "headword": "精神",
+      "reading": "jīngshen",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "jīngshén",
+          "file": "cmn-4543d88e.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "9cc3a6ea-4e01-5ed8-b0d0-93dcdca8ba87",
+      "hskIndex": 2624,
+      "headword": "惊喜",
+      "reading": "jīngxǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f1b865bf-2076-554a-bc12-e4e369b72a90",
+      "hskIndex": 2627,
+      "headword": "酒吧",
+      "reading": "jiǔbā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "22d02e2f-8913-51a3-8052-884d69186485",
+      "hskIndex": 2628,
+      "headword": "久远",
+      "reading": "jiǔyuǎn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2de0f1d6-7a4f-520f-93cb-b346d9730341",
+      "hskIndex": 2630,
+      "headword": "救护车",
+      "reading": "jiùhùchē",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "50909f84-63b9-5a49-8837-8dc03346fb15",
+      "hskIndex": 2647,
+      "headword": "角色",
+      "reading": "juésè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "50d04295-852e-59cf-a905-c3a0fb3d7605",
+      "hskIndex": 2652,
+      "headword": "开幕式",
+      "reading": "kāimùshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "eeb7d853-14eb-53de-a5c8-761fd26e8ce6",
+      "hskIndex": 2654,
+      "headword": "开通",
+      "reading": "kāitōng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6b6e4761-1ec6-5e8e-9adc-adac42425b9a",
+      "hskIndex": 2655,
+      "headword": "开业",
+      "reading": "kāiyè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+      "hskIndex": 2657,
+      "headword": "看",
+      "reading": "kān",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "kàn",
+          "file": "cmn-f4728089.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "9612e0cc-73e4-515b-9885-c19dafc5cbc1",
+      "hskIndex": 2668,
+      "headword": "客服",
+      "reading": "kèfú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "hskIndex": 2670,
+      "headword": "客户",
+      "reading": "kèhù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "07f82741-68c3-5a4c-8753-dc6e07185feb",
+      "hskIndex": 2674,
+      "headword": "口袋",
+      "reading": "kǒudai",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "kǒudài",
+          "file": "cmn-da89bfe1.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "hskIndex": 2675,
+      "headword": "口味",
+      "reading": "kǒuwèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "26e8e00e-da6f-5450-beac-584f0fa27c52",
+      "hskIndex": 2678,
+      "headword": "宽度",
+      "reading": "kuāndù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7e715e77-bf4f-5e54-adbf-a8361a7c9b19",
+      "hskIndex": 2686,
+      "headword": "老公",
+      "reading": "lǎogōng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "91075875-4d93-5816-9ea2-1afdfd165f50",
+      "hskIndex": 2689,
+      "headword": "姥爷",
+      "reading": "lǎoye",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "becbc160-7b65-567b-8e45-a91c83fa67b4",
+      "hskIndex": 2692,
+      "headword": "泪",
+      "reading": "lèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5021efb4-75c8-5435-b7ae-c99a21b4bfc7",
+      "hskIndex": 2694,
+      "headword": "泪水",
+      "reading": "lèishuǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8876e6eb-6651-516c-b58e-8c8f4fbacdf2",
+      "hskIndex": 2700,
+      "headword": "离职",
+      "reading": "lízhí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f7963a07-495b-55a6-8ff4-b5276f2a0ae6",
+      "hskIndex": 2707,
+      "headword": "力量",
+      "reading": "lìliàng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "lìliang",
+          "file": "cmn-c9aa9e16.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "a7547fab-7367-5754-89c3-03ccff8cfa3f",
+      "hskIndex": 2719,
+      "headword": "量",
+      "reading": "liàng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "liáng",
+          "file": "cmn-50b7a200.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "d90d8945-b54e-51f4-afe3-0a77e5051808",
+      "hskIndex": 2726,
+      "headword": "领带",
+      "reading": "lǐngdài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "36ff1197-46da-5d5a-a4b6-fb5d17e351ff",
+      "hskIndex": 2728,
+      "headword": "领取",
+      "reading": "lǐngqǔ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "c4f987be-ae1d-5f96-bf15-fbdfc932612c",
+      "hskIndex": 2733,
+      "headword": "流感",
+      "reading": "liúgǎn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "666bef9e-131e-51de-9dbf-9bf75d66c20f",
+      "hskIndex": 2734,
+      "headword": "浏览",
+      "reading": "liúlǎn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "64b9a964-5d55-50d8-95d6-92553243859b",
+      "hskIndex": 2735,
+      "headword": "留言",
+      "reading": "liúyán",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0d36f09d-010e-5535-ae44-7bb4046a3e85",
+      "hskIndex": 2741,
+      "headword": "路人",
+      "reading": "lùrén",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f82ee947-29a7-57bd-847d-1ef2c7337425",
+      "hskIndex": 2745,
+      "headword": "旅行社",
+      "reading": "lǚxíngshè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7e977d5a-80a0-5f4e-8971-c6e40c2b5d57",
+      "hskIndex": 2747,
+      "headword": "逻辑",
+      "reading": "luójí",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "luóji",
+          "file": "cmn-a1a3331c.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "5a62ac30-dd57-5793-a3da-b510abd3f417",
+      "hskIndex": 2749,
+      "headword": "买卖",
+      "reading": "mǎimai",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "mǎimài",
+          "file": "cmn-04da1ef4.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "15a32af0-cb3e-52c6-9328-455f17507c6b",
+      "hskIndex": 2753,
+      "headword": "毛病",
+      "reading": "máobìng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "máobing",
+          "file": "cmn-e6969a89.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "92d4380c-ba8b-5590-a970-a1e32efa8501",
+      "hskIndex": 2755,
+      "headword": "没法儿",
+      "reading": "méifǎr",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4252134a-eb20-5415-bc16-c0ae4010b5e9",
+      "hskIndex": 2757,
+      "headword": "媒体",
+      "reading": "méitǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b9a70328-74be-5473-a1b0-9ed1ed481297",
+      "hskIndex": 2759,
+      "headword": "美味",
+      "reading": "měiwèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b38aacc0-3fa7-57de-9530-dd0033f9bc83",
+      "hskIndex": 2760,
+      "headword": "魅力",
+      "reading": "mèilì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "92848aba-3676-5ec4-83fc-2b47beeb3973",
+      "hskIndex": 2763,
+      "headword": "迷路",
+      "reading": "mílù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e6dc9993-529b-5297-a1a0-b09f5a24efa7",
+      "hskIndex": 2768,
+      "headword": "面积",
+      "reading": "miànjī",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "miànji",
+          "file": "cmn-45ff8bb4.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "701f8c80-8089-5ed6-b630-1b98b207f5fe",
+      "hskIndex": 2770,
+      "headword": "面向",
+      "reading": "miànxiàng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "294b0377-8956-50d3-9b2c-6e84f0026ded",
+      "hskIndex": 2775,
+      "headword": "名片",
+      "reading": "míngpiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4ce636e9-a246-51ee-9b4d-d736328d1910",
+      "hskIndex": 2794,
+      "headword": "闹钟",
+      "reading": "nàozhōng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9e735ece-4cf1-5adb-8bb1-a242c1caa057",
+      "hskIndex": 2797,
+      "headword": "年初",
+      "reading": "niánchū",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "06a86154-6a7c-5781-93ad-e52b627e7984",
+      "hskIndex": 2800,
+      "headword": "年夜饭",
+      "reading": "niányèfàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "02f6230d-020d-58e0-8464-c48bb6c6f314",
+      "hskIndex": 2802,
+      "headword": "牛仔裤",
+      "reading": "niúzǎikù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "56801f20-a3e4-53ea-87f5-b167dad84d26",
+      "hskIndex": 2808,
+      "headword": "欧洲",
+      "reading": "Ōuzhōu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "bc89f001-d8f5-5846-9e5e-e991e4ed40a5",
+      "hskIndex": 2816,
+      "headword": "陪伴",
+      "reading": "péibàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "77db4e2b-f465-551b-a112-75d35999a0b1",
+      "hskIndex": 2821,
+      "headword": "配送",
+      "reading": "pèisòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "hskIndex": 2831,
+      "headword": "拼音",
+      "reading": "pīnyīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "16576295-26ae-5074-b947-952d7616229d",
+      "hskIndex": 2833,
+      "headword": "品牌",
+      "reading": "pǐnpái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "eb5e1c15-c8b8-5bf8-9b96-deb90b9add0e",
+      "hskIndex": 2843,
+      "headword": "凭借",
+      "reading": "píngjiè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e9997dd7-f1b9-56c0-a78a-9aa3ab46f357",
+      "hskIndex": 2846,
+      "headword": "屏幕",
+      "reading": "píngmù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9e377185-e016-5717-9215-cad26705a685",
+      "hskIndex": 2847,
+      "headword": "平台",
+      "reading": "píngtái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7f6f7e22-3044-5455-a212-4034b73f5625",
+      "hskIndex": 2859,
+      "headword": "签",
+      "reading": "qiān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8d92431a-b91f-55f5-a4fc-16cd395efde2",
+      "hskIndex": 2864,
+      "headword": "前来",
+      "reading": "qiánlái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "ea4af2eb-9606-5eaa-938d-c3c2c544a11f",
+      "hskIndex": 2880,
+      "headword": "亲朋好友",
+      "reading": "qīnpéng-hǎoyǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f0d80ca1-6be5-5806-a2e5-df4bdc6e61c5",
+      "hskIndex": 2882,
+      "headword": "亲情",
+      "reading": "qīnqíng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e79fa0ec-be8d-535b-b602-8880d0866e44",
+      "hskIndex": 2888,
+      "headword": "轻重",
+      "reading": "qīngzhòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "47e33a08-bafc-5b50-8200-3a4992bab95c",
+      "hskIndex": 2903,
+      "headword": "全新",
+      "reading": "quánxīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b5bd3e58-48d1-5d82-9954-56cd6b203a44",
+      "hskIndex": 2919,
+      "headword": "人际",
+      "reading": "rénjì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5840f903-4b7f-5251-aff1-cc529b0b0538",
+      "hskIndex": 2930,
+      "headword": "日历",
+      "reading": "rìlì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f2874d2c-1d94-5bb7-977f-05e40512790c",
+      "hskIndex": 2942,
+      "headword": "赛场",
+      "reading": "sàichǎng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7cfc1b97-2cb6-59b0-9345-1fa6c451f545",
+      "hskIndex": 2949,
+      "headword": "扇",
+      "reading": "shān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3cd99a54-5b78-5082-854c-8c1e3e844654",
+      "hskIndex": 2950,
+      "headword": "删除",
+      "reading": "shānchú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "ef2bc722-c758-59c8-ba9a-43bd5087a511",
+      "hskIndex": 2958,
+      "headword": "商家",
+      "reading": "shāngjiā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8ad06b43-27f0-5dfc-a0d3-f6faaca1be74",
+      "hskIndex": 2960,
+      "headword": "商务",
+      "reading": "shāngwù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "30da9715-565b-53dc-bec0-ab0ca9198e22",
+      "hskIndex": 2963,
+      "headword": "上传",
+      "reading": "shàngchuán",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "29c5a790-e06d-534a-8a7a-936467aa0cfb",
+      "hskIndex": 2968,
+      "headword": "烧烤",
+      "reading": "shāokǎo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7382c0b4-68d2-52b9-a137-baa02e76120f",
+      "hskIndex": 2975,
+      "headword": "社区",
+      "reading": "shèqū",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "21ddfa89-f4c1-51c9-9ba5-cc4629675287",
+      "hskIndex": 2982,
+      "headword": "身份",
+      "reading": "shēnfèn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "shēnfen",
+          "file": "cmn-97c276c3.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "b2b6ccc5-37ad-5a5c-a3d0-c461f2743c3d",
+      "hskIndex": 2993,
+      "headword": "升级",
+      "reading": "shēngjí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7ca4fd72-4a91-594e-9742-8b1033958ea4",
+      "hskIndex": 2994,
+      "headword": "升温",
+      "reading": "shēngwēn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b1ec04a5-db1b-5628-87ce-8de6ffed3aed",
+      "hskIndex": 2996,
+      "headword": "生肖",
+      "reading": "shēngxiào",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8a3c005c-fb63-5641-aff1-9bb6d3a2a172",
+      "hskIndex": 2999,
+      "headword": "省份",
+      "reading": "shěngfèn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "55281c20-e012-5398-af47-8c50c33f5592",
+      "hskIndex": 3005,
+      "headword": "失恋",
+      "reading": "shīliàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2d193012-21fd-5204-9e5f-c20f09455acf",
+      "hskIndex": 3010,
+      "headword": "时差",
+      "reading": "shíchā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d8518ec2-8ba5-517f-a163-f5a124456063",
+      "hskIndex": 3022,
+      "headword": "实验",
+      "reading": "shíyàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e4134b71-cfbd-50a4-9ff1-831f9a54a9a5",
+      "hskIndex": 3023,
+      "headword": "实验室",
+      "reading": "shíyànshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e56cf6a4-0228-5024-b2be-8e100292c17c",
+      "hskIndex": 3036,
+      "headword": "视为",
+      "reading": "shìwéi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "24d63152-4721-5e7c-b18c-f9cd908903cf",
+      "hskIndex": 3042,
+      "headword": "适用",
+      "reading": "shìyòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7ec35b12-b9a8-5785-8244-6c4cc4675fa1",
+      "hskIndex": 3045,
+      "headword": "收看",
+      "reading": "shōukàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b00bc64e-bf97-54ad-a878-e725d41d6bcc",
+      "hskIndex": 3047,
+      "headword": "首次",
+      "reading": "shǒucì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "81d6971b-31a2-59ba-99d2-d2141f799d12",
+      "hskIndex": 3054,
+      "headword": "售价",
+      "reading": "shòujià",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7e1c21df-2556-5f64-910c-d0dcda4ba26c",
+      "hskIndex": 3057,
+      "headword": "书房",
+      "reading": "shūfáng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0b88c7b6-413b-5414-99ac-f853468283c6",
+      "hskIndex": 3062,
+      "headword": "熟人",
+      "reading": "shúrén",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "66cda21a-957a-50cf-a070-5428b2a8d99a",
+      "hskIndex": 3064,
+      "headword": "鼠标",
+      "reading": "shǔbiāo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f5027f10-a923-53af-9bb9-d5d8c20000aa",
+      "hskIndex": 3087,
+      "headword": "酸甜苦辣",
+      "reading": "suān-tián-kǔ-là",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d95a14e6-0fd8-5f51-a324-08250bdf3fa4",
+      "hskIndex": 3101,
+      "headword": "台灯",
+      "reading": "táidēng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a0fdd1a9-77f6-502a-8e05-5374087156bf",
+      "hskIndex": 3110,
+      "headword": "特有",
+      "reading": "tèyǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4c64e5f1-55de-5511-9ba9-165f7819d4cd",
+      "hskIndex": 3112,
+      "headword": "疼痛",
+      "reading": "téngtòng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "628a8da0-701f-5faf-a6a6-c19509283d09",
+      "hskIndex": 3116,
+      "headword": "提起",
+      "reading": "tíqǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4de8e340-28db-5cd9-b0b5-152feb59697b",
+      "hskIndex": 3127,
+      "headword": "甜品",
+      "reading": "tiánpǐn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "855df256-5238-55bc-83cd-5a7dbdf29d26",
+      "hskIndex": 3130,
+      "headword": "调",
+      "reading": "tiáo",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "diào",
+          "file": "cmn-c8c42428.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+      "hskIndex": 3149,
+      "headword": "头",
+      "reading": "tou",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "tóu",
+          "file": "cmn-560fc521.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "ea94923a-3983-5a04-8132-a16bbf1864d8",
+      "hskIndex": 3152,
+      "headword": "图书",
+      "reading": "túshū",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9479febc-f377-5177-b2aa-332b342ac772",
+      "hskIndex": 3157,
+      "headword": "团队",
+      "reading": "tuánduì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "75ae4e55-f38e-59c2-ac83-a86edcc9cdb8",
+      "hskIndex": 3166,
+      "headword": "拖鞋",
+      "reading": "tuōxié",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7a6339a3-544e-5916-8f1e-f480716cbd98",
+      "hskIndex": 3168,
+      "headword": "外公",
+      "reading": "wàigōng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8cda8b86-28b1-51d9-a9dc-9bc2bd14e82d",
+      "hskIndex": 3174,
+      "headword": "完美",
+      "reading": "wánměi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1478c8aa-7ac3-5cd6-bab2-ddc2d57ecd2f",
+      "hskIndex": 3179,
+      "headword": "网络",
+      "reading": "wǎngluò",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a5a16703-9c9c-534f-a729-558256d5c526",
+      "hskIndex": 3184,
+      "headword": "为",
+      "reading": "wéi",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "wèi",
+          "file": "cmn-5602df4c.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "b95b5201-8da0-55bc-a388-b922614cde94",
+      "hskIndex": 3191,
+      "headword": "唯一",
+      "reading": "wéiyī",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a0a949ec-7f04-54d4-a9a9-8e8db459e8ef",
+      "hskIndex": 3198,
+      "headword": "位置",
+      "reading": "wèizhì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "wèizhi",
+          "file": "cmn-07dbc24b.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "fbd9e485-362c-5b65-bf6f-1e508a1e389d",
+      "hskIndex": 3202,
+      "headword": "问卷",
+      "reading": "wènjuàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4d018a18-6141-5302-b878-9fd2ad946e0d",
+      "hskIndex": 3206,
+      "headword": "无关",
+      "reading": "wúguān",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d7c6bcc3-5d42-525e-99da-fe1fb198f944",
+      "hskIndex": 3207,
+      "headword": "无奈",
+      "reading": "wúnài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d602a9bc-9f2d-5951-b0fd-a59fa37dedc9",
+      "hskIndex": 3214,
+      "headword": "五颜六色",
+      "reading": "wǔyán-liùsè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "db6d3b69-72b7-5519-80fd-e5f3e2d57ec4",
+      "hskIndex": 3219,
+      "headword": "物业",
+      "reading": "wùyè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "bca9218d-7fab-580f-b270-2d3733f97f29",
+      "hskIndex": 3222,
+      "headword": "吸管",
+      "reading": "xīguǎn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "92aec428-bcb9-5426-b20a-88d668941eba",
+      "hskIndex": 3224,
+      "headword": "西装",
+      "reading": "xīzhuāng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "hskIndex": 3230,
+      "headword": "下载",
+      "reading": "xiàzài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4f89fa01-3a69-5e69-b576-520935b446f0",
+      "hskIndex": 3247,
+      "headword": "相处",
+      "reading": "xiāngchǔ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "2c8df22f-ad6f-51ce-839e-c170cbd5d4a1",
+      "hskIndex": 3254,
+      "headword": "响声",
+      "reading": "xiǎngshēng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "xiǎngsheng",
+          "file": "cmn-9fbc5659.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "30675d2d-aeda-585b-9b74-43030ee306f0",
+      "hskIndex": 3257,
+      "headword": "相册",
+      "reading": "xiàngcè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3eada61e-3a03-5f72-b5e9-6c57323a5051",
+      "hskIndex": 3260,
+      "headword": "向上",
+      "reading": "xiàngshàng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1f490c26-4903-54bd-9227-97d21ffb282b",
+      "hskIndex": 3263,
+      "headword": "消费者",
+      "reading": "xiāofèizhě",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5db250eb-a696-5778-a7cb-381b56061ad6",
+      "hskIndex": 3266,
+      "headword": "销量",
+      "reading": "xiāoliàng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "260c338b-0ddf-5f58-a5ea-856ed36ade5a",
+      "hskIndex": 3269,
+      "headword": "小姐",
+      "reading": "xiǎojiě",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "xiǎojie",
+          "file": "cmn-ecd62eca.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "4d4e1de2-0e23-5197-b023-d8d7a382eb0e",
+      "hskIndex": 3271,
+      "headword": "小于",
+      "reading": "xiǎoyú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1c515432-171d-5ae7-8d16-36df66328064",
+      "hskIndex": 3281,
+      "headword": "心态",
+      "reading": "xīntài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "f7abcc00-8c07-5b9c-906b-6864ee1afe65",
+      "hskIndex": 3297,
+      "headword": "行走",
+      "reading": "xíngzǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "hskIndex": 3302,
+      "headword": "休闲",
+      "reading": "xiūxián",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "b344514d-fea1-52e3-87ba-cc8f192f3cc7",
+      "hskIndex": 3309,
+      "headword": "学分",
+      "reading": "xuéfēn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "19961a30-152d-523e-a4f8-2a0cddd60b41",
+      "hskIndex": 3315,
+      "headword": "雪糕",
+      "reading": "xuěgāo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "768b3376-5e50-58c4-b3b1-9e6e0343030c",
+      "hskIndex": 3321,
+      "headword": "押金",
+      "reading": "yājīn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9a4c6bd4-90bd-5deb-84a5-2fab212c2187",
+      "hskIndex": 3322,
+      "headword": "压岁钱",
+      "reading": "yāsuìqián",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "24e5280f-4ee1-5bf3-a886-cb12b271df2e",
+      "hskIndex": 3327,
+      "headword": "研发",
+      "reading": "yánfā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "23c8836c-0f7c-54e1-af5f-2e38113ada7a",
+      "hskIndex": 3333,
+      "headword": "阳台",
+      "reading": "yángtái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "c6d4d490-f46c-575d-a1b4-6ebf1b8fa51e",
+      "hskIndex": 3334,
+      "headword": "样式",
+      "reading": "yàngshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d253341a-750b-5aee-a05f-c4662aa8ec33",
+      "hskIndex": 3339,
+      "headword": "要不是",
+      "reading": "yàobúshì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yàobushì",
+          "file": "cmn-c56b5ece.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "ff49a0f6-a6ed-59c6-8bcc-efa53168595e",
+      "hskIndex": 3343,
+      "headword": "夜市",
+      "reading": "yèshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "fbd190f7-885c-5d96-acdf-4810f79253b0",
+      "hskIndex": 3352,
+      "headword": "一次性",
+      "reading": "yícìxìng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d7f456d4-21b2-518c-b050-d08dcb172184",
+      "hskIndex": 3353,
+      "headword": "一代",
+      "reading": "yídài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "0b057acf-ad30-51e9-a327-ddf2a641766e",
+      "hskIndex": 3354,
+      "headword": "一旦",
+      "reading": "yídàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yīdàn",
+          "file": "cmn-5d23bbcb.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "c293c398-c7e1-5f2b-ab34-a6e41f866146",
+      "hskIndex": 3357,
+      "headword": "一路",
+      "reading": "yílù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "988c61aa-a68a-5b41-b183-3b112668940e",
+      "hskIndex": 3358,
+      "headword": "一路顺风",
+      "reading": "yílù-shùnfēng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yīlùshùnfēng",
+          "file": "cmn-f8efcf45.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "930c4098-8ca6-5cf2-a59f-7d812b53e75f",
+      "hskIndex": 3360,
+      "headword": "一致",
+      "reading": "yízhì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yīzhì",
+          "file": "cmn-eec6f5d8.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "13b472df-5056-5137-b653-fd9707423ebf",
+      "hskIndex": 3366,
+      "headword": "意识",
+      "reading": "yìshí",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yìshi",
+          "file": "cmn-0a36ee28.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "502e3175-9b4d-584f-b240-f7b83e588377",
+      "hskIndex": 3372,
+      "headword": "音量",
+      "reading": "yīnliàng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3f96f928-4b97-57f5-adb9-4936fc75105a",
+      "hskIndex": 3383,
+      "headword": "影视",
+      "reading": "yǐngshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "5a299d1b-f211-54a3-b4c4-3614ecbba04e",
+      "hskIndex": 3385,
+      "headword": "应对",
+      "reading": "yìngduì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a4287509-845b-5e6e-9099-5f82496aab27",
+      "hskIndex": 3402,
+      "headword": "由此",
+      "reading": "yóu cǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "14ba490e-731f-58f9-8799-f856383c8d90",
+      "hskIndex": 3407,
+      "headword": "油条",
+      "reading": "yóutiáo",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "aed4c478-09a3-50e4-ad3d-cb73442189bb",
+      "hskIndex": 3414,
+      "headword": "有助于",
+      "reading": "yǒuzhùyú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "65fa3c8c-87a0-58a1-afc3-1c8773073ef4",
+      "hskIndex": 3430,
+      "headword": "原有",
+      "reading": "yuán yǒu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "1d9b84d7-c340-58f6-b313-bbe314678d65",
+      "hskIndex": 3432,
+      "headword": "员工",
+      "reading": "yuángōng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "ce930a43-e9d2-5088-b5d7-62d06e2d7c30",
+      "hskIndex": 3436,
+      "headword": "约定",
+      "reading": "yuēdìng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d3bcbdbc-1ece-5ea0-a179-1bbd7cdf87c2",
+      "hskIndex": 3438,
+      "headword": "运费",
+      "reading": "yùnfèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "a0c3bf2a-427f-5889-a048-7b1b642d6a94",
+      "hskIndex": 3442,
+      "headword": "在场",
+      "reading": "zàichǎng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "36bcaeac-a409-59a0-88ad-29ed37022fd8",
+      "hskIndex": 3444,
+      "headword": "在内",
+      "reading": "zàinèi",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4770198d-5a69-53ed-bfdf-e3d3abf875ff",
+      "hskIndex": 3445,
+      "headword": "在线",
+      "reading": "zàixiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8be39b87-1e5f-51df-9060-e1a685ac1231",
+      "hskIndex": 3454,
+      "headword": "造成",
+      "reading": "zàochéng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "13d98e8e-ad99-53d5-888d-8fd635c40ee2",
+      "hskIndex": 3458,
+      "headword": "赠",
+      "reading": "zèng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "30e76835-81da-51f8-b8b3-2248593b48ca",
+      "hskIndex": 3460,
+      "headword": "炸",
+      "reading": "zhá",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "zhà",
+          "file": "cmn-9fe3de40.mp3"
+        }
+      ]
+    },
+    {
+      "entryId": "9db5e978-a3c0-5cd8-8016-af07b3dbf9a0",
+      "hskIndex": 3466,
+      "headword": "展示",
+      "reading": "zhǎnshì",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e0a8faff-cc28-5690-8349-cca8585b1f62",
+      "hskIndex": 3469,
+      "headword": "站台",
+      "reading": "zhàntái",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3791a7ac-9695-58e3-9359-23a02b88aae0",
+      "hskIndex": 3470,
+      "headword": "占线",
+      "reading": "zhànxiàn",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "7db44c3b-d743-5fc6-b3ec-f57ec47bba64",
+      "hskIndex": 3475,
+      "headword": "账号",
+      "reading": "zhànghào",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "3f116233-929d-5205-8b49-ab54a2d80e7d",
+      "hskIndex": 3476,
+      "headword": "账户",
+      "reading": "zhànghù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "425082d6-8bce-57c4-b24d-b86e7d7e6f70",
+      "hskIndex": 3479,
+      "headword": "折扣",
+      "reading": "zhékòu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "183b38de-96eb-5664-996c-d006ea40c2f9",
+      "hskIndex": 3496,
+      "headword": "正如",
+      "reading": "zhèngrú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "cebe3230-a888-5193-b816-99afd070c276",
+      "hskIndex": 3500,
+      "headword": "知名",
+      "reading": "zhīmíng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "4d6d7b4d-86e0-53c1-ae32-ab86e504d2b9",
+      "hskIndex": 3503,
+      "headword": "职场",
+      "reading": "zhíchǎng",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "910fa71e-7bfb-5d20-b66c-b101ec948fec",
+      "hskIndex": 3517,
+      "headword": "志愿者",
+      "reading": "zhìyuànzhě",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "dde18285-0db6-5bb8-b278-54a343667745",
+      "hskIndex": 3520,
+      "headword": "中华",
+      "reading": "Zhōnghuá",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "677bc150-c69a-5f47-89e9-357150159fbe",
+      "hskIndex": 3521,
+      "headword": "中华民族",
+      "reading": "Zhōnghuá Mínzú",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "9c7c4588-d8e8-54e2-9b31-4b03c1cc2f10",
+      "hskIndex": 3522,
+      "headword": "中级",
+      "reading": "zhōngjí",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "hskIndex": 3523,
+      "headword": "中介",
+      "reading": "zhōngjiè",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "96f5a0bc-b064-5fce-9c83-07d07bc41447",
+      "hskIndex": 3524,
+      "headword": "中期",
+      "reading": "zhōngqī",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "6ba8e930-5420-5cc1-b960-6dd9f8262512",
+      "hskIndex": 3525,
+      "headword": "中外",
+      "reading": "zhōngwài",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "d7554e76-ed28-572a-85a1-f6f3ff6f3064",
+      "hskIndex": 3551,
+      "headword": "住宿",
+      "reading": "zhùsù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "bdf71cf9-1c66-5f5a-9c25-5ad0810e53d2",
+      "hskIndex": 3552,
+      "headword": "住址",
+      "reading": "zhùzhǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "172c6ab8-a8cd-5a6b-b640-362cabf1cebd",
+      "hskIndex": 3561,
+      "headword": "装修",
+      "reading": "zhuāngxiū",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "05c29e17-4559-5511-ab0c-401836cdddf3",
+      "hskIndex": 3573,
+      "headword": "子女",
+      "reading": "zǐnǚ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "df40c17f-dc39-57d9-815d-918e492a0756",
+      "hskIndex": 3581,
+      "headword": "总部",
+      "reading": "zǒngbù",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8ccc6d46-fe89-5d25-ad5d-a51cd3fb0876",
+      "hskIndex": 3584,
+      "headword": "总体",
+      "reading": "zǒngtǐ",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "e83d90a0-963c-541d-b747-0ae0f1b45aa0",
+      "hskIndex": 3589,
+      "headword": "足够",
+      "reading": "zúgòu",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "8cb6a1cd-2f31-55b0-ba02-e61da94f47c1",
+      "hskIndex": 3597,
+      "headword": "最佳",
+      "reading": "zuìjiā",
+      "status": "missing",
+      "sourceCandidates": []
+    },
+    {
+      "entryId": "928d1eac-5f16-5975-88c7-9688d47d67a7",
+      "hskIndex": 3600,
+      "headword": "作出",
+      "reading": "zuòchū",
+      "status": "missing",
+      "sourceCandidates": []
+    }
+  ]
+}

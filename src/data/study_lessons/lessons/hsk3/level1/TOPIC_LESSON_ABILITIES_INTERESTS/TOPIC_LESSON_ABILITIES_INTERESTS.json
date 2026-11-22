@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -9,8 +9,9 @@
     "slug": "abilities-interests"
   },
   "classification": {
-    "primary_topic_id": "daily-actions",
+    "primary_topic_id": "grammar-functions",
     "topic_ids": [
+      "grammar-functions",
       "daily-actions",
       "leisure-media"
     ],
@@ -20,7 +21,11 @@
       "preferences",
       "entertainment"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "arts-entertainment"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Express ability and intention.",
@@ -29,7 +34,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -137,7 +142,10 @@
     "那": "Characters:那",
     "里": "Characters:里",
     "间": "Characters:间",
-    "院": "Characters:院"
+    "院": "Characters:院",
+    "写": "Characters:写",
+    "字": "Characters:字",
+    "习": "Characters:习"
   },
   "sections": {
     "overview": {
@@ -172,10 +180,10 @@
               "id": "ex-082-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我妹妹会唱歌。",
-              "pinyin": "wǒ mèimei huì chàng gē.",
-              "english": "My younger sister can sing.",
-              "teaching_note": ""
+              "hanzi": "她会写很多汉字。",
+              "pinyin": "tā huì xiě hěn duō hànzì.",
+              "english": "She can write many Chinese characters.",
+              "teaching_note": "The modal expresses a learned skill."
             }
           ],
           "learning_role": "introduced",
@@ -185,7 +193,10 @@
               "entry_id": 82
             }
           ],
-          "pos_note": "Modal use for learned ability; the full word has other uses."
+          "pos_note": "Modal use for learned ability; the full word has other uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-096",
@@ -225,7 +236,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 96
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-102",
@@ -267,7 +281,10 @@
               "entry_id": 102
             }
           ],
-          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use."
+          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-145",
@@ -279,7 +296,7 @@
             "modal-verb"
           ],
           "topic_ids": [
-            "daily-actions"
+            "grammar-functions"
           ],
           "examples": [
             {
@@ -295,10 +312,10 @@
               "id": "ex-145-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "今天下午你能来吗？",
-              "pinyin": "jīntiān xiàwǔ nǐ néng lái ma?",
-              "english": "Can you come this afternoon?",
-              "teaching_note": ""
+              "hanzi": "学生们在这里能看书，也能学习。",
+              "pinyin": "xuéshengmen zài zhèlǐ néng kàn shū, yě néng xuéxí.",
+              "english": "Students can read books and study here.",
+              "teaching_note": "The repeated modal links two activities students can do in this location."
             }
           ],
           "learning_role": "introduced",
@@ -307,7 +324,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 145
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-225",
@@ -319,7 +339,6 @@
             "verb"
           ],
           "topic_ids": [
-            "daily-actions",
             "qualities-feelings"
           ],
           "examples": [
@@ -348,7 +367,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 225
             }
-          ]
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-233",
@@ -390,7 +414,10 @@
               "entry_id": 233
             }
           ],
-          "pos_note": "Modal sense want/would like, also lexical verb think/miss."
+          "pos_note": "Modal sense want/would like, also lexical verb think/miss.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-252",
@@ -432,7 +459,10 @@
               "entry_id": 252
             }
           ],
-          "pos_note": "Modal of intention/need, also a lexical verb meaning want."
+          "pos_note": "Modal of intention/need, also a lexical verb meaning want.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-263",
@@ -472,7 +502,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 263
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "daily-actions"
         },
         {
           "id": "w-018",
@@ -513,7 +546,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 18
             }
-          ]
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "primary_topic_id": "leisure-media"
         },
         {
           "id": "w-037",
@@ -525,7 +563,8 @@
             "noun"
           ],
           "topic_ids": [
-            "leisure-media"
+            "leisure-media",
+            "home-objects"
           ],
           "examples": [
             {
@@ -553,7 +592,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 37
             }
-          ]
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "primary_topic_id": "leisure-media"
         },
         {
           "id": "w-038",
@@ -593,7 +637,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 38
             }
-          ]
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "primary_topic_id": "leisure-media"
         },
         {
           "id": "w-039",
@@ -634,7 +683,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 39
             }
-          ]
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "primary_topic_id": "leisure-media"
         },
         {
           "id": "w-058",
@@ -675,7 +729,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 58
             }
-          ]
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "primary_topic_id": "leisure-media"
         },
         {
           "id": "w-075",
@@ -702,11 +761,11 @@
             {
               "id": "ex-075-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这里有很多好玩儿的东西。",
-              "pinyin": "zhèlǐ yǒu hěn duō hǎowánr de dōngxi.",
-              "english": "There are many fun things here.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这里有很多好玩儿的东西。”小朋友说。",
+              "pinyin": "“zhèlǐ yǒu hěn duō hǎowánr de dōngxi.” xiǎopéngyǒu shuō.",
+              "english": "“There are lots of fun things here,” the child said.",
+              "teaching_note": "The original spoken form fits naturally in quoted dialogue."
             }
           ],
           "learning_role": "introduced",
@@ -715,7 +774,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 75
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "leisure-media"
         }
       ],
       "related_entries": []
@@ -818,10 +880,10 @@
         {
           "id": "q-17-5",
           "kind": "production",
-          "prompt": "Write this in Mandarin: “My younger sister can sing.”",
+          "prompt": "Write this in Mandarin: “She can write many Chinese characters.”",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我妹妹会唱歌。 (wǒ mèimei huì chàng gē.)",
+          "answer": "她会写很多汉字。 (tā huì xiě hěn duō hànzì.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
         },
         {

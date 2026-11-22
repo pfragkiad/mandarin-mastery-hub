@@ -1,0 +1,2 @@
+# Preserve the supplied HSK package notes byte-for-byte.
+HSK_LEVEL1_PACKAGE_README.md -text

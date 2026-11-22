@@ -27,6 +27,7 @@ export type Entry = {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
     primaryTopicId: string; topicIds: string[]; primaryPosId: string; posIds: string[]; posLabels: string[];
     primarySubtopicId?: string | null; subtopicIds?: string[];
+    exampleImportPolicy?: 'terms_only_preserve_existing';
     posNote: string | null; verificationStatus: string;
     syllabusHeadword?: string; syllabusPosZh?: string;
   };

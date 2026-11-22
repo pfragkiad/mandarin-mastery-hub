@@ -1,5 +1,5 @@
 {
-  "package_version": "3.1.0",
+  "package_version": "3.2.0",
   "curriculum_id": "hsk3-2025",
   "level": 1,
   "hsk_vocab_count": 300,
@@ -33,7 +33,9 @@
       ],
       "word_count": 12,
       "example_count": 24,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-basic-negation-particles",
@@ -58,7 +60,9 @@
       ],
       "word_count": 10,
       "example_count": 20,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-social-conversation",
@@ -88,7 +92,9 @@
       ],
       "word_count": 15,
       "example_count": 30,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-questions-and-pointing",
@@ -125,7 +131,11 @@
       ],
       "word_count": 22,
       "example_count": 44,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "position-direction"
+      ]
     },
     {
       "lesson_id": "topic-counting-numbers",
@@ -152,7 +162,9 @@
       ],
       "word_count": 13,
       "example_count": 26,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-quantities-classifiers",
@@ -183,7 +195,9 @@
       ],
       "word_count": 16,
       "example_count": 32,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-clock-and-day",
@@ -213,7 +227,9 @@
       ],
       "word_count": 15,
       "example_count": 30,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-dates-calendar",
@@ -243,7 +259,9 @@
       ],
       "word_count": 15,
       "example_count": 30,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-family-and-friends",
@@ -274,7 +292,9 @@
       ],
       "word_count": 16,
       "example_count": 32,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-people-and-work",
@@ -299,7 +319,9 @@
       ],
       "word_count": 10,
       "example_count": 20,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-food-and-meals",
@@ -335,7 +357,9 @@
       ],
       "word_count": 21,
       "example_count": 42,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-shopping-and-things",
@@ -369,7 +393,12 @@
       ],
       "word_count": 19,
       "example_count": 38,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "shopping-commerce",
+        "everyday-objects"
+      ]
     },
     {
       "lesson_id": "topic-getting-around",
@@ -403,7 +432,11 @@
       ],
       "word_count": 19,
       "example_count": 38,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "position-direction"
+      ]
     },
     {
       "lesson_id": "topic-school-people-places",
@@ -428,7 +461,9 @@
       ],
       "word_count": 10,
       "example_count": 20,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-studying-and-language",
@@ -462,7 +497,9 @@
       ],
       "word_count": 19,
       "example_count": 38,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-everyday-actions",
@@ -489,7 +526,12 @@
       ],
       "word_count": 13,
       "example_count": 26,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "everyday-routines",
+        "physical-actions"
+      ]
     },
     {
       "lesson_id": "topic-abilities-interests",
@@ -511,14 +553,19 @@
         75
       ],
       "title": "What I Can and Want to Do",
-      "primary_topic_id": "daily-actions",
+      "primary_topic_id": "grammar-functions",
       "topic_ids": [
+        "grammar-functions",
         "daily-actions",
         "leisure-media"
       ],
       "word_count": 14,
       "example_count": 28,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "arts-entertainment"
+      ]
     },
     {
       "lesson_id": "topic-describing-feelings",
@@ -544,7 +591,12 @@
       ],
       "word_count": 12,
       "example_count": 24,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "emotions-attitudes",
+        "judgments-evaluation"
+      ]
     },
     {
       "lesson_id": "topic-health-and-rest",
@@ -568,7 +620,9 @@
       ],
       "word_count": 10,
       "example_count": 20,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "topic-animals-and-weather",
@@ -590,7 +644,12 @@
       ],
       "word_count": 8,
       "example_count": 16,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": [
+        "animals-wildlife",
+        "weather-climate"
+      ]
     },
     {
       "lesson_id": "topic-connecting-ideas",
@@ -616,7 +675,9 @@
       ],
       "word_count": 11,
       "example_count": 22,
-      "quiz_count": 5
+      "quiz_count": 5,
+      "primary_subtopic_id": null,
+      "subtopic_ids": []
     },
     {
       "lesson_id": "char-6B21",
@@ -637,5 +698,9 @@
   ],
   "catalog": "catalog_ids.json (external reference)",
   "review_status": "draft_editorial_not_native_certified",
-  "notes": "21 HSK1 instructional lessons (new original teaching plans). Existing vocabulary detail sentences remain in lesson JSON but are deliberately not rendered in HSK lesson HTML/Markdown. 2 independent character lessons unchanged."
+  "notes": "21 HSK1 instructional lessons (new original teaching plans). Existing vocabulary detail sentences remain in lesson JSON but are deliberately not rendered in HSK lesson HTML/Markdown. 2 independent character lessons unchanged.",
+  "vocabulary_data_version": "1.7.1",
+  "taxonomy_version": "2.0.0",
+  "source_package": "Mandarin_HSK_Level1_Lessons_v3.2.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+  "source_sha256": "e4f0774372b58ca6f6bb1aa28f099d9dcdf87e3ccb21c97306bc3d3730e8830a"
 }

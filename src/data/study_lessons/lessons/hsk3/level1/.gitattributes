@@ -1,0 +1,4 @@
+# Preserve the four-file companions exactly as supplied in the lesson ZIPs.
+*/*.json -text
+*/*.html -text
+*/*.md -text

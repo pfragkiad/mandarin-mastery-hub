@@ -108,7 +108,7 @@ export type GeneralBlock =
 export type TopicExample = { id: string; style?: string; register?: string; hanzi: string; pinyin: string; english: string; teaching_note?: string };
 /** A course syllabus entry this word stands for (e.g. hsk3-2025 entry 26). */
 export type SyllabusRef = { curriculum_id: string; entry_id: number };
-export type TopicVocabItem = { id: string; hanzi: string; pinyin: string; meaning_en: string; primary_pos_id: string; pos_ids: string[]; topic_ids: string[]; examples: TopicExample[]; learning_role: 'introduced' | 'reviewed' | string; syllabus_refs: SyllabusRef[] };
+export type TopicVocabItem = { id: string; hanzi: string; pinyin: string; meaning_en: string; primary_pos_id: string; pos_ids: string[]; primary_topic_id?: string; topic_ids: string[]; primary_subtopic_id?: string | null; subtopic_ids?: string[]; examples: TopicExample[]; learning_role: 'introduced' | 'reviewed' | string; syllabus_refs: SyllabusRef[] };
 /** A grammar note with the recorded example it points at (resolved by example ID; null when the ID is unknown). */
 export type TopicGrammarPoint = { id: string; title: string; explanation: string; example: TopicExample | null };
 /** A Mandarin line with its tone-marked pinyin and English (teaching-plan sentences). */
@@ -172,7 +172,8 @@ export function lessonKindFor(schemaVersion: string): LessonKind {
 }
 
 export const lessonCategories: LessonCategory[] = (categoryRegistry.categories ?? [])
-  .filter(c => c.status === 'active')
+  // Subtopics remain recorded separately and never become top-level topic filters.
+  .filter(c => c.status === 'active' && c.kind === 'topic')
   .map(c => ({ id: c.id, label: c.label, description: c.description }));
 
 /** One summary from a lesson's top-level keys; categories resolve only through the shared registry. */

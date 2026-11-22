@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.2.0",
   "lesson_id": "topic-questions-and-pointing",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,11 @@
       "demonstratives",
       "pointing"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "position-direction"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Ask basic information questions.",
@@ -28,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -139,7 +143,9 @@
     "问": "Characters:问",
     "院": "Characters:院",
     "题": "Characters:题",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "们": "Characters:们",
+    "菜": "Characters:菜"
   },
   "sections": {
     "overview": {
@@ -189,7 +195,10 @@
               "entry_id": 47
             }
           ],
-          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun."
+          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-131",
@@ -216,11 +225,11 @@
             {
               "id": "ex-131-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "你想读哪本书？",
-              "pinyin": "nǐ xiǎng dú nǎ běn shū?",
-              "english": "Which book do you want to read?",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "老师问：“你们想读哪本书？”",
+              "pinyin": "lǎoshī wèn: “nǐmen xiǎng dú nǎ běn shū?”",
+              "english": "The teacher asked, “Which book would you like to read?”",
+              "teaching_note": "The question word comes before the book classifier."
             }
           ],
           "learning_role": "introduced",
@@ -229,7 +238,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 131
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-132",
@@ -269,7 +281,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 132
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-133",
@@ -309,7 +324,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 133
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-134",
@@ -349,7 +367,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 134
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-135",
@@ -389,7 +410,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 135
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-136",
@@ -431,7 +455,10 @@
               "entry_id": 136
             }
           ],
-          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses."
+          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-137",
@@ -471,7 +498,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 137
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-138",
@@ -511,7 +541,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 138
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-139",
@@ -551,7 +584,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 139
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-140",
@@ -578,11 +614,11 @@
             {
               "id": "ex-140-2",
               "style": "written",
-              "register": "polite_instruction",
-              "hanzi": "请在那儿等老师。",
-              "pinyin": "qǐng zài nàr děng lǎoshī.",
-              "english": "Please wait for the teacher there.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“请在那儿等老师。”她说。",
+              "pinyin": "“qǐng zài nàr děng lǎoshī.” tā shuō.",
+              "english": "“Please wait for the teacher over there,” she said.",
+              "teaching_note": "The quoted speaker uses the erhua form for “there.”"
             }
           ],
           "learning_role": "introduced",
@@ -591,7 +627,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 140
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-141",
@@ -631,7 +670,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 141
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-181",
@@ -671,7 +713,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 181
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-182",
@@ -711,7 +756,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 182
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-276",
@@ -753,7 +801,10 @@
               "entry_id": 276
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-277",
@@ -781,11 +832,11 @@
             {
               "id": "ex-277-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这个饭店怎么样？",
-              "pinyin": "zhège fàndiàn zěnmeyàng?",
-              "english": "What do you think of this restaurant?",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这家饭店的菜怎么样？”他问。",
+              "pinyin": "“zhè jiā fàndiàn de cài zěnmeyàng?” tā wèn.",
+              "english": "“How’s the food at this restaurant?” he asked.",
+              "teaching_note": "The question word asks for an evaluation in quoted speech."
             }
           ],
           "learning_role": "introduced",
@@ -795,7 +846,10 @@
               "entry_id": 277
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-279",
@@ -835,7 +889,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 279
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-280",
@@ -875,7 +932,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 280
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-281",
@@ -915,7 +975,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 281
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-282",
@@ -955,7 +1018,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 282
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-283",
@@ -982,11 +1048,11 @@
             {
               "id": "ex-283-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这儿有一家书店。",
-              "pinyin": "zhèr yǒu yì jiā shūdiàn.",
-              "english": "There is a bookstore here.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这儿有一家书店。”她说。",
+              "pinyin": "“zhèr yǒu yì jiā shūdiàn.” tā shuō.",
+              "english": "“There’s a bookstore here,” she said.",
+              "teaching_note": "The quoted speaker uses the erhua form for “here.”"
             }
           ],
           "learning_role": "introduced",
@@ -995,7 +1061,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 283
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-284",
@@ -1035,7 +1104,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 284
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []

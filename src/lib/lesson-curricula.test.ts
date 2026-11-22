@@ -64,6 +64,22 @@ describe('topic-lesson words and Vocabulary records', () => {
     }
     expect(checked).toBe(300);
   });
+  it('all 600 word-card examples and recorded topic/subtopic IDs match vocabulary v1.7.1', async () => {
+    let checked = 0;
+    for (const summary of lessonSummaries.filter(s => s.schemaVersion === 'mandarin-topic-lesson/3.2.0')) {
+      for (const item of (await loadLesson(summary.id))!.topic!.items) {
+        const entry = syllabusEntryFor(item, entries);
+        if (!entry) throw new Error(`Missing exact vocabulary identity: ${item.hanzi}`);
+        expect(item.topic_ids).toEqual(entry.studyMetadata?.topicIds);
+        expect(item.primary_subtopic_id).toBe(entry.studyMetadata?.primarySubtopicId);
+        expect(item.subtopic_ids).toEqual(entry.studyMetadata?.subtopicIds);
+        expect(item.examples.map(ex => [ex.hanzi, ex.pinyin, ex.english, ex.style, ex.register])).toEqual(
+          entry.examples.map(ex => [ex.simplified, ex.pinyinDisplay, ex.english, ex.style, ex.register]));
+        checked += item.examples.length;
+      }
+    }
+    expect(checked).toBe(600);
+  });
   it('点 #33 and 点 #336 stay separate records', () => {
     const a = syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 33 }] }, entries);
     const b = syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 336 }] }, entries);

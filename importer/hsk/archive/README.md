@@ -13,3 +13,7 @@ Current vocabulary imports use the files in [the parent directory](../README.md)
 | `hsk3_level3_1.0.4.json` | `119cc3981a6096859892145d667878d138c73a072c935adc40319368aeeedd5d` |
 | `hsk3_level4_1.0.3.json` | `10a5dcb07bb97dc1939bbd5e64e6bf575bd3399ffc77e8efd9103a12621a7ee9` |
 | `hsk3_topics_1.1.0.json` | `b3d5ef85064afb3fd7a7e835b47ff3d43e693e7751190dc30a9de3c06da5165d` |
+| `hsk3_level1_1.7.0.json` | `eeddab94e661294e3c209bdbe5f1f9e73f251eec43e13940210a31be1e03056a` |
+| `hsk3_level2_1.1.0.json` | `735ecd4b029b2bc34430809a2501c8c6f8b05b3fd108bd3d31dc2319e3e2f478` |
+| `hsk3_level3_1.1.0.json` | `04f6c394775896cc0afbf346b9c7528c46d7f7d67e4c75f2709af2719620a0e5` |
+| `hsk3_level4_1.1.0.json` | `0225c634973aa66d58d6d851b7990ebbd1ca9c4312e8123641dbf2d20bfd7abd` |

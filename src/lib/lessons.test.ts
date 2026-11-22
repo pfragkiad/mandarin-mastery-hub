@@ -33,6 +33,11 @@ describe('lesson categories', () => {
   it('every project lesson has a registered primary category', () => {
     for (const s of lessonSummaries) expect(lessonCategories.some(c => c.id === s.primaryCategory?.id)).toBe(true);
   });
+  it('uses the 22 parent topics for top-level discovery while retaining subtopics in lesson vocabulary', () => {
+    expect(lessonCategories).toHaveLength(22);
+    expect(lessonCategories.some(c => c.id === 'science-technology')).toBe(true);
+    expect(lessonCategories.some(c => c.id === 'digital-technology')).toBe(false);
+  });
 });
 
 describe('lesson index', () => {
@@ -46,8 +51,8 @@ describe('lesson index', () => {
     expect(ids.filter(id => id.startsWith('convm-')).length).toBe(15);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(21);
-    // Topic lessons moved to the v3.1 teaching-plan schema; character lessons stay v3.0.0.
-    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.1.0')).toBe(true);
+    // Topic lessons use v3.2 taxonomy fields with the same teaching plans; character lessons stay v3.0.0.
+    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.2.0')).toBe(true);
     expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion.endsWith('/3.0.0'))).toBe(true);
   });
 });
@@ -147,7 +152,7 @@ describe('lesson files', () => {
     for (const f of all) {
       const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
       for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);
-      const headwordKind = /\/(CHARACTER|WORD|PHRASE)_LESSON_/.test(f);
+      const headwordKind = /[\\/](CHARACTER|WORD|PHRASE)_LESSON_/.test(f);
       expect('headword' in json, `${f} headword`).toBe(headwordKind);
     }
   });
@@ -157,7 +162,7 @@ describe('lesson files', () => {
 // path the page renders, and its review words must all be words this lesson carries.
 describe('v3.1 teaching plans', () => {
   const root = 'src/data/study_lessons/lessons/hsk3/level1';
-  const plans = readdirSync(root).map(dir => {
+  const plans = readdirSync(root, { withFileTypes: true }).filter(entry => entry.isDirectory()).map(({ name: dir }) => {
     const json = JSON.parse(readFileSync(join(root, dir, `${dir}.json`), 'utf8')) as { lesson_id: string; sections: Record<string, unknown> };
     return { id: json.lesson_id, topic: toTopicContent(json.sections) };
   });

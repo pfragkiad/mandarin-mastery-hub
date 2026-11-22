@@ -1,5 +1,7 @@
 # Buying Everyday Things
 
+**Subtopics:** shopping-commerce, everyday-objects
+
 Buy and describe common things, ask prices and talk about personal possessions.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.

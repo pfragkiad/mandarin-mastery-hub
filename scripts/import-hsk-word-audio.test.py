@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.dont_write_bytecode = True
@@ -126,6 +127,37 @@ class Level4AudioImportTests(unittest.TestCase):
     def test_committed_attachments_cover_exactly_the_matched_entries(self):
         _, report = audio.import_audio(self.vocabulary, self.manifest)
         self.assertEqual((report['attached'], report['changed'], report['pendingUpload']), (797, 0, []))
+
+
+class Level5AudioCompatibilityTests(unittest.TestCase):
+    def setUp(self):
+        audio.configure(5)
+
+    def test_revised_source_keeps_the_original_recording_identities(self):
+        manifest = audio.load_manifest()
+        self.assertEqual(manifest['handoff']['file'], 'hsk3_level5_1.0.0.json')
+        self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.1.json' for row in manifest['compatibleHandoffs']))
+        vocabulary = audio.base.vocabulary_store.read_vocabulary()
+        before = copy.deepcopy(vocabulary)
+        _, report = audio.import_audio(vocabulary, manifest)
+        self.assertEqual((report['matched'], report['missing'], report['reading_mismatch']), (1306, 252, 42))
+        self.assertEqual(vocabulary, before)
+
+    def test_rejects_an_unbound_compatibility_checksum(self):
+        manifest = copy.deepcopy(audio.read(audio.MANIFEST))
+        manifest['compatibleHandoffs'][0]['sha256'] = 'incorrect'
+        original_read = audio.read
+        with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
+            with self.assertRaisesRegex(ValueError, 'different Level 5 handoff'):
+                audio.load_manifest()
+
+    def test_rejects_changed_identities_despite_a_valid_compatibility_checksum(self):
+        manifest = copy.deepcopy(audio.read(audio.MANIFEST))
+        manifest['entries'][0]['reading'] = 'incorrect'
+        original_read = audio.read
+        with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
+            with self.assertRaisesRegex(ValueError, 'identities differ'):
+                audio.load_manifest()
 
 
 if __name__ == '__main__':

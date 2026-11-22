@@ -180,5 +180,5 @@ Do not confuse 三点 (sān diǎn, 3 o’clock) with 三个小时 (sān ge xiǎo
 **Comprehension:** In the example “我白天上班。” (wǒ báitiān shàngbān.), what is happening?
 **Answer:** I work during the day.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “I study at school during the day.”
-**Answer:** 白天我在学校学习。 (báitiān wǒ zài xuéxiào xuéxí.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “The students study at school during the day.”
+**Answer:** 学生们白天在学校学习。 (xuéshengmen báitiān zài xuéxiào xuéxí.). Compare your answer with the example and its tone-marked pinyin.

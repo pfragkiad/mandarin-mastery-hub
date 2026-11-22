@@ -1,5 +1,7 @@
 # Animals and Weather
 
+**Subtopics:** animals-wildlife, weather-climate
+
 Name common pets and describe basic weather conditions.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
