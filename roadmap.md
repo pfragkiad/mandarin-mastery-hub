@@ -93,3 +93,4 @@
 - [x] Popup offers every existing record for the exact glyph (character/component/radical rows)
 - [x] Self rows visible again but without a link
 - [x] Radical gold everywhere from one central rule (card-ink.ts): hint popups (header, pill, every row incl. self), word cards grid + detail (gold hanzi + Radical #N pill), glyph detail titles
+- [x] Hint popup kind rows: own pinyin + speaker and translation, omitted only when exactly equal to the word row
