@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { BookText, FlaskConical, Library, Tags, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -50,25 +51,56 @@ export function LessonsIndex({ view, category, tag, onSearch }: { view: LessonsV
   </div>;
 }
 
+/** Remembered open/collapsed flag for one course drawer. Drawers start COLLAPSED on a
+ *  first visit (the list is long), then the visitor's own fold/unfold choice is kept in
+ *  localStorage per drawer id. Read after mount so server and first client render agree. */
+const FOLD_KEY = 'lessons-fold-v1';
+function useLessonFold(id: string): [boolean, (open: boolean) => void] {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(FOLD_KEY);
+      if (saved) setOpen(Boolean((JSON.parse(saved) as Record<string, boolean>)[id]));
+    } catch { /* storage unavailable: stay collapsed */ }
+  }, [id]);
+  const update = (next: boolean) => {
+    setOpen(next);
+    try {
+      const saved = localStorage.getItem(FOLD_KEY);
+      const all = saved ? (JSON.parse(saved) as Record<string, boolean>) : {};
+      all[id] = next;
+      localStorage.setItem(FOLD_KEY, JSON.stringify(all));
+    } catch { /* ignore */ }
+  };
+  return [open, update];
+}
+
+/** One foldable drawer (a course, or "Independent lessons"): collapsed by default,
+ *  remembering the visitor's last choice. Native <details> keeps keyboard and screen
+ *  reader support; onToggle fires for every open/close, so the choice is stored there. */
+function LessonFold({ id, title, note, children }: { id: string; title: string; note?: string; children: React.ReactNode }) {
+  const [open, setOpen] = useLessonFold(id);
+  return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
+    <summary><h2 id={`course-${id}`}>{title}</h2></summary>
+    {note && <p className="lesson-note">{note}</p>}
+    {children}
+  </details>;
+}
+
 /** By course: every course, then the lessons no course places. */
 function CourseView() {
   return <>
     {courses.map(c => <CourseOutline key={c.id} course={c}/>)}
-    {projectIndependentLessons.length > 0 && <details className="lessons-group lessons-course lessons-fold" open>
-      <summary><h2 id="lessons-independent">Independent lessons</h2></summary>
-      <p className="lesson-note">Lessons that stand on their own, outside any course. Open them in any order.</p>
+    {projectIndependentLessons.length > 0 && <LessonFold id="independent" title="Independent lessons" note="Lessons that stand on their own, outside any course. Open them in any order.">
       <div className="lessons-grid">{projectIndependentLessons.map(s => <LessonCard key={s.id} lesson={s}/>)}</div>
-    </details>}
+    </LessonFold>}
   </>;
 }
 
 /** One course: its levels (sections) → units → numbered lessons, all in recorded order.
  *  Lesson numbers count through the whole level, so "Lesson 5" matches the lesson page. */
 function CourseOutline({ course }: { course: Course }) {
-  // Native <details> so each course folds independently (keyboard and screen readers included).
-  return <details className="lessons-group lessons-course lessons-fold" open>
-    <summary><h2 id={`course-${course.id}`}>{course.title}</h2></summary>
-    {course.description && <p className="lesson-note">{course.description}</p>}
+  return <LessonFold id={course.id} title={course.title} note={course.description}>
     {course.sections.map(section => {
       const flat = sectionPlacements(section);
       return <div key={section.id} className="lessons-level">
@@ -82,7 +114,7 @@ function CourseOutline({ course }: { course: Course }) {
         </div>)}
       </div>;
     })}
-  </details>;
+  </LessonFold>;
 }
 
 /** By topic: lessons under their primary registry topic; a topic filter also matches
@@ -108,7 +140,7 @@ function TopicView({ category, tag, onSearch }: { category: string | undefined; 
     {groups.map(g => <section key={g.id} className="lessons-group" aria-labelledby={`lessons-${g.id}`}>
       <h2 id={`lessons-${g.id}`}>{g.label}</h2>
       {g.description && <p className="lesson-note">{g.description}</p>}
-      <div className="lessons-grid">{g.lessons.map(s => <LessonCard key={s.id} lesson={s} onTag={t => onSearch({ view: 'topic', ...(category ? { category } : {}), tag: t })} activeTag={tag}/>)}</div>
+      <div className="lessons-grid">{g.lessons.map(s => <LessonCard key={s.id} lesson={s} onTag={t => onSearch(t === tag ? { view: 'topic', ...(category ? { category } : {}) } : { view: 'topic', ...(category ? { category } : {}), tag: t })} activeTag={tag}/>)}</div>
     </section>)}
   </>;
 }
