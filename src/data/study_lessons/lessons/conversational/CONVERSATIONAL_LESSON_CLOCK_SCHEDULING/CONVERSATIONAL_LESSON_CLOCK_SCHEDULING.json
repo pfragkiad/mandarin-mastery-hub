@@ -1,0 +1,282 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-clock-scheduling",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Clock Time and Negotiating a Meeting",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-clock-scheduling"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar",
+      "numbers-quantities"
+    ],
+    "tags": [
+      "clock-time",
+      "scheduling",
+      "negotiation",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "clock-scheduling"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Ask and tell the time.",
+    "Suggest alternate meeting times."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "五": "Characters:五",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "八": "Characters:八",
+    "六": "Characters:六",
+    "几": "Characters:几",
+    "午": "Characters:午",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "行": "Characters:行",
+    "还": "Characters:还",
+    "那": "Characters:那",
+    "钟": "Characters:钟",
+    "间": "Characters:间",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想几点钟吃晚饭？",
+            "pinyin": "Nǐ xiǎng jǐ diǎn zhōng chī wǎnfàn?",
+            "english": "What time do you want to have dinner?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "六点钟，好吗？",
+            "pinyin": "Liù diǎn zhōng, hǎo ma?",
+            "english": "Is six o’clock okay?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "六点钟不行。",
+            "pinyin": "Liù diǎn zhōng bù xíng.",
+            "english": "Six o’clock does not work."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "那么七点钟吧。",
+            "pinyin": "Nàme qī diǎn zhōng ba.",
+            "english": "Then let’s say seven o’clock."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "几点钟",
+        "pattern_pinyin": "jǐ diǎn zhōng",
+        "function_en": "几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "现在几点钟？",
+          "pinyin": "xiànzài jǐ diǎn zhōng?",
+          "english": "What time is it now?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "时间 + 好吗 / 不行",
+        "pattern_pinyin": "shíjiān hǎo ma / bù xíng",
+        "function_en": "Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "八点钟不行。",
+          "pinyin": "bā diǎn zhōng bù xíng.",
+          "english": "Eight o’clock does not work.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "现在几点钟",
+            "pinyin": "xiànzài jǐ diǎn zhōng",
+            "meaning_en": "What time is it now?"
+          },
+          {
+            "hanzi": "是九点钟吗",
+            "pinyin": "shì jiǔ diǎn zhōng ma",
+            "meaning_en": "Is it nine o’clock?"
+          },
+          {
+            "hanzi": "八点钟还是九点钟",
+            "pinyin": "bā diǎn zhōng háishi jiǔ diǎn zhōng",
+            "meaning_en": "Eight or nine o’clock?"
+          },
+          {
+            "hanzi": "一点钟好吗",
+            "pinyin": "yì diǎn zhōng hǎo ma",
+            "meaning_en": "Is one o’clock okay?"
+          },
+          {
+            "hanzi": "两点钟好吗",
+            "pinyin": "liǎng diǎn zhōng hǎo ma",
+            "meaning_en": "Is two o’clock okay?"
+          },
+          {
+            "hanzi": "八点钟不行",
+            "pinyin": "bā diǎn zhōng bù xíng",
+            "meaning_en": "Eight o’clock does not work."
+          },
+          {
+            "hanzi": "那么七点钟吧",
+            "pinyin": "nàme qī diǎn zhōng ba",
+            "meaning_en": "Then let’s say seven o’clock."
+          },
+          {
+            "hanzi": "你想什么时候吃午饭",
+            "pinyin": "nǐ xiǎng shénme shíhou chī wǔfàn",
+            "meaning_en": "When do you want to have lunch?"
+          },
+          {
+            "hanzi": "今天晚上",
+            "pinyin": "jīntiān wǎnshang",
+            "meaning_en": "This evening."
+          },
+          {
+            "hanzi": "六点钟好吗",
+            "pinyin": "liù diǎn zhōng hǎo ma",
+            "meaning_en": "Does six o'clock work?"
+          },
+          {
+            "hanzi": "六点钟不行",
+            "pinyin": "liù diǎn zhōng bù xíng",
+            "meaning_en": "Six o'clock doesn't work."
+          },
+          {
+            "hanzi": "三点钟不行",
+            "pinyin": "sān diǎn zhōng bù xíng",
+            "meaning_en": "Three o'clock doesn't work."
+          },
+          {
+            "hanzi": "九点钟不行",
+            "pinyin": "jiǔ diǎn zhōng bù xíng",
+            "meaning_en": "Nine o'clock doesn't work."
+          },
+          {
+            "hanzi": "我想五点钟吃",
+            "pinyin": "wǒ xiǎng wǔ diǎn zhōng chī",
+            "meaning_en": "I want to eat at five o'clock."
+          },
+          {
+            "hanzi": "现在四点钟",
+            "pinyin": "xiànzài sì diǎn zhōng",
+            "meaning_en": "It is four o'clock now."
+          },
+          {
+            "hanzi": "五点钟不行",
+            "pinyin": "wǔ diǎn zhōng bù xíng",
+            "meaning_en": "Five o'clock doesn't work."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Negotiate a dinner time by proposing six, seven or eight o’clock."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?) — Is six o’clock okay?",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Is one o’clock okay?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "一点钟好吗 (yì diǎn zhōng hǎo ma)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "八点钟不行。 (bā diǎn zhōng bù xíng.) — Eight o’clock does not work.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Negotiate a dinner time by proposing six, seven or eight o’clock.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想几点钟吃晚饭？ (Nǐ xiǎng jǐ diǎn zhōng chī wǎnfàn?) — 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

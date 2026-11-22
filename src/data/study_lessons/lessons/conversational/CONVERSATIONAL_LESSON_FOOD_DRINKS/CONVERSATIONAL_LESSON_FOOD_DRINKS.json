@@ -1,0 +1,277 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-food-drinks",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Ordering Food and Drinks",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice express what you would like to eat or drink. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-food-drinks"
+  },
+  "classification": {
+    "primary_topic_id": "food-drink",
+    "topic_ids": [
+      "food-drink",
+      "shopping-money"
+    ],
+    "tags": [
+      "restaurants",
+      "tea",
+      "coffee",
+      "beer",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "food-drinks"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Express what you would like to eat or drink.",
+    "Offer a simple choice of drinks."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "么": "Characters:么",
+    "什": "Characters:什",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "啤": "Characters:啤",
+    "喝": "Characters:喝",
+    "好": "Characters:好",
+    "店": "Characters:店",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "数": "Characters:数",
+    "料": "Characters:料",
+    "是": "Characters:是",
+    "杯": "Characters:杯",
+    "点": "Characters:点",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "还": "Characters:还",
+    "酒": "Characters:酒",
+    "量": "Characters:量",
+    "饭": "Characters:饭",
+    "饮": "Characters:饮"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想喝茶还是啤酒？",
+            "pinyin": "Nǐ xiǎng hē chá háishi píjiǔ?",
+            "english": "Would you like tea or beer?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想喝一点茶。",
+            "pinyin": "Wǒ xiǎng hē yìdiǎn chá.",
+            "english": "I would like some tea."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想吃午饭吗？",
+            "pinyin": "Nǐ xiǎng chī wǔfàn ma?",
+            "english": "Do you want to have lunch?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我们去饭店吧。",
+            "pinyin": "Hǎo, wǒmen qù fàndiàn ba.",
+            "english": "Yes, let us go to a restaurant."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "A 还是 B",
+        "pattern_pinyin": "A háishi B",
+        "function_en": "Use 还是 (háishi) to present alternatives in a question.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "你想喝茶还是啤酒？",
+          "pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
+          "english": "Would you like tea or beer?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "数量 + 杯 + 饮料",
+        "pattern_pinyin": "shùliàng bēi yǐnliào",
+        "function_en": "杯 (bēi) counts cups or glasses of drinks.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我要两杯茶。",
+          "pinyin": "wǒ yào liǎng bēi chá.",
+          "english": "I want two cups of tea.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你想喝什么",
+            "pinyin": "nǐ xiǎng hē shénme",
+            "meaning_en": "What would you like to drink?"
+          },
+          {
+            "hanzi": "你想吃什么",
+            "pinyin": "nǐ xiǎng chī shénme",
+            "meaning_en": "What would you like to eat?"
+          },
+          {
+            "hanzi": "我想喝一点茶",
+            "pinyin": "wǒ xiǎng hē yìdiǎn chá",
+            "meaning_en": "I would like some tea."
+          },
+          {
+            "hanzi": "我想喝一点啤酒",
+            "pinyin": "wǒ xiǎng hē yìdiǎn píjiǔ",
+            "meaning_en": "I would like a little beer."
+          },
+          {
+            "hanzi": "我想要两杯啤酒",
+            "pinyin": "wǒ xiǎng yào liǎng bēi píjiǔ",
+            "meaning_en": "I would like two glasses of beer."
+          },
+          {
+            "hanzi": "你想喝茶还是啤酒",
+            "pinyin": "nǐ xiǎng hē chá háishi píjiǔ",
+            "meaning_en": "Would you like tea or beer?"
+          },
+          {
+            "hanzi": "一杯啤酒",
+            "pinyin": "yì bēi píjiǔ",
+            "meaning_en": "A glass of beer."
+          },
+          {
+            "hanzi": "我想吃午饭",
+            "pinyin": "wǒ xiǎng chī wǔfàn",
+            "meaning_en": "I would like to eat lunch."
+          },
+          {
+            "hanzi": "我想去饭店吃",
+            "pinyin": "wǒ xiǎng qù fàndiàn chī",
+            "meaning_en": "I want to eat at a restaurant."
+          },
+          {
+            "hanzi": "我想吃一点东西",
+            "pinyin": "wǒ xiǎng chī yìdiǎn dōngxi",
+            "meaning_en": "I would like something to eat."
+          },
+          {
+            "hanzi": "你想喝啤酒吗",
+            "pinyin": "nǐ xiǎng hē píjiǔ ma",
+            "meaning_en": "Would you like to drink beer?"
+          },
+          {
+            "hanzi": "一点茶",
+            "pinyin": "yìdiǎn chá",
+            "meaning_en": "A little tea."
+          },
+          {
+            "hanzi": "一点啤酒",
+            "pinyin": "yìdiǎn píjiǔ",
+            "meaning_en": "A little beer."
+          },
+          {
+            "hanzi": "我想要一点茶",
+            "pinyin": "wǒ xiǎng yào yìdiǎn chá",
+            "meaning_en": "I would like some tea."
+          },
+          {
+            "hanzi": "我想要一杯啤酒",
+            "pinyin": "wǒ xiǎng yào yì bēi píjiǔ",
+            "meaning_en": "I would like a glass of beer."
+          },
+          {
+            "hanzi": "我想喝一点东西",
+            "pinyin": "wǒ xiǎng hē yìdiǎn dōngxi",
+            "meaning_en": "I would like something to drink."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Order a drink, specify the number of glasses, and choose between two options."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想喝一点茶。 (Wǒ xiǎng hē yìdiǎn chá.) — I would like some tea.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: I would like a little beer.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想喝一点啤酒 (wǒ xiǎng hē yìdiǎn píjiǔ)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 数量 + 杯 + 饮料 (shùliàng bēi yǐnliào).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我要两杯茶。 (wǒ yào liǎng bēi chá.) — I want two cups of tea.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Order a drink, specify the number of glasses, and choose between two options.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — 我想喝一点茶。 (Wǒ xiǎng hē yìdiǎn chá.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

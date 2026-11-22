@@ -125,7 +125,7 @@ export function LessonText({ text }: { text: string | null | undefined }) {
   })}</>;
 }
 
-type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'phrase'; word: string }; audio: AudioRequest['audio'] };
+type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'phrase'; word: string }; audio: AudioRequest['audio']; reading?: string };
 
 /** Exact-match destination for one recorded hanzi field, or null. Re-evaluated when the catalogue loads. */
 export function useHanziTarget(hanzi: string): HanziTarget | null {
@@ -136,7 +136,7 @@ export function useHanziTarget(hanzi: string): HanziTarget | null {
     if (chars.length === 1) { const dest = libraryDestination(hanzi, preferences.includeTraditional); return dest ? { kind: 'glyph', search: dest } : null; }
     const matches = items.filter(w => w.hanzi === hanzi);
     const only = matches.length === 1 ? matches[0] : undefined;
-    return only ? { kind: 'word', search: { tab: vocabularyKind(only), word: only.id }, audio: only.audio ?? null } : null;
+    return only ? { kind: 'word', search: { tab: vocabularyKind(only), word: only.id }, audio: only.audio ?? null, reading: only.pinyin } : null;
     // catalogVersion: libraryDestination reads the lazily loaded catalogue.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hanzi, items, preferences.includeTraditional, catalogVersion]);
@@ -193,7 +193,10 @@ export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; 
   const fallback = useHanziTarget(hanzi);
   const target: HanziTarget | null = record === undefined ? fallback
     : record ? { kind: 'word', search: { tab: vocabularyKind(record), word: record.id }, audio: record.audio ?? null } : null;
-  const sameReading = record ? spacing(record.pinyin) === spacing(pinyin) : true;
+  // A recording is borrowed only from a record read exactly as the lesson reads it, whether the
+  // record was passed in or found by exact headword (谢谢你 never plays another reading's audio).
+  const linkedReading = record ? record.pinyin : target?.kind === 'word' ? target.reading : undefined;
+  const sameReading = linkedReading === undefined || spacing(linkedReading) === spacing(pinyin);
   const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
   const head = target?.kind === 'glyph'

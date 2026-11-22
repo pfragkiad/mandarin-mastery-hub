@@ -1,0 +1,280 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-permission-requests",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Permission and Polite Requests",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice ask whether someone can do something. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-permission-requests"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "communication-social"
+    ],
+    "tags": [
+      "permission",
+      "requests",
+      "giving",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "permission-requests"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Ask whether someone can do something.",
+    "Ask someone to give you an amount or item."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "买": "Characters:买",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "以": "Characters:以",
+    "你": "Characters:你",
+    "动": "Characters:动",
+    "十": "Characters:十",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "啤": "Characters:啤",
+    "在": "Characters:在",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "客": "Characters:客",
+    "币": "Characters:币",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "民": "Characters:民",
+    "气": "Characters:气",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "给": "Characters:给",
+    "美": "Characters:美",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "词": "Characters:词",
+    "谢": "Characters:谢",
+    "酒": "Characters:酒",
+    "金": "Characters:金",
+    "钱": "Characters:钱"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你可不可以给我一点钱？",
+            "pinyin": "Nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián?",
+            "english": "Could you give me some money?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "可以，我给你十块人民币。",
+            "pinyin": "Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.",
+            "english": "Yes, I can. I will give you ten yuan."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "谢谢你！",
+            "pinyin": "Xièxie nǐ!",
+            "english": "Thank you!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不客气。",
+            "pinyin": "Bú kèqi.",
+            "english": "You are welcome."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "可不可以 + 动词",
+        "pattern_pinyin": "kě bu kěyǐ dòngcí",
+        "function_en": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "你可不可以买茶？",
+          "pinyin": "nǐ kě bu kěyǐ mǎi chá?",
+          "english": "Can you buy tea?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "给 + 人 + 东西",
+        "pattern_pinyin": "gěi rén dōngxi",
+        "function_en": "给 (gěi) can mean to give something to someone.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "给我一点茶。",
+          "pinyin": "gěi wǒ yìdiǎn chá.",
+          "english": "Give me a little tea.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "我可以",
+            "pinyin": "wǒ kěyǐ",
+            "meaning_en": "I can; I am allowed to."
+          },
+          {
+            "hanzi": "你可以",
+            "pinyin": "nǐ kěyǐ",
+            "meaning_en": "You can; you are allowed to."
+          },
+          {
+            "hanzi": "你可不可以",
+            "pinyin": "nǐ kě bu kěyǐ",
+            "meaning_en": "Can you?; may you?"
+          },
+          {
+            "hanzi": "你可不可以现在吃",
+            "pinyin": "nǐ kě bu kěyǐ xiànzài chī",
+            "meaning_en": "Can you eat now?"
+          },
+          {
+            "hanzi": "我不可以",
+            "pinyin": "wǒ bù kěyǐ",
+            "meaning_en": "I cannot; I am not allowed to."
+          },
+          {
+            "hanzi": "给我一点人民币",
+            "pinyin": "gěi wǒ yìdiǎn rénmínbì",
+            "meaning_en": "Give me a little RMB."
+          },
+          {
+            "hanzi": "你可不可以给我一点钱",
+            "pinyin": "nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián",
+            "meaning_en": "Could you give me some money?"
+          },
+          {
+            "hanzi": "我给你十块美金",
+            "pinyin": "wǒ gěi nǐ shí kuài Měijīn",
+            "meaning_en": "I will give you ten US dollars."
+          },
+          {
+            "hanzi": "不客气",
+            "pinyin": "bú kèqi",
+            "meaning_en": "You are welcome."
+          },
+          {
+            "hanzi": "你可不可以买很多啤酒",
+            "pinyin": "nǐ kě bu kěyǐ mǎi hěn duō píjiǔ",
+            "meaning_en": "Can you buy a lot of beer?"
+          },
+          {
+            "hanzi": "我可以买很多啤酒",
+            "pinyin": "wǒ kěyǐ mǎi hěn duō píjiǔ",
+            "meaning_en": "I can buy a lot of beer."
+          },
+          {
+            "hanzi": "你可不可以去买一点啤酒",
+            "pinyin": "nǐ kě bu kěyǐ qù mǎi yìdiǎn píjiǔ",
+            "meaning_en": "Can you go buy some beer?"
+          },
+          {
+            "hanzi": "我可以去买一点啤酒",
+            "pinyin": "wǒ kěyǐ qù mǎi yìdiǎn píjiǔ",
+            "meaning_en": "I can go buy some beer."
+          },
+          {
+            "hanzi": "我不可以给你",
+            "pinyin": "wǒ bù kěyǐ gěi nǐ",
+            "meaning_en": "I cannot give it to you."
+          },
+          {
+            "hanzi": "给我三块人民币",
+            "pinyin": "gěi wǒ sān kuài rénmínbì",
+            "meaning_en": "Give me three yuan."
+          },
+          {
+            "hanzi": "我给你五块美金",
+            "pinyin": "wǒ gěi nǐ wǔ kuài Měijīn",
+            "meaning_en": "I will give you five US dollars."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Ask politely for an item and respond with permission, refusal or thanks."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.) — Yes, I can. I will give you ten yuan.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Can you eat now?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你可不可以现在吃 (nǐ kě bu kěyǐ xiànzài chī)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "给我一点茶。 (gěi wǒ yìdiǎn chá.) — Give me a little tea.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Ask politely for an item and respond with permission, refusal or thanks.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你可不可以给我一点钱？ (Nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián?) — 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

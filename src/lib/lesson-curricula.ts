@@ -110,10 +110,14 @@ export function wordLessonPlacements(all: Course[], word: SyllabusWord): WordLes
 const manifests = import.meta.glob<RawCurriculum>('/src/data/study_lessons/lessons/curricula/*.json', { eager: true, import: 'default' });
 /** Placements whose lesson_id matched no lesson (should stay empty; checked by tests). */
 export const unresolvedPlacements: string[] = [];
+/** Display order of known courses on the Lessons page (manifests carry no course order);
+ *  courses not listed follow in file order. */
+const COURSE_ORDER = ['hsk3-2025', 'conversational-mandarin'];
+const rank = (id: string) => { const i = COURSE_ORDER.indexOf(id); return i < 0 ? COURSE_ORDER.length : i; };
 export const courses: Course[] = Object.keys(manifests).sort().flatMap(path => {
   const course = buildCourse(manifests[path]!, lessonSummary, unresolvedPlacements);
   return course ? [course] : [];
-});
+}).sort((a, b) => rank(a.id) - rank(b.id));
 export const projectIndependentLessons = independentLessons(courses, lessonSummaries);
 export const positionsOf = (lessonId: string) => lessonPositions(courses, lessonId);
 export const lessonsForWord = (word: SyllabusWord) => wordLessonPlacements(courses, word);

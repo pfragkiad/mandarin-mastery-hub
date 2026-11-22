@@ -92,7 +92,16 @@ export type LessonSections = {
   /** Legacy optional; rendered only when present. */
   checklist?: { items: { id: string; label: string; passed: boolean }[] };
   extensions?: { intro: string; items: LessonExtension[] };
+  /** General lessons (mandarin-general-lesson): recorded teaching blocks, rendered in order. */
+  blocks?: GeneralBlock[];
 };
+
+/** One block of a general lesson (core/general_lesson.schema.json); unknown kinds are skipped. */
+export type GeneralBlock =
+  | { id: string; kind: 'explanation'; text: string }
+  | { id: string; kind: 'dialogue'; title?: string; turns: { speaker: string; hanzi: string; pinyin: string; english: string }[] }
+  | { id: string; kind: 'grammar_pattern'; pattern_hanzi: string; pattern_pinyin: string; function_en: string; example: { id: string; hanzi: string; pinyin: string; english: string; teaching_note?: string } }
+  | { id: string; kind: 'review_set'; items: { hanzi: string; pinyin: string; meaning_en: string }[] };
 
 /* ---------- Topic lessons (mirrors core/topic_lesson.schema.json v3) ---------- */
 /** One recorded example sentence of a topic-lesson word. */

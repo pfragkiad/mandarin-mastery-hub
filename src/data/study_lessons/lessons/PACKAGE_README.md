@@ -1,24 +1,19 @@
-# Mandarin learning library — lessons package v3.0.1 (schema v3.0.0)
+# Mandarin Tutor — lessons bundle v3.1.0
 
-This archive contains the **actual learner content**, organized independently of the reusable `core.zip` schemas and renderer.
+Compatible with `core.zip` v3.1.0. **This is an instructional curriculum, not a duplicated vocabulary listing.**
 
-- 21 HSK 3.0 Level 1 topic lessons, reorganized by learning objective rather than one lesson per taxonomy category.
-- 300 source entries introduced once, with 600 source example sentences and newly authored exercises.
-- 2 independent character-usage lessons: 次 (cì) and 以 (yǐ), with their pre-existing lesson IDs retained.
-- One HSK 3.0 Level 1 curriculum placement manifest for navigation, sequence, prerequisites, and syllabus-entry coverage.
+- HSK 3.0 Level 1: 21 lessons containing 300 introduced vocabulary entries and their 600 existing source examples (retained solely in canonical JSON).
+- 84 newly written conversation turns, 42 explicit grammar/pattern explanations (2 worked examples each), 42 guided substitutions, 22 connected reading paragraphs, 42 speaking scenarios, and 189 total quiz prompts, including 84 applied comprehension/speaking questions.
+- Two independent character-usage lessons, 次 (cì) and 以 (yǐ), unchanged from their v3.0.0 format and validated with the shared core.
+- A Level 1 course manifest with stable lesson IDs, lesson order and syllabus entry coverage.
+- Every lesson ZIP has exactly four root files: canonical JSON, HTML, Markdown and independent `report.md`.
 
-## Layout
+## Important content distinction
 
-- `hsk3/level1/*.zip`: Each lesson ZIP has exactly four root-level files: JSON, HTML, Markdown, `report.md`.
-- `independent/*.zip`: Same four-file format for independent character lessons.
-- `curricula/HSK3_2025_LEVEL1.json`: shared curriculum manifest, separate from learner content.
-- `manifest.json`: machine-readable lesson library index.
-- `REPORT.md`: dataset review status and migration summary.
+The lesson's *main view* now teaches: dialogue → two worked grammar patterns → substitutions → connected reading with comprehension → speaking → common error/pronunciation → applied checks → review.
 
-**The catalog is external.** Use the authoritative project `catalog_ids.json`, not a copied catalog. Every known written character is mapped to its exact ID.
+The original example sentences are still present in the lesson JSON so older word-detail card consumers retain source data, but the v3.1 HTML/Markdown renderer does **not** print those 600 examples. It prints a collapsible reference word bank with HSK entry IDs instead. Please use a vocabulary-card route in your web app to open each entry; no route is invented by the generated files.
 
-The HSK 3.0 Level 1 lesson IDs are course-independent, so they may later be reused in another curriculum.
+## Review caveat
 
-The 21 proposed lessons are editorial groups, not an official HSK learning order. Source example pinyin and translations have not been independently native-speaker certified. An overt pinyin segmentation error in source entry 36 is corrected and recorded in that lesson's `report.md`.
-
-To regenerate or validate content using the same contracts, use `core.zip` v3.0.1 (`generate_lesson.py` and `validate_core.py`).
+New material is **editorially authored draft content**, not official HSK text, independently native-speaker certified, or fully audited against the cumulative HSK1 lexicon/grammar. Some naturally communicative contexts use supporting vocabulary from higher levels. Pinyin is manually written and needs a second linguistic review prior to authoritative publication.

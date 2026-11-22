@@ -1,0 +1,270 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-wants-intentions",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Expressing Wants and Intentions",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-wants-intentions"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions",
+      "grammar-functions"
+    ],
+    "tags": [
+      "wants",
+      "intentions",
+      "negation",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "wants-intentions"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Use 想 and 要 for wants and intentions.",
+    "Decline an offer naturally."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "么": "Characters:么",
+    "买": "Characters:买",
+    "什": "Characters:什",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "好": "Characters:好",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "时": "Characters:时",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "词": "Characters:词",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想吃一点东西吗？",
+            "pinyin": "Nǐ xiǎng chī yìdiǎn dōngxi ma?",
+            "english": "Would you like something to eat?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我不想吃。",
+            "pinyin": "Wǒ bù xiǎng chī.",
+            "english": "I do not want to eat."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想喝一点茶吗？",
+            "pinyin": "Nǐ xiǎng hē yìdiǎn chá ma?",
+            "english": "Would you like some tea?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我想喝一点茶。",
+            "pinyin": "Hǎo, wǒ xiǎng hē yìdiǎn chá.",
+            "english": "Yes, I would like a little tea."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "想 + 动词",
+        "pattern_pinyin": "xiǎng dòngcí",
+        "function_en": "想 (xiǎng) expresses a wish or desire followed by a verb.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我想吃午饭。",
+          "pinyin": "wǒ xiǎng chī wǔfàn.",
+          "english": "I want to eat lunch.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "想不想……",
+        "pattern_pinyin": "xiǎng bu xiǎng",
+        "function_en": "An A-not-A question asks whether someone wants to do something.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "你想不想喝茶？",
+          "pinyin": "nǐ xiǎng bu xiǎng hē chá?",
+          "english": "Do you want to drink tea?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "meaning_en": "I would like to; I want to."
+          },
+          {
+            "hanzi": "你想",
+            "pinyin": "nǐ xiǎng",
+            "meaning_en": "You would like to; you want to."
+          },
+          {
+            "hanzi": "我不想",
+            "pinyin": "wǒ bù xiǎng",
+            "meaning_en": "I do not want to."
+          },
+          {
+            "hanzi": "我想吃",
+            "pinyin": "wǒ xiǎng chī",
+            "meaning_en": "I want to eat."
+          },
+          {
+            "hanzi": "我想喝一点东西",
+            "pinyin": "wǒ xiǎng hē yìdiǎn dōngxi",
+            "meaning_en": "I would like something to drink."
+          },
+          {
+            "hanzi": "你想买什么",
+            "pinyin": "nǐ xiǎng mǎi shénme",
+            "meaning_en": "What do you want to buy?"
+          },
+          {
+            "hanzi": "我想要一点茶",
+            "pinyin": "wǒ xiǎng yào yìdiǎn chá",
+            "meaning_en": "I would like a little tea."
+          },
+          {
+            "hanzi": "你想不想",
+            "pinyin": "nǐ xiǎng bu xiǎng",
+            "meaning_en": "Do you want to (or not)?"
+          },
+          {
+            "hanzi": "我不要",
+            "pinyin": "wǒ bú yào",
+            "meaning_en": "I do not want it."
+          },
+          {
+            "hanzi": "你想吃一点东西吗",
+            "pinyin": "nǐ xiǎng chī yìdiǎn dōngxi ma",
+            "meaning_en": "Would you like something to eat?"
+          },
+          {
+            "hanzi": "我想吃一点东西",
+            "pinyin": "wǒ xiǎng chī yìdiǎn dōngxi",
+            "meaning_en": "I would like something to eat."
+          },
+          {
+            "hanzi": "我不想现在吃",
+            "pinyin": "wǒ bù xiǎng xiànzài chī",
+            "meaning_en": "I do not want to eat now."
+          },
+          {
+            "hanzi": "我想现在喝",
+            "pinyin": "wǒ xiǎng xiànzài hē",
+            "meaning_en": "I would like to drink now."
+          },
+          {
+            "hanzi": "我要现在吃午饭",
+            "pinyin": "wǒ yào xiànzài chī wǔfàn",
+            "meaning_en": "I intend to have lunch now."
+          },
+          {
+            "hanzi": "我不要吃",
+            "pinyin": "wǒ bú yào chī",
+            "meaning_en": "I do not want to eat."
+          },
+          {
+            "hanzi": "你想什么时候吃",
+            "pinyin": "nǐ xiǎng shénme shíhou chī",
+            "meaning_en": "When would you like to eat?"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Offer food and drink, accept one offer and politely decline another."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我不想吃。 (Wǒ bù xiǎng chī.) — I do not want to eat.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: I want to eat.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想吃 (wǒ xiǎng chī)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想不想喝茶？ (nǐ xiǎng bu xiǎng hē chá?) — Do you want to drink tea?",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Offer food and drink, accept one offer and politely decline another.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — 我不想吃。 (Wǒ bù xiǎng chī.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

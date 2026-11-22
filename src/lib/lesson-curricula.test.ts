@@ -55,7 +55,7 @@ describe('course building', () => {
 describe('topic-lesson words and Vocabulary records', () => {
   const entries = words.flatMap(w => w.entry ? [{ ...w.entry, word: w }] : []);
   it('every HSK Level 1 topic-lesson word matches exactly one Vocabulary record', async () => {
-    const topics = lessonSummaries.filter(s => s.kind === 'topic');
+    const topics = lessonSummaries.filter(s => s.schemaVersion.startsWith('mandarin-topic-lesson/'));
     let checked = 0;
     for (const s of topics) for (const item of (await loadLesson(s.id))!.topic!.items) {
       const hit = syllabusEntryFor(item, entries);
@@ -103,5 +103,18 @@ describe('course lessons on word cards', () => {
     expect(wordLessonPlacements(courses, word(82, { entryKind: 'phrase' }))).toEqual([]);
     expect(wordLessonPlacements(courses, word(82, { hskVersion: '2.0' }))).toEqual([]);
     expect(wordLessonPlacements(courses, word(null))).toEqual([]);
+  });
+});
+
+describe('Conversational Mandarin course', () => {
+  it('places its 15 lessons in manifest order, resolves every placement and teaches no HSK words', () => {
+    const conv = courses.find(c => c.id === 'conversational-mandarin');
+    expect(conv).toBeDefined();
+    const flat = sectionPlacements(conv!.sections[0]!);
+    expect(flat.map(p => p.lesson.id)).toEqual(['convm-greetings-politeness', 'convm-people-identity', 'convm-speaking-languages', 'convm-understanding-clarification', 'convm-asking-directions', 'convm-wants-intentions', 'convm-food-drinks', 'convm-places-to-meet', 'convm-with-someone', 'convm-clock-scheduling', 'convm-today-tomorrow-later', 'convm-choices-alternatives', 'convm-money-prices', 'convm-numbers-arithmetic', 'convm-permission-requests']);
+    expect(unresolvedPlacements).toEqual([]);
+    expect(flat.every(p => p.introducedEntryIds.length === 0 && p.reviewedEntryIds.length === 0)).toBe(true);
+    expect(projectIndependentLessons.some(l => l.id.startsWith('convm-'))).toBe(false);
+    expect(courses.map(c => c.id)).toEqual(['hsk3-2025', 'conversational-mandarin']);
   });
 });

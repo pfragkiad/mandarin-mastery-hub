@@ -1,0 +1,271 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-places-to-meet",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Choosing Where to Meet and Eat",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice suggest where to go. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-places-to-meet"
+  },
+  "classification": {
+    "primary_topic_id": "travel-transport",
+    "topic_ids": [
+      "travel-transport",
+      "places-directions",
+      "food-drink"
+    ],
+    "tags": [
+      "restaurants",
+      "hotel",
+      "meeting-places",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "places-to-meet"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Suggest where to go.",
+    "Accept or reject a proposed location."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "京": "Characters:京",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "动": "Characters:动",
+    "北": "Characters:北",
+    "午": "Characters:午",
+    "厅": "Characters:厅",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "咖": "Characters:咖",
+    "哪": "Characters:哪",
+    "啡": "Characters:啡",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "好": "Characters:好",
+    "店": "Characters:店",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "点": "Characters:点",
+    "茶": "Characters:茶",
+    "词": "Characters:词",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "酒": "Characters:酒",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想去哪儿吃午饭？",
+            "pinyin": "Nǐ xiǎng qù nǎr chī wǔfàn?",
+            "english": "Where would you like to have lunch?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想去饭店。",
+            "pinyin": "Wǒ xiǎng qù fàndiàn.",
+            "english": "I would like to go to a restaurant."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "去北京饭店，好吗？",
+            "pinyin": "Qù Běijīng Fàndiàn, hǎo ma?",
+            "english": "How about going to the Beijing Hotel?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我们去吧。",
+            "pinyin": "Hǎo, wǒmen qù ba.",
+            "english": "Okay, let us go."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "去 + 地点 + 动词",
+        "pattern_pinyin": "qù dìdiǎn dòngcí",
+        "function_en": "Combine destination and purpose in one sentence.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我想去饭店吃。",
+          "pinyin": "wǒ xiǎng qù fàndiàn chī.",
+          "english": "I want to go to a restaurant to eat.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "在 + 地点 + 动词",
+        "pattern_pinyin": "zài dìdiǎn dòngcí",
+        "function_en": "Use 在 (zài) before a place to say where an action happens.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我想在这儿喝茶。",
+          "pinyin": "wǒ xiǎng zài zhèr hē chá.",
+          "english": "I want to drink tea here.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你想去哪儿",
+            "pinyin": "nǐ xiǎng qù nǎr",
+            "meaning_en": "Where do you want to go?"
+          },
+          {
+            "hanzi": "你想去哪儿吃",
+            "pinyin": "nǐ xiǎng qù nǎr chī",
+            "meaning_en": "Where do you want to eat?"
+          },
+          {
+            "hanzi": "去咖啡厅",
+            "pinyin": "qù kāfēitīng",
+            "meaning_en": "Go to a café."
+          },
+          {
+            "hanzi": "去饭店",
+            "pinyin": "qù fàndiàn",
+            "meaning_en": "Go to a restaurant."
+          },
+          {
+            "hanzi": "我想去酒店",
+            "pinyin": "wǒ xiǎng qù jiǔdiàn",
+            "meaning_en": "I want to go to the hotel."
+          },
+          {
+            "hanzi": "我想去北京饭店",
+            "pinyin": "wǒ xiǎng qù Běijīng Fàndiàn",
+            "meaning_en": "I want to go to the Beijing Hotel."
+          },
+          {
+            "hanzi": "我想去你那儿",
+            "pinyin": "wǒ xiǎng qù nǐ nàr",
+            "meaning_en": "I want to go to your place."
+          },
+          {
+            "hanzi": "我不想在这儿吃",
+            "pinyin": "wǒ bù xiǎng zài zhèr chī",
+            "meaning_en": "I do not want to eat here."
+          },
+          {
+            "hanzi": "你想去哪儿喝",
+            "pinyin": "nǐ xiǎng qù nǎr hē",
+            "meaning_en": "Where would you like to go for a drink?"
+          },
+          {
+            "hanzi": "北京饭店在哪儿",
+            "pinyin": "Běijīng Fàndiàn zài nǎr",
+            "meaning_en": "Where is the Beijing Hotel?"
+          },
+          {
+            "hanzi": "你想去酒店吗",
+            "pinyin": "nǐ xiǎng qù jiǔdiàn ma",
+            "meaning_en": "Do you want to go to the hotel?"
+          },
+          {
+            "hanzi": "去你那儿",
+            "pinyin": "qù nǐ nàr",
+            "meaning_en": "Go to your place."
+          },
+          {
+            "hanzi": "去我那儿",
+            "pinyin": "qù wǒ nàr",
+            "meaning_en": "Go to my place."
+          },
+          {
+            "hanzi": "在饭店",
+            "pinyin": "zài fàndiàn",
+            "meaning_en": "At a restaurant."
+          },
+          {
+            "hanzi": "我想在这儿吃",
+            "pinyin": "wǒ xiǎng zài zhèr chī",
+            "meaning_en": "I want to eat here."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Invite a friend to a café, restaurant or hotel; decline one place and suggest another."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想去饭店。 (Wǒ xiǎng qù fàndiàn.) — I would like to go to a restaurant.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Go to a restaurant.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "去饭店 (qù fàndiàn)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想在这儿喝茶。 (wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想去哪儿吃午饭？ (Nǐ xiǎng qù nǎr chī wǔfàn?) — 我想去饭店。 (Wǒ xiǎng qù fàndiàn.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

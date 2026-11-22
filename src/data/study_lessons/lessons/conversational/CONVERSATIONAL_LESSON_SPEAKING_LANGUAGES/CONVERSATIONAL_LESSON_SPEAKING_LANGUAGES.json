@@ -1,0 +1,270 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-speaking-languages",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Speaking Languages and Describing Ability",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice ask whether somebody speaks a language. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-speaking-languages"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language",
+      "communication-social",
+      "daily-actions"
+    ],
+    "tags": [
+      "language-learning",
+      "ability",
+      "confidence",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "speaking-languages"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Ask whether somebody speaks a language.",
+    "Describe your proficiency accurately and modestly."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "不": "Characters:不",
+    "价": "Characters:价",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "动": "Characters:动",
+    "吗": "Characters:吗",
+    "好": "Characters:好",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "我": "Characters:我",
+    "文": "Characters:文",
+    "普": "Characters:普",
+    "点": "Characters:点",
+    "英": "Characters:英",
+    "言": "Characters:言",
+    "评": "Characters:评",
+    "词": "Characters:词",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "通": "Characters:通",
+    "问": "Characters:问"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，你会说英文吗？",
+            "pinyin": "Qǐngwèn, nǐ huì shuō Yīngwén ma?",
+            "english": "Excuse me, can you speak English?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不会，我不会说英文。",
+            "pinyin": "Bú huì, wǒ bú huì shuō Yīngwén.",
+            "english": "No, I cannot speak English."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会说一点普通话。",
+            "pinyin": "Wǒ huì shuō yìdiǎn Pǔtōnghuà.",
+            "english": "I can speak a little Mandarin."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你普通话说得很好。",
+            "pinyin": "Nǐ Pǔtōnghuà shuō de hěn hǎo.",
+            "english": "You speak Mandarin very well."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "会 + 说 + 语言",
+        "pattern_pinyin": "huì shuō",
+        "function_en": "会 (huì) expresses acquired ability; add a language after 说 (shuō).",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我会说普通话。",
+          "pinyin": "wǒ huì shuō Pǔtōnghuà.",
+          "english": "I can speak Mandarin.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "动词 + 得 + 评价",
+        "pattern_pinyin": "dòngcí de",
+        "function_en": "得 (de) introduces how well the action is performed.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "你说得很好。",
+          "pinyin": "nǐ shuō de hěn hǎo.",
+          "english": "You speak very well.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你会说英文吗",
+            "pinyin": "nǐ huì shuō Yīngwén ma",
+            "meaning_en": "Can you speak English?"
+          },
+          {
+            "hanzi": "你会说普通话吗",
+            "pinyin": "nǐ huì shuō Pǔtōnghuà ma",
+            "meaning_en": "Can you speak Mandarin?"
+          },
+          {
+            "hanzi": "会说",
+            "pinyin": "huì shuō",
+            "meaning_en": "Can speak; know how to speak."
+          },
+          {
+            "hanzi": "不会说",
+            "pinyin": "bú huì shuō",
+            "meaning_en": "Cannot speak."
+          },
+          {
+            "hanzi": "我会说英文",
+            "pinyin": "wǒ huì shuō Yīngwén",
+            "meaning_en": "I can speak English."
+          },
+          {
+            "hanzi": "我不会说英文",
+            "pinyin": "wǒ bú huì shuō Yīngwén",
+            "meaning_en": "I cannot speak English."
+          },
+          {
+            "hanzi": "我会说一点普通话",
+            "pinyin": "wǒ huì shuō yìdiǎn Pǔtōnghuà",
+            "meaning_en": "I can speak a little Mandarin."
+          },
+          {
+            "hanzi": "我说得不好",
+            "pinyin": "wǒ shuō de bù hǎo",
+            "meaning_en": "I do not speak very well."
+          },
+          {
+            "hanzi": "你普通话说得很好",
+            "pinyin": "nǐ Pǔtōnghuà shuō de hěn hǎo",
+            "meaning_en": "You speak Mandarin very well."
+          },
+          {
+            "hanzi": "你会说",
+            "pinyin": "nǐ huì shuō",
+            "meaning_en": "You can speak."
+          },
+          {
+            "hanzi": "你会说英文",
+            "pinyin": "nǐ huì shuō Yīngwén",
+            "meaning_en": "You can speak English."
+          },
+          {
+            "hanzi": "我会说普通话",
+            "pinyin": "wǒ huì shuō Pǔtōnghuà",
+            "meaning_en": "I can speak Mandarin."
+          },
+          {
+            "hanzi": "我不会说普通话",
+            "pinyin": "wǒ bú huì shuō Pǔtōnghuà",
+            "meaning_en": "I cannot speak Mandarin."
+          },
+          {
+            "hanzi": "我会说一点英文",
+            "pinyin": "wǒ huì shuō yìdiǎn Yīngwén",
+            "meaning_en": "I can speak a little English."
+          },
+          {
+            "hanzi": "你不会说英文",
+            "pinyin": "nǐ bú huì shuō Yīngwén",
+            "meaning_en": "You cannot speak English."
+          },
+          {
+            "hanzi": "你会说普通话",
+            "pinyin": "nǐ huì shuō Pǔtōnghuà",
+            "meaning_en": "You can speak Mandarin."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn)."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Cannot speak.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "不会说 (bú huì shuō)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你说得很好。 (nǐ shuō de hěn hǎo.) — You speak very well.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，你会说英文吗？ (Qǐngwèn, nǐ huì shuō Yīngwén ma?) — 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

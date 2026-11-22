@@ -1,0 +1,246 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-understanding-clarification",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Understanding and Asking for Clarification",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice say that you do or do not understand. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-understanding-clarification"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social",
+      "reference-questions"
+    ],
+    "tags": [
+      "comprehension",
+      "clarifying",
+      "questions",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "understanding-clarification"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Say that you do or do not understand.",
+    "Ask what somebody said."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "么": "Characters:么",
+    "什": "Characters:什",
+    "你": "Characters:你",
+    "吗": "Characters:吗",
+    "好": "Characters:好",
+    "得": "Characters:得",
+    "我": "Characters:我",
+    "明": "Characters:明",
+    "普": "Characters:普",
+    "白": "Characters:白",
+    "知": "Characters:知",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "通": "Characters:通",
+    "道": "Characters:道"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你明白吗？",
+            "pinyin": "Nǐ míngbai ma?",
+            "english": "Do you understand?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我不明白。",
+            "pinyin": "Wǒ bù míngbai.",
+            "english": "I do not understand."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你说什么？",
+            "pinyin": "Nǐ shuō shénme?",
+            "english": "What did you say?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我说普通话。",
+            "pinyin": "Wǒ shuō Pǔtōnghuà.",
+            "english": "I am speaking Mandarin."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "不 + 明白",
+        "pattern_pinyin": "bù míngbai",
+        "function_en": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我不明白。",
+          "pinyin": "wǒ bù míngbai.",
+          "english": "I do not understand.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "……什么",
+        "pattern_pinyin": "shénme",
+        "function_en": "什么 (shénme) occupies the position of the unknown thing in the sentence.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "你说什么？",
+          "pinyin": "nǐ shuō shénme?",
+          "english": "What did you say?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "我明白",
+            "pinyin": "wǒ míngbai",
+            "meaning_en": "I understand."
+          },
+          {
+            "hanzi": "我不明白",
+            "pinyin": "wǒ bù míngbai",
+            "meaning_en": "I do not understand."
+          },
+          {
+            "hanzi": "你明白吗",
+            "pinyin": "nǐ míngbai ma",
+            "meaning_en": "Do you understand?"
+          },
+          {
+            "hanzi": "我不知道",
+            "pinyin": "wǒ bù zhīdào",
+            "meaning_en": "I do not know."
+          },
+          {
+            "hanzi": "你知道吗",
+            "pinyin": "nǐ zhīdào ma",
+            "meaning_en": "Do you know?"
+          },
+          {
+            "hanzi": "我不明白你说什么",
+            "pinyin": "wǒ bù míngbai nǐ shuō shénme",
+            "meaning_en": "I do not understand what you are saying."
+          },
+          {
+            "hanzi": "你说什么",
+            "pinyin": "nǐ shuō shénme",
+            "meaning_en": "What did you say?"
+          },
+          {
+            "hanzi": "我普通话说得不好",
+            "pinyin": "wǒ Pǔtōnghuà shuō de bù hǎo",
+            "meaning_en": "I do not speak Mandarin well."
+          },
+          {
+            "hanzi": "你明白",
+            "pinyin": "nǐ míngbai",
+            "meaning_en": "You understand."
+          },
+          {
+            "hanzi": "我知道",
+            "pinyin": "wǒ zhīdào",
+            "meaning_en": "I know."
+          },
+          {
+            "hanzi": "你不知道",
+            "pinyin": "nǐ bù zhīdào",
+            "meaning_en": "You do not know."
+          },
+          {
+            "hanzi": "你不明白",
+            "pinyin": "nǐ bù míngbai",
+            "meaning_en": "You do not understand."
+          },
+          {
+            "hanzi": "说得不好",
+            "pinyin": "shuō de bù hǎo",
+            "meaning_en": "To speak poorly."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Tell someone you do not understand and ask what they said."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我不明白。 (Wǒ bù míngbai.) — I do not understand.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: I do not know.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我不知道 (wǒ bù zhīdào)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern ……什么 (shénme).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你说什么？ (nǐ shuō shénme?) — What did you say?",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Tell someone you do not understand and ask what they said.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你明白吗？ (Nǐ míngbai ma?) — 我不明白。 (Wǒ bù míngbai.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

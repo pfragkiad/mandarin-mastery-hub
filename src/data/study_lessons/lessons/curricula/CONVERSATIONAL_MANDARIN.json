@@ -1,0 +1,430 @@
+{
+  "schema_version": "mandarin-curriculum/3.0.0",
+  "curriculum_id": "conversational-mandarin",
+  "title": "Conversational Mandarin — Topic-Based Beginner Lessons",
+  "kind": "course",
+  "language": "zh-CN",
+  "edition": "Tracks 1–16; topic-based editorial arrangement",
+  "status": "draft",
+  "description": "Course topics reorganize the initial 16 audio transcript tracks by communicative function; source track indices retained only as provenance. No official Pimsleur sequence or HSK level certification is implied.",
+  "course_topics": [
+    {
+      "id": "greetings-politeness",
+      "label": "Greetings and Politeness",
+      "global_topic_ids": [
+        "communication-social"
+      ]
+    },
+    {
+      "id": "people-identity",
+      "label": "Introducing Yourself and Other People",
+      "global_topic_ids": [
+        "people-identity",
+        "family-relationships"
+      ]
+    },
+    {
+      "id": "speaking-languages",
+      "label": "Speaking Languages and Describing Ability",
+      "global_topic_ids": [
+        "school-language",
+        "communication-social",
+        "daily-actions"
+      ]
+    },
+    {
+      "id": "understanding-clarification",
+      "label": "Understanding and Asking for Clarification",
+      "global_topic_ids": [
+        "communication-social",
+        "reference-questions"
+      ]
+    },
+    {
+      "id": "asking-directions",
+      "label": "Asking Where Places Are",
+      "global_topic_ids": [
+        "places-directions",
+        "travel-transport"
+      ]
+    },
+    {
+      "id": "wants-intentions",
+      "label": "Expressing Wants and Intentions",
+      "global_topic_ids": [
+        "daily-actions",
+        "grammar-functions"
+      ]
+    },
+    {
+      "id": "food-drinks",
+      "label": "Ordering Food and Drinks",
+      "global_topic_ids": [
+        "food-drink",
+        "shopping-money"
+      ]
+    },
+    {
+      "id": "places-to-meet",
+      "label": "Choosing Where to Meet and Eat",
+      "global_topic_ids": [
+        "travel-transport",
+        "places-directions",
+        "food-drink"
+      ]
+    },
+    {
+      "id": "with-someone",
+      "label": "Doing Things Together",
+      "global_topic_ids": [
+        "communication-social",
+        "family-relationships",
+        "daily-actions"
+      ]
+    },
+    {
+      "id": "clock-scheduling",
+      "label": "Clock Time and Negotiating a Meeting",
+      "global_topic_ids": [
+        "time-calendar",
+        "numbers-quantities"
+      ]
+    },
+    {
+      "id": "today-tomorrow-later",
+      "label": "Today, Tomorrow, and Later",
+      "global_topic_ids": [
+        "time-calendar",
+        "daily-actions"
+      ]
+    },
+    {
+      "id": "choices-alternatives",
+      "label": "Choosing: Or, Either, and Not",
+      "global_topic_ids": [
+        "grammar-functions",
+        "communication-social",
+        "food-drink"
+      ]
+    },
+    {
+      "id": "money-prices",
+      "label": "Money, Prices, and Currency",
+      "global_topic_ids": [
+        "shopping-money",
+        "numbers-quantities"
+      ]
+    },
+    {
+      "id": "numbers-arithmetic",
+      "label": "Counting and Simple Arithmetic",
+      "global_topic_ids": [
+        "numbers-quantities"
+      ]
+    },
+    {
+      "id": "permission-requests",
+      "label": "Permission and Polite Requests",
+      "global_topic_ids": [
+        "grammar-functions",
+        "communication-social"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "convm-topics",
+      "title": "Beginner Conversational Topics",
+      "sequence": 1,
+      "level_number": 1,
+      "description": "Topic browser; order is suggested from basic introductions through requests and prices, not inherited from the transcript track index.",
+      "units": [
+        {
+          "unit_id": "convm-topic-01",
+          "title": "Greetings and Politeness",
+          "sequence": 1,
+          "placements": [
+            {
+              "placement_id": "convm-placement-01",
+              "lesson_id": "convm-greetings-politeness",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "greetings-politeness"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-02",
+          "title": "Introducing Yourself and Other People",
+          "sequence": 2,
+          "placements": [
+            {
+              "placement_id": "convm-placement-02",
+              "lesson_id": "convm-people-identity",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-03",
+          "title": "Speaking Languages and Describing Ability",
+          "sequence": 3,
+          "placements": [
+            {
+              "placement_id": "convm-placement-03",
+              "lesson_id": "convm-speaking-languages",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "speaking-languages"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-04",
+          "title": "Understanding and Asking for Clarification",
+          "sequence": 4,
+          "placements": [
+            {
+              "placement_id": "convm-placement-04",
+              "lesson_id": "convm-understanding-clarification",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "understanding-clarification"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-05",
+          "title": "Asking Where Places Are",
+          "sequence": 5,
+          "placements": [
+            {
+              "placement_id": "convm-placement-05",
+              "lesson_id": "convm-asking-directions",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "asking-directions"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-06",
+          "title": "Expressing Wants and Intentions",
+          "sequence": 6,
+          "placements": [
+            {
+              "placement_id": "convm-placement-06",
+              "lesson_id": "convm-wants-intentions",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "wants-intentions"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-07",
+          "title": "Ordering Food and Drinks",
+          "sequence": 7,
+          "placements": [
+            {
+              "placement_id": "convm-placement-07",
+              "lesson_id": "convm-food-drinks",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "food-drinks"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-08",
+          "title": "Choosing Where to Meet and Eat",
+          "sequence": 8,
+          "placements": [
+            {
+              "placement_id": "convm-placement-08",
+              "lesson_id": "convm-places-to-meet",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "places-to-meet"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-09",
+          "title": "Doing Things Together",
+          "sequence": 9,
+          "placements": [
+            {
+              "placement_id": "convm-placement-09",
+              "lesson_id": "convm-with-someone",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "with-someone"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-10",
+          "title": "Clock Time and Negotiating a Meeting",
+          "sequence": 10,
+          "placements": [
+            {
+              "placement_id": "convm-placement-10",
+              "lesson_id": "convm-clock-scheduling",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "clock-scheduling"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-11",
+          "title": "Today, Tomorrow, and Later",
+          "sequence": 11,
+          "placements": [
+            {
+              "placement_id": "convm-placement-11",
+              "lesson_id": "convm-today-tomorrow-later",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "today-tomorrow-later"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-12",
+          "title": "Choosing: Or, Either, and Not",
+          "sequence": 12,
+          "placements": [
+            {
+              "placement_id": "convm-placement-12",
+              "lesson_id": "convm-choices-alternatives",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "choices-alternatives"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-13",
+          "title": "Money, Prices, and Currency",
+          "sequence": 13,
+          "placements": [
+            {
+              "placement_id": "convm-placement-13",
+              "lesson_id": "convm-money-prices",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "money-prices"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-14",
+          "title": "Counting and Simple Arithmetic",
+          "sequence": 14,
+          "placements": [
+            {
+              "placement_id": "convm-placement-14",
+              "lesson_id": "convm-numbers-arithmetic",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "numbers-arithmetic"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-15",
+          "title": "Permission and Polite Requests",
+          "sequence": 15,
+          "placements": [
+            {
+              "placement_id": "convm-placement-15",
+              "lesson_id": "convm-permission-requests",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "permission-requests"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

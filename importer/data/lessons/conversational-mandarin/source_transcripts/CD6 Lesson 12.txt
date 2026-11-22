@@ -1,0 +1,296 @@
+[1.78 - 5.72] This is Unit 12 of Pimsleur's Mandarin Chinese 1.
+[6.32 - 8.50] Please listen to this telephone conversation.
+[9.26 - 11.54] Li Ming is making a call to Miss Wang.
+[12.12 - 12.36] Listen.
+[31.78 - 33.94] 七点钟(qī diǎn zhōng) 不行(bù xíng)。
+[33.94 - 35.34] 那么(nà me) 八点钟(bā diǎn zhōng) 好(hǎo) 吗(ma)?
+[36.02 - 40.20] 好(hǎo),明天(míng tiān) 晚上(wǎn shàng) 八点钟(bā diǎn zhōng) 去(qù) 我(wǒ) 那儿(nà ér)。
+[40.20 - 42.14] 好(hǎo),明天(míng tiān) 见(jiàn)。
+[42.14 - 44.22] 明天(míng tiān) 见(jiàn)。
+[44.22 - 44.92] Listen again.
+[46.40 - 47.86] 请问(qǐng wèn) 是(shì) 王小姐(wáng xiǎo jiě) 吗(ma)?
+[48.32 - 49.82] 是(shì),我(wǒ) 是(shì)。
+[49.82 - 50.98] 我(wǒ) 是(shì) 李明(lǐ míng)。
+[50.98 - 55.14] 王小姐(wáng xiǎo jiě),你(nǐ) 今天(jīn tiān) 晚上(wǎn shàng) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃晚饭(chī wǎn fàn) 吗(ma)?
+[55.68 - 59.08] 今天(jīn tiān) 晚上(wǎn shàng) 不好(bù hǎo),明天(míng tiān) 晚上(wǎn shàng) 好(hǎo) 吗(ma)?
+[59.70 - 61.36] 好(hǎo),几点钟(jǐ diǎn zhōng)?
+[61.78 - 63.10] 七点钟(qī diǎn zhōng) 好(hǎo) 吗(ma)?
+[63.66 - 66.44] 对不起(duì bù qǐ),七点钟(qī diǎn zhōng) 不行(bù xíng)。
+[66.44 - 67.84] 那么(nà me) 八点钟(bā diǎn zhōng) 好(hǎo) 吗(ma)?
+[68.56 - 72.70] 好(hǎo),明天(míng tiān) 晚上(wǎn shàng) 八点钟(bā diǎn zhōng) 去(qù) 我(wǒ) 那儿(nà ér)。
+[72.70 - 74.62] 好(hǎo),明天(míng tiān) 见(jiàn)。
+[74.62 - 76.30] 明天(míng tiān) 见(jiàn)。
+[76.30 - 78.90] Do you remember how to say this evening?
+[83.86 - 84.82] 今天(jīn tiān) 晚上(wǎn shàng)。
+[84.82 - 89.44] Tomorrow evening.
+[94.34 - 98.42] 明天(míng tiān) 晚上(wǎn shàng)。
+[98.42 - 100.28] Say, at six o'clock.
+[103.90 - 104.82] 六点钟(liù diǎn zhōng)。
+[104.82 - 109.23] Ask, what about later?
+[113.06 - 117.66] 过(guò) 一会儿(yī huì er) 呢(ne)?
+[120.79 - 123.91] Respond, in that case, let's say 8 o'clock.
+[128.10 - 129.34] 那么(nà me) 八点钟(bā diǎn zhōng) 吧(ba)?
+[143.88 - 145.74] Ask, what time is it?
+[150.50 - 151.10] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[155.18 - 157.18] Tell her that now it's 10 o'clock.
+[162.66 - 163.42] 现在(xiàn zài) 十点钟(shí diǎn zhōng)。
+[163.42 - 169.88] Try to ask, is it 10 o'clock?
+[175.56 - 176.44] 是(shì) 十点钟(shí diǎn zhōng) 吗(ma)?
+[182.28 - 183.04] 是(shì),十(shí)。
+[183.04 - 189.46] Did your tones sound like the speaker's?
+[189.82 - 192.38] Try to answer, no, it's not ten o'clock.
+[198.64 - 206.73] 不是(bú shì),不是(bú shì) 十点钟(shí diǎn zhōng)。
+[206.73 - 214.49] Ask again what time it is.
+[219.88 - 220.52] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[224.43 - 226.63] Say, now it's four o'clock.
+[232.45 - 236.67] 现在(xiàn zài) 四点(sì diǎn) 钟(zhōng)。
+[236.67 - 240.93] Say, five o'clock.
+[244.45 - 245.21] 五点钟(wǔ diǎn zhōng)。
+[245.21 - 250.41] Say, I am going to eat at five o'clock.
+[256.31 - 256.51] 我要(wǒ yào) 五点钟(wǔ diǎn zhōng) 吃(chī)。
+[256.95 - 267.54] 我要(wǒ yào) 五点钟(wǔ diǎn zhōng) 吃(chī)。
+[267.54 - 270.06] Ask, are you going to eat at five o'clock?
+[276.06 - 276.70] 你(nǐ) 要(yào) 五点钟(wǔ diǎn zhōng) 吃(chī) 吗(ma)?
+[277.12 - 283.14] How would you answer this question?
+[283.46 - 283.82] Yes.
+[286.63 - 287.23] 是(shì)。
+[287.23 - 291.29] Answer, yes, with you.
+[304.89 - 305.57] 是(shì),跟(gēn) 你(nǐ) 一起(yì qǐ)。
+[305.57 - 312.76] Tell her this evening you are going to eat supper.
+[332.16 - 332.84] 今天(jīn tiān) 晚上(wǎn shàng) 我要(wǒ yào) 吃晚饭(chī wǎn fàn)。
+[332.84 - 339.40] And now say, I would like to eat supper with you.
+[347.86 - 348.50] 我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃晚饭(chī wǎn fàn)。
+[348.50 - 357.03] What word means also or to?
+[360.25 - 363.60] 也(yě)。
+[363.60 - 366.54] Say, OK, I too would like to eat.
+[379.56 - 380.24] 好(hǎo),我(wǒ) 也(yě) 想(xiǎng) 吃(chī)。
+[380.24 - 386.81] How would you tell her, in that case, let's say 7 o'clock?
+[392.48 - 393.20] 那么(nà me)7点钟(diǎn zhōng) 吧(ba)。
+[393.20 - 399.43] Ask, would you like to drink tea?
+[405.24 - 411.69] Say, no, I would like to drink beer.
+[417.64 - 425.87] 不想(bù xiǎng),我(wǒ) 想(xiǎng) 喝啤酒(hē pí jiǔ)。
+[425.87 - 428.17] Say, today I would not like to drink.
+[434.35 - 435.19] 今天(jīn tiān) 我(wǒ) 不想(bù xiǎng) 喝(hē)。
+[435.19 - 442.06] How does she ask you if you would like to drink something?
+[449.09 - 449.61] 你(nǐ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[454.42 - 457.12] Say, this evening I would not like to drink.
+[465.36 - 466.24] 今天(jīn tiān) 晚上(wǎn shàng) 我(wǒ) 不想(bù xiǎng) 喝(hē)。
+[466.24 - 473.72] Say, anything.
+[479.52 - 480.08] 东西(dōng xī)。
+[480.08 - 484.94] Tell her that you would not like to drink anything.
+[491.44 - 492.20] 我(wǒ) 不想(bù xiǎng) 喝(hē) 东西(dōng xī)。
+[492.20 - 497.28] Try to say,
+[497.80 - 499.92] Today I'm going to eat at three o'clock.
+[508.02 - 508.66] 今天(jīn tiān) 我要(wǒ yào) 三点钟(sān diǎn zhōng) 吃(chī)。
+[508.66 - 520.26] 我要(wǒ yào) 三点钟(sān diǎn zhōng) 吃(chī)。
+[520.26 - 520.70] Say,
+[521.06 - 522.66] Or eat at four o'clock.
+[528.97 - 529.93] 或者(huò zhě) 四点(sì diǎn) 钟吃(zhōng chī)。
+[529.93 - 535.94] 四点(sì diǎn) 钟(zhōng)。
+[535.94 - 539.34] Say,
+[539.34 - 542.10] This evening I would not like to drink anything.
+[551.36 - 551.80] 今天(jīn tiān) 晚上(wǎn shàng) 我(wǒ) 不想(bù xiǎng) 喝(hē) 东西(dōng xī)。
+[551.80 - 560.24] Now say tomorrow
+[560.24 - 564.17] 明天(míng tiān)
+[564.17 - 570.72] Tell her that tomorrow evening you are going to drink something
+[570.72 - 580.71] 明天(míng tiān) 晚上(wǎn shàng) 我要(wǒ yào) 喝(hē) 一点(yì diǎn) 东西(dōng xī)
+[580.71 - 590.63] Do you remember how to say as for me
+[590.63 - 597.69] 我(wǒ) 啊(a) 我(wǒ) 啊(a)
+[597.69 - 604.12] She says as for me I would like to eat supper now
+[604.12 - 614.12] 我(wǒ) 啊(a) 我(wǒ) 想(xiǎng) 现在(xiàn zài) 吃晚饭(chī wǎn fàn)
+[614.12 - 622.87] Say okay
+[622.87 - 625.69] 好(hǎo)
+[625.69 - 631.89] Here is how to ask how much or how many in Mandarin.
+[632.59 - 633.51] 请(qǐng) 跟着(gēn zhe) 说(shuō)
+[633.51 - 634.85] Please repeat.
+[635.79 - 636.55] 请(qǐng) 跟着(gēn zhe) 说(shuō)
+[636.55 - 638.09] 多少(duō shǎo)
+[638.09 - 642.68] 少(shǎo)
+[642.68 - 646.36] 多少(duō shǎo)
+[646.36 - 650.24] 多少(duō shǎo)
+[650.24 - 656.75] This expression is pronounced with a high-level tone
+[656.75 - 659.25] followed by a falling, rising tone.
+[659.65 - 660.73] Ask how much.
+[664.14 - 664.54] 多少(duō shǎo)
+[664.54 - 668.92] How much money?
+[669.84 - 670.70] 请(qǐng) 跟着(gēn zhe) 说(shuō)
+[670.70 - 681.26] 多少(duō shǎo) 钱(qián)? 钱(qián)? 钱(qián)?
+[681.68 - 687.16] The word money is pronounced with a rising tone.
+[687.66 - 688.52] Say money.
+[691.63 - 695.34] 钱(qián)? 钱(qián)?
+[695.92 - 702.32] Ask how much money, meaning how much does it cost.
+[706.65 - 712.27] 多少(duō shǎo) 钱(qián)? 多少(duō shǎo) 钱(qián)?
+[712.67 - 718.88] Chinese money is called people's currency.
+[718.88 - 720.88] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[722.06 - 722.88] 人民币(rén mín bì)。
+[735.50 - 735.76] 人民(rén mín)。
+[735.76 - 744.24] 人民(rén mín) 人民币(rén mín bì) 人民币(rén mín bì)
+[744.24 - 750.42] That's two rising tones and a falling tone.
+[751.12 - 752.58] Say, people's currency.
+[756.30 - 757.00] 人民币(rén mín bì)
+[757.00 - 761.89] Ask how much it costs.
+[770.90 - 771.46] 多少(duō shǎo) 钱(qián)
+[771.46 - 776.85] Ask how much it costs today.
+[777.43 - 779.21] Literally, today, how much money.
+[784.72 - 785.48] 今天(jīn tiān) 多少(duō shǎo) 钱(qián)
+[785.48 - 792.09] To say one renminbi,
+[792.09 - 795.55] you must say literally, one unit of people's currency.
+[796.19 - 798.87] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[798.87 - 814.11] 一块(yī kuài) 人民币(rén mín bì),快(kuài),快(kuài),一块(yī kuài)。
+[814.11 - 816.65] Unit is pronounced with a falling tone.
+[817.29 - 818.17] Say unit.
+[820.80 - 821.08] 快(kuài)
+[821.08 - 825.37] Try to say one unit.
+[828.88 - 833.25] 一块(yī kuài),一块(yī kuài)
+[833.25 - 840.70] Say one renminbi, or one unit of people's currency.
+[845.29 - 846.13] 一块(yī kuài) 人民币(rén mín bì)
+[846.13 - 851.50] Ask how much it costs.
+[855.22 - 855.92] 多少(duō shǎo) 钱(qián)
+[855.92 - 861.36] Try to answer. Eight renminbi.
+[861.82 - 867.25] 八块(bā kuài) 人民币(rén mín bì)
+[867.25 - 876.70] Here is the number eleven in Mandarin.
+[877.52 - 879.08] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[879.94 - 880.56] 十一(shí yī)
+[880.56 - 884.04] 一(yī)
+[884.04 - 887.00] 一(yī)
+[887.00 - 890.20] 十(shí)
+[890.20 - 893.88] 十一(shí yī)
+[893.88 - 897.84] 十一(shí yī)
+[897.84 - 903.09] What is the number eleven made up of?
+[903.55 - 904.67] It's ten one.
+[905.27 - 909.09] Say again, eleven, using rising and high level tones.
+[912.49 - 913.37] 十一(shí yī)
+[913.37 - 917.58] Ask how much
+[917.58 - 921.15] 多少(duō shǎo)
+[921.15 - 926.41] And now ask how much money you owe
+[926.41 - 930.93] 多少(duō shǎo) 钱(qián)
+[930.93 - 936.24] Say, eleven renminbi
+[936.24 - 943.10] 十一块(shí yī kuài) 人民币(rén mín bì)
+[943.10 - 949.60] Here's the number twelve
+[949.60 - 951.60] 请(qǐng) 跟着(gēn zhe) 说(shuō)
+[951.60 - 953.28] 十二(shí èr)
+[953.28 - 957.11] 二(èr)
+[957.11 - 959.94] 二(èr)
+[959.94 - 962.90] 十(shí)
+[962.90 - 966.13] 十二(shí èr)
+[966.13 - 972.70] Twelve has first a rising then a falling tone
+[972.70 - 974.74] Say again, twelve
+[974.74 - 982.93] 十二(shí èr) 十二(shí èr)
+[982.93 - 988.12] What part of that means two?
+[990.44 - 993.13] 二(èr) 二(èr)
+[993.13 - 997.31] Now say, two cups of beer.
+[1002.29 - 1003.01] 两杯(liǎng bēi) 啤酒(pí jiǔ)
+[1003.01 - 1007.71] 两(liǎng)
+[1007.71 - 1010.43] Is used to say two of something.
+[1010.79 - 1012.11] Say again, twelve.
+[1015.10 - 1018.71] 十二(shí èr) 二(èr)
+[1018.71 - 1023.09] You use 二(èr) to say this.
+[1023.09 - 1027.31] This is also the number two used for counting or in mathematics.
+[1027.31 - 1029.95] Say, 12 renminbi.
+[1040.53 - 1045.53] Now say, 11 renminbi.
+[1058.94 - 1061.06] Say, 1 renminbi.
+[1074.49 - 1076.11] Say again, 12.
+[1083.94 - 1088.41] Say, 12 renminbi.
+[1088.41 - 1094.56] Say, 12 renminbi.
+[1094.56 - 1101.33] Try to say, thirteen renminbi.
+[1105.85 - 1112.46] 十三块(shí sān kuài) 人民币(rén mín bì),十三(shí sān).
+[1112.96 - 1119.74] Say again, thirteen, using rising and high-level tones.
+[1122.77 - 1126.90] 十三(shí sān),十三(shí sān).
+[1129.28 - 1131.00] Ask how much it costs.
+[1135.06 - 1140.16] 多少(duō shǎo) 钱(qián),多少(duō shǎo) 钱(qián)?
+[1143.60 - 1145.78] Answer, twelve renminbi.
+[1150.74 - 1157.93] 十二块(shí èr kuài) 人民币(rén mín bì),十二(shí èr).
+[1157.93 - 1163.07] Answer, thirteen renminbi.
+[1163.53 - 1174.16] 十三块(shí sān kuài) 人民币(rén mín bì)。
+[1174.16 - 1177.49] 十三(shí sān)。
+[1177.49 - 1178.97] Eleven renminbi.
+[1184.84 - 1190.35] 十一块(shí yī kuài) 人民币(rén mín bì)。
+[1190.35 - 1193.94] 十一(shí yī)。
+[1193.94 - 1195.94] Say, ten renminbi.
+[1201.65 - 1206.49] 十块(shí kuài) 人民币(rén mín bì)。
+[1206.49 - 1207.49] 十(shí)。
+[1207.49 - 1211.20] Say, two renminbi.
+[1216.11 - 1216.45] 两块(liǎng kuài) 人民币(rén mín bì)。
+[1220.25 - 1223.48] 两(liǎng)。
+[1223.48 - 1225.72] And what's the Mandarin number, twelve?
+[1235.12 - 1235.68] 十二(shí èr)。
+[1235.68 - 1240.12] Say again, ten renminbi.
+[1244.47 - 1249.34] 十块(shí kuài) 人民币(rén mín bì)。
+[1249.34 - 1251.26] Say, eight renminbi.
+[1255.94 - 1260.37] 八块(bā kuài) 人民币(rén mín bì)。
+[1260.37 - 1262.25] Say, six renminbi.
+[1267.41 - 1268.49] 六块(liù kuài) 人民币(rén mín bì)。
+[1268.49 - 1274.45] And how would you ask, how much money?
+[1285.39 - 1286.43] 多少(duō shǎo) 钱(qián)?
+[1286.43 - 1290.41] Say, six.
+[1295.86 - 1296.66] 六(liù)。
+[1296.66 - 1301.14] Ask, is it five renminbi?
+[1308.14 - 1317.14] Say, no, it's four renminbi.
+[1323.34 - 1331.58] 不是(bú shì),是(shì) 四块(sì kuài) 人民币(rén mín bì)。
+[1331.58 - 1339.70] Now say, seven renminbi.
+[1348.16 - 1348.18] 七块(qī kuài) 人民币(rén mín bì)。
+[1348.18 - 1354.42] How would you ask, is it thirteen renminbi?
+[1369.53 - 1370.25] 是(shì) 十三块(shí sān kuài) 人民币(rén mín bì) 吗(ma)?
+[1375.65 - 1377.69] Did your tones sound like the speaker's?
+[1377.69 - 1380.49] Say, no, it's not thirteen.
+[1386.13 - 1394.28] 不是(bú shì),不是(bú shì) 十三(shí sān)。
+[1394.28 - 1399.54] Ask, is it twelve units?
+[1404.27 - 1410.76] 是(shì) 十二块(shí èr kuài) 吗(ma)?十二(shí èr)。
+[1411.32 - 1416.34] Try to say, no, it's eleven renminbi.
+[1423.21 - 1425.85] 不是(bú shì),是(shì) 十一块(shí yī kuài) 人民币(rén mín bì)。
+[1432.07 - 1442.54] Ask, do you understand?
+[1446.28 - 1447.20] 你(nǐ) 明白(míng bái) 吗(ma)?
+[1447.20 - 1451.48] How would you answer?
+[1451.48 - 1453.26] Yes, I understand
+[1453.26 - 1459.39] 明白(míng bái),我(wǒ) 明白(míng bái)
+[1459.39 - 1465.08] Do you remember how to say
+[1465.08 - 1466.46] One renminbi?
+[1471.60 - 1472.28] 一块(yī kuài) 人民币(rén mín bì)
+[1472.28 - 1477.79] 现在(xiàn zài) 请(qǐng) 听(tīng)
+[1477.79 - 1479.95] What did I just ask you to do?
+[1481.25 - 1483.67] I asked you to please listen now
+[1483.67 - 1486.23] The young man is going to propose
+[1486.23 - 1488.19] various things you can do together
+[1488.19 - 1490.81] You will contradict him every time
+[1490.81 - 1492.51] Listen now
+[1492.51 - 1494.33] and then answer the questions
+[1494.33 - 1496.33] 你好(nǐ hǎo)
+[1496.33 - 1499.25] 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1504.86 - 1510.99] 我(wǒ) 不想(bù xiǎng),谢谢(xiè xiè) 你(nǐ)。
+[1510.99 - 1517.00] 我(wǒ) 不想(bù xiǎng) 吃(chī) 东西(dōng xī)。
+[1517.00 - 1525.28] 我(wǒ) 啊(a),我(wǒ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 东西(dōng xī)。
+[1525.28 - 1526.78] 你(nǐ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 茶(chá) 吗(ma)?
+[1527.56 - 1530.82] Answer no and tell him you'd like to drink some beer.
+[1539.30 - 1541.86] 不想(bù xiǎng),我(wǒ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 啤酒(pí jiǔ)。
+[1548.42 - 1554.80] 我(wǒ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 啤酒(pí jiǔ)。
+[1554.80 - 1556.22] 好(hǎo),什么(shén me) 时候(shí hòu)?
+[1557.02 - 1557.96] 今天(jīn tiān) 好(hǎo) 吗(ma)?
+[1558.66 - 1560.32] Tell him, not okay.
+[1560.32 - 1580.04] Let's say tomorrow 不好(bù hǎo) 明天(míng tiān) 吧(ba) 明天(míng tiān) 吧(ba) 今天(jīn tiān) 晚上(wǎn shàng) 呢(ne) This evening is not okay
+[1580.04 - 1612.30] Let's say tomorrow evening 今天(jīn tiān) 晚上(wǎn shàng) 不好(bù hǎo) 明天(míng tiān) 晚上(wǎn shàng) 吧(ba) 今天(jīn tiān) 晚上(wǎn shàng) 不好(bù hǎo) 明天(míng tiān) 晚上(wǎn shàng) 吧(ba) 几点钟(jǐ diǎn zhōng) 五点钟(wǔ diǎn zhōng) 好(hǎo) 吗(ma)
+[1612.30 - 1615.70] Say five o'clock is not okay
+[1615.70 - 1625.89] Let's say six o'clock 五点钟(wǔ diǎn zhōng) 不好(bù hǎo) 六点钟(liù diǎn zhōng) 吧(ba)
+[1626.19 - 1633.75] 不好(bù hǎo),七点钟(qī diǎn zhōng) 吧(ba)。
+[1633.75 - 1636.45] Tell him that seven o'clock is not okay.
+[1637.03 - 1638.27] Suggest eight o'clock.
+[1646.60 - 1654.78] 七点钟(qī diǎn zhōng) 不好(bù hǎo),八点钟(bā diǎn zhōng) 吧(ba)。
+[1654.78 - 1666.38] 好(hǎo),明天(míng tiān) 晚上(wǎn shàng) 八点钟(bā diǎn zhōng)。
+[1666.38 - 1667.60] 再见(zài jiàn)。
+[1667.60 - 1671.36] Now you'll have a conversation with the saleswoman in a store.
+[1672.12 - 1675.78] You've made some purchases and you're disagreeing with her about the price.
+[1676.54 - 1678.94] Begin by asking her how much money it is.
+[1683.13 - 1691.96] 十三块(shí sān kuài) 人民币(rén mín bì)。
+[1691.96 - 1694.82] Say, no, it's twelve renminbi.
+[1701.10 - 1715.26] 不是(bú shì),是(shì) 十二块(shí èr kuài) 人民币(rén mín bì)。
+[1715.26 - 1720.70] 不是(bú shì),是(shì) 十一块(shí yī kuài) 人民币(rén mín bì)。
+[1720.70 - 1723.68] It's not eleven units, it's ten units.
+[1731.36 - 1739.80] 不是(bú shì) 十一块(shí yī kuài),是(shì) 十块(shí kuài)。
+[1739.80 - 1744.41] 是(shì) 十块(shí kuài)。
+[1744.41 - 1747.67] 十块(shí kuài) 不行(bù xíng),八块(bā kuài) 人民币(rén mín bì) 好(hǎo) 吗(ma)?
+[1747.69 - 1753.03] Tell her it's not OK. Ask if 7 renminbi are OK.
+[1761.68 - 1764.10] 不好(bù hǎo),7块(kuài) 人民币(rén mín bì) 好(hǎo) 吗(ma)?
+[1772.72 - 1781.64] 好(hǎo),那么(nà me)7块(kuài) 人民币(rén mín bì) 吧(ba),再见(zài jiàn)。
+[1781.64 - 1784.24] This is the end of Unit 12.
+[1785.20 - 1788.46] Copyright 2005 by Simon & Schuster, Inc.
+[1789.62 - 1793.28] Recording Copyright 2005 by Simon & Schuster, Inc.
+[1793.28 - 1795.54] All rights reserved.

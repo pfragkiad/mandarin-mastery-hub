@@ -51,6 +51,8 @@ import { useWorkspace } from './workspace';
  */
 
 const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character lesson', word: 'Word lesson', phrase: 'Phrase lesson', topic: 'Topic lesson' };
+/** Kind label; general lessons with lesson_type "dialogue" read as conversation lessons. */
+const lessonLabel = (summary: LessonSummary) => summary.kind === 'topic' && summary.lessonType === 'dialogue' ? 'Conversation lesson' : kindLabel[summary.kind];
 const mappingLabel: Record<string, string> = { same_written_form: 'Same form in both scripts', one_to_one: 'One traditional form', context_dependent: 'Traditional form depends on context', multiple_targets: 'Several traditional forms' };
 /** snake_case enum values read as plain words ("compositional_frequency_phrase" → "compositional frequency phrase"). */
 const plain = (value: string) => value.replace(/_/g, ' ');
@@ -157,10 +159,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     const reviewWords = p.review.entry_ids.flatMap(id => { const item = byEntry.get(id); return item ? [item] : []; });
     if (p.dialogue.turns.length) sections.push({ id: 'conversation', title: 'Conversation', hint: p.dialogue.title, body: <>
       {p.dialogue.context_en && <p className="lesson-note"><LessonText text={p.dialogue.context_en}/></p>}
-      <div className="lesson-dialogue">{p.dialogue.turns.map((t, i) => <div key={i} className="lesson-turn">
-        <span className="lesson-turn-speaker" aria-label={`Speaker ${t.speaker}`}>{t.speaker}</span>
-        <PlanSentence line={t}/>
-      </div>)}</div>
+      <DialogueTurns turns={p.dialogue.turns}/>
     </> });
     if (p.patterns.length) sections.push({ id: 'patterns', title: 'How the language works', hint: count(p.patterns.length, 'pattern'), body: <div className="lesson-stack">
       {p.patterns.map(pat => <div key={pat.id} className="lesson-card lesson-pattern">
@@ -229,6 +228,27 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div> });
     if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <div className="lesson-grid lesson-vocab-grid">
       {topic.related.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}
+    </div> });
+  }
+
+  // General lessons (e.g. Conversational Mandarin dialogue lessons): blocks in recorded order.
+  // Consecutive explanations open the lesson as "About this lesson"; each other block is its own section.
+  const blocks = S.blocks ?? [];
+  const introBlocks = blocks.flatMap(b => b.kind === 'explanation' ? [b] : []);
+  if (introBlocks.length) sections.push({ id: 'about', title: 'About this lesson', hint: 'What this lesson is based on', body: <>{introBlocks.map(b => <p key={b.id} className="lesson-note"><LessonText text={b.text}/></p>)}</> });
+  for (const b of blocks) {
+    if (b.kind === 'dialogue' && b.turns.length) sections.push({ id: `block-${b.id}`, title: b.title || 'Conversation', hint: count(b.turns.length, 'line'), body: <DialogueTurns turns={b.turns}/> });
+  }
+  const patterns = blocks.flatMap(b => b.kind === 'grammar_pattern' ? [b] : []);
+  if (patterns.length) sections.push({ id: 'block-patterns', title: 'Patterns', hint: count(patterns.length, 'pattern'), body: <div className="lesson-stack">{patterns.map(g => <div key={g.id} className="lesson-card lesson-pattern">
+    <p className="lesson-pattern-line"><LessonPairedLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>
+    <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
+    <PlanSentence line={g.example}/>
+    {g.example.teaching_note && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
+  </div>)}</div> });
+  for (const b of blocks) {
+    if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <div className="lesson-grid lesson-vocab-grid">
+      {b.items.map((item, i) => <div key={`${item.hanzi}-${i}`} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/></div>)}
     </div> });
   }
 
@@ -353,7 +373,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
-        <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{kindLabel[summary.kind].toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
+        <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
         <h1>{summary.title}<LessonStatusPill status={summary.status}/></h1>
         {summary.subtitle && <p className="lesson-subtitle"><LessonText text={summary.subtitle}/></p>}
         {summary.description && <p className="lesson-description"><LessonText text={summary.description}/></p>}
@@ -388,7 +408,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
           </section>;
         })}
         <ReportProvenance lesson={lesson}/>
-        <p className="source-note">{kindLabel[summary.kind]} · {summary.status}{summary.dateReviewed ? ` · reviewed ${summary.dateReviewed}` : ''}{lesson.metadata.license_note ? ` · ${lesson.metadata.license_note}` : ''}</p>
+        <p className="source-note">{lessonLabel(summary)} · {summary.status}{summary.dateReviewed ? ` · reviewed ${summary.dateReviewed}` : ''}{lesson.metadata.license_note ? ` · ${lesson.metadata.license_note}` : ''}</p>
       </div>
     </div>
   </div>
@@ -419,6 +439,14 @@ function PlanSentence({ line }: { line: PlanLine }) {
   return <SentenceExample sentence={line.hanzi} pinyin={line.pinyin} translation={line.english} heading=""/>;
 }
 
+/** A dialogue: one row per turn with its speaker badge (A, B…) beside the shared sentence renderer. */
+function DialogueTurns({ turns }: { turns: (PlanLine & { speaker: string })[] }) {
+  return <div className="lesson-dialogue">{turns.map((t, i) => <div key={i} className="lesson-turn">
+    <span className="lesson-turn-speaker" aria-label={`Speaker ${t.speaker}`}>{t.speaker}</span>
+    <PlanSentence line={t}/>
+  </div>)}</div>;
+}
+
 /** Hidden model answer the learner opens after trying first (native disclosure; state is the element's own). */
 function Reveal({ label, children }: { label: string; children: ReactNode }) {
   return <details className="lesson-details lesson-reveal"><summary>{label}</summary>{children}</details>;
@@ -427,7 +455,7 @@ function Reveal({ label, children }: { label: string; children: ReactNode }) {
 /** Compact word-bank entry: linked headword with its record's audio and HSK number, no example sentences. */
 function WordBankCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
   const hsk = record?.entry?.hskLevel && record.entry.hsk_index ? `HSK ${record.entry.hskLevel} · #${record.entry.hsk_index}` : '';
-  return <div className="lesson-card lesson-vocab">
+  return <div className="lesson-card lesson-vocab lesson-bank-word">
     {hsk && <div className="lesson-card-top"><span className="lesson-register is-hsk">{hsk}</span></div>}
     <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record}/>
   </div>;

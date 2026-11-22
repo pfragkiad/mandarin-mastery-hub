@@ -1,0 +1,282 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-today-tomorrow-later",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Today, Tomorrow, and Later",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-today-tomorrow-later"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar",
+      "daily-actions"
+    ],
+    "tags": [
+      "dates",
+      "future",
+      "later",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "today-tomorrow-later"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Distinguish now, later, tonight, and tomorrow.",
+    "Move an invitation to another day."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "么": "Characters:么",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "呢": "Characters:呢",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "现": "Characters:现",
+    "行": "Characters:行",
+    "西": "Characters:西",
+    "见": "Characters:见",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "那": "Characters:那"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想现在吃吗？",
+            "pinyin": "Nǐ xiǎng xiànzài chī ma?",
+            "english": "Do you want to eat now?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "现在不行。",
+            "pinyin": "Xiànzài bù xíng.",
+            "english": "Now does not work."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那么明天晚上，好吗？",
+            "pinyin": "Nàme míngtiān wǎnshang, hǎo ma?",
+            "english": "Then tomorrow evening, okay?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，明天见！",
+            "pinyin": "Hǎo, míngtiān jiàn!",
+            "english": "Okay, see you tomorrow!"
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "今天 / 明天",
+        "pattern_pinyin": "jīntiān / míngtiān",
+        "function_en": "Time words often precede the main verb or follow the topic.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "明天我想去。",
+          "pinyin": "míngtiān wǒ xiǎng qù.",
+          "english": "I want to go tomorrow.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "过一会儿",
+        "pattern_pinyin": "guò yíhuìr",
+        "function_en": "This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "过一会儿见。",
+          "pinyin": "guò yíhuìr jiàn.",
+          "english": "See you in a little while.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "现在",
+            "pinyin": "xiànzài",
+            "meaning_en": "Now."
+          },
+          {
+            "hanzi": "什么时候",
+            "pinyin": "shénme shíhou",
+            "meaning_en": "When?"
+          },
+          {
+            "hanzi": "过一会儿",
+            "pinyin": "guò yíhuìr",
+            "meaning_en": "In a little while; later."
+          },
+          {
+            "hanzi": "今天",
+            "pinyin": "jīntiān",
+            "meaning_en": "Today."
+          },
+          {
+            "hanzi": "今天晚上",
+            "pinyin": "jīntiān wǎnshang",
+            "meaning_en": "Tonight."
+          },
+          {
+            "hanzi": "明天",
+            "pinyin": "míngtiān",
+            "meaning_en": "Tomorrow."
+          },
+          {
+            "hanzi": "明天晚上",
+            "pinyin": "míngtiān wǎnshang",
+            "meaning_en": "Tomorrow evening."
+          },
+          {
+            "hanzi": "现在还是过一会儿",
+            "pinyin": "xiànzài háishi guò yíhuìr",
+            "meaning_en": "Now or a little later?"
+          },
+          {
+            "hanzi": "明天好吗",
+            "pinyin": "míngtiān hǎo ma",
+            "meaning_en": "Would tomorrow be okay?"
+          },
+          {
+            "hanzi": "明天见",
+            "pinyin": "míngtiān jiàn",
+            "meaning_en": "See you tomorrow."
+          },
+          {
+            "hanzi": "明天呢",
+            "pinyin": "míngtiān ne",
+            "meaning_en": "What about tomorrow?"
+          },
+          {
+            "hanzi": "现在吗",
+            "pinyin": "xiànzài ma",
+            "meaning_en": "Now?"
+          },
+          {
+            "hanzi": "过一会儿好吗",
+            "pinyin": "guò yíhuìr hǎo ma",
+            "meaning_en": "Would a little later be okay?"
+          },
+          {
+            "hanzi": "过一会儿不好",
+            "pinyin": "guò yíhuìr bù hǎo",
+            "meaning_en": "Later is not a good time."
+          },
+          {
+            "hanzi": "我想现在喝",
+            "pinyin": "wǒ xiǎng xiànzài hē",
+            "meaning_en": "I want to drink now."
+          },
+          {
+            "hanzi": "今天晚上我不想吃东西",
+            "pinyin": "jīntiān wǎnshang wǒ bù xiǎng chī dōngxi",
+            "meaning_en": "I do not want to eat anything tonight."
+          },
+          {
+            "hanzi": "明天晚上不行",
+            "pinyin": "míngtiān wǎnshang bù xíng",
+            "meaning_en": "Tomorrow evening doesn't work."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Postpone plans from tonight to tomorrow, or from now to later."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "现在不行。 (Xiànzài bù xíng.) — Now does not work.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Today.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "今天 (jīntiān)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 过一会儿 (guò yíhuìr).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "过一会儿见。 (guò yíhuìr jiàn.) — See you in a little while.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Postpone plans from tonight to tomorrow, or from now to later.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想现在吃吗？ (Nǐ xiǎng xiànzài chī ma?) — 现在不行。 (Xiànzài bù xíng.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-greetings-politeness",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Greetings and Politeness",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice start a polite conversation. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-greetings-politeness"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social"
+    ],
+    "tags": [
+      "greetings",
+      "apologies",
+      "courtesy",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "greetings-politeness"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Start a polite conversation.",
+    "Greet, thank, and close a short exchange."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "再": "Characters:再",
+    "吗": "Characters:吗",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "客": "Characters:客",
+    "对": "Characters:对",
+    "很": "Characters:很",
+    "文": "Characters:文",
+    "明": "Characters:明",
+    "气": "Characters:气",
+    "英": "Characters:英",
+    "见": "Characters:见",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "问": "Characters:问"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你好！",
+            "pinyin": "Nǐ hǎo!",
+            "english": "Hello!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你好！",
+            "pinyin": "Nǐ hǎo!",
+            "english": "Hello!"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你好吗？",
+            "pinyin": "Nǐ hǎo ma?",
+            "english": "How are you?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "很好，谢谢！",
+            "pinyin": "Hěn hǎo, xièxie!",
+            "english": "Very well, thank you!"
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "你好吗？",
+        "pattern_pinyin": "nǐ hǎo ma",
+        "function_en": "The neutral-tone question particle 吗 (ma) can form a yes–no question.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "你好吗？",
+          "pinyin": "nǐ hǎo ma?",
+          "english": "How are you?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "请问……",
+        "pattern_pinyin": "qǐngwèn",
+        "function_en": "A polite way to introduce a request for information.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "请问，你会说英文吗？",
+          "pinyin": "qǐngwèn, nǐ huì shuō Yīngwén ma?",
+          "english": "Excuse me, do you speak English?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你好",
+            "pinyin": "nǐ hǎo",
+            "meaning_en": "Hello."
+          },
+          {
+            "hanzi": "你好吗",
+            "pinyin": "nǐ hǎo ma",
+            "meaning_en": "How are you?"
+          },
+          {
+            "hanzi": "很好",
+            "pinyin": "hěn hǎo",
+            "meaning_en": "Very well."
+          },
+          {
+            "hanzi": "对不起",
+            "pinyin": "duìbuqǐ",
+            "meaning_en": "Excuse me; sorry."
+          },
+          {
+            "hanzi": "请问",
+            "pinyin": "qǐngwèn",
+            "meaning_en": "Excuse me, may I ask…"
+          },
+          {
+            "hanzi": "谢谢",
+            "pinyin": "xièxie",
+            "meaning_en": "Thank you."
+          },
+          {
+            "hanzi": "谢谢你",
+            "pinyin": "xièxie nǐ",
+            "meaning_en": "Thank you."
+          },
+          {
+            "hanzi": "不客气",
+            "pinyin": "bú kèqi",
+            "meaning_en": "You’re welcome."
+          },
+          {
+            "hanzi": "再见",
+            "pinyin": "zàijiàn",
+            "meaning_en": "Goodbye."
+          },
+          {
+            "hanzi": "明天见",
+            "pinyin": "míngtiān jiàn",
+            "meaning_en": "See you tomorrow."
+          },
+          {
+            "hanzi": "对不起请问",
+            "pinyin": "duìbuqǐ qǐngwèn",
+            "meaning_en": "Excuse me, may I ask…"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Greet a stranger politely, ask a simple question, then thank them."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你好！ (Nǐ hǎo!) — Hello!",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Excuse me; sorry.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "对不起 (duìbuqǐ)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 请问…… (qǐngwèn).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，你会说英文吗？ (qǐngwèn, nǐ huì shuō Yīngwén ma?) — Excuse me, do you speak English?",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Greet a stranger politely, ask a simple question, then thank them.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你好！ (Nǐ hǎo!) — 你好！ (Nǐ hǎo!)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

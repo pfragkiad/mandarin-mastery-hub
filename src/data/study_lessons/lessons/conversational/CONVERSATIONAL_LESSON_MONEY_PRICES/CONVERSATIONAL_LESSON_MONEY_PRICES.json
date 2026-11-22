@@ -1,0 +1,276 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-money-prices",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Money, Prices, and Currency",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice ask how much something costs. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-money-prices"
+  },
+  "classification": {
+    "primary_topic_id": "shopping-money",
+    "topic_ids": [
+      "shopping-money",
+      "numbers-quantities"
+    ],
+    "tags": [
+      "money",
+      "currency",
+      "prices",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "money-prices"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Ask how much something costs.",
+    "Say amounts in yuan or US dollars."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "你": "Characters:你",
+    "十": "Characters:十",
+    "吗": "Characters:吗",
+    "啤": "Characters:啤",
+    "四": "Characters:四",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "少": "Characters:少",
+    "币": "Characters:币",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "数": "Characters:数",
+    "有": "Characters:有",
+    "杯": "Characters:杯",
+    "民": "Characters:民",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "种": "Characters:种",
+    "美": "Characters:美",
+    "茶": "Characters:茶",
+    "要": "Characters:要",
+    "词": "Characters:词",
+    "请": "Characters:请",
+    "酒": "Characters:酒",
+    "金": "Characters:金",
+    "钱": "Characters:钱",
+    "问": "Characters:问"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，一杯啤酒多少钱？",
+            "pinyin": "Qǐngwèn, yì bēi píjiǔ duōshao qián?",
+            "english": "Excuse me, how much is a glass of beer?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "十块人民币。",
+            "pinyin": "Shí kuài rénmínbì.",
+            "english": "Ten yuan."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你有人民币吗？",
+            "pinyin": "Nǐ yǒu rénmínbì ma?",
+            "english": "Do you have Chinese currency?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "有，我有二十块。",
+            "pinyin": "Yǒu, wǒ yǒu èrshí kuài.",
+            "english": "Yes, I have twenty yuan."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "多少钱",
+        "pattern_pinyin": "duōshao qián",
+        "function_en": "多少钱 (duōshao qián) asks for the price.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "一杯茶多少钱？",
+          "pinyin": "yì bēi chá duōshao qián?",
+          "english": "How much is a cup of tea?",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "数词 + 块 + 币种",
+        "pattern_pinyin": "shùcí kuài bìzhǒng",
+        "function_en": "块 (kuài) is the colloquial unit used to count yuan or a currency amount.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我有十块人民币。",
+          "pinyin": "wǒ yǒu shí kuài rénmínbì.",
+          "english": "I have ten yuan.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "多少钱",
+            "pinyin": "duōshao qián",
+            "meaning_en": "How much does it cost?"
+          },
+          {
+            "hanzi": "一块人民币",
+            "pinyin": "yí kuài rénmínbì",
+            "meaning_en": "One yuan."
+          },
+          {
+            "hanzi": "十块人民币",
+            "pinyin": "shí kuài rénmínbì",
+            "meaning_en": "Ten yuan."
+          },
+          {
+            "hanzi": "十二块人民币",
+            "pinyin": "shí’èr kuài rénmínbì",
+            "meaning_en": "Twelve yuan."
+          },
+          {
+            "hanzi": "你有多少人民币",
+            "pinyin": "nǐ yǒu duōshao rénmínbì",
+            "meaning_en": "How much RMB do you have?"
+          },
+          {
+            "hanzi": "你有多少美金",
+            "pinyin": "nǐ yǒu duōshao Měijīn",
+            "meaning_en": "How many US dollars do you have?"
+          },
+          {
+            "hanzi": "我有十五块美金",
+            "pinyin": "wǒ yǒu shíwǔ kuài Měijīn",
+            "meaning_en": "I have fifteen US dollars."
+          },
+          {
+            "hanzi": "我没有人民币",
+            "pinyin": "wǒ méiyǒu rénmínbì",
+            "meaning_en": "I have no RMB."
+          },
+          {
+            "hanzi": "一杯啤酒多少钱",
+            "pinyin": "yì bēi píjiǔ duōshao qián",
+            "meaning_en": "How much is a glass of beer?"
+          },
+          {
+            "hanzi": "你有没有人民币",
+            "pinyin": "nǐ yǒu méiyǒu rénmínbì",
+            "meaning_en": "Do you have any RMB?"
+          },
+          {
+            "hanzi": "我有十四块美金",
+            "pinyin": "wǒ yǒu shísì kuài Měijīn",
+            "meaning_en": "I have fourteen US dollars."
+          },
+          {
+            "hanzi": "我有很多人民币",
+            "pinyin": "wǒ yǒu hěn duō rénmínbì",
+            "meaning_en": "I have plenty of RMB."
+          },
+          {
+            "hanzi": "你要多少人民币",
+            "pinyin": "nǐ yào duōshao rénmínbì",
+            "meaning_en": "How much RMB do you want?"
+          },
+          {
+            "hanzi": "我没有钱",
+            "pinyin": "wǒ méiyǒu qián",
+            "meaning_en": "I have no money."
+          },
+          {
+            "hanzi": "我有一点美金",
+            "pinyin": "wǒ yǒu yìdiǎn Měijīn",
+            "meaning_en": "I have a little US currency."
+          },
+          {
+            "hanzi": "你有钱吗",
+            "pinyin": "nǐ yǒu qián ma",
+            "meaning_en": "Do you have money?"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Ask the price of tea or beer; answer with a simple amount in RMB or dollars."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "十块人民币。 (Shí kuài rénmínbì.) — Ten yuan.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Twelve yuan.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "十二块人民币 (shí’èr kuài rénmínbì)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 数词 + 块 + 币种 (shùcí kuài bìzhǒng).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我有十块人民币。 (wǒ yǒu shí kuài rénmínbì.) — I have ten yuan.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Ask the price of tea or beer; answer with a simple amount in RMB or dollars.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，一杯啤酒多少钱？ (Qǐngwèn, yì bēi píjiǔ duōshao qián?) — 十块人民币。 (Shí kuài rénmínbì.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

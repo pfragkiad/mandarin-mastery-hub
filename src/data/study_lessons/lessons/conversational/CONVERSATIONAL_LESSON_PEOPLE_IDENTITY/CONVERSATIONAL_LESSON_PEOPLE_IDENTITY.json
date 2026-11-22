@@ -1,0 +1,269 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "convm-people-identity",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Introducing Yourself and Other People",
+    "subtitle": "Topic-based beginner conversation lesson",
+    "description": "Practice say who you are and ask where another person is from. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "slug": "conversational-people-identity"
+  },
+  "classification": {
+    "primary_topic_id": "people-identity",
+    "topic_ids": [
+      "people-identity",
+      "family-relationships"
+    ],
+    "tags": [
+      "introductions",
+      "nationalities",
+      "forms-of-address",
+      "conversational-mandarin",
+      "beginner",
+      "topic-lesson"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "people-identity"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Say who you are and ask where another person is from.",
+    "Use polite forms of address."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner conversational Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "中": "Characters:中",
+    "人": "Characters:人",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "先": "Characters:先",
+    "吗": "Characters:吗",
+    "吴": "Characters:吴",
+    "呢": "Characters:呢",
+    "国": "Characters:国",
+    "姐": "Characters:姐",
+    "小": "Characters:小",
+    "我": "Characters:我",
+    "是": "Characters:是",
+    "李": "Characters:李",
+    "王": "Characters:王",
+    "生": "Characters:生",
+    "美": "Characters:美",
+    "这": "Characters:这"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Topic lesson based on Conversational Mandarin, tracks 1–16. Dialogue is an editorial teaching exchange using source-attested expressions; it is not presented as a verbatim audio transcript."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你是美国人吗？",
+            "pinyin": "Nǐ shì Měiguó rén ma?",
+            "english": "Are you American?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不是，我是中国人。",
+            "pinyin": "Bú shì, wǒ shì Zhōngguó rén.",
+            "english": "No, I am Chinese."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你呢？",
+            "pinyin": "Nǐ ne?",
+            "english": "And you?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我是美国人。",
+            "pinyin": "Wǒ shì Měiguó rén.",
+            "english": "I am American."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "我是……",
+        "pattern_pinyin": "wǒ shì",
+        "function_en": "Use 是 (shì) to identify nationality or identity.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我是中国人。",
+          "pinyin": "wǒ shì Zhōngguó rén.",
+          "english": "I am Chinese.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "不是……",
+        "pattern_pinyin": "bú shì",
+        "function_en": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我不是美国人。",
+          "pinyin": "wǒ bú shì Měiguó rén.",
+          "english": "I am not American.",
+          "teaching_note": "Use this construction in your own dialogue."
+        }
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "我是美国人",
+            "pinyin": "wǒ shì Měiguó rén",
+            "meaning_en": "I am American."
+          },
+          {
+            "hanzi": "你是美国人吗",
+            "pinyin": "nǐ shì Měiguó rén ma",
+            "meaning_en": "Are you American?"
+          },
+          {
+            "hanzi": "我不是美国人",
+            "pinyin": "wǒ bú shì Měiguó rén",
+            "meaning_en": "I am not American."
+          },
+          {
+            "hanzi": "我是中国人",
+            "pinyin": "wǒ shì Zhōngguó rén",
+            "meaning_en": "I am Chinese."
+          },
+          {
+            "hanzi": "你是中国人吗",
+            "pinyin": "nǐ shì Zhōngguó rén ma",
+            "meaning_en": "Are you Chinese?"
+          },
+          {
+            "hanzi": "你呢",
+            "pinyin": "nǐ ne",
+            "meaning_en": "And you?"
+          },
+          {
+            "hanzi": "李先生",
+            "pinyin": "Lǐ xiānsheng",
+            "meaning_en": "Mr. Li."
+          },
+          {
+            "hanzi": "王小姐",
+            "pinyin": "Wáng xiǎojiě",
+            "meaning_en": "Miss Wang."
+          },
+          {
+            "hanzi": "吴先生",
+            "pinyin": "Wú xiānsheng",
+            "meaning_en": "Mr. Wu."
+          },
+          {
+            "hanzi": "这位",
+            "pinyin": "zhè wèi",
+            "meaning_en": "This person (polite classifier)."
+          },
+          {
+            "hanzi": "美国人",
+            "pinyin": "Měiguó rén",
+            "meaning_en": "An American person."
+          },
+          {
+            "hanzi": "中国人",
+            "pinyin": "Zhōngguó rén",
+            "meaning_en": "A Chinese person."
+          },
+          {
+            "hanzi": "你不是美国人吗",
+            "pinyin": "nǐ bú shì Měiguó rén ma",
+            "meaning_en": "Aren't you American?"
+          },
+          {
+            "hanzi": "你不是中国人",
+            "pinyin": "nǐ bú shì Zhōngguó rén",
+            "meaning_en": "You are not Chinese."
+          },
+          {
+            "hanzi": "我不是中国人",
+            "pinyin": "wǒ bú shì Zhōngguó rén",
+            "meaning_en": "I am not Chinese."
+          },
+          {
+            "hanzi": "你是美国人",
+            "pinyin": "nǐ shì Měiguó rén",
+            "meaning_en": "You are American."
+          },
+          {
+            "hanzi": "我是",
+            "pinyin": "wǒ shì",
+            "meaning_en": "I am…; it is me."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”"
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.) — No, I am Chinese.",
+          "explanation": "Read the first two turns again, then answer without looking."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: I am Chinese.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我是中国人 (wǒ shì Zhōngguó rén)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Make a sentence using the pattern 不是…… (bú shì).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我不是美国人。 (wǒ bú shì Měiguó rén.) — I am not American.",
+          "explanation": "Use the word order shown in the second grammar explanation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你是美国人吗？ (Nǐ shì Měiguó rén ma?) — 不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.)",
+          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+        }
+      ]
+    }
+  }
+}

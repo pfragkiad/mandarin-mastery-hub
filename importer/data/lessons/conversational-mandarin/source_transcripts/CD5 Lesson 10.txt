@@ -1,0 +1,290 @@
+[1.46 - 5.16] This is Unit 10 of Pimsleur's Mandarin Chinese 1.
+[5.58 - 7.28] Listen to this Mandarin conversation.
+[8.92 - 13.12] 李先生(lǐ xiān shēng),我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī),好(hǎo) 吗(ma)?
+[13.92 - 16.30] 几点钟(jǐ diǎn zhōng)?两点钟(liǎng diǎn zhōng) 好(hǎo) 吗(ma)?
+[17.14 - 20.26] 不好(bù hǎo),我(wǒ) 想(xiǎng) 过(guò) 一会儿(yī huì er) 吃(chī)。
+[20.26 - 22.14] 八点钟(bā diǎn zhōng) 还是(hái shì) 九点钟(jiǔ diǎn zhōng)?
+[22.86 - 24.10] 九点钟(jiǔ diǎn zhōng)。
+[24.10 - 25.18] 好(hǎo)。
+[25.18 - 25.90] Listen again.
+[26.86 - 31.12] 李先生(lǐ xiān shēng),我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī),好(hǎo) 吗(ma)?
+[31.46 - 33.96] 几点钟(jǐ diǎn zhōng)? 两点钟(liǎng diǎn zhōng) 好(hǎo) 吗(ma)?
+[34.90 - 38.22] 不好(bù hǎo),我(wǒ) 想(xiǎng) 过(guò) 一会儿(yī huì er) 吃(chī)。
+[38.22 - 40.24] 八点钟(bā diǎn zhōng) 还是(hái shì) 九点钟(jiǔ diǎn zhōng)?
+[41.30 - 42.74] 九点钟(jiǔ diǎn zhōng)。
+[42.74 - 43.94] 好(hǎo)。
+[43.94 - 47.10] Do you remember how to say, I would like to eat something?
+[53.51 - 54.39] 我(wǒ) 想(xiǎng) 吃(chī) 一点(yì diǎn) 东西(dōng xī)。
+[54.39 - 61.28] Now say, I'd like to buy something.
+[68.41 - 73.79] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 东西(dōng xī)。
+[73.79 - 74.67] 买(mǎi)。
+[74.67 - 78.59] Ask, what would you like to do?
+[82.60 - 82.96] 你(nǐ) 想(xiǎng) 做(zuò) 什么(shén me)?
+[86.19 - 87.37] 你(nǐ) 想(xiǎng) 做(zuò) 什么(shén me)?
+[87.87 - 92.85] Say again, I would like to buy something.
+[97.46 - 103.68] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 东西(dōng xī)。
+[103.68 - 105.26] Ask, at what time?
+[108.09 - 108.69] 几点钟(jǐ diǎn zhōng)?
+[111.33 - 113.21] Say, at one o'clock.
+[116.10 - 125.96] 一点钟(yì diǎn zhōng),一(yī),一点钟(yì diǎn zhōng)。
+[125.96 - 128.14] Tell her, I'd like to drink some tea.
+[133.54 - 142.60] 我(wǒ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 茶(chá),一点(yì diǎn) 茶(chá)。
+[142.60 - 145.18] And how would you say, at nine o'clock?
+[145.18 - 156.26] 九点钟(jiǔ diǎn zhōng),九(jiǔ),九点钟(jiǔ diǎn zhōng)
+[156.26 - 161.72] Now ask, is it at nine o'clock?
+[165.25 - 166.35] 是(shì) 九点钟(jiǔ diǎn zhōng) 吗(ma)?
+[166.81 - 174.00] Do you remember how to say impossible or it's impossible?
+[176.87 - 180.50] 不行(bù xíng),不行(bù xíng)
+[180.50 - 185.76] Try to say, nine o'clock is impossible.
+[189.90 - 191.06] 九点钟(jiǔ diǎn zhōng) 不行(bù xíng)
+[191.06 - 196.93] Say, at eight o'clock
+[196.93 - 206.49] 八点钟(bā diǎn zhōng),八点钟(bā diǎn zhōng)
+[206.49 - 211.09] Now say, at two o'clock
+[211.09 - 218.85] 两点钟(liǎng diǎn zhōng),两(liǎng)
+[218.85 - 224.34] Do you remember how to say, you don't understand?
+[227.46 - 228.16] 你(nǐ) 不(bù) 明白(míng bái)
+[228.16 - 233.25] Ask, what don't I understand?
+[237.05 - 242.36] 我(wǒ) 不(bù) 明白(míng bái) 什么(shén me),什么(shén me)
+[242.36 - 246.53] Ask her what she would like to drink
+[246.53 - 251.63] 你(nǐ) 想(xiǎng) 喝(hē) 什么(shén me)?
+[256.01 - 257.41] Ask her, do you know?
+[260.61 - 261.49] 你(nǐ) 知道(zhī dào) 吗(ma)?
+[266.02 - 270.61] Answer, no, I don't know
+[270.61 - 280.75] 不(bù) 知道(zhī dào),我(wǒ) 不(bù) 知道(zhī dào),不(bù) 知道(zhī dào)
+[280.75 - 285.76] Ask whether she would like to drink something
+[285.76 - 292.53] 你(nǐ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[297.20 - 298.20] 一点(yì diǎn) 东西(dōng xī)
+[298.20 - 303.70] She says, I would not like to drink anything
+[303.70 - 305.16] Listen and repeat
+[305.16 - 314.64] 我(wǒ) 不想(bù xiǎng) 喝(hē) 东西(dōng xī),东西(dōng xī),东西(dōng xī)
+[314.64 - 320.42] How do you say thing or anything in Mandarin?
+[323.28 - 323.82] 东西(dōng xī)
+[323.82 - 329.07] Say again, I would not like to drink anything
+[329.07 - 334.23] 我(wǒ) 不想(bù xiǎng) 喝(hē) 东西(dōng xī)
+[334.23 - 340.70] How would she say, but I would like to eat something?
+[346.33 - 348.19] 可是(kě shì) 我(wǒ) 想(xiǎng) 吃(chī) 一点(yì diǎn) 东西(dōng xī)
+[348.19 - 356.97] Do you remember how to ask, would you like to go to the hotel?
+[361.51 - 362.31] 你(nǐ) 想(xiǎng) 去(qù) 酒店(jiǔ diàn) 吗(ma)?
+[366.06 - 366.64] 酒店(jiǔ diàn)
+[366.64 - 371.27] Ask, would you like to drink something?
+[377.14 - 377.86] 你(nǐ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[382.61 - 385.65] How would you ask, would you like to order tea or beer?
+[393.29 - 399.06] 你(nǐ) 想要(xiǎng yào) 茶(chá) 还是(hái shì) 啤酒(pí jiǔ)?还是(hái shì)
+[399.06 - 403.61] Say, I don't know.
+[410.31 - 413.71] Say, two beers or two glasses of beer.
+[427.36 - 429.36] Ask, what would you like to drink?
+[439.58 - 445.84] How does she say, I would not like to drink anything?
+[457.73 - 460.39] Ask, would you like to eat something with me?
+[467.69 - 479.08] 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[485.09 - 488.41] Say, yes, I would like to eat something with you.
+[496.00 - 505.55] 想(xiǎng),我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī)。
+[505.55 - 508.35] Say, I would not like to go to the hotel.
+[514.05 - 518.14] 我(wǒ) 不想(bù xiǎng) 去(qù) 酒店(jiǔ diàn)。
+[518.14 - 520.83] 酒店(jiǔ diàn)。
+[520.83 - 523.95] Do you remember how to ask, what would you like to do?
+[529.09 - 535.12] 你(nǐ) 想(xiǎng) 做(zuò) 什么(shén me)?做(zuò)。
+[535.12 - 537.88] Say, I would like to go to your place to eat.
+[542.05 - 547.81] 我(wǒ) 想(xiǎng) 去(qù) 你(nǐ) 那儿(nà ér) 吃(chī)。
+[547.81 - 550.98] 你(nǐ) 那儿(nà ér)。
+[550.98 - 552.04] Ask, when.
+[555.22 - 556.34] 什么(shén me) 时候(shí hòu)。
+[556.34 - 560.43] When would you like to eat something?
+[567.72 - 568.28] 你(nǐ) 想(xiǎng) 什么(shén me) 时候(shí hòu) 吃(chī) 一点(yì diǎn) 东西(dōng xī)?
+[573.68 - 575.14] Ask, at what time.
+[582.20 - 582.84] 几点钟(jǐ diǎn zhōng)。
+[582.84 - 586.78] To ask, what time is it?
+[586.78 - 590.34] In Mandarin, you ask literally, now at what time?
+[591.02 - 592.64] Try to ask, what time is it?
+[596.86 - 597.54] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[602.03 - 602.63] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[603.07 - 608.11] Did your tones match the speakers?
+[608.75 - 610.41] Ask again, what time is it?
+[614.77 - 615.37] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[618.97 - 620.85] Say, it's one o'clock.
+[621.39 - 622.75] It's is understood.
+[625.46 - 629.36] 一点钟(yì diǎn zhōng),一点钟(yì diǎn zhōng)
+[629.36 - 633.63] Tell me that it is nine o'clock.
+[637.17 - 641.42] 九点钟(jiǔ diǎn zhōng),九(jiǔ)
+[641.42 - 645.77] Ask again, what time is it?
+[650.10 - 650.66] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[654.18 - 655.72] Answer that it's two o'clock.
+[659.86 - 664.43] Here's how to say, it's five o'clock.
+[664.89 - 665.63] Listen and repeat.
+[672.75 - 676.05] Five is pronounced with a falling, rising tone.
+[676.69 - 677.85] Say, five.
+[686.07 - 687.17] Ask what time it is.
+[687.63 - 689.03] Remember to use now.
+[695.00 - 700.11] Listen and repeat the answer.
+[700.55 - 701.53] It's three o'clock.
+[701.53 - 703.63] 三点钟(sān diǎn zhōng)
+[703.63 - 707.12] 三(sān)
+[707.12 - 710.18] 三(sān)
+[710.18 - 715.28] Three is pronounced with a high-level tone.
+[715.90 - 717.08] Say, three o'clock.
+[720.94 - 721.58] 三点钟(sān diǎn zhōng)
+[721.58 - 726.86] Now tell me that it's five o'clock.
+[730.29 - 730.89] 五点钟(wǔ diǎn zhōng)
+[730.89 - 736.11] Listen and repeat, four o'clock.
+[737.61 - 738.21] 四点(sì diǎn) 钟(zhōng)
+[738.21 - 741.88] 四(sì)
+[741.88 - 744.99] 四(sì)
+[744.99 - 750.07] Four is pronounced with a falling tone.
+[750.75 - 752.11] Tell me it's four o'clock.
+[755.80 - 756.36] 四点(sì diǎn) 钟(zhōng)
+[756.36 - 761.23] Tell me that it's five o'clock
+[761.23 - 765.31] 五点钟(wǔ diǎn zhōng)
+[765.31 - 770.01] Tell me that it's two o'clock
+[770.01 - 773.93] 两点钟(liǎng diǎn zhōng)
+[773.93 - 777.52] 两(liǎng)
+[777.52 - 781.87] Tell me that it's four o'clock
+[781.87 - 785.85] 四点(sì diǎn) 钟(zhōng)
+[785.85 - 789.37] 四(sì)
+[789.37 - 792.88] Listen and repeat
+[792.88 - 794.22] Is it four o'clock?
+[795.42 - 796.68] 是(shì) 四点(sì diǎn) 钟(zhōng) 吗(ma)?
+[800.48 - 800.76] 是(shì)
+[800.76 - 804.40] 是(shì) 四点(sì diǎn) 钟(zhōng) 吗(ma)?
+[804.86 - 810.08] Now ask me if it's nine o'clock
+[810.08 - 814.79] 是(shì) 九点钟(jiǔ diǎn zhōng) 吗(ma)?
+[818.27 - 818.71] 九(jiǔ)
+[818.71 - 822.20] Say, no
+[822.20 - 825.34] 不是(bú shì)
+[825.34 - 832.86] Now say, it's eight o'clock
+[832.86 - 836.46] 八点钟(bā diǎn zhōng)
+[836.46 - 844.51] Say, four o'clock
+[844.51 - 848.56] 四点(sì diǎn) 钟(zhōng)
+[848.56 - 852.90] Ask what time it is
+[852.90 - 857.97] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)
+[857.97 - 868.50] Say, nine o'clock
+[868.50 - 872.44] 九点钟(jiǔ diǎn zhōng)
+[872.44 - 876.36] Three o'clock
+[876.36 - 880.32] 三点钟(sān diǎn zhōng)
+[880.32 - 884.22] Five o'clock
+[884.22 - 887.93] 五点钟(wǔ diǎn zhōng)
+[887.93 - 891.68] Four o'clock
+[891.68 - 895.64] 四点(sì diǎn) 钟(zhōng)
+[895.64 - 901.41] Now say, four o'clock or five o'clock
+[901.41 - 911.34] 四点(sì diǎn) 钟(zhōng) 或者(huò zhě) 五点钟(wǔ diǎn zhōng)
+[911.34 - 918.92] 或者(huò zhě)
+[918.92 - 924.85] 四点(sì diǎn) 钟(zhōng) 或者(huò zhě) 五点钟(wǔ diǎn zhōng)
+[924.85 - 932.88] Ask again what time it is
+[932.88 - 937.93] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)
+[937.93 - 944.66] Say, I don't know but I'd like to eat something
+[944.66 - 957.31] 我(wǒ) 不(bù) 知道(zhī dào),可是(kě shì) 我(wǒ) 想(xiǎng) 吃(chī) 一点(yì diǎn) 东西(dōng xī)
+[957.31 - 979.04] 我(wǒ) 不(bù) 知道(zhī dào),可是(kě shì) 我(wǒ) 想(xiǎng) 吃(chī) 一点(yì diǎn) 东西(dōng xī)。
+[979.04 - 980.44] Ask, with whom?
+[983.94 - 984.80] 跟(gēn) 谁(shuí) 一起(yì qǐ)?
+[989.96 - 995.50] Ask her if she would like to eat something with you.
+[1004.90 - 1005.66] 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1015.83 - 1027.16] How would she say, I would not like to eat now, later, okay?
+[1036.67 - 1038.75] 我(wǒ) 不想(bù xiǎng) 现在(xiàn zài) 吃(chī),过(guò) 一会儿(yī huì er) 好(hǎo) 吗(ma)?
+[1046.83 - 1052.57] 我(wǒ) 不想(bù xiǎng) 现在(xiàn zài) 吃(chī)。
+[1052.57 - 1054.25] I'm going to have lunch now.
+[1054.73 - 1055.47] Listen and repeat.
+[1058.07 - 1058.99] 我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1058.99 - 1066.78] 要(yào)。
+[1066.78 - 1069.59] 要(yào)。
+[1069.59 - 1077.16] 我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1077.16 - 1079.52] What part of that means going to?
+[1082.13 - 1082.89] 要(yào)。
+[1082.89 - 1086.46] What else does this word mean?
+[1087.52 - 1091.80] It can also mean to order or literally to want.
+[1092.60 - 1094.46] Say, you're going to have lunch now.
+[1099.57 - 1099.85] 你(nǐ) 要(yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1100.25 - 1106.67] Now ask, are you going to eat something?
+[1111.75 - 1112.31] 你(nǐ) 要(yào) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1116.17 - 1118.75] Ask, are you going to eat something now?
+[1126.33 - 1126.97] 你(nǐ) 要(yào) 现在(xiàn zài) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1132.59 - 1135.13] Here's how to answer this question, yes.
+[1135.79 - 1136.57] Listen and repeat.
+[1141.21 - 1143.53] 是(shì) 是(shì) 是(shì)
+[1143.53 - 1149.10] This is how to answer yes to a going to question.
+[1149.64 - 1152.44] Answer, yes, I am going to have lunch now.
+[1160.87 - 1161.47] 我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1161.47 - 1169.82] Ask her again if she would like to eat something.
+[1174.76 - 1176.40] 你(nǐ) 想(xiǎng) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1181.00 - 1182.56] Do you remember how to say,
+[1183.10 - 1184.78] I wouldn't like to eat anything.
+[1189.45 - 1194.78] 我(wǒ) 不想(bù xiǎng) 吃(chī) 东西(dōng xī),东西(dōng xī)。
+[1194.78 - 1199.09] You want to say, as for me,
+[1199.67 - 1200.53] listen and repeat.
+[1201.63 - 1215.06] 我(wǒ) 啊(a),啊(a),我(wǒ),我(wǒ) 啊(a),我(wǒ) 啊(a)。
+[1215.06 - 1219.11] Say, as for me,
+[1221.51 - 1225.57] 我(wǒ) 啊(a),我(wǒ) 啊(a)。
+[1225.57 - 1231.22] Now try to say, as for me, I'm going to have lunch now.
+[1237.82 - 1246.95] 我(wǒ) 啊(a),我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1246.95 - 1249.93] Try to say, I'm going to eat at five o'clock.
+[1255.45 - 1261.62] 我要(wǒ yào) 五点钟(wǔ diǎn zhōng) 吃(chī),五点钟(wǔ diǎn zhōng)。
+[1261.62 - 1266.19] Ask me if I'm going to eat at five o'clock.
+[1271.14 - 1271.62] 你(nǐ) 要(yào) 五点钟(wǔ diǎn zhōng) 吃(chī) 吗(ma)?
+[1275.54 - 1276.86] Answer, yes.
+[1282.29 - 1282.93] 是(shì),是(shì)。
+[1282.93 - 1286.88] And how would you answer, no?
+[1293.10 - 1295.56] 不是(bú shì),不是(bú shì)。
+[1295.56 - 1297.96] Say, I'm going to eat at 8 o'clock.
+[1302.80 - 1308.98] 我要(wǒ yào) 八点钟(bā diǎn zhōng) 吃(chī)。
+[1308.98 - 1312.80] 八点钟(bā diǎn zhōng)。
+[1312.80 - 1315.14] Say, I'm going to drink something now.
+[1321.91 - 1322.67] 我要(wǒ yào) 现在(xiàn zài) 喝(hē) 一点(yì diǎn) 东西(dōng xī)。
+[1322.67 - 1330.61] And how would you say, I'd like to order two beers.
+[1337.55 - 1338.23] 我(wǒ) 想要(xiǎng yào) 两杯(liǎng bēi) 啤酒(pí jiǔ)。
+[1338.23 - 1344.22] Now ask, when?
+[1347.33 - 1348.01] 什么(shén me) 时候(shí hòu)?
+[1348.49 - 1353.68] Try to ask, when are you going to drink something?
+[1361.60 - 1362.18] 你(nǐ) 要(yào) 什么(shén me) 时候(shí hòu) 喝(hē) 一点(yì diǎn) 东西(dōng xī)?
+[1369.75 - 1388.82] 现在(xiàn zài) 还是(hái shì) 过(guò) 一会儿(yī huì er),还是(hái shì)。
+[1388.82 - 1394.14] How would you say, at three o'clock or four o'clock?
+[1402.42 - 1411.75] 三点钟(sān diǎn zhōng) 或者(huò zhě) 四点(sì diǎn) 钟(zhōng),或者(huò zhě)。
+[1411.75 - 1413.63] She says, as for me.
+[1416.23 - 1416.95] 我(wǒ) 啊(a)。
+[1416.95 - 1421.98] As for me, I'm going to drink at nine o'clock.
+[1429.46 - 1429.70] 我(wǒ) 啊(a),我要(wǒ yào) 九点钟(jiǔ diǎn zhōng) 喝(hē)。
+[1435.00 - 1436.70] Ask, what time is it?
+[1441.71 - 1441.87] 现在(xiàn zài) 几点钟(jǐ diǎn zhōng)?
+[1445.70 - 1447.22] Answer, one o'clock.
+[1450.14 - 1451.30] 一点钟(yì diǎn zhōng)。
+[1451.30 - 1458.99] Ask me when I'm going to eat.
+[1464.40 - 1464.92] 你(nǐ) 要(yào) 什么(shén me) 时候(shí hòu) 吃(chī)?
+[1465.42 - 1472.18] And how would I tell you, I'm going to have lunch now.
+[1478.06 - 1478.70] 我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1478.70 - 1492.04] Now the young woman is going to converse with you.
+[1492.04 - 1494.20] You are to answer her questions.
+[1494.64 - 1495.88] Begin by greeting her.
+[1502.02 - 1504.58] 你好(nǐ hǎo)。
+[1504.58 - 1508.78] 你好(nǐ hǎo),请问(qǐng wèn) 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1509.64 - 1511.30] Give a positive answer.
+[1514.00 - 1525.02] 想(xiǎng),我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃(chī) 一点(yì diǎn) 东西(dōng xī)。
+[1525.02 - 1527.62] She is going to suggest various times to you.
+[1528.18 - 1530.40] After each suggestion, tell her no.
+[1530.72 - 1532.90] You want to eat an hour later than she does.
+[1534.96 - 1535.88] 你(nǐ) 想(xiǎng) 八点钟(bā diǎn zhōng) 吃(chī) 吗(ma)?
+[1537.76 - 1538.32] 你(nǐ) 想(xiǎng) 八点钟(bā diǎn zhōng) 吃(chī) 吗(ma)?
+[1545.62 - 1548.62] 不想(bù xiǎng),我(wǒ) 想(xiǎng) 九点钟(jiǔ diǎn zhōng) 吃(chī)。
+[1548.62 - 1559.32] 九点钟(jiǔ diǎn zhōng) 不好(bù hǎo),两点钟(liǎng diǎn zhōng) 好(hǎo) 吗(ma)?
+[1566.66 - 1577.02] 两点钟(liǎng diǎn zhōng) 不好(bù hǎo),我(wǒ) 想(xiǎng) 三点钟(sān diǎn zhōng) 吃(chī)。
+[1577.02 - 1578.72] 我(wǒ) 想(xiǎng) 三点钟(sān diǎn zhōng) 吃(chī)。
+[1583.54 - 1587.44] 三点钟(sān diǎn zhōng) 不好(bù hǎo),我(wǒ) 想(xiǎng) 四点(sì diǎn) 钟吃(zhōng chī),好(hǎo) 吗(ma)?
+[1595.46 - 1598.30] 四点(sì diǎn) 钟(zhōng) 不好(bù hǎo),我(wǒ) 想(xiǎng) 五点钟(wǔ diǎn zhōng) 吃(chī)。
+[1606.93 - 1609.79] 四点(sì diǎn) 钟(zhōng) 不好(bù hǎo),我(wǒ) 想(xiǎng) 五点钟(wǔ diǎn zhōng) 吃(chī)。
+[1618.62 - 1621.28] 我(wǒ) 啊(a),我(wǒ) 不想(bù xiǎng) 五点钟(wǔ diǎn zhōng) 吃(chī)。
+[1622.68 - 1624.84] Ask her when she would like to have lunch.
+[1625.28 - 1632.36] 你(nǐ) 想(xiǎng) 什么(shén me) 时候(shí hòu) 吃(chī) 午饭(wǔ fàn)?
+[1645.56 - 1647.20] 我(wǒ) 不(bù) 知道(zhī dào)。
+[1647.20 - 1650.86] Say, as for me, I'm going to have lunch now.
+[1658.03 - 1668.12] 我(wǒ) 啊(a),我要(wǒ yào) 现在(xiàn zài) 吃(chī) 午饭(wǔ fàn)。
+[1668.12 - 1669.94] How does she ask, with whom?
+[1673.16 - 1673.92] 跟(gēn) 谁(shuí) 一起(yì qǐ)?
+[1674.46 - 1679.38] Ask her if she'd like to have lunch with you.
+[1687.46 - 1687.94] 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 午饭(wǔ fàn) 吗(ma)?
+[1693.98 - 1697.38] How does she answer, yes, I'd like to have lunch along with you.
+[1703.63 - 1712.86] 想(xiǎng),我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 吃(chī) 午饭(wǔ fàn)。
+[1712.86 - 1714.64] Ask, at what time?
+[1717.92 - 1718.62] 几点钟(jǐ diǎn zhōng)?
+[1721.88 - 1724.62] Try to ask, when would you like to have lunch with me?
+[1725.40 - 1729.14] Literally, you would like Wen along with me to eat lunch.
+[1740.95 - 1741.55] 你(nǐ) 想(xiǎng) 什么(shén me) 时候(shí hòu) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 午饭(wǔ fàn)?
+[1753.60 - 1754.12] 你(nǐ) 想(xiǎng) 什么(shén me) 时候(shí hòu) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃(chī) 午饭(wǔ fàn)?
+[1754.60 - 1765.47] How would she say, later, okay?
+[1769.30 - 1770.58] 过(guò) 一会儿(yī huì er),好(hǎo) 吗(ma)?
+[1774.23 - 1775.59] 好(hǎo),过(guò) 一会儿(yī huì er)。
+[1775.77 - 1778.39] This is the end of Unit 10.

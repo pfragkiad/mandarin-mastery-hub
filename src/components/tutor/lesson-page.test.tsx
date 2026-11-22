@@ -18,9 +18,21 @@ describe('LessonPage', () => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(container.querySelector('h1')?.textContent).toContain(lesson.summary.title);
-    expect(['mandarin-character-lesson/3.0.0', 'mandarin-topic-lesson/3.0.0']).toContain(lesson.summary.schemaVersion);
-    if (lesson.topic) expect(container.querySelectorAll('.lesson-topic-word')).toHaveLength(lesson.topic.items.length);
-    else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
+    expect(['mandarin-character-lesson/3.0.0', 'mandarin-topic-lesson/3.1.0', 'mandarin-general-lesson/3.0.0']).toContain(lesson.summary.schemaVersion);
+    if (lesson.topic?.plan) {
+      // v3.1: teaching path first, every word once in the word bank, no source examples repeated.
+      expect(container.querySelectorAll('.lesson-bank-word')).toHaveLength(lesson.topic.items.length);
+      expect(container.querySelectorAll('.lesson-turn')).toHaveLength(lesson.topic.plan.dialogue.turns.length);
+      expect(container.querySelector('.lesson-topic-word')).toBeNull();
+    } else if (lesson.sections.blocks) {
+      const blocks = lesson.sections.blocks;
+      const turns = blocks.reduce((n, b) => n + (b.kind === 'dialogue' ? b.turns.length : 0), 0);
+      const expressions = blocks.reduce((n, b) => n + (b.kind === 'review_set' ? b.items.length : 0), 0);
+      expect(container.querySelectorAll('.lesson-turn')).toHaveLength(turns);
+      expect(container.querySelectorAll('.lesson-vocab')).toHaveLength(expressions);
+      expect(container.querySelectorAll('.lesson-question')).toHaveLength(lesson.sections.practice!.questions.length);
+      expect(container.textContent).toContain('Conversation lesson');
+    } else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
   });
 
@@ -34,7 +46,7 @@ describe('LessonPage', () => {
       { id: 'exact', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: entry(ref.entry_id, item.hanzi) },
     ];
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
-    const card = container.querySelector('.lesson-topic-word')!;
+    const card = container.querySelector('.lesson-bank-word')!;
     expect(card.querySelector('a.lesson-word-link')?.getAttribute('data-to')).toBe('/vocabulary');
     expect(card.textContent).toContain(`HSK 1 · #${ref.entry_id}`);
   });
@@ -44,7 +56,7 @@ describe('LessonPage', () => {
     const item = lesson.topic!.items[0]!;
     prefs.items = [{ id: 'same-form-other-number', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: { simplified: item.hanzi, entryKind: 'word', hskVersion: '3.0', hskLevel: 1, hsk_index: 9999 } }];
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
-    expect(container.querySelector('.lesson-topic-word a.lesson-word-link')).toBeNull();
+    expect(container.querySelector('.lesson-bank-word a.lesson-word-link')).toBeNull();
   });
 
   it('renders the recorded corpus comparison without source IDs in v2.5', async () => {

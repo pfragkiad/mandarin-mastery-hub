@@ -39,10 +39,11 @@ describe('lesson index', () => {
   it('rejects two files with the same lesson_id', () => {
     expect(() => buildLessonIndex({ 'a.json': raw(), 'b.json': raw() }, cats)).toThrow(/Duplicate lesson_id char-6B21/);
   });
-  it('lists the two character lessons and the 21 HSK Level 1 topic lessons, never the legacy copies', () => {
+  it('lists the two character lessons, the 21 HSK Level 1 topic lessons and the 15 conversational lessons, never the legacy copies', () => {
     const ids = lessonSummaries.map(s => s.id);
-    expect(ids.length).toBe(23);
-    expect(new Set(ids).size).toBe(23);
+    expect(ids.length).toBe(38);
+    expect(new Set(ids).size).toBe(38);
+    expect(ids.filter(id => id.startsWith('convm-')).length).toBe(15);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(21);
     // Topic lessons moved to the v3.1 teaching-plan schema; character lessons stay v3.0.0.
@@ -142,7 +143,7 @@ describe('lesson files', () => {
   });
   const all = files(root);
   it('every lesson file has the eagerly read keys', () => {
-    expect(all.length).toBe(23);
+    expect(all.length).toBe(38);
     for (const f of all) {
       const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
       for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);
@@ -176,5 +177,19 @@ describe('v3.1 teaching plans', () => {
   });
   it('a lesson without a teaching plan keeps the word-list layout', () => {
     expect(toTopicContent({ vocabulary: { items: [] } }).plan).toBeNull();
+  });
+});
+
+// Conversational Mandarin: general dialogue lessons rendered from their recorded blocks.
+describe('conversational lessons', () => {
+  const root = 'src/data/study_lessons/lessons/conversational';
+  const docs = readdirSync(root, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => JSON.parse(readFileSync(join(root, d.name, `${d.name}.json`), 'utf8')) as { schema_version: string; lesson_type: string; sections: { blocks: { kind: string }[] } });
+  it('are 15 general dialogue lessons whose blocks are all kinds the page renders', () => {
+    expect(docs.length).toBe(15);
+    for (const d of docs) {
+      expect(d.schema_version).toBe('mandarin-general-lesson/3.0.0');
+      expect(d.lesson_type).toBe('dialogue');
+      expect(d.sections.blocks.every(b => ['explanation', 'dialogue', 'grammar_pattern', 'review_set'].includes(b.kind))).toBe(true);
+    }
   });
 });

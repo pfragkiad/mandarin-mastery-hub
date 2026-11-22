@@ -1,0 +1,296 @@
+[1.81 - 5.89] This is Unit 14 of Pimsleur's Mandarin Chinese 1.
+[6.79 - 8.81] 请(qǐng) 听(tīng) 这段(zhè duàn) 普通话(pǔ tōng huà) 对话(duì huà)。
+[9.65 - 12.25] Mr. Jones wants to buy an American newspaper.
+[13.63 - 14.55] 美国(měi guó) 报纸(bào zhǐ)。
+[14.55 - 16.67] An American newspaper.
+[17.29 - 18.75] He's speaking with the saleswoman.
+[19.51 - 19.75] Listen.
+[20.99 - 23.51] 请问(qǐng wèn),你(nǐ) 有没有(yǒu méi yǒu) 美国(měi guó) 报纸(bào zhǐ)?
+[24.01 - 25.01] 有(yǒu),No.
+[25.69 - 26.33] 多少(duō shǎo) 钱(qián)?
+[26.85 - 27.81] 八块(bā kuài) 人民币(rén mín bì)。
+[28.67 - 30.45] 是不是(shì bú shì) 十八块(shí bā kuài) 人民币(rén mín bì)?
+[30.45 - 33.45] 不是(bú shì) 十八块(shí bā kuài),是(shì) 八块(bā kuài)
+[33.45 - 34.65] 谢谢(xiè xiè) 你(nǐ)
+[34.65 - 35.37] No
+[35.37 - 36.95] 八块(bā kuài) 人民币(rén mín bì)
+[36.95 - 39.87] You just heard the man ask
+[39.87 - 41.85] Is it eighteen renminbi?
+[43.11 - 45.17] 是不是(shì bú shì) 十八块(shí bā kuài) 人民币(rén mín bì)?
+[45.95 - 46.67] 再(zài) 听(tīng) 一次(yī cì)
+[46.67 - 48.17] Listen again
+[48.17 - 49.73] 再(zài) 听(tīng) 一次(yī cì)
+[49.73 - 53.41] 请问(qǐng wèn) 你(nǐ) 有没有(yǒu méi yǒu) 美国(měi guó) 报纸(bào zhǐ)?
+[53.95 - 54.27] 有(yǒu)
+[54.27 - 54.93] No
+[54.93 - 56.23] 多少(duō shǎo) 钱(qián)?
+[56.77 - 58.01] 八块(bā kuài) 人民币(rén mín bì)
+[58.01 - 60.33] 是不是(shì bú shì) 十八块(shí bā kuài) 人民币(rén mín bì)?
+[60.45 - 63.77] 不是(bú shì) 十八块(shí bā kuài),是(shì) 八块(bā kuài)。
+[63.77 - 65.05] 谢谢(xiè xiè) 你(nǐ)。
+[65.05 - 67.81] No,八块(bā kuài) 人民币(rén mín bì)。
+[67.81 - 71.79] Suppose that you were handing someone some money to pay for a purchase.
+[72.53 - 76.23] What word would you use to accompany the gesture of handing the money to him?
+[78.77 - 81.38] No, no.
+[83.53 - 86.63] Try to say, here you are, thirteen renminbi.
+[92.53 - 104.54] No,十三块(shí sān kuài) 人民币(rén mín bì),十三块(shí sān kuài)。
+[104.54 - 108.42] Do you remember how to say, I would like to order two beers?
+[116.51 - 122.00] 我(wǒ) 想要(xiǎng yào) 两杯(liǎng bēi) 啤酒(pí jiǔ),要(yào)。
+[122.00 - 127.43] This literally means, I would like to want.
+[127.91 - 130.35] With that in mind, try to say, I want.
+[139.96 - 140.56] 我要(wǒ yào)。
+[140.56 - 145.88] Try to say, I want 12 renminbi.
+[152.85 - 153.61] 我要(wǒ yào)12块(kuài) 人民币(rén mín bì)。
+[153.61 - 160.24] Say the number 12.
+[163.76 - 164.08] 12
+[164.08 - 170.21] What part of that is the number two used in mathematics?
+[173.16 - 173.40] 二(èr)
+[173.40 - 181.17] And now say again, two beers.
+[185.54 - 186.66] 两杯(liǎng bēi) 啤酒(pí jiǔ)
+[186.66 - 191.31] 两(liǎng)
+[191.31 - 196.36] Say, I would like to buy something.
+[202.25 - 202.89] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 东西(dōng xī)
+[202.89 - 210.17] Here you are, fourteen renminbi.
+[216.23 - 218.05] 诺(nuò),十四块(shí sì kuài) 人民币(rén mín bì)
+[218.05 - 224.12] 诺(nuò)
+[224.12 - 229.12] Do you remember how to ask, do you have?
+[229.12 - 233.33] 你(nǐ) 有没有(yǒu méi yǒu)?
+[233.85 - 239.05] Ask, do you have one renminbi?
+[247.48 - 255.52] Now say, I don't have any renminbi.
+[256.16 - 257.24] Any is understood.
+[268.16 - 273.50] Try to say, I don't want any renminbi.
+[274.24 - 275.06] Use 不(bù).
+[285.54 - 292.57] Here's how to ask, do you want, using the positive negative form.
+[294.67 - 296.83] nǐ yào bú yào?
+[310.36 - 312.88] Ask, do you want one renminbi?
+[320.26 - 322.48] nǐ yào bú yào yī kuài rénminbì?
+[322.94 - 332.93] We'll use this form to ask yes-no questions throughout this unit.
+[333.67 - 339.49] Ask again, do you want...
+[339.49 - 340.51] nǐ yào bú yào?
+[349.52 - 351.94] Ask me if I want one renminbi.
+[359.25 - 361.31] nǐ yào bú yào yī kuài rénminbì?
+[361.31 - 369.68] Tell me that you don't want 1 renminbi.
+[377.32 - 383.22] 我(wǒ) 不要(bú yào)1块(kuài) 人民币(rén mín bì)。
+[383.22 - 385.84] Ask me if I want 11 renminbi.
+[397.81 - 405.23] 你(nǐ) 要(yào) 不要(bú yào)11块(kuài) 人民币(rén mín bì)?11
+[405.23 - 410.35] Now say 12.
+[419.54 - 420.22] 12
+[420.22 - 425.90] Ask, do you want 13 renminbi?
+[435.01 - 442.00] 你(nǐ) 要(yào) 不要(bú yào)13块(kuài) 人民币(rén mín bì)?13
+[442.00 - 448.19] Say, I want 16 renminbi.
+[453.82 - 461.00] 我要(wǒ yào)16块(kuài) 人民币(rén mín bì)。
+[461.00 - 461.48] 16
+[461.48 - 466.73] Try to say, it's not 15 units.
+[477.52 - 478.36] 不是(bú shì)15块(kuài)。
+[478.36 - 485.00] Do you remember how to ask, how much?
+[488.45 - 488.77] 多少(duō shǎo)
+[488.77 - 494.90] You're actually asking, much, little?
+[495.56 - 497.64] Meaning, much or a little.
+[498.28 - 499.60] Try to say, much.
+[509.36 - 510.84] Note the high-level tone.
+[511.14 - 512.62] Ask again, how much?
+[516.03 - 516.39] 多少(duō shǎo)?
+[517.17 - 521.65] Now ask, how much money it is?
+[525.96 - 526.64] 多少(duō shǎo) 钱(qián)?
+[529.81 - 532.79] Ask, how many American dollars do you have?
+[537.73 - 539.21] 你(nǐ) 有(yǒu) 多少(duō shǎo) 美金(měi jīn)?
+[544.28 - 545.20] 美金(měi jīn)。
+[545.20 - 551.26] Try to answer, I don't have any American dollars.
+[556.43 - 557.31] 我(wǒ) 没有(méi yǒu) 美金(měi jīn)。
+[557.31 - 562.96] 我(wǒ) 没有(méi yǒu) 美金(měi jīn)。
+[562.96 - 569.73] Do you remember the Mandarin word that means very?
+[575.12 - 576.08] 很(hěn)。很(hěn)。
+[576.08 - 579.76] I have a lot of renminbi.
+[580.72 - 582.96] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[582.96 - 590.28] 我(wǒ) 有(yǒu) 很多(hěn duō) 人民币(rén mín bì)。
+[590.28 - 590.80] 很多(hěn duō)
+[590.80 - 594.19] 多(duō)
+[594.19 - 597.49] 很多(hěn duō)
+[597.49 - 601.40] 很多(hěn duō)
+[601.40 - 609.78] Say a lot of or very much using rising and high-level tones.
+[613.36 - 614.04] 很多(hěn duō)
+[614.04 - 619.04] Say, I have a lot of renminbi.
+[625.64 - 626.48] 我(wǒ) 有(yǒu) 很多(hěn duō) 人民币(rén mín bì)。
+[626.48 - 634.12] Say, but I don't have any American dollars.
+[639.68 - 647.06] 可是(kě shì),我(wǒ) 没有(méi yǒu) 美金(měi jīn)。
+[647.06 - 652.18] 我(wǒ) 没有(méi yǒu) 美金(měi jīn)。
+[652.18 - 654.40] Ask me if I want American dollars.
+[659.32 - 660.08] 你(nǐ) 要(yào) 不要(bú yào) 美金(měi jīn)?
+[664.44 - 665.24] 你(nǐ) 要(yào) 不要(bú yào)?
+[665.76 - 671.21] Answer this question, no.
+[674.00 - 676.68] 不要(bú yào)。
+[676.68 - 678.52] Say, you're not American.
+[683.71 - 684.67] 你(nǐ) 不是(bú shì) 美国(měi guó) 人(rén)。
+[684.67 - 689.84] Say, I'm American.
+[694.64 - 698.89] 我(wǒ) 是(shì) 美国(měi guó) 人(rén)。
+[698.89 - 702.55] Do you remember how to say a little or some?
+[702.55 - 706.37] 一点(yì diǎn)
+[706.37 - 715.79] Say, I have some renminbi.
+[720.74 - 722.22] 我(wǒ) 有(yǒu) 一点(yì diǎn) 人民币(rén mín bì)
+[722.22 - 735.85] As with money, you don't need the word for units when you say some.
+[736.55 - 738.51] Tell me you have some American dollars.
+[744.30 - 745.70] 我(wǒ) 有(yǒu) 一点(yì diǎn) 美金(měi jīn)
+[745.70 - 752.68] Tell me you have a lot of American dollars.
+[766.51 - 766.79] 我(wǒ) 有(yǒu) 很多(hěn duō) 美金(měi jīn)
+[766.79 - 773.47] Now say, but I don't have any renminbi
+[773.47 - 780.61] 可是(kě shì) 我(wǒ) 没有(méi yǒu) 人民币(rén mín bì)
+[780.61 - 786.37] 我(wǒ) 没有(méi yǒu)
+[786.37 - 791.46] Give me some renminbi
+[791.46 - 793.34] 请(qǐng) 跟着(gēn zhe) 说(shuō)
+[793.34 - 796.32] 给(gěi) 我(wǒ) 一点(yì diǎn) 人民币(rén mín bì)
+[796.32 - 801.61] 给(gěi)
+[801.61 - 810.40] Give is pronounced with a falling, rising tone
+[810.40 - 812.34] Say, give me
+[812.34 - 816.07] 给(gěi) 我(wǒ)
+[816.07 - 820.00] 我(wǒ)
+[820.00 - 823.44] 给(gěi) 我(wǒ)
+[823.44 - 829.34] Ask me to give you some American dollars
+[829.34 - 836.42] 给(gěi) 我(wǒ) 一点(yì diǎn) 美金(měi jīn)
+[836.42 - 845.68] Try to say, OK, here you are, three American dollars
+[845.68 - 855.39] 好(hǎo),那(nà) 三块(sān kuài) 美金(měi jīn)
+[855.39 - 874.09] Tell her you don't have any renminbi
+[874.09 - 879.74] 我(wǒ) 没有(méi yǒu) 人民币(rén mín bì)
+[879.74 - 886.18] Ask her if she has renminbi
+[886.18 - 892.65] 你(nǐ) 有没有(yǒu méi yǒu) 人民币(rén mín bì)
+[892.65 - 899.94] How does she say, I have a lot of renminbi?
+[907.23 - 912.41] 我(wǒ) 有(yǒu) 很多(hěn duō) 人民币(rén mín bì),很多(hěn duō)
+[912.41 - 918.98] Try to say, seventeen, ten, seven
+[918.98 - 927.02] 十七(shí qī),十七(shí qī)
+[927.02 - 932.52] The tones are rising and high level.
+[933.24 - 935.62] Say, I have seventeen renminbi.
+[943.38 - 949.52] 我(wǒ) 有(yǒu) 十七块(shí qī kuài) 人民币(rén mín bì),十七块(shí qī kuài)
+[949.52 - 954.81] Try to say, eighteen
+[954.81 - 961.96] 十八(shí bā) 十八(shí bā)
+[961.96 - 966.38] Now try to say nineteen.
+[970.30 - 979.96] 十九(shí jiǔ) 十九(shí jiǔ) 十九(shí jiǔ)
+[979.96 - 986.44] Say, I have nineteen American dollars.
+[992.16 - 993.98] 我(wǒ) 有(yǒu) 十九块(shí jiǔ kuài) 美金(měi jīn)
+[993.98 - 1002.26] How does she tell you that she has a lot of renminbi?
+[1002.26 - 1015.87] 我(wǒ) 有(yǒu) 很多(hěn duō) 人民币(rén mín bì) 很多(hěn duō)
+[1015.87 - 1021.39] Ask her how much renminbi she has.
+[1026.70 - 1028.34] 你(nǐ) 有(yǒu) 多少(duō shǎo) 人民币(rén mín bì)?
+[1028.56 - 1035.20] Say, eighteen units.
+[1038.78 - 1039.94] 十八块(shí bā kuài)。
+[1039.94 - 1045.06] Try to say, seventeen units.
+[1048.57 - 1049.69] 十七块(shí qī kuài)。
+[1049.69 - 1055.28] 十七(shí qī)。
+[1055.28 - 1059.82] Using the positive-negative form, ask me if I want dollars.
+[1064.12 - 1065.32] 你(nǐ) 要(yào) 不要(bú yào) 美金(měi jīn)?
+[1070.90 - 1076.09] Answer, no.
+[1078.45 - 1080.84] 不要(bú yào)。
+[1080.84 - 1085.16] Say, give me.
+[1091.61 - 1091.81] 给(gěi) 我(wǒ)。
+[1091.81 - 1102.60] 给(gěi) 我(wǒ) 一块(yī kuài) 人民币(rén mín bì)
+[1102.60 - 1109.54] Say, I don't have any beer
+[1109.54 - 1115.64] 我(wǒ) 没有(méi yǒu) 啤酒(pí jiǔ)
+[1115.64 - 1122.49] Say that you would like to order some beer
+[1122.49 - 1131.78] 我(wǒ) 想要(xiǎng yào) 一点(yì diǎn) 啤酒(pí jiǔ)
+[1131.78 - 1140.67] And now say, I would like to buy some beer
+[1140.67 - 1148.61] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 啤酒(pí jiǔ)
+[1148.61 - 1154.79] 买(mǎi)
+[1154.79 - 1159.57] Again say, I don't have any beer
+[1159.57 - 1165.68] 我(wǒ) 没有(méi yǒu) 啤酒(pí jiǔ)
+[1165.68 - 1172.22] As for me, I have some beer
+[1172.22 - 1180.70] 我(wǒ) 啊(a),我(wǒ) 有(yǒu) 一点(yì diǎn) 啤酒(pí jiǔ)
+[1180.70 - 1187.78] She points to one
+[1187.78 - 1190.64] How does she say, here you are, one beer
+[1190.64 - 1197.28] 那(nà),一杯(yī bēi) 啤酒(pí jiǔ)
+[1197.28 - 1211.05] Say, give me seventeen renminbi
+[1211.05 - 1225.83] 给(gěi) 我(wǒ) 十七块(shí qī kuài) 人民币(rén mín bì),十七块(shí qī kuài)
+[1225.83 - 1231.37] Tell her that you want some tea
+[1231.37 - 1243.20] 我要(wǒ yào) 一点(yì diǎn) 茶(chá),我要(wǒ yào)
+[1243.20 - 1247.04] And how would you say
+[1247.04 - 1249.22] I would like to order some tea?
+[1254.74 - 1256.28] 我(wǒ) 想要(xiǎng yào) 一点(yì diǎn) 茶(chá)
+[1256.28 - 1262.50] 我(wǒ) 想要(xiǎng yào)
+[1262.50 - 1266.40] How do you say
+[1266.40 - 1267.50] 16
+[1267.50 - 1271.57] 16
+[1271.57 - 1275.39] 14
+[1275.39 - 1279.26] 14
+[1279.26 - 1283.14] 18
+[1283.14 - 1287.10] 18
+[1287.10 - 1291.02] 11
+[1291.02 - 1294.96] 11
+[1294.96 - 1298.75] 15
+[1298.75 - 1302.62] 15
+[1302.62 - 1306.05] 19
+[1306.05 - 1310.13] 19
+[1310.13 - 1314.13] 13
+[1314.13 - 1318.19] 13
+[1318.19 - 1321.94] 17
+[1321.94 - 1326.04] 十七(shí qī)
+[1326.04 - 1331.44] Ask me if I have American dollars.
+[1336.58 - 1337.68] 你(nǐ) 有没有(yǒu méi yǒu) 美金(měi jīn)?
+[1338.24 - 1344.83] Answer, no, I don't have American dollars.
+[1351.11 - 1360.34] 没有(méi yǒu),我(wǒ) 没有(méi yǒu) 美金(měi jīn),没有(méi yǒu)。
+[1360.34 - 1364.78] Try to ask, what about renminbi?
+[1368.54 - 1369.38] 人民币(rén mín bì) 呢(ne)?
+[1373.94 - 1379.78] Say, a lot or very much.
+[1386.11 - 1386.87] 很多(hěn duō)
+[1386.87 - 1391.82] And how would you ask, how much?
+[1395.18 - 1395.46] 多少(duō shǎo)
+[1395.46 - 1399.63] How much money?
+[1402.75 - 1403.51] 多少(duō shǎo) 钱(qián)
+[1403.51 - 1408.78] Say, nineteen units.
+[1412.70 - 1413.42] 十九块(shí jiǔ kuài)
+[1413.42 - 1419.59] Try to say, it isn't very much.
+[1423.12 - 1423.94] 不是(bú shì) 很多(hěn duō)
+[1423.94 - 1433.91] Now let's review how to ask for directions.
+[1434.51 - 1437.57] Say, excuse me, please let me ask.
+[1442.68 - 1444.00] 对不起(duì bù qǐ),请问(qǐng wèn)
+[1444.00 - 1450.81] Remembering the word order, ask
+[1450.81 - 1452.53] Where is Long Peace Street?
+[1457.43 - 1458.67] 长安街(cháng ān jiē) 在(zài) 哪儿(nǎ ér)?
+[1464.14 - 1470.75] Use the positive-negative form to ask
+[1470.75 - 1473.17] Is it located over there?
+[1478.04 - 1479.24] 是不是(shì bú shì) 在(zài) 那儿(nà ér)?
+[1483.13 - 1488.08] 是不是(shì bú shì) 在(zài) 那儿(nà ér)?
+[1491.84 - 1493.84] Ask, or located here.
+[1497.84 - 1499.06] 还是(hái shì) 在(zài) 这儿(zhè ér)?
+[1502.67 - 1507.73] 还是(hái shì) 在(zài) 这儿(zhè ér)?
+[1508.11 - 1513.13] How would she say over there?
+[1516.09 - 1516.77] 在(zài) 那儿(nà ér)?
+[1516.77 - 1520.77] Say, thank you.
+[1524.18 - 1527.46] 谢谢(xiè xiè) 你(nǐ)。
+[1527.46 - 1533.04] The woman answers, don't mention it.
+[1533.80 - 1536.04] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[1536.04 - 1540.09] 不(bù) 客气(kè qì)。
+[1540.09 - 1543.33] 气(qì)。
+[1543.33 - 1546.60] 客(kè)。
+[1546.60 - 1550.33] 不(bù)。
+[1550.33 - 1553.84] 不(bù) 客气(kè qì)。
+[1553.84 - 1557.04] The tone first rises, then falls twice.
+[1557.88 - 1559.28] Say, don't mention it.
+[1565.74 - 1565.78] 不(bù) 客气(kè qì)。
+[1565.78 - 1571.62] An American woman is talking to her husband.
+[1571.62 - 1573.00] They are in Beijing.
+[1573.00 - 1575.72] How does she say, I'm going to buy something?
+[1581.08 - 1582.54] 我要(wǒ yào) 买(mǎi) 一点(yì diǎn) 东西(dōng xī)。
+[1587.55 - 1590.45] Say, give me 15 American dollars.
+[1597.13 - 1597.97] 给(gěi) 我(wǒ)15块(kuài) 美金(měi jīn)。
+[1597.97 - 1607.20] Try to say, give me 17 or 18 American dollars.
+[1616.75 - 1617.51] 给(gěi) 我(wǒ)17或者(huò zhě)18块(kuài) 美金(měi jīn)。
+[1617.51 - 1637.48] How does she ask him if he has any renminbi?
+[1642.46 - 1642.98] 你(nǐ) 有没有(yǒu méi yǒu) 人民币(rén mín bì)?
+[1642.98 - 1649.26] Now he says no, he doesn't have any renminbi
+[1649.26 - 1658.74] 没有(méi yǒu),我(wǒ) 没有(méi yǒu) 人民币(rén mín bì)
+[1658.74 - 1667.14] Say, I have a lot of American dollars
+[1667.14 - 1678.78] 我(wǒ) 有(yǒu) 很多(hěn duō) 美金(měi jīn),很多(hěn duō)
+[1678.78 - 1683.38] But I don't have any renminbi
+[1683.38 - 1691.39] 可是(kě shì),我(wǒ) 没有(méi yǒu) 人民币(rén mín bì)
+[1691.39 - 1699.71] Ask her how many renminbi she wants
+[1699.71 - 1707.58] 你(nǐ) 要(yào) 多少(duō shǎo) 人民币(rén mín bì)
+[1707.58 - 1715.14] Say, 18 or 19 units
+[1715.14 - 1722.65] 十八(shí bā) 或者(huò zhě) 十九块(shí jiǔ kuài)
+[1722.65 - 1730.74] How does she ask you to give her nineteen units?
+[1736.06 - 1736.70] 给(gěi) 我(wǒ) 十九块(shí jiǔ kuài)
+[1736.70 - 1744.16] Try to say, I give or I'm giving
+[1744.16 - 1748.28] 我(wǒ) 给(gěi)
+[1748.28 - 1755.08] Now try to say, I'm giving you ten American dollars
+[1755.08 - 1762.57] 我(wǒ) 给(gěi) 你(nǐ) 十块(shí kuài) 美金(měi jīn)
+[1762.57 - 1770.06] 我(wǒ) 给(gěi) 你(nǐ) 十块(shí kuài) 美金(měi jīn)
+[1770.06 - 1776.59] How does she thank you?
+[1779.67 - 1780.31] 谢谢(xiè xiè) 你(nǐ)
+[1780.31 - 1785.20] Respond, don't mention it
+[1785.20 - 1797.73] This is the end of Unit 14.

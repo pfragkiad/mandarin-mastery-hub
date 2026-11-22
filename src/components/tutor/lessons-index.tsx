@@ -19,7 +19,7 @@ function ExperimentalTag() {
     </PopoverTrigger>
     <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
       <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
-      Still being built: the HSK 3.0 Level 1 path and two character lessons so far, all still drafts awaiting review. Later levels and other courses are not in the collection yet.
+      Still being built: the HSK 3.0 Level 1 path, a Conversational Mandarin course and two character lessons so far, all still drafts awaiting review. Later levels are not in the collection yet.
     </HintBody></PopoverContent>
   </Popover>;
 }
