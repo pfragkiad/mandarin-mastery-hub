@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-food-and-meals",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1261,7 +1261,8 @@
               "hanzi": "我想喝一杯水。",
               "pinyin": "Wǒ xiǎng hē yì bēi shuǐ.",
               "english": "I would like a glass of water."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "milk",
@@ -1269,7 +1270,8 @@
               "hanzi": "我想喝一杯牛奶。",
               "pinyin": "Wǒ xiǎng hē yì bēi niúnǎi.",
               "english": "I would like a glass of milk."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1285,11 +1287,13 @@
         "questions": [
           {
             "prompt_en": "What does the speaker eat for breakfast?",
-            "answer_en": "Eggs and bread."
+            "answer_en": "Eggs and bread.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Who cooks dinner?",
-            "answer_en": "Dad."
+            "answer_en": "Dad.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1338,5 +1342,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-food-and-meals--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Food and drink verbs",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-food-and-meals--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Offering and declining",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: water",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-food-and-meals--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: milk",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--read--reading-q-01",
+            "kind": "question",
+            "label": "What does the speaker eat for breakfast?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-food-and-meals--read--reading-q-02",
+            "kind": "question",
+            "label": "Who cooks dinner?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Order food and a drink.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-food-and-meals--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Politely decline more food.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--quiz--q-11-1",
+            "kind": "practice",
+            "label": "Which expression means “steamed bun”?",
+            "optional": true,
+            "target_id": "q-11-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-2",
+            "kind": "practice",
+            "label": "Which expression means “cooked rice”?",
+            "optional": true,
+            "target_id": "q-11-2"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-3",
+            "kind": "practice",
+            "label": "Which expression means “cook”?",
+            "optional": true,
+            "target_id": "q-11-3"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-4",
+            "kind": "practice",
+            "label": "In the example “我早上吃包子。” (wǒ zǎoshang chī bāozi.), what is happening?",
+            "optional": false,
+            "target_id": "q-11-4"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “The steamed buns at this shop are delicious.”",
+            "optional": false,
+            "target_id": "q-11-5"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What does the speaker eat for breakfast?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Who cooks dinner?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Order food and a drink.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Politely decline more food.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

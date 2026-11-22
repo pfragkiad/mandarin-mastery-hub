@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-school-people-places",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -776,7 +776,8 @@
               "hanzi": "我是大学生。",
               "pinyin": "Wǒ shì dàxuéshēng.",
               "english": "I am a university student."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "primary school",
@@ -784,7 +785,8 @@
               "hanzi": "我是小学生。",
               "pinyin": "Wǒ shì xiǎoxuéshēng.",
               "english": "I am a primary-school pupil."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -800,11 +802,13 @@
         "questions": [
           {
             "prompt_en": "Which child is in primary school?",
-            "answer_en": "The younger sister."
+            "answer_en": "The younger sister.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Do they travel to school together?",
-            "answer_en": "Yes."
+            "answer_en": "Yes.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -849,5 +853,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-school-people-places--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: School versus student",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-school-people-places--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Attending school: 上学 (shàngxué)",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: university",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-school-people-places--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: primary school",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--read--reading-q-01",
+            "kind": "question",
+            "label": "Which child is in primary school?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-school-people-places--read--reading-q-02",
+            "kind": "question",
+            "label": "Do they travel to school together?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask where someone attends school.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-school-people-places--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say a friend is a university student.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-school-people-places--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-school-people-places--quiz--q-14-1",
+            "kind": "practice",
+            "label": "Which expression means “university”?",
+            "optional": true,
+            "target_id": "q-14-1"
+          },
+          {
+            "id": "topic-school-people-places--quiz--q-14-2",
+            "kind": "practice",
+            "label": "Which expression means “primary pupil”?",
+            "optional": true,
+            "target_id": "q-14-2"
+          },
+          {
+            "id": "topic-school-people-places--quiz--q-14-3",
+            "kind": "practice",
+            "label": "Which expression means “middle school student”?",
+            "optional": true,
+            "target_id": "q-14-3"
+          },
+          {
+            "id": "topic-school-people-places--quiz--q-14-4",
+            "kind": "practice",
+            "label": "In the example “我在大学学习中文。” (wǒ zài dàxué xuéxí Zhōngwén.), what is happening?",
+            "optional": false,
+            "target_id": "q-14-4"
+          },
+          {
+            "id": "topic-school-people-places--quiz--q-14-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “There are many students at the university.”",
+            "optional": false,
+            "target_id": "q-14-5"
+          },
+          {
+            "id": "topic-school-people-places--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Which child is in primary school?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-school-people-places--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Do they travel to school together?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-school-people-places--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask where someone attends school.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-school-people-places--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say a friend is a university student.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

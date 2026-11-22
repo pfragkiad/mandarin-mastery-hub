@@ -87,3 +87,29 @@ Speaking task: Invite someone to lunch, accept or decline, and decide where to g
 
 **Production:** Invite someone to lunch, accept or decline, and decide where to go together.
 **Answer:** 你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — 好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-with-someone--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-with-someone--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-with-someone--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-with-someone--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-with-someone--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-with-someone--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-with-someone--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Would you like to have lunch with me? — ID: `convm-with-someone--quiz--q-translation`
+- [ ] Make a sentence using the pattern 也 + 动词短语 (yě dòngcí duǎnyǔ). — ID: `convm-with-someone--quiz--q-grammar`
+- [ ] Invite someone to lunch, accept or decline, and decide where to go together. — ID: `convm-with-someone--quiz--q-speaking`

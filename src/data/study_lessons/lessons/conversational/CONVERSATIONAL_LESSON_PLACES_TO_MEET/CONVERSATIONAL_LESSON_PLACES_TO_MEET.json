@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "convm-places-to-meet",
   "lesson_type": "dialogue",
   "lesson": {
@@ -36,7 +36,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "Beginner conversational Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -267,5 +267,123 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-places-to-meet--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Introduction — lesson-intro",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "Conversation — Model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--grammar--grammar-1",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-1",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-places-to-meet--grammar--grammar-2",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-2",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--review--key-expressions",
+            "kind": "section",
+            "label": "Expression review — key-expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Guided speaking — guided-speaking",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: Go to a restaurant.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí).",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

@@ -1,29 +1,24 @@
-# Source and validation report — Asking Where Places Are
+# Editorial and validation report — Asking Where Places Are
 
-- Source: User-provided `transcript.zip`: Conversational Mandarin / Pimsleur Mandarin 1, audio tracks 1–16 and cumulative HTML extraction index.
-- Curriculum: `conversational-mandarin`; independent global categories: places-directions, travel-transport.
-- Relevant transcript tracks: 4, 5, 6, 9.
-- Lesson data: Editorially assembled dialogue, manually reviewed beginner expressions and grammar explanations. Not a verbatim transcript or officially endorsed Pimsleur lesson.
-- Review level: Curated expressions checked for everyday grammatical plausibility and pinyin; not independent native-speaker or audio certification. Original extraction preserved in the package source index.
-- Sentence provenance: each learner dialogue combines learner-level patterns, may include newly composed turns. No audio timestamp is claimed for an invented model turn.
+## Origin and authorship
 
-## Extracted expression source mapping
+- Course: `conversational-mandarin`; independent, topic-based beginner Mandarin lessons.
+- Authoring basis: Communicative themes selected from the learner's study interests. The lesson's examples, explanations, dialogues and activities are independently assembled editorial teaching content. The topic list alone does not establish copying or source provenance from another course.
+- External material: No audio recordings, third-party transcripts or source-track mappings are distributed with this lesson. No external quotation or timestamp is claimed for the lesson text.
+- Review status: Learner-oriented editorial draft. Not independently native-speaker certified.
+- Pinyin: Tone-marked reading is provided with Chinese content; automated structural checks do not certify every linguistic realization.
 
-| Expression | Source location | Status |
-|---|---|---|
-| 请问学院路在哪儿 | Track 4, 14:22 (line 135) | source-extracted |
-| 学院路在哪儿 | Track 4, 16:30 (line 135) | source-extracted |
-| 长安街在哪儿 | Track 5, 06:55 (line 65) | source-extracted |
-| 在这儿 | Track 4, 20:25 (line 199) | source-extracted |
-| 在那儿 | Track 4, 24:47 (line 230) | source-extracted |
-| 不在这儿 | Track 4, 24:47 (line 230) | source-extracted |
-| 长安街在那儿 | Track 4, 28:58 (line 264) | source-extracted |
-| 学院路在这儿 | Track 4, 29:11 (line 266) | source-extracted |
-| 我不知道 | Track 5, 09:51 (line 88) | source-extracted |
-| 学院路在那儿 | Track 6, 03:36 (line 54) | source-extracted |
-| 长安街在这儿 | Track 5, 07:19 (line 69) | source-extracted |
-| 长安街不在这儿 | Track 5, 08:43 (line 79) | source-extracted |
-| 学院路呢 | Track 6, 02:31 (line 42) | source-extracted |
-| 不在那儿 | Track 4, 28:47 (line 262) | source-extracted |
-| 你知道长安街在哪儿吗 | Track 9, 01:37 (line 19) | source-extracted |
-| 长安街呢 | Track 5, 00:14 (line 5) | source-extracted |
+## Lesson package
+
+- Permanent lesson ID: `convm-asking-directions`
+- Lesson type: `dialogue`
+- JSON schema: `mandarin-general-lesson/3.0.0`
+- Primary topic: `places-directions`
+- All topics: `places-directions`, `travel-transport`
+- Subtopics: (none assigned)
+- Teaching content: 4 dialogue turns, 16 key expression placements, 4 practice questions.
+- Provenance policy: Input processing and source verification, when applicable, remain separate from learner-visible JSON, HTML and Markdown.
+
+## Change scope
+
+This attribution correction updates **this report only**. Canonical lesson JSON, HTML and Markdown content are preserved from the latest available taxonomy-synchronized lesson. The curriculum placement is unchanged.

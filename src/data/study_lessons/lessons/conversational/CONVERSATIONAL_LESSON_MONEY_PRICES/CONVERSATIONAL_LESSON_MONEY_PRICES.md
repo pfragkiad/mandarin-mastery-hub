@@ -95,3 +95,29 @@ Speaking task: Ask the price of tea or beer; answer with a simple amount in RMB 
 
 **Production:** Ask the price of tea or beer; answer with a simple amount in RMB or dollars.
 **Answer:** 请问，一杯啤酒多少钱？ (Qǐngwèn, yì bēi píjiǔ duōshao qián?) — 十块人民币。 (Shí kuài rénmínbì.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-money-prices--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-money-prices--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-money-prices--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-money-prices--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-money-prices--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-money-prices--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-money-prices--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Twelve yuan. — ID: `convm-money-prices--quiz--q-translation`
+- [ ] Make a sentence using the pattern 数词 + 块 + 币种 (shùcí kuài bìzhǒng). — ID: `convm-money-prices--quiz--q-grammar`
+- [ ] Ask the price of tea or beer; answer with a simple amount in RMB or dollars. — ID: `convm-money-prices--quiz--q-speaking`

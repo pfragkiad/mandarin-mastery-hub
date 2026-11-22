@@ -97,3 +97,29 @@ Speaking task: Order a drink, specify the number of glasses, and choose between 
 
 **Production:** Order a drink, specify the number of glasses, and choose between two options.
 **Answer:** 你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — 我想喝一点茶。 (Wǒ xiǎng hē yìdiǎn chá.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-food-drinks--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-food-drinks--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-food-drinks--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-food-drinks--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-food-drinks--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-food-drinks--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-food-drinks--quiz--q-dialogue`
+- [ ] Translate into Mandarin: I would like a little beer. — ID: `convm-food-drinks--quiz--q-translation`
+- [ ] Make a sentence using the pattern 数量 + 杯 + 饮料 (shùliàng bēi yǐnliào). — ID: `convm-food-drinks--quiz--q-grammar`
+- [ ] Order a drink, specify the number of glasses, and choose between two options. — ID: `convm-food-drinks--quiz--q-speaking`

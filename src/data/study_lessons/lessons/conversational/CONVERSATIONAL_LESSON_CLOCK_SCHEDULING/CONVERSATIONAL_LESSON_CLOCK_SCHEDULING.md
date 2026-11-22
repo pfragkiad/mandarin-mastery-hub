@@ -95,3 +95,29 @@ Speaking task: Negotiate a dinner time by proposing six, seven or eight o’cloc
 
 **Production:** Negotiate a dinner time by proposing six, seven or eight o’clock.
 **Answer:** 你想几点钟吃晚饭？ (Nǐ xiǎng jǐ diǎn zhōng chī wǎnfàn?) — 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-clock-scheduling--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-clock-scheduling--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-clock-scheduling--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-clock-scheduling--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-clock-scheduling--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-clock-scheduling--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-clock-scheduling--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Is one o’clock okay? — ID: `convm-clock-scheduling--quiz--q-translation`
+- [ ] Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng). — ID: `convm-clock-scheduling--quiz--q-grammar`
+- [ ] Negotiate a dinner time by proposing six, seven or eight o’clock. — ID: `convm-clock-scheduling--quiz--q-speaking`

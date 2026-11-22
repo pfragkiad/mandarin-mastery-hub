@@ -1,28 +1,24 @@
-# Source and validation report — Choosing Where to Meet and Eat
+# Editorial and validation report — Choosing Where to Meet and Eat
 
-- Source: User-provided `transcript.zip`: Conversational Mandarin / Pimsleur Mandarin 1, audio tracks 1–16 and cumulative HTML extraction index.
-- Curriculum: `conversational-mandarin`; independent global categories: travel-transport, places-directions, food-drink.
-- Relevant transcript tracks: 6, 7, 8, 9.
-- Lesson data: Editorially assembled dialogue, manually reviewed beginner expressions and grammar explanations. Not a verbatim transcript or officially endorsed Pimsleur lesson.
-- Review level: Curated expressions checked for everyday grammatical plausibility and pinyin; not independent native-speaker or audio certification. Original extraction preserved in the package source index.
-- Sentence provenance: each learner dialogue combines learner-level patterns, may include newly composed turns. No audio timestamp is claimed for an invented model turn.
+## Origin and authorship
 
-## Extracted expression source mapping
+- Course: `conversational-mandarin`; independent, topic-based beginner Mandarin lessons.
+- Authoring basis: Communicative themes selected from the learner's study interests. The lesson's examples, explanations, dialogues and activities are independently assembled editorial teaching content. The topic list alone does not establish copying or source provenance from another course.
+- External material: No audio recordings, third-party transcripts or source-track mappings are distributed with this lesson. No external quotation or timestamp is claimed for the lesson text.
+- Review status: Learner-oriented editorial draft. Not independently native-speaker certified.
+- Pinyin: Tone-marked reading is provided with Chinese content; automated structural checks do not certify every linguistic realization.
 
-| Expression | Source location | Status |
-|---|---|---|
-| 你想去哪儿 | Track 8, 18:42 (line 43) | source-extracted |
-| 你想去哪儿吃 | Track 6, 10:57 (line 110) | source-extracted |
-| 去咖啡厅 | Track 7, 00:26 (line 8) | source-extracted |
-| 去饭店 | Track 7, 08:55 (line 96) | source-extracted |
-| 我想去酒店 | Track 8, 16:35 (line 191) | source-extracted |
-| 我想去北京饭店 | Track 7, 23:51 (line 236) | source-extracted |
-| 我想去你那儿 | Track 7, 06:57 (line 75) | source-extracted |
-| 我不想在这儿吃 | Track 7, 05:56 (line 67) | source-extracted |
-| 你想去哪儿喝 | Track 7, 00:16 (line 5) | source-extracted |
-| 北京饭店在哪儿 | Track 7, 25:11 (line 246) | source-extracted |
-| 你想去酒店吗 | Track 8, 25:41 (line 281) | source-extracted |
-| 去你那儿 | Track 6, 14:10 (line 143) | source-extracted |
-| 去我那儿 | Track 6, 13:11 (line 133) | source-extracted |
-| 在饭店 | Track 9, 26:25 (line 255) | source-extracted |
-| 我想在这儿吃 | Track 7, 07:51 (line 86) | source-extracted |
+## Lesson package
+
+- Permanent lesson ID: `convm-places-to-meet`
+- Lesson type: `dialogue`
+- JSON schema: `mandarin-general-lesson/3.0.0`
+- Primary topic: `travel-transport`
+- All topics: `travel-transport`, `places-directions`, `food-drink`
+- Subtopics: (none assigned)
+- Teaching content: 4 dialogue turns, 15 key expression placements, 4 practice questions.
+- Provenance policy: Input processing and source verification, when applicable, remain separate from learner-visible JSON, HTML and Markdown.
+
+## Change scope
+
+This attribution correction updates **this report only**. Canonical lesson JSON, HTML and Markdown content are preserved from the latest available taxonomy-synchronized lesson. The curriculum placement is unchanged.

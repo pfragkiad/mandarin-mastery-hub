@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-social-conversation",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1024,7 +1024,8 @@
               "hanzi": "对不起！→ 没关系！",
               "pinyin": "Duìbuqǐ! → Méi guānxi!",
               "english": "Sorry! → No problem!"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "farewell",
@@ -1032,7 +1033,8 @@
               "hanzi": "再见！→ 再见！",
               "pinyin": "Zàijiàn! → Zàijiàn!",
               "english": "Goodbye! → Goodbye!"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1048,11 +1050,13 @@
         "questions": [
           {
             "prompt_en": "Who is Xiao Li meeting?",
-            "answer_en": "Teacher Wang."
+            "answer_en": "Teacher Wang.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Have they met before?",
-            "answer_en": "No, this is their first meeting."
+            "answer_en": "No, this is their first meeting.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1096,5 +1100,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-social-conversation--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Polite openings",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-social-conversation--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Apologies and thanks",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: apology",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-social-conversation--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: farewell",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--read--reading-q-01",
+            "kind": "question",
+            "label": "Who is Xiao Li meeting?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-social-conversation--read--reading-q-02",
+            "kind": "question",
+            "label": "Have they met before?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Introduce yourself politely on the phone.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-social-conversation--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Apologize for being late and give a fitting response.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--quiz--q-03-1",
+            "kind": "practice",
+            "label": "Which expression means “you're welcome”?",
+            "optional": true,
+            "target_id": "q-03-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-2",
+            "kind": "practice",
+            "label": "Which expression means “may I ask”?",
+            "optional": true,
+            "target_id": "q-03-2"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-3",
+            "kind": "practice",
+            "label": "Which expression means “matter”?",
+            "optional": true,
+            "target_id": "q-03-3"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-4",
+            "kind": "practice",
+            "label": "In the example “不客气！” (bú kèqi!), what is happening?",
+            "optional": false,
+            "target_id": "q-03-4"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “She said, \"You're welcome.\"”",
+            "optional": false,
+            "target_id": "q-03-5"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Who is Xiao Li meeting?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Have they met before?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Introduce yourself politely on the phone.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Apologize for being late and give a fitting response.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

@@ -174,3 +174,46 @@ He is writing characters right now.
 
 **Production:** Write this in Mandarin: “All the students are in the classroom.”
 **Answer:** 学生们都在教室里。 (xuéshēngmen dōu zài jiàoshì lǐ.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-connecting-ideas--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Adding and combining information — ID: `topic-connecting-ideas--pattern--pattern-1`
+- [ ] Apply: Degree and ongoing actions — ID: `topic-connecting-ideas--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: studying — ID: `topic-connecting-ideas--build--build-sub-01`
+- [ ] Build a sentence: drinking water — ID: `topic-connecting-ideas--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Where are the brother and sister? — ID: `topic-connecting-ideas--read--reading-q-01`
+- [ ] Who is writing? — ID: `topic-connecting-ideas--read--reading-q-02`
+
+### Speaking practice
+- [ ] Explain what you and a friend both like. — ID: `topic-connecting-ideas--speak--speaking-1`
+- [ ] Describe what someone is doing right now. — ID: `topic-connecting-ideas--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-connecting-ideas--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-connecting-ideas--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-connecting-ideas--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “all”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-1`
+- [ ] Which expression means “too”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-2`
+- [ ] Which expression means “currently”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-3`
+- [ ] In the example “我们都是学生。” (wǒmen dōu shì xuéshēng.), what is happening? — ID: `topic-connecting-ideas--quiz--q-21-4`
+- [ ] Write this in Mandarin: “All the students are in the classroom.” — ID: `topic-connecting-ideas--quiz--q-21-5`
+- [ ] Reading comprehension: Where are the brother and sister? — ID: `topic-connecting-ideas--quiz--applied-reading-1`
+- [ ] Reading comprehension: Who is writing? — ID: `topic-connecting-ideas--quiz--applied-reading-2`
+- [ ] Say this aloud: Explain what you and a friend both like. — ID: `topic-connecting-ideas--quiz--applied-speaking-1`
+- [ ] Say this aloud: Describe what someone is doing right now. — ID: `topic-connecting-ideas--quiz--applied-speaking-2`

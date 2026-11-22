@@ -4651,3 +4651,20 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-toc-count { flex: none; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted-foreground); }
 .lesson-toc-count.is-done { color: var(--primary); }
 .lesson-toc-count svg { width: 13px; height: 13px; }
+
+/* Lesson checkpoints (Core v3.3 manual ticks): "Mark as done" toggles at a section's end, on
+   a pattern card or in the finish box. A small box that fills with the accent when done;
+   hover tints the text like other quiet controls (no hard background block). */
+.lesson-checkpoints { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; }
+.lesson-checkpoints.is-card { margin-top: 10px; }
+.lesson-finish .lesson-checkpoints { flex-basis: 100%; margin-top: 0; }
+.lesson-checkpoint { display: inline-flex; align-items: center; gap: 8px; padding: 4px 2px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 13px; text-align: left; cursor: pointer; transition: color .15s; }
+.lesson-checkpoint:hover, .lesson-checkpoint:focus-visible { color: var(--primary); }
+.lesson-checkpoint small { font-size: 11px; color: var(--muted-foreground); }
+.lesson-checkpoint-box { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border: 1.5px solid var(--border); border-radius: 4px; transition: border-color .15s, background .15s; }
+.lesson-checkpoint:hover .lesson-checkpoint-box { border-color: var(--primary); }
+.lesson-checkpoint.is-done { color: var(--foreground); }
+.lesson-checkpoint.is-done .lesson-checkpoint-box { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
+.lesson-checkpoint-box svg { width: 13px; height: 13px; }
+.lesson-progress-time { font-size: inherit; font-weight: 400; color: var(--muted-foreground); }
+.lesson-index-facts { font-size: 12px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }

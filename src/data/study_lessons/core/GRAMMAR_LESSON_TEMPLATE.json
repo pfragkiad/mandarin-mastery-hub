@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.1.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "grammar-negation-basic",
   "lesson_type": "grammar",
   "lesson": {
@@ -26,7 +26,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -85,5 +85,53 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "grammar-negation-basic--section--explanation",
+        "section_key": "explanation",
+        "title": "Understanding",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--explanation--b1",
+            "kind": "section",
+            "label": "Understanding — b1",
+            "optional": false,
+            "target_id": "b1"
+          }
+        ]
+      },
+      {
+        "id": "grammar-negation-basic--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--grammar--b2",
+            "kind": "section",
+            "label": "Grammar patterns — b2",
+            "optional": false,
+            "target_id": "b2"
+          }
+        ]
+      },
+      {
+        "id": "grammar-negation-basic--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--quiz--q1",
+            "kind": "practice",
+            "label": "Which negates an action?",
+            "optional": false,
+            "target_id": "q1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

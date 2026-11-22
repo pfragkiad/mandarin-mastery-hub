@@ -194,3 +194,46 @@ No more, thank you!
 
 **Production:** Write this in Mandarin: “The steamed buns at this shop are delicious.”
 **Answer:** 这家店的包子很好吃。 (zhè jiā diàn de bāozi hěn hǎochī.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-food-and-meals--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Food and drink verbs — ID: `topic-food-and-meals--pattern--pattern-1`
+- [ ] Apply: Offering and declining — ID: `topic-food-and-meals--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: water — ID: `topic-food-and-meals--build--build-sub-01`
+- [ ] Build a sentence: milk — ID: `topic-food-and-meals--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What does the speaker eat for breakfast? — ID: `topic-food-and-meals--read--reading-q-01`
+- [ ] Who cooks dinner? — ID: `topic-food-and-meals--read--reading-q-02`
+
+### Speaking practice
+- [ ] Order food and a drink. — ID: `topic-food-and-meals--speak--speaking-1`
+- [ ] Politely decline more food. — ID: `topic-food-and-meals--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-food-and-meals--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-food-and-meals--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-food-and-meals--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “steamed bun”? *(optional)* — ID: `topic-food-and-meals--quiz--q-11-1`
+- [ ] Which expression means “cooked rice”? *(optional)* — ID: `topic-food-and-meals--quiz--q-11-2`
+- [ ] Which expression means “cook”? *(optional)* — ID: `topic-food-and-meals--quiz--q-11-3`
+- [ ] In the example “我早上吃包子。” (wǒ zǎoshang chī bāozi.), what is happening? — ID: `topic-food-and-meals--quiz--q-11-4`
+- [ ] Write this in Mandarin: “The steamed buns at this shop are delicious.” — ID: `topic-food-and-meals--quiz--q-11-5`
+- [ ] Reading comprehension: What does the speaker eat for breakfast? — ID: `topic-food-and-meals--quiz--applied-reading-1`
+- [ ] Reading comprehension: Who cooks dinner? — ID: `topic-food-and-meals--quiz--applied-reading-2`
+- [ ] Say this aloud: Order food and a drink. — ID: `topic-food-and-meals--quiz--applied-speaking-1`
+- [ ] Say this aloud: Politely decline more food. — ID: `topic-food-and-meals--quiz--applied-speaking-2`

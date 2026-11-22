@@ -170,3 +170,46 @@ A weather event such as 下雨 (xià yǔ) is not an adjective. Prefer 今天下�
 
 **Production:** Write this in Mandarin: “There are two dogs here.”
 **Answer:** 这里有两只狗。 (zhèlǐ yǒu liǎng zhī gǒu.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-animals-and-weather--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Describing weather — ID: `topic-animals-and-weather--pattern--pattern-1`
+- [ ] Apply: Talking about animal location — ID: `topic-animals-and-weather--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: hot — ID: `topic-animals-and-weather--build--build-sub-01`
+- [ ] Build a sentence: good — ID: `topic-animals-and-weather--build--build-sub-02`
+
+### Reading comprehension
+- [ ] When is the weather good? — ID: `topic-animals-and-weather--read--reading-q-01`
+- [ ] What is the cat doing? — ID: `topic-animals-and-weather--read--reading-q-02`
+
+### Speaking practice
+- [ ] Describe today’s weather to a friend. — ID: `topic-animals-and-weather--speak--speaking-1`
+- [ ] Say where a pet is. — ID: `topic-animals-and-weather--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-animals-and-weather--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-animals-and-weather--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-animals-and-weather--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “dog”? *(optional)* — ID: `topic-animals-and-weather--quiz--q-20-1`
+- [ ] Which expression means “weather”? *(optional)* — ID: `topic-animals-and-weather--quiz--q-20-2`
+- [ ] Which expression means “rain”? *(optional)* — ID: `topic-animals-and-weather--quiz--q-20-3`
+- [ ] In the example “这只狗很小。” (zhè zhī gǒu hěn xiǎo.), what is happening? — ID: `topic-animals-and-weather--quiz--q-20-4`
+- [ ] Write this in Mandarin: “There are two dogs here.” — ID: `topic-animals-and-weather--quiz--q-20-5`
+- [ ] Reading comprehension: When is the weather good? — ID: `topic-animals-and-weather--quiz--applied-reading-1`
+- [ ] Reading comprehension: What is the cat doing? — ID: `topic-animals-and-weather--quiz--applied-reading-2`
+- [ ] Say this aloud: Describe today’s weather to a friend. — ID: `topic-animals-and-weather--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say where a pet is. — ID: `topic-animals-and-weather--quiz--applied-speaking-2`

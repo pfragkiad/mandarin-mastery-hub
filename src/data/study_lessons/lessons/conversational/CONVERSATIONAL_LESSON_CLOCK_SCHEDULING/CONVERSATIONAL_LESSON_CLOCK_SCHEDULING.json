@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "convm-clock-scheduling",
   "lesson_type": "dialogue",
   "lesson": {
@@ -35,7 +35,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "Beginner conversational Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -278,5 +278,123 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-clock-scheduling--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Introduction — lesson-intro",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-clock-scheduling--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "Conversation — Model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-clock-scheduling--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--grammar--grammar-1",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-1",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-clock-scheduling--grammar--grammar-2",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-2",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-clock-scheduling--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--review--key-expressions",
+            "kind": "section",
+            "label": "Expression review — key-expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-clock-scheduling--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Guided speaking — guided-speaking",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-clock-scheduling--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-clock-scheduling--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-clock-scheduling--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: Is one o’clock okay?",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-clock-scheduling--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng).",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-clock-scheduling--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Negotiate a dinner time by proposing six, seven or eight o’clock.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

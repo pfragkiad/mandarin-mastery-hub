@@ -77,6 +77,10 @@
           },
           "uniqueItems": true,
           "description": "Optional stable global subtopic IDs from the topic registry."
+        },
+        "icon_glyph": {
+          "type": "string",
+          "pattern": "^[㐀-鿿豈-﫿𠀀-𮯯]$"
         }
       },
       "allOf": [
@@ -434,6 +438,95 @@
         },
         "teaching_note": {
           "type": "string"
+        }
+      }
+    },
+    "progress": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Canonical authored checklist layout, NOT learner state. Completion is count of nonoptional checkpoints, independent of elapsed time. Client stores completed checkpoint IDs separately.",
+      "required": [
+        "tracking_mode",
+        "sections"
+      ],
+      "properties": {
+        "tracking_mode": {
+          "const": "checkpoints"
+        },
+        "sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "section_key",
+              "title",
+              "checkpoints"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+              },
+              "section_key": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Semantic section identifier for UI grouping; do not infer it from nested JSON indexes."
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "checkpoints": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "kind",
+                    "label",
+                    "optional"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+                      "description": "Permanent learner-progress key; retain across content changes/reordering."
+                    },
+                    "kind": {
+                      "enum": [
+                        "section",
+                        "reveal",
+                        "question",
+                        "speaking",
+                        "practice",
+                        "review"
+                      ]
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "optional": {
+                      "type": "boolean",
+                      "description": "Optional checkpoints never block core completion."
+                    },
+                    "target_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Exact ID of the corresponding source item when there is one. For section acknowledgements omit target_id."
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

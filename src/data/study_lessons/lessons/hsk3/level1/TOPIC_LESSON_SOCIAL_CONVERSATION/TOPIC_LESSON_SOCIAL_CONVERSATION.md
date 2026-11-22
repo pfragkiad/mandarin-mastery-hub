@@ -182,3 +182,46 @@ Do not answer 谢谢 (xièxie) with 没关系 (méi guānxi) as your default. �
 
 **Production:** Write this in Mandarin: “She said, "You're welcome."”
 **Answer:** 她说：“不客气。” (tā shuō: “bú kèqi.”). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-social-conversation--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Polite openings — ID: `topic-social-conversation--pattern--pattern-1`
+- [ ] Apply: Apologies and thanks — ID: `topic-social-conversation--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: apology — ID: `topic-social-conversation--build--build-sub-01`
+- [ ] Build a sentence: farewell — ID: `topic-social-conversation--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Who is Xiao Li meeting? — ID: `topic-social-conversation--read--reading-q-01`
+- [ ] Have they met before? — ID: `topic-social-conversation--read--reading-q-02`
+
+### Speaking practice
+- [ ] Introduce yourself politely on the phone. — ID: `topic-social-conversation--speak--speaking-1`
+- [ ] Apologize for being late and give a fitting response. — ID: `topic-social-conversation--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-social-conversation--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-social-conversation--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-social-conversation--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “you're welcome”? *(optional)* — ID: `topic-social-conversation--quiz--q-03-1`
+- [ ] Which expression means “may I ask”? *(optional)* — ID: `topic-social-conversation--quiz--q-03-2`
+- [ ] Which expression means “matter”? *(optional)* — ID: `topic-social-conversation--quiz--q-03-3`
+- [ ] In the example “不客气！” (bú kèqi!), what is happening? — ID: `topic-social-conversation--quiz--q-03-4`
+- [ ] Write this in Mandarin: “She said, "You're welcome."” — ID: `topic-social-conversation--quiz--q-03-5`
+- [ ] Reading comprehension: Who is Xiao Li meeting? — ID: `topic-social-conversation--quiz--applied-reading-1`
+- [ ] Reading comprehension: Have they met before? — ID: `topic-social-conversation--quiz--applied-reading-2`
+- [ ] Say this aloud: Introduce yourself politely on the phone. — ID: `topic-social-conversation--quiz--applied-speaking-1`
+- [ ] Say this aloud: Apologize for being late and give a fitting response. — ID: `topic-social-conversation--quiz--applied-speaking-2`

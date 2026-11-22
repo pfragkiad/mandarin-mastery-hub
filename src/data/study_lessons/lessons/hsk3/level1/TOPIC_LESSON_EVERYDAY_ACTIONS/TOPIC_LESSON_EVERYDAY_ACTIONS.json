@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-everyday-actions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -957,7 +957,8 @@
               "hanzi": "你看见我的手机了吗？",
               "pinyin": "Nǐ kànjiàn wǒ de shǒujī le ma?",
               "english": "Have you seen my phone?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "bag",
@@ -965,7 +966,8 @@
               "hanzi": "你看见我的包了吗？",
               "pinyin": "Nǐ kànjiàn wǒ de bāo le ma?",
               "english": "Have you seen my bag?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -981,11 +983,13 @@
         "questions": [
           {
             "prompt_en": "Why does Xiao Hong call a classmate?",
-            "answer_en": "She cannot find her book."
+            "answer_en": "She cannot find her book.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Where is the book?",
-            "answer_en": "In the classroom."
+            "answer_en": "In the classroom.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1027,5 +1031,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-everyday-actions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Looking versus seeing",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-everyday-actions--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Give and receive",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: phone",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-everyday-actions--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: bag",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--read--reading-q-01",
+            "kind": "question",
+            "label": "Why does Xiao Hong call a classmate?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-everyday-actions--read--reading-q-02",
+            "kind": "question",
+            "label": "Where is the book?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask if a friend has seen your book.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-everyday-actions--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask someone to hand you a book.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions--quiz--q-16-1",
+            "kind": "practice",
+            "label": "Which expression means “wear”?",
+            "optional": true,
+            "target_id": "q-16-1"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--q-16-2",
+            "kind": "practice",
+            "label": "Which expression means “catch sight of”?",
+            "optional": true,
+            "target_id": "q-16-2"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--q-16-3",
+            "kind": "practice",
+            "label": "Which expression means “do”?",
+            "optional": true,
+            "target_id": "q-16-3"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--q-16-4",
+            "kind": "practice",
+            "label": "In the example “今天我穿新衣服。” (jīntiān wǒ chuān xīn yīfu.), what is happening?",
+            "optional": false,
+            "target_id": "q-16-4"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--q-16-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “When it is cold, please wear more clothes.”",
+            "optional": false,
+            "target_id": "q-16-5"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Why does Xiao Hong call a classmate?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Where is the book?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask if a friend has seen your book.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-everyday-actions--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask someone to hand you a book.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

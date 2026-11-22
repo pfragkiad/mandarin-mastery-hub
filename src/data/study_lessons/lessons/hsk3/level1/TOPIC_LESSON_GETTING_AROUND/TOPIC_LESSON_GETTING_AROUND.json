@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-getting-around",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -32,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1233,7 +1233,8 @@
               "hanzi": "我坐飞机去北京。",
               "pinyin": "Wǒ zuò fēijī qù Běijīng.",
               "english": "I fly to Beijing."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "taxi",
@@ -1241,7 +1242,8 @@
               "hanzi": "我坐出租车去北京。",
               "pinyin": "Wǒ zuò chūzūchē qù Běijīng.",
               "english": "I take a taxi to Beijing."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1257,11 +1259,13 @@
         "questions": [
           {
             "prompt_en": "Who takes a taxi?",
-            "answer_en": "Mom."
+            "answer_en": "Mom.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "How does the speaker return home?",
-            "answer_en": "By train."
+            "answer_en": "By train.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1310,5 +1314,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-getting-around--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Movement from the speaker’s viewpoint",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-getting-around--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Places and destinations",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: plane",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-getting-around--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: taxi",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--read--reading-q-01",
+            "kind": "question",
+            "label": "Who takes a taxi?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-getting-around--read--reading-q-02",
+            "kind": "question",
+            "label": "How does the speaker return home?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask where a place is.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-getting-around--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say how you get home.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--quiz--q-13-1",
+            "kind": "practice",
+            "label": "Which expression means “vehicle”?",
+            "optional": true,
+            "target_id": "q-13-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-2",
+            "kind": "practice",
+            "label": "Which expression means “side”?",
+            "optional": true,
+            "target_id": "q-13-2"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-3",
+            "kind": "practice",
+            "label": "Which expression means “China”?",
+            "optional": true,
+            "target_id": "q-13-3"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-4",
+            "kind": "practice",
+            "label": "In the example “这是我爸爸的车。” (zhè shì wǒ bàba de chē.), what is happening?",
+            "optional": false,
+            "target_id": "q-13-4"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “There are many cars at the school entrance.”",
+            "optional": false,
+            "target_id": "q-13-5"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Who takes a taxi?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: How does the speaker return home?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask where a place is.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say how you get home.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

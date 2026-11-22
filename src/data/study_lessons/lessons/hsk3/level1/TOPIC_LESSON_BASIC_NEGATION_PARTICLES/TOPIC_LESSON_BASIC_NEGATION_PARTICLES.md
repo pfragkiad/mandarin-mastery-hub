@@ -172,3 +172,46 @@ Do not use 不有 to mean “do not have.” Use 没有 (méiyǒu) for lack of p
 
 **Production:** Write this in Mandarin: “"Come back tomorrow," the teacher said.”
 **Answer:** “明天再来吧。”老师说。 (“míngtiān zài lái ba.” lǎoshī shuō.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-basic-negation-particles--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: 不 (bù) and 没有 (méiyǒu) — ID: `topic-basic-negation-particles--pattern--pattern-1`
+- [ ] Apply: Particles for questions and responses — ID: `topic-basic-negation-particles--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: possession — ID: `topic-basic-negation-particles--build--build-sub-01`
+- [ ] Build a sentence: habit — ID: `topic-basic-negation-particles--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Is Xiao Wang a teacher? — ID: `topic-basic-negation-particles--read--reading-q-01`
+- [ ] Where is he studying today? — ID: `topic-basic-negation-particles--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask whether your partner is a student, then answer. — ID: `topic-basic-negation-particles--speak--speaking-1`
+- [ ] Ask someone about their computer; respond negatively. — ID: `topic-basic-negation-particles--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-basic-negation-particles--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-basic-negation-particles--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-basic-negation-particles--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “suggestion particle”? *(optional)* — ID: `topic-basic-negation-particles--quiz--q-02-1`
+- [ ] Which expression means “yes/no particle”? *(optional)* — ID: `topic-basic-negation-particles--quiz--q-02-2`
+- [ ] Which expression means “be”? *(optional)* — ID: `topic-basic-negation-particles--quiz--q-02-3`
+- [ ] In the example “我们走吧。” (wǒmen zǒu ba.), what is happening? — ID: `topic-basic-negation-particles--quiz--q-02-4`
+- [ ] Write this in Mandarin: “"Come back tomorrow," the teacher said.” — ID: `topic-basic-negation-particles--quiz--q-02-5`
+- [ ] Reading comprehension: Is Xiao Wang a teacher? — ID: `topic-basic-negation-particles--quiz--applied-reading-1`
+- [ ] Reading comprehension: Where is he studying today? — ID: `topic-basic-negation-particles--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask whether your partner is a student, then answer. — ID: `topic-basic-negation-particles--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask someone about their computer; respond negatively. — ID: `topic-basic-negation-particles--quiz--applied-speaking-2`

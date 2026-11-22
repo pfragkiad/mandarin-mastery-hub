@@ -192,3 +192,46 @@ Do not reverse 来 (lái) and 去 (qù); choose the viewpoint before you speak.
 
 **Production:** Write this in Mandarin: “There are many cars at the school entrance.”
 **Answer:** 学校门口有很多车。 (xuéxiào ménkǒu yǒu hěn duō chē.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-getting-around--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Movement from the speaker’s viewpoint — ID: `topic-getting-around--pattern--pattern-1`
+- [ ] Apply: Places and destinations — ID: `topic-getting-around--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: plane — ID: `topic-getting-around--build--build-sub-01`
+- [ ] Build a sentence: taxi — ID: `topic-getting-around--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Who takes a taxi? — ID: `topic-getting-around--read--reading-q-01`
+- [ ] How does the speaker return home? — ID: `topic-getting-around--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask where a place is. — ID: `topic-getting-around--speak--speaking-1`
+- [ ] Say how you get home. — ID: `topic-getting-around--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-getting-around--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-getting-around--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-getting-around--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “vehicle”? *(optional)* — ID: `topic-getting-around--quiz--q-13-1`
+- [ ] Which expression means “side”? *(optional)* — ID: `topic-getting-around--quiz--q-13-2`
+- [ ] Which expression means “China”? *(optional)* — ID: `topic-getting-around--quiz--q-13-3`
+- [ ] In the example “这是我爸爸的车。” (zhè shì wǒ bàba de chē.), what is happening? — ID: `topic-getting-around--quiz--q-13-4`
+- [ ] Write this in Mandarin: “There are many cars at the school entrance.” — ID: `topic-getting-around--quiz--q-13-5`
+- [ ] Reading comprehension: Who takes a taxi? — ID: `topic-getting-around--quiz--applied-reading-1`
+- [ ] Reading comprehension: How does the speaker return home? — ID: `topic-getting-around--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask where a place is. — ID: `topic-getting-around--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say how you get home. — ID: `topic-getting-around--quiz--applied-speaking-2`

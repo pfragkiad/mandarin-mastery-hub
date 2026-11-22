@@ -89,7 +89,7 @@ def checks_lesson(lesson,catalog=None):
             if len(hanzi)==1 and catalog.get(hanzi) and lesson['metadata']['catalog_character_id']!=catalog[hanzi]:
                 raise ValueError('headword catalog character ID mismatch')
     # Pedagogical v3.1 integrity rules beyond JSON Schema.
-    if lesson['schema_version'] in ('mandarin-topic-lesson/3.1.0','mandarin-topic-lesson/3.2.0'):
+    if lesson['schema_version'] in ('mandarin-topic-lesson/3.1.0','mandarin-topic-lesson/3.2.0','mandarin-topic-lesson/3.3.0'):
         t=lesson['sections']['teaching_plan']
         intro={ref['entry_id'] for v in lesson['sections']['vocabulary']['items']
                for ref in v.get('syllabus_refs',[]) if v.get('learning_role')=='introduced'}
@@ -121,10 +121,29 @@ def checks_lesson(lesson,catalog=None):
             if not example.get('pinyin') or not example.get('english'):
                 raise ValueError('missing pinyin/English in new teaching example')
     # Authoring: do not allow source/provenance in learner-facing source blocks.
-    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0','/3.2.0')):
+    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0','/3.2.0','/3.3.0')):
         forbidden={'report_intake','source_files','original_video','extraction_stats'}
         bad=[key for node in each_dict(lesson) for key in node if key in forbidden]
         if bad:raise ValueError('report-only field(s) in learner lesson: '+str(bad))
+    check_progress(lesson)
+
+def check_progress(lesson):
+    """Core v3.3 checkpoint contract: unique section/checkpoint IDs, and every target_id names
+    exactly one recorded item ID in this lesson (never an array position)."""
+    progress=lesson.get('progress')
+    if progress is None:return
+    if progress.get('tracking_mode')!='checkpoints':raise ValueError('progress.tracking_mode must be checkpoints')
+    ids=Counter(n['id'] for n in each_dict(lesson.get('sections',{})) if isinstance(n.get('id'),str))
+    sids=[s['id'] for s in progress['sections']]
+    cids=[c['id'] for s in progress['sections'] for c in s['checkpoints']]
+    if len(sids)!=len(set(sids)):raise ValueError('duplicate progress section ID')
+    if len(cids)!=len(set(cids)):raise ValueError('duplicate checkpoint ID')
+    for s in progress['sections']:
+        for c in s['checkpoints']:
+            t=c.get('target_id')
+            if t is not None and ids[t]!=1:raise ValueError(f'checkpoint {c["id"]} target {t} resolves to {ids[t]} items')
+    if not any(not c['optional'] for s in progress['sections'] for c in s['checkpoints']):
+        raise ValueError('progress needs at least one required checkpoint')
 
 def checks_curriculum(doc,library=None):
     check_schema('curriculum.schema.json',doc)
@@ -164,7 +183,7 @@ def run_test():
         ('general_lesson.schema.json','REVIEW_LESSON_TEMPLATE.json'),
         ('general_lesson.schema.json','GENERIC_LESSON_TEMPLATE.json'),
         ('curriculum.schema.json','CURRICULUM_HSK3_TEMPLATE.json'),
-        ('curriculum.schema.json','CURRICULUM_PIMSLEUR_TEMPLATE.json'),
+        ('curriculum.schema.json','CURRICULUM_CONVERSATIONAL_MANDARIN_TEMPLATE.json'),
         ('lesson_categories.schema.json','lesson_categories.json')]
     for schema,file in tests:
         check_schema(schema,load(HERE/file))

@@ -97,3 +97,29 @@ Speaking task: Offer food and drink, accept one offer and politely decline anoth
 
 **Production:** Offer food and drink, accept one offer and politely decline another.
 **Answer:** 你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — 我不想吃。 (Wǒ bù xiǎng chī.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-wants-intentions--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-wants-intentions--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-wants-intentions--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-wants-intentions--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-wants-intentions--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-wants-intentions--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-wants-intentions--quiz--q-dialogue`
+- [ ] Translate into Mandarin: I want to eat. — ID: `convm-wants-intentions--quiz--q-translation`
+- [ ] Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng). — ID: `convm-wants-intentions--quiz--q-grammar`
+- [ ] Offer food and drink, accept one offer and politely decline another. — ID: `convm-wants-intentions--quiz--q-speaking`

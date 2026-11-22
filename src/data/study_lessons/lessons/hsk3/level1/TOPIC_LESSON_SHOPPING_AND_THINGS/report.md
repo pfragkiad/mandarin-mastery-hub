@@ -40,10 +40,3 @@
 - Exception: HSK entry 36 retains previously corrected sentence pinyin: shàng xuéxí rather than older source segmentation shàngxué xí. Correct the upstream source separately.
 - Classification and teaching-content validation passed.
 
-
-## Vocabulary synchronization to v1.7.1
-
-- Current vocabulary source: `hsk3_level1_1.7.1.json`.
-- Canonical word-card examples revised: 3.
-- Linked quiz prompts and answers revised in all three lesson formats: 0.
-- Lesson schema: `mandarin-topic-lesson/3.2.0`. Topic taxonomy: v2.0.0.

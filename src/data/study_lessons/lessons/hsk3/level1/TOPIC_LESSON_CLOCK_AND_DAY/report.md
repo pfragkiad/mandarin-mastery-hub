@@ -35,10 +35,3 @@
 - HSK Level 1 entry classifications follow hsk3_level1_1.7.0 source JSON by syllabus ID.
 - Classification and teaching-content validation passed.
 
-
-## Vocabulary synchronization to v1.7.1
-
-- Current vocabulary source: `hsk3_level1_1.7.1.json`.
-- Canonical word-card examples revised: 1.
-- Linked quiz prompts and answers revised in all three lesson formats: 1.
-- Lesson schema: `mandarin-topic-lesson/3.2.0`. Topic taxonomy: v2.0.0.

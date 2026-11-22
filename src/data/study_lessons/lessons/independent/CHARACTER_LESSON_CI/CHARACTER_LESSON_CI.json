@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/3.0.0",
+  "schema_version": "mandarin-character-lesson/3.2.0",
   "lesson_id": "char-6B21",
   "lesson": {
     "title": "Talking About Times & Occasions",
@@ -9,7 +9,7 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "HSK beginner; foundational Mandarin grammar",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
@@ -929,10 +929,151 @@
       "classifiers",
       "tone-sandhi"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Count occurrences with 次 (cì), identify particular occasions, and express repetition with 再 (zài).",
     "Learn the six main expressions, practice natural sentences, then explore conversational shortenings, frequency complements, and tone sandhi."
-  ]
+  ],
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "char-6B21--section--overview",
+        "section_key": "overview",
+        "title": "Meaning and usage",
+        "checkpoints": [
+          {
+            "id": "char-6B21--overview",
+            "kind": "section",
+            "label": "Understand the character meaning and usage",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--vocabulary",
+        "section_key": "vocabulary",
+        "title": "Vocabulary",
+        "checkpoints": [
+          {
+            "id": "char-6B21--vocabulary",
+            "kind": "section",
+            "label": "Review vocabulary and pronunciation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--constructions",
+        "section_key": "constructions",
+        "title": "Constructions",
+        "checkpoints": [
+          {
+            "id": "char-6B21--constructions",
+            "kind": "section",
+            "label": "Practice constructions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--examples",
+        "section_key": "examples",
+        "title": "Worked examples",
+        "checkpoints": [
+          {
+            "id": "char-6B21--examples",
+            "kind": "section",
+            "label": "Understand the worked examples",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--contrasts",
+        "section_key": "contrasts",
+        "title": "Usage contrasts",
+        "checkpoints": [
+          {
+            "id": "char-6B21--contrasts",
+            "kind": "section",
+            "label": "Distinguish contrasted expressions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--mistakes",
+        "section_key": "mistakes",
+        "title": "Common mistakes",
+        "checkpoints": [
+          {
+            "id": "char-6B21--mistakes",
+            "kind": "section",
+            "label": "Avoid common usage mistakes",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "char-6B21--quiz--q-how-many",
+            "kind": "practice",
+            "label": "In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”?",
+            "optional": false,
+            "target_id": "q-how-many"
+          },
+          {
+            "id": "char-6B21--quiz--q-short",
+            "kind": "practice",
+            "label": "Choose the common shorter form of 下一次 (xià yí cì).",
+            "optional": false,
+            "target_id": "q-short"
+          },
+          {
+            "id": "char-6B21--quiz--q-tone",
+            "kind": "practice",
+            "label": "Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin?",
+            "optional": false,
+            "target_id": "q-tone"
+          },
+          {
+            "id": "char-6B21--quiz--q-zai",
+            "kind": "practice",
+            "label": "Which expression means “try one more time”?",
+            "optional": false,
+            "target_id": "q-zai"
+          },
+          {
+            "id": "char-6B21--quiz--q-produce",
+            "kind": "practice",
+            "label": "Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).",
+            "optional": false,
+            "target_id": "q-produce"
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--extensions",
+        "section_key": "extensions",
+        "title": "Extensions",
+        "checkpoints": [
+          {
+            "id": "char-6B21--extensions",
+            "kind": "section",
+            "label": "Explore extra related material",
+            "optional": true
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
 }

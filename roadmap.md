@@ -114,7 +114,7 @@
 - [x] Cookie progress: bar per card, Continue card, unit x/y, course x of y
 - [x] Course path: connectors, Up next, dim not-started, collapsible units
 - [x] Learner copy; caveats in (i); no Pimsleur/ID notes
-- [ ] Estimated time — blocked: lessons record no duration
+- [x] Estimated time on lesson cards and pages (from each lesson's estimated_minutes)
 - [x] Lesson Word bank / Words to review: simplified Vocabulary grid card look (hanzi box in card ink, reading + translation at its right, HSK pill)
 - [x] Lesson progress: Show answer then going back must not leave the course view at zero
 - [x] Lesson page: progress shown on the left while studying
@@ -123,3 +123,7 @@
 - [x] Progress bar + Reset progress always visible at the start of each lesson
 - [x] Complete lesson returns to the course/topic screen
 - [x] Remove the Draft pill from lessons
+
+- [x] Lessons v3.3: regression report on word-card examples (handoff vs current) — which version is newer
+- [x] Lessons v3.3: wire checkpoint progress, estimated minutes and icon glyph into lesson pages and cards
+- [ ] Lessons v3.3: re-import the corrected lesson package from the owner (waiting on the upload)

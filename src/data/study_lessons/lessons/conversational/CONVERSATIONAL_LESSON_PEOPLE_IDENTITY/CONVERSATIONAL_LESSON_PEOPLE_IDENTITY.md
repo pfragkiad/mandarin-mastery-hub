@@ -97,3 +97,29 @@ Speaking task: Introduce yourself, ask whether someone is Chinese or American, a
 
 **Production:** Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”
 **Answer:** 你是美国人吗？ (Nǐ shì Měiguó rén ma?) — 不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-people-identity--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-people-identity--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-people-identity--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-people-identity--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-people-identity--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-people-identity--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-people-identity--quiz--q-dialogue`
+- [ ] Translate into Mandarin: I am Chinese. — ID: `convm-people-identity--quiz--q-translation`
+- [ ] Make a sentence using the pattern 不是…… (bú shì). — ID: `convm-people-identity--quiz--q-grammar`
+- [ ] Introduce yourself, ask whether someone is Chinese or American, and ask “And you?” — ID: `convm-people-identity--quiz--q-speaking`

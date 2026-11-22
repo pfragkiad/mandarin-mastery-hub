@@ -238,12 +238,13 @@ const TOPIC_MARKS: Record<string, [string, string]> = {
   'science-technology': ['电', 'sky'], 'society-government-law': ['国', 'amber'], 'vocabulary-grammar-patterns': ['词', 'violet'],
 };
 
-/** The card's box: headword when recorded, else the course number, else the topic mark. */
+/** The card's box: headword when recorded, else the course number, else the lesson's recorded
+ *  icon_glyph, else the topic mark (the colour always follows the topic). */
 function LessonGlyph({ lesson, number }: { lesson: LessonSummary; number?: number | undefined }) {
   const mark = TOPIC_MARKS[lesson.primaryCategory?.id ?? ''] ?? ['课', 'neutral'];
   const tone = lesson.headword || number ? 'jade' : mark[1];
   return <span className={`lesson-index-glyph tone-${tone}`} aria-hidden="true">
-    {lesson.headword ? <span lang="zh-CN">{lesson.headword.hanzi}</span> : number ? <span className="lesson-index-number">{number}</span> : <span lang="zh-CN">{mark[0]}</span>}
+    {lesson.headword ? <span lang="zh-CN">{lesson.headword.hanzi}</span> : number ? <span className="lesson-index-number">{number}</span> : <span lang="zh-CN">{lesson.iconGlyph ?? mark[0]}</span>}
   </span>;
 }
 
@@ -271,10 +272,23 @@ export function LessonCard({ lesson, number, after = [], onTag, activeTag, extra
       </span>
     </Link>
     <div className="lesson-index-foot">
+      <LessonFacts lesson={lesson} done={state === 'done' ? lesson.checkpoints.required : progress?.[lesson.id]?.answered.length}/>
       {progress && <ProgressBar fraction={fraction}/>}
       {onTag && tags.length > 0 && <div className="lesson-index-tags" aria-label={`Tags for ${lesson.title}`}>
         {tags.map(t => <button key={t} type="button" className={`lesson-tag-chip${activeTag === t ? ' is-active' : ''}`} aria-pressed={activeTag === t} onClick={() => onTag(t)}>#{t}</button>)}
       </div>}
     </div>
   </div>;
+}
+
+/** "25 min · 18 tasks" (or "4/18 tasks" once started), from the lesson's recorded estimate and
+ *  required checkpoints; optional ones read "+3 bonus". Hidden when neither is recorded. */
+function LessonFacts({ lesson, done }: { lesson: LessonSummary; done: number | undefined }) {
+  const { required, optional } = lesson.checkpoints;
+  const parts = [
+    lesson.estimatedMinutes ? `${lesson.estimatedMinutes} min` : '',
+    required ? `${done ? `${Math.min(done, required)}/` : ''}${required} ${required === 1 ? 'task' : 'tasks'}` : '',
+    optional ? `+${optional} bonus` : '',
+  ].filter(Boolean);
+  return parts.length ? <span className="lesson-index-facts">{parts.join(' · ')}</span> : null;
 }

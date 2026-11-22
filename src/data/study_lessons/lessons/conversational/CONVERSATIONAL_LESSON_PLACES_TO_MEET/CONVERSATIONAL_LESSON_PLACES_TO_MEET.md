@@ -93,3 +93,29 @@ Speaking task: Invite a friend to a café, restaurant or hotel; decline one plac
 
 **Production:** Invite a friend to a café, restaurant or hotel; decline one place and suggest another.
 **Answer:** 你想去哪儿吃午饭？ (Nǐ xiǎng qù nǎr chī wǔfàn?) — 我想去饭店。 (Wǒ xiǎng qù fàndiàn.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-places-to-meet--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-places-to-meet--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-places-to-meet--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-places-to-meet--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-places-to-meet--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-places-to-meet--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-places-to-meet--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Go to a restaurant. — ID: `convm-places-to-meet--quiz--q-translation`
+- [ ] Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí). — ID: `convm-places-to-meet--quiz--q-grammar`
+- [ ] Invite a friend to a café, restaurant or hotel; decline one place and suggest another. — ID: `convm-places-to-meet--quiz--q-speaking`

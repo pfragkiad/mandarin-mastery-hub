@@ -180,3 +180,46 @@ Do not confuse 看 (kàn, look) with 看见 (kànjiàn, perceive/see). The resul
 
 **Production:** Write this in Mandarin: “When it is cold, please wear more clothes.”
 **Answer:** 天气冷的时候，请多穿衣服。 (tiānqì lěng de shíhou, qǐng duō chuān yīfu.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-everyday-actions--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Looking versus seeing — ID: `topic-everyday-actions--pattern--pattern-1`
+- [ ] Apply: Give and receive — ID: `topic-everyday-actions--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: phone — ID: `topic-everyday-actions--build--build-sub-01`
+- [ ] Build a sentence: bag — ID: `topic-everyday-actions--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Why does Xiao Hong call a classmate? — ID: `topic-everyday-actions--read--reading-q-01`
+- [ ] Where is the book? — ID: `topic-everyday-actions--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask if a friend has seen your book. — ID: `topic-everyday-actions--speak--speaking-1`
+- [ ] Ask someone to hand you a book. — ID: `topic-everyday-actions--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-everyday-actions--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-everyday-actions--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-everyday-actions--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “wear”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-1`
+- [ ] Which expression means “catch sight of”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-2`
+- [ ] Which expression means “do”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-3`
+- [ ] In the example “今天我穿新衣服。” (jīntiān wǒ chuān xīn yīfu.), what is happening? — ID: `topic-everyday-actions--quiz--q-16-4`
+- [ ] Write this in Mandarin: “When it is cold, please wear more clothes.” — ID: `topic-everyday-actions--quiz--q-16-5`
+- [ ] Reading comprehension: Why does Xiao Hong call a classmate? — ID: `topic-everyday-actions--quiz--applied-reading-1`
+- [ ] Reading comprehension: Where is the book? — ID: `topic-everyday-actions--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask if a friend has seen your book. — ID: `topic-everyday-actions--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask someone to hand you a book. — ID: `topic-everyday-actions--quiz--applied-speaking-2`

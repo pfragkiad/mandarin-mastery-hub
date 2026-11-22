@@ -180,5 +180,48 @@ Do not reverse the English month/day order: 十号五月 is not a normal calenda
 **Comprehension:** In the example “今天是十月十四号。” (jīntiān shì shí yuè shísì hào.), what is happening?
 **Answer:** Today is October 14.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “The teacher said, “There’s no class on October 5.””
-**Answer:** 老师说：“十月五号不上课。” (lǎoshī shuō: “shí yuè wǔ hào bú shàngkè.”). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “October 5 is a Monday.”
+**Answer:** 十月五号是星期一。 (shí yuè wǔ hào shì xīngqīyī.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-dates-calendar--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Dates: year, month, day — ID: `topic-dates-calendar--pattern--pattern-1`
+- [ ] Apply: Relative days versus calendar days — ID: `topic-dates-calendar--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: May 12 — ID: `topic-dates-calendar--build--build-sub-01`
+- [ ] Build a sentence: June 2 — ID: `topic-dates-calendar--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What does Xiao Li want to do on Saturday? — ID: `topic-dates-calendar--read--reading-q-01`
+- [ ] What will he do on Sunday? — ID: `topic-dates-calendar--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask someone what day of the week it is. — ID: `topic-dates-calendar--speak--speaking-1`
+- [ ] Say what day you will study. — ID: `topic-dates-calendar--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-dates-calendar--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-dates-calendar--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-dates-calendar--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “number”? *(optional)* — ID: `topic-dates-calendar--quiz--q-08-1`
+- [ ] Which expression means “day”? *(optional)* — ID: `topic-dates-calendar--quiz--q-08-2`
+- [ ] Which expression means “yesterday”? *(optional)* — ID: `topic-dates-calendar--quiz--q-08-3`
+- [ ] In the example “今天是十月十四号。” (jīntiān shì shí yuè shísì hào.), what is happening? — ID: `topic-dates-calendar--quiz--q-08-4`
+- [ ] Write this in Mandarin: “October 5 is a Monday.” — ID: `topic-dates-calendar--quiz--q-08-5`
+- [ ] Reading comprehension: What does Xiao Li want to do on Saturday? — ID: `topic-dates-calendar--quiz--applied-reading-1`
+- [ ] Reading comprehension: What will he do on Sunday? — ID: `topic-dates-calendar--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask someone what day of the week it is. — ID: `topic-dates-calendar--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say what day you will study. — ID: `topic-dates-calendar--quiz--applied-speaking-2`

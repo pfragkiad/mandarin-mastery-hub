@@ -89,3 +89,29 @@ Speaking task: Tell someone you do not understand and ask what they said.
 
 **Production:** Tell someone you do not understand and ask what they said.
 **Answer:** 你明白吗？ (Nǐ míngbai ma?) — 我不明白。 (Wǒ bù míngbai.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-understanding-clarification--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-understanding-clarification--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-understanding-clarification--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-understanding-clarification--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-understanding-clarification--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-understanding-clarification--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-understanding-clarification--quiz--q-dialogue`
+- [ ] Translate into Mandarin: I do not know. — ID: `convm-understanding-clarification--quiz--q-translation`
+- [ ] Make a sentence using the pattern ……什么 (shénme). — ID: `convm-understanding-clarification--quiz--q-grammar`
+- [ ] Tell someone you do not understand and ask what they said. — ID: `convm-understanding-clarification--quiz--q-speaking`

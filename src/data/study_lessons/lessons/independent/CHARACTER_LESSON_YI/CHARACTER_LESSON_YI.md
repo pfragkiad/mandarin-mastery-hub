@@ -231,3 +231,33 @@ The phrase 以城 (yǐ chéng) identifies what would be given. The comparison wi
 
 **Production:** Translate “May I come in?” using 可以 (kěyǐ).
 **Answer:** 我可以进去吗？(Wǒ kěyǐ jìnqù ma?). The complete modal verb expresses permission.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Meaning and usage
+- [ ] Understand the character meaning and usage — ID: `char-4EE5--overview`
+
+### Vocabulary
+- [ ] Review vocabulary and pronunciation — ID: `char-4EE5--vocabulary`
+
+### Constructions
+- [ ] Practice constructions — ID: `char-4EE5--constructions`
+
+### Worked examples
+- [ ] Understand the worked examples — ID: `char-4EE5--examples`
+
+### Usage contrasts
+- [ ] Distinguish contrasted expressions — ID: `char-4EE5--contrasts`
+
+### Common mistakes
+- [ ] Avoid common usage mistakes — ID: `char-4EE5--mistakes`
+
+### Historical usage
+- [ ] Review historical usage — ID: `char-4EE5--historical`
+
+### Practice
+- [ ] In 我以前住在北京 (Wǒ yǐqián zhù zài Běijīng), does the speaker refer to present or earlier residence? — ID: `char-4EE5--quiz--q-01`
+- [ ] Which sounds natural for casual “eat with chopsticks”? — ID: `char-4EE5--quiz--q-02`
+- [ ] Translate “May I come in?” using 可以 (kěyǐ). — ID: `char-4EE5--quiz--q-03`

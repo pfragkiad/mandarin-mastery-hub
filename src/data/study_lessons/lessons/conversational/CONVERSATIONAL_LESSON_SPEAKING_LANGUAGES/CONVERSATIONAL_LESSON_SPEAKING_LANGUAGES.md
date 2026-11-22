@@ -95,3 +95,29 @@ Speaking task: Ask a partner what language they speak; answer using 会 (huì), 
 
 **Production:** Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn).
 **Answer:** 请问，你会说英文吗？ (Qǐngwèn, nǐ huì shuō Yīngwén ma?) — 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-speaking-languages--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-speaking-languages--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-speaking-languages--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-speaking-languages--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-speaking-languages--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-speaking-languages--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-speaking-languages--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Cannot speak. — ID: `convm-speaking-languages--quiz--q-translation`
+- [ ] Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de). — ID: `convm-speaking-languages--quiz--q-grammar`
+- [ ] Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn). — ID: `convm-speaking-languages--quiz--q-speaking`

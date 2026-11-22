@@ -317,3 +317,35 @@ The form and syntactic structure are different.
 
 **Production:** Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).
 **Answer:** 每一次见到你，我都很开心。(Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.). A temporal every-time phrase and a main clause with 都 (dōu) express recurrence.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Meaning and usage
+- [ ] Understand the character meaning and usage — ID: `char-6B21--overview`
+
+### Vocabulary
+- [ ] Review vocabulary and pronunciation — ID: `char-6B21--vocabulary`
+
+### Constructions
+- [ ] Practice constructions — ID: `char-6B21--constructions`
+
+### Worked examples
+- [ ] Understand the worked examples — ID: `char-6B21--examples`
+
+### Usage contrasts
+- [ ] Distinguish contrasted expressions — ID: `char-6B21--contrasts`
+
+### Common mistakes
+- [ ] Avoid common usage mistakes — ID: `char-6B21--mistakes`
+
+### Practice
+- [ ] In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”? — ID: `char-6B21--quiz--q-how-many`
+- [ ] Choose the common shorter form of 下一次 (xià yí cì). — ID: `char-6B21--quiz--q-short`
+- [ ] Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin? — ID: `char-6B21--quiz--q-tone`
+- [ ] Which expression means “try one more time”? — ID: `char-6B21--quiz--q-zai`
+- [ ] Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu). — ID: `char-6B21--quiz--q-produce`
+
+### Extensions
+- [ ] Explore extra related material *(optional)* — ID: `char-6B21--extensions`

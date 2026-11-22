@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "convm-asking-directions",
   "lesson_type": "dialogue",
   "lesson": {
@@ -35,7 +35,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "Beginner conversational Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -264,5 +264,123 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-asking-directions--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Introduction — lesson-intro",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-asking-directions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "Conversation — Model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-asking-directions--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--grammar--grammar-1",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-1",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-asking-directions--grammar--grammar-2",
+            "kind": "section",
+            "label": "Grammar patterns — grammar-2",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-asking-directions--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--review--key-expressions",
+            "kind": "section",
+            "label": "Expression review — key-expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-asking-directions--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Guided speaking — guided-speaking",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-asking-directions--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-asking-directions--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-asking-directions--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: It is here; located here.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-asking-directions--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn).",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-asking-directions--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

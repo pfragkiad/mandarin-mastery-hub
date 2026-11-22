@@ -1,0 +1,70 @@
+import { describe, expect, it } from 'vitest';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+import { checkpointLabel, migrateLegacyKeys, planCheckpoints, toLessonProgress } from './lesson-checkpoints';
+
+// Core v3.3 progress rules: completion counts only required checkpoints, optional ones are
+// bonus, ticks are stored by checkpoint ID, and every checkpoint has somewhere to be done.
+const contract = (over: Record<string, unknown> = {}) => ({ tracking_mode: 'checkpoints', sections: [
+  { id: 's-build', section_key: 'guided-building', title: 'Build', checkpoints: [{ id: 'cp-b1', kind: 'reveal', label: 'Build a sentence: we', optional: false, target_id: 'build-sub-01' }] },
+  { id: 's-pat', section_key: 'patterns', title: 'Patterns', checkpoints: [{ id: 'cp-p1', kind: 'section', label: 'Apply: X', optional: false, target_id: 'pattern-1' }] },
+  { id: 's-dia', section_key: 'dialogue', title: 'Conversation', checkpoints: [{ id: 'cp-d', kind: 'section', label: 'Understand the conversation', optional: false }] },
+  { id: 's-q', section_key: 'practice', title: 'Practice', checkpoints: [{ id: 'cp-q1', kind: 'practice', label: 'Q1', optional: true, target_id: 'q-1' }, { id: 'cp-q2', kind: 'practice', label: 'Q2', optional: false, target_id: 'q-2' }] },
+  { id: 's-hist', section_key: 'historical', title: 'History', checkpoints: [{ id: 'cp-h', kind: 'section', label: 'Read it', optional: false }] },
+], ...over });
+const page = { sections: ['conversation', 'patterns', 'build', 'practice', 'review'], interactive: new Map([['build-sub-01', 'build'], ['q-1', 'review'], ['q-2', 'practice']]), cards: new Map([['pattern-1', 'patterns']]), blocks: new Map<string, string>(), sectionKeys: { dialogue: 'conversation', historical: 'historical', patterns: 'patterns' } };
+
+describe('lesson checkpoints', () => {
+  it('counts only required checkpoints toward the total', () => {
+    const plan = planCheckpoints(toLessonProgress(contract())!, page);
+    expect(plan.required).toEqual(['cp-b1', 'cp-p1', 'cp-d', 'cp-q2', 'cp-h']);
+    expect(plan.optional).toEqual(['cp-q1']);
+  });
+  it('completes interactive checkpoints through their target, puts manual ones on cards or section ends', () => {
+    const plan = planCheckpoints(toLessonProgress(contract())!, page);
+    expect(plan.auto.get('build-sub-01')?.id).toBe('cp-b1');
+    expect(plan.card.get('pattern-1')?.id).toBe('cp-p1');
+    expect(plan.section.get('conversation')?.map(c => c.id)).toEqual(['cp-d']);
+  });
+  it('moves a checkpoint whose section is not on the page to the finish box', () => {
+    const plan = planCheckpoints(toLessonProgress(contract())!, page);
+    expect(plan.section.get('finish')?.map(c => c.id)).toEqual(['cp-h']);
+  });
+  it('rejects a contract with duplicate checkpoint IDs', () => {
+    const bad = contract(); (bad.sections[1]!.checkpoints[0] as { id: string }).id = 'cp-b1';
+    expect(toLessonProgress(bad)).toBeNull();
+  });
+  it('turns saved positional keys into checkpoint IDs and drops unknown ones', () => {
+    const plan = planCheckpoints(toLessonProgress(contract())!, page);
+    const legacy = new Map([['build-1', 'build-sub-01'], ['q-1', 'q-1'], ['q-2', 'q-2']]);
+    expect(migrateLegacyKeys(['build-1', 'q-1', 'q-2', 'reading-9'], legacy, plan)).toEqual({ answered: ['cp-b1', 'cp-q2'], bonus: ['cp-q1'] });
+  });
+  it('hides labels that quote their own target ID', () => {
+    expect(checkpointLabel({ label: 'Grammar patterns — grammar-1', targetId: 'grammar-1' })).toBe('Mark as done');
+    expect(checkpointLabel({ label: 'Understand the conversation', targetId: null })).toBe('Understand the conversation');
+  });
+});
+
+describe('project lessons', () => {
+  const root = join(process.cwd(), 'src/data/study_lessons/lessons');
+  const files: string[] = [];
+  const walk = (dir: string) => { for (const name of readdirSync(dir)) { const p = join(dir, name); if (statSync(p).isDirectory()) { if (name !== 'legacy') walk(p); } else if (/_LESSON_.*\.json$/.test(name) && name === `${dir.split('/').pop()}.json`) files.push(p); } };
+  walk(root);
+  const lessons = files.map(f => JSON.parse(readFileSync(f, 'utf8')) as { lesson_id: string; estimated_minutes?: number | null; progress?: unknown });
+  const cards = (JSON.parse(readFileSync(join(root, 'lesson-cards.json'), 'utf8')) as { lessons: Record<string, { required: number; optional: number; estimated_minutes: number | null }> }).lessons;
+  it('every lesson has a valid checkpoint contract', () => {
+    expect(lessons).toHaveLength(38);
+    for (const l of lessons) expect(toLessonProgress(l.progress), l.lesson_id).not.toBeNull();
+  });
+  it('the card sidecar matches every lesson (regenerate with scripts/import-lessons-v3.3.py)', () => {
+    for (const l of lessons) {
+      const sections = toLessonProgress(l.progress)!;
+      const all = sections.flatMap(s => s.checkpoints);
+      expect(cards[l.lesson_id], l.lesson_id).toEqual({ required: all.filter(c => !c.optional).length, optional: all.filter(c => c.optional).length, estimated_minutes: l.estimated_minutes ?? null });
+    }
+  });
+  it('the topic-lesson recall quiz keeps 3 optional questions per lesson and 549 required checkpoints overall', () => {
+    expect(Object.values(cards).reduce((n, c) => n + c.required, 0)).toBe(549);
+    expect(Object.values(cards).reduce((n, c) => n + c.optional, 0)).toBe(64);
+  });
+});

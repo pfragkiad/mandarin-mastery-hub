@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-basic-negation-particles",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -796,7 +796,8 @@
               "hanzi": "我有电脑。→ 我没有电脑。",
               "pinyin": "Wǒ yǒu diànnǎo. → Wǒ méiyǒu diànnǎo.",
               "english": "I have a computer. → I do not have a computer."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "habit",
@@ -804,7 +805,8 @@
               "hanzi": "我喝茶。→ 我不喝茶。",
               "pinyin": "Wǒ hē chá. → Wǒ bù hē chá.",
               "english": "I drink tea. → I do not drink tea."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -820,11 +822,13 @@
         "questions": [
           {
             "prompt_en": "Is Xiao Wang a teacher?",
-            "answer_en": "No, he is a student."
+            "answer_en": "No, he is a student.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Where is he studying today?",
-            "answer_en": "At home."
+            "answer_en": "At home.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -868,5 +872,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-basic-negation-particles--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: 不 (bù) and 没有 (méiyǒu)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-basic-negation-particles--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Particles for questions and responses",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: possession",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-basic-negation-particles--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: habit",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--read--reading-q-01",
+            "kind": "question",
+            "label": "Is Xiao Wang a teacher?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-basic-negation-particles--read--reading-q-02",
+            "kind": "question",
+            "label": "Where is he studying today?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask whether your partner is a student, then answer.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-basic-negation-particles--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask someone about their computer; respond negatively.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-basic-negation-particles--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-basic-negation-particles--quiz--q-02-1",
+            "kind": "practice",
+            "label": "Which expression means “suggestion particle”?",
+            "optional": true,
+            "target_id": "q-02-1"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--q-02-2",
+            "kind": "practice",
+            "label": "Which expression means “yes/no particle”?",
+            "optional": true,
+            "target_id": "q-02-2"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--q-02-3",
+            "kind": "practice",
+            "label": "Which expression means “be”?",
+            "optional": true,
+            "target_id": "q-02-3"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--q-02-4",
+            "kind": "practice",
+            "label": "In the example “我们走吧。” (wǒmen zǒu ba.), what is happening?",
+            "optional": false,
+            "target_id": "q-02-4"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--q-02-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “\"Come back tomorrow,\" the teacher said.”",
+            "optional": false,
+            "target_id": "q-02-5"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Is Xiao Wang a teacher?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Where is he studying today?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask whether your partner is a student, then answer.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-basic-negation-particles--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask someone about their computer; respond negatively.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

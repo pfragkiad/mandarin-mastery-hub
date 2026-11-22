@@ -95,3 +95,29 @@ Speaking task: Ask politely for an item and respond with permission, refusal or 
 
 **Production:** Ask politely for an item and respond with permission, refusal or thanks.
 **Answer:** 你可不可以给我一点钱？ (Nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián?) — 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-permission-requests--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-permission-requests--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-permission-requests--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-permission-requests--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-permission-requests--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-permission-requests--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-permission-requests--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Can you eat now? — ID: `convm-permission-requests--quiz--q-translation`
+- [ ] Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi). — ID: `convm-permission-requests--quiz--q-grammar`
+- [ ] Ask politely for an item and respond with permission, refusal or thanks. — ID: `convm-permission-requests--quiz--q-speaking`

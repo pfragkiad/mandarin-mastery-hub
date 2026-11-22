@@ -95,3 +95,29 @@ Speaking task: Ask and answer three addition questions in Mandarin.
 
 **Production:** Ask and answer three addition questions in Mandarin.
 **Answer:** 二加三是多少？ (Èr jiā sān shì duōshao?) — 五。 (Wǔ.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-numbers-arithmetic--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-numbers-arithmetic--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-numbers-arithmetic--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-numbers-arithmetic--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-numbers-arithmetic--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-numbers-arithmetic--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-numbers-arithmetic--quiz--q-dialogue`
+- [ ] Translate into Mandarin: What is sixteen plus four? — ID: `convm-numbers-arithmetic--quiz--q-translation`
+- [ ] Make a sentence using the pattern 十 + 数字 (shí shùzì). — ID: `convm-numbers-arithmetic--quiz--q-grammar`
+- [ ] Ask and answer three addition questions in Mandarin. — ID: `convm-numbers-arithmetic--quiz--q-speaking`

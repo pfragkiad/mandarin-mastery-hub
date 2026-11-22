@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.1.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "review-greetings",
   "lesson_type": "review",
   "lesson": {
@@ -25,7 +25,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -76,5 +76,39 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "review-greetings--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "review-greetings--review--r1",
+            "kind": "section",
+            "label": "Expression review — r1",
+            "optional": false,
+            "target_id": "r1"
+          }
+        ]
+      },
+      {
+        "id": "review-greetings--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "review-greetings--quiz--q1",
+            "kind": "practice",
+            "label": "Which expression means hello?",
+            "optional": false,
+            "target_id": "q1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 12
 }

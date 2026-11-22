@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { lessonSearchEntry, lessonTexts, numberedToMarks, searchLessons } from './lesson-search';
 import type { LessonSummary } from './lessons';
 
-const summary = (id: string, title: string): LessonSummary => ({ id, kind: 'topic', schemaVersion: '3', title, subtitle: '', description: '', categories: [], primaryCategory: null, tags: [], status: 'draft', audience: '', dateReviewed: null, lessonType: '', objectives: [], headword: null, catalogCharacterId: null });
+const summary = (id: string, title: string): LessonSummary => ({ id, kind: 'topic', schemaVersion: '3', title, subtitle: '', description: '', categories: [], primaryCategory: null, tags: [], status: 'draft', audience: '', dateReviewed: null, lessonType: '', objectives: [], headword: null, catalogCharacterId: null, iconGlyph: null, estimatedMinutes: null, checkpoints: { required: 0, optional: 0 } });
 const raw = { lesson_id: 'x', catalog_character_refs: { 学: 'Characters:学' }, sections: [{ id: 'sec-student', blocks: [{ hanzi: '我是学生。', pinyin: 'Wǒ shì xuéshēng.', english: 'I’m a student.', register: 'neutral' }] }] };
 const entries = [lessonSearchEntry(summary('a', 'Talking about people'), raw), lessonSearchEntry(summary('b', 'Students and school'), {})];
 

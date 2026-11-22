@@ -1,0 +1,35 @@
+{
+  "schema_version": "mandarin-curriculum/3.0.0",
+  "curriculum_id": "conversational-mandarin",
+  "title": "Conversational Mandarin — Independent Topic-Based Course",
+  "kind": "course",
+  "language": "zh-CN",
+  "edition": null,
+  "status": "draft",
+  "description": "Independent learner-authored conversational lessons grouped by communicative goals. Topic selection may reflect prior study interests; lesson content is authored separately, without claiming to reproduce any external course.",
+  "course_topics": [
+    {
+      "id": "greetings-politeness",
+      "label": "Greetings and Politeness",
+      "global_topic_ids": [
+        "communication-social"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "conversational-foundations",
+      "title": "Conversational Foundations",
+      "level_number": 1,
+      "sequence": 1,
+      "units": [
+        {
+          "unit_id": "conversational-topic-lessons",
+          "title": "Communicative Lessons",
+          "sequence": 1,
+          "placements": []
+        }
+      ]
+    }
+  ]
+}

@@ -97,3 +97,29 @@ Speaking task: Postpone plans from tonight to tomorrow, or from now to later.
 
 **Production:** Postpone plans from tonight to tomorrow, or from now to later.
 **Answer:** 你想现在吃吗？ (Nǐ xiǎng xiànzài chī ma?) — 现在不行。 (Xiànzài bù xíng.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-today-tomorrow-later--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-today-tomorrow-later--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-today-tomorrow-later--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-today-tomorrow-later--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-today-tomorrow-later--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-today-tomorrow-later--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-today-tomorrow-later--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Today. — ID: `convm-today-tomorrow-later--quiz--q-translation`
+- [ ] Make a sentence using the pattern 过一会儿 (guò yíhuìr). — ID: `convm-today-tomorrow-later--quiz--q-grammar`
+- [ ] Postpone plans from tonight to tomorrow, or from now to later. — ID: `convm-today-tomorrow-later--quiz--q-speaking`

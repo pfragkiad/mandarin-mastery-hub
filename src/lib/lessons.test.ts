@@ -51,9 +51,9 @@ describe('lesson index', () => {
     expect(ids.filter(id => id.startsWith('convm-')).length).toBe(15);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(21);
-    // Topic lessons use v3.2 taxonomy fields with the same teaching plans; character lessons stay v3.0.0.
-    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.2.0')).toBe(true);
-    expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion.endsWith('/3.0.0'))).toBe(true);
+    // Core v3.3 (checkpoint progress): topic lessons 3.3.0, character lessons 3.2.0.
+    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.3.0')).toBe(true);
+    expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion === 'mandarin-character-lesson/3.2.0')).toBe(true);
   });
 });
 
@@ -200,8 +200,8 @@ describe('conversational lessons', () => {
   it('are 15 general dialogue lessons whose blocks are all kinds the page renders', () => {
     expect(docs.length).toBe(15);
     for (const d of docs) {
-      // Two lessons were reclassified under general schema v3.1.0; the rest stay v3.0.0.
-      expect(['mandarin-general-lesson/3.0.0', 'mandarin-general-lesson/3.1.0']).toContain(d.schema_version);
+      // Core v3.3 general lessons carry checkpoint progress.
+      expect(d.schema_version).toBe('mandarin-general-lesson/3.2.0');
       expect(d.lesson_type).toBe('dialogue');
       expect(d.sections.blocks.every(b => ['explanation', 'dialogue', 'grammar_pattern', 'review_set'].includes(b.kind))).toBe(true);
     }

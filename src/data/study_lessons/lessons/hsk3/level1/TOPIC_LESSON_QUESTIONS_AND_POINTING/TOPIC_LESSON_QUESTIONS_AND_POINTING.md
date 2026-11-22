@@ -198,3 +198,46 @@ Which book do you want?
 
 **Production:** Write this in Mandarin: “How many students are in this class?”
 **Answer:** 这个班有多少学生？ (zhège bān yǒu duōshao xuéshēng?). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-questions-and-pointing--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: This versus that — ID: `topic-questions-and-pointing--pattern--pattern-1`
+- [ ] Apply: Choose the right question word — ID: `topic-questions-and-pointing--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: which book — ID: `topic-questions-and-pointing--build--build-sub-01`
+- [ ] Build a sentence: which clothes — ID: `topic-questions-and-pointing--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What is Xiao Li shopping for? — ID: `topic-questions-and-pointing--read--reading-q-01`
+- [ ] Which phone is cheaper? — ID: `topic-questions-and-pointing--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask where the school is. — ID: `topic-questions-and-pointing--speak--speaking-1`
+- [ ] Ask which book someone wants. — ID: `topic-questions-and-pointing--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-questions-and-pointing--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-questions-and-pointing--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-questions-and-pointing--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “how many”? *(optional)* — ID: `topic-questions-and-pointing--quiz--q-04-1`
+- [ ] Which expression means “those”? *(optional)* — ID: `topic-questions-and-pointing--quiz--q-04-2`
+- [ ] Which expression means “these”? *(optional)* — ID: `topic-questions-and-pointing--quiz--q-04-3`
+- [ ] In the example “这个多少钱？” (zhège duōshao qián?), what is happening? — ID: `topic-questions-and-pointing--quiz--q-04-4`
+- [ ] Write this in Mandarin: “How many students are in this class?” — ID: `topic-questions-and-pointing--quiz--q-04-5`
+- [ ] Reading comprehension: What is Xiao Li shopping for? — ID: `topic-questions-and-pointing--quiz--applied-reading-1`
+- [ ] Reading comprehension: Which phone is cheaper? — ID: `topic-questions-and-pointing--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask where the school is. — ID: `topic-questions-and-pointing--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask which book someone wants. — ID: `topic-questions-and-pointing--quiz--applied-speaking-2`

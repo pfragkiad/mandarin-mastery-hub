@@ -85,3 +85,29 @@ Speaking task: Greet a stranger politely, ask a simple question, then thank them
 
 **Production:** Greet a stranger politely, ask a simple question, then thank them.
 **Answer:** 你好！ (Nǐ hǎo!) — 你好！ (Nǐ hǎo!). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-greetings-politeness--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-greetings-politeness--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-greetings-politeness--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-greetings-politeness--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-greetings-politeness--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-greetings-politeness--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-greetings-politeness--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Excuse me; sorry. — ID: `convm-greetings-politeness--quiz--q-translation`
+- [ ] Make a sentence using the pattern 请问…… (qǐngwèn). — ID: `convm-greetings-politeness--quiz--q-grammar`
+- [ ] Greet a stranger politely, ask a simple question, then thank them. — ID: `convm-greetings-politeness--quiz--q-speaking`

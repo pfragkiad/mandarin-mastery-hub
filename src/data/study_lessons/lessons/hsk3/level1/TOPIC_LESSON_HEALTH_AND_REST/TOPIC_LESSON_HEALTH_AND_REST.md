@@ -172,3 +172,46 @@ Are you going to see a doctor?
 
 **Production:** Write this in Mandarin: “His illness has gotten better.”
 **Answer:** 他的病好了。 (tā de bìng hǎo le.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-health-and-rest--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: A condition versus getting medical attention — ID: `topic-health-and-rest--pattern--pattern-1`
+- [ ] Apply: Rest and sleep — ID: `topic-health-and-rest--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: my younger sister — ID: `topic-health-and-rest--build--build-sub-01`
+- [ ] Build a sentence: my father — ID: `topic-health-and-rest--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Why does the speaker want to rest? — ID: `topic-health-and-rest--read--reading-q-01`
+- [ ] Where does the speaker want to rest? — ID: `topic-health-and-rest--read--reading-q-02`
+
+### Speaking practice
+- [ ] Explain that you are unwell and want to rest. — ID: `topic-health-and-rest--speak--speaking-1`
+- [ ] Ask whether someone is going to see a doctor. — ID: `topic-health-and-rest--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-health-and-rest--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-health-and-rest--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-health-and-rest--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “illness”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-1`
+- [ ] Which expression means “sleep”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-2`
+- [ ] Which expression means “hospital”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-3`
+- [ ] In the example “他生病了。” (tā shēngbìng le.), what is happening? — ID: `topic-health-and-rest--quiz--q-19-4`
+- [ ] Write this in Mandarin: “His illness has gotten better.” — ID: `topic-health-and-rest--quiz--q-19-5`
+- [ ] Reading comprehension: Why does the speaker want to rest? — ID: `topic-health-and-rest--quiz--applied-reading-1`
+- [ ] Reading comprehension: Where does the speaker want to rest? — ID: `topic-health-and-rest--quiz--applied-reading-2`
+- [ ] Say this aloud: Explain that you are unwell and want to rest. — ID: `topic-health-and-rest--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask whether someone is going to see a doctor. — ID: `topic-health-and-rest--quiz--applied-speaking-2`

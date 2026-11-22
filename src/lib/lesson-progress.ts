@@ -17,7 +17,9 @@
  */
 import { useEffect, useState } from 'react';
 
-export type LessonProgressEntry = { total: number; answered: string[]; at: number; completed?: boolean };
+/** `answered` holds required task keys — checkpoint IDs for Core v3.3 lessons, page task keys
+ *  for older ones; `bonus` holds completed optional checkpoints, which never count toward total. */
+export type LessonProgressEntry = { total: number; answered: string[]; bonus?: string[]; at: number; completed?: boolean };
 export type LessonProgressMap = Record<string, LessonProgressEntry>;
 export type LessonState = 'not-started' | 'in-progress' | 'done';
 
@@ -65,20 +67,35 @@ function write(map: LessonProgressMap) {
   window.dispatchEvent(new Event(EVENT));
 }
 
-/** Record a visit and the page's current question count. */
-export function markLessonOpened(id: string, total: number) {
+/** Record a visit and the page's current required task count. `remap` (checkpoint lessons)
+ *  turns previously saved keys into the lesson's current checkpoint IDs, dropping unknown ones. */
+export function markLessonOpened(id: string, total: number, remap?: (keys: string[]) => { answered: string[]; bonus: string[] }) {
   const map = readProgress();
   const prev = map[id];
-  map[id] = { ...prev, total, answered: prev?.answered ?? [], at: Date.now() };
+  const keys = [...(prev?.answered ?? []), ...(prev?.bonus ?? [])];
+  const next = remap ? remap(keys) : { answered: prev?.answered ?? [], bonus: prev?.bonus ?? [] };
+  const entry: LessonProgressEntry = { ...prev, total, answered: next.answered, at: Date.now() };
+  if (next.bonus.length) entry.bonus = next.bonus; else delete entry.bonus;
+  map[id] = entry;
   write(map);
 }
 
-/** Record one answered question (by its stable key on the page). */
-export function markQuestionAnswered(id: string, key: string) {
+/** Record one completed task (by its stable key); optional checkpoints go to `bonus`. */
+export function markQuestionAnswered(id: string, key: string, optional = false) {
   const map = readProgress();
   const prev = map[id] ?? { total: 0, answered: [], at: Date.now() };
-  if (prev.answered.includes(key)) return;
-  map[id] = { ...prev, answered: [...prev.answered, key], at: Date.now() };
+  const list = optional ? prev.bonus ?? [] : prev.answered;
+  if (list.includes(key)) return;
+  map[id] = optional ? { ...prev, bonus: [...list, key], at: Date.now() } : { ...prev, answered: [...list, key], at: Date.now() };
+  write(map);
+}
+
+/** Untick one manual checkpoint ("Mark as done" pressed again); answered items stay done. */
+export function unmarkCheckpoint(id: string, key: string) {
+  const map = readProgress();
+  const prev = map[id];
+  if (!prev) return;
+  map[id] = { ...prev, answered: prev.answered.filter(k => k !== key), ...(prev.bonus ? { bonus: prev.bonus.filter(k => k !== key) } : {}), at: Date.now() };
   write(map);
 }
 
@@ -111,7 +128,7 @@ export function resetCourseProgress(ids: readonly string[]) {
 
 /** Whether an entry holds anything a reset would clear. */
 export function hasLessonProgress(entry: LessonProgressEntry | undefined): boolean {
-  return Boolean(entry && (entry.answered.length > 0 || entry.completed));
+  return Boolean(entry && (entry.answered.length > 0 || (entry.bonus?.length ?? 0) > 0 || entry.completed));
 }
 
 /** Pure: the state and 0–1 fraction one entry stands for. */

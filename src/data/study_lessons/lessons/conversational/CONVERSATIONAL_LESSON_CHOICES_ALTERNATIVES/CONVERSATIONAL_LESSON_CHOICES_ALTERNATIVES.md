@@ -91,3 +91,29 @@ Speaking task: Ask three choice questions: drinks, location, and time. Answer us
 
 **Production:** Ask three choice questions: drinks, location, and time. Answer using a complete sentence.
 **Answer:** 你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — 我想喝茶。 (Wǒ xiǎng hē chá.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-choices-alternatives--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-choices-alternatives--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-choices-alternatives--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-choices-alternatives--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-choices-alternatives--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-choices-alternatives--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-choices-alternatives--quiz--q-dialogue`
+- [ ] Translate into Mandarin: Four or five o’clock. — ID: `convm-choices-alternatives--quiz--q-translation`
+- [ ] Make a sentence using the pattern A 或者 B (A huòzhě B). — ID: `convm-choices-alternatives--quiz--q-grammar`
+- [ ] Ask three choice questions: drinks, location, and time. Answer using a complete sentence. — ID: `convm-choices-alternatives--quiz--q-speaking`

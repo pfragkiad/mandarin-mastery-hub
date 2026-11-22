@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-family-and-friends",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1081,7 +1081,8 @@
               "hanzi": "这是我弟弟。",
               "pinyin": "Zhè shì wǒ dìdi.",
               "english": "This is my younger brother."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "older brother",
@@ -1089,7 +1090,8 @@
               "hanzi": "这是我哥哥。",
               "pinyin": "Zhè shì wǒ gēge.",
               "english": "This is my older brother."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1105,11 +1107,13 @@
         "questions": [
           {
             "prompt_en": "How many younger siblings does the speaker have?",
-            "answer_en": "Two."
+            "answer_en": "Two.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Who likes reading?",
-            "answer_en": "The younger sister."
+            "answer_en": "The younger sister.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1154,5 +1158,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-family-and-friends--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Family ownership with 的 (de)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-family-and-friends--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Introducing a relationship",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: younger brother",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-family-and-friends--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: older brother",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--read--reading-q-01",
+            "kind": "question",
+            "label": "How many younger siblings does the speaker have?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-family-and-friends--read--reading-q-02",
+            "kind": "question",
+            "label": "Who likes reading?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Introduce one family member.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-family-and-friends--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask how many people are in someone’s family.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-family-and-friends--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-family-and-friends--quiz--q-09-1",
+            "kind": "practice",
+            "label": "Which expression means “love”?",
+            "optional": true,
+            "target_id": "q-09-1"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--q-09-2",
+            "kind": "practice",
+            "label": "Which expression means “older sister”?",
+            "optional": true,
+            "target_id": "q-09-2"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--q-09-3",
+            "kind": "practice",
+            "label": "Which expression means “child”?",
+            "optional": true,
+            "target_id": "q-09-3"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--q-09-4",
+            "kind": "practice",
+            "label": "In the example “我爱我的家。” (wǒ ài wǒ de jiā.), what is happening?",
+            "optional": false,
+            "target_id": "q-09-4"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--q-09-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Dad loves watching Chinese-language movies.”",
+            "optional": false,
+            "target_id": "q-09-5"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: How many younger siblings does the speaker have?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Who likes reading?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Introduce one family member.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-family-and-friends--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask how many people are in someone’s family.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

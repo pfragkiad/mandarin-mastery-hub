@@ -172,3 +172,46 @@ In an introduction, 我是 (wǒ shì) identifies a person or role; 我叫 (wǒ j
 
 **Production:** Write this in Mandarin: “Please write your name here.”
 **Answer:** 请在这里写名字。 (qǐng zài zhèlǐ xiě míngzi.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-people-and-work--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Asking and giving names — ID: `topic-people-and-work--pattern--pattern-1`
+- [ ] Apply: Where someone works and when — ID: `topic-people-and-work--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: school — ID: `topic-people-and-work--build--build-sub-01`
+- [ ] Build a sentence: hospital — ID: `topic-people-and-work--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Where does Mr. Wang work? — ID: `topic-people-and-work--read--reading-q-01`
+- [ ] When does Mr. Wang finish work? — ID: `topic-people-and-work--read--reading-q-02`
+
+### Speaking practice
+- [ ] Introduce your name. — ID: `topic-people-and-work--speak--speaking-1`
+- [ ] Ask politely where someone works. — ID: `topic-people-and-work--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-people-and-work--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-people-and-work--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-people-and-work--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “name”? *(optional)* — ID: `topic-people-and-work--quiz--q-10-1`
+- [ ] Which expression means “Mr.”? *(optional)* — ID: `topic-people-and-work--quiz--q-10-2`
+- [ ] Which expression means “finish work”? *(optional)* — ID: `topic-people-and-work--quiz--q-10-3`
+- [ ] In the example “你的名字是什么？” (nǐ de míngzi shì shénme?), what is happening? — ID: `topic-people-and-work--quiz--q-10-4`
+- [ ] Write this in Mandarin: “Please write your name here.” — ID: `topic-people-and-work--quiz--q-10-5`
+- [ ] Reading comprehension: Where does Mr. Wang work? — ID: `topic-people-and-work--quiz--applied-reading-1`
+- [ ] Reading comprehension: When does Mr. Wang finish work? — ID: `topic-people-and-work--quiz--applied-reading-2`
+- [ ] Say this aloud: Introduce your name. — ID: `topic-people-and-work--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask politely where someone works. — ID: `topic-people-and-work--quiz--applied-speaking-2`

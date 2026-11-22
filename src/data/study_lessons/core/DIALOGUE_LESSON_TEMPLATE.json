@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.1.0",
+  "schema_version": "mandarin-general-lesson/3.2.0",
   "lesson_id": "dialogue-greetings-basic",
   "lesson_type": "dialogue",
   "lesson": {
@@ -25,7 +25,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -60,5 +60,25 @@
       "enabled": false,
       "questions": []
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "dialogue-greetings-basic--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "dialogue-greetings-basic--dialogue--d1",
+            "kind": "section",
+            "label": "Conversation — Hello",
+            "optional": false,
+            "target_id": "d1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

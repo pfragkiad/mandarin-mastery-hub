@@ -95,3 +95,29 @@ Speaking task: Role-play asking for Xueyuan Road and Chang’an Street; answer h
 
 **Production:** Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here.
 **Answer:** 请问，学院路在哪儿？ (Qǐngwèn, Xuéyuàn Lù zài nǎr?) — 在那儿。 (Zài nàr.). Sample opening exchange. Continue the role-play in your own words.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Introduction
+- [ ] Introduction — lesson-intro — ID: `convm-asking-directions--introduction--lesson-intro`
+
+### Conversation
+- [ ] Conversation — Model conversation — ID: `convm-asking-directions--dialogue--model-dialogue`
+
+### Grammar patterns
+- [ ] Grammar patterns — grammar-1 — ID: `convm-asking-directions--grammar--grammar-1`
+- [ ] Grammar patterns — grammar-2 — ID: `convm-asking-directions--grammar--grammar-2`
+
+### Expression review
+- [ ] Expression review — key-expressions — ID: `convm-asking-directions--review--key-expressions`
+
+### Guided speaking
+- [ ] Guided speaking — guided-speaking — ID: `convm-asking-directions--guided-speaking--guided-speaking`
+
+### Practice
+- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-asking-directions--quiz--q-dialogue`
+- [ ] Translate into Mandarin: It is here; located here. — ID: `convm-asking-directions--quiz--q-translation`
+- [ ] Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn). — ID: `convm-asking-directions--quiz--q-grammar`
+- [ ] Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here. — ID: `convm-asking-directions--quiz--q-speaking`

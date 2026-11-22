@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-health-and-rest",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -790,7 +790,8 @@
               "hanzi": "我妹妹生病了。",
               "pinyin": "Wǒ mèimei shēngbìng le.",
               "english": "My younger sister is ill."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "my father",
@@ -798,7 +799,8 @@
               "hanzi": "我爸爸生病了。",
               "pinyin": "Wǒ bàba shēngbìng le.",
               "english": "My father is ill."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -814,11 +816,13 @@
         "questions": [
           {
             "prompt_en": "Why does the speaker want to rest?",
-            "answer_en": "They were very busy and went to sleep late."
+            "answer_en": "They were very busy and went to sleep late.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Where does the speaker want to rest?",
-            "answer_en": "At home."
+            "answer_en": "At home.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -862,5 +866,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-health-and-rest--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: A condition versus getting medical attention",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-health-and-rest--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Rest and sleep",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: my younger sister",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-health-and-rest--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: my father",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--read--reading-q-01",
+            "kind": "question",
+            "label": "Why does the speaker want to rest?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-health-and-rest--read--reading-q-02",
+            "kind": "question",
+            "label": "Where does the speaker want to rest?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Explain that you are unwell and want to rest.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-health-and-rest--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask whether someone is going to see a doctor.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--quiz--q-19-1",
+            "kind": "practice",
+            "label": "Which expression means “illness”?",
+            "optional": true,
+            "target_id": "q-19-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-2",
+            "kind": "practice",
+            "label": "Which expression means “sleep”?",
+            "optional": true,
+            "target_id": "q-19-2"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-3",
+            "kind": "practice",
+            "label": "Which expression means “hospital”?",
+            "optional": true,
+            "target_id": "q-19-3"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-4",
+            "kind": "practice",
+            "label": "In the example “他生病了。” (tā shēngbìng le.), what is happening?",
+            "optional": false,
+            "target_id": "q-19-4"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “His illness has gotten better.”",
+            "optional": false,
+            "target_id": "q-19-5"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Why does the speaker want to rest?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Where does the speaker want to rest?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Explain that you are unwell and want to rest.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask whether someone is going to see a doctor.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

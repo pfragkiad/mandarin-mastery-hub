@@ -1,10 +1,14 @@
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, useLessonProgress } from '@/lib/lesson-progress';
+import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
+import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
 import { ResetProgressButton } from './reset-progress-button';
 
 /** Progress hook for QuestionCards and "Show answer" reveals: each reports its key once answered or opened. */
 const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
+/** Manual checkpoints (Core v3.3): the page's plan, the completed checkpoint IDs and a toggle,
+ *  read by the "Mark as done" ticks on pattern cards, at section ends and in the finish box. */
+const CheckpointTicks = createContext<{ plan: CheckpointPlan; done: ReadonlySet<string>; toggle: (c: LessonCheckpoint) => void } | null>(null);
 import { Link, useNavigate } from '@tanstack/react-router';
 import { setLessonFold } from '@/lib/lesson-fold';
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
@@ -68,6 +72,17 @@ const plain = (value: string) => value.replace(/_/g, ' ');
 
 type SectionDef = { id: string; title: string; hint: string; body: ReactNode };
 
+/** Progress section_key → the page section that renders it, for every lesson family (topic
+ *  plans, general lessons, character lessons). Keys whose section is not on the page put
+ *  their tick in the finish box (planCheckpoints), so no lesson is left uncompletable. */
+const SECTION_KEYS: Record<string, string> = {
+  dialogue: 'conversation', patterns: 'patterns', 'guided-building': 'build', reading: 'reading', speaking: 'speaking',
+  pitfall: 'watch-out', pronunciation: 'watch-out', review: 'review', practice: 'practice',
+  introduction: 'about', grammar: 'block-patterns',
+  overview: 'overview', vocabulary: 'vocabulary', constructions: 'constructions', examples: 'examples', contrasts: 'contrasts',
+  mistakes: 'mistakes', historical: 'historical', extensions: 'more',
+};
+
 /** Matches the `@container lesson-page (max-width: 760px)` rules in styles.css. */
 const NARROW_MAX = 760;
 const count = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
@@ -114,35 +129,46 @@ function useActiveSection(ids: string[]) {
 
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
-  // Progress counts the lesson's tasks: every question (in topic plans both "Check what you
-  // can do" and the Review section's word recall quiz) plus, in topic plans, every "Show
-  // answer" reveal (sentence changes, reading questions, speaking tasks), since many topic
-  // lessons have no multiple choice at all. Keys are stable per task.
+  // Progress. Core v3.3 lessons record their own checkpoints (lesson.progress): the page maps
+  // each to the question/reveal/speaking task it targets, or to a "Mark as done" tick, through
+  // planCheckpoints once the sections are known (below). Older lessons keep page task keys:
+  // every question plus, in topic plans, every "Show answer" reveal.
+  const contract = lesson.progress;
+  const targetCheckpoint = new Map((contract ?? []).flatMap(s => s.checkpoints.flatMap(c => c.targetId ? [[c.targetId, c] as const] : [])));
   const allQuestions = S.practice?.enabled ? S.practice.questions : [];
   const planTasks = lesson.topic?.plan;
+  // Reveal keys: the recorded item ID when present (v3.3), else the older positional key.
+  const buildKey = (x: { id: string }, i: number) => x.id || `build-${i + 1}`;
+  const readingKey = (q: { id: string }, i: number) => q.id || `reading-${i + 1}`;
+  const speakingKey = (t: { id: string }, i: number) => contract && t.id ? t.id : `speaking-${t.id || i + 1}`;
   const revealIds = planTasks ? [
-    ...planTasks.guided_building.substitutions.map((_, i) => `build-${i + 1}`),
-    ...planTasks.reading.questions.map((_, i) => `reading-${i + 1}`),
-    ...planTasks.speaking_tasks.map((t, i) => `speaking-${t.id || i + 1}`),
+    ...planTasks.guided_building.substitutions.map(buildKey),
+    ...planTasks.reading.questions.map(readingKey),
+    ...planTasks.speaking_tasks.map(speakingKey),
   ] : [];
   const requiredIds = [...allQuestions.map(q => q.id), ...revealIds];
-  // Topic plans show non-"applied-" questions in Review (the word recall quiz).
-  const reviewQuestion = (key: string) => Boolean(planTasks) && allQuestions.some(q => q.id === key && !q.id.startsWith('applied-'));
+  // Saved keys from before the contract → the item they stood for (for migrateLegacyKeys).
+  const legacyTarget = new Map<string, string>(planTasks ? [
+    ...planTasks.guided_building.substitutions.map((x, i) => [`build-${i + 1}`, x.id] as [string, string]),
+    ...planTasks.reading.questions.map((q, i) => [`reading-${i + 1}`, q.id] as [string, string]),
+    ...planTasks.speaking_tasks.map((t, i) => [`speaking-${t.id || i + 1}`, t.id] as [string, string]),
+  ] : []);
+  for (const q of allQuestions) legacyTarget.set(q.id, q.id);
+  // Topic plans split questions: checkpoint lessons by the recorded optional flag (bonus quiz),
+  // older lessons by the applied- prefix (the Review section's word recall quiz).
+  const isOptionalQuestion = (q: LessonQuestion) => contract ? Boolean(targetCheckpoint.get(q.id)?.optional) : !q.id.startsWith('applied-');
+  const reviewQuestion = (key: string) => Boolean(planTasks) && allQuestions.some(q => q.id === key && isOptionalQuestion(q));
   const required = useRef(new Set<string>()); required.current = new Set(requiredIds);
-  const progress = useRef({ answer: (k: string) => { if (required.current.has(k)) markQuestionAnswered(summary.id, k); } }).current;
-  useEffect(() => { markLessonOpened(summary.id, requiredIds.length); }, [summary.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const planRef = useRef<CheckpointPlan | null>(null);
+  const progress = useRef({ answer: (k: string) => {
+    const plan = planRef.current;
+    if (plan) { const c = plan.auto.get(k); if (c) markQuestionAnswered(summary.id, c.id, c.optional); return; }
+    if (required.current.has(k)) markQuestionAnswered(summary.id, k);
+  } }).current;
   const progressEntry = useLessonProgress()[summary.id];
   // A reset remounts the lesson body, closing every reveal and clearing picked answers.
   const [round, setRound] = useState(0);
   const restart = () => { resetLesson(summary.id); setRound(r => r + 1); };
-  // Per-section task keys, for the left menu's "2/4" counts: reveals by their section prefix,
-  // graded questions in the practice section (the same keys requiredIds counts).
-  const sectionTasks: Record<string, string[]> = {};
-  for (const key of requiredIds) {
-    const section = key.startsWith('build-') ? 'build' : key.startsWith('reading-') ? 'reading' : key.startsWith('speaking-') ? 'speaking' : reviewQuestion(key) ? 'review' : 'practice';
-    (sectionTasks[section] ??= []).push(key);
-  }
-  const answeredSet = new Set(progressEntry?.answered ?? []);
   const lessonDone = Boolean(progressEntry?.completed);
   // Complete lesson marks it done and returns to where it is listed: its course (the drawer
   // is opened first so the course shows unfolded), or the topic view of its main topic.
@@ -201,8 +227,8 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     // The words' own source examples stay on their Vocabulary cards and are not repeated here.
     const p = plan;
     const questions = S.practice?.enabled ? S.practice.questions : [];
-    const applied = questions.filter(q => q.id.startsWith('applied-'));
-    const recall = questions.filter(q => !q.id.startsWith('applied-'));
+    const applied = questions.filter(q => !isOptionalQuestion(q));
+    const recall = questions.filter(q => isOptionalQuestion(q));
     // Review words resolve only through a recorded syllabus entry ID on this lesson's own words.
     const byEntry = new Map(topic.items.flatMap(item => item.syllabus_refs.map(ref => [ref.entry_id, item] as const)));
     const reviewWords = p.review.entry_ids.flatMap(id => { const item = byEntry.get(id); return item ? [item] : []; });
@@ -216,6 +242,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <p className="lesson-muted"><LessonText text={pat.explanation_en}/></p>
         {pat.formula_en && <p className="lesson-formula"><LessonText text={pat.formula_en}/></p>}
         <div className="lesson-stack">{pat.examples.map((e, i) => <PlanSentence key={i} line={e}/>)}</div>
+        <CardTick target={pat.id}/>
       </div>)}
     </div> });
     if (p.guided_building.substitutions.length) sections.push({ id: 'build', title: 'Build new sentences', hint: count(p.guided_building.substitutions.length, 'change'), body: <>
@@ -223,7 +250,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       <div className="lesson-card lesson-task"><p className="lesson-task-label">Worked model</p><PlanSentence line={p.guided_building.model}/></div>
       <div className="lesson-stack">{p.guided_building.substitutions.map((x, i) => <div key={i} className="lesson-card lesson-task">
         <p className="lesson-card-title">Change {i + 1}: <LessonText text={x.cue_en}/></p>
-        <Reveal label="Show a model answer" progressKey={`build-${i + 1}`}><PlanSentence line={x.model_answer}/></Reveal>
+        <Reveal label="Show a model answer" progressKey={buildKey(x, i)}><PlanSentence line={x.model_answer}/></Reveal>
       </div>)}</div>
     </> });
     if (p.reading.paragraphs.length) sections.push({ id: 'reading', title: 'Read for meaning', hint: p.reading.title, body: <>
@@ -231,14 +258,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       <div className="lesson-stack">{p.reading.paragraphs.map((e, i) => <div key={i} className="lesson-card"><PlanSentence line={e}/></div>)}</div>
       <div className="lesson-stack">{p.reading.questions.map((q, i) => <div key={i} className="lesson-card lesson-task">
         <p className="lesson-card-title">{i + 1}. <LessonText text={q.prompt_en}/></p>
-        <Reveal label="Show the answer" progressKey={`reading-${i + 1}`}><p><LessonText text={q.answer_en}/></p></Reveal>
+        <Reveal label="Show the answer" progressKey={readingKey(q, i)}><p><LessonText text={q.answer_en}/></p></Reveal>
       </div>)}</div>
     </> });
     if (p.speaking_tasks.length) sections.push({ id: 'speaking', title: 'Speak and personalise', hint: count(p.speaking_tasks.length, 'task'), body: <>
       <p className="lesson-note">Answer aloud before opening the model, and adapt it to your own life.</p>
       <div className="lesson-stack">{p.speaking_tasks.map((t, i) => <div key={t.id || i} className="lesson-card lesson-task">
         <p className="lesson-card-title">{i + 1}. <LessonText text={t.scenario_en}/></p>
-        <Reveal label="Show one possible answer" progressKey={`speaking-${t.id || i + 1}`}><PlanSentence line={t.model_answer}/></Reveal>
+        <Reveal label="Show one possible answer" progressKey={speakingKey(t, i)}><PlanSentence line={t.model_answer}/></Reveal>
       </div>)}</div>
     </> });
     if (p.common_pitfall || p.pronunciation_focus) sections.push({ id: 'watch-out', title: 'Watch out', hint: 'A common pitfall and pronunciation', body: <div className="lesson-grid">
@@ -254,7 +281,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <LessonFitGrid className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid>
       </details>}
       {recall.length > 0 && <details className="lesson-details">
-        <summary>Optional word recall quiz ({recall.length})</summary>
+        <summary>Optional word recall quiz ({recall.length}){contract && (() => { const n = recall.filter(q => { const c = targetCheckpoint.get(q.id); return c && progressEntry?.bonus?.includes(c.id); }).length; return n > 0 ? ` · ${n} bonus done` : ''; })()}</summary>
         <div className="lesson-stack">{recall.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div>
       </details>}
     </> });
@@ -283,7 +310,11 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // General lessons (e.g. Conversational Mandarin dialogue lessons): blocks in recorded order.
   // Consecutive explanations open the lesson as "About this lesson"; each other block is its own section.
   const blocks = S.blocks ?? [];
-  const introBlocks = blocks.flatMap(b => b.kind === 'explanation' ? [b] : []);
+  // Only the leading run of explanations opens the lesson; a later one (e.g. a guided speaking
+  // brief) is its own section, titled by the progress section that targets it.
+  const firstOther = blocks.findIndex(b => b.kind !== 'explanation');
+  const introBlocks = (firstOther < 0 ? blocks : blocks.slice(0, firstOther)).flatMap(b => b.kind === 'explanation' ? [b] : []);
+  const laterNotes = (firstOther < 0 ? [] : blocks.slice(firstOther)).flatMap(b => b.kind === 'explanation' ? [b] : []);
   if (introBlocks.length) sections.push({ id: 'about', title: 'About this lesson', hint: 'What this lesson is based on', body: <>{introBlocks.map(b => <p key={b.id} className="lesson-note"><LessonText text={b.text}/></p>)}</> });
   for (const b of blocks) {
     if (b.kind === 'dialogue' && b.turns.length) sections.push({ id: `block-${b.id}`, title: b.title || 'Conversation', hint: count(b.turns.length, 'line'), body: <DialogueTurns turns={b.turns}/> });
@@ -294,11 +325,16 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
     <PlanSentence line={g.example}/>
     {g.example.teaching_note && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
+    <CardTick target={g.id}/>
   </div>)}</div> });
   for (const b of blocks) {
     if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
       {b.items.map((item, i) => <div key={`${item.hanzi}-${i}`} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/></div>)}
     </LessonFitGrid> });
+  }
+  for (const b of laterNotes) {
+    const title = contract?.find(sec => sec.checkpoints.some(c => c.targetId === b.id))?.title || 'Notes';
+    sections.push({ id: `block-${b.id}`, title, hint: 'Try it yourself', body: <p className="lesson-note"><LessonText text={b.text}/></p> });
   }
 
   const vocab = topic ? [] : S.vocabulary?.items ?? [];
@@ -396,6 +432,42 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </> });
 
   const ids = sections.map(s => s.id);
+
+  // Where each recorded checkpoint lives on this page (lesson-checkpoints.ts planCheckpoints).
+  const checkpointPlan = contract ? planCheckpoints(contract, {
+    sections: ids,
+    interactive: new Map<string, string>([
+      ...allQuestions.map(q => [q.id, planTasks ? (isOptionalQuestion(q) ? 'review' : 'practice') : 'practice'] as [string, string]),
+      ...(planTasks ? [
+        ...planTasks.guided_building.substitutions.flatMap(x => x.id ? [[x.id, 'build'] as [string, string]] : []),
+        ...planTasks.reading.questions.flatMap(q => q.id ? [[q.id, 'reading'] as [string, string]] : []),
+        ...planTasks.speaking_tasks.flatMap(t => t.id ? [[t.id, 'speaking'] as [string, string]] : []),
+      ] : []),
+    ]),
+    cards: new Map<string, string>([
+      ...(planTasks?.patterns ?? []).map(pt => [pt.id, 'patterns'] as [string, string]),
+      ...patterns.map(g => [g.id, 'block-patterns'] as [string, string]),
+    ]),
+    blocks: new Map<string, string>(blocks.map(b => [b.id, b.kind === 'explanation' ? (introBlocks.includes(b) ? 'about' : `block-${b.id}`) : b.kind === 'grammar_pattern' ? 'block-patterns' : `block-${b.id}`])),
+    sectionKeys: SECTION_KEYS,
+  }) : null;
+  planRef.current = checkpointPlan;
+  const totalTasks = checkpointPlan ? checkpointPlan.required.length : requiredIds.length;
+  useEffect(() => {
+    const plan = planRef.current;
+    markLessonOpened(summary.id, plan ? plan.required.length : requiredIds.length, plan ? keys => migrateLegacyKeys(keys, legacyTarget, plan) : undefined);
+  }, [summary.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Per-section required task keys, for the left menu's "2/4" counts.
+  const sectionTasks: Record<string, string[]> = {};
+  if (checkpointPlan) for (const key of checkpointPlan.required) { const where = checkpointPlan.pageOf.get(key); if (where) (sectionTasks[where] ??= []).push(key); }
+  else for (const key of requiredIds) {
+    const section = key.startsWith('build-') ? 'build' : key.startsWith('reading-') ? 'reading' : key.startsWith('speaking-') ? 'speaking' : reviewQuestion(key) ? 'review' : 'practice';
+    (sectionTasks[section] ??= []).push(key);
+  }
+  const answeredSet = new Set(progressEntry?.answered ?? []);
+  const doneSet = new Set([...answeredSet, ...(progressEntry?.bonus ?? [])]);
+  const ticks = checkpointPlan ? { plan: checkpointPlan, done: doneSet, toggle: (c: LessonCheckpoint) => { if (doneSet.has(c.id)) unmarkCheckpoint(summary.id, c.id); else markQuestionAnswered(summary.id, c.id, c.optional); } } : null;
+  const minutes = summary.estimatedMinutes;
   // Narrow layout state: which collapsible sections are open (the first one to begin with).
   const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set(ids.slice(0, 1)));
   const active = useActiveSection(ids);
@@ -418,7 +490,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <span><strong>{compact ? 'Hints' : 'Character hints'}</strong>{!compact && <small id="lesson-hints-help">Hover or tap a character for a quick card</small>}</span>
   </label>;
 
-  return <QuestionProgress.Provider value={progress}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
@@ -431,7 +503,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
       </div>
     </header>
-    <LessonProgressStrip entry={progressEntry} total={requiredIds.length} onReset={restart}/>
+    <LessonProgressStrip entry={progressEntry} total={totalTasks} minutes={minutes} onReset={restart}/>
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -440,7 +512,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>}
     <div className="lesson-layout">
       <nav ref={toc} className="lesson-toc" aria-label="Lesson sections">
-        {!narrow && <LessonTocProgress entry={progressEntry} total={requiredIds.length} onReset={restart}/>}
+        {!narrow && <LessonTocProgress entry={progressEntry} total={totalTasks} onReset={restart}/>}
         <span className="eyebrow">IN THIS LESSON</span>
         {/* In-page jump links only (hash anchors scroll within this one page). In the
             narrow layout a pill also opens its collapsed section before the jump. */}
@@ -452,14 +524,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </nav>
       <div className="lesson-main" key={round}>
         {sections.map(s => {
-          if (!narrow) return <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}</section>;
+          if (!narrow) return <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}<SectionTicks where={s.id}/></section>;
           const open = openIds.has(s.id);
           return <section key={s.id} id={`lesson-${s.id}`} className={`lesson-section is-collapsible${open ? ' is-open' : ''}`} aria-labelledby={`lesson-${s.id}-title`}>
             <h2 id={`lesson-${s.id}-title`}><button type="button" className="lesson-section-toggle" aria-expanded={open} aria-controls={`lesson-${s.id}-body`} onClick={() => toggle(s.id)}>
               <span><span className="lesson-section-title">{s.title}</span><small>{s.hint}</small></span>
               <ChevronDown size={18} aria-hidden="true"/>
             </button></h2>
-            <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}</div>
+            <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}<SectionTicks where={s.id}/></div>
           </section>;
         })}
         <LessonFinish entry={progressEntry} onComplete={complete} onReset={restart} next={positions[0]?.next}/>
@@ -469,7 +541,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </div>
   {/* Floating study controls (narrow layout only), outside the page's container so they fix to the window. */}
   {narrow && <div className="lesson-float-tools" role="group" aria-label="Study controls">{hanziToggle}{pinyinToggle}{translationsToggle}{hintsToggle(true)}</div>}
-  </LessonHintsProvider></QuestionProgress.Provider>;
+  </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider>;
 }
 
 /** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
@@ -520,16 +592,42 @@ function progressView(entry: LessonProgressEntry | undefined, total: number) {
   return { tasks, state, fraction, label };
 }
 
+/** One manual checkpoint: a toggle reading "Mark as done" (or the recorded label) / "Done".
+ *  Optional checkpoints say Bonus. Pressing again unticks it. */
+function CheckpointButton({ checkpoint: c }: { checkpoint: LessonCheckpoint }) {
+  const ctx = useContext(CheckpointTicks);
+  if (!ctx) return null;
+  const done = ctx.done.has(c.id);
+  const label = checkpointLabel(c);
+  return <button type="button" className={`lesson-checkpoint${done ? ' is-done' : ''}`} aria-pressed={done} onClick={() => ctx.toggle(c)}>
+    <span className="lesson-checkpoint-box" aria-hidden="true">{done && <Check/>}</span>
+    <span>{label}{c.optional && <small> · bonus</small>}</span>
+  </button>;
+}
+
+/** The "Mark as done" tick on one pattern card, when a checkpoint targets that card. */
+function CardTick({ target }: { target: string }) {
+  const c = useContext(CheckpointTicks)?.plan.card.get(target);
+  return c ? <div className="lesson-checkpoints is-card"><CheckpointButton checkpoint={c}/></div> : null;
+}
+
+/** Manual checkpoints placed at the end of one page section (or the finish box: where="finish"). */
+function SectionTicks({ where }: { where: string }) {
+  const list = useContext(CheckpointTicks)?.plan.section.get(where) ?? [];
+  if (!list.length) return null;
+  return <div className="lesson-checkpoints" role="group" aria-label="Checklist">{list.map(c => <CheckpointButton key={c.id} checkpoint={c}/>)}</div>;
+}
+
 const resetCopy = { label: 'Reset progress', title: 'Reset this lesson?', description: 'Your answers and revealed answers in this lesson are cleared, and it no longer counts as done.' };
 
 /** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and
  *  an always-visible Reset progress (disabled while there is nothing to clear). Inputs: the
  *  stored entry (absent until read after mount), the page's task count and `onReset`. */
-function LessonProgressStrip({ entry, total, onReset }: { entry: LessonProgressEntry | undefined; total: number; onReset: () => void }) {
+function LessonProgressStrip({ entry, total, minutes, onReset }: { entry: LessonProgressEntry | undefined; total: number; minutes: number | null; onReset: () => void }) {
   const { tasks, state, fraction, label } = progressView(entry, total);
   if (tasks === 0 && !entry?.completed) return null;
   return <div className={`lesson-progress-strip is-${state}`}>
-    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}</span>
+    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}{minutes && <small className="lesson-progress-time"> · about {minutes} min</small>}</span>
     <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
     <ResetProgressButton {...resetCopy} disabled={!hasLessonProgress(entry)} onReset={onReset}/>
   </div>;
@@ -561,6 +659,7 @@ function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgr
       </div>
     </> : <>
       <p className="lesson-finish-title">Finished this lesson?</p>
+      <SectionTicks where="finish"/>
       <div className="lesson-finish-actions"><Button type="button" onClick={onComplete}><CheckCircle2 aria-hidden="true"/>Complete lesson</Button></div>
     </>}
   </div>;

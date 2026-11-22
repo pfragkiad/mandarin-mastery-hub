@@ -20,7 +20,7 @@ describe('LessonPage', () => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(container.querySelector('h1')?.textContent).toContain(lesson.summary.title);
-    expect(['mandarin-character-lesson/3.0.0', 'mandarin-topic-lesson/3.2.0', 'mandarin-general-lesson/3.0.0', 'mandarin-general-lesson/3.1.0']).toContain(lesson.summary.schemaVersion);
+    expect(['mandarin-character-lesson/3.2.0', 'mandarin-topic-lesson/3.3.0', 'mandarin-general-lesson/3.2.0']).toContain(lesson.summary.schemaVersion);
     if (lesson.topic?.plan) {
       // v3.1: teaching path first, every word once in the word bank, no source examples repeated.
       expect(container.querySelectorAll('.lesson-details .lesson-bank-word')).toHaveLength(lesson.topic.items.length);

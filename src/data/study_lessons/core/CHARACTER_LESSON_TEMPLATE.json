@@ -1,6 +1,6 @@
 {
-  "schema_version": "mandarin-character-lesson/3.1.0",
-  "lesson_id": "char-<HEX_CODEPOINT>",
+  "schema_version": "mandarin-character-lesson/3.2.0",
+  "lesson_id": "char-template-placeholder",
   "lesson": {
     "title": "<DESCRIPTIVE_LESSON_TITLE>",
     "subtitle": "<ONE_LINE_TOPIC_SUMMARY>",
@@ -9,7 +9,7 @@
   },
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.2.0",
     "audience": "<TARGET_LEARNER>",
     "language": "zh-CN",
     "date_reviewed": null,
@@ -189,5 +189,84 @@
   "learning_objectives": [
     "Recognize the headword and its common reading in context.",
     "Use the main vocabulary or constructions naturally."
-  ]
+  ],
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "char-template-placeholder--section--overview",
+        "section_key": "overview",
+        "title": "Meaning and usage",
+        "checkpoints": [
+          {
+            "id": "char-template-placeholder--overview",
+            "kind": "section",
+            "label": "Understand the character meaning and usage",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-template-placeholder--section--vocabulary",
+        "section_key": "vocabulary",
+        "title": "Vocabulary",
+        "checkpoints": [
+          {
+            "id": "char-template-placeholder--vocabulary",
+            "kind": "section",
+            "label": "Review vocabulary and pronunciation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-template-placeholder--section--examples",
+        "section_key": "examples",
+        "title": "Worked examples",
+        "checkpoints": [
+          {
+            "id": "char-template-placeholder--examples",
+            "kind": "section",
+            "label": "Understand the worked examples",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-template-placeholder--section--mistakes",
+        "section_key": "mistakes",
+        "title": "Common mistakes",
+        "checkpoints": [
+          {
+            "id": "char-template-placeholder--mistakes",
+            "kind": "section",
+            "label": "Avoid common usage mistakes",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-template-placeholder--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "char-template-placeholder--quiz--quiz-choice-example",
+            "kind": "practice",
+            "label": "<CLEAR_MULTIPLE_CHOICE_PROMPT>",
+            "optional": false,
+            "target_id": "quiz-choice-example"
+          },
+          {
+            "id": "char-template-placeholder--quiz--quiz-open-example",
+            "kind": "practice",
+            "label": "<OPEN_ENDED_QUESTION>",
+            "optional": false,
+            "target_id": "quiz-open-example"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
 }

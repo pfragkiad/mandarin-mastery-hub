@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/3.0.0",
+  "schema_version": "mandarin-character-lesson/3.2.0",
   "lesson_id": "char-4EE5",
   "lesson": {
     "title": "Common Words & Grammatical Uses",
@@ -9,7 +9,7 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "HSK beginner core; intermediate extension",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
@@ -707,10 +707,137 @@
       "formal-register",
       "prepositions"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Learn common complete words containing 以 (yǐ), then recognize formal patterns expressing means or taking one thing as another.",
     "Study natural modern words first; formal constructions come second, and Classical Chinese is optional."
-  ]
+  ],
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "char-4EE5--section--overview",
+        "section_key": "overview",
+        "title": "Meaning and usage",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--overview",
+            "kind": "section",
+            "label": "Understand the character meaning and usage",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--vocabulary",
+        "section_key": "vocabulary",
+        "title": "Vocabulary",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--vocabulary",
+            "kind": "section",
+            "label": "Review vocabulary and pronunciation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--constructions",
+        "section_key": "constructions",
+        "title": "Constructions",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--constructions",
+            "kind": "section",
+            "label": "Practice constructions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--examples",
+        "section_key": "examples",
+        "title": "Worked examples",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--examples",
+            "kind": "section",
+            "label": "Understand the worked examples",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--contrasts",
+        "section_key": "contrasts",
+        "title": "Usage contrasts",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--contrasts",
+            "kind": "section",
+            "label": "Distinguish contrasted expressions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--mistakes",
+        "section_key": "mistakes",
+        "title": "Common mistakes",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--mistakes",
+            "kind": "section",
+            "label": "Avoid common usage mistakes",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--historical",
+        "section_key": "historical",
+        "title": "Historical usage",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--historical",
+            "kind": "section",
+            "label": "Review historical usage",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-4EE5--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "char-4EE5--quiz--q-01",
+            "kind": "practice",
+            "label": "In 我以前住在北京 (Wǒ yǐqián zhù zài Běijīng), does the speaker refer to present or earlier residence?",
+            "optional": false,
+            "target_id": "q-01"
+          },
+          {
+            "id": "char-4EE5--quiz--q-02",
+            "kind": "practice",
+            "label": "Which sounds natural for casual “eat with chopsticks”?",
+            "optional": false,
+            "target_id": "q-02"
+          },
+          {
+            "id": "char-4EE5--quiz--q-03",
+            "kind": "practice",
+            "label": "Translate “May I come in?” using 可以 (kěyǐ).",
+            "optional": false,
+            "target_id": "q-03"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
 }

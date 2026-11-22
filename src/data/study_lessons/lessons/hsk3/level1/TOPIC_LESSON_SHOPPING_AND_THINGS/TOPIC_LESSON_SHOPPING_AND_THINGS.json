@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-shopping-and-things",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -33,7 +33,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1253,7 +1253,8 @@
               "hanzi": "这个手机多少钱？",
               "pinyin": "Zhège shǒujī duōshao qián?",
               "english": "How much is this phone?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "table",
@@ -1261,7 +1262,8 @@
               "hanzi": "这张桌子多少钱？",
               "pinyin": "Zhè zhāng zhuōzi duōshao qián?",
               "english": "How much is this table?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1277,11 +1279,13 @@
         "questions": [
           {
             "prompt_en": "What two things does Mom want to buy?",
-            "answer_en": "A chair and a table."
+            "answer_en": "A chair and a table.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Which object is cheaper?",
-            "answer_en": "The chair."
+            "answer_en": "The chair.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1332,5 +1336,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-shopping-and-things--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Prices: 元 (yuán) and 块 (kuài)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-shopping-and-things--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Buying versus selling",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: phone",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-shopping-and-things--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: table",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--read--reading-q-01",
+            "kind": "question",
+            "label": "What two things does Mom want to buy?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-shopping-and-things--read--reading-q-02",
+            "kind": "question",
+            "label": "Which object is cheaper?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask for something less expensive.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-shopping-and-things--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say you want to buy a phone.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-1",
+            "kind": "practice",
+            "label": "Which expression means “supermarket”?",
+            "optional": true,
+            "target_id": "q-12-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-2",
+            "kind": "practice",
+            "label": "Which expression means “yuan (currency)”?",
+            "optional": true,
+            "target_id": "q-12-2"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-3",
+            "kind": "practice",
+            "label": "Which expression means “table”?",
+            "optional": true,
+            "target_id": "q-12-3"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-4",
+            "kind": "practice",
+            "label": "In the example “我去超市买水果。” (wǒ qù chāoshì mǎi shuǐguǒ.), what is happening?",
+            "optional": false,
+            "target_id": "q-12-4"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “The supermarket opens at eight in the morning.”",
+            "optional": false,
+            "target_id": "q-12-5"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What two things does Mom want to buy?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Which object is cheaper?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask for something less expensive.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say you want to buy a phone.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.2.0",
+  "schema_version": "mandarin-topic-lesson/3.3.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -34,7 +34,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -1008,7 +1008,8 @@
               "hanzi": "你想唱歌吗？",
               "pinyin": "Nǐ xiǎng chàng gē ma?",
               "english": "Do you want to sing?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "drink tea",
@@ -1016,7 +1017,8 @@
               "hanzi": "你想喝茶吗？",
               "pinyin": "Nǐ xiǎng hē chá ma?",
               "english": "Do you want to drink tea?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1037,11 +1039,13 @@
         "questions": [
           {
             "prompt_en": "Why can Xiaoming not go to the cinema today?",
-            "answer_en": "He is busy today."
+            "answer_en": "He is busy today.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "When does he want to go?",
-            "answer_en": "Tomorrow."
+            "answer_en": "Tomorrow.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1086,5 +1090,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-abilities-interests--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Ability: 会 (huì) versus 能 (néng)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-abilities-interests--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Desire: 想 (xiǎng) versus 要 (yào)",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: sing",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-abilities-interests--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: drink tea",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--read--reading-q-01",
+            "kind": "question",
+            "label": "Why can Xiaoming not go to the cinema today?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-abilities-interests--read--reading-q-02",
+            "kind": "question",
+            "label": "When does he want to go?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask a friend which activity they would like to do today.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-abilities-interests--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Explain a learned skill and one thing you cannot do today.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--quiz--q-17-1",
+            "kind": "practice",
+            "label": "Which expression means “can”?",
+            "optional": true,
+            "target_id": "q-17-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-2",
+            "kind": "practice",
+            "label": "Which expression means “have”?",
+            "optional": true,
+            "target_id": "q-17-2"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-3",
+            "kind": "practice",
+            "label": "Which expression means “fun”?",
+            "optional": true,
+            "target_id": "q-17-3"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-4",
+            "kind": "practice",
+            "label": "In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening?",
+            "optional": false,
+            "target_id": "q-17-4"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “My younger sister can sing.”",
+            "optional": false,
+            "target_id": "q-17-5"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Why can Xiaoming not go to the cinema today?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: When does he want to go?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask a friend which activity they would like to do today.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Explain a learned skill and one thing you cannot do today.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }
