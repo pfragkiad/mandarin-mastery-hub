@@ -114,10 +114,10 @@ function useActiveSection(ids: string[]) {
 
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
-  // Progress counts the lesson's required tasks: its graded questions (topic plans: the "Check
-  // what you can do" set; the optional recall quiz is not required and is not recorded) plus,
-  // in topic plans, every "Show answer" reveal (sentence changes, reading questions, speaking
-  // tasks), since many topic lessons have no multiple choice at all. Keys are stable per task.
+  // Progress counts the lesson's tasks: every question (in topic plans both "Check what you
+  // can do" and the Review section's word recall quiz) plus, in topic plans, every "Show
+  // answer" reveal (sentence changes, reading questions, speaking tasks), since many topic
+  // lessons have no multiple choice at all. Keys are stable per task.
   const allQuestions = S.practice?.enabled ? S.practice.questions : [];
   const planTasks = lesson.topic?.plan;
   const revealIds = planTasks ? [
@@ -125,7 +125,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     ...planTasks.reading.questions.map((_, i) => `reading-${i + 1}`),
     ...planTasks.speaking_tasks.map((t, i) => `speaking-${t.id || i + 1}`),
   ] : [];
-  const requiredIds = [...(planTasks ? allQuestions.filter(q => q.id.startsWith('applied-')) : allQuestions).map(q => q.id), ...revealIds];
+  const requiredIds = [...allQuestions.map(q => q.id), ...revealIds];
+  // Topic plans show non-"applied-" questions in Review (the word recall quiz).
+  const reviewQuestion = (key: string) => Boolean(planTasks) && allQuestions.some(q => q.id === key && !q.id.startsWith('applied-'));
   const required = useRef(new Set<string>()); required.current = new Set(requiredIds);
   const progress = useRef({ answer: (k: string) => { if (required.current.has(k)) markQuestionAnswered(summary.id, k); } }).current;
   useEffect(() => { markLessonOpened(summary.id, requiredIds.length); }, [summary.id]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -137,7 +139,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // graded questions in the practice section (the same keys requiredIds counts).
   const sectionTasks: Record<string, string[]> = {};
   for (const key of requiredIds) {
-    const section = key.startsWith('build-') ? 'build' : key.startsWith('reading-') ? 'reading' : key.startsWith('speaking-') ? 'speaking' : 'practice';
+    const section = key.startsWith('build-') ? 'build' : key.startsWith('reading-') ? 'reading' : key.startsWith('speaking-') ? 'speaking' : reviewQuestion(key) ? 'review' : 'practice';
     (sectionTasks[section] ??= []).push(key);
   }
   const answeredSet = new Set(progressEntry?.answered ?? []);
@@ -429,7 +431,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
       </div>
     </header>
-    {narrow && <LessonProgressStrip entry={progressEntry} onReset={restart}/>}
+    <LessonProgressStrip entry={progressEntry} total={requiredIds.length} onReset={restart}/>
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -438,7 +440,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>}
     <div className="lesson-layout">
       <nav ref={toc} className="lesson-toc" aria-label="Lesson sections">
-        {!narrow && <LessonTocProgress entry={progressEntry} onReset={restart}/>}
+        {!narrow && <LessonTocProgress entry={progressEntry} total={requiredIds.length} onReset={restart}/>}
         <span className="eyebrow">IN THIS LESSON</span>
         {/* In-page jump links only (hash anchors scroll within this one page). In the
             narrow layout a pill also opens its collapsed section before the jump. */}
@@ -508,34 +510,41 @@ function Reveal({ label, progressKey, children }: { label: string; progressKey?:
   return <details className="lesson-details lesson-reveal" onToggle={e => { if (e.target === e.currentTarget && e.currentTarget.open && progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</details>;
 }
 
-/** Top-of-lesson progress line: "N of M tasks done" (or Completed) with a bar, and Reset
- *  progress once there is something to clear. Inputs: the cookie entry (absent before the
- *  first read after mount, so nothing renders on the server) and `onReset`. */
-function LessonProgressStrip({ entry, onReset }: { entry: LessonProgressEntry | undefined; onReset: () => void }) {
-  if (!entry) return null;
-  const { state, fraction } = lessonState(entry);
-  if (entry.total === 0 && !entry.completed) return null;
-  const done = Math.min(entry.answered.length, entry.total);
+/** The numbers both progress displays show. Before the first read after mount (and on the
+ *  server) there is no entry yet, so it reads 0 of the page's own task count. */
+function progressView(entry: LessonProgressEntry | undefined, total: number) {
+  const tasks = entry?.total ?? total;
+  const { state, fraction } = entry ? lessonState(entry) : { state: 'not-started' as const, fraction: 0 };
+  const done = Math.min(entry?.answered.length ?? 0, tasks);
+  const label = state === 'done' ? null : `${done} of ${tasks} ${tasks === 1 ? 'task' : 'tasks'} done`;
+  return { tasks, state, fraction, label };
+}
+
+const resetCopy = { label: 'Reset progress', title: 'Reset this lesson?', description: 'Your answers and revealed answers in this lesson are cleared, and it no longer counts as done.' };
+
+/** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and
+ *  an always-visible Reset progress (disabled while there is nothing to clear). Inputs: the
+ *  stored entry (absent until read after mount), the page's task count and `onReset`. */
+function LessonProgressStrip({ entry, total, onReset }: { entry: LessonProgressEntry | undefined; total: number; onReset: () => void }) {
+  const { tasks, state, fraction, label } = progressView(entry, total);
+  if (tasks === 0 && !entry?.completed) return null;
   return <div className={`lesson-progress-strip is-${state}`}>
-    <span className="lesson-progress-label">{state === 'done' ? <><CheckCircle2 aria-hidden="true"/>Completed</> : `${done} of ${entry.total} ${entry.total === 1 ? 'task' : 'tasks'} done`}</span>
+    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}</span>
     <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    {hasLessonProgress(entry) && <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>}
+    <ResetProgressButton {...resetCopy} disabled={!hasLessonProgress(entry)} onReset={onReset}/>
   </div>;
 }
 
 /** Progress at the top of the left lesson menu (wide layout), which stays in view while the
- *  learner scrolls: "N of M tasks done" (or Completed) with a bar, and a small Reset once there
- *  is something to clear. Before any task is done it still shows "0 of M" so the learner
- *  knows progress is tracked. Inputs as LessonProgressStrip. */
-function LessonTocProgress({ entry, onReset }: { entry: LessonProgressEntry | undefined; onReset: () => void }) {
-  if (!entry || (entry.total === 0 && !entry.completed)) return null;
-  const { state, fraction } = lessonState(entry);
-  const done = Math.min(entry.answered.length, entry.total);
+ *  learner scrolls: the same numbers, bar and Reset as LessonProgressStrip. */
+function LessonTocProgress({ entry, total, onReset }: { entry: LessonProgressEntry | undefined; total: number; onReset: () => void }) {
+  const { tasks, state, fraction, label } = progressView(entry, total);
+  if (tasks === 0 && !entry?.completed) return null;
   return <div className={`lesson-toc-progress is-${state}`}>
     <span className="eyebrow">YOUR PROGRESS</span>
-    <span className="lesson-progress-label">{state === 'done' ? <><CheckCircle2 aria-hidden="true"/>Completed</> : `${done} of ${entry.total} ${entry.total === 1 ? 'task' : 'tasks'} done`}</span>
+    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}</span>
     <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    {hasLessonProgress(entry) && <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>}
+    <ResetProgressButton {...resetCopy} disabled={!hasLessonProgress(entry)} onReset={onReset}/>
   </div>;
 }
 
@@ -548,7 +557,7 @@ function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgr
       <p className="lesson-finish-title"><CheckCircle2 aria-hidden="true"/>Lesson complete</p>
       <div className="lesson-finish-actions">
         {next && <Link to="/lessons/$lessonId" params={{ lessonId: next.id }} className="lesson-finish-next">Next: {next.title}<ArrowRight size={14} aria-hidden="true"/></Link>}
-        <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>
+        <ResetProgressButton {...resetCopy} onReset={onReset}/>
       </div>
     </> : <>
       <p className="lesson-finish-title">Finished this lesson?</p>

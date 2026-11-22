@@ -181,7 +181,7 @@ describe('LessonPage', () => {
     render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Complete lesson' }));
     expect(router.navigate).toHaveBeenCalledWith({ to: '/lessons' });
-    expect(decodeURIComponent(document.cookie)).toContain('"completed":true');
+    expect(localStorage.getItem('lesson_progress_v1')).toContain('"completed":true');
   });
 
   it('lesson titles carry no Draft pill', async () => {
