@@ -1,0 +1,2 @@
+- Level parts are stored one compact entry per line (scripts/vocabulary_store.py dump_entries and its byte-identical Node twin) so every part stays under the repository's 10 MB per-file limit with per-entry diffs; index.json stays indented.
+- The dev script raises Node's heap (NODE_OPTIONS max-old-space-size in package.json) because these eagerly bundled levels exceed Vite's default dev-server heap and crash the preview; production builds are unaffected.

@@ -22,8 +22,25 @@ describe('Level 5 draft terms', () => {
       expect(entry.examples.map(ex => [ex.simplified, ex.pinyinDisplay, ex.english, ex.notes, ex.register])).toEqual(
         recorded.examples.map((ex: { hanzi: string; pinyin: string; english: string; note: string; register: string }) =>
           [ex.hanzi, ex.pinyin, ex.english, ex.note, ex.register]));
-      expect(entry.audio).toBeNull();
     }
+  });
+  it('attaches word audio only to the 1,306 exact word-and-reading matches', () => {
+    const manifest = JSON.parse(readFileSync('importer/data/hsk-audio/level5-manifest.json', 'utf-8'));
+    const rows = new Map<number, { status: string; recording?: { sha256: string } }>(
+      manifest.entries.map((row: { hskIndex: number }) => [row.hskIndex, row]));
+    let attached = 0;
+    for (const entry of level5) {
+      const row = entry.hsk_index === null ? undefined : rows.get(entry.hsk_index);
+      if (row?.status !== 'matched') { expect(entry.audio).toBeNull(); continue; }
+      attached += 1;
+      expect(entry.audio?.source).toBe('audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan');
+      expect(entry.audio?.recordingKind).toBe('word');
+      expect(entry.audio?.url).toMatch(/^\/__l5e\/assets-v1\//);
+      // Reused earlier-level clips keep their own names; new Level 5 uploads are named by the clip's checksum.
+      if (entry.audio?.url.includes('/hsk5-')) expect(entry.audio.url).toContain(row.recording!.sha256.slice(0, 16));
+    }
+    expect(attached).toBe(1306);
+    for (const example of level5.flatMap(e => e.examples)) expect(example.audio ?? null).toBeNull();
   });
   it('offers Level 5 word and sentence pools while retaining source readings and draft status', () => {
     const facets = vocabularyFacetOptions(words.filter(w => vocabularyKind(w) === 'word'), { collection: 'All collections', level: 'All levels', pos: 'All types' });

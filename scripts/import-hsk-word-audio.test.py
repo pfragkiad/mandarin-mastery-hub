@@ -42,10 +42,11 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest)
-        self.assertEqual(report['reusedExisting'], 3)
+        # Any other level's clip for the same word and reading counts, including Level 5's 才 cái (#2083).
+        self.assertEqual(report['reusedExisting'], 4)
         reused = sorted(entry['hsk_index'] for entry in data['entries'] if entry['hskLevel'] == 3 and entry.get('audio'))
-        self.assertEqual(reused, [660, 683, 966])  # 过去 guòqù, 会 huì, 站 zhàn
-        self.assertEqual(len(report['pendingUpload']), 440)
+        self.assertEqual(reused, [544, 660, 683, 966])  # 才 cái, 过去 guòqù, 会 huì, 站 zhàn
+        self.assertEqual(len(report['pendingUpload']), 439)
 
     def test_only_audio_and_timestamp_change_and_only_on_level_3(self):
         fresh = copy.deepcopy(self.vocabulary)
@@ -81,7 +82,7 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest, audio.INPUT / 'level3-uploads.json')
-        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 3, []))
+        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 4, []))
         self.assertEqual(sum(1 for e in data['entries'] if e['hskLevel'] == 3 and e.get('audio')), 443)
 
 

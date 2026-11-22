@@ -10,6 +10,9 @@ import { fileURLToPath } from 'node:url';
 export const VOCABULARY_DIRECTORY = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data/vocabulary');
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const dump = value => `${JSON.stringify(value, null, 4)}\n`;
+// Level parts: one compact entry per line, byte-identical to vocabulary_store.py's dump_entries,
+// so diffs stay per entry and each part stays under the repository's 10 MB per-file limit.
+export const dumpEntries = entries => (entries.length ? `[\n${entries.map(entry => JSON.stringify(entry)).join(',\n')}\n]\n` : '[]\n');
 export const partName = entry => (entry.hskLevel == null ? 'unlevelled.json' : `level-${entry.hskLevel}.json`);
 
 export function readVocabulary(path = VOCABULARY_DIRECTORY) {
@@ -41,7 +44,7 @@ export function writeVocabulary(path = VOCABULARY_DIRECTORY, data) {
   const interleaved = grouped.some((entry, index) => entry.id !== entryOrder[index]);
   if (!existsSync(path)) mkdirSync(path, { recursive: true });
   for (const stale of readdirSync(path).filter(name => name.endsWith('.json') && name !== 'index.json' && !parts.has(name))) unlinkSync(join(path, stale));
-  for (const [name, entries] of parts) writeFileSync(join(path, name), dump(entries));
+  for (const [name, entries] of parts) writeFileSync(join(path, name), dumpEntries(entries));
   const { entries: _entries, ...rest } = data;
   writeFileSync(join(path, 'index.json'), dump({ ...rest, parts: [...parts.keys()], ...(interleaved ? { entryOrder } : {}) }));
 }

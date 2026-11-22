@@ -6,6 +6,10 @@ entries without a level). Parts are ordered by each level's first appearance; an
 optional entryOrder preserves the original order when levels are interleaved.
 
 A path ending in .json is read/written as one combined file (importer test fixtures).
+
+Level parts are written one compact entry per line (dump_entries): diffs stay per entry,
+and every part stays under the repository's 10 MB per-file limit, which the indented
+layout exceeded once Level 5 arrived. The Node twin writes byte-identical files.
 """
 import json
 from pathlib import Path
@@ -21,6 +25,12 @@ def part_name(entry):
 
 def dump(value):
     return json.dumps(value, ensure_ascii=False, indent=4) + '\n'
+
+
+def dump_entries(entries):
+    # One compact JSON entry per line; still a plain JSON array for every reader.
+    lines = ',\n'.join(json.dumps(entry, ensure_ascii=False, separators=(',', ':')) for entry in entries)
+    return '[\n' + lines + '\n]\n' if entries else '[]\n'
 
 
 def read_vocabulary(path=DIRECTORY):
@@ -58,7 +68,7 @@ def write_vocabulary(data, path=DIRECTORY):
     for stale in set(p.name for p in path.glob('*.json')) - set(parts) - {'index.json'}:
         (path / stale).unlink()
     for name, entries in parts.items():
-        (path / name).write_text(dump(entries), 'utf-8')
+        (path / name).write_text(dump_entries(entries), 'utf-8')
     index = {key: value for key, value in data.items() if key != 'entries'}
     index['parts'] = list(parts)
     if grouped != order:

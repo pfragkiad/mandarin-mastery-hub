@@ -27,8 +27,10 @@ All source verification limits, exact word IDs, compatible recordings and origin
 syllabus provenance remain attached. Optional terms-only imports preserve existing
 examples; normal imports use the current source examples.
 
-Level 5 recordings were packaged externally for owner CDN upload; their exact
-word/reading matches remain valid for v1.0.1. No local media paths are runtime audio
+Level 5 word recordings are on the Lovable CDN: all 1,306 exact word/reading
+matches are attached (42 different recorded readings and 252 missing words stay
+without audio; see the [Level 5 audio report](../../../reports/hsk-level5-audio.md)).
+Draft example sentences have no recordings. No local media paths are runtime audio
 attachments. See the [Level 1 audit](../../../reports/hsk-level1-1.7.1-import.json)
 and [Level 5 audit](../../../reports/hsk-level5-1.0.1-import.json).
 
@@ -43,3 +45,5 @@ example IDs are preserved. See the [Level 3 audit](../../../reports/hsk-level3-1
 `level-4.json` follows v1.1.1: only sentence examples change (43 examples across
 38 entries). All 1,000 word IDs, lexical fields, topics and 797 word recordings
 remain unchanged; 1,957 example IDs are retained. See the [Level 4 audit](../../../reports/hsk-level4-1.1.1-import.json).
+
+Level files are written one compact entry per line by `scripts/vocabulary_store.py` / `scripts/vocabulary-store.mjs` (byte-identical), so each stays under the repository's 10 MB per-file limit; `index.json` stays indented. Both are ordinary JSON arrays for every reader.
