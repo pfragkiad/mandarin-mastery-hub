@@ -97,7 +97,7 @@
           {
             "id": "grammar-negation-basic--explanation--b1",
             "kind": "section",
-            "label": "Understanding — b1",
+            "label": "Read the explanation",
             "optional": false,
             "target_id": "b1"
           }
@@ -111,7 +111,7 @@
           {
             "id": "grammar-negation-basic--grammar--b2",
             "kind": "section",
-            "label": "Grammar patterns — b2",
+            "label": "Understand: not do an action",
             "optional": false,
             "target_id": "b2"
           }

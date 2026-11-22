@@ -1,6 +1,6 @@
 {
   "package_name": "mandarin-tutor-core",
-  "package_version": "3.3.0",
+  "package_version": "3.3.0 (Rev. 2)",
   "lesson_schema_versions": [
     "mandarin-character-lesson/3.2.0",
     "mandarin-topic-lesson/3.3.0",

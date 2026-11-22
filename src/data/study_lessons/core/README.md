@@ -83,3 +83,7 @@ That earlier attribution correction was documentation-only; the new v3.3.0 chang
 - The canonical lesson JSON defines the activity checklist **but never contains individual learners' completion state**. Store per-user `{lesson_id, checkpoint_id}` completion records in app storage. Never attach course placement identifiers to reusable lesson IDs.
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
+
+## Release packaging and source pinning — 2026-11-22
+
+An HSK lesson collection has three independent version axes: lesson schema (`v3.3.0`), taxonomy (`taxonomy-v2.0.0`) and vocabulary source (`vocab-v1.7.1`). Always encode each in the exported bundle filename. The lesson schema version does **not** advance for editorial source refreshes or documentation changes. Learner-facing course summaries and checklist labels must not contain internal workflow notes or synthetic activity identifiers.

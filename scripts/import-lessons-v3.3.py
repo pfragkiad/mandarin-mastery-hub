@@ -31,7 +31,7 @@ LIB = ROOT / 'src/data/study_lessons'
 LESSONS = LIB / 'lessons'
 CORE = LIB / 'core'
 PACKAGES = {
-    'core': SRC / 'Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0.zip',
+    'core': SRC / 'Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0_rev2.zip',  # rev2: guidance only, schemas unchanged
     # Corrected owner release synced to vocabulary v1.7.1 (supersedes the first v3.3.0 HSK ZIP,
     # which was built from vocab v1.7.0 and kept only for the regression record).
     'hsk': SRC / 'Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip',  # rev2: catalog refs repaired

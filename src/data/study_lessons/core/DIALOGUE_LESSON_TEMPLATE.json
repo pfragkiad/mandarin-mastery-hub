@@ -72,7 +72,7 @@
           {
             "id": "dialogue-greetings-basic--dialogue--d1",
             "kind": "section",
-            "label": "Conversation — Hello",
+            "label": "Practise the conversation",
             "optional": false,
             "target_id": "d1"
           }

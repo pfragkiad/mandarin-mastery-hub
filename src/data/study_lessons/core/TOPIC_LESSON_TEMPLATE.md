@@ -43,3 +43,7 @@ Older v3.0.0 topic JSON remains accepted, but v3.1.0, v3.2.0, and v3.3.0 lessons
 - The canonical lesson JSON defines the activity checklist **but never contains individual learners' completion state**. Store per-user `{lesson_id, checkpoint_id}` completion records in app storage. Never attach course placement identifiers to reusable lesson IDs.
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
+
+## Vocabulary release synchronization
+
+Before publishing a teaching-lesson bundle, synchronize embedded word-card example records and any derived "Write this in Mandarin" questions with the exact latest vocabulary release. Put the source version in the outer lesson bundle filename, e.g. `Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip`. Keep checkpoint IDs and core/optional flags stable. Document source exceptions in a standalone audit file.

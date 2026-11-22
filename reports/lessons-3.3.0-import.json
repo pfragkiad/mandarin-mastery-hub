@@ -1,8 +1,8 @@
 {
   "sources": {
     "core": {
-      "file": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0.zip",
-      "sha256": "e0088c00715faeb4dfe7583fd198f1a03bf02282f1f4b5eb16436b213e7bf161"
+      "file": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0_rev2.zip",
+      "sha256": "cceb74b6f1d10c157db78e3d4105256c6c34100ec018c32734414fe0a2e63cc7"
     },
     "hsk": {
       "file": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip",
@@ -324,10 +324,7 @@
       "taken_from_package": []
     },
     "CONVERSATIONAL_MANDARIN.json": {
-      "taken_from_package": [
-        "description",
-        "edition"
-      ]
+      "taken_from_package": []
     }
   },
   "core": {
