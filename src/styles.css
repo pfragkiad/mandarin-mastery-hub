@@ -210,6 +210,12 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 /* Details link in the answer side's top-right corner, clickable above the flip area. */
 .flash-face.back > .flash-details { position: absolute; top: 10px; right: 10px; pointer-events: auto; gap: 6px; color: var(--muted-foreground); }
 .flash-face.back > .flash-details:hover { background: transparent; color: var(--primary); }
+/* Lessons teaching the card's exact record: small accent links under the answer, clickable above the flip area. */
+.flash-face.back > .flash-lessons { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 10px; max-width: 100%; }
+.flash-lesson-link { pointer-events: auto; display: inline-flex; align-items: center; gap: 6px; min-width: 0; padding: 3px 8px; border-radius: 999px; font-size: 13px; color: var(--primary); text-decoration: none; transition: background .2s; }
+.flash-lesson-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+.flash-lesson-link span { overflow-wrap: anywhere; }
+.flash-lesson-link:hover, .flash-lesson-link:focus-visible { background: color-mix(in oklab, var(--primary) 14%, transparent); }
 .flash-result { text-align: center; border: 1px solid var(--border); border-radius: 10px; background: var(--card); padding: 36px 24px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
 .flash-result strong { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--primary); }
 .flash-missed { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }.flash-missed a { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; color: var(--foreground); text-decoration: none; transition: border-color .2s, background .2s; }.flash-missed a:hover { border-color: var(--primary); background: var(--secondary); }.flash-missed a span { font-family: var(--font-hanzi); font-size: 22px; }.flash-missed a small { font-size: 10px; color: var(--muted-foreground); }

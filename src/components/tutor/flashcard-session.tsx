@@ -5,7 +5,7 @@ import type { CharacterScript } from '@/lib/learning-preferences';
 import type { LibraryKind } from '@/lib/character-library';
 
 /** One dealt flashcard: an exact vocabulary record or library glyph (ids kept intact). */
-export type FlashCard = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; radicalVariant?: string; radicalHeadingId?: string; script?: CharacterScript; audio?: AudioAttachment | null };
+export type FlashCard = { id: string; hanzi: string; pinyin: string; meaning: string; libraryKind?: LibraryKind; radicalVariant?: string; radicalHeadingId?: string; script?: CharacterScript; audio?: AudioAttachment | null; /** Vocabulary cards only: the record's HSK identity, for its lesson links. */ entry?: { entryKind: string; hskVersion: string | null; hsk_index: number | null } };
 
 /**
  * Everything a running flashcard round needs to continue exactly where it was:

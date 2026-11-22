@@ -11,7 +11,8 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useFlashcardSession, type FlashCard } from './flashcard-session';
 import { DetailsIcon } from './practice-icons';
 import { detailTrail } from '@/lib/detail-trail';
-import { RotateCcw, Volume2, Check, X, Play, Target } from 'lucide-react';
+import { RotateCcw, Volume2, Check, X, Play, Target, BookText } from 'lucide-react';
+import { cardLessons, lessonDeckGroups, lessonDeckIds, lessonDeckKind, lessonDeckTitle } from '@/lib/flashcard-lessons';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -37,20 +38,22 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 const deckSizes = ROUND_SIZES; // shared with every game
 
 /** `category` is a flashcardKinds value (glyph kind or Words/Phrases); `collection` narrows vocabulary ('' = all collections). */
-export type FlashcardFilters = { category: string; collection?: string | undefined; level: string; pos: string; usage: string; strokes?: string | undefined; saved?: boolean | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** Phrases only: recorded sentence style (Conversational / Written / Unclassified); empty = all styles. */ style?: string | undefined };
+export type FlashcardFilters = { category: string; collection?: string | undefined; level: string; pos: string; usage: string; strokes?: string | undefined; saved?: boolean | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** Phrases only: recorded sentence style (Conversational / Written / Unclassified); empty = all styles. */ style?: string | undefined; /** Characters/Words only: a lesson ID; the deck keeps only the cards that lesson records (flashcard-lessons.ts). */ lesson?: string | undefined };
 /** Last answer → results: the bar's 0.3s fill to 100% plus a short hold before the switch. */
 const FINISH_PAUSE_MS = 450;
 
-export function FlashcardsPage({ category: controlledCategory, collection: controlledCollection, level: controlledLevel, pos: controlledPos, usage: controlledUsage, strokes: controlledStrokes, saved: controlledSaved, usageUpTo: controlledUsageUpTo, strokesUpTo: controlledStrokesUpTo, style: controlledStyle, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
+export function FlashcardsPage({ category: controlledCategory, collection: controlledCollection, level: controlledLevel, pos: controlledPos, usage: controlledUsage, strokes: controlledStrokes, saved: controlledSaved, usageUpTo: controlledUsageUpTo, strokesUpTo: controlledStrokesUpTo, style: controlledStyle, lesson: controlledLesson, onFiltersChange }: Partial<FlashcardFilters> & { onFiltersChange?: (filters: FlashcardFilters) => void } = {}) {
   const { items, preferences, saved, toggleSaved, catalogVersion } = useWorkspace();
   const [localFilters, setLocalFilters] = useState<FlashcardFilters>({ category: DEFAULT_FLASHCARD_KIND, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' });
-  const applied: FlashcardFilters = { category: controlledCategory ?? localFilters.category, collection: controlledCollection ?? localFilters.collection ?? '', level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage, strokes: controlledStrokes ?? localFilters.strokes, saved: controlledSaved ?? localFilters.saved, usageUpTo: controlledUsageUpTo ?? localFilters.usageUpTo, strokesUpTo: controlledStrokesUpTo ?? localFilters.strokesUpTo, style: controlledStyle ?? localFilters.style };
+  const applied: FlashcardFilters = { category: controlledCategory ?? localFilters.category, collection: controlledCollection ?? localFilters.collection ?? '', level: controlledLevel ?? localFilters.level, pos: controlledPos ?? localFilters.pos, usage: controlledUsage ?? localFilters.usage, strokes: controlledStrokes ?? localFilters.strokes, saved: controlledSaved ?? localFilters.saved, usageUpTo: controlledUsageUpTo ?? localFilters.usageUpTo, strokesUpTo: controlledStrokesUpTo ?? localFilters.strokesUpTo, style: controlledStyle ?? localFilters.style, lesson: controlledLesson ?? localFilters.lesson };
   const { category, level, pos, usage, strokes, usageUpTo, strokesUpTo } = applied;
   // Style only narrows the Phrases deck; a stale value never empties another kind.
   const style = flashcardVocabularyKind(category) === 'phrase' ? applied.style ?? '' : '';
   const collection = applied.collection ?? '';
+  // Lesson only narrows Characters and Words decks; a stale value never empties another kind.
+  const lesson = lessonDeckKind(category) ? applied.lesson ?? '' : '';
   const savedOnly = Boolean(applied.saved);
-  const activeFilters = Boolean(collection || level !== 'All levels' || pos !== 'All types' || style || usage || strokes || savedOnly);
+  const activeFilters = Boolean(collection || level !== 'All levels' || pos !== 'All types' || style || usage || strokes || savedOnly || lesson);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); };
   // The round lives in root session state so opening a card's Details and pressing
   // Back resumes the same card (still turned over) instead of a fresh setup.
@@ -66,20 +69,24 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     ? { to: '/characters' as const, search: c.radicalVariant ? savedGlyphDestination(c as LibraryEntry) : { tab: c.libraryKind, id: c.id } }
     : { to: '/vocabulary' as const, search: { word: c.id, tab: vocabularyKind(c as unknown as Word) } };
   const rememberReturn = () => detailTrail.replace({ label: 'Flashcards', href: window.location.href });
-  // Collection / level / type / style options come from the records of the chosen
+  // Exact card IDs one lesson records for a kind ('' = no lesson filter → undefined).
+  const lessonIds = (draftCategory: string, lessonId: string | undefined) => { const kind = lessonDeckKind(draftCategory); return kind && lessonId ? lessonDeckIds(lessonId, kind, items) : undefined; };
+  // Topic / level / type / style options come from the records of the chosen
   // vocabulary kind (Words or Phrases) under the draft's Saved-only choice, and each
   // dropdown is narrowed by the other current picks (shared vocabularyFacetOptions),
   // so a dropdown never offers a choice with no cards behind it.
   const vocabularyFacets = (draft: FlashcardFilters) => {
     const vocabKind = flashcardVocabularyKind(draft.category);
-    const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind && (!draft.saved || saved.includes(w.id))) : [];
+    const inLesson = lessonIds(draft.category, draft.lesson);
+    const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind && (!draft.saved || saved.includes(w.id)) && (!inLesson || inLesson.has(w.id))) : [];
     const facets = vocabularyFacetOptions(kindItems, { collection: draft.collection || 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: vocabKind === 'phrase' ? draft.style : undefined });
     return { styles: vocabKind === 'phrase' && kindItems.length ? facets.styles : [], collections: facets.collections, levels: facets.levels, posOptions: facets.pos };
   };
   // Glyph decks: rank groups and stroke counts narrow each other the same way the
   // Glyphs library does, for Characters, Components and Radicals alike.
   const glyphFacets = (draft: FlashcardFilters, refKind: LibraryKind) => {
-    const entries = libraryEntries(refKind);
+    const inLesson = refKind === 'Characters' ? lessonIds(draft.category, draft.lesson) : undefined;
+    const entries = inLesson ? libraryEntries(refKind).filter(entry => inLesson.has(entry.id)) : libraryEntries(refKind);
     const allStrokes = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
     if (refKind !== 'Characters' && refKind !== 'Components' && refKind !== 'Radicals') return { strokes: allStrokes, ranks: usageGroups(refKind) };
     const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseUsageGroup(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
@@ -90,9 +97,12 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
   };
   const isReference = category.startsWith('Ref:');
 
-  // Deck pool for a category; `savedOnly` narrows it to bookmarked records, like the
+  // Deck pool for a set of filters; `savedFilter` narrows it to bookmarked records, like the
   // Drawing game's All/Saved switch. Saved radical variants join the Radicals pool.
-  const buildPool = (savedFilter: boolean): Card[] => {
+  // Taking the filters as an argument lets the Lesson dropdown test each lesson against
+  // the other current picks, so it never offers a lesson with no cards behind it.
+  const poolFor = (f: FlashcardFilters, savedFilter: boolean): Card[] => {
+    const fStyle = flashcardVocabularyKind(f.category) === 'phrase' ? f.style ?? '' : '';
     const referenceCards = (kind: ReferenceKind) => {
       const reference = referenceCatalog.find(c => c.kind === kind);
       if (!reference) return [];
@@ -100,27 +110,36 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       return reference.entries.filter(row => includeScript(row[4], preferences.includeTraditional)).map(([hanzi, pinyin, meaning, , script]) => ({ id: `${libraryKind}:${hanzi}`, libraryKind, hanzi, pinyin, meaning: (libraryKind === 'Characters' ? characterMeaning : cardMeaning)(hanzi, pinyin, meaning), ...(script ? { script } : {}) }));
     };
     let base: Card[];
-    if (isReference) {
-      const refKind = libraryKinds[category.slice(4) as ReferenceKind];
-      const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
+    if (f.category.startsWith('Ref:')) {
+      const refKind = libraryKinds[f.category.slice(4) as ReferenceKind];
+      const group = refKind ? parseUsageGroup(refKind, f.usage) : undefined;
       const kangxi = new Map(refKind === 'Radicals' ? referenceCatalog.find(c => c.kind === 'Radical')?.entries.map(row => [row[0], Number((row[3] ?? "").match(/\bRadical #(\d+)\b/i)?.[1]) || undefined] as const) ?? [] : []);
       // Stroke counts come from the library's exact records; a card without a
       // recorded count never matches a stroke filter (fail closed).
       const strokeMap = new Map(refKind ? libraryEntries(refKind).map(entry => [entry.hanzi, entry.strokes] as const) : []);
-      const maxStrokes = strokesUpTo === '1' && strokes ? Number(strokes) : null;
-      base = referenceCards(category.slice(4) as ReferenceKind)
-        .filter(card => !group || !refKind || usageRankMatches(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional), group, usageUpTo === '1'))
-        .filter(card => !strokes || (maxStrokes !== null ? (strokeMap.get(card.hanzi) ?? Infinity) <= maxStrokes : strokeMap.get(card.hanzi) === Number(strokes)));
+      const maxStrokes = f.strokesUpTo === '1' && f.strokes ? Number(f.strokes) : null;
+      base = referenceCards(f.category.slice(4) as ReferenceKind)
+        .filter(card => !group || !refKind || usageRankMatches(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional), group, f.usageUpTo === '1'))
+        .filter(card => !f.strokes || (maxStrokes !== null ? (strokeMap.get(card.hanzi) ?? Infinity) <= maxStrokes : strokeMap.get(card.hanzi) === Number(f.strokes)));
       if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
     } else {
-      const vocabKind = flashcardVocabularyKind(category);
-      base = items.filter(w => vocabularyKind(w) === vocabKind && (!collection || wordCollections(w).includes(collection)) && (level === 'All levels' || w.level === level) && (pos === 'All types' || partOfSpeechList(w).includes(pos)) && matchesPhraseStyle(w.entry, style));
+      const vocabKind = flashcardVocabularyKind(f.category);
+      base = items.filter(w => vocabularyKind(w) === vocabKind && (!f.collection || wordCollections(w).includes(f.collection)) && (f.level === 'All levels' || w.level === f.level) && (f.pos === 'All types' || partOfSpeechList(w).includes(f.pos)) && matchesPhraseStyle(w.entry, fStyle));
     }
+    const inLesson = lessonIds(f.category, f.lesson);
+    if (inLesson) base = base.filter(card => inLesson.has(card.id));
     return savedFilter ? base.filter(card => saved.includes(card.id)) : base;
   };
-  const pool = useMemo(() => buildPool(savedOnly), [items, category, collection, level, pos, isReference, savedOnly, saved, usage, strokes, usageUpTo, strokesUpTo, style, preferences.includeTraditional, catalogVersion]);
+  const poolDeps = [items, category, collection, level, pos, savedOnly, saved, usage, strokes, usageUpTo, strokesUpTo, style, lesson, preferences.includeTraditional, catalogVersion];
+  const pool = useMemo(() => poolFor({ ...applied, style, lesson }, savedOnly), poolDeps);
   // Count shown on the Saved half of the All/Saved switch: bookmarks in this category.
-  const savedCount = useMemo(() => buildPool(true).length, [items, category, collection, level, pos, isReference, saved, usage, strokes, usageUpTo, strokesUpTo, style, preferences.includeTraditional, catalogVersion]);
+  const savedCount = useMemo(() => poolFor({ ...applied, style, lesson }, true).length, poolDeps);
+  // Lesson choices for a draft: every lesson with at least one card under the draft's other picks.
+  const lessonGroups = (draft: FlashcardFilters) => {
+    if (!lessonDeckKind(draft.category)) return [];
+    const others = new Set(poolFor({ ...draft, lesson: undefined }, Boolean(draft.saved)).map(card => card.id));
+    return lessonDeckGroups().map(g => ({ ...g, lessons: g.lessons.filter(l => l.id === draft.lesson || [...lessonIds(draft.category, l.id) ?? []].some(id => others.has(id))) })).filter(g => g.lessons.length);
+  };
 
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const cardsUnit = (n: number) => `${n} ${n === 1 ? 'card' : 'cards'}`;
@@ -129,7 +148,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     const refKind = isReference ? libraryKinds[category.slice(4) as ReferenceKind] : undefined;
     const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
-    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [strokesUpTo === '1' ? `Up to ${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}` : `${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}`] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [strokesUpTo === '1' ? `Up to ${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}` : `${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}`] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     return parts.join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -189,15 +208,17 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     return () => window.removeEventListener('keydown', onKey);
   }, [setSession]);
   const setup = (action: ReactNode, summary: ReactNode) => <>
-      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; return <>
+      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch, setDraft }) => { const draftReference = draft.category.startsWith('Ref:'); const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; const lessons = lessonGroups(draft); return <>
         {/* Row 1: what kind of card, plus the vocabulary collection / level / type for Words and Phrases. */}
         <div className="game-filter-row">
-          <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => setDraft({ category: e.target.value, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '', ...(draft.saved ? { saved: true } : {}) })}>
+          <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => { const next = e.target.value; const keepLesson = draft.lesson && (lessonIds(next, draft.lesson)?.size ?? 0) > 0; setDraft({ category: next, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '', ...(draft.saved ? { saved: true } : {}), ...(keepLesson ? { lesson: draft.lesson } : {}) }); }}>
             <optgroup label="Glyphs">{flashcardKinds.filter(k => k.value.startsWith('Ref:')).map(k => <option key={k.value} value={k.value}>{k.label}</option>)}</optgroup>
             <optgroup label="Vocabulary">{flashcardKinds.filter(k => !k.value.startsWith('Ref:')).map(k => <option key={k.value} value={k.value}>{k.label}</option>)}</optgroup>
           </select>
+          {/* Characters and Words: a lesson deck, grouped by course like the Lessons page. */}
+          {lessons.length > 0 && <select className="filter-select" aria-label="Lesson" value={draft.lesson ?? ''} onChange={e => patch({ lesson: e.target.value || undefined })}><option value="">All lessons</option>{lessons.map(g => <optgroup key={g.label} label={g.label}>{g.lessons.map(l => <option key={l.id} value={l.id}>{l.title}</option>)}</optgroup>)}</select>}
           {!draftReference && <>
-            {facets.collections.length > 0 && <select className="filter-select" aria-label="Collection" value={draft.collection ?? ''} onChange={e => patch({ collection: e.target.value })}><option value="">All collections</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>}
+            {facets.collections.length > 0 && <select className="filter-select" aria-label="Topic" value={draft.collection ?? ''} onChange={e => patch({ collection: e.target.value })}><option value="">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>}
             {facets.levels.length > 0 && <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>}
             {facets.posOptions.length > 0 && <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.posOptions.map(p => <option key={p}>{p}</option>)}</select>}
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}
@@ -253,6 +274,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
               <Button asChild variant="ghost" size="sm" className="flash-details"><Link {...detailsFor(card)} onClick={rememberReturn} title={`Open details for ${card.hanzi}`} aria-label={`Open details for ${card.hanzi}`}><DetailsIcon/>Details</Link></Button>
               <div className="flash-pinyin-row">{!card.audio && Array.from(card.hanzi).length === 1 && isMultiReading(card.pinyin) ? <MultiReadingSpeakers spoken={card.hanzi} reading={card.pinyin} variant="header" textClassName="pinyin flash-pinyin"/> : <><span className="pinyin flash-pinyin">{card.pinyin}</span><Button variant="ghost" size="icon" className={audioAvailable ? '' : 'audio-tts-only'} disabled={!audioAvailable} title={audioAvailable ? `Listen · ${source}` : undefined} aria-label={audioAvailable ? `Listen to ${card.hanzi}` : `No audio available for ${card.hanzi}`} onClick={() => playPronunciation(request, preferences.slow)}><Volume2/></Button></>}</div>
               <span className="flash-big" lang="zh-CN" style={{ '--flash-chars': Array.from(card.hanzi).length } as React.CSSProperties}>{card.hanzi}</span><span className="flash-word"><MeaningText text={card.meaning}/></span>
+              {/* Lessons that teach this exact record (answer side only, like Details). */}
+              {cardLessons(card).length > 0 && <div className="flash-lessons" aria-label="Lessons">{cardLessons(card).map(l => <Link key={l.id} to="/lessons/$lessonId" params={{ lessonId: l.id }} onClick={rememberReturn} className="flash-lesson-link" title={`Open the lesson ${l.title}`}><BookText aria-hidden="true"/><span>{l.title}</span></Link>)}</div>}
             </div>
           </div>
         </div>

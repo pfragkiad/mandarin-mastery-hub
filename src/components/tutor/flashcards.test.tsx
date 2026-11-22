@@ -23,7 +23,7 @@ const openSettings = () => fireEvent.click(screen.getByRole('button', { name: /C
 describe('Flashcard front pinyin', () => {
   it('offers audio only on the back and plays the attached recording without flipping', async () => {
     await renderWords();
-    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('button', { name: 'Listen to 你好' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -33,7 +33,7 @@ describe('Flashcard front pinyin', () => {
   });
   it('can reveal and hide pinyin on the Chinese front without restarting the deck', async () => {
     await renderWords();
-    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByText('nǐ hǎo', { selector: '[aria-hidden="false"] .pinyin' })).not.toBeInTheDocument();
     openSettings();
@@ -48,7 +48,7 @@ describe('Flashcard front pinyin', () => {
 
 describe('Unknown-card bookmarks', () => {
   async function finish(category: string, known = false) {
-    fireEvent.change(screen.getByRole('combobox', { name: category.startsWith('Ref:') ? 'Category' : 'Collection' }), { target: { value: category } });
+    fireEvent.change(screen.getByRole('combobox', { name: category.startsWith('Ref:') ? 'Category' : 'Topic' }), { target: { value: category } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: known ? 'I knew it' : 'Still learning' }));
@@ -103,7 +103,7 @@ describe('Card details and Back', () => {
     // The provider stays mounted (as at the app root) while the page leaves and returns.
     const page = (shown: boolean) => <FlashcardSessionProvider>{shown && <FlashcardsPage />}</FlashcardSessionProvider>;
     const view = await renderWords(page(true));
-    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.queryByRole('link', { name: 'Open details for 你好' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -126,7 +126,7 @@ describe('Deck size', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
     const current = screen.getByText('Card 1 of 10');
     openSettings();
-    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
     await screen.findByRole('button', { name: 'Restart · 1 card' });
     expect(current).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
@@ -155,7 +155,7 @@ describe('Deck size', () => {
 
  it('applies filter changes immediately and clears immediately with X', async () => {
    await renderWords();
-   fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+   fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
@@ -194,7 +194,7 @@ describe('Play bar and results', () => {
   });
   it('an unticked card is left out of the review round', async () => {
     await renderWords();
-    fireEvent.change(screen.getByRole('combobox', { name: 'Collection' }), { target: { value: 'Greetings' } });
+    fireEvent.change(screen.getByRole('combobox', { name: 'Topic' }), { target: { value: 'Greetings' } });
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
     fireEvent.click(screen.getByRole('button', { name: 'Still learning' }));
@@ -231,13 +231,13 @@ describe('What to practise kinds', () => {
     const select = screen.getByRole('combobox', { name: 'Category' });
     expect(Array.from((select as HTMLSelectElement).options).map(o => o.textContent)).toEqual(['Characters', 'Components', 'Radicals', 'Words', 'Phrases']);
     expect(select).toHaveValue('Ref:Character');
-    expect(screen.queryByRole('combobox', { name: 'Collection' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Topic' })).not.toBeInTheDocument();
   });
   it('keeps Words and Phrases as separate decks with their own collection dropdown', async () => {
     render(<FlashcardsPage />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Phrases' } });
     expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
-    expect(Array.from((screen.getByRole('combobox', { name: 'Collection' }) as HTMLSelectElement).options).map(o => o.textContent)).toEqual(['All collections', 'Greetings']);
+    expect(Array.from((screen.getByRole('combobox', { name: 'Topic' }) as HTMLSelectElement).options).map(o => o.textContent)).toEqual(['All topics', 'Greetings']);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Words' } });
     expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
