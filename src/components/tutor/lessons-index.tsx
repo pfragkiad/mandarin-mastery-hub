@@ -8,7 +8,8 @@ import { courses, projectIndependentLessons, sectionPlacements, type Course } fr
 import { LessonText } from './lesson-text';
 import { LessonStatusPill } from './lesson-page';
 import { HintBody, SourceInfo } from './source-info';
-import { continueLesson, lessonState, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
+import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
+import { ResetProgressButton } from './reset-progress-button';
 import { DraftFilterForm } from './filter-form';
 import { LessonSearchResults, lessonScopeLabel, lessonScopes } from './lesson-search-results';
 
@@ -117,12 +118,18 @@ function useLessonFold(id: string): [boolean, (open: boolean) => void] {
 
 /** One foldable drawer (a course, or "Independent lessons"): collapsed by default,
  *  remembering the visitor's last choice. Native <details> keeps keyboard and screen
- *  reader support; onToggle fires for every open/close, so the choice is stored there. */
-function LessonFold({ id, title, note, info, aside, children }: { id: string; title: string; note?: string; info?: string; aside?: React.ReactNode; children: React.ReactNode }) {
+ *  reader support; onToggle fires for every open/close, so the choice is stored there.
+ *  React also delivers a nested unit's toggle to this handler, so only this drawer's own
+ *  toggle (target === currentTarget) is stored — a unit's arrow never folds the course.
+ *  `tools` sits at the end of the note row (e.g. the course's Reset progress). */
+function LessonFold({ id, title, note, info, aside, tools, children }: { id: string; title: string; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
   const [open, setOpen] = useLessonFold(id);
-  return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
+  return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
     <summary><h2 id={`course-${id}`}>{title}</h2>{aside}</summary>
-    {note && <p className="lesson-note">{note}{info && <> <SourceInfo className="lesson-course-info" inline>{info}</SourceInfo></>}</p>}
+    {(note || tools) && <div className="lesson-fold-intro">
+      {note && <p className="lesson-note">{note}{info && <> <SourceInfo className="lesson-course-info" inline>{info}</SourceInfo></>}</p>}
+      {tools}
+    </div>}
     {children}
   </details>;
 }
@@ -174,7 +181,10 @@ function CourseOutline({ course, progress }: { course: Course; progress: LessonP
   const all = course.sections.flatMap(sectionPlacements);
   const done = all.filter(p => isDone(progress, p.lesson.id)).length;
   const next = all.find(p => !isDone(progress, p.lesson.id))?.lesson.id;
+  const ids = all.map(p => p.lesson.id);
+  const started = ids.some(id => progress[id]);
   return <LessonFold id={course.id} title={course.title} note={course.description} info={courseCaveat(course)}
+    tools={started ? <ResetProgressButton label="Reset course progress" title={`Reset ${course.title}?`} description="Every lesson in this course goes back to not started. Lessons outside this course keep their progress." onReset={() => resetCourseProgress(ids)}/> : undefined}
     aside={<span className="lesson-course-progress"><small>{done} of {all.length} lessons done</small><ProgressBar fraction={all.length ? done / all.length : 0}/></span>}>
     {course.sections.map(section => {
       const flat = sectionPlacements(section);

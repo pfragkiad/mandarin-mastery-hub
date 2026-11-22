@@ -1,11 +1,12 @@
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { markLessonOpened, markQuestionAnswered } from '@/lib/lesson-progress';
+import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, useLessonProgress } from '@/lib/lesson-progress';
+import { ResetProgressButton } from './reset-progress-button';
 
-/** Progress hook for QuestionCards: a card reports its id once answered or revealed. */
+/** Progress hook for QuestionCards and "Show answer" reveals: each reports its key once answered or opened. */
 const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
 import { Link } from '@tanstack/react-router';
-import { ArrowLeft, ArrowRight, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
@@ -114,12 +115,25 @@ function useActiveSection(ids: string[]) {
 
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
-  // Progress counts the lesson's required questions (topic plans: the "Check what you can do"
-  // set; the optional recall quiz still records answers but is not required), keyed by question id.
+  // Progress counts the lesson's required tasks: its graded questions (topic plans: the "Check
+  // what you can do" set; the optional recall quiz is not required and is not recorded) plus,
+  // in topic plans, every "Show answer" reveal (sentence changes, reading questions, speaking
+  // tasks), since many topic lessons have no multiple choice at all. Keys are stable per task.
   const allQuestions = S.practice?.enabled ? S.practice.questions : [];
-  const requiredIds = (lesson.topic?.plan ? allQuestions.filter(q => q.id.startsWith('applied-')) : allQuestions).map(q => q.id);
-  const progress = useRef({ answer: (k: string) => markQuestionAnswered(summary.id, k) }).current;
+  const planTasks = lesson.topic?.plan;
+  const revealIds = planTasks ? [
+    ...planTasks.guided_building.substitutions.map((_, i) => `build-${i + 1}`),
+    ...planTasks.reading.questions.map((_, i) => `reading-${i + 1}`),
+    ...planTasks.speaking_tasks.map((t, i) => `speaking-${t.id || i + 1}`),
+  ] : [];
+  const requiredIds = [...(planTasks ? allQuestions.filter(q => q.id.startsWith('applied-')) : allQuestions).map(q => q.id), ...revealIds];
+  const required = useRef(new Set<string>()); required.current = new Set(requiredIds);
+  const progress = useRef({ answer: (k: string) => { if (required.current.has(k)) markQuestionAnswered(summary.id, k); } }).current;
   useEffect(() => { markLessonOpened(summary.id, requiredIds.length); }, [summary.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const progressEntry = useLessonProgress()[summary.id];
+  // A reset remounts the lesson body, closing every reveal and clearing picked answers.
+  const [round, setRound] = useState(0);
+  const restart = () => { resetLesson(summary.id); setRound(r => r + 1); };
   const [hidePinyin, setHidePinyin] = useState(false);
   // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
   // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
@@ -190,7 +204,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       <div className="lesson-card lesson-task"><p className="lesson-task-label">Worked model</p><PlanSentence line={p.guided_building.model}/></div>
       <div className="lesson-stack">{p.guided_building.substitutions.map((x, i) => <div key={i} className="lesson-card lesson-task">
         <p className="lesson-card-title">Change {i + 1}: <LessonText text={x.cue_en}/></p>
-        <Reveal label="Show a model answer"><PlanSentence line={x.model_answer}/></Reveal>
+        <Reveal label="Show a model answer" progressKey={`build-${i + 1}`}><PlanSentence line={x.model_answer}/></Reveal>
       </div>)}</div>
     </> });
     if (p.reading.paragraphs.length) sections.push({ id: 'reading', title: 'Read for meaning', hint: p.reading.title, body: <>
@@ -198,14 +212,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       <div className="lesson-stack">{p.reading.paragraphs.map((e, i) => <div key={i} className="lesson-card"><PlanSentence line={e}/></div>)}</div>
       <div className="lesson-stack">{p.reading.questions.map((q, i) => <div key={i} className="lesson-card lesson-task">
         <p className="lesson-card-title">{i + 1}. <LessonText text={q.prompt_en}/></p>
-        <Reveal label="Show the answer"><p><LessonText text={q.answer_en}/></p></Reveal>
+        <Reveal label="Show the answer" progressKey={`reading-${i + 1}`}><p><LessonText text={q.answer_en}/></p></Reveal>
       </div>)}</div>
     </> });
     if (p.speaking_tasks.length) sections.push({ id: 'speaking', title: 'Speak and personalise', hint: count(p.speaking_tasks.length, 'task'), body: <>
       <p className="lesson-note">Answer aloud before opening the model, and adapt it to your own life.</p>
       <div className="lesson-stack">{p.speaking_tasks.map((t, i) => <div key={t.id || i} className="lesson-card lesson-task">
         <p className="lesson-card-title">{i + 1}. <LessonText text={t.scenario_en}/></p>
-        <Reveal label="Show one possible answer"><PlanSentence line={t.model_answer}/></Reveal>
+        <Reveal label="Show one possible answer" progressKey={`speaking-${t.id || i + 1}`}><PlanSentence line={t.model_answer}/></Reveal>
       </div>)}</div>
     </> });
     if (p.common_pitfall || p.pronunciation_focus) sections.push({ id: 'watch-out', title: 'Watch out', hint: 'A common pitfall and pronunciation', body: <div className="lesson-grid">
@@ -398,6 +412,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
       </div>
     </header>
+    <LessonProgressStrip entry={progressEntry} onReset={restart}/>
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -415,7 +430,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         {!narrow && translationsToggle}
         {!narrow && hintsToggle(false)}
       </nav>
-      <div className="lesson-main">
+      <div className="lesson-main" key={round}>
         {sections.map(s => {
           if (!narrow) return <section key={s.id} id={`lesson-${s.id}`} className="lesson-section" aria-labelledby={`lesson-${s.id}-title`}><h2 id={`lesson-${s.id}-title`}>{s.title}</h2>{s.body}</section>;
           const open = openIds.has(s.id);
@@ -427,8 +442,8 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
             <div id={`lesson-${s.id}-body`} className="lesson-section-body" hidden={!open}>{s.body}</div>
           </section>;
         })}
+        <LessonFinish entry={progressEntry} onComplete={() => markLessonCompleted(summary.id)} onReset={restart} next={positions[0]?.next}/>
         <ReportProvenance lesson={lesson}/>
-        <p className="source-note">{lessonLabel(summary)} · {summary.status}{summary.dateReviewed ? ` · reviewed ${summary.dateReviewed}` : ''}{lesson.metadata.license_note ? ` · ${lesson.metadata.license_note}` : ''}</p>
       </div>
     </div>
   </div>
@@ -467,9 +482,45 @@ function DialogueTurns({ turns }: { turns: (PlanLine & { speaker: string })[] })
   </div>)}</div>;
 }
 
-/** Hidden model answer the learner opens after trying first (native disclosure; state is the element's own). */
-function Reveal({ label, children }: { label: string; children: ReactNode }) {
-  return <details className="lesson-details lesson-reveal"><summary>{label}</summary>{children}</details>;
+/** Hidden model answer the learner opens after trying first (native disclosure; state is the
+ *  element's own). Opening it counts as doing the task: `progressKey` is reported once open.
+ *  The handler checks currentTarget so a nested disclosure's toggle never counts for this one. */
+function Reveal({ label, progressKey, children }: { label: string; progressKey?: string; children: ReactNode }) {
+  const progressCtx = useContext(QuestionProgress);
+  return <details className="lesson-details lesson-reveal" onToggle={e => { if (e.target === e.currentTarget && e.currentTarget.open && progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</details>;
+}
+
+/** Top-of-lesson progress line: "N of M tasks done" (or Completed) with a bar, and Reset
+ *  progress once there is something to clear. Inputs: the cookie entry (absent before the
+ *  first read after mount, so nothing renders on the server) and `onReset`. */
+function LessonProgressStrip({ entry, onReset }: { entry: LessonProgressEntry | undefined; onReset: () => void }) {
+  if (!entry) return null;
+  const { state, fraction } = lessonState(entry);
+  if (entry.total === 0 && !entry.completed) return null;
+  const done = Math.min(entry.answered.length, entry.total);
+  return <div className={`lesson-progress-strip is-${state}`}>
+    <span className="lesson-progress-label">{state === 'done' ? <><CheckCircle2 aria-hidden="true"/>Completed</> : `${done} of ${entry.total} ${entry.total === 1 ? 'task' : 'tasks'} done`}</span>
+    <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
+    {hasLessonProgress(entry) && <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>}
+  </div>;
+}
+
+/** End-of-lesson box: "Complete lesson" marks it done without opening every task; once done
+ *  it reads Lesson complete with Reset progress and, in a course, the next lesson. */
+function LessonFinish({ entry, onComplete, onReset, next }: { entry: LessonProgressEntry | undefined; onComplete: () => void; onReset: () => void; next: LessonSummary | null | undefined }) {
+  const done = lessonState(entry).state === 'done' && Boolean(entry);
+  return <div className={`lesson-finish${done ? ' is-done' : ''}`}>
+    {done ? <>
+      <p className="lesson-finish-title"><CheckCircle2 aria-hidden="true"/>Lesson complete</p>
+      <div className="lesson-finish-actions">
+        {next && <Link to="/lessons/$lessonId" params={{ lessonId: next.id }} className="lesson-finish-next">Next: {next.title}<ArrowRight size={14} aria-hidden="true"/></Link>}
+        <ResetProgressButton label="Reset progress" title="Reset this lesson?" description="Your answers and revealed answers in this lesson are cleared, and it no longer counts as done." onReset={onReset}/>
+      </div>
+    </> : <>
+      <p className="lesson-finish-title">Finished this lesson?</p>
+      <div className="lesson-finish-actions"><Button type="button" onClick={onComplete}><CheckCircle2 aria-hidden="true"/>Complete lesson</Button></div>
+    </>}
+  </div>;
 }
 
 /** Compact word-bank entry: linked headword with its record's audio and HSK number, no example sentences. */

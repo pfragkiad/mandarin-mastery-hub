@@ -1,9 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { continueLesson, lessonState } from './lesson-progress';
+import { continueLesson, hasLessonProgress, lessonState } from './lesson-progress';
 
 describe('lessonState', () => {
   it('is not started when never opened', () => expect(lessonState(undefined).state).toBe('not-started'));
   it('is in progress with some answers', () => expect(lessonState({ total: 4, answered: ['a'], at: 1 })).toEqual({ state: 'in-progress', fraction: 0.25 }));
   it('is done when every question is answered', () => expect(lessonState({ total: 2, answered: ['a', 'b'], at: 1 }).state).toBe('done'));
   it('continues the latest unfinished lesson', () => expect(continueLesson({ A: { total: 2, answered: [], at: 1 }, B: { total: 2, answered: ['x'], at: 5 }, C: { total: 1, answered: ['x'], at: 9 } })).toBe('B'));
+  it('is done when marked complete by hand, even with tasks left', () => expect(lessonState({ total: 5, answered: ['a'], at: 1, completed: true })).toEqual({ state: 'done', fraction: 1 }));
+  it('has nothing to reset right after opening', () => expect(hasLessonProgress({ total: 3, answered: [], at: 1 })).toBe(false));
+  it('has progress to reset once marked complete', () => expect(hasLessonProgress({ total: 3, answered: [], at: 1, completed: true })).toBe(true));
 });

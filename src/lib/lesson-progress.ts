@@ -1,16 +1,17 @@
 /**
  * Lesson progress kept in one browser cookie (there is no account storage yet).
- * Per lesson we keep: question count seen on the page, the answered question keys, and
- * the last visit time. State is derived, never guessed:
- *   - not started: never opened
- *   - in progress: opened, not every question answered
- *   - done: every recorded question answered (or opened, when it has no questions)
+ * Per lesson we keep: the count of progress tasks seen on the page (graded questions and
+ * "Show answer" reveals), the completed task keys, the last visit time, and whether the
+ * learner marked the lesson complete by hand. State is derived, never guessed:
+ *   - not started: never opened (or its progress was reset from the course)
+ *   - in progress: opened, not every task done and not marked complete
+ *   - done: every task done, marked complete, or opened when it has no tasks
  * Readers subscribe through useLessonProgress, which reads after mount so the server and
  * first client render agree, and re-reads on the 'lesson-progress' window event.
  */
 import { useEffect, useState } from 'react';
 
-export type LessonProgressEntry = { total: number; answered: string[]; at: number };
+export type LessonProgressEntry = { total: number; answered: string[]; at: number; completed?: boolean };
 export type LessonProgressMap = Record<string, LessonProgressEntry>;
 export type LessonState = 'not-started' | 'in-progress' | 'done';
 
@@ -33,7 +34,7 @@ function write(map: LessonProgressMap) {
 export function markLessonOpened(id: string, total: number) {
   const map = readProgress();
   const prev = map[id];
-  map[id] = { total, answered: prev?.answered ?? [], at: Date.now() };
+  map[id] = { ...prev, total, answered: prev?.answered ?? [], at: Date.now() };
   write(map);
 }
 
@@ -46,10 +47,42 @@ export function markQuestionAnswered(id: string, key: string) {
   write(map);
 }
 
+/** The learner's "Complete lesson" button: done regardless of how many tasks were opened. */
+export function markLessonCompleted(id: string) {
+  const map = readProgress();
+  const prev = map[id] ?? { total: 0, answered: [], at: Date.now() };
+  map[id] = { ...prev, completed: true, at: Date.now() };
+  write(map);
+}
+
+/** Start one lesson over from its page: keeps the visit (so it reads "in progress" at 0%),
+ *  clears every completed task and the manual completion. */
+export function resetLesson(id: string) {
+  const map = readProgress();
+  const prev = map[id];
+  if (!prev) return;
+  map[id] = { total: prev.total, answered: [], at: Date.now() };
+  write(map);
+}
+
+/** Clear a whole course: its lessons return to "not started". Only the given lessons change,
+ *  so a lesson shared with another course loses its progress there too (it is one lesson). */
+export function resetCourseProgress(ids: readonly string[]) {
+  const map = readProgress();
+  let changed = false;
+  for (const id of ids) if (map[id]) { delete map[id]; changed = true; }
+  if (changed) write(map);
+}
+
+/** Whether an entry holds anything a reset would clear. */
+export function hasLessonProgress(entry: LessonProgressEntry | undefined): boolean {
+  return Boolean(entry && (entry.answered.length > 0 || entry.completed));
+}
+
 /** Pure: the state and 0–1 fraction one entry stands for. */
 export function lessonState(entry: LessonProgressEntry | undefined): { state: LessonState; fraction: number } {
   if (!entry) return { state: 'not-started', fraction: 0 };
-  if (entry.total === 0) return { state: 'done', fraction: 1 };
+  if (entry.completed || entry.total === 0) return { state: 'done', fraction: 1 };
   const fraction = Math.min(1, entry.answered.length / entry.total);
   return { state: fraction >= 1 ? 'done' : 'in-progress', fraction };
 }

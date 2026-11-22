@@ -4590,3 +4590,21 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-search-snippet mark { background: color-mix(in oklab, var(--primary) 22%, transparent); color: var(--foreground); border-radius: 3px; padding: 0 2px; }
 .lesson-search-results h2 .lessons-level-count { margin-left: 10px; }
 .lesson-search .filter-select { width: auto; max-width: 100%; }
+
+/* Lesson progress controls: the course drawer's note row with Reset course progress, the
+   lesson page's progress strip under the title, and the end-of-lesson Complete box. */
+.lesson-fold-intro { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 16px; }
+.lesson-fold-intro > .lesson-note { flex: 1 1 320px; max-width: 72ch; margin-bottom: 0; }
+.lesson-reset svg { width: 14px; height: 14px; }
+.lesson-progress-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 14px 0 4px; font-size: 13px; color: var(--muted-foreground); }
+.lesson-progress-strip .lesson-progress { flex: 1 1 160px; max-width: 320px; }
+.lesson-progress-label { display: inline-flex; align-items: center; gap: 6px; }
+.lesson-progress-strip.is-done .lesson-progress-label { color: var(--primary); font-weight: 600; }
+.lesson-progress-label svg { width: 15px; height: 15px; }
+.lesson-finish { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; margin: 28px 0 8px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); }
+.lesson-finish.is-done { border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); background: color-mix(in oklab, var(--primary) 7%, var(--card)); }
+.lesson-finish-title { display: inline-flex; align-items: center; gap: 8px; margin: 0; font-family: var(--font-display); font-size: 19px; }
+.lesson-finish.is-done .lesson-finish-title { color: var(--primary); }
+.lesson-finish-title svg { width: 18px; height: 18px; }
+.lesson-finish-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.lesson-finish-next { display: inline-flex; align-items: center; gap: 6px; color: var(--primary); font-weight: 600; text-decoration: none; }
