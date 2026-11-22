@@ -1,10 +1,11 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { historyPosition } from '@/lib/detail-trail';
 import { ChevronDown, ChevronUp, GitBranch, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
 import { carryTabOnCardSwitch, entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
-import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyView } from './etymology-section';
+import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyViews } from './etymology-section';
+import { WordEtymologyInfo, WordEtymologyPanel } from './word-etymology';
 
 /**
  * Decomposition | Etymology drawer tabs on a glyph detail card, built exactly like Practice's
@@ -12,7 +13,8 @@ import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyView } 
  * plain text tabs with the open tab's source ⓘ beside it and a collapse chevron at the right.
  * Inputs:
  * - `decomposition`: the recorded breakdown (`info` ⓘ + `body`), or null when there is none.
- * - `etymology`: the exact etymology request, or null when etymology does not apply (strokes).
+ * - `etymology`: the exact etymology request, or null when etymology does not apply (strokes);
+ *   a list (multi-character word cards) shows one block per character (word-etymology.tsx).
  * - `cardKey`: the card's identity (heading ID, so switching forms on one card keeps the tab).
  * State:
  * - open/collapsed is remembered on this device (owner's choice). A card opens on
@@ -58,12 +60,15 @@ function useRememberedOpen(): [boolean, (next: boolean) => void, boolean] {
   return [state.open, update, state.known];
 }
 
-export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decomposition: { info: ReactNode; body: ReactNode } | null; etymology: EtymologyRequest | null; cardKey: string }) {
+export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decomposition: { info: ReactNode; body: ReactNode } | null; etymology: EtymologyRequest | EtymologyRequest[] | null; cardKey: string }) {
   const drawerId = `detail-drawer-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const [open, setOpen, known] = useRememberedOpen();
-  const view = useEtymologyView(etymology, known && open);
-  // Offered while unresolved; hidden once resolved with nothing to show.
-  const hasEtymology = Boolean(etymology) && (view === undefined || etymologyHasContent(view));
+  const list = Array.isArray(etymology);
+  const requests = useMemo(() => etymology === null ? [] : Array.isArray(etymology) ? etymology : [etymology], [etymology]);
+  const views = useEtymologyViews(requests, known && open);
+  const view = views === undefined ? undefined : views[0] ?? null;
+  // Offered while unresolved; hidden once resolved with nothing to show (for a word: no character has notes).
+  const hasEtymology = requests.length > 0 && (views === undefined || views.some(etymologyHasContent));
   const offered: DetailTab[] = [...(decomposition ? ['decomposition' as const] : []), ...(hasEtymology ? ['etymology' as const] : [])];
   // The chosen tab belongs to one history entry's card; a tab that vanished falls back to the first offered.
   const remembered = useEntryTab(cardKey);
@@ -72,7 +77,7 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
   const rootRef = useRef<HTMLDivElement>(null);
   // Returning to a card left on Etymology: bring the tabs back into view once its notes resolve.
   const scrolledFor = useRef('');
-  const returnedToEtymology = remembered.returned && remembered.tab === 'etymology' && tab === 'etymology' && view !== undefined;
+  const returnedToEtymology = remembered.returned && remembered.tab === 'etymology' && tab === 'etymology' && views !== undefined;
   useEffect(() => {
     if (!returnedToEtymology || scrolledFor.current === remembered.entry) return;
     scrolledFor.current = remembered.entry;
@@ -98,7 +103,7 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
         </span>}
         {hasEtymology && <span className="stroke-tab-item">
           <button type="button" role="tab" id={tabId('etymology')} className="stroke-tab" aria-selected={showEtymology} aria-controls={showEtymology ? drawerId : undefined} title="Show the etymology notes" onClick={() => select('etymology')}><History size={13} aria-hidden="true"/>Etymology</button>
-          {showEtymology && view && <EtymologyInfo view={view}/>}
+          {showEtymology && views && (list ? <WordEtymologyInfo views={views}/> : view && <EtymologyInfo view={view}/>)}
         </span>}
       </div>
       {/* Collapsed keeps the chevron pointing down, so the row never loses its control; it reopens the current tab. */}
@@ -107,6 +112,6 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
         : <Button variant="ghost" size="icon" className="stroke-tabs-collapse" aria-label="Expand details" title="Expand" aria-expanded="false" onClick={() => setOpen(true)}><ChevronDown size={18} aria-hidden="true"/></Button>}
     </div>
     {showDecomposition && <div className="stroke-drawer stroke-drawer-decomposition" id={drawerId} role="tabpanel" aria-labelledby={tabId('decomposition')}>{decomposition.body}</div>}
-    {showEtymology && <div className="stroke-drawer detail-drawer-etymology etymology-section" id={drawerId} role="tabpanel" aria-labelledby={tabId('etymology')}><EtymologyPanel view={view}/></div>}
+    {showEtymology && <div className="stroke-drawer detail-drawer-etymology etymology-section" id={drawerId} role="tabpanel" aria-labelledby={tabId('etymology')}>{list ? <WordEtymologyPanel requests={requests} views={views}/> : <EtymologyPanel view={view}/>}</div>}
   </div>;
 }

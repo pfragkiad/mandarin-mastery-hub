@@ -4360,3 +4360,9 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* Lesson prose: an identified word (words-first) rings as one unit on hover. */
 .lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }
 .lesson-hint-run:hover { box-shadow: 0 0 0 1px color-mix(in oklch, var(--primary) 55%, transparent); }
+
+/* Word cards' Etymology tab (word-etymology.tsx): one block per character, divided like
+   the decomposition list, each headed by its tile, reading and meaning. */
+.etymology-section .etymology-word-parts { display: grid; gap: 16px; }
+.etymology-section .etymology-word-part { display: grid; gap: 10px; min-width: 0; }
+.etymology-section .etymology-word-part + .etymology-word-part { border-top: 1px solid var(--border); padding-top: 16px; }

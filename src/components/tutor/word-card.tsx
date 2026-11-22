@@ -6,7 +6,8 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { vocabularyKind, wordCollections, words as vocabularyWords, type Word } from '@/lib/mandarin';
-import { phraseParts } from '@/lib/vocabulary-decomposition';
+import { phraseParts, wordCharacters } from '@/lib/vocabulary-decomposition';
+import { wordEtymologyRequests } from './word-etymology';
 import { matchedWordSpans, phraseTileLines } from '@/lib/phrase-tile-fit';
 import { playPronunciation, audioCandidates, audioMessage } from '@/lib/audio';
 import { useWorkspace } from './workspace';
@@ -71,6 +72,17 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const bookmarked = saved.includes(word.id);
   const listen = async (preferTts = false) => { const r = await playPronunciation(request, preferences.slow, preferTts); setAudioError(audioMessage(r)); setCanTts(!r.ok && r.canUseTts); };
   const close = onNavigate ?? (() => {});
+  // Etymology is inherited from the word's own characters (exact Characters:<glyph> requests);
+  // a one-character word asks exactly like that character's card, so both show the same notes.
+  const etymology = useMemo(() => {
+    if (vocabularyKind(word) !== 'word') return null;
+    // 爸爸 still lists its one unique character under a heading: only a one-character word
+    // drops the heading, so a repeated character never reads as the whole word's notes.
+    const glyphs = wordCharacters(word).map(part => part.text);
+    const requests = wordEtymologyRequests(glyphs);
+    const [only] = requests;
+    return glyphs.length === 1 && only ? only : requests.length ? requests : null;
+  }, [word]);
   // Same pills as the grid card's top row (word-identity-pills.tsx): merged HSK L<level>/#<id>,
   // gold Radical #N, phrase style; Traditional comes from the title's own `script` pill.
   const hskPill = wordHskPill(word);
@@ -106,9 +118,10 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     </SentenceSection>}
     {/* Course lessons that teach this exact HSK word (recorded entry number, never spelling). */}
     <WordLessonsSection word={word}/>
-    {/* Same collapsed Decomposition drawer as the character cards (detail-tabs.tsx), sharing
-        the remembered open choice; words and phrases have no etymology tab. */}
-    <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={null}
+    {/* Same collapsed Decomposition | Etymology drawer as the character cards (detail-tabs.tsx),
+        sharing the remembered open choice. Words inherit etymology from their characters
+        (one-character word: exactly that character's notes; longer: one block per unique character); phrases have none. */}
+    <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={etymology}
       decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
     <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>

@@ -146,21 +146,33 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   </div>;
 }
 
-/** Resolves the view for the exact request while `enabled`; earlier results for other requests are ignored. */
-export function useEtymologyView(request: EtymologyRequest | null, enabled: boolean): EtymologyView | null | undefined {
-  const key = request ? [request.recordId, request.glyph, request.familyId ?? '', request.formKey ?? ''].join('|') : '';
-  const [state, setState] = useState<{ key: string; view: EtymologyView | null } | null>(null);
+const requestKey = (request: EtymologyRequest) => [request.recordId, request.glyph, request.familyId ?? '', request.formKey ?? ''].join('|');
+const NO_REQUESTS: EtymologyRequest[] = [];
+
+/** Resolves every exact request (in order) while `enabled`; earlier results for other request
+ *  lists are ignored. `undefined` until all have resolved; each item is a view or null (fail
+ *  closed). Used by word cards, whose Etymology tab lists each of the word's characters. */
+export function useEtymologyViews(requests: readonly EtymologyRequest[], enabled: boolean): (EtymologyView | null)[] | undefined {
+  const key = requests.map(requestKey).join('\u241e');
+  const [state, setState] = useState<{ key: string; views: (EtymologyView | null)[] } | null>(null);
   const known = state?.key === key;
   useEffect(() => {
-    if (!request || !enabled || known) return;
+    if (!requests.length || !enabled || known) return;
     let live = true;
-    void resolveEtymology(request).then(view => { if (live) setState({ key, view }); });
+    void Promise.all(requests.map(request => resolveEtymology(request))).then(views => { if (live) setState({ key, views }); });
     return () => { live = false; };
-    // `key` encodes every request field.
+    // `key` encodes every field of every request.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, enabled, known]);
+  if (!requests.length) return [];
+  return state && known ? state.views : undefined;
+}
+
+/** Resolves the view for one exact request while `enabled` (glyph detail cards). */
+export function useEtymologyView(request: EtymologyRequest | null, enabled: boolean): EtymologyView | null | undefined {
+  const views = useEtymologyViews(request ? [request] : NO_REQUESTS, enabled);
   if (!request) return null;
-  return state && state.key === key ? state.view : undefined;
+  return views === undefined ? undefined : views[0] ?? null;
 }
 
 /** Owner's rule: only source text or a record to link counts; absent or blocked states
@@ -175,31 +187,45 @@ export function etymologyHasContent(view: EtymologyView | null): view is Etymolo
 
 /** The tab's source note: disclaimer, coverage, each entry's source link, licences and import date. */
 export function EtymologyInfo({ view }: { view: EtymologyView }) {
-  const meta = view.metadata;
+  return <EtymologySourcesInfo views={[view]}/>;
+}
+
+/** Source note for one or several resolved views. `perCharacter` (word cards) prefixes each
+ *  coverage line and source link with its own character and states that the notes belong to
+ *  the characters, never to the word, so no word history is implied. */
+export function EtymologySourcesInfo({ views, perCharacter = false }: { views: EtymologyView[]; perCharacter?: boolean }) {
+  const meta = views[0]?.metadata;
+  if (!meta) return null;
+  const entries = views.flatMap(view => view.entries);
   const licenses = [...new Set(meta.license_notices.map(notice => `${notice.source_id === 'howell' ? 'Howell' : notice.source_id === 'shuowen' ? 'Shuowen Jiezi' : notice.source_id} · ${notice.license}`))];
+  const prefix = (glyph: string) => perCharacter ? <><span lang="zh-CN">{glyph}</span> · </> : null;
   return <SourceInfo inline className="detail-footnote">
     {meta.disclaimer}<br/>
-    {COVERAGE[view.coverage] && <>{COVERAGE[view.coverage]}<br/></>}
-    {view.entries.map(entry => <span key={entry.id}>{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
-    {view.entries.some(entry => entry.translation) && <>{view.entries.some(corrected) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : view.entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft, checked in a partial editorial review (English unchanged)' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
+    {perCharacter && <>Each note belongs to its own character, not to the history of this word.<br/></>}
+    {views.map(view => COVERAGE[view.coverage] && <span key={view.glyph}>{prefix(view.glyph)}{COVERAGE[view.coverage]}<br/></span>)}
+    {entries.map(entry => <span key={entry.id}>{prefix(entry.headword)}{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
+    {entries.some(entry => entry.translation) && <>{entries.some(corrected) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft, checked in a partial editorial review (English unchanged)' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
     {licenses.join(' · ')}<br/>
     Imported {meta.import_date}
   </SourceInfo>;
 }
 
+/** Exact record link tile: the recorded ID wins; the glyph index only supplies its page.
+ *  Opening it asks the next card to show its Etymology tab. Inputs: record ID and its glyph. */
+export function EtymologyRecordLink({ id, glyph }: { id: string; glyph: string }) {
+  const { preferences } = useWorkspace();
+  const tab = id.split(':')[0] as 'Characters';
+  const destination = libraryDestination(glyph, preferences.includeTraditional);
+  const search = destination && destination.id === id ? destination : { tab, id };
+  const hint = openDetailsHint(glyph, tab);
+  return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(glyph) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>;
+}
+
 /** The tab's body; `undefined` (still resolving) shows pulsing text lines. */
 export function EtymologyPanel({ view }: { view: EtymologyView | null | undefined }) {
-  const { preferences } = useWorkspace();
   if (view === undefined) return <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
   if (!etymologyHasContent(view)) return null;
-  // Exact record links: the recorded ID wins; the glyph index only supplies its page.
-  const recordLink = (id: string, target: string) => {
-    const tab = id.split(':')[0] as 'Characters';
-    const destination = libraryDestination(target, preferences.includeTraditional);
-    const search = destination && destination.id === id ? destination : { tab, id };
-    const hint = openDetailsHint(target, tab);
-    return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(target) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{target}</strong></Link></Button>;
-  };
+  const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
   if (view.status === 'exact-headword') {
     const howell = view.entries.filter(entry => entry.sourceId === 'howell');
     const shuowen = view.entries.filter(entry => entry.sourceId === 'shuowen');
