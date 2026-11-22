@@ -1,0 +1,78 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "review-greetings",
+  "lesson_type": "review",
+  "lesson": {
+    "title": "Greetings Review",
+    "subtitle": "Recall greetings you have learned.",
+    "description": "Review familiar greeting vocabulary and reinforce its meaning.",
+    "slug": "greetings-review"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social"
+    ],
+    "tags": [
+      "review"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Recall previously learned greetings without introducing new vocabulary."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "你": "Characters:你",
+    "好": "Characters:好",
+    "茶": "Characters:茶"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "r1",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你好",
+            "pinyin": "nǐ hǎo",
+            "meaning_en": "hello",
+            "syllabus_refs": []
+          }
+        ]
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "selection",
+          "prompt": "Which expression means hello?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "你好",
+              "pinyin": "nǐ hǎo"
+            },
+            {
+              "id": "b",
+              "hanzi": "茶",
+              "pinyin": "chá"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "你好 (nǐ hǎo) is a common greeting."
+        }
+      ]
+    }
+  }
+}

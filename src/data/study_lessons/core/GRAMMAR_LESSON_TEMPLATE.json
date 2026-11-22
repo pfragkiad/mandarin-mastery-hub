@@ -1,0 +1,87 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "grammar-negation-basic",
+  "lesson_type": "grammar",
+  "lesson": {
+    "title": "Negating Simple Actions",
+    "subtitle": "Use 不 (bù) before common verbs.",
+    "description": "Learn the basic negative statement pattern and practice short conversational examples.",
+    "slug": "negating-simple-actions"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "communication-social"
+    ],
+    "tags": [
+      "negation"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Use basic negation in a statement."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "喝": "Characters:喝",
+    "我": "Characters:我",
+    "茶": "Characters:茶"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "b1",
+        "kind": "explanation",
+        "text": "Place 不 (bù) before a verb to negate an ordinary statement."
+      },
+      {
+        "id": "b2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "不 + V",
+        "pattern_pinyin": "bù + V",
+        "function_en": "not do an action",
+        "example": {
+          "id": "ex1",
+          "hanzi": "我不喝茶。",
+          "pinyin": "wǒ bù hē chá.",
+          "english": "I do not drink tea.",
+          "teaching_note": "Negation of a basic action."
+        }
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q1",
+          "kind": "selection",
+          "prompt": "Which negates an action?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "不",
+              "pinyin": "bù"
+            },
+            {
+              "id": "b",
+              "hanzi": "茶",
+              "pinyin": "chá"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "不 (bù) precedes an ordinary verb."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,834 @@
+{
+  "schema_version": "mandarin-curriculum/3.0.0",
+  "curriculum_id": "hsk3-2025",
+  "title": "HSK 3.0 (2025) — Level 1 Learning Path",
+  "kind": "syllabus",
+  "language": "zh-CN",
+  "edition": "2025-11",
+  "status": "draft",
+  "description": "A proposed Level 1 path using 300 entries across 21 focused lessons. Later levels can add sections without reassigning lesson IDs.",
+  "course_topics": [
+    {
+      "id": "numbers-quantities",
+      "label": "Numbers & Quantities",
+      "global_topic_ids": [
+        "numbers-quantities"
+      ]
+    },
+    {
+      "id": "time-calendar",
+      "label": "Time & Calendar",
+      "global_topic_ids": [
+        "time-calendar"
+      ]
+    },
+    {
+      "id": "family-relationships",
+      "label": "Family & Relationships",
+      "global_topic_ids": [
+        "family-relationships"
+      ]
+    },
+    {
+      "id": "people-identity",
+      "label": "People & Identity",
+      "global_topic_ids": [
+        "people-identity"
+      ]
+    },
+    {
+      "id": "reference-questions",
+      "label": "Pronouns, Questions & Pointing",
+      "global_topic_ids": [
+        "reference-questions"
+      ]
+    },
+    {
+      "id": "food-drink",
+      "label": "Food, Drinks & Meals",
+      "global_topic_ids": [
+        "food-drink"
+      ]
+    },
+    {
+      "id": "school-language",
+      "label": "Education & Language",
+      "global_topic_ids": [
+        "school-language"
+      ]
+    },
+    {
+      "id": "work-jobs",
+      "label": "Work & Jobs",
+      "global_topic_ids": [
+        "work-jobs"
+      ]
+    },
+    {
+      "id": "shopping-money",
+      "label": "Shopping & Money",
+      "global_topic_ids": [
+        "shopping-money"
+      ]
+    },
+    {
+      "id": "home-objects",
+      "label": "Home, Clothing & Objects",
+      "global_topic_ids": [
+        "home-objects"
+      ]
+    },
+    {
+      "id": "travel-transport",
+      "label": "Travel & Transport",
+      "global_topic_ids": [
+        "travel-transport"
+      ]
+    },
+    {
+      "id": "health-wellbeing",
+      "label": "Health & Wellbeing",
+      "global_topic_ids": [
+        "health-wellbeing"
+      ]
+    },
+    {
+      "id": "animals-weather",
+      "label": "Animals & Weather",
+      "global_topic_ids": [
+        "animals-weather"
+      ]
+    },
+    {
+      "id": "daily-actions",
+      "label": "Daily Actions & Activities",
+      "global_topic_ids": [
+        "daily-actions"
+      ]
+    },
+    {
+      "id": "leisure-media",
+      "label": "Leisure, Music & Media",
+      "global_topic_ids": [
+        "leisure-media"
+      ]
+    },
+    {
+      "id": "places-directions",
+      "label": "Places, Position & Direction",
+      "global_topic_ids": [
+        "places-directions"
+      ]
+    },
+    {
+      "id": "communication-social",
+      "label": "Communication & Social Language",
+      "global_topic_ids": [
+        "communication-social"
+      ]
+    },
+    {
+      "id": "qualities-feelings",
+      "label": "Qualities, Feelings & Evaluation",
+      "global_topic_ids": [
+        "qualities-feelings"
+      ]
+    },
+    {
+      "id": "grammar-functions",
+      "label": "Grammar & Function Words",
+      "global_topic_ids": [
+        "grammar-functions"
+      ]
+    },
+    {
+      "id": "abstract-concepts",
+      "label": "Abstract & General Concepts",
+      "global_topic_ids": [
+        "abstract-concepts"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "hsk3-l1",
+      "title": "HSK 3.0 Level 1 — Foundation",
+      "sequence": 1,
+      "level_number": 1,
+      "description": "A proposed thematic learning path for the 300 entries in the user-supplied Level 1 vocabulary dataset; not an official sequence.",
+      "units": [
+        {
+          "unit_id": "hsk3-l1-u-01",
+          "title": "Sentence Foundations",
+          "sequence": 1,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-01",
+              "lesson_id": "topic-personal-pronouns",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "reference-questions",
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [
+                26,
+                146,
+                148,
+                150,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                221,
+                222
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-02",
+              "lesson_id": "topic-basic-negation-particles",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-personal-pronouns"
+              ],
+              "course_topic_ids": [
+                "grammar-functions",
+                "communication-social"
+              ],
+              "introduced_syllabus_entry_ids": [
+                4,
+                13,
+                15,
+                30,
+                108,
+                115,
+                122,
+                124,
+                144,
+                188
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-03",
+              "lesson_id": "topic-social-conversation",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-basic-negation-particles"
+              ],
+              "course_topic_ids": [
+                "communication-social",
+                "abstract-concepts"
+              ],
+              "introduced_syllabus_entry_ids": [
+                14,
+                24,
+                45,
+                120,
+                121,
+                147,
+                165,
+                166,
+                171,
+                218,
+                219,
+                220,
+                241,
+                272,
+                187
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-04",
+              "lesson_id": "topic-questions-and-pointing",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-social-conversation"
+              ],
+              "course_topic_ids": [
+                "reference-questions",
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                47,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                181,
+                182,
+                276,
+                277,
+                279,
+                280,
+                281,
+                282,
+                283,
+                284
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l1-u-02",
+          "title": "Numbers and Time",
+          "sequence": 2,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-05",
+              "lesson_id": "topic-counting-numbers",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-questions-and-pointing"
+              ],
+              "course_topic_ids": [
+                "numbers-quantities"
+              ],
+              "introduced_syllabus_entry_ids": [
+                2,
+                6,
+                49,
+                95,
+                112,
+                113,
+                160,
+                162,
+                173,
+                184,
+                198,
+                223,
+                254
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-06",
+              "lesson_id": "topic-quantities-classifiers",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-counting-numbers"
+              ],
+              "course_topic_ids": [
+                "numbers-quantities",
+                "shopping-money"
+              ],
+              "introduced_syllabus_entry_ids": [
+                7,
+                10,
+                31,
+                60,
+                85,
+                89,
+                111,
+                239,
+                258,
+                259,
+                261,
+                262,
+                264,
+                265,
+                266,
+                287
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-07",
+              "lesson_id": "topic-clock-and-day",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-quantities-classifiers"
+              ],
+              "course_topic_ids": [
+                "time-calendar",
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                5,
+                33,
+                55,
+                56,
+                178,
+                185,
+                186,
+                215,
+                217,
+                230,
+                232,
+                236,
+                273,
+                275,
+                291
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-08",
+              "lesson_id": "topic-dates-calendar",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-clock-and-day"
+              ],
+              "course_topic_ids": [
+                "time-calendar",
+                "numbers-quantities"
+              ],
+              "introduced_syllabus_entry_ids": [
+                76,
+                93,
+                94,
+                128,
+                129,
+                149,
+                168,
+                172,
+                199,
+                207,
+                243,
+                244,
+                245,
+                269,
+                297
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l1-u-03",
+          "title": "People and Everyday Situations",
+          "sequence": 3,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-09",
+              "lesson_id": "topic-family-and-friends",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-dates-calendar"
+              ],
+              "course_topic_ids": [
+                "family-relationships",
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [
+                1,
+                3,
+                32,
+                48,
+                59,
+                68,
+                86,
+                87,
+                92,
+                114,
+                123,
+                143,
+                153,
+                154,
+                156,
+                235
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-10",
+              "lesson_id": "topic-people-and-work",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-family-and-friends"
+              ],
+              "course_topic_ids": [
+                "people-identity",
+                "work-jobs"
+              ],
+              "introduced_syllabus_entry_ids": [
+                130,
+                142,
+                152,
+                155,
+                170,
+                231,
+                62,
+                63,
+                176,
+                228
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-11",
+              "lesson_id": "topic-food-and-meals",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-people-and-work"
+              ],
+              "course_topic_ids": [
+                "food-drink",
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                8,
+                16,
+                17,
+                21,
+                50,
+                51,
+                72,
+                77,
+                84,
+                90,
+                125,
+                126,
+                127,
+                151,
+                159,
+                192,
+                193,
+                216,
+                224,
+                274,
+                300
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-12",
+              "lesson_id": "topic-shopping-and-things",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-food-and-meals"
+              ],
+              "course_topic_ids": [
+                "shopping-money",
+                "home-objects"
+              ],
+              "introduced_syllabus_entry_ids": [
+                19,
+                34,
+                65,
+                105,
+                116,
+                117,
+                157,
+                164,
+                174,
+                268,
+                9,
+                35,
+                36,
+                40,
+                52,
+                189,
+                255,
+                260,
+                295
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l1-u-04",
+          "title": "Moving Around and Learning",
+          "sequence": 4,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-13",
+              "lesson_id": "topic-getting-around",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-shopping-and-things"
+              ],
+              "course_topic_ids": [
+                "travel-transport",
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                20,
+                22,
+                29,
+                54,
+                81,
+                83,
+                98,
+                106,
+                167,
+                11,
+                66,
+                80,
+                110,
+                163,
+                175,
+                212,
+                213,
+                226,
+                289
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-14",
+              "lesson_id": "topic-school-people-places",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-getting-around"
+              ],
+              "course_topic_ids": [
+                "school-language",
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [
+                27,
+                28,
+                179,
+                211,
+                237,
+                238,
+                248,
+                250,
+                292,
+                293
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-15",
+              "lesson_id": "topic-studying-and-language",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-school-people-places"
+              ],
+              "course_topic_ids": [
+                "school-language",
+                "communication-social"
+              ],
+              "introduced_syllabus_entry_ids": [
+                42,
+                43,
+                69,
+                70,
+                103,
+                107,
+                177,
+                190,
+                191,
+                196,
+                197,
+                209,
+                210,
+                229,
+                240,
+                247,
+                249,
+                290,
+                296
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l1-u-05",
+          "title": "Actions, Abilities and Description",
+          "sequence": 5,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-16",
+              "lesson_id": "topic-everyday-actions",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-studying-and-language"
+              ],
+              "course_topic_ids": [
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                23,
+                61,
+                88,
+                91,
+                97,
+                99,
+                101,
+                214,
+                278,
+                288,
+                294,
+                298,
+                299
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-17",
+              "lesson_id": "topic-abilities-interests",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-everyday-actions"
+              ],
+              "course_topic_ids": [
+                "daily-actions",
+                "leisure-media"
+              ],
+              "introduced_syllabus_entry_ids": [
+                82,
+                96,
+                102,
+                145,
+                225,
+                233,
+                252,
+                263,
+                18,
+                37,
+                38,
+                39,
+                58,
+                75
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-18",
+              "lesson_id": "topic-describing-feelings",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-abilities-interests"
+              ],
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                25,
+                44,
+                46,
+                57,
+                71,
+                73,
+                74,
+                118,
+                158,
+                180,
+                234,
+                242
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l1-u-06",
+          "title": "Wellbeing, Nature and Grammar",
+          "sequence": 6,
+          "placements": [
+            {
+              "placement_id": "hsk3-l1-p-19",
+              "lesson_id": "topic-health-and-rest",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-describing-feelings"
+              ],
+              "course_topic_ids": [
+                "health-wellbeing"
+              ],
+              "introduced_syllabus_entry_ids": [
+                12,
+                100,
+                104,
+                161,
+                183,
+                194,
+                195,
+                246,
+                256,
+                257
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-20",
+              "lesson_id": "topic-animals-and-weather",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-health-and-rest"
+              ],
+              "course_topic_ids": [
+                "animals-weather"
+              ],
+              "introduced_syllabus_entry_ids": [
+                64,
+                109,
+                119,
+                169,
+                208,
+                227,
+                251,
+                267
+              ],
+              "reviewed_syllabus_entry_ids": []
+            },
+            {
+              "placement_id": "hsk3-l1-p-21",
+              "lesson_id": "topic-connecting-ideas",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-animals-and-weather"
+              ],
+              "course_topic_ids": [
+                "grammar-functions",
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                41,
+                53,
+                67,
+                78,
+                79,
+                206,
+                253,
+                270,
+                271,
+                285,
+                286
+              ],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

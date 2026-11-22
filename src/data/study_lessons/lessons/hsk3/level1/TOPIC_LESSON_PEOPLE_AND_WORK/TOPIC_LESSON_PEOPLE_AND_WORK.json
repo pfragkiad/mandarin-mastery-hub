@@ -1,0 +1,633 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-people-and-work",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Introducing People and Work",
+    "subtitle": "Names, Occupations and the Workday",
+    "description": "Describe who someone is and talk about workplaces and daily work.",
+    "slug": "people-and-work"
+  },
+  "classification": {
+    "primary_topic_id": "people-identity",
+    "topic_ids": [
+      "people-identity",
+      "work-jobs"
+    ],
+    "tags": [
+      "identity",
+      "jobs",
+      "work"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Introduce people by name or title.",
+    "Talk about work and companies.",
+    "Understand when someone goes to work or finishes."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "写": "Characters:写",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "叫": "Characters:叫",
+    "司": "Characters:司",
+    "吃": "Characters:吃",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "哥": "Characters:哥",
+    "在": "Characters:在",
+    "士": "Characters:士",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "性": "Characters:性",
+    "我": "Characters:我",
+    "早": "Characters:早",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "校": "Characters:校",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "男": "Characters:男",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "老": "Characters:老",
+    "要": "Characters:要",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "院": "Characters:院",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Describe who someone is and talk about workplaces and daily work.",
+      "focus": "Introduce people by name or title."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-130",
+          "hanzi": "名字",
+          "pinyin": "míngzi",
+          "meaning_en": "name",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-130-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你的名字是什么？",
+              "pinyin": "nǐ de míngzi shì shénme?",
+              "english": "What is your name?",
+              "teaching_note": "你的名字是什么 is a direct question about someone’s name; 叫什么名字 is another common wording."
+            },
+            {
+              "id": "ex-130-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在这里写名字。",
+              "pinyin": "qǐng zài zhèlǐ xiě míngzi.",
+              "english": "Please write your name here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 130
+            }
+          ]
+        },
+        {
+          "id": "w-142",
+          "hanzi": "男",
+          "pinyin": "nán",
+          "meaning_en": "male",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-142-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个男学生是我的朋友。",
+              "pinyin": "nàge nán xuéshēng shì wǒ de péngyou.",
+              "english": "That male student is my friend.",
+              "teaching_note": "男 is an adjective specifying a male student; more formal contexts may use 男性."
+            },
+            {
+              "id": "ex-142-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有十个男学生。",
+              "pinyin": "zhège bān yǒu shí gè nán xuéshēng.",
+              "english": "There are ten male students in this class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 142
+            }
+          ]
+        },
+        {
+          "id": "w-152",
+          "hanzi": "女",
+          "pinyin": "nǚ",
+          "meaning_en": "female",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-152-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个女学生在看书。",
+              "pinyin": "nàge nǚ xuéshēng zài kàn shū.",
+              "english": "That female student is reading a book.",
+              "teaching_note": "女 modifies 学生 to specify a female student."
+            },
+            {
+              "id": "ex-152-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有八个女学生。",
+              "pinyin": "zhège bān yǒu bā gè nǚ xuéshēng.",
+              "english": "There are eight female students in this class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 152
+            }
+          ]
+        },
+        {
+          "id": "w-155",
+          "hanzi": "女士",
+          "pinyin": "nǚshì",
+          "meaning_en": "Ms.; lady",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-155-1",
+              "style": "conversational",
+              "register": "formal",
+              "hanzi": "这位女士是老师。",
+              "pinyin": "zhè wèi nǚshì shì lǎoshī.",
+              "english": "This lady is a teacher.",
+              "teaching_note": "女士 is a respectful label for an adult woman, more formal than 女人."
+            },
+            {
+              "id": "ex-155-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那位女士会说汉语。",
+              "pinyin": "nà wèi nǚshì huì shuō Hànyǔ.",
+              "english": "That lady can speak Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 155
+            }
+          ]
+        },
+        {
+          "id": "w-170",
+          "hanzi": "人",
+          "pinyin": "rén",
+          "meaning_en": "person",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-170-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是一个好人。",
+              "pinyin": "tā shì yí ge hǎo rén.",
+              "english": "He is a good person.",
+              "teaching_note": "人 means a person; 一个好人 is one good person, with 个 as the classifier."
+            },
+            {
+              "id": "ex-170-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店里有很多人。",
+              "pinyin": "zhè jiā fàndiàn lǐ yǒu hěn duō rén.",
+              "english": "There are many people in this restaurant.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 170
+            }
+          ]
+        },
+        {
+          "id": "w-231",
+          "hanzi": "先生",
+          "pinyin": "xiānsheng",
+          "meaning_en": "Mr.; sir",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-231-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "这位先生是医生。",
+              "pinyin": "zhè wèi xiānsheng shì yīshēng.",
+              "english": "This gentleman is a doctor.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-231-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那位先生在学校工作。",
+              "pinyin": "nà wèi xiānsheng zài xuéxiào gōngzuò.",
+              "english": "That gentleman works at the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 231
+            }
+          ]
+        },
+        {
+          "id": "w-062",
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "meaning_en": "company",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "work-jobs",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-062-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她在一家公司上班。",
+              "pinyin": "tā zài yì jiā gōngsī shàngbān.",
+              "english": "She works for a company.",
+              "teaching_note": "家 classifies companies; 一 is pronounced yì before first-tone 家."
+            },
+            {
+              "id": "ex-062-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "公司里有很多人。",
+              "pinyin": "gōngsī lǐ yǒu hěn duō rén.",
+              "english": "There are many people at the company.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 62
+            }
+          ]
+        },
+        {
+          "id": "w-063",
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "meaning_en": "work; job",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-063-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天要工作。",
+              "pinyin": "wǒ jīntiān yào gōngzuò.",
+              "english": "I have to work today.",
+              "teaching_note": "要 can express necessity or a planned action; context determines how strong “have to” is."
+            },
+            {
+              "id": "ex-063-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈在医院工作。",
+              "pinyin": "māma zài yīyuàn gōngzuò.",
+              "english": "Mom works at a hospital.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 63
+            }
+          ],
+          "pos_note": "Can be the verb work or the noun work/job."
+        },
+        {
+          "id": "w-176",
+          "hanzi": "上班",
+          "pinyin": "shàngbān",
+          "meaning_en": "go to work",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-176-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸每天八点上班。",
+              "pinyin": "wǒ bàba měitiān bā diǎn shàngbān.",
+              "english": "My dad goes to work at eight every day.",
+              "teaching_note": "上班 means go to work or start work, not simply enter a building."
+            },
+            {
+              "id": "ex-176-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的哥哥早上八点上班。",
+              "pinyin": "wǒ de gēge zǎoshang bā diǎn shàngbān.",
+              "english": "My older brother goes to work at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 176
+            }
+          ]
+        },
+        {
+          "id": "w-228",
+          "hanzi": "下班",
+          "pinyin": "xiàbān",
+          "meaning_en": "finish work",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "work-jobs",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-228-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸六点下班。",
+              "pinyin": "wǒ bàba liù diǎn xiàbān.",
+              "english": "My father finishes work at six.",
+              "teaching_note": "下班 means finish the workday or leave work, here at six."
+            },
+            {
+              "id": "ex-228-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下班后，我们去饭店吃饭。",
+              "pinyin": "xiàbān hòu, wǒmen qù fàndiàn chī fàn.",
+              "english": "After work, we go to a restaurant to eat.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 228
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-63",
+        "title": "Talking about work",
+        "explanation": "Use the common work verb or noun with a person or workplace.",
+        "example_id": "ex-063-1"
+      },
+      {
+        "id": "g-130",
+        "title": "Names and identity",
+        "explanation": "Ask for or give a name using a familiar introductory expression.",
+        "example_id": "ex-130-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-130-1",
+      "ex-130-2",
+      "ex-142-1",
+      "ex-142-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-10-1",
+          "kind": "selection",
+          "prompt": "Which expression means “name”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "上班",
+              "pinyin": "shàngbān"
+            },
+            {
+              "id": "b",
+              "hanzi": "名字",
+              "pinyin": "míngzi"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “name”."
+        },
+        {
+          "id": "q-10-2",
+          "kind": "selection",
+          "prompt": "Which expression means “Mr.”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "先生",
+              "pinyin": "xiānsheng"
+            },
+            {
+              "id": "b",
+              "hanzi": "下班",
+              "pinyin": "xiàbān"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “Mr.; sir”."
+        },
+        {
+          "id": "q-10-3",
+          "kind": "selection",
+          "prompt": "Which expression means “finish work”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "名字",
+              "pinyin": "míngzi"
+            },
+            {
+              "id": "b",
+              "hanzi": "下班",
+              "pinyin": "xiàbān"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “finish work”."
+        },
+        {
+          "id": "q-10-4",
+          "kind": "comprehension",
+          "prompt": "In the example “你的名字是什么？” (nǐ de míngzi shì shénme?), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "What is your name?",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-10-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Please write your name here.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请在这里写名字。 (qǐng zài zhèlǐ xiě míngzi.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

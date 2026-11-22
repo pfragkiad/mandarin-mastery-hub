@@ -1,0 +1,827 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-dates-calendar",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Days, Months and Years",
+    "subtitle": "Dates, Calendar and Age",
+    "description": "Talk about today, yesterday and tomorrow, days of the week, years and age.",
+    "slug": "dates-calendar"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar",
+      "numbers-quantities"
+    ],
+    "tags": [
+      "dates",
+      "calendar",
+      "age"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Use day, month, year and week words.",
+    "Talk about last, this and next year.",
+    "Understand simple dates and ages."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "住": "Characters:住",
+    "八": "Characters:八",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "号": "Characters:号",
+    "四": "Characters:四",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "岁": "Characters:岁",
+    "市": "Characters:市",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "息": "Characters:息",
+    "我": "Characters:我",
+    "新": "Characters:新",
+    "日": "Characters:日",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "校": "Characters:校",
+    "汉": "Characters:汉",
+    "点": "Characters:点",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "语": "Characters:语",
+    "课": "Characters:课",
+    "超": "Characters:超",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "雨": "Characters:雨"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about today, yesterday and tomorrow, days of the week, years and age.",
+      "focus": "Use day, month, year and week words."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-076",
+          "hanzi": "号",
+          "pinyin": "hào",
+          "meaning_en": "number; date",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-076-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天是十月十四号。",
+              "pinyin": "jīntiān shì shí yuè shísì hào.",
+              "english": "Today is October 14.",
+              "teaching_note": "号 is a common spoken way to state a day of the month; 月 identifies the month."
+            },
+            {
+              "id": "ex-076-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "十月五号是星期一。",
+              "pinyin": "shí yuè wǔ hào shì xīngqīyī.",
+              "english": "October 5 is a Monday.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 76
+            }
+          ]
+        },
+        {
+          "id": "w-093",
+          "hanzi": "今年",
+          "pinyin": "jīnnián",
+          "meaning_en": "this year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-093-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今年在学汉语。",
+              "pinyin": "wǒ jīnnián zài xué Hànyǔ.",
+              "english": "I'm studying Chinese this year.",
+              "teaching_note": "今年 sets the time frame; 在学 marks learning in progress, rather than a finished action."
+            },
+            {
+              "id": "ex-093-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今年学校有很多新学生。",
+              "pinyin": "jīnnián xuéxiào yǒu hěn duō xīn xuéshēng.",
+              "english": "There are many new students at the school this year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 93
+            }
+          ]
+        },
+        {
+          "id": "w-094",
+          "hanzi": "今天",
+          "pinyin": "jīntiān",
+          "meaning_en": "today",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-094-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天我有汉语课。",
+              "pinyin": "jīntiān wǒ yǒu Hànyǔ kè.",
+              "english": "I have Chinese class today.",
+              "teaching_note": "今天 marks the current day; 汉语课 means Chinese-language class."
+            },
+            {
+              "id": "ex-094-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天下午我们不上课。",
+              "pinyin": "jīntiān xiàwǔ wǒmen bú shàngkè.",
+              "english": "We don't have class this afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 94
+            }
+          ]
+        },
+        {
+          "id": "w-128",
+          "hanzi": "明年",
+          "pinyin": "míngnián",
+          "meaning_en": "next year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-128-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "明年我去中国。",
+              "pinyin": "míngnián wǒ qù Zhōngguó.",
+              "english": "Next year I will go to China.",
+              "teaching_note": "明年 places the trip next year; Chinese verbs do not change for future tense."
+            },
+            {
+              "id": "ex-128-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "明年学校有新的汉语课。",
+              "pinyin": "míngnián xuéxiào yǒu xīn de Hànyǔ kè.",
+              "english": "The school will have new Chinese-language classes next year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 128
+            }
+          ]
+        },
+        {
+          "id": "w-129",
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "meaning_en": "tomorrow",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-129-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "明天我们去学校。",
+              "pinyin": "míngtiān wǒmen qù xuéxiào.",
+              "english": "Tomorrow we are going to school.",
+              "teaching_note": "明天 sets the time for a planned future action."
+            },
+            {
+              "id": "ex-129-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "明天上午八点开始上课。",
+              "pinyin": "míngtiān shàngwǔ bā diǎn kāishǐ shàngkè.",
+              "english": "Class starts at eight tomorrow morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 129
+            }
+          ]
+        },
+        {
+          "id": "w-149",
+          "hanzi": "年",
+          "pinyin": "nián",
+          "meaning_en": "year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-149-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "一年有十二个月。",
+              "pinyin": "yì nián yǒu shí'èr ge yuè.",
+              "english": "There are twelve months in a year.",
+              "teaching_note": "年 is a unit for a year; twelve months make one year."
+            },
+            {
+              "id": "ex-149-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们在这里住了两年。",
+              "pinyin": "wǒmen zài zhèlǐ zhù le liǎng nián.",
+              "english": "We have lived here for two years.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 149
+            }
+          ]
+        },
+        {
+          "id": "w-168",
+          "hanzi": "去年",
+          "pinyin": "qùnián",
+          "meaning_en": "last year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-168-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "去年我在中国。",
+              "pinyin": "qùnián wǒ zài Zhōngguó.",
+              "english": "Last year I was in China.",
+              "teaching_note": "去年 is last year; the sentence reports a past location without verb inflection."
+            },
+            {
+              "id": "ex-168-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "去年我在这个学校学习。",
+              "pinyin": "qùnián wǒ zài zhège xuéxiào xuéxí.",
+              "english": "I studied at this school last year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 168
+            }
+          ]
+        },
+        {
+          "id": "w-172",
+          "hanzi": "日",
+          "pinyin": "rì",
+          "meaning_en": "day; sun",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-172-1",
+              "style": "conversational",
+              "register": "formal",
+              "hanzi": "今天是十月十四日。",
+              "pinyin": "jīntiān shì shí yuè shísì rì.",
+              "english": "Today is October 14.",
+              "teaching_note": "日 is used for the day of a month in more formal or written dates; 号 is common in speech."
+            },
+            {
+              "id": "ex-172-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天是五月一日。",
+              "pinyin": "jīntiān shì wǔ yuè yī rì.",
+              "english": "Today is May 1.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 172
+            }
+          ],
+          "pos_note": "Day/date word; also a measure word for dates."
+        },
+        {
+          "id": "w-199",
+          "hanzi": "岁",
+          "pinyin": "suì",
+          "meaning_en": "years old",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-199-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今年二十岁。",
+              "pinyin": "wǒ jīnnián èrshí suì.",
+              "english": "I am twenty years old this year.",
+              "teaching_note": "岁 expresses age; no 是 is used before the age number."
+            },
+            {
+              "id": "ex-199-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个孩子今年八岁。",
+              "pinyin": "zhège háizi jīnnián bā suì.",
+              "english": "This child is eight years old this year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 199
+            }
+          ],
+          "pos_note": "Measure word for age."
+        },
+        {
+          "id": "w-207",
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "meaning_en": "day; sky",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-207-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在这里住了三天。",
+              "pinyin": "wǒ zài zhèlǐ zhù le sān tiān.",
+              "english": "I stayed here for three days.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-207-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个星期有三天不上课。",
+              "pinyin": "zhège xīngqī yǒu sān tiān bú shàngkè.",
+              "english": "We don't have class on three days this week.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 207
+            }
+          ],
+          "pos_note": "Day as a time noun; also a measure word for duration."
+        },
+        {
+          "id": "w-243",
+          "hanzi": "星期",
+          "pinyin": "xīngqī",
+          "meaning_en": "week",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-243-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天是星期三。",
+              "pinyin": "jīntiān shì xīngqī sān.",
+              "english": "Today is Wednesday.",
+              "teaching_note": "星期三 is Wednesday; weekdays are numbered from Monday as one."
+            },
+            {
+              "id": "ex-243-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个星期有三天汉语课。",
+              "pinyin": "zhège xīngqī yǒu sān tiān Hànyǔ kè.",
+              "english": "We have Chinese classes on three days this week.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 243
+            }
+          ]
+        },
+        {
+          "id": "w-244",
+          "hanzi": "星期日",
+          "pinyin": "xīngqīrì",
+          "meaning_en": "Sunday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-244-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "星期日我休息。",
+              "pinyin": "xīngqīrì wǒ xiūxi.",
+              "english": "I rest on Sunday.",
+              "teaching_note": "星期日 is a standard way to say Sunday; 星期天 has the same meaning."
+            },
+            {
+              "id": "ex-244-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校星期日不上课。",
+              "pinyin": "xuéxiào xīngqīrì bú shàngkè.",
+              "english": "The school has no classes on Sundays.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 244
+            }
+          ]
+        },
+        {
+          "id": "w-245",
+          "hanzi": "星期天",
+          "pinyin": "xīngqītiān",
+          "meaning_en": "Sunday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-245-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "星期天我们去超市。",
+              "pinyin": "xīngqītiān wǒmen qù chāoshì.",
+              "english": "We're going to the supermarket on Sunday.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-245-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个星期天我们去看电影。",
+              "pinyin": "zhège xīngqītiān wǒmen qù kàn diànyǐng.",
+              "english": "We are going to watch a movie this Sunday.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 245
+            }
+          ]
+        },
+        {
+          "id": "w-269",
+          "hanzi": "月",
+          "pinyin": "yuè",
+          "meaning_en": "month; moon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-269-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "下个月我去中国。",
+              "pinyin": "xià gè yuè wǒ qù Zhōngguó.",
+              "english": "I will go to China next month.",
+              "teaching_note": "下个月 means next month; no future-tense inflection is needed."
+            },
+            {
+              "id": "ex-269-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "明年五月我们去中国。",
+              "pinyin": "míngnián wǔ yuè wǒmen qù Zhōngguó.",
+              "english": "We are going to China next May.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 269
+            }
+          ]
+        },
+        {
+          "id": "w-297",
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "meaning_en": "yesterday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-297-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "昨天下雨了。",
+              "pinyin": "zuótiān xià yǔ le.",
+              "english": "It rained yesterday.",
+              "teaching_note": "昨天 places a completed rain event on the previous day."
+            },
+            {
+              "id": "ex-297-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "昨天上午我在学校上课。",
+              "pinyin": "zuótiān shàngwǔ wǒ zài xuéxiào shàngkè.",
+              "english": "I had class at school yesterday morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 297
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-269",
+        "title": "Naming months",
+        "explanation": "The month follows the number in a date expression.",
+        "example_id": "ex-269-1"
+      },
+      {
+        "id": "g-93",
+        "title": "Reference years",
+        "explanation": "Calendar expressions distinguish this, last and next year.",
+        "example_id": "ex-093-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-076-1",
+      "ex-076-2",
+      "ex-093-1",
+      "ex-093-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-08-1",
+          "kind": "selection",
+          "prompt": "Which expression means “number”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "星期",
+              "pinyin": "xīngqī"
+            },
+            {
+              "id": "b",
+              "hanzi": "号",
+              "pinyin": "hào"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “number; date”."
+        },
+        {
+          "id": "q-08-2",
+          "kind": "selection",
+          "prompt": "Which expression means “day”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "日",
+              "pinyin": "rì"
+            },
+            {
+              "id": "b",
+              "hanzi": "星期日",
+              "pinyin": "xīngqīrì"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “day; sun”."
+        },
+        {
+          "id": "q-08-3",
+          "kind": "selection",
+          "prompt": "Which expression means “yesterday”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "星期天",
+              "pinyin": "xīngqītiān"
+            },
+            {
+              "id": "b",
+              "hanzi": "昨天",
+              "pinyin": "zuótiān"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “yesterday”."
+        },
+        {
+          "id": "q-08-4",
+          "kind": "comprehension",
+          "prompt": "In the example “今天是十月十四号。” (jīntiān shì shí yuè shísì hào.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Today is October 14.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-08-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “October 5 is a Monday.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "十月五号是星期一。 (shí yuè wǔ hào shì xīngqīyī.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-counting-numbers",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Counting from One Upward",
+    "subtitle": "Basic Numbers and Large Numbers",
+    "description": "Recognize the basic Chinese numerals and combine them to express quantities.",
+    "slug": "counting-numbers"
+  },
+  "classification": {
+    "primary_topic_id": "numbers-quantities",
+    "topic_ids": [
+      "numbers-quantities"
+    ],
+    "tags": [
+      "basic-numbers",
+      "counting"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Read the digits and basic round numbers.",
+    "Understand how tens, hundreds and thousands are formed.",
+    "Recognize numbers in example sentences."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "九": "Characters:九",
+    "书": "Characters:书",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "八": "Characters:八",
+    "六": "Characters:六",
+    "十": "Characters:十",
+    "千": "Characters:千",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "始": "Characters:始",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "日": "Characters:日",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "杯": "Characters:杯",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "百": "Characters:百",
+    "看": "Characters:看",
+    "苹": "Characters:苹",
+    "课": "Characters:课",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "间": "Characters:间",
+    "零": "Characters:零"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Recognize the basic Chinese numerals and combine them to express quantities.",
+      "focus": "Read the digits and basic round numbers."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-002",
+          "hanzi": "八",
+          "pinyin": "bā",
+          "meaning_en": "eight",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-002-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有八本书。",
+              "pinyin": "wǒ yǒu bā běn shū.",
+              "english": "I have eight books.",
+              "teaching_note": "八 gives the quantity; 本 is the classifier used for bound books."
+            },
+            {
+              "id": "ex-002-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天有八个学生上课。",
+              "pinyin": "jīntiān yǒu bā gè xuéshēng shàngkè.",
+              "english": "Eight students have class today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 2
+            }
+          ]
+        },
+        {
+          "id": "w-006",
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "meaning_en": "hundred",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-006-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有一百个人。",
+              "pinyin": "zhèlǐ yǒu yì bǎi ge rén.",
+              "english": "There are a hundred people here.",
+              "teaching_note": "一百 means one hundred; 个 is the general classifier for people here."
+            },
+            {
+              "id": "ex-006-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有一百本中文书。",
+              "pinyin": "zhè jiā shūdiàn yǒu yì bǎi běn Zhōngwén shū.",
+              "english": "This bookstore has one hundred books in Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 6
+            }
+          ]
+        },
+        {
+          "id": "w-049",
+          "hanzi": "二",
+          "pinyin": "èr",
+          "meaning_en": "two",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-049-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有二十本书。",
+              "pinyin": "wǒ yǒu èrshí běn shū.",
+              "english": "I have twenty books.",
+              "teaching_note": "二十 is the number twenty; 本 counts books."
+            },
+            {
+              "id": "ex-049-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天是二月二日。",
+              "pinyin": "jīntiān shì èr yuè èr rì.",
+              "english": "Today is February 2.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 49
+            }
+          ]
+        },
+        {
+          "id": "w-095",
+          "hanzi": "九",
+          "pinyin": "jiǔ",
+          "meaning_en": "nine",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-095-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有九个苹果。",
+              "pinyin": "wǒ yǒu jiǔ gè píngguǒ.",
+              "english": "I have nine apples.",
+              "teaching_note": "个 is the general classifier used when counting apples."
+            },
+            {
+              "id": "ex-095-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校九点开始上课。",
+              "pinyin": "xuéxiào jiǔ diǎn kāishǐ shàngkè.",
+              "english": "Classes at the school start at nine o'clock.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 95
+            }
+          ]
+        },
+        {
+          "id": "w-112",
+          "hanzi": "零",
+          "pinyin": "líng",
+          "meaning_en": "zero",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-112-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是零点。",
+              "pinyin": "xiànzài shì líng diǎn.",
+              "english": "It is midnight.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-112-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校有一百零二个学生。",
+              "pinyin": "xuéxiào yǒu yì bǎi líng èr gè xuéshēng.",
+              "english": "The school has one hundred and two students.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 112
+            }
+          ]
+        },
+        {
+          "id": "w-113",
+          "hanzi": "六",
+          "pinyin": "liù",
+          "meaning_en": "six",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-113-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有六本书。",
+              "pinyin": "wǒ yǒu liù běn shū.",
+              "english": "I have six books.",
+              "teaching_note": "六 is a cardinal number used before the book classifier 本."
+            },
+            {
+              "id": "ex-113-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们星期六去书店。",
+              "pinyin": "wǒmen xīngqīliù qù shūdiàn.",
+              "english": "We are going to the bookstore on Saturday.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 113
+            }
+          ]
+        },
+        {
+          "id": "w-160",
+          "hanzi": "七",
+          "pinyin": "qī",
+          "meaning_en": "seven",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-160-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有七个杯子。",
+              "pinyin": "wǒ yǒu qī gè bēizi.",
+              "english": "I have seven cups.",
+              "teaching_note": "七 is the quantity, followed by the general classifier 个."
+            },
+            {
+              "id": "ex-160-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "七个学生在教室里。",
+              "pinyin": "qī gè xuéshēng zài jiàoshì lǐ.",
+              "english": "Seven students are in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 160
+            }
+          ]
+        },
+        {
+          "id": "w-162",
+          "hanzi": "千",
+          "pinyin": "qiān",
+          "meaning_en": "thousand",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-162-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有一千本书。",
+              "pinyin": "zhèlǐ yǒu yì qiān běn shū.",
+              "english": "There are one thousand books here.",
+              "teaching_note": "千 means a thousand; 一 is pronounced yì before qiān."
+            },
+            {
+              "id": "ex-162-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个学校有一千个学生。",
+              "pinyin": "zhège xuéxiào yǒu yì qiān gè xuéshēng.",
+              "english": "This school has one thousand students.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 162
+            }
+          ]
+        },
+        {
+          "id": "w-173",
+          "hanzi": "三",
+          "pinyin": "sān",
+          "meaning_en": "three",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-173-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有三个朋友。",
+              "pinyin": "wǒ yǒu sān gè péngyou.",
+              "english": "I have three friends.",
+              "teaching_note": "三 gives the count; 个 is the classifier for 朋友."
+            },
+            {
+              "id": "ex-173-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "三个学生在看书。",
+              "pinyin": "sān gè xuéshēng zài kàn shū.",
+              "english": "Three students are reading.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 173
+            }
+          ]
+        },
+        {
+          "id": "w-184",
+          "hanzi": "十",
+          "pinyin": "shí",
+          "meaning_en": "ten",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-184-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有十本书。",
+              "pinyin": "wǒ yǒu shí běn shū.",
+              "english": "I have ten books.",
+              "teaching_note": "十 counts the books; 本 is the required classifier."
+            },
+            {
+              "id": "ex-184-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "上午十点我们上课。",
+              "pinyin": "shàngwǔ shí diǎn wǒmen shàngkè.",
+              "english": "We have class at ten in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 184
+            }
+          ]
+        },
+        {
+          "id": "w-198",
+          "hanzi": "四",
+          "pinyin": "sì",
+          "meaning_en": "four",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-198-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有四本书。",
+              "pinyin": "wǒ yǒu sì běn shū.",
+              "english": "I have four books.",
+              "teaching_note": "四 is the number four, followed by 本 for books."
+            },
+            {
+              "id": "ex-198-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个房间有四个人。",
+              "pinyin": "zhège fángjiān yǒu sì gè rén.",
+              "english": "There are four people in this room.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 198
+            }
+          ]
+        },
+        {
+          "id": "w-223",
+          "hanzi": "五",
+          "pinyin": "wǔ",
+          "meaning_en": "five",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-223-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有五个苹果。",
+              "pinyin": "wǒ yǒu wǔ gè píngguǒ.",
+              "english": "I have five apples.",
+              "teaching_note": "五 gives the number, and 个 is the general classifier for apples."
+            },
+            {
+              "id": "ex-223-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天有五个学生没有来。",
+              "pinyin": "jīntiān yǒu wǔ gè xuéshēng méiyǒu lái.",
+              "english": "Five students did not come today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 223
+            }
+          ]
+        },
+        {
+          "id": "w-254",
+          "hanzi": "一",
+          "pinyin": "yī",
+          "meaning_en": "one",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-254-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个姐姐。",
+              "pinyin": "wǒ yǒu yí ge jiějie.",
+              "english": "I have one older sister.",
+              "teaching_note": "一 counts one older sister and changes to yí before neutral-tone 个."
+            },
+            {
+              "id": "ex-254-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有一个学生。",
+              "pinyin": "zhèlǐ yǒu yí ge xuéshēng.",
+              "english": "There is one student here.",
+              "teaching_note": "一 counts a single student with the measure word 个 in the common existential pattern 这里有… ."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 254
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-6",
+        "title": "Counting hundreds",
+        "explanation": "Combine numerals to build larger numbers.",
+        "example_id": "ex-006-1"
+      },
+      {
+        "id": "g-184",
+        "title": "Tens",
+        "explanation": "The numeral for ten participates in larger numbers.",
+        "example_id": "ex-184-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-002-1",
+      "ex-002-2",
+      "ex-006-1",
+      "ex-006-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-05-1",
+          "kind": "selection",
+          "prompt": "Which expression means “eight”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "八",
+              "pinyin": "bā"
+            },
+            {
+              "id": "b",
+              "hanzi": "十",
+              "pinyin": "shí"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “eight”."
+        },
+        {
+          "id": "q-05-2",
+          "kind": "selection",
+          "prompt": "Which expression means “seven”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "四",
+              "pinyin": "sì"
+            },
+            {
+              "id": "b",
+              "hanzi": "七",
+              "pinyin": "qī"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “seven”."
+        },
+        {
+          "id": "q-05-3",
+          "kind": "selection",
+          "prompt": "Which expression means “one”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "一",
+              "pinyin": "yī"
+            },
+            {
+              "id": "b",
+              "hanzi": "五",
+              "pinyin": "wǔ"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “one”."
+        },
+        {
+          "id": "q-05-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我有八本书。” (wǒ yǒu bā běn shū.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I have eight books.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-05-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Eight students have class today.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "今天有八个学生上课。 (jīntiān yǒu bā gè xuéshēng shàngkè.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

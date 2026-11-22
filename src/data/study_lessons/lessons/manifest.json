@@ -1,0 +1,640 @@
+{
+  "package_version": "3.0.1",
+  "curriculum_id": "hsk3-2025",
+  "level": 1,
+  "hsk_vocab_count": 300,
+  "hsk_example_count": 600,
+  "thematic_lesson_count": 21,
+  "independent_character_lessons": 2,
+  "course_manifest": "curricula/HSK3_2025_LEVEL1.json",
+  "lessons": [
+    {
+      "lesson_id": "topic-personal-pronouns",
+      "file": "hsk3/level1/TOPIC_LESSON_PERSONAL_PRONOUNS.zip",
+      "entry_ids": [
+        26,
+        146,
+        148,
+        150,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        221,
+        222
+      ],
+      "title": "Talking About People",
+      "primary_topic_id": "reference-questions",
+      "topic_ids": [
+        "reference-questions",
+        "people-identity"
+      ],
+      "word_count": 12,
+      "example_count": 24,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-basic-negation-particles",
+      "file": "hsk3/level1/TOPIC_LESSON_BASIC_NEGATION_PARTICLES.zip",
+      "entry_ids": [
+        4,
+        13,
+        15,
+        30,
+        108,
+        115,
+        122,
+        124,
+        144,
+        188
+      ],
+      "title": "Making Basic Statements",
+      "primary_topic_id": "grammar-functions",
+      "topic_ids": [
+        "grammar-functions",
+        "communication-social"
+      ],
+      "word_count": 10,
+      "example_count": 20,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-social-conversation",
+      "file": "hsk3/level1/TOPIC_LESSON_SOCIAL_CONVERSATION.zip",
+      "entry_ids": [
+        14,
+        24,
+        45,
+        120,
+        121,
+        147,
+        165,
+        166,
+        171,
+        218,
+        219,
+        220,
+        241,
+        272,
+        187
+      ],
+      "title": "Greeting and Talking to People",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social",
+        "abstract-concepts"
+      ],
+      "word_count": 15,
+      "example_count": 30,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-questions-and-pointing",
+      "file": "hsk3/level1/TOPIC_LESSON_QUESTIONS_AND_POINTING.zip",
+      "entry_ids": [
+        47,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        181,
+        182,
+        276,
+        277,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284
+      ],
+      "title": "Asking and Pointing",
+      "primary_topic_id": "reference-questions",
+      "topic_ids": [
+        "reference-questions",
+        "places-directions"
+      ],
+      "word_count": 22,
+      "example_count": 44,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-counting-numbers",
+      "file": "hsk3/level1/TOPIC_LESSON_COUNTING_NUMBERS.zip",
+      "entry_ids": [
+        2,
+        6,
+        49,
+        95,
+        112,
+        113,
+        160,
+        162,
+        173,
+        184,
+        198,
+        223,
+        254
+      ],
+      "title": "Counting from One Upward",
+      "primary_topic_id": "numbers-quantities",
+      "topic_ids": [
+        "numbers-quantities"
+      ],
+      "word_count": 13,
+      "example_count": 26,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-quantities-classifiers",
+      "file": "hsk3/level1/TOPIC_LESSON_QUANTITIES_CLASSIFIERS.zip",
+      "entry_ids": [
+        7,
+        10,
+        31,
+        60,
+        85,
+        89,
+        111,
+        239,
+        258,
+        259,
+        261,
+        262,
+        264,
+        265,
+        266,
+        287
+      ],
+      "title": "Counting Real Things",
+      "primary_topic_id": "numbers-quantities",
+      "topic_ids": [
+        "numbers-quantities",
+        "shopping-money"
+      ],
+      "word_count": 16,
+      "example_count": 32,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-clock-and-day",
+      "file": "hsk3/level1/TOPIC_LESSON_CLOCK_AND_DAY.zip",
+      "entry_ids": [
+        5,
+        33,
+        55,
+        56,
+        178,
+        185,
+        186,
+        215,
+        217,
+        230,
+        232,
+        236,
+        273,
+        275,
+        291
+      ],
+      "title": "Talking About the Clock",
+      "primary_topic_id": "time-calendar",
+      "topic_ids": [
+        "time-calendar",
+        "daily-actions"
+      ],
+      "word_count": 15,
+      "example_count": 30,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-dates-calendar",
+      "file": "hsk3/level1/TOPIC_LESSON_DATES_CALENDAR.zip",
+      "entry_ids": [
+        76,
+        93,
+        94,
+        128,
+        129,
+        149,
+        168,
+        172,
+        199,
+        207,
+        243,
+        244,
+        245,
+        269,
+        297
+      ],
+      "title": "Days, Months and Years",
+      "primary_topic_id": "time-calendar",
+      "topic_ids": [
+        "time-calendar",
+        "numbers-quantities"
+      ],
+      "word_count": 15,
+      "example_count": 30,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-family-and-friends",
+      "file": "hsk3/level1/TOPIC_LESSON_FAMILY_AND_FRIENDS.zip",
+      "entry_ids": [
+        1,
+        3,
+        32,
+        48,
+        59,
+        68,
+        86,
+        87,
+        92,
+        114,
+        123,
+        143,
+        153,
+        154,
+        156,
+        235
+      ],
+      "title": "Introducing Family and Friends",
+      "primary_topic_id": "family-relationships",
+      "topic_ids": [
+        "family-relationships",
+        "people-identity"
+      ],
+      "word_count": 16,
+      "example_count": 32,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-people-and-work",
+      "file": "hsk3/level1/TOPIC_LESSON_PEOPLE_AND_WORK.zip",
+      "entry_ids": [
+        130,
+        142,
+        152,
+        155,
+        170,
+        231,
+        62,
+        63,
+        176,
+        228
+      ],
+      "title": "Introducing People and Work",
+      "primary_topic_id": "people-identity",
+      "topic_ids": [
+        "people-identity",
+        "work-jobs"
+      ],
+      "word_count": 10,
+      "example_count": 20,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-food-and-meals",
+      "file": "hsk3/level1/TOPIC_LESSON_FOOD_AND_MEALS.zip",
+      "entry_ids": [
+        8,
+        16,
+        17,
+        21,
+        50,
+        51,
+        72,
+        77,
+        84,
+        90,
+        125,
+        126,
+        127,
+        151,
+        159,
+        192,
+        193,
+        216,
+        224,
+        274,
+        300
+      ],
+      "title": "Food and Drink",
+      "primary_topic_id": "food-drink",
+      "topic_ids": [
+        "food-drink",
+        "daily-actions"
+      ],
+      "word_count": 21,
+      "example_count": 42,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-shopping-and-things",
+      "file": "hsk3/level1/TOPIC_LESSON_SHOPPING_AND_THINGS.zip",
+      "entry_ids": [
+        19,
+        34,
+        65,
+        105,
+        116,
+        117,
+        157,
+        164,
+        174,
+        268,
+        9,
+        35,
+        36,
+        40,
+        52,
+        189,
+        255,
+        260,
+        295
+      ],
+      "title": "Buying Everyday Things",
+      "primary_topic_id": "shopping-money",
+      "topic_ids": [
+        "shopping-money",
+        "home-objects"
+      ],
+      "word_count": 19,
+      "example_count": 38,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-getting-around",
+      "file": "hsk3/level1/TOPIC_LESSON_GETTING_AROUND.zip",
+      "entry_ids": [
+        20,
+        22,
+        29,
+        54,
+        81,
+        83,
+        98,
+        106,
+        167,
+        11,
+        66,
+        80,
+        110,
+        163,
+        175,
+        212,
+        213,
+        226,
+        289
+      ],
+      "title": "Getting Around",
+      "primary_topic_id": "travel-transport",
+      "topic_ids": [
+        "travel-transport",
+        "places-directions"
+      ],
+      "word_count": 19,
+      "example_count": 38,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-school-people-places",
+      "file": "hsk3/level1/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES.zip",
+      "entry_ids": [
+        27,
+        28,
+        179,
+        211,
+        237,
+        238,
+        248,
+        250,
+        292,
+        293
+      ],
+      "title": "School and University",
+      "primary_topic_id": "school-language",
+      "topic_ids": [
+        "school-language",
+        "people-identity"
+      ],
+      "word_count": 10,
+      "example_count": 20,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-studying-and-language",
+      "file": "hsk3/level1/TOPIC_LESSON_STUDYING_AND_LANGUAGE.zip",
+      "entry_ids": [
+        42,
+        43,
+        69,
+        70,
+        103,
+        107,
+        177,
+        190,
+        191,
+        196,
+        197,
+        209,
+        210,
+        229,
+        240,
+        247,
+        249,
+        290,
+        296
+      ],
+      "title": "Learning Chinese",
+      "primary_topic_id": "school-language",
+      "topic_ids": [
+        "school-language",
+        "communication-social"
+      ],
+      "word_count": 19,
+      "example_count": 38,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-everyday-actions",
+      "file": "hsk3/level1/TOPIC_LESSON_EVERYDAY_ACTIONS.zip",
+      "entry_ids": [
+        23,
+        61,
+        88,
+        91,
+        97,
+        99,
+        101,
+        214,
+        278,
+        288,
+        294,
+        298,
+        299
+      ],
+      "title": "Things We Do Every Day",
+      "primary_topic_id": "daily-actions",
+      "topic_ids": [
+        "daily-actions"
+      ],
+      "word_count": 13,
+      "example_count": 26,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-abilities-interests",
+      "file": "hsk3/level1/TOPIC_LESSON_ABILITIES_INTERESTS.zip",
+      "entry_ids": [
+        82,
+        96,
+        102,
+        145,
+        225,
+        233,
+        252,
+        263,
+        18,
+        37,
+        38,
+        39,
+        58,
+        75
+      ],
+      "title": "What I Can and Want to Do",
+      "primary_topic_id": "daily-actions",
+      "topic_ids": [
+        "daily-actions",
+        "leisure-media"
+      ],
+      "word_count": 14,
+      "example_count": 28,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-describing-feelings",
+      "file": "hsk3/level1/TOPIC_LESSON_DESCRIBING_FEELINGS.zip",
+      "entry_ids": [
+        25,
+        44,
+        46,
+        57,
+        71,
+        73,
+        74,
+        118,
+        158,
+        180,
+        234,
+        242
+      ],
+      "title": "Describing People and Things",
+      "primary_topic_id": "qualities-feelings",
+      "topic_ids": [
+        "qualities-feelings"
+      ],
+      "word_count": 12,
+      "example_count": 24,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-health-and-rest",
+      "file": "hsk3/level1/TOPIC_LESSON_HEALTH_AND_REST.zip",
+      "entry_ids": [
+        12,
+        100,
+        104,
+        161,
+        183,
+        194,
+        195,
+        246,
+        256,
+        257
+      ],
+      "title": "Health and Rest",
+      "primary_topic_id": "health-wellbeing",
+      "topic_ids": [
+        "health-wellbeing"
+      ],
+      "word_count": 10,
+      "example_count": 20,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-animals-and-weather",
+      "file": "hsk3/level1/TOPIC_LESSON_ANIMALS_AND_WEATHER.zip",
+      "entry_ids": [
+        64,
+        109,
+        119,
+        169,
+        208,
+        227,
+        251,
+        267
+      ],
+      "title": "Animals and Weather",
+      "primary_topic_id": "animals-weather",
+      "topic_ids": [
+        "animals-weather"
+      ],
+      "word_count": 8,
+      "example_count": 16,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "topic-connecting-ideas",
+      "file": "hsk3/level1/TOPIC_LESSON_CONNECTING_IDEAS.zip",
+      "entry_ids": [
+        41,
+        53,
+        67,
+        78,
+        79,
+        206,
+        253,
+        270,
+        271,
+        285,
+        286
+      ],
+      "title": "Connecting and Emphasizing Ideas",
+      "primary_topic_id": "grammar-functions",
+      "topic_ids": [
+        "grammar-functions",
+        "daily-actions"
+      ],
+      "word_count": 11,
+      "example_count": 22,
+      "quiz_count": 5
+    },
+    {
+      "lesson_id": "char-6B21",
+      "file": "independent/CHARACTER_LESSON_CI.zip",
+      "title": "Talking About Times & Occasions",
+      "type": "character_usage",
+      "headword": "次",
+      "primary_topic_id": "numbers-quantities"
+    },
+    {
+      "lesson_id": "char-4EE5",
+      "file": "independent/CHARACTER_LESSON_YI.zip",
+      "title": "Common Words & Grammatical Uses",
+      "type": "character_usage",
+      "headword": "以",
+      "primary_topic_id": "grammar-functions"
+    }
+  ],
+  "catalog": "catalog_ids.json (external reference)",
+  "review_status": "draft_editorial_not_native_certified"
+}

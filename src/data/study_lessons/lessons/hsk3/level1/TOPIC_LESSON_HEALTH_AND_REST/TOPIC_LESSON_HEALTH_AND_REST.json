@@ -1,0 +1,628 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-health-and-rest",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Health and Rest",
+    "subtitle": "Illness, Medical Care and Sleep",
+    "description": "Talk about being unwell, healthcare, sleep and rest.",
+    "slug": "health-and-rest"
+  },
+  "classification": {
+    "primary_topic_id": "health-wellbeing",
+    "topic_ids": [
+      "health-wellbeing"
+    ],
+    "tags": [
+      "health",
+      "illness",
+      "rest"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Express basic illness and health needs.",
+    "Recognize hospital and doctor vocabulary.",
+    "Talk about sleeping and resting."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "个": "Characters:个",
+    "九": "Characters:九",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "休": "Characters:休",
+    "作": "Characters:作",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "始": "Characters:始",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "工": "Characters:工",
+    "床": "Characters:床",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "息": "Characters:息",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "昨": "Characters:昨",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "生": "Characters:生",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "睡": "Characters:睡",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "这": "Characters:这",
+    "院": "Characters:院"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about being unwell, healthcare, sleep and rest.",
+      "focus": "Express basic illness and health needs."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-012",
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "meaning_en": "illness",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-012-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他生病了。",
+              "pinyin": "tā shēngbìng le.",
+              "english": "He is ill.",
+              "teaching_note": "生病 is the ordinary way to say someone is ill; 有病 can sound judgmental in conversation."
+            },
+            {
+              "id": "ex-012-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的病好了。",
+              "pinyin": "tā de bìng hǎo le.",
+              "english": "His illness has gotten better.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 12
+            }
+          ],
+          "pos_note": "Illness as a noun; also occurs in verbal uses."
+        },
+        {
+          "id": "w-100",
+          "hanzi": "看病",
+          "pinyin": "kànbìng",
+          "meaning_en": "see a doctor",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-100-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我生病了，要去看病。",
+              "pinyin": "wǒ shēngbìng le, yào qù kànbìng.",
+              "english": "I am sick and need to see a doctor.",
+              "teaching_note": "看病 means consult a doctor or seek medical care, not merely “look at illness.”"
+            },
+            {
+              "id": "ex-100-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "医生上午九点开始看病。",
+              "pinyin": "yīshēng shàngwǔ jiǔ diǎn kāishǐ kànbìng.",
+              "english": "The doctor starts seeing patients at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 100
+            }
+          ]
+        },
+        {
+          "id": "w-104",
+          "hanzi": "口",
+          "pinyin": "kǒu",
+          "meaning_en": "mouth",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-104-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喝了一口水。",
+              "pinyin": "wǒ hē le yì kǒu shuǐ.",
+              "english": "I took a sip of water.",
+              "teaching_note": "口 acts as a measure word for a sip or mouthful, not the noun “mouth” here."
+            },
+            {
+              "id": "ex-104-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他喝了三口水。",
+              "pinyin": "tā hē le sān kǒu shuǐ.",
+              "english": "He took three sips of water.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 104
+            }
+          ],
+          "pos_note": "Noun for mouth; also classifier in expressions such as population count."
+        },
+        {
+          "id": "w-161",
+          "hanzi": "起床",
+          "pinyin": "qǐchuáng",
+          "meaning_en": "get up",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-161-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我早上七点起床。",
+              "pinyin": "wǒ zǎoshang qī diǎn qǐchuáng.",
+              "english": "I get up at seven in the morning.",
+              "teaching_note": "起床 refers to getting out of bed; 七点 gives the hour."
+            },
+            {
+              "id": "ex-161-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "起床后，我喝一点儿水。",
+              "pinyin": "qǐchuáng hòu, wǒ hē yìdiǎnr shuǐ.",
+              "english": "After getting up, I drink a little water.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 161
+            }
+          ]
+        },
+        {
+          "id": "w-183",
+          "hanzi": "生病",
+          "pinyin": "shēngbìng",
+          "meaning_en": "fall ill",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-183-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我昨天生病了。",
+              "pinyin": "wǒ zuótiān shēngbìng le.",
+              "english": "I became ill yesterday.",
+              "teaching_note": "生病了 describes a change to an ill state; 昨天 puts it in the past."
+            },
+            {
+              "id": "ex-183-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她昨天生病，没有上课。",
+              "pinyin": "tā zuótiān shēngbìng, méiyǒu shàngkè.",
+              "english": "She was sick yesterday and didn't go to class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 183
+            }
+          ]
+        },
+        {
+          "id": "w-194",
+          "hanzi": "睡",
+          "pinyin": "shuì",
+          "meaning_en": "sleep",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-194-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天睡八个小时。",
+              "pinyin": "wǒ měitiān shuì bā gè xiǎoshí.",
+              "english": "I sleep eight hours every day.",
+              "teaching_note": "每天 expresses habitual frequency and 八个小时 expresses duration of sleep."
+            },
+            {
+              "id": "ex-194-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妹妹每天晚上九点睡。",
+              "pinyin": "mèimei měitiān wǎnshang jiǔ diǎn shuì.",
+              "english": "My younger sister goes to sleep at nine every night.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 194
+            }
+          ]
+        },
+        {
+          "id": "w-195",
+          "hanzi": "睡觉",
+          "pinyin": "shuìjiào",
+          "meaning_en": "go to sleep",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-195-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我十点睡觉。",
+              "pinyin": "wǒ shí diǎn shuìjiào.",
+              "english": "I go to bed at ten.",
+              "teaching_note": "睡觉 can mean sleep or go to bed, depending on the situation."
+            },
+            {
+              "id": "ex-195-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "小朋友晚上九点睡觉。",
+              "pinyin": "xiǎopéngyou wǎnshang jiǔ diǎn shuìjiào.",
+              "english": "Young children go to bed at nine at night.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 195
+            }
+          ]
+        },
+        {
+          "id": "w-246",
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "meaning_en": "rest",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-246-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天想休息。",
+              "pinyin": "wǒ jīntiān xiǎng xiūxi.",
+              "english": "I want to rest today.",
+              "teaching_note": "休息 means rest or take a break, not necessarily go to sleep."
+            },
+            {
+              "id": "ex-246-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生下课后可以休息。",
+              "pinyin": "xuéshēng xiàkè hòu kěyǐ xiūxi.",
+              "english": "The students can rest after class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 246
+            }
+          ]
+        },
+        {
+          "id": "w-256",
+          "hanzi": "医生",
+          "pinyin": "yīshēng",
+          "meaning_en": "doctor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "people-identity",
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-256-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "医生在医院工作。",
+              "pinyin": "yīshēng zài yīyuàn gōngzuò.",
+              "english": "Doctors work in hospitals.",
+              "teaching_note": "医生 is a doctor; 工作 describes their profession’s activity."
+            },
+            {
+              "id": "ex-256-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家医院有很多医生。",
+              "pinyin": "zhè jiā yīyuàn yǒu hěn duō yīshēng.",
+              "english": "This hospital has many doctors.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 256
+            }
+          ]
+        },
+        {
+          "id": "w-257",
+          "hanzi": "医院",
+          "pinyin": "yīyuàn",
+          "meaning_en": "hospital",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-257-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她今天去医院。",
+              "pinyin": "tā jīntiān qù yīyuàn.",
+              "english": "She goes to the hospital today.",
+              "teaching_note": "医院 means hospital; 去 expresses going to that destination."
+            },
+            {
+              "id": "ex-257-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "医院上午九点开始看病。",
+              "pinyin": "yīyuàn shàngwǔ jiǔ diǎn kāishǐ kànbìng.",
+              "english": "The hospital starts seeing patients at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 257
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-183",
+        "title": "Becoming ill",
+        "explanation": "A common compound describes being sick.",
+        "example_id": "ex-183-1"
+      },
+      {
+        "id": "g-246",
+        "title": "Taking a rest",
+        "explanation": "A rest verb can be used independently for everyday needs.",
+        "example_id": "ex-246-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-012-1",
+      "ex-012-2",
+      "ex-100-1",
+      "ex-100-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-19-1",
+          "kind": "selection",
+          "prompt": "Which expression means “illness”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "病",
+              "pinyin": "bìng"
+            },
+            {
+              "id": "b",
+              "hanzi": "医生",
+              "pinyin": "yīshēng"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “illness”."
+        },
+        {
+          "id": "q-19-2",
+          "kind": "selection",
+          "prompt": "Which expression means “sleep”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "医院",
+              "pinyin": "yīyuàn"
+            },
+            {
+              "id": "b",
+              "hanzi": "睡",
+              "pinyin": "shuì"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “sleep”."
+        },
+        {
+          "id": "q-19-3",
+          "kind": "selection",
+          "prompt": "Which expression means “hospital”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "医院",
+              "pinyin": "yīyuàn"
+            },
+            {
+              "id": "b",
+              "hanzi": "病",
+              "pinyin": "bìng"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “hospital”."
+        },
+        {
+          "id": "q-19-4",
+          "kind": "comprehension",
+          "prompt": "In the example “他生病了。” (tā shēngbìng le.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He is ill.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-19-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “His illness has gotten better.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "他的病好了。 (tā de bìng hǎo le.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

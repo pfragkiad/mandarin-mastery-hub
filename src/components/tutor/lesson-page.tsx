@@ -1,10 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowLeft, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookText, Check, ChevronDown, ExternalLink, EyeOff, Eye, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
-import { correctLessonChoices, lessonCharacterRefs, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText } from './lesson-text';
+import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
+import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
+import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
+import type { Word } from '@/lib/mandarin';
 import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
@@ -34,6 +36,14 @@ import { useWorkspace } from './workspace';
  * sections, empty lists and editorial-only extensions are skipped). v2.6 selection
  * questions are graded only through their recorded correct_choice_ids; older and
  * open-ended questions reveal their recorded answer text without grading.
+ *
+ * Topic lessons (lesson.topic, schema v3) replace the character-lesson overview and
+ * priority vocabulary with: key sentences (featured_example_ids), words with their own
+ * examples, usage notes (grammar_points, each with its recorded example) and related words.
+ * Each word's headword links to — and speaks with — the one Vocabulary record that shares
+ * its recorded HSK entry number and headword (syllabusEntryFor); no match stays plain.
+ * Every v3 lesson also shows its learning objectives, and a lesson placed in a course shows
+ * where it sits there (CoursePosition) with Previous/Next inside that level.
  */
 
 const kindLabel: Record<LessonSummary['kind'], string> = { character: 'Character lesson', word: 'Word lesson', phrase: 'Phrase lesson', topic: 'Topic lesson' };
@@ -94,7 +104,11 @@ function useActiveSection(ids: string[]) {
 export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDocument; priority: 'A' | 'B' | 'C' | undefined; onPriority: (value: 'A' | 'B' | 'C' | undefined) => void }) {
   const { summary, sections: S, headword, intro } = lesson;
   const [hidePinyin, setHidePinyin] = useState(false);
-  const { preferences, setPreferences } = useWorkspace();
+  const { preferences, setPreferences, items } = useWorkspace();
+  const topic = lesson.topic;
+  // Exact Vocabulary records for this topic lesson's words (HSK entry number + headword).
+  const recordFor = (item: TopicVocabItem): Word | null => syllabusEntryFor(item, items.flatMap(w => w.entry ? [{ id: w.id, simplified: w.entry.simplified, entryKind: w.entry.entryKind, hskVersion: w.entry.hskVersion, hsk_index: w.entry.hsk_index, word: w }] : []))?.word ?? null;
+  const positions = positionsOf(summary.id);
   const pageRef = useRef<HTMLDivElement>(null);
   const narrow = useNarrowLesson(pageRef);
   const hintsOn = preferences.lessonHints !== false;
@@ -106,7 +120,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
 
   const sections: SectionDef[] = [];
   const overview = S.overview;
-  if (overview || headword) sections.push({ id: 'overview', title: 'At a glance', hint: 'Key facts and the meaning map', body: <>
+  if (!topic && (overview || headword)) sections.push({ id: 'overview', title: 'At a glance', hint: 'Key facts and the meaning map', body: <>
     {overview?.core_takeaway && <p className="lesson-lead"><LessonText text={overview.core_takeaway}/></p>}
     <dl className="lesson-facts">
       {headword?.simplified && <div><dt>Simplified</dt><dd><LessonTerm hanzi={headword.simplified} pinyin={headword.pinyin}/></dd></div>}
@@ -126,7 +140,29 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     </div>)}</div></> : null}
   </> });
 
-  const vocab = S.vocabulary?.items ?? [];
+  if (topic) {
+    const byId = new Map(topic.items.flatMap(item => item.examples.map(e => [e.id, { example: e, item }] as const)));
+    const featured = (Array.isArray((S as Record<string, unknown>)['featured_example_ids']) ? (S as Record<string, unknown>)['featured_example_ids'] as string[] : []).flatMap(id => { const hit = byId.get(id); return hit ? [hit] : []; });
+    if (featured.length) sections.push({ id: 'key-sentences', title: 'Key sentences', hint: count(featured.length, 'sentence'), body: <div className="lesson-stack">
+      {featured.map(({ example }) => <TopicSentence key={example.id} example={example}/>)}
+    </div> });
+    if (topic.items.length) sections.push({ id: 'vocabulary', title: 'Words and examples', hint: count(topic.items.length, 'word'), body: <>
+      <p className="lesson-note">Each word links to its Vocabulary card. Listen, then read its example sentences.</p>
+      <div className="lesson-stack">{topic.items.map(item => <TopicWordCard key={item.id} item={item} record={recordFor(item)}/>)}</div>
+    </> });
+    if (topic.grammar.length) sections.push({ id: 'grammar', title: 'How it is used', hint: count(topic.grammar.length, 'usage note'), body: <div className="lesson-stack">
+      {topic.grammar.map(g => <div key={g.id} className="lesson-card">
+        <p className="lesson-card-title"><LessonText text={g.title}/></p>
+        <p className="lesson-muted"><LessonText text={g.explanation}/></p>
+        {g.example && <SentenceExample sentence={g.example.hanzi} pinyin={g.example.pinyin} translation={g.example.english} heading=""/>}
+      </div>)}
+    </div> });
+    if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <div className="lesson-grid lesson-vocab-grid">
+      {topic.related.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}
+    </div> });
+  }
+
+  const vocab = topic ? [] : S.vocabulary?.items ?? [];
   if (vocab.length) {
     const levels = (['A', 'B', 'C'] as const).filter(p => vocab.some(v => v.priority === p));
     const shown = priority ? vocab.filter(v => v.priority === priority) : vocab;
@@ -243,6 +279,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
 
   return <LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
+    {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
@@ -253,7 +290,8 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
         <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
       </div>
     </header>
-    {(intro.lesson_focus || intro.core_principle || intro.learning_priority) && <div className="lesson-intro">
+    {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
+      {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
       {intro.core_principle && <p><strong>Key idea</strong><LessonText text={intro.core_principle}/></p>}
       {intro.learning_priority && <p><strong>Study order</strong><LessonText text={intro.learning_priority}/></p>}
@@ -289,10 +327,47 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </LessonHintsProvider>;
 }
 
+/** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
+ *  prerequisites, and Previous/Next within the same level (only the manifest's order). */
+function CoursePosition({ position: p }: { position: LessonPosition }) {
+  return <nav className="lesson-course-position" aria-label={`${p.course.title}: position`}>
+    <div className="lesson-course-where">
+      <Library size={14} aria-hidden="true"/>
+      <span><Link to="/lessons">{p.section.title}</Link> · {p.unit.title} · <strong>Lesson {p.index} of {p.total}</strong></span>
+    </div>
+    {p.placement.prerequisites.length > 0 && <p className="lesson-course-after">Before this: {p.placement.prerequisites.map((s, i) => <span key={s.id}>{i > 0 && ', '}<Link to="/lessons/$lessonId" params={{ lessonId: s.id }}>{s.title}</Link></span>)}</p>}
+    <div className="lesson-course-steps">
+      {p.previous ? <Link to="/lessons/$lessonId" params={{ lessonId: p.previous.id }} className="lesson-course-step"><ArrowLeft size={14} aria-hidden="true"/><span><small>Previous</small>{p.previous.title}</span></Link> : <span/>}
+      {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next</small>{p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
+    </div>
+  </nav>;
+}
+
+const styleLabel: Record<string, string> = { conversational: 'Conversational', written: 'Written' };
+/** One recorded topic-lesson sentence with its style and teaching note. */
+function TopicSentence({ example: e }: { example: TopicExample }) {
+  return <div className="lesson-card lesson-example">
+    {e.style && <div className="lesson-card-top"><span className="lesson-register">{styleLabel[e.style] ?? plain(e.style)}</span></div>}
+    <SentenceExample sentence={e.hanzi} pinyin={e.pinyin} translation={e.english} heading=""/>
+    {e.teaching_note && <p className="lesson-teaching"><LessonText text={e.teaching_note}/></p>}
+  </div>;
+}
+
+/** A topic-lesson word: linked headword with the record's recording, its HSK entry number
+ *  (shown only when the record matched), part of speech, and its recorded example sentences. */
+function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
+  const hsk = record?.entry?.hskLevel && record.entry.hsk_index ? `HSK ${record.entry.hskLevel} · #${record.entry.hsk_index}` : '';
+  return <div className="lesson-card lesson-topic-word">
+    <div className="lesson-card-top"><span className="lesson-register">{item.primary_pos_id.replace(/[-_]/g, ' ')}</span>{hsk && <span className="lesson-register is-hsk">{hsk}</span>}</div>
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record}/>
+    {item.examples.length > 0 && <div className="lesson-topic-examples">{item.examples.map(e => <TopicSentence key={e.id} example={e}/>)}</div>}
+  </div>;
+}
+
 function VocabCard({ item }: { item: LessonVocabItem }) {
   return <div className="lesson-card lesson-vocab">
     <div className="lesson-card-top"><span className="lesson-register">{item.part_of_speech}</span><span className={`lesson-priority is-${item.priority.toLowerCase()}`} title={`Editorial priority ${item.priority}`}>{item.priority}</span></div>
-    <LessonTerm hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} size="lg"/>
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>
     {item.usage_note && <p className="lesson-muted"><LessonText text={item.usage_note}/></p>}
     <p className="lesson-footnote">{[item.register, plain(item.lexical_status), item.hsk_level ? `HSK ${item.hsk_level}` : ''].filter(Boolean).join(' · ')}</p>
   </div>;

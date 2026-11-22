@@ -1,0 +1,191 @@
+{
+  "schema_version": "mandarin-character-lesson/3.0.0",
+  "lesson_id": "char-<HEX_CODEPOINT>",
+  "lesson": {
+    "title": "<DESCRIPTIVE_LESSON_TITLE>",
+    "subtitle": "<ONE_LINE_TOPIC_SUMMARY>",
+    "description": "<FULL_LESSON_DESCRIPTION_EXPLAINING_SCOPE_AND_SKILLS>",
+    "slug": "lesson-topic"
+  },
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "<TARGET_LEARNER>",
+    "language": "zh-CN",
+    "date_reviewed": null,
+    "hsk": {
+      "level": null,
+      "edition": null,
+      "official_id": null
+    },
+    "frequency": {
+      "rank": null,
+      "corpus": null,
+      "unit": null
+    },
+    "catalog_character_id": null
+  },
+  "headword": {
+    "hanzi": "<HANZI>",
+    "pinyin": "<PINYIN>",
+    "simplified": "<SIMPLIFIED>",
+    "traditional": [
+      {
+        "hanzi": "<TRADITIONAL>",
+        "pinyin": "<PINYIN>"
+      }
+    ],
+    "readings": [
+      {
+        "pinyin": "<PINYIN>",
+        "context": "<WHEN_USED>"
+      }
+    ],
+    "mapping_type": "<same_written_form | one_to_one | context_dependent | multiple_targets>"
+  },
+  "catalog_character_refs": {},
+  "intro": {
+    "lesson_focus": "<ONE_SENTENCE_LEARNER_FOCUS>",
+    "core_principle": "A character, morpheme, word, and construction are distinct linguistic units.",
+    "learning_priority": "<RECOMMENDED_ORDER_OF_STUDY>"
+  },
+  "sections": {
+    "overview": {
+      "core_takeaway": "<MAIN_TAKEAWAY>",
+      "independent_usage": "<COMMON | LIMITED | FORMAL | NONE>",
+      "modern_roles": [
+        "<ROLE>"
+      ],
+      "teaching_priority": "<TEACHING_PRIORITY>",
+      "meaning_map": [
+        {
+          "id": "meaning-01",
+          "reading": "<PINYIN>",
+          "function_en": "<FUNCTION>",
+          "register": "<REGISTER>",
+          "example": {
+            "hanzi": "<WORD>",
+            "pinyin": "<PINYIN>",
+            "meaning_en": "<MEANING>"
+          }
+        }
+      ],
+      "one_minute_explanation": "<EXPLANATION>"
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "word-01",
+          "catalog_id": null,
+          "hanzi": "<WORD>",
+          "pinyin": "<PINYIN>",
+          "part_of_speech": "<POS>",
+          "meaning_en": "<MEANING>",
+          "priority": "A",
+          "register": "<REGISTER>",
+          "lexical_status": "established_word",
+          "usage_note": "<USAGE NOTE>",
+          "hsk_level": null,
+          "hsk_syllabus_id": null,
+          "frequency_rank": null
+        }
+      ],
+      "notes": "<USAGE_OR_LEXICALIZATION_NOTES>"
+    },
+    "constructions": {
+      "enabled": false,
+      "items": [],
+      "structural_note": "<ONLY_IF_APPLICABLE>"
+    },
+    "examples": {
+      "items": [
+        {
+          "id": "ex-01",
+          "title": "<USAGE_TITLE>",
+          "hanzi": "<FULL_HANZI_SENTENCE>",
+          "pinyin": "<FULL_TONE_MARKED_PINYIN>",
+          "english": "<IDIOMATIC_ENGLISH>",
+          "context": "<CONTEXT>",
+          "register": "<REGISTER>",
+          "teaching_note": "<TEACHING_NOTE>"
+        }
+      ]
+    },
+    "contrasts": {
+      "items": [],
+      "preference_vs_rule": null
+    },
+    "mistakes": {
+      "items": [
+        {
+          "id": "m-01",
+          "incorrect_inference": "<MISCONCEPTION>",
+          "correction": "<BETTER_EXPLANATION>",
+          "reason": "<WHY>"
+        }
+      ]
+    },
+    "historical": {
+      "enabled": false,
+      "intro": "<OPTIONAL_HISTORICAL_CONTEXT>",
+      "items": [],
+      "caution": "<MODERN_VS_CLASSICAL_WARNING>"
+    },
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "quiz-choice-example",
+          "kind": "selection",
+          "prompt": "<CLEAR_MULTIPLE_CHOICE_PROMPT>",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "<CORRECT_HANZI>",
+              "pinyin": "<CORRECT_PINYIN>",
+              "meaning_en": "<CORRECT_MEANING>"
+            },
+            {
+              "id": "b",
+              "hanzi": "<DISTRACTOR_HANZI>",
+              "pinyin": "<DISTRACTOR_PINYIN>",
+              "meaning_en": "<DISTRACTOR_MEANING>"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "<WHY_A_IS_CORRECT>"
+        },
+        {
+          "id": "quiz-open-example",
+          "kind": "comprehension",
+          "prompt": "<OPEN_ENDED_QUESTION>",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "<SUGGESTED_FREE_TEXT_ANSWER>",
+          "explanation": "<WHY_THIS_ANSWER_IS_VALID>"
+        }
+      ]
+    },
+    "extensions": {
+      "intro": "Additional learner-relevant content not covered by the standard sections.",
+      "items": []
+    }
+  },
+  "lesson_type": "character_usage",
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "character-usage"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Recognize the headword and its common reading in context.",
+    "Use the main vocabulary or constructions naturally."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-drinks-preferences",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About Drinks",
+    "subtitle": "Say what you drink and what you like.",
+    "description": "Learn to identify everyday drinks and express a simple preference in natural Mandarin.",
+    "slug": "talking-about-drinks"
+  },
+  "classification": {
+    "primary_topic_id": "food-drink",
+    "topic_ids": [
+      "food-drink",
+      "communication-social"
+    ],
+    "tags": [
+      "drinks",
+      "preferences"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Identify a common beverage by name.",
+    "Express a basic preference using a simple verb phrase."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "不": "Characters:不",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "我": "Characters:我",
+    "欢": "Characters:欢",
+    "茶": "Characters:茶"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Everyday beverage preferences",
+      "focus": "Understand and express simple preferences."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "v-tea",
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "meaning_en": "tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 17
+            }
+          ],
+          "examples": [
+            {
+              "id": "ex-tea-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢喝茶。",
+              "pinyin": "wǒ xǐhuan hē chá.",
+              "english": "I like drinking tea.",
+              "teaching_note": "喜欢 (xǐhuan) expresses a preference."
+            }
+          ]
+        },
+        {
+          "id": "v-drink",
+          "hanzi": "喝",
+          "pinyin": "hē",
+          "meaning_en": "drink",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [],
+          "examples": [
+            {
+              "id": "ex-drink-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不喝茶。",
+              "pinyin": "wǒ bù hē chá.",
+              "english": "I do not drink tea.",
+              "teaching_note": "不 (bù) negates an ordinary preference."
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Like + verb phrase",
+        "explanation": "Use 喜欢 (xǐhuan) before a verb phrase to express enjoyment.",
+        "example_id": "ex-tea-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-tea-1",
+      "ex-drink-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-1",
+          "kind": "selection",
+          "prompt": "Which means tea?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "茶",
+              "pinyin": "chá"
+            },
+            {
+              "id": "b",
+              "hanzi": "喝",
+              "pinyin": "hē"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "茶 (chá) is the drink; 喝 (hē) is the verb drink."
+        },
+        {
+          "id": "q-2",
+          "kind": "production",
+          "prompt": "How would you say “I like drinking tea” in Mandarin?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我喜欢喝茶。 (wǒ xǐhuan hē chá.)",
+          "explanation": "Use 喜欢 (xǐhuan) before 喝茶 (hē chá)."
+        }
+      ]
+    }
+  }
+}

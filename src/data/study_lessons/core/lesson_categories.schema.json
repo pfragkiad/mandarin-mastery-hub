@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/mandarin-lessons/lesson-categories.schema.json",
-  "title": "Mandarin lesson category registry",
+  "$id": "https://example.invalid/mandarin/v3/lesson_categories.schema.json",
+  "title": "Global Mandarin topic registry v3.0.0",
   "type": "object",
   "additionalProperties": false,
   "required": [

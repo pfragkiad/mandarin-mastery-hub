@@ -1,0 +1,44 @@
+{
+  "schema_version": "mandarin-general-lesson/3.0.0",
+  "lesson_id": "generic-pronunciation-tips",
+  "lesson_type": "generic",
+  "lesson": {
+    "title": "Pronunciation Practice Notes",
+    "subtitle": "A course-independent study note.",
+    "description": "Organize pronunciation observations without assigning an artificial course or topic.",
+    "slug": "pronunciation-practice-notes"
+  },
+  "classification": {
+    "primary_topic_id": null,
+    "topic_ids": [],
+    "tags": [
+      "pronunciation",
+      "independent-study"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Practice a focused pronunciation point independently."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {},
+  "sections": {
+    "blocks": [
+      {
+        "id": "note-1",
+        "kind": "explanation",
+        "text": "Use this general format for a course-neutral lesson that is discoverable using tags only."
+      }
+    ],
+    "practice": {
+      "enabled": false,
+      "questions": []
+    }
+  }
+}

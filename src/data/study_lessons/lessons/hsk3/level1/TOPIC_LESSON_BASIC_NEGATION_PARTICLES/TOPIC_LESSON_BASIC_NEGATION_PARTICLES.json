@@ -1,0 +1,631 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-basic-negation-particles",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Making Basic Statements",
+    "subtitle": "Negation, Questions and Sentence Particles",
+    "description": "Build simple affirmative, negative and interrogative sentences using core function words.",
+    "slug": "basic-negation-particles"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "communication-social"
+    ],
+    "tags": [
+      "negation",
+      "sentence-particles",
+      "basic-syntax"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Negate a simple statement or request.",
+    "Recognize sentence-final particles.",
+    "Understand basic word order."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "再": "Characters:再",
+    "午": "Characters:午",
+    "卖": "Characters:卖",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "呢": "Characters:呢",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "学": "Characters:学",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "早": "Characters:早",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "爸": "Characters:爸",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "经": "Characters:经",
+    "老": "Characters:老",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Build simple affirmative, negative and interrogative sentences using core function words.",
+      "focus": "Negate a simple statement or request."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-004",
+          "hanzi": "吧",
+          "pinyin": "ba",
+          "meaning_en": "suggestion particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-004-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "我们走吧。",
+              "pinyin": "wǒmen zǒu ba.",
+              "english": "Let's go.",
+              "teaching_note": "Sentence-final 吧 softens a proposal into a friendly suggestion to go together."
+            },
+            {
+              "id": "ex-004-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“明天再来吧。”老师说。",
+              "pinyin": "“míngtiān zài lái ba.” lǎoshī shuō.",
+              "english": "\"Come back tomorrow,\" the teacher said.",
+              "teaching_note": "Written dialogue: 吧 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 4
+            }
+          ],
+          "pos_note": "Sentence-final suggestion or softening particle."
+        },
+        {
+          "id": "w-013",
+          "hanzi": "不",
+          "pinyin": "bù",
+          "meaning_en": "not",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-013-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不喝茶。",
+              "pinyin": "wǒ bù hē chá.",
+              "english": "I do not drink tea.",
+              "teaching_note": "不 negates a general action or preference; there is no aspect marker for a habitual statement."
+            },
+            {
+              "id": "ex-013-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里不卖茶。",
+              "pinyin": "zhèlǐ bú mài chá.",
+              "english": "Tea is not sold here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 13
+            }
+          ]
+        },
+        {
+          "id": "w-015",
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "meaning_en": "do not want; don't",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "modal-verb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-015-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不要这个。",
+              "pinyin": "wǒ bú yào zhège.",
+              "english": "I don't want this one.",
+              "teaching_note": "不要 directly rejects an offered object; in some contexts it can sound firm."
+            },
+            {
+              "id": "ex-015-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请不要在这里吃东西。",
+              "pinyin": "qǐng búyào zài zhèlǐ chī dōngxi.",
+              "english": "Please don't eat here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 15
+            }
+          ],
+          "pos_note": "Negative request/prohibition: 不 + 要; an expression rather than a single lexical category."
+        },
+        {
+          "id": "w-030",
+          "hanzi": "的",
+          "pinyin": "de",
+          "meaning_en": "possessive particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-030-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的书。",
+              "pinyin": "zhè shì wǒ de shū.",
+              "english": "This is my book.",
+              "teaching_note": "的 links the possessor 我 to the noun 书."
+            },
+            {
+              "id": "ex-030-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸的车在那边。",
+              "pinyin": "bàba de chē zài nàbiān.",
+              "english": "Dad's car is over there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 30
+            }
+          ],
+          "pos_note": "Structural particle marking modification/possession and other constructions."
+        },
+        {
+          "id": "w-108",
+          "hanzi": "了",
+          "pinyin": "le",
+          "meaning_en": "completion particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-108-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我吃了一个苹果。",
+              "pinyin": "wǒ chī le yí ge píngguǒ.",
+              "english": "I ate an apple.",
+              "teaching_note": "了 after 吃 marks a completed event, not a past-tense conjugation."
+            },
+            {
+              "id": "ex-108-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我已经吃了早饭。",
+              "pinyin": "wǒ yǐjīng chī le zǎofàn.",
+              "english": "I have already eaten breakfast.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 108
+            }
+          ],
+          "pos_note": "Aspect particle after verbs and sentence-final particle are related but different uses."
+        },
+        {
+          "id": "w-115",
+          "hanzi": "吗",
+          "pinyin": "ma",
+          "meaning_en": "yes/no particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-115-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你喜欢茶吗？",
+              "pinyin": "nǐ xǐhuan chá ma?",
+              "english": "Do you like tea?",
+              "teaching_note": "Sentence-final 吗 turns a statement into a yes–no question."
+            },
+            {
+              "id": "ex-115-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天上课吗？",
+              "pinyin": "jīntiān shàngkè ma?",
+              "english": "Do we have class today?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 115
+            }
+          ],
+          "pos_note": "Yes–no question particle."
+        },
+        {
+          "id": "w-122",
+          "hanzi": "没有",
+          "pinyin": "méiyǒu",
+          "meaning_en": "do not have",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-122-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我没有手机。",
+              "pinyin": "wǒ méiyǒu shǒujī.",
+              "english": "I don't have a mobile phone.",
+              "teaching_note": "没有 expresses non-possession; it is not combined with 不."
+            },
+            {
+              "id": "ex-122-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天下午没有课。",
+              "pinyin": "jīntiān xiàwǔ méiyǒu kè.",
+              "english": "There is no class this afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 122
+            }
+          ],
+          "pos_note": "Verb expressing absence or non-possession (我没有手机); negative adverbial 没(有) before a verb expresses nonoccurrence (我没有去). Both roles are kept, but the current examples illustrate non-possession/absence."
+        },
+        {
+          "id": "w-124",
+          "hanzi": "们",
+          "pinyin": "men",
+          "meaning_en": "plural suffix",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-124-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他们都是老师。",
+              "pinyin": "tāmen dōu shì lǎoshī.",
+              "english": "They are all teachers.",
+              "teaching_note": "们 marks a plural group of people in pronouns such as 他们, but is not freely added to every noun."
+            },
+            {
+              "id": "ex-124-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师们正在上课。",
+              "pinyin": "lǎoshīmen zhèngzài shàngkè.",
+              "english": "The teachers are having class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 124
+            }
+          ],
+          "pos_note": "Plural suffix for personal pronouns and people nouns."
+        },
+        {
+          "id": "w-144",
+          "hanzi": "呢",
+          "pinyin": "ne",
+          "meaning_en": "question particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-144-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "你呢？",
+              "pinyin": "nǐ ne?",
+              "english": "And you?",
+              "teaching_note": "你呢? is a compact way to return a question to the other person."
+            },
+            {
+              "id": "ex-144-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“我会说汉语，你呢？”她问。",
+              "pinyin": "“wǒ huì shuō Hànyǔ, nǐ ne?” tā wèn.",
+              "english": "\"I can speak Chinese. What about you?\" she asked.",
+              "teaching_note": "Written dialogue: 呢 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 144
+            }
+          ],
+          "pos_note": "Sentence-final particle for follow-up, topic continuation, or ongoing action."
+        },
+        {
+          "id": "w-188",
+          "hanzi": "是",
+          "pinyin": "shì",
+          "meaning_en": "be",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-188-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我是学生。",
+              "pinyin": "wǒ shì xuéshēng.",
+              "english": "I am a student.",
+              "teaching_note": "是 links subject and noun predicate; no article is required before 学生."
+            },
+            {
+              "id": "ex-188-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里是学校。",
+              "pinyin": "zhèlǐ shì xuéxiào.",
+              "english": "This is the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 188
+            }
+          ],
+          "pos_note": "Copular verb, not a general-purpose adjective."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-13",
+        "title": "Negating an ordinary action",
+        "explanation": "Use the negative adverb before a verb to negate a habitual action.",
+        "example_id": "ex-013-1"
+      },
+      {
+        "id": "g-115",
+        "title": "Yes/no questions",
+        "explanation": "A sentence-final question particle changes a statement into a basic yes/no question.",
+        "example_id": "ex-115-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-004-1",
+      "ex-004-2",
+      "ex-013-1",
+      "ex-013-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-02-1",
+          "kind": "selection",
+          "prompt": "Which expression means “suggestion particle”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "呢",
+              "pinyin": "ne"
+            },
+            {
+              "id": "b",
+              "hanzi": "吧",
+              "pinyin": "ba"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “suggestion particle”."
+        },
+        {
+          "id": "q-02-2",
+          "kind": "selection",
+          "prompt": "Which expression means “yes/no particle”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "吗",
+              "pinyin": "ma"
+            },
+            {
+              "id": "b",
+              "hanzi": "是",
+              "pinyin": "shì"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “yes/no particle”."
+        },
+        {
+          "id": "q-02-3",
+          "kind": "selection",
+          "prompt": "Which expression means “be”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "吧",
+              "pinyin": "ba"
+            },
+            {
+              "id": "b",
+              "hanzi": "是",
+              "pinyin": "shì"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “be”."
+        },
+        {
+          "id": "q-02-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我们走吧。” (wǒmen zǒu ba.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Let's go.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-02-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “\"Come back tomorrow,\" the teacher said.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "“明天再来吧。”老师说。 (“míngtiān zài lái ba.” lǎoshī shuō.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

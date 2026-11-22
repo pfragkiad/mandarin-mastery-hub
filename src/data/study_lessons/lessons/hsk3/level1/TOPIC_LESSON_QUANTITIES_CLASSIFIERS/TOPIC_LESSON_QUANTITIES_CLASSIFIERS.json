@@ -1,0 +1,910 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-quantities-classifiers",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Counting Real Things",
+    "subtitle": "Classifiers, Amounts and Approximate Quantities",
+    "description": "Count familiar objects and describe quantities with classifiers and expressions of amount.",
+    "slug": "quantities-classifiers"
+  },
+  "classification": {
+    "primary_topic_id": "numbers-quantities",
+    "topic_ids": [
+      "numbers-quantities",
+      "shopping-money"
+    ],
+    "tags": [
+      "classifiers",
+      "amounts",
+      "approximation"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Use common classifiers with familiar nouns.",
+    "Differentiate exact and approximate quantities.",
+    "Understand expressions of halves, a little and some."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "冷": "Characters:冷",
+    "几": "Characters:几",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "友": "Characters:友",
+    "只": "Characters:只",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "室": "Characters:室",
+    "小": "Characters:小",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "第": "Characters:第",
+    "等": "Characters:等",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "脑": "Characters:脑",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "衣": "Characters:衣",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "贵": "Characters:贵",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Count familiar objects and describe quantities with classifiers and expressions of amount.",
+      "focus": "Use common classifiers with familiar nouns."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-007",
+          "hanzi": "半",
+          "pinyin": "bàn",
+          "meaning_en": "half",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral",
+            "adverb"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-007-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是八点半。",
+              "pinyin": "xiànzài shì bā diǎn bàn.",
+              "english": "It is half past eight now.",
+              "teaching_note": "八点半 is the ordinary way to say 8:30; 半 means half an hour."
+            },
+            {
+              "id": "ex-007-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校上午八点半上课。",
+              "pinyin": "xuéxiào shàngwǔ bā diǎn bàn shàngkè.",
+              "english": "Classes at the school start at 8:30 a.m.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 7
+            }
+          ],
+          "pos_note": "Primarily the numeral “half” (半个小时, 八点半). Also has a restricted adverbial role meaning partly/half- in advanced patterns; that secondary role is not a Level 1 teaching priority."
+        },
+        {
+          "id": "w-010",
+          "hanzi": "本",
+          "pinyin": "běn",
+          "meaning_en": "measure word for books",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-010-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我买了两本书。",
+              "pinyin": "wǒ mǎi le liǎng běn shū.",
+              "english": "I bought two books.",
+              "teaching_note": "本 is the standard classifier for books; 两 normally precedes classifiers rather than 二."
+            },
+            {
+              "id": "ex-010-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生每人有一本书。",
+              "pinyin": "xuéshēng měi rén yǒu yì běn shū.",
+              "english": "Every student has one book.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 10
+            }
+          ]
+        },
+        {
+          "id": "w-031",
+          "hanzi": "第",
+          "pinyin": "dì",
+          "meaning_en": "ordinal prefix",
+          "primary_pos_id": "prefix",
+          "pos_ids": [
+            "prefix"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-031-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是第一课吗？",
+              "pinyin": "zhè shì dì yī kè ma?",
+              "english": "Is this the first lesson?",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-031-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天我们上第一课。",
+              "pinyin": "jīntiān wǒmen shàng dì yī kè.",
+              "english": "Today we are having our first lesson.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 31
+            }
+          ],
+          "pos_note": "Ordinal prefix before numerals."
+        },
+        {
+          "id": "w-060",
+          "hanzi": "个",
+          "pinyin": "gè",
+          "meaning_en": "general measure word",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-060-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个朋友。",
+              "pinyin": "wǒ yǒu yí ge péngyou.",
+              "english": "I have a friend.",
+              "teaching_note": "个 is the common classifier for 朋友; 一 is normally pronounced yí before this neutral-tone 个."
+            },
+            {
+              "id": "ex-060-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有二十个学生。",
+              "pinyin": "zhège bān yǒu èr shí gè xuéshēng.",
+              "english": "There are twenty students in this class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 60
+            }
+          ]
+        },
+        {
+          "id": "w-085",
+          "hanzi": "几",
+          "pinyin": "jǐ",
+          "meaning_en": "how many",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-085-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你有几个朋友？",
+              "pinyin": "nǐ yǒu jǐ gè péngyou?",
+              "english": "How many friends do you have?",
+              "teaching_note": "几 asks “how many” for a relatively small count and is followed by a classifier."
+            },
+            {
+              "id": "ex-085-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天来了几个学生？",
+              "pinyin": "jīntiān lái le jǐ gè xuéshēng?",
+              "english": "How many students came today?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 85
+            }
+          ],
+          "pos_note": "Interrogative quantity pronoun/numeral meaning how many (几个人、几本书). 个 or 本 is the classifier; 几 is NOT a classifier."
+        },
+        {
+          "id": "w-089",
+          "hanzi": "件",
+          "pinyin": "jiàn",
+          "meaning_en": "measure word for items",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-089-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我买了一件衣服。",
+              "pinyin": "wǒ mǎi le yí jiàn yīfu.",
+              "english": "I bought an item of clothing.",
+              "teaching_note": "件 is the measure word for individual items of clothing."
+            },
+            {
+              "id": "ex-089-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我有三件新衣服。",
+              "pinyin": "wǒ yǒu sān jiàn xīn yīfu.",
+              "english": "I have three new items of clothing.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 89
+            }
+          ]
+        },
+        {
+          "id": "w-111",
+          "hanzi": "两",
+          "pinyin": "liǎng",
+          "meaning_en": "two (quantity)",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-111-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有两个孩子。",
+              "pinyin": "wǒ yǒu liǎng gè háizi.",
+              "english": "I have two children.",
+              "teaching_note": "两 is used before 个 and other classifiers to mean “two.”"
+            },
+            {
+              "id": "ex-111-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校有两个大教室。",
+              "pinyin": "xuéxiào yǒu liǎng gè dà jiàoshì.",
+              "english": "The school has two large classrooms.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 111
+            }
+          ]
+        },
+        {
+          "id": "w-239",
+          "hanzi": "些",
+          "pinyin": "xiē",
+          "meaning_en": "some",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "quantifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-239-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想买些水果。",
+              "pinyin": "wǒ xiǎng mǎi xiē shuǐguǒ.",
+              "english": "I would like to buy some fruit.",
+              "teaching_note": "些 expresses an unspecified plural amount, here some fruit."
+            },
+            {
+              "id": "ex-239-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有些书，也有些电脑。",
+              "pinyin": "zhèlǐ yǒuxiē shū, yě yǒuxiē diànnǎo.",
+              "english": "There are some books here, as well as some computers.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 239
+            }
+          ],
+          "pos_note": "Indefinite quantity word, conventionally classified as a classifier/quantifier."
+        },
+        {
+          "id": "w-258",
+          "hanzi": "一半",
+          "pinyin": "yíbàn",
+          "meaning_en": "half",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral",
+            "quantifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-258-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个苹果我吃了一半。",
+              "pinyin": "zhège píngguǒ wǒ chī le yíbàn.",
+              "english": "I ate half of this apple.",
+              "teaching_note": "The apple is introduced as the topic; 一半 states that half was eaten."
+            },
+            {
+              "id": "ex-258-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书我读了一半。",
+              "pinyin": "zhè běn shū wǒ dú le yíbàn.",
+              "english": "I've read half of this book.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 258
+            }
+          ],
+          "pos_note": "Fractional numeral phrase meaning one half."
+        },
+        {
+          "id": "w-259",
+          "hanzi": "一下",
+          "pinyin": "yíxià",
+          "meaning_en": "a moment; briefly",
+          "primary_pos_id": "quantifier",
+          "pos_ids": [
+            "quantifier",
+            "adverb"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-259-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请等一下。",
+              "pinyin": "qǐng děng yíxià.",
+              "english": "Please wait a moment.",
+              "teaching_note": "等一下 is a polite request to wait a moment; 一下 softens the command."
+            },
+            {
+              "id": "ex-259-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“请看一下这个字。”老师说。",
+              "pinyin": "“qǐng kàn yíxià zhège zì.” lǎoshī shuō.",
+              "english": "\"Please take a look at this character,\" the teacher said.",
+              "teaching_note": "Written dialogue: 一下 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 259
+            }
+          ],
+          "pos_note": "Verb-quantity complement meaning briefly/once; also adverbial in some uses."
+        },
+        {
+          "id": "w-261",
+          "hanzi": "一点儿",
+          "pinyin": "yìdiǎnr",
+          "meaning_en": "a little",
+          "primary_pos_id": "quantifier",
+          "pos_ids": [
+            "quantifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-261-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说一点儿汉语。",
+              "pinyin": "wǒ huì shuō yìdiǎnr Hànyǔ.",
+              "english": "I can speak a little Chinese.",
+              "teaching_note": "一点儿 means a little; the 儿 ending is written and pronounced in this form."
+            },
+            {
+              "id": "ex-261-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请给我一点儿水。",
+              "pinyin": "qǐng gěi wǒ yìdiǎnr shuǐ.",
+              "english": "Please give me a little water.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 261
+            }
+          ],
+          "pos_note": "Quantity expression a little, typically used in object phrases."
+        },
+        {
+          "id": "w-262",
+          "hanzi": "一些",
+          "pinyin": "yìxiē",
+          "meaning_en": "some",
+          "primary_pos_id": "quantifier",
+          "pos_ids": [
+            "quantifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-262-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我买了一些苹果。",
+              "pinyin": "wǒ mǎi le yìxiē píngguǒ.",
+              "english": "I bought some apples.",
+              "teaching_note": "一些 means some or several; it precedes the noun 苹果."
+            },
+            {
+              "id": "ex-262-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有一些中文书。",
+              "pinyin": "zhèlǐ yǒu yìxiē Zhōngwén shū.",
+              "english": "There are some books in Chinese here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 262
+            }
+          ],
+          "pos_note": "Quantity expression some."
+        },
+        {
+          "id": "w-264",
+          "hanzi": "有的",
+          "pinyin": "yǒude",
+          "meaning_en": "some",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-264-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "有的人喜欢茶。",
+              "pinyin": "yǒude rén xǐhuan chá.",
+              "english": "Some people like tea.",
+              "teaching_note": "有的 before a noun means some members of a group, here some people."
+            },
+            {
+              "id": "ex-264-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有的学生喜欢唱歌，有的喜欢读书。",
+              "pinyin": "yǒude xuéshēng xǐhuan chàng gē, yǒude xǐhuan dúshū.",
+              "english": "Some students like singing, while others like reading.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 264
+            }
+          ],
+          "pos_note": "Indefinite/pronominal expression meaning some of a group (有的人、有的学生). The Level 1 grammar outline groups 有的 among demonstrative pronouns; it is not a degree adverb."
+        },
+        {
+          "id": "w-265",
+          "hanzi": "有点儿",
+          "pinyin": "yǒudiǎnr",
+          "meaning_en": "somewhat",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-265-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天有点儿冷。",
+              "pinyin": "jīntiān yǒudiǎnr lěng.",
+              "english": "It is a little cold today.",
+              "teaching_note": "有点儿 often introduces a slight, sometimes undesirable, condition such as cold."
+            },
+            {
+              "id": "ex-265-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个饭店的菜有点儿贵。",
+              "pinyin": "zhège fàndiàn de cài yǒudiǎnr guì.",
+              "english": "The food at this restaurant is a little expensive.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 265
+            }
+          ],
+          "pos_note": "Degree adverb meaning a little; often conveys an undesirable degree."
+        },
+        {
+          "id": "w-266",
+          "hanzi": "有些",
+          "pinyin": "yǒuxiē",
+          "meaning_en": "some",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-266-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "有些学生不在。",
+              "pinyin": "yǒuxiē xuéshēng bú zài.",
+              "english": "Some students are absent.",
+              "teaching_note": "有些 means some; here it modifies the group of students."
+            },
+            {
+              "id": "ex-266-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有些孩子今天没有来上学。",
+              "pinyin": "yǒuxiē háizi jīntiān méiyǒu lái shàngxué.",
+              "english": "Some children didn't come to school today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 266
+            }
+          ],
+          "pos_note": "At beginner level, pronominal/determiner use means some or certain (有些学生). A secondary degree-adverb use means somewhat (有些冷), included as later-level usage."
+        },
+        {
+          "id": "w-287",
+          "hanzi": "只",
+          "pinyin": "zhī",
+          "meaning_en": "measure word for animals; only",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-287-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有两只猫。",
+              "pinyin": "zhèlǐ yǒu liǎng zhī māo.",
+              "english": "There are two cats here.",
+              "teaching_note": "只 is the classifier for animals; here 两只猫 means two cats."
+            },
+            {
+              "id": "ex-287-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那只猫喜欢玩。",
+              "pinyin": "nà zhī māo xǐhuan wán.",
+              "english": "That cat likes playing.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 287
+            }
+          ],
+          "pos_note": "Classifier for animals and certain objects; not the adverb 只 (zhǐ) meaning only."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-60",
+        "title": "Numeral + classifier + noun",
+        "explanation": "A classifier typically links a number to a countable noun.",
+        "example_id": "ex-060-1"
+      },
+      {
+        "id": "g-111",
+        "title": "Two before classifiers",
+        "explanation": "The quantity two generally uses the special form before a classifier.",
+        "example_id": "ex-111-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-007-1",
+      "ex-007-2",
+      "ex-010-1",
+      "ex-010-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-06-1",
+          "kind": "selection",
+          "prompt": "Which expression means “half”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "一些",
+              "pinyin": "yìxiē"
+            },
+            {
+              "id": "b",
+              "hanzi": "半",
+              "pinyin": "bàn"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “half”."
+        },
+        {
+          "id": "q-06-2",
+          "kind": "selection",
+          "prompt": "Which expression means “half”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "一半",
+              "pinyin": "yíbàn"
+            },
+            {
+              "id": "b",
+              "hanzi": "有的",
+              "pinyin": "yǒude"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “half”."
+        },
+        {
+          "id": "q-06-3",
+          "kind": "selection",
+          "prompt": "Which expression means “measure word for animals”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "有点儿",
+              "pinyin": "yǒudiǎnr"
+            },
+            {
+              "id": "b",
+              "hanzi": "只",
+              "pinyin": "zhī"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “measure word for animals; only”."
+        },
+        {
+          "id": "q-06-4",
+          "kind": "comprehension",
+          "prompt": "In the example “现在是八点半。” (xiànzài shì bā diǎn bàn.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "It is half past eight now.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-06-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Classes at the school start at 8:30 a.m.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "学校上午八点半上课。 (xuéxiào shàngwǔ bā diǎn bàn shàngkè.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

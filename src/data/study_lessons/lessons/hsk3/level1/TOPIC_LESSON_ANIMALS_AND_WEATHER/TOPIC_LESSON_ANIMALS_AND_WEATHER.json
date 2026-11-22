@@ -1,0 +1,516 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-animals-and-weather",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Animals and Weather",
+    "subtitle": "Pets, Temperature, Rain and Snow",
+    "description": "Name common pets and describe basic weather conditions.",
+    "slug": "animals-and-weather"
+  },
+  "classification": {
+    "primary_topic_id": "animals-weather",
+    "topic_ids": [
+      "animals-weather"
+    ],
+    "tags": [
+      "pets",
+      "weather"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Name a few familiar animals.",
+    "Describe hot and cold weather.",
+    "Talk about rain and snow."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "候": "Characters:候",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "只": "Characters:只",
+    "喜": "Characters:喜",
+    "地": "Characters:地",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "小": "Characters:小",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "时": "Characters:时",
+    "昨": "Characters:昨",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "欢": "Characters:欢",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "热": "Characters:热",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "的": "Characters:的",
+    "睡": "Characters:睡",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "雨": "Characters:雨",
+    "雪": "Characters:雪"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Name common pets and describe basic weather conditions.",
+      "focus": "Name a few familiar animals."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-064",
+          "hanzi": "狗",
+          "pinyin": "gǒu",
+          "meaning_en": "dog",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-064-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这只狗很小。",
+              "pinyin": "zhè zhī gǒu hěn xiǎo.",
+              "english": "This dog is very small.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-064-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有两只狗。",
+              "pinyin": "zhèlǐ yǒu liǎng zhī gǒu.",
+              "english": "There are two dogs here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 64
+            }
+          ]
+        },
+        {
+          "id": "w-109",
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "meaning_en": "cold",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "animals-weather",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-109-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天很冷。",
+              "pinyin": "jīntiān hěn lěng.",
+              "english": "It is cold today.",
+              "teaching_note": "很 + 冷 describes cold weather; context supplies how cold it feels."
+            },
+            {
+              "id": "ex-109-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天晚上比上午冷。",
+              "pinyin": "jīntiān wǎnshang bǐ shàngwǔ lěng.",
+              "english": "It is colder tonight than it was this morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 109
+            }
+          ]
+        },
+        {
+          "id": "w-119",
+          "hanzi": "猫",
+          "pinyin": "māo",
+          "meaning_en": "cat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-119-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一只猫。",
+              "pinyin": "wǒ yǒu yì zhī māo.",
+              "english": "I have a cat.",
+              "teaching_note": "只 is the common animal classifier when counting cats."
+            },
+            {
+              "id": "ex-119-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这只猫喜欢睡觉。",
+              "pinyin": "zhè zhī māo xǐhuan shuìjiào.",
+              "english": "This cat likes sleeping.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 119
+            }
+          ]
+        },
+        {
+          "id": "w-169",
+          "hanzi": "热",
+          "pinyin": "rè",
+          "meaning_en": "hot",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "animals-weather",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-169-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天太热了。",
+              "pinyin": "jīntiān tài rè le.",
+              "english": "It is too hot today.",
+              "teaching_note": "太热了 expresses more heat than desired or expected."
+            },
+            {
+              "id": "ex-169-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午的天气很热。",
+              "pinyin": "xiàwǔ de tiānqì hěn rè.",
+              "english": "The weather is very hot in the afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 169
+            }
+          ]
+        },
+        {
+          "id": "w-208",
+          "hanzi": "天气",
+          "pinyin": "tiānqì",
+          "meaning_en": "weather",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-208-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天天气很好。",
+              "pinyin": "jīntiān tiānqì hěn hǎo.",
+              "english": "The weather is very good today.",
+              "teaching_note": "今天天气 is a common weather-topic phrase in everyday Chinese."
+            },
+            {
+              "id": "ex-208-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天的天气比昨天好。",
+              "pinyin": "jīntiān de tiānqì bǐ zuótiān hǎo.",
+              "english": "The weather today is better than yesterday's.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 208
+            }
+          ]
+        },
+        {
+          "id": "w-227",
+          "hanzi": "下雨",
+          "pinyin": "xià yǔ",
+          "meaning_en": "rain",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-227-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天下雨了。",
+              "pinyin": "jīntiān xià yǔ le.",
+              "english": "It rained today.",
+              "teaching_note": "下雨 is the verb expression for rain; 了 can mark a new or completed event."
+            },
+            {
+              "id": "ex-227-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "下雨的时候不要出去。",
+              "pinyin": "xià yǔ de shíhou búyào chūqu.",
+              "english": "Don't go outside when it rains.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 227
+            }
+          ]
+        },
+        {
+          "id": "w-251",
+          "hanzi": "雪",
+          "pinyin": "xuě",
+          "meaning_en": "snow",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-251-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "地上有雪。",
+              "pinyin": "dìshang yǒu xuě.",
+              "english": "There's snow on the ground.",
+              "teaching_note": "地上有雪 states that there is snow on the ground, not merely that it is winter."
+            },
+            {
+              "id": "ex-251-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天的雪很大。",
+              "pinyin": "jīntiān de xuě hěn dà.",
+              "english": "There's a lot of snow today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 251
+            }
+          ]
+        },
+        {
+          "id": "w-267",
+          "hanzi": "雨",
+          "pinyin": "yǔ",
+          "meaning_en": "rain",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-267-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天雨很大。",
+              "pinyin": "jīntiān yǔ hěn dà.",
+              "english": "It's raining heavily today.",
+              "teaching_note": "雨很大 describes heavy rain; 大 can describe rain intensity."
+            },
+            {
+              "id": "ex-267-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "昨天下午下了很多雨。",
+              "pinyin": "zuótiān xiàwǔ xià le hěn duō yǔ.",
+              "english": "It rained a lot yesterday afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 267
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-208",
+        "title": "Discussing weather",
+        "explanation": "Use a weather noun as the topic of a simple description.",
+        "example_id": "ex-208-1"
+      },
+      {
+        "id": "g-227",
+        "title": "Rain",
+        "explanation": "The verb-object weather expression describes rainfall.",
+        "example_id": "ex-227-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-064-1",
+      "ex-064-2",
+      "ex-109-1",
+      "ex-109-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-20-1",
+          "kind": "selection",
+          "prompt": "Which expression means “dog”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "雨",
+              "pinyin": "yǔ"
+            },
+            {
+              "id": "b",
+              "hanzi": "狗",
+              "pinyin": "gǒu"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “dog”."
+        },
+        {
+          "id": "q-20-2",
+          "kind": "selection",
+          "prompt": "Which expression means “weather”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "天气",
+              "pinyin": "tiānqì"
+            },
+            {
+              "id": "b",
+              "hanzi": "狗",
+              "pinyin": "gǒu"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “weather”."
+        },
+        {
+          "id": "q-20-3",
+          "kind": "selection",
+          "prompt": "Which expression means “rain”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "冷",
+              "pinyin": "lěng"
+            },
+            {
+              "id": "b",
+              "hanzi": "雨",
+              "pinyin": "yǔ"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “rain”."
+        },
+        {
+          "id": "q-20-4",
+          "kind": "comprehension",
+          "prompt": "In the example “这只狗很小。” (zhè zhī gǒu hěn xiǎo.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "This dog is very small.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-20-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “There are two dogs here.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这里有两只狗。 (zhèlǐ yǒu liǎng zhī gǒu.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

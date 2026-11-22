@@ -1,0 +1,21 @@
+{
+  "description": "Illustrative placements: lesson IDs are examples, NOT already-generated files. Use actual validated lesson IDs before publishing.",
+  "independent_lesson_ids": [
+    "char-6b21",
+    "char-4ee5"
+  ],
+  "course_placements": [
+    {
+      "curriculum_id": "hsk3-2025",
+      "section_id": "hsk3-level-2",
+      "lesson_id": "char-6b21",
+      "role": "reference"
+    },
+    {
+      "curriculum_id": "pimsleur-mandarin",
+      "section_id": "pimsleur-level-1",
+      "lesson_id": "char-6b21",
+      "role": "supplemental"
+    }
+  ]
+}

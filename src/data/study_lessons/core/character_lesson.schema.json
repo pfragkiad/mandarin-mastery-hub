@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/mandarin-character-lesson-2.8.0.json",
-  "title": "Mandarin character lesson data — v2.8.0",
-  "description": "Canonical learner content with keyed quizzes and catalog-backed character IDs. Provenance belongs only to independent report.md; the generator emits HTML and Markdown without extraneous TXT files.",
+  "$id": "https://example.invalid/mandarin/v3/character_lesson.schema.json",
+  "title": "Mandarin character-usage lesson (v2 compatibility + v3.0.0)",
+  "description": "v3 adds course-neutral classification, learning objectives and type; previous character schemas remain supported for migration.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -25,7 +25,9 @@
         "mandarin-character-lesson/2.6.0",
         "mandarin-character-lesson/2.6.1",
         "mandarin-character-lesson/2.7.0",
-        "mandarin-character-lesson/2.8.0"
+        "mandarin-character-lesson/3.0.0",
+        "mandarin-character-lesson/3.0.0",
+        "mandarin-character-lesson/3.0.0"
       ]
     },
     "lesson_id": {
@@ -64,7 +66,9 @@
             "2.6.0",
             "2.6.1",
             "2.7.0",
-            "2.8.0"
+            "3.0.0",
+            "3.0.0",
+            "3.0.0"
           ]
         },
         "audience": {
@@ -570,6 +574,99 @@
         "type": "string",
         "minLength": 1,
         "pattern": "^Characters:.+$"
+      }
+    },
+    "lesson_type": {
+      "const": "character_usage"
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_topic_id",
+        "topic_ids",
+        "tags",
+        "course_topic_refs"
+      ],
+      "properties": {
+        "primary_topic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Global topic key or null only when no global category reasonably applies."
+        },
+        "topic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "course_topic_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Optional cross-references to course-private topics; not curriculum membership.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "curriculum_id",
+              "course_topic_id"
+            ],
+            "properties": {
+              "curriculum_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "course_topic_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "primary_topic_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "primary_topic_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "topic_ids": {
+                "contains": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "learning_objectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
       }
     }
   },
@@ -2113,7 +2210,7 @@
       "if": {
         "properties": {
           "schema_version": {
-            "const": "mandarin-character-lesson/2.8.0"
+            "const": "mandarin-character-lesson/3.0.0"
           }
         },
         "required": [
@@ -2123,8 +2220,46 @@
       "then": {
         "required": [
           "lesson",
+          "lesson_type",
+          "classification",
+          "learning_objectives",
           "catalog_character_refs"
         ],
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.0.0"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "slug"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "categories"
+                  ]
+                },
+                {
+                  "required": [
+                    "primary_category_id"
+                  ]
+                },
+                {
+                  "required": [
+                    "tags"
+                  ]
+                }
+              ]
+            }
+          }
+        },
         "not": {
           "anyOf": [
             {
@@ -2156,12 +2291,33 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/3.0.0"
+          }
         },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "lesson_type",
+          "classification",
+          "learning_objectives",
+          "catalog_character_refs"
+        ],
         "properties": {
           "metadata": {
             "properties": {
               "template_version": {
-                "const": "2.8.0"
+                "const": "3.0.0"
               }
             }
           },
@@ -2169,28 +2325,148 @@
             "required": [
               "title",
               "description",
-              "categories",
-              "primary_category_id",
-              "tags",
               "slug"
-            ]
-          },
-          "sections": {
-            "required": [
-              "extensions"
             ],
-            "properties": {
-              "practice": {
-                "properties": {
-                  "questions": {
-                    "items": {
-                      "$ref": "#/$defs/question_v26"
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "categories"
+                  ]
+                },
+                {
+                  "required": [
+                    "primary_category_id"
+                  ]
+                },
+                {
+                  "required": [
+                    "tags"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
                     }
-                  }
+                  ]
                 }
               }
             }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-character-lesson/3.0.0"
           }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "required": [
+          "lesson",
+          "lesson_type",
+          "classification",
+          "learning_objectives",
+          "catalog_character_refs"
+        ],
+        "properties": {
+          "metadata": {
+            "properties": {
+              "template_version": {
+                "const": "3.0.0"
+              }
+            }
+          },
+          "lesson": {
+            "required": [
+              "title",
+              "description",
+              "slug"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "categories"
+                  ]
+                },
+                {
+                  "required": [
+                    "primary_category_id"
+                  ]
+                },
+                {
+                  "required": [
+                    "tags"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "report_intake"
+              ]
+            },
+            {
+              "properties": {
+                "sections": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "sources"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "checklist"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "writing"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
         }
       }
     }

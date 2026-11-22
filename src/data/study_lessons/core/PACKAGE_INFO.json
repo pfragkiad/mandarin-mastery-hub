@@ -1,0 +1,15 @@
+{
+  "package_name": "mandarin-tutor-core",
+  "package_version": "3.0.1",
+  "lesson_schema_versions": [
+    "mandarin-character-lesson/3.0.0",
+    "mandarin-topic-lesson/3.0.0",
+    "mandarin-general-lesson/3.0.0"
+  ],
+  "curriculum_schema_version": "mandarin-curriculum/3.0.0",
+  "renderer": "generate_lesson.py",
+  "validator": "validate_core.py",
+  "category_registry": "lesson_categories.json",
+  "catalog": "catalog_ids.json (external Project Source)",
+  "note": "Schema v3.0.0 is unchanged; core bundle v3.0.1 adds the renderer and fixes documentation."
+}

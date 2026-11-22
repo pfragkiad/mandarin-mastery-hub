@@ -1,0 +1,1069 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-food-and-meals",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Food and Drink",
+    "subtitle": "Meals, Ingredients and Eating Together",
+    "description": "Name everyday foods and drinks and describe eating, drinking and meal routines.",
+    "slug": "food-and-meals"
+  },
+  "classification": {
+    "primary_topic_id": "food-drink",
+    "topic_ids": [
+      "food-drink",
+      "daily-actions"
+    ],
+    "tags": [
+      "food",
+      "drinks",
+      "meals"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Identify foods, drinks and meals.",
+    "Describe eating and drinking.",
+    "Talk about meals and restaurants."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "二": "Characters:二",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "六": "Characters:六",
+    "包": "Characters:包",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "卖": "Characters:卖",
+    "吃": "Characters:吃",
+    "和": "Characters:和",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "奶": "Characters:奶",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "宜": "Characters:宜",
+    "家": "Characters:家",
+    "市": "Characters:市",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "早": "Characters:早",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "条": "Characters:条",
+    "果": "Characters:果",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "爸": "Characters:爸",
+    "牛": "Characters:牛",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "米": "Characters:米",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "蛋": "Characters:蛋",
+    "请": "Characters:请",
+    "起": "Characters:起",
+    "超": "Characters:超",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "饺": "Characters:饺",
+    "鸡": "Characters:鸡"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Name everyday foods and drinks and describe eating, drinking and meal routines.",
+      "focus": "Identify foods, drinks and meals."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-008",
+          "hanzi": "包子",
+          "pinyin": "bāozi",
+          "meaning_en": "steamed bun",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-008-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我早上吃包子。",
+              "pinyin": "wǒ zǎoshang chī bāozi.",
+              "english": "I eat steamed buns in the morning.",
+              "teaching_note": "包子 is a filled steamed bun; 早上 sets the morning time frame."
+            },
+            {
+              "id": "ex-008-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店的包子很好吃。",
+              "pinyin": "zhè jiā diàn de bāozi hěn hǎochī.",
+              "english": "The steamed buns at this shop are delicious.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 8
+            }
+          ]
+        },
+        {
+          "id": "w-016",
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "meaning_en": "vegetable; dish",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-016-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个菜很好吃。",
+              "pinyin": "zhège cài hěn hǎochī.",
+              "english": "This dish is delicious.",
+              "teaching_note": "菜 usually refers to a prepared dish here, and 好吃 describes how it tastes."
+            },
+            {
+              "id": "ex-016-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "饭店里有很多菜。",
+              "pinyin": "fàndiàn lǐ yǒu hěn duō cài.",
+              "english": "There are many dishes at the restaurant.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 16
+            }
+          ]
+        },
+        {
+          "id": "w-017",
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "meaning_en": "tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-017-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢喝茶。",
+              "pinyin": "wǒ xǐhuan hē chá.",
+              "english": "I like drinking tea.",
+              "teaching_note": "喜欢 + verb expresses an enjoyable activity; 喝茶 is “drink tea.”"
+            },
+            {
+              "id": "ex-017-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店卖茶。",
+              "pinyin": "zhè jiā diàn mài chá.",
+              "english": "This shop sells tea.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 17
+            }
+          ]
+        },
+        {
+          "id": "w-021",
+          "hanzi": "吃",
+          "pinyin": "chī",
+          "meaning_en": "eat",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-021-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们一起吃饭。",
+              "pinyin": "wǒmen yìqǐ chī fàn.",
+              "english": "We eat together.",
+              "teaching_note": "一起 emphasizes a shared activity; 吃饭 can mean having a meal in general."
+            },
+            {
+              "id": "ex-021-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在十二点吃午饭。",
+              "pinyin": "qǐng zài shí èr diǎn chī wǔfàn.",
+              "english": "Please have lunch at twelve o'clock.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 21
+            }
+          ]
+        },
+        {
+          "id": "w-050",
+          "hanzi": "饭",
+          "pinyin": "fàn",
+          "meaning_en": "meal; cooked rice",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-050-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天的饭很好吃。",
+              "pinyin": "jīntiān de fàn hěn hǎochī.",
+              "english": "Today’s meal tastes delicious.",
+              "teaching_note": "饭 can mean the whole cooked meal here, not just rice; 好吃 evaluates its taste."
+            },
+            {
+              "id": "ex-050-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "家人一起吃晚饭。",
+              "pinyin": "jiārén yìqǐ chī wǎnfàn.",
+              "english": "The family eats dinner together.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 50
+            }
+          ]
+        },
+        {
+          "id": "w-051",
+          "hanzi": "饭店",
+          "pinyin": "fàndiàn",
+          "meaning_en": "restaurant",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "shopping-money",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-051-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这家饭店的菜很好吃。",
+              "pinyin": "zhè jiā fàndiàn de cài hěn hǎochī.",
+              "english": "The food at this restaurant is delicious.",
+              "teaching_note": "家 is a classifier for restaurants, and the praise is specifically about the food served there."
+            },
+            {
+              "id": "ex-051-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店每天早上七点开门。",
+              "pinyin": "zhè jiā fàndiàn měitiān zǎoshang qī diǎn kāimén.",
+              "english": "This restaurant opens at seven every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 51
+            }
+          ]
+        },
+        {
+          "id": "w-072",
+          "hanzi": "好吃",
+          "pinyin": "hǎochī",
+          "meaning_en": "tasty",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-072-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个苹果很好吃。",
+              "pinyin": "zhège píngguǒ hěn hǎochī.",
+              "english": "This apple tastes good.",
+              "teaching_note": "好吃 evaluates the taste of food, not its appearance."
+            },
+            {
+              "id": "ex-072-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店的面条儿很好吃。",
+              "pinyin": "zhè jiā fàndiàn de miàntiáor hěn hǎochī.",
+              "english": "The noodles at this restaurant are delicious.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 72
+            }
+          ]
+        },
+        {
+          "id": "w-077",
+          "hanzi": "喝",
+          "pinyin": "hē",
+          "meaning_en": "drink",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-077-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想喝水。",
+              "pinyin": "wǒ xiǎng hē shuǐ.",
+              "english": "I want to drink water.",
+              "teaching_note": "想 + verb expresses a wish; 想喝 is wanting to drink."
+            },
+            {
+              "id": "ex-077-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们每天喝水。",
+              "pinyin": "xuéshēngmen měitiān hē shuǐ.",
+              "english": "The students drink water every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 77
+            }
+          ]
+        },
+        {
+          "id": "w-084",
+          "hanzi": "鸡蛋",
+          "pinyin": "jīdàn",
+          "meaning_en": "egg",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-084-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我早饭吃鸡蛋。",
+              "pinyin": "wǒ zǎofàn chī jīdàn.",
+              "english": "I eat eggs for breakfast.",
+              "teaching_note": "早饭 establishes the meal; 吃鸡蛋 names the food eaten."
+            },
+            {
+              "id": "ex-084-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天的早饭有鸡蛋。",
+              "pinyin": "jīntiān de zǎofàn yǒu jīdàn.",
+              "english": "There are eggs for breakfast today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 84
+            }
+          ]
+        },
+        {
+          "id": "w-090",
+          "hanzi": "饺子",
+          "pinyin": "jiǎozi",
+          "meaning_en": "dumplings",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-090-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢吃饺子。",
+              "pinyin": "wǒ xǐhuan chī jiǎozi.",
+              "english": "I like eating dumplings.",
+              "teaching_note": "饺子 are dumplings; 喜欢吃 specifies enjoyment of eating them."
+            },
+            {
+              "id": "ex-090-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店卖饺子。",
+              "pinyin": "zhè jiā fàndiàn mài jiǎozi.",
+              "english": "This restaurant sells dumplings.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 90
+            }
+          ]
+        },
+        {
+          "id": "w-125",
+          "hanzi": "米饭",
+          "pinyin": "mǐfàn",
+          "meaning_en": "cooked rice",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-125-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我中午吃米饭。",
+              "pinyin": "wǒ zhōngwǔ chī mǐfàn.",
+              "english": "I eat rice at noon.",
+              "teaching_note": "米饭 usually means cooked rice, not raw rice."
+            },
+            {
+              "id": "ex-125-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店中午有米饭。",
+              "pinyin": "zhè jiā fàndiàn zhōngwǔ yǒu mǐfàn.",
+              "english": "This restaurant serves rice at lunchtime.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 125
+            }
+          ]
+        },
+        {
+          "id": "w-126",
+          "hanzi": "面包",
+          "pinyin": "miànbāo",
+          "meaning_en": "bread",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-126-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "早饭我吃面包。",
+              "pinyin": "zǎofàn wǒ chī miànbāo.",
+              "english": "I eat bread for breakfast.",
+              "teaching_note": "面包 means bread; 早饭 places the action at breakfast."
+            },
+            {
+              "id": "ex-126-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "早饭有面包和牛奶。",
+              "pinyin": "zǎofàn yǒu miànbāo hé niúnǎi.",
+              "english": "There is bread and milk for breakfast.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 126
+            }
+          ]
+        },
+        {
+          "id": "w-127",
+          "hanzi": "面条儿",
+          "pinyin": "miàntiáor",
+          "meaning_en": "noodles",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-127-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "我想吃面条儿。",
+              "pinyin": "wǒ xiǎng chī miàntiáor.",
+              "english": "I want to eat noodles.",
+              "teaching_note": "面条儿 contains a northern 儿 ending; 面条 is also widely used."
+            },
+            {
+              "id": "ex-127-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店的面条儿很好吃。",
+              "pinyin": "zhè jiā diàn de miàntiáor hěn hǎochī.",
+              "english": "The noodles at this shop are delicious.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 127
+            }
+          ]
+        },
+        {
+          "id": "w-151",
+          "hanzi": "牛奶",
+          "pinyin": "niúnǎi",
+          "meaning_en": "milk",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-151-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天喝牛奶。",
+              "pinyin": "wǒ měitiān hē niúnǎi.",
+              "english": "I drink milk every day.",
+              "teaching_note": "每天 marks a daily routine; 喝牛奶 is a common verb-object phrase."
+            },
+            {
+              "id": "ex-151-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "早饭有牛奶和面包。",
+              "pinyin": "zǎofàn yǒu niúnǎi hé miànbāo.",
+              "english": "There is milk and bread for breakfast.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 151
+            }
+          ]
+        },
+        {
+          "id": "w-159",
+          "hanzi": "苹果",
+          "pinyin": "píngguǒ",
+          "meaning_en": "apple",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-159-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天吃一个苹果。",
+              "pinyin": "wǒ měitiān chī yí ge píngguǒ.",
+              "english": "I eat an apple every day.",
+              "teaching_note": "一个苹果 counts one apple; 每天 makes the action habitual."
+            },
+            {
+              "id": "ex-159-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店的苹果很便宜。",
+              "pinyin": "zhè jiā diàn de píngguǒ hěn piányi.",
+              "english": "The apples at this shop are very cheap.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 159
+            }
+          ]
+        },
+        {
+          "id": "w-192",
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "meaning_en": "water",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-192-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天喝很多水。",
+              "pinyin": "wǒ měitiān hē hěn duō shuǐ.",
+              "english": "I drink plenty of water every day.",
+              "teaching_note": "水 means water; 喝很多水 expresses drinking plenty of water regularly."
+            },
+            {
+              "id": "ex-192-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "今天很热，请多喝水。",
+              "pinyin": "jīntiān hěn rè, qǐng duō hē shuǐ.",
+              "english": "It's very hot today; please drink plenty of water.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 192
+            }
+          ]
+        },
+        {
+          "id": "w-193",
+          "hanzi": "水果",
+          "pinyin": "shuǐguǒ",
+          "meaning_en": "fruit",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-193-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢吃水果。",
+              "pinyin": "wǒ xǐhuan chī shuǐguǒ.",
+              "english": "I like eating fruit.",
+              "teaching_note": "水果 refers to fruit as a food category, not necessarily a single piece."
+            },
+            {
+              "id": "ex-193-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家超市卖很多水果。",
+              "pinyin": "zhè jiā chāoshì mài hěn duō shuǐguǒ.",
+              "english": "This supermarket sells lots of fruit.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 193
+            }
+          ]
+        },
+        {
+          "id": "w-216",
+          "hanzi": "晚饭",
+          "pinyin": "wǎnfàn",
+          "meaning_en": "dinner",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-216-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们七点吃晚饭。",
+              "pinyin": "wǒmen qī diǎn chī wǎnfàn.",
+              "english": "We eat dinner at seven.",
+              "teaching_note": "晚饭 is the evening meal; 七点 gives the meal time."
+            },
+            {
+              "id": "ex-216-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "晚饭六点半开始。",
+              "pinyin": "wǎnfàn liù diǎn bàn kāishǐ.",
+              "english": "Dinner starts at six thirty.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 216
+            }
+          ]
+        },
+        {
+          "id": "w-224",
+          "hanzi": "午饭",
+          "pinyin": "wǔfàn",
+          "meaning_en": "lunch",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-224-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们十二点吃午饭。",
+              "pinyin": "wǒmen shí'èr diǎn chī wǔfàn.",
+              "english": "We eat lunch at twelve.",
+              "teaching_note": "午饭 means lunch, usually eaten around the middle of the day."
+            },
+            {
+              "id": "ex-224-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生中午十二点吃午饭。",
+              "pinyin": "xuéshēng zhōngwǔ shí èr diǎn chī wǔfàn.",
+              "english": "The students eat lunch at twelve noon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 224
+            }
+          ]
+        },
+        {
+          "id": "w-274",
+          "hanzi": "早饭",
+          "pinyin": "zǎofàn",
+          "meaning_en": "breakfast",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-274-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我七点吃早饭。",
+              "pinyin": "wǒ qī diǎn chī zǎofàn.",
+              "english": "I eat breakfast at seven.",
+              "teaching_note": "吃早饭 means have breakfast, and 七点 gives the time."
+            },
+            {
+              "id": "ex-274-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天的早饭有包子和鸡蛋。",
+              "pinyin": "jīntiān de zǎofàn yǒu bāozi hé jīdàn.",
+              "english": "There are steamed buns and eggs for breakfast today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 274
+            }
+          ]
+        },
+        {
+          "id": "w-300",
+          "hanzi": "做饭",
+          "pinyin": "zuò fàn",
+          "meaning_en": "cook",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-300-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸在做饭。",
+              "pinyin": "wǒ bàba zài zuò fàn.",
+              "english": "My dad is cooking.",
+              "teaching_note": "做饭 means prepare/cook a meal, not just eat rice."
+            },
+            {
+              "id": "ex-300-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈每天晚上做饭。",
+              "pinyin": "māma měitiān wǎnshang zuò fàn.",
+              "english": "Mom cooks every evening.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 300
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-21",
+        "title": "Having a meal",
+        "explanation": "The eating verb appears in ordinary descriptions of meals.",
+        "example_id": "ex-021-1"
+      },
+      {
+        "id": "g-72",
+        "title": "Describing food",
+        "explanation": "A common adjective evaluates whether food tastes good.",
+        "example_id": "ex-072-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-008-1",
+      "ex-008-2",
+      "ex-016-1",
+      "ex-016-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-11-1",
+          "kind": "selection",
+          "prompt": "Which expression means “steamed bun”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "包子",
+              "pinyin": "bāozi"
+            },
+            {
+              "id": "b",
+              "hanzi": "牛奶",
+              "pinyin": "niúnǎi"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “steamed bun”."
+        },
+        {
+          "id": "q-11-2",
+          "kind": "selection",
+          "prompt": "Which expression means “cooked rice”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "苹果",
+              "pinyin": "píngguǒ"
+            },
+            {
+              "id": "b",
+              "hanzi": "米饭",
+              "pinyin": "mǐfàn"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “cooked rice”."
+        },
+        {
+          "id": "q-11-3",
+          "kind": "selection",
+          "prompt": "Which expression means “cook”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "做饭",
+              "pinyin": "zuò fàn"
+            },
+            {
+              "id": "b",
+              "hanzi": "水",
+              "pinyin": "shuǐ"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “cook”."
+        },
+        {
+          "id": "q-11-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我早上吃包子。” (wǒ zǎoshang chī bāozi.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I eat steamed buns in the morning.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-11-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “The steamed buns at this shop are delicious.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这家店的包子很好吃。 (zhè jiā diàn de bāozi hěn hǎochī.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

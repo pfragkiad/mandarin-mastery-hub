@@ -1,0 +1,713 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-describing-feelings",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Describing People and Things",
+    "subtitle": "Size, Quality, Feelings and Evaluation",
+    "description": "Use common adjectives and evaluative language to describe people and objects.",
+    "slug": "describing-feelings"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "adjectives",
+      "feelings",
+      "evaluation"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Describe appearance, size and quality.",
+    "Express simple evaluations and feelings.",
+    "Distinguish adjectives in natural context."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "书": "Characters:书",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "你": "Characters:你",
+    "兴": "Characters:兴",
+    "到": "Characters:到",
+    "午": "Characters:午",
+    "只": "Characters:只",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "唱": "Characters:唱",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "歌": "Characters:歌",
+    "漂": "Characters:漂",
+    "猫": "Characters:猫",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "老": "Characters:老",
+    "花": "Characters:花",
+    "菜": "Characters:菜",
+    "衣": "Characters:衣",
+    "见": "Characters:见",
+    "觉": "Characters:觉",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "间": "Characters:间",
+    "非": "Characters:非",
+    "饭": "Characters:饭",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Use common adjectives and evaluative language to describe people and objects.",
+      "focus": "Describe appearance, size and quality."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-025",
+          "hanzi": "大",
+          "pinyin": "dà",
+          "meaning_en": "big",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-025-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个房间很大。",
+              "pinyin": "zhège fángjiān hěn dà.",
+              "english": "This room is big.",
+              "teaching_note": "很 appears naturally before a descriptive adjective such as 大, without necessarily meaning “very.”"
+            },
+            {
+              "id": "ex-025-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个大学很大。",
+              "pinyin": "zhège dàxué hěn dà.",
+              "english": "This university is very big.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 25
+            }
+          ]
+        },
+        {
+          "id": "w-044",
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning_en": "correct; toward",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "preposition",
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-044-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我说得对吗？",
+              "pinyin": "wǒ shuō de duì ma?",
+              "english": "Am I right?",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-044-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "老师说：“对，是这样。”",
+              "pinyin": "lǎoshī shuō: “duì, shì zhèyàng.”",
+              "english": "The teacher said, \"Yes, that's right.\"",
+              "teaching_note": "Written dialogue: 对 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 44
+            }
+          ],
+          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages."
+        },
+        {
+          "id": "w-046",
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning_en": "many; much",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-046-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有很多人。",
+              "pinyin": "zhèlǐ yǒu hěn duō rén.",
+              "english": "There are many people here.",
+              "teaching_note": "很多 directly modifies 人 to express a large number of people."
+            },
+            {
+              "id": "ex-046-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午来的人很多。",
+              "pinyin": "xiàwǔ lái de rén hěn duō.",
+              "english": "There are many people coming this afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 46
+            }
+          ]
+        },
+        {
+          "id": "w-057",
+          "hanzi": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning_en": "happy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-057-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "见到你很高兴。",
+              "pinyin": "jiàndào nǐ hěn gāoxìng.",
+              "english": "Nice to meet you.",
+              "teaching_note": "见到你很高兴 is a conventional greeting on meeting someone."
+            },
+            {
+              "id": "ex-057-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们今天非常高兴。",
+              "pinyin": "xuéshēngmen jīntiān fēicháng gāoxìng.",
+              "english": "The students are very happy today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 57
+            }
+          ]
+        },
+        {
+          "id": "w-071",
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "meaning_en": "good",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-071-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这本书很好。",
+              "pinyin": "zhè běn shū hěn hǎo.",
+              "english": "This book is good.",
+              "teaching_note": "好 is a broad positive adjective; 很好 can describe books, people, plans, or weather."
+            },
+            {
+              "id": "ex-071-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店的菜很好。",
+              "pinyin": "zhè jiā fàndiàn de cài hěn hǎo.",
+              "english": "The food at this restaurant is very good.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 71
+            }
+          ]
+        },
+        {
+          "id": "w-073",
+          "hanzi": "好看",
+          "pinyin": "hǎokàn",
+          "meaning_en": "good-looking",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-073-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这件衣服很好看。",
+              "pinyin": "zhè jiàn yīfu hěn hǎokàn.",
+              "english": "This item of clothing looks nice.",
+              "teaching_note": "件 is a classifier for clothing; 好看 describes how the garment looks."
+            },
+            {
+              "id": "ex-073-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书很好看。",
+              "pinyin": "zhè běn shū hěn hǎokàn.",
+              "english": "This book is very good to read.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 73
+            }
+          ]
+        },
+        {
+          "id": "w-074",
+          "hanzi": "好听",
+          "pinyin": "hǎotīng",
+          "meaning_en": "pleasant to hear",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings",
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-074-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我觉得中文歌很好听。",
+              "pinyin": "wǒ juéde Zhōngwén gē hěn hǎotīng.",
+              "english": "I think Chinese songs sound really nice.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-074-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她唱的歌很好听。",
+              "pinyin": "tā chàng de gē hěn hǎotīng.",
+              "english": "The songs she sings sound very nice.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 74
+            }
+          ]
+        },
+        {
+          "id": "w-118",
+          "hanzi": "忙",
+          "pinyin": "máng",
+          "meaning_en": "busy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-118-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天很忙。",
+              "pinyin": "wǒ jīntiān hěn máng.",
+              "english": "I am very busy today.",
+              "teaching_note": "忙 is a state adjective; 很忙 is a natural predicate without 是."
+            },
+            {
+              "id": "ex-118-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈早上很忙，晚上有时间。",
+              "pinyin": "māma zǎoshang hěn máng, wǎnshang yǒu shíjiān.",
+              "english": "Mom is very busy in the morning but has time in the evening.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 118
+            }
+          ]
+        },
+        {
+          "id": "w-158",
+          "hanzi": "漂亮",
+          "pinyin": "piàoliang",
+          "meaning_en": "beautiful",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-158-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这件衣服很漂亮。",
+              "pinyin": "zhè jiàn yīfu hěn piàoliang.",
+              "english": "This item of clothing is beautiful.",
+              "teaching_note": "漂亮 describes attractive appearance, here that of clothing."
+            },
+            {
+              "id": "ex-158-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有很多漂亮的花。",
+              "pinyin": "xuéxiào lǐ yǒu hěn duō piàoliang de huā.",
+              "english": "There are many beautiful flowers at the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 158
+            }
+          ]
+        },
+        {
+          "id": "w-180",
+          "hanzi": "少",
+          "pinyin": "shǎo",
+          "meaning_en": "few; little",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-180-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里的人很少。",
+              "pinyin": "zhèlǐ de rén hěn shǎo.",
+              "english": "There are very few people here.",
+              "teaching_note": "很少 describes a small number of people at this location."
+            },
+            {
+              "id": "ex-180-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天来上课的学生很少。",
+              "pinyin": "jīntiān lái shàngkè de xuéshēng hěn shǎo.",
+              "english": "Very few students came to class today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 180
+            }
+          ]
+        },
+        {
+          "id": "w-234",
+          "hanzi": "小",
+          "pinyin": "xiǎo",
+          "meaning_en": "small",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "prefix"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-234-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这只猫很小。",
+              "pinyin": "zhè zhī māo hěn xiǎo.",
+              "english": "This cat is very small.",
+              "teaching_note": "只 is the animal classifier; 小 describes the cat’s size."
+            },
+            {
+              "id": "ex-234-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个房间很小。",
+              "pinyin": "zhège fángjiān hěn xiǎo.",
+              "english": "This room is very small.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 234
+            }
+          ]
+        },
+        {
+          "id": "w-242",
+          "hanzi": "新",
+          "pinyin": "xīn",
+          "meaning_en": "new",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-242-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的新书。",
+              "pinyin": "zhè shì wǒ de xīn shū.",
+              "english": "This is my new book.",
+              "teaching_note": "新 modifies 书 to mean a new book."
+            },
+            {
+              "id": "ex-242-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有很多新书。",
+              "pinyin": "zhè jiā shūdiàn yǒu hěn duō xīn shū.",
+              "english": "This bookstore has many new books.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 242
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-25",
+        "title": "Describing size",
+        "explanation": "In simple affirmative descriptive sentences, a degree word can appear naturally before the adjective.",
+        "example_id": "ex-025-1"
+      },
+      {
+        "id": "g-57",
+        "title": "Talking about feelings",
+        "explanation": "Adjectives of feeling serve as predicates in simple descriptions.",
+        "example_id": "ex-057-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-025-1",
+      "ex-025-2",
+      "ex-044-1",
+      "ex-044-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-18-1",
+          "kind": "selection",
+          "prompt": "Which expression means “big”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "少",
+              "pinyin": "shǎo"
+            },
+            {
+              "id": "b",
+              "hanzi": "大",
+              "pinyin": "dà"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “big”."
+        },
+        {
+          "id": "q-18-2",
+          "kind": "selection",
+          "prompt": "Which expression means “pleasant to hear”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "好听",
+              "pinyin": "hǎotīng"
+            },
+            {
+              "id": "b",
+              "hanzi": "小",
+              "pinyin": "xiǎo"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “pleasant to hear”."
+        },
+        {
+          "id": "q-18-3",
+          "kind": "selection",
+          "prompt": "Which expression means “new”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "大",
+              "pinyin": "dà"
+            },
+            {
+              "id": "b",
+              "hanzi": "新",
+              "pinyin": "xīn"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “new”."
+        },
+        {
+          "id": "q-18-4",
+          "kind": "comprehension",
+          "prompt": "In the example “这个房间很大。” (zhège fángjiān hěn dà.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "This room is big.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-18-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “This university is very big.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这个大学很大。 (zhège dàxué hěn dà.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

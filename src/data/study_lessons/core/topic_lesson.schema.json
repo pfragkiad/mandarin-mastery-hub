@@ -1,0 +1,714 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/mandarin/v3/topic_lesson.schema.json",
+  "title": "Mandarin topic / vocabulary lesson — v3.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lesson_id",
+    "lesson_type",
+    "lesson",
+    "classification",
+    "learning_objectives",
+    "metadata",
+    "catalog_character_refs",
+    "sections"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mandarin-topic-lesson/3.0.0"
+    },
+    "lesson_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "lesson": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "description",
+        "slug"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 4
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 20
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "template_version",
+        "audience",
+        "language",
+        "date_reviewed"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "reviewed",
+            "approved"
+          ]
+        },
+        "template_version": {
+          "const": "3.0.0"
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "enum": [
+            "zh-CN",
+            "zh-TW",
+            "zh-HK"
+          ]
+        },
+        "date_reviewed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "catalog_character_refs": {
+      "type": "object",
+      "description": "Exact per-character IDs from external catalog_ids.json, never inferred or synthesized.",
+      "propertyNames": {
+        "minLength": 1,
+        "maxLength": 2
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^Characters:.+$"
+      }
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overview",
+        "vocabulary",
+        "grammar_points",
+        "featured_example_ids",
+        "practice"
+      ],
+      "properties": {
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "topic_description",
+            "focus"
+          ],
+          "properties": {
+            "topic_description": {
+              "type": "string"
+            },
+            "focus": {
+              "type": "string"
+            }
+          }
+        },
+        "vocabulary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "items",
+            "related_entries"
+          ],
+          "properties": {
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/vocab"
+              }
+            },
+            "related_entries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/related"
+              }
+            }
+          }
+        },
+        "grammar_points": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/grammar"
+          }
+        },
+        "featured_example_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "practice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enabled",
+            "questions"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "$ref": "#/$defs/question"
+              }
+            }
+          }
+        }
+      }
+    },
+    "lesson_type": {
+      "const": "topic_vocabulary"
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_topic_id",
+        "topic_ids",
+        "tags",
+        "course_topic_refs"
+      ],
+      "properties": {
+        "primary_topic_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Global topic key or null only when no global category reasonably applies."
+        },
+        "topic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true
+        },
+        "course_topic_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Optional cross-references to course-private topics; not curriculum membership.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "curriculum_id",
+              "course_topic_id"
+            ],
+            "properties": {
+              "curriculum_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "course_topic_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "primary_topic_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "primary_topic_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "topic_ids": {
+                "contains": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "learning_objectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "hanzi",
+        "pinyin",
+        "english",
+        "teaching_note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1
+        },
+        "style": {
+          "enum": [
+            "conversational",
+            "written",
+            "dialogue",
+            "other"
+          ]
+        },
+        "register": {
+          "type": "string"
+        },
+        "teaching_note": {
+          "type": "string"
+        }
+      }
+    },
+    "vocab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "hanzi",
+        "pinyin",
+        "meaning_en",
+        "primary_pos_id",
+        "pos_ids",
+        "topic_ids",
+        "examples",
+        "learning_role"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_pos_id": {
+          "type": "string"
+        },
+        "pos_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "topic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "pos_note": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/example"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        },
+        "learning_role": {
+          "enum": [
+            "introduced",
+            "reviewed"
+          ],
+          "description": "Introduced in this teaching unit or previously known and reused."
+        },
+        "syllabus_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "curriculum_id",
+              "entry_id"
+            ],
+            "properties": {
+              "curriculum_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "entry_id": {
+                "oneOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "related": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hanzi",
+        "pinyin",
+        "meaning_en",
+        "primary_category_id"
+      ],
+      "properties": {
+        "hanzi": {
+          "type": "string"
+        },
+        "pinyin": {
+          "type": "string"
+        },
+        "meaning_en": {
+          "type": "string"
+        },
+        "primary_category_id": {
+          "type": "string"
+        },
+        "syllabus_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "curriculum_id",
+              "entry_id"
+            ],
+            "properties": {
+              "curriculum_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "entry_id": {
+                "oneOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "explanation",
+        "example_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "example_id": {
+          "type": "string"
+        }
+      }
+    },
+    "choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "question": {
+      "$ref": "#/$defs/question_v3"
+    },
+    "quiz_choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hanzi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pinyin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning_en": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "hanzi",
+            "pinyin"
+          ]
+        }
+      ]
+    },
+    "question_v3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "choices",
+        "correct_choice_ids",
+        "explanation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "selection",
+            "multi_selection",
+            "comprehension",
+            "production"
+          ]
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quiz_choice"
+          }
+        },
+        "correct_choice_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "selection"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "choices": {
+                "minItems": 2
+              },
+              "correct_choice_ids": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            },
+            "not": {
+              "required": [
+                "answer"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "multi_selection"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "choices": {
+                "minItems": 3
+              },
+              "correct_choice_ids": {
+                "minItems": 2
+              }
+            },
+            "not": {
+              "required": [
+                "answer"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "comprehension",
+                  "production"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "answer"
+            ],
+            "properties": {
+              "choices": {
+                "maxItems": 0
+              },
+              "correct_choice_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "description": "Course-neutral communicative topic lesson; sequence and curriculum membership are defined in curriculum manifests."
+}

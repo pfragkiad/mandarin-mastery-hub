@@ -1,0 +1,898 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-family-and-friends",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Introducing Family and Friends",
+    "subtitle": "Relationships, Relatives and Friendship",
+    "description": "Introduce family members, friends and people close to you.",
+    "slug": "family-and-friends"
+  },
+  "classification": {
+    "primary_topic_id": "family-relationships",
+    "topic_ids": [
+      "family-relationships",
+      "people-identity"
+    ],
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Identify common relatives and relationship words.",
+    "Introduce friends and family members.",
+    "Understand short descriptions of family life."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "友": "Characters:友",
+    "司": "Characters:司",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "天": "Characters:天",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "岁": "Characters:岁",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "弟": "Characters:弟",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "文": "Characters:文",
+    "旁": "Characters:旁",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "火": "Characters:火",
+    "爱": "Characters:爱",
+    "爸": "Characters:爸",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "男": "Characters:男",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "老": "Characters:老",
+    "说": "Characters:说",
+    "读": "Characters:读",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "院": "Characters:院",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Introduce family members, friends and people close to you.",
+      "focus": "Identify common relatives and relationship words."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-001",
+          "hanzi": "爱",
+          "pinyin": "ài",
+          "meaning_en": "love; like",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-001-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爱我的家。",
+              "pinyin": "wǒ ài wǒ de jiā.",
+              "english": "I love my family.",
+              "teaching_note": "爱 expresses strong affection here; 家 can refer both to the home and to one’s family."
+            },
+            {
+              "id": "ex-001-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸爱看中文电影。",
+              "pinyin": "bàba ài kàn Zhōngwén diànyǐng.",
+              "english": "Dad loves watching Chinese-language movies.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 1
+            }
+          ]
+        },
+        {
+          "id": "w-003",
+          "hanzi": "爸爸",
+          "pinyin": "bàba",
+          "meaning_en": "father",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-003-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸是老师。",
+              "pinyin": "wǒ bàba shì lǎoshī.",
+              "english": "My father is a teacher.",
+              "teaching_note": "爸爸 is a familiar kinship noun, and the possessive 的 is often omitted before close family terms."
+            },
+            {
+              "id": "ex-003-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸在家做饭。",
+              "pinyin": "bàba zài jiā zuò fàn.",
+              "english": "Dad is cooking at home.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 3
+            }
+          ]
+        },
+        {
+          "id": "w-032",
+          "hanzi": "弟弟",
+          "pinyin": "dìdi",
+          "meaning_en": "younger brother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-032-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我弟弟十岁。",
+              "pinyin": "wǒ dìdi shí suì.",
+              "english": "My younger brother is ten.",
+              "teaching_note": "Age is commonly stated as person + number + 岁, without 是."
+            },
+            {
+              "id": "ex-032-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "弟弟和姐姐一起上学。",
+              "pinyin": "dìdi hé jiějie yìqǐ shàngxué.",
+              "english": "The younger brother and older sister go to school together.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 32
+            }
+          ]
+        },
+        {
+          "id": "w-048",
+          "hanzi": "儿子",
+          "pinyin": "érzi",
+          "meaning_en": "son",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-048-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我儿子喜欢猫。",
+              "pinyin": "wǒ érzi xǐhuan māo.",
+              "english": "My son likes cats.",
+              "teaching_note": "儿子 specifies one’s son; 喜欢 is followed by the thing liked."
+            },
+            {
+              "id": "ex-048-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的儿子今年上小学。",
+              "pinyin": "tā de érzi jīnnián shàng xiǎoxué.",
+              "english": "His son is attending primary school this year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 48
+            }
+          ]
+        },
+        {
+          "id": "w-059",
+          "hanzi": "哥哥",
+          "pinyin": "gēge",
+          "meaning_en": "older brother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-059-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我哥哥在工作。",
+              "pinyin": "wǒ gēge zài gōngzuò.",
+              "english": "My older brother is working.",
+              "teaching_note": "在 before a verb marks ongoing activity; the brother is working now."
+            },
+            {
+              "id": "ex-059-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "哥哥每天坐火车上班。",
+              "pinyin": "gēge měitiān zuò huǒchē shàngbān.",
+              "english": "The older brother takes the train to work every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 59
+            }
+          ]
+        },
+        {
+          "id": "w-068",
+          "hanzi": "孩子",
+          "pinyin": "háizi",
+          "meaning_en": "child",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-068-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个孩子五岁。",
+              "pinyin": "nàge háizi wǔ suì.",
+              "english": "That child is five years old.",
+              "teaching_note": "五岁 gives the child’s age; Chinese does not need a verb equivalent to “be.”"
+            },
+            {
+              "id": "ex-068-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "孩子们在学校学习。",
+              "pinyin": "háizimen zài xuéxiào xuéxí.",
+              "english": "The children study at school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 68
+            }
+          ]
+        },
+        {
+          "id": "w-086",
+          "hanzi": "家",
+          "pinyin": "jiā",
+          "meaning_en": "home; family",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-086-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我现在回家。",
+              "pinyin": "wǒ xiànzài huí jiā.",
+              "english": "I am going home now.",
+              "teaching_note": "回家 means go back home, with no need for 在 before 家."
+            },
+            {
+              "id": "ex-086-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我家有四个人。",
+              "pinyin": "wǒ jiā yǒu sì gè rén.",
+              "english": "There are four people in my family.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 86
+            }
+          ],
+          "pos_note": "Home/family noun; also a classifier for businesses/families."
+        },
+        {
+          "id": "w-087",
+          "hanzi": "家人",
+          "pinyin": "jiārén",
+          "meaning_en": "family members",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-087-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的家人都很好。",
+              "pinyin": "wǒ de jiārén dōu hěn hǎo.",
+              "english": "My family members are all well.",
+              "teaching_note": "家人 refers to family members; 都 confirms that the whole group is doing well."
+            },
+            {
+              "id": "ex-087-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的家人都在中国。",
+              "pinyin": "wǒ de jiārén dōu zài Zhōngguó.",
+              "english": "All my family members are in China.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 87
+            }
+          ]
+        },
+        {
+          "id": "w-092",
+          "hanzi": "姐姐",
+          "pinyin": "jiějie",
+          "meaning_en": "older sister",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-092-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我姐姐会开车。",
+              "pinyin": "wǒ jiějie huì kāichē.",
+              "english": "My older sister can drive.",
+              "teaching_note": "会开车 indicates the learned ability to drive."
+            },
+            {
+              "id": "ex-092-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的姐姐今年二十岁。",
+              "pinyin": "wǒ de jiějie jīnnián èr shí suì.",
+              "english": "My older sister is twenty years old this year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 92
+            }
+          ]
+        },
+        {
+          "id": "w-114",
+          "hanzi": "妈妈",
+          "pinyin": "māma",
+          "meaning_en": "mother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-114-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我妈妈是医生。",
+              "pinyin": "wǒ māma shì yīshēng.",
+              "english": "My mother is a doctor.",
+              "teaching_note": "妈妈 can be used directly before a description without a possessive 的."
+            },
+            {
+              "id": "ex-114-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈每天晚上和我一起读书。",
+              "pinyin": "māma měitiān wǎnshang hé wǒ yìqǐ dúshū.",
+              "english": "Mom reads with me every evening.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 114
+            }
+          ]
+        },
+        {
+          "id": "w-123",
+          "hanzi": "妹妹",
+          "pinyin": "mèimei",
+          "meaning_en": "younger sister",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-123-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我妹妹是学生。",
+              "pinyin": "wǒ mèimei shì xuéshēng.",
+              "english": "My younger sister is a student.",
+              "teaching_note": "妹妹 refers to one’s younger sister and is a familiar family term."
+            },
+            {
+              "id": "ex-123-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妹妹每天和姐姐一起上学。",
+              "pinyin": "mèimei měitiān hé jiějie yìqǐ shàngxué.",
+              "english": "The younger sister goes to school with her older sister every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 123
+            }
+          ]
+        },
+        {
+          "id": "w-143",
+          "hanzi": "男朋友",
+          "pinyin": "nánpéngyou",
+          "meaning_en": "boyfriend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-143-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她的男朋友是医生。",
+              "pinyin": "tā de nánpéngyou shì yīshēng.",
+              "english": "Her boyfriend is a doctor.",
+              "teaching_note": "男朋友 ordinarily means boyfriend, not merely a male friend."
+            },
+            {
+              "id": "ex-143-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她的男朋友在医院上班。",
+              "pinyin": "tā de nánpéngyou zài yīyuàn shàngbān.",
+              "english": "Her boyfriend works at a hospital.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 143
+            }
+          ]
+        },
+        {
+          "id": "w-153",
+          "hanzi": "女儿",
+          "pinyin": "nǚ'ér",
+          "meaning_en": "daughter",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-153-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的女儿很喜欢书。",
+              "pinyin": "wǒ de nǚ'ér hěn xǐhuan shū.",
+              "english": "My daughter likes books very much.",
+              "teaching_note": "女儿 means daughter; 很喜欢 increases the strength of the preference."
+            },
+            {
+              "id": "ex-153-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她的女儿今年五岁。",
+              "pinyin": "tā de nǚ'ér jīnnián wǔ suì.",
+              "english": "Her daughter is five years old this year.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 153
+            }
+          ]
+        },
+        {
+          "id": "w-154",
+          "hanzi": "女朋友",
+          "pinyin": "nǚpéngyou",
+          "meaning_en": "girlfriend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-154-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他的女朋友会说中文。",
+              "pinyin": "tā de nǚpéngyou huì shuō Zhōngwén.",
+              "english": "His girlfriend can speak Chinese.",
+              "teaching_note": "女朋友 normally identifies a romantic partner."
+            },
+            {
+              "id": "ex-154-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的女朋友也在这家公司工作。",
+              "pinyin": "tā de nǚpéngyou yě zài zhè jiā gōngsī gōngzuò.",
+              "english": "His girlfriend also works at this company.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 154
+            }
+          ]
+        },
+        {
+          "id": "w-156",
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "meaning_en": "friend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-156-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是我的好朋友。",
+              "pinyin": "tā shì wǒ de hǎo péngyou.",
+              "english": "He is my good friend.",
+              "teaching_note": "好朋友 means a good or close friend, not a romantic partner."
+            },
+            {
+              "id": "ex-156-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的朋友住在学校旁边。",
+              "pinyin": "wǒ de péngyou zhù zài xuéxiào pángbiān.",
+              "english": "My friend lives next to the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 156
+            }
+          ]
+        },
+        {
+          "id": "w-235",
+          "hanzi": "小朋友",
+          "pinyin": "xiǎopéngyou",
+          "meaning_en": "child; little friend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-235-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这些小朋友在玩。",
+              "pinyin": "zhèxiē xiǎopéngyou zài wán.",
+              "english": "These children are playing.",
+              "teaching_note": "小朋友 is a friendly way to refer to young children."
+            },
+            {
+              "id": "ex-235-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "小朋友们每天上午在学校学习。",
+              "pinyin": "xiǎopéngyoumen měitiān shàngwǔ zài xuéxiào xuéxí.",
+              "english": "The children study at school every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 235
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-3",
+        "title": "Family terms as nouns",
+        "explanation": "A kinship term can follow a possessive pronoun directly.",
+        "example_id": "ex-003-1"
+      },
+      {
+        "id": "g-86",
+        "title": "Home or family",
+        "explanation": "The same noun can refer to a home or a family, depending on context.",
+        "example_id": "ex-086-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-001-1",
+      "ex-001-2",
+      "ex-003-1",
+      "ex-003-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-09-1",
+          "kind": "selection",
+          "prompt": "Which expression means “love”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "爱",
+              "pinyin": "ài"
+            },
+            {
+              "id": "b",
+              "hanzi": "男朋友",
+              "pinyin": "nánpéngyou"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “love; like”."
+        },
+        {
+          "id": "q-09-2",
+          "kind": "selection",
+          "prompt": "Which expression means “older sister”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "女儿",
+              "pinyin": "nǚ'ér"
+            },
+            {
+              "id": "b",
+              "hanzi": "姐姐",
+              "pinyin": "jiějie"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “older sister”."
+        },
+        {
+          "id": "q-09-3",
+          "kind": "selection",
+          "prompt": "Which expression means “child”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "小朋友",
+              "pinyin": "xiǎopéngyou"
+            },
+            {
+              "id": "b",
+              "hanzi": "女朋友",
+              "pinyin": "nǚpéngyou"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “child; little friend”."
+        },
+        {
+          "id": "q-09-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我爱我的家。” (wǒ ài wǒ de jiā.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I love my family.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-09-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Dad loves watching Chinese-language movies.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "爸爸爱看中文电影。 (bàba ài kàn Zhōngwén diànyǐng.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

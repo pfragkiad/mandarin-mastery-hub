@@ -1,0 +1,1025 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-getting-around",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Getting Around",
+    "subtitle": "Vehicles, Destinations and Position",
+    "description": "Talk about travelling, moving between places and locating people and objects.",
+    "slug": "getting-around"
+  },
+  "classification": {
+    "primary_topic_id": "travel-transport",
+    "topic_ids": [
+      "travel-transport",
+      "places-directions"
+    ],
+    "tags": [
+      "transport",
+      "directions",
+      "locations"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Name common modes of transport.",
+    "Describe going, coming and returning.",
+    "Use basic spatial position words."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "九": "Characters:九",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "包": "Characters:包",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "司": "Characters:司",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "哥": "Characters:哥",
+    "商": "Characters:商",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "工": "Characters:工",
+    "市": "Characters:市",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "椅": "Characters:椅",
+    "火": "Characters:火",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "猫": "Characters:猫",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "租": "Characters:租",
+    "等": "Characters:等",
+    "苹": "Characters:苹",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "超": "Characters:超",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "飞": "Characters:飞"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about travelling, moving between places and locating people and objects.",
+      "focus": "Name common modes of transport."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-020",
+          "hanzi": "车",
+          "pinyin": "chē",
+          "meaning_en": "vehicle",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-020-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我爸爸的车。",
+              "pinyin": "zhè shì wǒ bàba de chē.",
+              "english": "This is my dad's car.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-020-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校门口有很多车。",
+              "pinyin": "xuéxiào ménkǒu yǒu hěn duō chē.",
+              "english": "There are many cars at the school entrance.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 20
+            }
+          ]
+        },
+        {
+          "id": "w-022",
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning_en": "taxi",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-022-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐出租车去学校。",
+              "pinyin": "wǒ zuò chūzūchē qù xuéxiào.",
+              "english": "I take a taxi to school.",
+              "teaching_note": "坐出租车 means travel by taxi, rather than literally sit in a taxi."
+            },
+            {
+              "id": "ex-022-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从学校到医院可以坐出租车。",
+              "pinyin": "cóng xuéxiào dào yīyuàn kěyǐ zuò chūzūchē.",
+              "english": "You can take a taxi from the school to the hospital.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 22
+            }
+          ]
+        },
+        {
+          "id": "w-029",
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning_en": "arrive",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-029-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他九点到学校。",
+              "pinyin": "tā jiǔ diǎn dào xuéxiào.",
+              "english": "He arrives at school at nine.",
+              "teaching_note": "九点 gives the arrival time; 到 indicates reaching the school."
+            },
+            {
+              "id": "ex-029-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从家到学校可以坐车。",
+              "pinyin": "cóng jiā dào xuéxiào kěyǐ zuò chē.",
+              "english": "You can go from home to school by car.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 29
+            }
+          ]
+        },
+        {
+          "id": "w-054",
+          "hanzi": "飞机",
+          "pinyin": "fēijī",
+          "meaning_en": "airplane",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-054-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他坐飞机去中国。",
+              "pinyin": "tā zuò fēijī qù Zhōngguó.",
+              "english": "He takes a plane to China.",
+              "teaching_note": "坐飞机 means to travel by plane; 去中国 specifies the destination."
+            },
+            {
+              "id": "ex-054-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "飞机下午三点到机场。",
+              "pinyin": "fēijī xiàwǔ sān diǎn dào jīchǎng.",
+              "english": "The plane arrives at the airport at three in the afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 54
+            }
+          ]
+        },
+        {
+          "id": "w-081",
+          "hanzi": "回",
+          "pinyin": "huí",
+          "meaning_en": "return",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "classifier"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-081-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我明天回家。",
+              "pinyin": "wǒ míngtiān huí jiā.",
+              "english": "I will go home tomorrow.",
+              "teaching_note": "回家 means return home; 明天 indicates the future without a future-tense ending."
+            },
+            {
+              "id": "ex-081-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他下午六点回家。",
+              "pinyin": "tā xiàwǔ liù diǎn huí jiā.",
+              "english": "He goes home at six in the afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 81
+            }
+          ]
+        },
+        {
+          "id": "w-083",
+          "hanzi": "火车",
+          "pinyin": "huǒchē",
+          "meaning_en": "train",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-083-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐火车去看朋友。",
+              "pinyin": "wǒ zuò huǒchē qù kàn péngyou.",
+              "english": "I take the train to visit a friend.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-083-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "火车上午九点到。",
+              "pinyin": "huǒchē shàngwǔ jiǔ diǎn dào.",
+              "english": "The train arrives at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 83
+            }
+          ]
+        },
+        {
+          "id": "w-098",
+          "hanzi": "开车",
+          "pinyin": "kāichē",
+          "meaning_en": "drive",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-098-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸会开车。",
+              "pinyin": "wǒ bàba huì kāichē.",
+              "english": "My father can drive.",
+              "teaching_note": "会 marks the skill of driving rather than permission to drive."
+            },
+            {
+              "id": "ex-098-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天爸爸开车去公司。",
+              "pinyin": "jīntiān bàba kāichē qù gōngsī.",
+              "english": "Dad drives to the company today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 98
+            }
+          ]
+        },
+        {
+          "id": "w-106",
+          "hanzi": "来",
+          "pinyin": "lái",
+          "meaning_en": "come",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-106-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你明天来吗？",
+              "pinyin": "nǐ míngtiān lái ma?",
+              "english": "Are you coming tomorrow?",
+              "teaching_note": "来 indicates movement toward the speaker’s place or point of reference."
+            },
+            {
+              "id": "ex-106-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们明天上午来学校。",
+              "pinyin": "xuéshēngmen míngtiān shàngwǔ lái xuéxiào.",
+              "english": "The students will come to school tomorrow morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 106
+            }
+          ]
+        },
+        {
+          "id": "w-167",
+          "hanzi": "去",
+          "pinyin": "qù",
+          "meaning_en": "go",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-167-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们现在去学校。",
+              "pinyin": "wǒmen xiànzài qù xuéxiào.",
+              "english": "We are going to school now.",
+              "teaching_note": "去 indicates movement away from the speaker’s present location."
+            },
+            {
+              "id": "ex-167-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们明天去电影院。",
+              "pinyin": "xuéshēngmen míngtiān qù diànyǐngyuàn.",
+              "english": "The students will go to the cinema tomorrow.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 167
+            }
+          ]
+        },
+        {
+          "id": "w-011",
+          "hanzi": "边",
+          "pinyin": "biān",
+          "meaning_en": "side; edge",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-011-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你来这边坐吧。",
+              "pinyin": "nǐ lái zhèbiān zuò ba.",
+              "english": "Come sit over here.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-011-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在那边。",
+              "pinyin": "xuéxiào zài nàbiān.",
+              "english": "The school is over there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 11
+            }
+          ],
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+        },
+        {
+          "id": "w-066",
+          "hanzi": "国",
+          "pinyin": "guó",
+          "meaning_en": "country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-066-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "中国是一个大国。",
+              "pinyin": "Zhōngguó shì yí ge dàguó.",
+              "english": "China is a large country.",
+              "teaching_note": "大国 means a large or major country; 个 is a general classifier."
+            },
+            {
+              "id": "ex-066-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我哥哥在外国工作。",
+              "pinyin": "wǒ gēge zài wàiguó gōngzuò.",
+              "english": "My older brother works abroad.",
+              "teaching_note": "外国 (“foreign country/abroad”) is a common compound containing 国."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 66
+            }
+          ]
+        },
+        {
+          "id": "w-080",
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "meaning_en": "after; behind",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-080-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐在你后边。",
+              "pinyin": "wǒ zuò zài nǐ hòubian.",
+              "english": "I am sitting behind you.",
+              "teaching_note": "后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker."
+            },
+            {
+              "id": "ex-080-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们下课后去书店。",
+              "pinyin": "wǒmen xiàkè hòu qù shūdiàn.",
+              "english": "We go to the bookstore after class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 80
+            }
+          ],
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+        },
+        {
+          "id": "w-110",
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "meaning_en": "inside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-110-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "书在包里。",
+              "pinyin": "shū zài bāo lǐ.",
+              "english": "The book is in the bag.",
+              "teaching_note": "里 is a location word, showing that the book is inside the bag."
+            },
+            {
+              "id": "ex-110-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们在教室里上课。",
+              "pinyin": "xuéshēngmen zài jiàoshì lǐ shàngkè.",
+              "english": "The students are having class in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 110
+            }
+          ],
+          "pos_note": "Localizer meaning inside, traditionally also categorized as a location noun."
+        },
+        {
+          "id": "w-163",
+          "hanzi": "前",
+          "pinyin": "qián",
+          "meaning_en": "before; front",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-163-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "学校在商店前边。",
+              "pinyin": "xuéxiào zài shāngdiàn qiánbian.",
+              "english": "The school is in front of the shop.",
+              "teaching_note": "前边 locates something in front of a landmark, here the shop."
+            },
+            {
+              "id": "ex-163-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课前请看书。",
+              "pinyin": "shàngkè qián qǐng kàn shū.",
+              "english": "Please read the book before class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 163
+            }
+          ],
+          "pos_note": "Before/in front of; a time or place localizer."
+        },
+        {
+          "id": "w-175",
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "meaning_en": "above; on",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-175-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "书在桌子上。",
+              "pinyin": "shū zài zhuōzi shàng.",
+              "english": "The book is on the table.",
+              "teaching_note": "上 is a positional word meaning on top of or above something."
+            },
+            {
+              "id": "ex-175-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有两个苹果。",
+              "pinyin": "zhuōzi shàng yǒu liǎng ge píngguǒ.",
+              "english": "There are two apples on the table.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 175
+            }
+          ],
+          "pos_note": "On/above as a localizer or verb for ascending/attending, depending on context."
+        },
+        {
+          "id": "w-212",
+          "hanzi": "外",
+          "pinyin": "wài",
+          "meaning_en": "outside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-212-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他在门外。",
+              "pinyin": "tā zài mén wài.",
+              "english": "He is outside the door.",
+              "teaching_note": "门外 locates someone outside the door; 外 means outside."
+            },
+            {
+              "id": "ex-212-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在门外等一下。",
+              "pinyin": "qǐng zài ménwài děng yíxià.",
+              "english": "Please wait outside the door for a moment.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 212
+            }
+          ]
+        },
+        {
+          "id": "w-213",
+          "hanzi": "外边",
+          "pinyin": "wàibian",
+          "meaning_en": "outside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-213-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "外边下雨了。",
+              "pinyin": "wàibian xià yǔ le.",
+              "english": "It is raining outside.",
+              "teaching_note": "外边 means outside; 下雨了 describes the onset or current fact of rain."
+            },
+            {
+              "id": "ex-213-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校外边有一个超市。",
+              "pinyin": "xuéxiào wàibian yǒu yí ge chāoshì.",
+              "english": "There is a supermarket outside the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 213
+            }
+          ]
+        },
+        {
+          "id": "w-226",
+          "hanzi": "下",
+          "pinyin": "xià",
+          "meaning_en": "below; down; next",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "verb",
+            "classifier"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-226-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "猫在桌子下面。",
+              "pinyin": "māo zài zhuōzi xià miàn.",
+              "english": "The cat is under the table.",
+              "teaching_note": "下面 is the full location expression below the table; 在 marks location."
+            },
+            {
+              "id": "ex-226-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "书在椅子下。",
+              "pinyin": "shū zài yǐzi xià.",
+              "english": "The book is under the chair.",
+              "teaching_note": "A short, concrete location sentence: 在 indicates location, and 下 means beneath or below the chair."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 226
+            }
+          ],
+          "pos_note": "Below/under as a localizer, but verb and measure-word uses also exist."
+        },
+        {
+          "id": "w-289",
+          "hanzi": "中国",
+          "pinyin": "Zhōngguó",
+          "meaning_en": "China",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-289-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想去中国。",
+              "pinyin": "wǒ xiǎng qù Zhōngguó.",
+              "english": "I want to go to China.",
+              "teaching_note": "中国 is the country China; 去 indicates travel to it."
+            },
+            {
+              "id": "ex-289-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "中国有很多大学。",
+              "pinyin": "Zhōngguó yǒu hěn duō dàxué.",
+              "english": "There are many universities in China.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 289
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-167",
+        "title": "Going to a destination",
+        "explanation": "The movement verb precedes the destination in a simple travel phrase.",
+        "example_id": "ex-167-1"
+      },
+      {
+        "id": "g-110",
+        "title": "Expressing position",
+        "explanation": "Location expressions identify where a person or thing is.",
+        "example_id": "ex-110-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-020-1",
+      "ex-020-2",
+      "ex-022-1",
+      "ex-022-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-13-1",
+          "kind": "selection",
+          "prompt": "Which expression means “vehicle”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "车",
+              "pinyin": "chē"
+            },
+            {
+              "id": "b",
+              "hanzi": "里",
+              "pinyin": "lǐ"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “vehicle”."
+        },
+        {
+          "id": "q-13-2",
+          "kind": "selection",
+          "prompt": "Which expression means “side”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "前",
+              "pinyin": "qián"
+            },
+            {
+              "id": "b",
+              "hanzi": "边",
+              "pinyin": "biān"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “side; edge”."
+        },
+        {
+          "id": "q-13-3",
+          "kind": "selection",
+          "prompt": "Which expression means “China”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "中国",
+              "pinyin": "Zhōngguó"
+            },
+            {
+              "id": "b",
+              "hanzi": "上",
+              "pinyin": "shàng"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “China”."
+        },
+        {
+          "id": "q-13-4",
+          "kind": "comprehension",
+          "prompt": "In the example “这是我爸爸的车。” (zhè shì wǒ bàba de chē.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "This is my dad's car.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-13-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “There are many cars at the school entrance.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "学校门口有很多车。 (xuéxiào ménkǒu yǒu hěn duō chē.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

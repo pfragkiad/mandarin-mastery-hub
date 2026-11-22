@@ -1,0 +1,1131 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-questions-and-pointing",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Asking and Pointing",
+    "subtitle": "Question Words, This and That",
+    "description": "Ask who, what, where and how, and identify people and objects as here or there.",
+    "slug": "questions-and-pointing"
+  },
+  "classification": {
+    "primary_topic_id": "reference-questions",
+    "topic_ids": [
+      "reference-questions",
+      "places-directions"
+    ],
+    "tags": [
+      "question-words",
+      "demonstratives",
+      "pointing"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Ask basic information questions.",
+    "Use this/that and here/there naturally.",
+    "Choose a demonstrative expression for singular or plural things."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "写": "Characters:写",
+    "到": "Characters:到",
+    "医": "Characters:医",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "少": "Characters:少",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "等": "Characters:等",
+    "老": "Characters:老",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "谁": "Characters:谁",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "问": "Characters:问",
+    "院": "Characters:院",
+    "题": "Characters:题",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask who, what, where and how, and identify people and objects as here or there.",
+      "focus": "Ask basic information questions."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-047",
+          "hanzi": "多少",
+          "pinyin": "duōshao",
+          "meaning_en": "how many; how much",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "quantifier"
+          ],
+          "topic_ids": [
+            "reference-questions",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-047-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个多少钱？",
+              "pinyin": "zhège duōshao qián?",
+              "english": "How much does this cost?",
+              "teaching_note": "多少钱 is the routine shopping question for a price."
+            },
+            {
+              "id": "ex-047-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有多少学生？",
+              "pinyin": "zhège bān yǒu duōshao xuéshēng?",
+              "english": "How many students are in this class?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 47
+            }
+          ],
+          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun."
+        },
+        {
+          "id": "w-131",
+          "hanzi": "哪",
+          "pinyin": "nǎ",
+          "meaning_en": "which",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-131-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你喜欢哪本书？",
+              "pinyin": "nǐ xǐhuan nǎ běn shū?",
+              "english": "Which book do you like?",
+              "teaching_note": "哪 selects one among known choices; 本 is the measure word for books."
+            },
+            {
+              "id": "ex-131-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "你想读哪本书？",
+              "pinyin": "nǐ xiǎng dú nǎ běn shū?",
+              "english": "Which book do you want to read?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 131
+            }
+          ]
+        },
+        {
+          "id": "w-132",
+          "hanzi": "哪个",
+          "pinyin": "nǎge",
+          "meaning_en": "which one",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-132-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你想要哪个？",
+              "pinyin": "nǐ xiǎng yào nǎge?",
+              "english": "Which one do you want?",
+              "teaching_note": "哪个 asks which one; 个 stands for the classifier of the implied object."
+            },
+            {
+              "id": "ex-132-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "哪个学生今天没有来？",
+              "pinyin": "nǎge xuéshēng jīntiān méiyǒu lái?",
+              "english": "Which student didn't come today?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 132
+            }
+          ]
+        },
+        {
+          "id": "w-133",
+          "hanzi": "哪里",
+          "pinyin": "nǎlǐ",
+          "meaning_en": "where",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-133-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "学校在哪里？",
+              "pinyin": "xuéxiào zài nǎlǐ?",
+              "english": "Where is the school?",
+              "teaching_note": "哪里 asks where an institution or object is located."
+            },
+            {
+              "id": "ex-133-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“请问，书店在哪里？”她问。",
+              "pinyin": "“qǐngwèn, shūdiàn zài nǎlǐ?” tā wèn.",
+              "english": "\"Excuse me, where is the bookstore?\" she asked.",
+              "teaching_note": "Written dialogue: 哪里 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 133
+            }
+          ]
+        },
+        {
+          "id": "w-134",
+          "hanzi": "哪儿",
+          "pinyin": "nǎr",
+          "meaning_en": "where",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-134-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "你去哪儿？",
+              "pinyin": "nǐ qù nǎr?",
+              "english": "Where are you going?",
+              "teaching_note": "哪儿 means where, with the 儿 pronunciation typical of northern Mandarin."
+            },
+            {
+              "id": "ex-134-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“学校在哪儿？”他问。",
+              "pinyin": "“xuéxiào zài nǎr?” tā wèn.",
+              "english": "\"Where is the school?\" he asked.",
+              "teaching_note": "Written dialogue: 哪儿 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 134
+            }
+          ]
+        },
+        {
+          "id": "w-135",
+          "hanzi": "哪些",
+          "pinyin": "nǎxiē",
+          "meaning_en": "which ones",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-135-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你喜欢哪些书？",
+              "pinyin": "nǐ xǐhuan nǎxiē shū?",
+              "english": "Which books do you like?",
+              "teaching_note": "哪些 means which ones when choosing several items."
+            },
+            {
+              "id": "ex-135-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "哪些学生会说汉语？",
+              "pinyin": "nǎxiē xuéshēng huì shuō Hànyǔ?",
+              "english": "Which students can speak Chinese?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 135
+            }
+          ]
+        },
+        {
+          "id": "w-136",
+          "hanzi": "那",
+          "pinyin": "nà",
+          "meaning_en": "that",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "conjunction"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-136-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那是我的朋友。",
+              "pinyin": "nà shì wǒ de péngyou.",
+              "english": "That is my friend.",
+              "teaching_note": "那 points to something away from the speaker, in contrast to 这."
+            },
+            {
+              "id": "ex-136-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那是学校的车。",
+              "pinyin": "nà shì xuéxiào de chē.",
+              "english": "That is the school's car.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 136
+            }
+          ],
+          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses."
+        },
+        {
+          "id": "w-137",
+          "hanzi": "那边",
+          "pinyin": "nàbiān",
+          "meaning_en": "over there",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-137-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "商店在那边。",
+              "pinyin": "shāngdiàn zài nàbiān.",
+              "english": "The store is over there.",
+              "teaching_note": "那边 denotes a place over there, away from the speaker."
+            },
+            {
+              "id": "ex-137-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那边有一家饭店。",
+              "pinyin": "nàbiān yǒu yì jiā fàndiàn.",
+              "english": "There is a restaurant over there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 137
+            }
+          ]
+        },
+        {
+          "id": "w-138",
+          "hanzi": "那个",
+          "pinyin": "nàge",
+          "meaning_en": "that one",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-138-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个苹果很大。",
+              "pinyin": "nàge píngguǒ hěn dà.",
+              "english": "That apple is big.",
+              "teaching_note": "那个 identifies a particular item; 个 is its classifier."
+            },
+            {
+              "id": "ex-138-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那个学生会说汉语。",
+              "pinyin": "nàge xuéshēng huì shuō Hànyǔ.",
+              "english": "That student can speak Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 138
+            }
+          ]
+        },
+        {
+          "id": "w-139",
+          "hanzi": "那里",
+          "pinyin": "nàlǐ",
+          "meaning_en": "there",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-139-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的学校在那里。",
+              "pinyin": "wǒ de xuéxiào zài nàlǐ.",
+              "english": "My school is there.",
+              "teaching_note": "那里 means “there” and is a full location word."
+            },
+            {
+              "id": "ex-139-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那里有很多学生。",
+              "pinyin": "nàlǐ yǒu hěn duō xuéshēng.",
+              "english": "There are many students there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 139
+            }
+          ]
+        },
+        {
+          "id": "w-140",
+          "hanzi": "那儿",
+          "pinyin": "nàr",
+          "meaning_en": "there",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-140-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "你去那儿吗？",
+              "pinyin": "nǐ qù nàr ma?",
+              "english": "Are you going there?",
+              "teaching_note": "那儿 is a northern-style alternative to 那里 for “there.”"
+            },
+            {
+              "id": "ex-140-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在那儿等老师。",
+              "pinyin": "qǐng zài nàr děng lǎoshī.",
+              "english": "Please wait for the teacher there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 140
+            }
+          ]
+        },
+        {
+          "id": "w-141",
+          "hanzi": "那些",
+          "pinyin": "nàxiē",
+          "meaning_en": "those",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-141-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那些书是我的。",
+              "pinyin": "nàxiē shū shì wǒ de.",
+              "english": "Those books are mine.",
+              "teaching_note": "那些 points to several items away from the speaker."
+            },
+            {
+              "id": "ex-141-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那些学生都在教室里。",
+              "pinyin": "nàxiē xuéshēng dōu zài jiàoshì lǐ.",
+              "english": "Those students are all in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 141
+            }
+          ]
+        },
+        {
+          "id": "w-181",
+          "hanzi": "谁",
+          "pinyin": "shéi / shuí",
+          "meaning_en": "who",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-181-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个人是谁？",
+              "pinyin": "nàge rén shì shéi?",
+              "english": "Who is that person?",
+              "teaching_note": "谁 asks for a person’s identity; shéi is used here, while shuí is an accepted alternative."
+            },
+            {
+              "id": "ex-181-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“这是谁的书？”老师问。",
+              "pinyin": "“zhè shì shéi de shū?” lǎoshī wèn.",
+              "english": "\"Whose book is this?\" the teacher asked.",
+              "teaching_note": "Written dialogue: 谁 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 181
+            }
+          ]
+        },
+        {
+          "id": "w-182",
+          "hanzi": "什么",
+          "pinyin": "shénme",
+          "meaning_en": "what",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-182-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你想吃什么？",
+              "pinyin": "nǐ xiǎng chī shénme?",
+              "english": "What do you want to eat?",
+              "teaching_note": "什么 asks what food the listener wants; it is a general interrogative pronoun."
+            },
+            {
+              "id": "ex-182-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“你想喝什么？”她问。",
+              "pinyin": "“nǐ xiǎng hē shénme?” tā wèn.",
+              "english": "\"What do you want to drink?\" she asked.",
+              "teaching_note": "Written dialogue: 什么 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 182
+            }
+          ]
+        },
+        {
+          "id": "w-276",
+          "hanzi": "怎么",
+          "pinyin": "zěnme",
+          "meaning_en": "how",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-276-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个字怎么写？",
+              "pinyin": "zhège zì zěnme xiě?",
+              "english": "How do you write this character?",
+              "teaching_note": "怎么写 asks how to write a particular Chinese character."
+            },
+            {
+              "id": "ex-276-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个问题怎么做？",
+              "pinyin": "zhège wèntí zěnme zuò?",
+              "english": "How do you do this question?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 276
+            }
+          ],
+          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences."
+        },
+        {
+          "id": "w-277",
+          "hanzi": "怎么样",
+          "pinyin": "zěnmeyàng",
+          "meaning_en": "how is it; how about",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-277-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你觉得怎么样？",
+              "pinyin": "nǐ juéde zěnmeyàng?",
+              "english": "What do you think?",
+              "teaching_note": "你觉得怎么样 asks for someone’s impression or opinion."
+            },
+            {
+              "id": "ex-277-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个饭店怎么样？",
+              "pinyin": "zhège fàndiàn zěnmeyàng?",
+              "english": "What do you think of this restaurant?",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 277
+            }
+          ],
+          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences."
+        },
+        {
+          "id": "w-279",
+          "hanzi": "这",
+          "pinyin": "zhè",
+          "meaning_en": "this",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-279-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是什么？",
+              "pinyin": "zhè shì shénme?",
+              "english": "What is this?",
+              "teaching_note": "这 means this; 这是什么 is a standard way to ask what something is."
+            },
+            {
+              "id": "ex-279-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书是新的。",
+              "pinyin": "zhè běn shū shì xīn de.",
+              "english": "This book is new.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 279
+            }
+          ]
+        },
+        {
+          "id": "w-280",
+          "hanzi": "这边",
+          "pinyin": "zhèbiān",
+          "meaning_en": "this side",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-280-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请到这边来。",
+              "pinyin": "qǐng dào zhèbiān lái.",
+              "english": "Please come this way.",
+              "teaching_note": "请到这边来 invites someone to come over to this side."
+            },
+            {
+              "id": "ex-280-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在这边，医院在那边。",
+              "pinyin": "xuéxiào zài zhèbiān, yīyuàn zài nàbiān.",
+              "english": "The school is on this side, and the hospital is over there.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 280
+            }
+          ]
+        },
+        {
+          "id": "w-281",
+          "hanzi": "这个",
+          "pinyin": "zhège",
+          "meaning_en": "this one",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-281-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个很好吃。",
+              "pinyin": "zhège hěn hǎochī.",
+              "english": "This one is delicious.",
+              "teaching_note": "这个 means “this one,” with the noun inferred from context."
+            },
+            {
+              "id": "ex-281-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个学生会说中文。",
+              "pinyin": "zhège xuéshēng huì shuō Zhōngwén.",
+              "english": "This student can speak Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 281
+            }
+          ]
+        },
+        {
+          "id": "w-282",
+          "hanzi": "这里",
+          "pinyin": "zhèlǐ",
+          "meaning_en": "here",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-282-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我住在这里。",
+              "pinyin": "wǒ zhù zài zhèlǐ.",
+              "english": "I live here.",
+              "teaching_note": "这里 is a full location word meaning “here.”"
+            },
+            {
+              "id": "ex-282-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里可以喝茶，也可以看书。",
+              "pinyin": "zhèlǐ kěyǐ hē chá, yě kěyǐ kàn shū.",
+              "english": "You can drink tea and read books here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 282
+            }
+          ]
+        },
+        {
+          "id": "w-283",
+          "hanzi": "这儿",
+          "pinyin": "zhèr",
+          "meaning_en": "here",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-283-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "请来这儿。",
+              "pinyin": "qǐng lái zhèr.",
+              "english": "Please come here.",
+              "teaching_note": "这儿 is a northern-style spoken alternative to 这里."
+            },
+            {
+              "id": "ex-283-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这儿有一家书店。",
+              "pinyin": "zhèr yǒu yì jiā shūdiàn.",
+              "english": "There is a bookstore here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 283
+            }
+          ]
+        },
+        {
+          "id": "w-284",
+          "hanzi": "这些",
+          "pinyin": "zhèxiē",
+          "meaning_en": "these",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-284-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这些苹果很好吃。",
+              "pinyin": "zhèxiē píngguǒ hěn hǎochī.",
+              "english": "These apples are delicious.",
+              "teaching_note": "这些 means these plural items, here the apples."
+            },
+            {
+              "id": "ex-284-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这些学生都在学汉语。",
+              "pinyin": "zhèxiē xuéshēng dōu zài xué Hànyǔ.",
+              "english": "These students are all learning Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 284
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-182",
+        "title": "Asking what",
+        "explanation": "Question words generally stay in the position of the information being requested.",
+        "example_id": "ex-182-1"
+      },
+      {
+        "id": "g-279",
+        "title": "Pointing nearby",
+        "explanation": "Demonstratives identify nearby or distant people, objects and places.",
+        "example_id": "ex-279-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-047-1",
+      "ex-047-2",
+      "ex-131-1",
+      "ex-131-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-04-1",
+          "kind": "selection",
+          "prompt": "Which expression means “how many”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "怎么",
+              "pinyin": "zěnme"
+            },
+            {
+              "id": "b",
+              "hanzi": "多少",
+              "pinyin": "duōshao"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “how many; how much”."
+        },
+        {
+          "id": "q-04-2",
+          "kind": "selection",
+          "prompt": "Which expression means “those”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "那些",
+              "pinyin": "nàxiē"
+            },
+            {
+              "id": "b",
+              "hanzi": "怎么样",
+              "pinyin": "zěnmeyàng"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “those”."
+        },
+        {
+          "id": "q-04-3",
+          "kind": "selection",
+          "prompt": "Which expression means “these”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "这",
+              "pinyin": "zhè"
+            },
+            {
+              "id": "b",
+              "hanzi": "这些",
+              "pinyin": "zhèxiē"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “these”."
+        },
+        {
+          "id": "q-04-4",
+          "kind": "comprehension",
+          "prompt": "In the example “这个多少钱？” (zhège duōshao qián?), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "How much does this cost?",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-04-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “How many students are in this class?”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这个班有多少学生？ (zhège bān yǒu duōshao xuéshēng?)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

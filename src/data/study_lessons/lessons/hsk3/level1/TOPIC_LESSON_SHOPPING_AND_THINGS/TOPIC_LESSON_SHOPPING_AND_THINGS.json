@@ -1,0 +1,1030 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-shopping-and-things",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Buying Everyday Things",
+    "subtitle": "Prices, Shops and Household Objects",
+    "description": "Buy and describe common things, ask prices and talk about personal possessions.",
+    "slug": "shopping-and-things"
+  },
+  "classification": {
+    "primary_topic_id": "shopping-money",
+    "topic_ids": [
+      "shopping-money",
+      "home-objects"
+    ],
+    "tags": [
+      "shopping",
+      "prices",
+      "objects"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Ask and answer basic price questions.",
+    "Identify common shops, furniture and devices.",
+    "Talk about buying and selling everyday items."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "些": "Characters:些",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "元": "Characters:元",
+    "八": "Characters:八",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "卖": "Characters:卖",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "商": "Characters:商",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "块": "Characters:块",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "宜": "Characters:宜",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "市": "Characters:市",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "杯": "Characters:杯",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "椅": "Characters:椅",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "玩": "Characters:玩",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "给": "Characters:给",
+    "脑": "Characters:脑",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "衣": "Characters:衣",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "话": "Characters:话",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "贵": "Characters:贵",
+    "超": "Characters:超",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "门": "Characters:门",
+    "间": "Characters:间"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Buy and describe common things, ask prices and talk about personal possessions.",
+      "focus": "Ask and answer basic price questions."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-019",
+          "hanzi": "超市",
+          "pinyin": "chāoshì",
+          "meaning_en": "supermarket",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-019-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我去超市买水果。",
+              "pinyin": "wǒ qù chāoshì mǎi shuǐguǒ.",
+              "english": "I go to the supermarket to buy fruit.",
+              "teaching_note": "去 + place + verb expresses going somewhere in order to do something."
+            },
+            {
+              "id": "ex-019-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "超市早上八点开门。",
+              "pinyin": "chāoshì zǎoshang bā diǎn kāimén.",
+              "english": "The supermarket opens at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 19
+            }
+          ]
+        },
+        {
+          "id": "w-034",
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "meaning_en": "shop",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "examples": [
+            {
+              "id": "ex-034-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那家店很小。",
+              "pinyin": "nà jiā diàn hěn xiǎo.",
+              "english": "That shop is small.",
+              "teaching_note": "家 can classify a shop or commercial establishment; 很小 describes its size."
+            },
+            {
+              "id": "ex-034-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店早上九点开门。",
+              "pinyin": "zhè jiā diàn zǎoshang jiǔ diǎn kāimén.",
+              "english": "This shop opens at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 34
+            }
+          ]
+        },
+        {
+          "id": "w-065",
+          "hanzi": "贵",
+          "pinyin": "guì",
+          "meaning_en": "expensive",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-065-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个手机太贵了。",
+              "pinyin": "zhège shǒujī tài guì le.",
+              "english": "This phone is too expensive.",
+              "teaching_note": "太…了 often indicates an excessive degree, here a phone being too expensive."
+            },
+            {
+              "id": "ex-065-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本中文书不贵。",
+              "pinyin": "zhè běn Zhōngwén shū bú guì.",
+              "english": "This Chinese book is not expensive.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 65
+            }
+          ]
+        },
+        {
+          "id": "w-105",
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "meaning_en": "piece; yuan",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-105-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "这个苹果五块钱。",
+              "pinyin": "zhège píngguǒ wǔ kuài qián.",
+              "english": "This apple costs five yuan.",
+              "teaching_note": "块钱 is a common spoken expression for an amount in yuan."
+            },
+            {
+              "id": "ex-105-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书二十块钱。",
+              "pinyin": "zhè běn shū èr shí kuài qián.",
+              "english": "This book costs twenty yuan.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 105
+            }
+          ],
+          "pos_note": "Classifier and colloquial monetary unit; also used for pieces."
+        },
+        {
+          "id": "w-116",
+          "hanzi": "买",
+          "pinyin": "mǎi",
+          "meaning_en": "buy",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "examples": [
+            {
+              "id": "ex-116-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想买一点儿茶。",
+              "pinyin": "wǒ xiǎng mǎi yìdiǎnr chá.",
+              "english": "I want to buy some tea.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-116-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生可以在这里买书。",
+              "pinyin": "xuéshēng kěyǐ zài zhèlǐ mǎi shū.",
+              "english": "Students can buy books here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 116
+            }
+          ]
+        },
+        {
+          "id": "w-117",
+          "hanzi": "卖",
+          "pinyin": "mài",
+          "meaning_en": "sell",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "examples": [
+            {
+              "id": "ex-117-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这家店卖水果。",
+              "pinyin": "zhè jiā diàn mài shuǐguǒ.",
+              "english": "This shop sells fruit.",
+              "teaching_note": "卖 is “sell,” in contrast to 买 “buy.”"
+            },
+            {
+              "id": "ex-117-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校外边的商店也卖书。",
+              "pinyin": "xuéxiào wàibian de shāngdiàn yě mài shū.",
+              "english": "The shop outside the school also sells books.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 117
+            }
+          ]
+        },
+        {
+          "id": "w-157",
+          "hanzi": "便宜",
+          "pinyin": "piányi",
+          "meaning_en": "cheap",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-157-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个苹果很便宜。",
+              "pinyin": "zhège píngguǒ hěn piányi.",
+              "english": "This apple is cheap.",
+              "teaching_note": "便宜 describes a low price; it is not the same as bad quality."
+            },
+            {
+              "id": "ex-157-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店的衣服很便宜。",
+              "pinyin": "zhè jiā diàn de yīfu hěn piányi.",
+              "english": "The clothes at this shop are very cheap.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 157
+            }
+          ]
+        },
+        {
+          "id": "w-164",
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "meaning_en": "money",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "examples": [
+            {
+              "id": "ex-164-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我没有钱。",
+              "pinyin": "wǒ méiyǒu qián.",
+              "english": "I don't have money.",
+              "teaching_note": "没有钱 expresses the absence of money; 不有 is not grammatical here."
+            },
+            {
+              "id": "ex-164-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有二十块钱。",
+              "pinyin": "zhuōzi shàng yǒu èr shí kuài qián.",
+              "english": "There are twenty yuan on the table.",
+              "teaching_note": "Straightforward statement of where an amount of money is located."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 164
+            }
+          ]
+        },
+        {
+          "id": "w-174",
+          "hanzi": "商店",
+          "pinyin": "shāngdiàn",
+          "meaning_en": "store",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-174-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们去商店买水。",
+              "pinyin": "wǒmen qù shāngdiàn mǎi shuǐ.",
+              "english": "We go to the store to buy water.",
+              "teaching_note": "去商店买水 expresses purpose: go to the shop to buy water."
+            },
+            {
+              "id": "ex-174-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "商店上午九点开门。",
+              "pinyin": "shāngdiàn shàngwǔ jiǔ diǎn kāimén.",
+              "english": "The shop opens at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 174
+            }
+          ]
+        },
+        {
+          "id": "w-268",
+          "hanzi": "元",
+          "pinyin": "yuán",
+          "meaning_en": "yuan (currency)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "shopping-money",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-268-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个杯子十元。",
+              "pinyin": "zhège bēizi shí yuán.",
+              "english": "This cup costs ten yuan.",
+              "teaching_note": "元 is the currency unit yuan; price follows the item directly."
+            },
+            {
+              "id": "ex-268-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书二十元。",
+              "pinyin": "zhè běn shū èr shí yuán.",
+              "english": "This book costs twenty yuan.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 268
+            }
+          ],
+          "pos_note": "Currency unit yuan, functioning as a measure word."
+        },
+        {
+          "id": "w-009",
+          "hanzi": "杯子",
+          "pinyin": "bēizi",
+          "meaning_en": "cup",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-009-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个杯子是我的。",
+              "pinyin": "zhège bēizi shì wǒ de.",
+              "english": "This cup is mine.",
+              "teaching_note": "The final 我的 stands for “my cup,” with the repeated noun left understood."
+            },
+            {
+              "id": "ex-009-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有三个杯子。",
+              "pinyin": "zhuōzi shàng yǒu sān gè bēizi.",
+              "english": "There are three cups on the table.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 9
+            }
+          ]
+        },
+        {
+          "id": "w-035",
+          "hanzi": "电话",
+          "pinyin": "diànhuà",
+          "meaning_en": "telephone",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-035-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "请给我打电话。",
+              "pinyin": "qǐng gěi wǒ dǎ diànhuà.",
+              "english": "Please give me a call.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-035-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这是学校的电话。",
+              "pinyin": "zhè shì xuéxiào de diànhuà.",
+              "english": "This is the school's phone number.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 35
+            }
+          ]
+        },
+        {
+          "id": "w-036",
+          "hanzi": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning_en": "computer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "school-language",
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-036-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在电脑上学习。",
+              "pinyin": "wǒ zài diànnǎo shàng xuéxí.",
+              "english": "I study on the computer.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-036-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有很多电脑。",
+              "pinyin": "xuéxiào lǐ yǒu hěn duō diànnǎo.",
+              "english": "There are many computers at school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 36
+            }
+          ]
+        },
+        {
+          "id": "w-040",
+          "hanzi": "东西",
+          "pinyin": "dōngxi",
+          "meaning_en": "thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-040-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这些东西是谁的？",
+              "pinyin": "zhèxiē dōngxi shì shéi de?",
+              "english": "Whose things are these?",
+              "teaching_note": "谁 asks about the owner; 谁 can be pronounced shéi or shuí, here read shéi."
+            },
+            {
+              "id": "ex-040-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请拿好你的东西。",
+              "pinyin": "qǐng ná hǎo nǐ de dōngxi.",
+              "english": "Please take care of your belongings.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 40
+            }
+          ]
+        },
+        {
+          "id": "w-052",
+          "hanzi": "房间",
+          "pinyin": "fángjiān",
+          "meaning_en": "room",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-052-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的房间很小。",
+              "pinyin": "wǒ de fángjiān hěn xiǎo.",
+              "english": "My room is small.",
+              "teaching_note": "房间 is a room; 很小 describes its physical size."
+            },
+            {
+              "id": "ex-052-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有三个大房间。",
+              "pinyin": "xuéxiào lǐ yǒu sān gè dà fángjiān.",
+              "english": "There are three large rooms at the school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 52
+            }
+          ]
+        },
+        {
+          "id": "w-189",
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "meaning_en": "mobile phone",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-189-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的手机。",
+              "pinyin": "zhè shì wǒ de shǒujī.",
+              "english": "This is my mobile phone.",
+              "teaching_note": "手机 is a mobile phone; 这 points to the device being identified."
+            },
+            {
+              "id": "ex-189-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课的时候请不要玩手机。",
+              "pinyin": "shàngkè de shíhou qǐng búyào wán shǒujī.",
+              "english": "Please don't play with your phone during class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 189
+            }
+          ]
+        },
+        {
+          "id": "w-255",
+          "hanzi": "衣服",
+          "pinyin": "yīfu",
+          "meaning_en": "clothes",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-255-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天买了新衣服。",
+              "pinyin": "wǒ jīntiān mǎi le xīn yīfu.",
+              "english": "I bought new clothes today.",
+              "teaching_note": "衣服 refers broadly to clothes; it commonly takes no classifier in this statement."
+            },
+            {
+              "id": "ex-255-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店卖很多新衣服。",
+              "pinyin": "zhè jiā diàn mài hěn duō xīn yīfu.",
+              "english": "This shop sells many new clothes.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 255
+            }
+          ]
+        },
+        {
+          "id": "w-260",
+          "hanzi": "椅子",
+          "pinyin": "yǐzi",
+          "meaning_en": "chair",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-260-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "这儿有椅子，请坐。",
+              "pinyin": "zhèr yǒu yǐzi, qǐng zuò.",
+              "english": "There are chairs here. Please sit down.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-260-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "椅子在桌子旁边。",
+              "pinyin": "yǐzi zài zhuōzi pángbiān.",
+              "english": "The chair is next to the table.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 260
+            }
+          ]
+        },
+        {
+          "id": "w-295",
+          "hanzi": "桌子",
+          "pinyin": "zhuōzi",
+          "meaning_en": "table",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-295-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "桌子上有一本书。",
+              "pinyin": "zhuōzi shàng yǒu yì běn shū.",
+              "english": "There is a book on the table.",
+              "teaching_note": "桌子上 means on the table; 有 introduces something located there."
+            },
+            {
+              "id": "ex-295-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "教室里有很多桌子。",
+              "pinyin": "jiàoshì lǐ yǒu hěn duō zhuōzi.",
+              "english": "There are many desks in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 295
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-164",
+        "title": "Talking about money",
+        "explanation": "Use money vocabulary when asking about or stating a price.",
+        "example_id": "ex-164-1"
+      },
+      {
+        "id": "g-116",
+        "title": "Buying versus selling",
+        "explanation": "Distinguish the verb for buying from its related counterpart for selling.",
+        "example_id": "ex-116-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-019-1",
+      "ex-019-2",
+      "ex-034-1",
+      "ex-034-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-12-1",
+          "kind": "selection",
+          "prompt": "Which expression means “supermarket”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "电脑",
+              "pinyin": "diànnǎo"
+            },
+            {
+              "id": "b",
+              "hanzi": "超市",
+              "pinyin": "chāoshì"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “supermarket”."
+        },
+        {
+          "id": "q-12-2",
+          "kind": "selection",
+          "prompt": "Which expression means “yuan (currency)”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "元",
+              "pinyin": "yuán"
+            },
+            {
+              "id": "b",
+              "hanzi": "东西",
+              "pinyin": "dōngxi"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “yuan (currency)”."
+        },
+        {
+          "id": "q-12-3",
+          "kind": "selection",
+          "prompt": "Which expression means “table”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "房间",
+              "pinyin": "fángjiān"
+            },
+            {
+              "id": "b",
+              "hanzi": "桌子",
+              "pinyin": "zhuōzi"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “table”."
+        },
+        {
+          "id": "q-12-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我去超市买水果。” (wǒ qù chāoshì mǎi shuǐguǒ.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I go to the supermarket to buy fruit.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-12-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “The supermarket opens at eight in the morning.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "超市早上八点开门。 (chāoshì zǎoshang bā diǎn kāimén.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

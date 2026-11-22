@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
 import { lessonGlyphHintById } from './lesson-hints';
 
@@ -37,8 +39,13 @@ describe('lesson index', () => {
   it('rejects two files with the same lesson_id', () => {
     expect(() => buildLessonIndex({ 'a.json': raw(), 'b.json': raw() }, cats)).toThrow(/Duplicate lesson_id char-6B21/);
   });
-  it('lists both supplied lessons by their lesson IDs', () => {
-    expect(lessonSummaries.map(s => s.id).sort()).toEqual(['char-4EE5', 'char-6B21']);
+  it('lists the two character lessons and the 21 HSK Level 1 topic lessons, never the legacy copies', () => {
+    const ids = lessonSummaries.map(s => s.id);
+    expect(ids.length).toBe(23);
+    expect(new Set(ids).size).toBe(23);
+    expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
+    expect(ids.filter(id => id.startsWith('topic-')).length).toBe(21);
+    expect(lessonSummaries.every(s => s.schemaVersion.endsWith('/3.0.0'))).toBe(true);
   });
 });
 
@@ -118,6 +125,27 @@ describe('recorded quiz answers', () => {
         expect(id.endsWith(`:${glyph}`)).toBe(true);
         expect(lessonGlyphHintById(id, false), `${id} resolves`).not.toBeNull();
       }
+    }
+  });
+});
+
+// Every lesson file must carry each key lessons.ts imports by name: in the browser a named
+// import of a missing JSON key fails the whole app, not just the lesson.
+describe('lesson files', () => {
+  const root = 'src/data/study_lessons/lessons';
+  const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(d => {
+    const path = join(dir, d.name);
+    if (d.isDirectory()) return d.name === 'legacy' || d.name === 'curricula' ? [] : files(path);
+    return d.name.endsWith('.json') && /_LESSON_/.test(dir) ? [path] : [];
+  });
+  const all = files(root);
+  it('every lesson file has the eagerly read keys', () => {
+    expect(all.length).toBe(23);
+    for (const f of all) {
+      const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
+      for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);
+      const headwordKind = /\/(CHARACTER|WORD|PHRASE)_LESSON_/.test(f);
+      expect('headword' in json, `${f} headword`).toBe(headwordKind);
     }
   });
 });

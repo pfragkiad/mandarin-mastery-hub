@@ -1,0 +1,845 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-social-conversation",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Greeting and Talking to People",
+    "subtitle": "Greetings, Courtesy and Everyday Questions",
+    "description": "Greet people, ask politely, apologize, thank others and talk about everyday matters.",
+    "slug": "social-conversation"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social",
+      "abstract-concepts"
+    ],
+    "tags": [
+      "greetings",
+      "politeness",
+      "social-expressions"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Greet someone and say goodbye.",
+    "Thank, apologize and respond naturally.",
+    "Ask a polite question and refer to a matter or issue."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "人": "Characters:人",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "关": "Characters:关",
+    "兴": "Characters:兴",
+    "再": "Characters:再",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "哪": "Characters:哪",
+    "喂": "Characters:喂",
+    "回": "Characters:回",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "学": "Characters:学",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "来": "Characters:来",
+    "次": "Characters:次",
+    "气": "Characters:气",
+    "没": "Characters:没",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "系": "Characters:系",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "认": "Characters:认",
+    "识": "Characters:识",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "院": "Characters:院",
+    "题": "Characters:题",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Greet people, ask politely, apologize, thank others and talk about everyday matters.",
+      "focus": "Greet someone and say goodbye."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-014",
+          "hanzi": "不客气",
+          "pinyin": "bú kèqi",
+          "meaning_en": "you're welcome",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-014-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "不客气！",
+              "pinyin": "bú kèqi!",
+              "english": "You're welcome!",
+              "teaching_note": "不客气 is a standard spoken response to thanks; the short answer is a complete utterance."
+            },
+            {
+              "id": "ex-014-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "她说：“不客气。”",
+              "pinyin": "tā shuō: “bú kèqi.”",
+              "english": "She said, \"You're welcome.\"",
+              "teaching_note": "Written dialogue: 不客气 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 14
+            }
+          ],
+          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately."
+        },
+        {
+          "id": "w-024",
+          "hanzi": "打电话",
+          "pinyin": "dǎ diànhuà",
+          "meaning_en": "make a phone call",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-024-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我要给妈妈打电话。",
+              "pinyin": "wǒ yào gěi māma dǎ diànhuà.",
+              "english": "I want to call my mother.",
+              "teaching_note": "给妈妈 identifies the recipient of the phone call; 打电话 is a verb-object expression."
+            },
+            {
+              "id": "ex-024-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请明天上午给老师打电话。",
+              "pinyin": "qǐng míngtiān shàngwǔ gěi lǎoshī dǎ diànhuà.",
+              "english": "Please call the teacher tomorrow morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 24
+            }
+          ]
+        },
+        {
+          "id": "w-045",
+          "hanzi": "对不起",
+          "pinyin": "duìbuqǐ",
+          "meaning_en": "sorry",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-045-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "对不起，我来晚了。",
+              "pinyin": "duìbuqǐ, wǒ lái wǎn le.",
+              "english": "Sorry, I came late.",
+              "teaching_note": "对不起 is an apology; 来晚了 means arriving late, with 了 indicating the completed situation."
+            },
+            {
+              "id": "ex-045-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“对不起，我没有看见你。”她说。",
+              "pinyin": "“duìbuqǐ, wǒ méiyǒu kànjiàn nǐ.” tā shuō.",
+              "english": "\"I'm sorry, I didn't see you,\" she said.",
+              "teaching_note": "Written dialogue: 对不起 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 45
+            }
+          ],
+          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression."
+        },
+        {
+          "id": "w-120",
+          "hanzi": "没关系",
+          "pinyin": "méi guānxi",
+          "meaning_en": "it doesn't matter",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-120-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "没关系，我们再来一次。",
+              "pinyin": "méi guānxi, wǒmen zài lái yí cì.",
+              "english": "It's okay; let's do it one more time.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-120-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“没关系，我们明天再来。”她说。",
+              "pinyin": "“méi guānxi, wǒmen míngtiān zài lái.” tā shuō.",
+              "english": "\"It's okay; we can come back tomorrow,\" she said.",
+              "teaching_note": "Written dialogue: 没关系 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 120
+            }
+          ],
+          "pos_note": "Fixed reply meaning it is all right/it does not matter."
+        },
+        {
+          "id": "w-121",
+          "hanzi": "没事",
+          "pinyin": "méishì",
+          "meaning_en": "no problem",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-121-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "没事，我很好。",
+              "pinyin": "méishì, wǒ hěn hǎo.",
+              "english": "No problem, I am fine.",
+              "teaching_note": "没事 is conversational reassurance, meaning that nothing is wrong."
+            },
+            {
+              "id": "ex-121-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“没事，你可以回家。”他说。",
+              "pinyin": "“méishì, nǐ kěyǐ huí jiā.” tā shuō.",
+              "english": "\"It’s okay; you can go home,\" he said.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 121
+            }
+          ],
+          "pos_note": "Fixed reassurance meaning nothing is wrong/no problem; other verbal uses exist."
+        },
+        {
+          "id": "w-147",
+          "hanzi": "你好",
+          "pinyin": "nǐ hǎo",
+          "meaning_en": "hello",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-147-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "你好！很高兴认识你。",
+              "pinyin": "nǐ hǎo! hěn gāoxìng rènshi nǐ.",
+              "english": "Hello! Nice to meet you.",
+              "teaching_note": "很高兴认识你 is a polite formula for meeting someone."
+            },
+            {
+              "id": "ex-147-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“你好，请问这里有人吗？”她问。",
+              "pinyin": "“nǐ hǎo, qǐngwèn zhèlǐ yǒu rén ma?” tā wèn.",
+              "english": "\"Hello, excuse me, is anyone here?\" she asked.",
+              "teaching_note": "Written dialogue: 你好 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 147
+            }
+          ]
+        },
+        {
+          "id": "w-165",
+          "hanzi": "请",
+          "pinyin": "qǐng",
+          "meaning_en": "please; invite",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-165-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请坐。",
+              "pinyin": "qǐng zuò.",
+              "english": "Please sit down.",
+              "teaching_note": "请坐 is a concise polite invitation to take a seat."
+            },
+            {
+              "id": "ex-165-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在这里坐一下。",
+              "pinyin": "qǐng zài zhèlǐ zuò yíxià.",
+              "english": "Please sit here for a moment.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 165
+            }
+          ],
+          "pos_note": "Polite request/please, grammaticalized use of the verb invite/ask."
+        },
+        {
+          "id": "w-166",
+          "hanzi": "请问",
+          "pinyin": "qǐngwèn",
+          "meaning_en": "may I ask",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-166-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请问，医院在哪儿？",
+              "pinyin": "qǐngwèn, yīyuàn zài nǎr?",
+              "english": "Excuse me, where is the hospital?",
+              "teaching_note": "请问 introduces a courteous question to someone you may not know."
+            },
+            {
+              "id": "ex-166-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“请问，电影院在哪儿？”她问。",
+              "pinyin": "“qǐngwèn, diànyǐngyuàn zài nǎr?” tā wèn.",
+              "english": "\"Excuse me, where is the cinema?\" she asked.",
+              "teaching_note": "Written dialogue: 请问 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 166
+            }
+          ]
+        },
+        {
+          "id": "w-171",
+          "hanzi": "认识",
+          "pinyin": "rènshi",
+          "meaning_en": "know (someone)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-171-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我认识这位老师。",
+              "pinyin": "wǒ rènshi zhè wèi lǎoshī.",
+              "english": "I know this teacher.",
+              "teaching_note": "认识 means to know or be acquainted with a person, not just to know a fact."
+            },
+            {
+              "id": "ex-171-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们都认识这个老师。",
+              "pinyin": "xuéshēngmen dōu rènshi zhège lǎoshī.",
+              "english": "All the students know this teacher.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 171
+            }
+          ]
+        },
+        {
+          "id": "w-218",
+          "hanzi": "喂",
+          "pinyin": "wèi",
+          "meaning_en": "hello (on phone)",
+          "primary_pos_id": "interjection",
+          "pos_ids": [
+            "interjection"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-218-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "喂，你好！",
+              "pinyin": "wéi, nǐ hǎo!",
+              "english": "Hello!",
+              "teaching_note": "喂 is used to answer the telephone and is commonly pronounced wéi in that context, though wèi is also listed."
+            },
+            {
+              "id": "ex-218-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“喂，你好，我想找老师。”她说。",
+              "pinyin": "“wéi, nǐ hǎo, wǒ xiǎng zhǎo lǎoshī.” tā shuō.",
+              "english": "\"Hello, I’d like to speak to the teacher,\" she said.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 218
+            }
+          ],
+          "pos_note": "Attention-getting interjection; phone usage may be wéi or wèi depending on context."
+        },
+        {
+          "id": "w-219",
+          "hanzi": "问",
+          "pinyin": "wèn",
+          "meaning_en": "ask",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-219-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想问一个问题。",
+              "pinyin": "wǒ xiǎng wèn yí ge wèntí.",
+              "english": "I want to ask a question.",
+              "teaching_note": "问 introduces a question; 一个问题 is “one question.”"
+            },
+            {
+              "id": "ex-219-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "课后可以问老师。",
+              "pinyin": "kè hòu kěyǐ wèn lǎoshī.",
+              "english": "You can ask the teacher after class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 219
+            }
+          ]
+        },
+        {
+          "id": "w-220",
+          "hanzi": "问题",
+          "pinyin": "wèntí",
+          "meaning_en": "question; problem",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "communication-social",
+            "abstract-concepts"
+          ],
+          "examples": [
+            {
+              "id": "ex-220-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个问题。",
+              "pinyin": "wǒ yǒu yí ge wèntí.",
+              "english": "I have a question.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-220-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有问题可以问老师。",
+              "pinyin": "yǒu wèntí kěyǐ wèn lǎoshī.",
+              "english": "If you have questions, you can ask the teacher.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 220
+            }
+          ]
+        },
+        {
+          "id": "w-241",
+          "hanzi": "谢谢",
+          "pinyin": "xièxie",
+          "meaning_en": "thank you",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-241-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "谢谢你帮我！",
+              "pinyin": "xièxie nǐ bāng wǒ!",
+              "english": "Thank you for helping me!",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-241-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“谢谢老师！”学生说。",
+              "pinyin": "“xièxie lǎoshī!” xuéshēng shuō.",
+              "english": "\"Thank you, teacher!\" the student said.",
+              "teaching_note": "Written dialogue: 谢谢 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 241
+            }
+          ]
+        },
+        {
+          "id": "w-272",
+          "hanzi": "再见",
+          "pinyin": "zàijiàn",
+          "meaning_en": "goodbye",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression",
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-272-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "再见，明天见！",
+              "pinyin": "zàijiàn, míngtiān jiàn!",
+              "english": "Goodbye, see you tomorrow!",
+              "teaching_note": "再见 is the standard goodbye; 明天见 adds the expectation of meeting tomorrow."
+            },
+            {
+              "id": "ex-272-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“再见，下个星期见！”她说。",
+              "pinyin": "“zàijiàn, xià ge xīngqī jiàn!” tā shuō.",
+              "english": "\"Goodbye! See you next week!\" she said.",
+              "teaching_note": "Written dialogue: 再见 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 272
+            }
+          ],
+          "pos_note": "Conventional farewell used as a fixed social expression; also analyzable as a verb."
+        },
+        {
+          "id": "w-187",
+          "hanzi": "事",
+          "pinyin": "shì",
+          "meaning_en": "matter; thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "examples": [
+            {
+              "id": "ex-187-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一件事要说。",
+              "pinyin": "wǒ yǒu yí jiàn shì yào shuō.",
+              "english": "I have something to say.",
+              "teaching_note": "件 can count matters or incidents; 事 means a matter or thing to discuss."
+            },
+            {
+              "id": "ex-187-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有事的时候，可以给老师打电话。",
+              "pinyin": "yǒu shì de shíhou, kěyǐ gěi lǎoshī dǎ diànhuà.",
+              "english": "If something comes up, you can call the teacher.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 187
+            }
+          ],
+          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-14",
+        "title": "Responding to thanks",
+        "explanation": "A fixed courtesy expression is the usual response to a thank-you.",
+        "example_id": "ex-014-1"
+      },
+      {
+        "id": "g-165",
+        "title": "Polite requests",
+        "explanation": "A short politeness marker can make a request courteous.",
+        "example_id": "ex-165-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-014-1",
+      "ex-014-2",
+      "ex-024-1",
+      "ex-024-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-03-1",
+          "kind": "selection",
+          "prompt": "Which expression means “you're welcome”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "不客气",
+              "pinyin": "bú kèqi"
+            },
+            {
+              "id": "b",
+              "hanzi": "问",
+              "pinyin": "wèn"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “you're welcome”."
+        },
+        {
+          "id": "q-03-2",
+          "kind": "selection",
+          "prompt": "Which expression means “may I ask”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "问题",
+              "pinyin": "wèntí"
+            },
+            {
+              "id": "b",
+              "hanzi": "请问",
+              "pinyin": "qǐngwèn"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “may I ask”."
+        },
+        {
+          "id": "q-03-3",
+          "kind": "selection",
+          "prompt": "Which expression means “matter”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "事",
+              "pinyin": "shì"
+            },
+            {
+              "id": "b",
+              "hanzi": "谢谢",
+              "pinyin": "xièxie"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “matter; thing”."
+        },
+        {
+          "id": "q-03-4",
+          "kind": "comprehension",
+          "prompt": "In the example “不客气！” (bú kèqi!), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "You're welcome!",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-03-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “She said, \"You're welcome.\"”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "她说：“不客气。” (tā shuō: “bú kèqi.”)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

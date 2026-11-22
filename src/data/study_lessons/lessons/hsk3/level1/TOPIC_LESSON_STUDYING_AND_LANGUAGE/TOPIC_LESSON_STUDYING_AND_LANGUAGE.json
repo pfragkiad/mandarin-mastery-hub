@@ -1,0 +1,1007 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-studying-and-language",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Learning Chinese",
+    "subtitle": "Speaking, Listening, Reading and Writing",
+    "description": "Talk about lessons, language study, reading, speaking, listening and writing.",
+    "slug": "studying-and-language"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language",
+      "communication-social"
+    ],
+    "tags": [
+      "studying",
+      "reading",
+      "writing",
+      "speaking"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Describe language learning activities.",
+    "Understand classroom language.",
+    "Distinguish reading, speaking, listening and writing verbs."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "写": "Characters:写",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "听": "Characters:听",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "怎": "Characters:怎",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "生": "Characters:生",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "老": "Characters:老",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "超": "Characters:超",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "门": "Characters:门"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about lessons, language study, reading, speaking, listening and writing.",
+      "focus": "Describe language learning activities."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-042",
+          "hanzi": "读",
+          "pinyin": "dú",
+          "meaning_en": "read",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-042-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会读汉字。",
+              "pinyin": "wǒ huì dú Hànzì.",
+              "english": "I can read Chinese characters.",
+              "teaching_note": "读 refers to reading aloud or decoding written characters in this example."
+            },
+            {
+              "id": "ex-042-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请读这一课。",
+              "pinyin": "qǐng dú zhè yí kè.",
+              "english": "Please read this lesson.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 42
+            }
+          ]
+        },
+        {
+          "id": "w-043",
+          "hanzi": "读书",
+          "pinyin": "dúshū",
+          "meaning_en": "read books",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-043-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天读书。",
+              "pinyin": "wǒ měitiān dúshū.",
+              "english": "I read books every day.",
+              "teaching_note": "读书 means read or study, depending on context; here it means read books."
+            },
+            {
+              "id": "ex-043-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们每天在学校读书。",
+              "pinyin": "xuéshēngmen měitiān zài xuéxiào dúshū.",
+              "english": "The students read at school every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 43
+            }
+          ]
+        },
+        {
+          "id": "w-069",
+          "hanzi": "汉语",
+          "pinyin": "Hànyǔ",
+          "meaning_en": "Chinese language",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-069-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我正在学汉语。",
+              "pinyin": "wǒ zhèngzài xué Hànyǔ.",
+              "english": "I am learning Chinese.",
+              "teaching_note": "正在 explicitly indicates an action currently in progress."
+            },
+            {
+              "id": "ex-069-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有汉语课。",
+              "pinyin": "xuéxiào lǐ yǒu Hànyǔ kè.",
+              "english": "The school has Chinese-language classes.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 69
+            }
+          ]
+        },
+        {
+          "id": "w-070",
+          "hanzi": "汉字",
+          "pinyin": "Hànzì",
+          "meaning_en": "Chinese character",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-070-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个汉字怎么读？",
+              "pinyin": "zhège Hànzì zěnme dú?",
+              "english": "How is this Chinese character pronounced?",
+              "teaching_note": "怎么读 asks for the reading or pronunciation of this written character."
+            },
+            {
+              "id": "ex-070-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生会写一百个汉字。",
+              "pinyin": "xuéshēng huì xiě yì bǎi gè Hànzì.",
+              "english": "The student can write one hundred Chinese characters.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 70
+            }
+          ]
+        },
+        {
+          "id": "w-103",
+          "hanzi": "课",
+          "pinyin": "kè",
+          "meaning_en": "lesson",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-103-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们上午有汉语课。",
+              "pinyin": "wǒmen shàngwǔ yǒu Hànyǔ kè.",
+              "english": "We have Chinese class in the morning.",
+              "teaching_note": "课 is a class or lesson; 有 + noun expresses having a scheduled class."
+            },
+            {
+              "id": "ex-103-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校星期天没有课。",
+              "pinyin": "xuéxiào xīngqītiān méiyǒu kè.",
+              "english": "The school has no classes on Sundays.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 103
+            }
+          ]
+        },
+        {
+          "id": "w-107",
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "meaning_en": "teacher",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity",
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-107-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们的老师很好。",
+              "pinyin": "wǒmen de lǎoshī hěn hǎo.",
+              "english": "Our teacher is very good.",
+              "teaching_note": "老师 denotes a teacher; 我们的 specifies the group’s teacher."
+            },
+            {
+              "id": "ex-107-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师在教室里。",
+              "pinyin": "lǎoshī zài jiàoshì lǐ.",
+              "english": "The teacher is in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 107
+            }
+          ]
+        },
+        {
+          "id": "w-177",
+          "hanzi": "上课",
+          "pinyin": "shàngkè",
+          "meaning_en": "attend class",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-177-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们九点上课。",
+              "pinyin": "wǒmen jiǔ diǎn shàngkè.",
+              "english": "We start class at nine.",
+              "teaching_note": "上课 means start or attend class; the time gives when it begins."
+            },
+            {
+              "id": "ex-177-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们每天上午九点上课。",
+              "pinyin": "xuéshēngmen měitiān shàngwǔ jiǔ diǎn shàngkè.",
+              "english": "The students have class at nine every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 177
+            }
+          ]
+        },
+        {
+          "id": "w-190",
+          "hanzi": "书",
+          "pinyin": "shū",
+          "meaning_en": "book",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-190-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢看书。",
+              "pinyin": "wǒ xǐhuan kàn shū.",
+              "english": "I like reading books.",
+              "teaching_note": "看书 means read a book; 看 has a broader range than English “look.”"
+            },
+            {
+              "id": "ex-190-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有很多中文书。",
+              "pinyin": "zhè jiā shūdiàn yǒu hěn duō Zhōngwén shū.",
+              "english": "This bookstore has many books in Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 190
+            }
+          ]
+        },
+        {
+          "id": "w-191",
+          "hanzi": "书店",
+          "pinyin": "shūdiàn",
+          "meaning_en": "bookstore",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "shopping-money",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-191-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "书店在学校旁边。",
+              "pinyin": "shūdiàn zài xuéxiào pángbiān.",
+              "english": "The bookstore is next to the school.",
+              "teaching_note": "旁边 expresses the shop’s location beside the school."
+            },
+            {
+              "id": "ex-191-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "书店每天早上九点开门。",
+              "pinyin": "shūdiàn měitiān zǎoshang jiǔ diǎn kāimén.",
+              "english": "The bookstore opens at nine every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 191
+            }
+          ]
+        },
+        {
+          "id": "w-196",
+          "hanzi": "说",
+          "pinyin": "shuō",
+          "meaning_en": "say",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-196-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说一点儿中文。",
+              "pinyin": "wǒ huì shuō yìdiǎnr Zhōngwén.",
+              "english": "I can speak a little Chinese.",
+              "teaching_note": "一点儿 expresses a small amount; 会 means an ability to speak the language."
+            },
+            {
+              "id": "ex-196-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天老师说汉语。",
+              "pinyin": "jīntiān lǎoshī shuō Hànyǔ.",
+              "english": "The teacher speaks Chinese today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 196
+            }
+          ]
+        },
+        {
+          "id": "w-197",
+          "hanzi": "说话",
+          "pinyin": "shuōhuà",
+          "meaning_en": "speak; talk",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-197-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请不要说话。",
+              "pinyin": "qǐng bú yào shuōhuà.",
+              "english": "Please don't talk.",
+              "teaching_note": "请不要… is a polite negative request, often heard in public or class settings."
+            },
+            {
+              "id": "ex-197-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课的时候请不要说话。",
+              "pinyin": "shàngkè de shíhou qǐng búyào shuōhuà.",
+              "english": "Please don't talk during class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 197
+            }
+          ]
+        },
+        {
+          "id": "w-209",
+          "hanzi": "听",
+          "pinyin": "tīng",
+          "meaning_en": "listen",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-209-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢听歌。",
+              "pinyin": "wǒ xǐhuan tīng gē.",
+              "english": "I like listening to songs.",
+              "teaching_note": "听歌 means listen to songs or music; 听 takes sound as its object."
+            },
+            {
+              "id": "ex-209-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们在听老师说话。",
+              "pinyin": "xuéshēngmen zài tīng lǎoshī shuōhuà.",
+              "english": "The students are listening to the teacher speak.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 209
+            }
+          ]
+        },
+        {
+          "id": "w-210",
+          "hanzi": "听见",
+          "pinyin": "tīngjiàn",
+          "meaning_en": "hear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-210-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我听见你说话了。",
+              "pinyin": "wǒ tīngjiàn nǐ shuōhuà le.",
+              "english": "I heard you speaking.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-210-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "在这里可以听见老师说话。",
+              "pinyin": "zài zhèlǐ kěyǐ tīngjiàn lǎoshī shuōhuà.",
+              "english": "You can hear the teacher speaking here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 210
+            }
+          ]
+        },
+        {
+          "id": "w-229",
+          "hanzi": "下课",
+          "pinyin": "xiàkè",
+          "meaning_en": "finish class",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-229-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们四点下课。",
+              "pinyin": "wǒmen sì diǎn xiàkè.",
+              "english": "We finish class at four.",
+              "teaching_note": "下课 means class has ended or is dismissed, here at four."
+            },
+            {
+              "id": "ex-229-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下课后，我们去超市。",
+              "pinyin": "xiàkè hòu, wǒmen qù chāoshì.",
+              "english": "After class, we go to the supermarket.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 229
+            }
+          ]
+        },
+        {
+          "id": "w-240",
+          "hanzi": "写",
+          "pinyin": "xiě",
+          "meaning_en": "write",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "communication-social",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-240-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会写这个字。",
+              "pinyin": "wǒ huì xiě zhège zì.",
+              "english": "I can write this character.",
+              "teaching_note": "写 refers to writing a character; 会 indicates learned ability."
+            },
+            {
+              "id": "ex-240-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请写你的名字。",
+              "pinyin": "qǐng xiě nǐ de míngzi.",
+              "english": "Please write your name.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 240
+            }
+          ]
+        },
+        {
+          "id": "w-247",
+          "hanzi": "学",
+          "pinyin": "xué",
+          "meaning_en": "learn",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-247-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我正在学中文。",
+              "pinyin": "wǒ zhèngzài xué Zhōngwén.",
+              "english": "I am learning Chinese.",
+              "teaching_note": "学 focuses on learning a subject; 正在 marks an ongoing process."
+            },
+            {
+              "id": "ex-247-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生在学校学汉语。",
+              "pinyin": "xuéshēng zài xuéxiào xué Hànyǔ.",
+              "english": "The students learn Chinese at school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 247
+            }
+          ]
+        },
+        {
+          "id": "w-249",
+          "hanzi": "学习",
+          "pinyin": "xuéxí",
+          "meaning_en": "study",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-249-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天学习汉语。",
+              "pinyin": "wǒ měitiān xuéxí Hànyǔ.",
+              "english": "I study Chinese every day.",
+              "teaching_note": "学习 refers to studying or learning; 每天 makes it a repeated practice."
+            },
+            {
+              "id": "ex-249-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们每天在这里学习。",
+              "pinyin": "xuéshēngmen měitiān zài zhèlǐ xuéxí.",
+              "english": "The students study here every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 249
+            }
+          ]
+        },
+        {
+          "id": "w-290",
+          "hanzi": "中文",
+          "pinyin": "Zhōngwén",
+          "meaning_en": "Chinese language",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-290-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说中文。",
+              "pinyin": "wǒ huì shuō Zhōngwén.",
+              "english": "I can speak Chinese.",
+              "teaching_note": "中文 refers to the Chinese language or writing; 会说 indicates speaking ability."
+            },
+            {
+              "id": "ex-290-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有很多中文书。",
+              "pinyin": "zhèlǐ yǒu hěn duō Zhōngwén shū.",
+              "english": "There are many Chinese-language books here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 290
+            }
+          ]
+        },
+        {
+          "id": "w-296",
+          "hanzi": "字",
+          "pinyin": "zì",
+          "meaning_en": "character; written word",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-296-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个字怎么读？",
+              "pinyin": "zhège zì zěnme dú?",
+              "english": "How is this character pronounced?",
+              "teaching_note": "怎么读 asks how to pronounce or read this written character."
+            },
+            {
+              "id": "ex-296-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "今天请写十个字。",
+              "pinyin": "jīntiān qǐng xiě shí gè zì.",
+              "english": "Please write ten characters today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 296
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-209",
+        "title": "Listening",
+        "explanation": "The listening verb denotes the activity; the perception compound can express hearing.",
+        "example_id": "ex-209-1"
+      },
+      {
+        "id": "g-240",
+        "title": "Writing",
+        "explanation": "Use the writing verb with the thing written, such as characters.",
+        "example_id": "ex-240-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-042-1",
+      "ex-042-2",
+      "ex-043-1",
+      "ex-043-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-15-1",
+          "kind": "selection",
+          "prompt": "Which expression means “read”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "读",
+              "pinyin": "dú"
+            },
+            {
+              "id": "b",
+              "hanzi": "听见",
+              "pinyin": "tīngjiàn"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “read”."
+        },
+        {
+          "id": "q-15-2",
+          "kind": "selection",
+          "prompt": "Which expression means “say”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "下课",
+              "pinyin": "xiàkè"
+            },
+            {
+              "id": "b",
+              "hanzi": "说",
+              "pinyin": "shuō"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “say”."
+        },
+        {
+          "id": "q-15-3",
+          "kind": "selection",
+          "prompt": "Which expression means “character”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "字",
+              "pinyin": "zì"
+            },
+            {
+              "id": "b",
+              "hanzi": "写",
+              "pinyin": "xiě"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “character; written word”."
+        },
+        {
+          "id": "q-15-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我会读汉字。” (wǒ huì dú Hànzì.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I can read Chinese characters.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-15-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Please read this lesson.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请读这一课。 (qǐng dú zhè yí kè.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

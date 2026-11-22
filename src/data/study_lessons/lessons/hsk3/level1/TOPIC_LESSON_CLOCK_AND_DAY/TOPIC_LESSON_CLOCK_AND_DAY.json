@@ -1,0 +1,842 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-clock-and-day",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About the Clock",
+    "subtitle": "Clock Times and Times of Day",
+    "description": "Say when activities happen, ask the time and identify parts of the day.",
+    "slug": "clock-and-day"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar",
+      "daily-actions"
+    ],
+    "tags": [
+      "clock",
+      "time-of-day",
+      "schedule"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Tell the time with hours and minutes.",
+    "Recognize morning, afternoon and evening.",
+    "Describe when daily actions happen."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "八": "Characters:八",
+    "再": "Characters:再",
+    "几": "Characters:几",
+    "分": "Characters:分",
+    "到": "Characters:到",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "商": "Characters:商",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "始": "Characters:始",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "床": "Characters:床",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "我": "Characters:我",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "等": "Characters:等",
+    "茶": "Characters:茶",
+    "要": "Characters:要",
+    "视": "Characters:视",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "钟": "Characters:钟",
+    "间": "Characters:间",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Say when activities happen, ask the time and identify parts of the day.",
+      "focus": "Tell the time with hours and minutes."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-005",
+          "hanzi": "白天",
+          "pinyin": "báitiān",
+          "meaning_en": "daytime",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-005-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我白天上班。",
+              "pinyin": "wǒ báitiān shàngbān.",
+              "english": "I work during the day.",
+              "teaching_note": "白天 contrasts with 晚上 and places the work in daytime hours."
+            },
+            {
+              "id": "ex-005-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "白天我在学校学习。",
+              "pinyin": "báitiān wǒ zài xuéxiào xuéxí.",
+              "english": "I study at school during the day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 5
+            }
+          ]
+        },
+        {
+          "id": "w-033",
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "meaning_en": "o'clock; point",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-033-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在几点？",
+              "pinyin": "xiànzài jǐ diǎn?",
+              "english": "What time is it now?",
+              "teaching_note": "几点 asks for the hour, while 现在 anchors the question to the present."
+            },
+            {
+              "id": "ex-033-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午三点下课。",
+              "pinyin": "xiàwǔ sān diǎn xiàkè.",
+              "english": "Class ends at three in the afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 33
+            }
+          ],
+          "pos_note": "Classifier and time unit in clock readings; also a noun for a point."
+        },
+        {
+          "id": "w-055",
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "meaning_en": "minute; divide",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-055-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是八点十分。",
+              "pinyin": "xiànzài shì bā diǎn shí fēn.",
+              "english": "It is 8:10 now.",
+              "teaching_note": "八点十分 is 8:10, with 分 marking minutes after the hour."
+            },
+            {
+              "id": "ex-055-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午三点二十分上课。",
+              "pinyin": "xiàwǔ sān diǎn èr shí fēn shàngkè.",
+              "english": "Class starts at 3:20 p.m.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 55
+            }
+          ],
+          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts."
+        },
+        {
+          "id": "w-056",
+          "hanzi": "分钟",
+          "pinyin": "fēnzhōng",
+          "meaning_en": "minute",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-056-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请等五分钟。",
+              "pinyin": "qǐng děng wǔ fēnzhōng.",
+              "english": "Please wait five minutes.",
+              "teaching_note": "请 makes the request courteous; 五分钟 is a five-minute duration."
+            },
+            {
+              "id": "ex-056-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请十分钟后再来。",
+              "pinyin": "qǐng shí fēnzhōng hòu zài lái.",
+              "english": "Please come back in ten minutes.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 56
+            }
+          ],
+          "pos_note": "Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time."
+        },
+        {
+          "id": "w-178",
+          "hanzi": "上午",
+          "pinyin": "shàngwǔ",
+          "meaning_en": "morning",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-178-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我上午有时间。",
+              "pinyin": "wǒ shàngwǔ yǒu shíjiān.",
+              "english": "I have time in the morning.",
+              "teaching_note": "有时间 means have time or be available during the period mentioned."
+            },
+            {
+              "id": "ex-178-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "上午我们有汉语课。",
+              "pinyin": "shàngwǔ wǒmen yǒu Hànyǔ kè.",
+              "english": "We have Chinese-language class in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 178
+            }
+          ]
+        },
+        {
+          "id": "w-185",
+          "hanzi": "时候",
+          "pinyin": "shíhou",
+          "meaning_en": "time; moment",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-185-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你什么时候来？",
+              "pinyin": "nǐ shénme shíhou lái?",
+              "english": "When will you come?",
+              "teaching_note": "什么时候 asks when an event will happen, not merely for the clock time."
+            },
+            {
+              "id": "ex-185-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课的时候不要说话。",
+              "pinyin": "shàngkè de shíhou búyào shuōhuà.",
+              "english": "Please don't talk during class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 185
+            }
+          ]
+        },
+        {
+          "id": "w-186",
+          "hanzi": "时间",
+          "pinyin": "shíjiān",
+          "meaning_en": "time",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-186-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我现在没有时间。",
+              "pinyin": "wǒ xiànzài méiyǒu shíjiān.",
+              "english": "I don't have time now.",
+              "teaching_note": "没有时间 means lack time or be unavailable now."
+            },
+            {
+              "id": "ex-186-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "上课时间是上午九点。",
+              "pinyin": "shàngkè shíjiān shì shàngwǔ jiǔ diǎn.",
+              "english": "Class starts at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 186
+            }
+          ]
+        },
+        {
+          "id": "w-215",
+          "hanzi": "晚",
+          "pinyin": "wǎn",
+          "meaning_en": "late",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-215-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天来晚了。",
+              "pinyin": "wǒ jīntiān lái wǎn le.",
+              "english": "I arrived late today.",
+              "teaching_note": "来晚了 means arrive late; 晚 here is an adverbial description."
+            },
+            {
+              "id": "ex-215-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天爸爸下班很晚。",
+              "pinyin": "jīntiān bàba xiàbān hěn wǎn.",
+              "english": "Dad gets off work very late today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 215
+            }
+          ]
+        },
+        {
+          "id": "w-217",
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "meaning_en": "evening",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-217-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "晚上我在家看书。",
+              "pinyin": "wǎnshang wǒ zài jiā kàn shū.",
+              "english": "I read at home in the evening.",
+              "teaching_note": "晚上 is evening or night; 在家 gives the location of reading."
+            },
+            {
+              "id": "ex-217-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "晚上八点我们在家看电视。",
+              "pinyin": "wǎnshang bā diǎn wǒmen zài jiā kàn diànshì.",
+              "english": "We watch TV at home at eight in the evening.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 217
+            }
+          ]
+        },
+        {
+          "id": "w-230",
+          "hanzi": "下午",
+          "pinyin": "xiàwǔ",
+          "meaning_en": "afternoon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-230-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我下午去商店。",
+              "pinyin": "wǒ xiàwǔ qù shāngdiàn.",
+              "english": "I will go to the store this afternoon.",
+              "teaching_note": "下午 is the period after noon; context can make the planned visit future."
+            },
+            {
+              "id": "ex-230-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午的课三点开始。",
+              "pinyin": "xiàwǔ de kè sān diǎn kāishǐ.",
+              "english": "The afternoon class starts at three.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 230
+            }
+          ]
+        },
+        {
+          "id": "w-232",
+          "hanzi": "现在",
+          "pinyin": "xiànzài",
+          "meaning_en": "now",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-232-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是上午十点。",
+              "pinyin": "xiànzài shì shàngwǔ shí diǎn.",
+              "english": "It is ten in the morning now.",
+              "teaching_note": "上午十点 is 10 a.m.; 现在 gives the current time frame."
+            },
+            {
+              "id": "ex-232-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "现在开始上课。",
+              "pinyin": "xiànzài kāishǐ shàngkè.",
+              "english": "Class starts now.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 232
+            }
+          ],
+          "pos_note": "Temporal noun meaning now, not a verb."
+        },
+        {
+          "id": "w-236",
+          "hanzi": "小时",
+          "pinyin": "xiǎoshí",
+          "meaning_en": "hour",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-236-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天学习两个小时。",
+              "pinyin": "wǒ měitiān xuéxí liǎng ge xiǎoshí.",
+              "english": "I study for two hours every day.",
+              "teaching_note": "小时 expresses duration in hours; 两个小时 means two hours."
+            },
+            {
+              "id": "ex-236-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午我们要上两个小时的课。",
+              "pinyin": "xiàwǔ wǒmen yào shàng liǎng gè xiǎoshí de kè.",
+              "english": "We have two hours of class in the afternoon.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 236
+            }
+          ]
+        },
+        {
+          "id": "w-273",
+          "hanzi": "早",
+          "pinyin": "zǎo",
+          "meaning_en": "early",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-273-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天来得很早。",
+              "pinyin": "wǒ jīntiān lái de hěn zǎo.",
+              "english": "I came very early today.",
+              "teaching_note": "来得很早 uses 得 to describe the manner or timing of arriving."
+            },
+            {
+              "id": "ex-273-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他每天很早起床。",
+              "pinyin": "tā měitiān hěn zǎo qǐchuáng.",
+              "english": "He gets up very early every day.",
+              "teaching_note": "很早 means early; this avoids repeating 早 in the same sentence."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 273
+            }
+          ]
+        },
+        {
+          "id": "w-275",
+          "hanzi": "早上",
+          "pinyin": "zǎoshang",
+          "meaning_en": "morning",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-275-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "早上我喝茶。",
+              "pinyin": "zǎoshang wǒ hē chá.",
+              "english": "I drink tea in the morning.",
+              "teaching_note": "早上 specifies the morning period; 喝茶 is the activity."
+            },
+            {
+              "id": "ex-275-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们每天早上八点上课。",
+              "pinyin": "wǒmen měitiān zǎoshang bā diǎn shàngkè.",
+              "english": "We have class at eight every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 275
+            }
+          ]
+        },
+        {
+          "id": "w-291",
+          "hanzi": "中午",
+          "pinyin": "zhōngwǔ",
+          "meaning_en": "noon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-291-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们中午吃饭。",
+              "pinyin": "wǒmen zhōngwǔ chī fàn.",
+              "english": "We have lunch at noon.",
+              "teaching_note": "中午 means noon; 吃饭 can mean having lunch in this setting."
+            },
+            {
+              "id": "ex-291-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "中午十二点到一点是午饭时间。",
+              "pinyin": "zhōngwǔ shí èr diǎn dào yì diǎn shì wǔfàn shíjiān.",
+              "english": "Lunch is from twelve to one.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 291
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-33",
+        "title": "Stating a clock time",
+        "explanation": "Clock expressions place the hour before the minute.",
+        "example_id": "ex-033-1"
+      },
+      {
+        "id": "g-56",
+        "title": "Durations in minutes",
+        "explanation": "A duration word differs from the minute marker inside a clock reading.",
+        "example_id": "ex-056-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-005-1",
+      "ex-005-2",
+      "ex-033-1",
+      "ex-033-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-07-1",
+          "kind": "selection",
+          "prompt": "Which expression means “daytime”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "白天",
+              "pinyin": "báitiān"
+            },
+            {
+              "id": "b",
+              "hanzi": "现在",
+              "pinyin": "xiànzài"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “daytime”."
+        },
+        {
+          "id": "q-07-2",
+          "kind": "selection",
+          "prompt": "Which expression means “late”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "小时",
+              "pinyin": "xiǎoshí"
+            },
+            {
+              "id": "b",
+              "hanzi": "晚",
+              "pinyin": "wǎn"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “late”."
+        },
+        {
+          "id": "q-07-3",
+          "kind": "selection",
+          "prompt": "Which expression means “noon”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "中午",
+              "pinyin": "zhōngwǔ"
+            },
+            {
+              "id": "b",
+              "hanzi": "早",
+              "pinyin": "zǎo"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “noon”."
+        },
+        {
+          "id": "q-07-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我白天上班。” (wǒ báitiān shàngbān.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I work during the day.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-07-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “I study at school during the day.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "白天我在学校学习。 (báitiān wǒ zài xuéxiào xuéxí.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

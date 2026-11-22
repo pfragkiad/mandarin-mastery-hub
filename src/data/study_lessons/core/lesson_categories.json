@@ -1,7 +1,147 @@
 {
-  "registry_version": "1.0.0",
-  "description": "Controlled, reusable lesson categories. Reuse a category by ID whenever its scope fits; tags capture narrower concepts. Do not create near-duplicate categories.",
+  "registry_version": "3.0.0",
+  "description": "Global shared thematic taxonomy; 20 active topics, with two legacy deprecated aliases. Private course topics belong in curriculum manifests.",
   "categories": [
+    {
+      "id": "abstract-concepts",
+      "label": "Abstract & General Concepts",
+      "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "animals-weather",
+      "label": "Animals & Weather",
+      "description": "Animals, weather conditions, and the natural environment.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "communication-social",
+      "label": "Communication & Social Language",
+      "description": "Greetings, requests, apologizing, thanking, and speaking with others.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "daily-actions",
+      "label": "Daily Actions & Activities",
+      "description": "Common everyday actions, physical activities, and routines.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "family-relationships",
+      "label": "Family & Relationships",
+      "description": "Relatives, family life, friendship, and relationships.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "food-drink",
+      "label": "Food, Drinks & Meals",
+      "description": "Meals, eating, drinking, ingredients, and restaurants.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "grammar-functions",
+      "label": "Grammar & Function Words",
+      "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "health-wellbeing",
+      "label": "Health & Wellbeing",
+      "description": "Illness, medical care, sleep, and rest.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "home-objects",
+      "label": "Home, Clothing & Objects",
+      "description": "Home interiors, everyday belongings, clothing, and household objects.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "leisure-media",
+      "label": "Leisure, Music & Media",
+      "description": "Films, music, games, recreation, and entertainment.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "numbers-quantities",
+      "label": "Numbers & Quantities",
+      "description": "Counting, amounts, measurements, ordinals, and classifiers.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "people-identity",
+      "label": "People & Identity",
+      "description": "People, gender, personal information, and forms of address.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "places-directions",
+      "label": "Places, Position & Direction",
+      "description": "Countries, positions, directions, and spatial relations.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "qualities-feelings",
+      "label": "Qualities, Feelings & Evaluation",
+      "description": "Descriptors, personal feelings, properties, and judgments.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "reference-questions",
+      "label": "Pronouns, Questions & Pointing",
+      "description": "Personal and demonstrative pronouns; asking and pointing.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "school-language",
+      "label": "Education & Language",
+      "description": "Learning, school, teachers, reading, writing, and languages.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "shopping-money",
+      "label": "Shopping & Money",
+      "description": "Stores, prices, buying, selling, and currency.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "time-calendar",
+      "label": "Time & Calendar",
+      "description": "Dates, times of day, periods, age and scheduling.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "travel-transport",
+      "label": "Travel & Transport",
+      "description": "Vehicles, travel, driving, and going from place to place.",
+      "aliases": [],
+      "status": "active"
+    },
+    {
+      "id": "work-jobs",
+      "label": "Work & Jobs",
+      "description": "Workplaces, occupations, and the working day.",
+      "aliases": [],
+      "status": "active"
+    },
     {
       "id": "time-frequency-repetition",
       "label": "Time, Frequency & Repetition",
@@ -13,7 +153,7 @@
         "repetition",
         "times and occasions"
       ],
-      "status": "active"
+      "status": "deprecated"
     },
     {
       "id": "vocabulary-grammar-patterns",
@@ -24,7 +164,7 @@
         "grammar and vocabulary",
         "usage patterns"
       ],
-      "status": "active"
+      "status": "deprecated"
     }
   ]
 }

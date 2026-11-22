@@ -1,0 +1,55 @@
+{
+  "schema_version": "mandarin-curriculum/3.0.0",
+  "curriculum_id": "hsk3-2025",
+  "title": "HSK 3.0 — 2025 syllabus",
+  "kind": "syllabus",
+  "language": "zh-CN",
+  "edition": "2025-11",
+  "status": "draft",
+  "description": "Planning template: placements and lesson IDs are illustrative; populate from the finalized curriculum.",
+  "course_topics": [],
+  "sections": [
+    {
+      "section_id": "hsk3-level-1",
+      "title": "Level 1",
+      "level_number": 1,
+      "sequence": 1,
+      "units": []
+    },
+    {
+      "section_id": "hsk3-level-2",
+      "title": "Level 2",
+      "level_number": 2,
+      "sequence": 2,
+      "units": []
+    },
+    {
+      "section_id": "hsk3-level-3",
+      "title": "Level 3",
+      "level_number": 3,
+      "sequence": 3,
+      "units": []
+    },
+    {
+      "section_id": "hsk3-level-4",
+      "title": "Level 4",
+      "level_number": 4,
+      "sequence": 4,
+      "units": []
+    },
+    {
+      "section_id": "hsk3-level-5",
+      "title": "Level 5",
+      "level_number": 5,
+      "sequence": 5,
+      "units": []
+    },
+    {
+      "section_id": "hsk3-level-6",
+      "title": "Level 6",
+      "level_number": 6,
+      "sequence": 6,
+      "units": []
+    }
+  ]
+}

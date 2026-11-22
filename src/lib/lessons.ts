@@ -1,12 +1,16 @@
 /**
  * Study lessons (browser-safe, no React).
  *
- * Source of truth: the JSON lesson files under src/data/study_lessons/lessons/<DIR>/<FILE>.json
- * plus the shared category registry src/data/study_lessons/core/lesson_categories.json. The
- * Markdown copies beside them are generated from the same JSON and are never read here.
+ * Source of truth: the lesson JSON files under src/data/study_lessons/lessons/ — one lesson
+ * per *_LESSON_* directory, at any depth (hsk3/level1/<DIR>/, independent/<DIR>/), except
+ * lessons/legacy/, which keeps the pre-v3 copies for migration only and would otherwise
+ * duplicate their lesson IDs — plus the shared topic registry
+ * src/data/study_lessons/core/lesson_categories.json. The Markdown/HTML copies beside each
+ * JSON are generated from it and never read here. Course placement (units, order,
+ * prerequisites) lives separately in lessons/curricula/*.json (src/lib/lesson-curricula.ts).
  *
  * Two ways in:
- * - Summaries (title, categories, headword, status) are read eagerly through Vite's
+ * - Summaries (title, topics, headword, status, objectives) are read eagerly through Vite's
  *   named-key JSON imports, so only those few top-level keys reach the page bundle;
  *   the index page, the menu and the character cards can list lessons synchronously.
  * - A whole lesson is loaded lazily (one chunk per lesson) only when its page opens.
@@ -15,6 +19,10 @@
  * mandarin-word-lesson → word, …), never from the headword's length or shape. A lesson
  * without a headword is a topic lesson. Lessons attach to a glyph or word record only by
  * an exact written-form match of their recorded headword, so no identity is inferred.
+ *
+ * Schema v3 moved topics into `classification` (primary_topic_id, topic_ids, tags) and added
+ * `lesson_type` and `learning_objectives`; v2.x lessons keep their `lesson.categories` fields,
+ * read only when a lesson has no v3 classification.
  */
 import categoryRegistry from '@/data/study_lessons/core/lesson_categories.json';
 
@@ -36,6 +44,10 @@ export type LessonSummary = {
   status: LessonStatus | string;
   audience: string;
   dateReviewed: string | null;
+  /** v3 `lesson_type` (character_usage, topic_vocabulary, grammar, …); '' for v2.x lessons. */
+  lessonType: string;
+  /** v3 `learning_objectives`, in recorded order (empty for v2.x lessons). */
+  objectives: string[];
   /** The recorded headword, when the lesson is about one written form. */
   headword: { hanzi: string; pinyin: string } | null;
   /** metadata.catalog_character_id: an explicit Characters record ID (e.g. "Characters:次"), when recorded. */
@@ -82,12 +94,30 @@ export type LessonSections = {
   extensions?: { intro: string; items: LessonExtension[] };
 };
 
+/* ---------- Topic lessons (mirrors core/topic_lesson.schema.json v3) ---------- */
+/** One recorded example sentence of a topic-lesson word. */
+export type TopicExample = { id: string; style?: string; register?: string; hanzi: string; pinyin: string; english: string; teaching_note?: string };
+/** A course syllabus entry this word stands for (e.g. hsk3-2025 entry 26). */
+export type SyllabusRef = { curriculum_id: string; entry_id: number };
+export type TopicVocabItem = { id: string; hanzi: string; pinyin: string; meaning_en: string; primary_pos_id: string; pos_ids: string[]; topic_ids: string[]; examples: TopicExample[]; learning_role: 'introduced' | 'reviewed' | string; syllabus_refs: SyllabusRef[] };
+/** A grammar note with the recorded example it points at (resolved by example ID; null when the ID is unknown). */
+export type TopicGrammarPoint = { id: string; title: string; explanation: string; example: TopicExample | null };
+export type TopicContent = {
+  description: string;
+  focus: string;
+  items: TopicVocabItem[];
+  related: TopicVocabItem[];
+  grammar: TopicGrammarPoint[];
+};
+
 export type LessonDocument = {
   summary: LessonSummary;
   intro: { lesson_focus?: string; core_principle?: string; learning_priority?: string };
   headword: { hanzi: string; pinyin: string; simplified?: string; traditional?: LessonTerm[]; readings?: { pinyin: string; context: string }[]; mapping_type?: string } | null;
   metadata: { license_note?: string; hsk?: { level: number | null; official_id: string | null } };
   sections: LessonSections;
+  /** Topic-vocabulary content (schema family mandarin-topic-lesson); null for other lessons. */
+  topic: TopicContent | null;
   reportIntake: { reports: LessonReport[]; material: LessonMaterial[] };
 };
 
@@ -103,7 +133,7 @@ export function correctLessonChoices(question: LessonQuestion): LessonChoice[] {
   return question.choices.filter(choice => choice.id && correctIds.includes(choice.id));
 }
 
-type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson?: Record<string, unknown> | undefined; metadata?: Record<string, unknown> | undefined; headword?: Record<string, unknown> | null | undefined };
+type RawLesson = { schema_version?: unknown; lesson_id?: unknown; lesson_type?: unknown; lesson?: Record<string, unknown> | undefined; classification?: Record<string, unknown> | null | undefined; learning_objectives?: unknown; metadata?: Record<string, unknown> | undefined; headword?: Record<string, unknown> | null | undefined };
 const str = (value: unknown) => (typeof value === 'string' ? value : '');
 const strList = (value: unknown) => (Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : []);
 
@@ -131,14 +161,18 @@ export function summarizeLesson(raw: RawLesson, categories: LessonCategory[] = l
   const headword = hanzi ? { hanzi, pinyin: str(raw.headword?.['pinyin']) } : null;
   const schemaVersion = str(raw.schema_version);
   const byId = new Map(categories.map(c => [c.id, c]));
-  const lessonCats = strList(lesson['categories']).flatMap(cid => { const c = byId.get(cid); return c ? [c] : []; });
-  const primaryId = str(lesson['primary_category_id']);
+  // v3 classification wins; v2.x lessons keep their categories inside `lesson`.
+  const cls = raw.classification && typeof raw.classification === 'object' ? raw.classification : null;
+  const topicIds = cls ? strList(cls['topic_ids']) : strList(lesson['categories']);
+  const primaryId = cls ? str(cls['primary_topic_id']) : str(lesson['primary_category_id']);
+  const lessonCats = [...new Set(primaryId ? [primaryId, ...topicIds] : topicIds)].flatMap(cid => { const c = byId.get(cid); return c ? [c] : []; });
   return {
     id, kind: lessonKindFor(schemaVersion), schemaVersion, title,
     subtitle: str(lesson['subtitle']), description: str(lesson['description']),
     categories: lessonCats, primaryCategory: byId.get(primaryId) ?? lessonCats[0] ?? null,
-    tags: strList(lesson['tags']), status: str(metadata['status']) || 'draft', audience: str(metadata['audience']),
+    tags: cls ? strList(cls['tags']) : strList(lesson['tags']), status: str(metadata['status']) || 'draft', audience: str(metadata['audience']),
     dateReviewed: typeof metadata['date_reviewed'] === 'string' ? metadata['date_reviewed'] : null,
+    lessonType: str(raw.lesson_type), objectives: strList(raw.learning_objectives),
     headword,
     catalogCharacterId: str(metadata['catalog_character_id']) || null,
   };
@@ -168,8 +202,10 @@ export function toLessonDocument(raw: Record<string, unknown>, summary: LessonSu
   const sections = (raw['sections'] ?? {}) as LessonSections;
   const intake = (raw['report_intake'] ?? {}) as Partial<LessonDocument['reportIntake']>;
   const headword = raw['headword'] && typeof raw['headword'] === 'object' && str((raw['headword'] as Record<string, unknown>)['hanzi']) ? raw['headword'] as LessonDocument['headword'] : null;
+  const topic = summary.schemaVersion.split('/')[0] === 'mandarin-topic-lesson' ? toTopicContent(raw['sections']) : null;
   return {
     summary,
+    topic,
     intro: (raw['intro'] ?? {}) as LessonDocument['intro'],
     headword,
     metadata: (raw['metadata'] ?? {}) as LessonDocument['metadata'],
@@ -178,18 +214,61 @@ export function toLessonDocument(raw: Record<string, unknown>, summary: LessonSu
   };
 }
 
+/** Topic-lesson sections as recorded. Grammar points resolve their example only by an exact
+ *  example ID inside this lesson's words (null when the ID is missing, never a guessed match). */
+export function toTopicContent(rawSections: unknown): TopicContent {
+  const s = (rawSections && typeof rawSections === 'object' ? rawSections : {}) as Record<string, unknown>;
+  const overview = (s['overview'] ?? {}) as Record<string, unknown>;
+  const vocabulary = (s['vocabulary'] ?? {}) as Record<string, unknown>;
+  const items = (Array.isArray(vocabulary['items']) ? vocabulary['items'] : []) as TopicVocabItem[];
+  const related = (Array.isArray(vocabulary['related_entries']) ? vocabulary['related_entries'] : []) as TopicVocabItem[];
+  const examples = new Map(items.flatMap(item => (item.examples ?? []).map(e => [e.id, e] as const)));
+  const grammar = (Array.isArray(s['grammar_points']) ? s['grammar_points'] : []) as { id: string; title: string; explanation: string; example_id?: string }[];
+  return {
+    description: str(overview['topic_description']), focus: str(overview['focus']),
+    items: items.map(item => ({ ...item, examples: item.examples ?? [], syllabus_refs: item.syllabus_refs ?? [], pos_ids: item.pos_ids ?? [], topic_ids: item.topic_ids ?? [] })),
+    related: related.map(item => ({ ...item, examples: item.examples ?? [], syllabus_refs: item.syllabus_refs ?? [], pos_ids: item.pos_ids ?? [], topic_ids: item.topic_ids ?? [] })),
+    grammar: grammar.map(g => ({ id: g.id, title: str(g.title), explanation: str(g.explanation), example: (g.example_id && examples.get(g.example_id)) || null })),
+  };
+}
+
+/** Syllabus editions a curriculum ID stands for, as recorded by its manifest (hsk3-2025 is the
+ *  CLEC HSK 3.0 syllabus, edition 2025-11, the same source as the Vocabulary entries). */
+const SYLLABUS_VERSION: Record<string, '3.0'> = { 'hsk3-2025': '3.0' };
+type SyllabusEntry = { id: string; simplified: string; entryKind: string; hskVersion: string | null; hsk_index: number | null };
+/** The one Vocabulary entry a topic-lesson word stands for: same syllabus edition, same HSK
+ *  entry number AND the exact same headword. Anything else (unknown curriculum, no match, a
+ *  number whose headword differs, several matches) is null, so no word identity is guessed —
+ *  点 #33 and 点 #336 stay apart because only the recorded number decides. */
+export function syllabusEntryFor<T extends SyllabusEntry>(item: Pick<TopicVocabItem, 'hanzi' | 'syllabus_refs'>, entries: readonly T[]): T | null {
+  const found = new Set<T>();
+  for (const ref of item.syllabus_refs) {
+    const version = SYLLABUS_VERSION[ref.curriculum_id];
+    if (!version) continue;
+    for (const e of entries) if (e.entryKind === 'word' && e.hskVersion === version && e.hsk_index === ref.entry_id && e.simplified === item.hanzi) found.add(e);
+  }
+  return found.size === 1 ? [...found][0]! : null;
+}
+
 /* ---------- Project data ---------- */
-// Vite needs a literal pattern in every glob call, so the path repeats.
-const ids = import.meta.glob<string>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'lesson_id' });
-const schemas = import.meta.glob<string>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'schema_version' });
-const lessonKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'lesson' });
-const metadataKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'metadata' });
-const headwordKeys = import.meta.glob<Record<string, unknown> | null>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'headword' });
-const loaders = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { import: 'default' });
-const refsKeys = import.meta.glob<Record<string, unknown>>('/src/data/study_lessons/lessons/*/*.json', { eager: true, import: 'catalog_character_refs' });
+// Vite needs a literal pattern in every glob call, so the pattern repeats. Every lesson
+// directory is named *_LESSON_*; lessons/legacy/ (pre-v3 copies) is excluded.
+const ids = import.meta.glob<string>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'lesson_id' });
+const schemas = import.meta.glob<string>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'schema_version' });
+const lessonKeys = import.meta.glob<Record<string, unknown>>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'lesson' });
+const metadataKeys = import.meta.glob<Record<string, unknown>>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'metadata' });
+// Only headword lesson kinds record `headword` (topic, grammar and other general lessons have
+// none), and a named import of a key a JSON file lacks breaks the whole page, so this one
+// key is read only from the headword kinds' directories (<KIND>_LESSON_<KEY>, per core/).
+const headwordKeys = import.meta.glob<Record<string, unknown> | null>(['/src/data/study_lessons/lessons/**/CHARACTER_LESSON_*/*.json', '/src/data/study_lessons/lessons/**/WORD_LESSON_*/*.json', '/src/data/study_lessons/lessons/**/PHRASE_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'headword' });
+const loaders = import.meta.glob<Record<string, unknown>>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { import: 'default' });
+const typeKeys = import.meta.glob<string>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'lesson_type' });
+const classificationKeys = import.meta.glob<Record<string, unknown>>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'classification' });
+const objectiveKeys = import.meta.glob<string[]>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'learning_objectives' });
+const refsKeys = import.meta.glob<Record<string, unknown>>(['/src/data/study_lessons/lessons/**/*_LESSON_*/*.json', '!/src/data/study_lessons/lessons/legacy/**'], { eager: true, import: 'catalog_character_refs' });
 
 const raws: Record<string, RawLesson> = Object.fromEntries(Object.keys(ids).map(path => [path, {
-  lesson_id: ids[path], schema_version: schemas[path], lesson: lessonKeys[path], metadata: metadataKeys[path], headword: headwordKeys[path] ?? null,
+  lesson_id: ids[path], schema_version: schemas[path], lesson_type: typeKeys[path], lesson: lessonKeys[path], classification: classificationKeys[path] ?? null, learning_objectives: objectiveKeys[path], metadata: metadataKeys[path], headword: headwordKeys[path] ?? null,
 }]));
 const index = buildLessonIndex(raws);
 /** Every lesson, in stable file order. */

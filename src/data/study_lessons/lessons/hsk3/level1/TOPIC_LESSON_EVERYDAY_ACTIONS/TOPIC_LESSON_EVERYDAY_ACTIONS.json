@@ -1,0 +1,769 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-everyday-actions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Things We Do Every Day",
+    "subtitle": "Common Actions and Practical Verbs",
+    "description": "Recognize and use common verbs for everyday actions and routines.",
+    "slug": "everyday-actions"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions"
+    ],
+    "tags": [
+      "routine",
+      "actions"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Describe common everyday actions.",
+    "Recognize actions of seeing, sitting, living and finding.",
+    "Distinguish related action verbs in context."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "冷": "Characters:冷",
+    "去": "Characters:去",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "商": "Characters:商",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "室": "Characters:室",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "找": "Characters:找",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "校": "Characters:校",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "点": "Characters:点",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "知": "Characters:知",
+    "穿": "Characters:穿",
+    "第": "Characters:第",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "认": "Characters:认",
+    "识": "Characters:识",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "道": "Characters:道",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "题": "Characters:题"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Recognize and use common verbs for everyday actions and routines.",
+      "focus": "Describe common everyday actions."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-023",
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning_en": "wear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-023-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天我穿新衣服。",
+              "pinyin": "jīntiān wǒ chuān xīn yīfu.",
+              "english": "I am wearing new clothes today.",
+              "teaching_note": "穿 refers to wearing clothes; Chinese does not need a progressive form for the current outfit."
+            },
+            {
+              "id": "ex-023-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "天气冷的时候，请多穿衣服。",
+              "pinyin": "tiānqì lěng de shíhou, qǐng duō chuān yīfu.",
+              "english": "When it is cold, please wear more clothes.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 23
+            }
+          ]
+        },
+        {
+          "id": "w-061",
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning_en": "give; for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-061-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "可以给我一点儿水吗？",
+              "pinyin": "kěyǐ gěi wǒ yìdiǎnr shuǐ ma?",
+              "english": "Could you give me a little water?",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-061-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师给我们一本书。",
+              "pinyin": "lǎoshī gěi wǒmen yì běn shū.",
+              "english": "The teacher gives us a book.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 61
+            }
+          ],
+          "pos_note": "Verb meaning give, and a coverb/preposition meaning for/to."
+        },
+        {
+          "id": "w-088",
+          "hanzi": "见",
+          "pinyin": "jiàn",
+          "meaning_en": "see; meet",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-088-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "明天见！",
+              "pinyin": "míngtiān jiàn!",
+              "english": "See you tomorrow!",
+              "teaching_note": "明天见 is a short, common parting expression meaning “see you tomorrow.”"
+            },
+            {
+              "id": "ex-088-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“星期一见！”她说。",
+              "pinyin": "“xīngqīyī jiàn!” tā shuō.",
+              "english": "\"See you on Monday!\" she said.",
+              "teaching_note": "Written dialogue: 见 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 88
+            }
+          ]
+        },
+        {
+          "id": "w-091",
+          "hanzi": "叫",
+          "pinyin": "jiào",
+          "meaning_en": "be called; call",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-091-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你叫什么名字？",
+              "pinyin": "nǐ jiào shénme míngzi?",
+              "english": "What is your name?",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-091-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "孩子们叫她妈妈。",
+              "pinyin": "háizimen jiào tā māma.",
+              "english": "The children call her Mom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 91
+            }
+          ]
+        },
+        {
+          "id": "w-097",
+          "hanzi": "开",
+          "pinyin": "kāi",
+          "meaning_en": "open",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "home-objects",
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-097-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请开门。",
+              "pinyin": "qǐng kāi mén.",
+              "english": "Please open the door.",
+              "teaching_note": "请 softens the imperative; 开门 means open the door."
+            },
+            {
+              "id": "ex-097-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "商店早上八点开门。",
+              "pinyin": "shāngdiàn zǎoshang bā diǎn kāimén.",
+              "english": "The shop opens at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 97
+            }
+          ]
+        },
+        {
+          "id": "w-099",
+          "hanzi": "看",
+          "pinyin": "kàn",
+          "meaning_en": "look; watch",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-099-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "你看，这本书很好。",
+              "pinyin": "nǐ kàn, zhè běn shū hěn hǎo.",
+              "english": "Look, this book is very good.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-099-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请看这本中文书。",
+              "pinyin": "qǐng kàn zhè běn Zhōngwén shū.",
+              "english": "Please look at this Chinese book.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 99
+            }
+          ]
+        },
+        {
+          "id": "w-101",
+          "hanzi": "看见",
+          "pinyin": "kànjiàn",
+          "meaning_en": "catch sight of",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-101-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我看见一只猫。",
+              "pinyin": "wǒ kànjiàn yì zhī māo.",
+              "english": "I see a cat.",
+              "teaching_note": "看见 emphasizes successful visual perception; here the speaker spots a cat."
+            },
+            {
+              "id": "ex-101-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从这里可以看见学校。",
+              "pinyin": "cóng zhèlǐ kěyǐ kànjiàn xuéxiào.",
+              "english": "You can see the school from here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 101
+            }
+          ]
+        },
+        {
+          "id": "w-214",
+          "hanzi": "玩",
+          "pinyin": "wán",
+          "meaning_en": "play",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-214-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "孩子们在玩。",
+              "pinyin": "háizimen zài wán.",
+              "english": "The children are playing.",
+              "teaching_note": "在 before 玩 marks ongoing play; 孩子们 refers to the children as a group."
+            },
+            {
+              "id": "ex-214-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们下课后在外边玩。",
+              "pinyin": "xuéshēngmen xiàkè hòu zài wàibian wán.",
+              "english": "The students play outside after class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 214
+            }
+          ]
+        },
+        {
+          "id": "w-278",
+          "hanzi": "找",
+          "pinyin": "zhǎo",
+          "meaning_en": "look for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-278-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在找我的手机。",
+              "pinyin": "wǒ zài zhǎo wǒ de shǒujī.",
+              "english": "I am looking for my phone.",
+              "teaching_note": "在 + 找 signals a search that is currently in progress."
+            },
+            {
+              "id": "ex-278-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我去学校找老师。",
+              "pinyin": "wǒ qù xuéxiào zhǎo lǎoshī.",
+              "english": "I'm going to the school to find the teacher.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 278
+            }
+          ]
+        },
+        {
+          "id": "w-288",
+          "hanzi": "知道",
+          "pinyin": "zhīdào",
+          "meaning_en": "know",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-288-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我知道你的名字。",
+              "pinyin": "wǒ zhīdào nǐ de míngzi.",
+              "english": "I know your name.",
+              "teaching_note": "知道 means know a fact or piece of information, unlike 认识 for familiarity."
+            },
+            {
+              "id": "ex-288-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师知道我的名字。",
+              "pinyin": "lǎoshī zhīdào wǒ de míngzi.",
+              "english": "The teacher knows my name.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 288
+            }
+          ]
+        },
+        {
+          "id": "w-294",
+          "hanzi": "住",
+          "pinyin": "zhù",
+          "meaning_en": "live; reside",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-294-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我住在这边。",
+              "pinyin": "wǒ zhù zài zhèbiān.",
+              "english": "I live over here.",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-294-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "现在很多学生住在学校里。",
+              "pinyin": "xiànzài hěn duō xuéshēng zhù zài xuéxiào lǐ.",
+              "english": "Many students now live at school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 294
+            }
+          ]
+        },
+        {
+          "id": "w-298",
+          "hanzi": "坐",
+          "pinyin": "zuò",
+          "meaning_en": "sit",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-298-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请坐在这里。",
+              "pinyin": "qǐng zuò zài zhèlǐ.",
+              "english": "Please sit here.",
+              "teaching_note": "请 makes the request polite; 坐在这里 includes an explicit location marker."
+            },
+            {
+              "id": "ex-298-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们坐在教室里。",
+              "pinyin": "xuéshēngmen zuò zài jiàoshì lǐ.",
+              "english": "The students are sitting in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 298
+            }
+          ]
+        },
+        {
+          "id": "w-299",
+          "hanzi": "做",
+          "pinyin": "zuò",
+          "meaning_en": "do; make",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-299-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天要做什么？",
+              "pinyin": "wǒ jīntiān yào zuò shénme?",
+              "english": "What do I have to do today?",
+              "teaching_note": "做 means do or make; 什么 identifies the task not yet specified."
+            },
+            {
+              "id": "ex-299-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "现在做第一题。",
+              "pinyin": "xiànzài zuò dì yī tí.",
+              "english": "Now do question one.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 299
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-99",
+        "title": "Watching and looking",
+        "explanation": "The perception verb combines with different objects for common actions.",
+        "example_id": "ex-099-1"
+      },
+      {
+        "id": "g-299",
+        "title": "Doing actions",
+        "explanation": "A broad everyday verb can describe performing an activity or task.",
+        "example_id": "ex-299-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-023-1",
+      "ex-023-2",
+      "ex-061-1",
+      "ex-061-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-16-1",
+          "kind": "selection",
+          "prompt": "Which expression means “wear”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "知道",
+              "pinyin": "zhīdào"
+            },
+            {
+              "id": "b",
+              "hanzi": "穿",
+              "pinyin": "chuān"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “wear”."
+        },
+        {
+          "id": "q-16-2",
+          "kind": "selection",
+          "prompt": "Which expression means “catch sight of”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "看见",
+              "pinyin": "kànjiàn"
+            },
+            {
+              "id": "b",
+              "hanzi": "住",
+              "pinyin": "zhù"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “catch sight of”."
+        },
+        {
+          "id": "q-16-3",
+          "kind": "selection",
+          "prompt": "Which expression means “do”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "坐",
+              "pinyin": "zuò"
+            },
+            {
+              "id": "b",
+              "hanzi": "做",
+              "pinyin": "zuò"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “do; make”."
+        },
+        {
+          "id": "q-16-4",
+          "kind": "comprehension",
+          "prompt": "In the example “今天我穿新衣服。” (jīntiān wǒ chuān xīn yīfu.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I am wearing new clothes today.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-16-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “When it is cold, please wear more clothes.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "天气冷的时候，请多穿衣服。 (tiānqì lěng de shíhou, qǐng duō chuān yīfu.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

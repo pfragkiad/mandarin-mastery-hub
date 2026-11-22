@@ -1,0 +1,678 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-connecting-ideas",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Connecting and Emphasizing Ideas",
+    "subtitle": "Degree, Coordination, Repetition and Ongoing Action",
+    "description": "Use common function words for emphasis, coordination, repetition and progressive actions.",
+    "slug": "connecting-ideas"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "daily-actions"
+    ],
+    "tags": [
+      "degree",
+      "emphasis",
+      "progressive",
+      "connectives"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Express degree and emphasis.",
+    "Recognize coordination and repetition.",
+    "Understand ongoing actions in simple sentences."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "亮": "Characters:亮",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "你": "Characters:你",
+    "兴": "Characters:兴",
+    "再": "Characters:再",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "和": "Characters:和",
+    "商": "Characters:商",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "气": "Characters:气",
+    "没": "Characters:没",
+    "漂": "Characters:漂",
+    "热": "Characters:热",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "老": "Characters:老",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "衣": "Characters:衣",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "贵": "Characters:贵",
+    "起": "Characters:起",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "非": "Characters:非",
+    "饭": "Characters:饭",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Use common function words for emphasis, coordination, repetition and progressive actions.",
+      "focus": "Express degree and emphasis."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-041",
+          "hanzi": "都",
+          "pinyin": "dōu",
+          "meaning_en": "all; both",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-041-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们都是学生。",
+              "pinyin": "wǒmen dōu shì xuéshēng.",
+              "english": "We are all students.",
+              "teaching_note": "都 applies to everyone in the subject group; omit it and the “all” nuance disappears."
+            },
+            {
+              "id": "ex-041-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们都在教室里。",
+              "pinyin": "xuéshēngmen dōu zài jiàoshì lǐ.",
+              "english": "All the students are in the classroom.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 41
+            }
+          ]
+        },
+        {
+          "id": "w-053",
+          "hanzi": "非常",
+          "pinyin": "fēicháng",
+          "meaning_en": "extremely",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-053-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天非常高兴。",
+              "pinyin": "wǒ jīntiān fēicháng gāoxìng.",
+              "english": "I am extremely happy today.",
+              "teaching_note": "非常 intensifies 高兴 more strongly than the common degree word 很."
+            },
+            {
+              "id": "ex-053-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这件衣服非常漂亮。",
+              "pinyin": "zhè jiàn yīfu fēicháng piàoliang.",
+              "english": "This piece of clothing is very pretty.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 53
+            }
+          ]
+        },
+        {
+          "id": "w-067",
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning_en": "still; also",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-067-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他还在学校。",
+              "pinyin": "tā hái zài xuéxiào.",
+              "english": "He is still at school.",
+              "teaching_note": "还 means “still,” showing that the school situation continues."
+            },
+            {
+              "id": "ex-067-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店还没有开门。",
+              "pinyin": "zhè jiā diàn hái méiyǒu kāimén.",
+              "english": "This shop hasn't opened yet.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 67
+            }
+          ]
+        },
+        {
+          "id": "w-078",
+          "hanzi": "和",
+          "pinyin": "hé",
+          "meaning_en": "and; with",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "preposition"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-078-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我和你一起去。",
+              "pinyin": "wǒ hé nǐ yìqǐ qù.",
+              "english": "I will go with you.",
+              "teaching_note": "和 joins two people; 一起 clarifies that they go together."
+            },
+            {
+              "id": "ex-078-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们和老师一起学习。",
+              "pinyin": "wǒmen hé lǎoshī yìqǐ xuéxí.",
+              "english": "We study together with the teacher.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 78
+            }
+          ],
+          "pos_note": "Connects nouns and nominal phrases as and; with is a prepositional use."
+        },
+        {
+          "id": "w-079",
+          "hanzi": "很",
+          "pinyin": "hěn",
+          "meaning_en": "very",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-079-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他很高兴。",
+              "pinyin": "tā hěn gāoxìng.",
+              "english": "He is very happy.",
+              "teaching_note": "很 often functions as a natural degree linker before adjectives, not an emphatic “very.”"
+            },
+            {
+              "id": "ex-079-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家商店很大。",
+              "pinyin": "zhè jiā shāngdiàn hěn dà.",
+              "english": "This shop is very big.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 79
+            }
+          ]
+        },
+        {
+          "id": "w-206",
+          "hanzi": "太",
+          "pinyin": "tài",
+          "meaning_en": "too; very",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-206-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这本书太贵了。",
+              "pinyin": "zhè běn shū tài guì le.",
+              "english": "This book is too expensive.",
+              "teaching_note": "太…了 indicates an excessive degree, not simply a high price."
+            },
+            {
+              "id": "ex-206-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天天气太热了。",
+              "pinyin": "jīntiān tiānqì tài rè le.",
+              "english": "The weather is too hot today.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 206
+            }
+          ]
+        },
+        {
+          "id": "w-253",
+          "hanzi": "也",
+          "pinyin": "yě",
+          "meaning_en": "also",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-253-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我也喜欢茶。",
+              "pinyin": "wǒ yě xǐhuan chá.",
+              "english": "I also like tea.",
+              "teaching_note": "也 means also; it normally appears before the verb or adjective predicate."
+            },
+            {
+              "id": "ex-253-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生也可以在这里看书。",
+              "pinyin": "xuéshēng yě kěyǐ zài zhèlǐ kàn shū.",
+              "english": "Students can also read books here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 253
+            }
+          ]
+        },
+        {
+          "id": "w-270",
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning_en": "again",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-270-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请再说一次。",
+              "pinyin": "qǐng zài shuō yí cì.",
+              "english": "Please say it again.",
+              "teaching_note": "再 indicates repetition; 一次 is one occurrence, and 一 is pronounced yí before 次."
+            },
+            {
+              "id": "ex-270-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请明天再来。",
+              "pinyin": "qǐng míngtiān zài lái.",
+              "english": "Please come back tomorrow.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 270
+            }
+          ]
+        },
+        {
+          "id": "w-271",
+          "hanzi": "在",
+          "pinyin": "zài",
+          "meaning_en": "at; in",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition",
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-271-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在家。",
+              "pinyin": "wǒ zài jiā.",
+              "english": "I am at home.",
+              "teaching_note": "在 + location states where the speaker is, not what they are doing."
+            },
+            {
+              "id": "ex-271-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们在学校上课。",
+              "pinyin": "wǒmen zài xuéxiào shàngkè.",
+              "english": "We have class at school.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 271
+            }
+          ],
+          "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb."
+        },
+        {
+          "id": "w-285",
+          "hanzi": "真",
+          "pinyin": "zhēn",
+          "meaning_en": "really",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "adjective"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-285-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "今天天气真好！",
+              "pinyin": "jīntiān tiānqì zhēn hǎo!",
+              "english": "The weather is really nice today!",
+              "teaching_note": "真 adds strong, spontaneous positive emphasis to 好."
+            },
+            {
+              "id": "ex-285-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店的菜真好吃！",
+              "pinyin": "zhè jiā fàndiàn de cài zhēn hǎochī!",
+              "english": "The food at this restaurant is really delicious!",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 285
+            }
+          ],
+          "pos_note": "Degree adverb truly/really, sometimes adjectival."
+        },
+        {
+          "id": "w-286",
+          "hanzi": "正在",
+          "pinyin": "zhèngzài",
+          "meaning_en": "currently; in progress",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-286-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我正在看书。",
+              "pinyin": "wǒ zhèngzài kàn shū.",
+              "english": "I am reading a book right now.",
+              "teaching_note": "正在 makes the ongoing action explicit: reading right now."
+            },
+            {
+              "id": "ex-286-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们正在上课。",
+              "pinyin": "xuéshēngmen zhèngzài shàngkè.",
+              "english": "The students are having class right now.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 286
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-270",
+        "title": "Doing something again",
+        "explanation": "A repetition adverb can indicate a future or additional occurrence.",
+        "example_id": "ex-270-1"
+      },
+      {
+        "id": "g-286",
+        "title": "Ongoing actions",
+        "explanation": "A progressive marker before a verb highlights an action underway.",
+        "example_id": "ex-286-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-041-1",
+      "ex-041-2",
+      "ex-053-1",
+      "ex-053-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-21-1",
+          "kind": "selection",
+          "prompt": "Which expression means “all”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "都",
+              "pinyin": "dōu"
+            },
+            {
+              "id": "b",
+              "hanzi": "在",
+              "pinyin": "zài"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “all; both”."
+        },
+        {
+          "id": "q-21-2",
+          "kind": "selection",
+          "prompt": "Which expression means “too”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "真",
+              "pinyin": "zhēn"
+            },
+            {
+              "id": "b",
+              "hanzi": "太",
+              "pinyin": "tài"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “too; very”."
+        },
+        {
+          "id": "q-21-3",
+          "kind": "selection",
+          "prompt": "Which expression means “currently”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "正在",
+              "pinyin": "zhèngzài"
+            },
+            {
+              "id": "b",
+              "hanzi": "都",
+              "pinyin": "dōu"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “currently; in progress”."
+        },
+        {
+          "id": "q-21-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我们都是学生。” (wǒmen dōu shì xuéshēng.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "We are all students.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-21-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “All the students are in the classroom.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "学生们都在教室里。 (xuéshēngmen dōu zài jiàoshì lǐ.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

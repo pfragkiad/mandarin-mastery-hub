@@ -1,20 +1,15 @@
 {
-  "schema_version": "mandarin-character-lesson/2.8.0",
+  "schema_version": "mandarin-character-lesson/3.0.0",
   "lesson_id": "char-<HEX_CODEPOINT>",
   "lesson": {
     "title": "<DESCRIPTIVE_LESSON_TITLE>",
     "subtitle": "<ONE_LINE_TOPIC_SUMMARY>",
     "description": "<FULL_LESSON_DESCRIPTION_EXPLAINING_SCOPE_AND_SKILLS>",
-    "categories": [
-      "vocabulary-grammar-patterns"
-    ],
-    "primary_category_id": "vocabulary-grammar-patterns",
-    "tags": [],
     "slug": "lesson-topic"
   },
   "metadata": {
     "status": "draft",
-    "template_version": "2.8.0",
+    "template_version": "3.0.0",
     "audience": "<TARGET_LEARNER>",
     "language": "zh-CN",
     "date_reviewed": null,
@@ -177,5 +172,20 @@
       "intro": "Additional learner-relevant content not covered by the standard sections.",
       "items": []
     }
-  }
+  },
+  "lesson_type": "character_usage",
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "character-usage"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Recognize the headword and its common reading in context.",
+    "Use the main vocabulary or constructions naturally."
+  ]
 }

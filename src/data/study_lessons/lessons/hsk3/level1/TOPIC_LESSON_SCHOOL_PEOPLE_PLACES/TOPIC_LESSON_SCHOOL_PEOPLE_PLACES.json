@@ -1,0 +1,609 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-school-people-places",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "School and University",
+    "subtitle": "Teachers, Students and Places of Learning",
+    "description": "Introduce schools, classes and people involved in education.",
+    "slug": "school-people-places"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language",
+      "people-identity"
+    ],
+    "tags": [
+      "school",
+      "university",
+      "students"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Distinguish types of schools.",
+    "Identify teachers, classmates and students.",
+    "Talk about attending school."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "上": "Characters:上",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "二": "Characters:二",
+    "些": "Characters:些",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "八": "Characters:八",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "可": "Characters:可",
+    "同": "Characters:同",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "小": "Characters:小",
+    "师": "Characters:师",
+    "弟": "Characters:弟",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "文": "Characters:文",
+    "早": "Characters:早",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "点": "Characters:点",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "老": "Characters:老",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "这": "Characters:这",
+    "里": "Characters:里"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Introduce schools, classes and people involved in education.",
+      "focus": "Distinguish types of schools."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-027",
+          "hanzi": "大学",
+          "pinyin": "dàxué",
+          "meaning_en": "university",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-027-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在大学学习中文。",
+              "pinyin": "wǒ zài dàxué xuéxí Zhōngwén.",
+              "english": "I study Chinese at university.",
+              "teaching_note": "大学 is the institution; 在 + place gives the location of the study activity."
+            },
+            {
+              "id": "ex-027-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学里有很多学生。",
+              "pinyin": "dàxué lǐ yǒu hěn duō xuéshēng.",
+              "english": "There are many students at the university.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 27
+            }
+          ]
+        },
+        {
+          "id": "w-028",
+          "hanzi": "大学生",
+          "pinyin": "dàxuéshēng",
+          "meaning_en": "university student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-028-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是大学生。",
+              "pinyin": "tā shì dàxuéshēng.",
+              "english": "She is a university student.",
+              "teaching_note": "大学生 refers to a university-level student, not an elementary-school pupil."
+            },
+            {
+              "id": "ex-028-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学生也可以在这里读书。",
+              "pinyin": "dàxuéshēng yě kěyǐ zài zhèlǐ dúshū.",
+              "english": "University students can also study here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 28
+            }
+          ]
+        },
+        {
+          "id": "w-179",
+          "hanzi": "上学",
+          "pinyin": "shàngxué",
+          "meaning_en": "go to school",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-179-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "孩子们每天上学。",
+              "pinyin": "háizimen měitiān shàngxué.",
+              "english": "The children go to school every day.",
+              "teaching_note": "上学 means attend or go to school; 们 makes the group plural."
+            },
+            {
+              "id": "ex-179-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "孩子们早上八点上学。",
+              "pinyin": "háizimen zǎoshang bā diǎn shàngxué.",
+              "english": "The children go to school at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 179
+            }
+          ]
+        },
+        {
+          "id": "w-211",
+          "hanzi": "同学",
+          "pinyin": "tóngxué",
+          "meaning_en": "classmate",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-211-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是我的同学。",
+              "pinyin": "tā shì wǒ de tóngxué.",
+              "english": "He is my classmate.",
+              "teaching_note": "同学 is someone studying in the same class or school."
+            },
+            {
+              "id": "ex-211-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的同学们喜欢学中文。",
+              "pinyin": "wǒ de tóngxuémen xǐhuan xué Zhōngwén.",
+              "english": "My classmates like learning Chinese.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 211
+            }
+          ]
+        },
+        {
+          "id": "w-237",
+          "hanzi": "小学",
+          "pinyin": "xiǎoxué",
+          "meaning_en": "primary school",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-237-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的孩子上小学。",
+              "pinyin": "wǒ de háizi shàng xiǎoxué.",
+              "english": "My child attends primary school.",
+              "teaching_note": "上小学 refers to attending elementary or primary school."
+            },
+            {
+              "id": "ex-237-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "小学早上八点上课。",
+              "pinyin": "xiǎoxué zǎoshang bā diǎn shàngkè.",
+              "english": "Primary school classes start at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 237
+            }
+          ]
+        },
+        {
+          "id": "w-238",
+          "hanzi": "小学生",
+          "pinyin": "xiǎoxuéshēng",
+          "meaning_en": "primary pupil",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-238-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是小学生。",
+              "pinyin": "tā shì xiǎoxuéshēng.",
+              "english": "He is a primary school pupil.",
+              "teaching_note": "小学生 specifies a primary-school pupil, not a college student."
+            },
+            {
+              "id": "ex-238-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这些小学生正在上课。",
+              "pinyin": "zhèxiē xiǎoxuéshēng zhèngzài shàngkè.",
+              "english": "These primary school students are having class.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 238
+            }
+          ]
+        },
+        {
+          "id": "w-248",
+          "hanzi": "学生",
+          "pinyin": "xuéshēng",
+          "meaning_en": "student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-248-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是学生。",
+              "pinyin": "tā shì xuéshēng.",
+              "english": "He is a student.",
+              "teaching_note": "学生 is student in general; it does not by itself specify the school level."
+            },
+            {
+              "id": "ex-248-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有二十个学生。",
+              "pinyin": "zhèlǐ yǒu èr shí gè xuéshēng.",
+              "english": "There are twenty students here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 248
+            }
+          ]
+        },
+        {
+          "id": "w-250",
+          "hanzi": "学校",
+          "pinyin": "xuéxiào",
+          "meaning_en": "school",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-250-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们的学校很大。",
+              "pinyin": "wǒmen de xuéxiào hěn dà.",
+              "english": "Our school is big.",
+              "teaching_note": "学校 can refer to a school institution or its campus/buildings."
+            },
+            {
+              "id": "ex-250-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个学校有很多老师。",
+              "pinyin": "zhège xuéxiào yǒu hěn duō lǎoshī.",
+              "english": "This school has many teachers.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 250
+            }
+          ]
+        },
+        {
+          "id": "w-292",
+          "hanzi": "中学",
+          "pinyin": "zhōngxué",
+          "meaning_en": "middle school",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-292-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我弟弟上中学。",
+              "pinyin": "wǒ dìdi shàng zhōngxué.",
+              "english": "My younger brother attends middle school.",
+              "teaching_note": "中学 generally denotes secondary or middle school."
+            },
+            {
+              "id": "ex-292-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个中学有很多老师。",
+              "pinyin": "zhège zhōngxué yǒu hěn duō lǎoshī.",
+              "english": "This middle school has many teachers.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 292
+            }
+          ]
+        },
+        {
+          "id": "w-293",
+          "hanzi": "中学生",
+          "pinyin": "zhōngxuéshēng",
+          "meaning_en": "middle school student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-293-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是中学生。",
+              "pinyin": "tā shì zhōngxuéshēng.",
+              "english": "She is a middle school student.",
+              "teaching_note": "中学生 is a secondary-school student, distinct from 小学生 and 大学生."
+            },
+            {
+              "id": "ex-293-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "中学生上午八点上课。",
+              "pinyin": "zhōngxuéshēng shàngwǔ bā diǎn shàngkè.",
+              "english": "Middle school students have class at eight in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 293
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-27",
+        "title": "Talking about schools",
+        "explanation": "Use the name of an institution to say where someone studies.",
+        "example_id": "ex-027-1"
+      },
+      {
+        "id": "g-248",
+        "title": "Identifying students",
+        "explanation": "A student noun describes the person, not the activity.",
+        "example_id": "ex-248-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-027-1",
+      "ex-027-2",
+      "ex-028-1",
+      "ex-028-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-14-1",
+          "kind": "selection",
+          "prompt": "Which expression means “university”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "中学",
+              "pinyin": "zhōngxué"
+            },
+            {
+              "id": "b",
+              "hanzi": "大学",
+              "pinyin": "dàxué"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “university”."
+        },
+        {
+          "id": "q-14-2",
+          "kind": "selection",
+          "prompt": "Which expression means “primary pupil”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "小学生",
+              "pinyin": "xiǎoxuéshēng"
+            },
+            {
+              "id": "b",
+              "hanzi": "中学生",
+              "pinyin": "zhōngxuéshēng"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “primary pupil”."
+        },
+        {
+          "id": "q-14-3",
+          "kind": "selection",
+          "prompt": "Which expression means “middle school student”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "大学",
+              "pinyin": "dàxué"
+            },
+            {
+              "id": "b",
+              "hanzi": "中学生",
+              "pinyin": "zhōngxuéshēng"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “middle school student”."
+        },
+        {
+          "id": "q-14-4",
+          "kind": "comprehension",
+          "prompt": "In the example “我在大学学习中文。” (wǒ zài dàxué xuéxí Zhōngwén.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "I study Chinese at university.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-14-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “There are many students at the university.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "大学里有很多学生。 (dàxué lǐ yǒu hěn duō xuéshēng.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}

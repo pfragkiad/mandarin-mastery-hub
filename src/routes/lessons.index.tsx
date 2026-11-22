@@ -1,22 +1,29 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { LessonsIndex } from '@/components/tutor/lessons-index';
 import { pageHead } from '@/lib/mandarin';
-import { lessonCategories } from '@/lib/lessons';
+import { lessonCategories, lessonSummaries } from '@/lib/lessons';
 
-// The Lessons index. The category filter lives in URL search (?category=<registry id>)
-// so Back and shared links restore it; unknown ids are dropped.
-export type LessonsSearch = { category?: string | undefined };
+// The Lessons index. The browsing mode and its filters live in URL search so Back and shared
+// links restore them: ?view=topic (absent = By course), &category=<registry topic id> and
+// &tag=<recorded lesson tag>, both only in the topic view; unknown values are dropped.
+export type LessonsSearch = { view?: 'topic' | undefined; category?: string | undefined; tag?: string | undefined };
 export const Route = createFileRoute('/lessons/')({
   validateSearch: (search: Record<string, unknown>): LessonsSearch => {
+    if (search['view'] !== 'topic') return {};
     const id = search['category'];
-    return typeof id === 'string' && lessonCategories.some(c => c.id === id) ? { category: id } : {};
+    const tag = search['tag'];
+    return {
+      view: 'topic',
+      ...(typeof id === 'string' && lessonCategories.some(c => c.id === id) ? { category: id } : {}),
+      ...(typeof tag === 'string' && lessonSummaries.some(s => s.tags.includes(tag)) ? { tag } : {}),
+    };
   },
-  head: () => pageHead('Lessons', 'Guided Mandarin lessons on how characters, words and grammar patterns are used, with examples and self-check questions.'),
+  head: () => pageHead('Lessons', 'Guided Mandarin lessons by course and topic: the HSK 3.0 Level 1 path plus character lessons, with examples and self-check questions.'),
   component: LessonsRoute,
 });
 
 function LessonsRoute() {
-  const { category } = Route.useSearch();
+  const { view, category, tag } = Route.useSearch();
   const navigate = Route.useNavigate();
-  return <LessonsIndex category={category} onCategory={id => navigate({ search: id ? { category: id } : {}, resetScroll: false })}/>;
+  return <LessonsIndex view={view ?? 'course'} category={category} tag={tag} onSearch={next => navigate({ search: next, resetScroll: false })}/>;
 }

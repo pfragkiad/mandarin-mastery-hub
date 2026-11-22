@@ -9,6 +9,7 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { HintChar, HintGlyphs, useLessonHints } from './lesson-hints';
 import { usePhrasePairing } from './phrase-pairing';
 import type { AudioRequest } from '@/lib/audio';
+import type { Word } from '@/lib/mandarin';
 
 /**
  * Shared text pieces for study lessons (lesson-page.tsx, lessons-index.tsx).
@@ -23,6 +24,7 @@ import type { AudioRequest } from '@/lib/audio';
  * - LessonTerm: hanzi + orange pinyin + speaker (+ meaning). The speaker uses the matched
  *   word's own recording, a single character's exact-reading recording, or browser speech
  *   for the recorded pinyin through the shared audio pipeline.
+ * - LessonWord: a vocabulary card's headword, linked as a whole to its exact record (see below).
  *
  * LessonText also pairs prose "hanzi (pinyin)" terms (inlineSegments + useLessonPairing), so
  * hovering 过 or its bracketed "guo" rings the other side, independent of the hints switch.
@@ -167,5 +169,41 @@ export function LessonTerm({ hanzi, pinyin, meaning, size = 'md', after }: { han
     {pinyin && <span className="lesson-term-reading"><span className="pinyin">{pair.pinyinBody}</span><LessonSpeaker hanzi={hanzi} pinyin={pinyin}/></span>}
     {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
     {after}
+  </span>;
+}
+
+const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
+
+/**
+ * A lesson's own word (a vocabulary card's headword): the hanzi links straight to its
+ * Vocabulary or Glyphs record and the speaker plays that record's recording.
+ *
+ * Inputs: the recorded hanzi/pinyin/meaning and `record`, the exact Vocabulary record the
+ * caller resolved (topic lessons: syllabusEntryFor, by HSK entry number + headword).
+ * `record === null` means "no exact record" and keeps plain text with speech for the
+ * recorded pinyin; `record` left out falls back to useHanziTarget's exact written-form
+ * match (character lessons, whose words carry no syllabus number).
+ *
+ * The link is the word's own target, so it replaces the per-character hint cards on this
+ * one heading (a hint click inside a link would open two things). The record's recording
+ * is used only when its reading is the lesson's reading (ignoring spaces and case), so a
+ * recording of another reading is never played under this pinyin.
+ */
+export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined }) {
+  const fallback = useHanziTarget(hanzi);
+  const target: HanziTarget | null = record === undefined ? fallback
+    : record ? { kind: 'word', search: { tab: vocabularyKind(record), word: record.id }, audio: record.audio ?? null } : null;
+  const sameReading = record ? spacing(record.pinyin) === spacing(pinyin) : true;
+  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading ? target.audio ?? null : null }
+    : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
+  const head = target?.kind === 'glyph'
+    ? <Link to="/characters" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
+    : target?.kind === 'word'
+      ? <Link to="/vocabulary" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
+      : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
+  return <span className="lesson-term is-lg">
+    {head}
+    <span className="lesson-term-reading"><span className="pinyin">{pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>
+    {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
   </span>;
 }

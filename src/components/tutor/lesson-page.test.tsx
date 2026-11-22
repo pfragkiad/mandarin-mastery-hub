@@ -6,21 +6,45 @@ import { lessonSummaries, loadLesson } from '@/lib/lessons';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children, className, to }: { children?: React.ReactNode; className?: string; to?: string }) => <a className={className} data-to={to}>{children}</a>,
 }));
-const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined }));
+const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, items: [] as unknown[] }));
 vi.mock('./workspace', () => ({
-  useWorkspace: () => ({ items: [], saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
+  useWorkspace: () => ({ items: prefs.items, saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
 }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => true }));
-afterEach(() => { cleanup(); prefs.lessonHints = undefined; });
+afterEach(() => { cleanup(); prefs.lessonHints = undefined; prefs.items = []; });
 
 describe('LessonPage', () => {
   it.each(lessonSummaries.map(s => s.id))('renders lesson %s from its JSON', async id => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
-    expect(screen.getByRole('heading', { level: 1, name: lesson.summary.title })).toBeTruthy();
-    expect(lesson.summary.schemaVersion).toBe('mandarin-character-lesson/2.8.0');
-    expect(container.querySelectorAll('.lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
+    expect(container.querySelector('h1')?.textContent).toContain(lesson.summary.title);
+    expect(['mandarin-character-lesson/3.0.0', 'mandarin-topic-lesson/3.0.0']).toContain(lesson.summary.schemaVersion);
+    if (lesson.topic) expect(container.querySelectorAll('.lesson-topic-word')).toHaveLength(lesson.topic.items.length);
+    else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
+  });
+
+  it('a topic lesson word links to the Vocabulary record with its HSK number and headword', async () => {
+    const lesson = (await loadLesson('topic-abilities-interests'))!;
+    const item = lesson.topic!.items[0]!; // 会 huì, HSK 3.0 entry 82
+    const ref = item.syllabus_refs[0]!;
+    const entry = (index: number, simplified: string) => ({ simplified, entryKind: 'word', hskVersion: '3.0', hskLevel: 1, hsk_index: index });
+    prefs.items = [
+      { id: 'other-number', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: entry(ref.entry_id + 1, item.hanzi) },
+      { id: 'exact', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: entry(ref.entry_id, item.hanzi) },
+    ];
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const card = container.querySelector('.lesson-topic-word')!;
+    expect(card.querySelector('a.lesson-word-link')?.getAttribute('data-to')).toBe('/vocabulary');
+    expect(card.textContent).toContain(`HSK 1 · #${ref.entry_id}`);
+  });
+
+  it('a topic lesson word with no exact record stays plain text', async () => {
+    const lesson = (await loadLesson('topic-abilities-interests'))!;
+    const item = lesson.topic!.items[0]!;
+    prefs.items = [{ id: 'same-form-other-number', hanzi: item.hanzi, pinyin: item.pinyin, audio: null, entry: { simplified: item.hanzi, entryKind: 'word', hskVersion: '3.0', hskLevel: 1, hsk_index: 9999 } }];
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(container.querySelector('.lesson-topic-word a.lesson-word-link')).toBeNull();
   });
 
   it('renders the recorded corpus comparison without source IDs in v2.5', async () => {

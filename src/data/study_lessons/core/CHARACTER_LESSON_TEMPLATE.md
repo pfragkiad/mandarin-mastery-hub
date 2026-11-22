@@ -1,125 +1,32 @@
 ---
-schema: mandarin-character-lesson/2.8.0
-lesson_id: char-<HEX_CODEPOINT>
-title: <DESCRIPTIVE_LESSON_TITLE>
-subtitle: <ONE_LINE_TOPIC_SUMMARY>
-description: <FULL_LESSON_DESCRIPTION_EXPLAINING_SCOPE_AND_SKILLS>
-primary_category_id: vocabulary-grammar-patterns
-category_ids:
-- vocabulary-grammar-patterns
-tags: []
-slug: lesson-topic
-hanzi: <HANZI>
-pinyin: <PINYIN>
-catalog_character_id: null
-catalog_character_refs: {}
-hsk_3_level: null
+schema_version: mandarin-character-lesson/3.0.0
+lesson_type: character_usage
+lesson_id: char-<lowercase-hex-codepoint>
+classification:
+  primary_topic_id: grammar-functions
+  topic_ids: [grammar-functions]
+  tags: [character-usage]
+  course_topic_refs: []
 ---
+# Character Usage Lesson — v3.0.0
 
-# &lt;HANZI&gt; (&lt;PINYIN&gt;) — &lt;DESCRIPTIVE_LESSON_TITLE&gt;
+Use `CHARACTER_LESSON_TEMPLATE.json` as the canonical source. This Markdown file is an authoring reference, not an independent data store.
 
-**Category:** Vocabulary & Grammar Patterns  
+## Teaching sections
+1. Headword and readings — distinguish pronunciation in words from catalog character identity.
+2. Overview and meaning map — usage-based meanings, not forced decomposition.
+3. Vocabulary and contrasts — link exact character IDs from `catalog_ids.json`.
+4. Construction patterns and natural Mandarin example sentences.
+5. Common mistakes and keyed quizzes (`correct_choice_ids`).
+6. Optional learner-facing extensions.
 
-**&lt;ONE_LINE_TOPIC_SUMMARY&gt;**
+## Classification rules
+- `lesson_id` stays stable: `char-6b21`, not `hsk3-l2-char-ci`.
+- `classification.primary_topic_id` is a shared global topic, or null when unsuitable.
+- `classification.topic_ids` contains that primary topic plus optional others.
+- `classification.tags` is for narrower concepts such as `frequency`, `tone-sandhi`.
+- Curriculum placement belongs in a course manifest, never inside the lesson.
+- `metadata.hsk` describes an associated headword/syllabus fact only, **not** lesson ownership or teaching level.
 
-&lt;FULL_LESSON_DESCRIPTION_EXPLAINING_SCOPE_AND_SKILLS&gt;
-
-**Lesson focus:** &lt;ONE_SENTENCE_LEARNER_FOCUS&gt;
-
-**Core principle:** A character, morpheme, word, and construction are distinct linguistic units.
-
-**Learning path:** &lt;RECOMMENDED_ORDER_OF_STUDY&gt;
-
-## 1. At a glance
-
-| Feature | Description |
-| --- | --- |
-| Character | **&lt;HANZI&gt; (&lt;PINYIN&gt;)** |
-| Core takeaway | &lt;MAIN_TAKEAWAY&gt; |
-| Independent usage | &lt;COMMON \| LIMITED \| FORMAL \| NONE&gt; |
-| Modern functions | &lt;ROLE&gt; |
-| Traditional form(s) | **&lt;TRADITIONAL&gt; (&lt;PINYIN&gt;)** |
-
-### Main uses
-
-| Reading | Function | Register | Example |
-| --- | --- | --- | --- |
-| &lt;PINYIN&gt; | &lt;FUNCTION&gt; | &lt;REGISTER&gt; | **&lt;WORD&gt; (&lt;PINYIN&gt;)** — &lt;MEANING&gt; |
-
-&lt;EXPLANATION&gt;
-
-## 2. Essential vocabulary and expressions
-
-| Priority | Word and pinyin | Part of speech | Meaning | Register | Usage |
-| --- | --- | --- | --- | --- | --- |
-| A | **&lt;WORD&gt; (&lt;PINYIN&gt;)** | &lt;POS&gt; | &lt;MEANING&gt; | &lt;REGISTER&gt; | &lt;USAGE NOTE&gt; |
-
-&lt;USAGE_OR_LEXICALIZATION_NOTES&gt;
-
-## 3. Natural example sentences
-
-### 1. &lt;USAGE_TITLE&gt;
-
-**&lt;FULL_HANZI_SENTENCE&gt;**
-
-*&lt;FULL_TONE_MARKED_PINYIN&gt;*
-
-&lt;IDIOMATIC_ENGLISH&gt;
-
-**Grammar:** &lt;TEACHING_NOTE&gt;
-
-**Context:** &lt;CONTEXT&gt;
-
-## 4. Common learner mistakes
-
-| Mistake | Correct approach | Explanation |
-| --- | --- | --- |
-| &lt;MISCONCEPTION&gt; | &lt;BETTER_EXPLANATION&gt; | &lt;WHY&gt; |
-
-## 5. Practice
-
-### Question 1
-
-&lt;CLEAR_MULTIPLE_CHOICE_PROMPT&gt;
-
-- A. &lt;CORRECT_HANZI&gt; (&lt;CORRECT_PINYIN&gt;) — &lt;CORRECT_MEANING&gt;
-- B. &lt;DISTRACTOR_HANZI&gt; (&lt;DISTRACTOR_PINYIN&gt;) — &lt;DISTRACTOR_MEANING&gt;
-
-### Question 2
-
-&lt;OPEN_ENDED_QUESTION&gt;
-
-### Suggested answers
-
-1. A. &lt;CORRECT_HANZI&gt; (&lt;CORRECT_PINYIN&gt;) — &lt;CORRECT_MEANING&gt; — &lt;WHY_A_IS_CORRECT&gt;
-2. &lt;SUGGESTED_FREE_TEXT_ANSWER&gt; — &lt;WHY_THIS_ANSWER_IS_VALID&gt;
-
-## Quiz authoring reference (template only)
-
-For single-choice questions, use unique `choices[].id` values and the authoritative `correct_choice_ids` key. Do not store a duplicate `answer` string for selected choices. Open-ended questions instead use `choices: []`, `correct_choice_ids: []`, and an `answer` string.
-
-```json
-{
-  "id": "q-next-time",
-  "kind": "selection",
-  "prompt": "Which expression means next time?",
-  "choices": [
-    {"id": "a", "hanzi": "下次", "pinyin": "xià cì", "meaning_en": "next time"},
-    {"id": "b", "hanzi": "上次", "pinyin": "shàng cì", "meaning_en": "last time"}
-  ],
-  "correct_choice_ids": ["a"],
-  "explanation": "下 (xià) indicates the following occasion."
-}
-```
-
-A plain-text option can be `{"id":"a","text":"How many times?"}`. For a `multi_selection` question, provide two or more correct IDs. Every selected ID must match one of that question’s choices.
-
-## JSON authoring quality rules (template only)
-
-- Use accurate tone-marked Hanyu Pinyin with standard word spacing; do not split normal multi-syllable words into unnatural fragments. Keep apostrophes where syllable boundaries require them. The application should validate syllable alignment separately.
-- Keep non-Hanzi structural tokens **identical** between `pattern_hanzi` and `pattern_pinyin`: `+`, placeholders such as `X`/`Y`, commas, and ellipses.
-- For choice questions, always key `correct_choice_ids` to existing, unique `choices[].id` values; open-ended questions retain a reference `answer`.
-- Write natural, complete English translations with appropriate sentence-ending punctuation.
-- Resolve exact per-character catalog IDs from the authoritative `catalog_ids.json` using `--sync-catalog-refs --catalog-ids catalog_ids.json`. This populates `metadata.catalog_character_id` and `catalog_character_refs`; never invent or infer catalog IDs.
-- `catalog_character_refs` keys are individual written characters, not words or pinyin. For example, character 一 (yī) retains its written-character ID even when pronounced yí in 一次 (yí cì).
-- The HTML exposes `data-catalog-id` on each known character; the application decides which internal route to open. No external URL is invented.
+## Packaging
+One full lesson ZIP has exactly four root files: `CHARACTER_LESSON_<NAME>.json`, `.html`, `.md` and `report.md`. Keep all report/input provenance in `report.md`, never in learner-facing content.

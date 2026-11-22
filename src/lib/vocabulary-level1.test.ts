@@ -24,7 +24,12 @@ describe('Versioned Level 1 handoff', () => {
       expect(entry.studyMetadata?.verificationStatus).toBe('beginner_editorial_review_not_native_certified');
     }
   });
-  it('keeps all 600 examples with source pinyin and unambiguously aligned character tokens', () => {
+  // Owner-approved pinyin corrections (2026-11-22): the source joins 上学习 as "shàngxué xí";
+  // the lessons package corrects entry 36 and the word list follows. Only these differ from the source.
+  const corrections: Record<string, { source: string; corrected: string }> = {
+    '36:0': { source: 'wǒ zài diànnǎo shàngxué xí.', corrected: 'wǒ zài diànnǎo shàng xuéxí.' },
+  };
+  it('keeps all 600 examples with source pinyin (except reviewed corrections) and unambiguously aligned character tokens', () => {
     const exampleIds = new Set<string>();
     for (const recorded of source.entries) {
       const entry = level1.find(e => e.hsk_index === recorded.id)!;
@@ -33,7 +38,9 @@ describe('Versioned Level 1 handoff', () => {
         const original = recorded.examples[index]!;
         expect(example.simplified).toBe(original.hanzi);
         expect(example.english).toBe(original.english);
-        expect(examplePinyin(example)).toBe(original.pinyin);
+        const fix = corrections[`${recorded.id}:${index}`];
+        if (fix) expect(original.pinyin).toBe(fix.source);
+        expect(examplePinyin(example)).toBe(fix ? fix.corrected : original.pinyin);
         expect(example.style).toBe(original.style);
         expect(example.tokens.map(t => t.text).join('')).toBe(original.hanzi);
         const pairing = alignPhrasePinyin(original.hanzi, original.pinyin, inventory)!;

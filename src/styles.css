@@ -3536,6 +3536,48 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-index-copy strong { font-family: var(--font-display); font-weight: 400; font-size: 18px; line-height: 1.35; transition: color .15s; }
 .lesson-index-subtitle { font-size: 13px; line-height: 1.5; }
 .lesson-index-copy small { font-size: 12px; color: var(--muted-foreground); }
+/* Lessons index: By course / By topic switch (shared segmented look), course outline
+   (course → level → unit → numbered lessons) and the topic view's filters and tag chips. */
+.lesson-view-switch { display: inline-flex; margin: 4px 0 8px; }
+.lesson-view-switch svg { width: 14px; height: 14px; }
+.lessons-course > .lesson-note { max-width: 72ch; }
+.lessons-level { margin-top: 22px; }
+.lessons-level h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-family: var(--font-display); font-weight: 400; font-size: 19px; }
+.lessons-level-count { font-family: var(--font-sans, inherit); font-size: 12px; color: var(--muted-foreground); }
+.lessons-unit { margin-top: 18px; padding-left: 14px; border-left: 2px solid var(--border); }
+.lessons-unit h4 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 15px; font-weight: 600; }
+.lessons-unit-number { font-size: 11px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--primary); }
+.lessons-path { list-style: none; padding: 0; margin-bottom: 0; }
+.lesson-index-item { display: flex; flex-direction: column; gap: 8px; min-width: 0; height: 100%; }
+.lesson-index-item > .lesson-index-card { flex: 1; }
+.lesson-index-number { font-family: var(--font-display); font-size: 30px; color: var(--primary); }
+.lesson-index-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 4px; }
+.lesson-topic-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0 4px; }
+.lesson-topic-filters .filter-select { min-width: min(100%, 300px); }
+.lesson-tag-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; padding: 3px 10px; border: 1px solid var(--border); border-radius: 999px; background: transparent; color: var(--muted-foreground); cursor: pointer; transition: color .15s, border-color .15s, background .15s; }
+.lesson-tag-chip svg { width: 12px; height: 12px; }
+.lesson-tag-chip:hover, .lesson-tag-chip:focus-visible { color: var(--primary); border-color: color-mix(in oklab, var(--primary) 45%, transparent); background: color-mix(in oklab, var(--primary) 8%, transparent); outline: none; }
+.lesson-tag-chip.is-active { color: var(--primary); border-color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
+
+/* Lesson page: where the lesson sits in its course, objectives and topic-lesson words. */
+.lesson-course-position { display: grid; gap: 8px; margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); }
+.lesson-course-where { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted-foreground); }
+.lesson-course-where svg { flex: none; color: var(--primary); }
+.lesson-course-where a, .lesson-course-after a { color: var(--primary); text-decoration: none; }
+.lesson-course-where strong { color: var(--foreground); font-weight: 600; }
+.lesson-course-after { font-size: 13px; color: var(--muted-foreground); }
+.lesson-course-steps { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.lesson-course-step { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; font-size: 13px; color: var(--foreground); text-decoration: none; }
+.lesson-course-step span { display: flex; flex-direction: column; min-width: 0; }
+.lesson-course-step small { font-size: 11px; color: var(--muted-foreground); }
+.lesson-course-step.is-next { margin-left: auto; text-align: right; }
+.lesson-course-step:hover, .lesson-course-step:focus-visible { color: var(--primary); outline: none; }
+.lesson-objectives { list-style: disc; margin: 4px 0 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; line-height: 1.6; }
+.lesson-topic-word { display: grid; gap: 10px; }
+.lesson-topic-examples { display: grid; gap: 10px; }
+.lesson-topic-examples .lesson-card { background: var(--secondary); }
+.lesson-register.is-hsk { color: var(--primary); }
+a.lesson-word-link { text-decoration: none; }
 .lesson-draft-pill { color: var(--experimental); border-color: color-mix(in oklab, var(--experimental) 40%, transparent); margin-left: 8px; vertical-align: middle; }
 
 .lesson-page { container: lesson-page / inline-size; }

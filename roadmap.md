@@ -71,3 +71,9 @@
 - [x] HSK 2 word recordings: upload 164 verified clips to the CDN, attach 166 entries, verify playback, remove temporary MP3s
 - [x] Returning to a grid (from Sound card, Details or Practice) focuses the card clicked from; hovering another card clears it.
 - [x] Card corner icon and bottom-right bookmark share one right edge in every card grid (Compact and Comfortable)
+
+## Lessons v3 (core/lessons packages v3.0.1)
+- [x] Import 21 HSK 3.0 Level 1 topic lessons + migrated 次/以, course manifest, v3 core
+- [x] Topic lesson page: objectives, words + examples (exact HSK record links/audio), grammar, practice, course position
+- [x] Lessons index: By Course (default; Course → Level → Unit → Lesson) / By Topic (shared topics + tags), Independent lessons section, URL-backed
+- [x] 电脑 example pinyin (shàng xuéxí) fixed in the word list, plus the same slip in HSK 3 学生在网站上学习汉语

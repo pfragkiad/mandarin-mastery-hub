@@ -1,0 +1,708 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.0.0",
+  "lesson_id": "topic-personal-pronouns",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About People",
+    "subtitle": "Personal Pronouns and Who Is Who",
+    "description": "Refer to yourself and other people using Mandarin personal pronouns.",
+    "slug": "personal-pronouns"
+  },
+  "classification": {
+    "primary_topic_id": "reference-questions",
+    "topic_ids": [
+      "reference-questions",
+      "people-identity"
+    ],
+    "tags": [
+      "pronouns",
+      "personal-reference"
+    ],
+    "course_topic_refs": []
+  },
+  "learning_objectives": [
+    "Identify first-, second- and third-person pronouns.",
+    "Distinguish singular and plural forms.",
+    "Recognize polite forms of address."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.0.0",
+    "audience": "Beginner Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "两": "Characters:两",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "午": "Characters:午",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "哥": "Characters:哥",
+    "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "姐": "Characters:姐",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "它": "Characters:它",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "很": "Characters:很",
+    "您": "Characters:您",
+    "我": "Characters:我",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "火": "Characters:火",
+    "点": "Characters:点",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Refer to yourself and other people using Mandarin personal pronouns.",
+      "focus": "Identify first-, second- and third-person pronouns."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-026",
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "meaning_en": "everyone",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-026-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "大家都来了。",
+              "pinyin": "dàjiā dōu lái le.",
+              "english": "Everyone has come.",
+              "teaching_note": "大家 refers to everyone present or in the relevant group; 都 reinforces “all.”"
+            },
+            {
+              "id": "ex-026-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大家下午两点来上课。",
+              "pinyin": "dàjiā xiàwǔ liǎng diǎn lái shàngkè.",
+              "english": "Everyone comes to class at two in the afternoon.",
+              "teaching_note": "A simple class schedule: 来上课 describes coming to attend a lesson."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 26
+            }
+          ]
+        },
+        {
+          "id": "w-146",
+          "hanzi": "你",
+          "pinyin": "nǐ",
+          "meaning_en": "you",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-146-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你好，你是新学生吗？",
+              "pinyin": "nǐ hǎo, nǐ shì xīn xuéshēng ma?",
+              "english": "Hello, are you a new student?",
+              "teaching_note": ""
+            },
+            {
+              "id": "ex-146-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "你可以在这里看书。",
+              "pinyin": "nǐ kěyǐ zài zhèlǐ kàn shū.",
+              "english": "You can read books here.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 146
+            }
+          ]
+        },
+        {
+          "id": "w-148",
+          "hanzi": "你们",
+          "pinyin": "nǐmen",
+          "meaning_en": "you (plural)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-148-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你们今天上课吗？",
+              "pinyin": "nǐmen jīntiān shàngkè ma?",
+              "english": "Do you all have class today?",
+              "teaching_note": "你们 addresses two or more people; 吗 marks a yes–no question."
+            },
+            {
+              "id": "ex-148-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "你们明天上午九点来。",
+              "pinyin": "nǐmen míngtiān shàngwǔ jiǔ diǎn lái.",
+              "english": "You all come tomorrow at nine in the morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 148
+            }
+          ]
+        },
+        {
+          "id": "w-150",
+          "hanzi": "您",
+          "pinyin": "nín",
+          "meaning_en": "you (polite)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-150-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "您好，请问您叫什么名字？",
+              "pinyin": "nín hǎo, qǐngwèn nín jiào shénme míngzi?",
+              "english": "Hello, may I ask your name?",
+              "teaching_note": "您 is the respectful form of 你, useful when addressing an unfamiliar adult."
+            },
+            {
+              "id": "ex-150-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "您好，请进。",
+              "pinyin": "nín hǎo, qǐng jìn.",
+              "english": "Hello, please come in.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 150
+            }
+          ]
+        },
+        {
+          "id": "w-200",
+          "hanzi": "他",
+          "pinyin": "tā",
+          "meaning_en": "he",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-200-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是我的哥哥。",
+              "pinyin": "tā shì wǒ de gēge.",
+              "english": "He is my older brother.",
+              "teaching_note": "他 is the third-person pronoun for a male person; 哥哥 is older brother."
+            },
+            {
+              "id": "ex-200-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他每天坐火车上班。",
+              "pinyin": "tā měitiān zuò huǒchē shàngbān.",
+              "english": "He takes the train to work every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 200
+            }
+          ]
+        },
+        {
+          "id": "w-201",
+          "hanzi": "它",
+          "pinyin": "tā",
+          "meaning_en": "it",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-201-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "它是一只猫。",
+              "pinyin": "tā shì yì zhī māo.",
+              "english": "It is a cat.",
+              "teaching_note": "它 generally refers to animals or things in writing; 只 counts the cat."
+            },
+            {
+              "id": "ex-201-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这只猫很小，它喜欢玩。",
+              "pinyin": "zhè zhī māo hěn xiǎo, tā xǐhuan wán.",
+              "english": "This cat is very small; it likes playing.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 201
+            }
+          ]
+        },
+        {
+          "id": "w-202",
+          "hanzi": "她",
+          "pinyin": "tā",
+          "meaning_en": "she",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-202-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是我的姐姐。",
+              "pinyin": "tā shì wǒ de jiějie.",
+              "english": "She is my older sister.",
+              "teaching_note": "她 is the written third-person pronoun for a female person."
+            },
+            {
+              "id": "ex-202-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她会说中文，也会唱歌。",
+              "pinyin": "tā huì shuō Zhōngwén, yě huì chàng gē.",
+              "english": "She can speak Chinese and can also sing.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 202
+            }
+          ]
+        },
+        {
+          "id": "w-203",
+          "hanzi": "他们",
+          "pinyin": "tāmen",
+          "meaning_en": "they (male/mixed)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-203-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他们在学校。",
+              "pinyin": "tāmen zài xuéxiào.",
+              "english": "They are at school.",
+              "teaching_note": "他们 is plural “they” for males or mixed groups in ordinary writing."
+            },
+            {
+              "id": "ex-203-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他们每天上午上课。",
+              "pinyin": "tāmen měitiān shàngwǔ shàngkè.",
+              "english": "They have class every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 203
+            }
+          ]
+        },
+        {
+          "id": "w-204",
+          "hanzi": "它们",
+          "pinyin": "tāmen",
+          "meaning_en": "they (nonhuman)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-204-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "它们都是小猫。",
+              "pinyin": "tāmen dōu shì xiǎomāo.",
+              "english": "They are all kittens.",
+              "teaching_note": "它们 is the written plural form for animals or things, here kittens."
+            },
+            {
+              "id": "ex-204-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有三只猫，它们都很小。",
+              "pinyin": "zhèlǐ yǒu sān zhī māo, tāmen dōu hěn xiǎo.",
+              "english": "There are three cats here; they are all small.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 204
+            }
+          ]
+        },
+        {
+          "id": "w-205",
+          "hanzi": "她们",
+          "pinyin": "tāmen",
+          "meaning_en": "they (female)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-205-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她们都是学生。",
+              "pinyin": "tāmen dōu shì xuéshēng.",
+              "english": "They are all students.",
+              "teaching_note": "她们 refers to a group of women or girls in written Chinese."
+            },
+            {
+              "id": "ex-205-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她们喜欢一起读书。",
+              "pinyin": "tāmen xǐhuan yìqǐ dúshū.",
+              "english": "They [female] like reading together.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 205
+            }
+          ]
+        },
+        {
+          "id": "w-221",
+          "hanzi": "我",
+          "pinyin": "wǒ",
+          "meaning_en": "I; me",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-221-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢汉语。",
+              "pinyin": "wǒ xǐhuan Hànyǔ.",
+              "english": "I like Chinese.",
+              "teaching_note": "我 is the first-person singular pronoun; the sentence states a personal preference."
+            },
+            {
+              "id": "ex-221-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我每天上午学习汉语。",
+              "pinyin": "wǒ měitiān shàngwǔ xuéxí Hànyǔ.",
+              "english": "I study Chinese every morning.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 221
+            }
+          ]
+        },
+        {
+          "id": "w-222",
+          "hanzi": "我们",
+          "pinyin": "wǒmen",
+          "meaning_en": "we",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-222-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们一起学习。",
+              "pinyin": "wǒmen yìqǐ xuéxí.",
+              "english": "We study together.",
+              "teaching_note": "我们 is “we”; 一起 emphasizes acting as a group."
+            },
+            {
+              "id": "ex-222-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们每天一起读书。",
+              "pinyin": "wǒmen měitiān yìqǐ dúshū.",
+              "english": "We read together every day.",
+              "teaching_note": ""
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 222
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "g-146",
+        "title": "Direct address",
+        "explanation": "Mandarin uses dedicated second-person pronouns and a polite form.",
+        "example_id": "ex-146-1"
+      },
+      {
+        "id": "g-221",
+        "title": "Referring to yourself",
+        "explanation": "Personal pronouns normally appear before the verb in a simple statement.",
+        "example_id": "ex-221-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-026-1",
+      "ex-026-2",
+      "ex-146-1",
+      "ex-146-2"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-01-1",
+          "kind": "selection",
+          "prompt": "Which expression means “everyone”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "大家",
+              "pinyin": "dàjiā"
+            },
+            {
+              "id": "b",
+              "hanzi": "她们",
+              "pinyin": "tāmen"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “everyone”."
+        },
+        {
+          "id": "q-01-2",
+          "kind": "selection",
+          "prompt": "Which expression means “she”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "我",
+              "pinyin": "wǒ"
+            },
+            {
+              "id": "b",
+              "hanzi": "她",
+              "pinyin": "tā"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "The correct vocabulary entry means “she”."
+        },
+        {
+          "id": "q-01-3",
+          "kind": "selection",
+          "prompt": "Which expression means “we”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "我们",
+              "pinyin": "wǒmen"
+            },
+            {
+              "id": "b",
+              "hanzi": "大家",
+              "pinyin": "dàjiā"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The correct vocabulary entry means “we”."
+        },
+        {
+          "id": "q-01-4",
+          "kind": "comprehension",
+          "prompt": "In the example “大家都来了。” (dàjiā dōu lái le.), what is happening?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Everyone has come.",
+          "explanation": "Use the complete sentence meaning as your guide."
+        },
+        {
+          "id": "q-01-5",
+          "kind": "production",
+          "prompt": "Write this in Mandarin: “Everyone comes to class at two in the afternoon.”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "大家下午两点来上课。 (dàjiā xiàwǔ liǎng diǎn lái shàngkè.)",
+          "explanation": "Compare your answer with the example and its tone-marked pinyin."
+        }
+      ]
+    }
+  }
+}
