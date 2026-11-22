@@ -1,0 +1,1510 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-describing-location-and-distance",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Places, Position & Direction — Part 1: Describing Location and Distance",
+    "subtitle": "Near, far, left, right and inside",
+    "description": "Locate people and objects in buildings and compare relative positions.",
+    "slug": "describing-location-and-distance"
+  },
+  "classification": {
+    "primary_topic_id": "places-directions",
+    "topic_ids": [
+      "places-directions"
+    ],
+    "tags": [
+      "near",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "position-direction",
+    "subtopic_ids": [
+      "position-direction"
+    ]
+  },
+  "learning_objectives": [
+    "Use 旁边 (pángbiān), 前面 (qiánmiàn) and 后面 (hòumiàn).",
+    "Ask whether a place is near or far.",
+    "Locate a place above, below or inside another."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "书": "Characters:书",
+    "二": "Characters:二",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "们": "Characters:们",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "冷": "Characters:冷",
+    "几": "Characters:几",
+    "前": "Characters:前",
+    "办": "Characters:办",
+    "包": "Characters:包",
+    "医": "Characters:医",
+    "去": "Characters:去",
+    "只": "Characters:只",
+    "右": "Characters:右",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "哥": "Characters:哥",
+    "商": "Characters:商",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "左": "Characters:左",
+    "店": "Characters:店",
+    "座": "Characters:座",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "教": "Characters:教",
+    "旁": "Characters:旁",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "椅": "Characters:椅",
+    "楼": "Characters:楼",
+    "比": "Characters:比",
+    "洗": "Characters:洗",
+    "点": "Characters:点",
+    "猫": "Characters:猫",
+    "的": "Characters:的",
+    "离": "Characters:离",
+    "站": "Characters:站",
+    "第": "Characters:第",
+    "药": "Characters:药",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "走": "Characters:走",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "较": "Characters:较",
+    "边": "Characters:边",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "远": "Characters:远",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Locate people and objects in buildings and compare relative positions.",
+      "focus": "Use 旁边 (pángbiān), 前面 (qiánmiàn) and 后面 (hòumiàn)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-356",
+          "hanzi": "后面",
+          "pinyin": "hòumiàn",
+          "meaning_en": "behind; at the back",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-356-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "谁在你后面？",
+              "pinyin": "shéi zài nǐ hòumiàn?",
+              "english": "Who is behind you?",
+              "teaching_note": "A short spoken example using 后面."
+            },
+            {
+              "id": "ex-356-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校后面有一家书店。",
+              "pinyin": "xuéxiào hòumiàn yǒu yì jiā shūdiàn.",
+              "english": "There is a bookshop behind the school.",
+              "teaching_note": "A simple written example using 后面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 356
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-371",
+          "hanzi": "近",
+          "pinyin": "jìn",
+          "meaning_en": "near; close",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-371-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你家离学校近吗？",
+              "pinyin": "nǐ jiā lí xuéxiào jìn ma?",
+              "english": "Is your home close to the school?",
+              "teaching_note": "A short spoken example using 近."
+            },
+            {
+              "id": "ex-371-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家商店离地铁站很近。",
+              "pinyin": "zhè jiā shāngdiàn lí dìtiě zhàn hěn jìn.",
+              "english": "This shop is very close to the subway station.",
+              "teaching_note": "A simple written example using 近."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 371
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-389",
+          "hanzi": "离",
+          "pinyin": "lí",
+          "meaning_en": "from; away from (distance)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-389-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你家离这儿远吗？",
+              "pinyin": "nǐ jiā lí zhèr yuǎn ma?",
+              "english": "Is your home far from here?",
+              "teaching_note": "A short spoken example using 离."
+            },
+            {
+              "id": "ex-389-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校离车站很近。",
+              "pinyin": "xuéxiào lí chēzhàn hěn jìn.",
+              "english": "The school is close to the station.",
+              "teaching_note": "A simple written example using 离."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 389
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-390",
+          "hanzi": "里面",
+          "pinyin": "lǐmiàn",
+          "meaning_en": "inside; interior",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-390-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "书在包里面吗？",
+              "pinyin": "shū zài bāo lǐmiàn ma?",
+              "english": "Is the book inside the bag?",
+              "teaching_note": "A short spoken example using 里面."
+            },
+            {
+              "id": "ex-390-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "书包在房间里面。",
+              "pinyin": "shūbāo zài fángjiān lǐmiàn.",
+              "english": "The schoolbag is inside the room.",
+              "teaching_note": "A simple written example using 里面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 390
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-391",
+          "hanzi": "楼",
+          "pinyin": "lóu",
+          "meaning_en": "building; floor; storey",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-391-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住几楼？",
+              "pinyin": "nǐ zhù jǐ lóu?",
+              "english": "Which floor do you live on?",
+              "teaching_note": "A short spoken example using 楼."
+            },
+            {
+              "id": "ex-391-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校后面的楼很高。",
+              "pinyin": "xuéxiào hòumiàn de lóu hěn gāo.",
+              "english": "The building behind the school is tall.",
+              "teaching_note": "A simple written example using 楼."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 391
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-403",
+          "hanzi": "面",
+          "pinyin": "miàn",
+          "meaning_en": "side; surface; suffix used in localizers",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-403-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在我后面吗？",
+              "pinyin": "nǐ zài wǒ hòumiàn ma?",
+              "english": "Are you behind me?",
+              "teaching_note": "The official 面1 entry is the suffix in localizers such as 前面、后面、下面."
+            },
+            {
+              "id": "ex-403-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "书包在椅子下面。",
+              "pinyin": "shūbāo zài yǐzi xiàmiàn.",
+              "english": "The schoolbag is under the chair.",
+              "teaching_note": "The official 面1 entry is the suffix in localizers such as 前面、后面、下面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 403
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "The official 面1 entry is the suffix in localizers such as 前面、后面、下面."
+        },
+        {
+          "id": "w-413",
+          "hanzi": "旁边",
+          "pinyin": "pángbiān",
+          "meaning_en": "beside; next to",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-413-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你坐在我旁边吧。",
+              "pinyin": "nǐ zuò zài wǒ pángbiān ba.",
+              "english": "Sit next to me.",
+              "teaching_note": "A short spoken example using 旁边."
+            },
+            {
+              "id": "ex-413-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校旁边有一家书店。",
+              "pinyin": "xuéxiào pángbiān yǒu yì jiā shūdiàn.",
+              "english": "There is a bookshop next to the school.",
+              "teaching_note": "A simple written example using 旁边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 413
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-419",
+          "hanzi": "前面",
+          "pinyin": "qiánmiàn",
+          "meaning_en": "in front; ahead",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-419-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我在你前面。",
+              "pinyin": "wǒ zài nǐ qiánmiàn.",
+              "english": "I'm in front of you.",
+              "teaching_note": "A short spoken example using 前面."
+            },
+            {
+              "id": "ex-419-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "饭馆前面有一个车站，旁边还有一家商店。",
+              "pinyin": "fànguǎn qiánmiàn yǒu yí ge chēzhàn, pángbiān hái yǒu yì jiā shāngdiàn.",
+              "english": "There is a station in front of the restaurant, and a shop nearby as well.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 419
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-426",
+          "hanzi": "上面",
+          "pinyin": "shàngmiàn",
+          "meaning_en": "on top; above",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-426-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "书在桌子上面吗？",
+              "pinyin": "shū zài zhuōzi shàngmiàn ma?",
+              "english": "Is the book on the table?",
+              "teaching_note": "A short spoken example using 上面."
+            },
+            {
+              "id": "ex-426-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上面有一本书。",
+              "pinyin": "zhuōzi shàngmiàn yǒu yì běn shū.",
+              "english": "There is a book on the table.",
+              "teaching_note": "A simple written example using 上面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 426
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-447",
+          "hanzi": "外面",
+          "pinyin": "wàimiàn",
+          "meaning_en": "outside; the exterior",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-447-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在外面吗？",
+              "pinyin": "nǐ zài wàimiàn ma?",
+              "english": "Are you outside?",
+              "teaching_note": "A short spoken example using 外面."
+            },
+            {
+              "id": "ex-447-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天外面很冷。",
+              "pinyin": "jīntiān wàimiàn hěn lěng.",
+              "english": "It's very cold outside today.",
+              "teaching_note": "A simple written example using 外面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 447
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-459",
+          "hanzi": "下面",
+          "pinyin": "xiàmiàn",
+          "meaning_en": "below; underneath",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-459-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "书在桌子下面吗？",
+              "pinyin": "shū zài zhuōzi xiàmiàn ma?",
+              "english": "Is the book under the table?",
+              "teaching_note": "A short spoken example using 下面."
+            },
+            {
+              "id": "ex-459-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "椅子下面有一只猫。",
+              "pinyin": "yǐzi xiàmiàn yǒu yì zhī māo.",
+              "english": "There is a cat under the chair.",
+              "teaching_note": "A simple written example using 下面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 459
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-481",
+          "hanzi": "右",
+          "pinyin": "yòu",
+          "meaning_en": "right; right-hand side",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-481-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "往右走。",
+              "pinyin": "wǎng yòu zǒu.",
+              "english": "Go right.",
+              "teaching_note": "A short spoken example using 右."
+            },
+            {
+              "id": "ex-481-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校在路的右边，医院在左边。",
+              "pinyin": "xuéxiào zài lù de yòubian, yīyuàn zài zuǒbian.",
+              "english": "The school is on the right side of the road, and the hospital is on the left.",
+              "teaching_note": "A simple written example using 右."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 481
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-482",
+          "hanzi": "右边",
+          "pinyin": "yòubian",
+          "meaning_en": "right side; to the right",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-482-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "商店在右边吗？",
+              "pinyin": "shāngdiàn zài yòubian ma?",
+              "english": "Is the shop on the right?",
+              "teaching_note": "A short spoken example using 右边."
+            },
+            {
+              "id": "ex-482-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校右边是一家饭馆。",
+              "pinyin": "xuéxiào yòubian shì yì jiā fànguǎn.",
+              "english": "There is a restaurant to the right of the school.",
+              "teaching_note": "A simple written example using 右边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 482
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-484",
+          "hanzi": "远",
+          "pinyin": "yuǎn",
+          "meaning_en": "far; distant",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-484-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "机场远不远？",
+              "pinyin": "jīchǎng yuǎn bu yuǎn?",
+              "english": "Is the airport far away?",
+              "teaching_note": "A short spoken example using 远."
+            },
+            {
+              "id": "ex-484-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我家离学校很远。",
+              "pinyin": "wǒ jiā lí xuéxiào hěn yuǎn.",
+              "english": "My home is far from school.",
+              "teaching_note": "A simple written example using 远."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 484
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-499",
+          "hanzi": "左",
+          "pinyin": "zuǒ",
+          "meaning_en": "left; left-hand side",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-499-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "往左走。",
+              "pinyin": "wǎng zuǒ zǒu.",
+              "english": "Go left.",
+              "teaching_note": "A short spoken example using 左."
+            },
+            {
+              "id": "ex-499-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "书店在路的左边。",
+              "pinyin": "shūdiàn zài lù de zuǒbian.",
+              "english": "The bookshop is on the left side of the road.",
+              "teaching_note": "A simple written example using 左."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 499
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-500",
+          "hanzi": "左边",
+          "pinyin": "zuǒbian",
+          "meaning_en": "left side; to the left",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-500-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "学校在左边吗？",
+              "pinyin": "xuéxiào zài zuǒbian ma?",
+              "english": "Is the school on the left?",
+              "teaching_note": "A short spoken example using 左边."
+            },
+            {
+              "id": "ex-500-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医院左边有一家药店。",
+              "pinyin": "yīyuàn zuǒbian yǒu yì jiā yàodiàn.",
+              "english": "There is a pharmacy to the left of the hospital.",
+              "teaching_note": "A simple written example using 左边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 500
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-011",
+          "hanzi": "边",
+          "pinyin": "biān",
+          "meaning_en": "side; edge",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-011-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你来这边坐吧。",
+              "pinyin": "nǐ lái zhèbiān zuò ba.",
+              "english": "Come sit over here.",
+              "teaching_note": "Short beginner-level description illustrating 边 in context."
+            },
+            {
+              "id": "ex-011-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在那边。",
+              "pinyin": "xuéxiào zài nàbiān.",
+              "english": "The school is over there.",
+              "teaching_note": "School or study context showing 边 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 11
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+        },
+        {
+          "id": "w-066",
+          "hanzi": "国",
+          "pinyin": "guó",
+          "meaning_en": "country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-066-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "中国是一个大国。",
+              "pinyin": "Zhōngguó shì yí ge dàguó.",
+              "english": "China is a large country.",
+              "teaching_note": "大国 means a large or major country; 个 is a general classifier."
+            },
+            {
+              "id": "ex-066-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我哥哥在外国工作。",
+              "pinyin": "wǒ gēge zài wàiguó gōngzuò.",
+              "english": "My older brother works abroad.",
+              "teaching_note": "外国 (“foreign country/abroad”) is a common compound containing 国."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 66
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-080",
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "meaning_en": "after; behind",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-080-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐在你后边。",
+              "pinyin": "wǒ zuò zài nǐ hòubian.",
+              "english": "I am sitting behind you.",
+              "teaching_note": "后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker."
+            },
+            {
+              "id": "ex-080-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们下课后去书店。",
+              "pinyin": "wǒmen xiàkè hòu qù shūdiàn.",
+              "english": "We go to the bookstore after class.",
+              "teaching_note": "School or study context showing 后 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 80
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Relative positions",
+        "explanation": "Place 旁边 (pángbiān), 左边 (zuǒbian), 右边 (yòubian) or another position term after a landmark to describe a location.",
+        "example_id": "ex-356-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Distance from a landmark",
+        "explanation": "离 (lí) introduces a reference point; combine it with 近 (jìn) or 远 (yuǎn).",
+        "example_id": "ex-371-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-356-1",
+      "ex-371-1",
+      "ex-389-1",
+      "ex-390-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "The library is upstairs in the building on the right, close to the main gate. The station is outside the school and a little far away."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: My book is under the table. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我的书在桌子下面。 (Wǒ de shū zài zhuōzi xiàmiàn.)",
+          "answer": "我的书在桌子下面。 (Wǒ de shū zài zhuōzi xiàmiàn.)"
+        },
+        {
+          "id": "recall-356",
+          "kind": "selection",
+          "prompt": "Which expression means “behind”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "后面",
+              "pinyin": "hòumiàn",
+              "meaning_en": "behind; at the back"
+            },
+            {
+              "id": "b",
+              "hanzi": "近",
+              "pinyin": "jìn",
+              "meaning_en": "near; close"
+            },
+            {
+              "id": "c",
+              "hanzi": "离",
+              "pinyin": "lí",
+              "meaning_en": "from; away from (distance)"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 后面 (hòumiàn) with this meaning."
+        },
+        {
+          "id": "recall-371",
+          "kind": "selection",
+          "prompt": "Which expression means “near”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "后面",
+              "pinyin": "hòumiàn",
+              "meaning_en": "behind; at the back"
+            },
+            {
+              "id": "c",
+              "hanzi": "离",
+              "pinyin": "lí",
+              "meaning_en": "from; away from (distance)"
+            },
+            {
+              "id": "a",
+              "hanzi": "近",
+              "pinyin": "jìn",
+              "meaning_en": "near; close"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 近 (jìn) with this meaning."
+        },
+        {
+          "id": "recall-389",
+          "kind": "selection",
+          "prompt": "Which expression means “from”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "近",
+              "pinyin": "jìn",
+              "meaning_en": "near; close"
+            },
+            {
+              "id": "a",
+              "hanzi": "离",
+              "pinyin": "lí",
+              "meaning_en": "from; away from (distance)"
+            },
+            {
+              "id": "b",
+              "hanzi": "后面",
+              "pinyin": "hòumiàn",
+              "meaning_en": "behind; at the back"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 离 (lí) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Describing Location and Distance",
+        "context_en": "Locate people and objects in buildings and compare relative positions.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，教室在几楼？",
+            "pinyin": "Qǐngwèn, jiàoshì zài jǐ lóu?",
+            "english": "Excuse me, which floor is the classroom on?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "在二楼。门就在左边。",
+            "pinyin": "Zài èr lóu. Mén jiù zài zuǒbian.",
+            "english": "On the second floor. The door is on the left."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "从这儿走远吗？",
+            "pinyin": "Cóng zhèr zǒu yuǎn ma?",
+            "english": "Is it far to walk from here?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不远，就在洗手间旁边，办公室前面。",
+            "pinyin": "Bù yuǎn, jiù zài xǐshǒujiān pángbiān, bàngōngshì qiánmiàn.",
+            "english": "Not far, next to the restroom, in front of the office."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Relative positions",
+          "explanation_en": "Place 旁边 (pángbiān), 左边 (zuǒbian), 右边 (yòubian) or another position term after a landmark to describe a location.",
+          "formula_en": "Landmark + position + 有/是 + place",
+          "examples": [
+            {
+              "hanzi": "我的书在桌子下面。",
+              "pinyin": "Wǒ de shū zài zhuōzi xiàmiàn.",
+              "english": "My book is under the table."
+            },
+            {
+              "hanzi": "在二楼。门就在左边。",
+              "pinyin": "Zài èr lóu. Mén jiù zài zuǒbian.",
+              "english": "On the second floor. The door is on the left."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Distance from a landmark",
+          "explanation_en": "离 (lí) introduces a reference point; combine it with 近 (jìn) or 远 (yuǎn).",
+          "formula_en": "Place A + 离 + place B + 近/远",
+          "examples": [
+            {
+              "hanzi": "我们家离学校很近。",
+              "pinyin": "Wǒmen jiā lí xuéxiào hěn jìn.",
+              "english": "Our home is close to the school."
+            },
+            {
+              "hanzi": "不远，就在洗手间旁边，办公室前面。",
+              "pinyin": "Bù yuǎn, jiù zài xǐshǒujiān pángbiān, bàngōngshì qiánmiàn.",
+              "english": "Not far, next to the restroom, in front of the office."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "请问，教室在几楼？",
+          "pinyin": "Qǐngwèn, jiàoshì zài jǐ lóu?",
+          "english": "Excuse me, which floor is the classroom on?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: My book is under the table.",
+            "model_answer": {
+              "hanzi": "我的书在桌子下面。",
+              "pinyin": "Wǒ de shū zài zhuōzi xiàmiàn.",
+              "english": "My book is under the table."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Our home is close to the school.",
+            "model_answer": {
+              "hanzi": "我们家离学校很近。",
+              "pinyin": "Wǒmen jiā lí xuéxiào hěn jìn.",
+              "english": "Our home is close to the school."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Is it far to walk from here?",
+            "model_answer": {
+              "hanzi": "从这儿走远吗？",
+              "pinyin": "Cóng zhèr zǒu yuǎn ma?",
+              "english": "Is it far to walk from here?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Describing Location and Distance — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "学校里面有两座楼。第一座楼比较高，后面那座楼比较小。",
+            "pinyin": "Xuéxiào lǐmiàn yǒu liǎng zuò lóu. Dì yī zuò lóu bǐjiào gāo, hòumiàn nà zuò lóu bǐjiào xiǎo.",
+            "english": "There are two buildings inside the school. The first is taller, and the one behind is smaller."
+          },
+          {
+            "hanzi": "图书馆在右边的楼上面，离大门很近；车站在学校外面，离这儿有点儿远。",
+            "pinyin": "Túshūguǎn zài yòubian de lóu shàngmiàn, lí dà mén hěn jìn; chēzhàn zài xuéxiào wàimiàn, lí zhèr yǒudiǎnr yuǎn.",
+            "english": "The library is upstairs in the building on the right, close to the main gate. The station is outside the school and a little far away."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "There are two buildings inside the school. The first is taller, and the one behind is smaller."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "The library is upstairs in the building on the right, close to the main gate. The station is outside the school and a little far away."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: My book is under the table.",
+          "model_answer": {
+            "hanzi": "我的书在桌子下面。",
+            "pinyin": "Wǒ de shū zài zhuōzi xiàmiàn.",
+            "english": "My book is under the table."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Our home is close to the school.",
+          "model_answer": {
+            "hanzi": "我们家离学校很近。",
+            "pinyin": "Wǒmen jiā lí xuéxiào hěn jìn.",
+            "english": "Our home is close to the school."
+          }
+        }
+      ],
+      "common_pitfall": "Do not confuse 近 (jìn), near, with 进 (jìn), enter. They have the same pinyin but different written characters and functions.",
+      "pronunciation_focus": "Contrast 左 (zuǒ), third tone, and 右 (yòu), fourth tone; 里面 (lǐmiàn) has two full-toned syllables.",
+      "review": {
+        "can_do": [
+          "Use 旁边 (pángbiān), 前面 (qiánmiàn) and 后面 (hòumiàn).",
+          "Ask whether a place is near or far.",
+          "Locate a place above, below or inside another."
+        ],
+        "entry_ids": [
+          356,
+          371,
+          389,
+          390,
+          391,
+          403,
+          413,
+          419,
+          426,
+          447,
+          459,
+          481,
+          482,
+          484,
+          499,
+          500
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-describing-location-and-distance--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Relative positions",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-describing-location-and-distance--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Distance from a landmark",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: My book is under the table.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-describing-location-and-distance--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Our home is close to the school.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-describing-location-and-distance--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Is it far to walk from here?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-describing-location-and-distance--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: My book is under the table.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-describing-location-and-distance--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Our home is close to the school.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-location-and-distance--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-describing-location-and-distance--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-describing-location-and-distance--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: My book is under the table. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-describing-location-and-distance--question-recall-356",
+            "kind": "practice",
+            "label": "Which expression means “behind”?",
+            "optional": true,
+            "target_id": "recall-356"
+          },
+          {
+            "id": "topic-describing-location-and-distance--question-recall-371",
+            "kind": "practice",
+            "label": "Which expression means “near”?",
+            "optional": true,
+            "target_id": "recall-371"
+          },
+          {
+            "id": "topic-describing-location-and-distance--question-recall-389",
+            "kind": "practice",
+            "label": "Which expression means “from”?",
+            "optional": true,
+            "target_id": "recall-389"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 50
+}

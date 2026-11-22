@@ -1,0 +1,742 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-talking-about-meanings-and-situations",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About Meanings and Situations",
+    "subtitle": "Questions, events and what words mean",
+    "description": "Ask about a word’s meaning and explain an everyday situation or problem.",
+    "slug": "talking-about-meanings-and-situations"
+  },
+  "classification": {
+    "primary_topic_id": "abstract-concepts",
+    "topic_ids": [
+      "abstract-concepts"
+    ],
+    "tags": [
+      "questions",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Ask what 意思 (yìsi) means in context.",
+    "Describe a matter or situation with 事情 (shìqing).",
+    "Use familiar words to request a clear explanation."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "于": "Characters:于",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "你": "Characters:你",
+    "例": "Characters:例",
+    "候": "Characters:候",
+    "华": "Characters:华",
+    "去": "Characters:去",
+    "句": "Characters:句",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "告": "Characters:告",
+    "地": "Characters:地",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "它": "Characters:它",
+    "小": "Characters:小",
+    "师": "Characters:师",
+    "很": "Characters:很",
+    "思": "Characters:思",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "然": "Characters:然",
+    "爱": "Characters:爱",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "终": "Characters:终",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "要": "Characters:要",
+    "解": "Characters:解",
+    "认": "Characters:认",
+    "诉": "Characters:诉",
+    "词": "Characters:词",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "这": "Characters:这",
+    "释": "Characters:释",
+    "重": "Characters:重",
+    "问": "Characters:问",
+    "题": "Characters:题"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask about a word’s meaning and explain an everyday situation or problem.",
+      "focus": "Ask what 意思 (yìsi) means in context."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-432",
+          "hanzi": "事情",
+          "pinyin": "shìqing",
+          "meaning_en": "matter; affair; thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "examples": [
+            {
+              "id": "ex-432-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有什么事情吗？",
+              "pinyin": "nǐ yǒu shénme shìqing ma?",
+              "english": "Do you need something?",
+              "teaching_note": "A short spoken example using 事情."
+            },
+            {
+              "id": "ex-432-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "有事情的时候，可以给我打电话。",
+              "pinyin": "yǒu shìqing de shíhou, kěyǐ gěi wǒ dǎ diànhuà.",
+              "english": "When something comes up, you can call me.",
+              "teaching_note": "A simple written example using 事情."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 432
+            }
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-474",
+          "hanzi": "意思",
+          "pinyin": "yìsi",
+          "meaning_en": "meaning; idea; interest",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "examples": [
+            {
+              "id": "ex-474-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是什么意思？",
+              "pinyin": "zhè shì shénme yìsi?",
+              "english": "What does this mean?",
+              "teaching_note": "A short spoken example using 意思."
+            },
+            {
+              "id": "ex-474-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师告诉我们这个词的意思。",
+              "pinyin": "lǎoshī gàosu wǒmen zhège cí de yìsi.",
+              "english": "The teacher tells us the meaning of this word.",
+              "teaching_note": "A simple written example using 意思."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 474
+            }
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-187",
+          "hanzi": "事",
+          "pinyin": "shì",
+          "meaning_en": "matter; thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "examples": [
+            {
+              "id": "ex-187-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一件事要说。",
+              "pinyin": "wǒ yǒu yí jiàn shì yào shuō.",
+              "english": "I have something to say.",
+              "teaching_note": "件 can count matters or incidents; 事 means a matter or thing to discuss."
+            },
+            {
+              "id": "ex-187-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有事的时候，可以给老师打电话。",
+              "pinyin": "yǒu shì de shíhou, kěyǐ gěi lǎoshī dǎ diànhuà.",
+              "english": "If something comes up, you can call the teacher.",
+              "teaching_note": "School or study context showing 事 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 187
+            }
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb."
+        },
+        {
+          "id": "w-220",
+          "hanzi": "问题",
+          "pinyin": "wèntí",
+          "meaning_en": "question; problem",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "abstract-concepts",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-220-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个问题。",
+              "pinyin": "wǒ yǒu yí ge wèntí.",
+              "english": "I have a question.",
+              "teaching_note": "Short beginner-level description illustrating 问题 in context."
+            },
+            {
+              "id": "ex-220-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有问题可以问老师。",
+              "pinyin": "yǒu wèntí kěyǐ wèn lǎoshī.",
+              "english": "If you have questions, you can ask the teacher.",
+              "teaching_note": "School or study context showing 问题 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 220
+            }
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Asking for a meaning",
+        "explanation": "Use 什么意思 (shénme yìsi) to ask what a word or phrase means. 意思 (yìsi) has other conversational meanings, but here it is about meaning.",
+        "example_id": "ex-432-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Discussing a matter",
+        "explanation": "事情 (shìqing) names a matter or event, often with the classifier 件 (jiàn).",
+        "example_id": "ex-474-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-432-1",
+      "ex-474-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "After class, Xiaohua asks the teacher. The teacher carefully explains the matter, and Xiaohua finally understands."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I do not understand what this sentence means. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我不明白这句话的意思。 (Wǒ bù míngbai zhè jù huà de yìsi.)",
+          "answer": "我不明白这句话的意思。 (Wǒ bù míngbai zhè jù huà de yìsi.)"
+        },
+        {
+          "id": "recall-432",
+          "kind": "selection",
+          "prompt": "Which expression means “matter”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "事情",
+              "pinyin": "shìqing",
+              "meaning_en": "matter; affair; thing"
+            },
+            {
+              "id": "b",
+              "hanzi": "意思",
+              "pinyin": "yìsi",
+              "meaning_en": "meaning; idea; interest"
+            },
+            {
+              "id": "c",
+              "hanzi": "爱",
+              "pinyin": "ài",
+              "meaning_en": "love; like"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 事情 (shìqing) with this meaning."
+        },
+        {
+          "id": "recall-474",
+          "kind": "selection",
+          "prompt": "Which expression means “meaning”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "事情",
+              "pinyin": "shìqing",
+              "meaning_en": "matter; affair; thing"
+            },
+            {
+              "id": "c",
+              "hanzi": "爱",
+              "pinyin": "ài",
+              "meaning_en": "love; like"
+            },
+            {
+              "id": "a",
+              "hanzi": "意思",
+              "pinyin": "yìsi",
+              "meaning_en": "meaning; idea; interest"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 意思 (yìsi) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About Meanings and Situations",
+        "context_en": "Ask about a word’s meaning and explain an everyday situation or problem.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "不好意思，我有一件事情想问你。",
+            "pinyin": "Bù hǎoyìsi, wǒ yǒu yí jiàn shìqing xiǎng wèn nǐ.",
+            "english": "Excuse me, I have something to ask you."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好的，是什么事情？",
+            "pinyin": "Hǎo de, shì shénme shìqing?",
+            "english": "Okay, what is it about?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这个词是什么意思？",
+            "pinyin": "Zhè ge cí shì shénme yìsi?",
+            "english": "What does this word mean?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我告诉你它的意思，然后一起看看例子。",
+            "pinyin": "Wǒ gàosu nǐ tā de yìsi, ránhòu yìqǐ kànkan lìzi.",
+            "english": "I’ll tell you what it means, and then we’ll look at examples together."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Asking for a meaning",
+          "explanation_en": "Use 什么意思 (shénme yìsi) to ask what a word or phrase means. 意思 (yìsi) has other conversational meanings, but here it is about meaning.",
+          "formula_en": "Word/phrase + 是什么意思?",
+          "examples": [
+            {
+              "hanzi": "我不明白这句话的意思。",
+              "pinyin": "Wǒ bù míngbai zhè jù huà de yìsi.",
+              "english": "I do not understand what this sentence means."
+            },
+            {
+              "hanzi": "好的，是什么事情？",
+              "pinyin": "Hǎo de, shì shénme shìqing?",
+              "english": "Okay, what is it about?"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Discussing a matter",
+          "explanation_en": "事情 (shìqing) names a matter or event, often with the classifier 件 (jiàn).",
+          "formula_en": "一件 + 事情",
+          "examples": [
+            {
+              "hanzi": "这件事情很重要。",
+              "pinyin": "Zhè jiàn shìqing hěn zhòngyào.",
+              "english": "This matter is important."
+            },
+            {
+              "hanzi": "我告诉你它的意思，然后一起看看例子。",
+              "pinyin": "Wǒ gàosu nǐ tā de yìsi, ránhòu yìqǐ kànkan lìzi.",
+              "english": "I’ll tell you what it means, and then we’ll look at examples together."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "不好意思，我有一件事情想问你。",
+          "pinyin": "Bù hǎoyìsi, wǒ yǒu yí jiàn shìqing xiǎng wèn nǐ.",
+          "english": "Excuse me, I have something to ask you."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I do not understand what this sentence means.",
+            "model_answer": {
+              "hanzi": "我不明白这句话的意思。",
+              "pinyin": "Wǒ bù míngbai zhè jù huà de yìsi.",
+              "english": "I do not understand what this sentence means."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: This matter is important.",
+            "model_answer": {
+              "hanzi": "这件事情很重要。",
+              "pinyin": "Zhè jiàn shìqing hěn zhòngyào.",
+              "english": "This matter is important."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: What does this word mean?",
+            "model_answer": {
+              "hanzi": "这个词是什么意思？",
+              "pinyin": "Zhè ge cí shì shénme yìsi?",
+              "english": "What does this word mean?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Talking About Meanings and Situations — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "今天上课的时候，老师说了一个新词。小华不明白这个词的意思。",
+            "pinyin": "Jīntiān shàngkè de shíhou, lǎoshī shuō le yí ge xīn cí. Xiǎo Huá bù míngbai zhè ge cí de yìsi.",
+            "english": "During class today, the teacher used a new word. Xiaohua did not understand what it meant."
+          },
+          {
+            "hanzi": "下课以后，小华去问老师。老师认真地解释了这件事情，小华终于明白了。",
+            "pinyin": "Xiàkè yǐhòu, Xiǎo Huá qù wèn lǎoshī. Lǎoshī rènzhēn de jiěshì le zhè jiàn shìqing, Xiǎo Huá zhōngyú míngbai le.",
+            "english": "After class, Xiaohua asks the teacher. The teacher carefully explains the matter, and Xiaohua finally understands."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "During class today, the teacher used a new word. Xiaohua did not understand what it meant."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "After class, Xiaohua asks the teacher. The teacher carefully explains the matter, and Xiaohua finally understands."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I do not understand what this sentence means.",
+          "model_answer": {
+            "hanzi": "我不明白这句话的意思。",
+            "pinyin": "Wǒ bù míngbai zhè jù huà de yìsi.",
+            "english": "I do not understand what this sentence means."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: This matter is important.",
+          "model_answer": {
+            "hanzi": "这件事情很重要。",
+            "pinyin": "Zhè jiàn shìqing hěn zhòngyào.",
+            "english": "This matter is important."
+          }
+        }
+      ],
+      "common_pitfall": "意思 (yìsi) can mean meaning or intention and can appear in 有意思 (yǒu yìsi); do not assume all these expressions are interchangeable.",
+      "pronunciation_focus": "The final syllable of 意思 (yìsi) and 事情 (shìqing) is normally neutral in everyday conversation.",
+      "review": {
+        "can_do": [
+          "Ask what 意思 (yìsi) means in context.",
+          "Describe a matter or situation with 事情 (shìqing).",
+          "Use familiar words to request a clear explanation."
+        ],
+        "entry_ids": [
+          432,
+          474
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Asking for a meaning",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Discussing a matter",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I do not understand what this sentence means.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: This matter is important.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: What does this word mean?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I do not understand what this sentence means.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: This matter is important.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-meanings-and-situations--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-meanings-and-situations--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I do not understand what this sentence means. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--question-recall-432",
+            "kind": "practice",
+            "label": "Which expression means “matter”?",
+            "optional": true,
+            "target_id": "recall-432"
+          },
+          {
+            "id": "topic-talking-about-meanings-and-situations--question-recall-474",
+            "kind": "practice",
+            "label": "Which expression means “meaning”?",
+            "optional": true,
+            "target_id": "recall-474"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 24
+}

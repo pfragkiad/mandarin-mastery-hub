@@ -1,0 +1,1454 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-entering-leaving-and-returning",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Places, Position & Direction — Part 2: Entering, Leaving and Returning",
+    "subtitle": "Direction complements in everyday actions",
+    "description": "Distinguish movement toward and away from the speaker when entering, exiting or returning.",
+    "slug": "entering-leaving-and-returning"
+  },
+  "classification": {
+    "primary_topic_id": "places-directions",
+    "topic_ids": [
+      "places-directions"
+    ],
+    "tags": [
+      "direction-complements-in-everyday-actions",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "position-direction",
+    "subtopic_ids": [
+      "position-direction"
+    ]
+  },
+  "learning_objectives": [
+    "Use 进来 (jìnlái) and 进去 (jìnqù) appropriately.",
+    "Contrast 出来 (chūlái) with 出去 (chūqù).",
+    "Talk about returning and moving up or down."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "出": "Characters:出",
+    "前": "Characters:前",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "口": "Characters:口",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "快": "Characters:快",
+    "我": "Characters:我",
+    "找": "Characters:找",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "朋": "Characters:朋",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "林": "Characters:林",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "楼": "Characters:楼",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "站": "Characters:站",
+    "等": "Characters:等",
+    "老": "Characters:老",
+    "自": "Characters:自",
+    "要": "Characters:要",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "跟": "Characters:跟",
+    "路": "Characters:路",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "雨": "Characters:雨",
+    "面": "Characters:面"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Distinguish movement toward and away from the speaker when entering, exiting or returning.",
+      "focus": "Use 进来 (jìnlái) and 进去 (jìnqù) appropriately."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-316",
+          "hanzi": "出",
+          "pinyin": "chū",
+          "meaning_en": "to go out; to emerge",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-316-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你什么时候出门？",
+              "pinyin": "nǐ shénme shíhou chūmén?",
+              "english": "When are you leaving home?",
+              "teaching_note": "A short spoken example using 出."
+            },
+            {
+              "id": "ex-316-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们出了教室。",
+              "pinyin": "xuéshēngmen chū le jiàoshì.",
+              "english": "The students left the classroom.",
+              "teaching_note": "出 is used independently as a verb, not only inside 出门 or 出来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 316
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-318",
+          "hanzi": "出来",
+          "pinyin": "chūlái",
+          "meaning_en": "to come out",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-318-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你出来一下！",
+              "pinyin": "nǐ chūlái yíxià!",
+              "english": "Come out for a moment!",
+              "teaching_note": "A short spoken example using 出来."
+            },
+            {
+              "id": "ex-318-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师从教室里出来了。",
+              "pinyin": "lǎoshī cóng jiàoshì lǐ chūlái le.",
+              "english": "The teacher came out of the classroom.",
+              "teaching_note": "A simple written example using 出来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 318
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-320",
+          "hanzi": "出去",
+          "pinyin": "chūqù",
+          "meaning_en": "to go out; to go outside",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-320-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们出去玩吧！",
+              "pinyin": "wǒmen chūqù wán ba!",
+              "english": "Let's go out and have fun!",
+              "teaching_note": "A short spoken example using 出去."
+            },
+            {
+              "id": "ex-320-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨的时候，学生不出去。",
+              "pinyin": "xià yǔ de shíhou, xuéshēng bù chūqù.",
+              "english": "When it rains, the students do not go outside.",
+              "teaching_note": "A simple written example using 出去."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 320
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-347",
+          "hanzi": "过",
+          "pinyin": "guò",
+          "meaning_en": "to cross; to pass through; to spend (time)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-347-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们过这条路吧。",
+              "pinyin": "wǒmen guò zhè tiáo lù ba.",
+              "english": "Let's cross this road.",
+              "teaching_note": "This 过 (guò) is a full verb (cross/pass), not the experiential particle at ID 351."
+            },
+            {
+              "id": "ex-347-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我每天上学都要过这条路。",
+              "pinyin": "wǒ měi tiān shàngxué dōu yào guò zhè tiáo lù.",
+              "english": "I have to cross this road every day on my way to school.",
+              "teaching_note": "This 过 (guò) is a full verb (cross/pass), not the experiential particle at ID 351."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 347
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "This 过 (guò) is a full verb (cross/pass), not the experiential particle at ID 351."
+        },
+        {
+          "id": "w-348",
+          "hanzi": "过来",
+          "pinyin": "guòlái",
+          "meaning_en": "to come over; to come here",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-348-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你过来一下。",
+              "pinyin": "nǐ guòlái yíxià.",
+              "english": "Come over for a moment.",
+              "teaching_note": "A short spoken example using 过来."
+            },
+            {
+              "id": "ex-348-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师叫学生过来。",
+              "pinyin": "lǎoshī jiào xuéshēng guòlái.",
+              "english": "The teacher calls the student over.",
+              "teaching_note": "A simple written example using 过来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 348
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-350",
+          "hanzi": "过去",
+          "pinyin": "guòqù",
+          "meaning_en": "to go over; to go there",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-350-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你过去看看。",
+              "pinyin": "nǐ guòqù kànkan.",
+              "english": "Go over there and take a look.",
+              "teaching_note": "This 过去 (guòqù) refers to movement toward a location, not the noun “the past.”"
+            },
+            {
+              "id": "ex-350-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她走过去跟朋友说话。",
+              "pinyin": "tā zǒu guòqù gēn péngyou shuōhuà.",
+              "english": "She walked over to speak with her friend.",
+              "teaching_note": "This 过去 (guòqù) refers to movement toward a location, not the noun “the past.”"
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 350
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "This 过去 (guòqù) refers to movement toward a location, not the noun “the past.”"
+        },
+        {
+          "id": "w-361",
+          "hanzi": "回来",
+          "pinyin": "huílái",
+          "meaning_en": "to come back; to return here",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-361-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你什么时候回来？",
+              "pinyin": "nǐ shénme shíhou huílái?",
+              "english": "When are you coming back?",
+              "teaching_note": "A short spoken example using 回来."
+            },
+            {
+              "id": "ex-361-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸每天晚上七点回来。",
+              "pinyin": "bàba měi tiān wǎnshang qī diǎn huílái.",
+              "english": "Dad comes back at seven every evening.",
+              "teaching_note": "A simple written example using 回来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 361
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-362",
+          "hanzi": "回去",
+          "pinyin": "huíqù",
+          "meaning_en": "to go back; to return there",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-362-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们现在回去吧。",
+              "pinyin": "wǒmen xiànzài huíqù ba.",
+              "english": "Let's go back now.",
+              "teaching_note": "A short spoken example using 回去."
+            },
+            {
+              "id": "ex-362-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们下课就回去了。",
+              "pinyin": "xuéshēngmen xiàkè jiù huíqù le.",
+              "english": "The students went back as soon as class ended.",
+              "teaching_note": "A simple written example using 回去."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 362
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-370",
+          "hanzi": "进",
+          "pinyin": "jìn",
+          "meaning_en": "to enter; to go in",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-370-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我可以进来吗？",
+              "pinyin": "wǒ kěyǐ jìnlái ma?",
+              "english": "May I come in?",
+              "teaching_note": "A short spoken example using 进."
+            },
+            {
+              "id": "ex-370-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上午九点，学生们进了教室，开始上课。",
+              "pinyin": "shàngwǔ jiǔ diǎn, xuéshēngmen jìn le jiàoshì, kāishǐ shàngkè.",
+              "english": "At nine in the morning, the students entered the classroom and began class.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 370
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-372",
+          "hanzi": "进来",
+          "pinyin": "jìnlái",
+          "meaning_en": "to come in",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-372-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "快进来！",
+              "pinyin": "kuài jìnlái!",
+              "english": "Come in quickly!",
+              "teaching_note": "A short spoken example using 进来."
+            },
+            {
+              "id": "ex-372-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师请学生进来坐。",
+              "pinyin": "lǎoshī qǐng xuéshēng jìnlái zuò.",
+              "english": "The teacher asked the student to come in and sit down.",
+              "teaching_note": "A simple written example using 进来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 372
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-373",
+          "hanzi": "进去",
+          "pinyin": "jìnqù",
+          "meaning_en": "to go in",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-373-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我可以进去吗？",
+              "pinyin": "wǒ kěyǐ jìnqù ma?",
+              "english": "May I go in?",
+              "teaching_note": "A short spoken example using 进去."
+            },
+            {
+              "id": "ex-373-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小猫从门口跑进去了。",
+              "pinyin": "xiǎo māo cóng ménkǒu pǎo jìnqù le.",
+              "english": "The kitten ran in through the doorway.",
+              "teaching_note": "A simple written example using 进去."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 373
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-425",
+          "hanzi": "上来",
+          "pinyin": "shànglái",
+          "meaning_en": "to come up",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-425-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你上来吧！",
+              "pinyin": "nǐ shànglái ba!",
+              "english": "Come up here!",
+              "teaching_note": "A short spoken example using 上来."
+            },
+            {
+              "id": "ex-425-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸从一楼走上来了。",
+              "pinyin": "bàba cóng yī lóu zǒu shànglái le.",
+              "english": "Dad walked up from the first floor.",
+              "teaching_note": "A simple written example using 上来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 425
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-427",
+          "hanzi": "上去",
+          "pinyin": "shàngqù",
+          "meaning_en": "to go up",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-427-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你上去看看。",
+              "pinyin": "nǐ shàngqù kànkan.",
+              "english": "Go upstairs and take a look.",
+              "teaching_note": "A short spoken example using 上去."
+            },
+            {
+              "id": "ex-427-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他走上去找老师。",
+              "pinyin": "tā zǒu shàngqù zhǎo lǎoshī.",
+              "english": "He went upstairs to look for the teacher.",
+              "teaching_note": "A simple written example using 上去."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 427
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-458",
+          "hanzi": "下来",
+          "pinyin": "xiàlái",
+          "meaning_en": "to come down",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-458-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你快下来！",
+              "pinyin": "nǐ kuài xiàlái!",
+              "english": "Come down quickly!",
+              "teaching_note": "A short spoken example using 下来."
+            },
+            {
+              "id": "ex-458-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小猫从桌子上下来了。",
+              "pinyin": "xiǎo māo cóng zhuōzi shàng xiàlái le.",
+              "english": "The kitten came down from the table.",
+              "teaching_note": "A simple written example using 下来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 458
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-460",
+          "hanzi": "下去",
+          "pinyin": "xiàqù",
+          "meaning_en": "to go down; to descend",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-460-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你下去看看。",
+              "pinyin": "nǐ xiàqù kànkan.",
+              "english": "Go down and have a look.",
+              "teaching_note": "A short spoken example using 下去."
+            },
+            {
+              "id": "ex-460-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们从楼上下去了。",
+              "pinyin": "xuéshēngmen cóng lóushàng xiàqù le.",
+              "english": "The students went downstairs.",
+              "teaching_note": "A simple written example using 下去."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 460
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-011",
+          "hanzi": "边",
+          "pinyin": "biān",
+          "meaning_en": "side; edge",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-011-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你来这边坐吧。",
+              "pinyin": "nǐ lái zhèbiān zuò ba.",
+              "english": "Come sit over here.",
+              "teaching_note": "Short beginner-level description illustrating 边 in context."
+            },
+            {
+              "id": "ex-011-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在那边。",
+              "pinyin": "xuéxiào zài nàbiān.",
+              "english": "The school is over there.",
+              "teaching_note": "School or study context showing 边 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 11
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+        },
+        {
+          "id": "w-066",
+          "hanzi": "国",
+          "pinyin": "guó",
+          "meaning_en": "country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-066-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "中国是一个大国。",
+              "pinyin": "Zhōngguó shì yí ge dàguó.",
+              "english": "China is a large country.",
+              "teaching_note": "大国 means a large or major country; 个 is a general classifier."
+            },
+            {
+              "id": "ex-066-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我哥哥在外国工作。",
+              "pinyin": "wǒ gēge zài wàiguó gōngzuò.",
+              "english": "My older brother works abroad.",
+              "teaching_note": "外国 (“foreign country/abroad”) is a common compound containing 国."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 66
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-080",
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "meaning_en": "after; behind",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-080-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐在你后边。",
+              "pinyin": "wǒ zuò zài nǐ hòubian.",
+              "english": "I am sitting behind you.",
+              "teaching_note": "后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker."
+            },
+            {
+              "id": "ex-080-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们下课后去书店。",
+              "pinyin": "wǒmen xiàkè hòu qù shūdiàn.",
+              "english": "We go to the bookstore after class.",
+              "teaching_note": "School or study context showing 后 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 80
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Movement toward the reference point",
+        "explanation": "来 (lái) signals movement toward the speaker or chosen reference point: 进来 (jìnlái), 出来 (chūlái), 回来 (huílái).",
+        "example_id": "ex-316-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Movement away from the reference point",
+        "explanation": "去 (qù) signals movement away from the speaker or chosen reference point: 进去 (jìnqù), 出去 (chūqù), 回去 (huíqù).",
+        "example_id": "ex-318-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-316-1",
+      "ex-318-1",
+      "ex-320-1",
+      "ex-347-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "A friend calls from downstairs, “Come down quickly!” Xiaolin comes downstairs with his bag and leaves with the friend."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Please come over and help me. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 请你过来帮我一下。 (Qǐng nǐ guòlái bāng wǒ yíxià.)",
+          "answer": "请你过来帮我一下。 (Qǐng nǐ guòlái bāng wǒ yíxià.)"
+        },
+        {
+          "id": "recall-316",
+          "kind": "selection",
+          "prompt": "Which expression means “to go out”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "出",
+              "pinyin": "chū",
+              "meaning_en": "to go out; to emerge"
+            },
+            {
+              "id": "b",
+              "hanzi": "出来",
+              "pinyin": "chūlái",
+              "meaning_en": "to come out"
+            },
+            {
+              "id": "c",
+              "hanzi": "出去",
+              "pinyin": "chūqù",
+              "meaning_en": "to go out; to go outside"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 出 (chū) with this meaning."
+        },
+        {
+          "id": "recall-318",
+          "kind": "selection",
+          "prompt": "Which expression means “to come out”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "出",
+              "pinyin": "chū",
+              "meaning_en": "to go out; to emerge"
+            },
+            {
+              "id": "c",
+              "hanzi": "出去",
+              "pinyin": "chūqù",
+              "meaning_en": "to go out; to go outside"
+            },
+            {
+              "id": "a",
+              "hanzi": "出来",
+              "pinyin": "chūlái",
+              "meaning_en": "to come out"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 出来 (chūlái) with this meaning."
+        },
+        {
+          "id": "recall-320",
+          "kind": "selection",
+          "prompt": "Which expression means “to go out”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "出来",
+              "pinyin": "chūlái",
+              "meaning_en": "to come out"
+            },
+            {
+              "id": "a",
+              "hanzi": "出去",
+              "pinyin": "chūqù",
+              "meaning_en": "to go out; to go outside"
+            },
+            {
+              "id": "b",
+              "hanzi": "出",
+              "pinyin": "chū",
+              "meaning_en": "to go out; to emerge"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 出去 (chūqù) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Entering, Leaving and Returning",
+        "context_en": "Distinguish movement toward and away from the speaker when entering, exiting or returning.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你在里面吗？我可以进来吗？",
+            "pinyin": "Nǐ zài lǐmiàn ma? Wǒ kěyǐ jìnlái ma?",
+            "english": "Are you inside? May I come in?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "可以，进来吧！我正要出去。",
+            "pinyin": "Kěyǐ, jìnlái ba! Wǒ zhèng yào chūqù.",
+            "english": "Yes, come in! I’m just about to go out."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你什么时候回来？",
+            "pinyin": "Nǐ shénme shíhou huílái?",
+            "english": "When will you come back?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我一会儿就回来。你先上去等我。",
+            "pinyin": "Wǒ yíhuìr jiù huílái. Nǐ xiān shàngqù děng wǒ.",
+            "english": "I’ll be back soon. Go upstairs and wait for me."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Movement toward the reference point",
+          "explanation_en": "来 (lái) signals movement toward the speaker or chosen reference point: 进来 (jìnlái), 出来 (chūlái), 回来 (huílái).",
+          "formula_en": "Movement verb + 来",
+          "examples": [
+            {
+              "hanzi": "请你过来帮我一下。",
+              "pinyin": "Qǐng nǐ guòlái bāng wǒ yíxià.",
+              "english": "Please come over and help me."
+            },
+            {
+              "hanzi": "可以，进来吧！我正要出去。",
+              "pinyin": "Kěyǐ, jìnlái ba! Wǒ zhèng yào chūqù.",
+              "english": "Yes, come in! I’m just about to go out."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Movement away from the reference point",
+          "explanation_en": "去 (qù) signals movement away from the speaker or chosen reference point: 进去 (jìnqù), 出去 (chūqù), 回去 (huíqù).",
+          "formula_en": "Movement verb + 去",
+          "examples": [
+            {
+              "hanzi": "老师走进教室，学生们都站起来。",
+              "pinyin": "Lǎoshī zǒu jìn jiàoshì, xuéshēngmen dōu zhàn qǐlái.",
+              "english": "The teacher walks into the classroom, and all the students stand up."
+            },
+            {
+              "hanzi": "我一会儿就回来。你先上去等我。",
+              "pinyin": "Wǒ yíhuìr jiù huílái. Nǐ xiān shàngqù děng wǒ.",
+              "english": "I’ll be back soon. Go upstairs and wait for me."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你在里面吗？我可以进来吗？",
+          "pinyin": "Nǐ zài lǐmiàn ma? Wǒ kěyǐ jìnlái ma?",
+          "english": "Are you inside? May I come in?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Please come over and help me.",
+            "model_answer": {
+              "hanzi": "请你过来帮我一下。",
+              "pinyin": "Qǐng nǐ guòlái bāng wǒ yíxià.",
+              "english": "Please come over and help me."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: The teacher walks into the classroom, and all the students stand up.",
+            "model_answer": {
+              "hanzi": "老师走进教室，学生们都站起来。",
+              "pinyin": "Lǎoshī zǒu jìn jiàoshì, xuéshēngmen dōu zhàn qǐlái.",
+              "english": "The teacher walks into the classroom, and all the students stand up."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: When will you come back?",
+            "model_answer": {
+              "hanzi": "你什么时候回来？",
+              "pinyin": "Nǐ shénme shíhou huílái?",
+              "english": "When will you come back?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Entering, Leaving and Returning — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小林走出教室，又发现自己的书包没拿。他跑回去，进去拿了书包。",
+            "pinyin": "Xiǎo Lín zǒu chū jiàoshì, yòu fāxiàn zìjǐ de shūbāo méi ná. Tā pǎo huíqù, jìnqù ná le shūbāo.",
+            "english": "Xiaolin leaves the classroom and notices he forgot his schoolbag. He runs back and enters to get it."
+          },
+          {
+            "hanzi": "朋友在楼下叫他：“快下来！”小林拿着包走下来，和朋友一起出门。",
+            "pinyin": "Péngyou zài lóu xià jiào tā: “Kuài xiàlái!” Xiǎo Lín názhe bāo zǒu xiàlái, hé péngyou yìqǐ chūmén.",
+            "english": "A friend calls from downstairs, “Come down quickly!” Xiaolin comes downstairs with his bag and leaves with the friend."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiaolin leaves the classroom and notices he forgot his schoolbag. He runs back and enters to get it."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "A friend calls from downstairs, “Come down quickly!” Xiaolin comes downstairs with his bag and leaves with the friend."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Please come over and help me.",
+          "model_answer": {
+            "hanzi": "请你过来帮我一下。",
+            "pinyin": "Qǐng nǐ guòlái bāng wǒ yíxià.",
+            "english": "Please come over and help me."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: The teacher walks into the classroom, and all the students stand up.",
+          "model_answer": {
+            "hanzi": "老师走进教室，学生们都站起来。",
+            "pinyin": "Lǎoshī zǒu jìn jiàoshì, xuéshēngmen dōu zhàn qǐlái.",
+            "english": "The teacher walks into the classroom, and all the students stand up."
+          }
+        }
+      ],
+      "common_pitfall": "Do not choose 来 (lái) or 去 (qù) solely from English “come” and “go.” Consider the location from which the action is described.",
+      "pronunciation_focus": "Practise the distinction between 出来 (chūlái) and 出去 (chūqù); pay attention to the directional final syllables.",
+      "review": {
+        "can_do": [
+          "Use 进来 (jìnlái) and 进去 (jìnqù) appropriately.",
+          "Contrast 出来 (chūlái) with 出去 (chūqù).",
+          "Talk about returning and moving up or down."
+        ],
+        "entry_ids": [
+          316,
+          318,
+          320,
+          347,
+          348,
+          350,
+          361,
+          362,
+          370,
+          372,
+          373,
+          425,
+          427,
+          458,
+          460
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-entering-leaving-and-returning--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Movement toward the reference point",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Movement away from the reference point",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please come over and help me.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: The teacher walks into the classroom, and all the students stand up.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: When will you come back?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Please come over and help me.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: The teacher walks into the classroom, and all the students stand up.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-entering-leaving-and-returning--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-entering-leaving-and-returning--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Please come over and help me. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--question-recall-316",
+            "kind": "practice",
+            "label": "Which expression means “to go out”?",
+            "optional": true,
+            "target_id": "recall-316"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--question-recall-318",
+            "kind": "practice",
+            "label": "Which expression means “to come out”?",
+            "optional": true,
+            "target_id": "recall-318"
+          },
+          {
+            "id": "topic-entering-leaving-and-returning--question-recall-320",
+            "kind": "practice",
+            "label": "Which expression means “to go out”?",
+            "optional": true,
+            "target_id": "recall-320"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 50
+}

@@ -1,0 +1,1042 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-sharing-opinions-and-feelings",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Qualities, Feelings & Evaluation — Part 2: Sharing Opinions and Feelings",
+    "subtitle": "Interesting activities, mistakes and hopes",
+    "description": "Say whether an activity is interesting, correct a mistake and express a personal hope.",
+    "slug": "sharing-opinions-and-feelings"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "interesting-activities",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "judgments-evaluation",
+    "subtopic_ids": [
+      "judgments-evaluation"
+    ]
+  },
+  "learning_objectives": [
+    "Describe something as interesting or boring.",
+    "Respond to an error without sounding harsh.",
+    "Express happiness and a simple hope."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "但": "Characters:但",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "关": "Characters:关",
+    "写": "Characters:写",
+    "出": "Characters:出",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "呢": "Characters:呢",
+    "和": "Characters:和",
+    "因": "Characters:因",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "希": "Characters:希",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "故": "Characters:故",
+    "日": "Characters:日",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晴": "Characters:晴",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "望": "Characters:望",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "样": "Characters:样",
+    "次": "Characters:次",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "王": "Characters:王",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "票": "Characters:票",
+    "系": "Characters:系",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "菜": "Characters:菜",
+    "觉": "Characters:觉",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "起": "Characters:起",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "间": "Characters:间",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Say whether an activity is interesting, correct a mistake and express a personal hope.",
+      "focus": "Describe something as interesting or boring."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-312",
+          "hanzi": "不错",
+          "pinyin": "búcuò",
+          "meaning_en": "not bad; quite good",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-312-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个不错！",
+              "pinyin": "zhège búcuò!",
+              "english": "This one is pretty good!",
+              "teaching_note": "A short spoken example using 不错."
+            },
+            {
+              "id": "ex-312-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆的菜很不错。",
+              "pinyin": "zhè jiā fànguǎn de cài hěn búcuò.",
+              "english": "The food at this restaurant is quite good.",
+              "teaching_note": "A simple written example using 不错."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 312
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ]
+        },
+        {
+          "id": "w-326",
+          "hanzi": "错",
+          "pinyin": "cuò",
+          "meaning_en": "wrong; incorrect",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-326-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我说错了吗？",
+              "pinyin": "wǒ shuō cuò le ma?",
+              "english": "Did I say something wrong?",
+              "teaching_note": "A short spoken example using 错."
+            },
+            {
+              "id": "ex-326-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个汉字写错了。",
+              "pinyin": "zhège Hànzì xiě cuò le.",
+              "english": "This Chinese character was written incorrectly.",
+              "teaching_note": "A simple written example using 错."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 326
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ]
+        },
+        {
+          "id": "w-385",
+          "hanzi": "快乐",
+          "pinyin": "kuàilè",
+          "meaning_en": "happy; joyful",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-385-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "生日快乐！",
+              "pinyin": "shēngrì kuàilè!",
+              "english": "Happy birthday!",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-385-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们今天很快乐。",
+              "pinyin": "háizimen jīntiān hěn kuàilè.",
+              "english": "The children are happy today.",
+              "teaching_note": "A simple written example using 快乐."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 385
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ]
+        },
+        {
+          "id": "w-398",
+          "hanzi": "没意思",
+          "pinyin": "méi yìsi",
+          "meaning_en": "boring; uninteresting",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-398-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个电影没意思。",
+              "pinyin": "zhège diànyǐng méi yìsi.",
+              "english": "This movie is boring.",
+              "teaching_note": "A short spoken example using 没意思."
+            },
+            {
+              "id": "ex-398-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他觉得这本书没意思。",
+              "pinyin": "tā juéde zhè běn shū méi yìsi.",
+              "english": "He thinks this book is boring.",
+              "teaching_note": "A simple written example using 没意思."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 398
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-455",
+          "hanzi": "希望",
+          "pinyin": "xīwàng",
+          "meaning_en": "to hope; to wish",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-455-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我希望明天是晴天。",
+              "pinyin": "wǒ xīwàng míngtiān shì qíng tiān.",
+              "english": "I hope it is sunny tomorrow.",
+              "teaching_note": "A short spoken example using 希望."
+            },
+            {
+              "id": "ex-455-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸希望我学好汉语。",
+              "pinyin": "bàba xīwàng wǒ xué hǎo Hànyǔ.",
+              "english": "Dad hopes I learn Chinese well.",
+              "teaching_note": "A simple written example using 希望."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 455
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-479",
+          "hanzi": "有意思",
+          "pinyin": "yǒu yìsi",
+          "meaning_en": "interesting; fun",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-479-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这电影真有意思！",
+              "pinyin": "zhè diànyǐng zhēn yǒu yìsi!",
+              "english": "This movie is really interesting!",
+              "teaching_note": "A short spoken example using 有意思."
+            },
+            {
+              "id": "ex-479-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师今天说的事很有意思。",
+              "pinyin": "lǎoshī jīntiān shuō de shì hěn yǒu yìsi.",
+              "english": "What the teacher talked about today was very interesting.",
+              "teaching_note": "A simple written example using 有意思."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 479
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-025",
+          "hanzi": "大",
+          "pinyin": "dà",
+          "meaning_en": "big",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-025-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个房间很大。",
+              "pinyin": "zhège fángjiān hěn dà.",
+              "english": "This room is big.",
+              "teaching_note": "很 appears naturally before a descriptive adjective such as 大, without necessarily meaning “very.”"
+            },
+            {
+              "id": "ex-025-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个大学很大。",
+              "pinyin": "zhège dàxué hěn dà.",
+              "english": "This university is very big.",
+              "teaching_note": "School or study context showing 大 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 25
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-044",
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning_en": "correct; toward",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "preposition",
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-044-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我说得对吗？",
+              "pinyin": "wǒ shuō de duì ma?",
+              "english": "Am I right?",
+              "teaching_note": "Short beginner-level description illustrating 对 in context."
+            },
+            {
+              "id": "ex-044-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "老师说：“对，是这样。”",
+              "pinyin": "lǎoshī shuō: “duì, shì zhèyàng.”",
+              "english": "The teacher said, \"Yes, that's right.\"",
+              "teaching_note": "Written dialogue: 对 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 44
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages."
+        },
+        {
+          "id": "w-046",
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning_en": "many; much",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-046-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有很多人。",
+              "pinyin": "zhèlǐ yǒu hěn duō rén.",
+              "english": "There are many people here.",
+              "teaching_note": "很多 directly modifies 人 to express a large number of people."
+            },
+            {
+              "id": "ex-046-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午来的人很多。",
+              "pinyin": "xiàwǔ lái de rén hěn duō.",
+              "english": "There are many people coming this afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 多 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 46
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Evaluating an activity",
+        "explanation": "有意思 (yǒu yìsi) means interesting; 没意思 (méi yìsi) expresses that something is uninteresting.",
+        "example_id": "ex-312-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Expressing a hope",
+        "explanation": "希望 (xīwàng) introduces what you hope will happen, followed by a clause.",
+        "example_id": "ex-326-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-312-1",
+      "ex-326-1",
+      "ex-385-1",
+      "ex-398-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Xiao Wang says he bought the wrong ticket, but nobody gets angry. They hope they can go out together tomorrow."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: This story is really interesting! Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 这个故事真有意思！ (Zhè ge gùshi zhēn yǒu yìsi!)",
+          "answer": "这个故事真有意思！ (Zhè ge gùshi zhēn yǒu yìsi!)"
+        },
+        {
+          "id": "recall-312",
+          "kind": "selection",
+          "prompt": "Which expression means “not bad”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "不错",
+              "pinyin": "búcuò",
+              "meaning_en": "not bad; quite good"
+            },
+            {
+              "id": "b",
+              "hanzi": "错",
+              "pinyin": "cuò",
+              "meaning_en": "wrong; incorrect"
+            },
+            {
+              "id": "c",
+              "hanzi": "快乐",
+              "pinyin": "kuàilè",
+              "meaning_en": "happy; joyful"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 不错 (búcuò) with this meaning."
+        },
+        {
+          "id": "recall-326",
+          "kind": "selection",
+          "prompt": "Which expression means “wrong”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "不错",
+              "pinyin": "búcuò",
+              "meaning_en": "not bad; quite good"
+            },
+            {
+              "id": "c",
+              "hanzi": "快乐",
+              "pinyin": "kuàilè",
+              "meaning_en": "happy; joyful"
+            },
+            {
+              "id": "a",
+              "hanzi": "错",
+              "pinyin": "cuò",
+              "meaning_en": "wrong; incorrect"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 错 (cuò) with this meaning."
+        },
+        {
+          "id": "recall-385",
+          "kind": "selection",
+          "prompt": "Which expression means “happy”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "错",
+              "pinyin": "cuò",
+              "meaning_en": "wrong; incorrect"
+            },
+            {
+              "id": "a",
+              "hanzi": "快乐",
+              "pinyin": "kuàilè",
+              "meaning_en": "happy; joyful"
+            },
+            {
+              "id": "b",
+              "hanzi": "不错",
+              "pinyin": "búcuò",
+              "meaning_en": "not bad; quite good"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 快乐 (kuàilè) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Sharing Opinions and Feelings",
+        "context_en": "Say whether an activity is interesting, correct a mistake and express a personal hope.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你觉得今天的电影怎么样？",
+            "pinyin": "Nǐ juéde jīntiān de diànyǐng zěnmeyàng?",
+            "english": "What do you think of today’s film?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我觉得很有意思！你呢？",
+            "pinyin": "Wǒ juéde hěn yǒu yìsi! Nǐ ne?",
+            "english": "I think it is very interesting! How about you?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我觉得还不错，但是最后有点儿没意思。",
+            "pinyin": "Wǒ juéde hái búcuò, dànshì zuìhòu yǒudiǎnr méi yìsi.",
+            "english": "I think it is fairly good, but the end is a little boring."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没关系！希望下次我们能看更好的电影。",
+            "pinyin": "Méi guānxi! Xīwàng xià cì wǒmen néng kàn gèng hǎo de diànyǐng.",
+            "english": "No problem! I hope we can watch a better movie next time."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Evaluating an activity",
+          "explanation_en": "有意思 (yǒu yìsi) means interesting; 没意思 (méi yìsi) expresses that something is uninteresting.",
+          "formula_en": "Activity + 很 + 有意思 / 没意思",
+          "examples": [
+            {
+              "hanzi": "这个故事真有意思！",
+              "pinyin": "Zhè ge gùshi zhēn yǒu yìsi!",
+              "english": "This story is really interesting!"
+            },
+            {
+              "hanzi": "我觉得很有意思！你呢？",
+              "pinyin": "Wǒ juéde hěn yǒu yìsi! Nǐ ne?",
+              "english": "I think it is very interesting! How about you?"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Expressing a hope",
+          "explanation_en": "希望 (xīwàng) introduces what you hope will happen, followed by a clause.",
+          "formula_en": "Subject + 希望 + clause",
+          "examples": [
+            {
+              "hanzi": "我希望明天的天气不错。",
+              "pinyin": "Wǒ xīwàng míngtiān de tiānqì búcuò.",
+              "english": "I hope tomorrow’s weather will be good."
+            },
+            {
+              "hanzi": "没关系！希望下次我们能看更好的电影。",
+              "pinyin": "Méi guānxi! Xīwàng xià cì wǒmen néng kàn gèng hǎo de diànyǐng.",
+              "english": "No problem! I hope we can watch a better movie next time."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你觉得今天的电影怎么样？",
+          "pinyin": "Nǐ juéde jīntiān de diànyǐng zěnmeyàng?",
+          "english": "What do you think of today’s film?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: This story is really interesting!",
+            "model_answer": {
+              "hanzi": "这个故事真有意思！",
+              "pinyin": "Zhè ge gùshi zhēn yǒu yìsi!",
+              "english": "This story is really interesting!"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I hope tomorrow’s weather will be good.",
+            "model_answer": {
+              "hanzi": "我希望明天的天气不错。",
+              "pinyin": "Wǒ xīwàng míngtiān de tiānqì búcuò.",
+              "english": "I hope tomorrow’s weather will be good."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: I think it is fairly good, but the end is a little boring.",
+            "model_answer": {
+              "hanzi": "我觉得还不错，但是最后有点儿没意思。",
+              "pinyin": "Wǒ juéde hái búcuò, dànshì zuìhòu yǒudiǎnr méi yìsi.",
+              "english": "I think it is fairly good, but the end is a little boring."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Sharing Opinions and Feelings — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小美今天很快乐，因为她和朋友一起去看电影。她觉得故事很有意思。",
+            "pinyin": "Xiǎoměi jīntiān hěn kuàilè, yīnwèi tā hé péngyou yìqǐ qù kàn diànyǐng. Tā juéde gùshi hěn yǒu yìsi.",
+            "english": "Xiaomei is happy today because she went to the cinema with friends. She finds the story interesting."
+          },
+          {
+            "hanzi": "小王说自己买错了票，不过大家没有生气。他们希望明天还能一起出去。",
+            "pinyin": "Xiǎo Wáng shuō zìjǐ mǎi cuò le piào, búguò dàjiā méiyǒu shēngqì. Tāmen xīwàng míngtiān hái néng yìqǐ chūqù.",
+            "english": "Xiao Wang says he bought the wrong ticket, but nobody gets angry. They hope they can go out together tomorrow."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiaomei is happy today because she went to the cinema with friends. She finds the story interesting."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Xiao Wang says he bought the wrong ticket, but nobody gets angry. They hope they can go out together tomorrow."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: This story is really interesting!",
+          "model_answer": {
+            "hanzi": "这个故事真有意思！",
+            "pinyin": "Zhè ge gùshi zhēn yǒu yìsi!",
+            "english": "This story is really interesting!"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I hope tomorrow’s weather will be good.",
+          "model_answer": {
+            "hanzi": "我希望明天的天气不错。",
+            "pinyin": "Wǒ xīwàng míngtiān de tiānqì búcuò.",
+            "english": "I hope tomorrow’s weather will be good."
+          }
+        }
+      ],
+      "common_pitfall": "不错 (búcuò) is a positive evaluation meaning “not bad”; 错 (cuò) by itself means wrong or incorrect. Avoid treating them as synonyms.",
+      "pronunciation_focus": "The second syllable in 意思 (yìsi) is neutral; 不错 (búcuò) has second-tone 不 before fourth-tone 错.",
+      "review": {
+        "can_do": [
+          "Describe something as interesting or boring.",
+          "Respond to an error without sounding harsh.",
+          "Express happiness and a simple hope."
+        ],
+        "entry_ids": [
+          312,
+          326,
+          385,
+          398,
+          455,
+          479
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Evaluating an activity",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Expressing a hope",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: This story is really interesting!",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I hope tomorrow’s weather will be good.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I think it is fairly good, but the end is a little boring.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: This story is really interesting!",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I hope tomorrow’s weather will be good.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sharing-opinions-and-feelings--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-sharing-opinions-and-feelings--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: This story is really interesting! Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--question-recall-312",
+            "kind": "practice",
+            "label": "Which expression means “not bad”?",
+            "optional": true,
+            "target_id": "recall-312"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--question-recall-326",
+            "kind": "practice",
+            "label": "Which expression means “wrong”?",
+            "optional": true,
+            "target_id": "recall-326"
+          },
+          {
+            "id": "topic-sharing-opinions-and-feelings--question-recall-385",
+            "kind": "practice",
+            "label": "Which expression means “happy”?",
+            "optional": true,
+            "target_id": "recall-385"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

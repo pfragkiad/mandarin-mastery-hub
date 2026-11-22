@@ -1,0 +1,1289 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-talking-about-time-and-habits",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About Time and Habits",
+    "subtitle": "Birthdays, recurring activities and short waits",
+    "description": "Describe regular activities, birthdays, past habits and things about to happen.",
+    "slug": "talking-about-time-and-habits"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar"
+    ],
+    "tags": [
+      "birthdays",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Describe frequency with 经常 (jīngcháng) and 有时 (yǒushí).",
+    "Talk about childhood and the past.",
+    "Describe an approaching event using 快要 (kuàiyào)."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "丽": "Characters:丽",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "交": "Characters:交",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "再": "Characters:再",
+    "准": "Characters:准",
+    "几": "Characters:几",
+    "分": "Characters:分",
+    "到": "Characters:到",
+    "动": "Characters:动",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "只": "Characters:只",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "备": "Characters:备",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "始": "Characters:始",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "已": "Characters:已",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "待": "Characters:待",
+    "很": "Characters:很",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "息": "Characters:息",
+    "我": "Characters:我",
+    "日": "Characters:日",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "点": "Characters:点",
+    "爷": "Characters:爷",
+    "猫": "Characters:猫",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "等": "Characters:等",
+    "经": "Characters:经",
+    "考": "Characters:考",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "过": "Characters:过",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "雨": "Characters:雨",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Describe regular activities, birthdays, past habits and things about to happen.",
+      "focus": "Describe frequency with 经常 (jīngcháng) and 有时 (yǒushí)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-325",
+          "hanzi": "从小",
+          "pinyin": "cóngxiǎo",
+          "meaning_en": "since childhood; from an early age",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-325-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我从小就喜欢猫。",
+              "pinyin": "wǒ cóngxiǎo jiù xǐhuan māo.",
+              "english": "I have liked cats since I was little.",
+              "teaching_note": "A short spoken example using 从小."
+            },
+            {
+              "id": "ex-325-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她从小就学汉语。",
+              "pinyin": "tā cóngxiǎo jiù xué Hànyǔ.",
+              "english": "She has studied Chinese since childhood.",
+              "teaching_note": "A simple written example using 从小."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 325
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-349",
+          "hanzi": "过年",
+          "pinyin": "guònián",
+          "meaning_en": "to celebrate the New Year",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-349-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在哪儿过年？",
+              "pinyin": "nǐ zài nǎr guònián?",
+              "english": "Where will you spend the New Year?",
+              "teaching_note": "A short spoken example using 过年."
+            },
+            {
+              "id": "ex-349-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今年我们在家过年。",
+              "pinyin": "jīnnián wǒmen zài jiā guònián.",
+              "english": "This year we are celebrating the New Year at home.",
+              "teaching_note": "A simple written example using 过年."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 349
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-374",
+          "hanzi": "经常",
+          "pinyin": "jīngcháng",
+          "meaning_en": "often; frequently",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-374-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你经常运动吗？",
+              "pinyin": "nǐ jīngcháng yùndòng ma?",
+              "english": "Do you exercise often?",
+              "teaching_note": "A short spoken example using 经常."
+            },
+            {
+              "id": "ex-374-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他经常坐地铁去上班。",
+              "pinyin": "tā jīngcháng zuò dìtiě qù shàngbān.",
+              "english": "He often takes the subway to work.",
+              "teaching_note": "A simple written example using 经常."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 374
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-378",
+          "hanzi": "开始",
+          "pinyin": "kāishǐ",
+          "meaning_en": "to begin; beginning",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-378-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们什么时候开始？",
+              "pinyin": "wǒmen shénme shíhou kāishǐ?",
+              "english": "When do we start?",
+              "teaching_note": "A short spoken example using 开始."
+            },
+            {
+              "id": "ex-378-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "考试上午九点开始。",
+              "pinyin": "kǎoshì shàngwǔ jiǔ diǎn kāishǐ.",
+              "english": "The exam starts at nine in the morning.",
+              "teaching_note": "A simple written example using 开始."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 378
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-386",
+          "hanzi": "快要",
+          "pinyin": "kuàiyào",
+          "meaning_en": "soon to; about to",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-386-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "快要下雨了！",
+              "pinyin": "kuàiyào xià yǔ le!",
+              "english": "It's about to rain!",
+              "teaching_note": "A short spoken example using 快要."
+            },
+            {
+              "id": "ex-386-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "已经十二点了，学生们快要下课了。",
+              "pinyin": "yǐjīng shí’èr diǎn le, xuéshēngmen kuàiyào xiàkè le.",
+              "english": "It’s already noon, and the students’ class is about to end.",
+              "teaching_note": "A simple written example using 快要."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 386
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-430",
+          "hanzi": "生日",
+          "pinyin": "shēngrì",
+          "meaning_en": "birthday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-430-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天是你生日吗？",
+              "pinyin": "jīntiān shì nǐ shēngrì ma?",
+              "english": "Is today your birthday?",
+              "teaching_note": "A short spoken example using 生日."
+            },
+            {
+              "id": "ex-430-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹的生日是三月五日。",
+              "pinyin": "mèimei de shēngrì shì sān yuè wǔ rì.",
+              "english": "My younger sister's birthday is March fifth.",
+              "teaching_note": "A simple written example using 生日."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 430
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-431",
+          "hanzi": "时",
+          "pinyin": "shí",
+          "meaning_en": "time; hour (in formal time); when; during",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-431-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你上班时听歌吗？",
+              "pinyin": "nǐ shàngbān shí tīng gē ma?",
+              "english": "Do you listen to music while working?",
+              "teaching_note": "时 means “when/during”; this use is more natural here than formal clock-time 九时."
+            },
+            {
+              "id": "ex-431-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上课时不要说话。",
+              "pinyin": "shàngkè shí bú yào shuōhuà.",
+              "english": "Do not talk during class.",
+              "teaching_note": "时 means “when/during”; this example is a plain written classroom instruction."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 431
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "时 is a time noun or marker; as a clock-time unit it is formal, but 在…时 or 上课时 means “when/during.”"
+        },
+        {
+          "id": "w-462",
+          "hanzi": "小时候",
+          "pinyin": "xiǎoshíhou",
+          "meaning_en": "during childhood; when young",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-462-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你小时候喜欢什么？",
+              "pinyin": "nǐ xiǎoshíhou xǐhuan shénme?",
+              "english": "What did you like when you were little?",
+              "teaching_note": "A short spoken example using 小时候."
+            },
+            {
+              "id": "ex-462-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我小时候住在中国。",
+              "pinyin": "wǒ xiǎoshíhou zhù zài Zhōngguó.",
+              "english": "I lived in China when I was little.",
+              "teaching_note": "A simple written example using 小时候."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 462
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-471",
+          "hanzi": "一会儿",
+          "pinyin": "yíhuìr",
+          "meaning_en": "a little while; a moment",
+          "primary_pos_id": "quantifier",
+          "pos_ids": [
+            "quantifier"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-471-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "等我一会儿！",
+              "pinyin": "děng wǒ yíhuìr!",
+              "english": "Wait for me a moment!",
+              "teaching_note": "一会儿 includes connected-speech 一 tone sandhi."
+            },
+            {
+              "id": "ex-471-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们休息一会儿再上课。",
+              "pinyin": "xuéshēngmen xiūxi yíhuìr zài shàngkè.",
+              "english": "The students rest for a while before resuming class.",
+              "teaching_note": "一会儿 includes connected-speech 一 tone sandhi."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 471
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "一会儿 includes connected-speech 一 tone sandhi."
+        },
+        {
+          "id": "w-480",
+          "hanzi": "有时",
+          "pinyin": "yǒushí",
+          "meaning_en": "sometimes; at times",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-480-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我有时坐公交车。",
+              "pinyin": "wǒ yǒushí zuò gōngjiāochē.",
+              "english": "I sometimes take the bus.",
+              "teaching_note": "A short spoken example using 有时."
+            },
+            {
+              "id": "ex-480-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她有时在家工作。",
+              "pinyin": "tā yǒushí zài jiā gōngzuò.",
+              "english": "She sometimes works from home.",
+              "teaching_note": "A simple written example using 有时."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 480
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-492",
+          "hanzi": "周",
+          "pinyin": "zhōu",
+          "meaning_en": "week",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-492-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这周你忙吗？",
+              "pinyin": "zhè zhōu nǐ máng ma?",
+              "english": "Are you busy this week?",
+              "teaching_note": "A short spoken example using 周."
+            },
+            {
+              "id": "ex-492-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下周我们有两次考试。",
+              "pinyin": "xià zhōu wǒmen yǒu liǎng cì kǎoshì.",
+              "english": "We have two exams next week.",
+              "teaching_note": "A simple written example using 周."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 492
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-005",
+          "hanzi": "白天",
+          "pinyin": "báitiān",
+          "meaning_en": "daytime",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-005-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我白天上班。",
+              "pinyin": "wǒ báitiān shàngbān.",
+              "english": "I work during the day.",
+              "teaching_note": "白天 contrasts with 晚上 and places the work in daytime hours."
+            },
+            {
+              "id": "ex-005-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们白天在学校学习。",
+              "pinyin": "xuéshengmen báitiān zài xuéxiào xuéxí.",
+              "english": "The students study at school during the day.",
+              "teaching_note": "The time word comes before the phrase that says where the students study."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 5
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-033",
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "meaning_en": "o'clock; point",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-033-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在几点？",
+              "pinyin": "xiànzài jǐ diǎn?",
+              "english": "What time is it now?",
+              "teaching_note": "几点 asks for the hour, while 现在 anchors the question to the present."
+            },
+            {
+              "id": "ex-033-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午三点下课。",
+              "pinyin": "xiàwǔ sān diǎn xiàkè.",
+              "english": "Class ends at three in the afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 点 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 33
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Classifier and time unit in clock readings; also a noun for a point."
+        },
+        {
+          "id": "w-055",
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "meaning_en": "minute; divide",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-055-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是八点十分。",
+              "pinyin": "xiànzài shì bā diǎn shí fēn.",
+              "english": "It is 8:10 now.",
+              "teaching_note": "八点十分 is 8:10, with 分 marking minutes after the hour."
+            },
+            {
+              "id": "ex-055-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午三点二十分上课。",
+              "pinyin": "xiàwǔ sān diǎn èr shí fēn shàngkè.",
+              "english": "Class starts at 3:20 p.m.",
+              "teaching_note": "Daily time or schedule context illustrating 分 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 55
+            }
+          ],
+          "primary_topic_id": "time-calendar",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Frequency in daily life",
+        "explanation": "经常 (jīngcháng) means often; 有时 (yǒushí) means sometimes. Put the frequency word before the main action.",
+        "example_id": "ex-325-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "An event is about to happen",
+        "explanation": "Use 快要 (kuàiyào) before an event or verb phrase, often with 了 (le) to signal an impending change.",
+        "example_id": "ex-349-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-325-1",
+      "ex-349-1",
+      "ex-374-1",
+      "ex-378-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "The New Year is approaching, so the family is starting to prepare lots of tasty food."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I often exercise on Saturdays. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我经常星期六去运动。 (Wǒ jīngcháng xīngqīliù qù yùndòng.)",
+          "answer": "我经常星期六去运动。 (Wǒ jīngcháng xīngqīliù qù yùndòng.)"
+        },
+        {
+          "id": "recall-325",
+          "kind": "selection",
+          "prompt": "Which expression means “since childhood”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "从小",
+              "pinyin": "cóngxiǎo",
+              "meaning_en": "since childhood; from an early age"
+            },
+            {
+              "id": "b",
+              "hanzi": "过年",
+              "pinyin": "guònián",
+              "meaning_en": "to celebrate the New Year"
+            },
+            {
+              "id": "c",
+              "hanzi": "经常",
+              "pinyin": "jīngcháng",
+              "meaning_en": "often; frequently"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 从小 (cóngxiǎo) with this meaning."
+        },
+        {
+          "id": "recall-349",
+          "kind": "selection",
+          "prompt": "Which expression means “to celebrate the New Year”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "从小",
+              "pinyin": "cóngxiǎo",
+              "meaning_en": "since childhood; from an early age"
+            },
+            {
+              "id": "c",
+              "hanzi": "经常",
+              "pinyin": "jīngcháng",
+              "meaning_en": "often; frequently"
+            },
+            {
+              "id": "a",
+              "hanzi": "过年",
+              "pinyin": "guònián",
+              "meaning_en": "to celebrate the New Year"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 过年 (guònián) with this meaning."
+        },
+        {
+          "id": "recall-374",
+          "kind": "selection",
+          "prompt": "Which expression means “often”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "过年",
+              "pinyin": "guònián",
+              "meaning_en": "to celebrate the New Year"
+            },
+            {
+              "id": "a",
+              "hanzi": "经常",
+              "pinyin": "jīngcháng",
+              "meaning_en": "often; frequently"
+            },
+            {
+              "id": "b",
+              "hanzi": "从小",
+              "pinyin": "cóngxiǎo",
+              "meaning_en": "since childhood; from an early age"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 经常 (jīngcháng) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About Time and Habits",
+        "context_en": "Describe regular activities, birthdays, past habits and things about to happen.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你下周过生日吗？",
+            "pinyin": "Nǐ xià zhōu guò shēngrì ma?",
+            "english": "Is your birthday next week?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，我的生日快要到了！",
+            "pinyin": "Duì, wǒ de shēngrì kuàiyào dào le!",
+            "english": "Yes, my birthday is coming soon!"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你小时候经常怎么过生日？",
+            "pinyin": "Nǐ xiǎoshíhou jīngcháng zěnme guò shēngrì?",
+            "english": "How did you often celebrate birthdays as a child?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我从小喜欢和家人一起吃饭。有时还唱歌。",
+            "pinyin": "Wǒ cóngxiǎo xǐhuan hé jiārén yìqǐ chī fàn. Yǒushí hái chàng gē.",
+            "english": "Since childhood I have liked eating with family. Sometimes we also sang."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Frequency in daily life",
+          "explanation_en": "经常 (jīngcháng) means often; 有时 (yǒushí) means sometimes. Put the frequency word before the main action.",
+          "formula_en": "Subject + frequency adverb + verb",
+          "examples": [
+            {
+              "hanzi": "我经常星期六去运动。",
+              "pinyin": "Wǒ jīngcháng xīngqīliù qù yùndòng.",
+              "english": "I often exercise on Saturdays."
+            },
+            {
+              "hanzi": "对，我的生日快要到了！",
+              "pinyin": "Duì, wǒ de shēngrì kuàiyào dào le!",
+              "english": "Yes, my birthday is coming soon!"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "An event is about to happen",
+          "explanation_en": "Use 快要 (kuàiyào) before an event or verb phrase, often with 了 (le) to signal an impending change.",
+          "formula_en": "快要 + event + 了",
+          "examples": [
+            {
+              "hanzi": "电影快要开始了，我们进去吧。",
+              "pinyin": "Diànyǐng kuàiyào kāishǐ le, wǒmen jìnqù ba.",
+              "english": "The movie is about to start; let’s go in."
+            },
+            {
+              "hanzi": "我从小喜欢和家人一起吃饭。有时还唱歌。",
+              "pinyin": "Wǒ cóngxiǎo xǐhuan hé jiārén yìqǐ chī fàn. Yǒushí hái chàng gē.",
+              "english": "Since childhood I have liked eating with family. Sometimes we also sang."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你下周过生日吗？",
+          "pinyin": "Nǐ xià zhōu guò shēngrì ma?",
+          "english": "Is your birthday next week?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I often exercise on Saturdays.",
+            "model_answer": {
+              "hanzi": "我经常星期六去运动。",
+              "pinyin": "Wǒ jīngcháng xīngqīliù qù yùndòng.",
+              "english": "I often exercise on Saturdays."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: The movie is about to start; let’s go in.",
+            "model_answer": {
+              "hanzi": "电影快要开始了，我们进去吧。",
+              "pinyin": "Diànyǐng kuàiyào kāishǐ le, wǒmen jìnqù ba.",
+              "english": "The movie is about to start; let’s go in."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: How did you often celebrate birthdays as a child?",
+            "model_answer": {
+              "hanzi": "你小时候经常怎么过生日？",
+              "pinyin": "Nǐ xiǎoshíhou jīngcháng zěnme guò shēngrì?",
+              "english": "How did you often celebrate birthdays as a child?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Talking About Time and Habits — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小丽每周去看一次爷爷。有时她只坐一会儿，有时会待几个小时。",
+            "pinyin": "Xiǎo Lì měi zhōu qù kàn yí cì yéye. Yǒushí tā zhǐ zuò yíhuìr, yǒushí huì dāi jǐ ge xiǎoshí.",
+            "english": "Xiaoli visits her grandpa every week. Sometimes she stays only a short while; sometimes several hours."
+          },
+          {
+            "hanzi": "今年快要过年了，家里开始准备很多好吃的东西。",
+            "pinyin": "Jīnnián kuàiyào guònián le, jiālǐ kāishǐ zhǔnbèi hěn duō hǎochī de dōngxi.",
+            "english": "The New Year is approaching, so the family is starting to prepare lots of tasty food."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiaoli visits her grandpa every week. Sometimes she stays only a short while; sometimes several hours."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "The New Year is approaching, so the family is starting to prepare lots of tasty food."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I often exercise on Saturdays.",
+          "model_answer": {
+            "hanzi": "我经常星期六去运动。",
+            "pinyin": "Wǒ jīngcháng xīngqīliù qù yùndòng.",
+            "english": "I often exercise on Saturdays."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: The movie is about to start; let’s go in.",
+          "model_answer": {
+            "hanzi": "电影快要开始了，我们进去吧。",
+            "pinyin": "Diànyǐng kuàiyào kāishǐ le, wǒmen jìnqù ba.",
+            "english": "The movie is about to start; let’s go in."
+          }
+        }
+      ],
+      "common_pitfall": "Avoid confusing 小时候 (xiǎoshíhou), meaning when someone was little, with 小时 (xiǎoshí), a unit of sixty minutes.",
+      "pronunciation_focus": "Listen for the tone change in 一会儿 (yíhuìr) and the neutral suffix in 小时候 (xiǎoshíhou).",
+      "review": {
+        "can_do": [
+          "Describe frequency with 经常 (jīngcháng) and 有时 (yǒushí).",
+          "Talk about childhood and the past.",
+          "Describe an approaching event using 快要 (kuàiyào)."
+        ],
+        "entry_ids": [
+          325,
+          349,
+          374,
+          378,
+          386,
+          430,
+          431,
+          462,
+          471,
+          480,
+          492
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-talking-about-time-and-habits--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Frequency in daily life",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: An event is about to happen",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I often exercise on Saturdays.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: The movie is about to start; let’s go in.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: How did you often celebrate birthdays as a child?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I often exercise on Saturdays.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: The movie is about to start; let’s go in.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-time-and-habits--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-time-and-habits--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I often exercise on Saturdays. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--question-recall-325",
+            "kind": "practice",
+            "label": "Which expression means “since childhood”?",
+            "optional": true,
+            "target_id": "recall-325"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--question-recall-349",
+            "kind": "practice",
+            "label": "Which expression means “to celebrate the New Year”?",
+            "optional": true,
+            "target_id": "recall-349"
+          },
+          {
+            "id": "topic-talking-about-time-and-habits--question-recall-374",
+            "kind": "practice",
+            "label": "Which expression means “often”?",
+            "optional": true,
+            "target_id": "recall-374"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 42
+}
