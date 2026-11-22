@@ -279,7 +279,10 @@ html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-la
 .glyph-usage-section > .glyph-usage-example:first-of-type > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 /* "In a sentence" label row: label left, "Find more examples" right; wraps under the label
    when the card is too narrow for both. The link reads by accent colour on hover, no underline. */
-.sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; min-height: 24px; justify-content: space-between; gap: 6px 14px; }
+/* The row is only as tall as its heading, so "In a sentence" starts the same distance below its
+   divider as every other section label; the link's hover badge (3px padding) overhangs the line. */
+.sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; }
+.sentence-section-head > .find-examples-link { margin-block: -5px; }
 .sentence-section-head > .eyebrow { margin: 0; }
 /* The label row is a div too, so :first-of-type above misses the first example here. */
 .sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
@@ -1664,7 +1667,7 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 
 /* The reference row closes the detail window: label left, actions right, on the
    same section rhythm as every other section (16px above the divider, 14px below it). */
-.detail-reference-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.detail-reference-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: var(--detail-section-gap, 16px); padding-top: var(--detail-section-pad, 14px); border-top: 1px solid var(--border); }
 .detail-reference-row .word-detail-actions { margin: 0; width: 100%; }
 /* Detail bottom row: Trace/Recall on the left, Bookmark alone at the far right (as on library cards). */
 .detail-reference-row .detail-bookmark-action { margin-left: auto; }
@@ -1694,14 +1697,15 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    floating window reads as one compact card, so section gaps shrink. */
 .detail-sheet .catalog-detail-title { margin-bottom: 14px; }
 .detail-sheet .word-detail-actions { margin: 2px 0 4px; }
-/* Facts block: 16px before its divider like any section, 14px from divider to
-   content, and no extra bottom padding — the gap below the content is the shared
-   16px section rhythm, same as every other section's last line. */
-.detail-sheet .catalog-facts { margin-top: 16px; padding: 14px 0 0; }
-/* Every section in the floating window keeps the same rhythm: 16px above the
-   divider, 14px from divider to heading — so the gap below any section's last
-   line equals the gap below every other section's last line. */
-.detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: 16px; padding-top: 14px; }
+/* One section rhythm for the whole floating detail window, set only here:
+   --detail-section-gap above each divider, --detail-section-pad from divider to heading.
+   Used by the facts row, "In a sentence", Lessons, the Decomposition | Etymology drawer
+   (.detail-tabs) and the bottom actions row, so the gap below any section's last line equals
+   the gap below every other section's last line. */
+.detail-sheet { --detail-section-gap: 16px; --detail-section-pad: 14px; }
+/* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
+.detail-sheet .catalog-facts { margin-top: var(--detail-section-gap); padding: var(--detail-section-pad) 0 0; }
+.detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
 .detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
@@ -4340,9 +4344,10 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
    is left alone: there a card genuinely is one full-width row. */
 .library-page .catalog-entry-grid.is-loading:not(.library-list-view) { grid-template-columns: repeat(auto-fill,minmax(min(230px,calc((100% - 20px) / 2)),1fr)); }
 
-/* Glyph detail cards: Decomposition | Etymology drawer tabs (detail-tabs.tsx) reuse Practice's
-   drawer styles; the row sits where the Decomposition section used to, spaced like a section. */
-.catalog-detail .detail-tabs { margin-top: 28px; }
+/* Detail cards: Decomposition | Etymology drawer tabs (detail-tabs.tsx) reuse Practice's
+   drawer styles but open like every other detail section — the shared divider and the
+   detail-sheet section rhythm (--detail-section-gap / --detail-section-pad). */
+.catalog-detail .detail-tabs { margin-top: var(--detail-section-gap, 28px); padding-top: var(--detail-section-pad, 22px); border-top: 1px solid var(--border); }
 .detail-drawer-etymology { margin-top: 20px; }
 
 /* Search hits: recorded part of speech before a word's meaning. */
