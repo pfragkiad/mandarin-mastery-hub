@@ -103,6 +103,16 @@
             "id": "b133f1c8-f257-5390-a5be-0f12358d92cc",
             "name": "Abstract & General Concepts",
             "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning."
+        },
+        {
+            "id": "6c110e57-0a9c-5e3c-a380-efbcd8c9d98a",
+            "name": "Science & Technology",
+            "description": "Scientific ideas, research, computing, communications technology, engineering, and technical devices."
+        },
+        {
+            "id": "628bb076-c9f4-56db-89e2-0c783f911a65",
+            "name": "Society, Government & Law",
+            "description": "Public institutions, government, laws, civic rights, public safety, and social structures."
         }
     ],
     "parts": [

@@ -14,3 +14,8 @@ passed to an importer remains a single combined file. Preserve record IDs,
 source metadata, examples, and CDN audio attachments when updating the data.
 See the [HSK handoff guide](../../../importer/hsk/README.md) and
 [importer guide](../../../scripts/README.md).
+
+Levels 1–4 use editorial topic taxonomy v2.0.0 (22 parent collections). Exact
+primary/secondary subtopic IDs are retained in `studyMetadata` alongside the
+version and source checksum. The [migration audit](../../../reports/hsk-topics-v2-import.json)
+records classification changes and preservation checks for all 2,000 entries.

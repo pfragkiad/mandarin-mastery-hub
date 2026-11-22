@@ -1,0 +1,102 @@
+[
+  {
+    "id": "numbers-quantities",
+    "label": "Numbers & Quantities",
+    "description": "Counting, amounts, measurements, ordinals, and classifiers."
+  },
+  {
+    "id": "time-calendar",
+    "label": "Time & Calendar",
+    "description": "Dates, times of day, periods, age and scheduling."
+  },
+  {
+    "id": "family-relationships",
+    "label": "Family & Relationships",
+    "description": "Relatives, family life, friendship, and relationships."
+  },
+  {
+    "id": "people-identity",
+    "label": "People & Identity",
+    "description": "People, gender, personal information, and forms of address."
+  },
+  {
+    "id": "reference-questions",
+    "label": "Pronouns, Questions & Pointing",
+    "description": "Personal and demonstrative pronouns; asking and pointing."
+  },
+  {
+    "id": "food-drink",
+    "label": "Food, Drinks & Meals",
+    "description": "Meals, eating, drinking, ingredients, and restaurants."
+  },
+  {
+    "id": "school-language",
+    "label": "Education & Language",
+    "description": "Learning, school, teachers, reading, writing, and languages."
+  },
+  {
+    "id": "work-jobs",
+    "label": "Work & Jobs",
+    "description": "Workplaces, occupations, and the working day."
+  },
+  {
+    "id": "shopping-money",
+    "label": "Shopping & Money",
+    "description": "Stores, prices, buying, selling, and currency."
+  },
+  {
+    "id": "home-objects",
+    "label": "Home, Clothing & Objects",
+    "description": "Home interiors, everyday belongings, clothing, and household objects."
+  },
+  {
+    "id": "travel-transport",
+    "label": "Travel & Transport",
+    "description": "Vehicles, travel, driving, and going from place to place."
+  },
+  {
+    "id": "health-wellbeing",
+    "label": "Health & Wellbeing",
+    "description": "Illness, medical care, sleep, and rest."
+  },
+  {
+    "id": "animals-weather",
+    "label": "Animals & Weather",
+    "description": "Animals, weather conditions, and the natural environment."
+  },
+  {
+    "id": "daily-actions",
+    "label": "Daily Actions & Activities",
+    "description": "Common everyday actions, physical activities, and routines."
+  },
+  {
+    "id": "leisure-media",
+    "label": "Leisure, Music & Media",
+    "description": "Films, music, games, recreation, and entertainment."
+  },
+  {
+    "id": "places-directions",
+    "label": "Places, Position & Direction",
+    "description": "Countries, positions, directions, and spatial relations."
+  },
+  {
+    "id": "communication-social",
+    "label": "Communication & Social Language",
+    "description": "Greetings, requests, apologizing, thanking, and speaking with others."
+  },
+  {
+    "id": "qualities-feelings",
+    "label": "Qualities, Feelings & Evaluation",
+    "description": "Descriptors, personal feelings, properties, and judgments."
+  },
+  {
+    "id": "grammar-functions",
+    "label": "Grammar & Function Words",
+    "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain."
+  },
+  {
+    "id": "abstract-concepts",
+    "label": "Abstract & General Concepts",
+    "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning."
+  }
+]

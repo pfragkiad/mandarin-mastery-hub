@@ -8,7 +8,7 @@ import { importLevel2 } from './import-hsk-level2.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.0.3.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.0.json', 'utf8');
 const source = JSON.parse(sourceRaw), topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
 
@@ -20,7 +20,7 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level2_1.0.3.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.0.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }
@@ -63,7 +63,7 @@ const invalid = [
   ['ID/headword disagreement', inputs => { [inputs.source.entries[0].headword, inputs.source.entries[1].headword] = [inputs.source.entries[1].headword, inputs.source.entries[0].headword]; }, /ID\/headword mismatch/],
   ['duplicate source IDs', inputs => { inputs.source.entries[1].id = 301; }, /unique IDs/],
   ['incomplete existing identities', inputs => { inputs.vocabulary.entries = inputs.vocabulary.entries.filter(e => e.hsk_index !== 313); }, /complete and unique/],
-  ['different shared topics', inputs => { inputs.topics[0].label = 'Changed'; }, /Topic sidecar differs/],
+  ['different shared topics', inputs => { inputs.topics.topics[0].label = 'Changed'; }, /Topic sidecar differs/],
   ['unknown secondary topics', inputs => { inputs.source.entries[0].topic_ids.push('unknown'); }, /Invalid topic_ids/],
   ['unknown POS', inputs => { inputs.source.entries[0].pos_ids.push('unknown'); }, /Invalid pos_ids/],
   ['missing written style', inputs => { inputs.source.entries[0].examples[1].style = 'conversational'; }, /two ordered example styles/],

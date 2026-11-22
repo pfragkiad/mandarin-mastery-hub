@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { vocabularyData, entryToWord } from './data-contract';
 
 describe('HSK recorded parts of speech', () => {
-  const l1 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level1_1.6.1.json');
-  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level2_1.0.3.json');
+  const l1 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level1_1.7.0.json');
+  const l2 = vocabularyData.entries.filter(e => e.partOfSpeechSource?.sourceName === 'hsk3_level2_1.1.0.json');
   it('enriches all 300 HSK 1 and 200 HSK 2 entries without adding duplicates', () => {
     expect(l1).toHaveLength(300);
     expect(l2).toHaveLength(200);

@@ -1,0 +1,103 @@
+{
+  "taxonomyVersion": "2.0.0",
+  "scope": "Editorial topic migration only; no independent linguistic certification.",
+  "beforeEntries": 2001,
+  "afterEntries": 2001,
+  "checks": {
+    "exactEntryOrderAndIdsPreserved": true,
+    "allLexicalContentExamplesTokensAndRecordingsPreserved": true,
+    "existingCategoryIdsAndDefinitionsPreserved": true,
+    "twoApprovedExamplePinyinSpacingCorrectionsPreserved": true,
+    "allFourReimportsIdempotent": true
+  },
+  "levels": [
+    {
+      "level": 1,
+      "source": {
+        "path": "importer/hsk/hsk3_level1_1.7.0.json",
+        "sha256": "eeddab94e661294e3c209bdbe5f1f9e73f251eec43e13940210a31be1e03056a",
+        "dataVersion": "1.7.0"
+      },
+      "topics": {
+        "path": "importer/hsk/hsk3_topics.json",
+        "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+        "version": "2.0.0",
+        "count": 22,
+        "subtopicCount": 25,
+        "matchesEmbeddedTaxonomy": true
+      },
+      "entries": 300,
+      "changedPrimaryTopic": 6,
+      "changedTopicList": 7,
+      "assignedPrimarySubtopics": 49,
+      "preservedWordRecordings": 276,
+      "preservedExampleIds": 600
+    },
+    {
+      "level": 2,
+      "source": {
+        "path": "importer/hsk/hsk3_level2_1.1.0.json",
+        "sha256": "735ecd4b029b2bc34430809a2501c8c6f8b05b3fd108bd3d31dc2319e3e2f478",
+        "dataVersion": "1.1.0"
+      },
+      "topics": {
+        "path": "importer/hsk/hsk3_topics.json",
+        "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+        "version": "2.0.0",
+        "count": 22,
+        "subtopicCount": 25,
+        "matchesEmbeddedTaxonomy": true
+      },
+      "entries": 200,
+      "changedPrimaryTopic": 3,
+      "changedTopicList": 3,
+      "assignedPrimarySubtopics": 60,
+      "preservedWordRecordings": 166,
+      "preservedExampleIds": 400
+    },
+    {
+      "level": 3,
+      "source": {
+        "path": "importer/hsk/hsk3_level3_1.1.0.json",
+        "sha256": "04f6c394775896cc0afbf346b9c7528c46d7f7d67e4c75f2709af2719620a0e5",
+        "dataVersion": "1.1.0"
+      },
+      "topics": {
+        "path": "importer/hsk/hsk3_topics.json",
+        "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+        "version": "2.0.0",
+        "count": 22,
+        "subtopicCount": 25,
+        "matchesEmbeddedTaxonomy": true
+      },
+      "entries": 500,
+      "changedPrimaryTopic": 18,
+      "changedTopicList": 28,
+      "assignedPrimarySubtopics": 169,
+      "preservedWordRecordings": 443,
+      "preservedExampleIds": 1000
+    },
+    {
+      "level": 4,
+      "source": {
+        "path": "importer/hsk/hsk3_level4_1.1.0.json",
+        "sha256": "0225c634973aa66d58d6d851b7990ebbd1ca9c4312e8123641dbf2d20bfd7abd",
+        "dataVersion": "1.1.0"
+      },
+      "topics": {
+        "path": "importer/hsk/hsk3_topics.json",
+        "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+        "version": "2.0.0",
+        "count": 22,
+        "subtopicCount": 25,
+        "matchesEmbeddedTaxonomy": true
+      },
+      "entries": 1000,
+      "changedPrimaryTopic": 164,
+      "changedTopicList": 175,
+      "assignedPrimarySubtopics": 296,
+      "preservedWordRecordings": 797,
+      "preservedExampleIds": 2000
+    }
+  ]
+}

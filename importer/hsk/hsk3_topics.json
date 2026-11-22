@@ -1,102 +1,279 @@
-[
-  {
-    "id": "numbers-quantities",
-    "label": "Numbers & Quantities",
-    "description": "Counting, amounts, measurements, ordinals, and classifiers."
+{
+  "version": "2.0.0",
+  "schema_version": "hsk-topics/2.0.0",
+  "description": "Editorial shared semantic HSK 3.0 vocabulary taxonomy, with stable top-level IDs and optional parented subtopics; not an official HSK classification.",
+  "topics": [
+    {
+      "id": "numbers-quantities",
+      "label": "Numbers & Quantities",
+      "description": "Counting, amounts, measurements, ordinals, and classifiers."
+    },
+    {
+      "id": "time-calendar",
+      "label": "Time & Calendar",
+      "description": "Dates, times of day, periods, age and scheduling."
+    },
+    {
+      "id": "family-relationships",
+      "label": "Family & Relationships",
+      "description": "Relatives, family life, friendship, and relationships."
+    },
+    {
+      "id": "people-identity",
+      "label": "People & Identity",
+      "description": "People, gender, personal information, and forms of address."
+    },
+    {
+      "id": "reference-questions",
+      "label": "Pronouns, Questions & Pointing",
+      "description": "Personal and demonstrative pronouns; asking and pointing."
+    },
+    {
+      "id": "food-drink",
+      "label": "Food, Drinks & Meals",
+      "description": "Meals, eating, drinking, ingredients, and restaurants."
+    },
+    {
+      "id": "school-language",
+      "label": "Education & Language",
+      "description": "Learning, school, teachers, reading, writing, and languages."
+    },
+    {
+      "id": "work-jobs",
+      "label": "Work & Jobs",
+      "description": "Workplaces, occupations, and the working day."
+    },
+    {
+      "id": "shopping-money",
+      "label": "Shopping & Money",
+      "description": "Stores, prices, buying, selling, and currency."
+    },
+    {
+      "id": "home-objects",
+      "label": "Home, Clothing & Objects",
+      "description": "Home interiors, everyday belongings, clothing, and household objects."
+    },
+    {
+      "id": "travel-transport",
+      "label": "Travel & Transport",
+      "description": "Vehicles, travel, driving, and going from place to place."
+    },
+    {
+      "id": "health-wellbeing",
+      "label": "Health & Wellbeing",
+      "description": "Illness, medical care, sleep, and rest."
+    },
+    {
+      "id": "animals-weather",
+      "label": "Animals & Weather",
+      "description": "Animals, weather conditions, and the natural environment."
+    },
+    {
+      "id": "daily-actions",
+      "label": "Daily Actions & Activities",
+      "description": "Common everyday actions, physical activities, and routines."
+    },
+    {
+      "id": "leisure-media",
+      "label": "Leisure, Music & Media",
+      "description": "Films, music, games, recreation, and entertainment."
+    },
+    {
+      "id": "places-directions",
+      "label": "Places, Position & Direction",
+      "description": "Countries, positions, directions, and spatial relations."
+    },
+    {
+      "id": "communication-social",
+      "label": "Communication & Social Language",
+      "description": "Greetings, requests, apologizing, thanking, and speaking with others."
+    },
+    {
+      "id": "qualities-feelings",
+      "label": "Qualities, Feelings & Evaluation",
+      "description": "Descriptors, personal feelings, properties, and judgments."
+    },
+    {
+      "id": "grammar-functions",
+      "label": "Grammar & Function Words",
+      "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain."
+    },
+    {
+      "id": "abstract-concepts",
+      "label": "Abstract & General Concepts",
+      "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning."
+    },
+    {
+      "id": "science-technology",
+      "label": "Science & Technology",
+      "description": "Scientific ideas, research, computing, communications technology, engineering, and technical devices."
+    },
+    {
+      "id": "society-government-law",
+      "label": "Society, Government & Law",
+      "description": "Public institutions, government, laws, civic rights, public safety, and social structures."
+    }
+  ],
+  "subtopics": [
+    {
+      "id": "animals-wildlife",
+      "label": "Animals & Wildlife",
+      "description": "Animals, pets, wildlife, and animal habitats.",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "weather-climate",
+      "label": "Weather & Climate",
+      "description": "Weather, seasons, temperature, air conditions, and climate.",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "nature-ecology",
+      "label": "Nature & Ecology",
+      "description": "Landforms, plants, water, landscapes, conservation, and environmental processes.",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "emotions-attitudes",
+      "label": "Emotions & Attitudes",
+      "description": "Feelings, moods, desires, dispositions, and emotional responses.",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "physical-properties",
+      "label": "Physical Properties",
+      "description": "Observable characteristics such as dimensions, shape, color, texture, and temperature.",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "judgments-evaluation",
+      "label": "Judgments & Evaluation",
+      "description": "Subjective and objective appraisal, suitability, quality, and comparative evaluation.",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "everyday-routines",
+      "label": "Everyday Routines",
+      "description": "Recurring activities, ordinary personal habits, and household routines.",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "physical-actions",
+      "label": "Physical Actions",
+      "description": "Physical motions, manual manipulation, placement, and handling objects.",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "processes-change",
+      "label": "Processes & Change",
+      "description": "Changes of state, processes, progress, events, and general operations.",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "home-household",
+      "label": "Home & Household",
+      "description": "Housing, furniture, rooms, interior spaces, and household appliances.",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "clothing-accessories",
+      "label": "Clothing & Accessories",
+      "description": "Clothes, fashion accessories, dressing, and personal belongings worn.",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "everyday-objects",
+      "label": "Everyday Objects",
+      "description": "Common handheld objects, tools, physical materials, and miscellaneous belongings.",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "sports-recreation",
+      "label": "Sports & Recreation",
+      "description": "Sports, games, athletics, fitness recreation, and leisure activities.",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "arts-entertainment",
+      "label": "Arts & Entertainment",
+      "description": "Music, performing arts, visual arts, cinema, cultural performances, and entertainment.",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "media-literature",
+      "label": "Media & Literature",
+      "description": "Books, literature, publishing, broadcasting, journalism, and news media.",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "geography-places",
+      "label": "Geography & Places",
+      "description": "Countries, cities, geographic regions, locations, and built places.",
+      "parent_topic_id": "places-directions"
+    },
+    {
+      "id": "position-direction",
+      "label": "Position & Direction",
+      "description": "Relative location, spatial relationships, compass directions, and movement orientation.",
+      "parent_topic_id": "places-directions"
+    },
+    {
+      "id": "shopping-commerce",
+      "label": "Shopping & Commerce",
+      "description": "Retail, products, purchases, selling, and commercial exchange.",
+      "parent_topic_id": "shopping-money"
+    },
+    {
+      "id": "money-finance",
+      "label": "Money & Finance",
+      "description": "Money, accounts, banking, prices, wages, budgeting, and payments.",
+      "parent_topic_id": "shopping-money"
+    },
+    {
+      "id": "digital-technology",
+      "label": "Digital Technology",
+      "description": "Computers, internet services, digital devices, software, and electronic communications.",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "science-research",
+      "label": "Science & Research",
+      "description": "Science, scientific methods, mathematics, and research activity.",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "engineering-devices",
+      "label": "Engineering & Devices",
+      "description": "Machines, engineered systems, tools, electricity, and industrial technology.",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "government-politics",
+      "label": "Government & Politics",
+      "description": "Government, state institutions, political systems, public administration, and diplomacy.",
+      "parent_topic_id": "society-government-law"
+    },
+    {
+      "id": "law-rights",
+      "label": "Law & Rights",
+      "description": "Legal systems, law enforcement, regulations, rights, and legal procedures.",
+      "parent_topic_id": "society-government-law"
+    },
+    {
+      "id": "society-community",
+      "label": "Society & Community",
+      "description": "Community institutions, public services, social structures, and shared civic life.",
+      "parent_topic_id": "society-government-law"
+    }
+  ],
+  "classification_policy": {
+    "primary_topic_id": "One active primary topic per vocabulary sense; topic_ids starts with primary and contains meaningful secondary topics only.",
+    "primary_subtopic_id": "Optional. If nonnull, must appear in subtopic_ids and belong to the primary topic.",
+    "subtopic_ids": "Optional subtopics must be children of at least one listed topic; categories without defined subtopics use an empty array.",
+    "versioning": "Top-level IDs for the previous 20 categories are stable. The v2 registry is a JSON object rather than the legacy unversioned array."
   },
-  {
-    "id": "time-calendar",
-    "label": "Time & Calendar",
-    "description": "Dates, times of day, periods, age and scheduling."
-  },
-  {
-    "id": "family-relationships",
-    "label": "Family & Relationships",
-    "description": "Relatives, family life, friendship, and relationships."
-  },
-  {
-    "id": "people-identity",
-    "label": "People & Identity",
-    "description": "People, gender, personal information, and forms of address."
-  },
-  {
-    "id": "reference-questions",
-    "label": "Pronouns, Questions & Pointing",
-    "description": "Personal and demonstrative pronouns; asking and pointing."
-  },
-  {
-    "id": "food-drink",
-    "label": "Food, Drinks & Meals",
-    "description": "Meals, eating, drinking, ingredients, and restaurants."
-  },
-  {
-    "id": "school-language",
-    "label": "Education & Language",
-    "description": "Learning, school, teachers, reading, writing, and languages."
-  },
-  {
-    "id": "work-jobs",
-    "label": "Work & Jobs",
-    "description": "Workplaces, occupations, and the working day."
-  },
-  {
-    "id": "shopping-money",
-    "label": "Shopping & Money",
-    "description": "Stores, prices, buying, selling, and currency."
-  },
-  {
-    "id": "home-objects",
-    "label": "Home, Clothing & Objects",
-    "description": "Home interiors, everyday belongings, clothing, and household objects."
-  },
-  {
-    "id": "travel-transport",
-    "label": "Travel & Transport",
-    "description": "Vehicles, travel, driving, and going from place to place."
-  },
-  {
-    "id": "health-wellbeing",
-    "label": "Health & Wellbeing",
-    "description": "Illness, medical care, sleep, and rest."
-  },
-  {
-    "id": "animals-weather",
-    "label": "Animals & Weather",
-    "description": "Animals, weather conditions, and the natural environment."
-  },
-  {
-    "id": "daily-actions",
-    "label": "Daily Actions & Activities",
-    "description": "Common everyday actions, physical activities, and routines."
-  },
-  {
-    "id": "leisure-media",
-    "label": "Leisure, Music & Media",
-    "description": "Films, music, games, recreation, and entertainment."
-  },
-  {
-    "id": "places-directions",
-    "label": "Places, Position & Direction",
-    "description": "Countries, positions, directions, and spatial relations."
-  },
-  {
-    "id": "communication-social",
-    "label": "Communication & Social Language",
-    "description": "Greetings, requests, apologizing, thanking, and speaking with others."
-  },
-  {
-    "id": "qualities-feelings",
-    "label": "Qualities, Feelings & Evaluation",
-    "description": "Descriptors, personal feelings, properties, and judgments."
-  },
-  {
-    "id": "grammar-functions",
-    "label": "Grammar & Function Words",
-    "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain."
-  },
-  {
-    "id": "abstract-concepts",
-    "label": "Abstract & General Concepts",
-    "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning."
-  }
-]
+  "sources": [
+    "Legacy hsk3_topics.json v1.1.0 (all 20 original topic ID/label/description tuples preserved)",
+    "HSK 3.0 November 2025 vocabulary IDs 1–2000 in Levels 1–4; editorial semantic reassignment."
+  ]
+}

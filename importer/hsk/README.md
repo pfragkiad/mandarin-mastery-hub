@@ -4,20 +4,20 @@ These owner-supplied source files retain their original UTF-8 bytes and versione
 
 | File | Purpose and consumers | Producer |
 | --- | --- | --- |
-| [hsk3_level1_1.6.1.json](hsk3_level1_1.6.1.json) | 300 headwords and 600 examples, with 24 revised sentences. Read by the Level 1 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.6.1. |
-| [hsk3_level2_1.0.3.json](hsk3_level2_1.0.3.json) | 200 syllabus entries (301–500) and 400 examples, with six revised sentences. Read by the Level 2 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.3. |
-| [hsk3_level3_1.0.4.json](hsk3_level3_1.0.4.json) | 500 syllabus entries (501–1000), meanings, readings, 1,000 examples and editorial metadata. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.4. |
-| [hsk3_level4_1.0.3.json](hsk3_level4_1.0.3.json) | 1,000 syllabus entries (1001–2000), meanings, readings, 2,000 examples and editorial metadata. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.3. |
-| [hsk3_topics.json](hsk3_topics.json) | Shared 20-topic taxonomy; all importers require exact agreement with embedded topics. | Supplied taxonomy sidecar, version 1.1.0. |
+| [hsk3_level1_1.7.0.json](hsk3_level1_1.7.0.json) | 300 headwords and 600 examples, with 24 revised sentences. Read by the Level 1 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.7.0. |
+| [hsk3_level2_1.1.0.json](hsk3_level2_1.1.0.json) | 200 syllabus entries (301–500) and 400 examples, with six revised sentences. Read by the Level 2 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.0. |
+| [hsk3_level3_1.1.0.json](hsk3_level3_1.1.0.json) | 500 syllabus entries (501–1000), meanings, readings, 1,000 examples and editorial metadata. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.0. |
+| [hsk3_level4_1.1.0.json](hsk3_level4_1.1.0.json) | 1,000 syllabus entries (1001–2000), meanings, readings, 2,000 examples and editorial metadata. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.0. |
+| [hsk3_topics.json](hsk3_topics.json) | Versioned shared taxonomy with 22 parent topics and 25 subtopics; all importers require exact agreement with both embedded registries. | Supplied `hsk-topics/2.0.0` sidecar, version 2.0.0. |
 | `.gitattributes` | Disables Git line-ending conversion for current and archived checksum-bound sources. | Maintained alongside the pinned inputs. |
 
 Source SHA-256 values:
 
-- Level 1: `b86822f2e34f1ca0f068ccc3382514c8c1294a5265f46f8f168912ea0fe64a08`
-- Level 2: `f361dcb92b838ab403099b3bab2887073f6ae330fe1cb9f1fc4240108f92d68c`
-- Level 3: `119cc3981a6096859892145d667878d138c73a072c935adc40319368aeeedd5d`
-- Level 4: `10a5dcb07bb97dc1939bbd5e64e6bf575bd3399ffc77e8efd9103a12621a7ee9`
-- Topics: `b3d5ef85064afb3fd7a7e835b47ff3d43e693e7751190dc30a9de3c06da5165d`
+- Level 1: `eeddab94e661294e3c209bdbe5f1f9e73f251eec43e13940210a31be1e03056a`
+- Level 2: `735ecd4b029b2bc34430809a2501c8c6f8b05b3fd108bd3d31dc2319e3e2f478`
+- Level 3: `04f6c394775896cc0afbf346b9c7528c46d7f7d67e4c75f2709af2719620a0e5`
+- Level 4: `0225c634973aa66d58d6d851b7990ebbd1ca9c4312e8123641dbf2d20bfd7abd`
+- Topics: `d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f`
 
 From the repository root:
 
@@ -49,6 +49,10 @@ node --test scripts/import-hsk-level1.test.mjs scripts/import-hsk-level2.test.mj
 ```
 
 Use `--source`, `--topics` and `--vocabulary` to supply alternate input paths; `--output` selects a candidate output with `--write`. Vocabulary paths may be a split directory or a combined `.json` file. The Level 2–4 CLIs call the shared boundary in `scripts/import-hsk-level1.mjs`. All importers support their pinned schema/version and fail before writing if identities, taxonomy references or readings are incompatible.
+
+The v2 migration recategorizes all 2,000 syllabus entries without changing headwords, readings, meanings, POS or examples. Parent topics remain the browser collections, with stable category UUIDs; exact `primarySubtopicId` and `subtopicIds` are retained in `studyMetadata` for the 25 parented subtopics. Taxonomy and classification remain editorial drafts. See the [supplied migration report](../../reports/hsk3_topics_v2_migration_report.md), [supplied change list](../../reports/hsk3_topics_v2_migration_changes.csv), and [verified import audit](../../reports/hsk-topics-v2-import.json). The supplied reports are preserved byte-for-byte under `reports/`; optional compatibility-export filenames mentioned inside the report were not supplied here.
+
+Two owner-approved example pinyin spacing corrections remain applied by the importer (Level 1 ID 36 conversational; Level 3 ID 873 written). Each correction is bound to its exact sentence and source reading; other source readings stay untouched. Earlier source releases and taxonomy are archived byte-for-byte; Level 3/4 audio manifests continue to validate against those exact archived releases.
 
 Reimports match the existing syllabus ID **and exact headword**, retaining entry UUIDs, explicit word/phrase kinds, compatible entry recordings and existing syllabus provenance. Levels 3 and 4 create stable UUIDs from syllabus IDs and treat the supplied headwords as word entries, without inferring phrase kinds from length. They record the handoff itself as the syllabus source, rather than claiming independently verified primary-source provenance. Other levels remain unchanged; shared topics keep the same category UUIDs across all levels.
 

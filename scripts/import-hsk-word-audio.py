@@ -44,7 +44,7 @@ def configure(level):
     handoff, SIZE = LEVELS[level]
     LEVEL = level
     MANIFEST = INPUT / f'level{level}-manifest.json'
-    HANDOFF = ROOT / 'importer/hsk' / handoff
+    HANDOFF = ROOT / 'importer/hsk/archive' / handoff
     UPLOAD_MAP = INPUT / f'level{level}-uploads.json'
 
 

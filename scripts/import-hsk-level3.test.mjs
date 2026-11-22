@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { importLevel3 } from './import-hsk-level3.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level3_1.0.4.json';
+const sourcePath = 'importer/hsk/hsk3_level3_1.1.0.json';
 const topicsPath = 'importer/hsk/hsk3_topics.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
@@ -38,7 +38,8 @@ test('creates all Level 3 records and reimports them without changing any record
     assert.equal(entry.studyMetadata.verificationStatus, source.verification.status);
     assert.deepEqual(entry.studyMetadata.posIds, recorded.pos_ids);
     assert.equal(entry.studyMetadata.primaryPosId, recorded.primary_pos_id);
-    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english]), recorded.examples.map(e => [e.hanzi, e.pinyin, e.english]));
+    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english]), recorded.examples.map(e =>
+      [e.hanzi, recorded.id === 873 && e.style === 'written' ? 'xuéshēng zài wǎngzhàn shàng xuéxí Hànyǔ.' : e.pinyin, e.english]));
     assert.ok(entry.examples.every(e => e.audio === null && e.tokens.map(t => t.text).join('') === e.simplified));
   }
   const homographs = entries.filter(e => e.simplified === '得');
@@ -47,6 +48,10 @@ test('creates all Level 3 records and reimports them without changing any record
   assert.deepEqual(entries.find(e => e.hsk_index === 670).tokens.map(t => t.pinyin), ['hóng', 'lǜ', 'dēng']);
   writeFileSync(paths.vocabularyPath, JSON.stringify(first.data));
   assert.deepEqual(importLevel3(paths).data, first.data);
+});
+
+test('reimports the current Level 3 with all existing identities, recordings and corrections intact', t => {
+  assert.deepEqual(importLevel3(fixture(t)).data, vocabulary);
 });
 
 test('rejects incomplete or conflicting existing Level 3 identities', t => {

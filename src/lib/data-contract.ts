@@ -26,6 +26,7 @@ export type Entry = {
   studyMetadata?: {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
     primaryTopicId: string; topicIds: string[]; primaryPosId: string; posIds: string[]; posLabels: string[];
+    primarySubtopicId?: string | null; subtopicIds?: string[];
     posNote: string | null; verificationStatus: string;
     syllabusHeadword?: string; syllabusPosZh?: string;
   };
