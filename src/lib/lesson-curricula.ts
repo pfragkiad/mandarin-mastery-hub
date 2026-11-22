@@ -16,14 +16,14 @@
  * manifests; the Lessons pages and the Vocabulary word cards (lessonsForWord: which course
  * lessons teach this exact HSK word) import this module.
  */
-import { SYLLABUS_VERSION, lessonSummaries, lessonSummary, type LessonSummary } from './lessons';
+import { SYLLABUS_VERSION, isSyllabusRecord, lessonSummaries, lessonSummary, type LessonSummary, type SyllabusRecordFields } from './lessons';
 
 /** Syllabus edition each course teaches, by course (curriculum) ID. The HSK 3.0 levels are
- *  separate courses (hsk3-2025 = Level 1, hsk3-2025-level2 = Level 2) that all teach the
+ *  one course (hsk3-2025) whose sections are the levels (Level 1, Level 2, …) and teach the
  *  hsk3-2025 syllabus their lessons' syllabus_refs name, so word cards find lessons in each.
  *  Kept apart from SYLLABUS_VERSION, which only decides which syllabus_refs curriculum IDs
  *  resolve to Vocabulary words. */
-export const COURSE_SYLLABUS: Record<string, string> = { ...SYLLABUS_VERSION, 'hsk3-2025-level2': SYLLABUS_VERSION['hsk3-2025']! };
+export const COURSE_SYLLABUS: Record<string, string> = { ...SYLLABUS_VERSION };
 
 export type CoursePlacement = {
   id: string;
@@ -90,7 +90,7 @@ export function lessonPositions(courses: Course[], lessonId: string): LessonPosi
 }
 
 /** The vocabulary-record identity a course placement can name: an official syllabus word. */
-export type SyllabusWord = { entryKind: string; hskVersion: string | null; hsk_index: number | null };
+export type SyllabusWord = SyllabusRecordFields;
 export type WordLessonPlacement = LessonPosition & { introduced: boolean };
 /**
  * Course lessons that teach one exact Vocabulary word: placements whose recorded
@@ -100,8 +100,8 @@ export type WordLessonPlacement = LessonPosition & { introduced: boolean };
  * and a word without an HSK number, or from another edition, has no course lessons.
  */
 export function wordLessonPlacements(all: Course[], word: SyllabusWord): WordLessonPlacement[] {
-  if (word.entryKind !== 'word' || word.hsk_index == null || !word.hskVersion) return [];
-  const id = word.hsk_index;
+  if (!isSyllabusRecord(word)) return [];
+  const id = word.hsk_index!;
   return all.filter(c => COURSE_SYLLABUS[c.id] === word.hskVersion).flatMap(course => course.sections.flatMap(section => {
     const flat = sectionPlacements(section);
     return flat.flatMap((placement, i): WordLessonPlacement[] => {
@@ -119,7 +119,7 @@ const manifests = import.meta.glob<RawCurriculum>('/src/data/study_lessons/lesso
 export const unresolvedPlacements: string[] = [];
 /** Display order of known courses on the Lessons page (manifests carry no course order);
  *  courses not listed follow in file order. */
-const COURSE_ORDER = ['hsk3-2025', 'hsk3-2025-level2', 'conversational-mandarin'];
+const COURSE_ORDER = ['hsk3-2025', 'conversational-mandarin'];
 const rank = (id: string) => { const i = COURSE_ORDER.indexOf(id); return i < 0 ? COURSE_ORDER.length : i; };
 export const courses: Course[] = Object.keys(manifests).sort().flatMap(path => {
   const course = buildCourse(manifests[path]!, lessonSummary, unresolvedPlacements);

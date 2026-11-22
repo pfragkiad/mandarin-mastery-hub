@@ -1,0 +1,1041 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-nature-and-the-weather",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Nature and the Weather",
+    "subtitle": "Birds, flowers, sunshine and clouds",
+    "description": "Describe an outdoor scene with weather, birds, flowers and water.",
+    "slug": "nature-and-the-weather"
+  },
+  "classification": {
+    "primary_topic_id": "animals-weather",
+    "topic_ids": [
+      "animals-weather"
+    ],
+    "tags": [
+      "birds",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "weather-climate",
+    "subtopic_ids": [
+      "weather-climate"
+    ]
+  },
+  "learning_objectives": [
+    "Contrast sunny and cloudy conditions.",
+    "Describe a bird flying and things moving through water.",
+    "Talk about flowers in a natural outdoor setting."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "亮": "Characters:亮",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "吹": "Characters:吹",
+    "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "把": "Characters:把",
+    "旅": "Characters:旅",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "晴": "Characters:晴",
+    "有": "Characters:有",
+    "朗": "Characters:朗",
+    "期": "Characters:期",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "游": "Characters:游",
+    "湖": "Characters:湖",
+    "漂": "Characters:漂",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "睡": "Characters:睡",
+    "能": "Characters:能",
+    "花": "Characters:花",
+    "觉": "Characters:觉",
+    "起": "Characters:起",
+    "边": "Characters:边",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "阴": "Characters:阴",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "风": "Characters:风",
+    "飞": "Characters:飞",
+    "高": "Characters:高",
+    "鱼": "Characters:鱼",
+    "鸟": "Characters:鸟"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Describe an outdoor scene with weather, birds, flowers and water.",
+      "focus": "Contrast sunny and cloudy conditions."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-340",
+          "hanzi": "飞",
+          "pinyin": "fēi",
+          "meaning_en": "to fly",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-340-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "鸟会飞吗？",
+              "pinyin": "niǎo huì fēi ma?",
+              "english": "Can birds fly?",
+              "teaching_note": "A short spoken example using 飞."
+            },
+            {
+              "id": "ex-340-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "天上有一只鸟在飞。",
+              "pinyin": "tiān shàng yǒu yì zhī niǎo zài fēi.",
+              "english": "A bird is flying in the sky.",
+              "teaching_note": "A simple written example using 飞."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 340
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-358",
+          "hanzi": "花",
+          "pinyin": "huā",
+          "meaning_en": "flower; blossom",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-358-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这花真漂亮！",
+              "pinyin": "zhè huā zhēn piàoliang!",
+              "english": "This flower is so beautiful!",
+              "teaching_note": "This 花 (huā) is the noun “flower”; ID 357 means “to spend.”"
+            },
+            {
+              "id": "ex-358-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校前面有很多花。",
+              "pinyin": "xuéxiào qiánmiàn yǒu hěn duō huā.",
+              "english": "There are many flowers in front of the school.",
+              "teaching_note": "This 花 (huā) is the noun “flower”; ID 357 means “to spend.”"
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 358
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "pos_note": "This 花 (huā) is the noun “flower”; ID 357 means “to spend.”"
+        },
+        {
+          "id": "w-411",
+          "hanzi": "鸟",
+          "pinyin": "niǎo",
+          "meaning_en": "bird",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-411-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看，那只鸟！",
+              "pinyin": "nǐ kàn, nà zhī niǎo!",
+              "english": "Look, that bird!",
+              "teaching_note": "A short spoken example using 鸟."
+            },
+            {
+              "id": "ex-411-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "一只鸟在天上飞。",
+              "pinyin": "yì zhī niǎo zài tiān shàng fēi.",
+              "english": "A bird is flying in the sky.",
+              "teaching_note": "A simple written example using 鸟."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 411
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ]
+        },
+        {
+          "id": "w-420",
+          "hanzi": "晴",
+          "pinyin": "qíng",
+          "meaning_en": "sunny; clear weather",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-420-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天是晴天吗？",
+              "pinyin": "jīntiān shì qíng tiān ma?",
+              "english": "Is it sunny today?",
+              "teaching_note": "A short spoken example using 晴."
+            },
+            {
+              "id": "ex-420-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天是晴天，可以出去玩。",
+              "pinyin": "míngtiān shì qíng tiān, kěyǐ chūqù wán.",
+              "english": "Tomorrow will be sunny, so we can go out and play.",
+              "teaching_note": "A simple written example using 晴."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 420
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ]
+        },
+        {
+          "id": "w-475",
+          "hanzi": "阴",
+          "pinyin": "yīn",
+          "meaning_en": "overcast; cloudy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-475-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天阴，没下雨。",
+              "pinyin": "jīntiān yīn, méi xià yǔ.",
+              "english": "It is overcast today, but it isn't raining.",
+              "teaching_note": "A short spoken example using 阴."
+            },
+            {
+              "id": "ex-475-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天上午可能是阴天。",
+              "pinyin": "míngtiān shàngwǔ kěnéng shì yīn tiān.",
+              "english": "Tomorrow morning may be cloudy.",
+              "teaching_note": "A simple written example using 阴."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 475
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-477",
+          "hanzi": "游",
+          "pinyin": "yóu",
+          "meaning_en": "to swim; to travel through water",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-477-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看，这条鱼游得真快！",
+              "pinyin": "nǐ kàn, zhè tiáo yú yóu de zhēn kuài!",
+              "english": "Look how fast this fish swims!",
+              "teaching_note": "A short spoken example using 游."
+            },
+            {
+              "id": "ex-477-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "鱼在水里游。",
+              "pinyin": "yú zài shuǐ lǐ yóu.",
+              "english": "The fish is swimming in the water.",
+              "teaching_note": "A simple written example using 游."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 477
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-064",
+          "hanzi": "狗",
+          "pinyin": "gǒu",
+          "meaning_en": "dog",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-064-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这只狗很小。",
+              "pinyin": "zhè zhī gǒu hěn xiǎo.",
+              "english": "This dog is very small.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            },
+            {
+              "id": "ex-064-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有两只狗。",
+              "pinyin": "zhèlǐ yǒu liǎng zhī gǒu.",
+              "english": "There are two dogs here.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 64
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ]
+        },
+        {
+          "id": "w-109",
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "meaning_en": "cold",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "animals-weather",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-109-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天很冷。",
+              "pinyin": "jīntiān hěn lěng.",
+              "english": "It is cold today.",
+              "teaching_note": "很 + 冷 describes cold weather; context supplies how cold it feels."
+            },
+            {
+              "id": "ex-109-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天晚上比上午冷。",
+              "pinyin": "jīntiān wǎnshang bǐ shàngwǔ lěng.",
+              "english": "It is colder tonight than it was this morning.",
+              "teaching_note": "Daily time or schedule context illustrating 冷 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 109
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ]
+        },
+        {
+          "id": "w-119",
+          "hanzi": "猫",
+          "pinyin": "māo",
+          "meaning_en": "cat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "examples": [
+            {
+              "id": "ex-119-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一只猫。",
+              "pinyin": "wǒ yǒu yì zhī māo.",
+              "english": "I have a cat.",
+              "teaching_note": "只 is the common animal classifier when counting cats."
+            },
+            {
+              "id": "ex-119-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这只猫喜欢睡觉。",
+              "pinyin": "zhè zhī māo xǐhuan shuìjiào.",
+              "english": "This cat likes sleeping.",
+              "teaching_note": "Short beginner-level description illustrating 猫 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 119
+            }
+          ],
+          "primary_topic_id": "animals-weather",
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Talking about conditions",
+        "explanation": "晴 (qíng) refers to clear, sunny weather; 阴 (yīn) refers to cloudy or overcast conditions.",
+        "example_id": "ex-340-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Describing movement in nature",
+        "explanation": "飞 (fēi) describes flying, while 游 (yóu) describes moving through water.",
+        "example_id": "ex-358-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-340-1",
+      "ex-358-1",
+      "ex-411-1",
+      "ex-420-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "In the afternoon it gradually grows cloudy. The wind makes the flowers move, while fish swim in the lake."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: That little bird can fly. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 那只小鸟会飞。 (Nà zhī xiǎo niǎo huì fēi.)",
+          "answer": "那只小鸟会飞。 (Nà zhī xiǎo niǎo huì fēi.)"
+        },
+        {
+          "id": "recall-340",
+          "kind": "selection",
+          "prompt": "Which expression means “to fly”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "飞",
+              "pinyin": "fēi",
+              "meaning_en": "to fly"
+            },
+            {
+              "id": "b",
+              "hanzi": "花",
+              "pinyin": "huā",
+              "meaning_en": "flower; blossom"
+            },
+            {
+              "id": "c",
+              "hanzi": "鸟",
+              "pinyin": "niǎo",
+              "meaning_en": "bird"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 飞 (fēi) with this meaning."
+        },
+        {
+          "id": "recall-358",
+          "kind": "selection",
+          "prompt": "Which expression means “flower”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "飞",
+              "pinyin": "fēi",
+              "meaning_en": "to fly"
+            },
+            {
+              "id": "c",
+              "hanzi": "鸟",
+              "pinyin": "niǎo",
+              "meaning_en": "bird"
+            },
+            {
+              "id": "a",
+              "hanzi": "花",
+              "pinyin": "huā",
+              "meaning_en": "flower; blossom"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 花 (huā) with this meaning."
+        },
+        {
+          "id": "recall-411",
+          "kind": "selection",
+          "prompt": "Which expression means “bird”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "花",
+              "pinyin": "huā",
+              "meaning_en": "flower; blossom"
+            },
+            {
+              "id": "a",
+              "hanzi": "鸟",
+              "pinyin": "niǎo",
+              "meaning_en": "bird"
+            },
+            {
+              "id": "b",
+              "hanzi": "飞",
+              "pinyin": "fēi",
+              "meaning_en": "to fly"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 鸟 (niǎo) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Nature and the Weather",
+        "context_en": "Describe an outdoor scene with weather, birds, flowers and water.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天天气怎么样？我们出去吧。",
+            "pinyin": "Jīntiān tiānqì zěnmeyàng? Wǒmen chūqù ba.",
+            "english": "What’s the weather like today? Let’s go out."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "现在是晴天，公园里有很多花。",
+            "pinyin": "Xiànzài shì qíngtiān, gōngyuán lǐ yǒu hěn duō huā.",
+            "english": "It’s sunny now, and there are lots of flowers in the park."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你看，那只鸟飞得真高！",
+            "pinyin": "Nǐ kàn, nà zhī niǎo fēi de zhēn gāo!",
+            "english": "Look, that bird is flying really high!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "一会儿可能会阴天，我们先去湖边看看。",
+            "pinyin": "Yíhuìr kěnéng huì yīntiān, wǒmen xiān qù hú biān kànkan.",
+            "english": "It may get cloudy soon; let’s look by the lake first."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Talking about conditions",
+          "explanation_en": "晴 (qíng) refers to clear, sunny weather; 阴 (yīn) refers to cloudy or overcast conditions.",
+          "formula_en": "今天 + 晴/阴 + 天",
+          "examples": [
+            {
+              "hanzi": "那只小鸟会飞。",
+              "pinyin": "Nà zhī xiǎo niǎo huì fēi.",
+              "english": "That little bird can fly."
+            },
+            {
+              "hanzi": "现在是晴天，公园里有很多花。",
+              "pinyin": "Xiànzài shì qíngtiān, gōngyuán lǐ yǒu hěn duō huā.",
+              "english": "It’s sunny now, and there are lots of flowers in the park."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Describing movement in nature",
+          "explanation_en": "飞 (fēi) describes flying, while 游 (yóu) describes moving through water.",
+          "formula_en": "Animal + 在 + place + movement verb",
+          "examples": [
+            {
+              "hanzi": "今天阴天，我们在家看书吧。",
+              "pinyin": "Jīntiān yīntiān, wǒmen zài jiā kàn shū ba.",
+              "english": "It’s cloudy today; let’s read at home."
+            },
+            {
+              "hanzi": "一会儿可能会阴天，我们先去湖边看看。",
+              "pinyin": "Yíhuìr kěnéng huì yīntiān, wǒmen xiān qù hú biān kànkan.",
+              "english": "It may get cloudy soon; let’s look by the lake first."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "今天天气怎么样？我们出去吧。",
+          "pinyin": "Jīntiān tiānqì zěnmeyàng? Wǒmen chūqù ba.",
+          "english": "What’s the weather like today? Let’s go out."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: That little bird can fly.",
+            "model_answer": {
+              "hanzi": "那只小鸟会飞。",
+              "pinyin": "Nà zhī xiǎo niǎo huì fēi.",
+              "english": "That little bird can fly."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: It’s cloudy today; let’s read at home.",
+            "model_answer": {
+              "hanzi": "今天阴天，我们在家看书吧。",
+              "pinyin": "Jīntiān yīntiān, wǒmen zài jiā kàn shū ba.",
+              "english": "It’s cloudy today; let’s read at home."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Look, that bird is flying really high!",
+            "model_answer": {
+              "hanzi": "你看，那只鸟飞得真高！",
+              "pinyin": "Nǐ kàn, nà zhī niǎo fēi de zhēn gāo!",
+              "english": "Look, that bird is flying really high!"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Nature and the Weather — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "星期六，两个孩子到公园玩。天气很晴朗，鸟儿在树上唱歌。",
+            "pinyin": "Xīngqīliù, liǎng ge háizi dào gōngyuán wán. Tiānqì hěn qínglǎng, niǎor zài shù shang chàng gē.",
+            "english": "On Saturday, two children play in the park. The weather is clear, and birds sing in the trees."
+          },
+          {
+            "hanzi": "下午天慢慢阴了，风把花吹得动起来。湖里还有鱼在游。",
+            "pinyin": "Xiàwǔ tiān mànman yīn le, fēng bǎ huā chuī de dòng qǐlái. Hú lǐ hái yǒu yú zài yóu.",
+            "english": "In the afternoon it gradually grows cloudy. The wind makes the flowers move, while fish swim in the lake."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "On Saturday, two children play in the park. The weather is clear, and birds sing in the trees."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "In the afternoon it gradually grows cloudy. The wind makes the flowers move, while fish swim in the lake."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: That little bird can fly.",
+          "model_answer": {
+            "hanzi": "那只小鸟会飞。",
+            "pinyin": "Nà zhī xiǎo niǎo huì fēi.",
+            "english": "That little bird can fly."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: It’s cloudy today; let’s read at home.",
+          "model_answer": {
+            "hanzi": "今天阴天，我们在家看书吧。",
+            "pinyin": "Jīntiān yīntiān, wǒmen zài jiā kàn shū ba.",
+            "english": "It’s cloudy today; let’s read at home."
+          }
+        }
+      ],
+      "common_pitfall": "游 (yóu) means swim or move through water here; 旅游 (lǚyóu), travel, is a different word. 花 (huā) here means flower, not spend.",
+      "pronunciation_focus": "Distinguish 晴 (qíng), second tone, from 阴 (yīn), first tone, and 飞 (fēi), first tone.",
+      "review": {
+        "can_do": [
+          "Contrast sunny and cloudy conditions.",
+          "Describe a bird flying and things moving through water.",
+          "Talk about flowers in a natural outdoor setting."
+        ],
+        "entry_ids": [
+          340,
+          358,
+          411,
+          420,
+          475,
+          477
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-nature-and-the-weather--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Talking about conditions",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-nature-and-the-weather--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Describing movement in nature",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: That little bird can fly.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-nature-and-the-weather--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: It’s cloudy today; let’s read at home.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-nature-and-the-weather--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Look, that bird is flying really high!",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-nature-and-the-weather--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: That little bird can fly.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-nature-and-the-weather--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: It’s cloudy today; let’s read at home.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-nature-and-the-weather--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-nature-and-the-weather--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-nature-and-the-weather--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: That little bird can fly. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-nature-and-the-weather--question-recall-340",
+            "kind": "practice",
+            "label": "Which expression means “to fly”?",
+            "optional": true,
+            "target_id": "recall-340"
+          },
+          {
+            "id": "topic-nature-and-the-weather--question-recall-358",
+            "kind": "practice",
+            "label": "Which expression means “flower”?",
+            "optional": true,
+            "target_id": "recall-358"
+          },
+          {
+            "id": "topic-nature-and-the-weather--question-recall-411",
+            "kind": "practice",
+            "label": "Which expression means “bird”?",
+            "optional": true,
+            "target_id": "recall-411"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

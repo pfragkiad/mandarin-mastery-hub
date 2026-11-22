@@ -96,10 +96,25 @@
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-asking-for-help-and-making-introductions": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
+    },
     "topic-basic-negation-particles": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
+    },
+    "topic-buying-tickets-and-shopping": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 26
+    },
+    "topic-choosing-drinks-and-food": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 36
     },
     "topic-clock-and-day": {
       "required": 18,
@@ -116,25 +131,60 @@
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-counting-things-and-occasions": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 34
+    },
     "topic-dates-calendar": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
+    },
+    "topic-describing-actions-more-precisely": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 38
+    },
+    "topic-describing-colors-and-comparing-things": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 42
     },
     "topic-describing-feelings": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-describing-location-and-distance": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 50
+    },
+    "topic-entering-leaving-and-returning": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 50
+    },
     "topic-everyday-actions": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-explaining-why-and-how": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
+    },
     "topic-family-and-friends": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
+    },
+    "topic-finding-the-way-in-town": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
     },
     "topic-food-and-meals": {
       "required": 18,
@@ -151,10 +201,35 @@
       "optional": 3,
       "estimated_minutes": 25
     },
-    "topic-making-plans-together": {
-      "required": 25,
+    "topic-helping-with-everyday-tasks": {
+      "required": 15,
       "optional": 3,
-      "estimated_minutes": 35
+      "estimated_minutes": 36
+    },
+    "topic-how-are-you-feeling": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 44
+    },
+    "topic-introducing-people-by-name": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
+    },
+    "topic-linking-ideas-in-conversation": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 38
+    },
+    "topic-my-room-and-my-belongings": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
+    },
+    "topic-nature-and-the-weather": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
     },
     "topic-people-and-work": {
       "required": 18,
@@ -166,6 +241,11 @@
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-planning-a-journey": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 44
+    },
     "topic-quantities-classifiers": {
       "required": 18,
       "optional": 3,
@@ -176,10 +256,20 @@
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-routines-and-making-plans": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 38
+    },
     "topic-school-people-places": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
+    },
+    "topic-sharing-opinions-and-feelings": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 32
     },
     "topic-shopping-and-things": {
       "required": 18,
@@ -191,10 +281,40 @@
       "optional": 3,
       "estimated_minutes": 25
     },
+    "topic-sports-games-and-hobbies": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 36
+    },
     "topic-studying-and-language": {
       "required": 18,
       "optional": 3,
       "estimated_minutes": 25
+    },
+    "topic-talking-about-family-members": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 28
+    },
+    "topic-talking-about-meanings-and-situations": {
+      "required": 15,
+      "optional": 2,
+      "estimated_minutes": 24
+    },
+    "topic-talking-about-time-and-habits": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 42
+    },
+    "topic-using-the-internet": {
+      "required": 15,
+      "optional": 2,
+      "estimated_minutes": 24
+    },
+    "topic-words-classes-and-examinations": {
+      "required": 15,
+      "optional": 3,
+      "estimated_minutes": 44
     }
   }
 }

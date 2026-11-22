@@ -1,0 +1,1043 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-finding-the-way-in-town",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Places, Position & Direction — Part 3: Finding the Way in Town",
+    "subtitle": "Street routes, entrances and facilities",
+    "description": "Ask where places are and follow simple walking directions in an unfamiliar area.",
+    "slug": "finding-the-way-in-town"
+  },
+  "classification": {
+    "primary_topic_id": "places-directions",
+    "topic_ids": [
+      "places-directions"
+    ],
+    "tags": [
+      "street-routes",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "geography-places",
+    "subtopic_ids": [
+      "geography-places"
+    ]
+  },
+  "learning_objectives": [
+    "Ask directions using 往 (wǎng) and 从 (cóng).",
+    "Identify a street and a building entrance.",
+    "Find a 洗手间 (xǐshǒujiān) politely."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "于": "Characters:于",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "再": "Characters:再",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "医": "Characters:医",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "右": "Characters:右",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "左": "Characters:左",
+    "市": "Characters:市",
+    "店": "Characters:店",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "找": "Characters:找",
+    "旁": "Characters:旁",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "每": "Characters:每",
+    "沿": "Characters:沿",
+    "洗": "Characters:洗",
+    "王": "Characters:王",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "着": "Characters:着",
+    "站": "Characters:站",
+    "第": "Characters:第",
+    "等": "Characters:等",
+    "终": "Characters:终",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask where places are and follow simple walking directions in an unfamiliar area.",
+      "focus": "Ask directions using 往 (wǎng) and 从 (cóng)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-324",
+          "hanzi": "从",
+          "pinyin": "cóng",
+          "meaning_en": "from; since",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-324-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你从哪儿来？",
+              "pinyin": "nǐ cóng nǎr lái?",
+              "english": "Where are you coming from?",
+              "teaching_note": "A short spoken example using 从."
+            },
+            {
+              "id": "ex-324-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我每天从家走到学校。",
+              "pinyin": "wǒ měi tiān cóng jiā zǒu dào xuéxiào.",
+              "english": "I walk from home to school every day.",
+              "teaching_note": "A simple written example using 从."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 324
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-392",
+          "hanzi": "路",
+          "pinyin": "lù",
+          "meaning_en": "road; path",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-392-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条路怎么走？",
+              "pinyin": "zhè tiáo lù zěnme zǒu?",
+              "english": "How do I go along this road?",
+              "teaching_note": "A short spoken example using 路."
+            },
+            {
+              "id": "ex-392-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这条路从学校门口到车站。",
+              "pinyin": "zhè tiáo lù cóng xuéxiào ménkǒu dào chēzhàn.",
+              "english": "This road runs from the school entrance to the station.",
+              "teaching_note": "A simple written example using 路."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 392
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-401",
+          "hanzi": "门口",
+          "pinyin": "ménkǒu",
+          "meaning_en": "doorway; entrance",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-401-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我在门口等你。",
+              "pinyin": "wǒ zài ménkǒu děng nǐ.",
+              "english": "I'll wait for you at the entrance.",
+              "teaching_note": "A short spoken example using 门口."
+            },
+            {
+              "id": "ex-401-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校门口有很多学生。",
+              "pinyin": "xuéxiào ménkǒu yǒu hěn duō xuéshēng.",
+              "english": "There are many students at the school entrance.",
+              "teaching_note": "A simple written example using 门口."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 401
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-446",
+          "hanzi": "外国",
+          "pinyin": "wàiguó",
+          "meaning_en": "foreign country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-446-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去过外国吗？",
+              "pinyin": "nǐ qù guo wàiguó ma?",
+              "english": "Have you been abroad?",
+              "teaching_note": "A short spoken example using 外国."
+            },
+            {
+              "id": "ex-446-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我的朋友在外国工作。",
+              "pinyin": "wǒ de péngyou zài wàiguó gōngzuò.",
+              "english": "My friend works in a foreign country.",
+              "teaching_note": "A simple written example using 外国."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 446
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-450",
+          "hanzi": "往",
+          "pinyin": "wǎng",
+          "meaning_en": "towards; in the direction of",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition",
+            "verb"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-450-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "从这里往前走。",
+              "pinyin": "cóng zhèlǐ wǎng qián zǒu.",
+              "english": "Walk straight ahead from here.",
+              "teaching_note": "A short spoken example using 往."
+            },
+            {
+              "id": "ex-450-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校在左边，往右走可以到医院。",
+              "pinyin": "xuéxiào zài zuǒbian, wǎng yòu zǒu kěyǐ dào yīyuàn.",
+              "english": "The school is on the left; walk right to reach the hospital.",
+              "teaching_note": "A simple written example using 往."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 450
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ]
+        },
+        {
+          "id": "w-457",
+          "hanzi": "洗手间",
+          "pinyin": "xǐshǒujiān",
+          "meaning_en": "restroom; washroom",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-457-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "洗手间在哪儿？",
+              "pinyin": "xǐshǒujiān zài nǎr?",
+              "english": "Where is the restroom?",
+              "teaching_note": "A short spoken example using 洗手间."
+            },
+            {
+              "id": "ex-457-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆有洗手间。",
+              "pinyin": "zhè jiā fànguǎn yǒu xǐshǒujiān.",
+              "english": "There is a restroom in this restaurant.",
+              "teaching_note": "A simple written example using 洗手间."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 457
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-011",
+          "hanzi": "边",
+          "pinyin": "biān",
+          "meaning_en": "side; edge",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-011-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你来这边坐吧。",
+              "pinyin": "nǐ lái zhèbiān zuò ba.",
+              "english": "Come sit over here.",
+              "teaching_note": "Short beginner-level description illustrating 边 in context."
+            },
+            {
+              "id": "ex-011-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在那边。",
+              "pinyin": "xuéxiào zài nàbiān.",
+              "english": "The school is over there.",
+              "teaching_note": "School or study context showing 边 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 11
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+        },
+        {
+          "id": "w-066",
+          "hanzi": "国",
+          "pinyin": "guó",
+          "meaning_en": "country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-066-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "中国是一个大国。",
+              "pinyin": "Zhōngguó shì yí ge dàguó.",
+              "english": "China is a large country.",
+              "teaching_note": "大国 means a large or major country; 个 is a general classifier."
+            },
+            {
+              "id": "ex-066-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我哥哥在外国工作。",
+              "pinyin": "wǒ gēge zài wàiguó gōngzuò.",
+              "english": "My older brother works abroad.",
+              "teaching_note": "外国 (“foreign country/abroad”) is a common compound containing 国."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 66
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ]
+        },
+        {
+          "id": "w-080",
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "meaning_en": "after; behind",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-080-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐在你后边。",
+              "pinyin": "wǒ zuò zài nǐ hòubian.",
+              "english": "I am sitting behind you.",
+              "teaching_note": "后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker."
+            },
+            {
+              "id": "ex-080-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们下课后去书店。",
+              "pinyin": "wǒmen xiàkè hòu qù shūdiàn.",
+              "english": "We go to the bookstore after class.",
+              "teaching_note": "School or study context showing 后 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 80
+            }
+          ],
+          "primary_topic_id": "places-directions",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Where a route begins",
+        "explanation": "从 (cóng) introduces the starting location of a journey or movement.",
+        "example_id": "ex-324-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Giving a direction",
+        "explanation": "往 (wǎng) marks the direction of travel; combine it with 前 (qián), 左 (zuǒ), or 右 (yòu).",
+        "example_id": "ex-392-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-324-1",
+      "ex-392-1",
+      "ex-401-1",
+      "ex-446-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "At the school entrance he asks for directions and finally finds the restroom beside the restaurant."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Please walk left from the school entrance. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 请从学校门口往左走。 (Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.)",
+          "answer": "请从学校门口往左走。 (Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.)"
+        },
+        {
+          "id": "recall-324",
+          "kind": "selection",
+          "prompt": "Which expression means “from”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "meaning_en": "from; since"
+            },
+            {
+              "id": "b",
+              "hanzi": "路",
+              "pinyin": "lù",
+              "meaning_en": "road; path"
+            },
+            {
+              "id": "c",
+              "hanzi": "门口",
+              "pinyin": "ménkǒu",
+              "meaning_en": "doorway; entrance"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 从 (cóng) with this meaning."
+        },
+        {
+          "id": "recall-392",
+          "kind": "selection",
+          "prompt": "Which expression means “road”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "meaning_en": "from; since"
+            },
+            {
+              "id": "c",
+              "hanzi": "门口",
+              "pinyin": "ménkǒu",
+              "meaning_en": "doorway; entrance"
+            },
+            {
+              "id": "a",
+              "hanzi": "路",
+              "pinyin": "lù",
+              "meaning_en": "road; path"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 路 (lù) with this meaning."
+        },
+        {
+          "id": "recall-401",
+          "kind": "selection",
+          "prompt": "Which expression means “doorway”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "路",
+              "pinyin": "lù",
+              "meaning_en": "road; path"
+            },
+            {
+              "id": "a",
+              "hanzi": "门口",
+              "pinyin": "ménkǒu",
+              "meaning_en": "doorway; entrance"
+            },
+            {
+              "id": "b",
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "meaning_en": "from; since"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 门口 (ménkǒu) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Finding the Way in Town",
+        "context_en": "Ask where places are and follow simple walking directions in an unfamiliar area.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "不好意思，请问洗手间在哪儿？",
+            "pinyin": "Bù hǎoyìsi, qǐngwèn xǐshǒujiān zài nǎr?",
+            "english": "Excuse me, where is the restroom?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "从这儿往前走，到门口再往右走。",
+            "pinyin": "Cóng zhèr wǎng qián zǒu, dào ménkǒu zài wǎng yòu zǒu.",
+            "english": "Walk forward from here, then turn right at the entrance."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "是在这条路上吗？",
+            "pinyin": "Shì zài zhè tiáo lù shang ma?",
+            "english": "Is it on this road?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，就在那个外国饭馆的旁边。",
+            "pinyin": "Duì, jiù zài nà ge wàiguó fànguǎn de pángbiān.",
+            "english": "Yes, it’s right next to that foreign restaurant."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Where a route begins",
+          "explanation_en": "从 (cóng) introduces the starting location of a journey or movement.",
+          "formula_en": "从 + starting point + verb",
+          "examples": [
+            {
+              "hanzi": "请从学校门口往左走。",
+              "pinyin": "Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.",
+              "english": "Please walk left from the school entrance."
+            },
+            {
+              "hanzi": "从这儿往前走，到门口再往右走。",
+              "pinyin": "Cóng zhèr wǎng qián zǒu, dào ménkǒu zài wǎng yòu zǒu.",
+              "english": "Walk forward from here, then turn right at the entrance."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Giving a direction",
+          "explanation_en": "往 (wǎng) marks the direction of travel; combine it with 前 (qián), 左 (zuǒ), or 右 (yòu).",
+          "formula_en": "往 + direction + 走",
+          "examples": [
+            {
+              "hanzi": "洗手间就在前面。",
+              "pinyin": "Xǐshǒujiān jiù zài qiánmiàn.",
+              "english": "The restroom is just ahead."
+            },
+            {
+              "hanzi": "对，就在那个外国饭馆的旁边。",
+              "pinyin": "Duì, jiù zài nà ge wàiguó fànguǎn de pángbiān.",
+              "english": "Yes, it’s right next to that foreign restaurant."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "不好意思，请问洗手间在哪儿？",
+          "pinyin": "Bù hǎoyìsi, qǐngwèn xǐshǒujiān zài nǎr?",
+          "english": "Excuse me, where is the restroom?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Please walk left from the school entrance.",
+            "model_answer": {
+              "hanzi": "请从学校门口往左走。",
+              "pinyin": "Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.",
+              "english": "Please walk left from the school entrance."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: The restroom is just ahead.",
+            "model_answer": {
+              "hanzi": "洗手间就在前面。",
+              "pinyin": "Xǐshǒujiān jiù zài qiánmiàn.",
+              "english": "The restroom is just ahead."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Is it on this road?",
+            "model_answer": {
+              "hanzi": "是在这条路上吗？",
+              "pinyin": "Shì zài zhè tiáo lù shang ma?",
+              "english": "Is it on this road?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Finding the Way in Town — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小王第一次来到这个城市。他从车站出来，沿着大路往前走。",
+            "pinyin": "Xiǎo Wáng dì yī cì lái dào zhè ge chéngshì. Tā cóng chēzhàn chūlái, yánzhe dà lù wǎng qián zǒu.",
+            "english": "Xiao Wang arrives in this city for the first time. He leaves the station and walks forward along the main road."
+          },
+          {
+            "hanzi": "他在学校门口问路，终于找到了饭馆旁边的洗手间。",
+            "pinyin": "Tā zài xuéxiào ménkǒu wèn lù, zhōngyú zhǎodào le fànguǎn pángbiān de xǐshǒujiān.",
+            "english": "At the school entrance he asks for directions and finally finds the restroom beside the restaurant."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiao Wang arrives in this city for the first time. He leaves the station and walks forward along the main road."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "At the school entrance he asks for directions and finally finds the restroom beside the restaurant."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Please walk left from the school entrance.",
+          "model_answer": {
+            "hanzi": "请从学校门口往左走。",
+            "pinyin": "Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.",
+            "english": "Please walk left from the school entrance."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: The restroom is just ahead.",
+          "model_answer": {
+            "hanzi": "洗手间就在前面。",
+            "pinyin": "Xǐshǒujiān jiù zài qiánmiàn.",
+            "english": "The restroom is just ahead."
+          }
+        }
+      ],
+      "common_pitfall": "从 (cóng) describes a starting point; 往 (wǎng) describes a direction. One does not replace the other.",
+      "pronunciation_focus": "Practise the third tone in 往 (wǎng), the second tone in 从 (cóng), and the neutral syllable of 门口 (ménkǒu).",
+      "review": {
+        "can_do": [
+          "Ask directions using 往 (wǎng) and 从 (cóng).",
+          "Identify a street and a building entrance.",
+          "Find a 洗手间 (xǐshǒujiān) politely."
+        ],
+        "entry_ids": [
+          324,
+          392,
+          401,
+          446,
+          450,
+          457
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-finding-the-way-in-town--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Where a route begins",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Giving a direction",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please walk left from the school entrance.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: The restroom is just ahead.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Is it on this road?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Please walk left from the school entrance.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: The restroom is just ahead.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-finding-the-way-in-town--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-finding-the-way-in-town--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Please walk left from the school entrance. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--question-recall-324",
+            "kind": "practice",
+            "label": "Which expression means “from”?",
+            "optional": true,
+            "target_id": "recall-324"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--question-recall-392",
+            "kind": "practice",
+            "label": "Which expression means “road”?",
+            "optional": true,
+            "target_id": "recall-392"
+          },
+          {
+            "id": "topic-finding-the-way-in-town--question-recall-401",
+            "kind": "practice",
+            "label": "Which expression means “doorway”?",
+            "optional": true,
+            "target_id": "recall-401"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

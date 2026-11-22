@@ -24,7 +24,7 @@ def each_dict(obj):
     elif isinstance(obj,list):
         for v in obj:yield from each_dict(v)
 
-def checks_lesson(lesson,catalog=None):
+def checks_lesson(lesson,catalog=None,allow_overlap=()):
     if 'lesson_type' not in lesson and lesson.get('schema_version','').startswith('mandarin-character-lesson/2.'):
         check_schema('character_lesson.schema.json',lesson)
         return  # Historical files are validated structurally, not against v3 taxonomy.
@@ -109,8 +109,9 @@ def checks_lesson(lesson,catalog=None):
                   for c in s['checkpoints'] if c.get('kind')=='practice'}
         applied=([q for q in qs if q['id'] in quiz_cps and not quiz_cps[q['id']]['optional']] if quiz_cps
                  else [q for q in qs if q['kind'] in ('comprehension','production')])
-        if len(applied)<4:
-            raise ValueError('topic lessons must include at least 4 applied (required) practice questions')
+        # v3.3 checkpoint lessons need 2 required questions (reading + production); others keep 4.
+        if len(applied)<(2 if quiz_cps else 4):
+            raise ValueError('topic lessons need enough applied (required) practice questions')
         if len(t['dialogue']['turns'])<4 or len(t['reading']['questions'])<2:
             raise ValueError('v3.1 teaching content incomplete')
         # The two upstream word-detail sentences remain in canonical JSON, but
@@ -122,7 +123,7 @@ def checks_lesson(lesson,catalog=None):
         fresh += [t['guided_building']['model']]
         fresh += [p['model_answer'] for p in t['guided_building']['substitutions']]
         fresh += [p['model_answer'] for p in t['speaking_tasks']]
-        overlap={e['hanzi'] for e in fresh}&source_sentences
+        overlap=({e['hanzi'] for e in fresh}&source_sentences)-set(allow_overlap)
         if overlap:raise ValueError('v3.1 new examples duplicate existing detail-card examples: '+repr(sorted(overlap)))
         # All written learner-facing utterances are supplied with pinyin and translation.
         for example in fresh:

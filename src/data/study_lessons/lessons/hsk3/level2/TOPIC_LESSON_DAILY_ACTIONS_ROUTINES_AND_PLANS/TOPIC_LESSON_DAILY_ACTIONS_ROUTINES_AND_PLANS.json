@@ -1,0 +1,1202 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-routines-and-making-plans",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Daily Actions & Activities — Part 2: Routines and Making Plans",
+    "subtitle": "Remembering, preparing and going places",
+    "description": "Talk about personal schedules, remembered tasks, and getting ready to leave.",
+    "slug": "routines-and-making-plans"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions"
+    ],
+    "tags": [
+      "remembering",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "everyday-routines",
+    "subtopic_ids": [
+      "everyday-routines"
+    ]
+  },
+  "learning_objectives": [
+    "Say what you remember and forget.",
+    "Plan a shared activity with 一起 (yìqǐ).",
+    "Describe preparation and ordinary walking or running."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "写": "Characters:写",
+    "冷": "Characters:冷",
+    "准": "Characters:准",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "华": "Characters:华",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "商": "Characters:商",
+    "喜": "Characters:喜",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "备": "Characters:备",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "奶": "Characters:奶",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "我": "Characters:我",
+    "拿": "Characters:拿",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "最": "Characters:最",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "真": "Characters:真",
+    "穿": "Characters:穿",
+    "等": "Characters:等",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "记": "Characters:记",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "还": "Characters:还",
+    "远": "Characters:远",
+    "那": "Characters:那",
+    "门": "Characters:门",
+    "面": "Characters:面",
+    "题": "Characters:题"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about personal schedules, remembered tasks, and getting ready to leave.",
+      "focus": "Say what you remember and forget."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-319",
+          "hanzi": "出门",
+          "pinyin": "chūmén",
+          "meaning_en": "to go out; to leave home",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-319-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我现在出门了。",
+              "pinyin": "wǒ xiànzài chūmén le.",
+              "english": "I'm heading out now.",
+              "teaching_note": "A short spoken example using 出门."
+            },
+            {
+              "id": "ex-319-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天八点出门上班。",
+              "pinyin": "tā měi tiān bā diǎn chūmén shàngbān.",
+              "english": "He leaves home for work at eight every day.",
+              "teaching_note": "A simple written example using 出门."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 319
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ]
+        },
+        {
+          "id": "w-365",
+          "hanzi": "记得",
+          "pinyin": "jìde",
+          "meaning_en": "to remember",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-365-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你记得他的名字吗？",
+              "pinyin": "nǐ jìde tā de míngzi ma?",
+              "english": "Do you remember his name?",
+              "teaching_note": "A short spoken example using 记得."
+            },
+            {
+              "id": "ex-365-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我还记得去年那件事。",
+              "pinyin": "wǒ hái jìde qùnián nà jiàn shì.",
+              "english": "I still remember that event from last year.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 365
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-414",
+          "hanzi": "跑",
+          "pinyin": "pǎo",
+          "meaning_en": "to run",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-414-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你跑得真快！",
+              "pinyin": "nǐ pǎo de zhēn kuài!",
+              "english": "You run so fast!",
+              "teaching_note": "A short spoken example using 跑."
+            },
+            {
+              "id": "ex-414-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小朋友在学校外面跑。",
+              "pinyin": "xiǎopéngyou zài xuéxiào wàimiàn pǎo.",
+              "english": "The children are running outside the school.",
+              "teaching_note": "A simple written example using 跑."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 414
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-448",
+          "hanzi": "完",
+          "pinyin": "wán",
+          "meaning_en": "to finish; to complete",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-448-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你吃完了吗？",
+              "pinyin": "nǐ chī wán le ma?",
+              "english": "Have you finished eating?",
+              "teaching_note": "A short spoken example using 完."
+            },
+            {
+              "id": "ex-448-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生已经写完了今天的题。",
+              "pinyin": "xuéshēng yǐjīng xiě wán le jīntiān de tí.",
+              "english": "The students have already finished today's questions.",
+              "teaching_note": "A simple written example using 完."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 448
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ]
+        },
+        {
+          "id": "w-452",
+          "hanzi": "忘",
+          "pinyin": "wàng",
+          "meaning_en": "to forget",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-452-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我忘了！",
+              "pinyin": "wǒ wàng le!",
+              "english": "I forgot!",
+              "teaching_note": "A short spoken example using 忘."
+            },
+            {
+              "id": "ex-452-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她忘了拿书包。",
+              "pinyin": "tā wàng le ná shūbāo.",
+              "english": "She forgot to take her schoolbag.",
+              "teaching_note": "A simple written example using 忘."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 452
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-473",
+          "hanzi": "一起",
+          "pinyin": "yìqǐ",
+          "meaning_en": "together",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-473-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们一起去吧！",
+              "pinyin": "wǒmen yìqǐ qù ba!",
+              "english": "Let's go together!",
+              "teaching_note": "A short spoken example using 一起."
+            },
+            {
+              "id": "ex-473-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们一起在学校外面玩。",
+              "pinyin": "háizimen yìqǐ zài xuéxiào wàimiàn wán.",
+              "english": "The children play together outside the school.",
+              "teaching_note": "A simple written example using 一起."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 473
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-493",
+          "hanzi": "准备",
+          "pinyin": "zhǔnbèi",
+          "meaning_en": "to prepare; to get ready",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-493-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你准备好了吗？",
+              "pinyin": "nǐ zhǔnbèi hǎo le ma?",
+              "english": "Are you ready?",
+              "teaching_note": "A short spoken example using 准备."
+            },
+            {
+              "id": "ex-493-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生在准备明天的考试。",
+              "pinyin": "xuéshēng zài zhǔnbèi míngtiān de kǎoshì.",
+              "english": "The students are preparing for tomorrow's exam.",
+              "teaching_note": "A simple written example using 准备."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 493
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-495",
+          "hanzi": "走",
+          "pinyin": "zǒu",
+          "meaning_en": "to walk; to leave",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-495-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们走吧！",
+              "pinyin": "wǒmen zǒu ba!",
+              "english": "Let's go!",
+              "teaching_note": "A short spoken example using 走."
+            },
+            {
+              "id": "ex-495-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天从家走到学校。",
+              "pinyin": "tā měi tiān cóng jiā zǒu dào xuéxiào.",
+              "english": "He walks from home to school every day.",
+              "teaching_note": "A simple written example using 走."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 495
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-496",
+          "hanzi": "走路",
+          "pinyin": "zǒulù",
+          "meaning_en": "to walk on foot",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-496-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们走路去吧！",
+              "pinyin": "wǒmen zǒulù qù ba!",
+              "english": "Let's walk there!",
+              "teaching_note": "A short spoken example using 走路."
+            },
+            {
+              "id": "ex-496-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "奶奶每天早上走路去商店。",
+              "pinyin": "nǎinai měi tiān zǎoshang zǒulù qù shāngdiàn.",
+              "english": "Grandma walks to the shop every morning.",
+              "teaching_note": "A simple written example using 走路."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 496
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ]
+        },
+        {
+          "id": "w-023",
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning_en": "wear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-023-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天我穿新衣服。",
+              "pinyin": "jīntiān wǒ chuān xīn yīfu.",
+              "english": "I am wearing new clothes today.",
+              "teaching_note": "穿 refers to wearing clothes; Chinese does not need a progressive form for the current outfit."
+            },
+            {
+              "id": "ex-023-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "天气冷的时候，请多穿衣服。",
+              "pinyin": "tiānqì lěng de shíhou, qǐng duō chuān yīfu.",
+              "english": "When it is cold, please wear more clothes.",
+              "teaching_note": "Short everyday instruction or request using 穿; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 23
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-061",
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning_en": "give; for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-061-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "可以给我一点儿水吗？",
+              "pinyin": "kěyǐ gěi wǒ yìdiǎnr shuǐ ma?",
+              "english": "Could you give me a little water?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-061-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师给我们一本书。",
+              "pinyin": "lǎoshī gěi wǒmen yì běn shū.",
+              "english": "The teacher gives us a book.",
+              "teaching_note": "School or study context showing 给 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 61
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Verb meaning give, and a coverb/preposition meaning for/to."
+        },
+        {
+          "id": "w-082",
+          "hanzi": "会",
+          "pinyin": "huì",
+          "meaning_en": "can; know how",
+          "primary_pos_id": "modal-verb",
+          "pos_ids": [
+            "modal-verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-082-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说汉语。",
+              "pinyin": "wǒ huì shuō Hànyǔ.",
+              "english": "I can speak Chinese.",
+              "teaching_note": "会 refers to an acquired skill, such as speaking a language."
+            },
+            {
+              "id": "ex-082-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她会写很多汉字。",
+              "pinyin": "tā huì xiě hěn duō hànzì.",
+              "english": "She can write many Chinese characters.",
+              "teaching_note": "The modal expresses a learned skill."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 82
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Modal use for learned ability; the full word has other uses."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Remembering and forgetting",
+        "explanation": "记得 (jìde) means remember; 忘 (wàng) means forget. Place a following verb phrase after them when describing what happened.",
+        "example_id": "ex-319-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Doing an activity together",
+        "explanation": "一起 (yìqǐ) comes before the verb phrase when multiple people do something together.",
+        "example_id": "ex-365-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-319-1",
+      "ex-365-1",
+      "ex-414-1",
+      "ex-448-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "On Sunday, friends prepare to go to the park. They run a long way together and finally walk home."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I remember we have an exam tomorrow. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我记得明天要考试。 (Wǒ jìde míngtiān yào kǎoshì.)",
+          "answer": "我记得明天要考试。 (Wǒ jìde míngtiān yào kǎoshì.)"
+        },
+        {
+          "id": "recall-319",
+          "kind": "selection",
+          "prompt": "Which expression means “to go out”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "出门",
+              "pinyin": "chūmén",
+              "meaning_en": "to go out; to leave home"
+            },
+            {
+              "id": "b",
+              "hanzi": "记得",
+              "pinyin": "jìde",
+              "meaning_en": "to remember"
+            },
+            {
+              "id": "c",
+              "hanzi": "跑",
+              "pinyin": "pǎo",
+              "meaning_en": "to run"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 出门 (chūmén) with this meaning."
+        },
+        {
+          "id": "recall-365",
+          "kind": "selection",
+          "prompt": "Which expression means “to remember”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "出门",
+              "pinyin": "chūmén",
+              "meaning_en": "to go out; to leave home"
+            },
+            {
+              "id": "c",
+              "hanzi": "跑",
+              "pinyin": "pǎo",
+              "meaning_en": "to run"
+            },
+            {
+              "id": "a",
+              "hanzi": "记得",
+              "pinyin": "jìde",
+              "meaning_en": "to remember"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 记得 (jìde) with this meaning."
+        },
+        {
+          "id": "recall-414",
+          "kind": "selection",
+          "prompt": "Which expression means “to run”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "记得",
+              "pinyin": "jìde",
+              "meaning_en": "to remember"
+            },
+            {
+              "id": "a",
+              "hanzi": "跑",
+              "pinyin": "pǎo",
+              "meaning_en": "to run"
+            },
+            {
+              "id": "b",
+              "hanzi": "出门",
+              "pinyin": "chūmén",
+              "meaning_en": "to go out; to leave home"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 跑 (pǎo) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Routines and Making Plans",
+        "context_en": "Talk about personal schedules, remembered tasks, and getting ready to leave.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你准备好了吗？我们一起出门吧。",
+            "pinyin": "Nǐ zhǔnbèi hǎo le ma? Wǒmen yìqǐ chūmén ba.",
+            "english": "Are you ready? Let’s leave together."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "等一下，我忘了拿书包。",
+            "pinyin": "Děng yíxià, wǒ wàng le ná shūbāo.",
+            "english": "Wait, I forgot to take my schoolbag."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你记得今天下午要做什么吗？",
+            "pinyin": "Nǐ jìde jīntiān xiàwǔ yào zuò shénme ma?",
+            "english": "Do you remember what we need to do this afternoon?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "记得！先去学校，然后一起跑步。",
+            "pinyin": "Jìde! Xiān qù xuéxiào, ránhòu yìqǐ pǎobù.",
+            "english": "Yes! First we go to school, then we run together."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Remembering and forgetting",
+          "explanation_en": "记得 (jìde) means remember; 忘 (wàng) means forget. Place a following verb phrase after them when describing what happened.",
+          "formula_en": "记得/忘 + action",
+          "examples": [
+            {
+              "hanzi": "我记得明天要考试。",
+              "pinyin": "Wǒ jìde míngtiān yào kǎoshì.",
+              "english": "I remember we have an exam tomorrow."
+            },
+            {
+              "hanzi": "等一下，我忘了拿书包。",
+              "pinyin": "Děng yíxià, wǒ wàng le ná shūbāo.",
+              "english": "Wait, I forgot to take my schoolbag."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Doing an activity together",
+          "explanation_en": "一起 (yìqǐ) comes before the verb phrase when multiple people do something together.",
+          "formula_en": "People + 一起 + verb",
+          "examples": [
+            {
+              "hanzi": "我们准备好了，可以走了。",
+              "pinyin": "Wǒmen zhǔnbèi hǎo le, kěyǐ zǒu le.",
+              "english": "We’re ready; we can go."
+            },
+            {
+              "hanzi": "记得！先去学校，然后一起跑步。",
+              "pinyin": "Jìde! Xiān qù xuéxiào, ránhòu yìqǐ pǎobù.",
+              "english": "Yes! First we go to school, then we run together."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你准备好了吗？我们一起出门吧。",
+          "pinyin": "Nǐ zhǔnbèi hǎo le ma? Wǒmen yìqǐ chūmén ba.",
+          "english": "Are you ready? Let’s leave together."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I remember we have an exam tomorrow.",
+            "model_answer": {
+              "hanzi": "我记得明天要考试。",
+              "pinyin": "Wǒ jìde míngtiān yào kǎoshì.",
+              "english": "I remember we have an exam tomorrow."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: We’re ready; we can go.",
+            "model_answer": {
+              "hanzi": "我们准备好了，可以走了。",
+              "pinyin": "Wǒmen zhǔnbèi hǎo le, kěyǐ zǒu le.",
+              "english": "We’re ready; we can go."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Do you remember what we need to do this afternoon?",
+            "model_answer": {
+              "hanzi": "你记得今天下午要做什么吗？",
+              "pinyin": "Nǐ jìde jīntiān xiàwǔ yào zuò shénme ma?",
+              "english": "Do you remember what we need to do this afternoon?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Routines and Making Plans — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小华每天早上七点出门。他不喜欢坐车，经常走路去学校。",
+            "pinyin": "Xiǎo Huá měitiān zǎoshang qī diǎn chūmén. Tā bù xǐhuan zuò chē, jīngcháng zǒulù qù xuéxiào.",
+            "english": "Xiaohua leaves home at seven every morning. He does not like taking a vehicle and often walks to school."
+          },
+          {
+            "hanzi": "星期天朋友们准备去公园，大家一起跑了很远，最后走回家。",
+            "pinyin": "Xīngqītiān péngyoumen zhǔnbèi qù gōngyuán, dàjiā yìqǐ pǎo le hěn yuǎn, zuìhòu zǒu huí jiā.",
+            "english": "On Sunday, friends prepare to go to the park. They run a long way together and finally walk home."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiaohua leaves home at seven every morning. He does not like taking a vehicle and often walks to school."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "On Sunday, friends prepare to go to the park. They run a long way together and finally walk home."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I remember we have an exam tomorrow.",
+          "model_answer": {
+            "hanzi": "我记得明天要考试。",
+            "pinyin": "Wǒ jìde míngtiān yào kǎoshì.",
+            "english": "I remember we have an exam tomorrow."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: We’re ready; we can go.",
+          "model_answer": {
+            "hanzi": "我们准备好了，可以走了。",
+            "pinyin": "Wǒmen zhǔnbèi hǎo le, kěyǐ zǒu le.",
+            "english": "We’re ready; we can go."
+          }
+        }
+      ],
+      "common_pitfall": "走路 (zǒulù) specifically refers to walking, while 走 (zǒu) has broader motion meanings; 跑 (pǎo) means run.",
+      "pronunciation_focus": "The second syllable of 记得 (jìde) is neutral; 一起 (yìqǐ) has a fourth-tone 一 before the third tone.",
+      "review": {
+        "can_do": [
+          "Say what you remember and forget.",
+          "Plan a shared activity with 一起 (yìqǐ).",
+          "Describe preparation and ordinary walking or running."
+        ],
+        "entry_ids": [
+          319,
+          365,
+          414,
+          448,
+          452,
+          473,
+          493,
+          495,
+          496
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-routines-and-making-plans--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Remembering and forgetting",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-routines-and-making-plans--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Doing an activity together",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I remember we have an exam tomorrow.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-routines-and-making-plans--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: We’re ready; we can go.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-routines-and-making-plans--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Do you remember what we need to do this afternoon?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-routines-and-making-plans--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I remember we have an exam tomorrow.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-routines-and-making-plans--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: We’re ready; we can go.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-routines-and-making-plans--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-routines-and-making-plans--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-routines-and-making-plans--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I remember we have an exam tomorrow. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-routines-and-making-plans--question-recall-319",
+            "kind": "practice",
+            "label": "Which expression means “to go out”?",
+            "optional": true,
+            "target_id": "recall-319"
+          },
+          {
+            "id": "topic-routines-and-making-plans--question-recall-365",
+            "kind": "practice",
+            "label": "Which expression means “to remember”?",
+            "optional": true,
+            "target_id": "recall-365"
+          },
+          {
+            "id": "topic-routines-and-making-plans--question-recall-414",
+            "kind": "practice",
+            "label": "Which expression means “to run”?",
+            "optional": true,
+            "target_id": "recall-414"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 38
+}

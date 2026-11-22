@@ -44,13 +44,13 @@ describe('lesson index', () => {
   it('rejects two files with the same lesson_id', () => {
     expect(() => buildLessonIndex({ 'a.json': raw(), 'b.json': raw() }, cats)).toThrow(/Duplicate lesson_id char-6B21/);
   });
-  it('lists the two character lessons, the 21 HSK Level 1 + 1 Level 2 topic lessons and the 15 conversational lessons, never the legacy copies', () => {
+  it('lists the two character lessons, the 21 HSK Level 1 + 25 Level 2 topic lessons and the 15 conversational lessons, never the legacy copies', () => {
     const ids = lessonSummaries.map(s => s.id);
-    expect(ids.length).toBe(39);
-    expect(new Set(ids).size).toBe(39);
+    expect(ids.length).toBe(63);
+    expect(new Set(ids).size).toBe(63);
     expect(ids.filter(id => id.startsWith('convm-')).length).toBe(15);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
-    expect(ids.filter(id => id.startsWith('topic-')).length).toBe(22);
+    expect(ids.filter(id => id.startsWith('topic-')).length).toBe(46);
     // Core v3.3 (checkpoint progress): topic lessons 3.3.0, character lessons 3.2.0.
     expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.3.0')).toBe(true);
     expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion === 'mandarin-character-lesson/3.2.0')).toBe(true);
@@ -156,7 +156,7 @@ describe('lesson files', () => {
   });
   const all = files(root);
   it('every lesson file has the eagerly read keys', () => {
-    expect(all.length).toBe(39);
+    expect(all.length).toBe(63);
     for (const f of all) {
       const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
       for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);

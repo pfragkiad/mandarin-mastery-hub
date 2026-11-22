@@ -1,31 +1,561 @@
 {
+  "package": "importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+  "sha256": "3129da6b0ca0511f9ee8accb59fdee5bbf1bf1b7427f1b13895e1e3ef26ceffa",
   "lessons": {
-    "topic-making-plans-together": {
-      "package": "importer/data/lessons/TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
-      "sha256": "a0cdd9b3cab411cfd9a6f2773e8d23d4b7c7d93fcfdcaeacb4df32fd2a86c7fd",
-      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_MAKING_PLANS_TOGETHER",
+    "topic-talking-about-meanings-and-situations": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ABSTRACT_CONCEPTS",
       "introduced_entry_ids": [
-        302,
-        352,
-        388,
-        439,
-        471,
+        432,
+        474
+      ],
+      "reviewed_entry_ids": [
+        187,
+        220
+      ],
+      "examples_matched": 8,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 2
+    },
+    "topic-nature-and-the-weather": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER",
+      "introduced_entry_ids": [
+        340,
+        358,
+        411,
+        420,
+        475,
+        477
+      ],
+      "reviewed_entry_ids": [
+        64,
+        109,
+        119
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-asking-for-help-and-making-introductions": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_COMMUNICATION_SOCIAL",
+      "introduced_entry_ids": [
+        306,
+        313,
+        343,
+        369,
+        422,
+        463
+      ],
+      "reviewed_entry_ids": [
+        14,
+        24,
+        45
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-helping-with-everyday-tasks": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS",
+      "introduced_entry_ids": [
+        305,
+        329,
+        334,
+        338,
+        405,
+        418,
+        437,
+        456
+      ],
+      "reviewed_entry_ids": [
+        23,
+        61,
+        82
+      ],
+      "examples_matched": 22,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-routines-and-making-plans": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_ROUTINES_AND_PLANS",
+      "introduced_entry_ids": [
+        319,
+        365,
+        414,
+        448,
+        452,
         473,
-        485,
-        497,
+        493,
+        495,
+        496
+      ],
+      "reviewed_entry_ids": [
+        23,
+        61,
+        82
+      ],
+      "examples_matched": 24,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-talking-about-family-members": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_FAMILY_RELATIONSHIPS",
+      "introduced_entry_ids": [
+        409,
+        417,
+        470,
+        487
+      ],
+      "reviewed_entry_ids": [
+        1,
+        3,
+        32
+      ],
+      "examples_matched": 14,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-choosing-drinks-and-food": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_FOOD_DRINK",
+      "introduced_entry_ids": [
+        336,
+        339,
+        354,
+        377,
+        395,
+        408,
+        423,
+        483
+      ],
+      "reviewed_entry_ids": [
+        8,
+        16,
+        17
+      ],
+      "examples_matched": 22,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-linking-ideas-in-conversation": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_CONNECTING_IDEAS",
+      "introduced_entry_ids": [
+        330,
+        331,
+        345,
+        352,
+        376,
+        382,
+        438,
+        439,
+        476
+      ],
+      "reviewed_entry_ids": [
+        4,
+        13,
+        15
+      ],
+      "examples_matched": 24,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-describing-actions-more-precisely": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_PARTICLES_AND_MODIFIERS",
+      "introduced_entry_ids": [
+        301,
+        311,
+        332,
+        333,
+        351,
+        472,
+        490,
+        491,
         498
       ],
       "reviewed_entry_ids": [
-        225,
-        233,
-        102,
-        263,
-        252,
-        211
+        4,
+        13,
+        15
+      ],
+      "examples_matched": 24,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-how-are-you-feeling": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_HEALTH_WELLBEING",
+      "introduced_entry_ids": [
+        388,
+        415,
+        429,
+        433,
+        436,
+        440,
+        445,
+        467,
+        468,
+        469,
+        478,
+        485
+      ],
+      "reviewed_entry_ids": [
+        12,
+        100,
+        104
       ],
       "examples_matched": 30,
-      "catalog_character_refs": 127,
-      "required_checkpoints": 25,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-my-room-and-my-belongings": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_HOME_OBJECTS",
+      "introduced_entry_ids": [
+        307,
+        321,
+        383,
+        400,
+        434,
+        435
+      ],
+      "reviewed_entry_ids": [
+        9,
+        40,
+        52
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-sports-games-and-hobbies": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_LEISURE_MEDIA",
+      "introduced_entry_ids": [
+        302,
+        327,
+        359,
+        387,
+        421,
+        441,
+        444,
+        497
+      ],
+      "reviewed_entry_ids": [
+        18,
+        37,
+        38
+      ],
+      "examples_matched": 22,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-counting-things-and-occasions": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_NUMBERS_QUANTITIES",
+      "introduced_entry_ids": [
+        323,
+        366,
+        399,
+        404,
+        443,
+        449,
+        453
+      ],
+      "reviewed_entry_ids": [
+        2,
+        6,
+        7
+      ],
+      "examples_matched": 20,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-introducing-people-by-name": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PEOPLE_IDENTITY",
+      "introduced_entry_ids": [
+        344,
+        410,
+        412,
+        461,
+        464,
+        465
+      ],
+      "reviewed_entry_ids": [
+        130,
+        142,
+        152
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-finding-the-way-in-town": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_FINDING_THE_WAY",
+      "introduced_entry_ids": [
+        324,
+        392,
+        401,
+        446,
+        450,
+        457
+      ],
+      "reviewed_entry_ids": [
+        11,
+        66,
+        80
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-describing-location-and-distance": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_LOCATION_AND_DISTANCE",
+      "introduced_entry_ids": [
+        356,
+        371,
+        389,
+        390,
+        391,
+        403,
+        413,
+        419,
+        426,
+        447,
+        459,
+        481,
+        482,
+        484,
+        499,
+        500
+      ],
+      "reviewed_entry_ids": [
+        11,
+        66,
+        80
+      ],
+      "examples_matched": 38,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-entering-leaving-and-returning": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_MOVEMENT_AND_DIRECTION",
+      "introduced_entry_ids": [
+        316,
+        318,
+        320,
+        347,
+        348,
+        350,
+        361,
+        362,
+        370,
+        372,
+        373,
+        425,
+        427,
+        458,
+        460
+      ],
+      "reviewed_entry_ids": [
+        11,
+        66,
+        80
+      ],
+      "examples_matched": 36,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-describing-colors-and-comparing-things": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_AND_COMPARISON",
+      "introduced_entry_ids": [
+        303,
+        309,
+        314,
+        341,
+        353,
+        355,
+        360,
+        384,
+        396,
+        397,
+        466
+      ],
+      "reviewed_entry_ids": [
+        25,
+        44,
+        46
+      ],
+      "examples_matched": 28,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-sharing-opinions-and-feelings": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_OPINIONS_AND_FEELINGS",
+      "introduced_entry_ids": [
+        312,
+        326,
+        385,
+        398,
+        455,
+        479
+      ],
+      "reviewed_entry_ids": [
+        25,
+        44,
+        46
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-explaining-why-and-how": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_REFERENCE_QUESTIONS",
+      "introduced_entry_ids": [
+        406,
+        407,
+        454,
+        488,
+        489,
+        494
+      ],
+      "reviewed_entry_ids": [
+        26,
+        47,
+        131
+      ],
+      "examples_matched": 18,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-words-classes-and-examinations": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SCHOOL_LANGUAGE",
+      "introduced_entry_ids": [
+        304,
+        308,
+        310,
+        322,
+        337,
+        342,
+        367,
+        368,
+        379,
+        380,
+        381,
+        442
+      ],
+      "reviewed_entry_ids": [
+        27,
+        28,
+        42
+      ],
+      "examples_matched": 30,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-using-the-internet": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SCIENCE_TECHNOLOGY",
+      "introduced_entry_ids": [
+        428,
+        451
+      ],
+      "reviewed_entry_ids": [
+        35,
+        36,
+        189
+      ],
+      "examples_matched": 10,
+      "corrections": [
+        {
+          "example": "ex-036-1",
+          "field": "pinyin",
+          "supplied": "wǒ zài diànnǎo shàngxué xí.",
+          "corrected": "wǒ zài diànnǎo shàng xuéxí."
+        }
+      ],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 2
+    },
+    "topic-buying-tickets-and-shopping": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SHOPPING_MONEY",
+      "introduced_entry_ids": [
+        357,
+        402,
+        424
+      ],
+      "reviewed_entry_ids": [
+        19,
+        34,
+        65
+      ],
+      "examples_matched": 12,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-talking-about-time-and-habits": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_TIME_CALENDAR",
+      "introduced_entry_ids": [
+        325,
+        349,
+        374,
+        378,
+        386,
+        430,
+        431,
+        462,
+        471,
+        480,
+        492
+      ],
+      "reviewed_entry_ids": [
+        5,
+        33,
+        55
+      ],
+      "examples_matched": 28,
+      "corrections": [],
+      "required_checkpoints": 15,
+      "optional_checkpoints": 3
+    },
+    "topic-planning-a-journey": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_TRAVEL_TRANSPORT",
+      "introduced_entry_ids": [
+        315,
+        317,
+        328,
+        335,
+        346,
+        363,
+        364,
+        375,
+        393,
+        394,
+        416,
+        486
+      ],
+      "reviewed_entry_ids": [
+        20,
+        22,
+        29
+      ],
+      "examples_matched": 30,
+      "corrections": [],
+      "required_checkpoints": 15,
       "optional_checkpoints": 3
     }
   }

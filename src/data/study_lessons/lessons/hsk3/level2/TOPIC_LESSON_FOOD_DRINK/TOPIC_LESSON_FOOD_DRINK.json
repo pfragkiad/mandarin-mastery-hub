@@ -1,0 +1,1102 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-choosing-drinks-and-food",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Choosing Drinks and Food",
+    "subtitle": "Ordering tea, coffee and a meal",
+    "description": "Read a simple menu and order different drinks and dishes at a restaurant.",
+    "slug": "choosing-drinks-and-food"
+  },
+  "classification": {
+    "primary_topic_id": "food-drink",
+    "topic_ids": [
+      "food-drink"
+    ],
+    "tags": [
+      "ordering-tea",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Order beverages such as 红茶 (hóngchá) and 奶茶 (nǎichá).",
+    "Talk about meat and fish as foods.",
+    "Use 点 (diǎn) to order food."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "再": "Characters:再",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "卖": "Characters:卖",
+    "友": "Characters:友",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "呢": "Characters:呢",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "啡": "Characters:啡",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "奶": "Characters:奶",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "条": "Characters:条",
+    "杯": "Characters:杯",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "王": "Characters:王",
+    "的": "Characters:的",
+    "红": "Characters:红",
+    "给": "Characters:给",
+    "绿": "Characters:绿",
+    "肉": "Characters:肉",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "请": "Characters:请",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "边": "Characters:边",
+    "迎": "Characters:迎",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "鱼": "Characters:鱼"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Read a simple menu and order different drinks and dishes at a restaurant.",
+      "focus": "Order beverages such as 红茶 (hóngchá) and 奶茶 (nǎichá)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-336",
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "meaning_en": "to order; to select (food)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "food-drink",
+            "shopping-money"
+          ],
+          "examples": [
+            {
+              "id": "ex-336-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想点什么菜？",
+              "pinyin": "nǐ xiǎng diǎn shénme cài?",
+              "english": "What dish would you like to order?",
+              "teaching_note": "This 点 is the verb “to order,” not the Level 1 time/classifier reading."
+            },
+            {
+              "id": "ex-336-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她在饭馆点了面条儿。",
+              "pinyin": "tā zài fànguǎn diǎn le miàntiáor.",
+              "english": "She ordered noodles at the restaurant.",
+              "teaching_note": "This 点 is the verb “to order,” not the Level 1 time/classifier reading."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 336
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "This 点 is the verb “to order,” not the Level 1 time/classifier reading."
+        },
+        {
+          "id": "w-339",
+          "hanzi": "饭馆",
+          "pinyin": "fànguǎn",
+          "meaning_en": "restaurant; eating place",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-339-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这家饭馆怎么样？",
+              "pinyin": "zhè jiā fànguǎn zěnmeyàng?",
+              "english": "How is this restaurant?",
+              "teaching_note": "A short spoken example using 饭馆."
+            },
+            {
+              "id": "ex-339-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校旁边有一家小饭馆。",
+              "pinyin": "xuéxiào pángbiān yǒu yì jiā xiǎo fànguǎn.",
+              "english": "There is a small restaurant next to the school.",
+              "teaching_note": "A simple written example using 饭馆."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 339
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-354",
+          "hanzi": "红茶",
+          "pinyin": "hóngchá",
+          "meaning_en": "black tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-354-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想喝红茶吗？",
+              "pinyin": "nǐ xiǎng hē hóngchá ma?",
+              "english": "Would you like some black tea?",
+              "teaching_note": "A short spoken example using 红茶."
+            },
+            {
+              "id": "ex-354-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈每天上午都喝红茶。",
+              "pinyin": "māma měi tiān shàngwǔ dōu hē hóngchá.",
+              "english": "Mom drinks black tea every morning.",
+              "teaching_note": "A simple written example using 红茶."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 354
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-377",
+          "hanzi": "咖啡",
+          "pinyin": "kāfēi",
+          "meaning_en": "coffee",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-377-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢喝咖啡吗？",
+              "pinyin": "nǐ xǐhuan hē kāfēi ma?",
+              "english": "Do you like drinking coffee?",
+              "teaching_note": "A short spoken example using 咖啡."
+            },
+            {
+              "id": "ex-377-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆也卖咖啡。",
+              "pinyin": "zhè jiā fànguǎn yě mài kāfēi.",
+              "english": "This restaurant also sells coffee.",
+              "teaching_note": "A simple written example using 咖啡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 377
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-395",
+          "hanzi": "绿茶",
+          "pinyin": "lǜchá",
+          "meaning_en": "green tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-395-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喝绿茶还是红茶？",
+              "pinyin": "nǐ hē lǜchá háishi hóngchá?",
+              "english": "Would you like green tea or black tea?",
+              "teaching_note": "A short spoken example using 绿茶."
+            },
+            {
+              "id": "ex-395-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸早上喜欢喝绿茶。",
+              "pinyin": "bàba zǎoshang xǐhuan hē lǜchá.",
+              "english": "Dad likes drinking green tea in the morning.",
+              "teaching_note": "A simple written example using 绿茶."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 395
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-408",
+          "hanzi": "奶茶",
+          "pinyin": "nǎichá",
+          "meaning_en": "milk tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-408-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想喝奶茶吗？",
+              "pinyin": "nǐ xiǎng hē nǎichá ma?",
+              "english": "Would you like milk tea?",
+              "teaching_note": "A short spoken example using 奶茶."
+            },
+            {
+              "id": "ex-408-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家店卖红茶，也卖奶茶。",
+              "pinyin": "zhè jiā diàn mài hóngchá, yě mài nǎichá.",
+              "english": "This shop sells black tea and milk tea.",
+              "teaching_note": "A simple written example using 奶茶."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 408
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-423",
+          "hanzi": "肉",
+          "pinyin": "ròu",
+          "meaning_en": "meat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-423-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢吃肉吗？",
+              "pinyin": "nǐ xǐhuan chī ròu ma?",
+              "english": "Do you like eating meat?",
+              "teaching_note": "A short spoken example using 肉."
+            },
+            {
+              "id": "ex-423-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆的肉很好吃。",
+              "pinyin": "zhè jiā fànguǎn de ròu hěn hǎochī.",
+              "english": "The meat at this restaurant is delicious.",
+              "teaching_note": "A simple written example using 肉."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 423
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-483",
+          "hanzi": "鱼",
+          "pinyin": "yú",
+          "meaning_en": "fish",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-483-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢吃鱼吗？",
+              "pinyin": "nǐ xǐhuan chī yú ma?",
+              "english": "Do you like eating fish?",
+              "teaching_note": "A short spoken example using 鱼."
+            },
+            {
+              "id": "ex-483-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆的鱼很好吃。",
+              "pinyin": "zhè jiā fànguǎn de yú hěn hǎochī.",
+              "english": "The fish at this restaurant is delicious.",
+              "teaching_note": "A simple written example using 鱼."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 483
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-008",
+          "hanzi": "包子",
+          "pinyin": "bāozi",
+          "meaning_en": "steamed bun",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-008-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我早上吃包子。",
+              "pinyin": "wǒ zǎoshang chī bāozi.",
+              "english": "I eat steamed buns in the morning.",
+              "teaching_note": "包子 is a filled steamed bun; 早上 sets the morning time frame."
+            },
+            {
+              "id": "ex-008-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店的包子很好吃。",
+              "pinyin": "zhè jiā diàn de bāozi hěn hǎochī.",
+              "english": "The steamed buns at this shop are delicious.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 包子."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 8
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-016",
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "meaning_en": "vegetable; dish",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-016-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个菜很好吃。",
+              "pinyin": "zhège cài hěn hǎochī.",
+              "english": "This dish is delicious.",
+              "teaching_note": "菜 usually refers to a prepared dish here, and 好吃 describes how it tastes."
+            },
+            {
+              "id": "ex-016-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "饭店里有很多菜。",
+              "pinyin": "fàndiàn lǐ yǒu hěn duō cài.",
+              "english": "There are many dishes at the restaurant.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 菜."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 16
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-017",
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "meaning_en": "tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-017-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢喝茶。",
+              "pinyin": "wǒ xǐhuan hē chá.",
+              "english": "I like drinking tea.",
+              "teaching_note": "喜欢 + verb expresses an enjoyable activity; 喝茶 is “drink tea.”"
+            },
+            {
+              "id": "ex-017-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店卖茶。",
+              "pinyin": "zhè jiā diàn mài chá.",
+              "english": "This shop sells tea.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 茶."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 17
+            }
+          ],
+          "primary_topic_id": "food-drink",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Ordering at a restaurant",
+        "explanation": "点 (diǎn) is a verb meaning to order in a restaurant, as well as having other uses in the language.",
+        "example_id": "ex-336-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Kinds of tea and drinks",
+        "explanation": "Use 红茶 (hóngchá), 绿茶 (lǜchá), 奶茶 (nǎichá), or 咖啡 (kāfēi) as the ordered drink.",
+        "example_id": "ex-339-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-336-1",
+      "ex-339-1",
+      "ex-354-1",
+      "ex-377-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "They eat fish and meat together and think the restaurant’s food is pretty good."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Would you like black tea or green tea? Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 你想喝红茶还是绿茶？ (Nǐ xiǎng hē hóngchá háishi lǜchá?)",
+          "answer": "你想喝红茶还是绿茶？ (Nǐ xiǎng hē hóngchá háishi lǜchá?)"
+        },
+        {
+          "id": "recall-336",
+          "kind": "selection",
+          "prompt": "Which expression means “to order”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "点",
+              "pinyin": "diǎn",
+              "meaning_en": "to order; to select (food)"
+            },
+            {
+              "id": "b",
+              "hanzi": "饭馆",
+              "pinyin": "fànguǎn",
+              "meaning_en": "restaurant; eating place"
+            },
+            {
+              "id": "c",
+              "hanzi": "红茶",
+              "pinyin": "hóngchá",
+              "meaning_en": "black tea"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 点 (diǎn) with this meaning."
+        },
+        {
+          "id": "recall-339",
+          "kind": "selection",
+          "prompt": "Which expression means “restaurant”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "点",
+              "pinyin": "diǎn",
+              "meaning_en": "to order; to select (food)"
+            },
+            {
+              "id": "c",
+              "hanzi": "红茶",
+              "pinyin": "hóngchá",
+              "meaning_en": "black tea"
+            },
+            {
+              "id": "a",
+              "hanzi": "饭馆",
+              "pinyin": "fànguǎn",
+              "meaning_en": "restaurant; eating place"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 饭馆 (fànguǎn) with this meaning."
+        },
+        {
+          "id": "recall-354",
+          "kind": "selection",
+          "prompt": "Which expression means “black tea”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "饭馆",
+              "pinyin": "fànguǎn",
+              "meaning_en": "restaurant; eating place"
+            },
+            {
+              "id": "a",
+              "hanzi": "红茶",
+              "pinyin": "hóngchá",
+              "meaning_en": "black tea"
+            },
+            {
+              "id": "b",
+              "hanzi": "点",
+              "pinyin": "diǎn",
+              "meaning_en": "to order; to select (food)"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 红茶 (hóngchá) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Choosing Drinks and Food",
+        "context_en": "Read a simple menu and order different drinks and dishes at a restaurant.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "欢迎！你们想点什么？",
+            "pinyin": "Huānyíng! Nǐmen xiǎng diǎn shénme?",
+            "english": "Welcome! What would you like to order?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我要一杯绿茶，朋友想喝奶茶。",
+            "pinyin": "Wǒ yào yì bēi lǜchá, péngyou xiǎng hē nǎichá.",
+            "english": "I’ll have a cup of green tea, and my friend wants milk tea."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "吃的呢？今天有鱼，也有肉。",
+            "pinyin": "Chī de ne? Jīntiān yǒu yú, yě yǒu ròu.",
+            "english": "And for food? Today we have fish and meat."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我要鱼。请再给我一杯咖啡。",
+            "pinyin": "Wǒ yào yú. Qǐng zài gěi wǒ yì bēi kāfēi.",
+            "english": "I’ll have the fish. Please bring me a coffee too."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Ordering at a restaurant",
+          "explanation_en": "点 (diǎn) is a verb meaning to order in a restaurant, as well as having other uses in the language.",
+          "formula_en": "Person + 点 + food/drink",
+          "examples": [
+            {
+              "hanzi": "你想喝红茶还是绿茶？",
+              "pinyin": "Nǐ xiǎng hē hóngchá háishi lǜchá?",
+              "english": "Would you like black tea or green tea?"
+            },
+            {
+              "hanzi": "我要一杯绿茶，朋友想喝奶茶。",
+              "pinyin": "Wǒ yào yì bēi lǜchá, péngyou xiǎng hē nǎichá.",
+              "english": "I’ll have a cup of green tea, and my friend wants milk tea."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Kinds of tea and drinks",
+          "explanation_en": "Use 红茶 (hóngchá), 绿茶 (lǜchá), 奶茶 (nǎichá), or 咖啡 (kāfēi) as the ordered drink.",
+          "formula_en": "一杯 + drink",
+          "examples": [
+            {
+              "hanzi": "我想点一杯咖啡。",
+              "pinyin": "Wǒ xiǎng diǎn yì bēi kāfēi.",
+              "english": "I would like to order a coffee."
+            },
+            {
+              "hanzi": "我要鱼。请再给我一杯咖啡。",
+              "pinyin": "Wǒ yào yú. Qǐng zài gěi wǒ yì bēi kāfēi.",
+              "english": "I’ll have the fish. Please bring me a coffee too."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "欢迎！你们想点什么？",
+          "pinyin": "Huānyíng! Nǐmen xiǎng diǎn shénme?",
+          "english": "Welcome! What would you like to order?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Would you like black tea or green tea?",
+            "model_answer": {
+              "hanzi": "你想喝红茶还是绿茶？",
+              "pinyin": "Nǐ xiǎng hē hóngchá háishi lǜchá?",
+              "english": "Would you like black tea or green tea?"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I would like to order a coffee.",
+            "model_answer": {
+              "hanzi": "我想点一杯咖啡。",
+              "pinyin": "Wǒ xiǎng diǎn yì bēi kāfēi.",
+              "english": "I would like to order a coffee."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: And for food? Today we have fish and meat.",
+            "model_answer": {
+              "hanzi": "吃的呢？今天有鱼，也有肉。",
+              "pinyin": "Chī de ne? Jīntiān yǒu yú, yě yǒu ròu.",
+              "english": "And for food? Today we have fish and meat."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Choosing Drinks and Food — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "晚上，小王和朋友走进一家饭馆。小王喝红茶，朋友点了一杯奶茶。",
+            "pinyin": "Wǎnshang, Xiǎo Wáng hé péngyou zǒu jìn yì jiā fànguǎn. Xiǎo Wáng hē hóngchá, péngyou diǎn le yì bēi nǎichá.",
+            "english": "In the evening, Xiao Wang and a friend enter a restaurant. Xiao Wang drinks black tea, and the friend orders milk tea."
+          },
+          {
+            "hanzi": "他们一起吃了鱼和肉，觉得这家饭馆的菜不错。",
+            "pinyin": "Tāmen yìqǐ chī le yú hé ròu, juéde zhè jiā fànguǎn de cài búcuò.",
+            "english": "They eat fish and meat together and think the restaurant’s food is pretty good."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "In the evening, Xiao Wang and a friend enter a restaurant. Xiao Wang drinks black tea, and the friend orders milk tea."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "They eat fish and meat together and think the restaurant’s food is pretty good."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Would you like black tea or green tea?",
+          "model_answer": {
+            "hanzi": "你想喝红茶还是绿茶？",
+            "pinyin": "Nǐ xiǎng hē hóngchá háishi lǜchá?",
+            "english": "Would you like black tea or green tea?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I would like to order a coffee.",
+          "model_answer": {
+            "hanzi": "我想点一杯咖啡。",
+            "pinyin": "Wǒ xiǎng diǎn yì bēi kāfēi.",
+            "english": "I would like to order a coffee."
+          }
+        }
+      ],
+      "common_pitfall": "The colors in 红茶 (hóngchá) and 绿茶 (lǜchá) identify established types of tea; do not infer the English beverage name from the color alone.",
+      "pronunciation_focus": "Distinguish kāfēi (咖啡) from fànguǎn (饭馆); 茶 (chá) is second tone.",
+      "review": {
+        "can_do": [
+          "Order beverages such as 红茶 (hóngchá) and 奶茶 (nǎichá).",
+          "Talk about meat and fish as foods.",
+          "Use 点 (diǎn) to order food."
+        ],
+        "entry_ids": [
+          336,
+          339,
+          354,
+          377,
+          395,
+          408,
+          423,
+          483
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-choosing-drinks-and-food--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Ordering at a restaurant",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Kinds of tea and drinks",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Would you like black tea or green tea?",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I would like to order a coffee.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: And for food? Today we have fish and meat.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Would you like black tea or green tea?",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I would like to order a coffee.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-choosing-drinks-and-food--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-choosing-drinks-and-food--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Would you like black tea or green tea? Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--question-recall-336",
+            "kind": "practice",
+            "label": "Which expression means “to order”?",
+            "optional": true,
+            "target_id": "recall-336"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--question-recall-339",
+            "kind": "practice",
+            "label": "Which expression means “restaurant”?",
+            "optional": true,
+            "target_id": "recall-339"
+          },
+          {
+            "id": "topic-choosing-drinks-and-food--question-recall-354",
+            "kind": "practice",
+            "label": "Which expression means “black tea”?",
+            "optional": true,
+            "target_id": "recall-354"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 36
+}

@@ -1,0 +1,1041 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-explaining-why-and-how",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Explaining Why and How",
+    "subtitle": "Reasons, descriptions and the self",
+    "description": "Ask why something happened and describe different ways of doing things.",
+    "slug": "explaining-why-and-how"
+  },
+  "classification": {
+    "primary_topic_id": "reference-questions",
+    "topic_ids": [
+      "reference-questions"
+    ],
+    "tags": [
+      "reasons",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Ask reasons with 为什么 (wèi shénme).",
+    "Distinguish 这么 (zhème) and 那么 (nàme) in a description.",
+    "Refer back to oneself with 自己 (zìjǐ)."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "先": "Characters:先",
+    "兴": "Characters:兴",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "前": "Characters:前",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "另": "Characters:另",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "因": "Characters:因",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "宜": "Characters:宜",
+    "家": "Characters:家",
+    "少": "Characters:少",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "应": "Characters:应",
+    "很": "Characters:很",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "方": "Characters:方",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "法": "Characters:法",
+    "点": "Characters:点",
+    "照": "Characters:照",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "知": "Characters:知",
+    "穿": "Characters:穿",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "解": "Characters:解",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "该": "Characters:该",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "贵": "Characters:贵",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "道": "Characters:道",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "释": "Characters:释",
+    "钱": "Characters:钱",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "面": "Characters:面",
+    "题": "Characters:题",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask why something happened and describe different ways of doing things.",
+      "focus": "Ask reasons with 为什么 (wèi shénme)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-406",
+          "hanzi": "那么",
+          "pinyin": "nàme",
+          "meaning_en": "so; like that; in that case",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "conjunction",
+            "adverb"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-406-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怎么那么高兴？",
+              "pinyin": "nǐ zěnme nàme gāoxìng?",
+              "english": "Why are you so happy?",
+              "teaching_note": "那么 modifies degree here (so/that); the syllabus also labels it a demonstrative and a conjunction."
+            },
+            {
+              "id": "ex-406-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "天气那么冷，大家都在家。",
+              "pinyin": "tiānqì nàme lěng, dàjiā dōu zài jiā.",
+              "english": "The weather is so cold that everyone is at home.",
+              "teaching_note": "那么 modifies degree here (so/that); the syllabus also labels it a demonstrative and a conjunction."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 406
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "那么 modifies degree here (so/that); the syllabus also labels it a demonstrative and a conjunction."
+        },
+        {
+          "id": "w-407",
+          "hanzi": "那样",
+          "pinyin": "nàyàng",
+          "meaning_en": "like that; that kind of",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-407-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我不喜欢那样的衣服。",
+              "pinyin": "wǒ bù xǐhuan nàyàng de yīfu.",
+              "english": "I don't like clothes like that.",
+              "teaching_note": "A short spoken example using 那样."
+            },
+            {
+              "id": "ex-407-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那样的书包很便宜。",
+              "pinyin": "nàyàng de shūbāo hěn piányi.",
+              "english": "That kind of schoolbag is inexpensive.",
+              "teaching_note": "A simple written example using 那样."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 407
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-454",
+          "hanzi": "为什么",
+          "pinyin": "wèi shénme",
+          "meaning_en": "why; for what reason",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-454-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你为什么不去？",
+              "pinyin": "nǐ wèi shénme bú qù?",
+              "english": "Why aren't you going?",
+              "teaching_note": "为什么 is an interrogative meaning “why”."
+            },
+            {
+              "id": "ex-454-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家都知道他为什么每天学汉语。",
+              "pinyin": "dàjiā dōu zhīdào tā wèi shénme měi tiān xué Hànyǔ.",
+              "english": "Everyone knows why he studies Chinese every day.",
+              "teaching_note": "为什么 is an interrogative meaning “why”."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 454
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "为什么 is an interrogative meaning “why”."
+        },
+        {
+          "id": "w-488",
+          "hanzi": "这么",
+          "pinyin": "zhème",
+          "meaning_en": "so; this; to such a degree",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-488-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "怎么这么贵？",
+              "pinyin": "zěnme zhème guì?",
+              "english": "Why is it so expensive?",
+              "teaching_note": "这么 modifies degree here (so/this); its demonstrative use is retained in the POS tags."
+            },
+            {
+              "id": "ex-488-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天这么冷，大家都不出门。",
+              "pinyin": "jīntiān zhème lěng, dàjiā dōu bù chūmén.",
+              "english": "It's so cold today that no one is going out.",
+              "teaching_note": "这么 modifies degree here (so/this); its demonstrative use is retained in the POS tags."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 488
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "这么 modifies degree here (so/this); its demonstrative use is retained in the POS tags."
+        },
+        {
+          "id": "w-489",
+          "hanzi": "这样",
+          "pinyin": "zhèyàng",
+          "meaning_en": "like this; this way",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-489-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你为什么这样说？",
+              "pinyin": "nǐ wèi shénme zhèyàng shuō?",
+              "english": "Why do you say it like that?",
+              "teaching_note": "A short spoken example using 这样."
+            },
+            {
+              "id": "ex-489-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师这样教学生写字。",
+              "pinyin": "lǎoshī zhèyàng jiāo xuéshēng xiě zì.",
+              "english": "The teacher teaches the students to write characters this way.",
+              "teaching_note": "A simple written example using 这样."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 489
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-494",
+          "hanzi": "自己",
+          "pinyin": "zìjǐ",
+          "meaning_en": "oneself; self",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-494-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我自己来！",
+              "pinyin": "wǒ zìjǐ lái!",
+              "english": "I'll do it myself!",
+              "teaching_note": "A short spoken example using 自己."
+            },
+            {
+              "id": "ex-494-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个孩子能自己穿衣服。",
+              "pinyin": "zhège háizi néng zìjǐ chuān yīfu.",
+              "english": "This child can get dressed without help.",
+              "teaching_note": "A simple written example using 自己."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 494
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-026",
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "meaning_en": "everyone",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-026-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "大家都来了。",
+              "pinyin": "dàjiā dōu lái le.",
+              "english": "Everyone has come.",
+              "teaching_note": "大家 refers to everyone present or in the relevant group; 都 reinforces “all.”"
+            },
+            {
+              "id": "ex-026-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大家下午两点来上课。",
+              "pinyin": "dàjiā xiàwǔ liǎng diǎn lái shàngkè.",
+              "english": "Everyone comes to class at two in the afternoon.",
+              "teaching_note": "A simple class schedule: 来上课 describes coming to attend a lesson."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 26
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-047",
+          "hanzi": "多少",
+          "pinyin": "duōshao",
+          "meaning_en": "how many; how much",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "quantifier"
+          ],
+          "topic_ids": [
+            "reference-questions",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-047-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个多少钱？",
+              "pinyin": "zhège duōshao qián?",
+              "english": "How much does this cost?",
+              "teaching_note": "多少钱 is the routine shopping question for a price."
+            },
+            {
+              "id": "ex-047-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有多少学生？",
+              "pinyin": "zhège bān yǒu duōshao xuéshēng?",
+              "english": "How many students are in this class?",
+              "teaching_note": "School or study context showing 多少 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 47
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun."
+        },
+        {
+          "id": "w-131",
+          "hanzi": "哪",
+          "pinyin": "nǎ",
+          "meaning_en": "which",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-131-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你喜欢哪本书？",
+              "pinyin": "nǐ xǐhuan nǎ běn shū?",
+              "english": "Which book do you like?",
+              "teaching_note": "哪 selects one among known choices; 本 is the measure word for books."
+            },
+            {
+              "id": "ex-131-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "老师问：“你们想读哪本书？”",
+              "pinyin": "lǎoshī wèn: “nǐmen xiǎng dú nǎ běn shū?”",
+              "english": "The teacher asked, “Which book would you like to read?”",
+              "teaching_note": "The question word comes before the book classifier."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 131
+            }
+          ],
+          "primary_topic_id": "reference-questions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Asking for a reason",
+        "explanation": "为什么 (wèi shénme) asks for the reason; a natural reply often begins with 因为 (yīnwèi).",
+        "example_id": "ex-406-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Referring to manner and self",
+        "explanation": "这样 (zhèyàng) or 那样 (nàyàng) indicates a way of doing something; 自己 (zìjǐ) identifies the person acting independently.",
+        "example_id": "ex-407-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-406-1",
+      "ex-407-1",
+      "ex-454-1",
+      "ex-488-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Another student says, “Don’t write it that way; write it this way.” The teacher asks him to explain again."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Why are you not going to school today? Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 为什么你今天不去学校？ (Wèi shénme nǐ jīntiān bú qù xuéxiào?)",
+          "answer": "为什么你今天不去学校？ (Wèi shénme nǐ jīntiān bú qù xuéxiào?)"
+        },
+        {
+          "id": "recall-406",
+          "kind": "selection",
+          "prompt": "Which expression means “so”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "那么",
+              "pinyin": "nàme",
+              "meaning_en": "so; like that; in that case"
+            },
+            {
+              "id": "b",
+              "hanzi": "那样",
+              "pinyin": "nàyàng",
+              "meaning_en": "like that; that kind of"
+            },
+            {
+              "id": "c",
+              "hanzi": "为什么",
+              "pinyin": "wèi shénme",
+              "meaning_en": "why; for what reason"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 那么 (nàme) with this meaning."
+        },
+        {
+          "id": "recall-407",
+          "kind": "selection",
+          "prompt": "Which expression means “like that”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "那么",
+              "pinyin": "nàme",
+              "meaning_en": "so; like that; in that case"
+            },
+            {
+              "id": "c",
+              "hanzi": "为什么",
+              "pinyin": "wèi shénme",
+              "meaning_en": "why; for what reason"
+            },
+            {
+              "id": "a",
+              "hanzi": "那样",
+              "pinyin": "nàyàng",
+              "meaning_en": "like that; that kind of"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 那样 (nàyàng) with this meaning."
+        },
+        {
+          "id": "recall-454",
+          "kind": "selection",
+          "prompt": "Which expression means “why”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "那样",
+              "pinyin": "nàyàng",
+              "meaning_en": "like that; that kind of"
+            },
+            {
+              "id": "a",
+              "hanzi": "为什么",
+              "pinyin": "wèi shénme",
+              "meaning_en": "why; for what reason"
+            },
+            {
+              "id": "b",
+              "hanzi": "那么",
+              "pinyin": "nàme",
+              "meaning_en": "so; like that; in that case"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 为什么 (wèi shénme) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Explaining Why and How",
+        "context_en": "Ask why something happened and describe different ways of doing things.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你为什么这么高兴？",
+            "pinyin": "Nǐ wèi shénme zhème gāoxìng?",
+            "english": "Why are you so happy?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "因为我自己做完了这道题！",
+            "pinyin": "Yīnwèi wǒ zìjǐ zuò wán le zhè dào tí!",
+            "english": "Because I finished this problem by myself!"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你是怎么做的？",
+            "pinyin": "Nǐ shì zěnme zuò de?",
+            "english": "How did you do it?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我先看书，再照着上面的方法做。",
+            "pinyin": "Wǒ xiān kàn shū, zài zhàozhe shàngmian de fāngfǎ zuò.",
+            "english": "I read the book first, then followed the method in it."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Asking for a reason",
+          "explanation_en": "为什么 (wèi shénme) asks for the reason; a natural reply often begins with 因为 (yīnwèi).",
+          "formula_en": "为什么 + question?",
+          "examples": [
+            {
+              "hanzi": "为什么你今天不去学校？",
+              "pinyin": "Wèi shénme nǐ jīntiān bú qù xuéxiào?",
+              "english": "Why are you not going to school today?"
+            },
+            {
+              "hanzi": "因为我自己做完了这道题！",
+              "pinyin": "Yīnwèi wǒ zìjǐ zuò wán le zhè dào tí!",
+              "english": "Because I finished this problem by myself!"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Referring to manner and self",
+          "explanation_en": "这样 (zhèyàng) or 那样 (nàyàng) indicates a way of doing something; 自己 (zìjǐ) identifies the person acting independently.",
+          "formula_en": "Person + 自己 + action",
+          "examples": [
+            {
+              "hanzi": "我想自己试一试。",
+              "pinyin": "Wǒ xiǎng zìjǐ shì yi shì.",
+              "english": "I want to try it myself."
+            },
+            {
+              "hanzi": "我先看书，再照着上面的方法做。",
+              "pinyin": "Wǒ xiān kàn shū, zài zhàozhe shàngmian de fāngfǎ zuò.",
+              "english": "I read the book first, then followed the method in it."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你为什么这么高兴？",
+          "pinyin": "Nǐ wèi shénme zhème gāoxìng?",
+          "english": "Why are you so happy?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Why are you not going to school today?",
+            "model_answer": {
+              "hanzi": "为什么你今天不去学校？",
+              "pinyin": "Wèi shénme nǐ jīntiān bú qù xuéxiào?",
+              "english": "Why are you not going to school today?"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I want to try it myself.",
+            "model_answer": {
+              "hanzi": "我想自己试一试。",
+              "pinyin": "Wǒ xiǎng zìjǐ shì yi shì.",
+              "english": "I want to try it myself."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: How did you do it?",
+            "model_answer": {
+              "hanzi": "你是怎么做的？",
+              "pinyin": "Nǐ shì zěnme zuò de?",
+              "english": "How did you do it?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Explaining Why and How — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "老师问学生为什么这样写，学生说自己以前学过这个词。",
+            "pinyin": "Lǎoshī wèn xuéshēng wèi shénme zhèyàng xiě, xuéshēng shuō zìjǐ yǐqián xué guo zhè ge cí.",
+            "english": "The teacher asks why the student wrote it that way, and the student says they learned the word before."
+          },
+          {
+            "hanzi": "另一个学生说：“不要那么写，应该这么写。”老师请他再解释一下。",
+            "pinyin": "Lìng yí ge xuéshēng shuō: “Bú yào nàme xiě, yīnggāi zhème xiě.” Lǎoshī qǐng tā zài jiěshì yíxià.",
+            "english": "Another student says, “Don’t write it that way; write it this way.” The teacher asks him to explain again."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "The teacher asks why the student wrote it that way, and the student says they learned the word before."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Another student says, “Don’t write it that way; write it this way.” The teacher asks him to explain again."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Why are you not going to school today?",
+          "model_answer": {
+            "hanzi": "为什么你今天不去学校？",
+            "pinyin": "Wèi shénme nǐ jīntiān bú qù xuéxiào?",
+            "english": "Why are you not going to school today?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I want to try it myself.",
+          "model_answer": {
+            "hanzi": "我想自己试一试。",
+            "pinyin": "Wǒ xiǎng zìjǐ shì yi shì.",
+            "english": "I want to try it myself."
+          }
+        }
+      ],
+      "common_pitfall": "Do not translate 这么 (zhème) and 这样 (zhèyàng) as identical in every context: one often modifies degree, the other a way or manner.",
+      "pronunciation_focus": "Practise the fourth tone in 这 (zhè) and 那 (nà), and the third-tone pair in 自己 (zìjǐ).",
+      "review": {
+        "can_do": [
+          "Ask reasons with 为什么 (wèi shénme).",
+          "Distinguish 这么 (zhème) and 那么 (nàme) in a description.",
+          "Refer back to oneself with 自己 (zìjǐ)."
+        ],
+        "entry_ids": [
+          406,
+          407,
+          454,
+          488,
+          489,
+          494
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-explaining-why-and-how--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Asking for a reason",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-explaining-why-and-how--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Referring to manner and self",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Why are you not going to school today?",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-explaining-why-and-how--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I want to try it myself.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-explaining-why-and-how--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: How did you do it?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-explaining-why-and-how--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Why are you not going to school today?",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-explaining-why-and-how--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I want to try it myself.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-explaining-why-and-how--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-explaining-why-and-how--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-explaining-why-and-how--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Why are you not going to school today? Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-explaining-why-and-how--question-recall-406",
+            "kind": "practice",
+            "label": "Which expression means “so”?",
+            "optional": true,
+            "target_id": "recall-406"
+          },
+          {
+            "id": "topic-explaining-why-and-how--question-recall-407",
+            "kind": "practice",
+            "label": "Which expression means “like that”?",
+            "optional": true,
+            "target_id": "recall-407"
+          },
+          {
+            "id": "topic-explaining-why-and-how--question-recall-454",
+            "kind": "practice",
+            "label": "Which expression means “why”?",
+            "optional": true,
+            "target_id": "recall-454"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}
