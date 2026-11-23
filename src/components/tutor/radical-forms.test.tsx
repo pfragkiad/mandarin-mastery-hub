@@ -5,8 +5,8 @@ import { RadicalForms } from './radical-forms';
 
 const navigate = vi.hoisted(() => vi.fn());
 vi.mock('@tanstack/react-router', () => ({
-  Link: ({ to, search, children, ...props }: { to: string; search: Record<string, unknown>; children: React.ReactNode; 'aria-label'?: string; className?: string }) =>
-    <a href={to} {...props} onClick={event => { event.preventDefault(); navigate({ to, search }); }}>{children}</a>,
+  Link: ({ to, search, children, replace, resetScroll: _resetScroll, ...props }: { to: string; search: Record<string, unknown>; children: React.ReactNode; replace?: boolean; resetScroll?: boolean; 'aria-label'?: string; className?: string }) =>
+    <a href={to} data-replace={replace ? 'true' : 'false'} {...props} onClick={event => { event.preventDefault(); navigate({ to, search }); }}>{children}</a>,
 }));
 afterEach(() => { cleanup(); navigate.mockClear(); });
 
@@ -32,5 +32,12 @@ describe('Radical form destinations', () => {
     render(<RadicalForms familyId={85}/>);
     fireEvent.click(screen.getByRole('link', { name: 'View radical form 氵, 3 strokes' }));
     expect(navigate).toHaveBeenCalledWith({ to: '/characters', search: { tab: 'Radicals', id: 'Radicals:水', variant: '85-1' } });
+  });
+  it('switching radical forms replaces the history entry in Practice and on the detail card', () => {
+    render(<RadicalForms familyId={85} destination="practice"/>);
+    expect(screen.getByRole('link', { name: 'Practice radical form 氵, 3 strokes' }).dataset['replace']).toBe('true');
+    cleanup();
+    render(<RadicalForms familyId={85}/>);
+    expect(screen.getByRole('link', { name: 'View radical form 氵, 3 strokes' }).dataset['replace']).toBe('true');
   });
 });
