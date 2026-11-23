@@ -631,7 +631,7 @@ function Reveal({ label, progressKey, children }: { label: string; progressKey?:
  *  first render, then reopens from storage before the first paint (no hydration mismatch). Only this
  *  element's own toggle counts (currentTarget), never a nested disclosure's. Restoring an
  *  open panel does not call onOpen, so a restore never counts as new work. */
-function RememberedDetails({ panel, className, onOpen, children }: { panel?: string; className?: string; onOpen?: () => void; children: ReactNode }) {
+function RememberedDetails({ panel, className, onOpen, children }: { panel?: string | undefined; className?: string; onOpen?: () => void; children: ReactNode }) {
   const lessonId = useContext(LessonViewId);
   const [open, setOpen] = useState(false);
   const restoring = useRef(false);
