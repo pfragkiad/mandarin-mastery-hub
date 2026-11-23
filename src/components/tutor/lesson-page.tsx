@@ -314,7 +314,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </div>)}
     </div> });
     if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {topic.related.map(item => { const record = recordFor(item); return <div key={item.id} className="lesson-card lesson-vocab lesson-bank-word"><div className="lesson-bank-top">{record && <WordIdentityPills word={record}/>}</div><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/></div>; })}
+      {topic.related.map(item => { const record = recordFor(item); return <div key={item.id} className="lesson-card lesson-vocab lesson-bank-word"><div className="lesson-bank-top"><HeaderStrut/>{record && <WordIdentityPills word={record}/>}</div><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/></div>; })}
     </LessonFitGrid> });
   }
 
@@ -732,10 +732,15 @@ function LessonFinish({ entry, total, onComplete, onReset, next }: { entry: Less
  *  the translation to its right. No example sentences (those are on the Vocabulary card).
  *  Inputs: the lesson item and its exact Vocabulary record (null when none matched, which
  *  shows the lesson's own part of speech and no pills, so nothing is borrowed). */
+/** Invisible, zero-width HSK pill at the start of a lesson card header: it gives every header
+ *  the pill's exact height (in each display size), so cards with and without pills keep the
+ *  hanzi box at the same place. */
+function HeaderStrut() { return <span className="word-hsk-id lesson-bank-strut" aria-hidden="true">&nbsp;</span>; }
+
 function WordBankCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
   const pos = record?.type || plain(item.primary_pos_id.replace(/[-_]/g, ' '));
   return <div className="lesson-card lesson-vocab lesson-bank-word">
-    <div className="lesson-bank-top">{pos && <span className="lesson-register">{pos}</span>}{record && <WordIdentityPills word={record}/>}</div>
+    <div className="lesson-bank-top"><HeaderStrut/>{pos && <span className="lesson-register">{pos}</span>}{record && <WordIdentityPills word={record}/>}</div>
     <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/>
   </div>;
 }
@@ -771,7 +776,7 @@ function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: 
   // Same layout as the word-bank/Vocabulary grid cards: a header row that always reserves its
   // height (empty for composite expressions), then the hanzi box with pinyin and translation to its right.
   return <div className="lesson-card lesson-vocab lesson-bank-word">
-    <div className="lesson-bank-top">{hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>}</div>
+    <div className="lesson-bank-top"><HeaderStrut/>{hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>}</div>
     <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
   </div>;
 }

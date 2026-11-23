@@ -4676,6 +4676,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-bank-word { gap: 10px; }
 .lesson-bank-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 20px; }
 .lesson-bank-top .word-hsk-id { font-size: 11px; letter-spacing: .5px; }
+.lesson-bank-strut { visibility: hidden; width: 0; padding-inline: 0 !important; border-inline-width: 0 !important; margin-right: -8px; overflow: hidden; }
 .lesson-term.is-tile { display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; }
 .lesson-word-tile { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 60px; height: 60px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; color: var(--card-ink, var(--foreground)); transition: border-color .2s; }
 .lesson-term.is-tile .lesson-word-tile .lesson-hanzi { font-size: 36px; line-height: 1; white-space: nowrap; color: inherit; }
