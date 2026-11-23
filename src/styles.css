@@ -3975,7 +3975,6 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-answer-lines { gap: 10px; }
 .lesson-answer-text { margin: 0; }
 .lesson-answer-note { margin: 0; padding-top: 8px; border-top: 1px dashed var(--border); }
-.lesson-word-segments.is-recorded { color: var(--primary); }
 .lesson-preference { margin-top: 14px; }
 .lesson-bar-row { display: grid; grid-template-columns: minmax(90px, auto) minmax(80px, 1fr) auto; gap: 12px; align-items: center; }
 .lesson-bar-label { display: inline-flex; align-items: baseline; gap: 6px; }

@@ -1,3 +1,4 @@
+import { wordHskPill } from './word-identity-pills';
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
@@ -339,7 +340,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </div>)}</div> });
   for (const b of blocks) {
     if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {b.items.map((item, i) => <div key={`${item.hanzi}-${i}`} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/></div>)}
+      {b.items.map((item, i) => <KeyExpressionCard key={`${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>)}
     </LessonFitGrid> });
   }
   for (const b of laterNotes) {
@@ -757,6 +758,19 @@ function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | 
     <div className="lesson-card-top"><span className="lesson-register">{item.primary_pos_id.replace(/[-_]/g, ' ')}</span>{hsk && <span className="lesson-register is-hsk">{hsk}</span>}</div>
     <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record}/>
     {item.examples.length > 0 && <div className="lesson-topic-examples">{item.examples.map(e => <TopicSentence key={e.id} example={e}/>)}</div>}
+  </div>;
+}
+
+/** A Key expressions card. Inputs: the recorded expression. When exactly one Vocabulary record has
+ * this exact headword, its HSK pill (the grid cards' own wordHskPill) marks the whole expression as
+ * an entry; composite expressions get no pill. Hanzi colour stays uniform either way. */
+function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: string; meaning?: string | undefined }) {
+  const { items } = useWorkspace();
+  const matches = items.filter(w => w.hanzi === hanzi);
+  const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
+  return <div className="lesson-card lesson-vocab">
+    {hsk && <div className="lesson-card-top"><span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span></div>}
+    <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning}/>
   </div>;
 }
 
