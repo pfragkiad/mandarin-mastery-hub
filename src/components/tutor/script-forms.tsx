@@ -17,8 +17,10 @@ import type { CharactersSearch } from './characters-page';
 
 // Form picker for a simplified/traditional script group.
 // Inputs: the glyph whose record is shown; `destination` picks where each tile leads —
-// 'reference' (default) swaps the Characters detail card to that form's own record (URL id,
-// replace), 'practice' opens Practice for that exact form (pushed, keeping the active mode),
+// 'reference' (default) swaps the Characters detail card to that form's own record (URL id),
+// 'practice' switches Practice to that exact form (keeping the active mode). Both *replace*
+// the history entry: a form switch is the same card / same practice page, so browser Back
+// returns to where the learner came from instead of stepping through earlier forms,
 // mirroring RadicalForms. Either way the selected form shows its own reading, meaning,
 // strokes and rank — a traditional form never borrows the simplified rank or vice versa.
 // `hideLabel` drops the heading where the surrounding panel already labels the record
@@ -72,7 +74,7 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
           : <><strong lang="zh-CN">{entry.hanzi}</strong><span>{strokes}</span><small>{formLabel(entry.hanzi, entry.script)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}</small></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {destination === 'practice'
-            ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} resetScroll={false} aria-current={selected ? 'true' : undefined} title={practiceHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${practiceHint(entry.hanzi, selected)}`}>{content}</Link>
+            ? <Link to="/strokes" search={{ character: entry.hanzi, ...(mode ? { mode } : {}) }} replace resetScroll={false} aria-current={selected ? 'true' : undefined} title={practiceHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${practiceHint(entry.hanzi, selected)}`}>{content}</Link>
             : <Link to="/characters" search={prev => { const { variant: _variant, ...rest } = prev as CharactersSearch; return { ...rest, id: entry.id }; }} replace resetScroll={false} aria-current={selected ? 'true' : undefined} title={switchFormHint(entry.hanzi, selected)} aria-label={`${scriptName} form · ${switchFormHint(entry.hanzi, selected)}`}>{content}</Link>}
         </Button>;
       })}

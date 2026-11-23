@@ -1,6 +1,6 @@
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
+import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
 import { toast } from 'sonner';
 import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
@@ -10,9 +10,12 @@ import { ResetProgressButton } from './reset-progress-button';
 const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
 /** Manual checkpoints (Core v3.3): the page's plan, the completed checkpoint IDs and a toggle,
  *  read by the "Mark as done" ticks on pattern cards, at section ends and in the finish box. */
+/** The lesson whose fold-out panels RememberedDetails records (lesson-view-state.ts). */
+const LessonViewId = createContext<string | null>(null);
 const CheckpointTicks = createContext<{ plan: CheckpointPlan; done: ReadonlySet<string>; toggle: (c: LessonCheckpoint) => void } | null>(null);
 import { Link, useNavigate } from '@tanstack/react-router';
-import { setLessonFold } from '@/lib/lesson-fold';
+import { levelFoldId, setLessonFold } from '@/lib/lesson-fold';
+import { readLessonView, saveLessonView, setLessonPanel } from '@/lib/lesson-view-state';
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
@@ -26,6 +29,7 @@ import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
 import { useWorkspace } from './workspace';
+import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-header-copy';
 
 /**
  * One study lesson page, rendered entirely from its JSON document (src/lib/lessons.ts),
@@ -172,15 +176,16 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const [round, setRound] = useState(0);
   // Every reset snapshots first and offers Undo in a toast for 10 seconds (designer's proposal).
   const undoToast = (message: string, snapshot: ReturnType<typeof snapshotLesson>) => toast(message, { duration: 10000, action: { label: 'Undo', onClick: () => restoreLesson(summary.id, snapshot) } });
-  const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
+  const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); saveLessonView(summary.id, 'panels', []); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
   const lessonDone = Boolean(progressEntry?.completed);
   // Complete lesson marks it done and returns to where it is listed: its course (the drawer
-  // is opened first so the course shows unfolded), or the topic view of its main topic.
+  // and its level are opened first so they show unfolded), or the topic view of its main topic.
   const navigate = useNavigate();
   const complete = () => {
     markLessonCompleted(summary.id);
-    const course = positionsOf(summary.id)[0]?.course;
-    if (course) { setLessonFold(course.id, true); void navigate({ to: '/lessons' }); }
+    const position = positionsOf(summary.id)[0];
+    // Open the course and the lesson's own level, so the learner lands on the path they left.
+    if (position) { setLessonFold(position.course.id, true); setLessonFold(levelFoldId(position.course.id, position.section.id), true); void navigate({ to: '/lessons' }); }
     else void navigate({ to: '/lessons', search: summary.primaryCategory ? { view: 'topic', category: summary.primaryCategory.id } : { view: 'topic' } });
   };
   const [hidePinyin, setHidePinyin] = useState(false);
@@ -280,14 +285,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (p.review.can_do.length || topic.items.length) sections.push({ id: 'review', title: 'Review', hint: 'What you can do now', body: <>
       {p.review.can_do.length > 0 && <ul className="lesson-objectives">{p.review.can_do.map(x => <li key={x}><LessonText text={x}/></li>)}</ul>}
       {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><LessonFitGrid className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid></>}
-      {topic.items.length > 0 && <details className="lesson-details">
+      {topic.items.length > 0 && <RememberedDetails panel="word-bank" className="lesson-details">
         <summary>Word bank ({topic.items.length}) — examples are on each Vocabulary card</summary>
         <LessonFitGrid className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid>
-      </details>}
-      {recall.length > 0 && <details className="lesson-details">
+      </RememberedDetails>}
+      {recall.length > 0 && <RememberedDetails panel="recall-quiz" className="lesson-details">
         <summary>Optional word recall quiz ({recall.length}){contract && (() => { const n = recall.filter(q => { const c = targetCheckpoint.get(q.id); return c && progressEntry?.bonus?.includes(c.id); }).length; return n > 0 ? ` · ${n} bonus done` : ''; })()}</summary>
         <div className="lesson-stack">{recall.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div>
-      </details>}
+      </RememberedDetails>}
     </> });
   } else if (topic) {
     const byId = new Map(topic.items.flatMap(item => item.examples.map(e => [e.id, { example: e, item }] as const)));
@@ -473,7 +478,15 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const ticks = checkpointPlan ? { plan: checkpointPlan, done: doneSet, toggle: (c: LessonCheckpoint) => { if (doneSet.has(c.id)) unmarkCheckpoint(summary.id, c.id); else markQuestionAnswered(summary.id, c.id, c.optional); } } : null;
   const minutes = summary.estimatedMinutes;
   // Narrow layout state: which collapsible sections are open (the first one to begin with).
-  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set(ids.slice(0, 1)));
+  // Restored from this tab's saved view, so Back from a word's card shows the same sections
+  // open (and scroll restoration lands where the learner was). Reading storage in the
+  // initializer is hydration-safe here: openIds only affects markup once `narrow` is true,
+  // which is false on the server and on the first client render alike.
+  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => {
+    const saved = readLessonView(summary.id)?.sections.filter(id => ids.includes(id));
+    return new Set(saved ?? ids.slice(0, 1));
+  });
+  useEffect(() => { saveLessonView(summary.id, 'sections', openIds); }, [summary.id, openIds]);
   const active = useActiveSection(ids);
   const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
 
@@ -490,6 +503,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (!activeSection) return;
     const snapshot = snapshotLesson(summary.id);
     resetLessonTasks(summary.id, activeKeys);
+    saveLessonView(summary.id, 'panels', []); // the remount closes every panel, so forget them too
     setRound(r => r + 1);
     undoToast(`“${activeSection.title}” reset`, snapshot);
   };
@@ -510,25 +524,35 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     }, 320);
   };
 
+  const subtitle = displaySubtitle(summary.subtitle);
+  const description = displayDescription(summary.description);
+  const tags = displayTags(summary.tags);
+
   const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
     <Switch checked={hintsOn} onCheckedChange={setHints} aria-describedby="lesson-hints-help"/>
     <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
   </label>;
 
-  return <QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
-    <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
-    {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
+  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+    {/* Back link + course position share one block: on narrow pages they flow as one line
+        (back left, course/lesson number right) with Previous/Next below (CSS .lesson-top). */}
+    <div className="lesson-top">
+      <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
+      {positions.map(p => <CoursePosition key={p.placement.id} position={p} lessonTitle={summary.title}/>)}
+    </div>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
-        <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
+        <div className="eyebrow"><BookText size={12} aria-hidden="true"/><span>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <span className="lesson-eyebrow-category"> · {summary.primaryCategory.label.toUpperCase()}</span>}{minutes && <span className="lesson-eyebrow-time"> · ABOUT {minutes} MIN</span>}</span></div>
         <h1>{summary.title}</h1>
-        {summary.subtitle && <p className="lesson-subtitle"><LessonText text={summary.subtitle}/></p>}
-        {summary.description && <p className="lesson-description"><LessonText text={summary.description}/></p>}
-        <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
+        {/* Header copy goes through lesson-header-copy.ts: listed boilerplate subtitles, source
+            notes and course/level tags are hidden (never rewritten); the audience line is not
+            shown because the course line above already names the course and level. */}
+        {subtitle && <p className="lesson-subtitle"><LessonText text={subtitle}/></p>}
+        {description && <p className="lesson-description"><LessonText text={description}/></p>}
+        {tags.length > 0 && <ul className="lesson-chips">{tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>}
       </div>
     </header>
-    <LessonProgressStrip entry={progressEntry} total={totalTasks} minutes={minutes} onReset={restart}/>
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -569,21 +593,25 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </div>
     </div>
   </div>
-  </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider>;
+  </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider></LessonViewId.Provider>;
 }
 
 /** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
  *  prerequisites, and Previous/Next within the same level (only the manifest's order). */
-function CoursePosition({ position: p }: { position: LessonPosition }) {
+function CoursePosition({ position: p, lessonTitle }: { position: LessonPosition; lessonTitle: string }) {
+  // A unit named exactly like the lesson adds nothing, so the line skips it.
+  const unit = p.unit.title.trim() === lessonTitle.trim() ? null : p.unit.title;
+  // A prerequisite that is simply the Previous link below would be said twice, so it is listed once there.
+  const before = p.placement.prerequisites.filter(x => x.id !== p.previous?.id);
   return <nav className="lesson-course-position" aria-label={`${p.course.title}: position`}>
     <div className="lesson-course-where">
       <Library size={14} aria-hidden="true"/>
-      <span><Link to="/lessons">{p.section.title}</Link> · {p.unit.title} · <strong>Lesson {p.index} of {p.total}</strong></span>
+      <span><Link to="/lessons">{p.section.title}</Link>{unit && <span className="lesson-course-unit"> · {unit}</span>} · <strong>Lesson {p.index} of {p.total}</strong></span>
     </div>
-    {p.placement.prerequisites.length > 0 && <p className="lesson-course-after">Before this: {p.placement.prerequisites.map((s, i) => <span key={s.id}>{i > 0 && ', '}<Link to="/lessons/$lessonId" params={{ lessonId: s.id }}>{s.title}</Link></span>)}</p>}
+    {before.length > 0 && <p className="lesson-course-after">Before this: {before.map((s, i) => <span key={s.id}>{i > 0 && ', '}<Link to="/lessons/$lessonId" params={{ lessonId: s.id }}>{s.title}</Link></span>)}</p>}
     <div className="lesson-course-steps">
-      {p.previous ? <Link to="/lessons/$lessonId" params={{ lessonId: p.previous.id }} className="lesson-course-step"><ArrowLeft size={14} aria-hidden="true"/><span><small>Previous</small>{p.previous.title}</span></Link> : <span/>}
-      {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next</small>{p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
+      {p.previous ? <Link to="/lessons/$lessonId" params={{ lessonId: p.previous.id }} className="lesson-course-step"><ArrowLeft size={14} aria-hidden="true"/><span><small>Previous:</small> {p.previous.title}</span></Link> : <span/>}
+      {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next:</small> {p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
     </div>
   </nav>;
 }
@@ -607,7 +635,33 @@ function DialogueTurns({ turns }: { turns: (PlanLine & { speaker: string })[] })
  *  The handler checks currentTarget so a nested disclosure's toggle never counts for this one. */
 function Reveal({ label, progressKey, children }: { label: string; progressKey?: string; children: ReactNode }) {
   const progressCtx = useContext(QuestionProgress);
-  return <details className="lesson-details lesson-reveal" onToggle={e => { if (e.target === e.currentTarget && e.currentTarget.open && progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</details>;
+  // Remembered by its task key (when it has one), so a revealed answer is still open on Back.
+  return <RememberedDetails panel={progressKey ? `reveal:${progressKey}` : undefined} className="lesson-details lesson-reveal" onOpen={() => { if (progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</RememberedDetails>;
+}
+
+/** A native <details> whose open state is remembered for this lesson in this tab
+ *  (lesson-view-state.ts), so leaving the lesson for a word card and coming Back reopens it.
+ *  Inputs: `panel`, a key unique within the lesson (no key → an ordinary, unremembered
+ *  disclosure); `onOpen`, called when the learner opens it. Starts closed on the server and
+ *  first render, then reopens from storage before the first paint (no hydration mismatch). Only this
+ *  element's own toggle counts (currentTarget), never a nested disclosure's. Restoring an
+ *  open panel does not call onOpen, so a restore never counts as new work. */
+function RememberedDetails({ panel, className, onOpen, children }: { panel?: string | undefined; className?: string; onOpen?: () => void; children: ReactNode }) {
+  const lessonId = useContext(LessonViewId);
+  const [open, setOpen] = useState(false);
+  const restoring = useRef(false);
+  // Layout effect: reopen before paint, so restored scroll lands on the same content.
+  useLayoutEffect(() => {
+    if (panel && lessonId && readLessonView(lessonId)?.panels.includes(panel)) { restoring.current = true; setOpen(true); }
+  }, [panel, lessonId]);
+  return <details className={className} open={open} onToggle={e => {
+    if (e.target !== e.currentTarget) return;
+    const now = e.currentTarget.open;
+    setOpen(now);
+    if (restoring.current) { restoring.current = false; return; }
+    if (panel && lessonId) setLessonPanel(lessonId, panel, now);
+    if (now) onOpen?.();
+  }}>{children}</details>;
 }
 
 /** The numbers both progress displays show. Before the first read after mount (and on the
@@ -649,20 +703,6 @@ function SectionTicks({ where }: { where: string }) {
 /** One confirm wording for every whole-lesson reset (sidebar menu, phone Settings, Start over,
  *  Practice this lesson again), each followed by the same Undo toast. */
 const resetCopy = (total: number) => ({ title: `Reset all ${total} ${total === 1 ? 'task' : 'tasks'}?`, description: 'This clears your answers and progress for this lesson.' });
-
-/** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and,
- *  only once there is progress to clear, a quiet "Start over" text link (owner's choice: a
- *  natural moment to reset, kept low-emphasis). Inputs: the stored entry (absent until read
- *  after mount), the page's task count and `onReset`. */
-function LessonProgressStrip({ entry, total, minutes, onReset }: { entry: LessonProgressEntry | undefined; total: number; minutes: number | null; onReset: () => void }) {
-  const { tasks, state, fraction, label } = progressView(entry, total);
-  if (tasks === 0 && !entry?.completed) return null;
-  return <div className={`lesson-progress-strip is-${state}`}>
-    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}{minutes && <small className="lesson-progress-time"> · about {minutes} min</small>}</span>
-    <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    {hasLessonProgress(entry) && <ResetProgressButton look="link" label="Start over" {...resetCopy(tasks)} onReset={onReset}/>}
-  </div>;
-}
 
 /** End-of-lesson box: "Complete lesson" marks it done without opening every task; once done
  *  it reads Lesson complete with, in a course, the next lesson as the main action and a

@@ -134,3 +134,15 @@
 - [x] Lessons: "Start over" text link at the top (only with progress) + "Practice this lesson again" outline button at the end, same confirm + Undo
 - [x] Lessons: phone Settings "Reset this section" row under Progress (Undo toast)
 - [x] Lessons: first HSK 3.0 Level 2 lesson (Making Plans Together) in its own Level 2 course card after Level 1
+
+- [x] Lessons: import corrected HSK Level 2 package (rev2)
+- [x] Lessons: each course level (Level 1, Level 2) folds open/closed like units
+
+- [x] Lesson top (small screens): less cramped header per mockup; Next + title + arrow on one line
+- [x] Lesson top: hide boilerplate subtitle ("Topic-based beginner conversation lesson") and the transcript/source sentence in descriptions
+- [x] Lesson tags: hide long audience pill and course/format tags (topic lesson, beginner, conversational mandarin…); review tag guideline for lesson creator
+- [x] Lesson top: drop the repeated progress bar above "In this lesson you will" at every width; time moves beside the lesson type
+- [x] Lesson-creator guideline update for subtitles/descriptions/tags
+- [x] Etymology: simplified character without its own entry shows "师 → 師" + the traditional form's notes (labelled suggested, not reviewed)
+- [x] Etymology (character card): left simplified tile same size as the traditional tile
+- [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line

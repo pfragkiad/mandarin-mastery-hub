@@ -32,7 +32,8 @@ function LessonRoute() {
   const lesson = Route.useLoaderData();
   const { priority } = Route.useSearch();
   const navigate = Route.useNavigate();
-  return <LessonPage lesson={lesson} priority={priority} onPriority={value => navigate({ search: value ? { priority: value } : {}, resetScroll: false })}/>;
+  // Keyed by lesson so Previous/Next start that lesson's own view (open sections, panels).
+  return <LessonPage key={lesson.summary.id} lesson={lesson} priority={priority} onPriority={value => navigate({ search: value ? { priority: value } : {}, resetScroll: false })}/>;
 }
 
 function LessonError({ error, reset }: ErrorComponentProps) {

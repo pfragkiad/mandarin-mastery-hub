@@ -1,0 +1,1295 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-describing-colors-and-comparing-things",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Qualities, Feelings & Evaluation — Part 1: Describing Colors and Comparing Things",
+    "subtitle": "Color, height, length and speed",
+    "description": "Describe the colors and physical qualities of objects, then compare two things.",
+    "slug": "describing-colors-and-comparing-things"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "color",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "physical-properties",
+    "subtopic_ids": [
+      "physical-properties"
+    ]
+  },
+  "learning_objectives": [
+    "Recognize white, black, red and green.",
+    "Compare two items with 比 (bǐ).",
+    "Describe height, length and speed."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "交": "Characters:交",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "你": "Characters:你",
+    "公": "Characters:公",
+    "到": "Characters:到",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "吗": "Characters:吗",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "坏": "Characters:坏",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "师": "Characters:师",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "弟": "Characters:弟",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "时": "Characters:时",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "更": "Characters:更",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "机": "Characters:机",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "林": "Characters:林",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "步": "Characters:步",
+    "比": "Characters:比",
+    "漂": "Characters:漂",
+    "热": "Characters:热",
+    "王": "Characters:王",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "短": "Characters:短",
+    "站": "Characters:站",
+    "红": "Characters:红",
+    "绿": "Characters:绿",
+    "老": "Characters:老",
+    "而": "Characters:而",
+    "脑": "Characters:脑",
+    "色": "Characters:色",
+    "苹": "Characters:苹",
+    "衣": "Characters:衣",
+    "裤": "Characters:裤",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "觉": "Characters:觉",
+    "说": "Characters:说",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "较": "Characters:较",
+    "辆": "Characters:辆",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "长": "Characters:长",
+    "间": "Characters:间",
+    "颜": "Characters:颜",
+    "高": "Characters:高",
+    "黑": "Characters:黑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Describe the colors and physical qualities of objects, then compare two things.",
+      "focus": "Recognize white, black, red and green."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-303",
+          "hanzi": "白色",
+          "pinyin": "báisè",
+          "meaning_en": "white; white color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-303-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢白色吗？",
+              "pinyin": "nǐ xǐhuan báisè ma?",
+              "english": "Do you like white?",
+              "teaching_note": "A short spoken example using 白色."
+            },
+            {
+              "id": "ex-303-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈昨天买了一件白色的衣服。",
+              "pinyin": "māma zuótiān mǎi le yí jiàn báisè de yīfu.",
+              "english": "Mom bought a white piece of clothing yesterday.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 303
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-309",
+          "hanzi": "比",
+          "pinyin": "bǐ",
+          "meaning_en": "than; to compare",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "qualities-feelings",
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-309-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你比我高。",
+              "pinyin": "nǐ bǐ wǒ gāo.",
+              "english": "You are taller than me.",
+              "teaching_note": "比 introduces the standard of comparison; it is not a classifier."
+            },
+            {
+              "id": "ex-309-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今年比去年热。",
+              "pinyin": "jīnnián bǐ qùnián rè.",
+              "english": "This year is hotter than last year.",
+              "teaching_note": "比 introduces the standard of comparison; it is not a classifier."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 309
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "比 introduces the standard of comparison; it is not a classifier."
+        },
+        {
+          "id": "w-314",
+          "hanzi": "长",
+          "pinyin": "cháng",
+          "meaning_en": "long; lengthy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-314-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条路长吗？",
+              "pinyin": "zhè tiáo lù cháng ma?",
+              "english": "Is this road long?",
+              "teaching_note": "A short spoken example using 长."
+            },
+            {
+              "id": "ex-314-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这条路很长，从学校走到车站要半个小时。",
+              "pinyin": "zhè tiáo lù hěn cháng, cóng xuéxiào zǒu dào chēzhàn yào bàn ge xiǎoshí.",
+              "english": "This road is long; walking from the school to the station takes half an hour.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 314
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-341",
+          "hanzi": "高",
+          "pinyin": "gāo",
+          "meaning_en": "tall; high",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-341-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你哥哥高吗？",
+              "pinyin": "nǐ gēge gāo ma?",
+              "english": "Is your older brother tall?",
+              "teaching_note": "A short spoken example using 高."
+            },
+            {
+              "id": "ex-341-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我弟弟比我高。",
+              "pinyin": "wǒ dìdi bǐ wǒ gāo.",
+              "english": "My younger brother is taller than me.",
+              "teaching_note": "A simple written example using 高."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 341
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-353",
+          "hanzi": "黑色",
+          "pinyin": "hēisè",
+          "meaning_en": "black; black color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-353-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢黑色吗？",
+              "pinyin": "nǐ xǐhuan hēisè ma?",
+              "english": "Do you like black?",
+              "teaching_note": "A short spoken example using 黑色."
+            },
+            {
+              "id": "ex-353-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的手机是黑色的。",
+              "pinyin": "tā de shǒujī shì hēisè de.",
+              "english": "His phone is black.",
+              "teaching_note": "A simple written example using 黑色."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 353
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-355",
+          "hanzi": "红色",
+          "pinyin": "hóngsè",
+          "meaning_en": "red; red color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-355-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件衣服有红色的吗？",
+              "pinyin": "zhè jiàn yīfu yǒu hóngsè de ma?",
+              "english": "Does this item of clothing come in red?",
+              "teaching_note": "A short spoken example using 红色."
+            },
+            {
+              "id": "ex-355-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹喜欢红色，昨天买了一件红色的衣服。",
+              "pinyin": "mèimei xǐhuan hóngsè, zuótiān mǎi le yí jiàn hóngsè de yīfu.",
+              "english": "My younger sister likes red and bought a red piece of clothing yesterday.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 355
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-360",
+          "hanzi": "坏",
+          "pinyin": "huài",
+          "meaning_en": "bad; broken",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-360-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个苹果坏了。",
+              "pinyin": "zhège píngguǒ huài le.",
+              "english": "This apple has gone bad.",
+              "teaching_note": "A short spoken example using 坏."
+            },
+            {
+              "id": "ex-360-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我的电脑坏了。",
+              "pinyin": "wǒ de diànnǎo huài le.",
+              "english": "My computer is broken.",
+              "teaching_note": "A simple written example using 坏."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 360
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ]
+        },
+        {
+          "id": "w-384",
+          "hanzi": "快",
+          "pinyin": "kuài",
+          "meaning_en": "fast; quick; soon",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-384-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你走得真快！",
+              "pinyin": "nǐ zǒu de zhēn kuài!",
+              "english": "You walk really fast!",
+              "teaching_note": "A short spoken example using 快."
+            },
+            {
+              "id": "ex-384-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "时间过得很快。",
+              "pinyin": "shíjiān guò de hěn kuài.",
+              "english": "Time passes quickly.",
+              "teaching_note": "A simple written example using 快."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 384
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-396",
+          "hanzi": "绿色",
+          "pinyin": "lǜsè",
+          "meaning_en": "green; green color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-396-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢绿色吗？",
+              "pinyin": "nǐ xǐhuan lǜsè ma?",
+              "english": "Do you like green?",
+              "teaching_note": "A short spoken example using 绿色."
+            },
+            {
+              "id": "ex-396-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我有一个绿色的书包，妹妹的书包是红色的。",
+              "pinyin": "wǒ yǒu yí ge lǜsè de shūbāo, mèimei de shūbāo shì hóngsè de.",
+              "english": "I have a green schoolbag; my younger sister’s schoolbag is red.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 396
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-397",
+          "hanzi": "慢",
+          "pinyin": "màn",
+          "meaning_en": "slow; slowly",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-397-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你说得太慢了。",
+              "pinyin": "nǐ shuō de tài màn le.",
+              "english": "You are speaking too slowly.",
+              "teaching_note": "A short spoken example using 慢."
+            },
+            {
+              "id": "ex-397-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公交车开得很慢。",
+              "pinyin": "gōngjiāochē kāi de hěn màn.",
+              "english": "The bus is moving very slowly.",
+              "teaching_note": "A simple written example using 慢."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 397
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-466",
+          "hanzi": "颜色",
+          "pinyin": "yánsè",
+          "meaning_en": "color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "qualities-feelings",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-466-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢什么颜色？",
+              "pinyin": "nǐ xǐhuan shénme yánsè?",
+              "english": "What color do you like?",
+              "teaching_note": "A short spoken example using 颜色."
+            },
+            {
+              "id": "ex-466-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这些衣服有很多颜色。",
+              "pinyin": "zhèxiē yīfu yǒu hěn duō yánsè.",
+              "english": "These clothes come in many colors.",
+              "teaching_note": "A simple written example using 颜色."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 466
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ]
+        },
+        {
+          "id": "w-025",
+          "hanzi": "大",
+          "pinyin": "dà",
+          "meaning_en": "big",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-025-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个房间很大。",
+              "pinyin": "zhège fángjiān hěn dà.",
+              "english": "This room is big.",
+              "teaching_note": "很 appears naturally before a descriptive adjective such as 大, without necessarily meaning “very.”"
+            },
+            {
+              "id": "ex-025-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个大学很大。",
+              "pinyin": "zhège dàxué hěn dà.",
+              "english": "This university is very big.",
+              "teaching_note": "School or study context showing 大 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 25
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-044",
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning_en": "correct; toward",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "preposition",
+            "verb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-044-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我说得对吗？",
+              "pinyin": "wǒ shuō de duì ma?",
+              "english": "Am I right?",
+              "teaching_note": "Short beginner-level description illustrating 对 in context."
+            },
+            {
+              "id": "ex-044-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "老师说：“对，是这样。”",
+              "pinyin": "lǎoshī shuō: “duì, shì zhèyàng.”",
+              "english": "The teacher said, \"Yes, that's right.\"",
+              "teaching_note": "Written dialogue: 对 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 44
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages."
+        },
+        {
+          "id": "w-046",
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning_en": "many; much",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "pronoun",
+            "adverb"
+          ],
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-046-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有很多人。",
+              "pinyin": "zhèlǐ yǒu hěn duō rén.",
+              "english": "There are many people here.",
+              "teaching_note": "很多 directly modifies 人 to express a large number of people."
+            },
+            {
+              "id": "ex-046-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午来的人很多。",
+              "pinyin": "xiàwǔ lái de rén hěn duō.",
+              "english": "There are many people coming this afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 多 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 46
+            }
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Comparing two items",
+        "explanation": "比 (bǐ) introduces the item used for comparison, followed by the relevant adjective.",
+        "example_id": "ex-303-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Describing colors",
+        "explanation": "Use a color noun such as 红色 (hóngsè) before 的 (de) when modifying a noun.",
+        "example_id": "ex-309-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-303-1",
+      "ex-309-1",
+      "ex-314-1",
+      "ex-341-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "They see a red car and a black car and think the red one is pretty."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: This road is longer than that road. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 这条路比那条路长。 (Zhè tiáo lù bǐ nà tiáo lù cháng.)",
+          "answer": "这条路比那条路长。 (Zhè tiáo lù bǐ nà tiáo lù cháng.)"
+        },
+        {
+          "id": "recall-303",
+          "kind": "selection",
+          "prompt": "Which expression means “white”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "白色",
+              "pinyin": "báisè",
+              "meaning_en": "white; white color"
+            },
+            {
+              "id": "b",
+              "hanzi": "比",
+              "pinyin": "bǐ",
+              "meaning_en": "than; to compare"
+            },
+            {
+              "id": "c",
+              "hanzi": "长",
+              "pinyin": "cháng",
+              "meaning_en": "long; lengthy"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 白色 (báisè) with this meaning."
+        },
+        {
+          "id": "recall-309",
+          "kind": "selection",
+          "prompt": "Which expression means “than”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "白色",
+              "pinyin": "báisè",
+              "meaning_en": "white; white color"
+            },
+            {
+              "id": "c",
+              "hanzi": "长",
+              "pinyin": "cháng",
+              "meaning_en": "long; lengthy"
+            },
+            {
+              "id": "a",
+              "hanzi": "比",
+              "pinyin": "bǐ",
+              "meaning_en": "than; to compare"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 比 (bǐ) with this meaning."
+        },
+        {
+          "id": "recall-314",
+          "kind": "selection",
+          "prompt": "Which expression means “long”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "比",
+              "pinyin": "bǐ",
+              "meaning_en": "than; to compare"
+            },
+            {
+              "id": "a",
+              "hanzi": "长",
+              "pinyin": "cháng",
+              "meaning_en": "long; lengthy"
+            },
+            {
+              "id": "b",
+              "hanzi": "白色",
+              "pinyin": "báisè",
+              "meaning_en": "white; white color"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 长 (cháng) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Describing Colors and Comparing Things",
+        "context_en": "Describe the colors and physical qualities of objects, then compare two things.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你喜欢哪件衣服？红色的还是绿色的？",
+            "pinyin": "Nǐ xǐhuan nǎ jiàn yīfu? Hóngsè de háishi lǜsè de?",
+            "english": "Which outfit do you like, the red one or the green one?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我喜欢绿色的，不过黑色的也不错。",
+            "pinyin": "Wǒ xǐhuan lǜsè de, búguò hēisè de yě búcuò.",
+            "english": "I like the green one, though the black one is also nice."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这条裤子比那条长吗？",
+            "pinyin": "Zhè tiáo kùzi bǐ nà tiáo cháng ma?",
+            "english": "Are these trousers longer than those?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，而且白色的那条比这条短。",
+            "pinyin": "Duì, érqiě báisè de nà tiáo bǐ zhè tiáo duǎn.",
+            "english": "Yes, and the white pair is shorter than this one."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Comparing two items",
+          "explanation_en": "比 (bǐ) introduces the item used for comparison, followed by the relevant adjective.",
+          "formula_en": "A + 比 + B + adjective",
+          "examples": [
+            {
+              "hanzi": "这条路比那条路长。",
+              "pinyin": "Zhè tiáo lù bǐ nà tiáo lù cháng.",
+              "english": "This road is longer than that road."
+            },
+            {
+              "hanzi": "我喜欢绿色的，不过黑色的也不错。",
+              "pinyin": "Wǒ xǐhuan lǜsè de, búguò hēisè de yě búcuò.",
+              "english": "I like the green one, though the black one is also nice."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Describing colors",
+          "explanation_en": "Use a color noun such as 红色 (hóngsè) before 的 (de) when modifying a noun.",
+          "formula_en": "Color + 的 + noun",
+          "examples": [
+            {
+              "hanzi": "她走得很慢，我走得很快。",
+              "pinyin": "Tā zǒu de hěn màn, wǒ zǒu de hěn kuài.",
+              "english": "She walks slowly, and I walk quickly."
+            },
+            {
+              "hanzi": "对，而且白色的那条比这条短。",
+              "pinyin": "Duì, érqiě báisè de nà tiáo bǐ zhè tiáo duǎn.",
+              "english": "Yes, and the white pair is shorter than this one."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你喜欢哪件衣服？红色的还是绿色的？",
+          "pinyin": "Nǐ xǐhuan nǎ jiàn yīfu? Hóngsè de háishi lǜsè de?",
+          "english": "Which outfit do you like, the red one or the green one?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: This road is longer than that road.",
+            "model_answer": {
+              "hanzi": "这条路比那条路长。",
+              "pinyin": "Zhè tiáo lù bǐ nà tiáo lù cháng.",
+              "english": "This road is longer than that road."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: She walks slowly, and I walk quickly.",
+            "model_answer": {
+              "hanzi": "她走得很慢，我走得很快。",
+              "pinyin": "Tā zǒu de hěn màn, wǒ zǒu de hěn kuài.",
+              "english": "She walks slowly, and I walk quickly."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Are these trousers longer than those?",
+            "model_answer": {
+              "hanzi": "这条裤子比那条长吗？",
+              "pinyin": "Zhè tiáo kùzi bǐ nà tiáo cháng ma?",
+              "english": "Are these trousers longer than those?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Describing Colors and Comparing Things — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小林和小王一起跑步。小王个子比较高，可是小林跑得更快。",
+            "pinyin": "Xiǎo Lín hé Xiǎo Wáng yìqǐ pǎobù. Xiǎo Wáng gèzi bǐjiào gāo, kěshì Xiǎo Lín pǎo de gèng kuài.",
+            "english": "Xiaolin and Xiao Wang run together. Xiao Wang is taller, but Xiaolin runs faster."
+          },
+          {
+            "hanzi": "他们看见一辆红色的车和一辆黑色的车，觉得红色的车很漂亮。",
+            "pinyin": "Tāmen kànjiàn yí liàng hóngsè de chē hé yí liàng hēisè de chē, juéde hóngsè de chē hěn piàoliang.",
+            "english": "They see a red car and a black car and think the red one is pretty."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiaolin and Xiao Wang run together. Xiao Wang is taller, but Xiaolin runs faster."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "They see a red car and a black car and think the red one is pretty."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: This road is longer than that road.",
+          "model_answer": {
+            "hanzi": "这条路比那条路长。",
+            "pinyin": "Zhè tiáo lù bǐ nà tiáo lù cháng.",
+            "english": "This road is longer than that road."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: She walks slowly, and I walk quickly.",
+          "model_answer": {
+            "hanzi": "她走得很慢，我走得很快。",
+            "pinyin": "Tā zǒu de hěn màn, wǒ zǒu de hěn kuài.",
+            "english": "She walks slowly, and I walk quickly."
+          }
+        }
+      ],
+      "common_pitfall": "In comparisons with 比 (bǐ), do not automatically insert 很 (hěn) before the adjective as in an ordinary description.",
+      "pronunciation_focus": "Contrast 黑色 (hēisè), first plus fourth tone, and 红色 (hóngsè), second plus fourth tone.",
+      "review": {
+        "can_do": [
+          "Recognize white, black, red and green.",
+          "Compare two items with 比 (bǐ).",
+          "Describe height, length and speed."
+        ],
+        "entry_ids": [
+          303,
+          309,
+          314,
+          341,
+          353,
+          355,
+          360,
+          384,
+          396,
+          397,
+          466
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Comparing two items",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Describing colors",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: This road is longer than that road.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: She walks slowly, and I walk quickly.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Are these trousers longer than those?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: This road is longer than that road.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: She walks slowly, and I walk quickly.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-colors-and-comparing-things--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-describing-colors-and-comparing-things--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: This road is longer than that road. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--question-recall-303",
+            "kind": "practice",
+            "label": "Which expression means “white”?",
+            "optional": true,
+            "target_id": "recall-303"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--question-recall-309",
+            "kind": "practice",
+            "label": "Which expression means “than”?",
+            "optional": true,
+            "target_id": "recall-309"
+          },
+          {
+            "id": "topic-describing-colors-and-comparing-things--question-recall-314",
+            "kind": "practice",
+            "label": "Which expression means “long”?",
+            "optional": true,
+            "target_id": "recall-314"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 42
+}

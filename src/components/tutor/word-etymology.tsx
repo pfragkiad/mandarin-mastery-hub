@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
-import { EtymologyPanel, EtymologyRecordLink, EtymologySourcesInfo, etymologyHasContent } from './etymology-section';
+import { EtymologyPanel, EtymologyRecordLink, EtymologySourcesInfo, ScriptPairArrow, etymologyHasContent, useInheritedEtymology } from './etymology-section';
+import type { RelatedForm } from '@/lib/etymology';
 
 /**
  * Etymology tab body for every word card (owner-requested: inherited from the word's
@@ -27,7 +28,7 @@ export function wordEtymologyRequests(glyphs: readonly string[]): EtymologyReque
 }
 
 /** Heading of one character block: tile link (to its notes when it has some), reading, meaning. */
-function CharacterHeading({ glyph, hasNotes }: { glyph: string; hasNotes: boolean }) {
+function CharacterHeading({ glyph, hasNotes, counterpart }: { glyph: string; hasNotes: boolean; counterpart?: RelatedForm | null | undefined }) {
   const { preferences } = useWorkspace();
   const facts = glyphIndex()[glyph];
   const reading = facts?.pinyin ?? '';
@@ -40,7 +41,8 @@ function CharacterHeading({ glyph, hasNotes }: { glyph: string; hasNotes: boolea
   // Same heading markup as the word Decomposition list (vocabulary-decomposition.tsx):
   // tile, then reading + speaker over the meaning, so both tabs introduce a character alike.
   return <div className="decomposition-part">
-    {tile}
+    {/* With a traditional form's notes shown below, the pair reads "师 → 師" on one line. */}
+    {counterpart ? <span className="etymology-script-pair">{tile}<ScriptPairArrow form={counterpart}/></span> : tile}
     <div className="vocabulary-part-facts">
       <span className="example-pinyin-row">{isMultiReading(reading)
         ? <MultiReadingSpeakers spoken={glyph} reading={reading} variant="example"/>
@@ -52,14 +54,20 @@ function CharacterHeading({ glyph, hasNotes }: { glyph: string; hasNotes: boolea
 
 export function WordEtymologyPanel({ requests, views }: { requests: readonly EtymologyRequest[]; views: (EtymologyView | null)[] | undefined }) {
   if (views === undefined) return <EtymologyPanel view={undefined}/>;
-  return <ul className="decomposition-tree etymology-word-parts">{requests.map((request, index) => {
-    const view = views[index] ?? null;
-    const hasNotes = etymologyHasContent(view);
-    return <li key={request.recordId} className="etymology-word-part" aria-label={`Etymology of ${request.glyph}`}>
-      <CharacterHeading glyph={request.glyph} hasNotes={hasNotes && view?.status === 'exact-headword'}/>
-      {hasNotes ? <EtymologyPanel view={view}/> : <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{request.glyph}</span> in Howell or Shuowen Jiezi.</p>}
-    </li>;
-  })}</ul>;
+  return <ul className="decomposition-tree etymology-word-parts">{requests.map((request, index) => <WordEtymologyPart key={request.recordId} request={request} view={views[index] ?? null}/>)}</ul>;
+}
+
+/** One character block. A simplified character without its own entry but with one plain
+ *  traditional form (useInheritedEtymology) shows "师 → 師" in its heading and that form's
+ *  labelled notes below; the arrow appears only while those notes load or once they resolve. */
+function WordEtymologyPart({ request, view }: { request: EtymologyRequest; view: EtymologyView | null }) {
+  const hasNotes = etymologyHasContent(view);
+  const { form, inherited } = useInheritedEtymology(view, true);
+  const counterpart = form && inherited !== null ? form : null;
+  return <li className="etymology-word-part" aria-label={`Etymology of ${request.glyph}`}>
+    <CharacterHeading glyph={request.glyph} hasNotes={hasNotes && view?.status === 'exact-headword'} counterpart={counterpart}/>
+    {hasNotes ? <EtymologyPanel view={view} headless={Boolean(counterpart)}/> : <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{request.glyph}</span> in Howell or Shuowen Jiezi.</p>}
+  </li>;
 }
 
 /** Source ⓘ for the word tab: only characters with notes, each line prefixed by its character. */

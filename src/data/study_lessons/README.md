@@ -36,6 +36,17 @@ See [lessons/README.md](lessons/README.md) for the directories.
 - Hanzi in lesson fields link to Glyphs or Vocabulary only on an exact written-form match; nothing is inferred.
 - Selection questions record stable `choices[].id` values and `correct_choice_ids`. Each correct ID must refer to a unique choice in that question. The application grades selections only against validated recorded IDs; open-ended and legacy questions retain their reference-answer behavior.
 
+## Header copy (lesson creator guideline)
+
+The top of a lesson page shows: course line, lesson type and time, `lesson.title`, `lesson.subtitle`, `lesson.description` and up to three `classification.tags`. Everything there must be about this lesson's content:
+
+- `lesson.subtitle`: a short line naming this lesson's own content (e.g. "Stations, tickets and getting around"), or empty. Never a line shared by a whole course ("Topic-based beginner conversation lesson").
+- `lesson.description`: one or two learner-facing sentences starting with a verb ("Learn to start a polite conversation: greet, thank and close a short exchange."). No notes about sources, transcripts, audio tracks, versions or how the lesson was made.
+- `classification.tags`: 2–3 short content tags, most important first (`greetings`, `apologies`, `courtesy`). No course, level, audience or format tags (`beginner`, `hsk-level-2`, `topic-lesson`, `topic-study`, `conversational-mandarin`) — the course line already shows those.
+- `metadata.audience` is not shown to learners; keep it short if recorded.
+
+Until a package follows this, `src/lib/lesson-header-copy.ts` hides the exact listed boilerplate subtitle, the transcript sentence and course/level/format tags (nothing is rewritten; search still matches the recorded text).
+
 ## Current Level 1 package
 
 The [source handoff guide](../../../importer/data/lessons/README.md) records both supplied ZIPs and checksums. All 19 Core Project Sources are copied byte-for-byte from the owner’s v3.2.0 contract. The Level 1 package updates 33 word-card examples, three quizzes and taxonomy fields, while retaining the same 21 lesson IDs, curriculum order and teaching plans. All 300 syllabus references and 600 examples match runtime vocabulary v1.7.1, including the approved entry 36 pinyin spacing correction. The HSK package import leaves independent and Conversational Mandarin lesson files untouched. The separate incoming taxonomy synchronization reclassified two Conversational Mandarin lessons; those changes are retained.

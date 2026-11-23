@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useId, useState } from 'react';
 import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { Link } from '@tanstack/react-router';
-import { ChevronDown, History, TriangleAlert } from 'lucide-react';
+import { ArrowRight, ChevronDown, History, TriangleAlert } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
 import { HintBody, SourceInfo } from './source-info';
@@ -9,7 +9,7 @@ import { HowellEntry, HowellKeyInfo } from './howell-entry';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { hasOwnEtymologyText, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView } from '@/lib/etymology';
+import { hasOwnEtymologyText, inheritableCounterpart, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView, type RelatedForm } from '@/lib/etymology';
 
 /**
  * Etymology tab content of a glyph detail card (Characters, Components, Radicals and radical
@@ -221,9 +221,56 @@ export function EtymologyRecordLink({ id, glyph }: { id: string; glyph: string }
   return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(glyph) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>;
 }
 
-/** The tab's body; `undefined` (still resolving) shows pulsing text lines. */
-export function EtymologyPanel({ view }: { view: EtymologyView | null | undefined }) {
-  if (view === undefined) return <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
+const LoadingLines = () => <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
+
+/**
+ * Traditional-form notes shown in place for a simplified character without its own entry
+ * (owner-requested: saves opening 師 to read 师's history). `form` comes from
+ * inheritableCounterpart (one plain simplified → traditional pair only, using exact script
+ * metadata), and `inherited` is that form's own resolved view, loaded only while `enabled`.
+ * The notes stay attributed to the traditional form and are labelled suggested/unreviewed;
+ * nothing is copied into the simplified record. `undefined` = still loading.
+ */
+export function useInheritedEtymology(view: EtymologyView | null | undefined, enabled: boolean): { form: RelatedForm | null; inherited: EtymologyView | null | undefined } {
+  const form = inheritableCounterpart(view, glyph => glyphScript(glyph) === 'Traditional');
+  const inherited = useEtymologyView(form ? { recordId: form.recordId, glyph: form.glyph } : null, enabled && Boolean(form));
+  const usable = inherited === undefined ? undefined : inherited?.status === 'exact-headword' && etymologyHasContent(inherited) ? inherited : null;
+  return { form, inherited: form ? usable : null };
+}
+
+/** "师 → 師" on one line: the simplified glyph (static, it is this record), an arrow and the
+ *  traditional form's record link (opens its card on Etymology). */
+export function ScriptPairArrow({ form }: { form: RelatedForm }) {
+  return <><ArrowRight className="etymology-pair-arrow" aria-label="traditional form"/><EtymologyRecordLink id={form.recordId} glyph={form.glyph}/></>;
+}
+
+/** Note + the traditional form's notes. `headless` drops the "师 → 師" row when the caller's own
+ *  heading already shows it (word cards). */
+function InheritedEtymology({ view, form, inherited, headless }: { view: EtymologyView; form: RelatedForm; inherited: EtymologyView; headless: boolean }) {
+  return <div className="etymology-inherited">
+    {!headless && <div className="etymology-inherited-row"><span className="decomposition-glyph decomposition-glyph-static"><strong lang="zh-CN">{view.glyph}</strong></span><ScriptPairArrow form={form}/></div>}
+    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span> (suggested, not reviewed):<EtymologyInfo view={inherited}/></p>
+    <EtymologyPanel view={inherited}/>
+  </div>;
+}
+
+/** "No exact headword": the traditional form's notes in place when inheritableCounterpart
+ *  allows it, otherwise the related forms as links with their recorded notes. */
+function RelatedEtymology({ view, headless }: { view: EtymologyView; headless: boolean }) {
+  const { form, inherited } = useInheritedEtymology(view, true);
+  if (form && inherited === undefined) return <LoadingLines/>;
+  if (form && inherited) return <InheritedEtymology view={view} form={form} inherited={inherited} headless={headless}/>;
+  const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
+  return <>
+    <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. Related written forms have their own notes (suggested, not reviewed):</p>
+    <div className="glyph-usage-parents">{view.related.map(item => <div key={item.recordId} className="glyph-usage-reference">{recordLink(item.recordId, item.glyph)}{item.explanation && <span className="glyph-usage-meaning">{item.explanation}</span>}</div>)}</div>
+  </>;
+}
+
+/** The tab's body; `undefined` (still resolving) shows pulsing text lines. `headless`: see
+ *  InheritedEtymology (the caller already shows the simplified → traditional pair). */
+export function EtymologyPanel({ view, headless = false }: { view: EtymologyView | null | undefined; headless?: boolean }) {
+  if (view === undefined) return <LoadingLines/>;
   if (!etymologyHasContent(view)) return null;
   const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
   if (view.status === 'exact-headword') {
@@ -237,10 +284,7 @@ export function EtymologyPanel({ view }: { view: EtymologyView | null | undefine
   if (view.status === 'context-review-required') {
     return view.standalone && <div className="glyph-usage-reference">{recordLink(view.standalone, view.glyph)}<span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
   }
-  return <>
-    <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. Related written forms have their own notes (suggested, not reviewed):</p>
-    <div className="glyph-usage-parents">{view.related.map(item => <div key={item.recordId} className="glyph-usage-reference">{recordLink(item.recordId, item.glyph)}{item.explanation && <span className="glyph-usage-meaning">{item.explanation}</span>}</div>)}</div>
-  </>;
+  return <RelatedEtymology view={view} headless={headless}/>;
 }
 
 // The index once loaded, so cards mounted later (paging, Start shuffles) mark at once.

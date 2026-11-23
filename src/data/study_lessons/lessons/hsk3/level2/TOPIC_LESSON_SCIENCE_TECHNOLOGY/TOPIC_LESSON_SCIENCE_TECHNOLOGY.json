@@ -1,0 +1,817 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-using-the-internet",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Using the Internet",
+    "subtitle": "Online information and simple digital habits",
+    "description": "Talk about going online and finding information on the internet in daily life.",
+    "slug": "using-the-internet"
+  },
+  "classification": {
+    "primary_topic_id": "science-technology",
+    "topic_ids": [
+      "science-technology"
+    ],
+    "tags": [
+      "online-information-and-simple-digital-habits",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "digital-technology",
+    "subtopic_ids": [
+      "digital-technology"
+    ]
+  },
+  "learning_objectives": [
+    "Use 上网 (shàngwǎng) for going online.",
+    "Recognize 网上 (wǎngshang) as a location or medium.",
+    "Describe a simple online search with familiar verbs."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "到": "Characters:到",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "故": "Characters:故",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "爱": "Characters:爱",
+    "玩": "Characters:玩",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "知": "Characters:知",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "网": "Characters:网",
+    "老": "Characters:老",
+    "脑": "Characters:脑",
+    "要": "Characters:要",
+    "让": "Characters:让",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "道": "Characters:道",
+    "里": "Characters:里",
+    "闻": "Characters:闻"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about going online and finding information on the internet in daily life.",
+      "focus": "Use 上网 (shàngwǎng) for going online."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-428",
+          "hanzi": "上网",
+          "pinyin": "shàngwǎng",
+          "meaning_en": "to go online; use the internet",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "science-technology",
+            "leisure-media",
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-428-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你经常上网吗？",
+              "pinyin": "nǐ jīngcháng shàngwǎng ma?",
+              "english": "Do you often go online?",
+              "teaching_note": "A short spoken example using 上网."
+            },
+            {
+              "id": "ex-428-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们在家上网学习。",
+              "pinyin": "xuéshēngmen zài jiā shàngwǎng xuéxí.",
+              "english": "The students study online at home.",
+              "teaching_note": "A simple written example using 上网."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 428
+            }
+          ],
+          "primary_topic_id": "science-technology",
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ]
+        },
+        {
+          "id": "w-451",
+          "hanzi": "网上",
+          "pinyin": "wǎngshang",
+          "meaning_en": "online; on the internet",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "science-technology",
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-451-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在网上买的吗？",
+              "pinyin": "nǐ zài wǎngshang mǎi de ma?",
+              "english": "Did you buy it online?",
+              "teaching_note": "A short spoken example using 网上."
+            },
+            {
+              "id": "ex-451-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "网上有很多中文书。",
+              "pinyin": "wǎngshang yǒu hěn duō Zhōngwén shū.",
+              "english": "There are many Chinese books online.",
+              "teaching_note": "A simple written example using 网上."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 451
+            }
+          ],
+          "primary_topic_id": "science-technology",
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ]
+        },
+        {
+          "id": "w-035",
+          "hanzi": "电话",
+          "pinyin": "diànhuà",
+          "meaning_en": "telephone",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "science-technology",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-035-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "请给我打电话。",
+              "pinyin": "qǐng gěi wǒ dǎ diànhuà.",
+              "english": "Please give me a call.",
+              "teaching_note": "Short everyday instruction or request using 电话; the tone is polite or neutral."
+            },
+            {
+              "id": "ex-035-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这是学校的电话。",
+              "pinyin": "zhè shì xuéxiào de diànhuà.",
+              "english": "This is the school's phone number.",
+              "teaching_note": "School or study context showing 电话 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 35
+            }
+          ],
+          "primary_topic_id": "science-technology",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-036",
+          "hanzi": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning_en": "computer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "science-technology",
+            "school-language",
+            "work-jobs"
+          ],
+          "examples": [
+            {
+              "id": "ex-036-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在电脑上学习。",
+              "pinyin": "wǒ zài diànnǎo shàng xuéxí.",
+              "english": "I study on the computer.",
+              "teaching_note": "Short beginner-level description illustrating 电脑 in context."
+            },
+            {
+              "id": "ex-036-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有很多电脑。",
+              "pinyin": "xuéxiào lǐ yǒu hěn duō diànnǎo.",
+              "english": "There are many computers at school.",
+              "teaching_note": "School or study context showing 电脑 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 36
+            }
+          ],
+          "primary_topic_id": "science-technology",
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ]
+        },
+        {
+          "id": "w-189",
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "meaning_en": "mobile phone",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "science-technology",
+            "communication-social",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-189-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的手机。",
+              "pinyin": "zhè shì wǒ de shǒujī.",
+              "english": "This is my mobile phone.",
+              "teaching_note": "手机 is a mobile phone; 这 points to the device being identified."
+            },
+            {
+              "id": "ex-189-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课的时候请不要玩手机。",
+              "pinyin": "shàngkè de shíhou qǐng búyào wán shǒujī.",
+              "english": "Please don't play with your phone during class.",
+              "teaching_note": "Short everyday instruction or request using 手机; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 189
+            }
+          ],
+          "primary_topic_id": "science-technology",
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Going online",
+        "explanation": "上网 (shàngwǎng) is a verb meaning go online or use the internet. Follow it with an optional purpose such as 学习 (xuéxí).",
+        "example_id": "ex-428-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Doing something online",
+        "explanation": "网上 (wǎngshang) is an online location or medium; use 在网上 (zài wǎngshang) before an activity.",
+        "example_id": "ex-451-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-428-1",
+      "ex-451-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Today the teacher asks students to find a Chinese story online. After finding one, Xiaoming reads it to a friend."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I go online to study every day. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我每天上网学习。 (Wǒ měitiān shàngwǎng xuéxí.)",
+          "answer": "我每天上网学习。 (Wǒ měitiān shàngwǎng xuéxí.)"
+        },
+        {
+          "id": "recall-428",
+          "kind": "selection",
+          "prompt": "Which expression means “to go online”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "上网",
+              "pinyin": "shàngwǎng",
+              "meaning_en": "to go online; use the internet"
+            },
+            {
+              "id": "b",
+              "hanzi": "网上",
+              "pinyin": "wǎngshang",
+              "meaning_en": "online; on the internet"
+            },
+            {
+              "id": "c",
+              "hanzi": "爱",
+              "pinyin": "ài",
+              "meaning_en": "love; like"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 上网 (shàngwǎng) with this meaning."
+        },
+        {
+          "id": "recall-451",
+          "kind": "selection",
+          "prompt": "Which expression means “online”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "上网",
+              "pinyin": "shàngwǎng",
+              "meaning_en": "to go online; use the internet"
+            },
+            {
+              "id": "c",
+              "hanzi": "爱",
+              "pinyin": "ài",
+              "meaning_en": "love; like"
+            },
+            {
+              "id": "a",
+              "hanzi": "网上",
+              "pinyin": "wǎngshang",
+              "meaning_en": "online; on the internet"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 网上 (wǎngshang) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Using the Internet",
+        "context_en": "Talk about going online and finding information on the internet in daily life.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你晚上经常做什么？",
+            "pinyin": "Nǐ wǎnshang jīngcháng zuò shénme?",
+            "english": "What do you often do in the evening?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我喜欢上网看新闻。",
+            "pinyin": "Wǒ xǐhuan shàngwǎng kàn xīnwén.",
+            "english": "I like going online to read the news."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "明天的天气你知道吗？",
+            "pinyin": "Míngtiān de tiānqì nǐ zhīdào ma?",
+            "english": "Do you know tomorrow’s weather?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我不知道。我们一起在网上看看吧。",
+            "pinyin": "Wǒ bù zhīdào. Wǒmen yìqǐ zài wǎngshang kànkan ba.",
+            "english": "I don’t know. Let’s check online together."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Going online",
+          "explanation_en": "上网 (shàngwǎng) is a verb meaning go online or use the internet. Follow it with an optional purpose such as 学习 (xuéxí).",
+          "formula_en": "Subject + 上网 + activity",
+          "examples": [
+            {
+              "hanzi": "我每天上网学习。",
+              "pinyin": "Wǒ měitiān shàngwǎng xuéxí.",
+              "english": "I go online to study every day."
+            },
+            {
+              "hanzi": "我喜欢上网看新闻。",
+              "pinyin": "Wǒ xǐhuan shàngwǎng kàn xīnwén.",
+              "english": "I like going online to read the news."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Doing something online",
+          "explanation_en": "网上 (wǎngshang) is an online location or medium; use 在网上 (zài wǎngshang) before an activity.",
+          "formula_en": "Subject + 在网上 + verb",
+          "examples": [
+            {
+              "hanzi": "这本书可以在网上看。",
+              "pinyin": "Zhè běn shū kěyǐ zài wǎngshang kàn.",
+              "english": "You can read this book online."
+            },
+            {
+              "hanzi": "我不知道。我们一起在网上看看吧。",
+              "pinyin": "Wǒ bù zhīdào. Wǒmen yìqǐ zài wǎngshang kànkan ba.",
+              "english": "I don’t know. Let’s check online together."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你晚上经常做什么？",
+          "pinyin": "Nǐ wǎnshang jīngcháng zuò shénme?",
+          "english": "What do you often do in the evening?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I go online to study every day.",
+            "model_answer": {
+              "hanzi": "我每天上网学习。",
+              "pinyin": "Wǒ měitiān shàngwǎng xuéxí.",
+              "english": "I go online to study every day."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: You can read this book online.",
+            "model_answer": {
+              "hanzi": "这本书可以在网上看。",
+              "pinyin": "Zhè běn shū kěyǐ zài wǎngshang kàn.",
+              "english": "You can read this book online."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Do you know tomorrow’s weather?",
+            "model_answer": {
+              "hanzi": "明天的天气你知道吗？",
+              "pinyin": "Míngtiān de tiānqì nǐ zhīdào ma?",
+              "english": "Do you know tomorrow’s weather?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Using the Internet — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小明每天晚上上网学习汉语，有时还在网上看电影。",
+            "pinyin": "Xiǎomíng měitiān wǎnshang shàngwǎng xuéxí Hànyǔ, yǒushí hái zài wǎngshang kàn diànyǐng.",
+            "english": "Every evening Xiaoming goes online to study Mandarin; sometimes he also watches movies online."
+          },
+          {
+            "hanzi": "今天老师让学生在网上找一个中文故事。小明找到了以后，就把故事读给朋友听。",
+            "pinyin": "Jīntiān lǎoshī ràng xuéshēng zài wǎngshang zhǎo yí ge Zhōngwén gùshi. Xiǎomíng zhǎo dào le yǐhòu, jiù bǎ gùshi dú gěi péngyou tīng.",
+            "english": "Today the teacher asks students to find a Chinese story online. After finding one, Xiaoming reads it to a friend."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Every evening Xiaoming goes online to study Mandarin; sometimes he also watches movies online."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Today the teacher asks students to find a Chinese story online. After finding one, Xiaoming reads it to a friend."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I go online to study every day.",
+          "model_answer": {
+            "hanzi": "我每天上网学习。",
+            "pinyin": "Wǒ měitiān shàngwǎng xuéxí.",
+            "english": "I go online to study every day."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: You can read this book online.",
+          "model_answer": {
+            "hanzi": "这本书可以在网上看。",
+            "pinyin": "Zhè běn shū kěyǐ zài wǎngshang kàn.",
+            "english": "You can read this book online."
+          }
+        }
+      ],
+      "common_pitfall": "上网 (shàngwǎng) is a verb phrase, while 网上 (wǎngshang) identifies the online setting; do not use them in identical sentence positions.",
+      "pronunciation_focus": "Compare 上网 (shàngwǎng), both syllables fourth and third tones, with 网上 (wǎngshang), third tone followed by neutral tone.",
+      "review": {
+        "can_do": [
+          "Use 上网 (shàngwǎng) for going online.",
+          "Recognize 网上 (wǎngshang) as a location or medium.",
+          "Describe a simple online search with familiar verbs."
+        ],
+        "entry_ids": [
+          428,
+          451
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-using-the-internet--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Going online",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-using-the-internet--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Doing something online",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I go online to study every day.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-using-the-internet--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: You can read this book online.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-using-the-internet--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Do you know tomorrow’s weather?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-using-the-internet--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I go online to study every day.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-using-the-internet--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: You can read this book online.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-using-the-internet--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-using-the-internet--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-using-the-internet--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I go online to study every day. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-using-the-internet--question-recall-428",
+            "kind": "practice",
+            "label": "Which expression means “to go online”?",
+            "optional": true,
+            "target_id": "recall-428"
+          },
+          {
+            "id": "topic-using-the-internet--question-recall-451",
+            "kind": "practice",
+            "label": "Which expression means “online”?",
+            "optional": true,
+            "target_id": "recall-451"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 24
+}

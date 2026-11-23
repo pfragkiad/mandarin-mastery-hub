@@ -1,0 +1,1088 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-counting-things-and-occasions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Counting Things and Occasions",
+    "subtitle": "Times, measures and polite counters",
+    "description": "Count repeated events and use everyday measure words for people, rooms and long objects.",
+    "slug": "counting-things-and-occasions"
+  },
+  "classification": {
+    "primary_topic_id": "numbers-quantities",
+    "topic_ids": [
+      "numbers-quantities"
+    ],
+    "tags": [
+      "times",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Use 次 (cì) to count occurrences.",
+    "Choose a measure word for a person or long object.",
+    "Understand larger numbers such as 万 (wàn)."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "万": "Characters:万",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "写": "Characters:写",
+    "几": "Characters:几",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "周": "Characters:周",
+    "四": "Characters:四",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "安": "Characters:安",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "师": "Characters:师",
+    "年": "Characters:年",
+    "床": "Characters:床",
+    "店": "Characters:店",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "怎": "Characters:怎",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "数": "Characters:数",
+    "文": "Characters:文",
+    "方": "Characters:方",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "次": "Characters:次",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "纸": "Characters:纸",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "裤": "Characters:裤",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "起": "Characters:起",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "酒": "Characters:酒",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "长": "Characters:长",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "静": "Characters:静",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "鱼": "Characters:鱼"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Count repeated events and use everyday measure words for people, rooms and long objects.",
+      "focus": "Use 次 (cì) to count occurrences."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-323",
+          "hanzi": "次",
+          "pinyin": "cì",
+          "meaning_en": "time; occurrence (classifier)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-323-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去过几次？",
+              "pinyin": "nǐ qù guo jǐ cì?",
+              "english": "How many times have you been there?",
+              "teaching_note": "次 counts occasions or repeated actions."
+            },
+            {
+              "id": "ex-323-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我去年去了两次电影院。",
+              "pinyin": "wǒ qùnián qù le liǎng cì diànyǐngyuàn.",
+              "english": "I went to the cinema twice last year.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 323
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "次 counts occasions or repeated actions."
+        },
+        {
+          "id": "w-366",
+          "hanzi": "间",
+          "pinyin": "jiān",
+          "meaning_en": "classifier for rooms; room unit",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-366-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们学校有几间教室？",
+              "pinyin": "nǐmen xuéxiào yǒu jǐ jiān jiàoshì?",
+              "english": "How many classrooms does your school have?",
+              "teaching_note": "间 is the classifier for rooms in these examples."
+            },
+            {
+              "id": "ex-366-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家酒店有二十间房间。",
+              "pinyin": "zhè jiā jiǔdiàn yǒu èr shí jiān fángjiān.",
+              "english": "This hotel has twenty rooms.",
+              "teaching_note": "间 is the classifier for rooms in these examples."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 366
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "间 is the classifier for rooms in these examples."
+        },
+        {
+          "id": "w-399",
+          "hanzi": "每",
+          "pinyin": "měi",
+          "meaning_en": "each; every",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun",
+            "quantifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-399-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你每天几点起床？",
+              "pinyin": "nǐ měi tiān jǐ diǎn qǐchuáng?",
+              "english": "What time do you get up every day?",
+              "teaching_note": "A short spoken example using 每."
+            },
+            {
+              "id": "ex-399-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "每个学生都有一本书。",
+              "pinyin": "měi gè xuéshēng dōu yǒu yì běn shū.",
+              "english": "Every student has a book.",
+              "teaching_note": "A simple written example using 每."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 399
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-404",
+          "hanzi": "名",
+          "pinyin": "míng",
+          "meaning_en": "name; classifier for people",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-404-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们班有几名学生？",
+              "pinyin": "nǐmen bān yǒu jǐ míng xuéshēng?",
+              "english": "How many students are in your class?",
+              "teaching_note": "名 can be a noun meaning “name,” but both examples teach its classifier use for people."
+            },
+            {
+              "id": "ex-404-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们班有二十名学生。",
+              "pinyin": "wǒmen bān yǒu èr shí míng xuéshēng.",
+              "english": "There are twenty students in our class.",
+              "teaching_note": "名 can be a noun meaning “name,” but both examples teach its classifier use for people."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 404
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "名 can be a noun meaning “name,” but both examples teach its classifier use for people."
+        },
+        {
+          "id": "w-443",
+          "hanzi": "条",
+          "pinyin": "tiáo",
+          "meaning_en": "classifier for long, narrow objects",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-443-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条裤子怎么样？",
+              "pinyin": "zhè tiáo kùzi zěnmeyàng?",
+              "english": "How are these trousers?",
+              "teaching_note": "A short spoken example using 条."
+            },
+            {
+              "id": "ex-443-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这条鱼很大。",
+              "pinyin": "zhè tiáo yú hěn dà.",
+              "english": "This fish is very big.",
+              "teaching_note": "A simple written example using 条."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 443
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-449",
+          "hanzi": "万",
+          "pinyin": "wàn",
+          "meaning_en": "ten thousand",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-449-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一万块钱多吗？",
+              "pinyin": "yí wàn kuài qián duō ma?",
+              "english": "Is ten thousand yuan a lot of money?",
+              "teaching_note": "A short spoken example using 万."
+            },
+            {
+              "id": "ex-449-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个学校有一万名学生。",
+              "pinyin": "zhège xuéxiào yǒu yí wàn míng xuéshēng.",
+              "english": "This school has ten thousand students.",
+              "teaching_note": "A simple written example using 万."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 449
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-453",
+          "hanzi": "位",
+          "pinyin": "wèi",
+          "meaning_en": "polite classifier for people",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-453-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这位是谁？",
+              "pinyin": "zhè wèi shì shéi?",
+              "english": "Who is this person?",
+              "teaching_note": "A short spoken example using 位."
+            },
+            {
+              "id": "ex-453-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这位老师教我们汉语。",
+              "pinyin": "zhè wèi lǎoshī jiāo wǒmen Hànyǔ.",
+              "english": "This teacher teaches us Chinese.",
+              "teaching_note": "A simple written example using 位."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 453
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-002",
+          "hanzi": "八",
+          "pinyin": "bā",
+          "meaning_en": "eight",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-002-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有八本书。",
+              "pinyin": "wǒ yǒu bā běn shū.",
+              "english": "I have eight books.",
+              "teaching_note": "八 gives the quantity; 本 is the classifier used for bound books."
+            },
+            {
+              "id": "ex-002-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天有八个学生上课。",
+              "pinyin": "jīntiān yǒu bā gè xuéshēng shàngkè.",
+              "english": "Eight students have class today.",
+              "teaching_note": "School or study context showing 八 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 2
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-006",
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "meaning_en": "hundred",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-006-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有一百个人。",
+              "pinyin": "zhèlǐ yǒu yì bǎi ge rén.",
+              "english": "There are a hundred people here.",
+              "teaching_note": "一百 means one hundred; 个 is the general classifier for people here."
+            },
+            {
+              "id": "ex-006-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有一百本中文书。",
+              "pinyin": "zhè jiā shūdiàn yǒu yì bǎi běn Zhōngwén shū.",
+              "english": "This bookstore has one hundred books in Chinese.",
+              "teaching_note": "School or study context showing 百 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 6
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-007",
+          "hanzi": "半",
+          "pinyin": "bàn",
+          "meaning_en": "half",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral",
+            "adverb"
+          ],
+          "topic_ids": [
+            "numbers-quantities",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-007-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是八点半。",
+              "pinyin": "xiànzài shì bā diǎn bàn.",
+              "english": "It is half past eight now.",
+              "teaching_note": "八点半 is the ordinary way to say 8:30; 半 means half an hour."
+            },
+            {
+              "id": "ex-007-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校上午八点半上课。",
+              "pinyin": "xuéxiào shàngwǔ bā diǎn bàn shàngkè.",
+              "english": "Classes at the school start at 8:30 a.m.",
+              "teaching_note": "Daily time or schedule context illustrating 半 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 7
+            }
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Primarily the numeral “half” (半个小时, 八点半). Also has a restricted adverbial role meaning partly/half- in advanced patterns; that secondary role is not a Level 1 teaching priority."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Counting repeated actions",
+        "explanation": "Use 次 (cì) after a verb phrase to count how many times an action happened.",
+        "example_id": "ex-323-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Choosing a classifier",
+        "explanation": "Use 间 (jiān) for rooms, 位 (wèi) politely for people, and 条 (tiáo) for many long, narrow things.",
+        "example_id": "ex-366-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-323-1",
+      "ex-366-1",
+      "ex-399-1",
+      "ex-404-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "The teacher brings a long strip of paper bearing the number “ten thousand,” which the students read together."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I come to this place twice a week. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我每周来这个地方两次。 (Wǒ měi zhōu lái zhè ge dìfang liǎng cì.)",
+          "answer": "我每周来这个地方两次。 (Wǒ měi zhōu lái zhè ge dìfang liǎng cì.)"
+        },
+        {
+          "id": "recall-323",
+          "kind": "selection",
+          "prompt": "Which expression means “time”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "次",
+              "pinyin": "cì",
+              "meaning_en": "time; occurrence (classifier)"
+            },
+            {
+              "id": "b",
+              "hanzi": "间",
+              "pinyin": "jiān",
+              "meaning_en": "classifier for rooms; room unit"
+            },
+            {
+              "id": "c",
+              "hanzi": "每",
+              "pinyin": "měi",
+              "meaning_en": "each; every"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 次 (cì) with this meaning."
+        },
+        {
+          "id": "recall-366",
+          "kind": "selection",
+          "prompt": "Which expression means “classifier for rooms”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "次",
+              "pinyin": "cì",
+              "meaning_en": "time; occurrence (classifier)"
+            },
+            {
+              "id": "c",
+              "hanzi": "每",
+              "pinyin": "měi",
+              "meaning_en": "each; every"
+            },
+            {
+              "id": "a",
+              "hanzi": "间",
+              "pinyin": "jiān",
+              "meaning_en": "classifier for rooms; room unit"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 间 (jiān) with this meaning."
+        },
+        {
+          "id": "recall-399",
+          "kind": "selection",
+          "prompt": "Which expression means “each”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "间",
+              "pinyin": "jiān",
+              "meaning_en": "classifier for rooms; room unit"
+            },
+            {
+              "id": "a",
+              "hanzi": "每",
+              "pinyin": "měi",
+              "meaning_en": "each; every"
+            },
+            {
+              "id": "b",
+              "hanzi": "次",
+              "pinyin": "cì",
+              "meaning_en": "time; occurrence (classifier)"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 每 (měi) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Counting Things and Occasions",
+        "context_en": "Count repeated events and use everyday measure words for people, rooms and long objects.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你来过这家饭馆几次？",
+            "pinyin": "Nǐ lái guo zhè jiā fànguǎn jǐ cì?",
+            "english": "How many times have you been to this restaurant?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我来过两次。这儿有很多人。",
+            "pinyin": "Wǒ lái guo liǎng cì. Zhèr yǒu hěn duō rén.",
+            "english": "I have been here twice. There are many people here."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我们有几位客人？",
+            "pinyin": "Wǒmen yǒu jǐ wèi kèrén?",
+            "english": "How many guests do we have?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "三位。请给我们一间安静的房间。",
+            "pinyin": "Sān wèi. Qǐng gěi wǒmen yì jiān ānjìng de fángjiān.",
+            "english": "Three. Please give us a quiet room."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Counting repeated actions",
+          "explanation_en": "Use 次 (cì) after a verb phrase to count how many times an action happened.",
+          "formula_en": "Action + number + 次",
+          "examples": [
+            {
+              "hanzi": "我每周来这个地方两次。",
+              "pinyin": "Wǒ měi zhōu lái zhè ge dìfang liǎng cì.",
+              "english": "I come to this place twice a week."
+            },
+            {
+              "hanzi": "我来过两次。这儿有很多人。",
+              "pinyin": "Wǒ lái guo liǎng cì. Zhèr yǒu hěn duō rén.",
+              "english": "I have been here twice. There are many people here."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Choosing a classifier",
+          "explanation_en": "Use 间 (jiān) for rooms, 位 (wèi) politely for people, and 条 (tiáo) for many long, narrow things.",
+          "formula_en": "Number + classifier + noun",
+          "examples": [
+            {
+              "hanzi": "这里有四间教室。",
+              "pinyin": "Zhèlǐ yǒu sì jiān jiàoshì.",
+              "english": "There are four classrooms here."
+            },
+            {
+              "hanzi": "三位。请给我们一间安静的房间。",
+              "pinyin": "Sān wèi. Qǐng gěi wǒmen yì jiān ānjìng de fángjiān.",
+              "english": "Three. Please give us a quiet room."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你来过这家饭馆几次？",
+          "pinyin": "Nǐ lái guo zhè jiā fànguǎn jǐ cì?",
+          "english": "How many times have you been to this restaurant?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I come to this place twice a week.",
+            "model_answer": {
+              "hanzi": "我每周来这个地方两次。",
+              "pinyin": "Wǒ měi zhōu lái zhè ge dìfang liǎng cì.",
+              "english": "I come to this place twice a week."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: There are four classrooms here.",
+            "model_answer": {
+              "hanzi": "这里有四间教室。",
+              "pinyin": "Zhèlǐ yǒu sì jiān jiàoshì.",
+              "english": "There are four classrooms here."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: How many guests do we have?",
+            "model_answer": {
+              "hanzi": "我们有几位客人？",
+              "pinyin": "Wǒmen yǒu jǐ wèi kèrén?",
+              "english": "How many guests do we have?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Counting Things and Occasions — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "学校里有很多名学生。每个星期，他们都去图书馆看书。",
+            "pinyin": "Xuéxiào lǐ yǒu hěn duō míng xuéshēng. Měi ge xīngqī, tāmen dōu qù túshūguǎn kàn shū.",
+            "english": "There are many students at the school. Every week, they go to the library to read."
+          },
+          {
+            "hanzi": "老师拿来一条很长的纸，上面写着：“一万。”学生们一起读这个数字。",
+            "pinyin": "Lǎoshī ná lái yì tiáo hěn cháng de zhǐ, shàngmian xiězhe: “Yí wàn.” Xuéshēngmen yìqǐ dú zhè ge shùzì.",
+            "english": "The teacher brings a long strip of paper bearing the number “ten thousand,” which the students read together."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "There are many students at the school. Every week, they go to the library to read."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "The teacher brings a long strip of paper bearing the number “ten thousand,” which the students read together."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I come to this place twice a week.",
+          "model_answer": {
+            "hanzi": "我每周来这个地方两次。",
+            "pinyin": "Wǒ měi zhōu lái zhè ge dìfang liǎng cì.",
+            "english": "I come to this place twice a week."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: There are four classrooms here.",
+          "model_answer": {
+            "hanzi": "这里有四间教室。",
+            "pinyin": "Zhèlǐ yǒu sì jiān jiàoshì.",
+            "english": "There are four classrooms here."
+          }
+        }
+      ],
+      "common_pitfall": "A classifier is not interchangeable with every noun. For example, a room uses 一间 (yì jiān), not 一位 (yí wèi).",
+      "pronunciation_focus": "Listen for the fourth tone of 次 (cì) and the neutral ending of 每个 (měi ge).",
+      "review": {
+        "can_do": [
+          "Use 次 (cì) to count occurrences.",
+          "Choose a measure word for a person or long object.",
+          "Understand larger numbers such as 万 (wàn)."
+        ],
+        "entry_ids": [
+          323,
+          366,
+          399,
+          404,
+          443,
+          449,
+          453
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-counting-things-and-occasions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Counting repeated actions",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Choosing a classifier",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I come to this place twice a week.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: There are four classrooms here.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: How many guests do we have?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I come to this place twice a week.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: There are four classrooms here.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-things-and-occasions--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-counting-things-and-occasions--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I come to this place twice a week. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--question-recall-323",
+            "kind": "practice",
+            "label": "Which expression means “time”?",
+            "optional": true,
+            "target_id": "recall-323"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--question-recall-366",
+            "kind": "practice",
+            "label": "Which expression means “classifier for rooms”?",
+            "optional": true,
+            "target_id": "recall-366"
+          },
+          {
+            "id": "topic-counting-things-and-occasions--question-recall-399",
+            "kind": "practice",
+            "label": "Which expression means “each”?",
+            "optional": true,
+            "target_id": "recall-399"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 34
+}

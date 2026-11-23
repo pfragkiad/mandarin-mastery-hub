@@ -1,0 +1,933 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-talking-about-family-members",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Talking About Family Members",
+    "subtitle": "Grandparents, spouses and family ties",
+    "description": "Talk about grandparents and spouses, and describe a family visit in ordinary Mandarin.",
+    "slug": "talking-about-family-members"
+  },
+  "classification": {
+    "primary_topic_id": "family-relationships",
+    "topic_ids": [
+      "family-relationships"
+    ],
+    "tags": [
+      "grandparents",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name grandparents correctly.",
+    "Use 妻子 (qīzi) and 丈夫 (zhàngfu) for spouses.",
+    "Describe a family visit with familiar verbs."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "丈": "Characters:丈",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "六": "Characters:六",
+    "兴": "Characters:兴",
+    "出": "Characters:出",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "因": "Characters:因",
+    "在": "Characters:在",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "夫": "Characters:夫",
+    "奶": "Characters:奶",
+    "她": "Characters:她",
+    "妻": "Characters:妻",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "岁": "Characters:岁",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "弟": "Characters:弟",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "文": "Characters:文",
+    "早": "Characters:早",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "期": "Characters:期",
+    "来": "Characters:来",
+    "样": "Characters:样",
+    "每": "Characters:每",
+    "点": "Characters:点",
+    "爱": "Characters:爱",
+    "爷": "Characters:爷",
+    "爸": "Characters:爸",
+    "王": "Characters:王",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "老": "Characters:老",
+    "要": "Characters:要",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "路": "Characters:路",
+    "这": "Characters:这",
+    "远": "Characters:远",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "门": "Characters:门",
+    "院": "Characters:院",
+    "饭": "Characters:饭",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about grandparents and spouses, and describe a family visit in ordinary Mandarin.",
+      "focus": "Name grandparents correctly."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-409",
+          "hanzi": "奶奶",
+          "pinyin": "nǎinai",
+          "meaning_en": "paternal grandmother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-409-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "奶奶今天来我们家。",
+              "pinyin": "nǎinai jīntiān lái wǒmen jiā.",
+              "english": "Grandma is coming to our home today.",
+              "teaching_note": "A short spoken example using 奶奶."
+            },
+            {
+              "id": "ex-409-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我的奶奶今年七十岁。",
+              "pinyin": "wǒ de nǎinai jīnnián qī shí suì.",
+              "english": "My grandmother is seventy this year.",
+              "teaching_note": "A simple written example using 奶奶."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 409
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-417",
+          "hanzi": "妻子",
+          "pinyin": "qīzi",
+          "meaning_en": "wife",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-417-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是我妻子。",
+              "pinyin": "zhè shì wǒ qīzi.",
+              "english": "This is my wife.",
+              "teaching_note": "A short spoken example using 妻子."
+            },
+            {
+              "id": "ex-417-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的妻子在医院工作，每天都很忙。",
+              "pinyin": "tā de qīzi zài yīyuàn gōngzuò, měi tiān dōu hěn máng.",
+              "english": "His wife works at a hospital and is busy every day.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 417
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-470",
+          "hanzi": "爷爷",
+          "pinyin": "yéye",
+          "meaning_en": "paternal grandfather",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-470-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "爷爷今天怎么样？",
+              "pinyin": "yéye jīntiān zěnmeyàng?",
+              "english": "How is Grandpa today?",
+              "teaching_note": "A short spoken example using 爷爷."
+            },
+            {
+              "id": "ex-470-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我爷爷每天早上都走路去商店。",
+              "pinyin": "wǒ yéye měi tiān zǎoshang dōu zǒulù qù shāngdiàn.",
+              "english": "My grandfather walks to the shop every morning.",
+              "teaching_note": "A simple written example using 爷爷."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 470
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-487",
+          "hanzi": "丈夫",
+          "pinyin": "zhàngfu",
+          "meaning_en": "husband",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-487-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是我丈夫。",
+              "pinyin": "zhè shì wǒ zhàngfu.",
+              "english": "This is my husband.",
+              "teaching_note": "A short spoken example using 丈夫."
+            },
+            {
+              "id": "ex-487-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她的丈夫在医院工作，每天早上七点出门。",
+              "pinyin": "tā de zhàngfu zài yīyuàn gōngzuò, měi tiān zǎoshang qī diǎn chūmén.",
+              "english": "Her husband works at a hospital and leaves home at seven every morning.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 487
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-001",
+          "hanzi": "爱",
+          "pinyin": "ài",
+          "meaning_en": "love; like",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-001-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爱我的家。",
+              "pinyin": "wǒ ài wǒ de jiā.",
+              "english": "I love my family.",
+              "teaching_note": "爱 expresses strong affection here; 家 can refer both to the home and to one’s family."
+            },
+            {
+              "id": "ex-001-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸爱看中文电影。",
+              "pinyin": "bàba ài kàn Zhōngwén diànyǐng.",
+              "english": "Dad loves watching Chinese-language movies.",
+              "teaching_note": "School or study context showing 爱 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 1
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-003",
+          "hanzi": "爸爸",
+          "pinyin": "bàba",
+          "meaning_en": "father",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-003-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸是老师。",
+              "pinyin": "wǒ bàba shì lǎoshī.",
+              "english": "My father is a teacher.",
+              "teaching_note": "爸爸 is a familiar kinship noun, and the possessive 的 is often omitted before close family terms."
+            },
+            {
+              "id": "ex-003-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸在家做饭。",
+              "pinyin": "bàba zài jiā zuò fàn.",
+              "english": "Dad is cooking at home.",
+              "teaching_note": "Family or daily-life description using 爸爸 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 3
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-032",
+          "hanzi": "弟弟",
+          "pinyin": "dìdi",
+          "meaning_en": "younger brother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-032-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我弟弟十岁。",
+              "pinyin": "wǒ dìdi shí suì.",
+              "english": "My younger brother is ten.",
+              "teaching_note": "Age is commonly stated as person + number + 岁, without 是."
+            },
+            {
+              "id": "ex-032-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "弟弟和姐姐一起上学。",
+              "pinyin": "dìdi hé jiějie yìqǐ shàngxué.",
+              "english": "The younger brother and older sister go to school together.",
+              "teaching_note": "Family or daily-life description using 弟弟 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 32
+            }
+          ],
+          "primary_topic_id": "family-relationships",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Introducing relatives",
+        "explanation": "Place a possessive phrase before a family term: 我的 (wǒ de) + 爷爷 (yéye) or 奶奶 (nǎinai).",
+        "example_id": "ex-409-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Talking about a spouse",
+        "explanation": "妻子 (qīzi) means wife and 丈夫 (zhàngfu) means husband. Use the ordinary verb phrase that follows to tell what they do.",
+        "example_id": "ex-417-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-409-1",
+      "ex-417-1",
+      "ex-470-1",
+      "ex-487-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Grandma is happy because everyone is at home today."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: This is my grandpa, and that is my grandma. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 这是我爷爷，那是我奶奶。 (Zhè shì wǒ yéye, nà shì wǒ nǎinai.)",
+          "answer": "这是我爷爷，那是我奶奶。 (Zhè shì wǒ yéye, nà shì wǒ nǎinai.)"
+        },
+        {
+          "id": "recall-409",
+          "kind": "selection",
+          "prompt": "Which expression means “paternal grandmother”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "奶奶",
+              "pinyin": "nǎinai",
+              "meaning_en": "paternal grandmother"
+            },
+            {
+              "id": "b",
+              "hanzi": "妻子",
+              "pinyin": "qīzi",
+              "meaning_en": "wife"
+            },
+            {
+              "id": "c",
+              "hanzi": "爷爷",
+              "pinyin": "yéye",
+              "meaning_en": "paternal grandfather"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 奶奶 (nǎinai) with this meaning."
+        },
+        {
+          "id": "recall-417",
+          "kind": "selection",
+          "prompt": "Which expression means “wife”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "奶奶",
+              "pinyin": "nǎinai",
+              "meaning_en": "paternal grandmother"
+            },
+            {
+              "id": "c",
+              "hanzi": "爷爷",
+              "pinyin": "yéye",
+              "meaning_en": "paternal grandfather"
+            },
+            {
+              "id": "a",
+              "hanzi": "妻子",
+              "pinyin": "qīzi",
+              "meaning_en": "wife"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 妻子 (qīzi) with this meaning."
+        },
+        {
+          "id": "recall-470",
+          "kind": "selection",
+          "prompt": "Which expression means “paternal grandfather”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "妻子",
+              "pinyin": "qīzi",
+              "meaning_en": "wife"
+            },
+            {
+              "id": "a",
+              "hanzi": "爷爷",
+              "pinyin": "yéye",
+              "meaning_en": "paternal grandfather"
+            },
+            {
+              "id": "b",
+              "hanzi": "奶奶",
+              "pinyin": "nǎinai",
+              "meaning_en": "paternal grandmother"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 爷爷 (yéye) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About Family Members",
+        "context_en": "Talk about grandparents and spouses, and describe a family visit in ordinary Mandarin.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "星期天你去哪儿？",
+            "pinyin": "Xīngqītiān nǐ qù nǎr?",
+            "english": "Where are you going on Sunday?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我要去看爷爷和奶奶。",
+            "pinyin": "Wǒ yào qù kàn yéye hé nǎinai.",
+            "english": "I am going to visit my grandpa and grandma."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "他们住得远吗？",
+            "pinyin": "Tāmen zhù de yuǎn ma?",
+            "english": "Do they live far away?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不远。我的丈夫也想一起去。",
+            "pinyin": "Bù yuǎn. Wǒ de zhàngfu yě xiǎng yìqǐ qù.",
+            "english": "Not far. My husband wants to go together too."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Introducing relatives",
+          "explanation_en": "Place a possessive phrase before a family term: 我的 (wǒ de) + 爷爷 (yéye) or 奶奶 (nǎinai).",
+          "formula_en": "Possessor + 的 + relative",
+          "examples": [
+            {
+              "hanzi": "这是我爷爷，那是我奶奶。",
+              "pinyin": "Zhè shì wǒ yéye, nà shì wǒ nǎinai.",
+              "english": "This is my grandpa, and that is my grandma."
+            },
+            {
+              "hanzi": "我要去看爷爷和奶奶。",
+              "pinyin": "Wǒ yào qù kàn yéye hé nǎinai.",
+              "english": "I am going to visit my grandpa and grandma."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Talking about a spouse",
+          "explanation_en": "妻子 (qīzi) means wife and 丈夫 (zhàngfu) means husband. Use the ordinary verb phrase that follows to tell what they do.",
+          "formula_en": "Person + 的 + 妻子/丈夫",
+          "examples": [
+            {
+              "hanzi": "她的丈夫星期六要上班。",
+              "pinyin": "Tā de zhàngfu xīngqīliù yào shàngbān.",
+              "english": "Her husband has to work on Saturday."
+            },
+            {
+              "hanzi": "不远。我的丈夫也想一起去。",
+              "pinyin": "Bù yuǎn. Wǒ de zhàngfu yě xiǎng yìqǐ qù.",
+              "english": "Not far. My husband wants to go together too."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "星期天你去哪儿？",
+          "pinyin": "Xīngqītiān nǐ qù nǎr?",
+          "english": "Where are you going on Sunday?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: This is my grandpa, and that is my grandma.",
+            "model_answer": {
+              "hanzi": "这是我爷爷，那是我奶奶。",
+              "pinyin": "Zhè shì wǒ yéye, nà shì wǒ nǎinai.",
+              "english": "This is my grandpa, and that is my grandma."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Her husband has to work on Saturday.",
+            "model_answer": {
+              "hanzi": "她的丈夫星期六要上班。",
+              "pinyin": "Tā de zhàngfu xīngqīliù yào shàngbān.",
+              "english": "Her husband has to work on Saturday."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Do they live far away?",
+            "model_answer": {
+              "hanzi": "他们住得远吗？",
+              "pinyin": "Tāmen zhù de yuǎn ma?",
+              "english": "Do they live far away?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Talking About Family Members — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "王先生和妻子每个星期都去看爷爷奶奶。他们一起吃饭，也一起说话。",
+            "pinyin": "Wáng xiānsheng hé qīzi měi ge xīngqī dōu qù kàn yéye nǎinai. Tāmen yìqǐ chī fàn, yě yìqǐ shuōhuà.",
+            "english": "Mr Wang and his wife visit the grandparents every week. They eat and talk together."
+          },
+          {
+            "hanzi": "奶奶很高兴，因为大家今天都在家。",
+            "pinyin": "Nǎinai hěn gāoxìng, yīnwèi dàjiā jīntiān dōu zài jiā.",
+            "english": "Grandma is happy because everyone is at home today."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Mr Wang and his wife visit the grandparents every week. They eat and talk together."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Grandma is happy because everyone is at home today."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: This is my grandpa, and that is my grandma.",
+          "model_answer": {
+            "hanzi": "这是我爷爷，那是我奶奶。",
+            "pinyin": "Zhè shì wǒ yéye, nà shì wǒ nǎinai.",
+            "english": "This is my grandpa, and that is my grandma."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Her husband has to work on Saturday.",
+          "model_answer": {
+            "hanzi": "她的丈夫星期六要上班。",
+            "pinyin": "Tā de zhàngfu xīngqīliù yào shàngbān.",
+            "english": "Her husband has to work on Saturday."
+          }
+        }
+      ],
+      "common_pitfall": "Do not use 爷爷 (yéye) or 奶奶 (nǎinai) interchangeably; they refer to distinct grandparents in standard kinship terminology.",
+      "pronunciation_focus": "The second syllables of 爷爷 (yéye) and 奶奶 (nǎinai) are neutral in everyday speech.",
+      "review": {
+        "can_do": [
+          "Name grandparents correctly.",
+          "Use 妻子 (qīzi) and 丈夫 (zhàngfu) for spouses.",
+          "Describe a family visit with familiar verbs."
+        ],
+        "entry_ids": [
+          409,
+          417,
+          470,
+          487
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-talking-about-family-members--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Introducing relatives",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-talking-about-family-members--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Talking about a spouse",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: This is my grandpa, and that is my grandma.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-talking-about-family-members--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Her husband has to work on Saturday.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-talking-about-family-members--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Do they live far away?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-talking-about-family-members--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: This is my grandpa, and that is my grandma.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-talking-about-family-members--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Her husband has to work on Saturday.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-talking-about-family-members--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-talking-about-family-members--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-talking-about-family-members--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: This is my grandpa, and that is my grandma. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-talking-about-family-members--question-recall-409",
+            "kind": "practice",
+            "label": "Which expression means “paternal grandmother”?",
+            "optional": true,
+            "target_id": "recall-409"
+          },
+          {
+            "id": "topic-talking-about-family-members--question-recall-417",
+            "kind": "practice",
+            "label": "Which expression means “wife”?",
+            "optional": true,
+            "target_id": "recall-417"
+          },
+          {
+            "id": "topic-talking-about-family-members--question-recall-470",
+            "kind": "practice",
+            "label": "Which expression means “paternal grandfather”?",
+            "optional": true,
+            "target_id": "recall-470"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 28
+}

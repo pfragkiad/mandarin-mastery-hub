@@ -309,7 +309,17 @@ export function toTeachingPlan(raw: Record<string, unknown>): TeachingPlan {
 /** Syllabus editions a curriculum ID stands for, as recorded by its manifest (hsk3-2025 is the
  *  CLEC HSK 3.0 syllabus, edition 2025-11, the same source as the Vocabulary entries). */
 export const SYLLABUS_VERSION: Record<string, '3.0'> = { 'hsk3-2025': '3.0' };
-type SyllabusEntry = { id: string; simplified: string; entryKind: string; hskVersion: string | null; hsk_index: number | null };
+type SyllabusEntry = SyllabusRecordFields & { id: string; simplified: string };
+/** Fields that decide whether a Vocabulary record is an official syllabus entry. */
+export type SyllabusRecordFields = { entryKind: string; hskVersion: string | null; hsk_index: number | null; hskSource?: { sourceId?: string | null } | null; sentenceSource?: unknown };
+/** An official syllabus record: a word, or one of the syllabus's own phrases (不好意思 #313),
+ *  recognised by its HSK source ID equalling its own entry number. Example-sentence phrases
+ *  (sentenceSource) borrow their parent word's number and are never syllabus records. */
+export function isSyllabusRecord(e: SyllabusRecordFields): boolean {
+  if (e.hsk_index == null || !e.hskVersion) return false;
+  if (e.entryKind === 'word') return true;
+  return e.entryKind === 'phrase' && e.sentenceSource == null && e.hskSource?.sourceId === String(e.hsk_index);
+}
 /** The one Vocabulary entry a topic-lesson word stands for: same syllabus edition, same HSK
  *  entry number AND the exact same headword. Anything else (unknown curriculum, no match, a
  *  number whose headword differs, several matches) is null, so no word identity is guessed —
@@ -319,7 +329,7 @@ export function syllabusEntryFor<T extends SyllabusEntry>(item: Pick<TopicVocabI
   for (const ref of item.syllabus_refs) {
     const version = SYLLABUS_VERSION[ref.curriculum_id];
     if (!version) continue;
-    for (const e of entries) if (e.entryKind === 'word' && e.hskVersion === version && e.hsk_index === ref.entry_id && e.simplified === item.hanzi) found.add(e);
+    for (const e of entries) if (isSyllabusRecord(e) && e.hskVersion === version && e.hsk_index === ref.entry_id && e.simplified === item.hanzi) found.add(e);
   }
   return found.size === 1 ? [...found][0]! : null;
 }

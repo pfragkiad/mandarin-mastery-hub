@@ -3794,8 +3794,9 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-course-after { font-size: 13px; color: var(--muted-foreground); }
 .lesson-course-steps { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 .lesson-course-step { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; font-size: 13px; color: var(--foreground); text-decoration: none; }
-.lesson-course-step span { display: flex; flex-direction: column; min-width: 0; }
-.lesson-course-step small { font-size: 11px; color: var(--muted-foreground); }
+/* "Next: <title> →" reads as one line (label, title and arrow together), wrapping only the title. */
+.lesson-course-step span { display: inline; min-width: 0; }
+.lesson-course-step small { font-size: inherit; color: var(--primary); }
 .lesson-course-step.is-next { margin-left: auto; text-align: right; }
 .lesson-course-step:hover, .lesson-course-step:focus-visible { color: var(--primary); outline: none; }
 .lesson-objectives { list-style: disc; margin: 4px 0 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; line-height: 1.6; }
@@ -4038,6 +4039,28 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-page { --lesson-sticky-top: 0px; }
 @media (max-width: 850px) { .lesson-page { --lesson-sticky-top: 60px; } }
 .lesson-page.is-narrow .lesson-back { margin-bottom: 12px; }
+/* Narrow top block, one layer instead of a boxed card: "← All lessons" left and the course line
+   ("Course · Lesson N of M", unit and icon dropped) right on one row, wrapping when it doesn't
+   fit; Previous/Next each on their own full-width line below. The nav uses display: contents
+   so its parts join the row without its card box. */
+.lesson-page.is-narrow .lesson-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 14px; }
+.lesson-page.is-narrow .lesson-top .lesson-back { margin: 0; flex: none; }
+.lesson-page.is-narrow .lesson-course-position { display: contents; }
+.lesson-page.is-narrow .lesson-course-where { flex: 1 1 auto; min-width: 0; justify-content: flex-end; text-align: right; }
+.lesson-page.is-narrow .lesson-course-where svg, .lesson-page.is-narrow .lesson-course-unit { display: none; }
+.lesson-page.is-narrow .lesson-course-after { flex-basis: 100%; }
+.lesson-page.is-narrow .lesson-course-steps { flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 4px; }
+.lesson-page.is-narrow .lesson-course-steps > span:empty { display: none; }
+.lesson-course-where strong { white-space: nowrap; }
+/* Narrow: each step is one flowing line, so the arrow stays beside the last word when a long
+   title wraps instead of floating at the row's edge. */
+.lesson-page.is-narrow .lesson-course-step { display: block; font-size: 14px; line-height: 1.45; padding: 4px 0; }
+.lesson-page.is-narrow .lesson-course-step svg { display: inline; vertical-align: -2px; }
+.lesson-page.is-narrow .lesson-course-step svg:first-child { margin-right: 6px; }
+.lesson-page.is-narrow .lesson-course-step svg:last-child { margin-left: 6px; }
+.lesson-page.is-narrow .lesson-course-step.is-next { margin-left: 0; text-align: left; }
+/* Narrow eyebrow: lesson type + time only (the topic is on the Lessons page), one line. */
+.lesson-page.is-narrow .lesson-eyebrow-category { display: none; }
 .lesson-page.is-narrow .lesson-hero { padding-bottom: 18px; }
 .lesson-page.is-narrow .lesson-hero.has-headword { grid-template-columns: auto minmax(0, 1fr); gap: 2px 16px; align-items: start; }
 .lesson-page.is-narrow .lesson-hero.has-headword .lesson-hero-copy { display: contents; }
@@ -4492,13 +4515,17 @@ html[data-display-size='comfortable'] .etymology-section .etymology-advanced-act
 .howell-hash { font-size: 10px; font-weight: 700; color: var(--sound-link); margin-left: 1px; vertical-align: super; text-decoration: none; cursor: help; border-radius: 3px; }
 .howell-hash:focus-visible { outline: 2px solid var(--sound-link); outline-offset: 1px; }
 .howell-path { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.howell-step { display: grid; grid-template-columns: 18px minmax(0, 1fr); align-items: baseline; gap: 4px; }
+/* `.howell li.howell-step` (not just `.howell-step`) so the step keeps its arrow column inside
+   a word card's Etymology tab, whose list reuses .decomposition-tree, whose `li` rule (a
+   column flex) would otherwise put each arrow on its own line above the step's text. */
+.howell li.howell-step { display: grid; grid-template-columns: 18px minmax(0, 1fr); align-items: baseline; gap: 4px; }
 .howell-step-arrow, .howell-arrow { color: var(--terracotta); font-weight: 600; }
 .howell-step-arrow { text-align: center; }
 .howell-step-text { overflow-wrap: anywhere; }
 /* A (← …) reason sits indented under the step it explains; never a forward step. */
 .howell-reason { display: block; margin: 2px 0 0 4px; padding-left: 10px; border-left: 2px solid color-mix(in oklch, var(--terracotta) 40%, transparent); }
-.howell-meaning { font-style: normal; font-weight: 600; color: var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); border-radius: 4px; padding: 0 4px; }
+/* nowrap: a highlighted meaning is a word or two, and its flag must never end a line on its own. */
+.howell-meaning { font-style: normal; font-weight: 600; color: var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); border-radius: 4px; padding: 0 4px; white-space: nowrap; }
 /* Howell's *…* meanings are his marked modern Japanese meanings: a small flag says so at a glance. */
 .howell-meaning::before { content: '🇯🇵'; font-size: .8em; margin-right: 2px; }
 .howell-reason .howell-meaning { background: transparent; font-weight: 500; }
@@ -4561,14 +4588,36 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* Search hits: recorded part of speech before a word's meaning. */
 .hero-search-hit .hit-pos { font-style: italic; opacity: .8; }
 
-/* Foldable course blocks on the Lessons page: the course title is the toggle, with a chevron. */
-.lessons-fold > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; }
-.lessons-fold > summary::-webkit-details-marker { display: none; }
-.lessons-fold > summary > h2 { margin: 0; }
-.lessons-fold > summary::before { content: ''; width: .5rem; height: .5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; opacity: .7; }
-.lessons-fold[open] > summary::before { transform: rotate(45deg); }
+/* Foldable course and level drawers on the Lessons page. The summary is a grid: arrow |
+   title | progress. The arrow keeps its own column, centred on the title's FIRST line (its box
+   is one title line tall), so a wrapping title never strands it on a line of its own. When the
+   drawer is too narrow for title and progress side by side (container query, not a device
+   width), the progress drops to its own full-width row and the title steps down a size. */
+.lessons-fold, .lessons-level-fold { container-type: inline-size; }
+.lessons-fold > summary, .lessons-level-fold > summary { --fold-title-size: 22px; --fold-title-lh: 1.3; list-style: none; cursor: pointer; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; column-gap: 10px; row-gap: 10px; }
+.lessons-level-fold > summary { --fold-title-size: 19px; }
+.lessons-fold > summary::-webkit-details-marker, .lessons-level-fold > summary::-webkit-details-marker { display: none; }
+.lessons-fold > summary > h2, .lessons-level-fold > summary > h3 { margin: 0; min-width: 0; font-size: var(--fold-title-size); line-height: var(--fold-title-lh); }
+/* Narrow drawers swap a course's full title for its recorded short title (one line). */
+.fold-title-short { display: none; }
+.lessons-fold-chevron { display: flex; align-items: center; height: calc(var(--fold-title-size) * var(--fold-title-lh)); color: var(--foreground); }
+.lessons-fold-chevron svg { width: 20px; height: 20px; transition: transform .15s; transform: rotate(-90deg); }
+.lessons-level-fold > summary .lessons-fold-chevron svg { width: 18px; height: 18px; }
+.lessons-fold[open] > summary > .lessons-fold-chevron svg, .lessons-level-fold[open] > summary > .lessons-fold-chevron svg { transform: none; }
+.lessons-fold > summary > .lesson-course-progress, .lessons-level-fold > summary > .lesson-course-progress { align-self: center; width: 220px; margin-left: 0; }
 .lessons-fold[open] > summary { margin-bottom: .75rem; }
-.lessons-fold > summary:hover h2 { color: var(--primary); }
+.lessons-fold > summary:hover h2, .lessons-level-fold > summary:hover > h3 { color: var(--primary); }
+.lessons-fold > summary:hover .lessons-fold-chevron, .lessons-level-fold > summary:hover .lessons-fold-chevron { color: var(--primary); }
+/* A level (HSK Level 1, Level 2…) inside a multi-level course: spacing only — no divider,
+   since a thin line here reads as a second progress bar. */
+.lessons-level-fold { padding-top: 14px; }
+@container (max-width: 560px) {
+  .lessons-fold > summary { --fold-title-size: 19px; }
+  .lessons-level-fold > summary { --fold-title-size: 17px; }
+  .lessons-fold > summary > .lesson-course-progress, .lessons-level-fold > summary > .lesson-course-progress { grid-column: 1 / -1; width: 100%; align-items: stretch; }
+  .lessons-fold > summary .fold-title-short { display: inline; }
+  .lessons-fold > summary h2:has(.fold-title-short) .fold-title-full { display: none; }
+}
 
 /* Lesson prose: an identified word (words-first) rings as one unit on hover. */
 .lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }
@@ -4606,10 +4655,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-fold-intro { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 16px; }
 .lesson-fold-intro > .lesson-note { flex: 1 1 320px; max-width: 72ch; margin-bottom: 0; }
 .lesson-reset svg { width: 14px; height: 14px; }
-.lesson-progress-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 14px 0 4px; font-size: 13px; color: var(--muted-foreground); }
-.lesson-progress-strip .lesson-progress { flex: 1 1 160px; max-width: 320px; }
 .lesson-progress-label { display: inline-flex; align-items: center; gap: 6px; }
-.lesson-progress-strip.is-done .lesson-progress-label { color: var(--primary); font-weight: 600; }
 .lesson-progress-label svg { width: 15px; height: 15px; }
 .lesson-finish { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; margin: 28px 0 8px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); }
 .lesson-finish.is-done { border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); background: color-mix(in oklab, var(--primary) 7%, var(--card)); }
@@ -4745,3 +4791,13 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 @media (max-width: 850px) { :root { --toast-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); } }
 /* Toasts follow the app theme (sonner's own palette is light-only by default). */
 :root [data-sonner-toaster][data-sonner-theme] { --normal-bg: var(--card); --normal-text: var(--foreground); --normal-border: var(--border); }
+
+/* Simplified → traditional pair on one line ("师 → 师's traditional form 師"), used when a
+   simplified character shows its traditional form's etymology (etymology-section.tsx). */
+.etymology-script-pair, .etymology-inherited-row { display: inline-flex; align-items: center; gap: 8px; flex: none; }
+.etymology-inherited-row { display: flex; margin-bottom: 8px; }
+.etymology-pair-arrow { width: 18px; height: 18px; flex: none; color: var(--muted-foreground); }
+.etymology-inherited { display: grid; gap: 10px; min-width: 0; }
+.etymology-inherited-note { margin: 0; }
+:where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
+:where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph strong { font-size: 40px; }

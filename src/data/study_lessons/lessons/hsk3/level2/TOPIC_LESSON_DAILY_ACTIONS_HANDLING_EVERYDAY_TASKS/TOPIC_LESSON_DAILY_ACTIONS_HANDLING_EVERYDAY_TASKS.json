@@ -1,0 +1,1151 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-helping-with-everyday-tasks",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Daily Actions & Activities — Part 1: Helping with Everyday Tasks",
+    "subtitle": "Giving help, opening things and handling objects",
+    "description": "Ask someone to help with simple tasks, handle objects and complete everyday actions.",
+    "slug": "helping-with-everyday-tasks"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions"
+    ],
+    "tags": [
+      "giving-help",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "physical-actions",
+    "subtopic_ids": [
+      "physical-actions"
+    ]
+  },
+  "learning_objectives": [
+    "Use 帮 (bāng) to offer or request help.",
+    "Give instructions with 打开 (dǎkāi) and 拿 (ná).",
+    "Describe waiting, moving and finishing a task."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "东": "Characters:东",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "关": "Characters:关",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "刘": "Characters:刘",
+    "别": "Characters:别",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "哥": "Characters:哥",
+    "回": "Characters:回",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "头": "Characters:头",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "完": "Characters:完",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "我": "Characters:我",
+    "户": "Characters:户",
+    "手": "Characters:手",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "把": "Characters:把",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "杯": "Characters:杯",
+    "果": "Characters:果",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "洗": "Characters:洗",
+    "点": "Characters:点",
+    "猫": "Characters:猫",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "着": "Characters:着",
+    "穿": "Characters:穿",
+    "窗": "Characters:窗",
+    "站": "Characters:站",
+    "等": "Characters:等",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "脑": "Characters:脑",
+    "苹": "Characters:苹",
+    "衣": "Characters:衣",
+    "西": "Characters:西",
+    "见": "Characters:见",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "送": "Characters:送",
+    "都": "Characters:都",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "题": "Characters:题"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask someone to help with simple tasks, handle objects and complete everyday actions.",
+      "focus": "Use 帮 (bāng) to offer or request help."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-305",
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning_en": "to help",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-305-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你能帮我一下吗？",
+              "pinyin": "nǐ néng bāng wǒ yíxià ma?",
+              "english": "Can you help me for a moment?",
+              "teaching_note": "A short spoken example using 帮."
+            },
+            {
+              "id": "ex-305-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "哥哥经常帮妹妹学汉语。",
+              "pinyin": "gēge jīngcháng bāng mèimei xué Hànyǔ.",
+              "english": "The older brother often helps his younger sister learn Chinese.",
+              "teaching_note": "A simple written example using 帮."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 305
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-329",
+          "hanzi": "打开",
+          "pinyin": "dǎkāi",
+          "meaning_en": "to open; to turn on",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-329-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请打开门。",
+              "pinyin": "qǐng dǎkāi mén.",
+              "english": "Please open the door.",
+              "teaching_note": "A short spoken example using 打开."
+            },
+            {
+              "id": "ex-329-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上课前，老师打开电脑。",
+              "pinyin": "shàngkè qián, lǎoshī dǎkāi diànnǎo.",
+              "english": "Before class, the teacher turns on the computer.",
+              "teaching_note": "A simple written example using 打开."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 329
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-334",
+          "hanzi": "等",
+          "pinyin": "děng",
+          "meaning_en": "to wait; to wait for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-334-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "等我一下！",
+              "pinyin": "děng wǒ yíxià!",
+              "english": "Wait for me a moment!",
+              "teaching_note": "A short spoken example using 等."
+            },
+            {
+              "id": "ex-334-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下午三点，学生们在教室门口等老师。",
+              "pinyin": "xiàwǔ sān diǎn, xuéshēngmen zài jiàoshì ménkǒu děng lǎoshī.",
+              "english": "At three in the afternoon, the students wait for their teacher outside the classroom.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 334
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-338",
+          "hanzi": "动",
+          "pinyin": "dòng",
+          "meaning_en": "to move",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-338-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别动！",
+              "pinyin": "bié dòng!",
+              "english": "Don't move!",
+              "teaching_note": "A short spoken example using 动."
+            },
+            {
+              "id": "ex-338-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小猫的头动了一下。",
+              "pinyin": "xiǎo māo de tóu dòng le yíxià.",
+              "english": "The kitten moved its head a little.",
+              "teaching_note": "A simple written example using 动."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 338
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-405",
+          "hanzi": "拿",
+          "pinyin": "ná",
+          "meaning_en": "to take; to hold; to carry",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-405-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我帮你拿吧。",
+              "pinyin": "wǒ bāng nǐ ná ba.",
+              "english": "I'll carry it for you.",
+              "teaching_note": "A short spoken example using 拿."
+            },
+            {
+              "id": "ex-405-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他拿着一本书。",
+              "pinyin": "tā ná zhe yì běn shū.",
+              "english": "He is holding a book.",
+              "teaching_note": "拿 is the verb “hold”; 着 marks an ongoing state."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 405
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-418",
+          "hanzi": "起来",
+          "pinyin": "qǐlái",
+          "meaning_en": "to rise; to get up; to stand up",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-418-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "快起来，上学了！",
+              "pinyin": "kuài qǐlái, shàngxué le!",
+              "english": "Get up quickly; it's time for school!",
+              "teaching_note": "A short spoken example using 起来."
+            },
+            {
+              "id": "ex-418-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们听见老师来了，都站起来。",
+              "pinyin": "xuéshēngmen tīngjiàn lǎoshī lái le, dōu zhàn qǐlái.",
+              "english": "When the students hear the teacher arrive, they all stand up.",
+              "teaching_note": "A simple written example using 起来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 418
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-437",
+          "hanzi": "送",
+          "pinyin": "sòng",
+          "meaning_en": "to give as a gift; to see off; to deliver",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-437-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我送你回家吧。",
+              "pinyin": "wǒ sòng nǐ huí jiā ba.",
+              "english": "Let me take you home.",
+              "teaching_note": "A short spoken example using 送."
+            },
+            {
+              "id": "ex-437-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈送了我一本新书。",
+              "pinyin": "māma sòng le wǒ yì běn xīn shū.",
+              "english": "Mom gave me a new book.",
+              "teaching_note": "A simple written example using 送."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 437
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-456",
+          "hanzi": "洗",
+          "pinyin": "xǐ",
+          "meaning_en": "to wash",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-456-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我去洗手。",
+              "pinyin": "wǒ qù xǐ shǒu.",
+              "english": "I'm going to wash my hands.",
+              "teaching_note": "A short spoken example using 洗."
+            },
+            {
+              "id": "ex-456-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈在洗苹果。",
+              "pinyin": "māma zài xǐ píngguǒ.",
+              "english": "Mom is washing apples.",
+              "teaching_note": "A simple written example using 洗."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 456
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ]
+        },
+        {
+          "id": "w-023",
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning_en": "wear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-023-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天我穿新衣服。",
+              "pinyin": "jīntiān wǒ chuān xīn yīfu.",
+              "english": "I am wearing new clothes today.",
+              "teaching_note": "穿 refers to wearing clothes; Chinese does not need a progressive form for the current outfit."
+            },
+            {
+              "id": "ex-023-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "天气冷的时候，请多穿衣服。",
+              "pinyin": "tiānqì lěng de shíhou, qǐng duō chuān yīfu.",
+              "english": "When it is cold, please wear more clothes.",
+              "teaching_note": "Short everyday instruction or request using 穿; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 23
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ]
+        },
+        {
+          "id": "w-061",
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning_en": "give; for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-061-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "可以给我一点儿水吗？",
+              "pinyin": "kěyǐ gěi wǒ yìdiǎnr shuǐ ma?",
+              "english": "Could you give me a little water?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-061-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师给我们一本书。",
+              "pinyin": "lǎoshī gěi wǒmen yì běn shū.",
+              "english": "The teacher gives us a book.",
+              "teaching_note": "School or study context showing 给 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 61
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Verb meaning give, and a coverb/preposition meaning for/to."
+        },
+        {
+          "id": "w-082",
+          "hanzi": "会",
+          "pinyin": "huì",
+          "meaning_en": "can; know how",
+          "primary_pos_id": "modal-verb",
+          "pos_ids": [
+            "modal-verb"
+          ],
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-082-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说汉语。",
+              "pinyin": "wǒ huì shuō Hànyǔ.",
+              "english": "I can speak Chinese.",
+              "teaching_note": "会 refers to an acquired skill, such as speaking a language."
+            },
+            {
+              "id": "ex-082-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她会写很多汉字。",
+              "pinyin": "tā huì xiě hěn duō hànzì.",
+              "english": "She can write many Chinese characters.",
+              "teaching_note": "The modal expresses a learned skill."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 82
+            }
+          ],
+          "primary_topic_id": "daily-actions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Modal use for learned ability; the full word has other uses."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Helping someone do an action",
+        "explanation": "帮 (bāng) can precede a person and the action you assist them with.",
+        "example_id": "ex-305-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Finishing one step",
+        "explanation": "完 (wán) follows a verb to indicate completion, as in 洗完 (xǐ wán).",
+        "example_id": "ex-329-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-305-1",
+      "ex-329-1",
+      "ex-334-1",
+      "ex-338-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "In the afternoon he helps a friend deliver books, and shuts the door after everyone leaves."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Please help me take this book. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 请帮我拿一下这本书。 (Qǐng bāng wǒ ná yíxià zhè běn shū.)",
+          "answer": "请帮我拿一下这本书。 (Qǐng bāng wǒ ná yíxià zhè běn shū.)"
+        },
+        {
+          "id": "recall-305",
+          "kind": "selection",
+          "prompt": "Which expression means “to help”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "帮",
+              "pinyin": "bāng",
+              "meaning_en": "to help"
+            },
+            {
+              "id": "b",
+              "hanzi": "打开",
+              "pinyin": "dǎkāi",
+              "meaning_en": "to open; to turn on"
+            },
+            {
+              "id": "c",
+              "hanzi": "等",
+              "pinyin": "děng",
+              "meaning_en": "to wait; to wait for"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 帮 (bāng) with this meaning."
+        },
+        {
+          "id": "recall-329",
+          "kind": "selection",
+          "prompt": "Which expression means “to open”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "帮",
+              "pinyin": "bāng",
+              "meaning_en": "to help"
+            },
+            {
+              "id": "c",
+              "hanzi": "等",
+              "pinyin": "děng",
+              "meaning_en": "to wait; to wait for"
+            },
+            {
+              "id": "a",
+              "hanzi": "打开",
+              "pinyin": "dǎkāi",
+              "meaning_en": "to open; to turn on"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 打开 (dǎkāi) with this meaning."
+        },
+        {
+          "id": "recall-334",
+          "kind": "selection",
+          "prompt": "Which expression means “to wait”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "打开",
+              "pinyin": "dǎkāi",
+              "meaning_en": "to open; to turn on"
+            },
+            {
+              "id": "a",
+              "hanzi": "等",
+              "pinyin": "děng",
+              "meaning_en": "to wait; to wait for"
+            },
+            {
+              "id": "b",
+              "hanzi": "帮",
+              "pinyin": "bāng",
+              "meaning_en": "to help"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 等 (děng) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Helping with Everyday Tasks",
+        "context_en": "Ask someone to help with simple tasks, handle objects and complete everyday actions.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请帮我打开门，好吗？",
+            "pinyin": "Qǐng bāng wǒ dǎkāi mén, hǎo ma?",
+            "english": "Please help me open the door, okay?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我先把包拿起来。",
+            "pinyin": "Hǎo, wǒ xiān bǎ bāo ná qǐlái.",
+            "english": "Sure, I’ll pick up the bag first."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "谢谢！你等我一下，我洗完手就来。",
+            "pinyin": "Xièxie! Nǐ děng wǒ yíxià, wǒ xǐ wán shǒu jiù lái.",
+            "english": "Thanks! Wait a moment; I’ll come as soon as I finish washing my hands."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没问题。我把这些东西送进去。",
+            "pinyin": "Méi wèntí. Wǒ bǎ zhèxiē dōngxi sòng jìnqù.",
+            "english": "No problem. I’ll take these things inside."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Helping someone do an action",
+          "explanation_en": "帮 (bāng) can precede a person and the action you assist them with.",
+          "formula_en": "帮 + person + verb",
+          "examples": [
+            {
+              "hanzi": "请帮我拿一下这本书。",
+              "pinyin": "Qǐng bāng wǒ ná yíxià zhè běn shū.",
+              "english": "Please help me take this book."
+            },
+            {
+              "hanzi": "好，我先把包拿起来。",
+              "pinyin": "Hǎo, wǒ xiān bǎ bāo ná qǐlái.",
+              "english": "Sure, I’ll pick up the bag first."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Finishing one step",
+          "explanation_en": "完 (wán) follows a verb to indicate completion, as in 洗完 (xǐ wán).",
+          "formula_en": "Verb + 完 + object",
+          "examples": [
+            {
+              "hanzi": "我洗完衣服再出去。",
+              "pinyin": "Wǒ xǐ wán yīfu zài chūqù.",
+              "english": "I’ll go out after I finish washing my clothes."
+            },
+            {
+              "hanzi": "没问题。我把这些东西送进去。",
+              "pinyin": "Méi wèntí. Wǒ bǎ zhèxiē dōngxi sòng jìnqù.",
+              "english": "No problem. I’ll take these things inside."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "请帮我打开门，好吗？",
+          "pinyin": "Qǐng bāng wǒ dǎkāi mén, hǎo ma?",
+          "english": "Please help me open the door, okay?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Please help me take this book.",
+            "model_answer": {
+              "hanzi": "请帮我拿一下这本书。",
+              "pinyin": "Qǐng bāng wǒ ná yíxià zhè běn shū.",
+              "english": "Please help me take this book."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I’ll go out after I finish washing my clothes.",
+            "model_answer": {
+              "hanzi": "我洗完衣服再出去。",
+              "pinyin": "Wǒ xǐ wán yīfu zài chūqù.",
+              "english": "I’ll go out after I finish washing my clothes."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Thanks! Wait a moment; I’ll come as soon as I finish washing my hands.",
+            "model_answer": {
+              "hanzi": "谢谢！你等我一下，我洗完手就来。",
+              "pinyin": "Xièxie! Nǐ děng wǒ yíxià, wǒ xǐ wán shǒu jiù lái.",
+              "english": "Thanks! Wait a moment; I’ll come as soon as I finish washing my hands."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Helping with Everyday Tasks — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "今天小刘很忙。早上他先打开窗户，再拿来一杯水。",
+            "pinyin": "Jīntiān Xiǎo Liú hěn máng. Zǎoshang tā xiān dǎkāi chuānghu, zài ná lái yì bēi shuǐ.",
+            "english": "Xiao Liu is busy today. In the morning he opens the window and brings a glass of water."
+          },
+          {
+            "hanzi": "下午他帮朋友送书，等大家都走了才把门关上。",
+            "pinyin": "Xiàwǔ tā bāng péngyou sòng shū, děng dàjiā dōu zǒu le cái bǎ mén guān shàng.",
+            "english": "In the afternoon he helps a friend deliver books, and shuts the door after everyone leaves."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiao Liu is busy today. In the morning he opens the window and brings a glass of water."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "In the afternoon he helps a friend deliver books, and shuts the door after everyone leaves."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Please help me take this book.",
+          "model_answer": {
+            "hanzi": "请帮我拿一下这本书。",
+            "pinyin": "Qǐng bāng wǒ ná yíxià zhè běn shū.",
+            "english": "Please help me take this book."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I’ll go out after I finish washing my clothes.",
+          "model_answer": {
+            "hanzi": "我洗完衣服再出去。",
+            "pinyin": "Wǒ xǐ wán yīfu zài chūqù.",
+            "english": "I’ll go out after I finish washing my clothes."
+          }
+        }
+      ],
+      "common_pitfall": "打开 (dǎkāi) means open or switch on depending on the object; it should not be used without regard to what is being opened.",
+      "pronunciation_focus": "Contrast 拿 (ná), second tone, and 打开 (dǎkāi), two third/first tones.",
+      "review": {
+        "can_do": [
+          "Use 帮 (bāng) to offer or request help.",
+          "Give instructions with 打开 (dǎkāi) and 拿 (ná).",
+          "Describe waiting, moving and finishing a task."
+        ],
+        "entry_ids": [
+          305,
+          329,
+          334,
+          338,
+          405,
+          418,
+          437,
+          456
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-helping-with-everyday-tasks--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Helping someone do an action",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Finishing one step",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please help me take this book.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I’ll go out after I finish washing my clothes.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Thanks! Wait a moment; I’ll come as soon as I finish washing my hands.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Please help me take this book.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I’ll go out after I finish washing my clothes.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-helping-with-everyday-tasks--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-helping-with-everyday-tasks--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Please help me take this book. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--question-recall-305",
+            "kind": "practice",
+            "label": "Which expression means “to help”?",
+            "optional": true,
+            "target_id": "recall-305"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--question-recall-329",
+            "kind": "practice",
+            "label": "Which expression means “to open”?",
+            "optional": true,
+            "target_id": "recall-329"
+          },
+          {
+            "id": "topic-helping-with-everyday-tasks--question-recall-334",
+            "kind": "practice",
+            "label": "Which expression means “to wait”?",
+            "optional": true,
+            "target_id": "recall-334"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 36
+}

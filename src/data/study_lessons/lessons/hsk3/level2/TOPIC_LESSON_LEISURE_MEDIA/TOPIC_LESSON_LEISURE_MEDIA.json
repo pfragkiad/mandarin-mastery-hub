@@ -1,0 +1,1150 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "lesson_id": "topic-sports-games-and-hobbies",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Sports, Games and Hobbies",
+    "subtitle": "Football, basketball, art and dancing",
+    "description": "Talk with friends about leisure interests and suggest a sport or creative activity.",
+    "slug": "sports-games-and-hobbies"
+  },
+  "classification": {
+    "primary_topic_id": "leisure-media",
+    "topic_ids": [
+      "leisure-media"
+    ],
+    "tags": [
+      "football",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "sports-recreation",
+    "subtopic_ids": [
+      "sports-recreation"
+    ]
+  },
+  "learning_objectives": [
+    "Discuss sports and different balls.",
+    "Express a hobby using 爱好 (àihào).",
+    "Invite someone to dance or draw."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "也": "Characters:也",
+    "了": "Characters:了",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "六": "Characters:六",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "却": "Characters:却",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "唱": "Characters:唱",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "幅": "Characters:幅",
+    "平": "Characters:平",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "房": "Characters:房",
+    "打": "Characters:打",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "爱": "Characters:爱",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "球": "Characters:球",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "画": "Characters:画",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "篮": "Characters:篮",
+    "美": "Characters:美",
+    "者": "Characters:者",
+    "脑": "Characters:脑",
+    "舞": "Characters:舞",
+    "视": "Characters:视",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "足": "Characters:足",
+    "跟": "Characters:跟",
+    "跳": "Characters:跳",
+    "踢": "Characters:踢",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "音": "Characters:音",
+    "鸟": "Characters:鸟"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk with friends about leisure interests and suggest a sport or creative activity.",
+      "focus": "Discuss sports and different balls."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-302",
+          "hanzi": "爱好",
+          "pinyin": "àihào",
+          "meaning_en": "hobby; interest; to be fond of",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "topic_ids": [
+            "leisure-media",
+            "qualities-feelings"
+          ],
+          "examples": [
+            {
+              "id": "ex-302-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的爱好是什么？",
+              "pinyin": "nǐ de àihào shì shénme?",
+              "english": "What is your hobby?",
+              "teaching_note": "A short spoken example using 爱好."
+            },
+            {
+              "id": "ex-302-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的爱好是看电影。",
+              "pinyin": "tā de àihào shì kàn diànyǐng.",
+              "english": "His hobby is watching movies.",
+              "teaching_note": "A simple written example using 爱好."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 302
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-327",
+          "hanzi": "打",
+          "pinyin": "dǎ",
+          "meaning_en": "to hit; to play (a game); to make (a call)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "leisure-media",
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-327-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们去打篮球吧！",
+              "pinyin": "wǒmen qù dǎ lánqiú ba!",
+              "english": "Let's go play basketball!",
+              "teaching_note": "A short spoken example using 打."
+            },
+            {
+              "id": "ex-327-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每个星期都打篮球。",
+              "pinyin": "tā měi gè xīngqī dōu dǎ lánqiú.",
+              "english": "He plays basketball every week.",
+              "teaching_note": "A simple written example using 打."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 327
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ]
+        },
+        {
+          "id": "w-359",
+          "hanzi": "画",
+          "pinyin": "huà",
+          "meaning_en": "to draw; picture; painting",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-359-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会画猫吗？",
+              "pinyin": "nǐ huì huà māo ma?",
+              "english": "Can you draw a cat?",
+              "teaching_note": "A short spoken example using 画."
+            },
+            {
+              "id": "ex-359-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子在本子上画了一只鸟。",
+              "pinyin": "háizi zài běnzi shàng huà le yì zhī niǎo.",
+              "english": "The child drew a bird in the notebook.",
+              "teaching_note": "A simple written example using 画."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 359
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ]
+        },
+        {
+          "id": "w-387",
+          "hanzi": "篮球",
+          "pinyin": "lánqiú",
+          "meaning_en": "basketball",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-387-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢篮球吗？",
+              "pinyin": "nǐ xǐhuan lánqiú ma?",
+              "english": "Do you like basketball?",
+              "teaching_note": "A short spoken example using 篮球."
+            },
+            {
+              "id": "ex-387-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们下午一起打篮球。",
+              "pinyin": "xuéshēngmen xiàwǔ yìqǐ dǎ lánqiú.",
+              "english": "The students play basketball together in the afternoon.",
+              "teaching_note": "A simple written example using 篮球."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 387
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ]
+        },
+        {
+          "id": "w-421",
+          "hanzi": "球",
+          "pinyin": "qiú",
+          "meaning_en": "ball",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-421-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "球在哪儿？",
+              "pinyin": "qiú zài nǎr?",
+              "english": "Where is the ball?",
+              "teaching_note": "A short spoken example using 球."
+            },
+            {
+              "id": "ex-421-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在学校里玩球。",
+              "pinyin": "háizimen zài xuéxiào lǐ wán qiú.",
+              "english": "The children are playing ball at school.",
+              "teaching_note": "A simple written example using 球."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 421
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ]
+        },
+        {
+          "id": "w-441",
+          "hanzi": "踢",
+          "pinyin": "tī",
+          "meaning_en": "to kick",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-441-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们去踢足球吧！",
+              "pinyin": "wǒmen qù tī zúqiú ba!",
+              "english": "Let's go play football!",
+              "teaching_note": "A short spoken example using 踢."
+            },
+            {
+              "id": "ex-441-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们每个星期天都踢足球。",
+              "pinyin": "tāmen měi gè xīngqītiān dōu tī zúqiú.",
+              "english": "They play football every Sunday.",
+              "teaching_note": "A simple written example using 踢."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 441
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-444",
+          "hanzi": "跳舞",
+          "pinyin": "tiàowǔ",
+          "meaning_en": "to dance",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-444-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会跳舞吗？",
+              "pinyin": "nǐ huì tiàowǔ ma?",
+              "english": "Can you dance?",
+              "teaching_note": "A short spoken example using 跳舞."
+            },
+            {
+              "id": "ex-444-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐很喜欢跳舞。",
+              "pinyin": "jiějie hěn xǐhuan tiàowǔ.",
+              "english": "My older sister really likes dancing.",
+              "teaching_note": "A simple written example using 跳舞."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 444
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ]
+        },
+        {
+          "id": "w-497",
+          "hanzi": "足球",
+          "pinyin": "zúqiú",
+          "meaning_en": "football; soccer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-497-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢足球吗？",
+              "pinyin": "nǐ xǐhuan zúqiú ma?",
+              "english": "Do you like football?",
+              "teaching_note": "A short spoken example using 足球."
+            },
+            {
+              "id": "ex-497-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们下课后踢足球。",
+              "pinyin": "xuéshēngmen xiàkè hòu tī zúqiú.",
+              "english": "The students play football after class.",
+              "teaching_note": "A simple written example using 足球."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 497
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ]
+        },
+        {
+          "id": "w-018",
+          "hanzi": "唱",
+          "pinyin": "chàng",
+          "meaning_en": "sing",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "leisure-media",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-018-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她会唱中文歌。",
+              "pinyin": "tā huì chàng Zhōngwén gē.",
+              "english": "She can sing songs in Chinese.",
+              "teaching_note": "会 marks learned ability; 中文歌 means songs sung in Chinese."
+            },
+            {
+              "id": "ex-018-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们在唱歌。",
+              "pinyin": "xuéshēngmen zài chàng gē.",
+              "english": "The students are singing.",
+              "teaching_note": "School or study context showing 唱 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 18
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ]
+        },
+        {
+          "id": "w-037",
+          "hanzi": "电视",
+          "pinyin": "diànshì",
+          "meaning_en": "TV",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-037-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "晚上我们看电视。",
+              "pinyin": "wǎnshang wǒmen kàn diànshì.",
+              "english": "We watch TV in the evening.",
+              "teaching_note": "看电视 is the standard expression for watching television."
+            },
+            {
+              "id": "ex-037-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个房间里有电视，也有电脑。",
+              "pinyin": "zhège fángjiān lǐ yǒu diànshì, yě yǒu diànnǎo.",
+              "english": "There is a television and a computer in this room.",
+              "teaching_note": "Location phrase 房间里 makes the description of equipment in a room explicit."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 37
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ]
+        },
+        {
+          "id": "w-038",
+          "hanzi": "电影",
+          "pinyin": "diànyǐng",
+          "meaning_en": "film",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-038-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天晚上看电影吗？",
+              "pinyin": "jīntiān wǎnshang kàn diànyǐng ma?",
+              "english": "Shall we watch a movie tonight?",
+              "teaching_note": "Daily time or schedule context illustrating 电影 in a straightforward sentence."
+            },
+            {
+              "id": "ex-038-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "电影院今天有新电影。",
+              "pinyin": "diànyǐngyuàn jīntiān yǒu xīn diànyǐng.",
+              "english": "There is a new movie at the cinema today.",
+              "teaching_note": "Natural cinema listing; 新电影 means a new movie, with no advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 38
+            }
+          ],
+          "primary_topic_id": "leisure-media",
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Different sports verbs",
+        "explanation": "Use 打 (dǎ) with 篮球 (lánqiú), but 踢 (tī) with 足球 (zúqiú). These are conventional verb-noun collocations.",
+        "example_id": "ex-302-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Describing a hobby",
+        "explanation": "爱好 (àihào) refers to a hobby or interest. Use 我的爱好是 (wǒ de àihào shì) before an activity.",
+        "example_id": "ex-327-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-302-1",
+      "ex-327-1",
+      "ex-359-1",
+      "ex-387-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "In the evening she wants to draw a picture at home, while her sister wants to dance to music. Everyone’s hobbies differ."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: My hobby is playing basketball. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我的爱好是打篮球。 (Wǒ de àihào shì dǎ lánqiú.)",
+          "answer": "我的爱好是打篮球。 (Wǒ de àihào shì dǎ lánqiú.)"
+        },
+        {
+          "id": "recall-302",
+          "kind": "selection",
+          "prompt": "Which expression means “hobby”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "爱好",
+              "pinyin": "àihào",
+              "meaning_en": "hobby; interest; to be fond of"
+            },
+            {
+              "id": "b",
+              "hanzi": "打",
+              "pinyin": "dǎ",
+              "meaning_en": "to hit; to play (a game); to make (a call)"
+            },
+            {
+              "id": "c",
+              "hanzi": "画",
+              "pinyin": "huà",
+              "meaning_en": "to draw; picture; painting"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 爱好 (àihào) with this meaning."
+        },
+        {
+          "id": "recall-327",
+          "kind": "selection",
+          "prompt": "Which expression means “to hit”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "爱好",
+              "pinyin": "àihào",
+              "meaning_en": "hobby; interest; to be fond of"
+            },
+            {
+              "id": "c",
+              "hanzi": "画",
+              "pinyin": "huà",
+              "meaning_en": "to draw; picture; painting"
+            },
+            {
+              "id": "a",
+              "hanzi": "打",
+              "pinyin": "dǎ",
+              "meaning_en": "to hit; to play (a game); to make (a call)"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 打 (dǎ) with this meaning."
+        },
+        {
+          "id": "recall-359",
+          "kind": "selection",
+          "prompt": "Which expression means “to draw”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "打",
+              "pinyin": "dǎ",
+              "meaning_en": "to hit; to play (a game); to make (a call)"
+            },
+            {
+              "id": "a",
+              "hanzi": "画",
+              "pinyin": "huà",
+              "meaning_en": "to draw; picture; painting"
+            },
+            {
+              "id": "b",
+              "hanzi": "爱好",
+              "pinyin": "àihào",
+              "meaning_en": "hobby; interest; to be fond of"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 画 (huà) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Sports, Games and Hobbies",
+        "context_en": "Talk with friends about leisure interests and suggest a sport or creative activity.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你平时有什么爱好？",
+            "pinyin": "Nǐ píngshí yǒu shénme àihào?",
+            "english": "What hobbies do you have?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我喜欢打篮球，也喜欢踢足球。",
+            "pinyin": "Wǒ xǐhuan dǎ lánqiú, yě xǐhuan tī zúqiú.",
+            "english": "I like playing basketball and football."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这个球是你的吗？今天想一起去运动吗？",
+            "pinyin": "Zhè ge qiú shì nǐ de ma? Jīntiān xiǎng yìqǐ qù yùndòng ma?",
+            "english": "Is this your ball? Want to go exercise together today?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊！运动以后，我们还可以画画或者跳舞。",
+            "pinyin": "Hǎo a! Yùndòng yǐhòu, wǒmen hái kěyǐ huàhuà huòzhě tiàowǔ.",
+            "english": "Sure! After exercising, we can also draw or dance."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Different sports verbs",
+          "explanation_en": "Use 打 (dǎ) with 篮球 (lánqiú), but 踢 (tī) with 足球 (zúqiú). These are conventional verb-noun collocations.",
+          "formula_en": "打篮球 / 踢足球",
+          "examples": [
+            {
+              "hanzi": "我的爱好是打篮球。",
+              "pinyin": "Wǒ de àihào shì dǎ lánqiú.",
+              "english": "My hobby is playing basketball."
+            },
+            {
+              "hanzi": "我喜欢打篮球，也喜欢踢足球。",
+              "pinyin": "Wǒ xǐhuan dǎ lánqiú, yě xǐhuan tī zúqiú.",
+              "english": "I like playing basketball and football."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Describing a hobby",
+          "explanation_en": "爱好 (àihào) refers to a hobby or interest. Use 我的爱好是 (wǒ de àihào shì) before an activity.",
+          "formula_en": "我的爱好是 + activity",
+          "examples": [
+            {
+              "hanzi": "星期六我们一起去踢足球吧。",
+              "pinyin": "Xīngqīliù wǒmen yìqǐ qù tī zúqiú ba.",
+              "english": "Let’s go play football together on Saturday."
+            },
+            {
+              "hanzi": "好啊！运动以后，我们还可以画画或者跳舞。",
+              "pinyin": "Hǎo a! Yùndòng yǐhòu, wǒmen hái kěyǐ huàhuà huòzhě tiàowǔ.",
+              "english": "Sure! After exercising, we can also draw or dance."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你平时有什么爱好？",
+          "pinyin": "Nǐ píngshí yǒu shénme àihào?",
+          "english": "What hobbies do you have?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: My hobby is playing basketball.",
+            "model_answer": {
+              "hanzi": "我的爱好是打篮球。",
+              "pinyin": "Wǒ de àihào shì dǎ lánqiú.",
+              "english": "My hobby is playing basketball."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Let’s go play football together on Saturday.",
+            "model_answer": {
+              "hanzi": "星期六我们一起去踢足球吧。",
+              "pinyin": "Xīngqīliù wǒmen yìqǐ qù tī zúqiú ba.",
+              "english": "Let’s go play football together on Saturday."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Is this your ball? Want to go exercise together today?",
+            "model_answer": {
+              "hanzi": "这个球是你的吗？今天想一起去运动吗？",
+              "pinyin": "Zhè ge qiú shì nǐ de ma? Jīntiān xiǎng yìqǐ qù yùndòng ma?",
+              "english": "Is this your ball? Want to go exercise together today?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Sports, Games and Hobbies — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "周末，小美先和哥哥打篮球，下午又跟朋友去踢足球。",
+            "pinyin": "Zhōumò, Xiǎoměi xiān hé gēge dǎ lánqiú, xiàwǔ yòu gēn péngyou qù tī zúqiú.",
+            "english": "On the weekend, Xiaomei plays basketball with her older brother and then goes to play football with a friend."
+          },
+          {
+            "hanzi": "晚上她想在家画一幅画，妹妹却想听音乐跳舞。每个人的爱好都不一样。",
+            "pinyin": "Wǎnshang tā xiǎng zài jiā huà yì fú huà, mèimei què xiǎng tīng yīnyuè tiàowǔ. Měi ge rén de àihào dōu bù yíyàng.",
+            "english": "In the evening she wants to draw a picture at home, while her sister wants to dance to music. Everyone’s hobbies differ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "On the weekend, Xiaomei plays basketball with her older brother and then goes to play football with a friend."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "In the evening she wants to draw a picture at home, while her sister wants to dance to music. Everyone’s hobbies differ."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: My hobby is playing basketball.",
+          "model_answer": {
+            "hanzi": "我的爱好是打篮球。",
+            "pinyin": "Wǒ de àihào shì dǎ lánqiú.",
+            "english": "My hobby is playing basketball."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Let’s go play football together on Saturday.",
+          "model_answer": {
+            "hanzi": "星期六我们一起去踢足球吧。",
+            "pinyin": "Xīngqīliù wǒmen yìqǐ qù tī zúqiú ba.",
+            "english": "Let’s go play football together on Saturday."
+          }
+        }
+      ],
+      "common_pitfall": "Do not say 打足球 for ordinary football; standard Mandarin uses 踢足球 (tī zúqiú).",
+      "pronunciation_focus": "Practise 篮球 (lánqiú) as two second tones and 足球 (zúqiú) as two second tones.",
+      "review": {
+        "can_do": [
+          "Discuss sports and different balls.",
+          "Express a hobby using 爱好 (àihào).",
+          "Invite someone to dance or draw."
+        ],
+        "entry_ids": [
+          302,
+          327,
+          359,
+          387,
+          421,
+          441,
+          444,
+          497
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-sports-games-and-hobbies--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Different sports verbs",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Describing a hobby",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: My hobby is playing basketball.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Let’s go play football together on Saturday.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Is this your ball? Want to go exercise together today?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: My hobby is playing basketball.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Let’s go play football together on Saturday.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-games-and-hobbies--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-sports-games-and-hobbies--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: My hobby is playing basketball. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--question-recall-302",
+            "kind": "practice",
+            "label": "Which expression means “hobby”?",
+            "optional": true,
+            "target_id": "recall-302"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--question-recall-327",
+            "kind": "practice",
+            "label": "Which expression means “to hit”?",
+            "optional": true,
+            "target_id": "recall-327"
+          },
+          {
+            "id": "topic-sports-games-and-hobbies--question-recall-359",
+            "kind": "practice",
+            "label": "Which expression means “to draw”?",
+            "optional": true,
+            "target_id": "recall-359"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 36
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ChevronDown, FlaskConical, Library, Search, Tags, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,12 +6,14 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { lessonCategories, lessonSummaries, lessonSummary, type LessonSummary } from '@/lib/lessons';
 import { courses, projectIndependentLessons, sectionPlacements, type Course } from '@/lib/lesson-curricula';
 import { LessonText } from './lesson-text';
-import { readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
+import { useOneLineTitle } from './one-line-title';
+import { levelFoldId, readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
 import { HintBody, SourceInfo } from './source-info';
 import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
 import { ResetProgressButton } from './reset-progress-button';
 import { DraftFilterForm } from './filter-form';
 import { LessonSearchResults, lessonScopeLabel, lessonScopes } from './lesson-search-results';
+import { displaySubtitle, displayTags } from '@/lib/lesson-header-copy';
 
 /** Lessons' status pill in the page heading: the collection is partial material, so the
  *  tag says so and opens the shared hint card explaining exactly what is missing. No
@@ -24,7 +26,7 @@ function ExperimentalTag() {
     </PopoverTrigger>
     <PopoverContent className="source-info-popover count-hint w-auto" align="end"><HintBody>
       <strong className="count-hint-title count-hint-experimental">Experimental</strong><br/>
-      Still being built: the HSK 3.0 Level 1 path, the first HSK 3.0 Level 2 lesson, a Conversational Mandarin course and two character lessons so far, all still drafts awaiting review. Levels 3 and above are not in the collection yet.
+      Still being built: the HSK 3.0 Level 1 and Level 2 paths, a Conversational Mandarin course and two character lessons so far, all still drafts awaiting review. Levels 3 and above are not in the collection yet.
     </HintBody></PopoverContent>
   </Popover>;
 }
@@ -92,12 +94,13 @@ export function LessonsIndex({ view, category, tag, q = '', scope, onSearch }: {
   </div>;
 }
 
-/** Remembered open/collapsed flag for one course drawer. Drawers start COLLAPSED on a
- *  first visit (the list is long), then the visitor's own fold/unfold choice is kept in
- *  localStorage per drawer id. Read after mount so server and first client render agree. */
-function useLessonFold(id: string): [boolean, (open: boolean) => void] {
-  const [open, setOpen] = useState(false);
-  useEffect(() => { setOpen(Boolean(readLessonFolds()[id])); }, [id]);
+/** Remembered open/collapsed flag for one drawer. Course drawers start COLLAPSED on a
+ *  first visit (the list is long); a level passes its own first-visit default. Afterwards
+ *  the visitor's own fold/unfold choice is kept in localStorage per drawer id. Read after
+ *  mount so server and first client render agree. */
+function useLessonFold(id: string, fallback = false): [boolean, (open: boolean) => void] {
+  const [open, setOpen] = useState(fallback);
+  useEffect(() => { setOpen(readLessonFolds()[id] ?? fallback); }, [id, fallback]);
   const update = (next: boolean) => { setOpen(next); setLessonFold(id, next); };
   return [open, update];
 }
@@ -108,16 +111,38 @@ function useLessonFold(id: string): [boolean, (open: boolean) => void] {
  *  React also delivers a nested unit's toggle to this handler, so only this drawer's own
  *  toggle (target === currentTarget) is stored — a unit's arrow never folds the course.
  *  `tools` sits at the end of the note row (e.g. the course's Reset progress). */
-function LessonFold({ id, title, note, info, aside, tools, children }: { id: string; title: string; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
+function LessonFold({ id, title, shortTitle, note, info, aside, tools, children }: { id: string; title: string; shortTitle?: string | undefined; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
   const [open, setOpen] = useLessonFold(id);
   return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
-    <summary><h2 id={`course-${id}`}>{title}</h2>{aside}</summary>
+    <summary><FoldChevron/><FoldTitle id={`course-${id}`} title={title} shortTitle={shortTitle}/>{aside}</summary>
     {(note || tools) && <div className="lesson-fold-intro">
       {note && <p className="lesson-note">{note}{info && <> <SourceInfo className="lesson-course-info" inline>{info}</SourceInfo></>}</p>}
       {tools}
     </div>}
     {children}
   </details>;
+}
+
+/** The open/closed arrow of a course or level drawer. It sits in its own grid column beside
+ *  the title, centred on the title's first line, so a long title wraps beside it instead of
+ *  leaving the arrow alone on a line; it turns down when the drawer is open (CSS). */
+function FoldChevron() {
+  return <span className="lessons-fold-chevron" aria-hidden="true"><ChevronDown/></span>;
+}
+
+/** A course drawer's title: shrunk slightly (down to 16px) when that keeps it on one line,
+ *  otherwise left at its stylesheet size to wrap (owner's choice: smaller only if it fits).
+ *  On narrow drawers a recorded short title (course.shortTitle) replaces the full one so
+ *  the heading stays on one line; the full title is kept for screen readers and wide
+ *  screens. The one-line fit measures whichever span is visible (the hidden one has no
+ *  width in the clone), so crossing the narrow threshold re-fits automatically. */
+function FoldTitle({ id, title, shortTitle }: { id: string; title: string; shortTitle?: string | undefined }) {
+  const ref = useRef<HTMLHeadingElement>(null);
+  useOneLineTitle(ref, title, { minSize: 16, onlyIfFits: true });
+  return <h2 ref={ref} id={id}>
+    <span className="fold-title-full">{title}</span>
+    {shortTitle && <span className="fold-title-short" aria-hidden="true">{shortTitle}</span>}
+  </h2>;
 }
 
 /** Card shown above both views for the most recent unfinished lesson (cookie progress). */
@@ -145,7 +170,7 @@ function ProgressBar({ fraction }: { fraction: number }) {
 /** Learner-facing caveats per course, shown behind the (i) beside the course note. */
 const courseCaveat = (c: Course) => {
   if (!(c.kind.toLowerCase().includes('hsk') || c.id.startsWith('hsk'))) return 'A suggested order. Lessons can be opened in any order.';
-  // Name the levels the course's own sections record (Level 1 and Level 2 are separate courses).
+  // Name the levels the course's own sections record (Level 1 and Level 2 are sections of one course).
   const levels = c.sections.flatMap(s => s.level == null ? [] : [s.level]);
   return `A suggested order for learning the ${levels.length ? `Level ${levels.join(' and ')} ` : 'HSK '}words. It is not an official HSK sequence.`;
 };
@@ -176,25 +201,55 @@ function CourseOutline({ course, progress }: { course: Course; progress: LessonP
   const next = all.find(p => !isDone(progress, p.lesson.id))?.lesson.id;
   const ids = all.map(p => p.lesson.id);
   const started = ids.some(id => progress[id]);
-  return <LessonFold id={course.id} title={course.title} note={course.description} info={courseCaveat(course)}
+  return <LessonFold id={course.id} title={course.title} shortTitle={course.shortTitle} note={course.description} info={courseCaveat(course)}
     tools={started ? <ResetProgressButton label="Reset course progress" title={`Reset ${course.title}?`} description="Every lesson in this course goes back to not started. Lessons outside this course keep their progress." onReset={() => resetCourseProgress(ids)}/> : undefined}
     aside={<span className="lesson-course-progress"><small>{done} of {all.length} lessons done{working > 0 && ` · ${working} in progress`}</small><ProgressBar fraction={fraction}/></span>}>
     {course.sections.map(section => {
       const flat = sectionPlacements(section);
-      return <div key={section.id} className="lessons-level">
-        {course.sections.length > 1 && <h3>{section.title}<span className="lessons-level-count">{flat.length} {flat.length === 1 ? 'lesson' : 'lessons'}</span></h3>}
-        {section.units.map((unit, u) => {
-          const unitDone = unit.placements.filter(p => isDone(progress, p.lesson.id)).length;
-          return <details key={unit.id} className="lessons-unit" open>
-            <summary><h4><span className="lessons-unit-number">Unit {u + 1}</span>{unit.title}</h4><span className="lessons-unit-count">{unitDone} / {unit.placements.length}<ChevronDown aria-hidden="true"/></span></summary>
-            <ol className="lessons-grid lessons-path">{unit.placements.map(p => <li key={p.id}>
-              <LessonCard lesson={p.lesson} number={flat.indexOf(p) + 1} after={p.prerequisites} progress={progress} upNext={p.lesson.id === next}/>
-            </li>)}</ol>
-          </details>;
-        })}
-      </div>;
+      const units = <LevelUnits section={section} flat={flat} progress={progress} next={next}/>;
+      // A one-level course shows its units directly; each level of a multi-level course
+      // (HSK Level 1, Level 2…) is its own drawer, since each is a large body of study.
+      return course.sections.length > 1
+        ? <LevelFold key={section.id} id={levelFoldId(course.id, section.id)} section={section} flat={flat} progress={progress} defaultOpen={flat.some(p => p.lesson.id === next)}>{units}</LevelFold>
+        : <div key={section.id} className="lessons-level">{units}</div>;
     })}
   </LessonFold>;
+}
+
+type Section = Course['sections'][number];
+type Placement = ReturnType<typeof sectionPlacements>[number];
+
+/** One level's units (each a collapsible <details>, open by default) → numbered lessons on
+ *  a path. Inputs: the level, its placements in order (`flat`, which numbers the lessons
+ *  through the whole level), progress, and the course's "up next" lesson id. */
+function LevelUnits({ section, flat, progress, next }: { section: Section; flat: Placement[]; progress: LessonProgressMap; next: string | undefined }) {
+  return <>{section.units.map((unit, u) => {
+    const unitDone = unit.placements.filter(p => isDone(progress, p.lesson.id)).length;
+    return <details key={unit.id} className="lessons-unit" open>
+      <summary><h4><span className="lessons-unit-number">Unit {u + 1}</span>{unit.title}</h4><span className="lessons-unit-count">{unitDone} / {unit.placements.length}<ChevronDown aria-hidden="true"/></span></summary>
+      <ol className="lessons-grid lessons-path">{unit.placements.map(p => <li key={p.id}>
+        <LessonCard lesson={p.lesson} number={flat.indexOf(p) + 1} after={p.prerequisites} progress={progress} upNext={p.lesson.id === next}/>
+      </li>)}</ol>
+    </details>;
+  })}</>;
+}
+
+/** One level of a multi-level course as its own remembered drawer, with that level's
+ *  lessons-done count and bar in the heading. First visit: only the level holding the
+ *  course's "up next" lesson starts open (`defaultOpen`). As with the course drawer, only
+ *  this element's own toggle is stored, so a unit's arrow never folds the level. */
+function LevelFold({ id, section, flat, progress, defaultOpen, children }: { id: string; section: Section; flat: Placement[]; progress: LessonProgressMap; defaultOpen: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = useLessonFold(id, defaultOpen);
+  const done = flat.filter(p => isDone(progress, p.lesson.id)).length;
+  const fraction = flat.length ? flat.reduce((sum, p) => sum + lessonState(progress[p.lesson.id]).fraction, 0) / flat.length : 0;
+  return <details className="lessons-level lessons-level-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
+    <summary>
+      <FoldChevron/>
+      <h3>{section.title}<span className="lessons-level-count">{flat.length} {flat.length === 1 ? 'lesson' : 'lessons'}</span></h3>
+      <span className="lesson-course-progress"><small>{done} of {flat.length} done</small><ProgressBar fraction={fraction}/></span>
+    </summary>
+    {children}
+  </details>;
 }
 
 /** By topic: lessons under their primary registry topic; a topic filter also matches
@@ -262,14 +317,18 @@ export function LessonCard({ lesson, number, after = [], onTag, activeTag, extra
   const { state, fraction } = lessonState(progress?.[lesson.id]);
   const stateLabel = state === 'done' ? 'Done' : state === 'in-progress' ? 'In progress' : upNext ? 'Up next' : '';
   const dim = number !== undefined && state === 'not-started' && !upNext && progress !== undefined;
-  const tags = activeTag && lesson.tags.includes(activeTag) ? [activeTag, ...lesson.tags.filter(t => t !== activeTag)].slice(0, 3) : lesson.tags.slice(0, 3);
+  // Content tags only (lesson-header-copy.ts drops course/level/format tags); an active tag
+  // filter keeps its own chip first so the learner can see and clear it.
+  const shown = displayTags(lesson.tags, Infinity);
+  const tags = activeTag && lesson.tags.includes(activeTag) ? [activeTag, ...shown.filter(t => t !== activeTag)].slice(0, 3) : shown.slice(0, 3);
+  const subtitle = displaySubtitle(lesson.subtitle);
   return <div className={`lesson-index-item is-${state}${upNext ? ' is-next' : ''}${dim ? ' is-dim' : ''}`}>
     <Link to="/lessons/$lessonId" params={{ lessonId: lesson.id }} className="lesson-index-card">
       <LessonGlyph lesson={lesson} number={number}/>
       <span className="lesson-index-copy">
         <span className="lesson-index-meta">{number ? `Lesson ${number}` : kindLabel[lesson.kind]}{lesson.headword?.pinyin && <> · <span className="pinyin">{lesson.headword.pinyin}</span></>}{stateLabel && <> · <span className="lesson-state">{stateLabel}</span></>}</span>
         <strong>{lesson.title}</strong>
-        {lesson.subtitle && <span className="lesson-index-subtitle"><LessonText text={lesson.subtitle}/></span>}
+        {subtitle && <span className="lesson-index-subtitle"><LessonText text={subtitle}/></span>}
         {after.length > 0 && <small>After: {after.map(a => a.title).join(', ')}</small>}
         {extra}
       </span>

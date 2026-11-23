@@ -62,3 +62,4 @@
 - Update this guide, its schema and [the source guide](../../../importer/data/etymology/README.md)
   together when changing the data contract. Editorial review requires explicit,
   provenance-attached evidence; never infer verification from two-source presence.
+- Owner-approved display exception: a simplified Characters record with no exact headword may show its single related Traditional form's own notes in place (inheritableCounterpart in src/lib/etymology.ts: exactly one exact-headword related form, recorded Traditional script, no note other than a plain "traditional" one), shown as "师 → 師" and labelled as that form's notes, suggested and not reviewed. Context-dependent pairs (发, 后, 干) and variants keep links only; nothing is copied into the simplified record.
