@@ -148,3 +148,4 @@
 - [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line
 - [x] Lesson Key expressions: neutral PHRASE pill on non-entry expressions
 - [x] Lessons v3.4.0: Key expressions usage label/note; pattern cards hide repeated formula/note
+- [x] Audit lesson pinyin vs word-card readings (spacing/other differences) that could block recordings
