@@ -3941,6 +3941,8 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-pattern-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .lesson-pattern-line .lesson-hanzi { font-size: 24px; }
 .lesson-pattern-line .pinyin { font-size: 14px; }
+/* A long template reading may wrap; its speaker stays at the reading's end. */
+.lesson-pattern-line .lesson-term-reading { white-space: normal; flex-wrap: wrap; }
 .lesson-example .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .lesson-example .sentence p { font-size: 24px; margin-top: 4px; }
 .lesson-example .sentence-pinyin { margin-top: 0; font-size: 14px; }

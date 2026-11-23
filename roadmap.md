@@ -149,3 +149,5 @@
 - [x] Lesson Key expressions: neutral PHRASE pill on non-entry expressions
 - [x] Lessons v3.4.0: Key expressions usage label/note; pattern cards hide repeated formula/note
 - [x] Audit lesson pinyin vs word-card readings (spacing/other differences) that could block recordings
+- [x] Pattern template lines: speaker beside pinyin (owner: read as written)
+- [x] Pattern template lines: character hints / clickable words like other lesson text

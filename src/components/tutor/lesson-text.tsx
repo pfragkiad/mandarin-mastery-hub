@@ -81,6 +81,33 @@ export function LessonPairedLine({ hanzi, pinyin, className = 'lesson-hanzi', fo
   </>;
 }
 
+/**
+ * A pattern's template line (陈述句 + 吗？) with its recorded pinyin and a speaker beside it.
+ * Inputs: the recorded pattern hanzi/pinyin. Owner-approved: the computer voice reads the
+ * template as written, slot labels (主语, 动词…) included. A "+" joiner is spoken as a short
+ * pause rather than "加" — only the spoken text changes, never the displayed fields. A
+ * template is never a dictionary entry, so it never borrows a word recording; a line with no
+ * "+" goes through the ordinary LessonSpeaker rules instead.
+ */
+export function LessonPatternLine({ hanzi, pinyin }: { hanzi: string; pinyin?: string | undefined }) {
+  const pair = useLessonPairing(hanzi, pinyin);
+  return <>
+    <span className="lesson-hanzi" lang="zh-CN">{pair.hanziBody}</span>
+    {pinyin && <span className="lesson-term-reading"><span className="pinyin">{pair.pinyinBody}</span><PatternSpeaker hanzi={hanzi} pinyin={pinyin}/></span>}
+  </>;
+}
+
+/** Speech text for a pattern template: "+" joiners become pauses (see LessonPatternLine). */
+export function patternSpeechText(hanzi: string): string {
+  return hanzi.replace(/\s*[+＋]\s*/gu, '，').trim();
+}
+
+function PatternSpeaker({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
+  if (!/[+＋]/u.test(hanzi)) return <LessonSpeaker hanzi={hanzi} pinyin={pinyin}/>;
+  if (!/\p{Script=Han}/u.test(hanzi)) return null;
+  return <ExamplePronunciation request={{ text: patternSpeechText(hanzi), reading: pinyin, audio: null }} label={hanzi}/>;
+}
+
 /** The lesson hero's headword: big glyph + reading + speaker, hover-paired. */
 export function LessonHeadword({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
   const pair = useLessonPairing(hanzi, pinyin);

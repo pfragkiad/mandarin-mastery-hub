@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { LessonPage } from './lesson-page';
+import { patternSpeechText } from './lesson-text';
 import { lessonSummaries, loadLesson } from '@/lib/lessons';
 
 const router = vi.hoisted(() => ({ navigate: vi.fn() }));
@@ -67,6 +68,24 @@ describe('LessonPage', () => {
       expect(card.querySelector('.lesson-pattern-line')).toBeNull();
       expect(card.querySelector('.lesson-teaching')).toBeNull();
     });
+  });
+
+  it('every pattern template line has a speaker beside its pinyin', async () => {
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const lines = container.querySelectorAll('.lesson-pattern .lesson-pattern-line');
+    expect(lines.length).toBeGreaterThan(0);
+    lines.forEach(line => {
+      const hanzi = line.querySelector('.lesson-hanzi')!.textContent!;
+      expect(line.querySelector('.lesson-term-reading .pinyin')).not.toBeNull();
+      const labels = Array.from(line.querySelectorAll('button'), b => b.getAttribute('aria-label'));
+      expect(labels).toContain(`Listen to ${hanzi}`);
+    });
+  });
+
+  it('a pattern template speaks its "+" joiners as pauses, keeping slot labels', () => {
+    expect(patternSpeechText('陈述句 + 吗？')).toBe('陈述句，吗？');
+    expect(patternSpeechText('数字 + 加 + 数字 + 是多少？')).toBe('数字，加，数字，是多少？');
   });
 
   it('a topic lesson word links to the Vocabulary record with its HSK number and headword', async () => {

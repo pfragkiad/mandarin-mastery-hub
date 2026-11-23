@@ -22,7 +22,7 @@ import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { parseAnswerLines } from '@/lib/lesson-answer';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
+import { LessonHeadword, LessonPairedLine, LessonPatternLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
 import type { Word } from '@/lib/mandarin';
 import { WordIdentityPills } from './word-identity-pills';
@@ -335,7 +335,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // example sentence itself as the formula (or the function verbatim as the teaching note), that
   // duplicate is shown once only — the recorded fields are untouched, only the repeat is hidden.
   if (patterns.length) sections.push({ id: 'block-patterns', title: 'Patterns', hint: count(patterns.length, 'pattern'), body: <div className="lesson-stack">{patterns.map(g => <div key={g.id} className="lesson-card lesson-pattern">
-    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() && <p className="lesson-pattern-line"><LessonPairedLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>}
+    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() && <p className="lesson-pattern-line"><LessonPatternLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>}
     <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
     <PlanSentence line={g.example}/>
     {g.example.teaching_note && g.example.teaching_note.trim() !== g.function_en.trim() && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
@@ -369,7 +369,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', hint: count(S.constructions.items.length, 'reusable construction'), body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
-      <p className="lesson-pattern-line"><LessonPairedLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
+      <p className="lesson-pattern-line"><LessonPatternLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
       <p className="lesson-card-title"><LessonText text={c.function_en}/></p>
       <LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/>
       {c.usage_note && <p className="lesson-muted"><LessonText text={c.usage_note}/></p>}
