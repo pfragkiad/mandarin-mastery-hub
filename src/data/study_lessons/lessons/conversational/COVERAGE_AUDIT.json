@@ -1,0 +1,618 @@
+{
+  "release": "conversational-coverage/1.1.4",
+  "core_release": "3.3.2",
+  "taxonomy": "hsk-topics/2.0.0",
+  "lesson_count": 17,
+  "existing_lesson_ids_preserved": 15,
+  "independent_character_lessons_unchanged": 2,
+  "unit_crosswalk": [
+    {
+      "source_unit": 1,
+      "communicative_focus": "Polite opening; language ability; American nationality",
+      "lesson_ids": [
+        "convm-greetings-politeness",
+        "convm-speaking-languages",
+        "convm-people-identity"
+      ],
+      "functions": [
+        "greeting",
+        "polite-question",
+        "can-speak",
+        "not-can-speak",
+        "nationality"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 2,
+      "communicative_focus": "Speaking a little; negative identity; performance of speech",
+      "lesson_ids": [
+        "convm-speaking-languages",
+        "convm-people-identity"
+      ],
+      "functions": [
+        "little",
+        "rhotic-variant",
+        "not-american",
+        "performance-complement"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 3,
+      "communicative_focus": "Encouraging language learners; contrast with but",
+      "lesson_ids": [
+        "convm-speaking-languages"
+      ],
+      "functions": [
+        "praise",
+        "contrast",
+        "speaking-ability"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 4,
+      "communicative_focus": "Chinese nationality; understanding; asking location",
+      "lesson_ids": [
+        "convm-people-identity",
+        "convm-understanding-clarification",
+        "convm-asking-directions"
+      ],
+      "functions": [
+        "china-nationality",
+        "not-understand",
+        "where-question",
+        "street-name"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 5,
+      "communicative_focus": "Finding named streets; knowing location; farewell",
+      "lesson_ids": [
+        "convm-asking-directions",
+        "convm-wants-intentions"
+      ],
+      "functions": [
+        "street-directions",
+        "know-dont-know",
+        "wants",
+        "farewell"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 6,
+      "communicative_focus": "Now or later; eating vs drinking; accepting/refusing",
+      "lesson_ids": [
+        "convm-wants-intentions",
+        "convm-food-drinks"
+      ],
+      "functions": [
+        "time-now",
+        "soon",
+        "food-vs-drink",
+        "refusal"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 7,
+      "communicative_focus": "Café versus restaurant; timing food/drinks",
+      "lesson_ids": [
+        "convm-places-to-meet",
+        "convm-food-drinks"
+      ],
+      "functions": [
+        "cafe",
+        "hotel-restaurant",
+        "meal",
+        "drink"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 8,
+      "communicative_focus": "Ordering drinks with classifiers; lunch and alternatives",
+      "lesson_ids": [
+        "convm-food-drinks",
+        "convm-choices-alternatives"
+      ],
+      "functions": [
+        "drink-order",
+        "one-two-glasses",
+        "lunch",
+        "either-or"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 9,
+      "communicative_focus": "Invitation to lunch; choosing between times",
+      "lesson_ids": [
+        "convm-with-someone",
+        "convm-clock-scheduling"
+      ],
+      "functions": [
+        "invitation",
+        "together",
+        "time-proposal",
+        "cannot"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 10,
+      "communicative_focus": "Offering and rejecting meeting times",
+      "lesson_ids": [
+        "convm-clock-scheduling",
+        "convm-places-to-meet"
+      ],
+      "functions": [
+        "time-alternatives",
+        "polite-refusal",
+        "different-hours"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 11,
+      "communicative_focus": "Today/tomorrow evening, dinner, refusal and alternative",
+      "lesson_ids": [
+        "convm-today-tomorrow-later",
+        "convm-clock-scheduling"
+      ],
+      "functions": [
+        "today-vs-tomorrow",
+        "dinner",
+        "alternative",
+        "ten-oclock"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 12,
+      "communicative_focus": "Invitation planning; price amounts in yuan",
+      "lesson_ids": [
+        "convm-phone-invitations",
+        "convm-money-prices",
+        "convm-numbers-arithmetic"
+      ],
+      "functions": [
+        "telephone",
+        "invitation",
+        "price-rmb",
+        "eleven-thirteen"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 13,
+      "communicative_focus": "Evening plans; dollars vs renminbi; absence of money",
+      "lesson_ids": [
+        "convm-phone-invitations",
+        "convm-money-prices"
+      ],
+      "functions": [
+        "evening-invitation",
+        "currency",
+        "have-no-have",
+        "prices"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 14,
+      "communicative_focus": "Newspapers; price confirmation; dollars vs yuan",
+      "lesson_ids": [
+        "convm-newspaper-shopping",
+        "convm-money-prices",
+        "convm-people-identity"
+      ],
+      "functions": [
+        "newspaper",
+        "a-not-a",
+        "price-eight-eighteen",
+        "no-rmb"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 15,
+      "communicative_focus": "Permission; offers of money or drinks; quantities",
+      "lesson_ids": [
+        "convm-permission-requests",
+        "convm-money-prices"
+      ],
+      "functions": [
+        "may-i",
+        "have-no-have",
+        "too-much",
+        "giving"
+      ],
+      "status": "covered-by-curated-objectives"
+    },
+    {
+      "source_unit": 16,
+      "communicative_focus": "Telephone invitation; too late; too much/not enough",
+      "lesson_ids": [
+        "convm-phone-invitations",
+        "convm-today-tomorrow-later",
+        "convm-money-prices",
+        "convm-numbers-arithmetic"
+      ],
+      "functions": [
+        "telephone-invitation",
+        "too-late",
+        "too-much",
+        "not-enough",
+        "two-digit-numbers"
+      ],
+      "status": "covered-by-curated-objectives"
+    }
+  ],
+  "high_confidence_study_report": {
+    "distinct_curated_candidates": 296,
+    "literal_term_covered": 252,
+    "literal_term_not_yet_covered": 44,
+    "not_covered": [
+      "一次",
+      "七块人民币",
+      "两块人民币",
+      "你会说吗",
+      "你可以吗",
+      "你想什么时候喝",
+      "你有人民币吗",
+      "你有没有啤酒",
+      "你有没有美国报纸",
+      "你有没有美金",
+      "你有没有茶",
+      "你有没有钱",
+      "你要美金吗",
+      "六块人民币",
+      "十一块人民币",
+      "十三块人民币",
+      "十九块人民币",
+      "十五块人民币",
+      "十六块人民币",
+      "十四块人民币",
+      "可是你会说普通话",
+      "可是你普通话说得很好",
+      "可是学院路在这儿",
+      "可是我会说普通话",
+      "可是我想吃一点东西",
+      "可是我想喝一点东西",
+      "可是我有啤酒",
+      "可是我没有人民币",
+      "可是我知道",
+      "太太",
+      "对不起请问",
+      "我不想去你那儿",
+      "我想吃晚饭",
+      "我有一点儿",
+      "我有人民币",
+      "我没有啤酒",
+      "我没有美金",
+      "我没有茶",
+      "是今天吗",
+      "是八点钟吗",
+      "请问你会说普通话吗",
+      "请问你会说英文吗",
+      "请问你是中国人吗",
+      "请问你有没有美国报纸"
+    ],
+    "excluded_transcript_fragments": {
+      "不起": "partial word from repetition exercise",
+      "这段": "narrator referring to a transcript segment",
+      "对话": "narrator label rather than teachable target",
+      "跟着": "narrator instruction follow along; not a target utterance",
+      "诺": "uncertain recognition of response particle",
+      "的": "ASR confuses 的 with complement 得",
+      "啊": "incidental filler in a pronunciation drill",
+      "听": "instructor drill command rather than a lesson-specific target",
+      "你是吗": "incomplete question without predicate",
+      "你有吗": "incomplete question without object",
+      "你有没有很多": "ungrammatical fragment without quantified object",
+      "给我的": "context-free fragment; give-to-me action taught in complete exchange",
+      "给你的": "context-free fragment; give-to-you action taught in complete exchange",
+      "是我是美国人": "ASR concatenation; affirmative nationality modeled elsewhere",
+      "我会说一点儿普通话": "semantically included; expression taught in original forms"
+    }
+  },
+  "coverage_claim": "Communicative functions plus vetted expressions; not literal reproduction of all timestamped drills or a certified audio-level transcription.",
+  "linguistic_review": "See the v1.1.4 linguistic audit and the corrected source crosswalk for one exact-to-equivalent change.",
+  "residual_literal_dispositions": [
+    {
+      "source_expression": "一次",
+      "status": "instructor_narration",
+      "lesson_id": null,
+      "coverage_evidence": "Narrative cue / named relationship, not a new learner task"
+    },
+    {
+      "source_expression": "七块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "两块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "你会说吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "ability question with 吗"
+    },
+    {
+      "source_expression": "你可以吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-permission-requests",
+      "coverage_evidence": "permission / possibility"
+    },
+    {
+      "source_expression": "你想什么时候喝",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-choices-alternatives",
+      "coverage_evidence": "asking when and choosing now or later"
+    },
+    {
+      "source_expression": "你有人民币吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-money-prices",
+      "coverage_evidence": "asking whether someone has renminbi"
+    },
+    {
+      "source_expression": "你有没有啤酒",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-newspaper-shopping",
+      "coverage_evidence": "有没有 availability question, substitution of product"
+    },
+    {
+      "source_expression": "你有没有美国报纸",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-newspaper-shopping",
+      "coverage_evidence": "asking newspaper availability"
+    },
+    {
+      "source_expression": "你有没有美金",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-money-prices",
+      "coverage_evidence": "availability of US dollars; 有没有 question taught"
+    },
+    {
+      "source_expression": "你有没有茶",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-newspaper-shopping",
+      "coverage_evidence": "有没有 availability question, substitution of item"
+    },
+    {
+      "source_expression": "你有没有钱",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-permission-requests",
+      "coverage_evidence": "有没有 plus money/possession"
+    },
+    {
+      "source_expression": "你要美金吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-money-prices",
+      "coverage_evidence": "asking whether a currency is wanted, yes/no question"
+    },
+    {
+      "source_expression": "六块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十一块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十三块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十九块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十五块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十六块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "十四块人民币",
+      "status": "number_substitution",
+      "lesson_id": "convm-numbers-arithmetic",
+      "coverage_evidence": "Productive number + 块 + 人民币 pattern, practised through prices"
+    },
+    {
+      "source_expression": "可是你会说普通话",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是你普通话说得很好",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是学院路在这儿",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我会说普通话",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我想吃一点东西",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我想喝一点东西",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我有啤酒",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我没有人民币",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "可是我知道",
+      "status": "compositional_contrast",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "可是 contrast modelled in multiple practical responses"
+    },
+    {
+      "source_expression": "太太",
+      "status": "instructor_narration",
+      "lesson_id": null,
+      "coverage_evidence": "Narrative cue / named relationship, not a new learner task"
+    },
+    {
+      "source_expression": "对不起请问",
+      "status": "polite_question_variant",
+      "lesson_id": "convm-greetings-politeness",
+      "coverage_evidence": "Polite opening followed by a question, practised in several source contexts"
+    },
+    {
+      "source_expression": "我不想去你那儿",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-places-to-meet",
+      "coverage_evidence": "refusing a suggested location"
+    },
+    {
+      "source_expression": "我想吃晚饭",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-today-tomorrow-later",
+      "coverage_evidence": "wanting dinner; inviting and accepting"
+    },
+    {
+      "source_expression": "我有一点儿",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-speaking-languages",
+      "coverage_evidence": "one small amount: 一点儿, also possession with 有"
+    },
+    {
+      "source_expression": "我有人民币",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-money-prices",
+      "coverage_evidence": "affirmative currency possession"
+    },
+    {
+      "source_expression": "我没有啤酒",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-choices-alternatives",
+      "coverage_evidence": "negative availability and alternative drinks"
+    },
+    {
+      "source_expression": "我没有美金",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-money-prices",
+      "coverage_evidence": "negative currency possession"
+    },
+    {
+      "source_expression": "我没有茶",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-choices-alternatives",
+      "coverage_evidence": "negative availability in a drink choice"
+    },
+    {
+      "source_expression": "是今天吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-today-tomorrow-later",
+      "coverage_evidence": "confirming the day"
+    },
+    {
+      "source_expression": "是八点钟吗",
+      "status": "communicative_equivalent",
+      "lesson_id": "convm-clock-scheduling",
+      "coverage_evidence": "confirming a proposed clock time"
+    },
+    {
+      "source_expression": "请问你会说普通话吗",
+      "status": "polite_question_variant",
+      "lesson_id": "convm-greetings-politeness",
+      "coverage_evidence": "Polite opening followed by a question, practised in several source contexts"
+    },
+    {
+      "source_expression": "请问你会说英文吗",
+      "status": "polite_question_variant",
+      "lesson_id": "convm-greetings-politeness",
+      "coverage_evidence": "Polite opening followed by a question, practised in several source contexts"
+    },
+    {
+      "source_expression": "请问你是中国人吗",
+      "status": "polite_question_variant",
+      "lesson_id": "convm-greetings-politeness",
+      "coverage_evidence": "Polite opening followed by a question, practised in several source contexts"
+    },
+    {
+      "source_expression": "请问你有没有美国报纸",
+      "status": "polite_question_variant",
+      "lesson_id": "convm-greetings-politeness",
+      "coverage_evidence": "Polite opening followed by a question, practised in several source contexts"
+    }
+  ],
+  "residual_disposition_counts": {
+    "instructor_narration": 2,
+    "number_substitution": 9,
+    "communicative_equivalent": 19,
+    "compositional_contrast": 9,
+    "polite_question_variant": 5
+  },
+  "semantic_review_summary": {
+    "source_units_mapped": 16,
+    "unique_curated_candidates": 296,
+    "literally_covered": 252,
+    "remaining_literal_variants_classified": 44,
+    "unclassified_high_confidence_candidates": 0,
+    "new_lessons_vs_coverage_v1_1_0": 0,
+    "new_questions_or_checkpoints_vs_coverage_v1_1_0": 0,
+    "note": "Mapping is by communicative function, not verbatim transcript reproduction. Original audio not independently reviewed."
+  },
+  "source_crosswalk_counts": {
+    "IN_CONTEXT": 103,
+    "FUNCTIONAL_VARIANT": 42,
+    "EXACT_ENTRY": 149,
+    "NARRATION_NOT_TARGET": 2
+  },
+  "expression_review_count": 441,
+  "regional_marker_count": 49,
+  "missing_unique_conversational_targets_curated": 0,
+  "qualification": "No independent original-audio or native-speaker certification; curated source candidates only."
+}

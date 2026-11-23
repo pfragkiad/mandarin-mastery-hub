@@ -22,3 +22,19 @@
 ## Change scope
 
 This attribution correction updates **this report only**. Canonical lesson JSON, HTML and Markdown content are preserved from the latest available taxonomy-synchronized lesson. The curriculum placement is unchanged.
+
+## Coverage expansion (2026-11-23)
+
+Additional independently authored situational examples and/or expression review added under Core v3.3.1. Original lesson ID and checkpoint identities preserved. New optional activity checkpoints do not invalidate prior completion. Source thematic mapping is documented in outer `COVERAGE_AUDIT.json`, not in learner-facing lesson fields.
+
+## Editorial patch v1.1.2
+
+Durable expression review IDs and northern-style erhua markers are in the outer expression index and regional marker sidecar. Source transcript material remains separate. No checkpoint or question identities changed.
+
+## Pattern/example de-duplication — coverage v1.1.3
+
+Pattern headings are now non-spoken structural formulas, separate from the unchanged spoken examples. Contextual example notes have been differentiated from pattern explanations. Lesson, activity, checkpoint, and catalog IDs are preserved. No source dialogue or speaking prompt was changed.
+
+## Linguistic and export review v1.1.4
+
+Standardized learner-facing pinyin orthography and American-English spelling. Editorially revised 2 source-derived review phrases to more natural conversational usage where needed. The expression-index English export is independently corrected. Lesson, block, question, checkpoint and curriculum IDs remain stable; no lesson-format changes.

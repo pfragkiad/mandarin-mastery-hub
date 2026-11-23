@@ -1,6 +1,7 @@
 {
-  "curriculum_id": "conversational-mandarin",
-  "lesson_records": [
+  "course_id": "conversational-mandarin",
+  "taxonomy_version": "hsk-topics/2.0.0",
+  "lessons": [
     {
       "lesson_id": "convm-greetings-politeness",
       "title": "Greetings and Politeness",
@@ -22,7 +23,7 @@
         "people-identity",
         "family-relationships"
       ],
-      "term_count": 17,
+      "term_count": 20,
       "dialogue_turn_count": 4,
       "subtopic_ids": []
     },
@@ -36,8 +37,8 @@
         "communication-social",
         "daily-actions"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 22,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -49,7 +50,7 @@
         "communication-social",
         "reference-questions"
       ],
-      "term_count": 13,
+      "term_count": 15,
       "dialogue_turn_count": 4,
       "subtopic_ids": []
     },
@@ -62,8 +63,8 @@
         "places-directions",
         "travel-transport"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 21,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -75,8 +76,8 @@
         "grammar-functions",
         "daily-actions"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 21,
+      "dialogue_turn_count": 8,
       "subtopic_ids": [
         "everyday-routines"
       ]
@@ -90,8 +91,8 @@
         "food-drink",
         "shopping-money"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 23,
+      "dialogue_turn_count": 8,
       "subtopic_ids": [
         "shopping-commerce"
       ]
@@ -106,8 +107,8 @@
         "places-directions",
         "food-drink"
       ],
-      "term_count": 15,
-      "dialogue_turn_count": 4,
+      "term_count": 19,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -120,7 +121,7 @@
         "family-relationships",
         "daily-actions"
       ],
-      "term_count": 12,
+      "term_count": 16,
       "dialogue_turn_count": 4,
       "subtopic_ids": []
     },
@@ -133,8 +134,8 @@
         "time-calendar",
         "numbers-quantities"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 29,
+      "dialogue_turn_count": 9,
       "subtopic_ids": []
     },
     {
@@ -146,8 +147,8 @@
         "time-calendar",
         "daily-actions"
       ],
-      "term_count": 17,
-      "dialogue_turn_count": 4,
+      "term_count": 20,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -160,8 +161,8 @@
         "communication-social",
         "food-drink"
       ],
-      "term_count": 14,
-      "dialogue_turn_count": 4,
+      "term_count": 18,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -173,8 +174,8 @@
         "shopping-money",
         "numbers-quantities"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 29,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -185,8 +186,8 @@
       "topic_ids": [
         "numbers-quantities"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 26,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
     },
     {
@@ -198,10 +199,41 @@
         "grammar-functions",
         "communication-social"
       ],
-      "term_count": 16,
-      "dialogue_turn_count": 4,
+      "term_count": 21,
+      "dialogue_turn_count": 8,
       "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-phone-invitations",
+      "title": "Arranging Plans by Telephone",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.zip",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social",
+        "time-calendar",
+        "family-relationships"
+      ],
+      "term_count": 14,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-newspaper-shopping",
+      "title": "Buying a Newspaper",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.zip",
+      "primary_topic_id": "shopping-money",
+      "topic_ids": [
+        "shopping-money",
+        "numbers-quantities",
+        "reference-questions",
+        "communication-social"
+      ],
+      "term_count": 12,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": [
+        "shopping-commerce",
+        "money-finance"
+      ]
     }
-  ],
-  "taxonomy_version": "hsk-topics/2.0.0"
+  ]
 }

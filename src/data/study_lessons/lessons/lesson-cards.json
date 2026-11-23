@@ -13,22 +13,22 @@
     },
     "convm-asking-directions": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-choices-alternatives": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-clock-scheduling": {
       "required": 10,
-      "optional": 0,
+      "optional": 3,
       "estimated_minutes": 15
     },
     "convm-food-drinks": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-greetings-politeness": {
@@ -38,37 +38,47 @@
     },
     "convm-money-prices": {
       "required": 10,
-      "optional": 0,
+      "optional": 2,
       "estimated_minutes": 15
+    },
+    "convm-newspaper-shopping": {
+      "required": 11,
+      "optional": 0,
+      "estimated_minutes": 20
     },
     "convm-numbers-arithmetic": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-people-identity": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-permission-requests": {
       "required": 10,
-      "optional": 0,
+      "optional": 2,
       "estimated_minutes": 15
+    },
+    "convm-phone-invitations": {
+      "required": 11,
+      "optional": 0,
+      "estimated_minutes": 20
     },
     "convm-places-to-meet": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-speaking-languages": {
       "required": 10,
-      "optional": 0,
+      "optional": 3,
       "estimated_minutes": 15
     },
     "convm-today-tomorrow-later": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-understanding-clarification": {
@@ -78,7 +88,7 @@
     },
     "convm-wants-intentions": {
       "required": 10,
-      "optional": 0,
+      "optional": 1,
       "estimated_minutes": 15
     },
     "convm-with-someone": {

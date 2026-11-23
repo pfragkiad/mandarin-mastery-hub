@@ -32,7 +32,8 @@
   },
   "learning_objectives": [
     "Express what you would like to eat or drink.",
-    "Offer a simple choice of drinks."
+    "Offer a simple choice of drinks.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -48,6 +49,7 @@
     "么": "Characters:么",
     "什": "Characters:什",
     "们": "Characters:们",
+    "位": "Characters:位",
     "你": "Characters:你",
     "几": "Characters:几",
     "午": "Characters:午",
@@ -59,25 +61,31 @@
     "喝": "Characters:喝",
     "好": "Characters:好",
     "店": "Characters:店",
+    "您": "Characters:您",
     "想": "Characters:想",
     "我": "Characters:我",
+    "数": "Characters:数",
+    "料": "Characters:料",
     "是": "Characters:是",
     "杯": "Characters:杯",
     "点": "Characters:点",
+    "的": "Characters:的",
     "茶": "Characters:茶",
     "西": "Characters:西",
     "要": "Characters:要",
     "谢": "Characters:谢",
     "还": "Characters:还",
     "酒": "Characters:酒",
-    "饭": "Characters:饭"
+    "量": "Characters:量",
+    "饭": "Characters:饭",
+    "饮": "Characters:饮"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to choose a drink, order the number of cups you want, and ask for food. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to choose a drink, order the number of cups you want, and ask for food. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -113,29 +121,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你想喝茶还是啤酒？",
-        "pattern_pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
+        "pattern_hanzi": "想喝 + 饮料 + 还是 + 饮料？",
+        "pattern_pinyin": "xiǎng hē + yǐnliào + háishi + yǐnliào?",
         "function_en": "Use 还是 (háishi) to present alternatives in a question.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你想喝茶还是啤酒？",
           "pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
           "english": "Would you like tea or beer?",
-          "teaching_note": "Use 还是 (háishi) to present alternatives in a question."
+          "teaching_note": "Offer two drinks and let the listener choose one."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我要两杯茶。",
-        "pattern_pinyin": "wǒ yào liǎng bēi chá.",
+        "pattern_hanzi": "数量 + 杯 + 饮料",
+        "pattern_pinyin": "shùliàng + bēi + yǐnliào",
         "function_en": "杯 (bēi) counts cups or glasses of drinks.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我要两杯茶。",
           "pinyin": "wǒ yào liǎng bēi chá.",
           "english": "I want two cups of tea.",
-          "teaching_note": "杯 (bēi) counts cups or glasses of drinks."
+          "teaching_note": "Use the classifier when ordering a specific number of cups."
         }
       },
       {
@@ -221,6 +229,41 @@
             "hanzi": "我想喝一点东西",
             "pinyin": "wǒ xiǎng hē yìdiǎn dōngxi",
             "meaning_en": "I would like something to drink."
+          },
+          {
+            "hanzi": "两杯",
+            "pinyin": "liǎng bēi",
+            "meaning_en": "two cups or glasses"
+          },
+          {
+            "hanzi": "喝啤酒",
+            "pinyin": "hē píjiǔ",
+            "meaning_en": "drink beer"
+          },
+          {
+            "hanzi": "喝茶",
+            "pinyin": "hē chá",
+            "meaning_en": "drink tea"
+          },
+          {
+            "hanzi": "啤酒",
+            "pinyin": "píjiǔ",
+            "meaning_en": "beer"
+          },
+          {
+            "hanzi": "一杯",
+            "pinyin": "yì bēi",
+            "meaning_en": "one cup/glass"
+          },
+          {
+            "hanzi": "想要",
+            "pinyin": "xiǎng yào",
+            "meaning_en": "would like; want"
+          },
+          {
+            "hanzi": "我想喝啤酒",
+            "pinyin": "wǒ xiǎng hē píjiǔ",
+            "meaning_en": "I would like to drink beer."
           }
         ]
       },
@@ -228,6 +271,37 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Order a drink, specify the number of glasses, and choose between two options."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Ordering Two Drinks",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "您好，两位想喝什么？",
+            "pinyin": "Nín hǎo, liǎng wèi xiǎng hē shénme?",
+            "english": "Hello, what would you two like to drink?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想要一杯茶。",
+            "pinyin": "Wǒ xiǎng yào yì bēi chá.",
+            "english": "I would like a cup of tea."
+          },
+          {
+            "speaker": "C",
+            "hanzi": "我要两杯啤酒。",
+            "pinyin": "Wǒ yào liǎng bēi píjiǔ.",
+            "english": "I would like two glasses of beer."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "好的。还想吃点什么吗？",
+            "pinyin": "Hǎo de. Hái xiǎng chī diǎn shénme ma?",
+            "english": "All right. Would you like something to eat too?"
+          }
+        ]
       }
     ],
     "practice": {
@@ -267,7 +341,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — Would you like tea or beer?\nB: 我想喝茶。 (Wǒ xiǎng hē chá.) — I would like tea.\nA: 要几杯？ (Yào jǐ bēi?) — How many cups?\nB: 两杯茶，谢谢。 (Liǎng bēi chá, xièxie.) — Two cups of tea, thank you.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -297,7 +371,7 @@
           {
             "id": "convm-food-drinks--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -384,6 +458,20 @@
             "label": "Order a drink, specify the number of glasses, and choose between two options.",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-food-drinks--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-food-drinks--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Ordering Two Drinks",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
           }
         ]
       }

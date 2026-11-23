@@ -1,8 +1,8 @@
 # Mandarin Tutor — Lesson Creator Authoring Guidelines
 
-**Policy version:** 1.0.0  
-**Compatibility:** Core Project Sources v3.3.1; unchanged topic, character, general-lesson, and curriculum schema versions  
-**Status:** Adopted in Core Project Sources v3.3.1 (editorial policy v1.0.0)  
+**Policy version:** 1.0.1  
+**Compatibility:** Core Project Sources v3.3.2; unchanged topic, character, general-lesson, and curriculum schema versions  
+**Status:** Updated in Core Project Sources v3.3.2 (editorial policy v1.0.1)  
 **Scope:** HSK Levels 1–9, independent Conversational Mandarin, supplementary grammar, pronunciation, reading, writing, listening, and communication lessons
 
 ## 1. Purpose and precedence
@@ -88,6 +88,19 @@ The official HSK topic hierarchy and its mapping to the shared taxonomy are sepa
 - Use local Kai-friendly font stacks in generated learner HTML. Never distribute font files or depend on paid or remote font services.
 - Populate `catalog_character_refs` with exact IDs from `catalog_ids.json` for every catalog-resolvable Chinese character in the complete learner-facing lesson. Never invent IDs.
 
+## 6A. Grammar-pattern cards: distinguish structure and spoken example
+
+In `mandarin-general-lesson/3.2.0` grammar blocks, `pattern_hanzi` / `pattern_pinyin` and `example.hanzi` / `example.pinyin` serve **different instructional purposes**:
+
+- **Pattern fields:** Show a reusable structural formula (e.g. `陈述句 + 吗？` / `chénshùjù + ma?`), not a duplicate of the sample sentence. A structure may contain grammatical labels and operators such as `+` and is **never an audio/TTS input**.
+- **Example fields:** Supply a complete, natural, pronounceable Mandarin utterance, with accurately aligned pinyin and idiomatic English. Only this spoken example is eligible for an example audio button.
+- **`function_en`:** Explain the rule or communicative function of the grammatical pattern in one concise sentence.
+- **`example.teaching_note`:** Add genuinely new context, usage nuance, pronunciation information, register, or response guidance. **Do not** copy or trivially paraphrase `function_en`. Do not invent unnecessary explanatory prose merely to fill the field.
+- **No placeholders in audio-bearing fields:** Ban `……`, `...`, `<placeholder>`, grammatical operators (`+`), or unfinished utterances from concrete sentence/example/turn audio text. Structural formulas are allowed **only** in pattern fields explicitly rendered as non-spoken.
+- **Validation gate:** Reject generated lessons if normalized `pattern_hanzi == example.hanzi`, or normalized `function_en == example.teaching_note`. Separately flag near-duplicates for manual review. Check every grammar block across the complete lesson package, not only a sample card.
+- **Frontend defense:** Label the two portions **Grammar structure** and **Example**; disable audio for structural formulas and avoid duplicating explanatory notes. A presentation fallback does not repair duplicated authored JSON.
+- **Compatibility:** The above rules change authoring *quality*, not the JSON schema. Never rename fields or change existing lesson, block, example, question or checkpoint IDs when fixing repeated copy.
+
 ## 7. Lesson completeness and packaging
 
 - For a *full HSK level package*, cover **100% of the authoritative level vocabulary source**, partitioned by topic/subtopic and any necessary Part 1/Part 2 lesson subdivisions. A one-lesson sample is not a full level deliverable.
@@ -121,8 +134,8 @@ The official HSK topic hierarchy and its mapping to the shared taxonomy are sepa
 
 ## 9. Relationship to Core release policy
 
-This authoring policy is included in **Core Project Sources v3.3.1**. It is an editorial/release-quality policy, not a new JSON Schema. The topic-lesson schema remains `mandarin-topic-lesson/3.3.0`; character-lesson schema remains `mandarin-character-lesson/3.2.0`; general-lesson schema remains `mandarin-general-lesson/3.2.0`.
+This authoring policy is included in **Core Project Sources v3.3.2**. It is an editorial/release-quality policy, not a new JSON Schema. The topic-lesson schema remains `mandarin-topic-lesson/3.3.0`; character-lesson schema remains `mandarin-character-lesson/3.2.0`; general-lesson schema remains `mandarin-general-lesson/3.2.0`.
 
 The Core **package release** follows Semantic Versioning (major = incompatible format or validation contract; minor = backward-compatible format addition; patch = no lesson-format contract change, including policy, documentation, template-copy, and generator-instruction improvements). Changes that make previously valid lessons invalid are assessed for breaking compatibility, even if JSON field names stay unchanged.
 
-The **policy version** remains independently versioned; `1.0.0` is the first adopted release. Course vocabulary and taxonomy versions are separate axes and must be pinned explicitly. A Markdown file does not automatically run as an Agent Skill: a lesson-authoring agent must be directed to read and apply this file. Legacy lessons are not silently rewritten by the policy.
+The **policy version** remains independently versioned; `1.0.0` was first adopted in Core v3.3.1 and `1.0.1` adds grammar-card de-duplication and TTS safeguards. Course vocabulary and taxonomy versions are separate axes and must be pinned explicitly. A Markdown file does not automatically run as an Agent Skill: a lesson-authoring agent must be directed to read and apply this file. Legacy lessons are not silently rewritten by the policy.

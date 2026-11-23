@@ -40,7 +40,9 @@
   "catalog_character_refs": {
     "不": "Characters:不",
     "中": "Characters:中",
+    "主": "Characters:主",
     "人": "Characters:人",
+    "份": "Characters:份",
     "位": "Characters:位",
     "你": "Characters:你",
     "先": "Characters:先",
@@ -52,19 +54,23 @@
     "姐": "Characters:姐",
     "小": "Characters:小",
     "我": "Characters:我",
+    "明": "Characters:明",
     "是": "Characters:是",
     "李": "Characters:李",
     "王": "Characters:王",
     "生": "Characters:生",
     "美": "Characters:美",
-    "这": "Characters:这"
+    "语": "Characters:语",
+    "身": "Characters:身",
+    "这": "Characters:这",
+    "陈": "Characters:陈"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to introduce yourself, ask about someone’s nationality, and respond to a follow-up question. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to introduce yourself, ask about someone’s nationality, and respond to a follow-up question. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -100,29 +106,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我是中国人。",
-        "pattern_pinyin": "wǒ shì Zhōngguó rén.",
+        "pattern_hanzi": "主语 + 是 + 身份",
+        "pattern_pinyin": "zhǔyǔ + shì + shēnfèn",
         "function_en": "Use 是 (shì) to identify nationality or identity.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我是中国人。",
           "pinyin": "wǒ shì Zhōngguó rén.",
           "english": "I am Chinese.",
-          "teaching_note": "Use 是 (shì) to identify nationality or identity."
+          "teaching_note": "Replace the nationality with another identity to introduce yourself or someone else."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我不是美国人。",
-        "pattern_pinyin": "wǒ bú shì Měiguó rén.",
+        "pattern_hanzi": "主语 + 不是 + 身份",
+        "pattern_pinyin": "zhǔyǔ + bú shì + shēnfèn",
         "function_en": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我不是美国人。",
           "pinyin": "wǒ bú shì Měiguó rén.",
           "english": "I am not American.",
-          "teaching_note": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì)."
+          "teaching_note": "The spoken reading changes to bú shì before fourth-tone 是 (shì)."
         }
       },
       {
@@ -213,6 +219,21 @@
             "hanzi": "我是",
             "pinyin": "wǒ shì",
             "meaning_en": "I am; it is me."
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it?; positive-negative question form"
+          },
+          {
+            "hanzi": "李明",
+            "pinyin": "Lǐ Míng",
+            "meaning_en": "Li Ming; personal name"
+          },
+          {
+            "hanzi": "陈小姐",
+            "pinyin": "Chén xiǎojiě",
+            "meaning_en": "Miss Chen"
           }
         ]
       },
@@ -220,6 +241,20 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”"
+      },
+      {
+        "id": "source-coverage-grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "主语 + 是不是 + 身份？",
+        "pattern_pinyin": "zhǔyǔ + shì bú shì + shēnfèn?",
+        "function_en": "是不是 (shì bú shì) is a positive-negative question; normally omit final 吗 (ma) here.",
+        "example": {
+          "id": "source-coverage-grammar-1--example",
+          "hanzi": "你是不是中国人？",
+          "pinyin": "Nǐ shì bú shì Zhōngguó rén?",
+          "english": "Are you Chinese?",
+          "teaching_note": "A direct response may begin with 是 (shì) or 不是 (bú shì)."
+        }
       }
     ],
     "practice": {
@@ -259,7 +294,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 你好！我是美国人。你呢？ (Nǐ hǎo! Wǒ shì Měiguó rén. Nǐ ne?) — Hello! I am American. And you?\nB: 我是中国人。 (Wǒ shì Zhōngguó rén.) — I am Chinese.\nA: 你是美国人吗？ (Nǐ shì Měiguó rén ma?) — Are you American?\nB: 不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.) — No, I am Chinese.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -289,7 +324,7 @@
           {
             "id": "convm-people-identity--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -376,6 +411,20 @@
             "label": "Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-people-identity--section--extended-grammar",
+        "section_key": "extended-grammar",
+        "title": "Extended Grammar",
+        "checkpoints": [
+          {
+            "id": "convm-people-identity--extended-grammar--source-coverage-grammar-1",
+            "kind": "section",
+            "label": "practice the pattern: Are you Chinese?",
+            "optional": true,
+            "target_id": "source-coverage-grammar-1"
           }
         ]
       }

@@ -1,19 +1,45 @@
 {
   "course_id": "conversational-mandarin",
-  "core_release": "3.3.1",
-  "topic_registry": "hsk-topics/2.0.0",
+  "core_release": "3.3.2",
+  "taxonomy_version": "hsk-topics/2.0.0",
   "schema_versions": [
     "mandarin-general-lesson/3.2.0"
   ],
-  "lesson_count": 15,
-  "dialogue_turn_count": 60,
-  "practice_question_count": 60,
-  "required_checkpoints": 150,
-  "optional_checkpoints": 0,
-  "speaking_question_count": 15,
-  "speaking_model_turn_count": 70,
-  "editorial_check": "all 15 model speaking answers address entire task; speakable pattern text without ellipses, variables, arithmetic operators or slashes",
-  "schema_validation": "passed 15/15 using Core v3.3.1 schemas and validate_core.py with catalog_ids.json",
-  "stable_ids": "unchanged: 15 lesson IDs, all existing question IDs, section IDs, checkpoint IDs, checkpoint targets, optional/required flags and curriculum placements",
-  "editorial_status": "draft; instructional text has not received native-speaker review"
+  "lesson_count": 17,
+  "dialogue_turn_count": 121,
+  "practice_question_count": 68,
+  "required_checkpoints": 172,
+  "optional_checkpoints": 18,
+  "crosswalk_source_units": 16,
+  "source_audit_candidates": 296,
+  "literal_candidate_coverage": 252,
+  "remaining_literal_variants_classified": 44,
+  "unclassified_candidate_review": 0,
+  "identity": "15 legacy lessons and all original question/checkpoint/placement identities preserved",
+  "review_status": "structural/semantic source-transcript audit completed; original audio and native-speaker review outstanding",
+  "coverage_revision": "1.1.4",
+  "expression_review_count": 441,
+  "region_marker_count": 49,
+  "unclassified_conversational_targets": 0,
+  "grammar_pattern_count": 43,
+  "duplicate_pattern_example_remaining": 0,
+  "duplicate_function_note_remaining": 0,
+  "grammar_pattern_authoring_status": "43 structural formulas and distinct contextual notes; concrete spoken examples unchanged",
+  "additional_catalog_character_refs_for_structural_formulas": 89,
+  "linguistic_review": {
+    "grammar_example_gloss_export_repairs": 38,
+    "model_answer_placeholder_gloss_repairs": 28,
+    "punctuation_alignment_repairs": 33,
+    "naturalness_phrase_revisions": 5,
+    "source_crosswalk_exact_to_equivalent": 1,
+    "source_crosswalk_counts_current": {
+      "IN_CONTEXT": 103,
+      "FUNCTIONAL_VARIANT": 42,
+      "EXACT_ENTRY": 149,
+      "NARRATION_NOT_TARGET": 2
+    },
+    "expression_id_count_preserved": 441,
+    "pinyin_presentation_standard": "tone-marked with neutral-tone A-not-A 不; ASCII syllable apostrophe",
+    "american_english_spelling": "practice"
+  }
 }

@@ -2,15 +2,16 @@
 
 Learn to greet someone, ask a polite question, and thank them for their answer.
 
+*Greetings, simple questions, and thanks*
+
 ## Learning objectives
 
 - Start a polite conversation.
-
 - Greet, thank, and close a short exchange.
 
-## Explanation
+## Study guidance
 
-Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practice the patterns and speak aloud.
 
 ## Model conversation
 
@@ -22,67 +23,70 @@ Learn to greet someone, ask a polite question, and thank them for their answer. 
 
 **B:** 很好，谢谢！ (Hěn hǎo, xièxie!) — Very well, thank you!
 
-## Grammar Pattern
+## Grammar structure and spoken example
 
-**Pattern:** 你好吗？ (nǐ hǎo ma?)
+**陈述句 + 吗？** (chénshùjù + ma?)
 
 The neutral-tone question particle 吗 (ma) can form a yes–no question.
 
-**你好吗？**
-*nǐ hǎo ma?*
-How are you?
-**Usage:** The neutral-tone question particle 吗 (ma) can form a yes–no question.
+你好吗？ (nǐ hǎo ma?) — How are you?
+This example is a friendly check on how the other person is doing.
 
-## Grammar Pattern
+## Grammar structure and spoken example
 
-**Pattern:** 请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?)
+**请问 + 问题** (qǐngwèn + wèntí)
 
 A polite way to introduce a request for information.
 
-**请问，现在几点钟？**
-*Qǐngwèn, xiànzài jǐ diǎn zhōng?*
-Excuse me, what time is it?
-**Usage:** A polite way to introduce a request for information.
+请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Excuse me, what time is it?
+Use this opener when politely approaching someone you do not know.
 
-## Review Set
+## Key expressions and vocabulary
 
-你好 (nǐ hǎo) — Hello.
+- 你好 (nǐ hǎo) — Hello.
+- 你好吗 (nǐ hǎo ma) — How are you?
+- 很好 (hěn hǎo) — Very well.
+- 对不起 (duìbuqǐ) — Excuse me; sorry.
+- 请问 (qǐngwèn) — Excuse me, may I ask
+- 谢谢 (xièxie) — Thank you.
+- 谢谢你 (xièxie nǐ) — Thank you.
+- 不客气 (bú kèqi) — You’re welcome.
+- 再见 (zàijiàn) — Goodbye.
+- 明天见 (míngtiān jiàn) — See you tomorrow.
 
-你好吗 (nǐ hǎo ma) — How are you?
-
-很好 (hěn hǎo) — Very well.
-
-对不起 (duìbuqǐ) — Excuse me; sorry.
-
-请问 (qǐngwèn) — Excuse me, may I ask
-
-谢谢 (xièxie) — Thank you.
-
-谢谢你 (xièxie nǐ) — Thank you.
-
-不客气 (bú kèqi) — You’re welcome.
-
-再见 (zàijiàn) — Goodbye.
-
-明天见 (míngtiān jiàn) — See you tomorrow.
-
-## Explanation
+## Study guidance
 
 Speaking task: Greet a stranger politely, ask a simple question, then thank them.
 
 ## Practice
 
-**Comprehension:** After being asked how they are, how does speaker B respond?
-**Answer:** 很好，谢谢！ (Hěn hǎo, xièxie!) — Very well, thank you!. Check the model dialogue and identify the relevant response.
+**Question 1 (comprehension):** After being asked how they are, how does speaker B respond?
 
-**Production:** Translate into Mandarin: Excuse me; sorry.
-**Answer:** 对不起 (duìbuqǐ). One model answer; another natural equivalent may be acceptable.
+**Model answer:**
+很好，谢谢！ (Hěn hǎo, xièxie!) — Very well, thank you!
 
-**Production:** Use 请问 (qǐngwèn) to ask politely what time it is.
-**Answer:** 请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Excuse me, what time is it?. One natural model response; alternatives that express the same meaning are possible.
+Check the model dialogue and identify the relevant response.
 
-**Production:** Greet a stranger politely, ask a simple question, then thank them.
-**Answer:** A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?  
-B: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o’clock now.  
-A: 谢谢！ (Xièxie!) — Thank you!  
-B: 不客气！ (Bú kèqi!) — You are welcome!. Complete sample role-play. Practise both speakers, then substitute your own details.
+**Question 2 (production):** Translate into Mandarin: Excuse me; sorry.
+
+**Model answer:**
+对不起 (duìbuqǐ)
+
+One model answer; another natural equivalent may be acceptable.
+
+**Question 3 (production):** Use 请问 (qǐngwèn) to ask politely what time it is.
+
+**Model answer:**
+请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Excuse me, what time is it?
+
+One natural model response; alternatives that express the same meaning are possible.
+
+**Question 4 (production):** Greet a stranger politely, ask a simple question, then thank them.
+
+**Model answer:**
+A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?
+B: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o'clock now.
+A: 谢谢！ (Xièxie!) — Thank you!
+B: 不客气！ (Bú kèqi!) — You are welcome!
+
+Complete sample role-play. practice both speakers, then substitute your own details.

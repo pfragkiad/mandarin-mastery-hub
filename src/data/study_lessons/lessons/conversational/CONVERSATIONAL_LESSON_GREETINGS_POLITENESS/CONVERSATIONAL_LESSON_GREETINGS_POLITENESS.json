@@ -42,6 +42,7 @@
     "你": "Characters:你",
     "再": "Characters:再",
     "几": "Characters:几",
+    "句": "Characters:句",
     "吗": "Characters:吗",
     "在": "Characters:在",
     "天": "Characters:天",
@@ -57,15 +58,18 @@
     "请": "Characters:请",
     "谢": "Characters:谢",
     "起": "Characters:起",
+    "述": "Characters:述",
     "钟": "Characters:钟",
-    "问": "Characters:问"
+    "问": "Characters:问",
+    "陈": "Characters:陈",
+    "题": "Characters:题"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -101,29 +105,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你好吗？",
-        "pattern_pinyin": "nǐ hǎo ma?",
+        "pattern_hanzi": "陈述句 + 吗？",
+        "pattern_pinyin": "chénshùjù + ma?",
         "function_en": "The neutral-tone question particle 吗 (ma) can form a yes–no question.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你好吗？",
           "pinyin": "nǐ hǎo ma?",
           "english": "How are you?",
-          "teaching_note": "The neutral-tone question particle 吗 (ma) can form a yes–no question."
+          "teaching_note": "This example is a friendly check on how the other person is doing."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "请问，现在几点钟？",
-        "pattern_pinyin": "Qǐngwèn, xiànzài jǐ diǎn zhōng?",
+        "pattern_hanzi": "请问 + 问题",
+        "pattern_pinyin": "qǐngwèn + wèntí",
         "function_en": "A polite way to introduce a request for information.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "请问，现在几点钟？",
           "pinyin": "Qǐngwèn, xiànzài jǐ diǎn zhōng?",
           "english": "Excuse me, what time is it?",
-          "teaching_note": "A polite way to introduce a request for information."
+          "teaching_note": "Use this opener when politely approaching someone you do not know."
         }
       },
       {
@@ -224,8 +228,8 @@
           "prompt": "Greet a stranger politely, ask a simple question, then thank them.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?\nB: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o’clock now.\nA: 谢谢！ (Xièxie!) — Thank you!\nB: 不客气！ (Bú kèqi!) — You are welcome!",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "answer": "A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?\nB: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o'clock now.\nA: 谢谢！ (Xièxie!) — Thank you!\nB: 不客气！ (Bú kèqi!) — You are welcome!",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -255,7 +259,7 @@
           {
             "id": "convm-greetings-politeness--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }

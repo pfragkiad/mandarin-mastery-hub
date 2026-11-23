@@ -131,11 +131,11 @@ describe('course lessons on word cards', () => {
 });
 
 describe('Conversational Mandarin course', () => {
-  it('places its 15 lessons in manifest order, resolves every placement and teaches no HSK words', () => {
+  it('places its 17 lessons in manifest order, resolves every placement and teaches no HSK words', () => {
     const conv = courses.find(c => c.id === 'conversational-mandarin');
     expect(conv).toBeDefined();
     const flat = sectionPlacements(conv!.sections[0]!);
-    expect(flat.map(p => p.lesson.id)).toEqual(['convm-greetings-politeness', 'convm-people-identity', 'convm-speaking-languages', 'convm-understanding-clarification', 'convm-asking-directions', 'convm-wants-intentions', 'convm-food-drinks', 'convm-places-to-meet', 'convm-with-someone', 'convm-clock-scheduling', 'convm-today-tomorrow-later', 'convm-choices-alternatives', 'convm-money-prices', 'convm-numbers-arithmetic', 'convm-permission-requests']);
+    expect(flat.map(p => p.lesson.id)).toEqual(['convm-greetings-politeness', 'convm-people-identity', 'convm-speaking-languages', 'convm-understanding-clarification', 'convm-asking-directions', 'convm-wants-intentions', 'convm-food-drinks', 'convm-places-to-meet', 'convm-with-someone', 'convm-clock-scheduling', 'convm-today-tomorrow-later', 'convm-choices-alternatives', 'convm-money-prices', 'convm-numbers-arithmetic', 'convm-permission-requests', 'convm-phone-invitations', 'convm-newspaper-shopping']);
     expect(unresolvedPlacements).toEqual([]);
     expect(flat.every(p => p.introducedEntryIds.length === 0 && p.reviewedEntryIds.length === 0)).toBe(true);
     expect(projectIndependentLessons.some(l => l.id.startsWith('convm-'))).toBe(false);

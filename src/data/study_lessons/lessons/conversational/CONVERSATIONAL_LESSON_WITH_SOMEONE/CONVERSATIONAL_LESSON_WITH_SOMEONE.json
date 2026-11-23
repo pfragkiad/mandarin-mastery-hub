@@ -42,24 +42,35 @@
     "一": "Characters:一",
     "不": "Characters:不",
     "东": "Characters:东",
+    "主": "Characters:主",
     "也": "Characters:也",
+    "人": "Characters:人",
+    "今": "Characters:今",
     "们": "Characters:们",
+    "作": "Characters:作",
     "你": "Characters:你",
     "儿": "Characters:儿",
+    "动": "Characters:动",
     "午": "Characters:午",
     "去": "Characters:去",
+    "友": "Characters:友",
     "吃": "Characters:吃",
     "吗": "Characters:吗",
     "吧": "Characters:吧",
     "哪": "Characters:哪",
     "喝": "Characters:喝",
+    "天": "Characters:天",
+    "太": "Characters:太",
     "好": "Characters:好",
     "店": "Characters:店",
     "想": "Characters:想",
     "我": "Characters:我",
     "晚": "Characters:晚",
+    "朋": "Characters:朋",
     "点": "Characters:点",
+    "茶": "Characters:茶",
     "西": "Characters:西",
+    "语": "Characters:语",
     "谁": "Characters:谁",
     "起": "Characters:起",
     "跟": "Characters:跟",
@@ -70,7 +81,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to invite someone for lunch, accept or decline, and agree on a place to eat. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to invite someone for lunch, accept or decline, and agree on a place to eat. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -106,29 +117,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我想跟你一起吃饭。",
-        "pattern_pinyin": "wǒ xiǎng gēn nǐ yìqǐ chīfàn.",
+        "pattern_hanzi": "跟 + 人 + 一起 + 动作",
+        "pattern_pinyin": "gēn + rén + yìqǐ + dòngzuò",
         "function_en": "跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我想跟你一起吃饭。",
           "pinyin": "wǒ xiǎng gēn nǐ yìqǐ chīfàn.",
           "english": "I would like to eat with you.",
-          "teaching_note": "跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together."
+          "teaching_note": "Use this when inviting someone to share a meal or activity."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我也想去。",
-        "pattern_pinyin": "wǒ yě xiǎng qù.",
+        "pattern_hanzi": "主语 + 也 + 想 + 动作",
+        "pattern_pinyin": "zhǔyǔ + yě + xiǎng + dòngzuò",
         "function_en": "也 (yě) adds agreement or another participant doing the same thing.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我也想去。",
           "pinyin": "wǒ yě xiǎng qù.",
           "english": "I want to go too.",
-          "teaching_note": "也 (yě) adds agreement or another participant doing the same thing."
+          "teaching_note": "A friendly response when you want to join someone else’s plan."
         }
       },
       {
@@ -171,9 +182,9 @@
             "meaning_en": "Would you like to have dinner with me?"
           },
           {
-            "hanzi": "我不想跟你一起喝",
-            "pinyin": "wǒ bù xiǎng gēn nǐ yìqǐ hē",
-            "meaning_en": "I do not want to drink with you."
+            "hanzi": "我今天不太想跟你一起喝茶",
+            "pinyin": "wǒ jīntiān bú tài xiǎng gēn nǐ yìqǐ hē chá",
+            "meaning_en": "I do not really feel like having tea with you today."
           },
           {
             "hanzi": "你想跟我一起喝一点东西吗",
@@ -186,14 +197,34 @@
             "meaning_en": "I would like to have dinner with you."
           },
           {
-            "hanzi": "你不想跟我一起喝",
-            "pinyin": "nǐ bù xiǎng gēn wǒ yìqǐ hē",
-            "meaning_en": "You do not want to drink with me."
+            "hanzi": "你今天不太想跟我一起喝茶",
+            "pinyin": "nǐ jīntiān bú tài xiǎng gēn wǒ yìqǐ hē chá",
+            "meaning_en": "You do not really feel like having tea with me today."
           },
           {
             "hanzi": "我想跟你一起喝一点东西",
             "pinyin": "wǒ xiǎng gēn nǐ yìqǐ hē yìdiǎn dōngxi",
             "meaning_en": "I would like to have a drink with you."
+          },
+          {
+            "hanzi": "一起",
+            "pinyin": "yìqǐ",
+            "meaning_en": "together"
+          },
+          {
+            "hanzi": "跟",
+            "pinyin": "gēn",
+            "meaning_en": "with; follow"
+          },
+          {
+            "hanzi": "跟朋友一起",
+            "pinyin": "gēn péngyou yìqǐ",
+            "meaning_en": "together with a friend"
+          },
+          {
+            "hanzi": "一起吃晚饭",
+            "pinyin": "yìqǐ chī wǎnfàn",
+            "meaning_en": "have dinner together"
           }
         ]
       },
@@ -240,7 +271,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — Would you like to have lunch with me?\nB: 好，我想跟你一起吃。 (Hǎo, wǒ xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you.\nA: 我们去哪儿吃？ (Wǒmen qù nǎr chī?) — Where shall we eat?\nB: 我们去饭店吧。 (Wǒmen qù fàndiàn ba.) — Let us go to a restaurant.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -270,7 +301,7 @@
           {
             "id": "convm-with-someone--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }

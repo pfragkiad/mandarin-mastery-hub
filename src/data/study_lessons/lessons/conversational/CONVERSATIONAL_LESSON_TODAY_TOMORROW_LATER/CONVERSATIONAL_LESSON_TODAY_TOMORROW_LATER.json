@@ -28,7 +28,8 @@
   },
   "learning_objectives": [
     "Distinguish now, later, tonight, and tomorrow.",
-    "Move an invitation to another day."
+    "Move an invitation to another day.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -39,17 +40,24 @@
   },
   "catalog_character_refs": {
     "一": "Characters:一",
+    "七": "Characters:七",
     "上": "Characters:上",
     "不": "Characters:不",
     "东": "Characters:东",
+    "主": "Characters:主",
     "么": "Characters:么",
+    "了": "Characters:了",
     "什": "Characters:什",
     "今": "Characters:今",
     "以": "Characters:以",
     "会": "Characters:会",
     "你": "Characters:你",
+    "便": "Characters:便",
     "候": "Characters:候",
     "儿": "Characters:儿",
+    "动": "Characters:动",
+    "化": "Characters:化",
+    "十": "Characters:十",
     "去": "Characters:去",
     "可": "Characters:可",
     "吃": "Characters:吃",
@@ -59,20 +67,32 @@
     "喝": "Characters:喝",
     "在": "Characters:在",
     "天": "Characters:天",
+    "太": "Characters:太",
     "好": "Characters:好",
+    "对": "Characters:对",
+    "就": "Characters:就",
+    "很": "Characters:很",
     "想": "Characters:想",
     "我": "Characters:我",
+    "方": "Characters:方",
     "时": "Characters:时",
     "明": "Characters:明",
     "是": "Characters:是",
     "晚": "Characters:晚",
+    "没": "Characters:没",
+    "点": "Characters:点",
     "现": "Characters:现",
     "行": "Characters:行",
     "西": "Characters:西",
     "见": "Characters:见",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "起": "Characters:起",
     "过": "Characters:过",
     "还": "Characters:还",
     "那": "Characters:那",
+    "钟": "Characters:钟",
+    "间": "Characters:间",
     "饭": "Characters:饭"
   },
   "sections": {
@@ -80,7 +100,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to postpone an activity until later today or suggest meeting tomorrow instead. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to postpone an activity until later today or suggest meeting tomorrow instead. Use the model conversation to notice the expressions, then practice the patterns and speak aloud.\n\nPronunciation note: This course uses some northern-style 儿化 (érhuà) forms. The final -r belongs to the preceding syllable, not a separate syllable. In 一会儿 (yíhuìr), the -r is attached to 会 (huì); do not read 儿 (ér) as an extra syllable."
       },
       {
         "id": "model-dialogue",
@@ -116,29 +136,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "明天我想去。",
-        "pattern_pinyin": "míngtiān wǒ xiǎng qù.",
+        "pattern_hanzi": "时间词 + 主语 + 动词",
+        "pattern_pinyin": "shíjiāncí + zhǔyǔ + dòngcí",
         "function_en": "Time words often precede the main verb or follow the topic.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "明天我想去。",
           "pinyin": "míngtiān wǒ xiǎng qù.",
           "english": "I want to go tomorrow.",
-          "teaching_note": "Time words often precede the main verb or follow the topic."
+          "teaching_note": "Mentioning tomorrow first highlights when the planned action will happen."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "过一会儿见。",
-        "pattern_pinyin": "guò yíhuìr jiàn.",
+        "pattern_hanzi": "过 + 一会儿 + 动词",
+        "pattern_pinyin": "guò + yíhuìr + dòngcí",
         "function_en": "This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "过一会儿见。",
           "pinyin": "guò yíhuìr jiàn.",
           "english": "See you in a little while.",
-          "teaching_note": "This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì)."
+          "teaching_note": "Use this when proposing to meet shortly rather than immediately."
         }
       },
       {
@@ -211,9 +231,9 @@
             "meaning_en": "Would a little later be okay?"
           },
           {
-            "hanzi": "过一会儿不好",
-            "pinyin": "guò yíhuìr bù hǎo",
-            "meaning_en": "Later is not a good time."
+            "hanzi": "过一会儿不方便",
+            "pinyin": "guò yíhuìr bù fāngbiàn",
+            "meaning_en": "A little later would not be convenient."
           },
           {
             "hanzi": "我想现在喝",
@@ -229,6 +249,21 @@
             "hanzi": "明天晚上不行",
             "pinyin": "míngtiān wǎnshang bù xíng",
             "meaning_en": "Tomorrow evening doesn't work."
+          },
+          {
+            "hanzi": "太晚",
+            "pinyin": "tài wǎn",
+            "meaning_en": "too late"
+          },
+          {
+            "hanzi": "现在太晚了",
+            "pinyin": "xiànzài tài wǎn le",
+            "meaning_en": "it is too late now"
+          },
+          {
+            "hanzi": "十点钟",
+            "pinyin": "shí diǎn zhōng",
+            "meaning_en": "ten o’clock"
           }
         ]
       },
@@ -236,6 +271,37 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Postpone plans from tonight to tomorrow, or from now to later."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Dinner Tonight or Tomorrow",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天晚上一起吃晚饭，好吗？",
+            "pinyin": "Jīntiān wǎnshang yìqǐ chī wǎnfàn, hǎo ma?",
+            "english": "Shall we have dinner together tonight?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对不起，我今天晚上没时间。",
+            "pinyin": "Duìbuqǐ, wǒ jīntiān wǎnshang méi shíjiān.",
+            "english": "Sorry, I do not have time tonight."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那么明天晚上七点呢？",
+            "pinyin": "Nàme míngtiān wǎnshang qī diǎn ne?",
+            "english": "Then how about seven tomorrow evening?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "七点很好，十点就太晚了。",
+            "pinyin": "Qī diǎn hěn hǎo, shí diǎn jiù tài wǎn le.",
+            "english": "Seven is great; ten would be too late."
+          }
+        ]
       }
     ],
     "practice": {
@@ -275,7 +341,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 现在去吃饭，好吗？ (Xiànzài qù chīfàn, hǎo ma?) — Shall we go eat now?\nB: 现在不行，过一会儿吧。 (Xiànzài bù xíng, guò yíhuìr ba.) — Not now; let us go a bit later.\nA: 今天晚上可以吗？ (Jīntiān wǎnshang kěyǐ ma?) — Would tonight work?\nB: 今天晚上不行。 (Jīntiān wǎnshang bù xíng.) — Tonight does not work.\nA: 明天晚上呢？ (Míngtiān wǎnshang ne?) — How about tomorrow evening?\nB: 好，明天晚上见。 (Hǎo, míngtiān wǎnshang jiàn.) — Okay, see you tomorrow evening.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -305,7 +371,7 @@
           {
             "id": "convm-today-tomorrow-later--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -392,6 +458,20 @@
             "label": "Postpone plans from tonight to tomorrow, or from now to later.",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-today-tomorrow-later--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-today-tomorrow-later--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Dinner Tonight or Tomorrow",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
           }
         ]
       }

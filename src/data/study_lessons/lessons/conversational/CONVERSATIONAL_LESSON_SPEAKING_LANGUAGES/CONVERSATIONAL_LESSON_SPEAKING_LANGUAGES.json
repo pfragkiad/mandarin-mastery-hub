@@ -29,7 +29,8 @@
   },
   "learning_objectives": [
     "Ask whether somebody speaks a language.",
-    "Describe your proficiency accurately and modestly."
+    "Describe your proficiency accurately and modestly.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -41,20 +42,44 @@
   "catalog_character_refs": {
     "一": "Characters:一",
     "不": "Characters:不",
+    "主": "Characters:主",
+    "习": "Characters:习",
     "会": "Characters:会",
     "你": "Characters:你",
+    "儿": "Characters:儿",
+    "化": "Characters:化",
+    "句": "Characters:句",
+    "可": "Characters:可",
     "吗": "Characters:吗",
+    "听": "Characters:听",
+    "多": "Characters:多",
+    "太": "Characters:太",
     "好": "Characters:好",
+    "子": "Characters:子",
+    "对": "Characters:对",
+    "度": "Characters:度",
     "很": "Characters:很",
     "得": "Characters:得",
+    "想": "Characters:想",
+    "懂": "Characters:懂",
     "我": "Characters:我",
     "文": "Characters:文",
+    "是": "Characters:是",
     "普": "Characters:普",
+    "比": "Characters:比",
     "点": "Characters:点",
+    "的": "Characters:的",
+    "程": "Characters:程",
+    "练": "Characters:练",
     "英": "Characters:英",
+    "觉": "Characters:觉",
+    "言": "Characters:言",
     "话": "Characters:话",
+    "语": "Characters:语",
     "说": "Characters:说",
     "请": "Characters:请",
+    "谢": "Characters:谢",
+    "还": "Characters:还",
     "通": "Characters:通",
     "问": "Characters:问"
   },
@@ -63,7 +88,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask which languages someone speaks and describe what you can and cannot say. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to ask which languages someone speaks and describe what you can and cannot say. Use the model conversation to notice the expressions, then practice the patterns and speak aloud.\n\nPronunciation note: This course uses some northern-style 儿化 (érhuà) forms. The final -r belongs to the preceding syllable, not a separate syllable. For “a little,” 一点儿 (yìdiǎnr) is common in northern-influenced Mandarin; 一点 (yìdiǎn) is a non-erhua alternative."
       },
       {
         "id": "model-dialogue",
@@ -99,29 +124,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我会说普通话。",
-        "pattern_pinyin": "wǒ huì shuō Pǔtōnghuà.",
+        "pattern_hanzi": "主语 + 会 + 说 + 语言",
+        "pattern_pinyin": "zhǔyǔ + huì + shuō + yǔyán",
         "function_en": "会 (huì) expresses acquired ability; add a language after 说 (shuō).",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我会说普通话。",
           "pinyin": "wǒ huì shuō Pǔtōnghuà.",
           "english": "I can speak Mandarin.",
-          "teaching_note": "会 (huì) expresses acquired ability; add a language after 说 (shuō)."
+          "teaching_note": "Use this to describe a language you can speak, even if your ability is limited."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你说得很好。",
-        "pattern_pinyin": "nǐ shuō de hěn hǎo.",
+        "pattern_hanzi": "主语 + 说 + 得 + 程度",
+        "pattern_pinyin": "zhǔyǔ + shuō + de + chéngdù",
         "function_en": "得 (de) introduces how well the action is performed.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "你说得很好。",
           "pinyin": "nǐ shuō de hěn hǎo.",
           "english": "You speak very well.",
-          "teaching_note": "得 (de) introduces how well the action is performed."
+          "teaching_note": "This form can compliment someone on how well they speak a language."
         }
       },
       {
@@ -207,6 +232,36 @@
             "hanzi": "你会说普通话",
             "pinyin": "nǐ huì shuō Pǔtōnghuà",
             "meaning_en": "You can speak Mandarin."
+          },
+          {
+            "hanzi": "一点儿",
+            "pinyin": "yìdiǎnr",
+            "meaning_en": "a little; optional northern -r pronunciation"
+          },
+          {
+            "hanzi": "可是",
+            "pinyin": "kěshì",
+            "meaning_en": "but; however"
+          },
+          {
+            "hanzi": "说得不好",
+            "pinyin": "shuō de bù hǎo",
+            "meaning_en": "speak poorly; not speak well"
+          },
+          {
+            "hanzi": "说得很好",
+            "pinyin": "shuō de hěn hǎo",
+            "meaning_en": "speak very well"
+          },
+          {
+            "hanzi": "我会说一点儿普通话",
+            "pinyin": "wǒ huì shuō yìdiǎnr Pǔtōnghuà",
+            "meaning_en": "I can speak a little Mandarin."
+          },
+          {
+            "hanzi": "我会说一点儿英文",
+            "pinyin": "wǒ huì shuō yìdiǎnr Yīngwén",
+            "meaning_en": "I can speak a little English."
           }
         ]
       },
@@ -214,6 +269,65 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn)."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Speaking a Little and Encouraging Someone",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你会说普通话吗？",
+            "pinyin": "Nǐ huì shuō Pǔtōnghuà ma?",
+            "english": "Can you speak Mandarin?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会说一点儿，可是说得不好。",
+            "pinyin": "Wǒ huì shuō yìdiǎnr, kěshì shuō de bù hǎo.",
+            "english": "A little, but I do not speak it well."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我觉得你说得很好。",
+            "pinyin": "Wǒ juéde nǐ shuō de hěn hǎo.",
+            "english": "I think you speak it very well."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "谢谢！我还想多练习。",
+            "pinyin": "Xièxie! Wǒ hái xiǎng duō liànxí.",
+            "english": "Thanks! I still want to practice more."
+          }
+        ]
+      },
+      {
+        "id": "source-coverage-grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "主语 + 说得 + 不太好",
+        "pattern_pinyin": "zhǔyǔ + shuō de + bú tài hǎo",
+        "function_en": "The result complement 得 (de) describes how well an action is performed; do not confuse it with 的 (de).",
+        "example": {
+          "id": "source-coverage-grammar-1--example",
+          "hanzi": "我说得不太好。",
+          "pinyin": "Wǒ shuō de bú tài hǎo.",
+          "english": "I do not speak very well.",
+          "teaching_note": "A modest reply acknowledges limited ability without claiming you cannot speak at all."
+        }
+      },
+      {
+        "id": "source-coverage-grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "可是 + 对比的句子",
+        "pattern_pinyin": "kěshì + duìbǐ de jùzi",
+        "function_en": "可是 (kěshì) introduces a contrast; 一点儿 (yìdiǎnr) has optional northern rhotic pronunciation.",
+        "example": {
+          "id": "source-coverage-grammar-2--example",
+          "hanzi": "可是我听得懂一点儿。",
+          "pinyin": "Kěshì wǒ tīng de dǒng yìdiǎnr.",
+          "english": "But I understand a little.",
+          "teaching_note": "The speaker contrasts one limitation with something they can still do."
+        }
       }
     ],
     "practice": {
@@ -253,7 +367,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 你会说英文吗？ (Nǐ huì shuō Yīngwén ma?) — Can you speak English?\nB: 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.\nA: 你会说普通话吗？ (Nǐ huì shuō Pǔtōnghuà ma?) — Can you speak Mandarin?\nB: 会，我会说一点普通话。 (Huì, wǒ huì shuō yìdiǎn Pǔtōnghuà.) — Yes, I speak a little Mandarin.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -283,7 +397,7 @@
           {
             "id": "convm-speaking-languages--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -370,6 +484,41 @@
             "label": "Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn).",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-speaking-languages--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-speaking-languages--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Speaking a Little and Encouraging Someone",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-speaking-languages--section--extended-grammar",
+        "section_key": "extended-grammar",
+        "title": "Extended Grammar",
+        "checkpoints": [
+          {
+            "id": "convm-speaking-languages--extended-grammar--source-coverage-grammar-1",
+            "kind": "section",
+            "label": "practice the pattern: I do not speak very well.",
+            "optional": true,
+            "target_id": "source-coverage-grammar-1"
+          },
+          {
+            "id": "convm-speaking-languages--extended-grammar--source-coverage-grammar-2",
+            "kind": "section",
+            "label": "practice the pattern: But I understand a little.",
+            "optional": true,
+            "target_id": "source-coverage-grammar-2"
           }
         ]
       }

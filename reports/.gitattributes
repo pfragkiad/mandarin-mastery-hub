@@ -2,7 +2,3 @@
 # Keep the original CSV's supplied line endings without whitespace normalization.
 hsk-level1-lessons-classification-changes.csv -text -whitespace
 hsk-level1-lessons-source-example-discrepancies.json -text
-Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md -text
-Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md -text
-Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md whitespace=-blank-at-eol
-Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md whitespace=-blank-at-eol

@@ -28,7 +28,8 @@
   },
   "learning_objectives": [
     "Ask whether someone can do something.",
-    "Ask someone to give you an amount or item."
+    "Ask someone to give you an amount or item.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -41,37 +42,57 @@
     "一": "Characters:一",
     "三": "Characters:三",
     "不": "Characters:不",
+    "个": "Characters:个",
+    "主": "Characters:主",
     "买": "Characters:买",
+    "了": "Characters:了",
     "五": "Characters:五",
     "人": "Characters:人",
+    "付": "Characters:付",
     "以": "Characters:以",
+    "作": "Characters:作",
     "你": "Characters:你",
     "儿": "Characters:儿",
+    "动": "Characters:动",
     "十": "Characters:十",
     "去": "Characters:去",
+    "只": "Characters:只",
     "可": "Characters:可",
     "吃": "Characters:吃",
     "吗": "Characters:吗",
+    "品": "Characters:品",
     "啤": "Characters:啤",
     "喝": "Characters:喝",
     "在": "Characters:在",
     "块": "Characters:块",
     "多": "Characters:多",
+    "够": "Characters:够",
+    "太": "Characters:太",
     "客": "Characters:客",
     "币": "Characters:币",
     "很": "Characters:很",
     "我": "Characters:我",
+    "数": "Characters:数",
+    "是": "Characters:是",
+    "有": "Characters:有",
     "民": "Characters:民",
     "气": "Characters:气",
+    "没": "Characters:没",
     "点": "Characters:点",
+    "物": "Characters:物",
     "现": "Characters:现",
+    "用": "Characters:用",
     "给": "Characters:给",
     "美": "Characters:美",
     "茶": "Characters:茶",
+    "要": "Characters:要",
+    "词": "Characters:词",
+    "语": "Characters:语",
     "请": "Characters:请",
     "谢": "Characters:谢",
     "这": "Characters:这",
     "酒": "Characters:酒",
+    "量": "Characters:量",
     "金": "Characters:金",
     "钱": "Characters:钱",
     "问": "Characters:问"
@@ -81,7 +102,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask permission, request an item politely, and respond appropriately. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to ask permission, request an item politely, and respond appropriately. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -117,29 +138,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你可不可以买茶？",
-        "pattern_pinyin": "nǐ kě bu kěyǐ mǎi chá?",
+        "pattern_hanzi": "可不可以 + 动作？",
+        "pattern_pinyin": "kě bu kěyǐ + dòngzuò?",
         "function_en": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你可不可以买茶？",
           "pinyin": "nǐ kě bu kěyǐ mǎi chá?",
           "english": "Can you buy tea?",
-          "teaching_note": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission."
+          "teaching_note": "Ask whether an action is possible or allowed in the situation."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "给我一点茶。",
-        "pattern_pinyin": "gěi wǒ yìdiǎn chá.",
+        "pattern_hanzi": "给 + 人 + 数量 + 物品",
+        "pattern_pinyin": "gěi + rén + shùliàng + wùpǐn",
         "function_en": "给 (gěi) can mean to give something to someone.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "给我一点茶。",
           "pinyin": "gěi wǒ yìdiǎn chá.",
           "english": "Give me a little tea.",
-          "teaching_note": "给 (gěi) can mean to give something to someone."
+          "teaching_note": "In a polite request, consider adding 请 (qǐng) before the verb."
         }
       },
       {
@@ -183,7 +204,7 @@
           },
           {
             "hanzi": "我给你十块美金",
-            "pinyin": "wǒ gěi nǐ shí kuài Měijīn",
+            "pinyin": "wǒ gěi nǐ shí kuài měijīn",
             "meaning_en": "I will give you ten US dollars."
           },
           {
@@ -223,8 +244,33 @@
           },
           {
             "hanzi": "我给你五块美金",
-            "pinyin": "wǒ gěi nǐ wǔ kuài Měijīn",
+            "pinyin": "wǒ gěi nǐ wǔ kuài měijīn",
             "meaning_en": "I will give you five US dollars."
+          },
+          {
+            "hanzi": "可不可以",
+            "pinyin": "kě bu kěyǐ",
+            "meaning_en": "may I?; can or cannot?"
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it or not?"
+          },
+          {
+            "hanzi": "有没有",
+            "pinyin": "yǒu méiyǒu",
+            "meaning_en": "do you have?; is there any?"
+          },
+          {
+            "hanzi": "给你",
+            "pinyin": "gěi nǐ",
+            "meaning_en": "here you are; give to you"
+          },
+          {
+            "hanzi": "太多了",
+            "pinyin": "tài duō le",
+            "meaning_en": "that is too much"
           }
         ]
       },
@@ -232,6 +278,51 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Ask politely for an item and respond with permission, refusal or thanks."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Asking Whether You May Pay",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，可不可以用人民币付钱？",
+            "pinyin": "Qǐngwèn, kě bu kěyǐ yòng rénmínbì fù qián?",
+            "english": "Excuse me, may I pay with yuan?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "可以。你有现金吗？",
+            "pinyin": "Kěyǐ. Nǐ yǒu xiànjīn ma?",
+            "english": "Yes. Do you have cash?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我有钱，可是只有十块。",
+            "pinyin": "Wǒ yǒu qián, kěshì zhǐ yǒu shí kuài.",
+            "english": "I have money, but only ten yuan."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "十块不够，这个要十五块。",
+            "pinyin": "Shí kuài bú gòu, zhège yào shíwǔ kuài.",
+            "english": "Ten yuan is not enough. This costs fifteen yuan."
+          }
+        ]
+      },
+      {
+        "id": "source-coverage-grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "主语 + 可不可以 + 动词 + 物品？",
+        "pattern_pinyin": "zhǔyǔ + kě bu kěyǐ + dòngcí + wùpǐn?",
+        "function_en": "可不可以 (kě bu kěyǐ) asks for permission or possibility as an A-not-A question.",
+        "example": {
+          "id": "source-coverage-grammar-1--example",
+          "hanzi": "我可不可以用美金？",
+          "pinyin": "Wǒ kě bu kěyǐ yòng měijīn?",
+          "english": "May I use US dollars?",
+          "teaching_note": "Here the customer is checking whether paying in US dollars is acceptable."
+        }
       }
     ],
     "practice": {
@@ -271,7 +362,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 请问，你可不可以给我一点茶？ (Qǐngwèn, nǐ kě bu kěyǐ gěi wǒ yìdiǎn chá?) — Excuse me, could you give me some tea?\nB: 可以，给你。 (Kěyǐ, gěi nǐ.) — Yes, here you are.\nA: 谢谢！我可以在这儿喝吗？ (Xièxie! Wǒ kěyǐ zài zhèr hē ma?) — Thank you! May I drink it here?\nB: 可以。 (Kěyǐ.) — Yes, you may.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -301,7 +392,7 @@
           {
             "id": "convm-permission-requests--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -388,6 +479,34 @@
             "label": "Ask politely for an item and respond with permission, refusal or thanks.",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-permission-requests--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-permission-requests--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Asking Whether You May Pay",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-permission-requests--section--extended-grammar",
+        "section_key": "extended-grammar",
+        "title": "Extended Grammar",
+        "checkpoints": [
+          {
+            "id": "convm-permission-requests--extended-grammar--source-coverage-grammar-1",
+            "kind": "section",
+            "label": "practice the pattern: May I use US dollars?",
+            "optional": true,
+            "target_id": "source-coverage-grammar-1"
           }
         ]
       }

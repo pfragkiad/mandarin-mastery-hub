@@ -39,22 +39,31 @@
   },
   "catalog_character_refs": {
     "不": "Characters:不",
+    "主": "Characters:主",
     "么": "Characters:么",
     "了": "Characters:了",
     "什": "Characters:什",
     "们": "Characters:们",
     "你": "Characters:你",
+    "动": "Characters:动",
+    "可": "Characters:可",
     "吗": "Characters:吗",
     "天": "Characters:天",
     "好": "Characters:好",
+    "很": "Characters:很",
     "得": "Characters:得",
+    "心": "Characters:心",
     "我": "Characters:我",
     "明": "Characters:明",
+    "是": "Characters:是",
     "普": "Characters:普",
+    "理": "Characters:理",
     "白": "Characters:白",
     "知": "Characters:知",
     "见": "Characters:见",
+    "词": "Characters:词",
     "话": "Characters:话",
+    "语": "Characters:语",
     "说": "Characters:说",
     "谢": "Characters:谢",
     "通": "Characters:通",
@@ -65,7 +74,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to say when you do not understand and ask someone to clarify their meaning. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to say when you do not understand and ask someone to clarify their meaning. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -101,29 +110,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我不明白。",
-        "pattern_pinyin": "wǒ bù míngbai.",
+        "pattern_hanzi": "主语 + 不 + 心理动词",
+        "pattern_pinyin": "zhǔyǔ + bù + xīnlǐ dòngcí",
         "function_en": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我不明白。",
           "pinyin": "wǒ bù míngbai.",
           "english": "I do not understand.",
-          "teaching_note": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here."
+          "teaching_note": "This is a natural way to signal difficulty following what someone says."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你说什么？",
-        "pattern_pinyin": "nǐ shuō shénme?",
+        "pattern_hanzi": "主语 + 说 + 什么？",
+        "pattern_pinyin": "zhǔyǔ + shuō + shénme?",
         "function_en": "什么 (shénme) occupies the position of the unknown thing in the sentence.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "你说什么？",
           "pinyin": "nǐ shuō shénme?",
           "english": "What did you say?",
-          "teaching_note": "什么 (shénme) occupies the position of the unknown thing in the sentence."
+          "teaching_note": "In a conversation, this asks the other person to clarify their words."
         }
       },
       {
@@ -194,6 +203,16 @@
             "hanzi": "说得不好",
             "pinyin": "shuō de bù hǎo",
             "meaning_en": "To speak poorly."
+          },
+          {
+            "hanzi": "不是很好",
+            "pinyin": "bú shì hěn hǎo",
+            "meaning_en": "not very good"
+          },
+          {
+            "hanzi": "可是",
+            "pinyin": "kěshì",
+            "meaning_en": "but; however"
           }
         ]
       },
@@ -240,7 +259,7 @@
           "choices": [],
           "correct_choice_ids": [],
           "answer": "A: 你明白吗？ (Nǐ míngbai ma?) — Do you understand?\nB: 我不明白。你说什么？ (Wǒ bù míngbai. Nǐ shuō shénme?) — I do not understand. What did you say?\nA: 我说我们明天见。 (Wǒ shuō wǒmen míngtiān jiàn.) — I said we will see each other tomorrow.\nB: 好，我明白了。谢谢！ (Hǎo, wǒ míngbai le. Xièxie!) — Okay, now I understand. Thank you!",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -270,7 +289,7 @@
           {
             "id": "convm-understanding-clarification--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }

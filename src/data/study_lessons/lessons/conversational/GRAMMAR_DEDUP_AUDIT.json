@@ -1,0 +1,432 @@
+[
+  {
+    "lesson_id": "convm-asking-directions",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "学院路在哪儿？",
+    "new_pattern_hanzi": "地名 + 在 + 哪儿？",
+    "new_pattern_pinyin": "dìmíng + zài + nǎr?",
+    "old_teaching_note": "Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma).",
+    "new_teaching_note": "Replace the place name to ask about a street, building, or meeting point."
+  },
+  {
+    "lesson_id": "convm-asking-directions",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "不在这儿。",
+    "new_pattern_hanzi": "不在 + 地点",
+    "new_pattern_pinyin": "bú zài + dìdiǎn",
+    "old_teaching_note": "Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在.",
+    "new_teaching_note": "After correcting a mistaken location, give the right place or direction."
+  },
+  {
+    "lesson_id": "convm-choices-alternatives",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "你喝茶还是啤酒？",
+    "new_pattern_hanzi": "喝 + 饮料 + 还是 + 饮料？",
+    "new_pattern_pinyin": "hē + yǐnliào + háishi + yǐnliào?",
+    "old_teaching_note": "还是 (háishi) is normal in questions that present a choice.",
+    "new_teaching_note": "The speaker is asking the listener to select one of the drinks."
+  },
+  {
+    "lesson_id": "convm-choices-alternatives",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我想买茶或者啤酒。",
+    "new_pattern_hanzi": "动词 + 名词 + 或者 + 名词",
+    "new_pattern_pinyin": "dòngcí + míngcí + huòzhě + míngcí",
+    "old_teaching_note": "或者 (huòzhě) commonly offers alternatives in statements.",
+    "new_teaching_note": "This describes possibilities instead of directly requesting a choice."
+  },
+  {
+    "lesson_id": "convm-clock-scheduling",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "现在几点钟？",
+    "new_pattern_hanzi": "现在 + 几点钟？",
+    "new_pattern_pinyin": "xiànzài + jǐ diǎn zhōng?",
+    "old_teaching_note": "几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.",
+    "new_teaching_note": "Ask for the current clock time before arranging a meeting."
+  },
+  {
+    "lesson_id": "convm-clock-scheduling",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "八点钟不行。",
+    "new_pattern_hanzi": "时间 + 不行",
+    "new_pattern_pinyin": "shíjiān + bù xíng",
+    "old_teaching_note": "Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).",
+    "new_teaching_note": "Give an alternative time after declining the first suggestion."
+  },
+  {
+    "lesson_id": "convm-clock-scheduling",
+    "grammar_block_id": "source-coverage-grammar-1",
+    "example_id": "source-coverage-grammar-1--example",
+    "old_pattern_hanzi": "八点不行，九点可以。",
+    "new_pattern_hanzi": "时间 + 不行；另一个时间 + 可以",
+    "new_pattern_pinyin": "shíjiān + bù xíng; lìng yí ge shíjiān + kěyǐ",
+    "old_teaching_note": "不行 (bù xíng) rejects a proposal; 可以 (kěyǐ) accepts an alternative.",
+    "new_teaching_note": "This keeps negotiations moving by supplying an acceptable alternative."
+  },
+  {
+    "lesson_id": "convm-clock-scheduling",
+    "grammar_block_id": "source-coverage-grammar-2",
+    "example_id": "source-coverage-grammar-2--example",
+    "old_pattern_hanzi": "十点太晚了。",
+    "new_pattern_hanzi": "太 + 形容词 + 了",
+    "new_pattern_pinyin": "tài + xíngróngcí + le",
+    "old_teaching_note": "太 (tài) + adjective + 了 (le) expresses an excessive degree or a strong judgment.",
+    "new_teaching_note": "In scheduling, it explains why a proposed time is unsuitable."
+  },
+  {
+    "lesson_id": "convm-food-drinks",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "你想喝茶还是啤酒？",
+    "new_pattern_hanzi": "想喝 + 饮料 + 还是 + 饮料？",
+    "new_pattern_pinyin": "xiǎng hē + yǐnliào + háishi + yǐnliào?",
+    "old_teaching_note": "Use 还是 (háishi) to present alternatives in a question.",
+    "new_teaching_note": "Offer two drinks and let the listener choose one."
+  },
+  {
+    "lesson_id": "convm-food-drinks",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我要两杯茶。",
+    "new_pattern_hanzi": "数量 + 杯 + 饮料",
+    "new_pattern_pinyin": "shùliàng + bēi + yǐnliào",
+    "old_teaching_note": "杯 (bēi) counts cups or glasses of drinks.",
+    "new_teaching_note": "Use the classifier when ordering a specific number of cups."
+  },
+  {
+    "lesson_id": "convm-greetings-politeness",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "你好吗？",
+    "new_pattern_hanzi": "陈述句 + 吗？",
+    "new_pattern_pinyin": "chénshùjù + ma?",
+    "old_teaching_note": "The neutral-tone question particle 吗 (ma) can form a yes–no question.",
+    "new_teaching_note": "This example is a friendly check on how the other person is doing."
+  },
+  {
+    "lesson_id": "convm-greetings-politeness",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "请问，现在几点钟？",
+    "new_pattern_hanzi": "请问 + 问题",
+    "new_pattern_pinyin": "qǐngwèn + wèntí",
+    "old_teaching_note": "A polite way to introduce a request for information.",
+    "new_teaching_note": "Use this opener when politely approaching someone you do not know."
+  },
+  {
+    "lesson_id": "convm-money-prices",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "一杯茶多少钱？",
+    "new_pattern_hanzi": "物品 + 多少钱？",
+    "new_pattern_pinyin": "wùpǐn + duōshao qián?",
+    "old_teaching_note": "多少钱 (duōshao qián) asks for the price.",
+    "new_teaching_note": "Name the item when checking a quoted price."
+  },
+  {
+    "lesson_id": "convm-money-prices",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我有十块人民币。",
+    "new_pattern_hanzi": "数量 + 块 + 人民币",
+    "new_pattern_pinyin": "shùliàng + kuài + rénmínbì",
+    "old_teaching_note": "块 (kuài) is the colloquial unit used to count yuan or a currency amount.",
+    "new_teaching_note": "In ordinary conversations, 块 (kuài) is the casual word for yuan."
+  },
+  {
+    "lesson_id": "convm-money-prices",
+    "grammar_block_id": "source-coverage-grammar-1",
+    "example_id": "source-coverage-grammar-1--example",
+    "old_pattern_hanzi": "我只有五块钱，不够。",
+    "new_pattern_hanzi": "只有 + 数量 + 钱；不够",
+    "new_pattern_pinyin": "zhǐ yǒu + shùliàng + qián; bú gòu",
+    "old_teaching_note": "只有 (zhǐ yǒu) emphasizes a limited amount; 够 (gòu) means enough.",
+    "new_teaching_note": "This gives a practical reason for being unable to pay the requested amount."
+  },
+  {
+    "lesson_id": "convm-newspaper-shopping",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "你有没有今天的报纸？",
+    "new_pattern_hanzi": "有没有 + 物品？",
+    "new_pattern_pinyin": "yǒu méi yǒu + wùpǐn?",
+    "old_teaching_note": "有没有 (yǒu méi yǒu) is the A-not-A form of 有 (yǒu), used for availability or possession.",
+    "new_teaching_note": "Replace newspaper with another item when asking whether it is in stock."
+  },
+  {
+    "lesson_id": "convm-newspaper-shopping",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "这个是不是八块？",
+    "new_pattern_hanzi": "物品 + 是不是 + 价格？",
+    "new_pattern_pinyin": "wùpǐn + shì bú shì + jiàgé?",
+    "old_teaching_note": "是不是 (shì bú shì) asks for confirmation without a final 吗 (ma).",
+    "new_teaching_note": "Use this to check the amount you think you heard."
+  },
+  {
+    "lesson_id": "convm-newspaper-shopping",
+    "grammar_block_id": "grammar-3",
+    "example_id": "pattern-ex-3",
+    "old_pattern_hanzi": "八块，不是十八块。",
+    "new_pattern_hanzi": "数字 + 不是 + 另一个数字",
+    "new_pattern_pinyin": "shùzì + bú shì + lìng yí ge shùzì",
+    "old_teaching_note": "Check numbers carefully: 八 (bā) is eight, whereas 十八 (shíbā) is eighteen.",
+    "new_teaching_note": "Repeat the corrected number if the buyer misheard the price."
+  },
+  {
+    "lesson_id": "convm-numbers-arithmetic",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "六加六是多少？",
+    "new_pattern_hanzi": "数字 + 加 + 数字 + 是多少？",
+    "new_pattern_pinyin": "shùzì + jiā + shùzì + shì duōshao?",
+    "old_teaching_note": "Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.",
+    "new_teaching_note": "Use the pattern to ask for a total during a purchase."
+  },
+  {
+    "lesson_id": "convm-numbers-arithmetic",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "二十五",
+    "new_pattern_hanzi": "数字 + 十 + 数字",
+    "new_pattern_pinyin": "shùzì + shí + shùzì",
+    "old_teaching_note": "Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.",
+    "new_teaching_note": "二十五 (èrshíwǔ) consists of two tens plus five."
+  },
+  {
+    "lesson_id": "convm-people-identity",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我是中国人。",
+    "new_pattern_hanzi": "主语 + 是 + 身份",
+    "new_pattern_pinyin": "zhǔyǔ + shì + shēnfèn",
+    "old_teaching_note": "Use 是 (shì) to identify nationality or identity.",
+    "new_teaching_note": "Replace the nationality with another identity to introduce yourself or someone else."
+  },
+  {
+    "lesson_id": "convm-people-identity",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我不是美国人。",
+    "new_pattern_hanzi": "主语 + 不是 + 身份",
+    "new_pattern_pinyin": "zhǔyǔ + bú shì + shēnfèn",
+    "old_teaching_note": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).",
+    "new_teaching_note": "The spoken reading changes to bú shì before fourth-tone 是 (shì)."
+  },
+  {
+    "lesson_id": "convm-people-identity",
+    "grammar_block_id": "source-coverage-grammar-1",
+    "example_id": "source-coverage-grammar-1--example",
+    "old_pattern_hanzi": "你是不是中国人？",
+    "new_pattern_hanzi": "主语 + 是不是 + 身份？",
+    "new_pattern_pinyin": "zhǔyǔ + shì bú shì + shēnfèn?",
+    "old_teaching_note": "是不是 (shì bú shì) is a positive-negative question; normally omit final 吗 (ma) here.",
+    "new_teaching_note": "A direct response may begin with 是 (shì) or 不是 (bú shì)."
+  },
+  {
+    "lesson_id": "convm-permission-requests",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "你可不可以买茶？",
+    "new_pattern_hanzi": "可不可以 + 动作？",
+    "new_pattern_pinyin": "kě bù kěyǐ + dòngzuò?",
+    "old_teaching_note": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.",
+    "new_teaching_note": "Ask whether an action is possible or allowed in the situation."
+  },
+  {
+    "lesson_id": "convm-permission-requests",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "给我一点茶。",
+    "new_pattern_hanzi": "给 + 人 + 数量 + 物品",
+    "new_pattern_pinyin": "gěi + rén + shùliàng + wùpǐn",
+    "old_teaching_note": "给 (gěi) can mean to give something to someone.",
+    "new_teaching_note": "In a polite request, consider adding 请 (qǐng) before the verb."
+  },
+  {
+    "lesson_id": "convm-permission-requests",
+    "grammar_block_id": "source-coverage-grammar-1",
+    "example_id": "source-coverage-grammar-1--example",
+    "old_pattern_hanzi": "我可不可以用美金？",
+    "new_pattern_hanzi": "主语 + 可不可以 + 动词 + 物品？",
+    "new_pattern_pinyin": "zhǔyǔ + kě bù kěyǐ + dòngcí + wùpǐn?",
+    "old_teaching_note": "可不可以 (kě bù kěyǐ) asks for permission or possibility as an A-not-A question.",
+    "new_teaching_note": "Here the customer is checking whether paying in US dollars is acceptable."
+  },
+  {
+    "lesson_id": "convm-phone-invitations",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "请问李先生在吗？",
+    "new_pattern_hanzi": "请问 + 称呼 + 在吗？",
+    "new_pattern_pinyin": "qǐngwèn + chēnghu + zài ma?",
+    "old_teaching_note": "Use 请问 (qǐngwèn) plus a name and 在吗 (zài ma) when asking if someone is available on the telephone.",
+    "new_teaching_note": "This sounds courteous when another person answers the telephone."
+  },
+  {
+    "lesson_id": "convm-phone-invitations",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "今晚不行，明天呢？",
+    "new_pattern_hanzi": "时间 + 不行；另一个时间 + 呢？",
+    "new_pattern_pinyin": "shíjiān + bù xíng; lìng yí ge shíjiān + ne?",
+    "old_teaching_note": "The particle 呢 (ne) offers an elliptical alternative when the topic is already understood.",
+    "new_teaching_note": "The follow-up invites the other speaker to consider another time."
+  },
+  {
+    "lesson_id": "convm-phone-invitations",
+    "grammar_block_id": "grammar-3",
+    "example_id": "pattern-ex-3",
+    "old_pattern_hanzi": "太晚了，我们早点见。",
+    "new_pattern_hanzi": "太晚了 + 早点见",
+    "new_pattern_pinyin": "tài wǎn le + zǎo diǎn jiàn",
+    "old_teaching_note": "Use 太晚了 (tài wǎn le) to object and 早点 (zǎo diǎn) to suggest an earlier time.",
+    "new_teaching_note": "Pair your objection with a concrete earlier meeting suggestion."
+  },
+  {
+    "lesson_id": "convm-places-to-meet",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我想去饭店吃。",
+    "new_pattern_hanzi": "想 + 去 + 地点 + 动作",
+    "new_pattern_pinyin": "xiǎng + qù + dìdiǎn + dòngzuò",
+    "old_teaching_note": "Combine destination and purpose in one sentence.",
+    "new_teaching_note": "Link a proposed destination to the activity you want to do there."
+  },
+  {
+    "lesson_id": "convm-places-to-meet",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我想在这儿喝茶。",
+    "new_pattern_hanzi": "在 + 地点 + 动作",
+    "new_pattern_pinyin": "zài + dìdiǎn + dòngzuò",
+    "old_teaching_note": "Use 在 (zài) before a place to say where an action happens.",
+    "new_teaching_note": "You can use this structure to suggest staying here instead of going elsewhere."
+  },
+  {
+    "lesson_id": "convm-speaking-languages",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我会说普通话。",
+    "new_pattern_hanzi": "主语 + 会 + 说 + 语言",
+    "new_pattern_pinyin": "zhǔyǔ + huì + shuō + yǔyán",
+    "old_teaching_note": "会 (huì) expresses acquired ability; add a language after 说 (shuō).",
+    "new_teaching_note": "Use this to describe a language you can speak, even if your ability is limited."
+  },
+  {
+    "lesson_id": "convm-speaking-languages",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "你说得很好。",
+    "new_pattern_hanzi": "主语 + 说 + 得 + 程度",
+    "new_pattern_pinyin": "zhǔyǔ + shuō + de + chéngdù",
+    "old_teaching_note": "得 (de) introduces how well the action is performed.",
+    "new_teaching_note": "This form can compliment someone on how well they speak a language."
+  },
+  {
+    "lesson_id": "convm-speaking-languages",
+    "grammar_block_id": "source-coverage-grammar-1",
+    "example_id": "source-coverage-grammar-1--example",
+    "old_pattern_hanzi": "我说得不太好。",
+    "new_pattern_hanzi": "主语 + 说得 + 不太好",
+    "new_pattern_pinyin": "zhǔyǔ + shuō de + bú tài hǎo",
+    "old_teaching_note": "The result complement 得 (de) describes how well an action is performed; do not confuse it with 的 (de).",
+    "new_teaching_note": "A modest reply acknowledges limited ability without claiming you cannot speak at all."
+  },
+  {
+    "lesson_id": "convm-speaking-languages",
+    "grammar_block_id": "source-coverage-grammar-2",
+    "example_id": "source-coverage-grammar-2--example",
+    "old_pattern_hanzi": "可是我听得懂一点儿。",
+    "new_pattern_hanzi": "可是 + 对比的句子",
+    "new_pattern_pinyin": "kěshì + duìbǐ de jùzi",
+    "old_teaching_note": "可是 (kěshì) introduces a contrast; 一点儿 (yìdiǎnr) has optional northern rhotic pronunciation.",
+    "new_teaching_note": "The speaker contrasts one limitation with something they can still do."
+  },
+  {
+    "lesson_id": "convm-today-tomorrow-later",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "明天我想去。",
+    "new_pattern_hanzi": "时间词 + 主语 + 动词",
+    "new_pattern_pinyin": "shíjiāncí + zhǔyǔ + dòngcí",
+    "old_teaching_note": "Time words often precede the main verb or follow the topic.",
+    "new_teaching_note": "Mentioning tomorrow first highlights when the planned action will happen."
+  },
+  {
+    "lesson_id": "convm-today-tomorrow-later",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "过一会儿见。",
+    "new_pattern_hanzi": "过 + 一会儿 + 动词",
+    "new_pattern_pinyin": "guò + yíhuìr + dòngcí",
+    "old_teaching_note": "This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).",
+    "new_teaching_note": "Use this when proposing to meet shortly rather than immediately."
+  },
+  {
+    "lesson_id": "convm-understanding-clarification",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我不明白。",
+    "new_pattern_hanzi": "主语 + 不 + 心理动词",
+    "new_pattern_pinyin": "zhǔyǔ + bù + xīnlǐ dòngcí",
+    "old_teaching_note": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here.",
+    "new_teaching_note": "This is a natural way to signal difficulty following what someone says."
+  },
+  {
+    "lesson_id": "convm-understanding-clarification",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "你说什么？",
+    "new_pattern_hanzi": "主语 + 说 + 什么？",
+    "new_pattern_pinyin": "zhǔyǔ + shuō + shénme?",
+    "old_teaching_note": "什么 (shénme) occupies the position of the unknown thing in the sentence.",
+    "new_teaching_note": "In a conversation, this asks the other person to clarify their words."
+  },
+  {
+    "lesson_id": "convm-wants-intentions",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我想吃午饭。",
+    "new_pattern_hanzi": "主语 + 想 + 动作",
+    "new_pattern_pinyin": "zhǔyǔ + xiǎng + dòngzuò",
+    "old_teaching_note": "想 (xiǎng) expresses a wish or desire followed by a verb.",
+    "new_teaching_note": "A useful opening when suggesting what to eat or do next."
+  },
+  {
+    "lesson_id": "convm-wants-intentions",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "你想不想喝茶？",
+    "new_pattern_hanzi": "想不想 + 动作？",
+    "new_pattern_pinyin": "xiǎng bu xiǎng + dòngzuò?",
+    "old_teaching_note": "An A-not-A question asks whether someone wants to do something.",
+    "new_teaching_note": "The listener can answer 想 (xiǎng) or 不想 (bù xiǎng)."
+  },
+  {
+    "lesson_id": "convm-with-someone",
+    "grammar_block_id": "grammar-1",
+    "example_id": "pattern-ex-1",
+    "old_pattern_hanzi": "我想跟你一起吃饭。",
+    "new_pattern_hanzi": "跟 + 人 + 一起 + 动作",
+    "new_pattern_pinyin": "gēn + rén + yìqǐ + dòngzuò",
+    "old_teaching_note": "跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.",
+    "new_teaching_note": "Use this when inviting someone to share a meal or activity."
+  },
+  {
+    "lesson_id": "convm-with-someone",
+    "grammar_block_id": "grammar-2",
+    "example_id": "pattern-ex-2",
+    "old_pattern_hanzi": "我也想去。",
+    "new_pattern_hanzi": "主语 + 也 + 想 + 动作",
+    "new_pattern_pinyin": "zhǔyǔ + yě + xiǎng + dòngzuò",
+    "old_teaching_note": "也 (yě) adds agreement or another participant doing the same thing.",
+    "new_teaching_note": "A friendly response when you want to join someone else’s plan."
+  }
+]

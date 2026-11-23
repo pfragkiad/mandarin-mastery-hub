@@ -29,7 +29,8 @@
   },
   "learning_objectives": [
     "Choose between two options in a question.",
-    "Distinguish question-or from statement-or."
+    "Distinguish question-or from statement-or.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -44,6 +45,7 @@
     "不": "Characters:不",
     "东": "Characters:东",
     "两": "Characters:两",
+    "么": "Characters:么",
     "九": "Characters:九",
     "买": "Characters:买",
     "五": "Characters:五",
@@ -54,7 +56,10 @@
     "儿": "Characters:儿",
     "八": "Characters:八",
     "六": "Characters:六",
+    "动": "Characters:动",
+    "可": "Characters:可",
     "吃": "Characters:吃",
+    "名": "Characters:名",
     "吧": "Characters:吧",
     "咖": "Characters:咖",
     "啡": "Characters:啡",
@@ -62,15 +67,23 @@
     "喝": "Characters:喝",
     "四": "Characters:四",
     "在": "Characters:在",
+    "太": "Characters:太",
     "好": "Characters:好",
+    "就": "Characters:就",
     "币": "Characters:币",
+    "怎": "Characters:怎",
     "想": "Characters:想",
     "我": "Characters:我",
     "或": "Characters:或",
+    "料": "Characters:料",
     "是": "Characters:是",
+    "晚": "Characters:晚",
     "有": "Characters:有",
+    "果": "Characters:果",
+    "样": "Characters:样",
     "民": "Characters:民",
     "水": "Characters:水",
+    "汁": "Characters:汁",
     "没": "Characters:没",
     "点": "Characters:点",
     "现": "Characters:现",
@@ -79,20 +92,23 @@
     "茶": "Characters:茶",
     "西": "Characters:西",
     "要": "Characters:要",
+    "词": "Characters:词",
     "过": "Characters:过",
     "还": "Characters:还",
     "这": "Characters:这",
     "那": "Characters:那",
     "酒": "Characters:酒",
+    "里": "Characters:里",
     "金": "Characters:金",
-    "钟": "Characters:钟"
+    "钟": "Characters:钟",
+    "饮": "Characters:饮"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to offer two alternatives, ask someone to choose, and give a direct answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to offer two alternatives, ask someone to choose, and give a direct answer. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -128,29 +144,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "你喝茶还是啤酒？",
-        "pattern_pinyin": "nǐ hē chá háishi píjiǔ?",
+        "pattern_hanzi": "喝 + 饮料 + 还是 + 饮料？",
+        "pattern_pinyin": "hē + yǐnliào + háishi + yǐnliào?",
         "function_en": "还是 (háishi) is normal in questions that present a choice.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你喝茶还是啤酒？",
           "pinyin": "nǐ hē chá háishi píjiǔ?",
           "english": "Tea or beer?",
-          "teaching_note": "还是 (háishi) is normal in questions that present a choice."
+          "teaching_note": "The speaker is asking the listener to select one of the drinks."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我想买茶或者啤酒。",
-        "pattern_pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
+        "pattern_hanzi": "动词 + 名词 + 或者 + 名词",
+        "pattern_pinyin": "dòngcí + míngcí + huòzhě + míngcí",
         "function_en": "或者 (huòzhě) commonly offers alternatives in statements.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我想买茶或者啤酒。",
           "pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
           "english": "I want to buy tea or beer.",
-          "teaching_note": "或者 (huòzhě) commonly offers alternatives in statements."
+          "teaching_note": "This describes possibilities instead of directly requesting a choice."
         }
       },
       {
@@ -209,7 +225,7 @@
           },
           {
             "hanzi": "你要不要美金",
-            "pinyin": "nǐ yào bu yào Měijīn",
+            "pinyin": "nǐ yào bu yào měijīn",
             "meaning_en": "Do you want US dollars?"
           },
           {
@@ -226,6 +242,26 @@
             "hanzi": "现在还是过一会儿",
             "pinyin": "xiànzài háishi guò yíhuìr",
             "meaning_en": "Now or later?"
+          },
+          {
+            "hanzi": "可是",
+            "pinyin": "kěshì",
+            "meaning_en": "but; however"
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it or not?"
+          },
+          {
+            "hanzi": "太晚",
+            "pinyin": "tài wǎn",
+            "meaning_en": "too late"
+          },
+          {
+            "hanzi": "那么",
+            "pinyin": "nàme",
+            "meaning_en": "then; in that case"
           }
         ]
       },
@@ -233,6 +269,37 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Ask three choice questions: drinks, location, and time. Answer using a complete sentence."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Polite Disagreement and Alternatives",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想喝茶还是咖啡？",
+            "pinyin": "Nǐ xiǎng hē chá háishi kāfēi?",
+            "english": "Do you want tea or coffee?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想喝茶，可是这里没有茶。",
+            "pinyin": "Wǒ xiǎng hē chá, kěshì zhèlǐ méiyǒu chá.",
+            "english": "I want tea, but there is none here."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那么喝水或者果汁怎么样？",
+            "pinyin": "Nàme hē shuǐ huòzhě guǒzhī zěnmeyàng?",
+            "english": "Then how about water or juice?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，那就喝水吧。",
+            "pinyin": "Hǎo, nà jiù hē shuǐ ba.",
+            "english": "Sure, I will have water then."
+          }
+        ]
       }
     ],
     "practice": {
@@ -271,8 +338,8 @@
           "prompt": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "A: 你想喝水还是茶？ (Nǐ xiǎng hē shuǐ háishi chá?) — Would you like water or tea?\nB: 我想喝水。 (Wǒ xiǎng hē shuǐ.) — I would like water.\nA: 我们在这儿吃还是在那儿吃？ (Wǒmen zài zhèr chī háishi zài nàr chī?) — Shall we eat here or over there?\nB: 我们在这儿吃吧。 (Wǒmen zài zhèr chī ba.) — Let us eat here.\nA: 六点钟还是七点钟？ (Liù diǎn zhōng háishi qī diǎn zhōng?) — Six or seven o’clock?\nB: 七点钟吧。 (Qī diǎn zhōng ba.) — Seven o’clock.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "answer": "A: 你想喝水还是茶？ (Nǐ xiǎng hē shuǐ háishi chá?) — Would you like water or tea?\nB: 我想喝水。 (Wǒ xiǎng hē shuǐ.) — I would like water.\nA: 我们在这儿吃还是在那儿吃？ (Wǒmen zài zhèr chī háishi zài nàr chī?) — Shall we eat here or over there?\nB: 我们在这儿吃吧。 (Wǒmen zài zhèr chī ba.) — Let us eat here.\nA: 六点钟还是七点钟？ (Liù diǎn zhōng háishi qī diǎn zhōng?) — Six or seven o'clock?\nB: 七点钟吧。 (Qī diǎn zhōng ba.) — Seven o'clock.",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -302,7 +369,7 @@
           {
             "id": "convm-choices-alternatives--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -389,6 +456,20 @@
             "label": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Polite Disagreement and Alternatives",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
           }
         ]
       }

@@ -6,9 +6,9 @@ Shuowen review exports and supplied originals in this directory stay local and u
 
 | File | Use |
 | --- | --- |
-| [lessons-3.3.1-import.json](lessons-3.3.1-import.json) | Current Core/Other Lessons import: source and per-file checksums, 20 Core files, 17 lessons, exact dictionary/catalog checks, 63 validated active lessons and stable progress/curriculum identities. |
-| [Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md](Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md) | Owner-supplied Core release audit, preserved unchanged. |
-| [Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md](Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md) | Owner-supplied conversational editorial audit and review limitations, preserved unchanged. |
+| [lessons-3.3.2-import.json](lessons-3.3.2-import.json) | Current Core v3.3.2 / conversational coverage v1.1.4 import: 20 Core files, 19 supplied lessons, 65 active lessons, both curricula, exact dictionary/catalog checks, preserved progress identities and checked expression/crosswalk/marker references. |
+| [lessons-3.3.2-source-cleanup.json](lessons-3.3.2-source-cleanup.json) | Superseded v3.3.1 source ZIPs and Markdown audits; checksums and recovery revision in Git history. |
+| [lessons-3.3.1-import.json](lessons-3.3.1-import.json) | Historical Core/Other Lessons import: source and per-file checksums, 20 Core files, 17 lessons, exact dictionary/catalog checks, 63 validated active lessons and stable progress/curriculum identities. |
 | [lessons-3.3.1-source-cleanup.json](lessons-3.3.1-source-cleanup.json) | Owner-requested removal of 11 superseded ZIPs and 10 obsolete upload Markdown files; exact checksums and recovery revision in published Git history. |
 | [character-variants-42-lexical-notes.json](character-variants-42-lexical-notes.json) | Extracted lexical examples for offline review. |
 | [character-variants-42-lexical-web-audit.json](character-variants-42-lexical-web-audit.json) | Evidence report for those examples; [readable summary](character-variants-42-lexical-web-audit.md). |

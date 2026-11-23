@@ -1,19 +1,9 @@
-# Conversational Mandarin — Complete Course (Core v3.3.1)
+# Mandarin — Combined Conversational and Independent Lessons
 
-The course contains **15 complete conversational lessons**, each in a four-file ZIP (`.json`, `.html`, `.md`, `report.md`) under `conversational_mandarin/topics/`. The existing curriculum (`curricula/CONVERSATIONAL_MANDARIN.json`), lesson index, offline browser, and validation documents are included.
+This bundle contains 17 Conversational Mandarin lesson ZIPs plus 2 unchanged independent character lesson ZIPs. Core v3.3.1 / taxonomy v2.0.0. The original 15 lessons and checkpoint IDs are preserved. See `conversational_mandarin/COVERAGE_REPORT.md`.
 
-This is an editorial release that uses Core Project Sources **v3.3.1** and the **v2.0.0** topic taxonomy. The individual JSON lesson schemas remain `mandarin-general-lesson/3.2.0`; no schema change was made.
+Coverage editorial patch v1.1.2 adds an indexed learner-expression inventory and regional-pronunciation metadata; 17 conversational lessons and two unchanged independent character lessons are retained.
 
-## Editorial corrections
+Editorial patch v1.1.3: 43 grammar-pattern headings and 43 example notes repaired; 17 conversational lessons rebuilt. Stable progress IDs, the two independent character lessons and the source-to-lesson inventory are unchanged. No lesson JSON Schema change.
 
-- Replaced all 15 generic subtitles and outdated descriptions with lesson-specific, learner-facing content.
-- Normalized tags to 2–3 content-specific terms per lesson.
-- Replaced all non-speakable grammar-pattern placeholders/operators with actual Mandarin examples and matching pinyin.
-- Rewrote **all 15 speaking model answers** as complete 4–6-turn exchanges satisfying the full prompt.
-- Replaced generic grammar-question prompts with concrete tasks; aligned all affected answers and progress labels.
-- Removed one invalid concatenated expression from the greetings review list.
-- Kept all learner-progress identities and curriculum placement IDs stable.
-
-The two previously bundled independent character lessons under `independent/` remain unchanged byte-for-byte for drop-in compatibility with the preceding Other Lessons package.
-
-The file `conversational_mandarin/EDITORIAL_AUDIT.md` documents checks and the limits of automatic validation.
+Coverage v1.1.4: Verified linguistic and expression-index corrections (no new lessons, no Core schema changes). Compatible with Core v3.3.2; independent character ZIPs unchanged.

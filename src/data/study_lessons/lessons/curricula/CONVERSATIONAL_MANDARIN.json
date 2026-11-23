@@ -129,6 +129,25 @@
         "grammar-functions",
         "communication-social"
       ]
+    },
+    {
+      "id": "phone-invitations",
+      "label": "Telephone Invitations and Plans",
+      "global_topic_ids": [
+        "communication-social",
+        "time-calendar",
+        "family-relationships"
+      ]
+    },
+    {
+      "id": "newspaper-shopping",
+      "label": "Shopping for a Newspaper",
+      "global_topic_ids": [
+        "shopping-money",
+        "numbers-quantities",
+        "reference-questions",
+        "communication-social"
+      ]
     }
   ],
   "sections": [
@@ -418,6 +437,44 @@
               "prerequisite_lesson_ids": [],
               "course_topic_ids": [
                 "permission-requests"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-16",
+          "title": "Telephone Invitations and Plans",
+          "sequence": 16,
+          "placements": [
+            {
+              "placement_id": "convm-placement-16",
+              "lesson_id": "convm-phone-invitations",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "phone-invitations"
+              ],
+              "introduced_syllabus_entry_ids": [],
+              "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "convm-topic-17",
+          "title": "Shopping for a Newspaper",
+          "sequence": 17,
+          "placements": [
+            {
+              "placement_id": "convm-placement-17",
+              "lesson_id": "convm-newspaper-shopping",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "newspaper-shopping"
               ],
               "introduced_syllabus_entry_ids": [],
               "reviewed_syllabus_entry_ids": []

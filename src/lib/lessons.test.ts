@@ -44,11 +44,11 @@ describe('lesson index', () => {
   it('rejects two files with the same lesson_id', () => {
     expect(() => buildLessonIndex({ 'a.json': raw(), 'b.json': raw() }, cats)).toThrow(/Duplicate lesson_id char-6B21/);
   });
-  it('lists the two character lessons, the 21 HSK Level 1 + 25 Level 2 topic lessons and the 15 conversational lessons, never the legacy copies', () => {
+  it('lists the two character lessons, the 21 HSK Level 1 + 25 Level 2 topic lessons and the 17 conversational lessons, never the legacy copies', () => {
     const ids = lessonSummaries.map(s => s.id);
-    expect(ids.length).toBe(63);
-    expect(new Set(ids).size).toBe(63);
-    expect(ids.filter(id => id.startsWith('convm-')).length).toBe(15);
+    expect(ids.length).toBe(65);
+    expect(new Set(ids).size).toBe(65);
+    expect(ids.filter(id => id.startsWith('convm-')).length).toBe(17);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(46);
     // Core v3.3 (checkpoint progress): topic lessons 3.3.0, character lessons 3.2.0.
@@ -156,7 +156,7 @@ describe('lesson files', () => {
   });
   const all = files(root);
   it('every lesson file has the eagerly read keys', () => {
-    expect(all.length).toBe(63);
+    expect(all.length).toBe(65);
     for (const f of all) {
       const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
       for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);
@@ -197,8 +197,8 @@ describe('v3.1 teaching plans', () => {
 describe('conversational lessons', () => {
   const root = 'src/data/study_lessons/lessons/conversational';
   const docs = readdirSync(root, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => JSON.parse(readFileSync(join(root, d.name, `${d.name}.json`), 'utf8')) as { schema_version: string; lesson_type: string; sections: { blocks: { kind: string }[] } });
-  it('are 15 general dialogue lessons whose blocks are all kinds the page renders', () => {
-    expect(docs.length).toBe(15);
+  it('are 17 general dialogue lessons whose blocks are all kinds the page renders', () => {
+    expect(docs.length).toBe(17);
     for (const d of docs) {
       // Core v3.3 general lessons carry checkpoint progress.
       expect(d.schema_version).toBe('mandarin-general-lesson/3.2.0');

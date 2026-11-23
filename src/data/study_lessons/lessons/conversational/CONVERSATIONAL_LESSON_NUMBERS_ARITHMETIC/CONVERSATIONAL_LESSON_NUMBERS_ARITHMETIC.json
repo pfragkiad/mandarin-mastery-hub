@@ -27,7 +27,8 @@
   },
   "learning_objectives": [
     "Recognize numbers from one to forty-plus.",
-    "Ask and answer simple addition questions."
+    "Ask and answer simple addition questions.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
   ],
   "metadata": {
     "status": "draft",
@@ -40,24 +41,35 @@
     "一": "Characters:一",
     "七": "Characters:七",
     "三": "Characters:三",
+    "不": "Characters:不",
+    "两": "Characters:两",
     "九": "Characters:九",
     "二": "Characters:二",
     "五": "Characters:五",
+    "件": "Characters:件",
     "八": "Characters:八",
     "六": "Characters:六",
+    "共": "Characters:共",
     "加": "Characters:加",
     "十": "Characters:十",
     "四": "Characters:四",
+    "块": "Characters:块",
     "多": "Characters:多",
+    "字": "Characters:字",
     "少": "Characters:少",
-    "是": "Characters:是"
+    "数": "Characters:数",
+    "是": "Characters:是",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "钱": "Characters:钱"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to say two-digit numbers and ask or answer simple addition questions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to say two-digit numbers and ask or answer simple addition questions. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -85,7 +97,7 @@
           {
             "speaker": "B",
             "hanzi": "十二。",
-            "pinyin": "Shí’èr.",
+            "pinyin": "Shí'èr.",
             "english": "Twelve."
           }
         ]
@@ -93,29 +105,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "六加六是多少？",
-        "pattern_pinyin": "liù jiā liù shì duōshao?",
+        "pattern_hanzi": "数字 + 加 + 数字 + 是多少？",
+        "pattern_pinyin": "shùzì + jiā + shùzì + shì duōshao?",
         "function_en": "Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "六加六是多少？",
           "pinyin": "liù jiā liù shì duōshao?",
           "english": "What is six plus six?",
-          "teaching_note": "Use 加 (jiā) for addition; 多少 (duōshao) asks for the result."
+          "teaching_note": "Use the pattern to ask for a total during a purchase."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "二十五",
-        "pattern_pinyin": "èrshíwǔ",
+        "pattern_hanzi": "数字 + 十 + 数字",
+        "pattern_pinyin": "shùzì + shí + shùzì",
         "function_en": "Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "二十五",
           "pinyin": "èrshíwǔ",
           "english": "Twenty-five.",
-          "teaching_note": "Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit."
+          "teaching_note": "二十五 (èrshíwǔ) consists of two tens plus five."
         }
       },
       {
@@ -201,6 +213,56 @@
             "hanzi": "四十七",
             "pinyin": "sìshíqī",
             "meaning_en": "Forty-seven."
+          },
+          {
+            "hanzi": "十一",
+            "pinyin": "shíyī",
+            "meaning_en": "eleven"
+          },
+          {
+            "hanzi": "十二",
+            "pinyin": "shí'èr",
+            "meaning_en": "twelve"
+          },
+          {
+            "hanzi": "十三",
+            "pinyin": "shísān",
+            "meaning_en": "thirteen"
+          },
+          {
+            "hanzi": "十四",
+            "pinyin": "shísì",
+            "meaning_en": "fourteen"
+          },
+          {
+            "hanzi": "十五",
+            "pinyin": "shíwǔ",
+            "meaning_en": "fifteen"
+          },
+          {
+            "hanzi": "十六",
+            "pinyin": "shíliù",
+            "meaning_en": "sixteen"
+          },
+          {
+            "hanzi": "十七",
+            "pinyin": "shíqī",
+            "meaning_en": "seventeen"
+          },
+          {
+            "hanzi": "十八",
+            "pinyin": "shíbā",
+            "meaning_en": "eighteen"
+          },
+          {
+            "hanzi": "十九",
+            "pinyin": "shíjiǔ",
+            "meaning_en": "nineteen"
+          },
+          {
+            "hanzi": "二十",
+            "pinyin": "èrshí",
+            "meaning_en": "twenty"
           }
         ]
       },
@@ -208,6 +270,37 @@
         "id": "guided-speaking",
         "kind": "explanation",
         "text": "Speaking task: Ask and answer three addition questions in Mandarin."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Checking Prices with Two-Digit Numbers",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这是十三块还是三十块？",
+            "pinyin": "Zhè shì shísān kuài háishi sānshí kuài?",
+            "english": "Is this thirteen or thirty yuan?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "十三块，不是三十块。",
+            "pinyin": "Shísān kuài, bú shì sānshí kuài.",
+            "english": "Thirteen yuan, not thirty."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那两件一共多少钱？",
+            "pinyin": "Nà liǎng jiàn yígòng duōshao qián?",
+            "english": "Then how much are two items altogether?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "一共二十六块。",
+            "pinyin": "Yígòng èrshíliù kuài.",
+            "english": "Twenty-six yuan altogether."
+          }
+        ]
       }
     ],
     "practice": {
@@ -246,8 +339,8 @@
           "prompt": "Ask and answer three addition questions in Mandarin.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "A: 三加五是多少？ (Sān jiā wǔ shì duōshao?) — What is three plus five?\nB: 八。 (Bā.) — Eight.\nA: 十六加四是多少？ (Shíliù jiā sì shì duōshao?) — What is sixteen plus four?\nB: 二十。 (Èrshí.) — Twenty.\nA: 十二加七是多少？ (Shí’èr jiā qī shì duōshao?) — What is twelve plus seven?\nB: 十九。 (Shíjiǔ.) — Nineteen.",
-          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
+          "answer": "A: 三加五是多少？ (Sān jiā wǔ shì duōshao?) — What is three plus five?\nB: 八。 (Bā.) — Eight.\nA: 十六加四是多少？ (Shíliù jiā sì shì duōshao?) — What is sixteen plus four?\nB: 二十。 (Èrshí.) — Twenty.\nA: 十二加七是多少？ (Shí'èr jiā qī shì duōshao?) — What is twelve plus seven?\nB: 十九。 (Shíjiǔ.) — Nineteen.",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
         }
       ]
     }
@@ -277,7 +370,7 @@
           {
             "id": "convm-numbers-arithmetic--dialogue--model-dialogue",
             "kind": "section",
-            "label": "Practise the model conversation",
+            "label": "practice the model conversation",
             "optional": false,
             "target_id": "model-dialogue"
           }
@@ -364,6 +457,20 @@
             "label": "Ask and answer three addition questions in Mandarin.",
             "optional": false,
             "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-numbers-arithmetic--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-numbers-arithmetic--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Checking Prices with Two-Digit Numbers",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
           }
         ]
       }

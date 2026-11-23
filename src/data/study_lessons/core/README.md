@@ -1,6 +1,6 @@
-# Mandarin Tutor — Core Project Sources v3.3.1
+# Mandarin Tutor — Core Project Sources v3.3.2
 
-This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This patch release introduces authoring policy and updates illustrative template copy, **without changing any lesson JSON format or accepting/rejecting any previously valid lessons**.
+This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This patch release refines the adopted authoring policy with grammar-card de-duplication and TTS safety guidance, **without changing the lesson JSON Schema or format**.
 
 ## Architecture
 
@@ -90,13 +90,13 @@ That earlier attribution correction was documentation-only; the new v3.3.0 chang
 - **MINOR (`3.X.0`)**: backward-compatible additions to the lesson-format contract, such as new optional fields or new optional sections.
 - **PATCH (`3.3.X`)**: no lesson-format contract change; editorial/agent authoring guidelines, documentation, backward-compatible fixes to illustrative template copy, and release-quality guidance.
 - Do **not** use `_rev2` suffixes to version Core package releases. Use numbered releases with a changelog.
-- Do **not** conflate the Core package release version (now `3.3.1`) with the **embedded type-specific schema versions** (topic `3.3.0`, character/general `3.2.0`, curriculum `3.0.0`), vocabulary releases, or taxonomy releases.
+- Do **not** conflate the Core package release version (now `3.3.2`) with the **embedded type-specific schema versions** (topic `3.3.0`, character/general `3.2.0`, curriculum `3.0.0`), vocabulary releases, or taxonomy releases.
 - Generator scripts and tooling remain **outside** the Core Project Sources package; substantive tooling versions can be managed independently.
 - Revisions to existing completed lessons must preserve permanent lesson IDs, checkpoint IDs, target IDs and learner progress. An editorial-only Core release does not require re-exporting existing lesson collections.
 
 ## Lesson Creator authoring policy
 
-**Mandatory for new lessons and approved editorial revisions:** `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.0.0). Read it alongside the applicable schema and template. It governs learner-facing title/subtitle/description, 2–3 content-based tags, metadata placement, natural checkpoint labels, exact vocabulary/source alignment, cross-lesson duplicate sentences, and release validation. Existing lesson JSON files need no migration because this policy does not change their schema.
+**Mandatory for new lessons and approved editorial revisions:** `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.0.1). Read it alongside the applicable schema and template. It governs learner-facing title/subtitle/description, 2–3 content-based tags, metadata placement, natural checkpoint labels, exact vocabulary/source alignment, cross-lesson duplicate sentences, and release validation. Existing lesson JSON files need no migration because this policy does not change their schema.
 
 Template files provide valid examples and structural starting points, not authoritative word-card source data. The illustrative copy and tags in some templates were refreshed in v3.3.1 to align with this policy; the schemas and vocabulary sources remain the authority for field structure and source facts.
 
@@ -107,3 +107,11 @@ Template files provide valid examples and structural starting points, not author
 - Refined illustrative learner-facing copy, content tags, and checkpoint labels in six JSON authoring templates and updated three type-specific Markdown guides. These are **editorial example changes only**; no property names, schema versions, lesson IDs, question IDs, checkpoint IDs, target IDs or structural definitions changed.
 - All six JSON Schema files and `lesson_categories.json` are **byte-for-byte identical to canonical v3.3.0**, with taxonomy v2.0.0 unchanged.
 - No completed Level 1, Level 2, Conversational Mandarin or Character lesson packages were changed by this Core release. No taxonomy migration is included.
+
+## v3.3.2 patch changelog — 2026-11-23
+
+- Updated `LESSON_CREATOR_AUTHORING_GUIDELINES.md` to policy v1.0.1.
+- Introduced mandatory authoring checks: non-spoken grammar structures must differ from their spoken example sentences, and pattern explanations must not repeat the example teaching note.
+- Clarified that grammatical formulas and placeholders are **not TTS/audio targets**; real spoken examples must be complete pronounceable utterances.
+- This is a guidance-only PATCH: no schema, template, taxonomy, curriculum or lesson-format changes. The six JSON Schemas, category registry, eight JSON templates and three type-specific Markdown guides are byte-for-byte unchanged from Core v3.3.1.
+- Existing lesson IDs, checkpoint IDs, progress data and vocabulary references are unaffected. The Conversational Mandarin course has a separate, content-only coverage-v1.1.3 correction.
