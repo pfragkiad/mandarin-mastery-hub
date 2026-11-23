@@ -1,3 +1,4 @@
+import { Switch } from '@/components/ui/switch';
 import { isLastShownFace, nextFaceView, type Face, type FaceView } from '@/lib/face-view';
 
 /**
@@ -26,4 +27,17 @@ export function FaceToggles({ view, onChange, label, size = 'panel' }: { view: F
       </button>;
     })}
   </div>;
+}
+
+/**
+ * The one Character hints switch (hover ring + click quick card on hanzi), beside FaceToggles
+ * in lessons and the grids. Inputs: `checked`, `onChange`, `size` ('panel' keeps the lesson's
+ * two-line label, 'toolbar' a one-line pill as tall as the grid's buttons). Each surface keeps
+ * its own saved switch (lessons `lessonHints`, grids `gridHints`).
+ */
+export function CharacterHintsToggle({ checked, onChange, size = 'panel' }: { checked: boolean; onChange: (on: boolean) => void; size?: 'panel' | 'toolbar' }) {
+  return <label className={`lesson-hints-toggle is-${size}`} title="Hover a character for a ring; click or tap it for a quick card">
+    <Switch checked={checked} onCheckedChange={onChange} aria-label="Character hints"/>
+    <span><strong>Character hints</strong>{size === 'panel' && <small>Hover or tap a character for a quick card</small>}</span>
+  </label>;
 }

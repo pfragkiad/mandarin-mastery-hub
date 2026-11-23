@@ -6,7 +6,7 @@ import type { CardReveal } from '@/lib/learning-preferences';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { Switch } from '@/components/ui/switch';
 import { faceViewToReveal, revealToFaceView, type FaceView } from '@/lib/face-view';
-import { FaceToggles } from './face-toggles';
+import { CharacterHintsToggle, FaceToggles } from './face-toggles';
 
 /**
  * Glyphs/Vocabulary hidden-face controls: the shared Hanzi · Pinyin · EN buttons (FaceToggles,
@@ -50,8 +50,10 @@ export function CardRevealToggle({ study, playOptions }: { study?: boolean; play
 
   const chip = CHIPS[current] ?? CHIPS.all;
   const toggles = (size: 'panel' | 'toolbar') => <FaceToggles view={view} onChange={setView} label="Show on cards" size={size}/>;
-  if (study) return <><Button variant="outline" size="sm" onClick={() => setOpen(true)}><GraduationCap/>Study<ChevronDown/></Button>{current !== 'all' && <Button variant="ghost" size="sm" className="mobile-state-chip" aria-label={`${chip} — show all`} title="Show all" onClick={() => setPreferences({ ...preferences, cardReveal: 'all' })}><EyeOff/>{chip}<X/></Button>}<Sheet open={open} onOpenChange={setOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Study</SheetTitle>{playOptions && <section className="library-study-section"><h3>Play</h3>{playOptions}</section>}<section className="library-study-section"><h3>Show</h3>{toggles('panel')}</section>{current !== 'all' && <label className="library-remember-row">Remember revealed cards<Switch checked={Boolean(preferences.rememberCardReveals)} onCheckedChange={rememberCardReveals => setPreferences({ ...preferences, rememberCardReveals })}/></label>}</SheetContent></Sheet></>;
-  return <>{toggles('toolbar')}{current !== 'all' && <Button variant="outline" size="sm" aria-pressed={Boolean(preferences.rememberCardReveals)} title="Remember revealed cards" className={preferences.rememberCardReveals ? 'selected' : ''} onClick={() => setPreferences({ ...preferences, rememberCardReveals: !preferences.rememberCardReveals })}><Pin/>Remember revealed cards</Button>}</>;
+  // The grids' own Character hints switch (gridHints, absent = off), beside the face buttons as in lessons.
+  const hints = (size: 'panel' | 'toolbar') => <CharacterHintsToggle checked={preferences.gridHints === true} onChange={gridHints => setPreferences({ ...preferences, gridHints })} size={size}/>;
+  if (study) return <><Button variant="outline" size="sm" onClick={() => setOpen(true)}><GraduationCap/>Study<ChevronDown/></Button>{current !== 'all' && <Button variant="ghost" size="sm" className="mobile-state-chip" aria-label={`${chip} — show all`} title="Show all" onClick={() => setPreferences({ ...preferences, cardReveal: 'all' })}><EyeOff/>{chip}<X/></Button>}<Sheet open={open} onOpenChange={setOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Study</SheetTitle>{playOptions && <section className="library-study-section"><h3>Play</h3>{playOptions}</section>}<section className="library-study-section"><h3>Show</h3>{toggles('panel')}{hints('panel')}</section>{current !== 'all' && <label className="library-remember-row">Remember revealed cards<Switch checked={Boolean(preferences.rememberCardReveals)} onCheckedChange={rememberCardReveals => setPreferences({ ...preferences, rememberCardReveals })}/></label>}</SheetContent></Sheet></>;
+  return <>{toggles('toolbar')}{hints('toolbar')}{current !== 'all' && <Button variant="outline" size="sm" aria-pressed={Boolean(preferences.rememberCardReveals)} title="Remember revealed cards" className={preferences.rememberCardReveals ? 'selected' : ''} onClick={() => setPreferences({ ...preferences, rememberCardReveals: !preferences.rememberCardReveals })}><Pin/>Remember revealed cards</Button>}</>;
 }
 
 /** Grid container class for the active reveal mode ('' shows everything). */

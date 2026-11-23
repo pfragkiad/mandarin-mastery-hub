@@ -5,6 +5,7 @@ import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonO
 import { toast } from 'sonner';
 import { restoredFaceView } from '@/lib/face-view';
 import { blurredPieceAt, REVEALED_ATTR } from '@/lib/lesson-reveal';
+import { CharacterHintsToggle } from './face-toggles';
 import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
 import { ResetProgressButton } from './reset-progress-button';
@@ -559,10 +560,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const description = displayDescription(summary.description);
   const tags = displayTags(summary.tags);
 
-  const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
-    <Switch checked={hintsOn} onCheckedChange={setHints} aria-describedby="lesson-hints-help"/>
-    <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
-  </label>;
+  const hintsToggle = <CharacterHintsToggle checked={hintsOn} onChange={setHints}/>;
 
   return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} onClickCapture={revealClick} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     {/* Back link + course position share one block: on narrow pages they flow as one line

@@ -3882,6 +3882,10 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hints-toggle > span { display: flex; flex-direction: column; gap: 1px; }
 .lesson-hints-toggle strong { font-size: 13px; font-weight: 600; }
 .lesson-hints-toggle small { font-size: 12px; color: var(--muted-foreground); line-height: 1.35; }
+/* Toolbar size (grids' tools row): one line, as tall as the neighbouring outline buttons. */
+.lesson-hints-toggle.is-toolbar { flex: none; margin-top: 0; gap: 8px; height: 32px; padding: 0 12px 0 8px; border: 1px solid var(--border); border-radius: var(--radius-md, 6px); }
+.lesson-hints-toggle.is-toolbar strong { font-size: 13px; font-weight: 500; white-space: nowrap; }
+.library-study-section .lesson-hints-toggle { margin-top: 14px; }
 /* The quick card: a light, rounded floating card on the solid card surface (text behind never shows through). */
 .lesson-hint-card.lesson-hint-card { width: min(320px, calc(100vw - 24px)); padding: 0; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%); background: var(--card); box-shadow: var(--shadow-popover); outline: none; }
 .lesson-hint-body { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px 14px; }
