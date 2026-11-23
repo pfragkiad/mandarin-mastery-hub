@@ -1,7 +1,7 @@
 # Archived HSK handoffs
 
 These original, checksum-bound source bytes preserve historical import provenance.
-The audio manifests and importers still use `hsk3_level2_1.0.2.json`, `hsk3_level3_1.0.4.json` and `hsk3_level4_1.0.3.json`. The remaining archived level files and v1.1.0 topics preserve the pre-v2 classification baseline.
+The audio manifests and importers still use `hsk3_level2_1.0.2.json`, `hsk3_level3_1.0.4.json` and `hsk3_level4_1.0.3.json`. Archived level files preserve previous import provenance and classification baselines; v1.1.0 topics preserve the pre-v2 registry.
 Current vocabulary imports use the files in [the parent directory](../README.md).
 
 | File | SHA-256 |
@@ -17,3 +17,4 @@ Current vocabulary imports use the files in [the parent directory](../README.md)
 | `hsk3_level2_1.1.0.json` | `735ecd4b029b2bc34430809a2501c8c6f8b05b3fd108bd3d31dc2319e3e2f478` |
 | `hsk3_level3_1.1.0.json` | `04f6c394775896cc0afbf346b9c7528c46d7f7d67e4c75f2709af2719620a0e5` |
 | `hsk3_level4_1.1.0.json` | `0225c634973aa66d58d6d851b7990ebbd1ca9c4312e8123641dbf2d20bfd7abd` |
+| `hsk3_level5_1.0.1.json` | `7342f8f72d8d0a0e7b5facab3cd5075c7eae56c709910a41674bf05f0e2f8df3` |

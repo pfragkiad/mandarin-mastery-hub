@@ -28713,6 +28713,10 @@
     {
       "file": "hsk3_level5_1.0.1.json",
       "sha256": "7342f8f72d8d0a0e7b5facab3cd5075c7eae56c709910a41674bf05f0e2f8df3"
+    },
+    {
+      "file": "hsk3_level5_1.0.5.json",
+      "sha256": "cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727"
     }
   ]
 }

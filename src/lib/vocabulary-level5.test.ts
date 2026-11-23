@@ -4,11 +4,16 @@ import { describe, expect, it } from 'vitest';
 import { vocabularyData, sentencePhraseEntries } from './data-contract';
 import { vocabularyFacetOptions, vocabularyKind, words } from './mandarin';
 
-const raw = readFileSync('importer/hsk/hsk3_level5_1.0.1.json');
+const raw = readFileSync('importer/hsk/hsk3_level5_1.0.5.json');
 const source = JSON.parse(raw.toString());
 const level5 = vocabularyData.entries.filter(e => e.hskLevel === 5);
 
 describe('Level 5 draft terms', () => {
+  it('keeps the stored part compact and below the 10 MB file limit', () => {
+    const stored = readFileSync('src/data/vocabulary/level-5.json');
+    expect(stored.byteLength).toBeLessThan(10_000_000);
+    expect(stored.toString().trim().split(/\r?\n/)).toHaveLength(level5.length + 2);
+  });
   it('exposes every exact syllabus identity and its recorded draft fields', () => {
     expect(level5).toHaveLength(1600);
     expect(level5.map(e => e.hsk_index)).toEqual(source.entries.map((e: { id: number }) => e.id));

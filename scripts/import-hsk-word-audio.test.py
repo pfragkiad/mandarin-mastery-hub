@@ -138,6 +138,7 @@ class Level5AudioCompatibilityTests(unittest.TestCase):
         manifest = audio.load_manifest()
         self.assertEqual(manifest['handoff']['file'], 'hsk3_level5_1.0.0.json')
         self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.1.json' for row in manifest['compatibleHandoffs']))
+        self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.5.json' for row in manifest['compatibleHandoffs']))
         vocabulary = audio.base.vocabulary_store.read_vocabulary()
         before = copy.deepcopy(vocabulary)
         _, report = audio.import_audio(vocabulary, manifest)
@@ -146,7 +147,9 @@ class Level5AudioCompatibilityTests(unittest.TestCase):
 
     def test_rejects_an_unbound_compatibility_checksum(self):
         manifest = copy.deepcopy(audio.read(audio.MANIFEST))
-        manifest['compatibleHandoffs'][0]['sha256'] = 'incorrect'
+        for binding in manifest['compatibleHandoffs']:
+            if binding['file'] == audio.HANDOFF.name:
+                binding['sha256'] = 'incorrect'
         original_read = audio.read
         with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
             with self.assertRaisesRegex(ValueError, 'different Level 5 handoff'):

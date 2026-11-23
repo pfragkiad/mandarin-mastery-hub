@@ -18,6 +18,8 @@ Shuowen review exports and supplied originals in this directory stay local and u
 | [hsk-level3-1.1.2-import.json](hsk-level3-1.1.2-import.json) | Level 3 v1.1.2: 23 revised examples across 21 entries, 977 retained example IDs, 443 preserved word recordings and idempotent reimport checks. |
 | [hsk-level2-1.1.1-import.json](hsk-level2-1.1.1-import.json) | Level 2 sentence-only revision: 25 updated examples, 10 new sentence texts, 390 retained example IDs, 166 preserved word recordings, and idempotent reimport checks. |
 | [hsk-level1-1.7.1-import.json](hsk-level1-1.7.1-import.json) | Level 1 v1.7.1: 33 revised examples across 32 entries, 276 word recordings and 567 unchanged example IDs preserved. |
+| [hsk-level5-1.0.5-fonts.json](hsk-level5-1.0.5-fonts.json) | Public font-slice URLs, checksums and locally verified coverage for the two new example characters (灌, 骤) in both vocabulary font families. |
+| [hsk-level5-1.0.5-import.json](hsk-level5-1.0.5-import.json) | Level 5 v1.0.5: 190 revised examples, 69 revised meanings, all 1,306 word recordings preserved; compact output is 7,515,284 bytes, below 10 MB. |
 | [hsk-level5-1.0.1-import.json](hsk-level5-1.0.1-import.json) | Level 5 v1.0.1: 1,600 stable terms, 30 revised meanings and 3,200 rewritten draft examples, with source verification limits retained. |
 | [hsk-level1-5-example-fonts.json](hsk-level1-5-example-fonts.json) | Additional public font slices selected and verified locally for the updated example text; no vocabulary text sent in requests. |
 | [hsk-level5-import.json](hsk-level5-import.json) | Initial Level 5 terms-only import: 1,600 draft records, source checksum and verification limits; 3,200 draft examples deferred. |

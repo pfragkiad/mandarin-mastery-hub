@@ -21,7 +21,7 @@ Levels 1–4 share the 22-topic taxonomy v2.0.0 defined in the [HSK topic sideca
 
 The larger fetched glyph catalogue lives in [public/data/](../../public/data/README.md). Importer-only inputs live in [importer/data/](../../importer/data/README.md). See [catalog.md](../../public/data/catalog.md) for the shared catalogue contract and [scripts/README.md](../../scripts/README.md) for generators.
 
-Level 5 uses 1,600 draft terms and 3,200 owner-approved rewritten draft examples from the [v1.0.1 handoff](../../importer/hsk/README.md), including 30 revised meanings. Level 1 now uses v1.7.1 with 33 revised examples. Readings, meanings, POS, taxonomy and verification limits remain sourced; token alignment does not certify linguistic correctness.
+Level 5 uses 1,600 draft terms and 3,200 owner-approved rewritten draft examples from the [v1.0.5 handoff](../../importer/hsk/README.md), including 190 revised examples and 69 revised meanings relative to v1.0.1. The compact Level 5 file remains under 10 MB. Level 1 now uses v1.7.1 with 33 revised examples. Readings, meanings, POS, taxonomy and verification limits remain sourced; token alignment does not certify linguistic correctness.
 
 Level 2 now follows v1.1.1: 25 sentence examples updated, including 10 changed Hanzi texts. All lexical fields, word/phrase identities, topics and attached word recordings remain unchanged.
 

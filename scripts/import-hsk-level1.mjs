@@ -41,7 +41,7 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.1' };
+  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
   const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600 }[level];
   const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001 }[level], lastId = firstId + count - 1;

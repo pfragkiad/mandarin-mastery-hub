@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 @source "../src";
 @custom-variant dark (&:is(.dark *));
+/* Level 5 v1.0.5 examples: public font slices; new glyphs verified locally without text-subset requests. */
+@font-face { font-family: 'Tutor Vocabulary Kai'; src: url('https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.26.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+9AA4; }
+@font-face { font-family: 'Tutor Vocabulary Kai'; src: url('https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.111.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+704C; }
+@font-face { font-family: 'Tutor Vocabulary Serif'; src: url('https://fonts.gstatic.com/s/notoserifsc/v36/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWqm5Tjb17qLDam6T2isIOpAN0AzDc6KDF2jLlrDm0HbsE.108.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+9AA4; }
+@font-face { font-family: 'Tutor Vocabulary Serif'; src: url('https://fonts.gstatic.com/s/notoserifsc/v36/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWqm5Tjb17qLDam6T2isIOpAN0AzDc6KDF2jLlrDm0HbsE.111.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+704C; }
+
 /* Updated Level 1 and Level 5 examples: public font slices; new glyphs verified locally without text-subset requests. */
 @font-face { font-family: 'Tutor Vocabulary Kai'; src: url('https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.24.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+9E3D; }
 @font-face { font-family: 'Tutor Vocabulary Kai'; src: url('https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.27.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+9988; }

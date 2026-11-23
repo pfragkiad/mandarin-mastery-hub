@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { importLevel5 } from './import-hsk-level5.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level5_1.0.1.json';
+const sourcePath = 'importer/hsk/hsk3_level5_1.0.5.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
 
@@ -21,7 +21,7 @@ function fixture(t, edit = () => {}, editSource) {
   let inputPath = sourcePath;
   if (editSource) {
     const next = structuredClone(source); editSource(next);
-    inputPath = join(directory, 'hsk3_level5_1.0.1.json');
+    inputPath = join(directory, 'hsk3_level5_1.0.5.json');
     writeFileSync(inputPath, JSON.stringify(next));
   }
   return { sourcePath: inputPath, topicsPath: 'importer/hsk/hsk3_topics.json', vocabularyPath };

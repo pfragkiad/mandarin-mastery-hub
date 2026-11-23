@@ -1,0 +1,50 @@
+[
+  {
+    "family": "Tutor Vocabulary Kai",
+    "newCharacters": 2,
+    "stylesheetRequest": "https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC%3Awght%40400",
+    "allNewGlyphsVerified": true,
+    "slices": [
+      {
+        "url": "https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.26.woff2",
+        "unicodeRange": "U+9a87, U+9a8a-9a8b, U+9a8f-9a91, U+9a97, U+9a9a, U+9a9e, U+9aa0-9aa1, U+9aa4-9aa5, U+9aaf-9ab1, U+9ab6-9ab7, U+9ab9-9aba, U+9abe, U+9ac0-9ac5, U+9ac8, U+9acb-9acc, U+9ace-9acf, U+9ad1, U+9ad5-9ad7, U+9ad9, U+9adf, U+9ae1, U+9ae3, U+9aea-9aeb, U+9aed, U+9aef, U+9af2, U+9af4, U+9af9, U+9afb, U+9afd, U+9b03-9b04, U+9b08, U+9b13, U+9b18, U+9b1f, U+9b22-9b23, U+9b28-9b2a, U+9b2c-9b30, U+9b32, U+9b3b, U+9b43, U+9b46-9b49, U+9b4b-9b4e, U+9b51, U+9b55, U+9b58, U+9b5b, U+9b5e-9b60, U+9b63, U+9b68-9b69, U+9b74, U+9b7d, U+9b80-9b81, U+9b83-9b84, U+9b87-9b88, U+9b8a-9b8b, U+9b8d-9b8e, U+9b90, U+9b92-9b95, U+9b97, U+9b9f-9ba0, U+9ba2-9ba3, U+9ba8, U+9bab, U+9bb0, U+9bb8, U+9bc0-9bc1, U+9bc3, U+9bc6-9bc8, U+9bd3-9bd7, U+9bd9, U+9bdb, U+9bdd, U+9be1-9be2, U+9be4-9be5, U+9be7, U+9bea, U+9bed-9bee",
+        "addedUnicodeRange": "U+9AA4",
+        "bytes": 53568,
+        "sha256": "e5c175dbc746ef9512cfd30cfc600910950ff43a73eff750c5407e9392723fdd",
+        "verifiedMissingGlyphs": 1
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/lxgwwenkaitc/v11/w8gDH20td8wNsI3f40DmtXZb48uPRcYjfVkya1rPVMJ1s2xFdzxf8zbrG4pFHAjgWCOdOe9j.111.woff2",
+        "unicodeRange": "U+25ce, U+4e08, U+4e2a, U+4e56, U+4e9a, U+4ea8, U+4ead, U+4ec7, U+4f3a, U+4f51, U+4f62, U+4faf, U+507d, U+5098, U+50ac, U+5147, U+5173, U+5187, U+51f8, U+52a1, U+52a8, U+52f8, U+535c, U+53ed, U+541e, U+5435, U+5475, U+54a9, U+54c0, U+54c7, U+5589, U+5605, U+5690, U+5733, U+5782, U+57c3, U+5858, U+5893, U+589c, U+58e2, U+5974, U+599e, U+59a5, U+59ec, U+5b66, U+5b99, U+5b9d, U+5c2c, U+5c48, U+5c65, U+5cfd, U+5d0e, U+5dba, U+5de2, U+5e06, U+5e15, U+5ec1, U+5ed6, U+5f00, U+5f4c, U+5f65, U+6055, U+609f, U+60b6, U+6241, U+624e, U+626f, U+6291, U+62cc, U+62d3, U+62d8, U+62da, U+62fe, U+6349, U+6367, U+63ea, U+6454, U+64a4, U+64b2, U+64bc, U+64c5, U+64ce, U+6558, U+6572, U+65a5, U+65e8, U+65ed, U+6606, U+6614, U+6670, U+6688, U+673a, U+674f, U+6770, U+6795, U+68cb, U+6912, U+6953, U+6aac, U+6aaf, U+6ab8, U+6b20, U+6b96, U+6bbf, U+6bc5, U+6c6a, U+6cbe, U+6d59, U+6d78, U+6dc7, U+6deb, U+6e7e, U+6e9c, U+6f3f, U+6f51, U+6f70, U+6f84, U+704c, U+7051, U+70ab, U+70ad, U+70f9, U+7119, U+714e, U+71d9, U+71e5-71e6, U+72c4, U+72d0, U+72e0, U+7334, U+744b, U+7455, U+74f7, U+7529, U+75ab, U+75b2, U+766e, U+76c3, U+76fc, U+76fe, U+7891, U+7948, U+7a74, U+7b28, U+7c60, U+7c72, U+7cca, U+7ebf, U+7f55, U+7ff0, U+8154, U+81c2, U+81d8, U+81e3, U+81e5, U+8292, U+8299, U+8302, U+8304, U+8332, U+83c1, U+83c7, U+83ca, U+845b, U+8490, U+85af, U+8650, U+8667, U+8abc, U+8b0e, U+8b39, U+8bed, U+8c54, U+8c6b, U+8c9e, U+8ca7, U+8caa-8cab, U+8ce6, U+8cec-8ced, U+8eb2, U+8eba, U+8fb0, U+901d, U+908f, U+9127, U+91c0, U+9215, U+92b3, U+932b, U+93fd, U+95ca, U+964c, U+96c0, U+970d, U+9774, U+97fb, U+9812, U+9817, U+9913, U+9935, U+99c1, U+9b31, U+9d5d, U+9d6c, U+9e79, U+fe0f, U+fe30, U+ff0b, U+ff10, U+ff15",
+        "addedUnicodeRange": "U+704C",
+        "bytes": 76180,
+        "sha256": "4895434f4a346ed289b4bfd645d02adcebe1d4a5d0d17a9f453e8e770434fcb5",
+        "verifiedMissingGlyphs": 1
+      }
+    ]
+  },
+  {
+    "family": "Tutor Vocabulary Serif",
+    "newCharacters": 2,
+    "stylesheetRequest": "https://fonts.googleapis.com/css2?family=Noto+Serif+SC%3Awght%40400",
+    "allNewGlyphsVerified": true,
+    "slices": [
+      {
+        "url": "https://fonts.gstatic.com/s/notoserifsc/v36/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWqm5Tjb17qLDam6T2isIOpAN0AzDc6KDF2jLlrDm0HbsE.108.woff2",
+        "unicodeRange": "U+24, U+4e08, U+4e43, U+4e4f, U+4ef0, U+4f2a, U+507f, U+50ac, U+50bb, U+5151, U+51bb, U+51f6, U+51fd, U+5272, U+52fe, U+5362, U+53c9, U+53d4, U+53e0, U+543b, U+54f2, U+5507, U+5524, U+558a, U+55b5, U+561b, U+56ca, U+5782, U+57c3, U+5893, U+5915, U+5949, U+5962, U+59ae, U+59dc, U+59fb, U+5bd3, U+5c38, U+5cb3, U+5d07, U+5d29, U+5de1, U+5dfe, U+5e15, U+5eca, U+5f2f, U+5f7c, U+5fcc, U+6021, U+609f, U+60f9, U+6108, U+6148, U+6155, U+6170, U+61d2, U+6251, U+629b, U+62ab, U+62e8, U+62f3, U+6321, U+6350, U+6566, U+659c, U+65e8, U+6635, U+6655, U+6670, U+66f9, U+6734, U+679d, U+6851, U+6905, U+6b49, U+6b96, U+6c1b, U+6c41, U+6c6a, U+6c83, U+6cf3, U+6d9b, U+6dcb, U+6e1d, U+6e20-6e21, U+6eaa, U+6ee4, U+6ee9, U+6f58, U+70e4, U+722c, U+7262, U+7267, U+72b9, U+72e0, U+72ee, U+72f1, U+7334, U+73ab, U+7433, U+7470, U+758f, U+75d5, U+764c, U+7686, U+76c6, U+76fe, U+7720, U+77e2, U+7802, U+7816, U+788d, U+7891, U+7a00, U+7a9d, U+7b52, U+7bad, U+7c98, U+7cca, U+7eba, U+7eea, U+7ef5, U+7f1d, U+7f69, U+806a, U+809a, U+80bf, U+80c3, U+81c0, U+820c, U+82ac, U+82af, U+82cd, U+82d7, U+838e, U+839e, U+8404, U+84b8, U+852c, U+8587, U+8650, U+8679, U+86c7, U+8702, U+87ba, U+886b-886c, U+8870, U+8c10, U+8c23, U+8c6b, U+8d3e, U+8d4b-8d4c, U+8d64, U+8d6b, U+8d74, U+8e29, U+8f69, U+8f74, U+8fb0, U+8fdf, U+901b, U+9038, U+9093, U+9171, U+9489, U+94ae, U+94c3, U+9508, U+9510, U+9601, U+9614, U+964c, U+9675, U+971c, U+97f5, U+9888, U+98d8, U+9971, U+9aa4, U+9e3f, U+9e45, U+9e4f, U+9e70, U+9f7f, U+e715",
+        "addedUnicodeRange": "U+9AA4",
+        "bytes": 43852,
+        "sha256": "a9d450627989c9e65347e9ea95146034f15d168b74285e84e8a23d256c3ef28c",
+        "verifiedMissingGlyphs": 1
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/notoserifsc/v36/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SCqyWqm5Tjb17qLDam6T2isIOpAN0AzDc6KDF2jLlrDm0HbsE.111.woff2",
+        "unicodeRange": "U+4e4c, U+4e88, U+4ea1, U+4ea6, U+4ed3-4ed4, U+4eff, U+4f30, U+4fa7, U+4fc4, U+4fd7, U+500d, U+504f, U+5076-5077, U+517d, U+5192, U+51c9, U+51ef, U+5238, U+5251, U+526a, U+52c7, U+52df, U+52ff, U+53a6, U+53a8, U+53ec, U+5410, U+559d, U+55b7, U+5634, U+573e, U+5783, U+585e, U+586b, U+58a8, U+5999, U+59d3, U+5a1c, U+5a46, U+5b54-5b55, U+5b85, U+5b8b, U+5b8f, U+5bbf, U+5bd2, U+5c16, U+5c24, U+5e05, U+5e45, U+5e7c, U+5e84, U+5f03, U+5f1f, U+5f31, U+5f84, U+5f90, U+5fbd, U+5fc6, U+5fd9, U+5fe7, U+6052, U+6062, U+6089, U+60a3, U+60d1, U+6167, U+622a, U+6234, U+624e, U+6269, U+626c, U+62b5, U+62d2, U+6325, U+63e1, U+643a, U+6446, U+6562, U+656c, U+65e2, U+65fa, U+660c, U+6628, U+6652, U+6668, U+6676, U+66fc, U+66ff, U+6717, U+676d, U+67aa, U+67d4, U+6843, U+6881, U+68d2, U+695a, U+69fd, U+6a2a, U+6b8a, U+6c60, U+6c64, U+6c9f, U+6caa, U+6cc9, U+6ce1, U+6cfd, U+6d1b, U+6d1e, U+6d6e, U+6de1, U+6e10, U+6e7f, U+6f5c, U+704c, U+7070, U+7089, U+70b8, U+718a, U+71c3, U+723d, U+732a, U+73cd, U+7518, U+756a, U+75af, U+75be, U+75c7, U+76d2, U+76d7, U+7763, U+78e8, U+795d, U+79df, U+7c4d, U+7d2f, U+7ee9, U+7f13, U+7f8a, U+8000, U+8010, U+80af, U+80f6, U+80f8, U+8212, U+8273, U+82f9, U+83ab, U+83b1, U+83f2, U+8584, U+871c, U+8861, U+888b, U+88c1, U+88e4, U+8bd1, U+8bf1, U+8c31, U+8d5a, U+8d75-8d76, U+8de8, U+8f85, U+8fa3, U+8fc5, U+9006, U+903c, U+904d, U+9075, U+9178, U+9274, U+950b, U+9526, U+95ea, U+9636, U+9686, U+978b, U+987f, U+9a7e, U+9b42, U+9e1f, U+9ea6, U+9f13, U+9f84, U+ff5e",
+        "addedUnicodeRange": "U+704C",
+        "bytes": 42724,
+        "sha256": "781006ca8d5463354fb6fde2b118875a6da699b1796ce22be3abc003777b6b71",
+        "verifiedMissingGlyphs": 1
+      }
+    ]
+  }
+]
