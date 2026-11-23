@@ -1,3 +1,4 @@
+import { wordHskPill } from './word-identity-pills';
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
@@ -19,6 +20,7 @@ import { readLessonView, saveLessonView, setLessonPanel } from '@/lib/lesson-vie
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
+import { parseAnswerLines } from '@/lib/lesson-answer';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
@@ -312,7 +314,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </div>)}
     </div> });
     if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {topic.related.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}
+      {topic.related.map(item => { const record = recordFor(item); return <div key={item.id} className="lesson-card lesson-vocab lesson-bank-word"><div className="lesson-bank-top"><HeaderStrut/>{record && <WordIdentityPills word={record}/>}</div><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/></div>; })}
     </LessonFitGrid> });
   }
 
@@ -338,7 +340,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   </div>)}</div> });
   for (const b of blocks) {
     if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {b.items.map((item, i) => <div key={`${item.hanzi}-${i}`} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/></div>)}
+      {b.items.map((item, i) => <KeyExpressionCard key={`${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>)}
     </LessonFitGrid> });
   }
   for (const b of laterNotes) {
@@ -730,10 +732,15 @@ function LessonFinish({ entry, total, onComplete, onReset, next }: { entry: Less
  *  the translation to its right. No example sentences (those are on the Vocabulary card).
  *  Inputs: the lesson item and its exact Vocabulary record (null when none matched, which
  *  shows the lesson's own part of speech and no pills, so nothing is borrowed). */
+/** Invisible, zero-width HSK pill at the start of a lesson card header: it gives every header
+ *  the pill's exact height (in each display size), so cards with and without pills keep the
+ *  hanzi box at the same place. */
+function HeaderStrut() { return <span className="word-hsk-id lesson-bank-strut" aria-hidden="true">&nbsp;</span>; }
+
 function WordBankCard({ item, record }: { item: TopicVocabItem; record: Word | null }) {
   const pos = record?.type || plain(item.primary_pos_id.replace(/[-_]/g, ' '));
   return <div className="lesson-card lesson-vocab lesson-bank-word">
-    <div className="lesson-bank-top">{pos && <span className="lesson-register">{pos}</span>}{record && <WordIdentityPills word={record}/>}</div>
+    <div className="lesson-bank-top"><HeaderStrut/>{pos && <span className="lesson-register">{pos}</span>}{record && <WordIdentityPills word={record}/>}</div>
     <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/>
   </div>;
 }
@@ -759,10 +766,25 @@ function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | 
   </div>;
 }
 
+/** A Key expressions card. Inputs: the recorded expression. When exactly one Vocabulary record has
+ * this exact headword, its HSK pill (the grid cards' own wordHskPill) marks the whole expression as
+ * an entry; composite expressions wear a neutral Expression pill instead. Hanzi colour stays uniform either way. */
+function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: string; meaning?: string | undefined }) {
+  const { items } = useWorkspace();
+  const matches = items.filter(w => w.hanzi === hanzi);
+  const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
+  // Same layout as the word-bank/Vocabulary grid cards: a header row that always reserves its
+  // height (Expression pill for composite expressions), then the hanzi box with pinyin and translation to its right.
+  return <div className="lesson-card lesson-vocab lesson-bank-word">
+    <div className="lesson-bank-top"><HeaderStrut/>{hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <span className="word-hsk-id lesson-expression-pill" title="Expression built from words; not a single dictionary entry">Expression</span>}</div>
+    <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
+  </div>;
+}
+
 function VocabCard({ item }: { item: LessonVocabItem }) {
-  return <div className="lesson-card lesson-vocab">
+  return <div className="lesson-card lesson-vocab lesson-bank-word">
     <div className="lesson-card-top"><span className="lesson-register">{item.part_of_speech}</span><span className={`lesson-priority is-${item.priority.toLowerCase()}`} title={`Editorial priority ${item.priority}`}>{item.priority}</span></div>
-    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} tile/>
     {item.usage_note && <p className="lesson-muted"><LessonText text={item.usage_note}/></p>}
     <p className="lesson-footnote">{[item.register, plain(item.lexical_status), item.hsk_level ? `HSK ${item.hsk_level}` : ''].filter(Boolean).join(' · ')}</p>
   </div>;
@@ -821,8 +843,18 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
       {answered ? <Button size="sm" variant="outline" onClick={retry}>Try again</Button>
         : <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>}
     </div>
-    {(open || answered) && <div className="lesson-answer">{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
+    {(open || answered) && <div className="lesson-answer"><p className="lesson-answer-label">{graded ? 'Answer' : 'Model answer'}</p>{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <AnswerLines answer={question.answer}/>}{question.explanation && <p className="lesson-muted lesson-answer-note"><LessonText text={question.explanation}/></p>}</div>}
   </div></LessonHintsGate>;
+}
+
+/** A recorded free-text answer, line by line (parseAnswerLines): "A: 汉字 (pinyin) — English"
+ *  turns get the conversation's speaker badge and sentence renderer; other lines stay verbatim. */
+function AnswerLines({ answer }: { answer: string }) {
+  const lines = parseAnswerLines(answer);
+  return <div className="lesson-dialogue lesson-answer-lines">{lines.map((l, i) => l.kind === 'text'
+    ? <p key={i} className="lesson-answer-text"><LessonText text={l.text}/></p>
+    : l.speaker ? <div key={i} className="lesson-turn"><span className="lesson-turn-speaker" aria-label={`Speaker ${l.speaker}`}>{l.speaker}</span><PlanSentence line={l}/></div>
+    : <PlanSentence key={i} line={l}/>)}</div>;
 }
 
 /** The same recorded choice content appears in the options and revealed answer;

@@ -208,7 +208,9 @@ export function LessonWord({ hanzi, pinyin, meaning, record, tile = false, inkCl
   // On a lesson page an expression no single record matches uses the hint popups (word + arrow).
   const hints = useLessonHints();
   const pair = useLessonPairing(hanzi, pinyin);
-  const segmented = hints != null && record === undefined && !fallback && segments.some(s => s.kind !== 'text');
+  // On a lesson page every unresolved-by-caller expression uses the hint cards, even one with an exact
+  // record (its card offers the word link), so all key expressions behave alike.
+  const segmented = hints != null && record === undefined && segments.some(s => s.kind !== 'text');
   const target: HanziTarget | null = record === undefined ? fallback
     : record ? { kind: 'word', search: { tab: vocabularyKind(record), word: record.id }, audio: record.audio ?? null } : null;
   // A recording is borrowed only from a record read exactly as the lesson reads it, whether the
@@ -217,7 +219,9 @@ export function LessonWord({ hanzi, pinyin, meaning, record, tile = false, inkCl
   const sameReading = linkedReading === undefined || spacing(linkedReading) === spacing(pinyin);
   const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
-  const head = target?.kind === 'glyph'
+  const head = segmented
+    ? <span className={`lesson-hanzi lesson-word-segments${target ? ' is-recorded' : ''}`} lang="zh-CN">{pair.hanziBody}</span>
+    : target?.kind === 'glyph'
     ? <Link to="/characters" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
     : target?.kind === 'word'
       ? <Link to="/vocabulary" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>

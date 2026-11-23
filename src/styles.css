@@ -3970,7 +3970,11 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-verdict.is-right { color: var(--grade-high); }
 .lesson-verdict.is-wrong { color: var(--grade-low); }
 .lesson-question-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.lesson-answer { border-top: 1px solid var(--border); padding-top: 10px; display: grid; gap: 4px; }
+.lesson-answer { margin-top: 4px; padding: 12px 14px 14px; display: grid; gap: 10px; border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border)); border-left: 3px solid var(--primary); border-radius: 10px; background: color-mix(in oklab, var(--primary) 6%, transparent); }
+.lesson-answer-label { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+.lesson-answer-lines { gap: 10px; }
+.lesson-answer-text { margin: 0; }
+.lesson-answer-note { margin: 0; padding-top: 8px; border-top: 1px dashed var(--border); }
 .lesson-preference { margin-top: 14px; }
 .lesson-bar-row { display: grid; grid-template-columns: minmax(90px, auto) minmax(80px, 1fr) auto; gap: 12px; align-items: center; }
 .lesson-bar-label { display: inline-flex; align-items: baseline; gap: 6px; }
@@ -4672,6 +4676,10 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-bank-word { gap: 10px; }
 .lesson-bank-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 20px; }
 .lesson-bank-top .word-hsk-id { font-size: 11px; letter-spacing: .5px; }
+/* Composite Key expressions (not a single dictionary headword) wear this neutral pill where an
+   exact entry would show its HSK pill, so every card keeps the same header height. */
+.lesson-expression-pill { color: var(--muted-foreground); border-color: var(--border); text-transform: uppercase; }
+.lesson-bank-strut { visibility: hidden; width: 0; padding-inline: 0 !important; border-inline-width: 0 !important; margin-right: -8px; overflow: hidden; }
 .lesson-term.is-tile { display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; }
 .lesson-word-tile { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 60px; height: 60px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; color: var(--card-ink, var(--foreground)); transition: border-color .2s; }
 .lesson-term.is-tile .lesson-word-tile .lesson-hanzi { font-size: 36px; line-height: 1; white-space: nowrap; color: inherit; }
