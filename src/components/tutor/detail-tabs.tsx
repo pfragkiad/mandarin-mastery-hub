@@ -3,7 +3,7 @@ import { historyPosition } from '@/lib/detail-trail';
 import { ChevronDown, ChevronUp, GitBranch, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { EtymologyRequest } from '@/lib/etymology';
-import { carryTabOnCardSwitch, entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
+import { carriedEntries, carryTabOnCardSwitch, entryTabs, noteDetailEntry, takeRequestedTab, type DetailTab } from '@/lib/detail-tab-memory';
 import { EtymologyInfo, EtymologyPanel, etymologyHasContent, useEtymologyViews } from './etymology-section';
 import { WordEtymologyInfo, WordEtymologyPanel } from './word-etymology';
 
@@ -21,7 +21,8 @@ import { WordEtymologyInfo, WordEtymologyPanel } from './word-etymology';
  *   Decomposition (or the only tab offered) unless (a) it was reached from an Etymology tile
  *   link (requestDetailTab, consumed once by the next card), or (b) its history entry already
  *   had a tab chosen — so Back/Close to the previous card returns to its Etymology tab and
- *   scrolls the tabs into view. Choices live in memory per history entry + card, never saved.
+ *   scrolls the tabs into view. A form switch on the same card carries the tab without
+ *   scrolling. Choices live in memory per history entry + card, never saved.
  * - Nothing in a collapsed drawer mounts or downloads. While open, etymology resolves even on
  *   the Decomposition tab, so the Etymology tab can hide itself when the card has no notes
  *   (owner's choice: it may vanish a moment after opening). Unresolved, the tab stays offered.
@@ -41,8 +42,11 @@ function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefin
   noteDetailEntry(historyKey, cardKey);
   // Decided once per arrival on an entry (the sheet can stay mounted across links/Back):
   // an entry that already had a choice is a return; otherwise a pending link request applies.
+  // A tab carried by a form switch (师 → 師) is the same card, never a return: no scroll.
   const arrival = useRef<{ entry: string; returned: boolean } | null>(null);
-  if (arrival.current?.entry !== entry) arrival.current = { entry, returned: historyKey !== '' && entryTabs.has(entry) };
+  if (arrival.current?.entry !== entry) arrival.current = { entry, returned: historyKey !== '' && entryTabs.has(entry) && !carriedEntries.has(entry) };
+  // Leaving the entry ends its "just switched form" status, so a later Back/Close to it is a return.
+  useEffect(() => () => { carriedEntries.delete(entry); }, [entry]);
   if (!entryTabs.has(entry)) {
     const requested = takeRequestedTab(historyKey, cardKey);
     if (requested) entryTabs.set(entry, requested);

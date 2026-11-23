@@ -93,6 +93,35 @@ describe('Modal detail sheet', () => {
     }
   });
 });
+describe('Detail sheet scroll on form switches', () => {
+  // A form switch (师 → 師) is the same card, so the reader keeps their place;
+  // any other link to a different card starts it at the top.
+  const sheet = (title: string, switchLink: boolean) => <DetailSheet open title={title} onClose={vi.fn()}>
+    {switchLink ? <div className="form-switch"><a href="?id=2" onClick={event => event.preventDefault()}>Traditional</a></div> : <a href="?id=3" onClick={event => event.preventDefault()}>Other card</a>}
+  </DetailSheet>;
+  // jsdom has no element scrolling: give the panel a scrollTo that moves scrollTop.
+  const panel = () => {
+    const el = document.querySelector<HTMLElement>('.detail-sheet-body')!;
+    el.scrollTo = function (this: HTMLElement, options?: ScrollToOptions | number) { this.scrollTop = typeof options === 'object' ? options.top ?? 0 : 0; } as typeof Element.prototype.scrollTo;
+    return el;
+  };
+  it('keeps the scroll position when switching forms on the same card', () => {
+    const view = render(sheet('Details for 师', true));
+    panel().scrollTop = 240;
+    fireEvent.click(screen.getByText('Traditional'));
+    view.rerender(sheet('Details for 師', true));
+    expect(panel().scrollTop).toBe(240);
+    detailTrail.clear();
+  });
+  it('starts another card at the top', () => {
+    const view = render(sheet('Details for 师', false));
+    panel().scrollTop = 240;
+    fireEvent.click(screen.getByText('Other card'));
+    view.rerender(sheet('Details for 老', false));
+    expect(panel().scrollTop).toBe(0);
+    detailTrail.clear();
+  });
+});
 describe('Close returns where the window was opened from', () => {
   // Simulates the router: each entry carries its index/key, and the root records the page.
   const visit = (path: string, index: number) => { window.history.pushState({ __TSR_index: index, __TSR_key: `k${index}` }, '', path); recordVisit(); };
