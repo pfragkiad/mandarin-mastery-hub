@@ -4772,3 +4772,13 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 @media (max-width: 850px) { :root { --toast-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); } }
 /* Toasts follow the app theme (sonner's own palette is light-only by default). */
 :root [data-sonner-toaster][data-sonner-theme] { --normal-bg: var(--card); --normal-text: var(--foreground); --normal-border: var(--border); }
+
+/* Simplified → traditional pair on one line ("师 → 师's traditional form 師"), used when a
+   simplified character shows its traditional form's etymology (etymology-section.tsx). */
+.etymology-script-pair, .etymology-inherited-row { display: inline-flex; align-items: center; gap: 8px; flex: none; }
+.etymology-inherited-row { display: flex; margin-bottom: 8px; }
+.etymology-pair-arrow { width: 18px; height: 18px; flex: none; color: var(--muted-foreground); }
+.etymology-inherited { display: grid; gap: 10px; min-width: 0; }
+.etymology-inherited-note { margin: 0; }
+:where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
+:where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph strong { font-size: 40px; }

@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash, webcrypto } from 'node:crypto';
-import { etymologyTarget, etymologyView, hasOwnEtymologyText, howellSegments, validateEtymologyTranslations, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter, type EtymologyEntry } from './etymology';
+import { etymologyTarget, etymologyView, hasOwnEtymologyText, inheritableCounterpart, howellSegments, validateEtymologyTranslations, type EtymologyIndex, type EtymologyRequest, type EtymologyCharacter, type EtymologyEntry } from './etymology';
 
 // Real generated data, read from disk like the browser would fetch it.
 const dir = 'public/data/etymology/';
@@ -36,6 +36,18 @@ describe('etymology adapter', () => {
     expect(result?.status).toBe('no-exact-headword');
     expect(result?.entries).toEqual([]);
     expect(result?.related.map(item => item.glyph).sort()).toEqual(['發', '髮'].sort());
+  });
+  it('lets 师 show the notes of its one traditional form 師', () => {
+    const result = view({ recordId: 'Characters:师', glyph: '师' });
+    expect(inheritableCounterpart(result, glyph => glyph === '師')?.recordId).toBe('Characters:師');
+  });
+  it('never lets 发 or 后 show a traditional form\'s notes (context-dependent pairs keep links only)', () => {
+    const traditional = () => true;
+    expect(inheritableCounterpart(view({ recordId: 'Characters:发', glyph: '发' }), traditional)).toBeNull();
+    expect(inheritableCounterpart(view({ recordId: 'Characters:后', glyph: '后' }), traditional)).toBeNull();
+  });
+  it('shows no inherited notes when the single related form is not Traditional', () => {
+    expect(inheritableCounterpart(view({ recordId: 'Characters:师', glyph: '师' }), () => false)).toBeNull();
   });
   it('blocks the standalone 王 notes on the #96 jade form, while Characters:王 keeps them', () => {
     const jade = view({ recordId: 'Radicals:玉:variant:96-1', glyph: '王', familyId: 96, formKey: '96-1' });

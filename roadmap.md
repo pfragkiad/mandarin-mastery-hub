@@ -143,3 +143,5 @@
 - [x] Lesson tags: hide long audience pill and course/format tags (topic lesson, beginner, conversational mandarin…); review tag guideline for lesson creator
 - [x] Lesson top: drop the repeated progress bar above "In this lesson you will" at every width; time moves beside the lesson type
 - [x] Lesson-creator guideline update for subtitles/descriptions/tags
+- [x] Etymology: simplified character without its own entry shows "师 → 師" + the traditional form's notes (labelled suggested, not reviewed)
+- [x] Etymology (character card): left simplified tile same size as the traditional tile
