@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ChevronDown, FlaskConical, Library, Search, Tags, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { lessonCategories, lessonSummaries, lessonSummary, type LessonSummary } from '@/lib/lessons';
 import { courses, projectIndependentLessons, sectionPlacements, type Course } from '@/lib/lesson-curricula';
 import { LessonText } from './lesson-text';
+import { useOneLineTitle } from './one-line-title';
 import { levelFoldId, readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
 import { HintBody, SourceInfo } from './source-info';
 import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, type LessonProgressMap } from '@/lib/lesson-progress';
@@ -113,13 +114,28 @@ function useLessonFold(id: string, fallback = false): [boolean, (open: boolean) 
 function LessonFold({ id, title, note, info, aside, tools, children }: { id: string; title: string; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
   const [open, setOpen] = useLessonFold(id);
   return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
-    <summary><h2 id={`course-${id}`}>{title}</h2>{aside}</summary>
+    <summary><FoldChevron/><FoldTitle id={`course-${id}`} title={title}/>{aside}</summary>
     {(note || tools) && <div className="lesson-fold-intro">
       {note && <p className="lesson-note">{note}{info && <> <SourceInfo className="lesson-course-info" inline>{info}</SourceInfo></>}</p>}
       {tools}
     </div>}
     {children}
   </details>;
+}
+
+/** The open/closed arrow of a course or level drawer. It sits in its own grid column beside
+ *  the title, centred on the title's first line, so a long title wraps beside it instead of
+ *  leaving the arrow alone on a line; it turns down when the drawer is open (CSS). */
+function FoldChevron() {
+  return <span className="lessons-fold-chevron" aria-hidden="true"><ChevronDown/></span>;
+}
+
+/** A course drawer's title: shrunk slightly (down to 16px) when that keeps it on one line,
+ *  otherwise left at its stylesheet size to wrap (owner's choice: smaller only if it fits). */
+function FoldTitle({ id, title }: { id: string; title: string }) {
+  const ref = useRef<HTMLHeadingElement>(null);
+  useOneLineTitle(ref, title, { minSize: 16, onlyIfFits: true });
+  return <h2 ref={ref} id={id}>{title}</h2>;
 }
 
 /** Card shown above both views for the most recent unfinished lesson (cookie progress). */
@@ -221,6 +237,7 @@ function LevelFold({ id, section, flat, progress, defaultOpen, children }: { id:
   const fraction = flat.length ? flat.reduce((sum, p) => sum + lessonState(progress[p.lesson.id]).fraction, 0) / flat.length : 0;
   return <details className="lessons-level lessons-level-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
     <summary>
+      <FoldChevron/>
       <h3>{section.title}<span className="lessons-level-count">{flat.length} {flat.length === 1 ? 'lesson' : 'lessons'}</span></h3>
       <span className="lesson-course-progress"><small>{done} of {flat.length} done</small><ProgressBar fraction={fraction}/></span>
     </summary>

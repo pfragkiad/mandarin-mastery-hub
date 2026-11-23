@@ -4582,23 +4582,31 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* Search hits: recorded part of speech before a word's meaning. */
 .hero-search-hit .hit-pos { font-style: italic; opacity: .8; }
 
-/* Foldable course blocks on the Lessons page: the course title is the toggle, with a chevron. */
-.lessons-fold > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; }
-.lessons-fold > summary::-webkit-details-marker { display: none; }
-.lessons-fold > summary > h2 { margin: 0; }
-.lessons-fold > summary::before { content: ''; width: .5rem; height: .5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; opacity: .7; }
-.lessons-fold[open] > summary::before { transform: rotate(45deg); }
+/* Foldable course and level drawers on the Lessons page. The summary is a grid: arrow |
+   title | progress. The arrow keeps its own column, centred on the title's FIRST line (its box
+   is one title line tall), so a wrapping title never strands it on a line of its own. When the
+   drawer is too narrow for title and progress side by side (container query, not a device
+   width), the progress drops to its own full-width row and the title steps down a size. */
+.lessons-fold, .lessons-level-fold { container-type: inline-size; }
+.lessons-fold > summary, .lessons-level-fold > summary { --fold-title-size: 22px; --fold-title-lh: 1.3; list-style: none; cursor: pointer; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; column-gap: 10px; row-gap: 10px; }
+.lessons-level-fold > summary { --fold-title-size: 19px; }
+.lessons-fold > summary::-webkit-details-marker, .lessons-level-fold > summary::-webkit-details-marker { display: none; }
+.lessons-fold > summary > h2, .lessons-level-fold > summary > h3 { margin: 0; min-width: 0; font-size: var(--fold-title-size); line-height: var(--fold-title-lh); }
+.lessons-fold-chevron { display: flex; align-items: center; height: calc(var(--fold-title-size) * var(--fold-title-lh)); color: var(--foreground); }
+.lessons-fold-chevron svg { width: 20px; height: 20px; transition: transform .15s; transform: rotate(-90deg); }
+.lessons-level-fold > summary .lessons-fold-chevron svg { width: 18px; height: 18px; }
+.lessons-fold[open] > summary > .lessons-fold-chevron svg, .lessons-level-fold[open] > summary > .lessons-fold-chevron svg { transform: none; }
+.lessons-fold > summary > .lesson-course-progress, .lessons-level-fold > summary > .lesson-course-progress { align-self: center; width: 220px; margin-left: 0; }
 .lessons-fold[open] > summary { margin-bottom: .75rem; }
-.lessons-fold > summary:hover h2 { color: var(--primary); }
-/* A level (HSK Level 1, Level 2…) inside a multi-level course: its own drawer with the same
-   chevron as the course, a divider above and the level's own progress at the right. */
+.lessons-fold > summary:hover h2, .lessons-level-fold > summary:hover > h3 { color: var(--primary); }
+.lessons-fold > summary:hover .lessons-fold-chevron, .lessons-level-fold > summary:hover .lessons-fold-chevron { color: var(--primary); }
+/* A level (HSK Level 1, Level 2…) inside a multi-level course: a divider above. */
 .lessons-level-fold { padding-top: 14px; border-top: 1px solid var(--border); }
-.lessons-level-fold > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.lessons-level-fold > summary::-webkit-details-marker { display: none; }
-.lessons-level-fold > summary::before { content: ''; flex: none; width: .45rem; height: .45rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; opacity: .7; }
-.lessons-level-fold[open] > summary::before { transform: rotate(45deg); }
-.lessons-level-fold > summary > h3 { margin: 0; }
-.lessons-level-fold > summary:hover > h3 { color: var(--primary); }
+@container (max-width: 560px) {
+  .lessons-fold > summary { --fold-title-size: 19px; }
+  .lessons-level-fold > summary { --fold-title-size: 17px; }
+  .lessons-fold > summary > .lesson-course-progress, .lessons-level-fold > summary > .lesson-course-progress { grid-column: 1 / -1; width: 100%; align-items: stretch; }
+}
 
 /* Lesson prose: an identified word (words-first) rings as one unit on hover. */
 .lesson-hint-run { border-radius: 4px; transition: box-shadow .12s ease; }

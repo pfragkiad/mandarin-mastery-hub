@@ -145,3 +145,4 @@
 - [x] Lesson-creator guideline update for subtitles/descriptions/tags
 - [x] Etymology: simplified character without its own entry shows "师 → 師" + the traditional form's notes (labelled suggested, not reviewed)
 - [x] Etymology (character card): left simplified tile same size as the traditional tile
+- [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line
