@@ -10,9 +10,12 @@ import { ResetProgressButton } from './reset-progress-button';
 const QuestionProgress = createContext<{ answer: (key: string) => void } | null>(null);
 /** Manual checkpoints (Core v3.3): the page's plan, the completed checkpoint IDs and a toggle,
  *  read by the "Mark as done" ticks on pattern cards, at section ends and in the finish box. */
+/** The lesson whose fold-out panels RememberedDetails records (lesson-view-state.ts). */
+const LessonViewId = createContext<string | null>(null);
 const CheckpointTicks = createContext<{ plan: CheckpointPlan; done: ReadonlySet<string>; toggle: (c: LessonCheckpoint) => void } | null>(null);
 import { Link, useNavigate } from '@tanstack/react-router';
 import { levelFoldId, setLessonFold } from '@/lib/lesson-fold';
+import { readLessonView, saveLessonView, setLessonPanel } from '@/lib/lesson-view-state';
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
@@ -172,7 +175,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const [round, setRound] = useState(0);
   // Every reset snapshots first and offers Undo in a toast for 10 seconds (designer's proposal).
   const undoToast = (message: string, snapshot: ReturnType<typeof snapshotLesson>) => toast(message, { duration: 10000, action: { label: 'Undo', onClick: () => restoreLesson(summary.id, snapshot) } });
-  const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
+  const restart = () => { const snapshot = snapshotLesson(summary.id); resetLesson(summary.id); saveLessonView(summary.id, 'panels', []); setRound(r => r + 1); undoToast('Lesson progress reset', snapshot); };
   const lessonDone = Boolean(progressEntry?.completed);
   // Complete lesson marks it done and returns to where it is listed: its course (the drawer
   // and its level are opened first so they show unfolded), or the topic view of its main topic.
@@ -281,14 +284,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (p.review.can_do.length || topic.items.length) sections.push({ id: 'review', title: 'Review', hint: 'What you can do now', body: <>
       {p.review.can_do.length > 0 && <ul className="lesson-objectives">{p.review.can_do.map(x => <li key={x}><LessonText text={x}/></li>)}</ul>}
       {reviewWords.length > 0 && <><h3 className="lesson-subheading">Words to review</h3><LessonFitGrid className="lesson-grid lesson-vocab-grid">{reviewWords.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid></>}
-      {topic.items.length > 0 && <details className="lesson-details">
+      {topic.items.length > 0 && <RememberedDetails panel="word-bank" className="lesson-details">
         <summary>Word bank ({topic.items.length}) — examples are on each Vocabulary card</summary>
         <LessonFitGrid className="lesson-grid lesson-vocab-grid">{topic.items.map(item => <WordBankCard key={item.id} item={item} record={recordFor(item)}/>)}</LessonFitGrid>
-      </details>}
-      {recall.length > 0 && <details className="lesson-details">
+      </RememberedDetails>}
+      {recall.length > 0 && <RememberedDetails panel="recall-quiz" className="lesson-details">
         <summary>Optional word recall quiz ({recall.length}){contract && (() => { const n = recall.filter(q => { const c = targetCheckpoint.get(q.id); return c && progressEntry?.bonus?.includes(c.id); }).length; return n > 0 ? ` · ${n} bonus done` : ''; })()}</summary>
         <div className="lesson-stack">{recall.map((q, i) => <QuestionCard key={q.id} question={q} index={i + 1}/>)}</div>
-      </details>}
+      </RememberedDetails>}
     </> });
   } else if (topic) {
     const byId = new Map(topic.items.flatMap(item => item.examples.map(e => [e.id, { example: e, item }] as const)));
@@ -474,7 +477,15 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const ticks = checkpointPlan ? { plan: checkpointPlan, done: doneSet, toggle: (c: LessonCheckpoint) => { if (doneSet.has(c.id)) unmarkCheckpoint(summary.id, c.id); else markQuestionAnswered(summary.id, c.id, c.optional); } } : null;
   const minutes = summary.estimatedMinutes;
   // Narrow layout state: which collapsible sections are open (the first one to begin with).
-  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set(ids.slice(0, 1)));
+  // Restored from this tab's saved view, so Back from a word's card shows the same sections
+  // open (and scroll restoration lands where the learner was). Reading storage in the
+  // initializer is hydration-safe here: openIds only affects markup once `narrow` is true,
+  // which is false on the server and on the first client render alike.
+  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => {
+    const saved = readLessonView(summary.id)?.sections.filter(id => ids.includes(id));
+    return new Set(saved ?? ids.slice(0, 1));
+  });
+  useEffect(() => { saveLessonView(summary.id, 'sections', openIds); }, [summary.id, openIds]);
   const active = useActiveSection(ids);
   const toggle = (id: string) => setOpenIds(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
 
@@ -491,6 +502,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (!activeSection) return;
     const snapshot = snapshotLesson(summary.id);
     resetLessonTasks(summary.id, activeKeys);
+    saveLessonView(summary.id, 'panels', []); // the remount closes every panel, so forget them too
     setRound(r => r + 1);
     undoToast(`“${activeSection.title}” reset`, snapshot);
   };
@@ -516,7 +528,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
   </label>;
 
-  return <QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
     {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
@@ -570,7 +582,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </div>
     </div>
   </div>
-  </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider>;
+  </LessonHintsProvider></CheckpointTicks.Provider></QuestionProgress.Provider></LessonViewId.Provider>;
 }
 
 /** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
@@ -608,7 +620,33 @@ function DialogueTurns({ turns }: { turns: (PlanLine & { speaker: string })[] })
  *  The handler checks currentTarget so a nested disclosure's toggle never counts for this one. */
 function Reveal({ label, progressKey, children }: { label: string; progressKey?: string; children: ReactNode }) {
   const progressCtx = useContext(QuestionProgress);
-  return <details className="lesson-details lesson-reveal" onToggle={e => { if (e.target === e.currentTarget && e.currentTarget.open && progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</details>;
+  // Remembered by its task key (when it has one), so a revealed answer is still open on Back.
+  return <RememberedDetails panel={progressKey ? `reveal:${progressKey}` : undefined} className="lesson-details lesson-reveal" onOpen={() => { if (progressKey) progressCtx?.answer(progressKey); }}><summary>{label}</summary>{children}</RememberedDetails>;
+}
+
+/** A native <details> whose open state is remembered for this lesson in this tab
+ *  (lesson-view-state.ts), so leaving the lesson for a word card and coming Back reopens it.
+ *  Inputs: `panel`, a key unique within the lesson (no key → an ordinary, unremembered
+ *  disclosure); `onOpen`, called when the learner opens it. Starts closed on the server and
+ *  first render, then reopens from storage before the first paint (no hydration mismatch). Only this
+ *  element's own toggle counts (currentTarget), never a nested disclosure's. Restoring an
+ *  open panel does not call onOpen, so a restore never counts as new work. */
+function RememberedDetails({ panel, className, onOpen, children }: { panel?: string; className?: string; onOpen?: () => void; children: ReactNode }) {
+  const lessonId = useContext(LessonViewId);
+  const [open, setOpen] = useState(false);
+  const restoring = useRef(false);
+  // Layout effect: reopen before paint, so restored scroll lands on the same content.
+  useLayoutEffect(() => {
+    if (panel && lessonId && readLessonView(lessonId)?.panels.includes(panel)) { restoring.current = true; setOpen(true); }
+  }, [panel, lessonId]);
+  return <details className={className} open={open} onToggle={e => {
+    if (e.target !== e.currentTarget) return;
+    const now = e.currentTarget.open;
+    setOpen(now);
+    if (restoring.current) { restoring.current = false; return; }
+    if (panel && lessonId) setLessonPanel(lessonId, panel, now);
+    if (now) onOpen?.();
+  }}>{children}</details>;
 }
 
 /** The numbers both progress displays show. Before the first read after mount (and on the
