@@ -23,8 +23,9 @@ import { segmentLessonExpression, type LessonSegment } from '@/lib/lesson-segmen
  *   Vocabulary entry with exactly that headword. Anything else (patterns like 以 X 为 Y,
  *   ambiguous or unknown forms) stays plain text, so no record identity is guessed.
  * - LessonTerm: hanzi + orange pinyin + speaker (+ meaning). The speaker uses the matched
- *   word's own recording, a single character's exact-reading recording, or browser speech
- *   for the recorded pinyin through the shared audio pipeline.
+ *   word's own recording (only when its reading is the lesson's, see sameReading), a single
+ *   character's exact-reading recording, or browser speech for the recorded pinyin through
+ *   the shared audio pipeline.
  * - LessonWord: a vocabulary card's headword, linked as a whole to its exact record (see below).
  *
  * LessonText also pairs prose "hanzi (pinyin)" terms (inlineSegments + useLessonPairing), so
@@ -166,7 +167,9 @@ export function LessonHanzi({ hanzi, className = '', focusable = true }: { hanzi
 export function LessonSpeaker({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
   const target = useHanziTarget(hanzi);
   if (!pinyin || !HAN_TEST.test(hanzi.replace(/[，。？！、\s]/gu, ''))) return null;
-  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: target.audio ?? null }
+  // Same rule as LessonWord: the matched card's recording plays only under the card's own
+  // reading; a different lesson reading falls back to speech for the lesson's pinyin.
+  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading(target.reading, pinyin) ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
   return <ExamplePronunciation request={request} label={hanzi}/>;
 }
@@ -181,7 +184,19 @@ export function LessonTerm({ hanzi, pinyin, meaning, size = 'md', after }: { han
   </span>;
 }
 
-const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
+/**
+ * Whether a recorded word reading is the lesson's reading, so that word's recording may be
+ * played under the lesson's pinyin. Only spelling noise is ignored — Unicode composition,
+ * case, spaces, syllable apostrophes and punctuation ("Nǐ hǎo!" = "nǐhǎo") — never tone marks
+ * or letters, so a sandhi spelling (bú kèqi vs bù kèqi) or another reading falls back to speech.
+ * An unknown record reading (undefined) never matches.
+ */
+export function sameReading(recorded: string | null | undefined, lesson: string): boolean {
+  if (!recorded) return false;
+  const norm = (p: string) => p.normalize('NFC').toLowerCase().replace(/[\s'’‘`,.!?;:，。！？；：、…"“”-]+/gu, '');
+  const a = norm(recorded);
+  return a.length > 0 && a === norm(lesson);
+}
 
 /**
  * A lesson's own word (a vocabulary card's headword): the hanzi links straight to its
@@ -195,7 +210,7 @@ const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
  *
  * The link is the word's own target, so it replaces the per-character hint cards on this
  * one heading (a hint click inside a link would open two things). The record's recording
- * is used only when its reading is the lesson's reading (ignoring spaces and case), so a
+ * is used only when its reading is the lesson's reading (sameReading), so a
  * recording of another reading is never played under this pinyin.
  *
  * `tile` lays it out like a Vocabulary grid card: the hanzi in its own bordered box
@@ -216,8 +231,7 @@ export function LessonWord({ hanzi, pinyin, meaning, record, tile = false, inkCl
   // A recording is borrowed only from a record read exactly as the lesson reads it, whether the
   // record was passed in or found by exact headword (谢谢你 never plays another reading's audio).
   const linkedReading = record ? record.pinyin : target?.kind === 'word' ? target.reading : undefined;
-  const sameReading = linkedReading === undefined || spacing(linkedReading) === spacing(pinyin);
-  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading ? target.audio ?? null : null }
+  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading(linkedReading, pinyin) ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
   const head = segmented
     ? <span className={`lesson-hanzi lesson-word-segments${target ? ' is-recorded' : ''}`} lang="zh-CN">{pair.hanziBody}</span>
