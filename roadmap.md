@@ -137,3 +137,9 @@
 
 - [x] Lessons: import corrected HSK Level 2 package (rev2)
 - [x] Lessons: each course level (Level 1, Level 2) folds open/closed like units
+
+- [x] Lesson top (small screens): less cramped header per mockup; Next + title + arrow on one line
+- [x] Lesson top: hide boilerplate subtitle ("Topic-based beginner conversation lesson") and the transcript/source sentence in descriptions
+- [x] Lesson tags: hide long audience pill and course/format tags (topic lesson, beginner, conversational mandarin…); review tag guideline for lesson creator
+- [x] Lesson top: drop the repeated progress bar above "In this lesson you will" at every width; time moves beside the lesson type
+- [x] Lesson-creator guideline update for subtitles/descriptions/tags

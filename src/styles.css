@@ -3788,8 +3788,9 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 .lesson-course-after { font-size: 13px; color: var(--muted-foreground); }
 .lesson-course-steps { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 .lesson-course-step { display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; font-size: 13px; color: var(--foreground); text-decoration: none; }
-.lesson-course-step span { display: flex; flex-direction: column; min-width: 0; }
-.lesson-course-step small { font-size: 11px; color: var(--muted-foreground); }
+/* "Next: <title> →" reads as one line (label, title and arrow together), wrapping only the title. */
+.lesson-course-step span { display: inline; min-width: 0; }
+.lesson-course-step small { font-size: inherit; color: var(--primary); }
 .lesson-course-step.is-next { margin-left: auto; text-align: right; }
 .lesson-course-step:hover, .lesson-course-step:focus-visible { color: var(--primary); outline: none; }
 .lesson-objectives { list-style: disc; margin: 4px 0 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; line-height: 1.6; }
@@ -4032,6 +4033,28 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-page { --lesson-sticky-top: 0px; }
 @media (max-width: 850px) { .lesson-page { --lesson-sticky-top: 60px; } }
 .lesson-page.is-narrow .lesson-back { margin-bottom: 12px; }
+/* Narrow top block, one layer instead of a boxed card: "← All lessons" left and the course line
+   ("Course · Lesson N of M", unit and icon dropped) right on one row, wrapping when it doesn't
+   fit; Previous/Next each on their own full-width line below. The nav uses display: contents
+   so its parts join the row without its card box. */
+.lesson-page.is-narrow .lesson-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 14px; }
+.lesson-page.is-narrow .lesson-top .lesson-back { margin: 0; flex: none; }
+.lesson-page.is-narrow .lesson-course-position { display: contents; }
+.lesson-page.is-narrow .lesson-course-where { flex: 1 1 auto; min-width: 0; justify-content: flex-end; text-align: right; }
+.lesson-page.is-narrow .lesson-course-where svg, .lesson-page.is-narrow .lesson-course-unit { display: none; }
+.lesson-page.is-narrow .lesson-course-after { flex-basis: 100%; }
+.lesson-page.is-narrow .lesson-course-steps { flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 4px; }
+.lesson-page.is-narrow .lesson-course-steps > span:empty { display: none; }
+.lesson-course-where strong { white-space: nowrap; }
+/* Narrow: each step is one flowing line, so the arrow stays beside the last word when a long
+   title wraps instead of floating at the row's edge. */
+.lesson-page.is-narrow .lesson-course-step { display: block; font-size: 14px; line-height: 1.45; padding: 4px 0; }
+.lesson-page.is-narrow .lesson-course-step svg { display: inline; vertical-align: -2px; }
+.lesson-page.is-narrow .lesson-course-step svg:first-child { margin-right: 6px; }
+.lesson-page.is-narrow .lesson-course-step svg:last-child { margin-left: 6px; }
+.lesson-page.is-narrow .lesson-course-step.is-next { margin-left: 0; text-align: left; }
+/* Narrow eyebrow: lesson type + time only (the topic is on the Lessons page), one line. */
+.lesson-page.is-narrow .lesson-eyebrow-category { display: none; }
 .lesson-page.is-narrow .lesson-hero { padding-bottom: 18px; }
 .lesson-page.is-narrow .lesson-hero.has-headword { grid-template-columns: auto minmax(0, 1fr); gap: 2px 16px; align-items: start; }
 .lesson-page.is-narrow .lesson-hero.has-headword .lesson-hero-copy { display: contents; }
@@ -4613,10 +4636,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-fold-intro { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 16px; }
 .lesson-fold-intro > .lesson-note { flex: 1 1 320px; max-width: 72ch; margin-bottom: 0; }
 .lesson-reset svg { width: 14px; height: 14px; }
-.lesson-progress-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 14px 0 4px; font-size: 13px; color: var(--muted-foreground); }
-.lesson-progress-strip .lesson-progress { flex: 1 1 160px; max-width: 320px; }
 .lesson-progress-label { display: inline-flex; align-items: center; gap: 6px; }
-.lesson-progress-strip.is-done .lesson-progress-label { color: var(--primary); font-weight: 600; }
 .lesson-progress-label svg { width: 15px; height: 15px; }
 .lesson-finish { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; margin: 28px 0 8px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); }
 .lesson-finish.is-done { border-color: color-mix(in oklab, var(--primary) 45%, var(--border)); background: color-mix(in oklab, var(--primary) 7%, var(--card)); }

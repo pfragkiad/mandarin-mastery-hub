@@ -1,6 +1,6 @@
 import { LessonFitGrid } from './lesson-fit-grid';
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
-import { hasLessonProgress, lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
+import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
 import { toast } from 'sonner';
 import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
@@ -29,6 +29,7 @@ import { SentenceExample } from './sentence-example';
 import { LessonHintsGate, LessonHintsProvider } from './lesson-hints';
 import { Switch } from '@/components/ui/switch';
 import { useWorkspace } from './workspace';
+import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-header-copy';
 
 /**
  * One study lesson page, rendered entirely from its JSON document (src/lib/lessons.ts),
@@ -523,25 +524,35 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     }, 320);
   };
 
+  const subtitle = displaySubtitle(summary.subtitle);
+  const description = displayDescription(summary.description);
+  const tags = displayTags(summary.tags);
+
   const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
     <Switch checked={hintsOn} onCheckedChange={setHints} aria-describedby="lesson-hints-help"/>
     <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
   </label>;
 
   return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
-    <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
-    {positions.map(p => <CoursePosition key={p.placement.id} position={p}/>)}
+    {/* Back link + course position share one block: on narrow pages they flow as one line
+        (back left, course/lesson number right) with Previous/Next below (CSS .lesson-top). */}
+    <div className="lesson-top">
+      <Link to="/lessons" className="lesson-back"><ArrowLeft size={14} aria-hidden="true"/>All lessons</Link>
+      {positions.map(p => <CoursePosition key={p.placement.id} position={p} lessonTitle={summary.title}/>)}
+    </div>
     <header className={`lesson-hero${headword ? ' has-headword' : ''}`}>
       {headword && <LessonHeadword hanzi={headword.hanzi} pinyin={headword.pinyin}/>}
       <div className="lesson-hero-copy">
-        <div className="eyebrow"><BookText size={12} aria-hidden="true"/>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <> · {summary.primaryCategory.label.toUpperCase()}</>}</div>
+        <div className="eyebrow"><BookText size={12} aria-hidden="true"/><span>{lessonLabel(summary).toUpperCase()}{summary.primaryCategory && <span className="lesson-eyebrow-category"> · {summary.primaryCategory.label.toUpperCase()}</span>}{minutes && <span className="lesson-eyebrow-time"> · ABOUT {minutes} MIN</span>}</span></div>
         <h1>{summary.title}</h1>
-        {summary.subtitle && <p className="lesson-subtitle"><LessonText text={summary.subtitle}/></p>}
-        {summary.description && <p className="lesson-description"><LessonText text={summary.description}/></p>}
-        <ul className="lesson-chips">{summary.audience && <li className="is-audience">{summary.audience}</li>}{summary.tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>
+        {/* Header copy goes through lesson-header-copy.ts: listed boilerplate subtitles, source
+            notes and course/level tags are hidden (never rewritten); the audience line is not
+            shown because the course line above already names the course and level. */}
+        {subtitle && <p className="lesson-subtitle"><LessonText text={subtitle}/></p>}
+        {description && <p className="lesson-description"><LessonText text={description}/></p>}
+        {tags.length > 0 && <ul className="lesson-chips">{tags.map(t => <li key={t}>{t.replace(/-/g, ' ')}</li>)}</ul>}
       </div>
     </header>
-    <LessonProgressStrip entry={progressEntry} total={totalTasks} minutes={minutes} onReset={restart}/>
     {(intro.lesson_focus || intro.core_principle || intro.learning_priority || summary.objectives.length > 0) && <div className="lesson-intro">
       {summary.objectives.length > 0 && <div><strong>In this lesson you will</strong><ul className="lesson-objectives">{summary.objectives.map(o => <li key={o}><LessonText text={o}/></li>)}</ul></div>}
       {intro.lesson_focus && <p><strong>Focus</strong><LessonText text={intro.lesson_focus}/></p>}
@@ -587,16 +598,20 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
 
 /** Where this lesson sits in one course: course and level, unit, "Lesson N of M", recorded
  *  prerequisites, and Previous/Next within the same level (only the manifest's order). */
-function CoursePosition({ position: p }: { position: LessonPosition }) {
+function CoursePosition({ position: p, lessonTitle }: { position: LessonPosition; lessonTitle: string }) {
+  // A unit named exactly like the lesson adds nothing, so the line skips it.
+  const unit = p.unit.title.trim() === lessonTitle.trim() ? null : p.unit.title;
+  // A prerequisite that is simply the Previous link below would be said twice, so it is listed once there.
+  const before = p.placement.prerequisites.filter(x => x.id !== p.previous?.id);
   return <nav className="lesson-course-position" aria-label={`${p.course.title}: position`}>
     <div className="lesson-course-where">
       <Library size={14} aria-hidden="true"/>
-      <span><Link to="/lessons">{p.section.title}</Link> · {p.unit.title} · <strong>Lesson {p.index} of {p.total}</strong></span>
+      <span><Link to="/lessons">{p.section.title}</Link>{unit && <span className="lesson-course-unit"> · {unit}</span>} · <strong>Lesson {p.index} of {p.total}</strong></span>
     </div>
-    {p.placement.prerequisites.length > 0 && <p className="lesson-course-after">Before this: {p.placement.prerequisites.map((s, i) => <span key={s.id}>{i > 0 && ', '}<Link to="/lessons/$lessonId" params={{ lessonId: s.id }}>{s.title}</Link></span>)}</p>}
+    {before.length > 0 && <p className="lesson-course-after">Before this: {before.map((s, i) => <span key={s.id}>{i > 0 && ', '}<Link to="/lessons/$lessonId" params={{ lessonId: s.id }}>{s.title}</Link></span>)}</p>}
     <div className="lesson-course-steps">
-      {p.previous ? <Link to="/lessons/$lessonId" params={{ lessonId: p.previous.id }} className="lesson-course-step"><ArrowLeft size={14} aria-hidden="true"/><span><small>Previous</small>{p.previous.title}</span></Link> : <span/>}
-      {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next</small>{p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
+      {p.previous ? <Link to="/lessons/$lessonId" params={{ lessonId: p.previous.id }} className="lesson-course-step"><ArrowLeft size={14} aria-hidden="true"/><span><small>Previous:</small> {p.previous.title}</span></Link> : <span/>}
+      {p.next && <Link to="/lessons/$lessonId" params={{ lessonId: p.next.id }} className="lesson-course-step is-next"><span><small>Next:</small> {p.next.title}</span><ArrowRight size={14} aria-hidden="true"/></Link>}
     </div>
   </nav>;
 }
@@ -688,20 +703,6 @@ function SectionTicks({ where }: { where: string }) {
 /** One confirm wording for every whole-lesson reset (sidebar menu, phone Settings, Start over,
  *  Practice this lesson again), each followed by the same Undo toast. */
 const resetCopy = (total: number) => ({ title: `Reset all ${total} ${total === 1 ? 'task' : 'tasks'}?`, description: 'This clears your answers and progress for this lesson.' });
-
-/** Top-of-lesson progress line, every width: "N of M tasks done" (or Completed) with a bar and,
- *  only once there is progress to clear, a quiet "Start over" text link (owner's choice: a
- *  natural moment to reset, kept low-emphasis). Inputs: the stored entry (absent until read
- *  after mount), the page's task count and `onReset`. */
-function LessonProgressStrip({ entry, total, minutes, onReset }: { entry: LessonProgressEntry | undefined; total: number; minutes: number | null; onReset: () => void }) {
-  const { tasks, state, fraction, label } = progressView(entry, total);
-  if (tasks === 0 && !entry?.completed) return null;
-  return <div className={`lesson-progress-strip is-${state}`}>
-    <span className="lesson-progress-label">{label ?? <><CheckCircle2 aria-hidden="true"/>Completed</>}{minutes && <small className="lesson-progress-time"> · about {minutes} min</small>}</span>
-    <span className="lesson-progress" role="progressbar" aria-label="Lesson progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(fraction * 100)}><span style={{ width: `${fraction * 100}%` }}/></span>
-    {hasLessonProgress(entry) && <ResetProgressButton look="link" label="Start over" {...resetCopy(tasks)} onReset={onReset}/>}
-  </div>;
-}
 
 /** End-of-lesson box: "Complete lesson" marks it done without opening every task; once done
  *  it reads Lesson complete with, in a course, the next lesson as the main action and a

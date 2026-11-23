@@ -12,6 +12,7 @@ import { continueLesson, lessonState, resetCourseProgress, useLessonProgress, ty
 import { ResetProgressButton } from './reset-progress-button';
 import { DraftFilterForm } from './filter-form';
 import { LessonSearchResults, lessonScopeLabel, lessonScopes } from './lesson-search-results';
+import { displaySubtitle, displayTags } from '@/lib/lesson-header-copy';
 
 /** Lessons' status pill in the page heading: the collection is partial material, so the
  *  tag says so and opens the shared hint card explaining exactly what is missing. No
@@ -292,14 +293,18 @@ export function LessonCard({ lesson, number, after = [], onTag, activeTag, extra
   const { state, fraction } = lessonState(progress?.[lesson.id]);
   const stateLabel = state === 'done' ? 'Done' : state === 'in-progress' ? 'In progress' : upNext ? 'Up next' : '';
   const dim = number !== undefined && state === 'not-started' && !upNext && progress !== undefined;
-  const tags = activeTag && lesson.tags.includes(activeTag) ? [activeTag, ...lesson.tags.filter(t => t !== activeTag)].slice(0, 3) : lesson.tags.slice(0, 3);
+  // Content tags only (lesson-header-copy.ts drops course/level/format tags); an active tag
+  // filter keeps its own chip first so the learner can see and clear it.
+  const shown = displayTags(lesson.tags, Infinity);
+  const tags = activeTag && lesson.tags.includes(activeTag) ? [activeTag, ...shown.filter(t => t !== activeTag)].slice(0, 3) : shown.slice(0, 3);
+  const subtitle = displaySubtitle(lesson.subtitle);
   return <div className={`lesson-index-item is-${state}${upNext ? ' is-next' : ''}${dim ? ' is-dim' : ''}`}>
     <Link to="/lessons/$lessonId" params={{ lessonId: lesson.id }} className="lesson-index-card">
       <LessonGlyph lesson={lesson} number={number}/>
       <span className="lesson-index-copy">
         <span className="lesson-index-meta">{number ? `Lesson ${number}` : kindLabel[lesson.kind]}{lesson.headword?.pinyin && <> · <span className="pinyin">{lesson.headword.pinyin}</span></>}{stateLabel && <> · <span className="lesson-state">{stateLabel}</span></>}</span>
         <strong>{lesson.title}</strong>
-        {lesson.subtitle && <span className="lesson-index-subtitle"><LessonText text={lesson.subtitle}/></span>}
+        {subtitle && <span className="lesson-index-subtitle"><LessonText text={subtitle}/></span>}
         {after.length > 0 && <small>After: {after.map(a => a.title).join(', ')}</small>}
         {extra}
       </span>
