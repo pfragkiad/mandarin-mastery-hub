@@ -19,6 +19,7 @@ import { readLessonView, saveLessonView, setLessonPanel } from '@/lib/lesson-vie
 import { ArrowLeft, ArrowRight, BookText, Check, CheckCircle2, ChevronDown, ExternalLink, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
+import { parseAnswerLines } from '@/lib/lesson-answer';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
 import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
@@ -821,8 +822,18 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
       {answered ? <Button size="sm" variant="outline" onClick={retry}>Try again</Button>
         : <Button size="sm" variant="outline" className="lesson-answer-toggle" aria-expanded={open} onClick={() => setOpen(v => !v)}>{open ? 'Hide answer' : 'Show answer'}</Button>}
     </div>
-    {(open || answered) && <div className="lesson-answer">{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <p><strong><LessonText text={question.answer}/></strong></p>}{question.explanation && <p className="lesson-muted"><LessonText text={question.explanation}/></p>}</div>}
+    {(open || answered) && <div className="lesson-answer"><p className="lesson-answer-label">{graded ? 'Answer' : 'Model answer'}</p>{graded ? correctChoices.map(c => <p key={c.id} className="lesson-term"><QuestionChoice choice={c} showMeaning/></p>) : question.answer && <AnswerLines answer={question.answer}/>}{question.explanation && <p className="lesson-muted lesson-answer-note"><LessonText text={question.explanation}/></p>}</div>}
   </div></LessonHintsGate>;
+}
+
+/** A recorded free-text answer, line by line (parseAnswerLines): "A: 汉字 (pinyin) — English"
+ *  turns get the conversation's speaker badge and sentence renderer; other lines stay verbatim. */
+function AnswerLines({ answer }: { answer: string }) {
+  const lines = parseAnswerLines(answer);
+  return <div className="lesson-dialogue lesson-answer-lines">{lines.map((l, i) => l.kind === 'text'
+    ? <p key={i} className="lesson-answer-text"><LessonText text={l.text}/></p>
+    : l.speaker ? <div key={i} className="lesson-turn"><span className="lesson-turn-speaker" aria-label={`Speaker ${l.speaker}`}>{l.speaker}</span><PlanSentence line={l}/></div>
+    : <PlanSentence key={i} line={l}/>)}</div>;
 }
 
 /** The same recorded choice content appears in the options and revealed answer;

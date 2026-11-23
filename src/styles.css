@@ -3970,7 +3970,12 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-verdict.is-right { color: var(--grade-high); }
 .lesson-verdict.is-wrong { color: var(--grade-low); }
 .lesson-question-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.lesson-answer { border-top: 1px solid var(--border); padding-top: 10px; display: grid; gap: 4px; }
+.lesson-answer { margin-top: 4px; padding: 12px 14px 14px; display: grid; gap: 10px; border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border)); border-left: 3px solid var(--primary); border-radius: 10px; background: color-mix(in oklab, var(--primary) 6%, transparent); }
+.lesson-answer-label { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+.lesson-answer-lines { gap: 10px; }
+.lesson-answer-text { margin: 0; }
+.lesson-answer-note { margin: 0; padding-top: 8px; border-top: 1px dashed var(--border); }
+.lesson-word-segments.is-recorded { color: var(--primary); }
 .lesson-preference { margin-top: 14px; }
 .lesson-bar-row { display: grid; grid-template-columns: minmax(90px, auto) minmax(80px, 1fr) auto; gap: 12px; align-items: center; }
 .lesson-bar-label { display: inline-flex; align-items: baseline; gap: 6px; }
