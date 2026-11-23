@@ -768,15 +768,15 @@ function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | 
 
 /** A Key expressions card. Inputs: the recorded expression. When exactly one Vocabulary record has
  * this exact headword, its HSK pill (the grid cards' own wordHskPill) marks the whole expression as
- * an entry; composite expressions wear a neutral Phrase pill instead. Hanzi colour stays uniform either way. */
+ * an entry; composite expressions wear a neutral Expression pill instead. Hanzi colour stays uniform either way. */
 function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: string; meaning?: string | undefined }) {
   const { items } = useWorkspace();
   const matches = items.filter(w => w.hanzi === hanzi);
   const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
   // Same layout as the word-bank/Vocabulary grid cards: a header row that always reserves its
-  // height (Phrase pill for composite expressions), then the hanzi box with pinyin and translation to its right.
+  // height (Expression pill for composite expressions), then the hanzi box with pinyin and translation to its right.
   return <div className="lesson-card lesson-vocab lesson-bank-word">
-    <div className="lesson-bank-top"><HeaderStrut/>{hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <span className="word-hsk-id lesson-phrase-pill" title="Phrase built from words; not a single dictionary entry">Phrase</span>}</div>
+    <div className="lesson-bank-top"><HeaderStrut/>{hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <span className="word-hsk-id lesson-expression-pill" title="Expression built from words; not a single dictionary entry">Expression</span>}</div>
     <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
   </div>;
 }
