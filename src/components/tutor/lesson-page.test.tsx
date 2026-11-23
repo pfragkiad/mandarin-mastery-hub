@@ -20,7 +20,7 @@ describe('LessonPage', () => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(container.querySelector('h1')?.textContent).toContain(lesson.summary.title);
-    expect(['mandarin-character-lesson/3.2.0', 'mandarin-topic-lesson/3.3.0', 'mandarin-general-lesson/3.2.0']).toContain(lesson.summary.schemaVersion);
+    expect(['mandarin-character-lesson/3.2.0', 'mandarin-topic-lesson/3.3.0', 'mandarin-general-lesson/3.2.0', 'mandarin-general-lesson/3.3.0']).toContain(lesson.summary.schemaVersion);
     if (lesson.topic?.plan) {
       // v3.1: teaching path first, every word once in the word bank, no source examples repeated.
       expect(container.querySelectorAll('.lesson-details .lesson-bank-word')).toHaveLength(lesson.topic.items.length);
@@ -36,6 +36,37 @@ describe('LessonPage', () => {
       expect(container.querySelector('.lesson-hero .eyebrow')?.textContent).toContain('CONVERSATION LESSON');
     } else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
+  });
+
+  it('Key expressions show a recorded usage note below the phrase, never speak it, and omit it when absent', async () => {
+    const lesson = (await loadLesson('convm-with-someone'))!;
+    const items = lesson.sections.blocks!.flatMap(b => b.kind === 'review_set' ? b.items : []);
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const cards = Array.from(container.querySelectorAll('.lesson-vocab'));
+    expect(cards).toHaveLength(items.length);
+    items.forEach((item, i) => {
+      const note = cards[i]!.querySelector('.lesson-usage-note');
+      if (!item.usage_note) { expect(note).toBeNull(); return; }
+      expect(note?.querySelector('.lesson-usage-label')?.textContent).toBe(item.usage_label);
+      // Pronunciation stays on the original phrase: no speaker names the note's alternative forms.
+      expect(note?.querySelector('button')).toBeNull();
+      const speakers = Array.from(cards[i]!.querySelectorAll('button[aria-label]')).map(b => b.getAttribute('aria-label'));
+      expect(speakers.length).toBeGreaterThan(0);
+      expect(speakers.every(label => label === `Listen to ${item.hanzi}`)).toBe(true);
+    });
+    expect(items.filter(i => i.usage_note)).toHaveLength(2);
+  });
+
+  it('a pattern whose example repeats the formula and function shows each once', async () => {
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const blocks = lesson.sections.blocks!.map(b => b.kind === 'grammar_pattern' ? { ...b, pattern_hanzi: b.example.hanzi, pattern_pinyin: b.example.pinyin, example: { ...b.example, teaching_note: b.function_en } } : b);
+    const { container } = render(<LessonPage lesson={{ ...lesson, sections: { ...lesson.sections, blocks } }} priority={undefined} onPriority={() => {}}/>);
+    const cards = container.querySelectorAll('.lesson-pattern');
+    expect(cards.length).toBeGreaterThan(0);
+    cards.forEach(card => {
+      expect(card.querySelector('.lesson-pattern-line')).toBeNull();
+      expect(card.querySelector('.lesson-teaching')).toBeNull();
+    });
   });
 
   it('a topic lesson word links to the Vocabulary record with its HSK number and headword', async () => {

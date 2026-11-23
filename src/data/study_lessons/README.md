@@ -76,3 +76,8 @@ schema-version assertions in `src/lib/lessons.test.ts` and
 `src/components/tutor/lesson-page.test.tsx`, and check rendering/absence and that
 pronunciation still targets only the original phrase. The source TSV and
 restoration audit are offline references, not new eager frontend imports.
+
+Status: implemented — `ReviewSetItem` in `src/lib/lessons.ts`, a labelled note
+below the expression in `KeyExpressionCard`, and tests in `lesson-page.test.tsx`.
+Pattern cards also hide a formula or teaching note that only repeats the example
+or its function (display only; recorded fields unchanged).

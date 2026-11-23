@@ -147,3 +147,4 @@
 - [x] Etymology (character card): left simplified tile same size as the traditional tile
 - [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line
 - [x] Lesson Key expressions: neutral PHRASE pill on non-entry expressions
+- [x] Lessons v3.4.0: Key expressions usage label/note; pattern cards hide repeated formula/note

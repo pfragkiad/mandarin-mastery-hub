@@ -111,7 +111,11 @@ export type GeneralBlock =
   | { id: string; kind: 'explanation'; text: string }
   | { id: string; kind: 'dialogue'; title?: string; turns: { speaker: string; hanzi: string; pinyin: string; english: string }[] }
   | { id: string; kind: 'grammar_pattern'; pattern_hanzi: string; pattern_pinyin: string; function_en: string; example: { id: string; hanzi: string; pinyin: string; english: string; teaching_note?: string } }
-  | { id: string; kind: 'review_set'; items: { hanzi: string; pinyin: string; meaning_en: string }[] };
+  | { id: string; kind: 'review_set'; items: ReviewSetItem[] };
+
+/** One Key expressions item. General schema 3.3.0 adds optional permanent CMX expression IDs and a
+ * recorded usage label/note — visual explanation only, never pronounced or substituted for the phrase. */
+export type ReviewSetItem = { hanzi: string; pinyin: string; meaning_en: string; expression_id?: string; usage_label?: string; usage_note?: string };
 
 /* ---------- Topic lessons (mirrors core/topic_lesson.schema.json v3) ---------- */
 /** One recorded example sentence of a topic-lesson word. */

@@ -331,16 +331,19 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (b.kind === 'dialogue' && b.turns.length) sections.push({ id: `block-${b.id}`, title: b.title || 'Conversation', hint: count(b.turns.length, 'line'), body: <DialogueTurns turns={b.turns}/> });
   }
   const patterns = blocks.flatMap(b => b.kind === 'grammar_pattern' ? [b] : []);
+  // A pattern card shows the formula, its function, then the example. When a file records the
+  // example sentence itself as the formula (or the function verbatim as the teaching note), that
+  // duplicate is shown once only — the recorded fields are untouched, only the repeat is hidden.
   if (patterns.length) sections.push({ id: 'block-patterns', title: 'Patterns', hint: count(patterns.length, 'pattern'), body: <div className="lesson-stack">{patterns.map(g => <div key={g.id} className="lesson-card lesson-pattern">
-    <p className="lesson-pattern-line"><LessonPairedLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>
+    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() && <p className="lesson-pattern-line"><LessonPairedLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>}
     <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
     <PlanSentence line={g.example}/>
-    {g.example.teaching_note && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
+    {g.example.teaching_note && g.example.teaching_note.trim() !== g.function_en.trim() && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
     <CardTick target={g.id}/>
   </div>)}</div> });
   for (const b of blocks) {
     if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {b.items.map((item, i) => <KeyExpressionCard key={`${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>)}
+      {b.items.map((item, i) => <KeyExpressionCard key={item.expression_id ?? `${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} usageLabel={item.usage_label} usageNote={item.usage_note}/>)}
     </LessonFitGrid> });
   }
   for (const b of laterNotes) {
@@ -766,10 +769,12 @@ function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | 
   </div>;
 }
 
-/** A Key expressions card. Inputs: the recorded expression. When exactly one Vocabulary record has
- * this exact headword, its HSK pill (the grid cards' own wordHskPill) marks the whole expression as
- * an entry; composite expressions wear a neutral Expression pill instead. Hanzi colour stays uniform either way. */
-function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: string; meaning?: string | undefined }) {
+/** A Key expressions card. Inputs: the recorded expression and its optional usage label/note.
+ * When exactly one Vocabulary record has this exact headword, its HSK pill (the grid cards' own
+ * wordHskPill) marks the whole expression as an entry; composite expressions wear a neutral
+ * Expression pill instead. Hanzi colour stays uniform either way. The usage note sits below the
+ * expression as text only: its alternative forms are never spoken — the speaker stays on the phrase. */
+function KeyExpressionCard({ hanzi, pinyin, meaning, usageLabel, usageNote }: { hanzi: string; pinyin: string; meaning?: string | undefined; usageLabel?: string | undefined; usageNote?: string | undefined }) {
   const { items } = useWorkspace();
   const matches = items.filter(w => w.hanzi === hanzi);
   const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
@@ -778,6 +783,7 @@ function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: 
   return <div className="lesson-card lesson-vocab lesson-bank-word">
     <div className="lesson-bank-top"><HeaderStrut/>{hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <span className="word-hsk-id lesson-expression-pill" title="Expression built from words; not a single dictionary entry">Expression</span>}</div>
     <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
+    {usageNote && <p className="lesson-usage-note">{usageLabel && <span className="lesson-usage-label">{usageLabel}</span>}<LessonText text={usageNote}/></p>}
   </div>;
 }
 

@@ -200,8 +200,8 @@ describe('conversational lessons', () => {
   it('are 17 general dialogue lessons whose blocks are all kinds the page renders', () => {
     expect(docs.length).toBe(17);
     for (const d of docs) {
-      // Core v3.3 general lessons carry checkpoint progress.
-      expect(d.schema_version).toBe('mandarin-general-lesson/3.2.0');
+      // Core v3.4 general lessons (schema 3.3.0: optional usage notes); 3.2.0 stays supported.
+      expect(['mandarin-general-lesson/3.2.0', 'mandarin-general-lesson/3.3.0']).toContain(d.schema_version);
       expect(d.lesson_type).toBe('dialogue');
       expect(d.sections.blocks.every(b => ['explanation', 'dialogue', 'grammar_pattern', 'review_set'].includes(b.kind))).toBe(true);
     }

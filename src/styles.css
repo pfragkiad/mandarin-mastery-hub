@@ -3840,6 +3840,8 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-lead { font-size: 16px; line-height: 1.6; margin: 8px 0 16px; }
 .lesson-note { font-size: 13px; line-height: 1.65; color: var(--muted-foreground); margin: 8px 0 14px; max-width: 72ch; }
 .lesson-muted { font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.lesson-usage-note { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.lesson-usage-label { display: block; margin-bottom: 2px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--foreground); }
 .lesson-teaching { font-size: 13px; line-height: 1.6; padding-left: 10px; border-left: 2px solid var(--primary); }
 .lesson-caution { font-size: 13px; color: var(--terracotta); margin-top: 12px; }
 .lesson-footnote { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); border-top: 1px solid var(--border); padding-top: 8px; margin-top: auto; }
@@ -4140,7 +4142,7 @@ a.lesson-word-link { text-decoration: none; }
   html[data-display-size='comfortable'] .lesson-section h2 { font-size: 26px; }
   html[data-display-size='comfortable'] :is(.lesson-section h3, .lesson-subheading) { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-lead { font-size: 18px; }
-  html[data-display-size='comfortable'] :is(.lesson-note, .lesson-muted, .lesson-teaching, .lesson-caution) { font-size: 15px; }
+  html[data-display-size='comfortable'] :is(.lesson-note, .lesson-muted, .lesson-teaching, .lesson-caution, .lesson-usage-note) { font-size: 15px; }
   html[data-display-size='comfortable'] .lesson-facts dt { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-facts dd, html[data-display-size='comfortable'] .lesson-facts .pinyin { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-card { padding: 20px; }
