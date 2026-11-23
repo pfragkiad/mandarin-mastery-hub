@@ -5,7 +5,7 @@
   "lesson": {
     "title": "What I Can and Want to Do",
     "subtitle": "Abilities, Preferences and Leisure",
-    "description": "Express what you can do, what you want and what you enjoy doing in free time.",
+    "description": "Learn to express what you can do, what you want to do, and which leisure activities you enjoy.",
     "slug": "abilities-interests"
   },
   "classification": {
@@ -16,9 +16,8 @@
     ],
     "tags": [
       "ability",
-      "desire",
       "preferences",
-      "entertainment"
+      "leisure"
     ],
     "course_topic_refs": [],
     "primary_subtopic_id": null,

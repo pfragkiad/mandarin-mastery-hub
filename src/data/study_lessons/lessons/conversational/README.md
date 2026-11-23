@@ -1,19 +1,24 @@
 # Conversational Mandarin lessons
 
-15 beginner dialogue lessons organised by communicative topic (greetings, directions, food,
-time, money, permission…), built from 16 user-provided audio transcripts. Each
-`CONVERSATIONAL_LESSON_*` directory holds the canonical lesson JSON
-(`mandarin-general-lesson/3.0.0`, validated with core v3.1.0) plus its generated HTML,
-Markdown and editorial `report.md`.
+15 beginner dialogue lessons from the owner-supplied Other Lessons v3.3.1
+editorial release. Each `CONVERSATIONAL_LESSON_*` directory keeps exactly the
+supplied JSON (`mandarin-general-lesson/3.2.0`), HTML, Markdown and `report.md`.
 
-| File | Purpose | Consumer |
+| File | Purpose | Consumer / generator |
 | --- | --- | --- |
-| `CONVERSATIONAL_LESSON_*/` | One lesson: blocks (intro, model dialogue, two grammar patterns, key expressions) and open-ended practice. | `src/lib/lessons.ts` (summary eagerly, whole file on its page). |
-| `TOPIC_LESSON_INDEX.json`, `BROWSE_BY_TOPIC.html` | Supplied topic index and offline browser. | Authoring reference; not loaded. |
-| `REPORT.md`, `QUALITY_REPORT.json` | Editorial QA: extraction status counts, corrections, validity policy. | Authoring reference; not loaded. |
-| `COLLECTION_README.md`, `PACKAGE_README.md` | Supplied collection and package notes. | Authoring reference; not loaded. |
+| `CONVERSATIONAL_LESSON_*/` | Canonical lesson, supplied companions and editorial provenance. | `src/lib/lessons.ts` loads summaries and lazy lesson content; companions are not runtime inputs. |
+| `TOPIC_LESSON_INDEX.json`, `BROWSE_BY_TOPIC.html` | Supplied topic index and offline browser. | Authoring reference; not loaded by the app. |
+| `REPORT.md`, `QUALITY_REPORT.json`, `EDITORIAL_AUDIT.md` | Supplied validation and editorial assessments, including review limitations. | Authoring reference; not loaded. |
+| `COLLECTION_README.md`, `PACKAGE_README.md` | Exact supplied collection and outer-package notes. | Authoring reference; not loaded. |
 
-Course placement lives in [`../curricula/CONVERSATIONAL_MANDARIN.json`](../curricula/CONVERSATIONAL_MANDARIN.json).
-The transcripts and the 880-row extraction audit are source material under
-[`importer/data/lessons/conversational-mandarin/`](../../../../../importer/data/lessons/conversational-mandarin/README.md), never learner data.
-Dialogues are editorial teaching exchanges using source-attested expressions, not verbatim transcripts.
+Import/audit with `python scripts/import-lessons-v3.3.1.py [--write]` from the
+repository root. The Python importer validates Core, exact catalog references,
+checkpoint targets and stable lesson/question identities before copying source
+bytes. No lesson text or pinyin is generated, guessed or rewritten during import.
+
+Course placement lives in [the curriculum](../curricula/CONVERSATIONAL_MANDARIN.json).
+The [source guide](../../../../../importer/data/lessons/README.md) records current
+packages and checksums; the [import audit](../../../../../reports/lessons-3.3.1-import.json)
+records validation. The [original transcript/extraction inputs](../../../../../importer/data/lessons/conversational-mandarin/README.md)
+remain separate provenance, without implying that editorial teaching dialogues
+are verbatim transcripts. The supplied audit does not claim native-speaker certification.

@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Expressing Wants and Intentions",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "subtitle": "Offering food, declining, and accepting a drink",
+    "description": "Learn to say what you want, decline food politely, and accept an offered drink.",
     "slug": "conversational-wants-intentions"
   },
   "classification": {
@@ -17,10 +17,7 @@
     "tags": [
       "wants",
       "intentions",
-      "negation",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "offers"
     ],
     "course_topic_refs": [
       {
@@ -40,7 +37,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -53,7 +50,6 @@
     "什": "Characters:什",
     "你": "Characters:你",
     "候": "Characters:候",
-    "动": "Characters:动",
     "午": "Characters:午",
     "吃": "Characters:吃",
     "吗": "Characters:吗",
@@ -68,7 +64,7 @@
     "茶": "Characters:茶",
     "西": "Characters:西",
     "要": "Characters:要",
-    "词": "Characters:词",
+    "谢": "Characters:谢",
     "饭": "Characters:饭"
   },
   "sections": {
@@ -76,7 +72,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to use 想 and 要 for wants and intentions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to say what you want, decline food politely, and accept an offered drink. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -112,29 +108,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "想 + 动词",
-        "pattern_pinyin": "xiǎng dòngcí",
+        "pattern_hanzi": "我想吃午饭。",
+        "pattern_pinyin": "wǒ xiǎng chī wǔfàn.",
         "function_en": "想 (xiǎng) expresses a wish or desire followed by a verb.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我想吃午饭。",
           "pinyin": "wǒ xiǎng chī wǔfàn.",
           "english": "I want to eat lunch.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "想 (xiǎng) expresses a wish or desire followed by a verb."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "想不想……",
-        "pattern_pinyin": "xiǎng bu xiǎng",
+        "pattern_hanzi": "你想不想喝茶？",
+        "pattern_pinyin": "nǐ xiǎng bu xiǎng hē chá?",
         "function_en": "An A-not-A question asks whether someone wants to do something.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "你想不想喝茶？",
           "pinyin": "nǐ xiǎng bu xiǎng hē chá?",
           "english": "Do you want to drink tea?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "An A-not-A question asks whether someone wants to do something."
         }
       },
       {
@@ -235,11 +231,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "How does speaker B decline the offer of food?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "我不想吃。 (Wǒ bù xiǎng chī.) — I do not want to eat.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -253,11 +249,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng).",
+          "prompt": "Ask someone whether they would like tea, using 想不想 (xiǎng bu xiǎng).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想不想喝茶？ (nǐ xiǎng bu xiǎng hē chá?) — Do you want to drink tea?",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "你想不想喝茶？ (Nǐ xiǎng bu xiǎng hē chá?) — Would you like to drink tea?",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -265,8 +261,8 @@
           "prompt": "Offer food and drink, accept one offer and politely decline another.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — 我不想吃。 (Wǒ bù xiǎng chī.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — Would you like something to eat?\nB: 我不想吃，谢谢。 (Wǒ bù xiǎng chī, xièxie.) — I do not want to eat, thank you.\nA: 你想喝一点茶吗？ (Nǐ xiǎng hē yìdiǎn chá ma?) — Would you like some tea?\nB: 好，我想喝一点茶。 (Hǎo, wǒ xiǎng hē yìdiǎn chá.) — Yes, I would like some tea.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -359,7 +355,7 @@
           {
             "id": "convm-wants-intentions--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "How does speaker B decline the offer of food?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -373,7 +369,7 @@
           {
             "id": "convm-wants-intentions--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng).",
+            "label": "Ask someone whether they would like tea, using 想不想 (xiǎng bu xiǎng).",
             "optional": false,
             "target_id": "q-grammar"
           },

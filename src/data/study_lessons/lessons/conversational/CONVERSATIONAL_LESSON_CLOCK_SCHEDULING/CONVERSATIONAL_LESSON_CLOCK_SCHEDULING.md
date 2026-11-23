@@ -1,6 +1,6 @@
-# Clock Time and Negotiating a Meeting
+# Agreeing on a Meeting Time
 
-Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to propose a time for dinner, reject a conflicting time, and agree on another.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice ask and tell the time. Transcript-referenced conversational Mandarin st
 
 ## Explanation
 
-Learn to ask and tell the time. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to propose a time for dinner, reject a conflicting time, and agree on another. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to ask and tell the time. Use the model conversation to notice the express
 
 ## Grammar Pattern
 
-**Pattern:** 几点钟 (jǐ diǎn zhōng)
+**Pattern:** 现在几点钟？ (xiànzài jǐ diǎn zhōng?)
 
 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.
 
 **现在几点钟？**
 *xiànzài jǐ diǎn zhōng?*
 What time is it now?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.
 
 ## Grammar Pattern
 
-**Pattern:** 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng)
+**Pattern:** 八点钟不行。 (bā diǎn zhōng bù xíng.)
 
 Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).
 
 **八点钟不行。**
 *bā diǎn zhōng bù xíng.*
 Eight o’clock does not work.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).
 
 ## Review Set
 
@@ -84,40 +84,19 @@ Speaking task: Negotiate a dinner time by proposing six, seven or eight o’cloc
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?) — Is six o’clock okay?. Read the first two turns again, then answer without looking.
+**Comprehension:** What time does speaker B propose first?
+**Answer:** 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?) — Is six o’clock okay?. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Is one o’clock okay?
 **Answer:** 一点钟好吗 (yì diǎn zhōng hǎo ma). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng).
-**Answer:** 八点钟不行。 (bā diǎn zhōng bù xíng.) — Eight o’clock does not work.. Use the word order shown in the second grammar explanation.
+**Production:** Say that eight o’clock does not work for you.
+**Answer:** 八点钟不行。 (Bā diǎn zhōng bù xíng.) — Eight o’clock does not work.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Negotiate a dinner time by proposing six, seven or eight o’clock.
-**Answer:** 你想几点钟吃晚饭？ (Nǐ xiǎng jǐ diǎn zhōng chī wǎnfàn?) — 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-clock-scheduling--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-clock-scheduling--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration. — ID: `convm-clock-scheduling--grammar--grammar-1`
-- [ ] Understand: Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng). — ID: `convm-clock-scheduling--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-clock-scheduling--review--key-expressions`
-
-### Guided speaking
-- [ ] Negotiate a dinner time by proposing six, seven or eight o’clock. — ID: `convm-clock-scheduling--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-clock-scheduling--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Is one o’clock okay? — ID: `convm-clock-scheduling--quiz--q-translation`
-- [ ] Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng). — ID: `convm-clock-scheduling--quiz--q-grammar`
-- [ ] Negotiate a dinner time by proposing six, seven or eight o’clock. — ID: `convm-clock-scheduling--quiz--q-speaking`
+**Answer:** A: 六点钟吃晚饭，好吗？ (Liù diǎn zhōng chī wǎnfàn, hǎo ma?) — Shall we have dinner at six?  
+B: 六点钟不行。 (Liù diǎn zhōng bù xíng.) — Six does not work.  
+A: 七点钟呢？ (Qī diǎn zhōng ne?) — How about seven?  
+B: 七点钟也不行。 (Qī diǎn zhōng yě bù xíng.) — Seven does not work either.  
+A: 八点钟好吗？ (Bā diǎn zhōng hǎo ma?) — Is eight o’clock okay?  
+B: 好，八点钟见。 (Hǎo, bā diǎn zhōng jiàn.) — Yes, see you at eight.. Complete sample role-play. Practise both speakers, then substitute your own details.

@@ -1,6 +1,6 @@
-# Mandarin Tutor — Core Project Sources v3.3.0
+# Mandarin Tutor — Core Project Sources v3.3.1
 
-This 19-file Project Source package is the **canonical authoring contract**. The Core version tracks JSON Schema/validation changes only, never Python generator changes or lesson-content updates.
+This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This patch release introduces authoring policy and updates illustrative template copy, **without changing any lesson JSON format or accepting/rejecting any previously valid lessons**.
 
 ## Architecture
 
@@ -23,7 +23,7 @@ This 19-file Project Source package is the **canonical authoring contract**. The
 | Curriculum | `mandarin-curriculum/3.0.0` | Unchanged |
 | Global category registry | 3.2.0 | 22 active top-level, 2 deprecated top-level, 25 active subtopics (plus one deprecated subtopic alias) |
 
-## The 19 Project Source files
+## The 20 Project Source files
 
 Six reusable JSON Schema documents: `lesson_common.schema.json`, `character_lesson.schema.json`, `topic_lesson.schema.json`, `general_lesson.schema.json`, `curriculum.schema.json`, `lesson_categories.schema.json`.
 
@@ -31,7 +31,7 @@ One canonical category registry: `lesson_categories.json`.
 
 Eight JSON authoring templates: `CHARACTER_LESSON_TEMPLATE.json`, `TOPIC_LESSON_TEMPLATE.json`, `DIALOGUE_LESSON_TEMPLATE.json`, `GRAMMAR_LESSON_TEMPLATE.json`, `REVIEW_LESSON_TEMPLATE.json`, `GENERIC_LESSON_TEMPLATE.json`, `CURRICULUM_HSK3_TEMPLATE.json`, `CURRICULUM_CONVERSATIONAL_MANDARIN_TEMPLATE.json`.
 
-Four Markdown authoring guides: `README.md`, `CHARACTER_LESSON_TEMPLATE.md`, `TOPIC_LESSON_TEMPLATE.md`, `GENERAL_LESSON_TEMPLATE.md`.
+Five Markdown authoring guides: `README.md`, `CHARACTER_LESSON_TEMPLATE.md`, `TOPIC_LESSON_TEMPLATE.md`, `GENERAL_LESSON_TEMPLATE.md`, `LESSON_CREATOR_AUTHORING_GUIDELINES.md`.
 
 Python generation and migration tools are shipped **separately**, not as Project Source files, and their revisions do not trigger Core schema versioning.
 
@@ -84,6 +84,26 @@ That earlier attribution correction was documentation-only; the new v3.3.0 chang
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
 
-## Release packaging and source pinning — 2026-11-22
+## Core package Semantic Versioning — policy adopted in v3.3.1
 
-An HSK lesson collection has three independent version axes: lesson schema (`v3.3.0`), taxonomy (`taxonomy-v2.0.0`) and vocabulary source (`vocab-v1.7.1`). Always encode each in the exported bundle filename. The lesson schema version does **not** advance for editorial source refreshes or documentation changes. Learner-facing course summaries and checklist labels must not contain internal workflow notes or synthetic activity identifiers.
+- **MAJOR (`X.0.0`)**: incompatible changes to the JSON lesson-format contract or validation semantics that reject previously valid lessons (unless the older formats remain supported).
+- **MINOR (`3.X.0`)**: backward-compatible additions to the lesson-format contract, such as new optional fields or new optional sections.
+- **PATCH (`3.3.X`)**: no lesson-format contract change; editorial/agent authoring guidelines, documentation, backward-compatible fixes to illustrative template copy, and release-quality guidance.
+- Do **not** use `_rev2` suffixes to version Core package releases. Use numbered releases with a changelog.
+- Do **not** conflate the Core package release version (now `3.3.1`) with the **embedded type-specific schema versions** (topic `3.3.0`, character/general `3.2.0`, curriculum `3.0.0`), vocabulary releases, or taxonomy releases.
+- Generator scripts and tooling remain **outside** the Core Project Sources package; substantive tooling versions can be managed independently.
+- Revisions to existing completed lessons must preserve permanent lesson IDs, checkpoint IDs, target IDs and learner progress. An editorial-only Core release does not require re-exporting existing lesson collections.
+
+## Lesson Creator authoring policy
+
+**Mandatory for new lessons and approved editorial revisions:** `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.0.0). Read it alongside the applicable schema and template. It governs learner-facing title/subtitle/description, 2–3 content-based tags, metadata placement, natural checkpoint labels, exact vocabulary/source alignment, cross-lesson duplicate sentences, and release validation. Existing lesson JSON files need no migration because this policy does not change their schema.
+
+Template files provide valid examples and structural starting points, not authoritative word-card source data. The illustrative copy and tags in some templates were refreshed in v3.3.1 to align with this policy; the schemas and vocabulary sources remain the authority for field structure and source facts.
+
+## v3.3.1 patch changelog — 2026-11-23
+
+- Added `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.0.0), increasing the archive from 19 to 20 files.
+- Established package-level Semantic Versioning and clarified its separation from embedded JSON Schema, taxonomy, and vocabulary versions.
+- Refined illustrative learner-facing copy, content tags, and checkpoint labels in six JSON authoring templates and updated three type-specific Markdown guides. These are **editorial example changes only**; no property names, schema versions, lesson IDs, question IDs, checkpoint IDs, target IDs or structural definitions changed.
+- All six JSON Schema files and `lesson_categories.json` are **byte-for-byte identical to canonical v3.3.0**, with taxonomy v2.0.0 unchanged.
+- No completed Level 1, Level 2, Conversational Mandarin or Character lesson packages were changed by this Core release. No taxonomy migration is included.

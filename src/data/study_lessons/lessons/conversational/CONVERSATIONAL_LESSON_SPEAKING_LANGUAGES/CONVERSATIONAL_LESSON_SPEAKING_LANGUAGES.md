@@ -1,6 +1,6 @@
-# Speaking Languages and Describing Ability
+# Talking About Language Ability
 
-Practice ask whether somebody speaks a language. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to ask which languages someone speaks and describe what you can and cannot say.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice ask whether somebody speaks a language. Transcript-referenced conversat
 
 ## Explanation
 
-Learn to ask whether somebody speaks a language. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask which languages someone speaks and describe what you can and cannot say. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to ask whether somebody speaks a language. Use the model conversation to n
 
 ## Grammar Pattern
 
-**Pattern:** 会 + 说 + 语言 (huì shuō)
+**Pattern:** 我会说普通话。 (wǒ huì shuō Pǔtōnghuà.)
 
 会 (huì) expresses acquired ability; add a language after 说 (shuō).
 
 **我会说普通话。**
 *wǒ huì shuō Pǔtōnghuà.*
 I can speak Mandarin.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 会 (huì) expresses acquired ability; add a language after 说 (shuō).
 
 ## Grammar Pattern
 
-**Pattern:** 动词 + 得 + 评价 (dòngcí de)
+**Pattern:** 你说得很好。 (nǐ shuō de hěn hǎo.)
 
 得 (de) introduces how well the action is performed.
 
 **你说得很好。**
 *nǐ shuō de hěn hǎo.*
 You speak very well.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 得 (de) introduces how well the action is performed.
 
 ## Review Set
 
@@ -84,40 +84,17 @@ Speaking task: Ask a partner what language they speak; answer using 会 (huì), 
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.. Read the first two turns again, then answer without looking.
+**Comprehension:** What does speaker B say about their English-speaking ability?
+**Answer:** 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Cannot speak.
 **Answer:** 不会说 (bú huì shuō). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de).
-**Answer:** 你说得很好。 (nǐ shuō de hěn hǎo.) — You speak very well.. Use the word order shown in the second grammar explanation.
+**Production:** Use 得 (de) to compliment someone’s Mandarin-speaking ability.
+**Answer:** 你普通话说得很好。 (Nǐ Pǔtōnghuà shuō de hěn hǎo.) — You speak Mandarin very well.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn).
-**Answer:** 请问，你会说英文吗？ (Qǐngwèn, nǐ huì shuō Yīngwén ma?) — 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-speaking-languages--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-speaking-languages--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: 会 (huì) expresses acquired ability; add a language after 说 (shuō). — ID: `convm-speaking-languages--grammar--grammar-1`
-- [ ] Understand: 得 (de) introduces how well the action is performed. — ID: `convm-speaking-languages--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-speaking-languages--review--key-expressions`
-
-### Guided speaking
-- [ ] Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn). — ID: `convm-speaking-languages--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-speaking-languages--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Cannot speak. — ID: `convm-speaking-languages--quiz--q-translation`
-- [ ] Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de). — ID: `convm-speaking-languages--quiz--q-grammar`
-- [ ] Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn). — ID: `convm-speaking-languages--quiz--q-speaking`
+**Answer:** A: 你会说英文吗？ (Nǐ huì shuō Yīngwén ma?) — Can you speak English?  
+B: 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.  
+A: 你会说普通话吗？ (Nǐ huì shuō Pǔtōnghuà ma?) — Can you speak Mandarin?  
+B: 会，我会说一点普通话。 (Huì, wǒ huì shuō yìdiǎn Pǔtōnghuà.) — Yes, I speak a little Mandarin.. Complete sample role-play. Practise both speakers, then substitute your own details.

@@ -3,9 +3,9 @@
   "lesson_id": "convm-people-identity",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Introducing Yourself and Other People",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice say who you are and ask where another person is from. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Introducing Yourself and Others",
+    "subtitle": "Nationalities, identity, and follow-up questions",
+    "description": "Learn to introduce yourself, ask about someone’s nationality, and respond to a follow-up question.",
     "slug": "conversational-people-identity"
   },
   "classification": {
@@ -17,10 +17,7 @@
     "tags": [
       "introductions",
       "nationalities",
-      "forms-of-address",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "identity"
     ],
     "course_topic_refs": [
       {
@@ -36,7 +33,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -51,6 +48,7 @@
     "吴": "Characters:吴",
     "呢": "Characters:呢",
     "国": "Characters:国",
+    "好": "Characters:好",
     "姐": "Characters:姐",
     "小": "Characters:小",
     "我": "Characters:我",
@@ -66,7 +64,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to say who you are and ask where another person is from. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to introduce yourself, ask about someone’s nationality, and respond to a follow-up question. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -102,29 +100,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "我是……",
-        "pattern_pinyin": "wǒ shì",
+        "pattern_hanzi": "我是中国人。",
+        "pattern_pinyin": "wǒ shì Zhōngguó rén.",
         "function_en": "Use 是 (shì) to identify nationality or identity.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我是中国人。",
           "pinyin": "wǒ shì Zhōngguó rén.",
           "english": "I am Chinese.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Use 是 (shì) to identify nationality or identity."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "不是……",
-        "pattern_pinyin": "bú shì",
+        "pattern_hanzi": "我不是美国人。",
+        "pattern_pinyin": "wǒ bú shì Měiguó rén.",
         "function_en": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我不是美国人。",
           "pinyin": "wǒ bú shì Měiguó rén.",
           "english": "I am not American.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì)."
         }
       },
       {
@@ -214,7 +212,7 @@
           {
             "hanzi": "我是",
             "pinyin": "wǒ shì",
-            "meaning_en": "I am…; it is me."
+            "meaning_en": "I am; it is me."
           }
         ]
       },
@@ -230,11 +228,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "How does speaker B identify their nationality?",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.) — No, I am Chinese.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "answer": "我是中国人。 (Wǒ shì Zhōngguó rén.) — I am Chinese.",
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -248,11 +246,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 不是…… (bú shì).",
+          "prompt": "Say in Mandarin that you are not American.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我不是美国人。 (wǒ bú shì Měiguó rén.) — I am not American.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "我不是美国人。 (Wǒ bú shì Měiguó rén.) — I am not American.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -260,8 +258,8 @@
           "prompt": "Introduce yourself, ask whether someone is Chinese or American, and ask “And you?”",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你是美国人吗？ (Nǐ shì Měiguó rén ma?) — 不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你好！我是美国人。你呢？ (Nǐ hǎo! Wǒ shì Měiguó rén. Nǐ ne?) — Hello! I am American. And you?\nB: 我是中国人。 (Wǒ shì Zhōngguó rén.) — I am Chinese.\nA: 你是美国人吗？ (Nǐ shì Měiguó rén ma?) — Are you American?\nB: 不是，我是中国人。 (Bú shì, wǒ shì Zhōngguó rén.) — No, I am Chinese.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -354,7 +352,7 @@
           {
             "id": "convm-people-identity--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "How does speaker B identify their nationality?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -368,7 +366,7 @@
           {
             "id": "convm-people-identity--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 不是…… (bú shì).",
+            "label": "Say in Mandarin that you are not American.",
             "optional": false,
             "target_id": "q-grammar"
           },

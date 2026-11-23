@@ -1,6 +1,6 @@
 # Doing Things Together
 
-Practice invite another person to eat or drink with you. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to invite someone for lunch, accept or decline, and agree on a place to eat.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice invite another person to eat or drink with you. Transcript-referenced c
 
 ## Explanation
 
-Learn to invite another person to eat or drink with you. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to invite someone for lunch, accept or decline, and agree on a place to eat. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to invite another person to eat or drink with you. Use the model conversat
 
 ## Grammar Pattern
 
-**Pattern:** 跟 + 人 + 一起 + 动词 (gēn rén yìqǐ dòngcí)
+**Pattern:** 我想跟你一起吃饭。 (wǒ xiǎng gēn nǐ yìqǐ chīfàn.)
 
 跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.
 
 **我想跟你一起吃饭。**
 *wǒ xiǎng gēn nǐ yìqǐ chīfàn.*
 I would like to eat with you.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.
 
 ## Grammar Pattern
 
-**Pattern:** 也 + 动词短语 (yě dòngcí duǎnyǔ)
+**Pattern:** 我也想去。 (wǒ yě xiǎng qù.)
 
 也 (yě) adds agreement or another participant doing the same thing.
 
 **我也想去。**
 *wǒ yě xiǎng qù.*
 I want to go too.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 也 (yě) adds agreement or another participant doing the same thing.
 
 ## Review Set
 
@@ -76,40 +76,17 @@ Speaking task: Invite someone to lunch, accept or decline, and decide where to g
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you too.. Read the first two turns again, then answer without looking.
+**Comprehension:** Does speaker B accept the lunch invitation?
+**Answer:** 好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you too.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Would you like to have lunch with me?
 **Answer:** 你想跟我一起吃午饭吗 (nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 也 + 动词短语 (yě dòngcí duǎnyǔ).
-**Answer:** 我也想去。 (wǒ yě xiǎng qù.) — I want to go too.. Use the word order shown in the second grammar explanation.
+**Production:** Say that you also want to go, using 也 (yě).
+**Answer:** 我也想去。 (Wǒ yě xiǎng qù.) — I want to go too.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Invite someone to lunch, accept or decline, and decide where to go together.
-**Answer:** 你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — 好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-with-someone--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-with-someone--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: 跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together. — ID: `convm-with-someone--grammar--grammar-1`
-- [ ] Understand: 也 (yě) adds agreement or another participant doing the same thing. — ID: `convm-with-someone--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-with-someone--review--key-expressions`
-
-### Guided speaking
-- [ ] Invite someone to lunch, accept or decline, and decide where to go together. — ID: `convm-with-someone--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-with-someone--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Would you like to have lunch with me? — ID: `convm-with-someone--quiz--q-translation`
-- [ ] Make a sentence using the pattern 也 + 动词短语 (yě dòngcí duǎnyǔ). — ID: `convm-with-someone--quiz--q-grammar`
-- [ ] Invite someone to lunch, accept or decline, and decide where to go together. — ID: `convm-with-someone--quiz--q-speaking`
+**Answer:** A: 你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — Would you like to have lunch with me?  
+B: 好，我想跟你一起吃。 (Hǎo, wǒ xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you.  
+A: 我们去哪儿吃？ (Wǒmen qù nǎr chī?) — Where shall we eat?  
+B: 我们去饭店吧。 (Wǒmen qù fàndiàn ba.) — Let us go to a restaurant.. Complete sample role-play. Practise both speakers, then substitute your own details.

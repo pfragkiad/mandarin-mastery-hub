@@ -1,6 +1,6 @@
-# Choosing Where to Meet and Eat
+# Choosing Where to Meet
 
-Practice suggest where to go. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to invite someone to meet for food, decline one place, and suggest another.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice suggest where to go. Transcript-referenced conversational Mandarin stud
 
 ## Explanation
 
-Learn to suggest where to go. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to invite someone to meet for food, decline one place, and suggest another. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to suggest where to go. Use the model conversation to notice the expressio
 
 ## Grammar Pattern
 
-**Pattern:** 去 + 地点 + 动词 (qù dìdiǎn dòngcí)
+**Pattern:** 我想去饭店吃。 (wǒ xiǎng qù fàndiàn chī.)
 
 Combine destination and purpose in one sentence.
 
 **我想去饭店吃。**
 *wǒ xiǎng qù fàndiàn chī.*
 I want to go to a restaurant to eat.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Combine destination and purpose in one sentence.
 
 ## Grammar Pattern
 
-**Pattern:** 在 + 地点 + 动词 (zài dìdiǎn dòngcí)
+**Pattern:** 我想在这儿喝茶。 (wǒ xiǎng zài zhèr hē chá.)
 
 Use 在 (zài) before a place to say where an action happens.
 
 **我想在这儿喝茶。**
 *wǒ xiǎng zài zhèr hē chá.*
 I want to drink tea here.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Use 在 (zài) before a place to say where an action happens.
 
 ## Review Set
 
@@ -82,40 +82,17 @@ Speaking task: Invite a friend to a café, restaurant or hotel; decline one plac
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 我想去饭店。 (Wǒ xiǎng qù fàndiàn.) — I would like to go to a restaurant.. Read the first two turns again, then answer without looking.
+**Comprehension:** Where does speaker B first suggest meeting?
+**Answer:** 我想去饭店。 (Wǒ xiǎng qù fàndiàn.) — I would like to go to a restaurant.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Go to a restaurant.
 **Answer:** 去饭店 (qù fàndiàn). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí).
-**Answer:** 我想在这儿喝茶。 (wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.. Use the word order shown in the second grammar explanation.
+**Production:** Say you want to drink tea here, using 在 (zài) before the location.
+**Answer:** 我想在这儿喝茶。 (Wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Invite a friend to a café, restaurant or hotel; decline one place and suggest another.
-**Answer:** 你想去哪儿吃午饭？ (Nǐ xiǎng qù nǎr chī wǔfàn?) — 我想去饭店。 (Wǒ xiǎng qù fàndiàn.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-places-to-meet--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-places-to-meet--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: Combine destination and purpose in one sentence. — ID: `convm-places-to-meet--grammar--grammar-1`
-- [ ] Understand: Use 在 (zài) before a place to say where an action happens. — ID: `convm-places-to-meet--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-places-to-meet--review--key-expressions`
-
-### Guided speaking
-- [ ] Invite a friend to a café, restaurant or hotel; decline one place and suggest another. — ID: `convm-places-to-meet--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-places-to-meet--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Go to a restaurant. — ID: `convm-places-to-meet--quiz--q-translation`
-- [ ] Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí). — ID: `convm-places-to-meet--quiz--q-grammar`
-- [ ] Invite a friend to a café, restaurant or hotel; decline one place and suggest another. — ID: `convm-places-to-meet--quiz--q-speaking`
+**Answer:** A: 你想在饭店吃午饭吗？ (Nǐ xiǎng zài fàndiàn chī wǔfàn ma?) — Would you like to have lunch at a restaurant?  
+B: 不想，我想去咖啡馆。 (Bù xiǎng, wǒ xiǎng qù kāfēiguǎn.) — No, I would rather go to a café.  
+A: 好，我们去咖啡馆吧。 (Hǎo, wǒmen qù kāfēiguǎn ba.) — Okay, let us go to the café.  
+B: 好，下午一点钟见。 (Hǎo, xiàwǔ yì diǎn zhōng jiàn.) — Okay, see you at one in the afternoon.. Complete sample role-play. Practise both speakers, then substitute your own details.

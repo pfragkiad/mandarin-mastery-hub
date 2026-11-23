@@ -1,6 +1,6 @@
 # Asking Where Places Are
 
-Practice ask where a street or place is. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to ask where a street is and explain whether a place is here or over there.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice ask where a street or place is. Transcript-referenced conversational Ma
 
 ## Explanation
 
-Learn to ask where a street or place is. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask where a street is and explain whether a place is here or over there. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to ask where a street or place is. Use the model conversation to notice th
 
 ## Grammar Pattern
 
-**Pattern:** 地点 + 在 + 哪儿 (dìdiǎn zài nǎr)
+**Pattern:** 学院路在哪儿？ (Xuéyuàn Lù zài nǎr?)
 
 Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma).
 
 **学院路在哪儿？**
 *Xuéyuàn Lù zài nǎr?*
 Where is Xueyuan Road?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma).
 
 ## Grammar Pattern
 
-**Pattern:** 不在 + 地点 (bú zài dìdiǎn)
+**Pattern:** 不在这儿。 (bú zài zhèr.)
 
 Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在.
 
 **不在这儿。**
 *bú zài zhèr.*
 It is not here.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在.
 
 ## Review Set
 
@@ -84,40 +84,17 @@ Speaking task: Role-play asking for Xueyuan Road and Chang’an Street; answer h
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 在那儿。 (Zài nàr.) — It is over there.. Read the first two turns again, then answer without looking.
+**Comprehension:** Where does speaker B first say Xueyuan Road is?
+**Answer:** 在那儿。 (Zài nàr.) — It is over there.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: It is here; located here.
 **Answer:** 在这儿 (zài zhèr). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn).
-**Answer:** 不在这儿。 (bú zài zhèr.) — It is not here.. Use the word order shown in the second grammar explanation.
+**Production:** Say that Chang’an Street is not here, using 不在 (bú zài).
+**Answer:** 长安街不在这儿。 (Cháng’ān Jiē bú zài zhèr.) — Chang’an Street is not here.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here.
-**Answer:** 请问，学院路在哪儿？ (Qǐngwèn, Xuéyuàn Lù zài nǎr?) — 在那儿。 (Zài nàr.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-asking-directions--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-asking-directions--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma). — ID: `convm-asking-directions--grammar--grammar-1`
-- [ ] Understand: Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在. — ID: `convm-asking-directions--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-asking-directions--review--key-expressions`
-
-### Guided speaking
-- [ ] Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here. — ID: `convm-asking-directions--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-asking-directions--quiz--q-dialogue`
-- [ ] Translate into Mandarin: It is here; located here. — ID: `convm-asking-directions--quiz--q-translation`
-- [ ] Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn). — ID: `convm-asking-directions--quiz--q-grammar`
-- [ ] Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here. — ID: `convm-asking-directions--quiz--q-speaking`
+**Answer:** A: 请问，学院路在哪儿？ (Qǐngwèn, Xuéyuàn Lù zài nǎr?) — Excuse me, where is Xueyuan Road?  
+B: 学院路在那儿。 (Xuéyuàn Lù zài nàr.) — Xueyuan Road is over there.  
+A: 长安街也在那儿吗？ (Cháng’ān Jiē yě zài nàr ma?) — Is Chang’an Street over there too?  
+B: 不，长安街不在那儿，在这儿。 (Bù, Cháng’ān Jiē bú zài nàr, zài zhèr.) — No, Chang’an Street is not there. It is here.. Complete sample role-play. Practise both speakers, then substitute your own details.

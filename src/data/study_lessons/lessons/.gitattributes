@@ -1,2 +1,14 @@
-# Preserve the supplied HSK package notes byte-for-byte.
-HSK_LEVEL1_PACKAGE_README.md -text
+# Exact supplied v3.3.1 lesson/companion bytes, including Windows checkouts.
+conversational/CONVERSATIONAL_LESSON_*/* -text
+# Keep the supplied Markdown hard line breaks intact.
+conversational/CONVERSATIONAL_LESSON_*/*.md whitespace=-blank-at-eol
+independent/CHARACTER_LESSON_CI/* -text
+independent/CHARACTER_LESSON_YI/* -text
+curricula/CONVERSATIONAL_MANDARIN.json -text
+conversational/COLLECTION_README.md -text
+conversational/PACKAGE_README.md -text
+conversational/BROWSE_BY_TOPIC.html -text
+conversational/EDITORIAL_AUDIT.md -text
+conversational/QUALITY_REPORT.json -text
+conversational/REPORT.md -text
+conversational/TOPIC_LESSON_INDEX.json -text

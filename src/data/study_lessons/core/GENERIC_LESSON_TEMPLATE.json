@@ -3,9 +3,9 @@
   "lesson_id": "generic-pronunciation-tips",
   "lesson_type": "generic",
   "lesson": {
-    "title": "Pronunciation Practice Notes",
-    "subtitle": "A course-independent study note.",
-    "description": "Organize pronunciation observations without assigning an artificial course or topic.",
+    "title": "Practising Mandarin Pronunciation",
+    "subtitle": "Tone contours and careful repetition.",
+    "description": "Learn to recognise tone contours and practise clear Mandarin pronunciation.",
     "slug": "pronunciation-practice-notes"
   },
   "classification": {
@@ -13,7 +13,7 @@
     "topic_ids": [],
     "tags": [
       "pronunciation",
-      "independent-study"
+      "tone-practice"
     ],
     "course_topic_refs": [],
     "primary_subtopic_id": null,
@@ -35,7 +35,7 @@
       {
         "id": "note-1",
         "kind": "explanation",
-        "text": "Use this general format for a course-neutral lesson that is discoverable using tags only."
+        "text": "Listen closely to each tone contour. Repeat the syllable slowly, then at a natural conversational pace."
       }
     ],
     "practice": {
@@ -54,7 +54,7 @@
           {
             "id": "generic-pronunciation-tips--explanation--note-1",
             "kind": "section",
-            "label": "Read the explanation",
+            "label": "Practise pronunciation carefully",
             "optional": false,
             "target_id": "note-1"
           }

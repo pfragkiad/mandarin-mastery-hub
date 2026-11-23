@@ -44,6 +44,6 @@ Older v3.0.0 topic JSON remains accepted, but v3.1.0, v3.2.0, and v3.3.0 lessons
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
 
-## Vocabulary release synchronization
+## Vocabulary release synchronization and editorial standards
 
-Before publishing a teaching-lesson bundle, synchronize embedded word-card example records and any derived "Write this in Mandarin" questions with the exact latest vocabulary release. Put the source version in the outer lesson bundle filename, e.g. `Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip`. Keep checkpoint IDs and core/optional flags stable. Document source exceptions in a standalone audit file.
+Before publishing, synchronize inherited example records with the exact pinned vocabulary release and audit every newly authored sentence against source-card examples and other lessons. Follow `LESSON_CREATOR_AUTHORING_GUIDELINES.md` for card headers, 2–3 content-based tags, source isolation, and stable checkpoints. Record version/source exceptions in the separate release audit rather than learner-facing lesson content.

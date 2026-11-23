@@ -3,9 +3,9 @@
   "lesson_id": "convm-places-to-meet",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Choosing Where to Meet and Eat",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice suggest where to go. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Choosing Where to Meet",
+    "subtitle": "Restaurants, cafés, and proposing a place",
+    "description": "Learn to invite someone to meet for food, decline one place, and suggest another.",
     "slug": "conversational-places-to-meet"
   },
   "classification": {
@@ -16,12 +16,9 @@
       "food-drink"
     ],
     "tags": [
-      "restaurants",
-      "hotel",
       "meeting-places",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "invitations",
+      "alternatives"
     ],
     "course_topic_refs": [
       {
@@ -37,17 +34,18 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
+    "一": "Characters:一",
+    "下": "Characters:下",
     "不": "Characters:不",
     "京": "Characters:京",
     "们": "Characters:们",
     "你": "Characters:你",
     "儿": "Characters:儿",
-    "动": "Characters:动",
     "北": "Characters:北",
     "午": "Characters:午",
     "厅": "Characters:厅",
@@ -60,25 +58,26 @@
     "啡": "Characters:啡",
     "喝": "Characters:喝",
     "在": "Characters:在",
-    "地": "Characters:地",
     "好": "Characters:好",
     "店": "Characters:店",
     "想": "Characters:想",
     "我": "Characters:我",
     "点": "Characters:点",
     "茶": "Characters:茶",
-    "词": "Characters:词",
+    "见": "Characters:见",
     "这": "Characters:这",
     "那": "Characters:那",
     "酒": "Characters:酒",
-    "饭": "Characters:饭"
+    "钟": "Characters:钟",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to suggest where to go. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to invite someone to meet for food, decline one place, and suggest another. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -114,29 +113,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "去 + 地点 + 动词",
-        "pattern_pinyin": "qù dìdiǎn dòngcí",
+        "pattern_hanzi": "我想去饭店吃。",
+        "pattern_pinyin": "wǒ xiǎng qù fàndiàn chī.",
         "function_en": "Combine destination and purpose in one sentence.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我想去饭店吃。",
           "pinyin": "wǒ xiǎng qù fàndiàn chī.",
           "english": "I want to go to a restaurant to eat.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Combine destination and purpose in one sentence."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "在 + 地点 + 动词",
-        "pattern_pinyin": "zài dìdiǎn dòngcí",
+        "pattern_hanzi": "我想在这儿喝茶。",
+        "pattern_pinyin": "wǒ xiǎng zài zhèr hē chá.",
         "function_en": "Use 在 (zài) before a place to say where an action happens.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我想在这儿喝茶。",
           "pinyin": "wǒ xiǎng zài zhèr hē chá.",
           "english": "I want to drink tea here.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Use 在 (zài) before a place to say where an action happens."
         }
       },
       {
@@ -232,11 +231,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "Where does speaker B first suggest meeting?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "我想去饭店。 (Wǒ xiǎng qù fàndiàn.) — I would like to go to a restaurant.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -250,11 +249,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí).",
+          "prompt": "Say you want to drink tea here, using 在 (zài) before the location.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我想在这儿喝茶。 (wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "我想在这儿喝茶。 (Wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -262,8 +261,8 @@
           "prompt": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想去哪儿吃午饭？ (Nǐ xiǎng qù nǎr chī wǔfàn?) — 我想去饭店。 (Wǒ xiǎng qù fàndiàn.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你想在饭店吃午饭吗？ (Nǐ xiǎng zài fàndiàn chī wǔfàn ma?) — Would you like to have lunch at a restaurant?\nB: 不想，我想去咖啡馆。 (Bù xiǎng, wǒ xiǎng qù kāfēiguǎn.) — No, I would rather go to a café.\nA: 好，我们去咖啡馆吧。 (Hǎo, wǒmen qù kāfēiguǎn ba.) — Okay, let us go to the café.\nB: 好，下午一点钟见。 (Hǎo, xiàwǔ yì diǎn zhōng jiàn.) — Okay, see you at one in the afternoon.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -356,7 +355,7 @@
           {
             "id": "convm-places-to-meet--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "Where does speaker B first suggest meeting?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -370,7 +369,7 @@
           {
             "id": "convm-places-to-meet--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 在 + 地点 + 动词 (zài dìdiǎn dòngcí).",
+            "label": "Say you want to drink tea here, using 在 (zài) before the location.",
             "optional": false,
             "target_id": "q-grammar"
           },

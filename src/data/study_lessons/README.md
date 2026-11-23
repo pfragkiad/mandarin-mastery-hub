@@ -3,9 +3,11 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The library uses the canonical Core v3.2.0 authoring contract: 21 HSK 3.0 Level 1 topic lessons (schema mandarin-topic-lesson/3.2.0, whose required `sections.teaching_plan` the lesson page renders as its teaching path, with the words as a collapsed word bank) placed by
-a course manifest, plus two independent character lessons (次, 以). Learner content only;
-editorial references live in each lesson's `report.md`, which the app never loads.
+The library uses the canonical Core v3.3.1 authoring release: 21 HSK Level 1
+and 25 HSK Level 2 topic lessons, 15 conversational lessons and two independent
+character lessons (次, 以). Topic schemas remain 3.3.0, character/general schemas
+3.2.0 and curricula 3.0.0. Editorial references live in each lesson's `report.md`,
+which the app never loads.
 
 v3 moved topics into `classification` (`primary_topic_id`, `topic_ids`, `tags`) and adds
 `lesson_type` and `learning_objectives`; course order lives only in `lessons/curricula/`,
@@ -20,7 +22,7 @@ See [core/README.md](core/README.md) for schemas and templates and
 | --- | --- | --- |
 | `core/lesson_categories.json` | Canonical registry with 22 active parent topics, 25 active subtopics and deprecated aliases (`kind`, `parent_topic_id`, `status`). Top-level lesson discovery uses active parents only; recorded subtopic IDs stay attached to each lesson/word. | Static import in `lessons.ts` (By topic grouping and filter). |
 | `core/lesson_categories.schema.json` | JSON Schema for the registry. | Reference only. |
-| `core/*.schema.json`, `core/*_TEMPLATE.*` | Canonical v3.2 Core schemas/templates (topic v3.2; character/general v3.1; curriculum v3.0), accepting older lesson versions; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
+| `core/*.schema.json`, `core/*_TEMPLATE.*` | Canonical v3.3.1 Core release (topic schema v3.3; character/general v3.2; curriculum v3.0), accepting older lesson versions; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
 | `core/generate_lesson.py`, `core/validate_core.py` | Separately maintained generator and validator for the Markdown/HTML companions; see core/TOOLS.md. | Authoring tools; not loaded. |
 | `lessons/**/<KIND>_LESSON_<KEY>/<FILE>.json` | One lesson per directory: the canonical lesson. | `lessons.ts`: `lesson_id`, `schema_version`, `lesson_type`, `lesson`, `classification`, `learning_objectives`, `metadata`, `catalog_character_refs` (and `headword` for headword kinds) eagerly as summaries; the whole file lazily on its page. |
 | `lessons/curricula/*.json` | Course manifests (levels, units, placements, prerequisites). | `lesson-curricula.ts`. |
@@ -47,8 +49,14 @@ The top of a lesson page shows: course line, lesson type and time, `lesson.title
 
 Until a package follows this, `src/lib/lesson-header-copy.ts` hides the exact listed boilerplate subtitle, the transcript sentence and course/level/format tags (nothing is rewritten; search still matches the recorded text).
 
-## Current Level 1 package
+## Current package import
 
-The [source handoff guide](../../../importer/data/lessons/README.md) records both supplied ZIPs and checksums. All 19 Core Project Sources are copied byte-for-byte from the owner’s v3.2.0 contract. The Level 1 package updates 33 word-card examples, three quizzes and taxonomy fields, while retaining the same 21 lesson IDs, curriculum order and teaching plans. All 300 syllabus references and 600 examples match runtime vocabulary v1.7.1, including the approved entry 36 pinyin spacing correction. The HSK package import leaves independent and Conversational Mandarin lesson files untouched. The separate incoming taxonomy synchronization reclassified two Conversational Mandarin lessons; those changes are retained.
-
-The [lesson import audit](../../../reports/hsk-level1-lessons-3.2.0-import.json) and [Core cross-check](../../../reports/lesson-core-3.2.0-import.json) record validation. Supplied HTML/Markdown companions are retained, without regeneration or vocabulary edits.
+The [source handoff guide](../../../importer/data/lessons/README.md) lists the four
+current packages and exact checksums. `scripts/import-lessons-v3.3.1.py` stages and
+validates the supplied 20 Core files, 15 conversational lessons, two character
+lessons, collection references and conversational curriculum before writing exact
+source bytes. The [import audit](../../../reports/lessons-3.3.1-import.json) records
+checks for all 63 active lessons, both curricula and recorded HSK dictionary bindings.
+No lesson content is generated or repaired during import. HSK lesson content,
+runtime vocabulary and saved progress identities are preserved. Superseded source
+ZIPs and obsolete upload notes are retained only in Git history; see the source guide.

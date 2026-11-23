@@ -1,12 +1,12 @@
 {
   "schema_version": "mandarin-curriculum/3.0.0",
   "curriculum_id": "conversational-mandarin",
-  "title": "Conversational Mandarin — Topic-Based Beginner Lessons",
+  "title": "Conversational Mandarin — Everyday Communication",
   "kind": "course",
   "language": "zh-CN",
   "edition": "Independent topic-based editorial edition",
   "status": "draft",
-  "description": "Practice useful Mandarin for everyday situations through 15 topic-based lessons with conversations, expressions, and speaking activities.",
+  "description": "Learn to greet people, ask for information, make plans, order food and drinks, and respond politely in everyday situations.",
   "course_topics": [
     {
       "id": "greetings-politeness",
@@ -17,7 +17,7 @@
     },
     {
       "id": "people-identity",
-      "label": "Introducing Yourself and Other People",
+      "label": "Introducing Yourself and Others",
       "global_topic_ids": [
         "people-identity",
         "family-relationships"
@@ -25,7 +25,7 @@
     },
     {
       "id": "speaking-languages",
-      "label": "Speaking Languages and Describing Ability",
+      "label": "Talking About Language Ability",
       "global_topic_ids": [
         "school-language",
         "communication-social",
@@ -34,7 +34,7 @@
     },
     {
       "id": "understanding-clarification",
-      "label": "Understanding and Asking for Clarification",
+      "label": "Asking for Clarification",
       "global_topic_ids": [
         "communication-social",
         "reference-questions"
@@ -66,7 +66,7 @@
     },
     {
       "id": "places-to-meet",
-      "label": "Choosing Where to Meet and Eat",
+      "label": "Choosing Where to Meet",
       "global_topic_ids": [
         "travel-transport",
         "places-directions",
@@ -84,7 +84,7 @@
     },
     {
       "id": "clock-scheduling",
-      "label": "Clock Time and Negotiating a Meeting",
+      "label": "Agreeing on a Meeting Time",
       "global_topic_ids": [
         "time-calendar",
         "numbers-quantities"
@@ -100,7 +100,7 @@
     },
     {
       "id": "choices-alternatives",
-      "label": "Choosing: Or, Either, and Not",
+      "label": "Choosing Between Alternatives",
       "global_topic_ids": [
         "grammar-functions",
         "communication-social",
@@ -109,7 +109,7 @@
     },
     {
       "id": "money-prices",
-      "label": "Money, Prices, and Currency",
+      "label": "Asking About Prices",
       "global_topic_ids": [
         "shopping-money",
         "numbers-quantities"
@@ -117,14 +117,14 @@
     },
     {
       "id": "numbers-arithmetic",
-      "label": "Counting and Simple Arithmetic",
+      "label": "Counting and Simple Addition",
       "global_topic_ids": [
         "numbers-quantities"
       ]
     },
     {
       "id": "permission-requests",
-      "label": "Permission and Polite Requests",
+      "label": "Asking Permission Politely",
       "global_topic_ids": [
         "grammar-functions",
         "communication-social"
@@ -137,7 +137,7 @@
       "title": "Beginner Conversational Topics",
       "sequence": 1,
       "level_number": 1,
-      "description": "Topic browser; order is suggested from basic introductions through requests and prices, not inherited from the transcript track index.",
+      "description": "Build conversational confidence through practical topics, dialogue, and guided speaking.",
       "units": [
         {
           "unit_id": "convm-topic-01",
@@ -160,7 +160,7 @@
         },
         {
           "unit_id": "convm-topic-02",
-          "title": "Introducing Yourself and Other People",
+          "title": "Introducing Yourself and Others",
           "sequence": 2,
           "placements": [
             {
@@ -179,7 +179,7 @@
         },
         {
           "unit_id": "convm-topic-03",
-          "title": "Speaking Languages and Describing Ability",
+          "title": "Talking About Language Ability",
           "sequence": 3,
           "placements": [
             {
@@ -198,7 +198,7 @@
         },
         {
           "unit_id": "convm-topic-04",
-          "title": "Understanding and Asking for Clarification",
+          "title": "Asking for Clarification",
           "sequence": 4,
           "placements": [
             {
@@ -274,7 +274,7 @@
         },
         {
           "unit_id": "convm-topic-08",
-          "title": "Choosing Where to Meet and Eat",
+          "title": "Choosing Where to Meet",
           "sequence": 8,
           "placements": [
             {
@@ -312,7 +312,7 @@
         },
         {
           "unit_id": "convm-topic-10",
-          "title": "Clock Time and Negotiating a Meeting",
+          "title": "Agreeing on a Meeting Time",
           "sequence": 10,
           "placements": [
             {
@@ -350,7 +350,7 @@
         },
         {
           "unit_id": "convm-topic-12",
-          "title": "Choosing: Or, Either, and Not",
+          "title": "Choosing Between Alternatives",
           "sequence": 12,
           "placements": [
             {
@@ -369,7 +369,7 @@
         },
         {
           "unit_id": "convm-topic-13",
-          "title": "Money, Prices, and Currency",
+          "title": "Asking About Prices",
           "sequence": 13,
           "placements": [
             {
@@ -388,7 +388,7 @@
         },
         {
           "unit_id": "convm-topic-14",
-          "title": "Counting and Simple Arithmetic",
+          "title": "Counting and Simple Addition",
           "sequence": 14,
           "placements": [
             {
@@ -407,7 +407,7 @@
         },
         {
           "unit_id": "convm-topic-15",
-          "title": "Permission and Polite Requests",
+          "title": "Asking Permission Politely",
           "sequence": 15,
           "placements": [
             {

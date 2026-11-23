@@ -6,6 +6,10 @@ Shuowen review exports and supplied originals in this directory stay local and u
 
 | File | Use |
 | --- | --- |
+| [lessons-3.3.1-import.json](lessons-3.3.1-import.json) | Current Core/Other Lessons import: source and per-file checksums, 20 Core files, 17 lessons, exact dictionary/catalog checks, 63 validated active lessons and stable progress/curriculum identities. |
+| [Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md](Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md) | Owner-supplied Core release audit, preserved unchanged. |
+| [Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md](Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md) | Owner-supplied conversational editorial audit and review limitations, preserved unchanged. |
+| [lessons-3.3.1-source-cleanup.json](lessons-3.3.1-source-cleanup.json) | Owner-requested removal of 11 superseded ZIPs and 10 obsolete upload Markdown files; exact checksums and recovery revision in published Git history. |
 | [character-variants-42-lexical-notes.json](character-variants-42-lexical-notes.json) | Extracted lexical examples for offline review. |
 | [character-variants-42-lexical-web-audit.json](character-variants-42-lexical-web-audit.json) | Evidence report for those examples; [readable summary](character-variants-42-lexical-web-audit.md). |
 | [hsk3_topics_v2_migration_report.md](hsk3_topics_v2_migration_report.md) | Owner-supplied v2 classification migration report, preserved byte-for-byte; companion [change list](hsk3_topics_v2_migration_changes.csv). These are editorial assignments, not independent linguistic certification. |
@@ -25,7 +29,6 @@ Shuowen review exports and supplied originals in this directory stay local and u
 | [hsk-level5-import.json](hsk-level5-import.json) | Initial Level 5 terms-only import: 1,600 draft records, source checksum and verification limits; 3,200 draft examples deferred. |
 | [hsk-level5-audio-package.json](hsk-level5-audio-package.json) | Verified external CDN-upload package: 1,306 matched entries, 1,304 unique MP3s, 42 reading mismatches, 252 missing words, and ZIP checksum. Its audio is now attached; see [hsk-level5-audio.md](hsk-level5-audio.md). |
 | [hsk-level5-fonts.json](hsk-level5-fonts.json) | Public font-slice URLs, hashes and locally verified coverage for 431 additional Han glyphs in both vocabulary families. |
-| [lessons-taxonomy-v2-sync-report.md](lessons-taxonomy-v2-sync-report.md) | Owner-supplied lesson sync report (core v3.2.0, topics v2.0.0): 21 HSK Level 1 and 2 Conversational lessons reclassified, teaching content unchanged; companion [vocabulary classification changes](lessons-hsk1-classification-changes.csv) and [source example discrepancies](lessons-hsk1-source-example-discrepancies.json). Not loaded by the app. |
 | [hsk-level1-import.json](hsk-level1-import.json) | Initial Level 1 replacement counts, input checksums, preserved recording/identity checks and source verification limits; [compatibility summary](hsk-level1-import.md). |
 | [hsk-level2-import.json](hsk-level2-import.json) | Initial Level 2 replacement: 200 entries, 400 styled examples, 200 retired legacy example IDs, shared topic checksum and source verification limits; [compatibility summary](hsk-level2-import.md). |
 | [hsk-level5-audio.json](hsk-level5-audio.json) | Level 5 exact word/reading audio coverage: 1,306 attached, 42 reading mismatches, 252 missing; [audit and upload state](hsk-level5-audio.md). |

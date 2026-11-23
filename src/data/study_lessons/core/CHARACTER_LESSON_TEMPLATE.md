@@ -5,7 +5,7 @@ lesson_id: char-<lowercase-hex-codepoint>
 classification:
   primary_topic_id: grammar-functions
   topic_ids: [grammar-functions]
-  tags: [character-usage]
+  tags: [meaning, usage-contrasts]
   course_topic_refs: []
 ---
 # Character Usage Lesson — v3.2.0
@@ -54,3 +54,7 @@ One full lesson ZIP has exactly four root files: `CHARACTER_LESSON_<NAME>.json`,
 - The canonical lesson JSON defines the activity checklist **but never contains individual learners' completion state**. Store per-user `{lesson_id, checkpoint_id}` completion records in app storage. Never attach course placement identifiers to reusable lesson IDs.
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
+
+## Authoring policy
+
+For finished lessons, replace illustrative tags with 2–3 specific content tags, use concise action-oriented learner copy, and apply `LESSON_CREATOR_AUTHORING_GUIDELINES.md`. Preserve all existing IDs during editorial revisions.

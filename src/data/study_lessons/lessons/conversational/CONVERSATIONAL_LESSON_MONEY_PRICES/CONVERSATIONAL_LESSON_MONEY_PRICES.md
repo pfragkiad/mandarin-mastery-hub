@@ -1,6 +1,6 @@
-# Money, Prices, and Currency
+# Asking About Prices
 
-Practice ask how much something costs. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to ask the prices of common drinks and reply with amounts in renminbi.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice ask how much something costs. Transcript-referenced conversational Mand
 
 ## Explanation
 
-Learn to ask how much something costs. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask the prices of common drinks and reply with amounts in renminbi. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to ask how much something costs. Use the model conversation to notice the 
 
 ## Grammar Pattern
 
-**Pattern:** 多少钱 (duōshao qián)
+**Pattern:** 一杯茶多少钱？ (yì bēi chá duōshao qián?)
 
 多少钱 (duōshao qián) asks for the price.
 
 **一杯茶多少钱？**
 *yì bēi chá duōshao qián?*
 How much is a cup of tea?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 多少钱 (duōshao qián) asks for the price.
 
 ## Grammar Pattern
 
-**Pattern:** 数词 + 块 + 币种 (shùcí kuài bìzhǒng)
+**Pattern:** 我有十块人民币。 (wǒ yǒu shí kuài rénmínbì.)
 
 块 (kuài) is the colloquial unit used to count yuan or a currency amount.
 
 **我有十块人民币。**
 *wǒ yǒu shí kuài rénmínbì.*
 I have ten yuan.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 块 (kuài) is the colloquial unit used to count yuan or a currency amount.
 
 ## Review Set
 
@@ -84,40 +84,19 @@ Speaking task: Ask the price of tea or beer; answer with a simple amount in RMB 
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 十块人民币。 (Shí kuài rénmínbì.) — Ten yuan.. Read the first two turns again, then answer without looking.
+**Comprehension:** What currency is used in speaker B’s first price?
+**Answer:** 十块人民币。 (Shí kuài rénmínbì.) — Ten yuan.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Twelve yuan.
 **Answer:** 十二块人民币 (shí’èr kuài rénmínbì). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 数词 + 块 + 币种 (shùcí kuài bìzhǒng).
-**Answer:** 我有十块人民币。 (wǒ yǒu shí kuài rénmínbì.) — I have ten yuan.. Use the word order shown in the second grammar explanation.
+**Production:** Say that you have ten yuan, using 块 (kuài).
+**Answer:** 我有十块人民币。 (Wǒ yǒu shí kuài rénmínbì.) — I have ten yuan.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Ask the price of tea or beer; answer with a simple amount in RMB or dollars.
-**Answer:** 请问，一杯啤酒多少钱？ (Qǐngwèn, yì bēi píjiǔ duōshao qián?) — 十块人民币。 (Shí kuài rénmínbì.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-money-prices--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-money-prices--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: 多少钱 (duōshao qián) asks for the price. — ID: `convm-money-prices--grammar--grammar-1`
-- [ ] Understand: 块 (kuài) is the colloquial unit used to count yuan or a currency amount. — ID: `convm-money-prices--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-money-prices--review--key-expressions`
-
-### Guided speaking
-- [ ] Ask the price of tea or beer; answer with a simple amount in RMB or dollars. — ID: `convm-money-prices--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-money-prices--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Twelve yuan. — ID: `convm-money-prices--quiz--q-translation`
-- [ ] Make a sentence using the pattern 数词 + 块 + 币种 (shùcí kuài bìzhǒng). — ID: `convm-money-prices--quiz--q-grammar`
-- [ ] Ask the price of tea or beer; answer with a simple amount in RMB or dollars. — ID: `convm-money-prices--quiz--q-speaking`
+**Answer:** A: 请问，这杯茶多少钱？ (Qǐngwèn, zhè bēi chá duōshao qián?) — Excuse me, how much is this cup of tea?  
+B: 十块人民币。 (Shí kuài rénmínbì.) — Ten yuan.  
+A: 那杯啤酒多少钱？ (Nà bēi píjiǔ duōshao qián?) — How much is that glass of beer?  
+B: 十二块人民币。 (Shí’èr kuài rénmínbì.) — Twelve yuan.  
+A: 谢谢！ (Xièxie!) — Thank you!  
+B: 不客气！ (Bú kèqi!) — You are welcome!. Complete sample role-play. Practise both speakers, then substitute your own details.

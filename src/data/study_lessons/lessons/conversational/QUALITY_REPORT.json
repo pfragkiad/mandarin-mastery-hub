@@ -1,129 +1,19 @@
 {
-  "source_track_count": 16,
-  "extracted_row_count": 880,
-  "unique_hanzi_forms": 868,
-  "source_transcript_alignment": {
-    "aligned_rows": 880,
-    "method": "every extracted Hanzi string appears in a single timed transcript line; this does not verify pinyin or meaning"
-  },
-  "source_review_flag_count": 559,
-  "source_flag_interpretation": "Provisional flags generally mean unreviewed machine-generated gloss; they are NOT automatic evidence of ungrammatical Mandarin.",
-  "study_status_counts": {
-    "curated_teaching_entry": 215,
-    "transcript_attested_extracted": 222,
-    "drill_fragment": 26,
-    "transcript_attested_unreviewed_gloss": 380,
-    "exclude_malformed": 37
-  },
-  "new_topic_lesson_count": 15,
-  "curated_expression_total": 227,
-  "new_dialogue_turn_count": 60,
-  "quiz_count": 60,
-  "known_issues_examples": [
-    {
-      "bad": "我会说我",
-      "reason": "False concatenation of two drill responses; do not teach as a complete sentence."
-    },
-    {
-      "bad": "什么吗",
-      "reason": "In this context, an incorrect combination of the question word and yes-no particle."
-    },
-    {
-      "bad": "你普通话说",
-      "reason": "Incomplete construction; use 你普通话说得很好 with the degree complement."
-    },
-    {
-      "bad": "不想谢谢你",
-      "reason": "Merged unrelated drill turns; 不想 does not modify 谢谢你 here."
-    },
-    {
-      "bad": "钟吃",
-      "reason": "Invalid extracted lexical boundary; 钟 belongs with a clock-time expression."
-    },
-    {
-      "bad": "十二二",
-      "reason": "Transcription/assembly artifact, not a valid numeral."
-    },
-    {
-      "bad": "那么点钟吧",
-      "reason": "Missing numeral before 点钟."
-    },
-    {
-      "bad": "不是时",
-      "reason": "Incomplete or mis-segmented drill fragment."
-    },
-    {
-      "bad": "四二十四",
-      "reason": "Number recitation run together; not one expression."
-    },
-    {
-      "bad": "我有二十五块美金二十五",
-      "reason": "Repeated numeral merged into a sentence."
-    },
-    {
-      "bad": "太多了太太多了",
-      "reason": "Duplicated recognition result."
-    },
-    {
-      "bad": "晚饭吃晚饭",
-      "reason": "Repeated lexical pieces rather than a meaningful example."
-    },
-    {
-      "bad": "十五八加四是多少十二十三加三是多少十三加三十六十五加二是多少十七谢谢你",
-      "reason": "Multiple utterances fused; requires source-by-source reconstruction."
-    },
-    {
-      "bad": "今天晚上不好明天晚上吧今天晚上不好明天晚上吧几点钟五点钟好吗",
-      "reason": "Multiple prompts fused; do not include as a single expression."
-    },
-    {
-      "bad": "我有很多人民币很多",
-      "reason": "Repetition merged in extraction; remove trailing 很多."
-    },
-    {
-      "bad": "不客气不客气现在你会跟这位小姐对话",
-      "reason": "Two unrelated utterances merged."
-    },
-    {
-      "bad": "加是多少",
-      "reason": "Missing operands before 加."
-    },
-    {
-      "bad": "我要块人民币",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "我不要块人民币",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "我有块人民币",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "给我块人民币",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "给我块美金",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "我有块美金",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "我给你块美金",
-      "reason": "Missing numeral before 块."
-    },
-    {
-      "bad": "那么块人民币吧",
-      "reason": "Missing numeral before 块."
-    }
+  "course_id": "conversational-mandarin",
+  "core_release": "3.3.1",
+  "topic_registry": "hsk-topics/2.0.0",
+  "schema_versions": [
+    "mandarin-general-lesson/3.2.0"
   ],
-  "limitations": [
-    "Not all automatically extracted English glosses have been independently translated. Raw unreviewed rows are retained in source index only.",
-    "Human/native-speaker and audio-forensic verification of all 880 rows has not been performed.",
-    "Conversations are reconstructed editorial teaching material, not guaranteed consecutive or verbatim audio turns."
-  ]
+  "lesson_count": 15,
+  "dialogue_turn_count": 60,
+  "practice_question_count": 60,
+  "required_checkpoints": 150,
+  "optional_checkpoints": 0,
+  "speaking_question_count": 15,
+  "speaking_model_turn_count": 70,
+  "editorial_check": "all 15 model speaking answers address entire task; speakable pattern text without ellipses, variables, arithmetic operators or slashes",
+  "schema_validation": "passed 15/15 using Core v3.3.1 schemas and validate_core.py with catalog_ids.json",
+  "stable_ids": "unchanged: 15 lesson IDs, all existing question IDs, section IDs, checkpoint IDs, checkpoint targets, optional/required flags and curriculum placements",
+  "editorial_status": "draft; instructional text has not received native-speaker review"
 }

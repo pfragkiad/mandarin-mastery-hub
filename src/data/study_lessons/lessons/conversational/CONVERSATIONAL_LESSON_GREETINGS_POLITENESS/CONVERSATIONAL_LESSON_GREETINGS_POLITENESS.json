@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Greetings and Politeness",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice start a polite conversation. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "subtitle": "Greetings, simple questions, and thanks",
+    "description": "Learn to greet someone, ask a polite question, and thank them for their answer.",
     "slug": "conversational-greetings-politeness"
   },
   "classification": {
@@ -15,11 +15,8 @@
     ],
     "tags": [
       "greetings",
-      "apologies",
       "courtesy",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "polite-questions"
     ],
     "course_topic_refs": [
       {
@@ -35,30 +32,32 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
+    "七": "Characters:七",
     "不": "Characters:不",
-    "会": "Characters:会",
     "你": "Characters:你",
     "再": "Characters:再",
+    "几": "Characters:几",
     "吗": "Characters:吗",
+    "在": "Characters:在",
     "天": "Characters:天",
     "好": "Characters:好",
     "客": "Characters:客",
     "对": "Characters:对",
     "很": "Characters:很",
-    "文": "Characters:文",
     "明": "Characters:明",
     "气": "Characters:气",
-    "英": "Characters:英",
+    "点": "Characters:点",
+    "现": "Characters:现",
     "见": "Characters:见",
-    "说": "Characters:说",
     "请": "Characters:请",
     "谢": "Characters:谢",
     "起": "Characters:起",
+    "钟": "Characters:钟",
     "问": "Characters:问"
   },
   "sections": {
@@ -66,7 +65,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to start a polite conversation. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -103,28 +102,28 @@
         "id": "grammar-1",
         "kind": "grammar_pattern",
         "pattern_hanzi": "你好吗？",
-        "pattern_pinyin": "nǐ hǎo ma",
+        "pattern_pinyin": "nǐ hǎo ma?",
         "function_en": "The neutral-tone question particle 吗 (ma) can form a yes–no question.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你好吗？",
           "pinyin": "nǐ hǎo ma?",
           "english": "How are you?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "The neutral-tone question particle 吗 (ma) can form a yes–no question."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "请问……",
-        "pattern_pinyin": "qǐngwèn",
+        "pattern_hanzi": "请问，现在几点钟？",
+        "pattern_pinyin": "Qǐngwèn, xiànzài jǐ diǎn zhōng?",
         "function_en": "A polite way to introduce a request for information.",
         "example": {
           "id": "pattern-ex-2",
-          "hanzi": "请问，你会说英文吗？",
-          "pinyin": "qǐngwèn, nǐ huì shuō Yīngwén ma?",
-          "english": "Excuse me, do you speak English?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "hanzi": "请问，现在几点钟？",
+          "pinyin": "Qǐngwèn, xiànzài jǐ diǎn zhōng?",
+          "english": "Excuse me, what time is it?",
+          "teaching_note": "A polite way to introduce a request for information."
         }
       },
       {
@@ -154,7 +153,7 @@
           {
             "hanzi": "请问",
             "pinyin": "qǐngwèn",
-            "meaning_en": "Excuse me, may I ask…"
+            "meaning_en": "Excuse me, may I ask"
           },
           {
             "hanzi": "谢谢",
@@ -180,11 +179,6 @@
             "hanzi": "明天见",
             "pinyin": "míngtiān jiàn",
             "meaning_en": "See you tomorrow."
-          },
-          {
-            "hanzi": "对不起请问",
-            "pinyin": "duìbuqǐ qǐngwèn",
-            "meaning_en": "Excuse me, may I ask…"
           }
         ]
       },
@@ -200,11 +194,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "After being asked how they are, how does speaker B respond?",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你好！ (Nǐ hǎo!) — Hello!",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "answer": "很好，谢谢！ (Hěn hǎo, xièxie!) — Very well, thank you!",
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -218,11 +212,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 请问…… (qǐngwèn).",
+          "prompt": "Use 请问 (qǐngwèn) to ask politely what time it is.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "请问，你会说英文吗？ (qǐngwèn, nǐ huì shuō Yīngwén ma?) — Excuse me, do you speak English?",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Excuse me, what time is it?",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -230,8 +224,8 @@
           "prompt": "Greet a stranger politely, ask a simple question, then thank them.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你好！ (Nǐ hǎo!) — 你好！ (Nǐ hǎo!)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?\nB: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o’clock now.\nA: 谢谢！ (Xièxie!) — Thank you!\nB: 不客气！ (Bú kèqi!) — You are welcome!",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -324,7 +318,7 @@
           {
             "id": "convm-greetings-politeness--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "After being asked how they are, how does speaker B respond?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -338,7 +332,7 @@
           {
             "id": "convm-greetings-politeness--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 请问…… (qǐngwèn).",
+            "label": "Use 请问 (qǐngwèn) to ask politely what time it is.",
             "optional": false,
             "target_id": "q-grammar"
           },

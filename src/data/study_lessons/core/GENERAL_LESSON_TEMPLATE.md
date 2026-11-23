@@ -35,9 +35,6 @@ For independently authored conversational lessons, record only actual source use
 - Old schema versions remain valid; progress is mandatory for new topic 3.3.0, character 3.2.0, and general 3.2.0.
 - Keep the individual lesson four-file ZIP contract: JSON, HTML, Markdown, and standalone `report.md`.
 
-## Learner-visible progress labels
+## Learner-facing copy and checkpoint labels
 
-- Use natural action descriptions as `progress.sections[].checkpoints[].label` (e.g. "Practise the model conversation" or "Understand a choice-question pattern").
-- Never expose authoring IDs such as `grammar-1`, `review-1`, `lesson-intro`, `q-17-5` in visible labels. IDs must remain in their dedicated `id`/`target_id` fields.
-- Do not place course-source, transcript, provenance, extraction, or versioning notes inside learner-facing explanation blocks or curriculum descriptions. Put genuine source audit details only in `report.md`.
-- Vocabulary source version and taxonomy version belong in the release ZIP filename and archive README, not in reusable lesson IDs or learner text.
+Follow `LESSON_CREATOR_AUTHORING_GUIDELINES.md` for title, subtitle, description, tags, and distinct teaching examples. Use natural action descriptions in checkpoint labels; never expose raw activity IDs or source/provenance notes in learner-facing content.

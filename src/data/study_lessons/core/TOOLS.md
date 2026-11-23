@@ -1,9 +1,12 @@
 # Local lesson tools
 
-The 19 canonical Project Source files and [README](README.md) come byte-for-byte
-from the owner's v3.2.0 Core ZIP. Their hashes are recorded in
-[the core import audit](../../../../reports/lesson-core-3.2.0-import.json).
-`.gitattributes` preserves their exact bytes across checkouts.
+The 20 canonical Project Source files and [README](README.md) come byte-for-byte
+from the owner's v3.3.1 Core ZIP. Their hashes are recorded in
+[the import audit](../../../../reports/lessons-3.3.1-import.json).
+`.gitattributes` preserves their exact bytes across checkouts. This editorial patch
+keeps all six schemas and the taxonomy registry unchanged. The separate
+[authoring guidelines](LESSON_CREATOR_AUTHORING_GUIDELINES.md) are supplied policy,
+not new executable validation requirements for existing lessons.
 
 The following tools are maintained separately; changing them does not change the
 Core schema version:
@@ -18,7 +21,7 @@ From the repository root:
 
 ```sh
 python src/data/study_lessons/core/validate_core.py --self-test
-python scripts/import-hsk-level1-lessons.test.py
+python scripts/import-lessons-v3.3.1.test.py
 ```
 
 See the [source handoff guide](../../../../importer/data/lessons/README.md) for

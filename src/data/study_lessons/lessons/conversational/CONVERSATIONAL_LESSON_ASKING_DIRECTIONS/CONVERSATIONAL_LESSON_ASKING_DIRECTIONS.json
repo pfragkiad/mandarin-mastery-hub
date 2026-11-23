@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Asking Where Places Are",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice ask where a street or place is. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "subtitle": "Finding streets and saying here, there, or not here",
+    "description": "Learn to ask where a street is and explain whether a place is here or over there.",
     "slug": "conversational-asking-directions"
   },
   "classification": {
@@ -16,11 +16,8 @@
     ],
     "tags": [
       "directions",
-      "locations",
-      "streets",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "street-locations",
+      "position"
     ],
     "course_topic_refs": [
       {
@@ -36,7 +33,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -49,11 +46,9 @@
     "呢": "Characters:呢",
     "哪": "Characters:哪",
     "在": "Characters:在",
-    "地": "Characters:地",
     "学": "Characters:学",
     "安": "Characters:安",
     "我": "Characters:我",
-    "点": "Characters:点",
     "知": "Characters:知",
     "街": "Characters:街",
     "请": "Characters:请",
@@ -70,7 +65,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask where a street or place is. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to ask where a street is and explain whether a place is here or over there. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -106,29 +101,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "地点 + 在 + 哪儿",
-        "pattern_pinyin": "dìdiǎn zài nǎr",
+        "pattern_hanzi": "学院路在哪儿？",
+        "pattern_pinyin": "Xuéyuàn Lù zài nǎr?",
         "function_en": "Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma).",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "学院路在哪儿？",
           "pinyin": "Xuéyuàn Lù zài nǎr?",
           "english": "Where is Xueyuan Road?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma)."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "不在 + 地点",
-        "pattern_pinyin": "bú zài dìdiǎn",
+        "pattern_hanzi": "不在这儿。",
+        "pattern_pinyin": "bú zài zhèr.",
         "function_en": "Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "不在这儿。",
           "pinyin": "bú zài zhèr.",
           "english": "It is not here.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在."
         }
       },
       {
@@ -229,11 +224,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "Where does speaker B first say Xueyuan Road is?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "在那儿。 (Zài nàr.) — It is over there.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -247,11 +242,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn).",
+          "prompt": "Say that Chang’an Street is not here, using 不在 (bú zài).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "不在这儿。 (bú zài zhèr.) — It is not here.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "长安街不在这儿。 (Cháng’ān Jiē bú zài zhèr.) — Chang’an Street is not here.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -259,8 +254,8 @@
           "prompt": "Role-play asking for Xueyuan Road and Chang’an Street; answer here/there/not here.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "请问，学院路在哪儿？ (Qǐngwèn, Xuéyuàn Lù zài nǎr?) — 在那儿。 (Zài nàr.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 请问，学院路在哪儿？ (Qǐngwèn, Xuéyuàn Lù zài nǎr?) — Excuse me, where is Xueyuan Road?\nB: 学院路在那儿。 (Xuéyuàn Lù zài nàr.) — Xueyuan Road is over there.\nA: 长安街也在那儿吗？ (Cháng’ān Jiē yě zài nàr ma?) — Is Chang’an Street over there too?\nB: 不，长安街不在那儿，在这儿。 (Bù, Cháng’ān Jiē bú zài nàr, zài zhèr.) — No, Chang’an Street is not there. It is here.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -353,7 +348,7 @@
           {
             "id": "convm-asking-directions--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "Where does speaker B first say Xueyuan Road is?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -367,7 +362,7 @@
           {
             "id": "convm-asking-directions--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 不在 + 地点 (bú zài dìdiǎn).",
+            "label": "Say that Chang’an Street is not here, using 不在 (bú zài).",
             "optional": false,
             "target_id": "q-grammar"
           },

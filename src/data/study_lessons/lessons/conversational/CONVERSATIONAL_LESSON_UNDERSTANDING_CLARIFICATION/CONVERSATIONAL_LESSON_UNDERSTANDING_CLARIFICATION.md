@@ -1,6 +1,6 @@
-# Understanding and Asking for Clarification
+# Asking for Clarification
 
-Practice say that you do or do not understand. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to say when you do not understand and ask someone to clarify their meaning.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice say that you do or do not understand. Transcript-referenced conversatio
 
 ## Explanation
 
-Learn to say that you do or do not understand. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to say when you do not understand and ask someone to clarify their meaning. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to say that you do or do not understand. Use the model conversation to not
 
 ## Grammar Pattern
 
-**Pattern:** 不 + 明白 (bù míngbai)
+**Pattern:** 我不明白。 (wǒ bù míngbai.)
 
 Negate a mental state using 不 (bù); the next syllable is not fourth tone here.
 
 **我不明白。**
 *wǒ bù míngbai.*
 I do not understand.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Negate a mental state using 不 (bù); the next syllable is not fourth tone here.
 
 ## Grammar Pattern
 
-**Pattern:** ……什么 (shénme)
+**Pattern:** 你说什么？ (nǐ shuō shénme?)
 
 什么 (shénme) occupies the position of the unknown thing in the sentence.
 
 **你说什么？**
 *nǐ shuō shénme?*
 What did you say?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 什么 (shénme) occupies the position of the unknown thing in the sentence.
 
 ## Review Set
 
@@ -78,40 +78,17 @@ Speaking task: Tell someone you do not understand and ask what they said.
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 我不明白。 (Wǒ bù míngbai.) — I do not understand.. Read the first two turns again, then answer without looking.
+**Comprehension:** How does speaker B say they do not understand?
+**Answer:** 我不明白。 (Wǒ bù míngbai.) — I do not understand.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: I do not know.
 **Answer:** 我不知道 (wǒ bù zhīdào). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern ……什么 (shénme).
-**Answer:** 你说什么？ (nǐ shuō shénme?) — What did you say?. Use the word order shown in the second grammar explanation.
+**Production:** Ask someone what they just said, using 什么 (shénme).
+**Answer:** 你说什么？ (Nǐ shuō shénme?) — What did you say?. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Tell someone you do not understand and ask what they said.
-**Answer:** 你明白吗？ (Nǐ míngbai ma?) — 我不明白。 (Wǒ bù míngbai.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-understanding-clarification--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-understanding-clarification--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: Negate a mental state using 不 (bù); the next syllable is not fourth tone here. — ID: `convm-understanding-clarification--grammar--grammar-1`
-- [ ] Understand: 什么 (shénme) occupies the position of the unknown thing in the sentence. — ID: `convm-understanding-clarification--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-understanding-clarification--review--key-expressions`
-
-### Guided speaking
-- [ ] Tell someone you do not understand and ask what they said. — ID: `convm-understanding-clarification--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-understanding-clarification--quiz--q-dialogue`
-- [ ] Translate into Mandarin: I do not know. — ID: `convm-understanding-clarification--quiz--q-translation`
-- [ ] Make a sentence using the pattern ……什么 (shénme). — ID: `convm-understanding-clarification--quiz--q-grammar`
-- [ ] Tell someone you do not understand and ask what they said. — ID: `convm-understanding-clarification--quiz--q-speaking`
+**Answer:** A: 你明白吗？ (Nǐ míngbai ma?) — Do you understand?  
+B: 我不明白。你说什么？ (Wǒ bù míngbai. Nǐ shuō shénme?) — I do not understand. What did you say?  
+A: 我说我们明天见。 (Wǒ shuō wǒmen míngtiān jiàn.) — I said we will see each other tomorrow.  
+B: 好，我明白了。谢谢！ (Hǎo, wǒ míngbai le. Xièxie!) — Okay, now I understand. Thank you!. Complete sample role-play. Practise both speakers, then substitute your own details.

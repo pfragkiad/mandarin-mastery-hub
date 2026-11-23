@@ -2,7 +2,7 @@
 
 **Subtopics:** everyday-routines
 
-Practice use 想 and 要 for wants and intentions. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to say what you want, decline food politely, and accept an offered drink.
 
 ## Learning objectives
 
@@ -12,7 +12,7 @@ Practice use 想 and 要 for wants and intentions. Transcript-referenced convers
 
 ## Explanation
 
-Learn to use 想 and 要 for wants and intentions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to say what you want, decline food politely, and accept an offered drink. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -26,25 +26,25 @@ Learn to use 想 and 要 for wants and intentions. Use the model conversation to
 
 ## Grammar Pattern
 
-**Pattern:** 想 + 动词 (xiǎng dòngcí)
+**Pattern:** 我想吃午饭。 (wǒ xiǎng chī wǔfàn.)
 
 想 (xiǎng) expresses a wish or desire followed by a verb.
 
 **我想吃午饭。**
 *wǒ xiǎng chī wǔfàn.*
 I want to eat lunch.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 想 (xiǎng) expresses a wish or desire followed by a verb.
 
 ## Grammar Pattern
 
-**Pattern:** 想不想…… (xiǎng bu xiǎng)
+**Pattern:** 你想不想喝茶？ (nǐ xiǎng bu xiǎng hē chá?)
 
 An A-not-A question asks whether someone wants to do something.
 
 **你想不想喝茶？**
 *nǐ xiǎng bu xiǎng hē chá?*
 Do you want to drink tea?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** An A-not-A question asks whether someone wants to do something.
 
 ## Review Set
 
@@ -86,40 +86,17 @@ Speaking task: Offer food and drink, accept one offer and politely decline anoth
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 我不想吃。 (Wǒ bù xiǎng chī.) — I do not want to eat.. Read the first two turns again, then answer without looking.
+**Comprehension:** How does speaker B decline the offer of food?
+**Answer:** 我不想吃。 (Wǒ bù xiǎng chī.) — I do not want to eat.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: I want to eat.
 **Answer:** 我想吃 (wǒ xiǎng chī). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng).
-**Answer:** 你想不想喝茶？ (nǐ xiǎng bu xiǎng hē chá?) — Do you want to drink tea?. Use the word order shown in the second grammar explanation.
+**Production:** Ask someone whether they would like tea, using 想不想 (xiǎng bu xiǎng).
+**Answer:** 你想不想喝茶？ (Nǐ xiǎng bu xiǎng hē chá?) — Would you like to drink tea?. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Offer food and drink, accept one offer and politely decline another.
-**Answer:** 你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — 我不想吃。 (Wǒ bù xiǎng chī.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-wants-intentions--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-wants-intentions--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: 想 (xiǎng) expresses a wish or desire followed by a verb. — ID: `convm-wants-intentions--grammar--grammar-1`
-- [ ] Understand: An A-not-A question asks whether someone wants to do something. — ID: `convm-wants-intentions--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-wants-intentions--review--key-expressions`
-
-### Guided speaking
-- [ ] Offer food and drink, accept one offer and politely decline another. — ID: `convm-wants-intentions--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-wants-intentions--quiz--q-dialogue`
-- [ ] Translate into Mandarin: I want to eat. — ID: `convm-wants-intentions--quiz--q-translation`
-- [ ] Make a sentence using the pattern 想不想…… (xiǎng bu xiǎng). — ID: `convm-wants-intentions--quiz--q-grammar`
-- [ ] Offer food and drink, accept one offer and politely decline another. — ID: `convm-wants-intentions--quiz--q-speaking`
+**Answer:** A: 你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — Would you like something to eat?  
+B: 我不想吃，谢谢。 (Wǒ bù xiǎng chī, xièxie.) — I do not want to eat, thank you.  
+A: 你想喝一点茶吗？ (Nǐ xiǎng hē yìdiǎn chá ma?) — Would you like some tea?  
+B: 好，我想喝一点茶。 (Hǎo, wǒ xiǎng hē yìdiǎn chá.) — Yes, I would like some tea.. Complete sample role-play. Practise both speakers, then substitute your own details.

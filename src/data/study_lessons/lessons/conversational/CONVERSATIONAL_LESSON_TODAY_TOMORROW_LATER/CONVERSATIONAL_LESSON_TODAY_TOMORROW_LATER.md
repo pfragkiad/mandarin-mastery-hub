@@ -1,6 +1,6 @@
 # Today, Tomorrow, and Later
 
-Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to postpone an activity until later today or suggest meeting tomorrow instead.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice distinguish now, later, tonight, and tomorrow. Transcript-referenced co
 
 ## Explanation
 
-Learn to distinguish now, later, tonight, and tomorrow. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to postpone an activity until later today or suggest meeting tomorrow instead. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to distinguish now, later, tonight, and tomorrow. Use the model conversati
 
 ## Grammar Pattern
 
-**Pattern:** 今天 / 明天 (jīntiān / míngtiān)
+**Pattern:** 明天我想去。 (míngtiān wǒ xiǎng qù.)
 
 Time words often precede the main verb or follow the topic.
 
 **明天我想去。**
 *míngtiān wǒ xiǎng qù.*
 I want to go tomorrow.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Time words often precede the main verb or follow the topic.
 
 ## Grammar Pattern
 
-**Pattern:** 过一会儿 (guò yíhuìr)
+**Pattern:** 过一会儿见。 (guò yíhuìr jiàn.)
 
 This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).
 
 **过一会儿见。**
 *guò yíhuìr jiàn.*
 See you in a little while.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).
 
 ## Review Set
 
@@ -86,40 +86,19 @@ Speaking task: Postpone plans from tonight to tomorrow, or from now to later.
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 现在不行。 (Xiànzài bù xíng.) — Now does not work.. Read the first two turns again, then answer without looking.
+**Comprehension:** Why does speaker B suggest changing the plan?
+**Answer:** 现在不行。 (Xiànzài bù xíng.) — Now does not work.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Today.
 **Answer:** 今天 (jīntiān). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 过一会儿 (guò yíhuìr).
-**Answer:** 过一会儿见。 (guò yíhuìr jiàn.) — See you in a little while.. Use the word order shown in the second grammar explanation.
+**Production:** Say you will see someone in a little while, using 过一会儿 (guò yíhuìr).
+**Answer:** 过一会儿见。 (Guò yíhuìr jiàn.) — See you in a little while.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Postpone plans from tonight to tomorrow, or from now to later.
-**Answer:** 你想现在吃吗？ (Nǐ xiǎng xiànzài chī ma?) — 现在不行。 (Xiànzài bù xíng.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-today-tomorrow-later--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-today-tomorrow-later--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: Time words often precede the main verb or follow the topic. — ID: `convm-today-tomorrow-later--grammar--grammar-1`
-- [ ] Understand: This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì). — ID: `convm-today-tomorrow-later--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-today-tomorrow-later--review--key-expressions`
-
-### Guided speaking
-- [ ] Postpone plans from tonight to tomorrow, or from now to later. — ID: `convm-today-tomorrow-later--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-today-tomorrow-later--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Today. — ID: `convm-today-tomorrow-later--quiz--q-translation`
-- [ ] Make a sentence using the pattern 过一会儿 (guò yíhuìr). — ID: `convm-today-tomorrow-later--quiz--q-grammar`
-- [ ] Postpone plans from tonight to tomorrow, or from now to later. — ID: `convm-today-tomorrow-later--quiz--q-speaking`
+**Answer:** A: 现在去吃饭，好吗？ (Xiànzài qù chīfàn, hǎo ma?) — Shall we go eat now?  
+B: 现在不行，过一会儿吧。 (Xiànzài bù xíng, guò yíhuìr ba.) — Not now; let us go a bit later.  
+A: 今天晚上可以吗？ (Jīntiān wǎnshang kěyǐ ma?) — Would tonight work?  
+B: 今天晚上不行。 (Jīntiān wǎnshang bù xíng.) — Tonight does not work.  
+A: 明天晚上呢？ (Míngtiān wǎnshang ne?) — How about tomorrow evening?  
+B: 好，明天晚上见。 (Hǎo, míngtiān wǎnshang jiàn.) — Okay, see you tomorrow evening.. Complete sample role-play. Practise both speakers, then substitute your own details.

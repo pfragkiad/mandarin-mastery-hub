@@ -1,6 +1,6 @@
 # Greetings and Politeness
 
-Practice start a polite conversation. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to greet someone, ask a polite question, and thank them for their answer.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice start a polite conversation. Transcript-referenced conversational Manda
 
 ## Explanation
 
-Learn to start a polite conversation. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to greet someone, ask a polite question, and thank them for their answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to start a polite conversation. Use the model conversation to notice the e
 
 ## Grammar Pattern
 
-**Pattern:** 你好吗？ (nǐ hǎo ma)
+**Pattern:** 你好吗？ (nǐ hǎo ma?)
 
 The neutral-tone question particle 吗 (ma) can form a yes–no question.
 
 **你好吗？**
 *nǐ hǎo ma?*
 How are you?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** The neutral-tone question particle 吗 (ma) can form a yes–no question.
 
 ## Grammar Pattern
 
-**Pattern:** 请问…… (qǐngwèn)
+**Pattern:** 请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?)
 
 A polite way to introduce a request for information.
 
-**请问，你会说英文吗？**
-*qǐngwèn, nǐ huì shuō Yīngwén ma?*
-Excuse me, do you speak English?
-**Usage:** Use this construction in your own dialogue.
+**请问，现在几点钟？**
+*Qǐngwèn, xiànzài jǐ diǎn zhōng?*
+Excuse me, what time is it?
+**Usage:** A polite way to introduce a request for information.
 
 ## Review Set
 
@@ -54,7 +54,7 @@ Excuse me, do you speak English?
 
 对不起 (duìbuqǐ) — Excuse me; sorry.
 
-请问 (qǐngwèn) — Excuse me, may I ask…
+请问 (qǐngwèn) — Excuse me, may I ask
 
 谢谢 (xièxie) — Thank you.
 
@@ -66,48 +66,23 @@ Excuse me, do you speak English?
 
 明天见 (míngtiān jiàn) — See you tomorrow.
 
-对不起请问 (duìbuqǐ qǐngwèn) — Excuse me, may I ask…
-
 ## Explanation
 
 Speaking task: Greet a stranger politely, ask a simple question, then thank them.
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 你好！ (Nǐ hǎo!) — Hello!. Read the first two turns again, then answer without looking.
+**Comprehension:** After being asked how they are, how does speaker B respond?
+**Answer:** 很好，谢谢！ (Hěn hǎo, xièxie!) — Very well, thank you!. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Excuse me; sorry.
 **Answer:** 对不起 (duìbuqǐ). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 请问…… (qǐngwèn).
-**Answer:** 请问，你会说英文吗？ (qǐngwèn, nǐ huì shuō Yīngwén ma?) — Excuse me, do you speak English?. Use the word order shown in the second grammar explanation.
+**Production:** Use 请问 (qǐngwèn) to ask politely what time it is.
+**Answer:** 请问，现在几点钟？ (Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Excuse me, what time is it?. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Greet a stranger politely, ask a simple question, then thank them.
-**Answer:** 你好！ (Nǐ hǎo!) — 你好！ (Nǐ hǎo!). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-greetings-politeness--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-greetings-politeness--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: The neutral-tone question particle 吗 (ma) can form a yes–no question. — ID: `convm-greetings-politeness--grammar--grammar-1`
-- [ ] Understand: A polite way to introduce a request for information. — ID: `convm-greetings-politeness--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-greetings-politeness--review--key-expressions`
-
-### Guided speaking
-- [ ] Greet a stranger politely, ask a simple question, then thank them. — ID: `convm-greetings-politeness--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-greetings-politeness--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Excuse me; sorry. — ID: `convm-greetings-politeness--quiz--q-translation`
-- [ ] Make a sentence using the pattern 请问…… (qǐngwèn). — ID: `convm-greetings-politeness--quiz--q-grammar`
-- [ ] Greet a stranger politely, ask a simple question, then thank them. — ID: `convm-greetings-politeness--quiz--q-speaking`
+**Answer:** A: 你好！请问，现在几点钟？ (Nǐ hǎo! Qǐngwèn, xiànzài jǐ diǎn zhōng?) — Hello! Excuse me, what time is it?  
+B: 现在七点钟。 (Xiànzài qī diǎn zhōng.) — It is seven o’clock now.  
+A: 谢谢！ (Xièxie!) — Thank you!  
+B: 不客气！ (Bú kèqi!) — You are welcome!. Complete sample role-play. Practise both speakers, then substitute your own details.

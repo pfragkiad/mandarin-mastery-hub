@@ -3,9 +3,9 @@
   "lesson_id": "convm-permission-requests",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Permission and Polite Requests",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice ask whether someone can do something. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Asking Permission Politely",
+    "subtitle": "Requests, giving things, and permission to act",
+    "description": "Learn to ask permission, request an item politely, and respond appropriately.",
     "slug": "conversational-permission-requests"
   },
   "classification": {
@@ -17,10 +17,7 @@
     "tags": [
       "permission",
       "requests",
-      "giving",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "courtesy"
     ],
     "course_topic_refs": [
       {
@@ -36,7 +33,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -44,18 +41,19 @@
     "一": "Characters:一",
     "三": "Characters:三",
     "不": "Characters:不",
-    "东": "Characters:东",
     "买": "Characters:买",
     "五": "Characters:五",
     "人": "Characters:人",
     "以": "Characters:以",
     "你": "Characters:你",
-    "动": "Characters:动",
+    "儿": "Characters:儿",
     "十": "Characters:十",
     "去": "Characters:去",
     "可": "Characters:可",
     "吃": "Characters:吃",
+    "吗": "Characters:吗",
     "啤": "Characters:啤",
+    "喝": "Characters:喝",
     "在": "Characters:在",
     "块": "Characters:块",
     "多": "Characters:多",
@@ -70,19 +68,20 @@
     "给": "Characters:给",
     "美": "Characters:美",
     "茶": "Characters:茶",
-    "西": "Characters:西",
-    "词": "Characters:词",
+    "请": "Characters:请",
     "谢": "Characters:谢",
+    "这": "Characters:这",
     "酒": "Characters:酒",
     "金": "Characters:金",
-    "钱": "Characters:钱"
+    "钱": "Characters:钱",
+    "问": "Characters:问"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask whether someone can do something. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to ask permission, request an item politely, and respond appropriately. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -118,29 +117,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "可不可以 + 动词",
-        "pattern_pinyin": "kě bu kěyǐ dòngcí",
+        "pattern_hanzi": "你可不可以买茶？",
+        "pattern_pinyin": "nǐ kě bu kěyǐ mǎi chá?",
         "function_en": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你可不可以买茶？",
           "pinyin": "nǐ kě bu kěyǐ mǎi chá?",
           "english": "Can you buy tea?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "An A-not-A form of 可以 (kěyǐ) asks about possibility or permission."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "给 + 人 + 东西",
-        "pattern_pinyin": "gěi rén dōngxi",
+        "pattern_hanzi": "给我一点茶。",
+        "pattern_pinyin": "gěi wǒ yìdiǎn chá.",
         "function_en": "给 (gěi) can mean to give something to someone.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "给我一点茶。",
           "pinyin": "gěi wǒ yìdiǎn chá.",
           "english": "Give me a little tea.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "给 (gěi) can mean to give something to someone."
         }
       },
       {
@@ -241,11 +240,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "What does speaker B say when giving permission?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.) — Yes, I can. I will give you ten yuan.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -259,11 +258,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi).",
+          "prompt": "Politely ask someone to give you some tea, using 给 (gěi).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "给我一点茶。 (gěi wǒ yìdiǎn chá.) — Give me a little tea.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "请给我一点茶。 (Qǐng gěi wǒ yìdiǎn chá.) — Please give me some tea.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -271,8 +270,8 @@
           "prompt": "Ask politely for an item and respond with permission, refusal or thanks.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你可不可以给我一点钱？ (Nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián?) — 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 请问，你可不可以给我一点茶？ (Qǐngwèn, nǐ kě bu kěyǐ gěi wǒ yìdiǎn chá?) — Excuse me, could you give me some tea?\nB: 可以，给你。 (Kěyǐ, gěi nǐ.) — Yes, here you are.\nA: 谢谢！我可以在这儿喝吗？ (Xièxie! Wǒ kěyǐ zài zhèr hē ma?) — Thank you! May I drink it here?\nB: 可以。 (Kěyǐ.) — Yes, you may.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -365,7 +364,7 @@
           {
             "id": "convm-permission-requests--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "What does speaker B say when giving permission?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -379,7 +378,7 @@
           {
             "id": "convm-permission-requests--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi).",
+            "label": "Politely ask someone to give you some tea, using 给 (gěi).",
             "optional": false,
             "target_id": "q-grammar"
           },

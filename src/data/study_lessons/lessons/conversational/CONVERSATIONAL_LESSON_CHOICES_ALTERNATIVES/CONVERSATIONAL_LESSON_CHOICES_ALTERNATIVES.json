@@ -3,9 +3,9 @@
   "lesson_id": "convm-choices-alternatives",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Choosing: Or, Either, and Not",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice choose between two options in a question. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Choosing Between Alternatives",
+    "subtitle": "Choice questions with 还是 and statements with 或者",
+    "description": "Learn to offer two alternatives, ask someone to choose, and give a direct answer.",
     "slug": "conversational-choices-alternatives"
   },
   "classification": {
@@ -16,12 +16,9 @@
       "food-drink"
     ],
     "tags": [
+      "choice-questions",
       "alternatives",
-      "negation",
-      "a-not-a",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "contrast"
     ],
     "course_topic_refs": [
       {
@@ -37,12 +34,13 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
     "一": "Characters:一",
+    "七": "Characters:七",
     "不": "Characters:不",
     "东": "Characters:东",
     "两": "Characters:两",
@@ -50,12 +48,16 @@
     "买": "Characters:买",
     "五": "Characters:五",
     "人": "Characters:人",
+    "们": "Characters:们",
     "会": "Characters:会",
     "你": "Characters:你",
     "儿": "Characters:儿",
     "八": "Characters:八",
+    "六": "Characters:六",
     "吃": "Characters:吃",
     "吧": "Characters:吧",
+    "咖": "Characters:咖",
+    "啡": "Characters:啡",
     "啤": "Characters:啤",
     "喝": "Characters:喝",
     "四": "Characters:四",
@@ -68,6 +70,7 @@
     "是": "Characters:是",
     "有": "Characters:有",
     "民": "Characters:民",
+    "水": "Characters:水",
     "没": "Characters:没",
     "点": "Characters:点",
     "现": "Characters:现",
@@ -78,6 +81,8 @@
     "要": "Characters:要",
     "过": "Characters:过",
     "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
     "酒": "Characters:酒",
     "金": "Characters:金",
     "钟": "Characters:钟"
@@ -87,7 +92,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to choose between two options in a question. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to offer two alternatives, ask someone to choose, and give a direct answer. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -96,15 +101,15 @@
         "turns": [
           {
             "speaker": "A",
-            "hanzi": "你想喝茶还是啤酒？",
-            "pinyin": "Nǐ xiǎng hē chá háishi píjiǔ?",
-            "english": "Would you like tea or beer?"
+            "hanzi": "你想喝咖啡还是茶？",
+            "pinyin": "Nǐ xiǎng hē kāfēi háishi chá?",
+            "english": "Would you like coffee or tea?"
           },
           {
             "speaker": "B",
-            "hanzi": "我想喝茶。",
-            "pinyin": "Wǒ xiǎng hē chá.",
-            "english": "I would like tea."
+            "hanzi": "我想喝咖啡。",
+            "pinyin": "Wǒ xiǎng hē kāfēi.",
+            "english": "I would like coffee."
           },
           {
             "speaker": "A",
@@ -123,29 +128,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "A 还是 B",
-        "pattern_pinyin": "A háishi B",
+        "pattern_hanzi": "你喝茶还是啤酒？",
+        "pattern_pinyin": "nǐ hē chá háishi píjiǔ?",
         "function_en": "还是 (háishi) is normal in questions that present a choice.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你喝茶还是啤酒？",
           "pinyin": "nǐ hē chá háishi píjiǔ?",
           "english": "Tea or beer?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "还是 (háishi) is normal in questions that present a choice."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "A 或者 B",
-        "pattern_pinyin": "A huòzhě B",
+        "pattern_hanzi": "我想买茶或者啤酒。",
+        "pattern_pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
         "function_en": "或者 (huòzhě) commonly offers alternatives in statements.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我想买茶或者啤酒。",
           "pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
           "english": "I want to buy tea or beer.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "或者 (huòzhě) commonly offers alternatives in statements."
         }
       },
       {
@@ -236,11 +241,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "Which drink does speaker B choose in the first exchange?",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我想喝茶。 (Wǒ xiǎng hē chá.) — I would like tea.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "answer": "我想喝咖啡。 (Wǒ xiǎng hē kāfēi.) — I would like coffee.",
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -254,11 +259,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern A 或者 B (A huòzhě B).",
+          "prompt": "Use 或者 (huòzhě) to say you want to buy tea or beer.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我想买茶或者啤酒。 (wǒ xiǎng mǎi chá huòzhě píjiǔ.) — I want to buy tea or beer.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "我想买茶或者啤酒。 (Wǒ xiǎng mǎi chá huòzhě píjiǔ.) — I want to buy tea or beer.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -266,8 +271,8 @@
           "prompt": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — 我想喝茶。 (Wǒ xiǎng hē chá.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你想喝水还是茶？ (Nǐ xiǎng hē shuǐ háishi chá?) — Would you like water or tea?\nB: 我想喝水。 (Wǒ xiǎng hē shuǐ.) — I would like water.\nA: 我们在这儿吃还是在那儿吃？ (Wǒmen zài zhèr chī háishi zài nàr chī?) — Shall we eat here or over there?\nB: 我们在这儿吃吧。 (Wǒmen zài zhèr chī ba.) — Let us eat here.\nA: 六点钟还是七点钟？ (Liù diǎn zhōng háishi qī diǎn zhōng?) — Six or seven o’clock?\nB: 七点钟吧。 (Qī diǎn zhōng ba.) — Seven o’clock.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -360,7 +365,7 @@
           {
             "id": "convm-choices-alternatives--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "Which drink does speaker B choose in the first exchange?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -374,7 +379,7 @@
           {
             "id": "convm-choices-alternatives--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern A 或者 B (A huòzhě B).",
+            "label": "Use 或者 (huòzhě) to say you want to buy tea or beer.",
             "optional": false,
             "target_id": "q-grammar"
           },

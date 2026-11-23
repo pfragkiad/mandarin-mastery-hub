@@ -3,9 +3,9 @@
   "lesson_id": "convm-understanding-clarification",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Understanding and Asking for Clarification",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice say that you do or do not understand. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Asking for Clarification",
+    "subtitle": "Understanding, repeating, and asking what was said",
+    "description": "Learn to say when you do not understand and ask someone to clarify their meaning.",
     "slug": "conversational-understanding-clarification"
   },
   "classification": {
@@ -15,12 +15,9 @@
       "reference-questions"
     ],
     "tags": [
-      "comprehension",
-      "clarifying",
-      "questions",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "understanding",
+      "clarification",
+      "repair-questions"
     ],
     "course_topic_refs": [
       {
@@ -36,16 +33,19 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
     "不": "Characters:不",
     "么": "Characters:么",
+    "了": "Characters:了",
     "什": "Characters:什",
+    "们": "Characters:们",
     "你": "Characters:你",
     "吗": "Characters:吗",
+    "天": "Characters:天",
     "好": "Characters:好",
     "得": "Characters:得",
     "我": "Characters:我",
@@ -53,8 +53,10 @@
     "普": "Characters:普",
     "白": "Characters:白",
     "知": "Characters:知",
+    "见": "Characters:见",
     "话": "Characters:话",
     "说": "Characters:说",
+    "谢": "Characters:谢",
     "通": "Characters:通",
     "道": "Characters:道"
   },
@@ -63,7 +65,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to say that you do or do not understand. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to say when you do not understand and ask someone to clarify their meaning. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -99,29 +101,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "不 + 明白",
-        "pattern_pinyin": "bù míngbai",
+        "pattern_hanzi": "我不明白。",
+        "pattern_pinyin": "wǒ bù míngbai.",
         "function_en": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我不明白。",
           "pinyin": "wǒ bù míngbai.",
           "english": "I do not understand.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Negate a mental state using 不 (bù); the next syllable is not fourth tone here."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "……什么",
-        "pattern_pinyin": "shénme",
+        "pattern_hanzi": "你说什么？",
+        "pattern_pinyin": "nǐ shuō shénme?",
         "function_en": "什么 (shénme) occupies the position of the unknown thing in the sentence.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "你说什么？",
           "pinyin": "nǐ shuō shénme?",
           "english": "What did you say?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "什么 (shénme) occupies the position of the unknown thing in the sentence."
         }
       },
       {
@@ -207,11 +209,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "How does speaker B say they do not understand?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "我不明白。 (Wǒ bù míngbai.) — I do not understand.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -225,11 +227,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern ……什么 (shénme).",
+          "prompt": "Ask someone what they just said, using 什么 (shénme).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你说什么？ (nǐ shuō shénme?) — What did you say?",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "你说什么？ (Nǐ shuō shénme?) — What did you say?",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -237,8 +239,8 @@
           "prompt": "Tell someone you do not understand and ask what they said.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你明白吗？ (Nǐ míngbai ma?) — 我不明白。 (Wǒ bù míngbai.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你明白吗？ (Nǐ míngbai ma?) — Do you understand?\nB: 我不明白。你说什么？ (Wǒ bù míngbai. Nǐ shuō shénme?) — I do not understand. What did you say?\nA: 我说我们明天见。 (Wǒ shuō wǒmen míngtiān jiàn.) — I said we will see each other tomorrow.\nB: 好，我明白了。谢谢！ (Hǎo, wǒ míngbai le. Xièxie!) — Okay, now I understand. Thank you!",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -331,7 +333,7 @@
           {
             "id": "convm-understanding-clarification--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "How does speaker B say they do not understand?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -345,7 +347,7 @@
           {
             "id": "convm-understanding-clarification--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern ……什么 (shénme).",
+            "label": "Ask someone what they just said, using 什么 (shénme).",
             "optional": false,
             "target_id": "q-grammar"
           },

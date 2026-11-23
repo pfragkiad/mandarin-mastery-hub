@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Doing Things Together",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice invite another person to eat or drink with you. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "subtitle": "Inviting someone to lunch and deciding where to go",
+    "description": "Learn to invite someone for lunch, accept or decline, and agree on a place to eat.",
     "slug": "conversational-with-someone"
   },
   "classification": {
@@ -16,12 +16,9 @@
       "daily-actions"
     ],
     "tags": [
-      "invitations",
-      "together",
       "companionship",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "invitations",
+      "shared-plans"
     ],
     "course_topic_refs": [
       {
@@ -37,7 +34,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -46,11 +43,9 @@
     "不": "Characters:不",
     "东": "Characters:东",
     "也": "Characters:也",
-    "人": "Characters:人",
     "们": "Characters:们",
     "你": "Characters:你",
     "儿": "Characters:儿",
-    "动": "Characters:动",
     "午": "Characters:午",
     "去": "Characters:去",
     "吃": "Characters:吃",
@@ -64,10 +59,7 @@
     "我": "Characters:我",
     "晚": "Characters:晚",
     "点": "Characters:点",
-    "短": "Characters:短",
     "西": "Characters:西",
-    "词": "Characters:词",
-    "语": "Characters:语",
     "谁": "Characters:谁",
     "起": "Characters:起",
     "跟": "Characters:跟",
@@ -78,7 +70,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to invite another person to eat or drink with you. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to invite someone for lunch, accept or decline, and agree on a place to eat. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -114,29 +106,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "跟 + 人 + 一起 + 动词",
-        "pattern_pinyin": "gēn rén yìqǐ dòngcí",
+        "pattern_hanzi": "我想跟你一起吃饭。",
+        "pattern_pinyin": "wǒ xiǎng gēn nǐ yìqǐ chīfàn.",
         "function_en": "跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我想跟你一起吃饭。",
           "pinyin": "wǒ xiǎng gēn nǐ yìqǐ chīfàn.",
           "english": "I would like to eat with you.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "也 + 动词短语",
-        "pattern_pinyin": "yě dòngcí duǎnyǔ",
+        "pattern_hanzi": "我也想去。",
+        "pattern_pinyin": "wǒ yě xiǎng qù.",
         "function_en": "也 (yě) adds agreement or another participant doing the same thing.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我也想去。",
           "pinyin": "wǒ yě xiǎng qù.",
           "english": "I want to go too.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "也 (yě) adds agreement or another participant doing the same thing."
         }
       },
       {
@@ -217,11 +209,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "Does speaker B accept the lunch invitation?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you too.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -235,11 +227,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 也 + 动词短语 (yě dòngcí duǎnyǔ).",
+          "prompt": "Say that you also want to go, using 也 (yě).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我也想去。 (wǒ yě xiǎng qù.) — I want to go too.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "我也想去。 (Wǒ yě xiǎng qù.) — I want to go too.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -247,8 +239,8 @@
           "prompt": "Invite someone to lunch, accept or decline, and decide where to go together.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — 好，我也想跟你一起吃。 (Hǎo, wǒ yě xiǎng gēn nǐ yìqǐ chī.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你想跟我一起吃午饭吗？ (Nǐ xiǎng gēn wǒ yìqǐ chī wǔfàn ma?) — Would you like to have lunch with me?\nB: 好，我想跟你一起吃。 (Hǎo, wǒ xiǎng gēn nǐ yìqǐ chī.) — Yes, I would like to eat with you.\nA: 我们去哪儿吃？ (Wǒmen qù nǎr chī?) — Where shall we eat?\nB: 我们去饭店吧。 (Wǒmen qù fàndiàn ba.) — Let us go to a restaurant.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -341,7 +333,7 @@
           {
             "id": "convm-with-someone--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "Does speaker B accept the lunch invitation?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -355,7 +347,7 @@
           {
             "id": "convm-with-someone--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 也 + 动词短语 (yě dòngcí duǎnyǔ).",
+            "label": "Say that you also want to go, using 也 (yě).",
             "optional": false,
             "target_id": "q-grammar"
           },

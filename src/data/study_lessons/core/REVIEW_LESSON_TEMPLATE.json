@@ -5,7 +5,7 @@
   "lesson": {
     "title": "Greetings Review",
     "subtitle": "Recall greetings you have learned.",
-    "description": "Review familiar greeting vocabulary and reinforce its meaning.",
+    "description": "Review familiar greetings and practise responding politely.",
     "slug": "greetings-review"
   },
   "classification": {
@@ -14,7 +14,8 @@
       "communication-social"
     ],
     "tags": [
-      "review"
+      "greetings",
+      "courtesy"
     ],
     "course_topic_refs": [],
     "primary_subtopic_id": null,

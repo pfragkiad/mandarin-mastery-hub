@@ -9,19 +9,13 @@
       "topic_ids": [
         "communication-social"
       ],
-      "term_count": 11,
+      "term_count": 10,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        1,
-        2,
-        3,
-        11,
-        14
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-people-identity",
-      "title": "Introducing Yourself and Other People",
+      "title": "Introducing Yourself and Others",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.zip",
       "primary_topic_id": "people-identity",
       "topic_ids": [
@@ -30,19 +24,11 @@
       ],
       "term_count": 17,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        1,
-        2,
-        3,
-        4,
-        8,
-        15,
-        16
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-speaking-languages",
-      "title": "Speaking Languages and Describing Ability",
+      "title": "Talking About Language Ability",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.zip",
       "primary_topic_id": "school-language",
       "topic_ids": [
@@ -52,15 +38,11 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        1,
-        2,
-        3
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-understanding-clarification",
-      "title": "Understanding and Asking for Clarification",
+      "title": "Asking for Clarification",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.zip",
       "primary_topic_id": "communication-social",
       "topic_ids": [
@@ -69,14 +51,7 @@
       ],
       "term_count": 13,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        2,
-        4,
-        5,
-        9,
-        12,
-        15
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-asking-directions",
@@ -89,32 +64,21 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        4,
-        5,
-        6,
-        9
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-wants-intentions",
       "title": "Expressing Wants and Intentions",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.zip",
-      "primary_topic_id": "daily-actions",
+      "primary_topic_id": "grammar-functions",
       "topic_ids": [
-        "daily-actions",
-        "grammar-functions"
+        "grammar-functions",
+        "daily-actions"
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        5,
-        6,
-        8,
-        10,
-        13,
-        15,
-        16
+      "subtopic_ids": [
+        "everyday-routines"
       ]
     },
     {
@@ -128,16 +92,13 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        5,
-        7,
-        8,
-        13
+      "subtopic_ids": [
+        "shopping-commerce"
       ]
     },
     {
       "lesson_id": "convm-places-to-meet",
-      "title": "Choosing Where to Meet and Eat",
+      "title": "Choosing Where to Meet",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PLACES_TO_MEET.zip",
       "primary_topic_id": "travel-transport",
       "topic_ids": [
@@ -147,12 +108,7 @@
       ],
       "term_count": 15,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        6,
-        7,
-        8,
-        9
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-with-someone",
@@ -166,16 +122,11 @@
       ],
       "term_count": 12,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        8,
-        9,
-        11,
-        13
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-clock-scheduling",
-      "title": "Clock Time and Negotiating a Meeting",
+      "title": "Agreeing on a Meeting Time",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.zip",
       "primary_topic_id": "time-calendar",
       "topic_ids": [
@@ -184,12 +135,7 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        9,
-        10,
-        11,
-        12
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-today-tomorrow-later",
@@ -202,18 +148,11 @@
       ],
       "term_count": 17,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        6,
-        7,
-        9,
-        10,
-        11,
-        13
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-choices-alternatives",
-      "title": "Choosing: Or, Either, and Not",
+      "title": "Choosing Between Alternatives",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.zip",
       "primary_topic_id": "grammar-functions",
       "topic_ids": [
@@ -223,18 +162,11 @@
       ],
       "term_count": 14,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        8,
-        9,
-        10,
-        13,
-        14,
-        15
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-money-prices",
-      "title": "Money, Prices, and Currency",
+      "title": "Asking About Prices",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_MONEY_PRICES.zip",
       "primary_topic_id": "shopping-money",
       "topic_ids": [
@@ -243,17 +175,11 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        12,
-        13,
-        14,
-        15,
-        16
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-numbers-arithmetic",
-      "title": "Counting and Simple Arithmetic",
+      "title": "Counting and Simple Addition",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.zip",
       "primary_topic_id": "numbers-quantities",
       "topic_ids": [
@@ -261,14 +187,11 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        15,
-        16
-      ]
+      "subtopic_ids": []
     },
     {
       "lesson_id": "convm-permission-requests",
-      "title": "Permission and Polite Requests",
+      "title": "Asking Permission Politely",
       "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.zip",
       "primary_topic_id": "grammar-functions",
       "topic_ids": [
@@ -277,10 +200,8 @@
       ],
       "term_count": 16,
       "dialogue_turn_count": 4,
-      "source_tracks": [
-        14,
-        15
-      ]
+      "subtopic_ids": []
     }
-  ]
+  ],
+  "taxonomy_version": "hsk-topics/2.0.0"
 }

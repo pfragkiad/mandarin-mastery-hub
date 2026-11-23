@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Greeting Someone",
-    "subtitle": "Short exchange between two speakers.",
-    "description": "Practice greeting someone politely in a short two-person conversation.",
+    "subtitle": "A friendly greeting and response.",
+    "description": "Learn to greet someone politely and respond in a short conversation.",
     "slug": "greeting-someone"
   },
   "classification": {
@@ -14,7 +14,8 @@
       "communication-social"
     ],
     "tags": [
-      "greetings"
+      "greetings",
+      "courtesy"
     ],
     "course_topic_refs": [],
     "primary_subtopic_id": null,

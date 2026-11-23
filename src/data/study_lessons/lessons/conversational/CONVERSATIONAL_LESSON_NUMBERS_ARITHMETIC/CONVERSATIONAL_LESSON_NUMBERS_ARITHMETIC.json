@@ -3,9 +3,9 @@
   "lesson_id": "convm-numbers-arithmetic",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Counting and Simple Arithmetic",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice recognize numbers from one to forty-plus. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Counting and Simple Addition",
+    "subtitle": "Number combinations and mental arithmetic",
+    "description": "Learn to say two-digit numbers and ask or answer simple addition questions.",
     "slug": "conversational-numbers-arithmetic"
   },
   "classification": {
@@ -14,12 +14,9 @@
       "numbers-quantities"
     ],
     "tags": [
-      "arithmetic",
       "counting",
-      "large-numbers",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "addition",
+      "numbers"
     ],
     "course_topic_refs": [
       {
@@ -35,7 +32,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -52,9 +49,7 @@
     "十": "Characters:十",
     "四": "Characters:四",
     "多": "Characters:多",
-    "字": "Characters:字",
     "少": "Characters:少",
-    "数": "Characters:数",
     "是": "Characters:是"
   },
   "sections": {
@@ -62,7 +57,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to recognize numbers from one to forty-plus. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to say two-digit numbers and ask or answer simple addition questions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -98,29 +93,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "A 加 B 是多少",
-        "pattern_pinyin": "A jiā B shì duōshao",
+        "pattern_hanzi": "六加六是多少？",
+        "pattern_pinyin": "liù jiā liù shì duōshao?",
         "function_en": "Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "六加六是多少？",
           "pinyin": "liù jiā liù shì duōshao?",
           "english": "What is six plus six?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Use 加 (jiā) for addition; 多少 (duōshao) asks for the result."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "十 + 数字",
-        "pattern_pinyin": "shí shùzì",
+        "pattern_hanzi": "二十五",
+        "pattern_pinyin": "èrshíwǔ",
         "function_en": "Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "二十五",
           "pinyin": "èrshíwǔ",
           "english": "Twenty-five.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit."
         }
       },
       {
@@ -221,11 +216,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "In the model dialogue, what is the result of the first addition?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "五。 (Wǔ.) — Five.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -239,11 +234,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 十 + 数字 (shí shùzì).",
+          "prompt": "Write the number twenty-five in Chinese and give its pinyin.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "二十五 (èrshíwǔ) — Twenty-five.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "二十五 (èrshíwǔ) — twenty-five.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -251,8 +246,8 @@
           "prompt": "Ask and answer three addition questions in Mandarin.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "二加三是多少？ (Èr jiā sān shì duōshao?) — 五。 (Wǔ.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 三加五是多少？ (Sān jiā wǔ shì duōshao?) — What is three plus five?\nB: 八。 (Bā.) — Eight.\nA: 十六加四是多少？ (Shíliù jiā sì shì duōshao?) — What is sixteen plus four?\nB: 二十。 (Èrshí.) — Twenty.\nA: 十二加七是多少？ (Shí’èr jiā qī shì duōshao?) — What is twelve plus seven?\nB: 十九。 (Shíjiǔ.) — Nineteen.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -345,7 +340,7 @@
           {
             "id": "convm-numbers-arithmetic--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "In the model dialogue, what is the result of the first addition?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -359,7 +354,7 @@
           {
             "id": "convm-numbers-arithmetic--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 十 + 数字 (shí shùzì).",
+            "label": "Write the number twenty-five in Chinese and give its pinyin.",
             "optional": false,
             "target_id": "q-grammar"
           },

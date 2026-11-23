@@ -4,8 +4,8 @@
   "lesson_type": "dialogue",
   "lesson": {
     "title": "Ordering Food and Drinks",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice express what you would like to eat or drink. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "subtitle": "Choosing beverages and ordering by the cup",
+    "description": "Learn to choose a drink, order the number of cups you want, and ask for food.",
     "slug": "conversational-food-drinks"
   },
   "classification": {
@@ -15,13 +15,9 @@
       "shopping-money"
     ],
     "tags": [
-      "restaurants",
-      "tea",
-      "coffee",
-      "beer",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "ordering",
+      "drinks",
+      "quantities"
     ],
     "course_topic_refs": [
       {
@@ -41,7 +37,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -53,6 +49,7 @@
     "什": "Characters:什",
     "们": "Characters:们",
     "你": "Characters:你",
+    "几": "Characters:几",
     "午": "Characters:午",
     "去": "Characters:去",
     "吃": "Characters:吃",
@@ -64,26 +61,23 @@
     "店": "Characters:店",
     "想": "Characters:想",
     "我": "Characters:我",
-    "数": "Characters:数",
-    "料": "Characters:料",
     "是": "Characters:是",
     "杯": "Characters:杯",
     "点": "Characters:点",
     "茶": "Characters:茶",
     "西": "Characters:西",
     "要": "Characters:要",
+    "谢": "Characters:谢",
     "还": "Characters:还",
     "酒": "Characters:酒",
-    "量": "Characters:量",
-    "饭": "Characters:饭",
-    "饮": "Characters:饮"
+    "饭": "Characters:饭"
   },
   "sections": {
     "blocks": [
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to express what you would like to eat or drink. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to choose a drink, order the number of cups you want, and ask for food. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -119,29 +113,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "A 还是 B",
-        "pattern_pinyin": "A háishi B",
+        "pattern_hanzi": "你想喝茶还是啤酒？",
+        "pattern_pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
         "function_en": "Use 还是 (háishi) to present alternatives in a question.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "你想喝茶还是啤酒？",
           "pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
           "english": "Would you like tea or beer?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Use 还是 (háishi) to present alternatives in a question."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "数量 + 杯 + 饮料",
-        "pattern_pinyin": "shùliàng bēi yǐnliào",
+        "pattern_hanzi": "我要两杯茶。",
+        "pattern_pinyin": "wǒ yào liǎng bēi chá.",
         "function_en": "杯 (bēi) counts cups or glasses of drinks.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "我要两杯茶。",
           "pinyin": "wǒ yào liǎng bēi chá.",
           "english": "I want two cups of tea.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "杯 (bēi) counts cups or glasses of drinks."
         }
       },
       {
@@ -242,11 +236,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "Which drink does speaker B choose?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "我想喝一点茶。 (Wǒ xiǎng hē yìdiǎn chá.) — I would like some tea.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -260,11 +254,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 数量 + 杯 + 饮料 (shùliàng bēi yǐnliào).",
+          "prompt": "Order two cups of tea in Mandarin, using the classifier 杯 (bēi).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "我要两杯茶。 (wǒ yào liǎng bēi chá.) — I want two cups of tea.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "我要两杯茶。 (Wǒ yào liǎng bēi chá.) — I want two cups of tea.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -272,8 +266,8 @@
           "prompt": "Order a drink, specify the number of glasses, and choose between two options.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — 我想喝一点茶。 (Wǒ xiǎng hē yìdiǎn chá.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你想喝茶还是啤酒？ (Nǐ xiǎng hē chá háishi píjiǔ?) — Would you like tea or beer?\nB: 我想喝茶。 (Wǒ xiǎng hē chá.) — I would like tea.\nA: 要几杯？ (Yào jǐ bēi?) — How many cups?\nB: 两杯茶，谢谢。 (Liǎng bēi chá, xièxie.) — Two cups of tea, thank you.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -366,7 +360,7 @@
           {
             "id": "convm-food-drinks--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "Which drink does speaker B choose?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -380,7 +374,7 @@
           {
             "id": "convm-food-drinks--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 数量 + 杯 + 饮料 (shùliàng bēi yǐnliào).",
+            "label": "Order two cups of tea in Mandarin, using the classifier 杯 (bēi).",
             "optional": false,
             "target_id": "q-grammar"
           },

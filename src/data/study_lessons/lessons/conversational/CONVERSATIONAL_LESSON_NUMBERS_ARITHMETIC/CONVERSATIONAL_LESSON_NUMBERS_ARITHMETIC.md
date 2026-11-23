@@ -1,6 +1,6 @@
-# Counting and Simple Arithmetic
+# Counting and Simple Addition
 
-Practice recognize numbers from one to forty-plus. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to say two-digit numbers and ask or answer simple addition questions.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice recognize numbers from one to forty-plus. Transcript-referenced convers
 
 ## Explanation
 
-Learn to recognize numbers from one to forty-plus. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to say two-digit numbers and ask or answer simple addition questions. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to recognize numbers from one to forty-plus. Use the model conversation to
 
 ## Grammar Pattern
 
-**Pattern:** A 加 B 是多少 (A jiā B shì duōshao)
+**Pattern:** 六加六是多少？ (liù jiā liù shì duōshao?)
 
 Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.
 
 **六加六是多少？**
 *liù jiā liù shì duōshao?*
 What is six plus six?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.
 
 ## Grammar Pattern
 
-**Pattern:** 十 + 数字 (shí shùzì)
+**Pattern:** 二十五 (èrshíwǔ)
 
 Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.
 
 **二十五**
 *èrshíwǔ*
 Twenty-five.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.
 
 ## Review Set
 
@@ -84,40 +84,19 @@ Speaking task: Ask and answer three addition questions in Mandarin.
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 五。 (Wǔ.) — Five.. Read the first two turns again, then answer without looking.
+**Comprehension:** In the model dialogue, what is the result of the first addition?
+**Answer:** 五。 (Wǔ.) — Five.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: What is sixteen plus four?
 **Answer:** 十六加四是多少 (shíliù jiā sì shì duōshao). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 十 + 数字 (shí shùzì).
-**Answer:** 二十五 (èrshíwǔ) — Twenty-five.. Use the word order shown in the second grammar explanation.
+**Production:** Write the number twenty-five in Chinese and give its pinyin.
+**Answer:** 二十五 (èrshíwǔ) — twenty-five.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Ask and answer three addition questions in Mandarin.
-**Answer:** 二加三是多少？ (Èr jiā sān shì duōshao?) — 五。 (Wǔ.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-numbers-arithmetic--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-numbers-arithmetic--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: Use 加 (jiā) for addition; 多少 (duōshao) asks for the result. — ID: `convm-numbers-arithmetic--grammar--grammar-1`
-- [ ] Understand: Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit. — ID: `convm-numbers-arithmetic--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-numbers-arithmetic--review--key-expressions`
-
-### Guided speaking
-- [ ] Ask and answer three addition questions in Mandarin. — ID: `convm-numbers-arithmetic--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-numbers-arithmetic--quiz--q-dialogue`
-- [ ] Translate into Mandarin: What is sixteen plus four? — ID: `convm-numbers-arithmetic--quiz--q-translation`
-- [ ] Make a sentence using the pattern 十 + 数字 (shí shùzì). — ID: `convm-numbers-arithmetic--quiz--q-grammar`
-- [ ] Ask and answer three addition questions in Mandarin. — ID: `convm-numbers-arithmetic--quiz--q-speaking`
+**Answer:** A: 三加五是多少？ (Sān jiā wǔ shì duōshao?) — What is three plus five?  
+B: 八。 (Bā.) — Eight.  
+A: 十六加四是多少？ (Shíliù jiā sì shì duōshao?) — What is sixteen plus four?  
+B: 二十。 (Èrshí.) — Twenty.  
+A: 十二加七是多少？ (Shí’èr jiā qī shì duōshao?) — What is twelve plus seven?  
+B: 十九。 (Shíjiǔ.) — Nineteen.. Complete sample role-play. Practise both speakers, then substitute your own details.

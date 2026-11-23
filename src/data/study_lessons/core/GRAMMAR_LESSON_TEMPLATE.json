@@ -5,7 +5,7 @@
   "lesson": {
     "title": "Negating Simple Actions",
     "subtitle": "Use 不 (bù) before common verbs.",
-    "description": "Learn the basic negative statement pattern and practice short conversational examples.",
+    "description": "Learn to negate simple actions in everyday conversations.",
     "slug": "negating-simple-actions"
   },
   "classification": {
@@ -15,7 +15,8 @@
       "communication-social"
     ],
     "tags": [
-      "negation"
+      "negation",
+      "action-statements"
     ],
     "course_topic_refs": [],
     "primary_subtopic_id": null,
@@ -111,7 +112,7 @@
           {
             "id": "grammar-negation-basic--grammar--b2",
             "kind": "section",
-            "label": "Understand: not do an action",
+            "label": "Understand negation of actions",
             "optional": false,
             "target_id": "b2"
           }

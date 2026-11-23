@@ -3,9 +3,9 @@
   "lesson_id": "convm-clock-scheduling",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Clock Time and Negotiating a Meeting",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice ask and tell the time. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Agreeing on a Meeting Time",
+    "subtitle": "Suggesting, rejecting, and settling on clock times",
+    "description": "Learn to propose a time for dinner, reject a conflicting time, and agree on another.",
     "slug": "conversational-clock-scheduling"
   },
   "classification": {
@@ -17,10 +17,7 @@
     "tags": [
       "clock-time",
       "scheduling",
-      "negotiation",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "negotiation"
     ],
     "course_topic_refs": [
       {
@@ -36,7 +33,7 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
@@ -49,6 +46,7 @@
     "两": "Characters:两",
     "么": "Characters:么",
     "九": "Characters:九",
+    "也": "Characters:也",
     "五": "Characters:五",
     "什": "Characters:什",
     "今": "Characters:今",
@@ -61,6 +59,7 @@
     "吃": "Characters:吃",
     "吗": "Characters:吗",
     "吧": "Characters:吧",
+    "呢": "Characters:呢",
     "四": "Characters:四",
     "在": "Characters:在",
     "天": "Characters:天",
@@ -73,10 +72,10 @@
     "点": "Characters:点",
     "现": "Characters:现",
     "行": "Characters:行",
+    "见": "Characters:见",
     "还": "Characters:还",
     "那": "Characters:那",
     "钟": "Characters:钟",
-    "间": "Characters:间",
     "饭": "Characters:饭"
   },
   "sections": {
@@ -84,7 +83,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask and tell the time. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to propose a time for dinner, reject a conflicting time, and agree on another. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -120,29 +119,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "几点钟",
-        "pattern_pinyin": "jǐ diǎn zhōng",
+        "pattern_hanzi": "现在几点钟？",
+        "pattern_pinyin": "xiànzài jǐ diǎn zhōng?",
         "function_en": "几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "现在几点钟？",
           "pinyin": "xiànzài jǐ diǎn zhōng?",
           "english": "What time is it now?",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "时间 + 好吗 / 不行",
-        "pattern_pinyin": "shíjiān hǎo ma / bù xíng",
+        "pattern_hanzi": "八点钟不行。",
+        "pattern_pinyin": "bā diǎn zhōng bù xíng.",
         "function_en": "Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng).",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "八点钟不行。",
           "pinyin": "bā diǎn zhōng bù xíng.",
           "english": "Eight o’clock does not work.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "Suggest a time with 好吗 (hǎo ma); reject an unsuitable time with 不行 (bù xíng)."
         }
       },
       {
@@ -243,11 +242,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "What time does speaker B propose first?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?) — Is six o’clock okay?",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -261,11 +260,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng).",
+          "prompt": "Say that eight o’clock does not work for you.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "八点钟不行。 (bā diǎn zhōng bù xíng.) — Eight o’clock does not work.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "八点钟不行。 (Bā diǎn zhōng bù xíng.) — Eight o’clock does not work.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -273,8 +272,8 @@
           "prompt": "Negotiate a dinner time by proposing six, seven or eight o’clock.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你想几点钟吃晚饭？ (Nǐ xiǎng jǐ diǎn zhōng chī wǎnfàn?) — 六点钟，好吗？ (Liù diǎn zhōng, hǎo ma?)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 六点钟吃晚饭，好吗？ (Liù diǎn zhōng chī wǎnfàn, hǎo ma?) — Shall we have dinner at six?\nB: 六点钟不行。 (Liù diǎn zhōng bù xíng.) — Six does not work.\nA: 七点钟呢？ (Qī diǎn zhōng ne?) — How about seven?\nB: 七点钟也不行。 (Qī diǎn zhōng yě bù xíng.) — Seven does not work either.\nA: 八点钟好吗？ (Bā diǎn zhōng hǎo ma?) — Is eight o’clock okay?\nB: 好，八点钟见。 (Hǎo, bā diǎn zhōng jiàn.) — Yes, see you at eight.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -367,7 +366,7 @@
           {
             "id": "convm-clock-scheduling--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "What time does speaker B propose first?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -381,7 +380,7 @@
           {
             "id": "convm-clock-scheduling--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 时间 + 好吗 / 不行 (shíjiān hǎo ma / bù xíng).",
+            "label": "Say that eight o’clock does not work for you.",
             "optional": false,
             "target_id": "q-grammar"
           },

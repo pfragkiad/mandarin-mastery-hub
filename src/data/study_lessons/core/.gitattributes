@@ -1,12 +1,16 @@
 # Preserve canonical authoring-source bytes from the supplied Core ZIP.
+.gitattributes -text
+# Supplied Markdown uses trailing spaces for hard line breaks.
+*.md whitespace=-blank-at-eol
 CHARACTER_LESSON_TEMPLATE.json -text
 CHARACTER_LESSON_TEMPLATE.md -text
+CURRICULUM_CONVERSATIONAL_MANDARIN_TEMPLATE.json -text
 CURRICULUM_HSK3_TEMPLATE.json -text
-CURRICULUM_PIMSLEUR_TEMPLATE.json -text
 DIALOGUE_LESSON_TEMPLATE.json -text
 GENERAL_LESSON_TEMPLATE.md -text
 GENERIC_LESSON_TEMPLATE.json -text
 GRAMMAR_LESSON_TEMPLATE.json -text
+LESSON_CREATOR_AUTHORING_GUIDELINES.md -text
 README.md -text
 REVIEW_LESSON_TEMPLATE.json -text
 TOPIC_LESSON_TEMPLATE.json -text

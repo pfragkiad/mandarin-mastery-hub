@@ -3,9 +3,9 @@
   "lesson_id": "convm-speaking-languages",
   "lesson_type": "dialogue",
   "lesson": {
-    "title": "Speaking Languages and Describing Ability",
-    "subtitle": "Topic-based beginner conversation lesson",
-    "description": "Practice ask whether somebody speaks a language. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.",
+    "title": "Talking About Language Ability",
+    "subtitle": "Speaking English and Mandarin; ability and fluency",
+    "description": "Learn to ask which languages someone speaks and describe what you can and cannot say.",
     "slug": "conversational-speaking-languages"
   },
   "classification": {
@@ -16,12 +16,9 @@
       "daily-actions"
     ],
     "tags": [
-      "language-learning",
+      "languages",
       "ability",
-      "confidence",
-      "conversational-mandarin",
-      "beginner",
-      "topic-lesson"
+      "fluency"
     ],
     "course_topic_refs": [
       {
@@ -37,17 +34,15 @@
   "metadata": {
     "status": "draft",
     "template_version": "3.2.0",
-    "audience": "Beginner conversational Mandarin learners",
+    "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
   },
   "catalog_character_refs": {
     "一": "Characters:一",
     "不": "Characters:不",
-    "价": "Characters:价",
     "会": "Characters:会",
     "你": "Characters:你",
-    "动": "Characters:动",
     "吗": "Characters:吗",
     "好": "Characters:好",
     "很": "Characters:很",
@@ -57,11 +52,7 @@
     "普": "Characters:普",
     "点": "Characters:点",
     "英": "Characters:英",
-    "言": "Characters:言",
-    "评": "Characters:评",
-    "词": "Characters:词",
     "话": "Characters:话",
-    "语": "Characters:语",
     "说": "Characters:说",
     "请": "Characters:请",
     "通": "Characters:通",
@@ -72,7 +63,7 @@
       {
         "id": "lesson-intro",
         "kind": "explanation",
-        "text": "Learn to ask whether somebody speaks a language. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
+        "text": "Learn to ask which languages someone speaks and describe what you can and cannot say. Use the model conversation to notice the expressions, then practise the patterns and speak aloud."
       },
       {
         "id": "model-dialogue",
@@ -108,29 +99,29 @@
       {
         "id": "grammar-1",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "会 + 说 + 语言",
-        "pattern_pinyin": "huì shuō",
+        "pattern_hanzi": "我会说普通话。",
+        "pattern_pinyin": "wǒ huì shuō Pǔtōnghuà.",
         "function_en": "会 (huì) expresses acquired ability; add a language after 说 (shuō).",
         "example": {
           "id": "pattern-ex-1",
           "hanzi": "我会说普通话。",
           "pinyin": "wǒ huì shuō Pǔtōnghuà.",
           "english": "I can speak Mandarin.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "会 (huì) expresses acquired ability; add a language after 说 (shuō)."
         }
       },
       {
         "id": "grammar-2",
         "kind": "grammar_pattern",
-        "pattern_hanzi": "动词 + 得 + 评价",
-        "pattern_pinyin": "dòngcí de",
+        "pattern_hanzi": "你说得很好。",
+        "pattern_pinyin": "nǐ shuō de hěn hǎo.",
         "function_en": "得 (de) introduces how well the action is performed.",
         "example": {
           "id": "pattern-ex-2",
           "hanzi": "你说得很好。",
           "pinyin": "nǐ shuō de hěn hǎo.",
           "english": "You speak very well.",
-          "teaching_note": "Use this construction in your own dialogue."
+          "teaching_note": "得 (de) introduces how well the action is performed."
         }
       },
       {
@@ -231,11 +222,11 @@
         {
           "id": "q-dialogue",
           "kind": "comprehension",
-          "prompt": "In the model conversation, what does speaker B say in the first reply?",
+          "prompt": "What does speaker B say about their English-speaking ability?",
           "choices": [],
           "correct_choice_ids": [],
           "answer": "不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.",
-          "explanation": "Read the first two turns again, then answer without looking."
+          "explanation": "Check the model dialogue and identify the relevant response."
         },
         {
           "id": "q-translation",
@@ -249,11 +240,11 @@
         {
           "id": "q-grammar",
           "kind": "production",
-          "prompt": "Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de).",
+          "prompt": "Use 得 (de) to compliment someone’s Mandarin-speaking ability.",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "你说得很好。 (nǐ shuō de hěn hǎo.) — You speak very well.",
-          "explanation": "Use the word order shown in the second grammar explanation."
+          "answer": "你普通话说得很好。 (Nǐ Pǔtōnghuà shuō de hěn hǎo.) — You speak Mandarin very well.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
         },
         {
           "id": "q-speaking",
@@ -261,8 +252,8 @@
           "prompt": "Ask a partner what language they speak; answer using 会 (huì), 不会 (bú huì), and 一点 (yìdiǎn).",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "请问，你会说英文吗？ (Qǐngwèn, nǐ huì shuō Yīngwén ma?) — 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.)",
-          "explanation": "Sample opening exchange. Continue the role-play in your own words."
+          "answer": "A: 你会说英文吗？ (Nǐ huì shuō Yīngwén ma?) — Can you speak English?\nB: 不会，我不会说英文。 (Bú huì, wǒ bú huì shuō Yīngwén.) — No, I cannot speak English.\nA: 你会说普通话吗？ (Nǐ huì shuō Pǔtōnghuà ma?) — Can you speak Mandarin?\nB: 会，我会说一点普通话。 (Huì, wǒ huì shuō yìdiǎn Pǔtōnghuà.) — Yes, I speak a little Mandarin.",
+          "explanation": "Complete sample role-play. Practise both speakers, then substitute your own details."
         }
       ]
     }
@@ -355,7 +346,7 @@
           {
             "id": "convm-speaking-languages--quiz--q-dialogue",
             "kind": "practice",
-            "label": "In the model conversation, what does speaker B say in the first reply?",
+            "label": "What does speaker B say about their English-speaking ability?",
             "optional": false,
             "target_id": "q-dialogue"
           },
@@ -369,7 +360,7 @@
           {
             "id": "convm-speaking-languages--quiz--q-grammar",
             "kind": "practice",
-            "label": "Make a sentence using the pattern 动词 + 得 + 评价 (dòngcí de).",
+            "label": "Use 得 (de) to compliment someone’s Mandarin-speaking ability.",
             "optional": false,
             "target_id": "q-grammar"
           },

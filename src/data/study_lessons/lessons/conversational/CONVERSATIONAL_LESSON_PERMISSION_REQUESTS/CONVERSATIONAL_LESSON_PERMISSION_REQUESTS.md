@@ -1,6 +1,6 @@
-# Permission and Polite Requests
+# Asking Permission Politely
 
-Practice ask whether someone can do something. Transcript-referenced conversational Mandarin study organized by communicative goal rather than audio track.
+Learn to ask permission, request an item politely, and respond appropriately.
 
 ## Learning objectives
 
@@ -10,7 +10,7 @@ Practice ask whether someone can do something. Transcript-referenced conversatio
 
 ## Explanation
 
-Learn to ask whether someone can do something. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
+Learn to ask permission, request an item politely, and respond appropriately. Use the model conversation to notice the expressions, then practise the patterns and speak aloud.
 
 ## Model conversation
 
@@ -24,25 +24,25 @@ Learn to ask whether someone can do something. Use the model conversation to not
 
 ## Grammar Pattern
 
-**Pattern:** 可不可以 + 动词 (kě bu kěyǐ dòngcí)
+**Pattern:** 你可不可以买茶？ (nǐ kě bu kěyǐ mǎi chá?)
 
 An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.
 
 **你可不可以买茶？**
 *nǐ kě bu kěyǐ mǎi chá?*
 Can you buy tea?
-**Usage:** Use this construction in your own dialogue.
+**Usage:** An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.
 
 ## Grammar Pattern
 
-**Pattern:** 给 + 人 + 东西 (gěi rén dōngxi)
+**Pattern:** 给我一点茶。 (gěi wǒ yìdiǎn chá.)
 
 给 (gěi) can mean to give something to someone.
 
 **给我一点茶。**
 *gěi wǒ yìdiǎn chá.*
 Give me a little tea.
-**Usage:** Use this construction in your own dialogue.
+**Usage:** 给 (gěi) can mean to give something to someone.
 
 ## Review Set
 
@@ -84,40 +84,17 @@ Speaking task: Ask politely for an item and respond with permission, refusal or 
 
 ## Practice
 
-**Comprehension:** In the model conversation, what does speaker B say in the first reply?
-**Answer:** 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.) — Yes, I can. I will give you ten yuan.. Read the first two turns again, then answer without looking.
+**Comprehension:** What does speaker B say when giving permission?
+**Answer:** 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.) — Yes, I can. I will give you ten yuan.. Check the model dialogue and identify the relevant response.
 
 **Production:** Translate into Mandarin: Can you eat now?
 **Answer:** 你可不可以现在吃 (nǐ kě bu kěyǐ xiànzài chī). One model answer; another natural equivalent may be acceptable.
 
-**Production:** Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi).
-**Answer:** 给我一点茶。 (gěi wǒ yìdiǎn chá.) — Give me a little tea.. Use the word order shown in the second grammar explanation.
+**Production:** Politely ask someone to give you some tea, using 给 (gěi).
+**Answer:** 请给我一点茶。 (Qǐng gěi wǒ yìdiǎn chá.) — Please give me some tea.. One natural model response; alternatives that express the same meaning are possible.
 
 **Production:** Ask politely for an item and respond with permission, refusal or thanks.
-**Answer:** 你可不可以给我一点钱？ (Nǐ kě bu kěyǐ gěi wǒ yìdiǎn qián?) — 可以，我给你十块人民币。 (Kěyǐ, wǒ gěi nǐ shí kuài rénmínbì.). Sample opening exchange. Continue the role-play in your own words.
-
-
-## Learning checkpoints
-Track completed checkpoints, not time spent. Optional items are bonuses.
-
-### Introduction
-- [ ] Understand the lesson goal — ID: `convm-permission-requests--introduction--lesson-intro`
-
-### Conversation
-- [ ] Practise the model conversation — ID: `convm-permission-requests--dialogue--model-dialogue`
-
-### Grammar patterns
-- [ ] Understand: An A-not-A form of 可以 (kěyǐ) asks about possibility or permission. — ID: `convm-permission-requests--grammar--grammar-1`
-- [ ] Understand: 给 (gěi) can mean to give something to someone. — ID: `convm-permission-requests--grammar--grammar-2`
-
-### Expression review
-- [ ] Review the key expressions — ID: `convm-permission-requests--review--key-expressions`
-
-### Guided speaking
-- [ ] Ask politely for an item and respond with permission, refusal or thanks. — ID: `convm-permission-requests--guided-speaking--guided-speaking`
-
-### Practice
-- [ ] In the model conversation, what does speaker B say in the first reply? — ID: `convm-permission-requests--quiz--q-dialogue`
-- [ ] Translate into Mandarin: Can you eat now? — ID: `convm-permission-requests--quiz--q-translation`
-- [ ] Make a sentence using the pattern 给 + 人 + 东西 (gěi rén dōngxi). — ID: `convm-permission-requests--quiz--q-grammar`
-- [ ] Ask politely for an item and respond with permission, refusal or thanks. — ID: `convm-permission-requests--quiz--q-speaking`
+**Answer:** A: 请问，你可不可以给我一点茶？ (Qǐngwèn, nǐ kě bu kěyǐ gěi wǒ yìdiǎn chá?) — Excuse me, could you give me some tea?  
+B: 可以，给你。 (Kěyǐ, gěi nǐ.) — Yes, here you are.  
+A: 谢谢！我可以在这儿喝吗？ (Xièxie! Wǒ kěyǐ zài zhèr hē ma?) — Thank you! May I drink it here?  
+B: 可以。 (Kěyǐ.) — Yes, you may.. Complete sample role-play. Practise both speakers, then substitute your own details.
