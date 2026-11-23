@@ -560,7 +560,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const description = displayDescription(summary.description);
   const tags = displayTags(summary.tags);
 
-  const hintsToggle = <CharacterHintsToggle checked={hintsOn} onChange={setHints}/>;
+  const hintsToggle = <CharacterHintsToggle checked={hintsOn} onChange={setHints} size="toolbar"/>;
 
   return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} onClickCapture={revealClick} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     {/* Back link + course position share one block: on narrow pages they flow as one line

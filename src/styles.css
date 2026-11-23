@@ -3881,10 +3881,11 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hint-char:hover, .lesson-hint-char:focus-visible { box-shadow: 0 0 0 1px var(--primary); outline: none; }
 .lesson-hint-char[data-hint-active] { box-shadow: 0 0 0 1px var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); }
 .sentence-char.lesson-hint-char:hover, .sentence-char.lesson-hint-char:focus-visible { color: inherit; background: transparent; }
-.lesson-hints-toggle { display: flex; align-items: center; gap: 10px; margin-top: 14px; cursor: pointer; }
-.lesson-hints-toggle > span { display: flex; flex-direction: column; gap: 1px; }
-.lesson-hints-toggle strong { font-size: 13px; font-weight: 600; }
-.lesson-hints-toggle small { font-size: 12px; color: var(--muted-foreground); line-height: 1.35; }
+.lesson-hints-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+/* Sheet size (phone Study / Settings sheets, grids and lessons alike): a sheet row — label left,
+   switch right — like the sheets' other rows. */
+.lesson-hints-toggle.is-sheet { justify-content: space-between; min-height: 42px; gap: 12px; }
+.lesson-hints-toggle.is-sheet strong { font-size: 15px; font-weight: 400; }
 /* Toolbar size (grids' tools row): a plain switch + label on one line, no frame of its own (a
    switch is not a button), vertically centred on the row and using the row's button text size
    (Compact 11px, Comfortable --ui-control-size) so it reads as part of the same toolbar. */
@@ -3892,7 +3893,6 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hints-toggle.is-toolbar strong { font-size: 11px; font-weight: 500; white-space: nowrap; }
 html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar { height: 40px; }
 html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { font-size: var(--ui-control-size); }
-.library-study-section .lesson-hints-toggle { margin-top: 14px; }
 /* The quick card: a light, rounded floating card on the solid card surface (text behind never shows through). */
 .lesson-hint-card.lesson-hint-card { width: min(320px, calc(100vw - 24px)); padding: 0; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%); background: var(--card); box-shadow: var(--shadow-popover); outline: none; }
 .lesson-hint-body { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px 14px; }
@@ -4154,8 +4154,6 @@ html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { f
   html[data-display-size='comfortable'] .lesson-intro strong { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-page:not(.is-narrow) .lesson-layout { grid-template-columns: 230px minmax(0, 1fr); }
   html[data-display-size='comfortable'] .lesson-toc a { font-size: 15px; padding-block: 6px; }
-  html[data-display-size='comfortable'] .lesson-hints-toggle strong { font-size: 15px; }
-  html[data-display-size='comfortable'] .lesson-hints-toggle small { font-size: 13px; }
   html[data-display-size='comfortable'] .lesson-section h2 { font-size: 26px; }
   html[data-display-size='comfortable'] :is(.lesson-section h3, .lesson-subheading) { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-lead { font-size: 18px; }
@@ -4757,7 +4755,11 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-toc-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 4px; scrollbar-width: thin; }
 .lesson-toc-list .eyebrow { margin-bottom: 8px; }
 .lesson-toc-tools { flex: none; display: flex; flex-direction: column; gap: 12px; padding-top: 12px; margin-top: 12px; border-top: 1px solid var(--border); }
-.lesson-toc-tools .lesson-hints-toggle { margin-top: 0; }
+/* The sidebar uses the grid toolbar's look (same frame, height and text size per display size);
+   only the width differs: the buttons fill the narrow panel and share it, so Comfortable fits. */
+.lesson-toc-tools .face-toggles.is-toolbar { width: 100%; }
+html[data-display-size] .lesson-toc-tools .face-toggles.is-toolbar > .face-toggle { flex: 1 1 auto; padding: 0 8px; }
+.lesson-toc-tools .lesson-hints-toggle.is-toolbar { align-self: flex-start; padding: 0; }
 .lesson-toc-progress-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .lesson-progress-menu { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 22px; margin: -4px -6px -4px 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted-foreground); cursor: pointer; transition: color .15s, background .15s; }
 .lesson-progress-menu:hover, .lesson-progress-menu:focus-visible, .lesson-progress-menu[data-state='open'] { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }

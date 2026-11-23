@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { CheckCircle2, Check, ListTree, MoreHorizontal, RotateCcw, Settings2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
 import type { FaceView } from '@/lib/face-view';
-import { FaceToggles } from './face-toggles';
+import { CharacterHintsToggle, FaceToggles } from './face-toggles';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
@@ -30,9 +29,10 @@ export type StudyView = FaceView;
 export type SectionLink = { id: string; title: string; done: number; total: number; complete: boolean };
 export type ProgressNumbers = { done: number; total: number; fraction: number; state: 'not-started' | 'in-progress' | 'done' };
 
-/** Hanzi / Pinyin / EN as one row of on/off toggles ("on" = shown) — the shared FaceToggles. */
+/** Hanzi / Pinyin / EN as one row of on/off toggles ("on" = shown) — the shared FaceToggles in
+ *  the grids' toolbar look (owner: same style as the grid in Compact and Comfortable). */
 export function StudyToggles({ view, onChange }: { view: StudyView; onChange: (next: StudyView) => void }) {
-  return <FaceToggles view={view} onChange={onChange} label="Show in the lesson"/>;
+  return <FaceToggles view={view} onChange={onChange} label="Show in the lesson" size="toolbar"/>;
 }
 
 /** Sidebar progress card with the ⋯ reset menu and the inline whole-lesson confirm. */
@@ -108,7 +108,7 @@ export function PhoneLessonBar({ numbers, activeTitle, sections, activeId, onJum
         <div className="lesson-sheet-group">
           <p className="lesson-sheet-caption">Show</p>
           <div className="lesson-sheet-row is-faces"><FaceToggles view={view} onChange={onView} label="Show in the lesson"/></div>
-          <label className="lesson-sheet-row"><span>Character hints</span><Switch checked={hints} onCheckedChange={onHints}/></label>
+          <CharacterHintsToggle checked={hints} onChange={onHints} size="sheet"/>
         </div>
         <div className="lesson-sheet-group">
           <p className="lesson-sheet-caption">Progress · {state === 'done' ? 'completed' : `${done} of ${total} done`}</p>

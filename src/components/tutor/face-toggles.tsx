@@ -5,7 +5,9 @@ import { isLastShownFace, nextFaceView, type Face, type FaceView } from '@/lib/f
  * The one Hanzi · Pinyin · EN button row (on = shown) used wherever a learner hides study
  * faces: the lesson sidebar and phone Settings sheet, and the Glyphs/Vocabulary tools row and
  * phone Study sheet. Inputs: the current `view`, `onChange` with the next view, an accessible
- * group `label`, and `size` ('toolbar' matches the height of the grid's outline buttons).
+ * group `label`, and `size`: 'toolbar' (the grid tools row and the lesson sidebar — one look,
+ * sized per Compact/Comfortable like the row's outline buttons) or 'sheet' (phone bottom sheets,
+ * full width with 42px touch targets).
  * Each surface keeps its own saved choice; only the control and its rules are shared.
  * The last shown face cannot be switched off (nextFaceView), so a page never goes blank; its
  * button stays focusable and says why in its title.
@@ -16,7 +18,7 @@ const FACES: { key: Face; mark: string; label: string; name: string }[] = [
   { key: 'translations', mark: '', label: 'EN', name: 'translation' },
 ];
 
-export function FaceToggles({ view, onChange, label, size = 'panel' }: { view: FaceView; onChange: (next: FaceView) => void; label: string; size?: 'panel' | 'toolbar' }) {
+export function FaceToggles({ view, onChange, label, size = 'sheet' }: { view: FaceView; onChange: (next: FaceView) => void; label: string; size?: 'sheet' | 'toolbar' }) {
   return <div className={`face-toggles is-${size}`} role="group" aria-label={label}>
     {FACES.map(f => {
       const locked = isLastShownFace(view, f.key);
@@ -31,13 +33,14 @@ export function FaceToggles({ view, onChange, label, size = 'panel' }: { view: F
 
 /**
  * The one Character hints switch (hover ring + click quick card on hanzi), beside FaceToggles
- * in lessons and the grids. Inputs: `checked`, `onChange`, `size` ('panel' keeps the lesson's
- * two-line label, 'toolbar' a one-line pill as tall as the grid's buttons). Each surface keeps
- * its own saved switch (lessons `lessonHints`, grids `gridHints`).
+ * in lessons and the grids. Inputs: `checked`, `onChange`, `size`: 'toolbar' (switch + one-line
+ * label, no frame — the grid tools row and the lesson sidebar share it) or 'sheet' (a phone
+ * sheet row: label left, switch right, as in the other sheet rows). Each surface keeps its own
+ * saved switch (lessons `lessonHints`, grids `gridHints`).
  */
-export function CharacterHintsToggle({ checked, onChange, size = 'panel' }: { checked: boolean; onChange: (on: boolean) => void; size?: 'panel' | 'toolbar' }) {
+export function CharacterHintsToggle({ checked, onChange, size = 'toolbar' }: { checked: boolean; onChange: (on: boolean) => void; size?: 'sheet' | 'toolbar' }) {
+  const control = <Switch checked={checked} onCheckedChange={onChange} aria-label="Character hints"/>;
   return <label className={`lesson-hints-toggle is-${size}`} title="Hover a character for a ring; click or tap it for a quick card">
-    <Switch checked={checked} onCheckedChange={onChange} aria-label="Character hints"/>
-    <span><strong>Character hints</strong>{size === 'panel' && <small>Hover or tap a character for a quick card</small>}</span>
+    {size === 'toolbar' && control}<strong>Character hints</strong>{size === 'sheet' && control}
   </label>;
 }
