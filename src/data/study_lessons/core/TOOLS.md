@@ -1,10 +1,11 @@
 # Local lesson tools
 
 The 20 canonical Project Source files and [README](README.md) come byte-for-byte
-from the owner's v3.3.2 Core ZIP. Their hashes are recorded in
-[the import audit](../../../../reports/lessons-3.3.2-import.json).
-`.gitattributes` preserves their exact bytes across checkouts. This editorial patch
-keeps all six schemas and the taxonomy registry unchanged. The separate
+from the owner's v3.4.0 Core ZIP. Their hashes are recorded in
+[the import audit](../../../../reports/lessons-3.4.0-import.json).
+`.gitattributes` preserves their exact bytes across checkouts. This minor release adds optional expression usage fields to general schema 3.3.0;
+the other five schemas and taxonomy registry remain unchanged. Existing general
+lessons remain accepted. The separate
 [authoring guidelines](LESSON_CREATOR_AUTHORING_GUIDELINES.md) are supplied policy,
 not new executable validation requirements for existing lessons.
 
@@ -21,7 +22,7 @@ From the repository root:
 
 ```sh
 python src/data/study_lessons/core/validate_core.py --self-test
-python scripts/import-lessons-v3.3.2.test.py
+python scripts/import-lessons-v3.4.0.test.py
 ```
 
 See the [source handoff guide](../../../../importer/data/lessons/README.md) for

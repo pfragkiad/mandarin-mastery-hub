@@ -50,10 +50,12 @@ A friendly response when you want to join someone else’s plan.
 - 我想跟你一起吃午饭 (wǒ xiǎng gēn nǐ yìqǐ chī wǔfàn) — I would like to have lunch with you.
 - 我也想跟你一起吃午饭 (wǒ yě xiǎng gēn nǐ yìqǐ chī wǔfàn) — I would also like to have lunch with you.
 - 你想跟我一起吃晚饭吗 (nǐ xiǎng gēn wǒ yìqǐ chī wǎnfàn ma) — Would you like to have dinner with me?
-- 我今天不太想跟你一起喝茶 (wǒ jīntiān bú tài xiǎng gēn nǐ yìqǐ hē chá) — I do not really feel like having tea with you today.
+- 我不想跟你一起喝 (wǒ bù xiǎng gēn nǐ yìqǐ hē) — I do not want to drink with you.
+  - **Usage note · Context** (`CMX-B8F4416EDA77`): The object of 喝 (hē) is understood if the speakers already know what drink is being discussed. Without that context, the refusal sounds abrupt or incomplete. A softer, more explicit alternative is 我今天不太想跟你一起喝茶 (wǒ jīntiān bú tài xiǎng gēn nǐ yìqǐ hē chá).
 - 你想跟我一起喝一点东西吗 (nǐ xiǎng gēn wǒ yìqǐ hē yìdiǎn dōngxi ma) — Would you like to have a drink with me?
 - 我想跟你一起吃晚饭 (wǒ xiǎng gēn nǐ yìqǐ chī wǎnfàn) — I would like to have dinner with you.
-- 你今天不太想跟我一起喝茶 (nǐ jīntiān bú tài xiǎng gēn wǒ yìqǐ hē chá) — You do not really feel like having tea with me today.
+- 你不想跟我一起喝 (nǐ bù xiǎng gēn wǒ yìqǐ hē) — You do not want to drink with me.
+  - **Usage note · Context** (`CMX-C9042CF1784B`): The drink after 喝 (hē) is omitted because it is understood from the conversation. As an isolated sentence this can sound abrupt. A more explicit form is 你不想跟我一起喝茶 (nǐ bù xiǎng gēn wǒ yìqǐ hē chá).
 - 我想跟你一起喝一点东西 (wǒ xiǎng gēn nǐ yìqǐ hē yìdiǎn dōngxi) — I would like to have a drink with you.
 - 一起 (yìqǐ) — together
 - 跟 (gēn) — with; follow

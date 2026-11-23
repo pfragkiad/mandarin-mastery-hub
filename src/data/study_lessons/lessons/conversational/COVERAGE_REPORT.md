@@ -1,4 +1,4 @@
-# Conversational Mandarin — deduplicated coverage audit v1.1.4
+# Conversational Mandarin — deduplicated coverage audit v1.1.5
 
 ## Scope and outcome
 
@@ -98,7 +98,7 @@ The original automatic transcript contains narrator instructions, incomplete dri
 
 ## Compatibility and validation
 
-- Core Project Sources v3.3.1, taxonomy v2.0.0 and lesson JSON schema v3.2.0 remain unchanged.
+- This coverage study originated under Core v3.3.1/general schema v3.2.0. Current release uses **Core v3.4.0/general schema v3.3.0**; taxonomy v2.0.0 remains unchanged.
 - All 15 original lesson IDs and 60 original practice-question IDs remain unchanged.
 - All original checkpoint IDs/targets/flags and the first 15 curriculum placements remain unchanged.
 - The two standalone character-lesson archives are byte-for-byte unchanged.
@@ -111,4 +111,8 @@ All 43 grammar cards now distinguish structural grammar from their audio-ready s
 
 ## v1.1.4 wording and export corrections
 
-Five review phrases were improved for natural conversation without removing the taught communicative functions. One original transcript expression is now covered by a more natural rewording rather than an exact text match. See the updated source crosswalk; the curated 296 source target inventory remains unchanged.
+Historical note: v1.1.4 temporarily replaced five source-attested expressions. **Superseded by v1.1.5**: all five original phrases are restored with usage notes, and the source item again has an exact entry. The 296-target curated inventory is unchanged.
+
+## v1.1.5 verified source wording / visual notes
+
+Five expressions in v1.1.4 were silently rewritten despite being attested in the source. Their original Hanzi, pinyin and meanings have now been restored verbatim from the v1.1.3 expression release, and visible usage notes explain contextual emphasis or offer more neutral alternatives. One source crosswalk item returns from FUNCTIONAL_VARIANT to EXACT_ENTRY. The 296-item curated inventory and lessons' conversational scope remain unchanged.

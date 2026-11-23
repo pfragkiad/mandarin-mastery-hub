@@ -11,8 +11,8 @@ membership stay in [the curriculum](../../curricula/HSK3_2025_LEVEL1.json).
 
 The current source ZIP is recorded in the
 [source guide](../../../../../../importer/data/lessons/README.md).
-`python scripts/import-lessons-v3.3.2.py` audits all retained HSK lessons against
+`python scripts/import-lessons-v3.4.0.py` audits all retained HSK lessons against
 the current Core schemas and exact runtime vocabulary without writing them.
 It validates headwords, readings, meanings, examples, catalog identities and
-checkpoint targets; see the [current audit](../../../../../../reports/lessons-3.3.2-import.json).
+checkpoint targets; see the [current audit](../../../../../../reports/lessons-3.4.0-import.json).
 The historical v3.2 importer requires source inputs retained in Git history.

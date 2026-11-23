@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.2.0",
+  "schema_version": "mandarin-general-lesson/3.3.0",
   "lesson_id": "review-greetings",
   "lesson_type": "review",
   "lesson": {
@@ -26,7 +26,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -46,7 +46,9 @@
             "hanzi": "你好",
             "pinyin": "nǐ hǎo",
             "meaning_en": "hello",
-            "syllabus_refs": []
+            "syllabus_refs": [],
+            "usage_label": "Register",
+            "usage_note": "A neutral, common greeting that fits both informal and ordinary polite conversations."
           }
         ]
       }

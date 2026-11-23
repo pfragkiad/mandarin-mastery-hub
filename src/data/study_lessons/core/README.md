@@ -1,6 +1,6 @@
-# Mandarin Tutor — Core Project Sources v3.3.2
+# Mandarin Tutor — Core Project Sources v3.4.0
 
-This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This patch release refines the adopted authoring policy with grammar-card de-duplication and TTS safety guidance, **without changing the lesson JSON Schema or format**.
+This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This MINOR release adds optional review-expression usage notes to the general-lesson JSON format while keeping all older general lessons and all HSK topic/character lessons compatible.
 
 ## Architecture
 
@@ -19,7 +19,7 @@ This **20-file** Project Source package is the **canonical authoring contract an
 |---|---|---|
 | Topic / teaching lesson | `mandarin-topic-lesson/3.3.0` | 3.0.0, 3.1.0, 3.2.0 accepted |
 | Character usage lesson | `mandarin-character-lesson/3.2.0` | 3.0.0, 3.1.0 and existing v2 character versions accepted where applicable |
-| General / dialogue / grammar / review | `mandarin-general-lesson/3.2.0` | 3.0.0 and 3.1.0 accepted |
+| General / dialogue / grammar / review | `mandarin-general-lesson/3.3.0` | 3.0.0, 3.1.0 and 3.2.0 accepted |
 | Curriculum | `mandarin-curriculum/3.0.0` | Unchanged |
 | Global category registry | 3.2.0 | 22 active top-level, 2 deprecated top-level, 25 active subtopics (plus one deprecated subtopic alias) |
 
@@ -90,13 +90,13 @@ That earlier attribution correction was documentation-only; the new v3.3.0 chang
 - **MINOR (`3.X.0`)**: backward-compatible additions to the lesson-format contract, such as new optional fields or new optional sections.
 - **PATCH (`3.3.X`)**: no lesson-format contract change; editorial/agent authoring guidelines, documentation, backward-compatible fixes to illustrative template copy, and release-quality guidance.
 - Do **not** use `_rev2` suffixes to version Core package releases. Use numbered releases with a changelog.
-- Do **not** conflate the Core package release version (now `3.3.2`) with the **embedded type-specific schema versions** (topic `3.3.0`, character/general `3.2.0`, curriculum `3.0.0`), vocabulary releases, or taxonomy releases.
+- Do **not** conflate the Core package release version (now `3.4.0`) with the **embedded type-specific schema versions** (topic `3.3.0`, character `3.2.0`, general `3.3.0`, curriculum `3.0.0`), vocabulary releases, or taxonomy releases.
 - Generator scripts and tooling remain **outside** the Core Project Sources package; substantive tooling versions can be managed independently.
 - Revisions to existing completed lessons must preserve permanent lesson IDs, checkpoint IDs, target IDs and learner progress. An editorial-only Core release does not require re-exporting existing lesson collections.
 
 ## Lesson Creator authoring policy
 
-**Mandatory for new lessons and approved editorial revisions:** `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.0.1). Read it alongside the applicable schema and template. It governs learner-facing title/subtitle/description, 2–3 content-based tags, metadata placement, natural checkpoint labels, exact vocabulary/source alignment, cross-lesson duplicate sentences, and release validation. Existing lesson JSON files need no migration because this policy does not change their schema.
+**Mandatory for new lessons and approved editorial revisions:** `LESSON_CREATOR_AUTHORING_GUIDELINES.md` (policy v1.1.0). Read it alongside the applicable schema and template. It governs learner-facing title/subtitle/description, 2–3 content-based tags, metadata placement, natural checkpoint labels, exact vocabulary/source alignment, cross-lesson duplicate sentences, and release validation. Existing lesson JSON files need no migration because this policy does not change their schema.
 
 Template files provide valid examples and structural starting points, not authoritative word-card source data. The illustrative copy and tags in some templates were refreshed in v3.3.1 to align with this policy; the schemas and vocabulary sources remain the authority for field structure and source facts.
 
@@ -115,3 +115,12 @@ Template files provide valid examples and structural starting points, not author
 - Clarified that grammatical formulas and placeholders are **not TTS/audio targets**; real spoken examples must be complete pronounceable utterances.
 - This is a guidance-only PATCH: no schema, template, taxonomy, curriculum or lesson-format changes. The six JSON Schemas, category registry, eight JSON templates and three type-specific Markdown guides are byte-for-byte unchanged from Core v3.3.1.
 - Existing lesson IDs, checkpoint IDs, progress data and vocabulary references are unaffected. The Conversational Mandarin course has a separate, content-only coverage-v1.1.3 correction.
+
+## v3.4.0 MINOR release changelog — 2026-11-23
+
+- Backward-compatible **general lesson** schema v3.3.0 adds three **optional** properties to `review_set.items[]`: `expression_id`, `usage_label`, `usage_note`.
+- All earlier `mandarin-general-lesson/3.0.0`, 3.1.0 and 3.2.0 versions remain accepted. No required fields were added; no current identity/progress property changed.
+- Four general JSON templates now demonstrate schema/template v3.3.0 (review template illustrates an optional usage note); general Markdown guide and authoring policy v1.1.0 document use.
+- Five other JSON Schemas, the topic registry, four non-general JSON templates, and topic/character template Markdown remain **byte-for-byte unchanged** from v3.3.2.
+- Independent HSK Level 1 and Level 2 lesson packages remain valid without regeneration, because their `mandarin-topic-lesson/3.3.0` contract is unchanged.
+- Source-specific conversational usage should be explained via visible notes rather than silently replaced by independently authored expressions.

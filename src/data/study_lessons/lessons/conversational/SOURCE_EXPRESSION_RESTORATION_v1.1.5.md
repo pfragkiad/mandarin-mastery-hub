@@ -1,0 +1,9 @@
+# Conversational Mandarin source expression restoration — v1.1.5
+
+Core v3.4.0 / schema mandarin-general-lesson/3.3.0. The historical v1.1.4 linguistic audit is retained for traceability but its five rewordings are **superseded**. Source-attested forms are restored, and optional alternatives appear only as notes. Exactly five expression IDs are affected.
+
+- `CMX-143FCD826472`: **过一会儿不好** (guò yíhuìr bù hǎo) — Context: In the source scheduling exchange, this means that a slightly later time is not good. A more explicit way to say that the time is inconvenient is 过一会儿不方便 (guò yíhuìr bù fāngbiàn). The 儿化 (érhuà) ending in 一会儿 (yíhuìr) reflects northern-leaning spoken usage.
+- `CMX-121F2BDD3E59`: **我要现在吃午饭** (wǒ yào xiànzài chī wǔfàn) — Emphasis: Placing 现在 (xiànzài) after 要 (yào) gives extra emphasis to eating now rather than later. For a neutral statement, 我现在要吃午饭 (wǒ xiànzài yào chī wǔfàn) is more common.
+- `CMX-254A75AEDE95`: **我想现在吃午饭** (wǒ xiǎng xiànzài chī wǔfàn) — Emphasis: Placing 现在 (xiànzài) after 想 (xiǎng) highlights the desired time: now rather than later. The more neutral order is 我现在想吃午饭 (wǒ xiànzài xiǎng chī wǔfàn).
+- `CMX-B8F4416EDA77`: **我不想跟你一起喝** (wǒ bù xiǎng gēn nǐ yìqǐ hē) — Context: The object of 喝 (hē) is understood if the speakers already know what drink is being discussed. Without that context, the refusal sounds abrupt or incomplete. A softer, more explicit alternative is 我今天不太想跟你一起喝茶 (wǒ jīntiān bú tài xiǎng gēn nǐ yìqǐ hē chá).
+- `CMX-C9042CF1784B`: **你不想跟我一起喝** (nǐ bù xiǎng gēn wǒ yìqǐ hē) — Context: The drink after 喝 (hē) is omitted because it is understood from the conversation. As an isolated sentence this can sound abrupt. A more explicit form is 你不想跟我一起喝茶 (nǐ bù xiǎng gēn wǒ yìqǐ hē chá).

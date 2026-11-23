@@ -1,8 +1,8 @@
 # Mandarin Tutor — Lesson Creator Authoring Guidelines
 
-**Policy version:** 1.0.1  
-**Compatibility:** Core Project Sources v3.3.2; unchanged topic, character, general-lesson, and curriculum schema versions  
-**Status:** Updated in Core Project Sources v3.3.2 (editorial policy v1.0.1)  
+**Policy version:** 1.1.0  
+**Compatibility:** Core Project Sources v3.4.0; backward-compatible general-lesson schema v3.3.0; topic/character/curriculum schemas unchanged  
+**Status:** Updated in Core Project Sources v3.4.0 (authoring policy v1.1.0)  
 **Scope:** HSK Levels 1–9, independent Conversational Mandarin, supplementary grammar, pronunciation, reading, writing, listening, and communication lessons
 
 ## 1. Purpose and precedence
@@ -90,7 +90,7 @@ The official HSK topic hierarchy and its mapping to the shared taxonomy are sepa
 
 ## 6A. Grammar-pattern cards: distinguish structure and spoken example
 
-In `mandarin-general-lesson/3.2.0` grammar blocks, `pattern_hanzi` / `pattern_pinyin` and `example.hanzi` / `example.pinyin` serve **different instructional purposes**:
+In `mandarin-general-lesson/3.2.0` and `3.3.0` grammar blocks, `pattern_hanzi` / `pattern_pinyin` and `example.hanzi` / `example.pinyin` serve **different instructional purposes**:
 
 - **Pattern fields:** Show a reusable structural formula (e.g. `陈述句 + 吗？` / `chénshùjù + ma?`), not a duplicate of the sample sentence. A structure may contain grammatical labels and operators such as `+` and is **never an audio/TTS input**.
 - **Example fields:** Supply a complete, natural, pronounceable Mandarin utterance, with accurately aligned pinyin and idiomatic English. Only this spoken example is eligible for an example audio button.
@@ -100,6 +100,19 @@ In `mandarin-general-lesson/3.2.0` grammar blocks, `pattern_hanzi` / `pattern_pi
 - **Validation gate:** Reject generated lessons if normalized `pattern_hanzi == example.hanzi`, or normalized `function_en == example.teaching_note`. Separately flag near-duplicates for manual review. Check every grammar block across the complete lesson package, not only a sample card.
 - **Frontend defense:** Label the two portions **Grammar structure** and **Example**; disable audio for structural formulas and avoid duplicating explanatory notes. A presentation fallback does not repair duplicated authored JSON.
 - **Compatibility:** The above rules change authoring *quality*, not the JSON schema. Never rename fields or change existing lesson, block, example, question or checkpoint IDs when fixing repeated copy.
+
+## 6B. Source-attested conversational expressions and visible usage notes (Core v3.4.0)
+
+- Preserve the source-authenticated expression's Hanzi and pinyin in the main learner-facing entry. A different register, marked emphasis, northern speech habit, or context-dependent ellipsis is **not** by itself a reason to replace the sourced item.
+- In `mandarin-general-lesson/3.3.0`, review expressions may optionally include `expression_id`, `usage_label`, and `usage_note`. The fields are independent of grammar-pattern examples, and older `3.2.0` lessons remain valid.
+- `expression_id` is a permanent external review/index key; it must not be rederived from display text after editorial changes. It is not a substitute for the lesson/block/checkpoint IDs.
+- `usage_label` identifies a concise distinction: e.g. `Emphasis`, `Context`, `Northern usage`, `Register`. `usage_note` explains why the expression is used, how the context affects naturalness, and if helpful gives a more neutral/explicit alternative with Hanzi **and** pinyin.
+- Source-based form and authored alternative must be visibly distinct. Do not manufacture additional lessons or teach every alternative as a new mandatory review entry. Do not mark all instances of 儿 (ér) as rhotic usage; use regional tags only for genuine 儿化 (érhuà).
+- In the frontend and standalone HTML/MD, display `usage_note` immediately below the associated review expression. Never pass note text or grammatical formulas to TTS. A source phrase remains eligible for TTS when it is a complete utterance.
+- The note should be brief, factual, and learner-facing; source/provenance metadata and proof of transcript attestation belong in `report.md` / release audit.
+- Release validation checks: notes reference real expression IDs when provided; no duplicate expression IDs within one lesson; note text has no unpaired Chinese examples; lesson/question/checkpoint IDs are preserved.
+
+**Release rationale:** New optional JSON fields are a backward-compatible lesson-format extension; Core v3.4.0 is therefore MINOR (not PATCH). Existing general lesson v3.2.0 remains accepted.
 
 ## 7. Lesson completeness and packaging
 
@@ -134,8 +147,8 @@ In `mandarin-general-lesson/3.2.0` grammar blocks, `pattern_hanzi` / `pattern_pi
 
 ## 9. Relationship to Core release policy
 
-This authoring policy is included in **Core Project Sources v3.3.2**. It is an editorial/release-quality policy, not a new JSON Schema. The topic-lesson schema remains `mandarin-topic-lesson/3.3.0`; character-lesson schema remains `mandarin-character-lesson/3.2.0`; general-lesson schema remains `mandarin-general-lesson/3.2.0`.
+This authoring policy is included in **Core Project Sources v3.4.0**. It is an editorial/release-quality policy, not a new JSON Schema. The topic-lesson schema remains `mandarin-topic-lesson/3.3.0`; character-lesson schema remains `mandarin-character-lesson/3.2.0`; general-lesson schema is `mandarin-general-lesson/3.3.0` (older v3.2.0 accepted).
 
 The Core **package release** follows Semantic Versioning (major = incompatible format or validation contract; minor = backward-compatible format addition; patch = no lesson-format contract change, including policy, documentation, template-copy, and generator-instruction improvements). Changes that make previously valid lessons invalid are assessed for breaking compatibility, even if JSON field names stay unchanged.
 
-The **policy version** remains independently versioned; `1.0.0` was first adopted in Core v3.3.1 and `1.0.1` adds grammar-card de-duplication and TTS safeguards. Course vocabulary and taxonomy versions are separate axes and must be pinned explicitly. A Markdown file does not automatically run as an Agent Skill: a lesson-authoring agent must be directed to read and apply this file. Legacy lessons are not silently rewritten by the policy.
+The **policy version** remains independently versioned; `1.0.0` was first adopted in Core v3.3.1 and `1.0.1` adds grammar-card de-duplication and TTS safeguards; `1.1.0` adds optional source-respecting expression usage notes. Course vocabulary and taxonomy versions are separate axes and must be pinned explicitly. A Markdown file does not automatically run as an Agent Skill: a lesson-authoring agent must be directed to read and apply this file. Legacy lessons are not silently rewritten by the policy.

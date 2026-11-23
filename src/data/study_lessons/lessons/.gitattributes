@@ -1,4 +1,4 @@
-# Exact supplied v3.3.2 lesson/companion bytes, including Windows checkouts.
+# Exact supplied v3.4.0 lesson/companion bytes, including Windows checkouts.
 conversational/CONVERSATIONAL_LESSON_*/* -text
 # Keep the supplied Markdown hard line breaks intact.
 conversational/CONVERSATIONAL_LESSON_*/*.md whitespace=-blank-at-eol
@@ -21,3 +21,5 @@ conversational/GRAMMAR_DEDUP_AUDIT.json -text
 conversational/LINGUISTIC_REVIEW_v1.1.4.md -text
 conversational/COVERAGE_REPORT.md whitespace=-blank-at-eol
 conversational/LINGUISTIC_REVIEW_v1.1.4.md whitespace=-blank-at-eol
+conversational/EXPRESSION_USAGE_NOTES.tsv -text
+conversational/SOURCE_EXPRESSION_RESTORATION_v1.1.5.md -text whitespace=-blank-at-eol

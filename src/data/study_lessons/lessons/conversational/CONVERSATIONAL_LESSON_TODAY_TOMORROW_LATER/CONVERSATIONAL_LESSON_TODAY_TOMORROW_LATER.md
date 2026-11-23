@@ -59,7 +59,8 @@ Use this when proposing to meet shortly rather than immediately.
 - 明天呢 (míngtiān ne) — What about tomorrow?
 - 现在吗 (xiànzài ma) — Now?
 - 过一会儿好吗 (guò yíhuìr hǎo ma) — Would a little later be okay?  [Northern-style -r]
-- 过一会儿不方便 (guò yíhuìr bù fāngbiàn) — A little later would not be convenient.  [Northern-style -r]
+- 过一会儿不好 (guò yíhuìr bù hǎo) — Later is not a good time.  [Northern-style -r]
+  - **Usage note · Context** (`CMX-143FCD826472`): In the source scheduling exchange, this means that a slightly later time is not good. A more explicit way to say that the time is inconvenient is 过一会儿不方便 (guò yíhuìr bù fāngbiàn). The 儿化 (érhuà) ending in 一会儿 (yíhuìr) reflects northern-leaning spoken usage.
 - 我想现在喝 (wǒ xiǎng xiànzài hē) — I want to drink now.
 - 今天晚上我不想吃东西 (jīntiān wǎnshang wǒ bù xiǎng chī dōngxi) — I do not want to eat anything tonight.
 - 明天晚上不行 (míngtiān wǎnshang bù xíng) — Tomorrow evening doesn't work.

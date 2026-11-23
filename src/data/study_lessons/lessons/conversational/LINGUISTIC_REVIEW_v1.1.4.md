@@ -1,3 +1,9 @@
+# HISTORICAL AUDIT — SUPERSEDED FOR FIVE SOURCE EXPRESSIONS
+
+This v1.1.4 report documents a prior release. The five naturalness rewordings are **reversed in v1.1.5**, which restores the original source phrases and adds optional visual usage notes. Do not use the five changed-expression rows as the current canonical text.
+
+---
+
 # Conversational Mandarin — verified linguistic and expression-export review v1.1.4
 
 ## Evidence and scope

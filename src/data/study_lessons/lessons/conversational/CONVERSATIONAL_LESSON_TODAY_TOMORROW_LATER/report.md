@@ -38,3 +38,7 @@ Pattern headings are now non-spoken structural formulas, separate from the uncha
 ## Linguistic and export review v1.1.4
 
 Standardized learner-facing pinyin orthography and American-English spelling. Editorially revised 1 source-derived review phrases to more natural conversational usage where needed. The expression-index English export is independently corrected. Lesson, block, question, checkpoint and curriculum IDs remain stable; no lesson-format changes.
+
+## Source-expression restoration / usage notes — coverage v1.1.5
+
+Core v3.4.0 / general-lesson v3.3.0. Restored 1 authentic source-derived review expressions that had been rewritten in v1.1.4. The original wording is the learner-visible entry, while neutral/explicit alternatives are shown only in usage notes. Existing identity and progress keys remain unchanged. See the external v1.1.5 release audit for expression-level provenance.

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "purpose": "Optional per-expression presentation hints; lesson schema unchanged.",
   "label": "Northern-style -r",
   "marker": "northern_style_erhua",
@@ -60,8 +60,8 @@
     },
     {
       "expression_id": "CMX-143FCD826472",
-      "hanzi": "过一会儿不方便",
-      "pinyin": "guò yíhuìr bù fāngbiàn",
+      "hanzi": "过一会儿不好",
+      "pinyin": "guò yíhuìr bù hǎo",
       "marker": "northern_style_erhua",
       "forms": [
         "一会儿"

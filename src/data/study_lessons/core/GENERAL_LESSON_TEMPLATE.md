@@ -1,4 +1,4 @@
-# General Lesson Types (Grammar / Dialogue / Review) — v3.2.0
+# General Lesson Types (Grammar / Dialogue / Review) — v3.3.0
 
 Canonical JSON templates: `GRAMMAR_LESSON_TEMPLATE.json`, `DIALOGUE_LESSON_TEMPLATE.json`, `REVIEW_LESSON_TEMPLATE.json`, `GENERIC_LESSON_TEMPLATE.json`.
 Each uses `general_lesson.schema.json`. The `lesson_type` controls required block content:
@@ -12,7 +12,7 @@ Course names and session numbers belong to the **curriculum placement**, not to 
 For independently authored conversational lessons, record only actual source use in `report.md`; thematic inspiration does not establish textual or audio provenance. Never redistribute third-party recordings or transcripts as part of a lesson package.
 
 
-## Shared taxonomy (retained from Core v3.2.0)
+## Shared taxonomy (retained from Core v3.3.0)
 
 - 22 active global top-level topics, 25 stable optional subtopics and 2 retired-but-readable top-level category IDs.
 - Keep permanent lesson IDs and course manifests independent from taxonomy. No new course-specific global category IDs.
@@ -20,7 +20,7 @@ For independently authored conversational lessons, record only actual source use
 - For topic lesson vocabulary items, use the same optional `primary_subtopic_id` and `subtopic_ids` fields; item-level parent topic membership comes from `topic_ids`.
 - Subtopics are semantic, not parts of speech; do not guess from character shape or part of speech. Omit uncertain subtopics.
 - `lesson_categories.json` is the sole global registry, from which any HSK-specific topic export is derived. Course-private topics remain in their own curriculum manifest.
-- `mandarin-topic-lesson/3.3.0`, `mandarin-character-lesson/3.2.0`, `mandarin-general-lesson/3.2.0`; curriculum schema remains `mandarin-curriculum/3.0.0`.
+- `mandarin-topic-lesson/3.3.0`, `mandarin-character-lesson/3.2.0`, `mandarin-general-lesson/3.3.0`; curriculum schema remains `mandarin-curriculum/3.0.0`.
 - A migration or a grammar-content edit is not justified by a taxonomy change. All lesson teaching content and pre-existing syllabus IDs must remain unchanged.
 - Each nested completed lesson archive still has exactly one canonical JSON, one HTML, one Markdown and one `report.md` in the archive root.
 
@@ -38,3 +38,7 @@ For independently authored conversational lessons, record only actual source use
 ## Learner-facing copy and checkpoint labels
 
 Follow `LESSON_CREATOR_AUTHORING_GUIDELINES.md` for title, subtitle, description, tags, and distinct teaching examples. Use natural action descriptions in checkpoint labels; never expose raw activity IDs or source/provenance notes in learner-facing content.
+
+## Expression-level usage notes (Core v3.4.0)
+
+For a `review_set.items[]` expression, optional `expression_id`, `usage_label`, and `usage_note` permit visible, source-respecting commentary immediately beside that expression. Do not replace a source-attested expression solely to enforce a more neutral register. Explain the contrast and optionally give a natural alternative in `usage_note`, accompanied by tone-marked pinyin. Review expressions without notes remain fully valid. Only complete spoken expressions are TTS targets; notes are never passed to TTS.

@@ -6,7 +6,9 @@ Shuowen review exports and supplied originals in this directory stay local and u
 
 | File | Use |
 | --- | --- |
-| [lessons-3.3.2-import.json](lessons-3.3.2-import.json) | Current Core v3.3.2 / conversational coverage v1.1.4 import: 20 Core files, 19 supplied lessons, 65 active lessons, both curricula, exact dictionary/catalog checks, preserved progress identities and checked expression/crosswalk/marker references. |
+| [lessons-3.4.0-import.json](lessons-3.4.0-import.json) | Current Core v3.4.0 / coverage v1.1.5 import: exact source bytes, backward-compatible general schema, 65 active lessons, two curricula, 574 HSK bindings and five CMX-bound usage notes. |
+| [lessons-3.4.0-source-cleanup.json](lessons-3.4.0-source-cleanup.json) | Owner-removed uploads/Markdown: checksums and original Git revision. |
+| [lessons-3.3.2-import.json](lessons-3.3.2-import.json) | Historical Core v3.3.2 / conversational coverage v1.1.4 import: 20 Core files, 19 supplied lessons, 65 active lessons, both curricula, exact dictionary/catalog checks, preserved progress identities and checked expression/crosswalk/marker references. |
 | [lessons-3.3.2-source-cleanup.json](lessons-3.3.2-source-cleanup.json) | Superseded v3.3.1 source ZIPs and Markdown audits; checksums and recovery revision in Git history. |
 | [lessons-3.3.1-import.json](lessons-3.3.1-import.json) | Historical Core/Other Lessons import: source and per-file checksums, 20 Core files, 17 lessons, exact dictionary/catalog checks, 63 validated active lessons and stable progress/curriculum identities. |
 | [lessons-3.3.1-source-cleanup.json](lessons-3.3.1-source-cleanup.json) | Owner-requested removal of 11 superseded ZIPs and 10 obsolete upload Markdown files; exact checksums and recovery revision in published Git history. |

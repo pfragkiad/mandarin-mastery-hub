@@ -2,7 +2,7 @@
 
 17 topic lessons based on everyday communication goals, with expanded dialogues, grammar, reviewed expressions, and practice. Existing progress IDs are retained. Added supplementary checkpoints in the original lessons are optional to protect completed progress.
 
-Release: Core v3.3.1, taxonomy v2.0.0, coverage v1.1.4.
+Current release: Core v3.4.0, taxonomy v2.0.0, coverage v1.1.5. Historical earlier audit details are retained below.
 
 ## Pronunciation / regional variants
 
@@ -18,4 +18,8 @@ Canonical catalog references were extended only for newly introduced grammatical
 
 ## Export and linguistic review v1.1.4
 
-The CMX expression index now prefers actual English translations over grammar descriptions; review models have real English glosses rather than placeholders. Neutral-tone 不 (bu) in A-not-A questions, 有没有 (yǒu méiyǒu) segmentation, common-noun 美金 (měijīn) capitalization, and ASCII Pinyin apostrophes were standardized. Five isolated expressions were edited for natural conversation. Existing CMX identity keys are preserved even when display text changes. See the linguistic review audit.
+The CMX expression index now prefers actual English translations over grammar descriptions; review models have real English glosses rather than placeholders. Neutral-tone 不 (bu) in A-not-A questions, 有没有 (yǒu méiyǒu) segmentation, common-noun 美金 (měijīn) capitalization, and ASCII Pinyin apostrophes were standardized. The five earlier naturalness rewrites were subsequently reversed in v1.1.5 after their attestation in the source was confirmed; the alternatives are now comments below the original expressions. Stable CMX IDs are preserved.
+
+## v1.1.5 usage notes
+
+Course uses general-lesson v3.3.0 in Core v3.4.0: five source-authenticated phrases are restored; usage comments appear visually beneath expressions in JSON-derived HTML/MD and browser. See EXPRESSION_USAGE_NOTES.tsv for CMX-ID keyed notes. No new topics or exercises.

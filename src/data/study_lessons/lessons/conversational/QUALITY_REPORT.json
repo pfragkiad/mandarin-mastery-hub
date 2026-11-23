@@ -1,9 +1,9 @@
 {
   "course_id": "conversational-mandarin",
-  "core_release": "3.3.2",
+  "core_release": "3.4.0",
   "taxonomy_version": "hsk-topics/2.0.0",
   "schema_versions": [
-    "mandarin-general-lesson/3.2.0"
+    "mandarin-general-lesson/3.3.0"
   ],
   "lesson_count": 17,
   "dialogue_turn_count": 121,
@@ -17,7 +17,7 @@
   "unclassified_candidate_review": 0,
   "identity": "15 legacy lessons and all original question/checkpoint/placement identities preserved",
   "review_status": "structural/semantic source-transcript audit completed; original audio and native-speaker review outstanding",
-  "coverage_revision": "1.1.4",
+  "coverage_revision": "1.1.5",
   "expression_review_count": 441,
   "region_marker_count": 49,
   "unclassified_conversational_targets": 0,
@@ -30,16 +30,27 @@
     "grammar_example_gloss_export_repairs": 38,
     "model_answer_placeholder_gloss_repairs": 28,
     "punctuation_alignment_repairs": 33,
-    "naturalness_phrase_revisions": 5,
-    "source_crosswalk_exact_to_equivalent": 1,
+    "naturalness_phrase_revisions": 0,
+    "source_crosswalk_exact_to_equivalent": 0,
     "source_crosswalk_counts_current": {
       "IN_CONTEXT": 103,
-      "FUNCTIONAL_VARIANT": 42,
-      "EXACT_ENTRY": 149,
+      "FUNCTIONAL_VARIANT": 41,
+      "EXACT_ENTRY": 150,
       "NARRATION_NOT_TARGET": 2
     },
     "expression_id_count_preserved": 441,
     "pinyin_presentation_standard": "tone-marked with neutral-tone A-not-A 不; ASCII syllable apostrophe",
     "american_english_spelling": "practice"
+  },
+  "expression_usage_notes": {
+    "count": 5,
+    "source_attested_restorations": 5,
+    "original_CMX_ids_preserved": 441,
+    "source_crosswalk_counts_current": {
+      "IN_CONTEXT": 103,
+      "FUNCTIONAL_VARIANT": 41,
+      "EXACT_ENTRY": 150,
+      "NARRATION_NOT_TARGET": 2
+    }
   }
 }

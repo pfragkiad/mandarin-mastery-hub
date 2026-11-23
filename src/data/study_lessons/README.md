@@ -3,10 +3,9 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The library uses the canonical Core v3.3.2 authoring release: 21 HSK Level 1
+The library uses the canonical Core v3.4.0 authoring release: 21 HSK Level 1
 and 25 HSK Level 2 topic lessons, 17 conversational lessons and two independent
-character lessons (次, 以). Topic schemas remain 3.3.0, character/general schemas
-3.2.0 and curricula 3.0.0. Editorial references live in each lesson's `report.md`,
+character lessons (次, 以). Topic schemas remain 3.3.0, character schema 3.2.0, general schema 3.3.0 and curricula 3.0.0. Editorial references live in each lesson's `report.md`,
 which the app never loads.
 
 v3 moved topics into `classification` (`primary_topic_id`, `topic_ids`, `tags`) and adds
@@ -22,7 +21,7 @@ See [core/README.md](core/README.md) for schemas and templates and
 | --- | --- | --- |
 | `core/lesson_categories.json` | Canonical registry with 22 active parent topics, 25 active subtopics and deprecated aliases (`kind`, `parent_topic_id`, `status`). Top-level lesson discovery uses active parents only; recorded subtopic IDs stay attached to each lesson/word. | Static import in `lessons.ts` (By topic grouping and filter). |
 | `core/lesson_categories.schema.json` | JSON Schema for the registry. | Reference only. |
-| `core/*.schema.json`, `core/*_TEMPLATE.*` | Canonical v3.3.2 Core release (topic schema v3.3; character/general v3.2; curriculum v3.0), accepting older lesson versions; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
+| `core/*.schema.json`, `core/*_TEMPLATE.*` | Canonical v3.4.0 Core release (topic schema v3.3; character v3.2, general v3.3; curriculum v3.0), accepting older lesson versions; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
 | `core/generate_lesson.py`, `core/validate_core.py` | Separately maintained generator and validator for the Markdown/HTML companions; see core/TOOLS.md. | Authoring tools; not loaded. |
 | `lessons/**/<KIND>_LESSON_<KEY>/<FILE>.json` | One lesson per directory: the canonical lesson. | `lessons.ts`: `lesson_id`, `schema_version`, `lesson_type`, `lesson`, `classification`, `learning_objectives`, `metadata`, `catalog_character_refs` (and `headword` for headword kinds) eagerly as summaries; the whole file lazily on its page. |
 | `lessons/curricula/*.json` | Course manifests (levels, units, placements, prerequisites). | `lesson-curricula.ts`. |
@@ -52,11 +51,28 @@ Until a package follows this, `src/lib/lesson-header-copy.ts` hides the exact li
 ## Current package import
 
 The [source handoff guide](../../../importer/data/lessons/README.md) lists the four
-current packages and exact checksums. `scripts/import-lessons-v3.3.2.py` stages and
+current packages and exact checksums. `scripts/import-lessons-v3.4.0.py` stages and
 validates the supplied 20 Core files, 17 conversational lessons, two character
 lessons, collection references and conversational curriculum before writing exact
-source bytes. The [import audit](../../../reports/lessons-3.3.2-import.json) records
+source bytes. The [import audit](../../../reports/lessons-3.4.0-import.json) records
 checks for all 65 active lessons, both curricula and recorded HSK dictionary bindings.
 No lesson content is generated or repaired during import. HSK lesson content,
 runtime vocabulary and saved progress identities are preserved. Superseded source
 ZIPs and obsolete upload notes are retained only in Git history; see the source guide.
+
+## Frontend handoff for Core v3.4.0
+
+The imported conversational lessons use `mandarin-general-lesson/3.3.0`; older
+versions remain supported. `sections.blocks[]` with `kind: review_set` can now
+carry optional `expression_id`, `usage_label` and `usage_note` on each item.
+Five supplied items have notes; match the permanent CMX ID, never a rewritten
+phrase. Extend the `GeneralBlock` item type in `src/lib/lessons.ts` and pass the
+fields to `KeyExpressionCard` in `src/components/tutor/lesson-page.tsx`.
+Show the recorded label and note below the original expression/translation using
+`LessonText`. These notes are visual explanation only: never pass note text or
+its alternative forms to pronunciation/TTS, and never replace the main phrase.
+Absent fields keep the existing card appearance and behavior. Update general
+schema-version assertions in `src/lib/lessons.test.ts` and
+`src/components/tutor/lesson-page.test.tsx`, and check rendering/absence and that
+pronunciation still targets only the original phrase. The source TSV and
+restoration audit are offline references, not new eager frontend imports.

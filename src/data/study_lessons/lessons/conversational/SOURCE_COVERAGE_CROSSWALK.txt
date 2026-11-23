@@ -1,6 +1,5 @@
-# DEDUPLICATED SOURCE-TO-LESSON CONVERSATIONAL TARGETS — v1.1.4
-# Stable SOURCE_HANZI and source IDs are unchanged. One taught variant now uses a more natural word order.
-# EXACT_ENTRY / IN_CONTEXT / FUNCTIONAL_VARIANT / NARRATION_NOT_TARGET retain their documented meanings.
+# DEDUPLICATED SOURCE-TO-LESSON CONVERSATIONAL TARGETS — v1.1.5
+# Stable CMX IDs, source Hanzi and source pinyin unchanged. One source expression restored from FUNCTIONAL_VARIANT to EXACT_ENTRY.
 ID	SOURCE_HANZI	SOURCE_PINYIN	SOURCE_GLOSS	SOURCE_UNITS	COVERAGE_STATUS	LESSON_IDS	EXAMPLE_IN_LESSON	COVERAGE_EXPLANATION	REGIONAL_MARKER
 CMX-02811CEC0B73	呢	ne	and what about…? (particle)	3	IN_CONTEXT	convm-people-identity,convm-asking-directions,convm-clock-scheduling,convm-today-tomorrow-later,convm-phone-invitations	你呢	Exact teachable phrase or component appears in lesson expressions.	
 CMX-056B9C626275	谁	shéi	who	8	IN_CONTEXT	convm-with-someone	跟谁一起	Exact teachable phrase or component appears in lesson expressions.	
@@ -39,7 +38,7 @@ CMX-21600C1459EE	你有多少钱	nǐ yǒu duō shǎo qián	How much money do you
 CMX-220AC6C5A360	一起	yì qǐ	together	8	EXACT_ENTRY	convm-with-someone	一起	Phrase appears as an independent lesson expression.	
 CMX-2313DBBB686A	不客气	bù kè qì	You're welcome.	14	EXACT_ENTRY	convm-greetings-politeness,convm-money-prices,convm-permission-requests,convm-newspaper-shopping	不客气	Phrase appears as an independent lesson expression.	
 CMX-232E567D31A2	我没有人民币	wǒ méi yǒu rén mín bì	I don't have any renminbi.	13	EXACT_ENTRY	convm-money-prices	我没有人民币	Phrase appears as an independent lesson expression.	
-CMX-254A75AEDE95	我想现在吃午饭	wǒ xiǎng xiàn zài chī wǔ fàn	I'd like to have lunch now.	8	FUNCTIONAL_VARIANT	convm-wants-intentions	我现在想吃午饭	Natural conversational rewording preserves the original intention and structure without reproducing awkward word order.	
+CMX-254A75AEDE95	我想现在吃午饭	wǒ xiǎng xiàn zài chī wǔ fàn	I'd like to have lunch now.	8	EXACT_ENTRY	convm-wants-intentions	我想现在吃午饭	Original transcript expression restored as a learner-facing review item; the neutral word-order alternative is an explanatory usage note.	
 CMX-261C23B55843	街	jiē	street	6	IN_CONTEXT	convm-asking-directions	长安街也在那儿吗？	Exact teachable phrase or component appears in lesson expressions.	
 CMX-2887087F2BB8	北京饭店在哪儿	běi jīng fàn diàn zài nǎ ér	Where is the Beijing Hotel?	7	EXACT_ENTRY	convm-places-to-meet	北京饭店在哪儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
 CMX-29473899EFF5	十四	shí sì	fourteen	13	EXACT_ENTRY	convm-numbers-arithmetic	十四	Phrase appears as an independent lesson expression.	
@@ -297,4 +296,4 @@ CMX-F9796AA1410A	一点儿	yìdiǎnr	a little (with -r suffix)	1,3	EXACT_ENTRY	c
 CMX-FB8F01CB6D4B	多少	duō shǎo	how much; how many	12	IN_CONTEXT	convm-money-prices,convm-numbers-arithmetic	请问，一杯啤酒多少钱？	Exact teachable phrase or component appears in lesson expressions.	
 CMX-FC5AD7699E3F	我有一点儿	wǒ yǒu yì diǎn ér	I have a little.	15	FUNCTIONAL_VARIANT	convm-speaking-languages	你说得很好。	one small amount: 一点儿, also possession with 有	NORTHERN_ERHUA
 CMX-FC7EDD399A5C	十	shí	ten	11	IN_CONTEXT	convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-newspaper-shopping,convm-numbers-arithmetic,convm-permission-requests,convm-phone-invitations	十点钟	Exact teachable phrase or component appears in lesson expressions.	
-CMX-FE09EC564B31	可是你会说普通话	kě shì nǐ huì shuō pǔ tōng huà	But you can speak Mandarin.	4	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-FE09EC564B31	可是你会说普通话	kě shì nǐ huì shuō pǔ tōng huà	But you can speak Mandarin.	4	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses

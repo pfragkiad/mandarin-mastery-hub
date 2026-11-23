@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.2.0",
+  "schema_version": "mandarin-general-lesson/3.3.0",
   "lesson_id": "convm-wants-intentions",
   "lesson_type": "dialogue",
   "lesson": {
@@ -37,7 +37,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -217,9 +217,12 @@
             "meaning_en": "I would like to drink now."
           },
           {
-            "hanzi": "我现在要吃午饭",
-            "pinyin": "wǒ xiànzài yào chī wǔfàn",
-            "meaning_en": "I am going to have lunch now."
+            "hanzi": "我要现在吃午饭",
+            "pinyin": "wǒ yào xiànzài chī wǔfàn",
+            "meaning_en": "I intend to have lunch now.",
+            "expression_id": "CMX-121F2BDD3E59",
+            "usage_label": "Emphasis",
+            "usage_note": "Placing 现在 (xiànzài) after 要 (yào) gives extra emphasis to eating now rather than later. For a neutral statement, 我现在要吃午饭 (wǒ xiànzài yào chī wǔfàn) is more common."
           },
           {
             "hanzi": "我不要吃",
@@ -252,9 +255,12 @@
             "meaning_en": "would you like something to drink?"
           },
           {
-            "hanzi": "我现在想吃午饭",
-            "pinyin": "wǒ xiànzài xiǎng chī wǔfàn",
-            "meaning_en": "I would like to have lunch now."
+            "hanzi": "我想现在吃午饭",
+            "pinyin": "wǒ xiǎng xiànzài chī wǔfàn",
+            "meaning_en": "I would like to have lunch now.",
+            "expression_id": "CMX-254A75AEDE95",
+            "usage_label": "Emphasis",
+            "usage_note": "Placing 现在 (xiànzài) after 想 (xiǎng) highlights the desired time: now rather than later. The more neutral order is 我现在想吃午饭 (wǒ xiànzài xiǎng chī wǔfàn)."
           }
         ]
       },

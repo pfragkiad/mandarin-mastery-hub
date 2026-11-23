@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.2.0",
+  "schema_version": "mandarin-general-lesson/3.3.0",
   "lesson_id": "convm-asking-directions",
   "lesson_type": "dialogue",
   "lesson": {
@@ -33,7 +33,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.2.0",
+    "template_version": "3.3.0",
     "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null

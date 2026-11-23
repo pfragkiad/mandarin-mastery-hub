@@ -1,10 +1,9 @@
-# CONVERSATIONAL MANDARIN — EXPRESSION REVIEW v1.1.4
-# CMX IDs are permanent identity keys: do not regenerate after editorial wording changes.
-# Corrections to five existing expressions preserve their original CMX IDs; see the linguistic review audit.
-# English is always a translation or gloss; explanations belong to grammar notes.
-# Every expression occurs once; repetitions are referenced in REFERENCE_PATHS.
-# Regional marker NORTHERN_ERHUA identifies a northern-leaning rhotic form, not exclusive to northern China.
-# Fields are TAB-separated. Schema: mandarin-general-lesson/3.2.0.
+# CONVERSATIONAL MANDARIN — EXPRESSION REVIEW v1.1.5
+# CMX IDs are stable; all 441 existing IDs and review text-file columns are preserved.
+# Five source-authenticated expressions restored, with distinct optional alternatives in the lesson usage notes.
+# For note labels and text by CMX ID, see EXPRESSION_USAGE_NOTES.tsv (also available standalone).
+# English is a phrase translation, not a grammar teaching note.
+# Regional marker NORTHERN_ERHUA denotes northern-leaning rhotic colloquial usage; not exclusive to northern China.
 ID	HANZI	PINYIN	ENGLISH	REGIONAL_MARKER	LESSON_IDS	CONTENT_ROLES	REFERENCE_PATHS
 CMX-000074124781	八点也不行。我们明天六点见吧。	Bā diǎn yě bù xíng. Wǒmen míngtiān liù diǎn jiàn ba.	Eight does not work either. Let us meet at six tomorrow.		convm-clock-scheduling	dialogue	convm-clock-scheduling:sections.blocks[6] (source-coverage-dialogue).turns[3]
 CMX-00D84C0C837A	我不想去酒店。咖啡厅怎么样？	Wǒ bù xiǎng qù jiǔdiàn. Kāfēitīng zěnmeyàng?	I would rather not go to a hotel. How about a café?		convm-places-to-meet	dialogue	convm-places-to-meet:sections.blocks[6] (source-coverage-dialogue).turns[2]
@@ -32,11 +31,11 @@ CMX-0F2C78636768	这件东西十八块人民币。	Zhè jiàn dōngxi shíbā ku
 CMX-0FE8BC31AD63	你要不要	nǐ yào bu yào	Do you want it?		convm-choices-alternatives	review	convm-choices-alternatives:sections.blocks[4] (key-expressions).items[4]
 CMX-10CBD3B5ABAE	你明白吗	Nǐ míngbai ma	Do you understand?		convm-understanding-clarification	dialogue,model_answer,review	convm-understanding-clarification:sections.blocks[1] (model-dialogue).turns[0]; convm-understanding-clarification:sections.blocks[4] (key-expressions).items[2]; convm-understanding-clarification:sections.practice.questions[3].answer[0]
 CMX-120ABA722A24	你想什么时候吃午饭	nǐ xiǎng shénme shíhou chī wǔfàn	When do you want to have lunch?		convm-clock-scheduling	review	convm-clock-scheduling:sections.blocks[4] (key-expressions).items[7]
-CMX-121F2BDD3E59	我现在要吃午饭	wǒ xiànzài yào chī wǔfàn	I am going to have lunch now.		convm-wants-intentions	review	convm-wants-intentions:sections.blocks[4] (key-expressions).items[13]
+CMX-121F2BDD3E59	我要现在吃午饭	wǒ yào xiànzài chī wǔfàn	I intend to have lunch now.		convm-wants-intentions	review	convm-wants-intentions:sections.blocks[4] (key-expressions).items[13]
 CMX-12BF15499731	在这儿	zài zhèr	It is here; located here.	NORTHERN_ERHUA	convm-asking-directions	model_answer,review	convm-asking-directions:sections.blocks[4] (key-expressions).items[3]; convm-asking-directions:sections.practice.questions[1].answer[0]
 CMX-12D2A6DD63BB	你不是美国人吗	nǐ bú shì Měiguó rén ma	Aren't you American?		convm-people-identity	review	convm-people-identity:sections.blocks[4] (key-expressions).items[12]
 CMX-1345AC6AB480	你想去哪儿喝	nǐ xiǎng qù nǎr hē	Where would you like to go for a drink?	NORTHERN_ERHUA	convm-places-to-meet	review	convm-places-to-meet:sections.blocks[4] (key-expressions).items[8]
-CMX-143FCD826472	过一会儿不方便	guò yíhuìr bù fāngbiàn	A little later would not be convenient.	NORTHERN_ERHUA	convm-today-tomorrow-later	review	convm-today-tomorrow-later:sections.blocks[4] (key-expressions).items[13]
+CMX-143FCD826472	过一会儿不好	guò yíhuìr bù hǎo	Later is not a good time.	NORTHERN_ERHUA	convm-today-tomorrow-later	review	convm-today-tomorrow-later:sections.blocks[4] (key-expressions).items[13]
 CMX-14ED3A34C986	可以。你有现金吗？	Kěyǐ. Nǐ yǒu xiànjīn ma?	Yes. Do you have cash?		convm-permission-requests	dialogue	convm-permission-requests:sections.blocks[6] (source-coverage-dialogue).turns[1]
 CMX-1719CC5D682C	学院路在那儿	Xuéyuàn Lù zài nàr	Xueyuan Road is over there.	NORTHERN_ERHUA	convm-asking-directions	model_answer,review	convm-asking-directions:sections.blocks[4] (key-expressions).items[9]; convm-asking-directions:sections.practice.questions[3].answer[0]
 CMX-17357590A919	我会说普通话	wǒ huì shuō Pǔtōnghuà	I can speak Mandarin.		convm-speaking-languages	grammar_example,review	convm-speaking-languages:sections.blocks[2] (grammar-1).example; convm-speaking-languages:sections.blocks[4] (key-expressions).items[11]
@@ -66,7 +65,7 @@ CMX-23D3AA80F803	我不想	wǒ bù xiǎng	I do not want to.		convm-wants-intenti
 CMX-24436ED8A67E	请给我一点茶。	Qǐng gěi wǒ yìdiǎn chá.	Please give me a little tea.		convm-permission-requests	model_answer	convm-permission-requests:sections.practice.questions[2].answer[0]
 CMX-24DC082BDBBB	明天我们在哪儿见面？	Míngtiān wǒmen zài nǎr jiànmiàn?	Where shall we meet tomorrow?	NORTHERN_ERHUA	convm-places-to-meet	dialogue	convm-places-to-meet:sections.blocks[6] (source-coverage-dialogue).turns[0]
 CMX-2509EE802B04	你要不要美金	nǐ yào bu yào měijīn	Do you want US dollars?		convm-choices-alternatives	review	convm-choices-alternatives:sections.blocks[4] (key-expressions).items[10]
-CMX-254A75AEDE95	我现在想吃午饭	wǒ xiànzài xiǎng chī wǔfàn	I would like to have lunch now.		convm-wants-intentions	review	convm-wants-intentions:sections.blocks[4] (key-expressions).items[20]
+CMX-254A75AEDE95	我想现在吃午饭	wǒ xiǎng xiànzài chī wǔfàn	I would like to have lunch now.		convm-wants-intentions	review	convm-wants-intentions:sections.blocks[4] (key-expressions).items[20]
 CMX-255E07F851E1	好，我想喝一点茶。	Hǎo, wǒ xiǎng hē yìdiǎn chá.	Yes, I would like a little tea.		convm-wants-intentions	dialogue	convm-wants-intentions:sections.blocks[1] (model-dialogue).turns[3]
 CMX-26F05F79EB2D	现在四点钟	xiànzài sì diǎn zhōng	It is four o'clock now.		convm-clock-scheduling	review	convm-clock-scheduling:sections.blocks[4] (key-expressions).items[14]
 CMX-271DC9BEDC8C	我想喝茶，可是这里没有茶。	Wǒ xiǎng hē chá, kěshì zhèlǐ méiyǒu chá.	I want tea, but there is none here.		convm-choices-alternatives	dialogue	convm-choices-alternatives:sections.blocks[6] (source-coverage-dialogue).turns[1]
@@ -325,7 +324,7 @@ CMX-B561464BB03C	你不会说英文	nǐ bú huì shuō Yīngwén	You cannot spea
 CMX-B5B00E28125C	现在几点钟	xiànzài jǐ diǎn zhōng	What time is it now?		convm-clock-scheduling	grammar_example,review	convm-clock-scheduling:sections.blocks[2] (grammar-1).example; convm-clock-scheduling:sections.blocks[4] (key-expressions).items[0]
 CMX-B7254D0D3B6C	六加六是多少	Liù jiā liù shì duōshao	What is six plus six?		convm-numbers-arithmetic	dialogue,grammar_example,review	convm-numbers-arithmetic:sections.blocks[1] (model-dialogue).turns[2]; convm-numbers-arithmetic:sections.blocks[2] (grammar-1).example; convm-numbers-arithmetic:sections.blocks[4] (key-expressions).items[1]
 CMX-B81CF36B8312	北京饭店	Běijīng Fàndiàn	Beijing Hotel; hotel name		convm-places-to-meet	review	convm-places-to-meet:sections.blocks[4] (key-expressions).items[15]
-CMX-B8F4416EDA77	我今天不太想跟你一起喝茶	wǒ jīntiān bú tài xiǎng gēn nǐ yìqǐ hē chá	I do not really feel like having tea with you today.		convm-with-someone	review	convm-with-someone:sections.blocks[4] (key-expressions).items[7]
+CMX-B8F4416EDA77	我不想跟你一起喝	wǒ bù xiǎng gēn nǐ yìqǐ hē	I do not want to drink with you.		convm-with-someone	review	convm-with-someone:sections.blocks[4] (key-expressions).items[7]
 CMX-B949FEDABB8E	去你那儿	qù nǐ nàr	Go to your place.	NORTHERN_ERHUA	convm-places-to-meet	review	convm-places-to-meet:sections.blocks[4] (key-expressions).items[11]
 CMX-B9E2B8C1ECA6	你现在想吃东西吗？	Nǐ xiànzài xiǎng chī dōngxi ma?	Do you want something to eat now?		convm-wants-intentions	dialogue	convm-wants-intentions:sections.blocks[6] (source-coverage-dialogue).turns[0]
 CMX-BA166C7BC196	有没有	yǒu méiyǒu	do you have?; is there any?		convm-newspaper-shopping,convm-permission-requests	review	convm-permission-requests:sections.blocks[4] (key-expressions).items[18]; convm-newspaper-shopping:sections.blocks[5] (key-expressions).items[2]
@@ -369,7 +368,7 @@ CMX-C75A8AA6F99E	一杯啤酒	yì bēi píjiǔ	A glass of beer.		convm-food-drin
 CMX-C7804640E093	我想五点钟吃	wǒ xiǎng wǔ diǎn zhōng chī	I want to eat at five o'clock.		convm-clock-scheduling	review	convm-clock-scheduling:sections.blocks[4] (key-expressions).items[13]
 CMX-C7CC93B1FAAA	我不想吃，我想喝一点儿水。	Wǒ bù xiǎng chī, wǒ xiǎng hē yìdiǎnr shuǐ.	I do not want to eat; I would like a little water.	NORTHERN_ERHUA	convm-wants-intentions	dialogue	convm-wants-intentions:sections.blocks[6] (source-coverage-dialogue).turns[1]
 CMX-C858A43C19D2	我们去饭店吧。	Wǒmen qù fàndiàn ba.	Let us go to a restaurant.		convm-with-someone	model_answer	convm-with-someone:sections.practice.questions[3].answer[2]
-CMX-C9042CF1784B	你今天不太想跟我一起喝茶	nǐ jīntiān bú tài xiǎng gēn wǒ yìqǐ hē chá	You do not really feel like having tea with me today.		convm-with-someone	review	convm-with-someone:sections.blocks[4] (key-expressions).items[10]
+CMX-C9042CF1784B	你不想跟我一起喝	nǐ bù xiǎng gēn wǒ yìqǐ hē	You do not want to drink with me.		convm-with-someone	review	convm-with-someone:sections.blocks[4] (key-expressions).items[10]
 CMX-C90A1CDB561D	再见	zàijiàn	Goodbye.		convm-greetings-politeness	review	convm-greetings-politeness:sections.blocks[4] (key-expressions).items[8]
 CMX-C930571F1513	想要	xiǎng yào	would like; want		convm-food-drinks	review	convm-food-drinks:sections.blocks[4] (key-expressions).items[21]
 CMX-C9B87F516A38	五。	Wǔ.	Five.		convm-numbers-arithmetic	dialogue,model_answer	convm-numbers-arithmetic:sections.blocks[1] (model-dialogue).turns[1]; convm-numbers-arithmetic:sections.practice.questions[0].answer[0]

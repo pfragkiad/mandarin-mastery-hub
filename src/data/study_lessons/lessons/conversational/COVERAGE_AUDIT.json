@@ -1,6 +1,6 @@
 {
-  "release": "conversational-coverage/1.1.4",
-  "core_release": "3.3.2",
+  "release": "conversational-coverage/1.1.5",
+  "core_release": "3.4.0",
   "taxonomy": "hsk-topics/2.0.0",
   "lesson_count": 17,
   "existing_lesson_ids_preserved": 15,
@@ -321,7 +321,7 @@
     }
   },
   "coverage_claim": "Communicative functions plus vetted expressions; not literal reproduction of all timestamped drills or a certified audio-level transcription.",
-  "linguistic_review": "See the v1.1.4 linguistic audit and the corrected source crosswalk for one exact-to-equivalent change.",
+  "linguistic_review": "Five original transcript expressions restored with optional visible explanatory notes; no longer replaced by more neutral variants.",
   "residual_literal_dispositions": [
     {
       "source_expression": "一次",
@@ -607,8 +607,8 @@
   },
   "source_crosswalk_counts": {
     "IN_CONTEXT": 103,
-    "FUNCTIONAL_VARIANT": 42,
-    "EXACT_ENTRY": 149,
+    "FUNCTIONAL_VARIANT": 41,
+    "EXACT_ENTRY": 150,
     "NARRATION_NOT_TARGET": 2
   },
   "expression_review_count": 441,

@@ -1,0 +1,18 @@
+{
+  "reason": "Owner-replaced source uploads and removed historical upload note; preserved in Git history.",
+  "historyCommit": "1437aaffc16f4a7ff4e750db3dd4471e7a630692",
+  "removedFiles": [
+    {
+      "path": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.2_taxonomy-v2.0.0.zip",
+      "gitBlobSha256": "522b94b431e069c536c91acc9f596fca3c23bbfcc43dc6195d7fdbb7edd74bfa"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.2_taxonomy-v2.0.0_coverage-v1.1.4.zip",
+      "gitBlobSha256": "3ba35311ce9d208e3649e8d3645fee15b542eb0e0855d16d6b46132cfe89a560"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level1_Catalog_Reference_Repair_Report_v3.3.0_vocab-v1.7.1_rev2.md",
+      "gitBlobSha256": "0c7176947bc439473be8693d19ff0aeb6d3efc4eb563cce2a0e87fdb960eb0a3"
+    }
+  ]
+}

@@ -57,14 +57,16 @@ The listener can answer 想 (xiǎng) or 不想 (bù xiǎng).
 - 我想吃一点东西 (wǒ xiǎng chī yìdiǎn dōngxi) — I would like something to eat.
 - 我不想现在吃 (wǒ bù xiǎng xiànzài chī) — I do not want to eat now.
 - 我想现在喝 (wǒ xiǎng xiànzài hē) — I would like to drink now.
-- 我现在要吃午饭 (wǒ xiànzài yào chī wǔfàn) — I am going to have lunch now.
+- 我要现在吃午饭 (wǒ yào xiànzài chī wǔfàn) — I intend to have lunch now.
+  - **Usage note · Emphasis** (`CMX-121F2BDD3E59`): Placing 现在 (xiànzài) after 要 (yào) gives extra emphasis to eating now rather than later. For a neutral statement, 我现在要吃午饭 (wǒ xiànzài yào chī wǔfàn) is more common.
 - 我不要吃 (wǒ bú yào chī) — I do not want to eat.
 - 你想什么时候吃 (nǐ xiǎng shénme shíhou chī) — When would you like to eat?
 - 一点儿 (yìdiǎnr) — a little (optional -r pronunciation)  [Northern-style -r]
 - 可是 (kěshì) — but; however
 - 你想做什么 (nǐ xiǎng zuò shénme) — what would you like to do?
 - 你想喝一点东西吗 (nǐ xiǎng hē yìdiǎn dōngxi ma) — would you like something to drink?
-- 我现在想吃午饭 (wǒ xiànzài xiǎng chī wǔfàn) — I would like to have lunch now.
+- 我想现在吃午饭 (wǒ xiǎng xiànzài chī wǔfàn) — I would like to have lunch now.
+  - **Usage note · Emphasis** (`CMX-254A75AEDE95`): Placing 现在 (xiànzài) after 想 (xiǎng) highlights the desired time: now rather than later. The more neutral order is 我现在想吃午饭 (wǒ xiànzài xiǎng chī wǔfàn).
 
 ## Study guidance
 
