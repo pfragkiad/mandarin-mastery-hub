@@ -111,7 +111,7 @@ function useLessonFold(id: string, fallback = false): [boolean, (open: boolean) 
  *  React also delivers a nested unit's toggle to this handler, so only this drawer's own
  *  toggle (target === currentTarget) is stored — a unit's arrow never folds the course.
  *  `tools` sits at the end of the note row (e.g. the course's Reset progress). */
-function LessonFold({ id, title, shortTitle, note, info, aside, tools, children }: { id: string; title: string; shortTitle?: string; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
+function LessonFold({ id, title, shortTitle, note, info, aside, tools, children }: { id: string; title: string; shortTitle?: string | undefined; note?: string; info?: string; aside?: React.ReactNode; tools?: React.ReactNode; children: React.ReactNode }) {
   const [open, setOpen] = useLessonFold(id);
   return <details className="lessons-group lessons-course lessons-fold" open={open} onToggle={e => { if (e.target === e.currentTarget) setOpen(e.currentTarget.open); }}>
     <summary><FoldChevron/><FoldTitle id={`course-${id}`} title={title} shortTitle={shortTitle}/>{aside}</summary>
@@ -136,7 +136,7 @@ function FoldChevron() {
  *  the heading stays on one line; the full title is kept for screen readers and wide
  *  screens. The one-line fit measures whichever span is visible (the hidden one has no
  *  width in the clone), so crossing the narrow threshold re-fits automatically. */
-function FoldTitle({ id, title, shortTitle }: { id: string; title: string; shortTitle?: string }) {
+function FoldTitle({ id, title, shortTitle }: { id: string; title: string; shortTitle?: string | undefined }) {
   const ref = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(ref, title, { minSize: 16, onlyIfFits: true });
   return <h2 ref={ref} id={id}>
