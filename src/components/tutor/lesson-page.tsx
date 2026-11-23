@@ -768,9 +768,11 @@ function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: 
   const { items } = useWorkspace();
   const matches = items.filter(w => w.hanzi === hanzi);
   const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
-  return <div className="lesson-card lesson-vocab">
-    {hsk && <div className="lesson-card-top"><span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span></div>}
-    <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning}/>
+  // Same layout as the word-bank/Vocabulary grid cards: a header row that always reserves its
+  // height (empty for composite expressions), then the hanzi box with pinyin and translation to its right.
+  return <div className="lesson-card lesson-vocab lesson-bank-word">
+    <div className="lesson-bank-top">{hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>}</div>
+    <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
   </div>;
 }
 
