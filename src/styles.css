@@ -4592,6 +4592,8 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lessons-level-fold > summary { --fold-title-size: 19px; }
 .lessons-fold > summary::-webkit-details-marker, .lessons-level-fold > summary::-webkit-details-marker { display: none; }
 .lessons-fold > summary > h2, .lessons-level-fold > summary > h3 { margin: 0; min-width: 0; font-size: var(--fold-title-size); line-height: var(--fold-title-lh); }
+/* Narrow drawers swap a course's full title for its recorded short title (one line). */
+.fold-title-short { display: none; }
 .lessons-fold-chevron { display: flex; align-items: center; height: calc(var(--fold-title-size) * var(--fold-title-lh)); color: var(--foreground); }
 .lessons-fold-chevron svg { width: 20px; height: 20px; transition: transform .15s; transform: rotate(-90deg); }
 .lessons-level-fold > summary .lessons-fold-chevron svg { width: 18px; height: 18px; }
@@ -4606,6 +4608,8 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
   .lessons-fold > summary { --fold-title-size: 19px; }
   .lessons-level-fold > summary { --fold-title-size: 17px; }
   .lessons-fold > summary > .lesson-course-progress, .lessons-level-fold > summary > .lesson-course-progress { grid-column: 1 / -1; width: 100%; align-items: stretch; }
+  .lessons-fold > summary .fold-title-short { display: inline; }
+  .lessons-fold > summary h2:has(.fold-title-short) .fold-title-full { display: none; }
 }
 
 /* Lesson prose: an identified word (words-first) rings as one unit on hover. */

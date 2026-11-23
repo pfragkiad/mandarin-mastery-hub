@@ -36,7 +36,15 @@ export type CoursePlacement = {
 };
 export type CourseUnit = { id: string; title: string; sequence: number; placements: CoursePlacement[] };
 export type CourseSection = { id: string; title: string; sequence: number; level: number | null; description: string; units: CourseUnit[] };
-export type Course = { id: string; title: string; kind: string; edition: string; status: string; description: string; sections: CourseSection[] };
+export type Course = { id: string; title: string; shortTitle?: string; kind: string; edition: string; status: string; description: string; sections: CourseSection[] };
+
+/** Short course titles for narrow Lessons headings (owner's choice): the full manifest
+ *  title stays everywhere else; only the course drawer's heading swaps to this on phones.
+ *  Presentation-only — the manifests keep their recorded titles untouched. */
+const COURSE_SHORT_TITLES: Record<string, string> = {
+  'hsk3-2025': 'HSK 3.0 · Levels 1–2',
+  'conversational-mandarin': 'Conversational Mandarin',
+};
 
 type RawPlacement = { placement_id?: string; lesson_id?: string; sequence?: number; role?: string; prerequisite_lesson_ids?: string[]; introduced_syllabus_entry_ids?: number[]; reviewed_syllabus_entry_ids?: number[] };
 type RawUnit = { unit_id?: string; title?: string; sequence?: number; placements?: RawPlacement[] };
@@ -64,7 +72,8 @@ export function buildCourse(raw: RawCurriculum, find: (id: string) => LessonSumm
       }).sort(bySequence),
     })).filter(u => u.placements.length).sort(bySequence),
   })).filter(s => s.units.length).sort(bySequence);
-  return { id: raw.curriculum_id, title: raw.title ?? raw.curriculum_id, kind: raw.kind ?? '', edition: raw.edition ?? '', status: raw.status ?? '', description: raw.description ?? '', sections };
+  const shortTitle = COURSE_SHORT_TITLES[raw.curriculum_id];
+  return { id: raw.curriculum_id, title: raw.title ?? raw.curriculum_id, ...(shortTitle ? { shortTitle } : {}), kind: raw.kind ?? '', edition: raw.edition ?? '', status: raw.status ?? '', description: raw.description ?? '', sections };
 }
 
 /** Every placement of a course section in learning order (units, then placements). */
