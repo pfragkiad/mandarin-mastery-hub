@@ -314,7 +314,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
       </div>)}
     </div> });
     if (topic.related.length) sections.push({ id: 'related', title: 'Related words', hint: count(topic.related.length, 'word'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {topic.related.map(item => <div key={item.id} className="lesson-card lesson-vocab"><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={recordFor(item)}/></div>)}
+      {topic.related.map(item => { const record = recordFor(item); return <div key={item.id} className="lesson-card lesson-vocab lesson-bank-word"><div className="lesson-bank-top">{record && <WordIdentityPills word={record}/>}</div><LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} record={record} tile inkClass={wordInk(record ?? { hanzi: item.hanzi })}/></div>; })}
     </LessonFitGrid> });
   }
 
@@ -777,9 +777,9 @@ function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: 
 }
 
 function VocabCard({ item }: { item: LessonVocabItem }) {
-  return <div className="lesson-card lesson-vocab">
+  return <div className="lesson-card lesson-vocab lesson-bank-word">
     <div className="lesson-card-top"><span className="lesson-register">{item.part_of_speech}</span><span className={`lesson-priority is-${item.priority.toLowerCase()}`} title={`Editorial priority ${item.priority}`}>{item.priority}</span></div>
-    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>
+    <LessonWord hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} tile/>
     {item.usage_note && <p className="lesson-muted"><LessonText text={item.usage_note}/></p>}
     <p className="lesson-footnote">{[item.register, plain(item.lexical_status), item.hsk_level ? `HSK ${item.hsk_level}` : ''].filter(Boolean).join(' · ')}</p>
   </div>;
