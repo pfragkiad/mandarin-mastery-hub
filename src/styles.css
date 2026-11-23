@@ -4602,8 +4602,9 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lessons-fold[open] > summary { margin-bottom: .75rem; }
 .lessons-fold > summary:hover h2, .lessons-level-fold > summary:hover > h3 { color: var(--primary); }
 .lessons-fold > summary:hover .lessons-fold-chevron, .lessons-level-fold > summary:hover .lessons-fold-chevron { color: var(--primary); }
-/* A level (HSK Level 1, Level 2…) inside a multi-level course: a divider above. */
-.lessons-level-fold { padding-top: 14px; border-top: 1px solid var(--border); }
+/* A level (HSK Level 1, Level 2…) inside a multi-level course: spacing only — no divider,
+   since a thin line here reads as a second progress bar. */
+.lessons-level-fold { padding-top: 14px; }
 @container (max-width: 560px) {
   .lessons-fold > summary { --fold-title-size: 19px; }
   .lessons-level-fold > summary { --fold-title-size: 17px; }
