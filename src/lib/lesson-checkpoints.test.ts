@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, toLessonProgress } from './lesson-checkpoints';
 
 // Core v3.3 progress rules: completion counts only required checkpoints, optional ones are
@@ -48,7 +48,7 @@ describe('lesson checkpoints', () => {
 describe('project lessons', () => {
   const root = join(process.cwd(), 'src/data/study_lessons/lessons');
   const files: string[] = [];
-  const walk = (dir: string) => { for (const name of readdirSync(dir)) { const p = join(dir, name); if (statSync(p).isDirectory()) { if (name !== 'legacy') walk(p); } else if (/_LESSON_.*\.json$/.test(name) && name === `${dir.split('/').pop()}.json`) files.push(p); } };
+  const walk = (dir: string) => { for (const name of readdirSync(dir)) { const p = join(dir, name); if (statSync(p).isDirectory()) { if (name !== 'legacy') walk(p); } else if (/_LESSON_.*\.json$/.test(name) && name === `${basename(dir)}.json`) files.push(p); } };
   walk(root);
   const lessons = files.map(f => JSON.parse(readFileSync(f, 'utf8')) as { lesson_id: string; estimated_minutes?: number | null; progress?: unknown });
   const cards = (JSON.parse(readFileSync(join(root, 'lesson-cards.json'), 'utf8')) as { lessons: Record<string, { required: number; optional: number; estimated_minutes: number | null }> }).lessons;
