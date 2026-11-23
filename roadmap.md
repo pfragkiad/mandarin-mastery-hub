@@ -156,3 +156,4 @@
 - [x] Grid hidden faces blur instead of blank; click a card to reveal
 - [x] Lessons: blurred text click-to-reveal (now)
 - [x] Character hints switch in Glyphs/Vocabulary grids (hover ring + quick card on card hanzi)
+- [x] Grid hidden hanzi: much stronger blur so large simple characters are truly hidden

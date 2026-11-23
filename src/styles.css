@@ -1658,6 +1658,9 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .catalog-entry-meaning,
 :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes,
 :is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { filter: blur(6px); pointer-events: none; user-select: none; transition: filter .15s; }
+/* Hanzi are drawn far larger than text lines, so 6px still left simple characters (人, 了, 不)
+   readable: hidden hanzi get a much stronger blur and a slight fade (owner request). */
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes { filter: blur(16px) opacity(.75); }
 /* Peeked card in a Hide mode: its hidden faces clear again, marked by a subtle outline. */
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .catalog-entry-meaning,
 :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .usage-strokes,
@@ -3882,9 +3885,13 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hints-toggle > span { display: flex; flex-direction: column; gap: 1px; }
 .lesson-hints-toggle strong { font-size: 13px; font-weight: 600; }
 .lesson-hints-toggle small { font-size: 12px; color: var(--muted-foreground); line-height: 1.35; }
-/* Toolbar size (grids' tools row): one line, as tall as the neighbouring outline buttons. */
-.lesson-hints-toggle.is-toolbar { flex: none; margin-top: 0; gap: 8px; height: 32px; padding: 0 12px 0 8px; border: 1px solid var(--border); border-radius: var(--radius-md, 6px); }
-.lesson-hints-toggle.is-toolbar strong { font-size: 13px; font-weight: 500; white-space: nowrap; }
+/* Toolbar size (grids' tools row): a plain switch + label on one line, no frame of its own (a
+   switch is not a button), vertically centred on the row and using the row's button text size
+   (Compact 11px, Comfortable --ui-control-size) so it reads as part of the same toolbar. */
+.lesson-hints-toggle.is-toolbar { flex: none; margin-top: 0; gap: 8px; height: 32px; padding: 0 4px; }
+.lesson-hints-toggle.is-toolbar strong { font-size: 11px; font-weight: 500; white-space: nowrap; }
+html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar { height: 40px; }
+html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { font-size: var(--ui-control-size); }
 .library-study-section .lesson-hints-toggle { margin-top: 14px; }
 /* The quick card: a light, rounded floating card on the solid card surface (text behind never shows through). */
 .lesson-hint-card.lesson-hint-card { width: min(320px, calc(100vw - 24px)); padding: 0; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%); background: var(--card); box-shadow: var(--shadow-popover); outline: none; }
@@ -4771,8 +4778,16 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .face-toggle[aria-disabled='true'] { cursor: not-allowed; }
 .face-toggle[aria-disabled='true']:hover { color: var(--foreground); }
 .face-toggle-mark { font-size: 12px; color: inherit; opacity: .8; }
-.face-toggles.is-toolbar { flex: none; height: 32px; border-radius: var(--radius-md, 6px); }
-.face-toggles.is-toolbar .face-toggle { flex: none; padding: 0 12px; font-size: 13px; }
+/* Toolbar size: the same frame as the row's outline buttons (Play, Remember revealed cards) —
+   height, input-coloured border, background and text size per display size. The generic
+   comfortable "toolbar buttons are ≥40px" rule must not reach the segments: they would outgrow
+   the clipped frame and sit low, so the segments fill the frame's height exactly instead. */
+.face-toggles.is-toolbar { flex: none; height: 32px; border-color: var(--input); border-radius: var(--radius-md, 6px); background: var(--background); box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / .05)); }
+.face-toggles.is-toolbar .face-toggle + .face-toggle { border-left-color: var(--input); }
+html[data-display-size] .face-toggles.is-toolbar > .face-toggle { flex: none; height: 100%; min-height: 0; padding: 0 12px; font-size: 11px; line-height: 1; }
+.face-toggles.is-toolbar .face-toggle-mark { font-size: 1em; }
+html[data-display-size='comfortable'] .face-toggles.is-toolbar { height: 40px; }
+html[data-display-size='comfortable'] .face-toggles.is-toolbar > .face-toggle { padding: 0 14px; gap: 6px; font-size: var(--ui-control-size); }
 
 /* Quiet resets at natural moments: "Start over" is plain text; "Practice this lesson again"
    sits below the main Next action as a secondary outline button. */
