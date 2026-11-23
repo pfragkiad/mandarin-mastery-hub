@@ -151,3 +151,4 @@
 - [x] Audit lesson pinyin vs word-card readings (spacing/other differences) that could block recordings
 - [x] Pattern template lines: speaker beside pinyin (owner: read as written)
 - [x] Pattern template lines: character hints / clickable words like other lesson text
+- [x] Lesson side panel stays on narrower pages (switch when reading column < ~440px)

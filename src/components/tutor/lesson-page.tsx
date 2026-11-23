@@ -44,7 +44,7 @@ import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-h
  * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
- * Narrow layout (the page's own width ≤ 760px, the same threshold as its container
+ * Narrow layout (the page's own width ≤ 680px, the same threshold as its container
  * queries — a layout condition, never a device): the mobile prototype's design in the
  * site's styling. Sections become collapsible cards (the first open), the section list
  * becomes a sticky row of pills that opens and scrolls to its section, and the Pinyin /
@@ -91,8 +91,9 @@ const SECTION_KEYS: Record<string, string> = {
   mistakes: 'mistakes', historical: 'historical', extensions: 'more',
 };
 
-/** Matches the `@container lesson-page (max-width: 760px)` rules in styles.css. */
-const NARROW_MAX = 760;
+/** Matches the `@container lesson-page (max-width: 680px)` rules in styles.css. Chosen so the
+ *  side panel stays while the reading column beside it keeps roughly 440px or more. */
+const NARROW_MAX = 680;
 const count = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 /** True while the element's own content width is at most NARROW_MAX (ResizeObserver; false where unavailable). */
