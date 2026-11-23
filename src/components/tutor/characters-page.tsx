@@ -1,4 +1,5 @@
 import { MeaningText } from './meaning-text';
+import { revealToFaceView } from '@/lib/face-view';
 import { cardMnemonic, mnemonicFor } from '@/lib/mnemonics';
 import { MnemonicPreview, TileMnemonicButton, type MnemonicChoice, type MnemonicFacts, type MnemonicFamily } from './mnemonic';
 import { pronunciationAvailable, ttsAvailable } from '@/lib/audio';
@@ -452,7 +453,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // The button row gets its own, independent attempt: a smaller button font before Recall and
   // the bookmark drop to a second line.
   useCardFooterFit(footerRef, [entry.id, entry.hanzi, Boolean(onDetails), comfortable, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
-  const hanziHidden = !revealed && (preferences.cardReveal === 'hanzi' || preferences.cardReveal === 'hanzi-pinyin');
+  const hanziHidden = !revealed && !revealToFaceView(preferences.cardReveal).hanzi;
   // The popup repeats this card's pinyin, speaker and translation (MnemonicFacts).
   const mnemonicFacts = { pinyin: fallback ? fallback.pinyin : info.reading || undefined, meaning: hasMeaning ? meaningText : undefined, ...(audioAvailable && spoken ? { onListen: async () => setAudioError(await playCharacter(spoken, preferences.slow, reading)), listenLabel: `Listen to ${spoken}` } : {}) };
   const mnemonicButton = mnemonic && !hanziHidden ? <TileMnemonicButton mnemonic={mnemonic} facts={mnemonicFacts} family={family ? radicalMnemonicFamily(entry, preferences.slow, setAudioError, { glyph: entry.hanzi, facts: mnemonicFacts }) : undefined}/> : null;
@@ -468,10 +469,10 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // `reveal-hide-*` CSS cannot reach it: mirror the active Hide mode here. A card
   // the learner has peeked (`revealed`) shows everything, matching the card itself.
   // Hiding the translation suppresses the hint entirely, since the hint is the translation.
-  const hiddenFace = revealed ? 'all' : preferences.cardReveal;
-  const hideMeaning = hiddenFace === 'meaning' || hiddenFace === 'pinyin-meaning';
-  const hideHanzi = hiddenFace === 'hanzi' || hiddenFace === 'hanzi-pinyin';
-  const hidePinyin = hiddenFace === 'pinyin' || hiddenFace === 'pinyin-meaning' || hiddenFace === 'hanzi-pinyin';
+  const shownFaces = revealToFaceView(revealed ? 'all' : preferences.cardReveal);
+  const hideMeaning = !shownFaces.translations;
+  const hideHanzi = !shownFaces.hanzi;
+  const hidePinyin = !shownFaces.pinyin;
   // `is-traditional` marks traditional-script records so hover/selected/reveal frames tint purple (see styles.css `.word-card.is-traditional`).
   // Every other glyph card takes one identity ink (styles.css `.card-ink-*`) for its hanzi, hover/selected
   // frame and hovered translation: gold for sourced Kangxi radicals (record-ink.ts glyphRecordInk, so a Character or Component

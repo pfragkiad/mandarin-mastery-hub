@@ -1652,16 +1652,16 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .card-reveal-toggle .selected { background: color-mix(in srgb, var(--primary) 14%, transparent); color: var(--primary); }
 .catalog-tools-row .card-visibility-menu { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
 .card-visibility-menu span { min-width: 0; text-align: left; overflow-wrap: anywhere; }
-:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .catalog-entry-meaning { visibility: hidden; }
-/* Hanzi hiding covers both "Hide hanzi" and "Show only translation" (hanzi + pinyin away). */
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .tile-hanzi-row { visibility: hidden; }
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .usage-strokes { visibility: hidden; }
-/* Pronunciation hiding covers "Hide pronunciation", "Show only Hanzi" and "Show only translation". */
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { visibility: hidden; }
-/* Peeked card in a Hide mode: its hidden face shows again, marked by a subtle dashed outline. */
-:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .catalog-entry-meaning,
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .usage-strokes,
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { visibility: visible; }
+/* Hidden faces on grid cards blur in place (owner's choice, like lessons), so card sizes never
+   change between modes. A blurred face takes no pointer or selection, so its speaker can't play
+   and a click falls through to the card, which reveals it (card-peek.ts). */
+:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .catalog-entry-meaning,
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes,
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { filter: blur(6px); pointer-events: none; user-select: none; transition: filter .15s; }
+/* Peeked card in a Hide mode: its hidden faces clear again, marked by a subtle outline. */
+:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .catalog-entry-meaning,
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .usage-strokes,
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { filter: none; pointer-events: auto; user-select: auto; }
 /* Compact grid cards keep rank · strokes in the top label row only: their footer copy is
    hidden (below), and a child set to visibility:visible would poke through its hidden
    parent, so the peeked-card unhide above must never reach the footer. */
@@ -2285,6 +2285,9 @@ html[data-display-size='comfortable'] {
 .library-study-section > button, .library-study-section > div > button { justify-content: flex-start; width: 100%; min-height: 40px; white-space: normal; text-align: left; }
 .library-study-section > a { justify-content: flex-start; width: 100%; min-height: 40px; }
 .library-study-section button[aria-pressed='true'] { color: var(--primary); background: var(--secondary); }
+/* The shared Hanzi · Pinyin · EN row keeps its own look in the Study sheet, at touch size. */
+.library-study-section .face-toggles > .face-toggle { justify-content: center; width: auto; min-height: 42px; font-size: 14px; text-align: center; }
+.library-study-section .face-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
 .library-remember-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-size: var(--ui-label-size, 13px); }
 .mobile-state-chip { display: inline-flex; align-items: center; gap: 5px; color: var(--primary); font-size: 12px; min-width: 0; white-space: normal; }
 .mobile-state-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
@@ -4003,15 +4006,15 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-provenance > summary { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); }
 .lesson-provenance-report { margin-bottom: 12px; display: grid; gap: 3px; font-size: 13px; }
 .lesson-missing { margin-top: 24px; display: grid; gap: 12px; justify-items: start; }
-/* "Hide pinyin" study switch: readings blur until hovered or focused (speakers stay usable). */
-.lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child { filter: blur(5px); transition: filter .15s; }
-.lesson-hide-pinyin .pinyin:not(.sentence-pinyin):hover, .lesson-hide-pinyin .sentence-pinyin > span:first-child:hover { filter: none; }
-/* "Hide hanzi": recorded Chinese lines and terms blur until hovered or focused. */
-.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi) { filter: blur(6px); transition: filter .15s; }
-.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi):is(:hover, :focus-within) { filter: none; }
-/* "Hide translations": English renderings blur the same way until hovered or focused. */
-.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); transition: filter .15s; }
-.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation):is(:hover, :focus-within) { filter: none; }
+/* Lesson Hanzi · Pinyin · EN buttons (owner's choice: click to reveal, no hover peek). A hidden
+   face blurs; a click on a blurred piece clears just that piece (lesson-reveal.ts marks it with
+   data-lesson-revealed), and keyboard focus inside a piece clears it too. Speakers stay usable.
+   Selectors match lesson-reveal.ts FACE_SELECTORS. */
+.lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child,
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi),
+.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); cursor: pointer; transition: filter .15s; }
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi) { filter: blur(6px); }
+.lesson-page.lesson-page :is(.pinyin, .sentence-pinyin > span, .lesson-hanzi, .sentence-hanzi, .sentence-meaning, .lesson-term-meaning, .lesson-translation):is([data-lesson-revealed], :has(:focus-visible)) { filter: none; cursor: auto; }
 @container lesson-page (max-width: 680px) {
   .lesson-toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; }
   .lesson-toc .eyebrow { flex-basis: 100%; margin-bottom: 2px; }
@@ -4754,13 +4757,18 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-confirm-title { margin: 0; font-weight: 600; color: var(--foreground); }
 .lesson-confirm-copy { margin: 0; line-height: 1.4; }
 .lesson-confirm-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
-/* One row of display toggles (on = shown): 汉 Hanzi · pīn Pinyin · EN. */
-.lesson-study-toggles { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.lesson-study-toggle { flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; padding: 7px 4px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 12px; cursor: pointer; transition: color .15s, background .15s; }
-.lesson-study-toggle + .lesson-study-toggle { border-left: 1px solid var(--border); }
-.lesson-study-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
-.lesson-study-toggle:hover, .lesson-study-toggle:focus-visible { color: var(--primary); outline: none; }
-.lesson-study-mark { font-size: 12px; color: inherit; opacity: .8; }
+/* One row of display toggles (on = shown): 汉 Hanzi · pīn Pinyin · EN — face-toggles.tsx, shared by
+   lessons and the Glyphs/Vocabulary grids. The toolbar size matches the grid's outline buttons. */
+.face-toggles { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.face-toggle { flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; padding: 7px 4px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 12px; white-space: nowrap; cursor: pointer; transition: color .15s, background .15s; }
+.face-toggle + .face-toggle { border-left: 1px solid var(--border); }
+.face-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
+.face-toggle:hover, .face-toggle:focus-visible { color: var(--primary); outline: none; }
+.face-toggle[aria-disabled='true'] { cursor: not-allowed; }
+.face-toggle[aria-disabled='true']:hover { color: var(--foreground); }
+.face-toggle-mark { font-size: 12px; color: inherit; opacity: .8; }
+.face-toggles.is-toolbar { flex: none; height: 32px; border-radius: var(--radius-md, 6px); }
+.face-toggles.is-toolbar .face-toggle { flex: none; padding: 0 12px; font-size: 13px; }
 
 /* Quiet resets at natural moments: "Start over" is plain text; "Practice this lesson again"
    sits below the main Next action as a secondary outline button. */
@@ -4795,6 +4803,9 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-sheet-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; font-size: 15px; cursor: pointer; }
 button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--border); background: transparent; font: inherit; font-size: 15px; text-align: left; }
 .lesson-sheet-row.is-destructive { color: var(--destructive); }
+.lesson-sheet-row.is-faces { cursor: default; }
+.lesson-sheet-row.is-faces .face-toggles { flex: 1; }
+.lesson-sheet-row.is-faces .face-toggle { min-height: 42px; font-size: 14px; }
 .lesson-sheet-row.is-destructive:disabled { color: var(--muted-foreground); opacity: .6; cursor: default; }
 .lesson-sheet-row span { display: inline-flex; align-items: center; gap: 8px; }
 .lesson-sheet-row svg { width: 15px; height: 15px; }

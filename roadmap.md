@@ -152,3 +152,7 @@
 - [x] Pattern template lines: speaker beside pinyin (owner: read as written)
 - [x] Pattern template lines: character hints / clickable words like other lesson text
 - [x] Lesson side panel stays on narrower pages (switch when reading column < ~440px)
+- [ ] Shared Hanzi·Pinyin·EN toggles in lessons and Glyphs/Vocabulary grids (separate saved choices)
+- [ ] Grid hidden faces blur instead of blank; click a card to reveal
+- [ ] Lessons: blurred text click-to-reveal (now)
+- [ ] Character hints switch in Glyphs/Vocabulary grids (hover ring + quick card on card hanzi)

@@ -9,12 +9,12 @@ vi.mock('@tanstack/react-router', () => ({
   useNavigate: () => router.navigate,
   Link: ({ children, className, to }: { children?: React.ReactNode; className?: string; to?: string }) => <a className={className} data-to={to}>{children}</a>,
 }));
-const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, items: [] as unknown[] }));
+const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, lessonFaces: undefined as { hanzi: boolean; pinyin: boolean; translations: boolean } | undefined, items: [] as unknown[] }));
 vi.mock('./workspace', () => ({
-  useWorkspace: () => ({ items: prefs.items, saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
+  useWorkspace: () => ({ items: prefs.items, saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints, lessonFaces: prefs.lessonFaces }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
 }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => true }));
-afterEach(() => { cleanup(); prefs.lessonHints = undefined; prefs.items = []; });
+afterEach(() => { cleanup(); prefs.lessonHints = undefined; prefs.lessonFaces = undefined; prefs.items = []; });
 
 describe('LessonPage', () => {
   it.each(lessonSummaries.map(s => s.id))('renders lesson %s from its JSON', async id => {
@@ -68,6 +68,30 @@ describe('LessonPage', () => {
       expect(card.querySelector('.lesson-pattern-line')).toBeNull();
       expect(card.querySelector('.lesson-teaching')).toBeNull();
     });
+  });
+
+  it('a hidden face blurs, and a click reveals only that piece without opening its hint card', async () => {
+    prefs.lessonFaces = { hanzi: false, pinyin: true, translations: true };
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(container.querySelector('.lesson-page')!.classList.contains('lesson-hide-hanzi')).toBe(true);
+    const [first, second] = Array.from(container.querySelectorAll('.lesson-pattern-line .lesson-hanzi'));
+    const char = first!.querySelector('[data-lesson-hint]')!;
+    fireEvent.click(char);
+    expect(first!.hasAttribute('data-lesson-revealed')).toBe(true);
+    expect(second!.hasAttribute('data-lesson-revealed')).toBe(false);
+    expect(document.querySelector('.lesson-hint-card')).toBeNull();
+  });
+
+  it('a revealed piece blurs back when its non-interactive part is clicked', async () => {
+    prefs.lessonFaces = { hanzi: true, pinyin: false, translations: true };
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const pinyin = container.querySelector('.lesson-pattern-line .pinyin')!;
+    fireEvent.click(pinyin);
+    expect(pinyin.hasAttribute('data-lesson-revealed')).toBe(true);
+    fireEvent.click(pinyin);
+    expect(pinyin.hasAttribute('data-lesson-revealed')).toBe(false);
   });
 
   it('every pattern template line has a speaker beside its pinyin', async () => {

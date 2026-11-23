@@ -1,8 +1,10 @@
 import { wordHskPill } from './word-identity-pills';
 import { LessonFitGrid } from './lesson-fit-grid';
-import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type MouseEvent, type ReactNode, type RefObject } from 'react';
 import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
 import { toast } from 'sonner';
+import { restoredFaceView } from '@/lib/face-view';
+import { blurredPieceAt, REVEALED_ATTR } from '@/lib/lesson-reveal';
 import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
 import { ResetProgressButton } from './reset-progress-button';
@@ -39,8 +41,10 @@ import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-h
  * topic lesson; the headword box appears only when a headword is recorded).
  *
  * Inputs: `lesson` — the loaded document; `priority` / `onPriority` — the URL-backed
- * vocabulary priority filter (A/B/C or all). Local state: the "Hide hanzi", "Hide pinyin" and "Hide translations" study switches
- * and each practice card's revealed answer (both reset when the page is left). The
+ * vocabulary priority filter (A/B/C or all). The Hanzi · Pinyin · EN buttons (shared FaceToggles)
+ * are the remembered `lessonFaces` preference, apart from the grids' own; hidden pieces blur and
+ * clear one at a time on click (revealClick). Local state: each practice card's revealed answer
+ * (reset when the page is left). The
  * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
@@ -191,13 +195,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (position) { setLessonFold(position.course.id, true); setLessonFold(levelFoldId(position.course.id, position.section.id), true); void navigate({ to: '/lessons' }); }
     else void navigate({ to: '/lessons', search: summary.primaryCategory ? { view: 'topic', category: summary.primaryCategory.id } : { view: 'topic' } });
   };
-  const [hidePinyin, setHidePinyin] = useState(false);
-  // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
-  // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
-  const [hideTranslations, setHideTranslations] = useState(false);
-  // "Hide hanzi": blurs recorded Chinese lines and terms (not hanzi quoted inside English prose).
-  const [hideHanzi, setHideHanzi] = useState(false);
   const { preferences, setPreferences, items } = useWorkspace();
+  // Hanzi · Pinyin · EN (shared FaceToggles), remembered as the lesson's own choice, apart from
+  // the grids' Hide setting. Hidden faces blur until hovered or focused: "translations" covers
+  // English renderings of Chinese (sentence translations, word/term meanings) while instructions
+  // and explanations stay readable; "hanzi" covers recorded Chinese lines and terms, not hanzi
+  // quoted inside English prose.
+  const faces = restoredFaceView(preferences.lessonFaces);
+  const hidePinyin = !faces.pinyin, hideTranslations = !faces.translations, hideHanzi = !faces.hanzi;
   const topic = lesson.topic;
   // Exact Vocabulary records for this topic lesson's words (HSK entry number + headword).
   const recordFor = (item: TopicVocabItem): Word | null => syllabusEntryFor(item, items.flatMap(w => w.entry ? [{ id: w.id, simplified: w.entry.simplified, entryKind: w.entry.entryKind, hskVersion: w.entry.hskVersion, hsk_index: w.entry.hsk_index, word: w }] : []))?.word ?? null;
@@ -513,8 +518,28 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     setRound(r => r + 1);
     undoToast(`“${activeSection.title}” reset`, snapshot);
   };
-  const studyView: StudyView = { hanzi: !hideHanzi, pinyin: !hidePinyin, translations: !hideTranslations };
-  const setStudyView = (next: StudyView) => { setHideHanzi(!next.hanzi); setHidePinyin(!next.pinyin); setHideTranslations(!next.translations); };
+  const studyView: StudyView = faces;
+  const setStudyView = (next: StudyView) => {
+    // A new choice starts clean: pieces revealed under the previous one blur again.
+    pageRef.current?.querySelectorAll(`[${REVEALED_ATTR}]`).forEach(el => el.removeAttribute(REVEALED_ATTR));
+    setPreferences({ ...preferences, lessonFaces: next });
+  };
+  // Click-to-reveal (capture phase, before hints or links see the click): a click on a blurred
+  // piece only clears that piece. A click on a revealed piece blurs it back unless it landed on
+  // something interactive (a hint character, link or button), which then works as usual.
+  const revealClick = (event: MouseEvent<HTMLDivElement>) => {
+    const target = event.target as Element | null;
+    if (!target || (faces.hanzi && faces.pinyin && faces.translations)) return;
+    const piece = blurredPieceAt(target, faces);
+    if (!piece) return;
+    if (!piece.hasAttribute(REVEALED_ATTR)) {
+      piece.setAttribute(REVEALED_ATTR, '');
+      event.preventDefault(); event.stopPropagation();
+      return;
+    }
+    if (target.closest('a, button, [role="button"], input, label')) return;
+    piece.removeAttribute(REVEALED_ATTR);
+  };
   const setHints = (on: boolean) => setPreferences({ ...preferences, lessonHints: on });
   // Phone Sections sheet: open the collapsed section, then scroll to it once the sheet has closed.
   const jumpTo = (id: string) => {
@@ -539,7 +564,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
   </label>;
 
-  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} onClickCapture={revealClick} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     {/* Back link + course position share one block: on narrow pages they flow as one line
         (back left, course/lesson number right) with Previous/Next below (CSS .lesson-top). */}
     <div className="lesson-top">
