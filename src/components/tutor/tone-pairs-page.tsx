@@ -215,8 +215,8 @@ function PracticeCard({ row, pool, mode, hidden, slow, playing, status, onPlay, 
         {row.vocabularyEntryId && <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link">Open the word card<ArrowRight/></Link>}
       </div>
       <p className="detail-footnote tone-sounds-footnote">
-        Recording · {row.audio.speaker} · © 2009 Yue Tan / Shtooka · <a href={row.audio.licenseUrl} target="_blank" rel="noreferrer">{row.audio.license}</a>
         <SourceInfo inline className="detail-footnote">
+          Recording · {row.audio.speaker} · © 2009 Yue Tan / Shtooka · <a href={row.audio.licenseUrl} target="_blank" rel="noreferrer">{row.audio.license}</a><br/>
           Exact source reading · <span className="pinyin">{row.sourceReading}</span><br/>
           Whole-word recording by {row.audio.speaker} · {row.audio.source}<br/>
           <a href={row.audio.upstreamUrl} target="_blank" rel="noreferrer">Original pinned MP3</a> · SHA-256 {row.audio.sha256.slice(0, 16)}…<br/>
