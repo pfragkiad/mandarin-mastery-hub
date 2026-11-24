@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "卜": {
+      "path": "importer/data/character-readings/sources/535c.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%8D%9C",
+      "sha256": "091577892f605d7cc81cd3e11c35d4397ef9337e9d5894e0872cc4b57031ecab",
+      "sourceBytesSha256": "ede584e4106b696f0d66b3849d61f5a4e54386b8c04e3259f220a6c8b81ed551",
+      "sourceBytes": 71861,
+      "acquired": "2026-11-25"
+    },
+    "嗯": {
+      "path": "importer/data/character-readings/sources/55ef.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%97%AF",
+      "sha256": "95273d8ad4cbbf4356aad0c7f1e4cc7ae01787d397d28d103754053ed54c228c",
+      "sourceBytesSha256": "72c1d315770850dcf11e5be3065042f1427656667aa62cbb6d542c6f75046b34",
+      "sourceBytes": 38944,
+      "acquired": "2026-11-25"
+    },
+    "嗲": {
+      "path": "importer/data/character-readings/sources/55f2.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%97%B2",
+      "sha256": "b371916c96940b26e608cb2177ea3b3ff6b1687be6ff213c586e8f815489b56e",
+      "sourceBytesSha256": "8b895e7b743ebceb860e47c12e442f03e4e762077f8f8a07f0bb73072c2f3f1b",
+      "sourceBytes": 28645,
+      "acquired": "2026-11-25"
+    },
+    "嘸": {
+      "path": "importer/data/character-readings/sources/5638.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%98%B8",
+      "sha256": "83faf9efc5e353ad1beb26af6ed1ace7ba1be703df18aecca1fe9b6cbc0e0751",
+      "sourceBytesSha256": "7b547a3a47943960e21dcf6b0b11a23f0956c1c84016b9fb5c6e38e7c6582e64",
+      "sourceBytes": 30829,
+      "acquired": "2026-11-25"
+    },
+    "噠": {
+      "path": "importer/data/character-readings/sources/5660.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%99%A0",
+      "sha256": "04937f11f11e0115018d5cd50d69fd87d4779944ea26e7e62eca27b22956f083",
+      "sourceBytesSha256": "3c0df966e7fe4655d919df6d6fae7c799f2953ee6872ce46980ba9cc886b306a",
+      "sourceBytes": 32281,
+      "acquired": "2026-11-25"
+    },
+    "彷": {
+      "path": "importer/data/character-readings/sources/5f77.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%BD%B7",
+      "sha256": "2020a4ab63947e07f602dfc6118b61d23bb35b1349036b05aa58f166270e53ff",
+      "sourceBytesSha256": "dca8d942dea3886a02a562b91a551197d8ee3da547c8dd90b7888772d82e785f",
+      "sourceBytes": 45761,
+      "acquired": "2026-11-25"
+    },
+    "柁": {
+      "path": "importer/data/character-readings/sources/67c1.html.gz",
+      "url": "https://www.zdic.net/hans/%E6%9F%81",
+      "sha256": "b01ee60e4acf729cf66b58dbfca56f95c565e9a029ae72bc9df0ac773658e747",
+      "sourceBytesSha256": "dcc2a1f59a60bf05feca10019c7e35c0f4c34fb022041926475b50599a654d9b",
+      "sourceBytes": 40761,
+      "acquired": "2026-11-25"
+    },
+    "氿": {
+      "path": "importer/data/character-readings/sources/6c3f.html.gz",
+      "url": "https://www.zdic.net/hans/%E6%B0%BF",
+      "sha256": "bd6435978ec735dd5e34adcb823655f024e680f7700d5de1115ba573f0b1c326",
+      "sourceBytesSha256": "2d6aac44c4f94fb3210630d520a2a309aa55f3116d43ff88aef8f188b8d8735d",
+      "sourceBytes": 43974,
+      "acquired": "2026-11-25"
+    },
+    "牚": {
+      "path": "importer/data/character-readings/sources/725a.html.gz",
+      "url": "https://www.zdic.net/hans/%E7%89%9A",
+      "sha256": "811cfa0b55ace6b6227ae5973db4b48d935229e2b9171b5f2010191cea00002f",
+      "sourceBytesSha256": "d1f06d1f8fbc4916caaae992abdcfb5ea0f7c99824049b3c973ed78764ddbc1c",
+      "sourceBytes": 40640,
+      "acquired": "2026-11-25"
+    },
+    "眄": {
+      "path": "importer/data/character-readings/sources/7704.html.gz",
+      "url": "https://www.zdic.net/hans/%E7%9C%84",
+      "sha256": "b0cd60b093cc6d89fd117cb3a6698b618f13fdf45241cb6a057e4b570f1623f6",
+      "sourceBytesSha256": "1a323b2ea4d46638e0edce33c4c85be8fb55bb573ced8e7b30544e2fc9020e6b",
+      "sourceBytes": 45899,
+      "acquired": "2026-11-25"
+    },
+    "聒": {
+      "path": "importer/data/character-readings/sources/8052.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%81%92",
+      "sha256": "bd228951b002ad609619f6ae5bb79a59172af6c2f7a4400c98dadb7a78301692",
+      "sourceBytesSha256": "f88b9a254781e7c3185a4b91f64ec087f6c4683bafbe64cdcf53f02e9c770d6b",
+      "sourceBytes": 50305,
+      "acquired": "2026-11-25"
+    },
+    "芘": {
+      "path": "importer/data/character-readings/sources/8298.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%8A%98",
+      "sha256": "99e80df622821176bde761bf64d1c0c6f30816e5152856646f6d58147a050600",
+      "sourceBytesSha256": "cce8bf99d0a10fe8e9d8f54c3aeb924e99901ea26fa5fe235efaf2720a0b067f",
+      "sourceBytes": 43803,
+      "acquired": "2026-11-25"
+    },
+    "苧": {
+      "path": "importer/data/character-readings/sources/82e7.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%8B%A7",
+      "sha256": "0e7bd8c7c2cd05ac354b76e44c1998179d2bd0904209fc51aaa1277e951833b7",
+      "sourceBytesSha256": "0be12d4be79b6818dec1c3d72e909f7a636b2dd4488822d4cbf6d6e980794560",
+      "sourceBytes": 39804,
+      "acquired": "2026-11-25"
+    },
+    "醱": {
+      "path": "importer/data/character-readings/sources/91b1.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%86%B1",
+      "sha256": "73ff06201d9a95cc47630ebf1f740cfc02b3a0e8b0d014d160da65d4b5d8a47e",
+      "sourceBytesSha256": "c87b6bc4547eec83d455a6d9bbae91ee34508ba88ed70d0df4760ccb13e8e1bc",
+      "sourceBytes": 34188,
+      "acquired": "2026-11-25"
+    },
+    "釐": {
+      "path": "importer/data/character-readings/sources/91d0.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%87%90",
+      "sha256": "4d99244e9a9c71e7ab06876753555770ccf1ec08c031ad40f7ece7514afa64f3",
+      "sourceBytesSha256": "999192088d7449fcd3b5a504d5da2623bd397bb29d70d66f15a28169f3c0b92e",
+      "sourceBytes": 68367,
+      "acquired": "2026-11-25"
+    },
+    "隄": {
+      "path": "importer/data/character-readings/sources/9684.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%9A%84",
+      "sha256": "fb181116490df408174fd570a2ab444bfe7a3dcc66d15d5871ce04b940d88e2e",
+      "sourceBytesSha256": "e48a13353a53855b3152a3a34c530f43d9711883966e6a22133c19a5c8b36004",
+      "sourceBytes": 44182,
+      "acquired": "2026-11-25"
+    },
+    "unicode-2019": {
+      "path": "importer/data/character-readings/sources/unicode-2019.pdf",
+      "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf",
+      "sha256": "bcbc88b5820ae1259636b85a288ad4c27b4ccfff51ae3b628916c9ab95419da1",
+      "sourceBytesSha256": "bcbc88b5820ae1259636b85a288ad4c27b4ccfff51ae3b628916c9ab95419da1",
+      "sourceBytes": 2893700,
+      "acquired": "2026-11-25"
+    },
+    "cc-cedict": {
+      "path": "importer/data/character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "url": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "sha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+      "release": "2026-11-24T00:04:08Z",
+      "acquired": "2026-11-25",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  "reviewSha256": "7a265667c6f02ee7fd6ccd7a44f618d5a4b6502acfa63863d5ca523dba806e48"
+}

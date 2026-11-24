@@ -2,6 +2,14 @@
 
 Keep standalone audit, notes, and report JSON files here unless application loading code reads them at runtime. Inputs required to regenerate datasets belong under `importer/data/`, including source reviews used by importers; see [the importer data guide](../importer/README.md). Generated runtime data stays in its existing data location.
 
+The [character reading audit](character-reading-meanings-audit.md) and its
+[JSON evidence](character-reading-meanings-audit.json) cover all 75 explicitly
+multi-reading Characters records: 72 sourced mappings and three unresolved
+exact-reading discrepancies. Generated and checked by
+`scripts/import-reading-meanings.py` from the preserved
+[review and source inputs](../importer/data/character-readings/README.md);
+not loaded by the app.
+
 Shuowen review exports and supplied originals in this directory stay local and uncommitted. The checksum-bound copies required for regeneration are versioned under [translation review inputs](../importer/data/etymology/translations/review/README.md).
 
 | File | Use |

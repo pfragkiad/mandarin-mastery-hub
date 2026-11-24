@@ -1,0 +1,1175 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "scope": "Every Characters row with more than one explicitly recorded reading; no missing readings are added.",
+  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where the cited dictionaries support the exact readings; identical meanings remain grouped. Historical and regional context remains attributed and independent of etymology and geometry.",
+  "entries": {
+    "了": {
+      "status": "existing",
+      "recorded": [
+        "了",
+        "le / liǎo",
+        "to finish; particle of completed action",
+        "2 strokes · 亅 radical",
+        "Simplified"
+      ],
+      "record": {
+        "readings": {
+          "le": "particle of completed action",
+          "liǎo": "to finish; to understand (as in 了解)"
+        },
+        "combined": "to finish; particle of completed action",
+        "source": "Taiwan MOE 《重編國語辭典修訂本》 — 了 (le particle; liǎo finish/understand)",
+        "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3550",
+        "date": "2026-11-10",
+        "approvedBy": "project owner"
+      }
+    },
+    "万": {
+      "readings": {
+        "wàn": "ten thousand; innumerable",
+        "mò": "used in the surname 万俟 (Mòqí)"
+      },
+      "recorded": [
+        "万",
+        "wàn / mò",
+        "ten thousand; innumerable",
+        "3 strokes · 一 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "乾": {
+      "readings": {
+        "qián": "heaven; male principle; trigram ☰; hexagram ䷀",
+        "gān": "dry; dried; empty; in vain"
+      },
+      "recorded": [
+        "乾",
+        "qián / gān",
+        "dry; warming principle of the sun, penetrating and fertilizing, heavenly generative principle (male); trigram ☰; hexagram ䷀",
+        "11 strokes · 乙 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "伲": {
+      "status": "unresolved",
+      "note": "The recorded ní conflicts with the nì assigned to the dialectal I/we sense in CC-CEDICT and Han Dian. MOE supports nǐ as a variant of 你. Unicode's 2023 reading proposal discusses ní, but does not bind its meaning. Do not silently retone the recorded form or assign the nì sense to ní.",
+      "references": [
+        {
+          "label": "Taiwan MOE variant dictionary",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121"
+        },
+        {
+          "label": "Unicode reading proposal (2023)",
+          "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf"
+        }
+      ],
+      "recorded": [
+        "伲",
+        "ní / nǐ",
+        "we (Shanghai dialect)",
+        "7 strokes · 人 radical",
+        "Common"
+      ]
+    },
+    "俾": {
+      "readings": {
+        "bǐ": "so that; in order that; to cause; to enable",
+        "bì": "so that; in order that; to cause; to enable"
+      },
+      "note": "CC-CEDICT explicitly identifies bì as the Taiwan pronunciation. The Cantonese give sense in the original combined definition is not assigned to a Mandarin reading.",
+      "recorded": [
+        "俾",
+        "bǐ / bì",
+        "so that, in order that; to cause; (Cant.) to give (synonymous with Mandarin 給)",
+        "10 strokes · 人 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "剋": {
+      "readings": {
+        "kēi": "to scold; to beat",
+        "kè": "to subdue; to overcome; to restrain"
+      },
+      "recorded": [
+        "剋",
+        "kēi / kè",
+        "subdue, overcome; cut down",
+        "9 strokes · 刀 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "剖": {
+      "status": "unresolved",
+      "note": "The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.",
+      "references": [
+        {
+          "label": "Taiwan MOE revised dictionary",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=695"
+        },
+        {
+          "label": "Taiwan CNS11643",
+          "url": "https://www.cns11643.gov.tw/wordView.jsp?ID=87112"
+        }
+      ],
+      "recorded": [
+        "剖",
+        "pōu / pǒ",
+        "split in two, slice; dissect",
+        "10 strokes · 刀 radical",
+        "Common"
+      ]
+    },
+    "剽": {
+      "readings": {
+        "piāo": "to rob; swift; nimble",
+        "piào": "to rob; swift; nimble"
+      },
+      "note": "CC-CEDICT explicitly identifies piào as the Taiwan pronunciation of the same entry.",
+      "recorded": [
+        "剽",
+        "piāo / piào",
+        "rob, plunder; slice off; fast",
+        "13 strokes · 刀 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "卜": {
+      "readings": {
+        "bo": "used in 萝卜 / 蘿蔔 (radish)",
+        "bǔ": "fortune telling; to divine; to prophesy"
+      },
+      "zdic": "Basic and detailed definitions explicitly distinguish neutral bo in radish from bǔ divination.",
+      "recorded": [
+        "卜",
+        "bo / bǔ",
+        "fortune telling; prophesy",
+        "2 strokes · 卜 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "发": {
+      "status": "existing",
+      "recorded": [
+        "发",
+        "fā / fà / fǎ",
+        "issue, dispatch, send out; hair",
+        "5 strokes · 又 radical",
+        "Simplified"
+      ],
+      "record": {
+        "readings": {
+          "fā": "issue, dispatch, send out",
+          "fà": "hair",
+          "fǎ": "hair"
+        },
+        "combined": "issue, dispatch, send out; hair",
+        "source": "Unicode Unihan 17.0.0 kDefinition of 发 (\"issue, dispatch, send out; hair\") split by kXHC1983 0292.010 fā and 0297.040 fà; the hair sense is the one 发 carries as the simplified form of 髮 (kTraditionalVariant U+9AEE); fǎ hair: Unihan kMandarin of 髮 (fà fǎ)",
+        "sourceUrl": "https://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=53D1",
+        "date": "2026-11-14",
+        "approvedBy": "project owner"
+      }
+    },
+    "叚": {
+      "readings": {
+        "xiá": "used in personal names and surnames",
+        "jiǎ": "to borrow; false (variant of 假)"
+      },
+      "note": "The xiá personal-name use is explicitly documented in Unicode's 2019 proposal, quoting the General Standard Chinese Characters Dictionary.",
+      "references": [
+        {
+          "label": "Unicode source excerpts (2019)",
+          "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf"
+        }
+      ],
+      "recorded": [
+        "叚",
+        "xiá / jiǎ",
+        "false",
+        "9 strokes · 又 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "呷": {
+      "readings": {
+        "xiā": "to sip; to drink",
+        "xiá": "to sip; to drink"
+      },
+      "note": "CC-CEDICT explicitly identifies xiá as the Taiwan pronunciation.",
+      "recorded": [
+        "呷",
+        "xiā / xiá",
+        "suck, swallow, drink",
+        "8 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "啵": {
+      "readings": {
+        "bo": "grammatical particle equivalent to 吧",
+        "bō": "bubbling sound"
+      },
+      "recorded": [
+        "啵",
+        "bo / bō",
+        "phonetic",
+        "11 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "嗯": {
+      "readings": {
+        "ǹg": "interjection expressing agreement or assent",
+        "en": "interjection expressing agreement, a question, surprise or disapproval"
+      },
+      "zdic": "Basic definitions bind ǹg to agreement/assent. The Guoyu entry explicitly records neutral en and its agreement, question and surprise/disapproval uses.",
+      "recorded": [
+        "嗯",
+        "ǹg / en",
+        "final particle",
+        "13 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "嗲": {
+      "readings": {
+        "diǎ": "coy; affectedly sweet in voice or manner",
+        "diē": "coy; affectedly sweet in voice or manner"
+      },
+      "zdic": "The basic diǎ entry and Guoyu diē entry both describe a coy or affectedly sweet voice or manner. Unrelated Cantonese senses are not assigned to these Mandarin readings.",
+      "recorded": [
+        "嗲",
+        "diǎ / diē",
+        "(Cant.) saliva; intensifying particle; inviting, coquettish; 嗲哋. 'daddy'",
+        "13 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "嘸": {
+      "readings": {
+        "fǔ": "perplexed; astonished",
+        "wǔ": "perplexed; astonished"
+      },
+      "zdic": "Basic fǔ and Guoyu wǔ entries describe astonishment; the Kangxi entry explicitly says the wǔ sense is the same. Dialectal not is not reassigned from the unrecorded m reading.",
+      "recorded": [
+        "嘸",
+        "fǔ / wǔ",
+        "unclear; an expletive; not",
+        "15 strokes · 口 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "噠": {
+      "readings": {
+        "dā": "sound of hoofbeats or clattering; command to a horse",
+        "dá": "used in 嚈噠, the historical Hephthalite state"
+      },
+      "zdic": "Guoyu dā describes hoofbeats and gunfire; dá is used in the historical state name 嚈噠.",
+      "recorded": [
+        "噠",
+        "dā / dá",
+        "sound made to get a horse to move forward",
+        "15 strokes · 口 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "地": {
+      "status": "existing",
+      "recorded": [
+        "地",
+        "de / dì",
+        "earth; soil, ground; region",
+        "6 strokes · 土 radical",
+        "Common"
+      ],
+      "record": {
+        "readings": {
+          "de": "structural particle marking an adverbial",
+          "dì": "ground; land; earth; soil; region"
+        },
+        "combined": "earth; soil, ground; region",
+        "source": "Unicode Unihan 17.0.0 kDefinition of U+5730 (earth; soil, ground; region) supplies the recorded combined meaning. Taiwan MOE Concised Mandarin Chinese Dictionary: de (ID 7455) is the adverbial particle; dì (ID 8395, senses 1-5) covers earth, ground, land and region. The existing vocabulary-led display wording is retained under its attested reading.",
+        "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7455",
+        "date": "2026-11-25",
+        "approvedBy": "project owner"
+      }
+    },
+    "堤": {
+      "readings": {
+        "dī": "dike; embankment",
+        "tí": "dike; embankment"
+      },
+      "note": "CC-CEDICT explicitly identifies tí as the Taiwan pronunciation.",
+      "recorded": [
+        "堤",
+        "dī / tí",
+        "dike",
+        "12 strokes · 土 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "崾": {
+      "status": "unresolved",
+      "note": "CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.",
+      "references": [
+        {
+          "label": "Taiwan MOE variant dictionary",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607"
+        }
+      ],
+      "recorded": [
+        "崾",
+        "yào / yǎo",
+        "place name in Shanxi province",
+        "12 strokes · 山 radical",
+        "Common"
+      ]
+    },
+    "差": {
+      "readings": {
+        "chà": "different; wrong; lacking; inferior; nearly",
+        "chā": "difference; discrepancy; to differ; slightly"
+      },
+      "note": "This record lists only chà/chā. CC-CEDICT assigns the official/errand sense to chāi, which is not among its recorded readings; that sense is not borrowed. Taiwan also uses chā for some chà senses.",
+      "recorded": [
+        "差",
+        "chà / chā",
+        "to differ; different, wrong; nearly, almost; an officer",
+        "9 strokes · 工 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "帆": {
+      "readings": {
+        "fān": "sail; boat",
+        "fán": "sail; boat"
+      },
+      "note": "CC-CEDICT explicitly identifies fán as the Taiwan pronunciation, with an exception for 帆布.",
+      "recorded": [
+        "帆",
+        "fān / fán",
+        "sail; boat",
+        "6 strokes · 巾 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "干": {
+      "status": "existing",
+      "recorded": [
+        "干",
+        "gān / gàn",
+        "oppose, offend; invade; dried",
+        "3 strokes · 干 radical",
+        "Simplified"
+      ],
+      "record": {
+        "readings": {
+          "gān": "oppose, offend; invade; dried",
+          "gàn": "trunk of tree or of human body"
+        },
+        "combined": "oppose, offend; invade; dried",
+        "source": "gān: Unicode Unihan 17.0.0 kDefinition of 干 (all recorded senses are read gān). gàn: the recorded translation of 幹 (Unicode Unihan 17.0.0 kDefinition \"trunk of tree or of human body\"), the sense 干 carries as its simplified form (Unihan kTraditionalVariant U+5E79 幹); Unihan kXHC1983 0359.030 gàn",
+        "sourceUrl": "https://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=5E72",
+        "date": "2026-11-14",
+        "approvedBy": "project owner"
+      }
+    },
+    "彷": {
+      "readings": {
+        "páng": "to wander; to hesitate (as in 彷徨)",
+        "fǎng": "like; resembling (as in 彷彿)"
+      },
+      "zdic": "Detailed páng definitions describe wandering/hesitation; fǎng is used in 彷彿 and compares or resembles.",
+      "recorded": [
+        "彷",
+        "páng / fǎng",
+        "like, resembling; resemble",
+        "7 strokes · 彳 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "徵": {
+      "readings": {
+        "zhǐ": "the fourth note of the traditional five-note scale (sol)",
+        "zhēng": "to summon; to recruit; to levy; sign; evidence"
+      },
+      "recorded": [
+        "徵",
+        "zhǐ / zhēng",
+        "summon, recruit; musical note",
+        "15 strokes · 彳 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "摽": {
+      "readings": {
+        "biào": "to bind tightly; to cling to; to compete; to strike",
+        "biāo": "to wave away; to discard"
+      },
+      "recorded": [
+        "摽",
+        "biào / biāo",
+        "throw out; push out; strike",
+        "14 strokes · 手 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "斗": {
+      "readings": {
+        "dòu": "to fight; to struggle; to contend",
+        "dǒu": "a dipper; unit of volume (ten 升 or litres); Kangxi radical 68; 8th lunar mansion, determinative star φ Sagittarii"
+      },
+      "note": "The historical astronomical and measurement context of the original dǒu definition is retained; the distinct dòu sense is recorded under the dictionary's 鬥 / 斗 entry.",
+      "recorded": [
+        "斗",
+        "dòu / dǒu",
+        "a dipper; unit of volume (ten 升 or litres); Kangxi radical 68; 8th lunar mansion, determinative star φ Sagittarii",
+        "4 strokes · 斗 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "杓": {
+      "readings": {
+        "biāo": "handle of a spoon or ladle; the handle stars of the Big Dipper",
+        "sháo": "ladle; spoon (variant of 勺)"
+      },
+      "recorded": [
+        "杓",
+        "biāo / sháo",
+        "handle of cup, ladle, spoon; name of a constellation (the handle of the Big Dipper)",
+        "7 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "柁": {
+      "readings": {
+        "tuó": "large roof beam; girder",
+        "duò": "rudder (variant of 舵)"
+      },
+      "zdic": "Basic definitions distinguish tuó roof beam from duò rudder; the Guoyu entry confirms the latter.",
+      "recorded": [
+        "柁",
+        "tuó / duò",
+        "large tie-beams",
+        "9 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "柏": {
+      "readings": {
+        "bǎi": "cypress; cedar",
+        "bó": "cypress; cedar (Taiwan); used in transliterated names"
+      },
+      "note": "CC-CEDICT explicitly gives Taiwan bó for cypress/cedar and a separate bó entry for name transcription. This is overlapping regional use, not two disjoint senses.",
+      "recorded": [
+        "柏",
+        "bǎi / bó",
+        "cypress, cedar",
+        "9 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "框": {
+      "readings": {
+        "kuàng": "frame; framework; door frame",
+        "kuāng": "frame; framework; door frame"
+      },
+      "note": "CC-CEDICT explicitly identifies kuāng as the Taiwan pronunciation.",
+      "recorded": [
+        "框",
+        "kuàng / kuāng",
+        "frame; framework; door frame",
+        "10 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "槭": {
+      "readings": {
+        "qì": "maple",
+        "cù": "maple"
+      },
+      "note": "CC-CEDICT explicitly identifies cù as the Taiwan pronunciation; the additional source reading zú is not added to the catalogue.",
+      "recorded": [
+        "槭",
+        "qì / cù",
+        "maple",
+        "15 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "欻": {
+      "readings": {
+        "xū": "sudden; abrupt; quick",
+        "hū": "sudden; abrupt; quick"
+      },
+      "note": "CC-CEDICT explicitly lists hū as an alternative pronunciation of the same sudden entry.",
+      "recorded": [
+        "欻",
+        "xū / hū",
+        "sudden, abrupt, quick",
+        "12 strokes · 欠 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "氾": {
+      "readings": {
+        "fán": "used in personal names and surnames",
+        "fàn": "to overflow; to flood; to inundate"
+      },
+      "note": "The fán personal-name use is also explicitly documented in Unicode's 2019 dictionary excerpts.",
+      "references": [
+        {
+          "label": "Unicode source excerpts (2019)",
+          "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf"
+        }
+      ],
+      "recorded": [
+        "氾",
+        "fán / fàn",
+        "overflow, flood, inundate",
+        "5 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "氿": {
+      "readings": {
+        "jiǔ": "used in the names of East Jiu and West Jiu lakes in Yixing",
+        "guǐ": "a spring flowing out from the side"
+      },
+      "zdic": "Basic and detailed entries distinguish jiǔ lake names from guǐ a spring flowing sideways.",
+      "recorded": [
+        "氿",
+        "jiǔ / guǐ",
+        "spring",
+        "5 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "沈": {
+      "readings": {
+        "shěn": "surname Shen; short for Shenyang (沈阳 / 瀋陽)",
+        "chén": "to sink; to submerge; addicted to (variant of 沉)"
+      },
+      "note": "Dictionary entries explicitly distinguish the surname and Shenyang abbreviation from chén, the recorded variant of 沉.",
+      "recorded": [
+        "沈",
+        "shěn / chén",
+        "sink, submerge; addicted to; surname",
+        "7 strokes · 水 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "沓": {
+      "readings": {
+        "dá": "a pile or pad of sheets (classifier)",
+        "tà": "repeated; again and again; many"
+      },
+      "note": "Taiwan also reads the classifier tà; the repeated/many sense is separately entered as tà.",
+      "recorded": [
+        "沓",
+        "dá / tà",
+        "connected, joined; repeated",
+        "8 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "炔": {
+      "readings": {
+        "quē": "an alkyne (e.g., acetylene)",
+        "guì": "surname Gui"
+      },
+      "recorded": [
+        "炔",
+        "quē / guì",
+        "an alkyne (e.g., acetylene)",
+        "8 strokes · 火 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "牚": {
+      "readings": {
+        "chèng": "slanting pillar; crossbar between the legs of a table or chair",
+        "chēng": "to support; to prop up (variant of 撐 / 撑)"
+      },
+      "zdic": "Mainland basic/detailed definitions distinguish the noun chèng from support chēng. The Guoyu section also records chēng for a slanting pillar; these are regional conventions, not exclusive universal meanings.",
+      "recorded": [
+        "牚",
+        "chèng / chēng",
+        "",
+        "12 strokes · 牙 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "町": {
+      "readings": {
+        "tǐng": "raised path between fields",
+        "dīng": "used in place names"
+      },
+      "recorded": [
+        "町",
+        "tǐng / dīng",
+        "raised path between fields",
+        "7 strokes · 田 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "畬": {
+      "readings": {
+        "shē": "slash-and-burn agriculture",
+        "yú": "farmland cultivated for two years"
+      },
+      "recorded": [
+        "畬",
+        "shē / yú",
+        "reclaimed field",
+        "12 strokes · 田 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "眄": {
+      "readings": {
+        "miàn": "to look askance; to look sideways",
+        "miǎn": "to look askance; to look sideways"
+      },
+      "zdic": "Basic miàn, detailed/Guoyu miǎn and Kangxi alternative-tone entries share the sideways-looking sense; do not manufacture a meaning distinction from near-synonymous English glosses.",
+      "recorded": [
+        "眄",
+        "miàn / miǎn",
+        "to look askance; looking dull",
+        "9 strokes · 目 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "瞭": {
+      "status": "existing",
+      "recorded": [
+        "瞭",
+        "liào / liǎo",
+        "bright, clear; clear-sighted",
+        "17 strokes · 目 radical",
+        "Traditional"
+      ],
+      "record": {
+        "readings": {
+          "liào": "to look from afar (as in 瞭望); clear-sighted",
+          "liǎo": "to understand (as in 瞭解); bright, clear"
+        },
+        "combined": "bright, clear; clear-sighted",
+        "source": "Taiwan MOE 《重編國語辭典修訂本》 — 瞭 liǎo (ID 3553: understand, clear) and liào (ID 3561: look from afar), splitting Unicode Unihan 17.0.0 kDefinition \"bright, clear; clear-sighted\"",
+        "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3553",
+        "date": "2026-11-20",
+        "approvedBy": "project owner"
+      }
+    },
+    "砉": {
+      "readings": {
+        "huā": "whoosh; cracking sound; sound of something flying quickly",
+        "huò": "whoosh; cracking sound; sound of something flying quickly"
+      },
+      "note": "CC-CEDICT explicitly gives Taiwan huò for the huā sound entry. It assigns flaying to xū, which is not among this record's readings; the original combined flaying sense is not borrowed.",
+      "recorded": [
+        "砉",
+        "huā / huò",
+        "the sound of flaying, separating skin and bone; the sound of flying quickly, whooshing",
+        "9 strokes · 石 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "碡": {
+      "readings": {
+        "zhóu": "stone roller used for threshing grain or leveling ground",
+        "dú": "stone roller used for threshing grain or leveling ground"
+      },
+      "note": "CC-CEDICT explicitly identifies dú as the Taiwan pronunciation.",
+      "recorded": [
+        "碡",
+        "zhóu / dú",
+        "stone roller used to level fields",
+        "14 strokes · 石 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "繃": {
+      "readings": {
+        "běng": "to keep a taut or stern face",
+        "bēng": "to draw tight; to stretch taut; to bind; to tack with thread"
+      },
+      "recorded": [
+        "繃",
+        "běng / bēng",
+        "bind, draw firmly, strap",
+        "17 strokes · 糸 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "耙": {
+      "readings": {
+        "bà": "harrow; to harrow",
+        "pá": "rake; to rake"
+      },
+      "note": "Both are agricultural tools, but the dictionary distinguishes bà harrowing from pá raking.",
+      "recorded": [
+        "耙",
+        "bà / pá",
+        "rake",
+        "10 strokes · 耒 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "聒": {
+      "readings": {
+        "guō": "clamor; din; hubbub; to be noisy",
+        "guā": "clamor; din; hubbub; to be noisy"
+      },
+      "zdic": "Basic guō and Guoyu guā entries both describe noise or clamor.",
+      "recorded": [
+        "聒",
+        "guō / guā",
+        "clamor, din, hubbub",
+        "12 strokes · 耳 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "肋": {
+      "readings": {
+        "lèi": "ribs; chest",
+        "lè": "ribs; chest"
+      },
+      "note": "CC-CEDICT explicitly identifies lè as the Taiwan pronunciation.",
+      "recorded": [
+        "肋",
+        "lèi / lè",
+        "ribs; chest",
+        "6 strokes · 肉 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "舍": {
+      "readings": {
+        "shě": "to give up; to abandon; to give alms",
+        "shè": "house; dwelling; residence; one's younger relatives (humble); an ancient distance of 30 li"
+      },
+      "note": "The dictionary distinguishes shě (recorded 捨 / 舍 pair) from shè residence, humble kinship and the historical unit.",
+      "recorded": [
+        "舍",
+        "shě / shè",
+        "house, dwelling; dwell, reside",
+        "8 strokes · 舌 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "芎": {
+      "readings": {
+        "xiōng": "a medicinal herb (as in 川芎 and 芎藭)",
+        "qiōng": "a medicinal herb (as in 川芎 and 芎藭)"
+      },
+      "note": "CC-CEDICT explicitly identifies qiōng as the Taiwan pronunciation.",
+      "recorded": [
+        "芎",
+        "xiōng / qiōng",
+        "a kind of herb",
+        "6 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "芘": {
+      "readings": {
+        "bǐ": "pyrene (an organic compound)",
+        "pí": "mallow (Malva sylvestris)"
+      },
+      "zdic": "The basic entry explicitly binds bǐ to the chemical and pí to the mallow plant. The page's older detailed section conflicts on the chemical pronunciation; only the explicit modern basic bǐ and Guoyu pí plant entries are used.",
+      "recorded": [
+        "芘",
+        "bǐ / pí",
+        "Malva sylvestris",
+        "7 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "苧": {
+      "readings": {
+        "níng": "limonene; used in 薺薴 / 荠苧",
+        "zhù": "China grass; ramie (Boehmeria nivea)"
+      },
+      "zdic": "Basic/detailed níng names limonene; zhù is the ramie form. This preserves exact recorded dictionary spellings, without changing script grouping.",
+      "recorded": [
+        "苧",
+        "níng / zhù",
+        "China grass, ramie (Boehmeria nivea)",
+        "8 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "菹": {
+      "readings": {
+        "zū": "salted or pickled vegetables; to mince; marshland",
+        "jū": "salted or pickled vegetables; to mince; marshland"
+      },
+      "note": "CC-CEDICT explicitly identifies jū as the Taiwan pronunciation of the same entry.",
+      "recorded": [
+        "菹",
+        "zū / jū",
+        "salted or pickled vegetables",
+        "11 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "萎": {
+      "readings": {
+        "wěi": "to wither; to wilt; to decline; spiritless",
+        "wēi": "to wither; to wilt; to decline; spiritless"
+      },
+      "note": "CC-CEDICT explicitly identifies wēi as the Taiwan pronunciation.",
+      "recorded": [
+        "萎",
+        "wěi / wēi",
+        "wither, wilt",
+        "11 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "著": {
+      "readings": {
+        "zhù": "manifest; outstanding; to make known; to write; book",
+        "zhe": "aspect particle indicating an action in progress or an ongoing state"
+      },
+      "note": "The recorded 著 / 着 dictionary entry explicitly binds zhe to the aspect particle. Wear is zhuó in Mandarin; the original Cantonese wear sense is not assigned to zhe. Other source readings are not added.",
+      "recorded": [
+        "著",
+        "zhù / zhe",
+        "manifest; (Cant.) to wear",
+        "11 strokes · 艸 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "蕃": {
+      "readings": {
+        "bō": "used in 吐蕃, the historical Tibetan kingdom",
+        "fān": "foreign; non-Chinese (variant of 番)"
+      },
+      "recorded": [
+        "蕃",
+        "bō / fān",
+        "foreign things",
+        "15 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "薄": {
+      "readings": {
+        "báo": "thin; weak; light; infertile; cold in manner",
+        "bó": "slight; meager; weak; ungenerous; to despise; to approach"
+      },
+      "note": "The meanings overlap; CC-CEDICT nonetheless records separate báo and bó entries. The herb reading bò is not added.",
+      "recorded": [
+        "薄",
+        "báo / bó",
+        "thin, slight, weak; poor, stingy",
+        "16 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "袷": {
+      "readings": {
+        "qiā": "used in 袷袢, a long robe worn by some Central Asian peoples",
+        "jiá": "lined garment (variant of 夾 / 夹)"
+      },
+      "recorded": [
+        "袷",
+        "qiā / jiá",
+        "lined garment",
+        "11 strokes · 衣 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "誰": {
+      "readings": {
+        "shuí": "who? whom? whose? anyone?",
+        "shéi": "who? whom? whose? anyone?"
+      },
+      "note": "CC-CEDICT explicitly lists shuí as an alternative pronunciation of the shéi entry.",
+      "recorded": [
+        "誰",
+        "shuí / shéi",
+        "who? whom? whose? anyone?",
+        "15 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "諷": {
+      "readings": {
+        "fěng": "to recite; to satirize; to mock",
+        "fèng": "to recite; to satirize; to mock"
+      },
+      "note": "CC-CEDICT explicitly identifies fèng as the Taiwan pronunciation. Do not separate recitation from satire solely by tone.",
+      "recorded": [
+        "諷",
+        "fěng / fèng",
+        "recite, incant; satirize",
+        "16 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "識": {
+      "readings": {
+        "shí": "to recognize; to understand; to know; knowledge",
+        "shì": "to recognize; to understand; to know; knowledge"
+      },
+      "note": "CC-CEDICT explicitly identifies shì as the Taiwan pronunciation of shí. The separate record/write sense is zhì, which is not recorded here.",
+      "recorded": [
+        "識",
+        "shí / shì",
+        "recognize, understand, know",
+        "19 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "讽": {
+      "readings": {
+        "fěng": "to recite; to satirize; to mock",
+        "fèng": "to recite; to satirize; to mock"
+      },
+      "note": "CC-CEDICT explicitly identifies fèng as the Taiwan pronunciation. Do not separate recitation from satire solely by tone.",
+      "recorded": [
+        "讽",
+        "fěng / fèng",
+        "recite, incant; satirize",
+        "6 strokes · 言 radical",
+        "Simplified"
+      ],
+      "status": "shared"
+    },
+    "识": {
+      "readings": {
+        "shí": "to recognize; to understand; to know; knowledge",
+        "shì": "to recognize; to understand; to know; knowledge"
+      },
+      "note": "CC-CEDICT explicitly identifies shì as the Taiwan pronunciation of shí. The separate record/write sense is zhì, which is not recorded here.",
+      "recorded": [
+        "识",
+        "shí / shì",
+        "recognize, understand, know",
+        "7 strokes · 言 radical",
+        "Simplified"
+      ],
+      "status": "shared"
+    },
+    "跌": {
+      "readings": {
+        "diē": "to stumble; to slip; to fall; to drop",
+        "dié": "to stumble; to slip; to fall; to drop"
+      },
+      "note": "CC-CEDICT explicitly identifies dié as the Taiwan pronunciation.",
+      "recorded": [
+        "跌",
+        "diē / dié",
+        "stumble, slip, fall down; stamp",
+        "12 strokes · 足 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "蹣": {
+      "readings": {
+        "pán": "to limp; to stagger (as in 蹣跚)",
+        "mán": "to limp; to stagger (as in 蹣跚)"
+      },
+      "note": "CC-CEDICT explicitly identifies mán as the Taiwan pronunciation of the same compound-bound entry.",
+      "recorded": [
+        "蹣",
+        "pán / mán",
+        "to jump over; to limp",
+        "18 strokes · 足 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "蹬": {
+      "readings": {
+        "dēng": "to step on; to tread on; to put on shoes or trousers",
+        "dèng": "to step on; to tread on (Taiwan); to suffer a setback (as in 蹭蹬)"
+      },
+      "note": "CC-CEDICT explicitly gives Taiwan dèng for stepping and a separate dèng entry in 蹭蹬. This is overlapping regional use, not two disjoint senses.",
+      "recorded": [
+        "蹬",
+        "dēng / dèng",
+        "step on, tread on; lose energy",
+        "19 strokes · 足 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "适": {
+      "readings": {
+        "shì": "to go; to reach; appropriate; suitable; comfortable",
+        "kuò": "used in the personal name 李适 (Li Kuo)"
+      },
+      "note": "The name entry records exact 适, distinct from the 適 / 适 suitable/go entry. No look-alike or traditional-form substitution is inferred.",
+      "recorded": [
+        "适",
+        "shì / kuò",
+        "go, reach; appropriate, suitable",
+        "9 strokes · 辵 radical",
+        "Simplified"
+      ],
+      "status": "distinct"
+    },
+    "都": {
+      "readings": {
+        "dōu": "all; both; entirely; even; already",
+        "dū": "metropolis; capital city; surname Du"
+      },
+      "recorded": [
+        "都",
+        "dōu / dū",
+        "metropolis, capital; all, the whole; elegant, refined",
+        "10 strokes · 邑 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    },
+    "醱": {
+      "readings": {
+        "fā": "to ferment (as in 醱酵)",
+        "pò": "to brew again; to ferment (Taiwan)"
+      },
+      "zdic": "Basic fā refers to fermentation; Guoyu pò explicitly includes second brewing and fermentation. The original historical second-brewing context is retained under pò.",
+      "recorded": [
+        "醱",
+        "fā / pò",
+        "to brew for the second time",
+        "19 strokes · 酉 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "釐": {
+      "readings": {
+        "xī": "good fortune; auspiciousness (as in 禧)",
+        "lí": "to manage; to govern; to correct; a thousandth of a tael"
+      },
+      "zdic": "Guoyu xī is explicitly good fortune; lí includes management, correction and historical measurement units. Do not assign the manage sense to xī based on reading order.",
+      "recorded": [
+        "釐",
+        "xī / lí",
+        "manage, control; thousandth part of tael",
+        "18 strokes · 里 radical",
+        "Traditional"
+      ],
+      "status": "distinct"
+    },
+    "隄": {
+      "readings": {
+        "dī": "dike; embankment",
+        "tí": "dike; embankment"
+      },
+      "zdic": "Basic dī and Guoyu tí entries both name a dike; the Kangxi alternative-tone entry explicitly shares the same meaning.",
+      "recorded": [
+        "隄",
+        "dī / tí",
+        "dike, embankment",
+        "11 strokes · 阜 radical",
+        "Common"
+      ],
+      "status": "shared"
+    },
+    "頗": {
+      "readings": {
+        "pō": "to lean to one side; inclined; very; rather",
+        "pǒ": "to lean to one side; inclined; very; rather"
+      },
+      "note": "CC-CEDICT explicitly identifies pǒ as the Taiwan pronunciation.",
+      "recorded": [
+        "頗",
+        "pō / pǒ",
+        "lean one side; very, rather",
+        "14 strokes · 頁 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "髮": {
+      "readings": {
+        "fà": "hair",
+        "fǎ": "hair"
+      },
+      "note": "CC-CEDICT explicitly identifies fǎ as the Taiwan pronunciation. The two readings share one meaning and retain separate speakers.",
+      "recorded": [
+        "髮",
+        "fà / fǎ",
+        "hair",
+        "15 strokes · 髟 radical",
+        "Traditional"
+      ],
+      "status": "shared"
+    },
+    "麃": {
+      "readings": {
+        "páo": "a kind of deer (archaic)",
+        "biāo": "to weed; to till"
+      },
+      "recorded": [
+        "麃",
+        "páo / biāo",
+        "till, plow",
+        "15 strokes · 鹿 radical",
+        "Common"
+      ],
+      "status": "distinct"
+    }
+  }
+}

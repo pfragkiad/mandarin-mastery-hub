@@ -1,0 +1,2613 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "scope": "Every Characters row with more than one explicitly recorded reading; no missing readings are added.",
+  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where the cited dictionaries support the exact readings; identical meanings remain grouped. Historical and regional context remains attributed and independent of etymology and geometry.",
+  "charactersSha256": "f1db684baeb28187efec27a667d1a86ceb7ac827e45d94e0e517b17ddf681fb7",
+  "reviewSha256": "7a265667c6f02ee7fd6ccd7a44f618d5a4b6502acfa63863d5ca523dba806e48",
+  "sources": {
+    "卜": {
+      "path": "importer/data/character-readings/sources/535c.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%8D%9C",
+      "sha256": "091577892f605d7cc81cd3e11c35d4397ef9337e9d5894e0872cc4b57031ecab",
+      "sourceBytesSha256": "ede584e4106b696f0d66b3849d61f5a4e54386b8c04e3259f220a6c8b81ed551",
+      "sourceBytes": 71861,
+      "acquired": "2026-11-25"
+    },
+    "嗯": {
+      "path": "importer/data/character-readings/sources/55ef.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%97%AF",
+      "sha256": "95273d8ad4cbbf4356aad0c7f1e4cc7ae01787d397d28d103754053ed54c228c",
+      "sourceBytesSha256": "72c1d315770850dcf11e5be3065042f1427656667aa62cbb6d542c6f75046b34",
+      "sourceBytes": 38944,
+      "acquired": "2026-11-25"
+    },
+    "嗲": {
+      "path": "importer/data/character-readings/sources/55f2.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%97%B2",
+      "sha256": "b371916c96940b26e608cb2177ea3b3ff6b1687be6ff213c586e8f815489b56e",
+      "sourceBytesSha256": "8b895e7b743ebceb860e47c12e442f03e4e762077f8f8a07f0bb73072c2f3f1b",
+      "sourceBytes": 28645,
+      "acquired": "2026-11-25"
+    },
+    "嘸": {
+      "path": "importer/data/character-readings/sources/5638.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%98%B8",
+      "sha256": "83faf9efc5e353ad1beb26af6ed1ace7ba1be703df18aecca1fe9b6cbc0e0751",
+      "sourceBytesSha256": "7b547a3a47943960e21dcf6b0b11a23f0956c1c84016b9fb5c6e38e7c6582e64",
+      "sourceBytes": 30829,
+      "acquired": "2026-11-25"
+    },
+    "噠": {
+      "path": "importer/data/character-readings/sources/5660.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%99%A0",
+      "sha256": "04937f11f11e0115018d5cd50d69fd87d4779944ea26e7e62eca27b22956f083",
+      "sourceBytesSha256": "3c0df966e7fe4655d919df6d6fae7c799f2953ee6872ce46980ba9cc886b306a",
+      "sourceBytes": 32281,
+      "acquired": "2026-11-25"
+    },
+    "彷": {
+      "path": "importer/data/character-readings/sources/5f77.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%BD%B7",
+      "sha256": "2020a4ab63947e07f602dfc6118b61d23bb35b1349036b05aa58f166270e53ff",
+      "sourceBytesSha256": "dca8d942dea3886a02a562b91a551197d8ee3da547c8dd90b7888772d82e785f",
+      "sourceBytes": 45761,
+      "acquired": "2026-11-25"
+    },
+    "柁": {
+      "path": "importer/data/character-readings/sources/67c1.html.gz",
+      "url": "https://www.zdic.net/hans/%E6%9F%81",
+      "sha256": "b01ee60e4acf729cf66b58dbfca56f95c565e9a029ae72bc9df0ac773658e747",
+      "sourceBytesSha256": "dcc2a1f59a60bf05feca10019c7e35c0f4c34fb022041926475b50599a654d9b",
+      "sourceBytes": 40761,
+      "acquired": "2026-11-25"
+    },
+    "氿": {
+      "path": "importer/data/character-readings/sources/6c3f.html.gz",
+      "url": "https://www.zdic.net/hans/%E6%B0%BF",
+      "sha256": "bd6435978ec735dd5e34adcb823655f024e680f7700d5de1115ba573f0b1c326",
+      "sourceBytesSha256": "2d6aac44c4f94fb3210630d520a2a309aa55f3116d43ff88aef8f188b8d8735d",
+      "sourceBytes": 43974,
+      "acquired": "2026-11-25"
+    },
+    "牚": {
+      "path": "importer/data/character-readings/sources/725a.html.gz",
+      "url": "https://www.zdic.net/hans/%E7%89%9A",
+      "sha256": "811cfa0b55ace6b6227ae5973db4b48d935229e2b9171b5f2010191cea00002f",
+      "sourceBytesSha256": "d1f06d1f8fbc4916caaae992abdcfb5ea0f7c99824049b3c973ed78764ddbc1c",
+      "sourceBytes": 40640,
+      "acquired": "2026-11-25"
+    },
+    "眄": {
+      "path": "importer/data/character-readings/sources/7704.html.gz",
+      "url": "https://www.zdic.net/hans/%E7%9C%84",
+      "sha256": "b0cd60b093cc6d89fd117cb3a6698b618f13fdf45241cb6a057e4b570f1623f6",
+      "sourceBytesSha256": "1a323b2ea4d46638e0edce33c4c85be8fb55bb573ced8e7b30544e2fc9020e6b",
+      "sourceBytes": 45899,
+      "acquired": "2026-11-25"
+    },
+    "聒": {
+      "path": "importer/data/character-readings/sources/8052.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%81%92",
+      "sha256": "bd228951b002ad609619f6ae5bb79a59172af6c2f7a4400c98dadb7a78301692",
+      "sourceBytesSha256": "f88b9a254781e7c3185a4b91f64ec087f6c4683bafbe64cdcf53f02e9c770d6b",
+      "sourceBytes": 50305,
+      "acquired": "2026-11-25"
+    },
+    "芘": {
+      "path": "importer/data/character-readings/sources/8298.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%8A%98",
+      "sha256": "99e80df622821176bde761bf64d1c0c6f30816e5152856646f6d58147a050600",
+      "sourceBytesSha256": "cce8bf99d0a10fe8e9d8f54c3aeb924e99901ea26fa5fe235efaf2720a0b067f",
+      "sourceBytes": 43803,
+      "acquired": "2026-11-25"
+    },
+    "苧": {
+      "path": "importer/data/character-readings/sources/82e7.html.gz",
+      "url": "https://www.zdic.net/hans/%E8%8B%A7",
+      "sha256": "0e7bd8c7c2cd05ac354b76e44c1998179d2bd0904209fc51aaa1277e951833b7",
+      "sourceBytesSha256": "0be12d4be79b6818dec1c3d72e909f7a636b2dd4488822d4cbf6d6e980794560",
+      "sourceBytes": 39804,
+      "acquired": "2026-11-25"
+    },
+    "醱": {
+      "path": "importer/data/character-readings/sources/91b1.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%86%B1",
+      "sha256": "73ff06201d9a95cc47630ebf1f740cfc02b3a0e8b0d014d160da65d4b5d8a47e",
+      "sourceBytesSha256": "c87b6bc4547eec83d455a6d9bbae91ee34508ba88ed70d0df4760ccb13e8e1bc",
+      "sourceBytes": 34188,
+      "acquired": "2026-11-25"
+    },
+    "釐": {
+      "path": "importer/data/character-readings/sources/91d0.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%87%90",
+      "sha256": "4d99244e9a9c71e7ab06876753555770ccf1ec08c031ad40f7ece7514afa64f3",
+      "sourceBytesSha256": "999192088d7449fcd3b5a504d5da2623bd397bb29d70d66f15a28169f3c0b92e",
+      "sourceBytes": 68367,
+      "acquired": "2026-11-25"
+    },
+    "隄": {
+      "path": "importer/data/character-readings/sources/9684.html.gz",
+      "url": "https://www.zdic.net/hans/%E9%9A%84",
+      "sha256": "fb181116490df408174fd570a2ab444bfe7a3dcc66d15d5871ce04b940d88e2e",
+      "sourceBytesSha256": "e48a13353a53855b3152a3a34c530f43d9711883966e6a22133c19a5c8b36004",
+      "sourceBytes": 44182,
+      "acquired": "2026-11-25"
+    },
+    "unicode-2019": {
+      "path": "importer/data/character-readings/sources/unicode-2019.pdf",
+      "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf",
+      "sha256": "bcbc88b5820ae1259636b85a288ad4c27b4ccfff51ae3b628916c9ab95419da1",
+      "sourceBytesSha256": "bcbc88b5820ae1259636b85a288ad4c27b4ccfff51ae3b628916c9ab95419da1",
+      "sourceBytes": 2893700,
+      "acquired": "2026-11-25"
+    },
+    "cc-cedict": {
+      "path": "importer/data/character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "url": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "sha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+      "release": "2026-11-24T00:04:08Z",
+      "acquired": "2026-11-25",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  "counts": {
+    "total": 75,
+    "covered": 72,
+    "existing": 5,
+    "distinct": 39,
+    "unresolved": 3,
+    "shared": 28
+  },
+  "cases": [
+    {
+      "glyph": "了",
+      "id": "Characters:了",
+      "recorded": [
+        "了",
+        "le / liǎo",
+        "to finish; particle of completed action",
+        "2 strokes · 亅 radical",
+        "Simplified"
+      ],
+      "status": "existing",
+      "note": "",
+      "ccCedictEntries": [
+        "了 了 [le5] /(completed action marker)/(modal particle indicating change of state, situation now)/(modal particle intensifying preceding clause)/",
+        "了 了 [liao3] /to finish/(used with 得[de2] or 不[bu4] after a verb to express (im)possibility, as in 忘不了[wang4 bu5 liao3] \"cannot forget\")/(literary) (usually followed by a negative such as 無|无[wu2] or 不[bu4]) completely (not); entirely (not); (not) in the least/variant of 瞭|了[liao3]/",
+        "瞭 了 [liao3] /(bound form) clear in one's mind; to understand clearly/",
+        "瞭 了 [liao4] /unofficial variant of 瞭[liao4]/"
+      ],
+      "references": [
+        {
+          "label": "Dictionary source",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3550"
+        }
+      ],
+      "readings": {
+        "le": "particle of completed action",
+        "liǎo": "to finish; to understand (as in 了解)"
+      },
+      "source": "Taiwan MOE 《重編國語辭典修訂本》 — 了 (le particle; liǎo finish/understand)"
+    },
+    {
+      "glyph": "万",
+      "id": "Characters:万",
+      "recorded": [
+        "万",
+        "wàn / mò",
+        "ten thousand; innumerable",
+        "3 strokes · 一 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "万 万 [mo4] /used in 万俟[Mo4 qi2]/",
+        "萬 万 [Wan4] /surname Wan/",
+        "萬 万 [wan4] /ten thousand/a great number/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%B8%87"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "wàn": "ten thousand; innumerable",
+        "mò": "used in the surname 万俟 (Mòqí)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "乾",
+      "id": "Characters:乾",
+      "recorded": [
+        "乾",
+        "qián / gān",
+        "dry; warming principle of the sun, penetrating and fertilizing, heavenly generative principle (male); trigram ☰; hexagram ䷀",
+        "11 strokes · 乙 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "乹 乾 [qian2] /old variant of 乾[qian2]/",
+        "乾 乾 [Qian2] /surname Qian/",
+        "乾 乾 [qian2] /one of the Eight Trigrams 八卦[ba1 gua4], symbolizing heaven/male principle/☰/ancient Chinese compass point: 315° (northwest)/",
+        "乾 干 [Gan1] /surname Gan/",
+        "乾 干 [gan1] /dry/dried food/empty; hollow/taken in to nominal kinship; adoptive; foster/futile; in vain/(dialect) rude; blunt/(dialect) to cold-shoulder/",
+        "亁 乾 [qian2] /variant of 乾[qian2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%B9%BE"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "qián": "heaven; male principle; trigram ☰; hexagram ䷀",
+        "gān": "dry; dried; empty; in vain"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "伲",
+      "id": "Characters:伲",
+      "recorded": [
+        "伲",
+        "ní / nǐ",
+        "we (Shanghai dialect)",
+        "7 strokes · 人 radical",
+        "Common"
+      ],
+      "status": "unresolved",
+      "note": "The recorded ní conflicts with the nì assigned to the dialectal I/we sense in CC-CEDICT and Han Dian. MOE supports nǐ as a variant of 你. Unicode's 2023 reading proposal discusses ní, but does not bind its meaning. Do not silently retone the recorded form or assign the nì sense to ní.",
+      "ccCedictEntries": [
+        "伲 伲 [ni3] /variant of 你[ni3]/",
+        "伲 伲 [ni4] /(dialect) I/my/we/our/"
+      ],
+      "references": [
+        {
+          "label": "Taiwan MOE variant dictionary",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121"
+        },
+        {
+          "label": "Unicode reading proposal (2023)",
+          "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf"
+        }
+      ]
+    },
+    {
+      "glyph": "俾",
+      "id": "Characters:俾",
+      "recorded": [
+        "俾",
+        "bǐ / bì",
+        "so that, in order that; to cause; (Cant.) to give (synonymous with Mandarin 給)",
+        "10 strokes · 人 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies bì as the Taiwan pronunciation. The Cantonese give sense in the original combined definition is not assigned to a Mandarin reading.",
+      "ccCedictEntries": [
+        "俾 俾 [bi3] /to cause/to enable/phonetic bi/Taiwan pr. [bi4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%BF%BE"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bǐ": "so that; in order that; to cause; to enable",
+        "bì": "so that; in order that; to cause; to enable"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "剋",
+      "id": "Characters:剋",
+      "recorded": [
+        "剋",
+        "kēi / kè",
+        "subdue, overcome; cut down",
+        "9 strokes · 刀 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "剋 克 [Ke4] /Ke (c. 2000 BC), seventh of the legendary Flame Emperors, 炎帝[Yan2 di4] descended from Shennong 神農|神农[Shen2 nong2] Farmer God/",
+        "剋 克 [ke4] /variant of 克[ke4]/to subdue/to overthrow/to restrain/",
+        "剋 剋 [kei1] /to scold/to beat/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%89%8B"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "kēi": "to scold; to beat",
+        "kè": "to subdue; to overcome; to restrain"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "剖",
+      "id": "Characters:剖",
+      "recorded": [
+        "剖",
+        "pōu / pǒ",
+        "split in two, slice; dissect",
+        "10 strokes · 刀 radical",
+        "Common"
+      ],
+      "status": "unresolved",
+      "note": "The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.",
+      "ccCedictEntries": [
+        "剖 剖 [pou1] /to cut open/to analyze/Taiwan pr. [pou3]/"
+      ],
+      "references": [
+        {
+          "label": "Taiwan MOE revised dictionary",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=695"
+        },
+        {
+          "label": "Taiwan CNS11643",
+          "url": "https://www.cns11643.gov.tw/wordView.jsp?ID=87112"
+        }
+      ]
+    },
+    {
+      "glyph": "剽",
+      "id": "Characters:剽",
+      "recorded": [
+        "剽",
+        "piāo / piào",
+        "rob, plunder; slice off; fast",
+        "13 strokes · 刀 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies piào as the Taiwan pronunciation of the same entry.",
+      "ccCedictEntries": [
+        "剽 剽 [piao1] /to rob/swift/nimble/Taiwan pr. [piao4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%89%BD"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "piāo": "to rob; swift; nimble",
+        "piào": "to rob; swift; nimble"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "卜",
+      "id": "Characters:卜",
+      "recorded": [
+        "卜",
+        "bo / bǔ",
+        "fortune telling; prophesy",
+        "2 strokes · 卜 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "Basic and detailed definitions explicitly distinguish neutral bo in radish from bǔ divination.",
+      "ccCedictEntries": [
+        "卜 卜 [Bu3] /surname Bu/",
+        "卜 卜 [bu3] /(bound form) to divine/",
+        "蔔 卜 [bo2] /used in 蘿蔔|萝卜[luo2 bo5]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%8D%9C"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%8D%9C"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bo": "used in 萝卜 / 蘿蔔 (radish)",
+        "bǔ": "fortune telling; to divine; to prophesy"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "发",
+      "id": "Characters:发",
+      "recorded": [
+        "发",
+        "fā / fà / fǎ",
+        "issue, dispatch, send out; hair",
+        "5 strokes · 又 radical",
+        "Simplified"
+      ],
+      "status": "existing",
+      "note": "",
+      "ccCedictEntries": [
+        "發 发 [fa1] /to send out/to show (one's feeling)/to issue/to develop/to make a bundle of money/classifier for gunshots (rounds)/",
+        "髮 发 [fa4] /hair/Taiwan pr. [fa3]/"
+      ],
+      "references": [
+        {
+          "label": "Dictionary source",
+          "url": "https://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=53D1"
+        }
+      ],
+      "readings": {
+        "fā": "issue, dispatch, send out",
+        "fà": "hair",
+        "fǎ": "hair"
+      },
+      "source": "Unicode Unihan 17.0.0 kDefinition of 发 (\"issue, dispatch, send out; hair\") split by kXHC1983 0292.010 fā and 0297.040 fà; the hair sense is the one 发 carries as the simplified form of 髮 (kTraditionalVariant U+9AEE); fǎ hair: Unihan kMandarin of 髮 (fà fǎ)"
+    },
+    {
+      "glyph": "叚",
+      "id": "Characters:叚",
+      "recorded": [
+        "叚",
+        "xiá / jiǎ",
+        "false",
+        "9 strokes · 又 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "The xiá personal-name use is explicitly documented in Unicode's 2019 proposal, quoting the General Standard Chinese Characters Dictionary.",
+      "ccCedictEntries": [
+        "叚 假 [jia3] /to borrow (variant of 假[jia3])/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%8F%9A"
+        },
+        {
+          "label": "Unicode source excerpts (2019)",
+          "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "xiá": "used in personal names and surnames",
+        "jiǎ": "to borrow; false (variant of 假)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Additional historical evidence is linked below."
+    },
+    {
+      "glyph": "呷",
+      "id": "Characters:呷",
+      "recorded": [
+        "呷",
+        "xiā / xiá",
+        "suck, swallow, drink",
+        "8 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies xiá as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "呷 呷 [ga1] /used in 呷呷[ga1 ga1]/",
+        "呷 呷 [xia1] /to sip; to drink/Taiwan pr. [xia2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%91%B7"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "xiā": "to sip; to drink",
+        "xiá": "to sip; to drink"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "啵",
+      "id": "Characters:啵",
+      "recorded": [
+        "啵",
+        "bo / bō",
+        "phonetic",
+        "11 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "啵 啵 [bo1] /(onom.) to bubble/",
+        "啵 啵 [bo5] /grammatical particle equivalent to 吧/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%95%B5"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bo": "grammatical particle equivalent to 吧",
+        "bō": "bubbling sound"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "嗯",
+      "id": "Characters:嗯",
+      "recorded": [
+        "嗯",
+        "ǹg / en",
+        "final particle",
+        "13 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Basic definitions bind ǹg to agreement/assent. The Guoyu entry explicitly records neutral en and its agreement, question and surprise/disapproval uses.",
+      "ccCedictEntries": [
+        "嗯 嗯 [en1] /(a groaning sound)/",
+        "嗯 嗯 [en4] /(nonverbal grunt as interjection)/OK, yeah/what?/",
+        "嗯 嗯 [en5] /interjection indicating approval, appreciation or agreement/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%97%AF"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%97%AF"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "ǹg": "interjection expressing agreement or assent",
+        "en": "interjection expressing agreement, a question, surprise or disapproval"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "嗲",
+      "id": "Characters:嗲",
+      "recorded": [
+        "嗲",
+        "diǎ / diē",
+        "(Cant.) saliva; intensifying particle; inviting, coquettish; 嗲哋. 'daddy'",
+        "13 strokes · 口 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "The basic diǎ entry and Guoyu diē entry both describe a coy or affectedly sweet voice or manner. Unrelated Cantonese senses are not assigned to these Mandarin readings.",
+      "ccCedictEntries": [
+        "嗲 嗲 [dia3] /coy/childish/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%97%B2"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%97%B2"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "diǎ": "coy; affectedly sweet in voice or manner",
+        "diē": "coy; affectedly sweet in voice or manner"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "嘸",
+      "id": "Characters:嘸",
+      "recorded": [
+        "嘸",
+        "fǔ / wǔ",
+        "unclear; an expletive; not",
+        "15 strokes · 口 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "Basic fǔ and Guoyu wǔ entries describe astonishment; the Kangxi entry explicitly says the wǔ sense is the same. Dialectal not is not reassigned from the unrecorded m reading.",
+      "ccCedictEntries": [
+        "嘸 呒 [fu3] /perplexed/astonished/",
+        "嘸 呒 [m2] /dialectal equivalent of 沒有|没有[mei2 you3]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%98%B8"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%98%B8"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fǔ": "perplexed; astonished",
+        "wǔ": "perplexed; astonished"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "噠",
+      "id": "Characters:噠",
+      "recorded": [
+        "噠",
+        "dā / dá",
+        "sound made to get a horse to move forward",
+        "15 strokes · 口 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "Guoyu dā describes hoofbeats and gunfire; dá is used in the historical state name 嚈噠.",
+      "ccCedictEntries": [
+        "噠 哒 [da1] /(phonetic)/command to a horse/clatter (of horses' hoofs)/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%99%A0"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%99%A0"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dā": "sound of hoofbeats or clattering; command to a horse",
+        "dá": "used in 嚈噠, the historical Hephthalite state"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "地",
+      "id": "Characters:地",
+      "recorded": [
+        "地",
+        "de / dì",
+        "earth; soil, ground; region",
+        "6 strokes · 土 radical",
+        "Common"
+      ],
+      "status": "existing",
+      "note": "",
+      "ccCedictEntries": [
+        "地 地 [de5] /-ly/structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct/",
+        "地 地 [di4] /earth/ground/field/place/land/CL:片[pian4]/"
+      ],
+      "references": [
+        {
+          "label": "Dictionary source",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7455"
+        }
+      ],
+      "readings": {
+        "de": "structural particle marking an adverbial",
+        "dì": "ground; land; earth; soil; region"
+      },
+      "source": "Unicode Unihan 17.0.0 kDefinition of U+5730 (earth; soil, ground; region) supplies the recorded combined meaning. Taiwan MOE Concised Mandarin Chinese Dictionary: de (ID 7455) is the adverbial particle; dì (ID 8395, senses 1-5) covers earth, ground, land and region. The existing vocabulary-led display wording is retained under its attested reading."
+    },
+    {
+      "glyph": "堤",
+      "id": "Characters:堤",
+      "recorded": [
+        "堤",
+        "dī / tí",
+        "dike",
+        "12 strokes · 土 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies tí as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "堤 堤 [di1] /dike/Taiwan pr. [ti2]/",
+        "隄 堤 [di1] /variant of 堤[di1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%A0%A4"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dī": "dike; embankment",
+        "tí": "dike; embankment"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "崾",
+      "id": "Characters:崾",
+      "recorded": [
+        "崾",
+        "yào / yǎo",
+        "place name in Shanxi province",
+        "12 strokes · 山 radical",
+        "Common"
+      ],
+      "status": "unresolved",
+      "note": "CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.",
+      "ccCedictEntries": [
+        "崾 崾 [yao3] /(used in place names)/"
+      ],
+      "references": [
+        {
+          "label": "Taiwan MOE variant dictionary",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607"
+        }
+      ]
+    },
+    {
+      "glyph": "差",
+      "id": "Characters:差",
+      "recorded": [
+        "差",
+        "chà / chā",
+        "to differ; different, wrong; nearly, almost; an officer",
+        "9 strokes · 工 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "This record lists only chà/chā. CC-CEDICT assigns the official/errand sense to chāi, which is not among its recorded readings; that sense is not borrowed. Taiwan also uses chā for some chà senses.",
+      "ccCedictEntries": [
+        "差 差 [cha1] /difference; discrepancy/(math.) difference (amount remaining after a subtraction)/(literary) a little; somewhat; slightly/",
+        "差 差 [cha4] /different/wrong; mistaken/to fall short; to lack/not up to standard; inferior/Taiwan pr. [cha1]/",
+        "差 差 [chai1] /to send (on an errand)/(archaic) person sent on such an errand/job; official post/",
+        "差 差 [ci1] /used in 參差|参差[cen1 ci1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%B7%AE"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "chà": "different; wrong; lacking; inferior; nearly",
+        "chā": "difference; discrepancy; to differ; slightly"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "帆",
+      "id": "Characters:帆",
+      "recorded": [
+        "帆",
+        "fān / fán",
+        "sail; boat",
+        "6 strokes · 巾 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies fán as the Taiwan pronunciation, with an exception for 帆布.",
+      "ccCedictEntries": [
+        "㠶 帆 [fan1] /variant of 帆[fan1]/",
+        "帆 帆 [fan1] /sail/Taiwan pr. [fan2], except 帆布[fan1 bu4] canvas/",
+        "颿 帆 [fan1] /to gallop/Taiwan pr. [fan2]/variant of 帆[fan1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%B8%86"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fān": "sail; boat",
+        "fán": "sail; boat"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "干",
+      "id": "Characters:干",
+      "recorded": [
+        "干",
+        "gān / gàn",
+        "oppose, offend; invade; dried",
+        "3 strokes · 干 radical",
+        "Simplified"
+      ],
+      "status": "existing",
+      "note": "",
+      "ccCedictEntries": [
+        "乹 干 [gan1] /old variant of 乾|干[gan1]/",
+        "乾 干 [Gan1] /surname Gan/",
+        "乾 干 [gan1] /dry/dried food/empty; hollow/taken in to nominal kinship; adoptive; foster/futile; in vain/(dialect) rude; blunt/(dialect) to cold-shoulder/",
+        "亁 干 [gan1] /variant of 乾|干[gan1]/",
+        "干 干 [Gan1] /surname Gan/",
+        "干 干 [gan1] /(bound form) to have to do with; to concern oneself with/one of the ten heavenly stems 天干[tian1 gan1]/(archaic) shield/",
+        "幹 干 [gan4] /tree trunk/main part of sth/to manage/to work/to do/capable/cadre/to kill (slang)/to fuck (vulgar)/(coll.) pissed off/annoyed/"
+      ],
+      "references": [
+        {
+          "label": "Dictionary source",
+          "url": "https://www.unicode.org/cgi-bin/GetUnihanData.pl?codepoint=5E72"
+        }
+      ],
+      "readings": {
+        "gān": "oppose, offend; invade; dried",
+        "gàn": "trunk of tree or of human body"
+      },
+      "source": "gān: Unicode Unihan 17.0.0 kDefinition of 干 (all recorded senses are read gān). gàn: the recorded translation of 幹 (Unicode Unihan 17.0.0 kDefinition \"trunk of tree or of human body\"), the sense 干 carries as its simplified form (Unihan kTraditionalVariant U+5E79 幹); Unihan kXHC1983 0359.030 gàn"
+    },
+    {
+      "glyph": "彷",
+      "id": "Characters:彷",
+      "recorded": [
+        "彷",
+        "páng / fǎng",
+        "like, resembling; resemble",
+        "7 strokes · 彳 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Detailed páng definitions describe wandering/hesitation; fǎng is used in 彷彿 and compares or resembles.",
+      "ccCedictEntries": [
+        "彷 彷 [pang2] /used in 彷徨[pang2 huang2] and 彷徉[pang2 yang2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%BD%B7"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%BD%B7"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "páng": "to wander; to hesitate (as in 彷徨)",
+        "fǎng": "like; resembling (as in 彷彿)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "徵",
+      "id": "Characters:徵",
+      "recorded": [
+        "徵",
+        "zhǐ / zhēng",
+        "summon, recruit; musical note",
+        "15 strokes · 彳 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "徵 征 [zheng1] /to invite/to recruit/to levy (taxes)/to draft (troops)/phenomenon/symptom/characteristic sign (used as proof)/evidence/",
+        "徵 徵 [zhi3] /4th note in the ancient Chinese pentatonic scale 五音[wu3 yin1], corresponding to sol/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%BE%B5"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "zhǐ": "the fourth note of the traditional five-note scale (sol)",
+        "zhēng": "to summon; to recruit; to levy; sign; evidence"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "摽",
+      "id": "Characters:摽",
+      "recorded": [
+        "摽",
+        "biào / biāo",
+        "throw out; push out; strike",
+        "14 strokes · 手 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "摽 摽 [biao1] /(literary) to wave away; to discard/",
+        "摽 摽 [biao4] /to bind tightly/to link (arms)/to hang around with; to stick close to (sb)/to compete/(literary) to hit; to beat/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%91%BD"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "biào": "to bind tightly; to cling to; to compete; to strike",
+        "biāo": "to wave away; to discard"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "斗",
+      "id": "Characters:斗",
+      "recorded": [
+        "斗",
+        "dòu / dǒu",
+        "a dipper; unit of volume (ten 升 or litres); Kangxi radical 68; 8th lunar mansion, determinative star φ Sagittarii",
+        "4 strokes · 斗 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "The historical astronomical and measurement context of the original dǒu definition is retained; the distinct dòu sense is recorded under the dictionary's 鬥 / 斗 entry.",
+      "ccCedictEntries": [
+        "斗 斗 [Dou3] /abbr. for the Big Dipper constellation 北斗星[Bei3 dou3 xing1]/",
+        "斗 斗 [dou3] /dry measure for grain equal to ten 升[sheng1] or one-tenth of a 石[dan4]/decaliter/peck/cup or dipper shaped object/old variant of 陡[dou3]/",
+        "鬥 斗 [dou4] /to fight/to struggle/to condemn/to censure/to contend/to put together/coming together/",
+        "鬦 斗 [dou4] /variant of 鬭|斗[dou4]/",
+        "鬪 斗 [dou4] /variant of 鬥|斗[dou4]/",
+        "鬭 斗 [dou4] /variant of 鬥|斗[dou4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%96%97"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dòu": "to fight; to struggle; to contend",
+        "dǒu": "a dipper; unit of volume (ten 升 or litres); Kangxi radical 68; 8th lunar mansion, determinative star φ Sagittarii"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "杓",
+      "id": "Characters:杓",
+      "recorded": [
+        "杓",
+        "biāo / sháo",
+        "handle of cup, ladle, spoon; name of a constellation (the handle of the Big Dipper)",
+        "7 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "杓 杓 [biao1] /(literary) handle of a spoon or ladle/(literary) collective name for the three stars that form the handle of the Big Dipper/",
+        "杓 杓 [shao2] /ladle (variant of 勺[shao2])/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%9D%93"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "biāo": "handle of a spoon or ladle; the handle stars of the Big Dipper",
+        "sháo": "ladle; spoon (variant of 勺)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "柁",
+      "id": "Characters:柁",
+      "recorded": [
+        "柁",
+        "tuó / duò",
+        "large tie-beams",
+        "9 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Basic definitions distinguish tuó roof beam from duò rudder; the Guoyu entry confirms the latter.",
+      "ccCedictEntries": [
+        "柁 柁 [tuo2] /main beam of roof/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%9F%81"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E6%9F%81"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "tuó": "large roof beam; girder",
+        "duò": "rudder (variant of 舵)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "柏",
+      "id": "Characters:柏",
+      "recorded": [
+        "柏",
+        "bǎi / bó",
+        "cypress, cedar",
+        "9 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "CC-CEDICT explicitly gives Taiwan bó for cypress/cedar and a separate bó entry for name transcription. This is overlapping regional use, not two disjoint senses.",
+      "ccCedictEntries": [
+        "柏 柏 [Bai3] /surname Bai/Taiwan pr. [Bo2]/",
+        "柏 柏 [bai3] /cedar/cypress/Taiwan pr. [bo2]/",
+        "柏 柏 [bo2] /(used for transcribing names)/",
+        "柏 柏 [bo4] /used in 黃柏|黄柏[huang2 bo4]/Taiwan pr. [bo2]/",
+        "栢 柏 [bai3] /variant of 柏[bai3]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%9F%8F"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bǎi": "cypress; cedar",
+        "bó": "cypress; cedar (Taiwan); used in transliterated names"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "框",
+      "id": "Characters:框",
+      "recorded": [
+        "框",
+        "kuàng / kuāng",
+        "frame; framework; door frame",
+        "10 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies kuāng as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "框 框 [kuang4] /frame (e.g. door frame)/casing/fig. framework/template/to circle (i.e. draw a circle around sth)/to frame/to restrict/Taiwan pr. [kuang1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%A1%86"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "kuàng": "frame; framework; door frame",
+        "kuāng": "frame; framework; door frame"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "槭",
+      "id": "Characters:槭",
+      "recorded": [
+        "槭",
+        "qì / cù",
+        "maple",
+        "15 strokes · 木 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies cù as the Taiwan pronunciation; the additional source reading zú is not added to the catalogue.",
+      "ccCedictEntries": [
+        "槭 槭 [qi4] /maple/also pr. [zu2]/Taiwan pr. [cu4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%A7%AD"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "qì": "maple",
+        "cù": "maple"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "欻",
+      "id": "Characters:欻",
+      "recorded": [
+        "欻",
+        "xū / hū",
+        "sudden, abrupt, quick",
+        "12 strokes · 欠 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly lists hū as an alternative pronunciation of the same sudden entry.",
+      "ccCedictEntries": [
+        "欻 欻 [chua1] /(onom.) crashing sound/",
+        "欻 欻 [xu1] /suddenly/also pr. [hu1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%AC%BB"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "xū": "sudden; abrupt; quick",
+        "hū": "sudden; abrupt; quick"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "氾",
+      "id": "Characters:氾",
+      "recorded": [
+        "氾",
+        "fán / fàn",
+        "overflow, flood, inundate",
+        "5 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "The fán personal-name use is also explicitly documented in Unicode's 2019 dictionary excerpts.",
+      "ccCedictEntries": [
+        "氾 氾 [fan2] /used in given names and as a surname/",
+        "氾 泛 [fan4] /variant of 泛[fan4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%B0%BE"
+        },
+        {
+          "label": "Unicode source excerpts (2019)",
+          "url": "https://www.unicode.org/L2/L2019/19362-kmandarin-chg.pdf"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fán": "used in personal names and surnames",
+        "fàn": "to overflow; to flood; to inundate"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Additional historical evidence is linked below."
+    },
+    {
+      "glyph": "氿",
+      "id": "Characters:氿",
+      "recorded": [
+        "氿",
+        "jiǔ / guǐ",
+        "spring",
+        "5 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Basic and detailed entries distinguish jiǔ lake names from guǐ a spring flowing sideways.",
+      "ccCedictEntries": [
+        "氿 氿 [gui3] /mountain spring/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%B0%BF"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E6%B0%BF"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "jiǔ": "used in the names of East Jiu and West Jiu lakes in Yixing",
+        "guǐ": "a spring flowing out from the side"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "沈",
+      "id": "Characters:沈",
+      "recorded": [
+        "沈",
+        "shěn / chén",
+        "sink, submerge; addicted to; surname",
+        "7 strokes · 水 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "Dictionary entries explicitly distinguish the surname and Shenyang abbreviation from chén, the recorded variant of 沉.",
+      "ccCedictEntries": [
+        "沈 沈 [Shen3] /surname Shen/",
+        "沈 沉 [chen2] /variant of 沉[chen2]/",
+        "瀋 沈 [Shen3] /short name for 瀋陽|沈阳[Shen3 yang2]/",
+        "瀋 沈 [shen3] /(literary) juice/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%B2%88"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shěn": "surname Shen; short for Shenyang (沈阳 / 瀋陽)",
+        "chén": "to sink; to submerge; addicted to (variant of 沉)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "沓",
+      "id": "Characters:沓",
+      "recorded": [
+        "沓",
+        "dá / tà",
+        "connected, joined; repeated",
+        "8 strokes · 水 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Taiwan also reads the classifier tà; the repeated/many sense is separately entered as tà.",
+      "ccCedictEntries": [
+        "沓 沓 [Ta4] /surname Ta/",
+        "沓 沓 [da2] /classifier for sheets of papers etc: pile, pad/Taiwan pr. [ta4]/",
+        "沓 沓 [ta4] /again and again/many/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E6%B2%93"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dá": "a pile or pad of sheets (classifier)",
+        "tà": "repeated; again and again; many"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "炔",
+      "id": "Characters:炔",
+      "recorded": [
+        "炔",
+        "quē / guì",
+        "an alkyne (e.g., acetylene)",
+        "8 strokes · 火 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "炔 炔 [Gui4] /surname Gui/",
+        "炔 炔 [que1] /alkyne/also pr. [jue2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%82%94"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "quē": "an alkyne (e.g., acetylene)",
+        "guì": "surname Gui"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "牚",
+      "id": "Characters:牚",
+      "recorded": [
+        "牚",
+        "chèng / chēng",
+        "",
+        "12 strokes · 牙 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Mainland basic/detailed definitions distinguish the noun chèng from support chēng. The Guoyu section also records chēng for a slanting pillar; these are regional conventions, not exclusive universal meanings.",
+      "ccCedictEntries": [
+        "牚 牚 [cheng1] /variant of 撐|撑[cheng1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%89%9A"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E7%89%9A"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "chèng": "slanting pillar; crossbar between the legs of a table or chair",
+        "chēng": "to support; to prop up (variant of 撐 / 撑)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "町",
+      "id": "Characters:町",
+      "recorded": [
+        "町",
+        "tǐng / dīng",
+        "raised path between fields",
+        "7 strokes · 田 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "町 町 [ding1] /(used in place names)/",
+        "町 町 [ting3] /raised path between fields/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%94%BA"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "tǐng": "raised path between fields",
+        "dīng": "used in place names"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "畬",
+      "id": "Characters:畬",
+      "recorded": [
+        "畬",
+        "shē / yú",
+        "reclaimed field",
+        "12 strokes · 田 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "畬 畬 [she1] /(literary) slash-and-burn agriculture/",
+        "畬 畬 [yu2] /(literary) farmland that has been cultivated for two years/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%95%AC"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shē": "slash-and-burn agriculture",
+        "yú": "farmland cultivated for two years"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "眄",
+      "id": "Characters:眄",
+      "recorded": [
+        "眄",
+        "miàn / miǎn",
+        "to look askance; looking dull",
+        "9 strokes · 目 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "Basic miàn, detailed/Guoyu miǎn and Kangxi alternative-tone entries share the sideways-looking sense; do not manufacture a meaning distinction from near-synonymous English glosses.",
+      "ccCedictEntries": [
+        "眄 眄 [mian3] /to ogle at/to squint at/",
+        "眄 眄 [mian4] /to look askance at/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%9C%84"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E7%9C%84"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "miàn": "to look askance; to look sideways",
+        "miǎn": "to look askance; to look sideways"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "瞭",
+      "id": "Characters:瞭",
+      "recorded": [
+        "瞭",
+        "liào / liǎo",
+        "bright, clear; clear-sighted",
+        "17 strokes · 目 radical",
+        "Traditional"
+      ],
+      "status": "existing",
+      "note": "",
+      "ccCedictEntries": [
+        "瞭 了 [liao3] /(bound form) clear in one's mind; to understand clearly/",
+        "瞭 了 [liao4] /unofficial variant of 瞭[liao4]/",
+        "瞭 瞭 [liao4] /to watch from a height or distance/"
+      ],
+      "references": [
+        {
+          "label": "Dictionary source",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3553"
+        }
+      ],
+      "readings": {
+        "liào": "to look from afar (as in 瞭望); clear-sighted",
+        "liǎo": "to understand (as in 瞭解); bright, clear"
+      },
+      "source": "Taiwan MOE 《重編國語辭典修訂本》 — 瞭 liǎo (ID 3553: understand, clear) and liào (ID 3561: look from afar), splitting Unicode Unihan 17.0.0 kDefinition \"bright, clear; clear-sighted\""
+    },
+    {
+      "glyph": "砉",
+      "id": "Characters:砉",
+      "recorded": [
+        "砉",
+        "huā / huò",
+        "the sound of flaying, separating skin and bone; the sound of flying quickly, whooshing",
+        "9 strokes · 石 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly gives Taiwan huò for the huā sound entry. It assigns flaying to xū, which is not among this record's readings; the original combined flaying sense is not borrowed.",
+      "ccCedictEntries": [
+        "砉 砉 [hua1] /sound of a thing flying fast by/whoosh/cracking sound/Taiwan pr. [huo4]/",
+        "砉 砉 [xu1] /sound of flaying/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%A0%89"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "huā": "whoosh; cracking sound; sound of something flying quickly",
+        "huò": "whoosh; cracking sound; sound of something flying quickly"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "碡",
+      "id": "Characters:碡",
+      "recorded": [
+        "碡",
+        "zhóu / dú",
+        "stone roller used to level fields",
+        "14 strokes · 石 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies dú as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "碡 碡 [zhou2] /stone roller (for threshing grain, leveling ground etc)/Taiwan pr. [du2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%A2%A1"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "zhóu": "stone roller used for threshing grain or leveling ground",
+        "dú": "stone roller used for threshing grain or leveling ground"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "繃",
+      "id": "Characters:繃",
+      "recorded": [
+        "繃",
+        "běng / bēng",
+        "bind, draw firmly, strap",
+        "17 strokes · 糸 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "繃 绷 [beng1] /to draw tight; to stretch taut/to tack (with thread or pin)/(bound form) embroidery hoop/(bound form) woven bed mat/",
+        "繃 绷 [beng3] /to have a taut face/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E7%B9%83"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "běng": "to keep a taut or stern face",
+        "bēng": "to draw tight; to stretch taut; to bind; to tack with thread"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "耙",
+      "id": "Characters:耙",
+      "recorded": [
+        "耙",
+        "bà / pá",
+        "rake",
+        "10 strokes · 耒 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Both are agricultural tools, but the dictionary distinguishes bà harrowing from pá raking.",
+      "ccCedictEntries": [
+        "耙 耙 [ba4] /a hoe/to harrow/",
+        "耙 耙 [pa1] /(Sichuan dialect) common substitute for 𤆵[pa1] \"soft\" (used because 𤆵[pa1] can be difficult to input)/",
+        "耙 耙 [pa2] /a rake/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%80%99"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bà": "harrow; to harrow",
+        "pá": "rake; to rake"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "聒",
+      "id": "Characters:聒",
+      "recorded": [
+        "聒",
+        "guō / guā",
+        "clamor, din, hubbub",
+        "12 strokes · 耳 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "Basic guō and Guoyu guā entries both describe noise or clamor.",
+      "ccCedictEntries": [
+        "聒 聒 [guo1] /raucous/clamor/unpleasantly noisy/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%81%92"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E8%81%92"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "guō": "clamor; din; hubbub; to be noisy",
+        "guā": "clamor; din; hubbub; to be noisy"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "肋",
+      "id": "Characters:肋",
+      "recorded": [
+        "肋",
+        "lèi / lè",
+        "ribs; chest",
+        "6 strokes · 肉 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies lè as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "肋 肋 [lei4] /(bound form) rib/Taiwan pr. [le4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%82%8B"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "lèi": "ribs; chest",
+        "lè": "ribs; chest"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "舍",
+      "id": "Characters:舍",
+      "recorded": [
+        "舍",
+        "shě / shè",
+        "house, dwelling; dwell, reside",
+        "8 strokes · 舌 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "The dictionary distinguishes shě (recorded 捨 / 舍 pair) from shè residence, humble kinship and the historical unit.",
+      "ccCedictEntries": [
+        "捨 舍 [she3] /to give up; to abandon/to give alms/",
+        "舍 舍 [She4] /surname She/",
+        "舍 舍 [she3] /old variant of 捨|舍[she3]/",
+        "舍 舍 [she4] /(bound form) residence; house/(bound form) my (in speaking of relatives younger than oneself, as in 舍妹[she4 mei4])/(archaic) unit of distance equal to 30 li 里[li3]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%88%8D"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shě": "to give up; to abandon; to give alms",
+        "shè": "house; dwelling; residence; one's younger relatives (humble); an ancient distance of 30 li"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "芎",
+      "id": "Characters:芎",
+      "recorded": [
+        "芎",
+        "xiōng / qiōng",
+        "a kind of herb",
+        "6 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies qiōng as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "芎 芎 [xiong1] /used in 芎藭|芎䓖[xiong1 qiong2] and 川芎[chuan1 xiong1]/Taiwan pr. [qiong1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%8A%8E"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "xiōng": "a medicinal herb (as in 川芎 and 芎藭)",
+        "qiōng": "a medicinal herb (as in 川芎 and 芎藭)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "芘",
+      "id": "Characters:芘",
+      "recorded": [
+        "芘",
+        "bǐ / pí",
+        "Malva sylvestris",
+        "7 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "The basic entry explicitly binds bǐ to the chemical and pí to the mallow plant. The page's older detailed section conflicts on the chemical pronunciation; only the explicit modern basic bǐ and Guoyu pí plant entries are used.",
+      "ccCedictEntries": [
+        "芘 芘 [pi2] /Malva sylvestris/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%8A%98"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E8%8A%98"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bǐ": "pyrene (an organic compound)",
+        "pí": "mallow (Malva sylvestris)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "苧",
+      "id": "Characters:苧",
+      "recorded": [
+        "苧",
+        "níng / zhù",
+        "China grass, ramie (Boehmeria nivea)",
+        "8 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "Basic/detailed níng names limonene; zhù is the ramie form. This preserves exact recorded dictionary spellings, without changing script grouping.",
+      "ccCedictEntries": [
+        "苧 苎 [zhu4] /used in 苧麻|苎麻[zhu4 ma2]/",
+        "薴 苧 [ning2] /limonene/used in 薺薴|荠苧[ji4 ning2]/(literary) tangled; in disarray/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%8B%A7"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E8%8B%A7"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "níng": "limonene; used in 薺薴 / 荠苧",
+        "zhù": "China grass; ramie (Boehmeria nivea)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "菹",
+      "id": "Characters:菹",
+      "recorded": [
+        "菹",
+        "zū / jū",
+        "salted or pickled vegetables",
+        "11 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies jū as the Taiwan pronunciation of the same entry.",
+      "ccCedictEntries": [
+        "菹 菹 [zu1] /marshland/swamp/salted or pickled vegetables/to mince/to shred/to mince human flesh and bones/Taiwan pr. [ju1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%8F%B9"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "zū": "salted or pickled vegetables; to mince; marshland",
+        "jū": "salted or pickled vegetables; to mince; marshland"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "萎",
+      "id": "Characters:萎",
+      "recorded": [
+        "萎",
+        "wěi / wēi",
+        "wither, wilt",
+        "11 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies wēi as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "萎 萎 [wei3] /to wither/to drop/to decline/spiritless/Taiwan pr. [wei1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%90%8E"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "wěi": "to wither; to wilt; to decline; spiritless",
+        "wēi": "to wither; to wilt; to decline; spiritless"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "著",
+      "id": "Characters:著",
+      "recorded": [
+        "著",
+        "zhù / zhe",
+        "manifest; (Cant.) to wear",
+        "11 strokes · 艸 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "The recorded 著 / 着 dictionary entry explicitly binds zhe to the aspect particle. Wear is zhuó in Mandarin; the original Cantonese wear sense is not assigned to zhe. Other source readings are not added.",
+      "ccCedictEntries": [
+        "著 着 [zhao1] /a move in chess (Taiwan pr. [zhuo2])/trick; tactic/(dialect) okay; all right/(dialect) to put in; to add/",
+        "著 着 [zhao2] /to touch/to come in contact with/to feel/to be affected by/to catch fire/to burn/(coll.) to fall asleep/(after a verb) hitting the mark/succeeding in/",
+        "著 着 [zhe5] /aspect particle indicating action in progress or ongoing state/",
+        "著 着 [zhuo2] /to wear (clothes)/to contact/to use/to apply/",
+        "著 著 [zhu4] /to make known/to show/to prove/to write/book/outstanding/",
+        "著 著 [zhuo2] /used in 執著|执著[zhi2 zhuo2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%91%97"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "zhù": "manifest; outstanding; to make known; to write; book",
+        "zhe": "aspect particle indicating an action in progress or an ongoing state"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "蕃",
+      "id": "Characters:蕃",
+      "recorded": [
+        "蕃",
+        "bō / fān",
+        "foreign things",
+        "15 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "蕃 蕃 [bo1] /used in 吐蕃[Tu3 bo1]/",
+        "蕃 蕃 [fan1] /(bound form) foreign (non-Chinese); barbarian (variant of 番[fan1])/",
+        "蕃 蕃 [fan2] /luxuriant/flourishing/to reproduce/to proliferate/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%95%83"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "bō": "used in 吐蕃, the historical Tibetan kingdom",
+        "fān": "foreign; non-Chinese (variant of 番)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "薄",
+      "id": "Characters:薄",
+      "recorded": [
+        "薄",
+        "báo / bó",
+        "thin, slight, weak; poor, stingy",
+        "16 strokes · 艸 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "The meanings overlap; CC-CEDICT nonetheless records separate báo and bó entries. The herb reading bò is not added.",
+      "ccCedictEntries": [
+        "薄 薄 [Bo2] /surname Bo/",
+        "薄 薄 [bao2] /thin/cold in manner/indifferent/weak/light/infertile/",
+        "薄 薄 [bo2] /meager/slight/weak/ungenerous or unkind/frivolous/to despise/to belittle/to look down on/to approach or near/",
+        "薄 薄 [bo4] /see 薄荷[bo4 he5]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%96%84"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "báo": "thin; weak; light; infertile; cold in manner",
+        "bó": "slight; meager; weak; ungenerous; to despise; to approach"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "袷",
+      "id": "Characters:袷",
+      "recorded": [
+        "袷",
+        "qiā / jiá",
+        "lined garment",
+        "11 strokes · 衣 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "袷 袷 [jia2] /variant of 夾|夹[jia2]/",
+        "袷 袷 [qia1] /used in 袷袢[qia1 pan4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%A2%B7"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "qiā": "used in 袷袢, a long robe worn by some Central Asian peoples",
+        "jiá": "lined garment (variant of 夾 / 夹)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "誰",
+      "id": "Characters:誰",
+      "recorded": [
+        "誰",
+        "shuí / shéi",
+        "who? whom? whose? anyone?",
+        "15 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly lists shuí as an alternative pronunciation of the shéi entry.",
+      "ccCedictEntries": [
+        "誰 谁 [shei2] /who/also pr. [shui2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%AA%B0"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shuí": "who? whom? whose? anyone?",
+        "shéi": "who? whom? whose? anyone?"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "諷",
+      "id": "Characters:諷",
+      "recorded": [
+        "諷",
+        "fěng / fèng",
+        "recite, incant; satirize",
+        "16 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies fèng as the Taiwan pronunciation. Do not separate recitation from satire solely by tone.",
+      "ccCedictEntries": [
+        "諷 讽 [feng3] /to satirize/to mock/to recite/Taiwan pr. [feng4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%AB%B7"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fěng": "to recite; to satirize; to mock",
+        "fèng": "to recite; to satirize; to mock"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "識",
+      "id": "Characters:識",
+      "recorded": [
+        "識",
+        "shí / shì",
+        "recognize, understand, know",
+        "19 strokes · 言 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies shì as the Taiwan pronunciation of shí. The separate record/write sense is zhì, which is not recorded here.",
+      "ccCedictEntries": [
+        "識 识 [shi2] /to know/knowledge/Taiwan pr. [shi4]/",
+        "識 识 [zhi4] /to record/to write a footnote/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%AD%98"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shí": "to recognize; to understand; to know; knowledge",
+        "shì": "to recognize; to understand; to know; knowledge"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "讽",
+      "id": "Characters:讽",
+      "recorded": [
+        "讽",
+        "fěng / fèng",
+        "recite, incant; satirize",
+        "6 strokes · 言 radical",
+        "Simplified"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies fèng as the Taiwan pronunciation. Do not separate recitation from satire solely by tone.",
+      "ccCedictEntries": [
+        "諷 讽 [feng3] /to satirize/to mock/to recite/Taiwan pr. [feng4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%AE%BD"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fěng": "to recite; to satirize; to mock",
+        "fèng": "to recite; to satirize; to mock"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "识",
+      "id": "Characters:识",
+      "recorded": [
+        "识",
+        "shí / shì",
+        "recognize, understand, know",
+        "7 strokes · 言 radical",
+        "Simplified"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies shì as the Taiwan pronunciation of shí. The separate record/write sense is zhì, which is not recorded here.",
+      "ccCedictEntries": [
+        "識 识 [shi2] /to know/knowledge/Taiwan pr. [shi4]/",
+        "識 识 [zhi4] /to record/to write a footnote/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%AF%86"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shí": "to recognize; to understand; to know; knowledge",
+        "shì": "to recognize; to understand; to know; knowledge"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "跌",
+      "id": "Characters:跌",
+      "recorded": [
+        "跌",
+        "diē / dié",
+        "stumble, slip, fall down; stamp",
+        "12 strokes · 足 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies dié as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "跌 跌 [die1] /to fall/to tumble/to trip/(of prices etc) to drop/Taiwan pr. [die2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%B7%8C"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "diē": "to stumble; to slip; to fall; to drop",
+        "dié": "to stumble; to slip; to fall; to drop"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "蹣",
+      "id": "Characters:蹣",
+      "recorded": [
+        "蹣",
+        "pán / mán",
+        "to jump over; to limp",
+        "18 strokes · 足 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies mán as the Taiwan pronunciation of the same compound-bound entry.",
+      "ccCedictEntries": [
+        "蹣 蹒 [pan2] /used in 蹣跚|蹒跚[pan2 shan1]/Taiwan pr. [man2]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%B9%A3"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "pán": "to limp; to stagger (as in 蹣跚)",
+        "mán": "to limp; to stagger (as in 蹣跚)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "蹬",
+      "id": "Characters:蹬",
+      "recorded": [
+        "蹬",
+        "dēng / dèng",
+        "step on, tread on; lose energy",
+        "19 strokes · 足 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "CC-CEDICT explicitly gives Taiwan dèng for stepping and a separate dèng entry in 蹭蹬. This is overlapping regional use, not two disjoint senses.",
+      "ccCedictEntries": [
+        "蹬 蹬 [deng1] /to step on; to tread on/to put on; to wear (shoes, trousers etc)/(slang) to dump (sb)/Taiwan pr. [deng4]/",
+        "蹬 蹬 [deng4] /used in 蹭蹬[ceng4 deng4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E8%B9%AC"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dēng": "to step on; to tread on; to put on shoes or trousers",
+        "dèng": "to step on; to tread on (Taiwan); to suffer a setback (as in 蹭蹬)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "适",
+      "id": "Characters:适",
+      "recorded": [
+        "适",
+        "shì / kuò",
+        "go, reach; appropriate, suitable",
+        "9 strokes · 辵 radical",
+        "Simplified"
+      ],
+      "status": "distinct",
+      "note": "The name entry records exact 适, distinct from the 適 / 适 suitable/go entry. No look-alike or traditional-form substitution is inferred.",
+      "ccCedictEntries": [
+        "适 适 [kuo4] /see 李适[Li3 Kuo4]/",
+        "適 适 [Shi4] /surname Shi/",
+        "適 适 [shi4] /to fit/suitable/proper/just (now)/comfortable/well/to go/to follow or pursue/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%80%82"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "shì": "to go; to reach; appropriate; suitable; comfortable",
+        "kuò": "used in the personal name 李适 (Li Kuo)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "都",
+      "id": "Characters:都",
+      "recorded": [
+        "都",
+        "dōu / dū",
+        "metropolis, capital; all, the whole; elegant, refined",
+        "10 strokes · 邑 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "都 都 [Du1] /surname Du/",
+        "都 都 [dou1] /all; both; entirely/(used for emphasis) even/already/(not) at all/",
+        "都 都 [du1] /capital city/metropolis/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%83%BD"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dōu": "all; both; entirely; even; already",
+        "dū": "metropolis; capital city; surname Du"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "醱",
+      "id": "Characters:醱",
+      "recorded": [
+        "醱",
+        "fā / pò",
+        "to brew for the second time",
+        "19 strokes · 酉 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "Basic fā refers to fermentation; Guoyu pò explicitly includes second brewing and fermentation. The original historical second-brewing context is retained under pò.",
+      "ccCedictEntries": [
+        "醱 酦 [fa1] /used in 醱酵|酦酵[fa1 jiao4]/Taiwan pr. [po4]/",
+        "醱 酦 [po1] /to ferment alcohol/Taiwan pr. [po4]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%86%B1"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E9%86%B1"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fā": "to ferment (as in 醱酵)",
+        "pò": "to brew again; to ferment (Taiwan)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "釐",
+      "id": "Characters:釐",
+      "recorded": [
+        "釐",
+        "xī / lí",
+        "manage, control; thousandth part of tael",
+        "18 strokes · 里 radical",
+        "Traditional"
+      ],
+      "status": "distinct",
+      "note": "Guoyu xī is explicitly good fortune; lí includes management, correction and historical measurement units. Do not assign the manage sense to xī based on reading order.",
+      "ccCedictEntries": [
+        "釐 厘 [Li2] /Li (c. 2000 BC), sixth of the legendary Flame Emperors 炎帝[Yan2 di4] descended from Shennong 神農|神农[Shen2 nong2] Farmer God, also known as Ai 哀[Ai1]/",
+        "釐 厘 [li2] /one hundredth/centi-/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%87%90"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E9%87%90"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "xī": "good fortune; auspiciousness (as in 禧)",
+        "lí": "to manage; to govern; to correct; a thousandth of a tael"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "隄",
+      "id": "Characters:隄",
+      "recorded": [
+        "隄",
+        "dī / tí",
+        "dike, embankment",
+        "11 strokes · 阜 radical",
+        "Common"
+      ],
+      "status": "shared",
+      "note": "Basic dī and Guoyu tí entries both name a dike; the Kangxi alternative-tone entry explicitly shares the same meaning.",
+      "ccCedictEntries": [
+        "隄 堤 [di1] /variant of 堤[di1]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%9A%84"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E9%9A%84"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "dī": "dike; embankment",
+        "tí": "dike; embankment"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted."
+    },
+    {
+      "glyph": "頗",
+      "id": "Characters:頗",
+      "recorded": [
+        "頗",
+        "pō / pǒ",
+        "lean one side; very, rather",
+        "14 strokes · 頁 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies pǒ as the Taiwan pronunciation.",
+      "ccCedictEntries": [
+        "頗 颇 [Po1] /surname Po/Taiwan pr. [Po3]/",
+        "頗 颇 [po1] /rather/quite/considerably/oblique/inclined/slanting/Taiwan pr. [po3]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%A0%97"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "pō": "to lean to one side; inclined; very; rather",
+        "pǒ": "to lean to one side; inclined; very; rather"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "髮",
+      "id": "Characters:髮",
+      "recorded": [
+        "髮",
+        "fà / fǎ",
+        "hair",
+        "15 strokes · 髟 radical",
+        "Traditional"
+      ],
+      "status": "shared",
+      "note": "CC-CEDICT explicitly identifies fǎ as the Taiwan pronunciation. The two readings share one meaning and retain separate speakers.",
+      "ccCedictEntries": [
+        "髮 发 [fa4] /hair/Taiwan pr. [fa3]/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%AB%AE"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "fà": "hair",
+        "fǎ": "hair"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    },
+    {
+      "glyph": "麃",
+      "id": "Characters:麃",
+      "recorded": [
+        "麃",
+        "páo / biāo",
+        "till, plow",
+        "15 strokes · 鹿 radical",
+        "Common"
+      ],
+      "status": "distinct",
+      "note": "",
+      "ccCedictEntries": [
+        "麃 麃 [biao1] /to weed/",
+        "麃 麃 [pao2] /(archaic) a type of deer/"
+      ],
+      "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E9%BA%83"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "readings": {
+        "páo": "a kind of deer (archaic)",
+        "biāo": "to weed; to till"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0."
+    }
+  ]
+}

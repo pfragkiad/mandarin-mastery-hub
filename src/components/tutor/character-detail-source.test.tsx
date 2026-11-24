@@ -25,11 +25,12 @@ vi.mock('./workspace', () => ({
 beforeAll(() => hydrateCatalog(readCatalog()));
 afterEach(cleanup);
 
-function openSource() {
-  const row = catalog.characters.find(item => item[0] === '地')!;
-  const entry: LibraryEntry = { id: 'Characters:地', hanzi: row[0], pinyin: row[1], meaning: row[2], note: row[3] };
-  const { container } = render(<CharacterDetails entry={entry} kind="Characters"/>);
+function openSource(glyph = '地', kind: 'Characters' | 'Components' = 'Characters') {
+  const row = catalog.characters.find(item => item[0] === glyph)!;
+  const entry: LibraryEntry = { id: `${kind}:${glyph}`, hanzi: row[0], pinyin: row[1], meaning: row[2], note: row[3] };
+  const { container } = render(<CharacterDetails entry={entry} kind={kind}/>);
   fireEvent.click(within(container.querySelector('.catalog-detail-title') as HTMLElement).getByRole('button', { name: 'Source details' }));
+  return container;
 }
 
 describe('Sources for reading-specific character meanings', () => {
@@ -52,5 +53,27 @@ describe('Sources for reading-specific character meanings', () => {
     } finally {
       row[2] = original;
     }
+  });
+
+  it('shows dictionary/license links and retains the original historical definition', () => {
+    const container = openSource('麃');
+    expect(container.querySelectorAll('.reading-meaning')).toHaveLength(2);
+    expect(screen.getByRole('link', { name: 'CC-CEDICT entry' }).getAttribute('href')).toContain(encodeURIComponent('麃'));
+    expect(screen.getByRole('link', { name: 'CC BY-SA 4.0' })).toHaveAttribute('href', 'https://creativecommons.org/licenses/by-sa/4.0/');
+    expect(screen.getByText('Original Unihan definition: till, plow')).toBeVisible();
+    expect(container.textContent).toContain('a kind of deer (archaic)');
+  });
+
+  it('keeps one shared regional meaning with both exact reading controls', async () => {
+    const container = openSource('誰');
+    expect(container.querySelectorAll('.reading-meaning')).toHaveLength(1);
+    expect([...container.querySelectorAll('.reading-meaning-reading .pinyin[lang]')].map(node => node.textContent)).toEqual(['shuí', 'shéi']);
+    expect(await screen.findByText(/alternative pronunciation of the shéi entry/)).toBeVisible();
+  });
+
+  it('uses the same split and source on an exact lexical Components record', () => {
+    const container = openSource('都', 'Components');
+    expect(container.querySelectorAll('.reading-meaning')).toHaveLength(2);
+    expect(screen.getByRole('link', { name: 'CC-CEDICT entry' })).toBeVisible();
   });
 });

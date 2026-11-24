@@ -4,6 +4,7 @@ Keep source files required only for offline data generation here, grouped by dat
 
 | Directory | Usage |
 | --- | --- |
+| [character-readings/](character-readings/README.md) | Complete multi-reading character audit, explicit editorial mappings, pinned CC-CEDICT export and supplementary dictionary/source evidence; consumed by `scripts/import-reading-meanings.py`. |
 | [radical-identities/](radical-identities/README.md) | Supplied exact-identity review and pinned Unicode records consumed by `scripts/import-radical-identities.py`. |
 | [etymology/](etymology/README.md) | Pinned Howell and Shuowen sources, licenses and schema-versioned checksum manifest; acquired/audited by `scripts/download-etymology-sources.py`. Not loaded by the app. |
 | [lessons/](lessons/README.md) | Original owner-supplied HSK Level 1 lesson and canonical Core v3.2.0 ZIPs; validated by the lesson/Core import scripts. Never loaded by the app. |

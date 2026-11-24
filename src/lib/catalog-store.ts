@@ -32,7 +32,7 @@ export type CatalogData = CatalogFile & CharacterFile & RadicalFile & ComponentF
 
 /** One owner-reviewed split of a character's combined dictionary meaning by reading.
  *  `combined` is the catalogue meaning the split was reviewed against. */
-export type ReadingMeaningRecord = { readings: Record<string, string>; combined: string; source: string; sourceUrl?: string; date?: string; approvedBy?: string };
+export type ReadingMeaningRecord = { readings: Record<string, string>; combined: string; source: string; sourceUrl?: string; sourceLinks?: { label: string; url: string }[]; note?: string; date?: string; approvedBy?: string };
 
 export const catalog = {
   loaded: false, version: 0, source: '',

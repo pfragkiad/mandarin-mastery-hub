@@ -3,3 +3,6 @@
 hsk-level1-lessons-classification-changes.csv -text -whitespace
 hsk-level1-lessons-source-example-discrepancies.json -text
 Frontend_Migration_Report_Core_v3.6.0.md -text whitespace=-blank-at-eol
+# Reproducible reading audit outputs are compared byte-for-byte by --check.
+character-reading-meanings-audit.json -text
+character-reading-meanings-audit.md -text

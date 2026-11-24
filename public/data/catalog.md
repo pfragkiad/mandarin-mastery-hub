@@ -41,7 +41,7 @@ The shared `catalog.json` fields are:
 - `audio`: recording ID → attachment, including CDN URL and source/license metadata. Media binaries remain outside the repository.
 - `componentRadicals`: exact component glyph → dictionary radical, sourced from Unihan kRSUnicode.
 - `readingRevisions`: owner-reviewed reading changes with their sources and approval metadata.
-- `readingMeanings`: owner-reviewed per-reading meanings, guarded against the current recorded combined meaning and reading list.
+- `readingMeanings`: per-reading meanings from owner-requested source review, guarded against the current recorded combined meaning and reading list. Records retain attribution, source URL, optional `sourceLinks` (label/URL pairs), and optional regional/historical `note`. Shared-meaning alternate pronunciations keep identical glosses so the existing renderer groups them with independent speakers. The source popup retains the original Unihan definition alongside the additional sources.
 - `meaningPointers`: owner-reviewed links from a recorded sense to the related character that owns it.
 
 Section membership belongs to the section file. Shared fields must not be copied into each section file. Keep independent sidecars such as `radical-identities.json`, `radical-strokes.json`, `usage-order.json`, `character-variants-v1.4.0.json`, and per-glyph enrichment files in their existing roles. In particular, `radicals.json` contains library headings; `radical-strokes.json` contains family-qualified exact forms, variants, stroke sequences, and provenance.
@@ -103,6 +103,16 @@ for section in ('characters', 'radicals', 'components', 'strokes'):
 This joined object is an in-memory view. When writing a correction, update the owning file instead of writing the joined object back into `catalog.json`.
 
 ## Importers and maintenance
+
+The complete [reading audit](../../reports/character-reading-meanings-audit.md)
+is maintained from [preserved sources and explicit editorial mappings](../../importer/data/character-readings/README.md).
+`python scripts/import-reading-meanings.py --write` updates only `readingMeanings`
+and the offline audit reports; `--check` verifies reproducibility and exact source/row
+bindings. The 2026-11-25 audit covers all 75 multi-reading Characters tuples:
+72 have sourced mappings, including regional/shared meanings, and three retain
+their combined display because the imported readings differ from the dictionary
+evidence. No extra dictionary pronunciation is added to a catalogue row. Existing
+historical/etymology cards, source text, glyph IDs, recordings and geometry stay intact.
 
 | Importer | Catalogue files it reads or updates |
 | --- | --- |

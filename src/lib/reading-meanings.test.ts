@@ -1,7 +1,7 @@
 import { readCatalog } from '@/test/catalog-fixture';
 import { beforeAll, describe, expect, it } from 'vitest';
 import fs from 'fs';
-import { catalog, hydrateCatalog, readingMeaning, readingMeanings, type CatalogData } from './catalog-store';
+import { catalog, groupReadingMeanings, hydrateCatalog, readingMeaning, readingMeanings, type CatalogData } from './catalog-store';
 import { cardReadingSplit } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 
@@ -37,9 +37,37 @@ describe('meaning for each reading', () => {
     expect(readingMeanings('了')?.map(item => item.reading)).toEqual(['le', 'liǎo']);
   });
 
-  it('a character without a reviewed split keeps its combined meaning (no split)', () => {
-    expect(readingMeanings('万')).toBeNull();
-    expect(readingMeaning('万', 'wàn')).toBeUndefined();
+  it('an unresolved exact-reading discrepancy keeps its combined meaning (no split)', () => {
+    expect(readingMeanings('剖')).toBeNull();
+    expect(readingMeaning('剖', 'pǒ')).toBeUndefined();
+  });
+
+  it('separates common polyphones and preserves historical names and units under their attested reading', () => {
+    expect(readingMeaning('都', 'dōu')).toBe('all; both; entirely; even; already');
+    expect(readingMeaning('都', 'dū')).toContain('capital city');
+    expect(readingMeaning('炔', 'quē')).toContain('alkyne');
+    expect(readingMeaning('炔', 'guì')).toBe('surname Gui');
+    expect(readingMeaning('麃', 'páo')).toBe('a kind of deer (archaic)');
+    expect(readingMeaning('麃', 'biāo')).toBe('to weed; to till');
+    expect(readingMeaning('斗', 'dǒu')).toContain('8th lunar mansion');
+    expect(readingMeaning('斗', 'dòu')).not.toContain('lunar');
+  });
+
+  it('shares regional meanings instead of manufacturing a semantic distinction', () => {
+    expect(groupReadingMeanings(readingMeanings('誰')!)).toMatchObject([
+      { readings: ['shuí', 'shéi'], meaning: 'who? whom? whose? anyone?' },
+    ]);
+    expect(readingMeaning('識', 'shí')).toBe(readingMeaning('識', 'shì'));
+    expect(readingMeaning('眄', 'miàn')).toBe(readingMeaning('眄', 'miǎn'));
+  });
+
+  it('does not borrow dialectal or unrecorded-reading senses from a combined definition', () => {
+    expect(readingMeanings('砉')?.every(item => !item.meaning.includes('flaying'))).toBe(true);
+    expect(readingMeanings('差')?.every(item => !item.meaning.includes('officer'))).toBe(true);
+    expect(readingMeaning('著', 'zhe')).toContain('aspect particle');
+    expect(readingMeaning('著', 'zhe')).not.toContain('wear');
+    expect(readingMeaning('伲', 'ní')).toBeUndefined();
+    expect(readingMeanings('崾')).toBeNull();
   });
 
   it('瞭 liǎo means to understand (as in 瞭解), its first listed sense', () => {

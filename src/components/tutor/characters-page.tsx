@@ -229,7 +229,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   // A Characters record with a reviewed split (了 le / liǎo) lists each reading's own meaning.
   // The family's own radical card (干 #51) shows the same reviewed split, validated against this
   // exact record's readings and meaning (cardReadingSplit); variant forms keep their own text.
-  const perReading = kind === 'Characters' && !fallback ? readingMeanings(entry.hanzi) : kind === 'Radicals' && !form && !fallback ? cardReadingSplit(entry.hanzi, entry.pinyin, entry.meaning) : null;
+  const perReading = kind === 'Characters' && !fallback ? readingMeanings(entry.hanzi) : ((kind === 'Radicals' && !form) || (kind === 'Components' && !info.component)) && !fallback ? cardReadingSplit(entry.hanzi, entry.pinyin, entry.meaning) : null;
   // A reviewed sense owned by a related character (干's "dried" → 乾) gets a link to that card.
   // Per-reading lines (了 le / liǎo) carry their own speakers when every line is an exact recorded
   // reading and no "Component name ·" prefix is needed; otherwise the pinyin line stays.
@@ -271,7 +271,11 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   // cannot leave an obsolete reading attribution attached to the combined definition.
   const readingSource = perReading ? catalog.readingMeanings[entry.hanzi] : undefined;
   const sourceNote = <>{info.source ?? 'Unicode Unihan 17.0.0 readings and meanings.'}
-    {readingSource && <><br/>Reading-specific meanings: {readingSource.source}{readingSource.sourceUrl && <> <a href={readingSource.sourceUrl} target="_blank" rel="noopener noreferrer">Dictionary source</a></>}</>}
+    {readingSource && <><br/>Reading-specific meanings: {readingSource.source}
+      {readingSource.sourceLinks?.length ? readingSource.sourceLinks.map(link => <Fragment key={link.url}> <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a></Fragment>) : readingSource.sourceUrl && <> <a href={readingSource.sourceUrl} target="_blank" rel="noopener noreferrer">Dictionary source</a></>}
+      {readingSource.note && <><br/>{readingSource.note}</>}
+      {readingSource.combined && <><br/>Original Unihan definition: {readingSource.combined}</>}
+    </>}
     {scriptNote && <><br/>{scriptNote}</>}
   </>;
   return <section className={`catalog-detail ${kind === 'Radicals' && historicalRadicalHeading(entry.hanzi, heading.kangxiIndex) ? 'historical-radical-detail' : ''}`} aria-label={`Details for ${entry.hanzi}`}>
