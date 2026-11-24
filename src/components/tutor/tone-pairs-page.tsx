@@ -14,7 +14,8 @@
 // - The word speaker plays one exact whole-word recording (the word card's own CDN attachment);
 //   each syllable chip plays only the Sound chart's own recording of that exact syllable + tone.
 //   No TTS, no syllable joining, no automatic fallback on failure.
-// - Any selection change, page switch or unmount stops playback; Next word never autoplays.
+// - Any selection change, page switch or unmount stops playback; the speaker is play-only
+//   (no stop state), exactly like every other card in the app.
 // - The dictionary tones, the exact source reading and the *expected in speech* draft stay
 //   separate; the draft is labelled as such and nothing here claims listening approval.
 // - Listen first hides every word name and reading (cells, list, card) but keeps the
@@ -30,7 +31,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  listeningTip, loadTonePairs, nextExample, pairHasToneChange, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  listeningTip, loadTonePairs, pairHasToneChange, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -97,7 +98,8 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
 
   const play = async () => {
     if (!row) return;
-    if (status.kind === 'loading' || status.kind === 'playing') { stop(); return; }
+    // Play-only, like every other speaker in the app: a tap while playing does nothing.
+    if (status.kind === 'loading' || status.kind === 'playing') return;
     chipStop.current(); chipPlayer.clearError();
     const mine = ++generation.current;
     setStatus({ kind: 'loading', text: 'Loading recording…' });
@@ -110,8 +112,6 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
     const ok = await playRecordingAt(row.audio.url, slow ? SLOW_RATE : NORMAL_RATE, onSettle);
     if (ok && mine === generation.current) setStatus({ kind: 'playing', text: `Playing the whole-word recording · ${row.audio.speaker}${slow ? ' · slower' : ''}` });
   };
-  const playing = status.kind === 'loading' || status.kind === 'playing';
-
   return <div className="page-enter library-page pinyin-page tone-sounds-page">
     <div className="page-heading library-heading"><div>
       <div className="eyebrow library-eyebrow">PINYIN SOUNDS · {mode === 'pairs' ? 'TONE PAIRS' : 'TONE CHANGES'}</div>
@@ -142,10 +142,9 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             </div>
           </section>
         </div>
-        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} playing={playing} status={status}
+        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status}
           chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
-          onNext={() => { const next = nextExample(pool, row.id); if (next) onChange({ example: next.id }); }}
           onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
       </div>}
   </div>;
@@ -197,18 +196,19 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * The hanzi get the detail cards' hover pairing with the pinyin and, inside SentenceHints (the
  * remembered Character hints switch), a click opens each character's quick card; the word
  * context is the exact Vocabulary record bound to this recording (vocabularyEntryId), never a
- * spelling match. Below: dictionary vs expected tones, Play / Next word, and each dictionary
+ * spelling match. Below: dictionary vs expected tones, and each dictionary
  * syllable as a chip that plays the Sound chart's own recording in place (no navigation).
  */
-function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onNext, onReveal, chips }: {
-  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; playing: boolean; status: Status;
-  onPlay: () => void; onNext: () => void; onReveal: () => void; chips: SyllableChips;
+function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips }: {
+  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
+  onPlay: () => void; onReveal: () => void; chips: SyllableChips;
 }) {
   const changed = tonesChanged(row);
   const reading = row.expectedSpokenSyllables.join(' ');
   const pairing = usePhrasePairing(row.headword, reading, !hidden);
   const word = useMemo(() => (row.vocabularyEntryId ? vocabularyWords.find(w => w.id === row.vocabularyEntryId) ?? null : null), [row.vocabularyEntryId]);
-  const speaker = <Button variant="ghost" size="icon" aria-label={playing ? `Stop ${hidden ? 'the recording' : row.headword}` : `Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} aria-pressed={playing} onClick={onPlay}>{playing ? <Square/> : <Volume2/>}</Button>;
+  // Play-only speaker, consistent with every other card: no stop state, no icon swap.
+  const speaker = <Button variant="ghost" size="icon" aria-label={`Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} onClick={onPlay}><Volume2/></Button>;
   const pill = <span className="word-hsk-id tone-pair-pill" title={`Dictionary tones: ${toneLabel(row.citationTones)}`}>{row.citationTones.map((t, i) => <span key={i}>{i > 0 && ' + '}<ToneDigit tone={t}/></span>)}</span>;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
     <div className="pinyin-player-head">
@@ -226,10 +226,6 @@ function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onNext
       <div className={changed && !hidden ? 'is-changed' : undefined}><dt>Expected in speech · draft</dt><dd>{hidden ? 'Hidden' : toneLabel(row.expectedSpokenTones)}</dd></div>
     </dl>
     <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
-    <div className="tone-sounds-controls">
-      <Button variant="outline" size="sm" className="tone-sounds-play" onClick={onPlay}>{playing ? <><Square/>Stop</> : <><Volume2/>Play</>}</Button>
-      <Button variant="outline" size="sm" onClick={onNext}>Next word<ArrowRight/></Button>
-    </div>
     <p className={`tone-sounds-status${status.kind === 'error' || chips.error ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{chips.error || status.text}</p>
     {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
       <div className="tone-sounds-links">
