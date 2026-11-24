@@ -23,7 +23,8 @@ describe('split catalogue loading', () => {
     const data = readCatalog();
     for (const key of ['characters', 'radicals', 'components'] as const) {
       expect(store.catalog[key]).toBe(rows[key]);
-      const expected = key === 'characters' ? data.characters.map(row => row[0] === '伲' ? ['伲', 'nì / nǐ', ...row.slice(2)] : row) : data[key];
+      const corrected: Record<string, string> = { '伲': 'nì / nǐ', '剖': 'pōu / pǒu' };
+      const expected = key === 'characters' ? data.characters.map(row => corrected[row[0]] ? [row[0], corrected[row[0]], ...row.slice(2)] : row) : data[key];
       expect(store.catalog[key]).toEqual(expected);
       expect(fetchFile.mock.calls.filter(([url]) => url === `/data/${key}.json`)).toHaveLength(1);
     }
@@ -32,7 +33,7 @@ describe('split catalogue loading', () => {
     expect(store.catalog.strokes).toEqual(strokeData.strokes);
     expect(fetchFile.mock.calls.filter(([url]) => url === '/data/strokes.json')).toHaveLength(1);
     expect(store.catalog.trees).toEqual(data.trees);
-    expect(store.catalog.readingAudio).toEqual({ ...data.readingAudio, '伲': { ...data.readingAudio['伲'], 'nì': 'cmn-syl-ni4' } });
+    expect(store.catalog.readingAudio).toEqual({ ...data.readingAudio, '伲': { ...data.readingAudio['伲'], 'nì': 'cmn-syl-ni4' }, '剖': { ...data.readingAudio['剖'], 'pǒu': 'cmn-syl-pou3' } });
     expect(store.readingMeaning('了', 'liǎo')).toBe('to finish; to understand (as in 了解)');
     expect(store.catalog.loaded).toBe(true);
     expect(store.catalog.version).toBe(1); // Runtime invalidation counter, independent of file schema version.
@@ -59,6 +60,17 @@ describe('split catalogue loading', () => {
     expect(store.catalog.characters.find(row => row[0] === '伲')?.[1]).toBe('ní / nǐ');
     expect(store.readingMeanings('伲')).toBeNull();
     expect(store.catalog.readingAudio['伲']?.['nì']).toBeUndefined();
+  });
+
+  it('restores 剖 pǒu with its exact pou3 recording while preserving the original pǒ/po3 import', () => {
+    const data = readCatalog();
+    const original = JSON.stringify(data);
+    store.hydrateCatalog(data);
+    expect(store.catalog.characters.find(row => row[0] === '剖')?.[1]).toBe('pōu / pǒu');
+    expect(store.catalog.readingAudio['剖']).toMatchObject({ 'pōu': 'cmn-syl-pou1', 'pǒ': 'cmn-syl-po3', 'pǒu': 'cmn-syl-pou3' });
+    expect(store.characterRecording('剖', 'pǒu')?.url).toBe(data.audio['cmn-syl-pou3']?.url);
+    expect(store.characterRecording('剖', 'pǒu')?.url).not.toBe(data.audio['cmn-syl-po3']?.url);
+    expect(JSON.stringify(data)).toBe(original);
   });
 
   it.each(['characters', 'radicals', 'components', 'strokes'] as const)('keeps an incomplete load unpublished and retries failed %s', async section => {

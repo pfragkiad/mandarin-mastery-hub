@@ -6,7 +6,7 @@ Every Characters row with more than one explicitly recorded reading; no missing 
 
 Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.
 
-75 records scanned; 73 have source-backed reading meanings: 5 existing, 40 new distinct/overlapping senses, 28 new shared-meaning alternate pronunciations. 2 remain unresolved and retain their original display.
+75 records scanned; 74 have source-backed reading meanings: 5 existing, 40 new distinct/overlapping senses, 29 new shared-meaning alternate pronunciations. 1 remain unresolved and retain their original display.
 
 ## Source and presentation boundaries
 
@@ -20,14 +20,13 @@ Editorial review requested by the project owner. Exact imported rows and existin
 
 ## Cases requiring exact-reading evidence
 
-- **剖 (pōu / pǒ)**: The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.
-  Sources: [Taiwan MOE revised dictionary](https://dict.revised.moe.edu.tw/dictView.jsp?ID=695), [Taiwan CNS11643](https://www.cns11643.gov.tw/wordView.jsp?ID=87112).
 - **崾 (yào / yǎo)**: CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.
   Sources: [Taiwan MOE variant dictionary](https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607).
 
 ## Explicit pronunciation choices
 
 - **伲**: original `ní / nǐ` retained; card uses `nì / nǐ`. This card uses dictionary-attested nì / nǐ as an explicit editorial pronunciation choice. The original Unihan ní / nǐ remains preserved: Unicode’s 2023 proposal records a change from nì to ní, whereas CC-CEDICT and Han Dian attach the dialectal I/we/my/our senses to nì. Taiwan MOE identifies nǐ as an old variant meaning you. This is a documented source disagreement, not a claim that Unihan has a typo. Audio uses Mandarin syllables, not a recording of Shanghai dialect speech.
+- **剖**: original `pōu / pǒ` retained; card uses `pōu / pǒu`. This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording.
 
 ## Complete inventory
 
@@ -39,7 +38,7 @@ Editorial review requested by the project owner. Exact imported rows and existin
 | 伲 | ní / nǐ | distinct | nì: I; we; my; our (dialectal) / nǐ: you (archaic variant of 你) |
 | 俾 | bǐ / bì | shared | bǐ: so that; in order that; to cause; to enable / bì: so that; in order that; to cause; to enable |
 | 剋 | kēi / kè | distinct | kēi: to scold; to beat / kè: to subdue; to overcome; to restrain |
-| 剖 | pōu / pǒ | unresolved | Original combined display retained; see unresolved notes. |
+| 剖 | pōu / pǒ | shared | pōu: to split; to cut open; to dissect; to analyze / pǒu: to split; to cut open; to dissect; to analyze |
 | 剽 | piāo / piào | shared | piāo: to rob; swift; nimble / piào: to rob; swift; nimble |
 | 卜 | bo / bǔ | distinct | bo: used in 萝卜 / 蘿蔔 (radish) / bǔ: fortune telling; to divine; to prophesy |
 | 发 | fā / fà / fǎ | existing | fā: issue, dispatch, send out / fà: hair / fǎ: hair |

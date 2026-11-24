@@ -128,8 +128,8 @@
       "status": "distinct"
     },
     "剖": {
-      "status": "unresolved",
-      "note": "The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.",
+      "status": "shared",
+      "note": "This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording.",
       "references": [
         {
           "label": "Taiwan MOE revised dictionary",
@@ -146,7 +146,31 @@
         "split in two, slice; dissect",
         "10 strokes · 刀 radical",
         "Common"
-      ]
+      ],
+      "readings": {
+        "pōu": "to split; to cut open; to dissect; to analyze",
+        "pǒu": "to split; to cut open; to dissect; to analyze"
+      },
+      "zdic": "Mainland basic/detailed pōu and Guoyu pǒu share splitting, cutting open and analysis; the Guoyu entry explicitly calls pōu an alternate pronunciation.",
+      "readingRevision": {
+        "glyph": "剖",
+        "previous": "pōu / pǒ",
+        "reading": "pōu / pǒu",
+        "recordedRow": [
+          "剖",
+          "pōu / pǒ",
+          "split in two, slice; dissect",
+          "10 strokes · 刀 radical",
+          "Common"
+        ],
+        "readingAudio": {
+          "pǒu": "cmn-syl-pou3"
+        },
+        "source": "Owner-requested exact-reading correction: CC-CEDICT, Taiwan MOE and CNS11643 attest pōu / pǒu with shared senses; the imported pǒ is preserved as provenance, not silently treated as the same syllable.",
+        "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=695",
+        "date": "2026-11-25",
+        "approvedBy": "project-owner-requested editorial correction"
+      }
     },
     "剽": {
       "readings": {

@@ -20,9 +20,9 @@ class ReadingAuditTests(unittest.TestCase):
         cls.catalog = json.loads(cls.outputs[module.CATALOG])
 
     def test_all_multi_reading_tuples_have_explicit_dispositions(self):
-        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 73, 'existing': 5, 'distinct': 40, 'unresolved': 2, 'shared': 28})
-        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, {'剖', '崾'})
-        for glyph in ('剖', '崾'):
+        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 74, 'existing': 5, 'distinct': 40, 'unresolved': 1, 'shared': 29})
+        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, {'崾'})
+        for glyph in ('崾',):
             self.assertNotIn(glyph, self.catalog['readingMeanings'])
 
     def test_original_catalogue_fields_and_reviewed_splits_stay_intact(self):
@@ -53,6 +53,15 @@ class ReadingAuditTests(unittest.TestCase):
         self.assertEqual(revision['reading'], 'nì / nǐ')
         self.assertEqual(revision['readingAudio'], {'nì': 'cmn-syl-ni4'})
         self.assertIn('source disagreement', self.catalog['readingMeanings']['伲']['note'])
+
+    def test_pou_reconciliation_shares_meanings_and_never_relabels_po3_audio(self):
+        revision = next(r for r in self.catalog['readingRevisions'] if r['glyph'] == '剖')
+        self.assertEqual(revision['recordedRow'][1], 'pōu / pǒ')
+        self.assertEqual(revision['reading'], 'pōu / pǒu')
+        self.assertEqual(revision['readingAudio'], {'pǒu': 'cmn-syl-pou3'})
+        meanings = self.catalog['readingMeanings']['剖']['readings']
+        self.assertEqual(meanings['pōu'], meanings['pǒu'])
+        self.assertNotIn('pǒ', meanings)
 
     def test_changed_source_bytes_fail_before_generation(self):
         real_read = Path.read_bytes

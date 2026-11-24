@@ -4,7 +4,7 @@
   "scope": "Every Characters row with more than one explicitly recorded reading; no missing readings are added.",
   "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.",
   "charactersSha256": "f1db684baeb28187efec27a667d1a86ceb7ac827e45d94e0e517b17ddf681fb7",
-  "reviewSha256": "1c5d4959db490b05ba2be44d0bd8fff607f8e8cbf6e848b7483a30915b13ac50",
+  "reviewSha256": "329ee09613ede1603ab3bc73d96fa0733af44dbc60c0accb59e97122a1410bde",
   "sources": {
     "卜": {
       "path": "importer/data/character-readings/sources/535c.html.gz",
@@ -166,15 +166,23 @@
       "sourceBytesSha256": "f054c60fd915b1b3956a13890ae010aab516de93d8f2ee8eac9421dd2a01001c",
       "sourceBytes": 1613193,
       "acquired": "2026-11-25"
+    },
+    "剖": {
+      "path": "importer/data/character-readings/sources/5256.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%89%96",
+      "sha256": "4d487e288e8c2b1c2b0d3f56bcc9a2c71757557b04facf3258885c21151a1ecb",
+      "sourceBytesSha256": "e3d80fc677cb41206158edc644c1ce0aa1cde7ad92dcbfd47fe43d16ec24808f",
+      "sourceBytes": 48991,
+      "acquired": "2026-11-25"
     }
   },
   "counts": {
     "total": 75,
-    "covered": 73,
+    "covered": 74,
     "existing": 5,
     "distinct": 40,
-    "shared": 28,
-    "unresolved": 2
+    "shared": 29,
+    "unresolved": 1
   },
   "cases": [
     {
@@ -413,12 +421,16 @@
         "10 strokes · 刀 radical",
         "Common"
       ],
-      "status": "unresolved",
-      "note": "The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.",
+      "status": "shared",
+      "note": "This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording.",
       "ccCedictEntries": [
         "剖 剖 [pou1] /to cut open/to analyze/Taiwan pr. [pou3]/"
       ],
       "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E5%89%96"
+        },
         {
           "label": "Taiwan MOE revised dictionary",
           "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=695"
@@ -426,8 +438,40 @@
         {
           "label": "Taiwan CNS11643",
           "url": "https://www.cns11643.gov.tw/wordView.jsp?ID=87112"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E5%89%96"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
         }
-      ]
+      ],
+      "readingRevision": {
+        "glyph": "剖",
+        "previous": "pōu / pǒ",
+        "reading": "pōu / pǒu",
+        "recordedRow": [
+          "剖",
+          "pōu / pǒ",
+          "split in two, slice; dissect",
+          "10 strokes · 刀 radical",
+          "Common"
+        ],
+        "readingAudio": {
+          "pǒu": "cmn-syl-pou3"
+        },
+        "source": "Owner-requested exact-reading correction: CC-CEDICT, Taiwan MOE and CNS11643 attest pōu / pǒu with shared senses; the imported pǒ is preserved as provenance, not silently treated as the same syllable.",
+        "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=695",
+        "date": "2026-11-25",
+        "approvedBy": "project-owner-requested editorial correction"
+      },
+      "readings": {
+        "pōu": "to split; to cut open; to dissect; to analyze",
+        "pǒu": "to split; to cut open; to dissect; to analyze"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted. Additional historical evidence is linked below."
     },
     {
       "glyph": "剽",

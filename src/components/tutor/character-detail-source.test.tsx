@@ -80,9 +80,22 @@ describe('Sources for reading-specific character meanings', () => {
   it('discloses the original 伲 readings and Unicode disagreement beside its dictionary-attested split', () => {
     const container = openSource('伲');
     expect([...container.querySelectorAll('.reading-meaning-reading .pinyin[lang]')].map(node => node.textContent)).toEqual(['nì', 'nǐ']);
+    expect(within(container).getByRole('button', { name: 'Listen to 伲 nì' })).toBeEnabled();
+    expect(within(container).getByRole('button', { name: 'Listen to 伲 nǐ' })).toBeEnabled();
     expect(container.textContent).toContain('you (archaic variant of 你)');
     expect(screen.getByText(/original Unihan ní \/ nǐ remains preserved/)).toBeVisible();
     expect(screen.getByRole('link', { name: 'Taiwan MOE variant dictionary' })).toHaveAttribute('href', 'https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121');
     expect(screen.getByRole('link', { name: 'Unicode reading proposal (2023)' })).toBeVisible();
+  });
+
+  it('groups 剖 pōu/pǒu under one meaning and discloses the imported pǒ discrepancy with MOE/CNS links', () => {
+    const container = openSource('剖');
+    expect(container.querySelectorAll('.reading-meaning')).toHaveLength(1);
+    expect([...container.querySelectorAll('.reading-meaning-reading .pinyin[lang]')].map(node => node.textContent)).toEqual(['pōu', 'pǒu']);
+    expect(within(container).getByRole('button', { name: 'Listen to 剖 pǒu' })).toHaveAttribute('title', 'Listen to pǒu · Recording');
+    expect(container.querySelector('.reading-meaning')?.textContent).toContain('to split; to cut open; to dissect; to analyze');
+    expect(screen.getByText(/original imported pōu \/ pǒ remains preserved/)).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Taiwan MOE revised dictionary' })).toHaveAttribute('href', 'https://dict.revised.moe.edu.tw/dictView.jsp?ID=695');
+    expect(screen.getByRole('link', { name: 'Taiwan CNS11643' })).toHaveAttribute('href', 'https://www.cns11643.gov.tw/wordView.jsp?ID=87112');
   });
 });

@@ -38,8 +38,8 @@ describe('meaning for each reading', () => {
   });
 
   it('an unresolved exact-reading discrepancy keeps its combined meaning (no split)', () => {
-    expect(readingMeanings('剖')).toBeNull();
-    expect(readingMeaning('剖', 'pǒ')).toBeUndefined();
+    expect(readingMeanings('崾')).toBeNull();
+    expect(readingMeaning('崾', 'yào')).toBeUndefined();
   });
 
   it('separates common polyphones and preserves historical names and units under their attested reading', () => {
@@ -59,6 +59,10 @@ describe('meaning for each reading', () => {
     ]);
     expect(readingMeaning('識', 'shí')).toBe(readingMeaning('識', 'shì'));
     expect(readingMeaning('眄', 'miàn')).toBe(readingMeaning('眄', 'miǎn'));
+    expect(groupReadingMeanings(readingMeanings('剖')!)).toMatchObject([
+      { readings: ['pōu', 'pǒu'], meaning: 'to split; to cut open; to dissect; to analyze' },
+    ]);
+    expect(readingMeaning('剖', 'pǒ')).toBeUndefined();
   });
 
   it('does not borrow dialectal or unrecorded-reading senses from a combined definition', () => {

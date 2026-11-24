@@ -50,5 +50,14 @@ Han Dian and the 2023 Unicode proposal. It does not label Unihan as a typo or
 present a Mandarin syllable recording as Shanghai dialect audio. **侬/儂** is a
 different character and supplies neither this record's identity nor its reading.
 
+For **剖**, the card restores dictionary-attested `pōu / pǒu`, grouping their
+shared split/cut-open/dissect/analyze meanings with independent speakers. CC-CEDICT
+explicitly gives Taiwan `pǒu`; MOE and CNS11643 independently confirm it. The
+original imported `pōu / pǒ` and `po3` audio binding remain preserved, while the
+guarded revision adds the existing `pǒu` / `cmn-syl-pou3` attachment. The popup
+discloses the syllable correction and links all dictionary sources. The source
+archive preserves the Han Dian page; MOE/CNS were verified through their published
+web entries. No historical or etymology text is replaced.
+
 Related guides: [catalogue contract](../../../public/data/catalog.md),
 [importer inputs](../README.md), [scripts](../../../scripts/README.md).

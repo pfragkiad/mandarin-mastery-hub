@@ -161,7 +161,15 @@
       "sourceBytesSha256": "f054c60fd915b1b3956a13890ae010aab516de93d8f2ee8eac9421dd2a01001c",
       "sourceBytes": 1613193,
       "acquired": "2026-11-25"
+    },
+    "剖": {
+      "path": "importer/data/character-readings/sources/5256.html.gz",
+      "url": "https://www.zdic.net/hans/%E5%89%96",
+      "sha256": "4d487e288e8c2b1c2b0d3f56bcc9a2c71757557b04facf3258885c21151a1ecb",
+      "sourceBytesSha256": "e3d80fc677cb41206158edc644c1ce0aa1cde7ad92dcbfd47fe43d16ec24808f",
+      "sourceBytes": 48991,
+      "acquired": "2026-11-25"
     }
   },
-  "reviewSha256": "1c5d4959db490b05ba2be44d0bd8fff607f8e8cbf6e848b7483a30915b13ac50"
+  "reviewSha256": "329ee09613ede1603ab3bc73d96fa0733af44dbc60c0accb59e97122a1410bde"
 }
