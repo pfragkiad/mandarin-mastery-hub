@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import data from '@/data/pinyin/tone-pairs.json';
 import { vocabularyData } from './data-contract';
 import inventory from '@/data/pinyin/inventory.json';
-import { FIRST_TONES, SECOND_TONES, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
+import { FIRST_TONES, SECOND_TONES, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
 
 const tp = data as unknown as TonePairData;
 
@@ -64,9 +64,10 @@ describe('URL search', () => {
     expect(validateToneChangesSearch({ rule: 'sandhi' })).toEqual({});
     expect(validateToneChangesSearch({ rule: 'bu', listen: '1' })).toEqual({ rule: 'bu', listen: true });
   });
-  it('restores the exact example only inside its own pool', () => {
+  it('restores the exact example only inside its own pool, and Next wraps round', () => {
     const cell = pairPool(tp, '4-5');
     expect(selectedExample(cell, cell[1]!.id)?.headword).toBe('弟弟');
     expect(selectedExample(cell, 'shtooka:cmn-481c5c0c')?.headword).toBe('爸爸');
+    expect(nextExample(cell, cell[1]!.id)?.headword).toBe('爸爸');
   });
 });
