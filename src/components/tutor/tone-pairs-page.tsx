@@ -30,7 +30,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  listeningTip, loadTonePairs, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  listeningTip, loadTonePairs, nextExample, pairHasToneChange, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -164,7 +164,9 @@ function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: 
         ...SECOND_TONES.map(second => {
           const key = `${first}-${second}`;
           const words = pairPool(data, key);
-          return <button key={key} type="button" className={`tone-matrix-cell${pair === key ? ' is-selected' : ''}`} aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words`} onClick={() => onPick(key)}>
+          // Pairs whose words change tone in speech (today only 3 + 3) get the neon border.
+          const changes = pairHasToneChange(data, key);
+          return <button key={key} type="button" className={`tone-matrix-cell${pair === key ? ' is-selected' : ''}${changes ? ' is-tone-change' : ''}`} aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words${changes ? '; changes tone in speech' : ''}`} title={changes ? 'Changes tone in speech' : undefined} onClick={() => onPick(key)}>
             <span className="tone-matrix-code"><ToneDigit tone={first} compact/> + <ToneDigit tone={second} compact/></span>
             <span className="tone-matrix-word" lang="zh-CN">{hidden ? '••' : words[0]?.headword}</span>
           </button>;

@@ -93,6 +93,8 @@ export const toneLabel = (tones: readonly number[]) => tones.map(toneName).join(
 export const pairLabel = (pair: string) => toneLabel(pair.split('-').map(Number));
 /** True when the expected spoken draft differs from the dictionary tones (3+3 → 2+3, 一/不). */
 export const tonesChanged = (e: Pick<TonePairExample, 'citationTones' | 'expectedSpokenTones'>) => e.citationTones.join() !== e.expectedSpokenTones.join();
+/** True when any matrix word of this pair changes tone in speech (today only 3 + 3); drives the neon cell border. */
+export const pairHasToneChange = (data: Pick<TonePairData, 'examples'>, pair: string) => pairPool(data, pair).some(tonesChanged);
 
 /** The listening tip under a word: the rule's own detail, otherwise one by tone shape. */
 export function listeningTip(e: TonePairExample): string {
