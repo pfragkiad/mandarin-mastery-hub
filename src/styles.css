@@ -4934,8 +4934,6 @@ html[data-display-size='comfortable'] .tone-sounds-speed-row { font-size: 14px; 
 .tone-sounds-chip.tone-5 { --tone-ink: var(--muted-foreground); }
 .tone-sounds-word-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--primary); text-decoration: none; align-self: flex-start; }
 .tone-sounds-word-link svg { width: 14px; height: 14px; }
-.tone-sounds-footnote.detail-footnote { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
-.tone-sounds-footnote a { color: var(--primary); text-decoration: none; }
 html[data-display-size='comfortable'] .tone-matrix-code { font-size: 13px; }
 html[data-display-size='comfortable'] .tone-matrix-word { font-size: 24px; }
 html[data-display-size='comfortable'] .tone-matrix-cell { min-height: 76px; }

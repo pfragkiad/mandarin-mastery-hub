@@ -207,22 +207,14 @@ function PracticeCard({ row, pool, mode, hidden, slow, playing, status, onPlay, 
       </div>
     </div>
     <p className={`tone-sounds-status${status.kind === 'error' ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{status.text}</p>
-    {hidden ? <p className="tone-sounds-helper">Reveal the word to open its syllables and source details.</p> : <>
+    {hidden ? <p className="tone-sounds-helper">Reveal the word to open its syllables.</p> : <>
       <div className="tone-sounds-links">
         <span className="eyebrow">Each dictionary sound</span>
         <div className="tone-sounds-chips">{row.chartLinks.map((l, i) => <Link key={`${l.base}${l.tone}-${i}`} to="/pinyin" search={{ s: l.base, t: l.tone }} className={`tone-sounds-chip tone-${l.tone}`} title={`Open ${toneMark(l.base, l.tone)} in Sound chart`}
           onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) rememberTrail(); }}>{l.reading}</Link>)}</div>
         {row.vocabularyEntryId && <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link">Open the word card<ArrowRight/></Link>}
       </div>
-      <p className="detail-footnote tone-sounds-footnote">
-        <SourceInfo inline className="detail-footnote">
-          Recording · {row.audio.speaker} · © 2009 Yue Tan / Shtooka · <a href={row.audio.licenseUrl} target="_blank" rel="noreferrer">{row.audio.license}</a><br/>
-          Exact source reading · <span className="pinyin">{row.sourceReading}</span><br/>
-          Whole-word recording by {row.audio.speaker} · {row.audio.source}<br/>
-          <a href={row.audio.upstreamUrl} target="_blank" rel="noreferrer">Original pinned MP3</a> · SHA-256 {row.audio.sha256.slice(0, 16)}…<br/>
-          Expected-in-speech labels are separate editorial drafts; the recording has not been listening-reviewed
-        </SourceInfo>
-      </p>
+      {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
     </>}
   </section>;
 }
