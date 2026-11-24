@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { CheckCircle2, Check, ListTree, MoreHorizontal, RotateCcw, Settings2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
+import type { FaceView } from '@/lib/face-view';
+import { CharacterHintsToggle, FaceToggles } from './face-toggles';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
@@ -24,20 +25,14 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
  * Inputs only; the one local state here is which sheet/confirm is open.
  */
 
-export type StudyView = { hanzi: boolean; pinyin: boolean; translations: boolean };
+export type StudyView = FaceView;
 export type SectionLink = { id: string; title: string; done: number; total: number; complete: boolean };
 export type ProgressNumbers = { done: number; total: number; fraction: number; state: 'not-started' | 'in-progress' | 'done' };
 
-/** Hanzi / Pinyin / EN as one row of on/off toggles ("on" = shown). */
+/** Hanzi / Pinyin / EN as one row of on/off toggles ("on" = shown) — the shared FaceToggles in
+ *  the grids' toolbar look (owner: same style as the grid in Compact and Comfortable). */
 export function StudyToggles({ view, onChange }: { view: StudyView; onChange: (next: StudyView) => void }) {
-  const items: { key: keyof StudyView; mark: string; label: string; name: string }[] = [
-    { key: 'hanzi', mark: '汉', label: 'Hanzi', name: 'hanzi' }, { key: 'pinyin', mark: 'pīn', label: 'Pinyin', name: 'pinyin' }, { key: 'translations', mark: '', label: 'EN', name: 'translations' },
-  ];
-  return <div className="lesson-study-toggles" role="group" aria-label="Show in the lesson">
-    {items.map(i => <button key={i.key} type="button" className="lesson-study-toggle" aria-pressed={view[i.key]} title={view[i.key] ? `Hide ${i.name}` : `Show ${i.name}`} onClick={() => onChange({ ...view, [i.key]: !view[i.key] })}>
-      {i.mark && <span className="lesson-study-mark" lang={i.key === 'hanzi' ? 'zh-CN' : undefined} aria-hidden="true">{i.mark}</span>}{i.label}
-    </button>)}
-  </div>;
+  return <FaceToggles view={view} onChange={onChange} label="Show in the lesson" size="toolbar"/>;
 }
 
 /** Sidebar progress card with the ⋯ reset menu and the inline whole-lesson confirm. */
@@ -84,7 +79,6 @@ export function PhoneLessonBar({ numbers, activeTitle, sections, activeId, onJum
   const [confirm, setConfirm] = useState(false);
   const { done, total, fraction, state } = numbers;
   const count = state === 'done' ? <Check aria-label="Completed"/> : `${done}/${total}`;
-  const rows: { key: keyof StudyView; label: string }[] = [{ key: 'hanzi', label: 'Hanzi' }, { key: 'pinyin', label: 'Pinyin' }, { key: 'translations', label: 'Translations' }];
   return <>
     {/* One sticky strip (owner's choice): the app's own tab bar keeps the bottom of the screen. */}
     <div className="lesson-phone-strip">
@@ -113,8 +107,8 @@ export function PhoneLessonBar({ numbers, activeTitle, sections, activeId, onJum
         <DrawerHeader className="lesson-sheet-head"><DrawerTitle>Settings</DrawerTitle><DrawerDescription className="sr-only">What the lesson shows, and your progress</DrawerDescription></DrawerHeader>
         <div className="lesson-sheet-group">
           <p className="lesson-sheet-caption">Show</p>
-          {rows.map(r => <label key={r.key} className="lesson-sheet-row"><span>{r.label}</span><Switch checked={view[r.key]} onCheckedChange={on => onView({ ...view, [r.key]: on })}/></label>)}
-          <label className="lesson-sheet-row"><span>Character hints</span><Switch checked={hints} onCheckedChange={onHints}/></label>
+          <div className="lesson-sheet-row is-faces"><FaceToggles view={view} onChange={onView} label="Show in the lesson"/></div>
+          <CharacterHintsToggle checked={hints} onChange={onHints} size="sheet"/>
         </div>
         <div className="lesson-sheet-group">
           <p className="lesson-sheet-caption">Progress · {state === 'done' ? 'completed' : `${done} of ${total} done`}</p>

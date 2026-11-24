@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { LessonPage } from './lesson-page';
+import { patternSpeechText } from './lesson-text';
 import { lessonSummaries, loadLesson } from '@/lib/lessons';
 
 const router = vi.hoisted(() => ({ navigate: vi.fn() }));
@@ -8,19 +9,19 @@ vi.mock('@tanstack/react-router', () => ({
   useNavigate: () => router.navigate,
   Link: ({ children, className, to }: { children?: React.ReactNode; className?: string; to?: string }) => <a className={className} data-to={to}>{children}</a>,
 }));
-const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, items: [] as unknown[] }));
+const prefs = vi.hoisted(() => ({ lessonHints: undefined as boolean | undefined, lessonFaces: undefined as { hanzi: boolean; pinyin: boolean; translations: boolean } | undefined, items: [] as unknown[] }));
 vi.mock('./workspace', () => ({
-  useWorkspace: () => ({ items: prefs.items, saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
+  useWorkspace: () => ({ items: prefs.items, saved: [], preferences: { includeTraditional: false, pinyin: true, slow: false, lessonHints: prefs.lessonHints, lessonFaces: prefs.lessonFaces }, setPreferences: () => {}, catalogVersion: 0, theme: 'light' }),
 }));
 vi.mock('./use-pronunciation-availability', () => ({ usePronunciationAvailability: () => true }));
-afterEach(() => { cleanup(); prefs.lessonHints = undefined; prefs.items = []; });
+afterEach(() => { cleanup(); prefs.lessonHints = undefined; prefs.lessonFaces = undefined; prefs.items = []; });
 
 describe('LessonPage', () => {
   it.each(lessonSummaries.map(s => s.id))('renders lesson %s from its JSON', async id => {
     const lesson = (await loadLesson(id))!;
     const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     expect(container.querySelector('h1')?.textContent).toContain(lesson.summary.title);
-    expect(['mandarin-character-lesson/3.2.0', 'mandarin-topic-lesson/3.3.0', 'mandarin-general-lesson/3.2.0']).toContain(lesson.summary.schemaVersion);
+    expect(['mandarin-character-lesson/3.2.0', 'mandarin-topic-lesson/3.3.0', 'mandarin-general-lesson/3.2.0', 'mandarin-general-lesson/3.3.0']).toContain(lesson.summary.schemaVersion);
     if (lesson.topic?.plan) {
       // v3.1: teaching path first, every word once in the word bank, no source examples repeated.
       expect(container.querySelectorAll('.lesson-details .lesson-bank-word')).toHaveLength(lesson.topic.items.length);
@@ -36,6 +37,79 @@ describe('LessonPage', () => {
       expect(container.querySelector('.lesson-hero .eyebrow')?.textContent).toContain('CONVERSATION LESSON');
     } else expect(container.querySelectorAll('#lesson-examples .lesson-example')).toHaveLength(lesson.sections.examples!.items.length);
     expect(container.querySelector('#lesson-sources, .lesson-provenance')).toBeNull();
+  });
+
+  it('Key expressions show a recorded usage note below the phrase, never speak it, and omit it when absent', async () => {
+    const lesson = (await loadLesson('convm-with-someone'))!;
+    const items = lesson.sections.blocks!.flatMap(b => b.kind === 'review_set' ? b.items : []);
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const cards = Array.from(container.querySelectorAll('.lesson-vocab'));
+    expect(cards).toHaveLength(items.length);
+    items.forEach((item, i) => {
+      const note = cards[i]!.querySelector('.lesson-usage-note');
+      if (!item.usage_note) { expect(note).toBeNull(); return; }
+      expect(note?.querySelector('.lesson-usage-label')?.textContent).toBe(item.usage_label);
+      // Pronunciation stays on the original phrase: no speaker names the note's alternative forms.
+      expect(note?.querySelector('button')).toBeNull();
+      const speakers = Array.from(cards[i]!.querySelectorAll('button[aria-label]')).map(b => b.getAttribute('aria-label'));
+      expect(speakers.length).toBeGreaterThan(0);
+      expect(speakers.every(label => label === `Listen to ${item.hanzi}`)).toBe(true);
+    });
+    expect(items.filter(i => i.usage_note)).toHaveLength(2);
+  });
+
+  it('a pattern whose example repeats the formula and function shows each once', async () => {
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const blocks = lesson.sections.blocks!.map(b => b.kind === 'grammar_pattern' ? { ...b, pattern_hanzi: b.example.hanzi, pattern_pinyin: b.example.pinyin, example: { ...b.example, teaching_note: b.function_en } } : b);
+    const { container } = render(<LessonPage lesson={{ ...lesson, sections: { ...lesson.sections, blocks } }} priority={undefined} onPriority={() => {}}/>);
+    const cards = container.querySelectorAll('.lesson-pattern');
+    expect(cards.length).toBeGreaterThan(0);
+    cards.forEach(card => {
+      expect(card.querySelector('.lesson-pattern-line')).toBeNull();
+      expect(card.querySelector('.lesson-teaching')).toBeNull();
+    });
+  });
+
+  it('a hidden face blurs, and a click reveals only that piece without opening its hint card', async () => {
+    prefs.lessonFaces = { hanzi: false, pinyin: true, translations: true };
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    expect(container.querySelector('.lesson-page')!.classList.contains('lesson-hide-hanzi')).toBe(true);
+    const [first, second] = Array.from(container.querySelectorAll('.lesson-pattern-line .lesson-hanzi'));
+    const char = first!.querySelector('[data-lesson-hint]')!;
+    fireEvent.click(char);
+    expect(first!.hasAttribute('data-lesson-revealed')).toBe(true);
+    expect(second!.hasAttribute('data-lesson-revealed')).toBe(false);
+    expect(document.querySelector('.lesson-hint-card')).toBeNull();
+  });
+
+  it('a revealed piece blurs back when its non-interactive part is clicked', async () => {
+    prefs.lessonFaces = { hanzi: true, pinyin: false, translations: true };
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const pinyin = container.querySelector('.lesson-pattern-line .pinyin')!;
+    fireEvent.click(pinyin);
+    expect(pinyin.hasAttribute('data-lesson-revealed')).toBe(true);
+    fireEvent.click(pinyin);
+    expect(pinyin.hasAttribute('data-lesson-revealed')).toBe(false);
+  });
+
+  it('every pattern template line has a speaker beside its pinyin', async () => {
+    const lesson = (await loadLesson('convm-greetings-politeness'))!;
+    const { container } = render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
+    const lines = container.querySelectorAll('.lesson-pattern .lesson-pattern-line');
+    expect(lines.length).toBeGreaterThan(0);
+    lines.forEach(line => {
+      const hanzi = line.querySelector('.lesson-hanzi')!.textContent!;
+      expect(line.querySelector('.lesson-term-reading .pinyin')).not.toBeNull();
+      const labels = Array.from(line.querySelectorAll('button'), b => b.getAttribute('aria-label'));
+      expect(labels).toContain(`Listen to ${hanzi}`);
+    });
+  });
+
+  it('a pattern template speaks its "+" joiners as pauses, keeping slot labels', () => {
+    expect(patternSpeechText('陈述句 + 吗？')).toBe('陈述句，吗？');
+    expect(patternSpeechText('数字 + 加 + 数字 + 是多少？')).toBe('数字，加，数字，是多少？');
   });
 
   it('a topic lesson word links to the Vocabulary record with its HSK number and headword', async () => {

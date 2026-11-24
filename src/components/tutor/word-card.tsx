@@ -58,6 +58,23 @@ function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typ
     : pairing.glyph(ch, i))}</>;
 }
 
+/**
+ * Grid card headword glyphs with the grids' Character hints (gridHints, provider in the
+ * Vocabulary results): each Han character becomes a quick-card target — not a tab stop, since
+ * it sits inside the card's own button — with the same word context as the detail headword
+ * (a word's characters in that exact record, a phrase's characters in the words-first words
+ * it contains). Hints off or outside a provider (Start page cards): the plain pairing glyphs.
+ */
+function useCardHintGlyph(word: Word, pairing: ReturnType<typeof usePhrasePairing>) {
+  const hints = useLessonHints();
+  const phrase = vocabularyKind(word) === 'phrase';
+  const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
+  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: phrase ? 'phrase' : 'word', word: word.id }, audio: word.audio ?? null };
+  return (ch: string, index: number): ReactNode => hints?.enabled && isHanziChar(ch)
+    ? <HintChar key={index} glyph={ch} word={phrase ? contexts?.[index] ?? null : own} focusable={false} {...pairing.glyphProps(index)}/>
+    : pairing.glyph(ch, index);
+}
+
 /** Full word detail, shared by the floating dialog (mobile) and the side panel (desktop).
  *  Mirrors the catalog-detail structure used on the Characters page so both side
  *  columns read the same way. */
@@ -186,6 +203,8 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // Phrase cards pair each box character with its pinyin syllable on hover; line glyphs are
   // indexed through the whole headword so the pairing survives the box's line breaks.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, isPhrase || !singleGlyph);
+  const cardGlyph = useCardHintGlyph(word, pairing);
+  const hintsOn = Boolean(useLessonHints()?.enabled);
   const lineStarts = phraseLines.reduce<number[]>((starts, line, i) => [...starts, i === 0 ? 0 : starts[i - 1]! + Array.from(phraseLines[i - 1]!).length], []);
   // Recorded HSK level and official id only; either part is omitted when not supplied.
   const hskLevel = word.entry?.hskLevel ?? null;
@@ -224,7 +243,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
-    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired ? Array.from(line).map((ch, i) => pairing.glyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired ? Array.from(text).map((ch, i) => pairing.glyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={cardMeaning}/></span>}</Button>
+    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired || hintsOn ? Array.from(line).map((ch, i) => cardGlyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={cardMeaning}/></span>}</Button>
     <RecordCardFooter footerRef={footerRef} metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }

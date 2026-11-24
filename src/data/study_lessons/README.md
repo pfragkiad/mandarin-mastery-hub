@@ -73,3 +73,10 @@ acceptance checks. Do not eager-import the offline inventories or audit files.
 See the [source guide](../../../importer/data/lessons/README.md) and
 [current audit](../../../reports/lessons-3.6.1-import.json). The earlier v3.6.0
 catalog-reference errors are fixed by the supplied v3.6.1 Core/HSK packages.
+
+The preceding usage-note UI handoff is already implemented in the incoming
+frontend: `ReviewSetItem` in `src/lib/lessons.ts`, labelled notes in
+`KeyExpressionCard`, and tests in `lesson-page.test.tsx`. Pattern cards also hide
+headings/notes that only repeat their examples/functions. The new three-line
+pattern contract and legacy fallbacks still follow the migration report above.
+

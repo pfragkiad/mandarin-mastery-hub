@@ -147,3 +147,14 @@
 - [x] Etymology (character card): left simplified tile same size as the traditional tile
 - [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line
 - [x] Lesson Key expressions: neutral PHRASE pill on non-entry expressions
+- [x] Lessons v3.4.0: Key expressions usage label/note; pattern cards hide repeated formula/note
+- [x] Audit lesson pinyin vs word-card readings (spacing/other differences) that could block recordings
+- [x] Pattern template lines: speaker beside pinyin (owner: read as written)
+- [x] Pattern template lines: character hints / clickable words like other lesson text
+- [x] Lesson side panel stays on narrower pages (switch when reading column < ~440px)
+- [x] Shared Hanzi·Pinyin·EN toggles in lessons and Glyphs/Vocabulary grids (separate saved choices)
+- [x] Grid hidden faces blur instead of blank; click a card to reveal
+- [x] Lessons: blurred text click-to-reveal (now)
+- [x] Character hints switch in Glyphs/Vocabulary grids (hover ring + quick card on card hanzi)
+- [x] Grid hidden hanzi: much stronger blur so large simple characters are truly hidden
+- [x] Lesson sidebar + phone sheets use the grid toolbar look for Hanzi·Pinyin·EN and Character hints

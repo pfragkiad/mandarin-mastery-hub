@@ -1652,16 +1652,19 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .card-reveal-toggle .selected { background: color-mix(in srgb, var(--primary) 14%, transparent); color: var(--primary); }
 .catalog-tools-row .card-visibility-menu { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
 .card-visibility-menu span { min-width: 0; text-align: left; overflow-wrap: anywhere; }
-:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .catalog-entry-meaning { visibility: hidden; }
-/* Hanzi hiding covers both "Hide hanzi" and "Show only translation" (hanzi + pinyin away). */
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .tile-hanzi-row { visibility: hidden; }
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .usage-strokes { visibility: hidden; }
-/* Pronunciation hiding covers "Hide pronunciation", "Show only Hanzi" and "Show only translation". */
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { visibility: hidden; }
-/* Peeked card in a Hide mode: its hidden face shows again, marked by a subtle dashed outline. */
-:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning) .is-revealed .catalog-entry-meaning,
-:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin) .is-revealed .usage-strokes,
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { visibility: visible; }
+/* Hidden faces on grid cards blur in place (owner's choice, like lessons), so card sizes never
+   change between modes. A blurred face takes no pointer or selection, so its speaker can't play
+   and a click falls through to the card, which reveals it (card-peek.ts). */
+:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .catalog-entry-meaning,
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes,
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { filter: blur(6px); pointer-events: none; user-select: none; transition: filter .15s; }
+/* Hanzi are drawn far larger than text lines, so 6px still left simple characters (人, 了, 不)
+   readable: hidden hanzi get a much stronger blur and a slight fade (owner request). */
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes { filter: blur(16px) opacity(.75); }
+/* Peeked card in a Hide mode: its hidden faces clear again, marked by a subtle outline. */
+:is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .catalog-entry-meaning,
+:is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .usage-strokes,
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { filter: none; pointer-events: auto; user-select: auto; }
 /* Compact grid cards keep rank · strokes in the top label row only: their footer copy is
    hidden (below), and a child set to visibility:visible would poke through its hidden
    parent, so the peeked-card unhide above must never reach the footer. */
@@ -2285,6 +2288,9 @@ html[data-display-size='comfortable'] {
 .library-study-section > button, .library-study-section > div > button { justify-content: flex-start; width: 100%; min-height: 40px; white-space: normal; text-align: left; }
 .library-study-section > a { justify-content: flex-start; width: 100%; min-height: 40px; }
 .library-study-section button[aria-pressed='true'] { color: var(--primary); background: var(--secondary); }
+/* The shared Hanzi · Pinyin · EN row keeps its own look in the Study sheet, at touch size. */
+.library-study-section .face-toggles > .face-toggle { justify-content: center; width: auto; min-height: 42px; font-size: 14px; text-align: center; }
+.library-study-section .face-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
 .library-remember-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-size: var(--ui-label-size, 13px); }
 .mobile-state-chip { display: inline-flex; align-items: center; gap: 5px; color: var(--primary); font-size: 12px; min-width: 0; white-space: normal; }
 .mobile-state-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
@@ -3840,6 +3846,8 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-lead { font-size: 16px; line-height: 1.6; margin: 8px 0 16px; }
 .lesson-note { font-size: 13px; line-height: 1.65; color: var(--muted-foreground); margin: 8px 0 14px; max-width: 72ch; }
 .lesson-muted { font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.lesson-usage-note { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.lesson-usage-label { display: block; margin-bottom: 2px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--foreground); }
 .lesson-teaching { font-size: 13px; line-height: 1.6; padding-left: 10px; border-left: 2px solid var(--primary); }
 .lesson-caution { font-size: 13px; color: var(--terracotta); margin-top: 12px; }
 .lesson-footnote { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); border-top: 1px solid var(--border); padding-top: 8px; margin-top: auto; }
@@ -3873,10 +3881,18 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hint-char:hover, .lesson-hint-char:focus-visible { box-shadow: 0 0 0 1px var(--primary); outline: none; }
 .lesson-hint-char[data-hint-active] { box-shadow: 0 0 0 1px var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); }
 .sentence-char.lesson-hint-char:hover, .sentence-char.lesson-hint-char:focus-visible { color: inherit; background: transparent; }
-.lesson-hints-toggle { display: flex; align-items: center; gap: 10px; margin-top: 14px; cursor: pointer; }
-.lesson-hints-toggle > span { display: flex; flex-direction: column; gap: 1px; }
-.lesson-hints-toggle strong { font-size: 13px; font-weight: 600; }
-.lesson-hints-toggle small { font-size: 12px; color: var(--muted-foreground); line-height: 1.35; }
+.lesson-hints-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+/* Sheet size (phone Study / Settings sheets, grids and lessons alike): a sheet row — label left,
+   switch right — like the sheets' other rows. */
+.lesson-hints-toggle.is-sheet { justify-content: space-between; min-height: 42px; gap: 12px; }
+.lesson-hints-toggle.is-sheet strong { font-size: 15px; font-weight: 400; }
+/* Toolbar size (grids' tools row): a plain switch + label on one line, no frame of its own (a
+   switch is not a button), vertically centred on the row and using the row's button text size
+   (Compact 11px, Comfortable --ui-control-size) so it reads as part of the same toolbar. */
+.lesson-hints-toggle.is-toolbar { flex: none; margin-top: 0; gap: 8px; height: 32px; padding: 0 4px; }
+.lesson-hints-toggle.is-toolbar strong { font-size: 11px; font-weight: 500; white-space: nowrap; }
+html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar { height: 40px; }
+html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { font-size: var(--ui-control-size); }
 /* The quick card: a light, rounded floating card on the solid card surface (text behind never shows through). */
 .lesson-hint-card.lesson-hint-card { width: min(320px, calc(100vw - 24px)); padding: 0; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%); background: var(--card); box-shadow: var(--shadow-popover); outline: none; }
 .lesson-hint-body { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px 14px; }
@@ -3939,6 +3955,8 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-pattern-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .lesson-pattern-line .lesson-hanzi { font-size: 24px; }
 .lesson-pattern-line .pinyin { font-size: 14px; }
+/* A long template reading may wrap; its speaker stays at the reading's end. */
+.lesson-pattern-line .lesson-term-reading { white-space: normal; flex-wrap: wrap; }
 .lesson-example .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .lesson-example .sentence p { font-size: 24px; margin-top: 4px; }
 .lesson-example .sentence-pinyin { margin-top: 0; font-size: 14px; }
@@ -3999,17 +4017,16 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-provenance > summary { font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted-foreground); }
 .lesson-provenance-report { margin-bottom: 12px; display: grid; gap: 3px; font-size: 13px; }
 .lesson-missing { margin-top: 24px; display: grid; gap: 12px; justify-items: start; }
-/* "Hide pinyin" study switch: readings blur until hovered or focused (speakers stay usable). */
-.lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child { filter: blur(5px); transition: filter .15s; }
-.lesson-hide-pinyin .pinyin:not(.sentence-pinyin):hover, .lesson-hide-pinyin .sentence-pinyin > span:first-child:hover { filter: none; }
-/* "Hide hanzi": recorded Chinese lines and terms blur until hovered or focused. */
-.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi) { filter: blur(6px); transition: filter .15s; }
-.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi):is(:hover, :focus-within) { filter: none; }
-/* "Hide translations": English renderings blur the same way until hovered or focused. */
-.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); transition: filter .15s; }
-.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation):is(:hover, :focus-within) { filter: none; }
-@container lesson-page (max-width: 760px) {
-  .lesson-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+/* Lesson Hanzi · Pinyin · EN buttons (owner's choice: click to reveal, no hover peek). A hidden
+   face blurs; a click on a blurred piece clears just that piece (lesson-reveal.ts marks it with
+   data-lesson-revealed), and keyboard focus inside a piece clears it too. Speakers stay usable.
+   Selectors match lesson-reveal.ts FACE_SELECTORS. */
+.lesson-hide-pinyin .pinyin:not(.sentence-pinyin), .lesson-hide-pinyin .sentence-pinyin > span:first-child,
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi),
+.lesson-hide-translations :is(.sentence-meaning, .lesson-term-meaning, .lesson-translation) { filter: blur(5px); cursor: pointer; transition: filter .15s; }
+.lesson-hide-hanzi :is(.lesson-hanzi, .sentence-hanzi) { filter: blur(6px); }
+.lesson-page.lesson-page :is(.pinyin, .sentence-pinyin > span, .lesson-hanzi, .sentence-hanzi, .sentence-meaning, .lesson-term-meaning, .lesson-translation):is([data-lesson-revealed], :has(:focus-visible)) { filter: none; cursor: auto; }
+@container lesson-page (max-width: 680px) {
   .lesson-toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; }
   .lesson-toc .eyebrow { flex-basis: 100%; margin-bottom: 2px; }
   .lesson-toc a { border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
@@ -4035,7 +4052,7 @@ a.lesson-word-link { text-decoration: none; }
 /* Lesson section list: the section under the sticky header is highlighted (useActiveSection). */
 .lesson-toc a[aria-current] { color: var(--foreground); border-left-color: var(--primary); font-weight: 600; }
 
-/* Narrow lesson layout (lesson-page.tsx useNarrowLesson: the page's own width ≤ 760px, a layout
+/* Narrow lesson layout (lesson-page.tsx useNarrowLesson: the page's own width ≤ 680px, a layout
    condition, never a device): the mobile prototype in the site's styling. Sticky pill row under
    the phone header, collapsible section cards (inner cards on the page colour for contrast),
    headword beside the title, two-column words, full-width quiz choices, 44px tap targets and
@@ -4078,7 +4095,9 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-page.is-narrow .lesson-description { font-size: 14px; margin-top: 12px; }
 .lesson-page.is-narrow .lesson-intro { margin: 16px 0 0; padding: 14px 16px; border-radius: 14px; }
 .lesson-page.is-narrow .lesson-intro p { font-size: 15px; }
-.lesson-page.is-narrow .lesson-layout { margin-top: 12px; gap: 0; }
+/* The one-column switch keys on .is-narrow (not a container query), so the side panel and the
+   phone strip can never be on screen in a two-column grid at the same time. */
+.lesson-page.is-narrow .lesson-layout { grid-template-columns: minmax(0, 1fr); margin-top: 12px; gap: 0; }
 .lesson-page.is-narrow .lesson-toc { position: sticky; top: var(--lesson-sticky-top); z-index: 6; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 12px; padding: 10px 16px; background: var(--background); border-bottom: 1px solid var(--border); }
 .lesson-page.is-narrow .lesson-toc::-webkit-scrollbar { display: none; }
 .lesson-page.is-narrow .lesson-toc .eyebrow { display: none; }
@@ -4123,7 +4142,7 @@ a.lesson-word-link { text-decoration: none; }
 
 /* Comfortable on wide lesson pages: the same layout with larger text and glyphs (the narrow
    layout keeps its own sizes). Queries the page container, so only its descendants change. */
-@container lesson-page (min-width: 761px) {
+@container lesson-page (min-width: 681px) {
   html[data-display-size='comfortable'] .lesson-back { font-size: 15px; }
   html[data-display-size='comfortable'] .lesson-headword-glyph { width: 148px; height: 148px; font-size: 98px; }
   html[data-display-size='comfortable'] .lesson-headword-reading .pinyin { font-size: 21px; }
@@ -4133,14 +4152,12 @@ a.lesson-word-link { text-decoration: none; }
   html[data-display-size='comfortable'] .lesson-chips li { font-size: 14px; padding: 4px 12px; }
   html[data-display-size='comfortable'] .lesson-intro p { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-intro strong { font-size: 14px; }
-  html[data-display-size='comfortable'] .lesson-layout { grid-template-columns: 230px minmax(0, 1fr); }
+  html[data-display-size='comfortable'] .lesson-page:not(.is-narrow) .lesson-layout { grid-template-columns: 230px minmax(0, 1fr); }
   html[data-display-size='comfortable'] .lesson-toc a { font-size: 15px; padding-block: 6px; }
-  html[data-display-size='comfortable'] .lesson-hints-toggle strong { font-size: 15px; }
-  html[data-display-size='comfortable'] .lesson-hints-toggle small { font-size: 13px; }
   html[data-display-size='comfortable'] .lesson-section h2 { font-size: 26px; }
   html[data-display-size='comfortable'] :is(.lesson-section h3, .lesson-subheading) { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-lead { font-size: 18px; }
-  html[data-display-size='comfortable'] :is(.lesson-note, .lesson-muted, .lesson-teaching, .lesson-caution) { font-size: 15px; }
+  html[data-display-size='comfortable'] :is(.lesson-note, .lesson-muted, .lesson-teaching, .lesson-caution, .lesson-usage-note) { font-size: 15px; }
   html[data-display-size='comfortable'] .lesson-facts dt { font-size: 14px; }
   html[data-display-size='comfortable'] .lesson-facts dd, html[data-display-size='comfortable'] .lesson-facts .pinyin { font-size: 16px; }
   html[data-display-size='comfortable'] .lesson-card { padding: 20px; }
@@ -4738,7 +4755,11 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-toc-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 4px; scrollbar-width: thin; }
 .lesson-toc-list .eyebrow { margin-bottom: 8px; }
 .lesson-toc-tools { flex: none; display: flex; flex-direction: column; gap: 12px; padding-top: 12px; margin-top: 12px; border-top: 1px solid var(--border); }
-.lesson-toc-tools .lesson-hints-toggle { margin-top: 0; }
+/* The sidebar uses the grid toolbar's look (same frame, height and text size per display size);
+   only the width differs: the buttons fill the narrow panel and share it, so Comfortable fits. */
+.lesson-toc-tools .face-toggles.is-toolbar { width: 100%; }
+html[data-display-size] .lesson-toc-tools .face-toggles.is-toolbar > .face-toggle { flex: 1 1 auto; padding: 0 8px; }
+.lesson-toc-tools .lesson-hints-toggle.is-toolbar { align-self: flex-start; padding: 0; }
 .lesson-toc-progress-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .lesson-progress-menu { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 22px; margin: -4px -6px -4px 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted-foreground); cursor: pointer; transition: color .15s, background .15s; }
 .lesson-progress-menu:hover, .lesson-progress-menu:focus-visible, .lesson-progress-menu[data-state='open'] { color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
@@ -4749,13 +4770,26 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-confirm-title { margin: 0; font-weight: 600; color: var(--foreground); }
 .lesson-confirm-copy { margin: 0; line-height: 1.4; }
 .lesson-confirm-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
-/* One row of display toggles (on = shown): 汉 Hanzi · pīn Pinyin · EN. */
-.lesson-study-toggles { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.lesson-study-toggle { flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; padding: 7px 4px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 12px; cursor: pointer; transition: color .15s, background .15s; }
-.lesson-study-toggle + .lesson-study-toggle { border-left: 1px solid var(--border); }
-.lesson-study-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
-.lesson-study-toggle:hover, .lesson-study-toggle:focus-visible { color: var(--primary); outline: none; }
-.lesson-study-mark { font-size: 12px; color: inherit; opacity: .8; }
+/* One row of display toggles (on = shown): 汉 Hanzi · pīn Pinyin · EN — face-toggles.tsx, shared by
+   lessons and the Glyphs/Vocabulary grids. The toolbar size matches the grid's outline buttons. */
+.face-toggles { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.face-toggle { flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; padding: 7px 4px; border: 0; background: transparent; color: var(--muted-foreground); font: inherit; font-size: 12px; white-space: nowrap; cursor: pointer; transition: color .15s, background .15s; }
+.face-toggle + .face-toggle { border-left: 1px solid var(--border); }
+.face-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
+.face-toggle:hover, .face-toggle:focus-visible { color: var(--primary); outline: none; }
+.face-toggle[aria-disabled='true'] { cursor: not-allowed; }
+.face-toggle[aria-disabled='true']:hover { color: var(--foreground); }
+.face-toggle-mark { font-size: 12px; color: inherit; opacity: .8; }
+/* Toolbar size: the same frame as the row's outline buttons (Play, Remember revealed cards) —
+   height, input-coloured border, background and text size per display size. The generic
+   comfortable "toolbar buttons are ≥40px" rule must not reach the segments: they would outgrow
+   the clipped frame and sit low, so the segments fill the frame's height exactly instead. */
+.face-toggles.is-toolbar { flex: none; height: 32px; border-color: var(--input); border-radius: var(--radius-md, 6px); background: var(--background); box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / .05)); }
+.face-toggles.is-toolbar .face-toggle + .face-toggle { border-left-color: var(--input); }
+html[data-display-size] .face-toggles.is-toolbar > .face-toggle { flex: none; height: 100%; min-height: 0; padding: 0 12px; font-size: 11px; line-height: 1; }
+.face-toggles.is-toolbar .face-toggle-mark { font-size: 1em; }
+html[data-display-size='comfortable'] .face-toggles.is-toolbar { height: 40px; }
+html[data-display-size='comfortable'] .face-toggles.is-toolbar > .face-toggle { padding: 0 14px; gap: 6px; font-size: var(--ui-control-size); }
 
 /* Quiet resets at natural moments: "Start over" is plain text; "Practice this lesson again"
    sits below the main Next action as a secondary outline button. */
@@ -4790,6 +4824,9 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 .lesson-sheet-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; font-size: 15px; cursor: pointer; }
 button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--border); background: transparent; font: inherit; font-size: 15px; text-align: left; }
 .lesson-sheet-row.is-destructive { color: var(--destructive); }
+.lesson-sheet-row.is-faces { cursor: default; }
+.lesson-sheet-row.is-faces .face-toggles { flex: 1; }
+.lesson-sheet-row.is-faces .face-toggle { min-height: 42px; font-size: 14px; }
 .lesson-sheet-row.is-destructive:disabled { color: var(--muted-foreground); opacity: .6; cursor: default; }
 .lesson-sheet-row span { display: inline-flex; align-items: center; gap: 8px; }
 .lesson-sheet-row svg { width: 15px; height: 15px; }

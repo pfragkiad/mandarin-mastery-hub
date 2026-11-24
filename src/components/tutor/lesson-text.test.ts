@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { inlineSegments } from './lesson-text';
+import { inlineSegments, sameReading } from './lesson-text';
 
 describe('inlineSegments', () => {
   it('finds a Han run followed by its bracketed pinyin', () => {
@@ -18,5 +18,20 @@ describe('inlineSegments', () => {
   it('leaves brackets that are not pinyin as plain text', () => {
     expect(inlineSegments('以 (see the note on 用)')).toEqual([{ kind: 'text', text: '以 (see the note on 用)' }]);
     expect(inlineSegments('次 (2)')).toEqual([{ kind: 'text', text: '次 (2)' }]);
+  });
+});
+
+describe('sameReading (lesson speakers borrow a card recording only for its own reading)', () => {
+  it('matches the same reading despite spacing, case and punctuation', () => {
+    expect(sameReading('nǐ hǎo', 'Nǐhǎo!')).toBe(true);
+    expect(sameReading('xièxie', 'xiè xie')).toBe(true);
+  });
+  it('rejects a different tone spelling or reading', () => {
+    expect(sameReading('bù kèqi', 'bú kèqi')).toBe(false);
+    expect(sameReading('xièxie', 'xièxiè')).toBe(false);
+  });
+  it('never matches an unknown card reading', () => {
+    expect(sameReading(undefined, 'nǐ hǎo')).toBe(false);
+    expect(sameReading('', '')).toBe(false);
   });
 });

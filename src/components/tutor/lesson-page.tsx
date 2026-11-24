@@ -1,8 +1,11 @@
 import { wordHskPill } from './word-identity-pills';
 import { LessonFitGrid } from './lesson-fit-grid';
-import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type MouseEvent, type ReactNode, type RefObject } from 'react';
 import { lessonState, type LessonProgressEntry, markLessonCompleted, markLessonOpened, markQuestionAnswered, resetLesson, resetLessonTasks, restoreLesson, snapshotLesson, unmarkCheckpoint, useLessonProgress } from '@/lib/lesson-progress';
 import { toast } from 'sonner';
+import { restoredFaceView } from '@/lib/face-view';
+import { blurredPieceAt, REVEALED_ATTR } from '@/lib/lesson-reveal';
+import { CharacterHintsToggle } from './face-toggles';
 import { PhoneLessonBar, SidebarProgress, StudyToggles, type ProgressNumbers, type SectionLink, type StudyView } from './lesson-controls';
 import { checkpointLabel, migrateLegacyKeys, planCheckpoints, type CheckpointPlan, type LessonCheckpoint } from '@/lib/lesson-checkpoints';
 import { ResetProgressButton } from './reset-progress-button';
@@ -22,7 +25,7 @@ import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { parseAnswerLines } from '@/lib/lesson-answer';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHeadword, LessonPairedLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
+import { LessonHeadword, LessonPairedLine, LessonPatternLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
 import type { Word } from '@/lib/mandarin';
 import { WordIdentityPills } from './word-identity-pills';
@@ -39,12 +42,14 @@ import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-h
  * topic lesson; the headword box appears only when a headword is recorded).
  *
  * Inputs: `lesson` — the loaded document; `priority` / `onPriority` — the URL-backed
- * vocabulary priority filter (A/B/C or all). Local state: the "Hide hanzi", "Hide pinyin" and "Hide translations" study switches
- * and each practice card's revealed answer (both reset when the page is left). The
+ * vocabulary priority filter (A/B/C or all). The Hanzi · Pinyin · EN buttons (shared FaceToggles)
+ * are the remembered `lessonFaces` preference, apart from the grids' own; hidden pieces blur and
+ * clear one at a time on click (revealClick). Local state: each practice card's revealed answer
+ * (reset when the page is left). The
  * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
- * Narrow layout (the page's own width ≤ 760px, the same threshold as its container
+ * Narrow layout (the page's own width ≤ 680px, the same threshold as its container
  * queries — a layout condition, never a device): the mobile prototype's design in the
  * site's styling. Sections become collapsible cards (the first open), the section list
  * becomes a sticky row of pills that opens and scrolls to its section, and the Pinyin /
@@ -91,8 +96,9 @@ const SECTION_KEYS: Record<string, string> = {
   mistakes: 'mistakes', historical: 'historical', extensions: 'more',
 };
 
-/** Matches the `@container lesson-page (max-width: 760px)` rules in styles.css. */
-const NARROW_MAX = 760;
+/** Matches the `@container lesson-page (max-width: 680px)` rules in styles.css. Chosen so the
+ *  side panel stays while the reading column beside it keeps roughly 440px or more. */
+const NARROW_MAX = 680;
 const count = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 /** True while the element's own content width is at most NARROW_MAX (ResizeObserver; false where unavailable). */
@@ -190,13 +196,14 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (position) { setLessonFold(position.course.id, true); setLessonFold(levelFoldId(position.course.id, position.section.id), true); void navigate({ to: '/lessons' }); }
     else void navigate({ to: '/lessons', search: summary.primaryCategory ? { view: 'topic', category: summary.primaryCategory.id } : { view: 'topic' } });
   };
-  const [hidePinyin, setHidePinyin] = useState(false);
-  // "Hide translations": blurs English renderings of Chinese (sentence translations, word/term
-  // meanings) until hovered or focused, like Hide pinyin; instructions and explanations stay readable.
-  const [hideTranslations, setHideTranslations] = useState(false);
-  // "Hide hanzi": blurs recorded Chinese lines and terms (not hanzi quoted inside English prose).
-  const [hideHanzi, setHideHanzi] = useState(false);
   const { preferences, setPreferences, items } = useWorkspace();
+  // Hanzi · Pinyin · EN (shared FaceToggles), remembered as the lesson's own choice, apart from
+  // the grids' Hide setting. Hidden faces blur until hovered or focused: "translations" covers
+  // English renderings of Chinese (sentence translations, word/term meanings) while instructions
+  // and explanations stay readable; "hanzi" covers recorded Chinese lines and terms, not hanzi
+  // quoted inside English prose.
+  const faces = restoredFaceView(preferences.lessonFaces);
+  const hidePinyin = !faces.pinyin, hideTranslations = !faces.translations, hideHanzi = !faces.hanzi;
   const topic = lesson.topic;
   // Exact Vocabulary records for this topic lesson's words (HSK entry number + headword).
   const recordFor = (item: TopicVocabItem): Word | null => syllabusEntryFor(item, items.flatMap(w => w.entry ? [{ id: w.id, simplified: w.entry.simplified, entryKind: w.entry.entryKind, hskVersion: w.entry.hskVersion, hsk_index: w.entry.hsk_index, word: w }] : []))?.word ?? null;
@@ -331,16 +338,19 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (b.kind === 'dialogue' && b.turns.length) sections.push({ id: `block-${b.id}`, title: b.title || 'Conversation', hint: count(b.turns.length, 'line'), body: <DialogueTurns turns={b.turns}/> });
   }
   const patterns = blocks.flatMap(b => b.kind === 'grammar_pattern' ? [b] : []);
+  // A pattern card shows the formula, its function, then the example. When a file records the
+  // example sentence itself as the formula (or the function verbatim as the teaching note), that
+  // duplicate is shown once only — the recorded fields are untouched, only the repeat is hidden.
   if (patterns.length) sections.push({ id: 'block-patterns', title: 'Patterns', hint: count(patterns.length, 'pattern'), body: <div className="lesson-stack">{patterns.map(g => <div key={g.id} className="lesson-card lesson-pattern">
-    <p className="lesson-pattern-line"><LessonPairedLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>
+    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() && <p className="lesson-pattern-line"><LessonPatternLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>}
     <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
     <PlanSentence line={g.example}/>
-    {g.example.teaching_note && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
+    {g.example.teaching_note && g.example.teaching_note.trim() !== g.function_en.trim() && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
     <CardTick target={g.id}/>
   </div>)}</div> });
   for (const b of blocks) {
     if (b.kind === 'review_set' && b.items.length) sections.push({ id: `block-${b.id}`, title: 'Key expressions', hint: count(b.items.length, 'expression'), body: <LessonFitGrid className="lesson-grid lesson-vocab-grid">
-      {b.items.map((item, i) => <KeyExpressionCard key={`${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en}/>)}
+      {b.items.map((item, i) => <KeyExpressionCard key={item.expression_id ?? `${item.hanzi}-${i}`} hanzi={item.hanzi} pinyin={item.pinyin} meaning={item.meaning_en} usageLabel={item.usage_label} usageNote={item.usage_note}/>)}
     </LessonFitGrid> });
   }
   for (const b of laterNotes) {
@@ -366,7 +376,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', hint: count(S.constructions.items.length, 'reusable construction'), body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
-      <p className="lesson-pattern-line"><LessonPairedLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
+      <p className="lesson-pattern-line"><LessonPatternLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
       <p className="lesson-card-title"><LessonText text={c.function_en}/></p>
       <LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/>
       {c.usage_note && <p className="lesson-muted"><LessonText text={c.usage_note}/></p>}
@@ -509,8 +519,28 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     setRound(r => r + 1);
     undoToast(`“${activeSection.title}” reset`, snapshot);
   };
-  const studyView: StudyView = { hanzi: !hideHanzi, pinyin: !hidePinyin, translations: !hideTranslations };
-  const setStudyView = (next: StudyView) => { setHideHanzi(!next.hanzi); setHidePinyin(!next.pinyin); setHideTranslations(!next.translations); };
+  const studyView: StudyView = faces;
+  const setStudyView = (next: StudyView) => {
+    // A new choice starts clean: pieces revealed under the previous one blur again.
+    pageRef.current?.querySelectorAll(`[${REVEALED_ATTR}]`).forEach(el => el.removeAttribute(REVEALED_ATTR));
+    setPreferences({ ...preferences, lessonFaces: next });
+  };
+  // Click-to-reveal (capture phase, before hints or links see the click): a click on a blurred
+  // piece only clears that piece. A click on a revealed piece blurs it back unless it landed on
+  // something interactive (a hint character, link or button), which then works as usual.
+  const revealClick = (event: MouseEvent<HTMLDivElement>) => {
+    const target = event.target as Element | null;
+    if (!target || (faces.hanzi && faces.pinyin && faces.translations)) return;
+    const piece = blurredPieceAt(target, faces);
+    if (!piece) return;
+    if (!piece.hasAttribute(REVEALED_ATTR)) {
+      piece.setAttribute(REVEALED_ATTR, '');
+      event.preventDefault(); event.stopPropagation();
+      return;
+    }
+    if (target.closest('a, button, [role="button"], input, label')) return;
+    piece.removeAttribute(REVEALED_ATTR);
+  };
   const setHints = (on: boolean) => setPreferences({ ...preferences, lessonHints: on });
   // Phone Sections sheet: open the collapsed section, then scroll to it once the sheet has closed.
   const jumpTo = (id: string) => {
@@ -530,12 +560,9 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   const description = displayDescription(summary.description);
   const tags = displayTags(summary.tags);
 
-  const hintsToggle = <label className="lesson-hints-toggle" title="Hover a character for a ring; click or tap it for a quick card">
-    <Switch checked={hintsOn} onCheckedChange={setHints} aria-describedby="lesson-hints-help"/>
-    <span><strong>Character hints</strong><small id="lesson-hints-help">Hover or tap a character for a quick card</small></span>
-  </label>;
+  const hintsToggle = <CharacterHintsToggle checked={hintsOn} onChange={setHints} size="toolbar"/>;
 
-  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
+  return <LessonViewId.Provider value={summary.id}><QuestionProgress.Provider value={progress}><CheckpointTicks.Provider value={ticks}><LessonHintsProvider enabled={hintsOn} backLabel={headword ? `Lesson (${headword.hanzi})` : 'Lesson'} characterRefs={lessonCharacterRefs[summary.id]}><div ref={pageRef} onClickCapture={revealClick} className={`lesson-page${hidePinyin ? ' lesson-hide-pinyin' : ''}${hideTranslations ? ' lesson-hide-translations' : ''}${hideHanzi ? ' lesson-hide-hanzi' : ''}${hintsOn ? ' has-hints' : ''}${narrow ? ' is-narrow' : ''}`}>
     {/* Back link + course position share one block: on narrow pages they flow as one line
         (back left, course/lesson number right) with Previous/Next below (CSS .lesson-top). */}
     <div className="lesson-top">
@@ -766,10 +793,12 @@ function TopicWordCard({ item, record }: { item: TopicVocabItem; record: Word | 
   </div>;
 }
 
-/** A Key expressions card. Inputs: the recorded expression. When exactly one Vocabulary record has
- * this exact headword, its HSK pill (the grid cards' own wordHskPill) marks the whole expression as
- * an entry; composite expressions wear a neutral Expression pill instead. Hanzi colour stays uniform either way. */
-function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: string; meaning?: string | undefined }) {
+/** A Key expressions card. Inputs: the recorded expression and its optional usage label/note.
+ * When exactly one Vocabulary record has this exact headword, its HSK pill (the grid cards' own
+ * wordHskPill) marks the whole expression as an entry; composite expressions wear a neutral
+ * Expression pill instead. Hanzi colour stays uniform either way. The usage note sits below the
+ * expression as text only: its alternative forms are never spoken — the speaker stays on the phrase. */
+function KeyExpressionCard({ hanzi, pinyin, meaning, usageLabel, usageNote }: { hanzi: string; pinyin: string; meaning?: string | undefined; usageLabel?: string | undefined; usageNote?: string | undefined }) {
   const { items } = useWorkspace();
   const matches = items.filter(w => w.hanzi === hanzi);
   const hsk = matches.length === 1 ? wordHskPill(matches[0]!) : null;
@@ -778,6 +807,7 @@ function KeyExpressionCard({ hanzi, pinyin, meaning }: { hanzi: string; pinyin: 
   return <div className="lesson-card lesson-vocab lesson-bank-word">
     <div className="lesson-bank-top"><HeaderStrut/>{hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <span className="word-hsk-id lesson-expression-pill" title="Expression built from words; not a single dictionary entry">Expression</span>}</div>
     <LessonWord hanzi={hanzi} pinyin={pinyin} meaning={meaning} tile/>
+    {usageNote && <p className="lesson-usage-note">{usageLabel && <span className="lesson-usage-label">{usageLabel}</span>}<LessonText text={usageNote}/></p>}
   </div>;
 }
 
