@@ -161,3 +161,4 @@
 - [x] Lessons Core v3.6: three-line pattern headings (Hanzi, pinyin, pseudo-translation) in HSK, Conversational and character lessons; legacy formula fallback
 - [x] Pattern lines: no speaker (owner, following the migration report)
 - [x] Pattern pseudo-translation is the prominent line and comes first; Hanzi/pinyin smaller below
+- [x] Pinyin sounds: Tone pairs and Tone changes pages from the handoff (48 whole-word recordings, draft tone labels), under one "Pinyin sounds" menu item

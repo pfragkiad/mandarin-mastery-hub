@@ -4857,3 +4857,91 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 .etymology-inherited-note { margin: 0; }
 :where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph { width: 58px; height: 58px; border-radius: 10px; }
 :where(.etymology-section .etymology-word-part > .decomposition-part > .etymology-script-pair) > .decomposition-glyph strong { font-size: 40px; }
+
+/* ===== Pinyin sounds: Tone pairs and Tone changes (tone-pairs-page.tsx) =====
+   Reuses the Sound chart's page heading, group titles, card (.pinyin-player) and tone colours.
+   The layout follows its own container, so the card drops below the matrix whenever the
+   column would get too narrow, at any window size. */
+.tone-sounds-page { container: tone-sounds / inline-size; }
+.tone-sounds-draft { font-size: 12px; color: var(--muted-foreground); border-left: 2px solid var(--rank-gold, var(--primary)); padding: 2px 0 2px 10px; margin: 0 0 22px; }
+.tone-sounds-draft strong { color: var(--foreground); font-weight: 600; }
+.tone-sounds-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(320px, 32%, 440px); gap: 30px; align-items: start; }
+@container tone-sounds (max-width: 820px) { .tone-sounds-layout { grid-template-columns: minmax(0, 1fr); } .tone-sounds-card.pinyin-player { position: static; max-height: none; } }
+.tone-sounds-helper { font-size: 12px; color: var(--muted-foreground); line-height: 1.6; margin: 0 0 12px; }
+.tone-sounds-helper strong { color: var(--foreground); font-weight: 600; }
+.tone-matrix-section .tone-sounds-helper:last-child { margin: 12px 0 0; }
+
+/* Matrix: an axis column, then five second-tone columns; cells are equal boxes. */
+.tone-matrix { display: grid; grid-template-columns: 44px repeat(5, minmax(0, 1fr)); gap: 6px; }
+.tone-matrix-axis { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 11px; color: var(--tone-ink, var(--muted-foreground)); font-weight: 600; }
+.tone-matrix-axis .tone-contour { width: 26px; height: 16px; }
+.tone-matrix-axis.is-row { font-size: 15px; }
+.tone-matrix-axis.tone-5 { --tone-ink: var(--muted-foreground); }
+.tone-matrix-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 64px; padding: 8px 4px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, color .15s; }
+.tone-matrix-cell:hover, .tone-matrix-cell:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
+.tone-matrix-cell.is-selected { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.tone-matrix-code { font-size: 11px; color: var(--muted-foreground); white-space: nowrap; }
+.tone-pair-digit { color: var(--tone-ink, var(--muted-foreground)); font-weight: 650; }
+.tone-pair-digit.tone-5 { --tone-ink: var(--muted-foreground); }
+.tone-matrix-word { font-family: var(--font-hanzi); font-size: 20px; line-height: 1.2; }
+
+/* Tone change focus areas. */
+.tone-rule-list { display: grid; gap: 8px; margin-bottom: 12px; }
+.tone-rule { display: grid; grid-template-columns: 64px minmax(0, 1fr); align-items: center; gap: 12px; text-align: left; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s; }
+.tone-rule:hover, .tone-rule:focus-visible { border-color: var(--primary); outline: none; }
+.tone-rule.is-selected { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.tone-rule-symbol { font-size: 20px; text-align: center; white-space: nowrap; }
+.tone-rule-symbol[lang] { font-family: var(--font-hanzi); font-size: 30px; }
+.tone-rule-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-size: 12px; color: var(--muted-foreground); line-height: 1.5; }
+.tone-rule-copy strong { font-size: 14px; color: var(--foreground); font-weight: 600; }
+.tone-rule-copy small { font-size: 11px; color: var(--primary); }
+
+/* Word list under the matrix / rules. */
+.tone-sounds-bank { margin-top: 24px; }
+.tone-sounds-words { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+.tone-sounds-word { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px; border: 1px solid var(--border); border-radius: 7px; background: var(--card); color: var(--foreground); cursor: pointer; transition: border-color .15s, color .15s; }
+.tone-sounds-word:hover, .tone-sounds-word:focus-visible { border-color: var(--primary); outline: none; }
+.tone-sounds-word.is-selected { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+.tone-sounds-word-hanzi { font-family: var(--font-hanzi); font-size: 24px; line-height: 1.2; }
+.tone-sounds-word-reading { font-size: 12px; color: var(--muted-foreground); }
+
+/* Selected word card. */
+.tone-sounds-reveal.tone-sounds-reveal { height: 28px; padding: 0 10px; font-size: 12px; }
+.tone-sounds-face { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 0 4px; text-align: center; }
+.tone-sounds-hanzi { font-family: var(--font-hanzi); font-size: 64px; line-height: 1.15; }
+.tone-sounds-face.is-hidden .tone-sounds-hanzi { color: var(--muted-foreground); letter-spacing: 4px; }
+.tone-sounds-reading { font-size: 18px; }
+.tone-sounds-meaning { font-size: 14px; color: var(--foreground); }
+.tone-sounds-face.is-hidden .tone-sounds-reading, .tone-sounds-face.is-hidden .tone-sounds-meaning { color: var(--muted-foreground); font-size: 13px; }
+.tone-sounds-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0; margin: 0; }
+.tone-sounds-compare dt { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-foreground); font-weight: 600; }
+.tone-sounds-compare dd { font-size: 15px; margin: 4px 0 0; }
+.tone-sounds-compare .is-changed dd { color: var(--primary); font-style: italic; }
+.tone-sounds-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tone-sounds-controls > button { flex: 1 1 auto; }
+.tone-sounds-speed-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted-foreground); }
+html[data-display-size='comfortable'] .tone-sounds-speed-row { font-size: 14px; }
+.tone-sounds-speed { display: inline-flex; border: 1px solid var(--input); border-radius: 6px; overflow: hidden; height: 32px; }
+.tone-sounds-speed button { padding: 0 11px; font-size: 12px; background: transparent; color: var(--muted-foreground); border: 0; cursor: pointer; }
+.tone-sounds-speed button + button { border-left: 1px solid var(--input); }
+.tone-sounds-speed button.is-current { background: var(--secondary); color: var(--primary); font-weight: 600; }
+.tone-sounds-speed button:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
+.tone-sounds-status { min-height: 18px; font-size: 12px; color: var(--muted-foreground); margin: 0; }
+.tone-sounds-links { display: flex; flex-direction: column; gap: 8px; }
+.tone-sounds-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.tone-sounds-chip { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border: 1px solid color-mix(in oklch, var(--tone-ink, var(--border)) 55%, transparent); border-radius: 999px; color: var(--tone-ink, var(--foreground)); font-size: 14px; text-decoration: none; }
+.tone-sounds-chip:hover, .tone-sounds-chip:focus-visible { background: color-mix(in oklch, var(--tone-ink, var(--primary)) 14%, transparent); outline: none; }
+.tone-sounds-chip.tone-5 { --tone-ink: var(--muted-foreground); }
+.tone-sounds-word-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--primary); text-decoration: none; align-self: flex-start; }
+.tone-sounds-word-link svg { width: 14px; height: 14px; }
+.tone-sounds-footnote.detail-footnote { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.tone-sounds-footnote a { color: var(--primary); text-decoration: none; }
+html[data-display-size='comfortable'] .tone-matrix-code { font-size: 13px; }
+html[data-display-size='comfortable'] .tone-matrix-word { font-size: 24px; }
+html[data-display-size='comfortable'] .tone-matrix-cell { min-height: 76px; }
+html[data-display-size='comfortable'] :is(.tone-sounds-helper, .tone-sounds-status, .tone-sounds-draft, .tone-rule-copy) { font-size: 14px; }
+html[data-display-size='comfortable'] .tone-sounds-speed { height: 40px; }
+html[data-display-size='comfortable'] .tone-sounds-speed button { font-size: var(--ui-label-size, 14px); }
+html[data-display-size='comfortable'] .tone-sounds-reveal.tone-sounds-reveal { height: 34px; font-size: 14px; }
+/* Narrow matrix: smaller words and codes so five columns still fit. */
+@container tone-sounds (max-width: 460px) { .tone-matrix { grid-template-columns: 30px repeat(5, minmax(0, 1fr)); gap: 4px; } .tone-matrix-axis { font-size: 9px; } .tone-matrix-axis .tone-contour { width: 18px; height: 12px; } .tone-matrix-word { font-size: 16px; } .tone-matrix-code { font-size: 10px; } .tone-matrix-cell { min-height: 54px; padding: 6px 2px; } }

@@ -6,6 +6,8 @@ The owner-supplied [HSK Level 1–5 handoffs](hsk/README.md) remain under `impor
 
 The [Level 2 word-audio handoff](data/hsk-audio/README.md) pins the original Shtooka metadata, exact reading matches and audio-cmn checksums. The owner-requested temporary MP3 staging has been uploaded to the Lovable CDN, attached to the 166 eligible Level 2 words and removed; see [the completed Lovable upload instructions](data/hsk-audio/LOVABLE_HANDOFF.md) for re-imports.
 
+The [tone pairs source](data/tone-pairs/README.md) pins the 48 Tone pairs / Tone changes examples, their Shtooka recording checksums and licence notices; `scripts/import-tone-pairs.py` compiles them into `src/data/pinyin/tone-pairs.json` and verifies every word card and CDN recording matches exactly.
+
 ## Radical identities
 
 `scripts/import-radical-identities.py` reads these pinned inputs from `importer/data/radical-identities/`:

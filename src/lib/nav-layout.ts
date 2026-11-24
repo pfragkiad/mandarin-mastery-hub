@@ -39,8 +39,8 @@ export type PhoneTab = 'start' | 'glyphs' | 'vocabulary' | 'games' | 'lessons' |
 
 /**
  * Which phone tab is lit for a page. All five games count as Games — the two
- * Hanzi games and the three Pinyin quiz pages under /pinyin; the Sound chart
- * (/pinyin itself) is the Pinyin tab. Preferences lives under More. Practice has
+ * Hanzi games and the three Pinyin quiz pages under /pinyin; Pinyin sounds (the Sound chart
+ * /pinyin plus Tone pairs and Tone changes) is the Pinyin sounds tab. Preferences lives under More. Practice has
  * no tab of its own (it is opened from Glyphs, Vocabulary or a game), so no
  * tab claims it.
  */
@@ -50,7 +50,8 @@ export function phoneTabFor(path: string): PhoneTab | null {
   if (path === '/vocabulary') return 'vocabulary';
   if (path === '/flashcards' || path === '/drawing') return 'games';
   if (path === '/lessons' || path.startsWith('/lessons/')) return 'lessons';
-  if (path === '/pinyin') return 'pinyin';
+  // Pinyin sounds: the Sound chart, Tone pairs and Tone changes share the one tab.
+  if (path === '/pinyin' || path === '/pinyin/tone-pairs' || path === '/pinyin/tone-changes') return 'pinyin';
   if (path === '/pinyin/tone-quiz' || path === '/pinyin/sound-alikes' || path === '/pinyin/type-what-you-hear') return 'games';
   // The Hanzi finder has no tab of its own: it lives in the More drawer (and Search's Draw button).
   if (path === '/preferences' || path === '/finder') return 'more';

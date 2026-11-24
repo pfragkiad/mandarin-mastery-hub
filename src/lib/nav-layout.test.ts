@@ -28,6 +28,10 @@ describe('phone tab bar', () => {
     expect(phoneTabFor('/drawing')).toBe('games');
     expect(phoneTabFor('/pinyin')).toBe('pinyin');
   });
+  it('Tone pairs and Tone changes light the Pinyin sounds tab with the Sound chart', () => {
+    expect(phoneTabFor('/pinyin/tone-pairs')).toBe('pinyin');
+    expect(phoneTabFor('/pinyin/tone-changes')).toBe('pinyin');
+  });
   it('the three Pinyin quiz pages light Games, so Games covers all five games', () => {
     expect(phoneTabFor('/pinyin/tone-quiz')).toBe('games');
     expect(phoneTabFor('/pinyin/sound-alikes')).toBe('games');

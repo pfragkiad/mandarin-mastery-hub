@@ -138,6 +138,36 @@ export async function playRecordingUrl(url: string, slow = false, onEnded?: () =
   }
 }
 
+/** How one exact recording finished: naturally, stopped (by Stop, another speaker or navigation) or failed to play. */
+export type RecordingSettle = 'ended' | 'stopped' | 'failed';
+
+/**
+ * Play one exact recording URL at an explicit rate through the shared element (stopping any
+ * other speaker), with pitch preservation requested. `onSettle` fires exactly once: 'ended'
+ * when it finishes, 'stopped' when anything pauses it (stopRecording, another speaker), or
+ * 'failed' when it cannot load/play. Never falls back to TTS or another recording.
+ */
+export async function playRecordingAt(url: string, rate: number, onSettle: (how: RecordingSettle) => void): Promise<boolean> {
+  current?.pause();
+  const el = new Audio(url);
+  el.playbackRate = clampRate(rate);
+  el.preservesPitch = true;
+  current = el;
+  let settled = false;
+  const settle = (how: RecordingSettle) => { if (!settled) { settled = true; onSettle(how); } };
+  el.addEventListener('ended', () => settle('ended'), { once: true });
+  // A natural end also fires 'pause' first; el.ended tells the two apart.
+  el.addEventListener('pause', () => { if (!el.ended) settle('stopped'); });
+  el.addEventListener('error', () => settle('failed'), { once: true });
+  try {
+    await el.play();
+    return true;
+  } catch (error) {
+    settle(error instanceof DOMException && error.name === 'AbortError' ? 'stopped' : 'failed');
+    return false;
+  }
+}
+
 /** Stop whichever recording is playing. */
 export function stopRecording() {
   current?.pause();
