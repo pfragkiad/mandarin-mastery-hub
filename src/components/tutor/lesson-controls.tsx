@@ -107,7 +107,7 @@ export function PhoneLessonBar({ numbers, activeTitle, sections, activeId, onJum
         <DrawerHeader className="lesson-sheet-head"><DrawerTitle>Settings</DrawerTitle><DrawerDescription className="sr-only">What the lesson shows, and your progress</DrawerDescription></DrawerHeader>
         <div className="lesson-sheet-group">
           <p className="lesson-sheet-caption">Show</p>
-          <div className="lesson-sheet-row is-faces"><FaceToggles view={view} onChange={onView} label="Show in the lesson"/></div>
+          <div className="lesson-sheet-row is-faces"><FaceToggles view={view} onChange={onView} label="Show in the lesson" size="toolbar"/></div>
           <CharacterHintsToggle checked={hints} onChange={onHints} size="sheet"/>
         </div>
         <div className="lesson-sheet-group">

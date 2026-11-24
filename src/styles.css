@@ -2285,12 +2285,12 @@ html[data-display-size='comfortable'] {
 .library-sheet-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; min-height: 2.25rem; }
 .library-study-section { display: grid; gap: 8px; }
 .library-study-section h3 { font-size: var(--ui-label-size, 13px); color: var(--muted-foreground); }
-.library-study-section > button, .library-study-section > div > button { justify-content: flex-start; width: 100%; min-height: 40px; white-space: normal; text-align: left; }
+.library-study-section > button, .library-study-section > div:not(.face-toggles) > button { justify-content: flex-start; width: 100%; min-height: 40px; white-space: normal; text-align: left; }
 .library-study-section > a { justify-content: flex-start; width: 100%; min-height: 40px; }
 .library-study-section button[aria-pressed='true'] { color: var(--primary); background: var(--secondary); }
-/* The shared Hanzi · Pinyin · EN row keeps its own look in the Study sheet, at touch size. */
-.library-study-section .face-toggles > .face-toggle { justify-content: center; width: auto; min-height: 42px; font-size: 14px; text-align: center; }
-.library-study-section .face-toggle[aria-pressed='true'] { color: var(--foreground); background: color-mix(in oklab, var(--primary) 14%, transparent); }
+/* The Study sheet's Hanzi · Pinyin · EN row uses the grid toolbar look (owner's choice), so
+   only the legacy full-width sheet size keeps touch-size overrides here. */
+.library-study-section .face-toggles.is-sheet > .face-toggle { justify-content: center; width: auto; min-height: 42px; font-size: 14px; text-align: center; }
 .library-remember-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-size: var(--ui-label-size, 13px); }
 .mobile-state-chip { display: inline-flex; align-items: center; gap: 5px; color: var(--primary); font-size: 12px; min-width: 0; white-space: normal; }
 .mobile-state-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
@@ -4842,8 +4842,10 @@ html[data-display-size='comfortable'] .face-toggles.is-toolbar > .face-toggle { 
 button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--border); background: transparent; font: inherit; font-size: 15px; text-align: left; }
 .lesson-sheet-row.is-destructive { color: var(--destructive); }
 .lesson-sheet-row.is-faces { cursor: default; }
-.lesson-sheet-row.is-faces .face-toggles { flex: 1; }
-.lesson-sheet-row.is-faces .face-toggle { min-height: 42px; font-size: 14px; }
+/* The Settings sheet's face row uses the grid toolbar look (owner's choice); the stretch and
+   touch-size rules below only apply to the legacy full-width sheet size. */
+.lesson-sheet-row.is-faces .face-toggles.is-sheet { flex: 1; }
+.lesson-sheet-row.is-faces .face-toggles.is-sheet .face-toggle { min-height: 42px; font-size: 14px; }
 .lesson-sheet-row.is-destructive:disabled { color: var(--muted-foreground); opacity: .6; cursor: default; }
 .lesson-sheet-row span { display: inline-flex; align-items: center; gap: 8px; }
 .lesson-sheet-row svg { width: 15px; height: 15px; }

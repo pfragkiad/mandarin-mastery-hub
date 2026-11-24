@@ -5,9 +5,9 @@ import { isLastShownFace, nextFaceView, type Face, type FaceView } from '@/lib/f
  * The one Hanzi · Pinyin · EN button row (on = shown) used wherever a learner hides study
  * faces: the lesson sidebar and phone Settings sheet, and the Glyphs/Vocabulary tools row and
  * phone Study sheet. Inputs: the current `view`, `onChange` with the next view, an accessible
- * group `label`, and `size`: 'toolbar' (the grid tools row and the lesson sidebar — one look,
- * sized per Compact/Comfortable like the row's outline buttons) or 'sheet' (phone bottom sheets,
- * full width with 42px touch targets).
+ * group `label`, and `size`: 'toolbar' (the grid tools row, the lesson sidebar and the phone
+ * bottom sheets — one look, sized per Compact/Comfortable like the row's outline buttons) or
+ * 'sheet' (legacy full width with 42px touch targets, kept for any sheet that wants it).
  * Each surface keeps its own saved choice; only the control and its rules are shared.
  * The last shown face cannot be switched off (nextFaceView), so a page never goes blank; its
  * button stays focusable and says why in its title.
