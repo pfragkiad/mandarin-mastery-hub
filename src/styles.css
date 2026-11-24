@@ -4886,6 +4886,7 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 @keyframes tone-change-glow { 0%, 100% { box-shadow: 0 0 6px color-mix(in oklch, var(--primary) 40%, transparent), inset 0 0 4px color-mix(in oklch, var(--primary) 18%, transparent); } 50% { box-shadow: 0 0 14px color-mix(in oklch, var(--primary) 70%, transparent), inset 0 0 8px color-mix(in oklch, var(--primary) 32%, transparent); } }
 @media (prefers-reduced-motion: reduce) { .tone-matrix-cell.is-tone-change { animation: none; } }
 .tone-matrix-code { font-size: 11px; color: var(--muted-foreground); white-space: nowrap; }
+.tone-matrix-code .tone-pair-change { color: var(--muted-foreground); }
 .tone-pair-digit { color: var(--tone-ink, var(--muted-foreground)); font-weight: 650; }
 .tone-pair-digit.tone-5 { --tone-ink: var(--muted-foreground); }
 .tone-matrix-word { font-family: var(--font-hanzi); font-size: 20px; line-height: 1.2; }
