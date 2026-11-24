@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Glyphs: frequency/Pinyin/Shuffle sorting with stable URL-backed order and Reshuffle
+- [x] Words and Phrases: Pinyin/HSK index/Shuffle, Pinyin default for HSK entries, existing default order for non-HSK entries
+- [x] Verify sorting, reshuffle, pagination and browser history
+
 - [x] Hide unknown-only decomposition trees and availability controls across glyph cards, Practice and vocabulary; retain known alternatives
 - [x] Known parts include exact BabelStone parts and numbered source identities, not only dictionary glyphs
 

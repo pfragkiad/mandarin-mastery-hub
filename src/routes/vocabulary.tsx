@@ -1,8 +1,11 @@
+import { shuffleSeed, type LibrarySort } from '@/lib/library-order';
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export type VocabularySearch = { q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
+export type VocabularySearch = { sort?: LibrarySort | undefined; seed?: number | undefined; q?: string; word?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
 export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
+  ...(search['sort'] === 'pinyin' || search['sort'] === 'hsk' || search['sort'] === 'random' ? { sort: search['sort'] } : {}),
+  ...(shuffleSeed(search['seed']) ? { seed: shuffleSeed(search['seed']) } : {}),
   ...(search['tab'] === 'word' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}),
   ...(search['py'] === 'pinyin' || search['py'] === 'exact' ? { py: search['py'] } : {}),
   ...(typeof search['q'] === 'string' && search['q'] ? { q: search['q'] } : {}),

@@ -1,3 +1,5 @@
+import { orderLibrary, newShuffleSeed, type LibrarySort as Sort } from '@/lib/library-order';
+import { LibrarySort } from './library-sort';
 import { MeaningText } from './meaning-text';
 import { revealToFaceView } from '@/lib/face-view';
 import { cardMnemonic, mnemonicFor } from '@/lib/mnemonics';
@@ -509,7 +511,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
 
 const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect && a.revealed === b.revealed && a.onDetails === b.onDetails);
 
-export type CharactersSearch = { character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** '1' hides cards whose glyph is a Kangxi radical (Characters and Components tabs). */ hideRadicals?: '1' | undefined };
+export type CharactersSearch = { sort?: Sort | undefined; seed?: number | undefined; character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** '1' hides cards whose glyph is a Kangxi radical (Characters and Components tabs). */ hideRadicals?: '1' | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {
@@ -522,6 +524,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const strokeCount = search.strokes ?? '';
   const pinyinOnly = Boolean(search.py);
   const hasUsage = kind !== 'Strokes';
+  const sort = hasUsage && (search.sort === 'pinyin' || search.sort === 'random') ? search.sort : 'rank';
+  const seed = search.seed ?? 1;
   const usage = hasUsage ? parseUsageGroup(kind, search.usage) : undefined;
   const usageUpTo = search.usageUpTo === '1';
   const strokesUpTo = search.strokesUpTo === '1';
@@ -537,7 +541,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // No first-row fallback: ordinary visits and tab changes must not open a modal.
   // Explicit record IDs take precedence over glyph-only links to preserve kind.
   const clean = (s: CharactersSearch): CharactersSearch => Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined && v !== '' && !(v === 1))) as CharactersSearch;
-  const base: CharactersSearch = { variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo, hideRadicals: hideRadicalsField };
+  const base: CharactersSearch = { sort: search.sort, seed: search.seed, variant: search.variant, tab: kind, q: query, strokes: strokeCount, usage, page, id: selectedId, status: search.status, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo, hideRadicals: hideRadicalsField };
   const set = (patch: CharactersSearch, replace = false) => onSearch(clean({ ...base, ...patch }), replace);
   const appliedFilters = { q: query, strokes: strokeCount, usage, py: search.py, usageUpTo: search.usageUpTo, strokesUpTo: search.strokesUpTo, hideRadicals: hideRadicalsField };
   const activeFilters = Boolean(query || strokeCount || usage || search.py || savedOnly || hideRadicals);
@@ -577,7 +581,8 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   // (when the head exists in this library; otherwise the form keeps its own card).
   // A selected substitute is its own card, so paging, highlight and arrows follow that card.
   const cardSelectedId = requestedHeading && requestedForm && isRadicalSubstitute(requestedHeading.kangxiIndex, requestedForm.key) ? requestedId : groupScripts && selectedId.startsWith(`${kind}:`) && entries.some(entry => entry.id === `${kind}:${cardHead(selectedId.slice(kind.length + 1))}`) ? `${kind}:${cardHead(selectedId.slice(kind.length + 1))}` : selectedId;
-  const filtered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : cardSelectedId);
+  const unordered = includeSelectedRecord(requestedHeading && requestedForm ? [...entries, radicalVariantEntry(requestedHeading, requestedForm)] : entries, browsed, savedOnly ? requestedId : cardSelectedId);
+  const filtered = orderLibrary(unordered, sort, seed);
   // Preserve explicitly selected records even when browsing filters exclude them;
   // density-aware paging then reveals their exact card, including saved variants.
   const density = useLibraryDensity(() => set({ page: 1, id: '', variant: undefined }));
@@ -587,7 +592,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind]);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}|${sort}|${seed}`, preferences.rememberCardReveals);
   // Clicks only toggle the peek in a Hide mode; the detail panel opens solely via the card's details button.
   const selectTile = (id: string) => peek.reveal(id);
   useKeyboardPaging({ current: paged.current, pages: paged.pages, onPageChange: setPage, disabled: selectedId !== '' });
@@ -653,7 +658,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const familyTotalExtra = kind === 'Components' && sharedFamily > 0 && unfilteredAll ? <TraditionalTotalHint tone="family" count={sharedFamily} hint={familyCountHint(sharedFamily)}/> : null;
   const traditionalTotalExtra = traditionalTotalHint || familyTotalExtra ? <>{traditionalTotalHint ? <TraditionalTotalHint count={sharedHere} hint={traditionalTotalHint}/> : null}{familyTotalExtra}</> : undefined;
   const paginationProps = {
-    filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional]),
+    filterKey: JSON.stringify([kind, appliedFilters, savedOnly, preferences.includeTraditional, sort, seed]),
     total: filtered.length, current: paged.current, pages: paged.pages,
     range: filtered.length ? `${(paged.current - 1) * density.size + 1}–${Math.min(paged.current * density.size, filtered.length)}` : '0',
     perPage: density.size, onPerPageChange: density.onPerPageChange, onPageChange: setPage,
@@ -673,7 +678,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
     } : undefined,
   };
   const stickyLabel = (() => {
-    if (rankedTotal > 0) {
+    if (sort === 'rank' && rankedTotal > 0) {
       const ranks = paged.entries.map(e => rankOf(e)).filter((r): r is number => r !== null);
       if (ranks.length) return `Ranks ${Math.min(...ranks).toLocaleString('en-US')}–${Math.max(...ranks).toLocaleString('en-US')} of ${rankedTotal.toLocaleString('en-US')}`;
     }
@@ -716,7 +721,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
         </>}>{({ draft, patch }) => <>
           <div className="search-field"><Search/><input aria-label="Search character library" placeholder="Search Chinese, pinyin or English…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button variant="ghost" type="button" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button variant="ghost" type="button" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
         </>}</DraftFilterForm>
-        <LibraryTools flashcards={k !== 'Strokes' ? { category: `Ref:${k.slice(0, -1)}`, ...(savedOnly ? { saved: true } : {}) } : undefined} drawing={k !== 'Strokes' ? { kind: k, ...(savedOnly ? { saved: true } : {}) } : undefined}/>
+        <LibraryTools sort={hasUsage ? <LibrarySort value={sort} onChange={next => set({ sort: next, seed: next === 'random' ? newShuffleSeed(seed) : undefined, page: 1, id: '', variant: undefined })} onReshuffle={() => set({ sort: 'random', seed: newShuffleSeed(seed), page: 1, id: '', variant: undefined })}/> : undefined} flashcards={k !== 'Strokes' ? { category: `Ref:${k.slice(0, -1)}`, ...(savedOnly ? { saved: true } : {}) } : undefined} drawing={k !== 'Strokes' ? { kind: k, ...(savedOnly ? { saved: true } : {}) } : undefined}/>
         <div className={`catalog-workspace ${cardRevealClass(preferences.cardReveal)}`}>{/* Grid character hints (own `gridHints` switch, apart from lessons and detail cards, which sit outside this provider). */}<LessonHintsProvider enabled={preferences.gridHints === true} backLabel={k}><section className="catalog-results" aria-label={`${k} results`} aria-busy={!catalogReady}>{filtered.length > 0 && <StickyPagination key={`sticky-${k}`} label={stickyLabel} current={paged.current} pages={paged.pages} onPageChange={setPage} watchRef={topPaginationRef}/>}{filtered.length > 0 && <CatalogPagination top innerRef={topPaginationRef} {...paginationProps} totalExtra={traditionalTotalExtra} />}<div ref={gridRef} className={`catalog-entry-grid ${preferences.libraryView === 'list' ? 'library-list-view' : ''}${catalogReady ? '' : ' is-loading'}`}>{!catalogReady && <GridCardPlaceholder/>}{paged.entries.map(entry => <MemoCatalogTile key={entry.id} entry={entry} kind={k} selected={selectedBookmarkId === entry.id} onSelect={selectTile} revealed={peek.revealed.has(entry.id)} onDetails={setSelectedId}/>)}</div>{!filtered.length && catalogReady && <div className="empty-state"><Search/><h3>No matching records.</h3><Button variant="outline" onClick={clearFilters}>Clear filters</Button></div>}
           <CatalogPagination {...paginationProps} />
         </section></LessonHintsProvider></div>

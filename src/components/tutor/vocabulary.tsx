@@ -1,3 +1,5 @@
+import { orderVocabulary, newShuffleSeed, type LibrarySort as Sort } from '@/lib/library-order';
+import { LibrarySort } from './library-sort';
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
@@ -47,13 +49,13 @@ function ExperimentalTag() {
     </HintBody></PopoverContent>
   </Popover>;
 }
-type Filters = { q?: string; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
+type Filters = { sort?: Sort | undefined; seed?: number | undefined; q?: string; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 // Adding words is hidden: without storage or accounts, additions would vanish on reload.
 // The dialog and session-only addWord stay in place so it can return when storage exists.
 const ADD_WORD_ENABLED = false;
 
-export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', subtopic = ALL_SUBTOPICS, level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
+export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, sort = 'rank', seed = 1, collection = 'All collections', subtopic = ALL_SUBTOPICS, level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; sort?: Sort | undefined; seed?: number | undefined; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
   const detailLoading = useDetailLoading();
   const query = initialQuery;
@@ -90,7 +92,9 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // each other from the form's current (draft) picks, so e.g. choosing a level
   // leaves only the styles and types recorded at that level.
   const facetBase = useMemo(() => filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kindItems, query, status, saved, py]);
-  const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
+  const unordered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
+  const wordSort = sort === 'pinyin' || sort === 'hsk' || sort === 'random' ? sort : 'rank';
+  const filtered = orderVocabulary(unordered, wordSort, seed);
   // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
   const hasSubtopics = useMemo(() => kindItems.some(w => wordSubtopicIds(w).length > 0), [kindItems]);
   const appliedSubtopic = subtopicById(subtopic);
@@ -105,7 +109,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     onPageChange: onPageChange ?? (() => undefined),
   };
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide); reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}|${wordSort}|${seed}`, preferences.rememberCardReveals);
   // An absent selection is an empty string, not undefined; block paging only
   // while the same conditions below actually render the floating reference.
   const detailOpen = Boolean(onWordOpen && linkedWord);
@@ -150,7 +154,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     </>; }}>{({ draft, patch }) => <>
       <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
     </>}</DraftFilterForm>
-    <LibraryTools flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
+    <LibraryTools sort={<LibrarySort words value={wordSort} onChange={next => onFiltersChange?.({ sort: next, seed: next === 'random' ? newShuffleSeed(seed) : undefined })} onReshuffle={() => onFiltersChange?.({ sort: 'random', seed: newShuffleSeed(seed) })}/>} flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
     <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}>{/* Grid character hints (own `gridHints` switch, apart from lessons and detail cards, which sit outside this provider). */}<LessonHintsProvider enabled={preferences.gridHints === true} backLabel={label}><section className="catalog-results" aria-label={`${label} results`} aria-busy={!gridReady}>
       {!gridReady ? <div ref={gridRef} className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}><GridCardPlaceholder/></div>
       : filtered.length ? <>
