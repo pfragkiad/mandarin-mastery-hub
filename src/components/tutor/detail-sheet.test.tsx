@@ -182,6 +182,37 @@ describe('Close returns where the window was opened from', () => {
     expect(go).toHaveBeenCalledWith(-1);
   });
 
+  it('related-character tiles keep Back and Close pointed at the lesson after a replacement', () => {
+    const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
+    visit('/lessons/l1', 600);
+    detailTrail.replace({ label: 'Lesson', href: window.location.href });
+    visit('/characters?id=Characters:发', 601);
+    const view = render(sheet(vi.fn(), 'Details for 发', <div className="related-forms"><a className="related-form-choice" href="/characters?id=Characters:發" onClick={e => e.preventDefault()}>發</a></div>));
+    fireEvent.click(screen.getByText('發'));
+    window.history.replaceState({ __TSR_index: 601, __TSR_key: 'related' }, '', '/characters?id=Characters:發');
+    recordVisit();
+    view.rerender(sheet(vi.fn(), 'Details for 發'));
+    expect(screen.queryByRole('button', { name: 'Back to 襾' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Back to Lesson' }));
+    expect(go).toHaveBeenLastCalledWith(-1);
+    fireEvent.click(screen.getByRole('button', { name: 'Close and return to Lesson' }));
+    expect(go).toHaveBeenLastCalledWith(-1);
+  });
+
+  it('related-character tiles opened from the grid add no Back destination', () => {
+    visit('/characters', 610);
+    visit('/characters?id=Characters:发', 611);
+    const onClose = vi.fn();
+    const view = render(sheet(onClose, 'Details for 发', <div className="related-forms"><a className="related-form-choice" href="/characters?id=Characters:髮" onClick={e => e.preventDefault()}>髮</a></div>));
+    fireEvent.click(screen.getByText('髮'));
+    window.history.replaceState({ __TSR_index: 611, __TSR_key: 'related-grid' }, '', '/characters?id=Characters:髮');
+    recordVisit();
+    view.rerender(sheet(onClose, 'Details for 髮'));
+    expect(screen.queryByRole('button', { name: /^Back to / })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Close and show card in list' }));
+    expect(onClose).toHaveBeenCalledOnce();
+  });
+
   it('opened from another page without a recorded step (Start): Close goes back to it', () => {
     const go = vi.spyOn(window.history, 'go').mockImplementation(() => {});
     visit('/', 300);

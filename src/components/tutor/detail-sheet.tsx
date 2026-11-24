@@ -170,8 +170,11 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         if ((link as HTMLAnchorElement).href === window.location.href) return;
         // The card's own form switch keeps the same card: Close steps over that entry
         // and the panel keeps its scroll position.
-        if (link.closest('.form-switch')) formSwitch.current = { at: Date.now(), top: event.currentTarget.scrollTop, height: content.current?.offsetHeight ?? 0 };
-        detailTrail.push({ label: label ?? title, href: historyEntry(), ...(link.closest('.form-switch') ? { sameCard: true } : {}) });
+        // Related tiles change the displayed exact record, not the navigation destination.
+        // Limit this to tiles: source/spelling-note links still navigate normally.
+        const sameCard = Boolean(link.closest('.form-switch, .related-forms .related-form-choice'));
+        if (sameCard) formSwitch.current = { at: Date.now(), top: event.currentTarget.scrollTop, height: content.current?.offsetHeight ?? 0 };
+        detailTrail.push({ label: label ?? title, href: historyEntry(), ...(sameCard ? { sameCard: true } : {}) });
       }}><div ref={content}>{children}</div>
       </div>
     </DialogPrimitive.Content></DialogPortal>
