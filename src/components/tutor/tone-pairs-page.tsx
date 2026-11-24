@@ -198,8 +198,9 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * The hanzi get the detail cards' hover pairing with the pinyin and, inside SentenceHints (the
  * remembered Character hints switch), a click opens each character's quick card; the word
  * context is the exact Vocabulary record bound to this recording (vocabularyEntryId), never a
- * spelling match. Below: dictionary vs expected tones, and each dictionary
- * syllable as a chip that plays the Sound chart's own recording in place (no navigation).
+ * spelling match. Below: each dictionary syllable as a chip that plays the Sound chart's
+ * own recording in place (no navigation). The dictionary → expected tone change lives in
+ * the pill and the matrix tile header, not in a separate compare block.
  */
 function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips }: {
   row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
@@ -227,10 +228,6 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
         : <RecordDetailTitle hanzi={row.headword} glyphContent={<ToneHeadword headword={row.headword} word={word} pairing={pairing}/>} pill={pill}
             pinyinContent={<><span className="pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{pairing.paired ? pairing.pinyinText : reading}</span>{speaker}</>} meaning={row.english}/>}
     </SentenceHints>
-    <dl className="tone-sounds-compare">
-      <div><dt>Dictionary tones</dt><dd>{hidden ? 'Hidden' : toneLabel(row.citationTones)}</dd></div>
-      <div className={changed && !hidden ? 'is-changed' : undefined}><dt>Expected in speech · draft</dt><dd>{hidden ? 'Hidden' : toneLabel(row.expectedSpokenTones)}</dd></div>
-    </dl>
     <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
     <p className={`tone-sounds-status${status.kind === 'error' || chips.error ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{chips.error || status.text}</p>
     {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
