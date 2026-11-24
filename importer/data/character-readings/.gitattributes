@@ -1,6 +1,6 @@
 # These exact bytes are checksum-bound by manifest.json and the offline audit.
-review.json -text
-manifest.json -text
+review.json -text whitespace=cr-at-eol
+manifest.json -text whitespace=cr-at-eol
 *.gz -text
 sources/*.gz -text
 sources/*.pdf -text

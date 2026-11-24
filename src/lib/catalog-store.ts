@@ -24,6 +24,8 @@ export type CatalogFile = {
   componentRadicals?: Record<string, string>;
   /** Reviewed meaning for each reading of a multi-reading character (see readingMeaning). */
   readingMeanings?: Record<string, ReadingMeaningRecord>;
+  /** Explicit source-reviewed pronunciation choices; original on-disk tuples stay intact. */
+  readingRevisions?: ReadingRevisionRecord[];
   /** Reviewed links from one meaning sense to the related character that owns it (meaning-pointers.ts). */
   meaningPointers?: Record<string, import('./meaning-pointers').MeaningPointerRecord>;
 };
@@ -33,6 +35,19 @@ export type CatalogData = CatalogFile & CharacterFile & RadicalFile & ComponentF
 /** One owner-reviewed split of a character's combined dictionary meaning by reading.
  *  `combined` is the catalogue meaning the split was reviewed against. */
 export type ReadingMeaningRecord = { readings: Record<string, string>; combined: string; source: string; sourceUrl?: string; sourceLinks?: { label: string; url: string }[]; note?: string; date?: string; approvedBy?: string };
+
+/** Legacy revisions document previous direct corrections. Only revisions with a complete
+ * recordedRow binding can overlay a current row; an upstream edit invalidates that choice. */
+export type ReadingRevisionRecord = {
+  glyph: string; previous: string; reading: string; source: string; sourceUrl?: string;
+  recordedRow?: CatalogRow; readingAudio?: Record<string, string>; [key: string]: unknown;
+};
+
+/** Exact tuple binding, including meaning/script/note; never retone a changed source row. */
+export function matchingReadingRevision(row: CatalogRow, revisions: ReadingRevisionRecord[] = []): ReadingRevisionRecord | undefined {
+  return revisions.find(revision => revision.glyph === row[0] && revision.previous === row[1] && revision.recordedRow &&
+    JSON.stringify(revision.recordedRow) === JSON.stringify(row) && revision.reading.split('/').every(reading => reading.trim()));
+}
 
 export const catalog = {
   loaded: false, version: 0, source: '',
@@ -47,9 +62,25 @@ export const catalog = {
 export function hydrateCatalog(data: CatalogData, identities?: RadicalIdentityFile, strokes?: RadicalStrokeFile, strokeCatalog?: StrokeFile) {
   // Preserve array identities held by synchronous readers; the version increment
   // tells workspace consumers to recompute after all sidecars are installed.
-  for (const key of ['characters', 'radicals', 'components'] as const) catalog[key].splice(0, catalog[key].length, ...data[key]);
+  for (const key of ['characters', 'radicals', 'components'] as const) {
+    const rows = key === 'characters' ? data.characters.map(row => {
+      const revision = matchingReadingRevision(row, data.readingRevisions);
+      return revision ? [row[0], revision.reading, ...row.slice(2)] as CatalogRow : row;
+    }) : data[key];
+    catalog[key].splice(0, catalog[key].length, ...rows);
+  }
   if (strokeCatalog) catalog.strokes.splice(0, catalog.strokes.length, ...strokeCatalog.strokes);
   catalog.trees = data.trees; catalog.readingAudio = data.readingAudio; catalog.audio = data.audio; catalog.source = data.source; catalog.componentRadicals = data.componentRadicals ?? {};
+  // A revised reading may use only an existing attachment already bound to that exact
+  // Mandarin reading elsewhere. Preserve original bindings and never relabel their tone.
+  for (const row of data.characters) {
+    const revision = matchingReadingRevision(row, data.readingRevisions);
+    if (!revision?.readingAudio) continue;
+    const allowed = revision.reading.split('/').map(reading => reading.trim());
+    const additions = Object.fromEntries(Object.entries(revision.readingAudio).filter(([reading, id]) =>
+      allowed.includes(reading) && data.audio[id] && Object.values(data.readingAudio).some(bindings => bindings[reading] === id)));
+    catalog.readingAudio = { ...catalog.readingAudio, [row[0]]: { ...catalog.readingAudio[row[0]], ...additions } };
+  }
   catalog.readingMeanings = data.readingMeanings ?? {};
   catalog.meaningPointers = data.meaningPointers ?? {};
   if (identities) catalog.radicalIdentities = identities;

@@ -73,16 +73,35 @@ def build(root=ROOT):
             if glyph in evidence:
                 evidence[glyph].append(line)
 
+    raw = (root / CATALOG).read_bytes()
+    catalog = json.loads(raw)
+    revisions = list(catalog.get('readingRevisions', []))
     records, cases = {}, []
     for glyph, row in multi.items():
         item = review['entries'][glyph]
         require(row == item['recorded'], f'{glyph}: exact imported tuple changed; re-review required')
         readings = [part.strip() for part in row[1].split('/')]
+        revision = item.get('readingRevision')
+        if revision:
+            require(revision['glyph'] == glyph and revision['recordedRow'] == row and revision['previous'] == row[1],
+                    f'{glyph}: reading revision is not bound to the exact original row')
+            require(item.get('references') and item.get('note'), f'{glyph}: reading revision requires sources and disclosure')
+            readings = [part.strip() for part in revision['reading'].split('/')]
+            for reading, recording in revision.get('readingAudio', {}).items():
+                require(reading in readings and recording in catalog['audio'] and
+                        any(bindings.get(reading) == recording for bindings in catalog['readingAudio'].values()),
+                        f'{glyph}: revised audio lacks an existing exact-reading binding')
+            prior = [r for r in revisions if r['glyph'] == glyph]
+            require(not prior or prior == [revision], f'{glyph}: existing revision differs from the reviewed choice')
+            if not prior:
+                revisions.append(revision)
         status = item['status']
         require(status in ('existing', 'shared', 'distinct', 'unresolved'), f'{glyph}: unknown review status')
         case = {'glyph': glyph, 'id': f'Characters:{glyph}', 'recorded': row, 'status': status,
                 'note': item.get('note', item.get('zdic', '')), 'ccCedictEntries': evidence[glyph],
                 'references': item.get('references', [])}
+        if revision:
+            case['readingRevision'] = revision
         if status == 'unresolved':
             require(item.get('note') and item.get('references') and 'readings' not in item,
                     f'{glyph}: unresolved cases need a reason/sources and cannot assign meanings')
@@ -127,14 +146,15 @@ def build(root=ROOT):
         case['references'] = record.get('sourceLinks', [{'label': 'Dictionary source', 'url': record['sourceUrl']}])
         cases.append(case)
 
-    raw = (root / CATALOG).read_bytes()
-    catalog = json.loads(raw)
-    # Replace only the compact readingMeanings object: source rows, IDs, geometry,
-    # etymology, recordings, pointers and unrelated metadata retain their exact bytes.
+    # Replace only the reviewed metadata objects: on-disk source rows, IDs, geometry,
+    # etymology, original recordings and unrelated metadata retain their exact bytes.
     compact = lambda value: json.dumps(value, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
     old = compact(catalog.get('readingMeanings', {}))
     require(raw.count(old) == 1, 'catalogue format changed; cannot safely replace only readingMeanings')
     updated = raw.replace(old, compact(records), 1)
+    old_revisions = compact(catalog.get('readingRevisions', []))
+    require(updated.count(old_revisions) == 1, 'cannot safely replace reading revision metadata')
+    updated = updated.replace(old_revisions, compact(revisions), 1)
     counts = Counter(case['status'] for case in cases)
     report = {'schemaVersion': 1, 'date': review['date'], 'scope': review['scope'], 'policy': review['policy'],
               'charactersSha256': digest(character_bytes), 'reviewSha256': digest(review_bytes),
@@ -150,7 +170,8 @@ def build(root=ROOT):
              '- CC-CEDICT supplies dictionary entries that already bind pinyin to English senses; English glosses are edited/adapted under CC BY-SA 4.0.',
              '- Han Dian entries and explicit historical references supplement rare or regional readings; original downloaded bytes and SHA-256 hashes are preserved under the importer source guide.',
              '- A recorded reading can be regional, archaic or compound-bound; it need not have a unique meaning. Identical meanings share a line with one speaker per reading.',
-             '- No readings, imported meanings, row IDs/order, historical-source text, etymology notes, script associations, audio or stroke data were changed.',
+             '- Original on-disk readings, meanings, row IDs/order, historical-source text, etymology notes, script associations, audio and stroke data remain unchanged.',
+             '- Explicit pronunciation choices are stored in readingRevisions, applied only to an exact matching original tuple at hydration, and disclosed with the original reading in the source popup. Their audio can use only an existing exact-reading attachment.',
              '- Definitions do not establish etymology. Existing historical/decomposition cards retain their own sources and identities.',
              '- This audit covers readings explicitly present in the catalogue, not every pronunciation found in external dictionaries.', '',
              '## Cases requiring exact-reading evidence', '']
@@ -158,6 +179,11 @@ def build(root=ROOT):
         if case['status'] == 'unresolved':
             lines += [f"- **{case['glyph']} ({case['recorded'][1]})**: {case['note']}",
                       '  Sources: ' + ', '.join(f"[{ref['label']}]({ref['url']})" for ref in case['references']) + '.']
+    lines += ['', '## Explicit pronunciation choices', '']
+    for case in cases:
+        if case.get('readingRevision'):
+            revision = case['readingRevision']
+            lines.append(f"- **{case['glyph']}**: original `{revision['previous']}` retained; card uses `{revision['reading']}`. {case['note']}")
     lines += ['', '## Complete inventory', '', '| Character | Recorded readings | Outcome | Display meanings |', '| --- | --- | --- | --- |']
     for case in cases:
         meanings = ' / '.join(f"{reading}: {meaning}" for reading, meaning in case.get('readings', {}).items()) or 'Original combined display retained; see unresolved notes.'

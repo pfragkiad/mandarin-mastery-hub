@@ -76,4 +76,13 @@ describe('Sources for reading-specific character meanings', () => {
     expect(container.querySelectorAll('.reading-meaning')).toHaveLength(2);
     expect(screen.getByRole('link', { name: 'CC-CEDICT entry' })).toBeVisible();
   });
+
+  it('discloses the original 伲 readings and Unicode disagreement beside its dictionary-attested split', () => {
+    const container = openSource('伲');
+    expect([...container.querySelectorAll('.reading-meaning-reading .pinyin[lang]')].map(node => node.textContent)).toEqual(['nì', 'nǐ']);
+    expect(container.textContent).toContain('you (archaic variant of 你)');
+    expect(screen.getByText(/original Unihan ní \/ nǐ remains preserved/)).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Taiwan MOE variant dictionary' })).toHaveAttribute('href', 'https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121');
+    expect(screen.getByRole('link', { name: 'Unicode reading proposal (2023)' })).toBeVisible();
+  });
 });

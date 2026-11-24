@@ -20,9 +20,9 @@ class ReadingAuditTests(unittest.TestCase):
         cls.catalog = json.loads(cls.outputs[module.CATALOG])
 
     def test_all_multi_reading_tuples_have_explicit_dispositions(self):
-        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 72, 'existing': 5, 'distinct': 39, 'unresolved': 3, 'shared': 28})
-        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, {'伲', '剖', '崾'})
-        for glyph in ('伲', '剖', '崾'):
+        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 73, 'existing': 5, 'distinct': 40, 'unresolved': 2, 'shared': 28})
+        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, {'剖', '崾'})
+        for glyph in ('剖', '崾'):
             self.assertNotIn(glyph, self.catalog['readingMeanings'])
 
     def test_original_catalogue_fields_and_reviewed_splits_stay_intact(self):
@@ -41,8 +41,18 @@ class ReadingAuditTests(unittest.TestCase):
             record = self.catalog['readingMeanings'][case['glyph']]
             self.assertIn('CC-CEDICT', record['source'])
             self.assertTrue(any(link['label'] == 'CC BY-SA 4.0' for link in record['sourceLinks']))
-            self.assertEqual(set(record['readings']), set(case['recorded'][1].split(' / ')))
+            effective = case.get('readingRevision', {}).get('reading', case['recorded'][1])
+            self.assertEqual(set(record['readings']), set(effective.split(' / ')))
             self.assertTrue(case['ccCedictEntries'] or case['references'])
+
+    def test_ni_reconciliation_keeps_original_tuple_and_exact_recording_evidence(self):
+        case = next(case for case in self.report['cases'] if case['glyph'] == '伲')
+        self.assertEqual(case['recorded'][1], 'ní / nǐ')
+        revision = next(r for r in self.catalog['readingRevisions'] if r['glyph'] == '伲')
+        self.assertEqual(revision['recordedRow'], case['recorded'])
+        self.assertEqual(revision['reading'], 'nì / nǐ')
+        self.assertEqual(revision['readingAudio'], {'nì': 'cmn-syl-ni4'})
+        self.assertIn('source disagreement', self.catalog['readingMeanings']['伲']['note'])
 
     def test_changed_source_bytes_fail_before_generation(self):
         real_read = Path.read_bytes

@@ -23,7 +23,8 @@ describe('split catalogue loading', () => {
     const data = readCatalog();
     for (const key of ['characters', 'radicals', 'components'] as const) {
       expect(store.catalog[key]).toBe(rows[key]);
-      expect(store.catalog[key]).toEqual(data[key]);
+      const expected = key === 'characters' ? data.characters.map(row => row[0] === '伲' ? ['伲', 'nì / nǐ', ...row.slice(2)] : row) : data[key];
+      expect(store.catalog[key]).toEqual(expected);
       expect(fetchFile.mock.calls.filter(([url]) => url === `/data/${key}.json`)).toHaveLength(1);
     }
     expect(store.catalog.strokes).toBe(rows.strokes);
@@ -31,13 +32,33 @@ describe('split catalogue loading', () => {
     expect(store.catalog.strokes).toEqual(strokeData.strokes);
     expect(fetchFile.mock.calls.filter(([url]) => url === '/data/strokes.json')).toHaveLength(1);
     expect(store.catalog.trees).toEqual(data.trees);
-    expect(store.catalog.readingAudio).toEqual(data.readingAudio);
+    expect(store.catalog.readingAudio).toEqual({ ...data.readingAudio, '伲': { ...data.readingAudio['伲'], 'nì': 'cmn-syl-ni4' } });
     expect(store.readingMeaning('了', 'liǎo')).toBe('to finish; to understand (as in 了解)');
     expect(store.catalog.loaded).toBe(true);
     expect(store.catalog.version).toBe(1); // Runtime invalidation counter, independent of file schema version.
     const requests = fetchFile.mock.calls.length;
     await store.loadCatalog();
     expect(fetchFile).toHaveBeenCalledTimes(requests);
+  });
+
+  it('applies the sourced 伲 reading choice without mutating its imported tuple or retagging the original recording', () => {
+    const data = readCatalog();
+    const original = JSON.stringify(data);
+    store.hydrateCatalog(data);
+    expect(store.catalog.characters.find(row => row[0] === '伲')?.[1]).toBe('nì / nǐ');
+    expect(store.readingMeaning('伲', 'nì')).toBe('I; we; my; our (dialectal)');
+    expect(store.readingMeaning('伲', 'nǐ')).toBe('you (archaic variant of 你)');
+    expect(store.catalog.readingAudio['伲']).toMatchObject({ 'ní': 'cmn-syl-ni2', 'nì': 'cmn-syl-ni4', 'nǐ': 'cmn-syl-ni3' });
+    expect(JSON.stringify(data)).toBe(original);
+  });
+
+  it('drops both the pronunciation choice and added audio if the exact original tuple changes', () => {
+    const data = readCatalog();
+    data.characters.find(row => row[0] === '伲')![2] = 'updated source definition';
+    store.hydrateCatalog(data);
+    expect(store.catalog.characters.find(row => row[0] === '伲')?.[1]).toBe('ní / nǐ');
+    expect(store.readingMeanings('伲')).toBeNull();
+    expect(store.catalog.readingAudio['伲']?.['nì']).toBeUndefined();
   });
 
   it.each(['characters', 'radicals', 'components', 'strokes'] as const)('keeps an incomplete load unpublished and retries failed %s', async section => {

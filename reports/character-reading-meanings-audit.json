@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "date": "2026-11-25",
   "scope": "Every Characters row with more than one explicitly recorded reading; no missing readings are added.",
-  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where the cited dictionaries support the exact readings; identical meanings remain grouped. Historical and regional context remains attributed and independent of etymology and geometry.",
+  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.",
   "charactersSha256": "f1db684baeb28187efec27a667d1a86ceb7ac827e45d94e0e517b17ddf681fb7",
-  "reviewSha256": "7a265667c6f02ee7fd6ccd7a44f618d5a4b6502acfa63863d5ca523dba806e48",
+  "reviewSha256": "1c5d4959db490b05ba2be44d0bd8fff607f8e8cbf6e848b7483a30915b13ac50",
   "sources": {
     "卜": {
       "path": "importer/data/character-readings/sources/535c.html.gz",
@@ -150,15 +150,31 @@
       "acquired": "2026-11-25",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    "伲": {
+      "path": "importer/data/character-readings/sources/4f32.html.gz",
+      "url": "https://www.zdic.net/hans/%E4%BC%B2",
+      "sha256": "255ecbe83ca77733707ce0e4dcc303f03886477d846e1386a246d3552898f039",
+      "sourceBytesSha256": "b822fe33dd321cdf2578e8da6a8e2a1b6390884807d3a228ed17f7f705114df4",
+      "sourceBytes": 33261,
+      "acquired": "2026-11-25"
+    },
+    "unicode-2023": {
+      "path": "importer/data/character-readings/sources/unicode-2023.pdf",
+      "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf",
+      "sha256": "f054c60fd915b1b3956a13890ae010aab516de93d8f2ee8eac9421dd2a01001c",
+      "sourceBytesSha256": "f054c60fd915b1b3956a13890ae010aab516de93d8f2ee8eac9421dd2a01001c",
+      "sourceBytes": 1613193,
+      "acquired": "2026-11-25"
     }
   },
   "counts": {
     "total": 75,
-    "covered": 72,
+    "covered": 73,
     "existing": 5,
-    "distinct": 39,
-    "unresolved": 3,
-    "shared": 28
+    "distinct": 40,
+    "shared": 28,
+    "unresolved": 2
   },
   "cases": [
     {
@@ -270,13 +286,17 @@
         "7 strokes · 人 radical",
         "Common"
       ],
-      "status": "unresolved",
-      "note": "The recorded ní conflicts with the nì assigned to the dialectal I/we sense in CC-CEDICT and Han Dian. MOE supports nǐ as a variant of 你. Unicode's 2023 reading proposal discusses ní, but does not bind its meaning. Do not silently retone the recorded form or assign the nì sense to ní.",
+      "status": "distinct",
+      "note": "This card uses dictionary-attested nì / nǐ as an explicit editorial pronunciation choice. The original Unihan ní / nǐ remains preserved: Unicode’s 2023 proposal records a change from nì to ní, whereas CC-CEDICT and Han Dian attach the dialectal I/we/my/our senses to nì. Taiwan MOE identifies nǐ as an old variant meaning you. This is a documented source disagreement, not a claim that Unihan has a typo. Audio uses Mandarin syllables, not a recording of Shanghai dialect speech.",
       "ccCedictEntries": [
         "伲 伲 [ni3] /variant of 你[ni3]/",
         "伲 伲 [ni4] /(dialect) I/my/we/our/"
       ],
       "references": [
+        {
+          "label": "CC-CEDICT entry",
+          "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%BC%B2"
+        },
         {
           "label": "Taiwan MOE variant dictionary",
           "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121"
@@ -284,8 +304,40 @@
         {
           "label": "Unicode reading proposal (2023)",
           "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf"
+        },
+        {
+          "label": "Han Dian dictionary",
+          "url": "https://www.zdic.net/hans/%E4%BC%B2"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
         }
-      ]
+      ],
+      "readingRevision": {
+        "glyph": "伲",
+        "previous": "ní / nǐ",
+        "reading": "nì / nǐ",
+        "recordedRow": [
+          "伲",
+          "ní / nǐ",
+          "we (Shanghai dialect)",
+          "7 strokes · 人 radical",
+          "Common"
+        ],
+        "readingAudio": {
+          "nì": "cmn-syl-ni4"
+        },
+        "source": "Owner-requested lexical reading reconciliation: CC-CEDICT and Han Dian nì dialect pronoun; Taiwan MOE nǐ historical variant of you. Original Unihan ní is retained and its differing 2023 revision is disclosed.",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%BC%B2",
+        "date": "2026-11-25",
+        "approvedBy": "project-owner-requested editorial correction"
+      },
+      "readings": {
+        "nì": "I; we; my; our (dialectal)",
+        "nǐ": "you (archaic variant of 你)"
+      },
+      "source": "CC-CEDICT (MDBG), 24 November 2026 release; adapted English glosses under CC BY-SA 4.0. Han Dian basic, detailed and Guoyu dictionary entries also consulted. Additional historical evidence is linked below."
     },
     {
       "glyph": "俾",

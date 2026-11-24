@@ -4,27 +4,30 @@ Audit date: 2026-11-25.
 
 Every Characters row with more than one explicitly recorded reading; no missing readings are added.
 
-Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where the cited dictionaries support the exact readings; identical meanings remain grouped. Historical and regional context remains attributed and independent of etymology and geometry.
+Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.
 
-75 records scanned; 72 have source-backed reading meanings: 5 existing, 39 new distinct/overlapping senses, 28 new shared-meaning alternate pronunciations. 3 remain unresolved and retain their original display.
+75 records scanned; 73 have source-backed reading meanings: 5 existing, 40 new distinct/overlapping senses, 28 new shared-meaning alternate pronunciations. 2 remain unresolved and retain their original display.
 
 ## Source and presentation boundaries
 
 - CC-CEDICT supplies dictionary entries that already bind pinyin to English senses; English glosses are edited/adapted under CC BY-SA 4.0.
 - Han Dian entries and explicit historical references supplement rare or regional readings; original downloaded bytes and SHA-256 hashes are preserved under the importer source guide.
 - A recorded reading can be regional, archaic or compound-bound; it need not have a unique meaning. Identical meanings share a line with one speaker per reading.
-- No readings, imported meanings, row IDs/order, historical-source text, etymology notes, script associations, audio or stroke data were changed.
+- Original on-disk readings, meanings, row IDs/order, historical-source text, etymology notes, script associations, audio and stroke data remain unchanged.
+- Explicit pronunciation choices are stored in readingRevisions, applied only to an exact matching original tuple at hydration, and disclosed with the original reading in the source popup. Their audio can use only an existing exact-reading attachment.
 - Definitions do not establish etymology. Existing historical/decomposition cards retain their own sources and identities.
 - This audit covers readings explicitly present in the catalogue, not every pronunciation found in external dictionaries.
 
 ## Cases requiring exact-reading evidence
 
-- **伲 (ní / nǐ)**: The recorded ní conflicts with the nì assigned to the dialectal I/we sense in CC-CEDICT and Han Dian. MOE supports nǐ as a variant of 你. Unicode's 2023 reading proposal discusses ní, but does not bind its meaning. Do not silently retone the recorded form or assign the nì sense to ní.
-  Sources: [Taiwan MOE variant dictionary](https://dict.variants.moe.edu.tw/dictView.jsp?ID=1121), [Unicode reading proposal (2023)](https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf).
 - **剖 (pōu / pǒ)**: The imported second reading is pǒ, while CC-CEDICT, Taiwan MOE and CNS record pǒu. They are different syllables, not spelling normalization. The sources support shared cut-open/analyze senses for pōu/pǒu, but cannot validate a split under the current exact pǒ record.
   Sources: [Taiwan MOE revised dictionary](https://dict.revised.moe.edu.tw/dictView.jsp?ID=695), [Taiwan CNS11643](https://www.cns11643.gov.tw/wordView.jsp?ID=87112).
 - **崾 (yào / yǎo)**: CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.
   Sources: [Taiwan MOE variant dictionary](https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607).
+
+## Explicit pronunciation choices
+
+- **伲**: original `ní / nǐ` retained; card uses `nì / nǐ`. This card uses dictionary-attested nì / nǐ as an explicit editorial pronunciation choice. The original Unihan ní / nǐ remains preserved: Unicode’s 2023 proposal records a change from nì to ní, whereas CC-CEDICT and Han Dian attach the dialectal I/we/my/our senses to nì. Taiwan MOE identifies nǐ as an old variant meaning you. This is a documented source disagreement, not a claim that Unihan has a typo. Audio uses Mandarin syllables, not a recording of Shanghai dialect speech.
 
 ## Complete inventory
 
@@ -33,7 +36,7 @@ Editorial review requested by the project owner. Exact imported rows and existin
 | 了 | le / liǎo | existing | le: particle of completed action / liǎo: to finish; to understand (as in 了解) |
 | 万 | wàn / mò | distinct | wàn: ten thousand; innumerable / mò: used in the surname 万俟 (Mòqí) |
 | 乾 | qián / gān | distinct | qián: heaven; male principle; trigram ☰; hexagram ䷀ / gān: dry; dried; empty; in vain |
-| 伲 | ní / nǐ | unresolved | Original combined display retained; see unresolved notes. |
+| 伲 | ní / nǐ | distinct | nì: I; we; my; our (dialectal) / nǐ: you (archaic variant of 你) |
 | 俾 | bǐ / bì | shared | bǐ: so that; in order that; to cause; to enable / bì: so that; in order that; to cause; to enable |
 | 剋 | kēi / kè | distinct | kēi: to scold; to beat / kè: to subdue; to overcome; to restrain |
 | 剖 | pōu / pǒ | unresolved | Original combined display retained; see unresolved notes. |

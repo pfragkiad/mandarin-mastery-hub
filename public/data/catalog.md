@@ -40,7 +40,7 @@ The shared `catalog.json` fields are:
 - `readingAudio`: exact glyph → exact reading → recording ID or null.
 - `audio`: recording ID → attachment, including CDN URL and source/license metadata. Media binaries remain outside the repository.
 - `componentRadicals`: exact component glyph → dictionary radical, sourced from Unihan kRSUnicode.
-- `readingRevisions`: owner-reviewed reading changes with their sources and approval metadata.
+- `readingRevisions`: owner-reviewed reading changes with their sources and approval metadata. An entry with a complete `recordedRow` additionally applies its preferred `reading` at hydration only while the exact original tuple still matches; legacy entries without that binding remain documentary. Optional `readingAudio` may add only an attachment already bound to the same exact reading elsewhere. The original on-disk row and audio remain untouched.
 - `readingMeanings`: per-reading meanings from owner-requested source review, guarded against the current recorded combined meaning and reading list. Records retain attribution, source URL, optional `sourceLinks` (label/URL pairs), and optional regional/historical `note`. Shared-meaning alternate pronunciations keep identical glosses so the existing renderer groups them with independent speakers. The source popup retains the original Unihan definition alongside the additional sources.
 - `meaningPointers`: owner-reviewed links from a recorded sense to the related character that owns it.
 
@@ -107,11 +107,14 @@ This joined object is an in-memory view. When writing a correction, update the o
 The complete [reading audit](../../reports/character-reading-meanings-audit.md)
 is maintained from [preserved sources and explicit editorial mappings](../../importer/data/character-readings/README.md).
 `python scripts/import-reading-meanings.py --write` updates only `readingMeanings`
+and explicitly reviewed `readingRevisions`
 and the offline audit reports; `--check` verifies reproducibility and exact source/row
 bindings. The 2026-11-25 audit covers all 75 multi-reading Characters tuples:
-72 have sourced mappings, including regional/shared meanings, and three retain
+73 have sourced mappings, including regional/shared meanings, and two retain
 their combined display because the imported readings differ from the dictionary
-evidence. No extra dictionary pronunciation is added to a catalogue row. Existing
+evidence. The explicit 伲 reconciliation uses dictionary `nì / nǐ` at runtime,
+retaining original Unihan `ní / nǐ` on disk and disclosing the source disagreement.
+Existing
 historical/etymology cards, source text, glyph IDs, recordings and geometry stay intact.
 
 | Importer | Catalogue files it reads or updates |

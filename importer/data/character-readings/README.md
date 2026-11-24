@@ -2,8 +2,10 @@
 
 This offline audit covers every Characters tuple with multiple explicitly recorded
 readings. It distinguishes different meanings, overlapping regional usage, shared
-meanings, and unresolved exact-reading discrepancies. It does not add pronunciations
-or change imported character rows, etymology text, audio, script identities or geometry.
+meanings, and unresolved exact-reading discrepancies. Original character rows,
+etymology text, audio attachments, script identities and geometry stay intact.
+An explicit owner-requested pronunciation reconciliation may add a guarded runtime
+`readingRevisions` overlay with the complete original tuple and dictionary evidence.
 
 | File | Purpose | Consumer / generator |
 | --- | --- | --- |
@@ -31,12 +33,22 @@ python scripts/import-reading-meanings.test.py
 ```
 
 The importer verifies all source/review checksums and exact reviewed tuples, checks
-complete inventory coverage, and replaces only `readingMeanings` inside
+complete inventory coverage, and updates only `readingMeanings` and explicitly
+reviewed `readingRevisions` metadata inside
 [catalog.json](../../../public/data/catalog.json). It writes the complete
 [audit JSON](../../../reports/character-reading-meanings-audit.json) and
 [readable report](../../../reports/character-reading-meanings-audit.md).
 Unresolved cases never receive a guessed runtime split. The browser uses the
 existing catalogue loader and meaning renderer; no source archive enters its bundles.
+
+For **伲**, the card uses dictionary-attested `nì / nǐ`: dialectal I/we/my/our,
+and archaic you. Its original Unihan `ní / nǐ` tuple and audio bindings remain
+unchanged on disk. The exact-tuple revision applies only at hydration and adds
+the existing `cmn-syl-ni4` recording for `nì`, already attested under other glyphs.
+The source popup explicitly discloses Unicode's different reading and links MOE,
+Han Dian and the 2023 Unicode proposal. It does not label Unihan as a typo or
+present a Mandarin syllable recording as Shanghai dialect audio. **侬/儂** is a
+different character and supplies neither this record's identity nor its reading.
 
 Related guides: [catalogue contract](../../../public/data/catalog.md),
 [importer inputs](../README.md), [scripts](../../../scripts/README.md).

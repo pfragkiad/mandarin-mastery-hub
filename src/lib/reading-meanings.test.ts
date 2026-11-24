@@ -67,6 +67,8 @@ describe('meaning for each reading', () => {
     expect(readingMeaning('著', 'zhe')).toContain('aspect particle');
     expect(readingMeaning('著', 'zhe')).not.toContain('wear');
     expect(readingMeaning('伲', 'ní')).toBeUndefined();
+    expect(readingMeaning('伲', 'nǐ')).toBe('you (archaic variant of 你)');
+    expect(readingMeaning('伲', 'nì')).toBe('I; we; my; our (dialectal)');
     expect(readingMeanings('崾')).toBeNull();
   });
 

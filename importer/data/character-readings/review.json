@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-11-25",
   "scope": "Every Characters row with more than one explicitly recorded reading; no missing readings are added.",
-  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where the cited dictionaries support the exact readings; identical meanings remain grouped. Historical and regional context remains attributed and independent of etymology and geometry.",
+  "policy": "Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.",
   "entries": {
     "了": {
       "status": "existing",
@@ -54,8 +54,8 @@
       "status": "distinct"
     },
     "伲": {
-      "status": "unresolved",
-      "note": "The recorded ní conflicts with the nì assigned to the dialectal I/we sense in CC-CEDICT and Han Dian. MOE supports nǐ as a variant of 你. Unicode's 2023 reading proposal discusses ní, but does not bind its meaning. Do not silently retone the recorded form or assign the nì sense to ní.",
+      "status": "distinct",
+      "note": "This card uses dictionary-attested nì / nǐ as an explicit editorial pronunciation choice. The original Unihan ní / nǐ remains preserved: Unicode’s 2023 proposal records a change from nì to ní, whereas CC-CEDICT and Han Dian attach the dialectal I/we/my/our senses to nì. Taiwan MOE identifies nǐ as an old variant meaning you. This is a documented source disagreement, not a claim that Unihan has a typo. Audio uses Mandarin syllables, not a recording of Shanghai dialect speech.",
       "references": [
         {
           "label": "Taiwan MOE variant dictionary",
@@ -72,7 +72,31 @@
         "we (Shanghai dialect)",
         "7 strokes · 人 radical",
         "Common"
-      ]
+      ],
+      "readings": {
+        "nì": "I; we; my; our (dialectal)",
+        "nǐ": "you (archaic variant of 你)"
+      },
+      "zdic": "The exact entry explicitly distinguishes nì dialectal I/we/my/our from nǐ, the historical variant of you.",
+      "readingRevision": {
+        "glyph": "伲",
+        "previous": "ní / nǐ",
+        "reading": "nì / nǐ",
+        "recordedRow": [
+          "伲",
+          "ní / nǐ",
+          "we (Shanghai dialect)",
+          "7 strokes · 人 radical",
+          "Common"
+        ],
+        "readingAudio": {
+          "nì": "cmn-syl-ni4"
+        },
+        "source": "Owner-requested lexical reading reconciliation: CC-CEDICT and Han Dian nì dialect pronoun; Taiwan MOE nǐ historical variant of you. Original Unihan ní is retained and its differing 2023 revision is disclosed.",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdqb=%E4%BC%B2",
+        "date": "2026-11-25",
+        "approvedBy": "project-owner-requested editorial correction"
+      }
     },
     "俾": {
       "readings": {
