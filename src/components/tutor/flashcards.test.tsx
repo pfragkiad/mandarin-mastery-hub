@@ -14,6 +14,40 @@ vi.mock('@/lib/audio', async importOriginal => ({ ...await importOriginal<typeof
 vi.mock('@/lib/mandarin', async importOriginal => { const real = await importOriginal<typeof import('@/lib/mandarin')>(); const fixtureCollections = (items: { collection: string }[]) => ['Greetings', 'Numbers'].filter(name => items.some(w => w.collection === name)); return { ...real, collections: ['Greetings', 'Numbers'], collectionOptions: fixtureCollections, vocabularyFacetOptions: (items: Parameters<typeof real.vocabularyFacetOptions>[0], selection: Parameters<typeof real.vocabularyFacetOptions>[1]) => { const facets = real.vocabularyFacetOptions(items, selection); const inOthers = items.filter(w => (selection.level === 'All levels' || w.level === selection.level) && (selection.pos === 'All types' || real.partOfSpeechList(w).includes(selection.pos))); const listed = fixtureCollections(inOthers); return { ...facets, collections: selection.collection === 'All collections' || listed.includes(selection.collection) ? listed : [...listed, selection.collection] }; }, speak: vi.fn() }; });
 vi.mock('@/lib/character-library', () => ({ referenceCatalog: [{ kind: 'Radical', entries: [['一', 'yī', 'one']] }, { kind: 'Component', entries: [['一', 'yī', 'one']] }, { kind: 'Character', entries: [['一', 'yī', 'one']] }], libraryEntries: () => [{ hanzi: '一', strokes: 1 }], savedGlyphEntry: () => undefined, savedGlyphDestination: () => ({}) }));
 vi.mock('@tanstack/react-router', () => ({ Link: ({ to, search, children, ...props }: { to: string; search: Record<string, string>; children: React.ReactNode }) => <a href={`${to}?${new URLSearchParams(search)}`} {...props}>{children}</a>, useNavigate: () => vi.fn() }));
+// Lesson decks come from the fixture's own word ids, so the lesson-category tests never
+// depend on the real course data. The two lesson categories each get two lessons, and the
+// real lessonDeckKind (which category is a lesson deck) stays in place.
+vi.mock('@/lib/flashcard-lessons', async importOriginal => {
+  const real = await importOriginal<typeof import('@/lib/flashcard-lessons')>();
+  // Two courses: one records words, the other one character. Lesson decks key on the kind,
+  // so the UI test never depends on the real course data.
+  const decks: Record<'Characters' | 'Words', Record<string, string[]>> = {
+    Words: { 'lesson-w1': ['hello'], 'lesson-w2': ['number-0', 'number-1'] },
+    Characters: { 'lesson-c1': ['Characters:一'] },
+  };
+  const groups = [
+    { id: 'course-a', label: 'Test course', lessons: [{ id: 'lesson-w1', title: 'Greetings' }, { id: 'lesson-w2', title: 'Numbers' }] },
+    { id: 'course-b', label: 'Other course', lessons: [{ id: 'lesson-c1', title: 'First characters' }] },
+  ];
+  const among = (ids: string[], records: { id: string }[]) => { const known = new Set(records.map(r => r.id)); return new Set(ids.filter(id => known.has(id))); };
+  // Characters decks are the lesson's own recorded card IDs (the real rule ignores the word
+  // records); Words decks are matched against the word records, as the real rule does.
+  const deck = (kind: 'Characters' | 'Words', lessonId: string, records: { id: string }[]) =>
+    kind === 'Characters' ? new Set(decks.Characters[lessonId] ?? []) : among(decks.Words[lessonId] ?? [], records);
+  return {
+    ...real,
+    lessonDeckGroups: () => groups,
+    lessonDeckIds: (lessonId: string, kind: 'Characters' | 'Words', records: { id: string }[]) => deck(kind, lessonId, records),
+    lessonCourseIds: (courseId: string, kind: 'Characters' | 'Words', records: { id: string }[]) => {
+      const lessons = groups.find(g => g.id === courseId)?.lessons ?? [];
+      const ids = new Set<string>();
+      for (const l of lessons) for (const id of deck(kind, l.id, records)) ids.add(id);
+      return ids;
+    },
+    lessonDeckTitle: (id: string) => ({ 'lesson-w1': 'Greetings', 'lesson-w2': 'Numbers', 'lesson-c1': 'First characters' })[id],
+    cardLessons: () => [],
+  };
+});
 
 /** Most tests deal from the Words kind (Characters is the first, default kind). */
 const renderWords = async (ui: React.ReactElement = <FlashcardsPage />) => { const view = render(ui); fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Words' } }); await screen.findByRole('button', { name: 'Start · 10 cards' }); return view; };
@@ -240,5 +274,31 @@ describe('What to practise kinds', () => {
     expect(Array.from((screen.getByRole('combobox', { name: 'Topic' }) as HTMLSelectElement).options).map(o => o.textContent)).toEqual(['All topics', 'Greetings']);
     fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Words' } });
     expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
+  });
+});
+
+describe('Flashcard course and lesson pickers', () => {
+  it('shows no course or lesson dropdown for Words and Phrases', async () => {
+    // Pavlos (2026-11-24): Words and Phrases already break down by Topic, level and type.
+    await renderWords();
+    expect(screen.getByRole('combobox', { name: 'Topic' })).toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Course' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Lesson' })).not.toBeInTheDocument();
+    fireEvent.change(screen.getByRole('combobox', { name: 'Category' }), { target: { value: 'Phrases' } });
+    await screen.findByRole('button', { name: 'Start · 1 card' });
+    expect(screen.queryByRole('combobox', { name: 'Course' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Lesson' })).not.toBeInTheDocument();
+  });
+  it('offers the pair for Characters and lists only the course’s own lessons', async () => {
+    render(<FlashcardsPage />);
+    // Only the course whose lessons record characters is offered; the words course is not.
+    const course = screen.getByRole('combobox', { name: 'Course' }) as HTMLSelectElement;
+    expect(Array.from(course.options).map(o => o.textContent)).toEqual(['All courses', 'Other course']);
+    fireEvent.change(course, { target: { value: 'course-b' } });
+    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
+    const lesson = screen.getByRole('combobox', { name: 'Lesson' }) as HTMLSelectElement;
+    expect(Array.from(lesson.options).map(o => o.textContent)).toEqual(['All lessons', 'First characters']);
+    fireEvent.change(lesson, { target: { value: 'lesson-c1' } });
+    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
   });
 });

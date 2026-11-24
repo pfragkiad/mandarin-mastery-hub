@@ -162,3 +162,7 @@
 - [x] Pattern lines: no speaker (owner, following the migration report)
 - [x] Pattern pseudo-translation is the prominent line and comes first; Hanzi/pinyin smaller below
 - [x] Pinyin sounds: Tone pairs and Tone changes pages from the handoff (48 whole-word recordings, draft tone labels), under one "Pinyin sounds" menu item
+
+## Flashcards lesson deck placement
+- [x] Flashcards: category list unchanged; a Course dropdown beside Topic, and the lesson list follows from the course (both narrow the deck)
+- [x] Flashcards: no Course/Lesson dropdown for Words or Phrases (Pavlos 2026-11-24) — picker stays for Characters only

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cardLessons, lessonDeckGroups, lessonDeckIds, lessonDeckKind } from './flashcard-lessons';
+import { cardLessons, lessonCourseIds, lessonDeckGroups, lessonDeckIds, lessonDeckKind } from './flashcard-lessons';
 import { words } from './mandarin';
 import { lessonCharacterRefs } from './lessons';
 
@@ -7,12 +7,14 @@ const wordRecords = words.filter(w => w.entry?.entryKind === 'word');
 const byHsk = (n: number) => wordRecords.find(w => w.entry?.hskVersion === '3.0' && w.entry?.hsk_index === n)!;
 
 describe('Flashcard lesson decks', () => {
-  it('offers lesson decks only for Characters and Words', () => {
+  it('offers a lesson deck for Characters only', () => {
+    // Pavlos (2026-11-24): the Course → Lesson pair sits beside Topic for Characters; Words
+    // and Phrases break down by Topic, level and type, so they show no course dropdown.
     expect(lessonDeckKind('Ref:Character')).toBe('Characters');
-    expect(lessonDeckKind('Words')).toBe('Words');
+    expect(lessonDeckKind('Words')).toBeUndefined();
+    expect(lessonDeckKind('Phrases')).toBeUndefined();
     expect(lessonDeckKind('Ref:Component')).toBeUndefined();
     expect(lessonDeckKind('Ref:Radical')).toBeUndefined();
-    expect(lessonDeckKind('Phrases')).toBeUndefined();
   });
   it('builds a Words deck from the course placement syllabus IDs (HSK numbers), not spellings', () => {
     const ids = lessonDeckIds('topic-personal-pronouns', 'Words', words);
@@ -32,6 +34,16 @@ describe('Flashcard lesson decks', () => {
     expect(groups.map(g => g.lessons.length)).toEqual([46, 17, 2]);
     expect(groups[2]?.label).toBe('Independent lessons');
     expect(groups[0]?.lessons[0]?.title).toMatch(/^1\. /);
+  });
+  it('takes a course deck as the union of that course’s lessons', () => {
+    const hsk = lessonDeckGroups()[0]!;
+    const ids = lessonCourseIds(hsk.id, 'Words', words);
+    // The Personal pronouns lesson sits in this course, so its recorded words are in too.
+    expect(ids.has(byHsk(221).id)).toBe(true);
+    expect(ids.size).toBeGreaterThanOrEqual(lessonDeckIds('topic-personal-pronouns', 'Words', words).size);
+    for (const id of ids) expect(words.find(w => w.id === id)?.entry?.entryKind).toBe('word');
+    // Independent lessons record no words, so their course deck is empty rather than whole.
+    expect(lessonCourseIds('independent', 'Words', words).size).toBe(0);
   });
   it('links a word card only to the lessons that record its HSK number', () => {
     const me = byHsk(221);

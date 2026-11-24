@@ -7,9 +7,8 @@
  *   every character the lesson uses. The IDs must equal the deck card IDs exactly.
  * - Words: the course placement's introduced/reviewed syllabus entry IDs, matched to word
  *   records of that course's own syllabus edition by HSK entry number (the same rule as
- *   lessonsForWord on word cards). Phrases and lessons without recorded IDs (the
- *   Conversation lessons) offer no Words deck.
- * Components, Radicals and Phrases have no recorded lesson lists, so no lesson choice.
+ *   lessonsForWord on word cards).
+ * Components, Radicals and Phrases have no recorded lesson lists, so no lesson deck.
  *
  * The card back lists the lessons that teach that exact record (word: course placements
  * naming its HSK number; character: lessons about that record), reusing lessons.ts and
@@ -18,9 +17,15 @@
 import { SYLLABUS_VERSION, characterLessons, lessonCharacterRefs, lessonSummaries, type LessonSummary } from './lessons';
 import { courses as projectCourses, lessonsForWord, projectIndependentLessons, sectionPlacements, type Course, type SyllabusWord } from './lesson-curricula';
 
-/** Flashcard kinds that can come from a lesson. */
+/**
+ * Flashcard kinds a study lesson can supply cards for. Pavlos (2026-11-24) moved the
+ * lesson beside Topic as a Course → Lesson pair and kept it for Characters only: Words and
+ * Phrases already break down by Topic, level and type, so they show no course dropdown at
+ * all, and a stale `lesson` value from another kind never empties its deck.
+ */
 export type LessonDeckKind = 'Characters' | 'Words';
-export const lessonDeckKind = (category: string): LessonDeckKind | undefined => category === 'Ref:Character' ? 'Characters' : category === 'Words' ? 'Words' : undefined;
+export const lessonDeckKind = (category: string): LessonDeckKind | undefined =>
+  category === 'Ref:Character' ? 'Characters' : undefined;
 
 /** A deck candidate: anything with an ID and (for words) the record's HSK identity. */
 export type LessonDeckRecord = { id: string; entry?: SyllabusWord | undefined };
@@ -43,14 +48,22 @@ export function lessonDeckIds(lessonId: string, kind: LessonDeckKind, records: r
 }
 
 /** Lesson choices in Lessons-page order: each course (its title as the group), then independent lessons. */
-export type LessonDeckGroup = { label: string; lessons: { id: string; title: string }[] };
+export type LessonDeckGroup = { id: string; label: string; lessons: { id: string; title: string }[] };
 export function lessonDeckGroups(all: Course[] = projectCourses, independent: LessonSummary[] = projectIndependentLessons): LessonDeckGroup[] {
   const groups = all.map(course => {
     const seen = new Set<string>();
     const lessons = course.sections.flatMap(sectionPlacements).flatMap((p, i) => seen.has(p.lesson.id) ? [] : (seen.add(p.lesson.id), [{ id: p.lesson.id, title: `${i + 1}. ${p.lesson.title}` }]));
-    return { label: course.title, lessons };
+    return { id: course.id, label: course.title, lessons };
   });
-  return [...groups, ...(independent.length ? [{ label: 'Independent lessons', lessons: independent.map(l => ({ id: l.id, title: l.title })) }] : [])].filter(g => g.lessons.length);
+  return [...groups, ...(independent.length ? [{ id: 'independent', label: 'Independent lessons', lessons: independent.map(l => ({ id: l.id, title: l.title })) }] : [])].filter(g => g.lessons.length);
+}
+
+/** Every card one course's lessons record for a kind: the union of its lessons' decks. */
+export function lessonCourseIds(courseId: string, kind: LessonDeckKind, records: readonly LessonDeckRecord[], all: Course[] = projectCourses, refs: Record<string, Record<string, string>> = lessonCharacterRefs, independent: LessonSummary[] = projectIndependentLessons): Set<string> {
+  const group = lessonDeckGroups(all, independent).find(g => g.id === courseId);
+  const ids = new Set<string>();
+  for (const l of group?.lessons ?? []) for (const id of lessonDeckIds(l.id, kind, records, all, refs)) ids.add(id);
+  return ids;
 }
 
 /** Title of a lesson for summaries ("Personal Pronouns"); undefined for an unknown ID. */

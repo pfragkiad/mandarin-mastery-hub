@@ -16,14 +16,14 @@ export const flashcardKinds = [
 ] as const;
 export type FlashcardKind = typeof flashcardKinds[number]['value'];
 export const DEFAULT_FLASHCARD_KIND: FlashcardKind = 'Ref:Character';
-
 export const flashcardKindLabel = (kind: string) => flashcardKinds.find(k => k.value === kind)?.label ?? kind;
-/** 'word' / 'phrase' for vocabulary kinds, undefined for glyph kinds. */
-export const flashcardVocabularyKind = (kind: string): 'word' | 'phrase' | undefined => kind === 'Words' ? 'word' : kind === 'Phrases' ? 'phrase' : undefined;
+/** 'word' / 'phrase' for vocabulary kinds, undefined for reference kinds. */
+export const flashcardVocabularyKind = (kind: string): 'word' | 'phrase' | undefined =>
+  kind === 'Words' ? 'word' : kind === 'Phrases' ? 'phrase' : undefined;
 
 export function normalizeFlashcardCategory(category: string | undefined, collection: string | undefined, knownCollections: readonly string[]): { category: FlashcardKind; collection: string } {
-  const kind = flashcardKinds.find(k => k.value === category)?.value;
-  if (kind) return { category: kind, collection: flashcardVocabularyKind(kind) ? collection ?? '' : '' };
+  const kind = flashcardKinds.find(k => k.value === category);
+  if (kind) return { category: kind.value, collection: flashcardVocabularyKind(kind.value) ? collection ?? '' : '' };
   if (category === 'All vocabulary') return { category: 'Words', collection: '' };
   if (category && knownCollections.includes(category)) return { category: 'Words', collection: category };
   return { category: DEFAULT_FLASHCARD_KIND, collection: '' };
