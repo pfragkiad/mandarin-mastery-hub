@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-speaking-languages",
   "lesson_type": "dialogue",
   "lesson": {
@@ -133,7 +133,8 @@
           "pinyin": "wǒ huì shuō Pǔtōnghuà.",
           "english": "I can speak Mandarin.",
           "teaching_note": "Use this to describe a language you can speak, even if your ability is limited."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 会 + 说 + <language>"
       },
       {
         "id": "grammar-2",
@@ -147,7 +148,8 @@
           "pinyin": "nǐ shuō de hěn hǎo.",
           "english": "You speak very well.",
           "teaching_note": "This form can compliment someone on how well they speak a language."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 说 + 得 + <how well>"
       },
       {
         "id": "key-expressions",
@@ -313,7 +315,8 @@
           "pinyin": "Wǒ shuō de bú tài hǎo.",
           "english": "I do not speak very well.",
           "teaching_note": "A modest reply acknowledges limited ability without claiming you cannot speak at all."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 说得 + 不太好"
       },
       {
         "id": "source-coverage-grammar-2",
@@ -327,7 +330,8 @@
           "pinyin": "Kěshì wǒ tīng de dǒng yìdiǎnr.",
           "english": "But I understand a little.",
           "teaching_note": "The speaker contrasts one limitation with something they can still do."
-        }
+        },
+        "pattern_pseudo_translation": "可是 + <contrasting idea>"
       }
     ],
     "practice": {

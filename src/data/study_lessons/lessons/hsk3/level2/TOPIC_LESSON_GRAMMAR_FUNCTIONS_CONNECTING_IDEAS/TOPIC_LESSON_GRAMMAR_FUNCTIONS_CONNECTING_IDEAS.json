@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-linking-ideas-in-conversation",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -146,7 +146,14 @@
     "间": "Characters:间",
     "院": "Characters:院",
     "雨": "Characters:雨",
-    "面": "Characters:面"
+    "面": "Characters:面",
+    "分": "Characters:分",
+    "原": "Characters:原",
+    "句": "Characters:句",
+    "折": "Characters:折",
+    "果": "Characters:果",
+    "结": "Characters:结",
+    "转": "Characters:转"
   },
   "sections": {
     "overview": {
@@ -861,7 +868,6 @@
           "id": "pattern-1",
           "title": "A reason and its result",
           "explanation_en": "因为 (yīnwèi) introduces the reason; 所以 (suǒyǐ) introduces the consequence. One can also appear without the other when the relationship is clear.",
-          "formula_en": "因为 + reason， 所以 + result",
           "examples": [
             {
               "hanzi": "我今天很累，所以想早点儿回家。",
@@ -873,13 +879,15 @@
               "pinyin": "Wǒ xiǎng qù gōngyuán, dànshì kěnéng huì xià yǔ.",
               "english": "I want to go to the park, but it might rain."
             }
-          ]
+          ],
+          "pattern_hanzi": "因为 + 原因， 所以 + 结果",
+          "pattern_pinyin": "yīnwèi + yuányīn,  suǒyǐ + jiéguǒ",
+          "pattern_pseudo_translation": "因为 + <reason>， 所以 + <result>"
         },
         {
           "id": "pattern-2",
           "title": "Concession and contrast",
           "explanation_en": "虽然 (suīrán) starts a concession and 但是 (dànshì) can introduce a contrasting main clause.",
-          "formula_en": "虽然 + clause， 但是 + clause",
           "examples": [
             {
               "hanzi": "你喝茶还是喝水？",
@@ -891,7 +899,10 @@
               "pinyin": "Hǎo a! Wǒ gēn nǐ yìqǐ qù, xiànzài jiù zǒu.",
               "english": "Great! I’ll go with you; let’s leave right now."
             }
-          ]
+          ],
+          "pattern_hanzi": "虽然 + 分句，但是 + 转折分句",
+          "pattern_pinyin": "suīrán + fēnjù, dànshì + zhuǎnzhé fēnjù",
+          "pattern_pseudo_translation": "虽然 + <clause>，但是 + <contrasting clause>"
         }
       ],
       "guided_building": {

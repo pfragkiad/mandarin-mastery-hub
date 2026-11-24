@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-basic-negation-particles",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -51,8 +51,10 @@
     "会": "Characters:会",
     "但": "Characters:但",
     "你": "Characters:你",
+    "八": "Characters:八",
     "再": "Characters:再",
     "午": "Characters:午",
+    "半": "Characters:半",
     "卖": "Characters:卖",
     "去": "Characters:去",
     "友": "Characters:友",
@@ -66,11 +68,13 @@
     "天": "Characters:天",
     "她": "Characters:她",
     "妹": "Characters:妹",
+    "始": "Characters:始",
     "学": "Characters:学",
     "家": "Characters:家",
     "小": "Characters:小",
     "已": "Characters:已",
     "师": "Characters:师",
+    "开": "Characters:开",
     "我": "Characters:我",
     "手": "Characters:手",
     "早": "Characters:早",
@@ -87,6 +91,7 @@
     "正": "Characters:正",
     "汉": "Characters:汉",
     "没": "Characters:没",
+    "点": "Characters:点",
     "爸": "Characters:爸",
     "王": "Characters:王",
     "现": "Characters:现",
@@ -113,11 +118,18 @@
     "里": "Characters:里",
     "问": "Characters:问",
     "饭": "Characters:饭",
-    "八": "Characters:八",
-    "点": "Characters:点",
-    "半": "Characters:半",
-    "开": "Characters:开",
-    "始": "Characters:始"
+    "动": "Characters:动",
+    "句": "Characters:句",
+    "名": "Characters:名",
+    "容": "Characters:容",
+    "建": "Characters:建",
+    "形": "Characters:形",
+    "议": "Characters:议",
+    "词": "Characters:词",
+    "话": "Characters:话",
+    "述": "Characters:述",
+    "陈": "Characters:陈",
+    "题": "Characters:题"
   },
   "sections": {
     "overview": {
@@ -749,7 +761,6 @@
           "id": "pattern-1",
           "title": "不 (bù) and 没有 (méiyǒu)",
           "explanation_en": "不 (bù) typically negates identity, habitual actions, wants or future choices. 没有 (méiyǒu) negates possession and is used in common past-event negation.",
-          "formula_en": "不 + adjective/verb; 没有 + noun",
           "examples": [
             {
               "hanzi": "我晚上不喝茶。",
@@ -761,13 +772,15 @@
               "pinyin": "Wǒ mèimei méiyǒu shǒujī.",
               "english": "My younger sister does not have a mobile phone."
             }
-          ]
+          ],
+          "pattern_hanzi": "不 + 形容词/动词; 没有 + 名词",
+          "pattern_pinyin": "bù + xíngróngcí/dòngcí; méiyǒu + míngcí",
+          "pattern_pseudo_translation": "不 + <adjective>/<verb>; 没有 + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "Particles for questions and responses",
           "explanation_en": "吗 (ma) turns a statement into a yes/no question; 呢 (ne) often returns the topic to the listener; 吧 (ba) can soften a suggestion.",
-          "formula_en": "statement + 吗?; topic + 呢?; suggestion + 吧",
           "examples": [
             {
               "hanzi": "她是学生吗？",
@@ -779,7 +792,10 @@
               "pinyin": "Wǒmen xiànzài zǒu ba.",
               "english": "Let’s go now."
             }
-          ]
+          ],
+          "pattern_hanzi": "陈述句 + 吗？; 话题 + 呢？; 建议 + 吧",
+          "pattern_pinyin": "chénshùjù + ma?; huàtí + ne?; jiànyì + ba",
+          "pattern_pseudo_translation": "<statement> + 吗？; <topic> + 呢？; <suggestion> + 吧"
         }
       ],
       "guided_building": {

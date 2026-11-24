@@ -28,6 +28,8 @@ Learn to choose a drink, order the number of cups you want, and ask for food. Us
 
 **想喝 + 饮料 + 还是 + 饮料？** (xiǎng hē + yǐnliào + háishi + yǐnliào?)
 
+**想喝** + &lt;first drink&gt; + **还是** + &lt;second drink&gt;？
+
 Use 还是 (háishi) to present alternatives in a question.
 
 你想喝茶还是啤酒？ (nǐ xiǎng hē chá háishi píjiǔ?) — Would you like tea or beer?
@@ -36,6 +38,8 @@ Offer two drinks and let the listener choose one.
 ## Grammar structure and spoken example
 
 **数量 + 杯 + 饮料** (shùliàng + bēi + yǐnliào)
+
+&lt;number or amount&gt; + **杯** + &lt;drink&gt;
 
 杯 (bēi) counts cups or glasses of drinks.
 

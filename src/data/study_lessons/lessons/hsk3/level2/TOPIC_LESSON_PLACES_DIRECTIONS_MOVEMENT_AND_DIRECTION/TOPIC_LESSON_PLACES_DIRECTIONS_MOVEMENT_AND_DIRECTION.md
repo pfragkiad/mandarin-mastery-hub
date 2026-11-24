@@ -32,7 +32,11 @@ Distinguish movement toward and away from the speaker when entering, exiting or 
 
 来 (lái) signals movement toward the speaker or chosen reference point: 进来 (jìnlái), 出来 (chūlái), 回来 (huílái).
 
-**Pattern:** Movement verb + 来
+**Pattern**
+
+位移动词 + 来  
+*wèiyí dòngcí + lái*  
+&lt;movement verb&gt; + **来**
 
 **请你过来帮我一下。**
 *Qǐng nǐ guòlái bāng wǒ yíxià.*
@@ -46,7 +50,11 @@ Yes, come in! I’m just about to go out.
 
 去 (qù) signals movement away from the speaker or chosen reference point: 进去 (jìnqù), 出去 (chūqù), 回去 (huíqù).
 
-**Pattern:** Movement verb + 去
+**Pattern**
+
+位移动词 + 去  
+*wèiyí dòngcí + qù*  
+&lt;movement verb&gt; + **去**
 
 **老师走进教室，学生们都站起来。**
 *Lǎoshī zǒu jìn jiàoshì, xuéshēngmen dōu zhàn qǐlái.*

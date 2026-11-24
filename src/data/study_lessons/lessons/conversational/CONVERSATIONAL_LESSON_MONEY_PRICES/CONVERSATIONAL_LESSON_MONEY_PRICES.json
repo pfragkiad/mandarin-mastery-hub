@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-money-prices",
   "lesson_type": "dialogue",
   "lesson": {
@@ -143,7 +143,8 @@
           "pinyin": "yì bēi chá duōshao qián?",
           "english": "How much is a cup of tea?",
           "teaching_note": "Name the item when checking a quoted price."
-        }
+        },
+        "pattern_pseudo_translation": "<item> + 多少钱？"
       },
       {
         "id": "grammar-2",
@@ -157,7 +158,8 @@
           "pinyin": "wǒ yǒu shí kuài rénmínbì.",
           "english": "I have ten yuan.",
           "teaching_note": "In ordinary conversations, 块 (kuài) is the casual word for yuan."
-        }
+        },
+        "pattern_pseudo_translation": "<number or amount> + 块 + 人民币"
       },
       {
         "id": "key-expressions",
@@ -358,7 +360,8 @@
           "pinyin": "Wǒ zhǐ yǒu wǔ kuài qián, bú gòu.",
           "english": "I only have five yuan; that is not enough.",
           "teaching_note": "This gives a practical reason for being unable to pay the requested amount."
-        }
+        },
+        "pattern_pseudo_translation": "只有 + <number or amount> + 钱；不够"
       }
     ],
     "practice": {

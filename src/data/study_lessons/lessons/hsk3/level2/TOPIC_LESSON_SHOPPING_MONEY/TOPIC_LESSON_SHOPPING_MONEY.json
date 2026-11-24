@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-buying-tickets-and-shopping",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -126,7 +126,14 @@
     "门": "Characters:门",
     "问": "Characters:问",
     "院": "Characters:院",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "短": "Characters:短",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "金": "Characters:金",
+    "额": "Characters:额"
   },
   "sections": {
     "overview": {
@@ -576,7 +583,6 @@
           "id": "pattern-1",
           "title": "Paying for an activity",
           "explanation_en": "In its spending-money sense, 花 (huā) is a verb; place the amount of money after it.",
-          "formula_en": "Person + 花 + money + on an activity",
           "examples": [
             {
               "hanzi": "我在商场买了一件衣服。",
@@ -588,13 +594,15 @@
               "pinyin": "Hǎo. Nǐ jīntiān xiǎng mǎi shénme?",
               "english": "Sure. What do you want to buy today?"
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 花 + 金额 + 动词短语",
+          "pattern_pinyin": "rén + huā + jīn'é + dòngcí duǎnyǔ",
+          "pattern_pseudo_translation": "<person> + 花 + <money amount> + <verb phrase>"
         },
         {
           "id": "pattern-2",
           "title": "Asking about admission",
           "explanation_en": "门票 (ménpiào) is an admission ticket. Combine it with 多少钱 (duōshao qián) to ask the price.",
-          "formula_en": "门票 + 多少钱?",
           "examples": [
             {
               "hanzi": "你买门票花了多少钱？",
@@ -606,7 +614,10 @@
               "pinyin": "Bié huā tài duō qián. Wǒmen hái yǒu bié de shìqing yào zuò.",
               "english": "Don’t spend too much. We still have other things to do."
             }
-          ]
+          ],
+          "pattern_hanzi": "门票 + 多少钱？",
+          "pattern_pinyin": "ménpiào + duōshao qián?",
+          "pattern_pseudo_translation": "门票 + 多少钱？"
         }
       ],
       "guided_building": {

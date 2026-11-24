@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-describing-feelings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -32,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -130,7 +130,13 @@
     "颜": "Characters:颜",
     "饭": "Characters:饭",
     "首": "Characters:首",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "主": "Characters:主",
+    "名": "Characters:名",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "词": "Characters:词",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -857,7 +863,6 @@
           "id": "pattern-1",
           "title": "Quality adjectives are specific",
           "explanation_en": "好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.",
-          "formula_en": "subject + 很 + adjective",
           "examples": [
             {
               "hanzi": "这首歌很好听。",
@@ -869,13 +874,15 @@
               "pinyin": "Tā de xīn yīfu hěn piàoliang.",
               "english": "Her new clothes are pretty."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 很 + 形容词",
+          "pattern_pinyin": "zhǔyǔ + hěn + xíngróngcí",
+          "pattern_pseudo_translation": "<subject> + 很 + <adjective>"
         },
         {
           "id": "pattern-2",
           "title": "Degree and contrasting sizes",
           "explanation_en": "很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.",
-          "formula_en": "noun + 太 + adjective + 了",
           "examples": [
             {
               "hanzi": "这个房间太小了。",
@@ -887,7 +894,10 @@
               "pinyin": "Zhège píngguǒ hěn dà.",
               "english": "This apple is big."
             }
-          ]
+          ],
+          "pattern_hanzi": "名词 + 太 + 形容词 + 了",
+          "pattern_pinyin": "míngcí + tài + xíngróngcí + le",
+          "pattern_pseudo_translation": "<noun> + 太 + <adjective> + 了"
         }
       ],
       "guided_building": {

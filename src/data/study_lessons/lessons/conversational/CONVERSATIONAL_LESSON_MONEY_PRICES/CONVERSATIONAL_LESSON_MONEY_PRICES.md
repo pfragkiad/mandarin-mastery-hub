@@ -28,6 +28,8 @@ Learn to ask the prices of common drinks and reply with amounts in renminbi. Use
 
 **物品 + 多少钱？** (wùpǐn + duōshao qián?)
 
+&lt;item&gt; + **多少钱**？
+
 多少钱 (duōshao qián) asks for the price.
 
 一杯茶多少钱？ (yì bēi chá duōshao qián?) — How much is a cup of tea?
@@ -36,6 +38,8 @@ Name the item when checking a quoted price.
 ## Grammar structure and spoken example
 
 **数量 + 块 + 人民币** (shùliàng + kuài + rénmínbì)
+
+&lt;number or amount&gt; + **块** + **人民币**
 
 块 (kuài) is the colloquial unit used to count yuan or a currency amount.
 
@@ -91,6 +95,8 @@ Speaking task: Ask the price of tea or beer; answer with a simple amount in RMB 
 ## Grammar structure and spoken example
 
 **只有 + 数量 + 钱；不够** (zhǐ yǒu + shùliàng + qián; bú gòu)
+
+**只有** + &lt;number or amount&gt; + **钱**；**不够**
 
 只有 (zhǐ yǒu) emphasizes a limited amount; 够 (gòu) means enough.
 

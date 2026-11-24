@@ -32,7 +32,11 @@ At a bookstore, one friend asks which object and where; the other uses near/far 
 
 这 (zhè) points to something closer in the discourse or situation; 那 (nà) points to something more distant. Add a classifier when identifying a specific item.
 
-**Pattern:** 这/那 + classifier + noun
+**Pattern**
+
+这/那 + 量词 + 名词  
+*zhè/nà + liàngcí + míngcí*  
+**这**/**那** + &lt;classifier&gt; + &lt;noun&gt;
 
 **这个苹果很好吃。**
 *Zhège píngguǒ hěn hǎochī.*
@@ -46,7 +50,11 @@ That item of clothing is pretty.
 
 什么 (shénme) asks “what”; 谁 (shéi) asks “who”; 哪 (nǎ) asks “which”; 哪里 (nǎlǐ) asks “where”; 怎么 (zěnme) asks “how”.
 
-**Pattern:** 谁 + verb? / 在 + 哪里?
+**Pattern**
+
+谁 + 动词？ / 在 + 哪里？  
+*shéi + dòngcí? / zài + nǎlǐ?*  
+**谁** + &lt;verb&gt;？ / **在** + **哪里**？
 
 **谁是你的老师？**
 *Shéi shì nǐ de lǎoshī?*

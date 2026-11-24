@@ -30,7 +30,11 @@ Two new classmates introduce the people in their families and clarify family rel
 
 Use 的 (de) after a possessor when emphasizing whose person or thing it is. In close family relationships 的 is often omitted in natural speech.
 
-**Pattern:** person + 的 + noun
+**Pattern**
+
+人 + 的 + 名词  
+*rén + de + míngcí*  
+&lt;person&gt; + **的** + &lt;noun&gt;
 
 **这是我的哥哥。**
 *Zhè shì wǒ de gēge.*
@@ -44,7 +48,11 @@ My mom is at home.
 
 是 (shì) identifies someone; 有 (yǒu) tells what people or things someone has. Keep the predicates distinct.
 
-**Pattern:** X 是 Y / X 有 Y
+**Pattern**
+
+主语 + 是 + 身份 / 主语 + 有 + 所拥有的事物  
+*zhǔyǔ + shì + shēnfèn / zhǔyǔ + yǒu + suǒ yǒngyǒu de shìwù*  
+&lt;subject&gt; + **是** + &lt;identity&gt; / &lt;subject&gt; + **有** + &lt;thing owned&gt;
 
 **她是我妹妹。**
 *Tā shì wǒ mèimei.*

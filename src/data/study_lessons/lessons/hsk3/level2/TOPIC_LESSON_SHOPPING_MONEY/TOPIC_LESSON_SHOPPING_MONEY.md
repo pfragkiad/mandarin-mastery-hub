@@ -30,7 +30,11 @@ Ask about tickets, discuss shopping at the mall and describe spending money.
 
 In its spending-money sense, 花 (huā) is a verb; place the amount of money after it.
 
-**Pattern:** Person + 花 + money + on an activity
+**Pattern**
+
+人 + 花 + 金额 + 动词短语  
+*rén + huā + jīn'é + dòngcí duǎnyǔ*  
+&lt;person&gt; + **花** + &lt;money amount&gt; + &lt;verb phrase&gt;
 
 **我在商场买了一件衣服。**
 *Wǒ zài shāngchǎng mǎi le yí jiàn yīfu.*
@@ -44,7 +48,11 @@ Sure. What do you want to buy today?
 
 门票 (ménpiào) is an admission ticket. Combine it with 多少钱 (duōshao qián) to ask the price.
 
-**Pattern:** 门票 + 多少钱?
+**Pattern**
+
+门票 + 多少钱？  
+*ménpiào + duōshao qián?*  
+**门票** + **多少钱**？
 
 **你买门票花了多少钱？**
 *Nǐ mǎi ménpiào huā le duōshao qián?*

@@ -30,7 +30,11 @@ Ask why something happened and describe different ways of doing things.
 
 为什么 (wèi shénme) asks for the reason; a natural reply often begins with 因为 (yīnwèi).
 
-**Pattern:** 为什么 + question?
+**Pattern**
+
+为什么 + 分句？ / 主语 + 为什么 + 动词短语？  
+*wèishénme + fēnjù? / zhǔyǔ + wèishénme + dòngcí duǎnyǔ?*  
+**为什么** + &lt;clause&gt;？ / &lt;subject&gt; + **为什么** + &lt;verb phrase&gt;？
 
 **为什么你今天不去学校？**
 *Wèi shénme nǐ jīntiān bú qù xuéxiào?*
@@ -44,7 +48,11 @@ Because I finished this problem by myself!
 
 这样 (zhèyàng) or 那样 (nàyàng) indicates a way of doing something; 自己 (zìjǐ) identifies the person acting independently.
 
-**Pattern:** Person + 自己 + action
+**Pattern**
+
+人 + 自己 + 动作  
+*rén + zìjǐ + dòngzuò*  
+&lt;person&gt; + **自己** + &lt;action&gt;
 
 **我想自己试一试。**
 *Wǒ xiǎng zìjǐ shì yi shì.*

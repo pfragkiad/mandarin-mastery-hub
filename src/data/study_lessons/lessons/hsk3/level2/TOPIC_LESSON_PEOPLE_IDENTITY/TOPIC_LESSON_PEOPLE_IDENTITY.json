@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-introducing-people-by-name",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -111,7 +111,12 @@
     "里": "Characters:里",
     "问": "Characters:问",
     "面": "Characters:面",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "人": "Characters:人",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "氏": "Characters:氏",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -682,7 +687,6 @@
           "id": "pattern-1",
           "title": "Surnames and full names",
           "explanation_en": "姓 (xìng) introduces a family name; 姓名 (xìngmíng) means a full name. Ask 姓什么 (xìng shénme) when you want the family name.",
-          "formula_en": "Person + 姓 + family name",
           "examples": [
             {
               "hanzi": "我姓李，叫李小红。",
@@ -694,13 +698,15 @@
               "pinyin": "Wǒ xìng Wáng. Wǒ de xìngmíng shì Wáng Xiǎomíng.",
               "english": "My surname is Wang. My full name is Wang Xiaoming."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 姓 + 姓氏",
+          "pattern_pinyin": "rén + xìng + xìngshì",
+          "pattern_pseudo_translation": "<person> + 姓 + <family name>"
         },
         {
           "id": "pattern-2",
           "title": "Descriptions of people",
           "explanation_en": "Use 个子 (gèzi) with 高 (gāo) or another suitable adjective to describe a person’s height.",
-          "formula_en": "Person + 个子 + adjective",
           "examples": [
             {
               "hanzi": "这个女孩儿个子不高。",
@@ -712,7 +718,10 @@
               "pinyin": "Shì de, tā shì wǒ de péngyou, gèzi hěn gāo.",
               "english": "Yes, he is my friend, and he is tall."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 个子 + 形容词",
+          "pattern_pinyin": "rén + gèzi + xíngróngcí",
+          "pattern_pseudo_translation": "<person> + 个子 + <adjective>"
         }
       ],
       "guided_building": {

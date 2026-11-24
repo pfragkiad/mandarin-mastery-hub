@@ -47,3 +47,5 @@ Older v3.0.0 topic JSON remains accepted, but v3.1.0, v3.2.0, and v3.3.0 lessons
 ## Vocabulary release synchronization and editorial standards
 
 Before publishing, synchronize inherited example records with the exact pinned vocabulary release and audit every newly authored sentence against source-card examples and other lessons. Follow `LESSON_CREATOR_AUTHORING_GUIDELINES.md` for card headers, 2–3 content-based tags, source isolation, and stable checkpoints. Record version/source exceptions in the separate release audit rather than learner-facing lesson content.
+
+Topic lesson format v3.4.0 requires `pattern_hanzi`, `pattern_pinyin`, and `pattern_pseudo_translation` on each teaching pattern. Earlier formats use `formula_en`.

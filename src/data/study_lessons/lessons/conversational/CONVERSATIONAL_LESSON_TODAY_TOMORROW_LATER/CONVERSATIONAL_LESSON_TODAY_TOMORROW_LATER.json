@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-today-tomorrow-later",
   "lesson_type": "dialogue",
   "lesson": {
@@ -145,7 +145,8 @@
           "pinyin": "míngtiān wǒ xiǎng qù.",
           "english": "I want to go tomorrow.",
           "teaching_note": "Mentioning tomorrow first highlights when the planned action will happen."
-        }
+        },
+        "pattern_pseudo_translation": "<time word or phrase> + <who or what> + <action word>"
       },
       {
         "id": "grammar-2",
@@ -159,7 +160,8 @@
           "pinyin": "guò yíhuìr jiàn.",
           "english": "See you in a little while.",
           "teaching_note": "Use this when proposing to meet shortly rather than immediately."
-        }
+        },
+        "pattern_pseudo_translation": "过 + 一会儿 + <action word>"
       },
       {
         "id": "key-expressions",

@@ -32,7 +32,11 @@ Talk with friends about leisure interests and suggest a sport or creative activi
 
 Use 打 (dǎ) with 篮球 (lánqiú), but 踢 (tī) with 足球 (zúqiú). These are conventional verb-noun collocations.
 
-**Pattern:** 打篮球 / 踢足球
+**Pattern**
+
+打篮球 / 踢足球  
+*dǎ lánqiú / tī zúqiú*  
+**打篮球** / **踢足球**
 
 **我的爱好是打篮球。**
 *Wǒ de àihào shì dǎ lánqiú.*
@@ -46,7 +50,11 @@ I like playing basketball and football.
 
 爱好 (àihào) refers to a hobby or interest. Use 我的爱好是 (wǒ de àihào shì) before an activity.
 
-**Pattern:** 我的爱好是 + activity
+**Pattern**
+
+我的爱好是 + 活动  
+*wǒ de àihào shì + huódòng*  
+**我的爱好是** + &lt;activity&gt;
 
 **星期六我们一起去踢足球吧。**
 *Xīngqīliù wǒmen yìqǐ qù tī zúqiú ba.*

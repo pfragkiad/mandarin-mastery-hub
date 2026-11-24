@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-family-and-friends",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -37,12 +37,14 @@
   "catalog_character_refs": {
     "一": "Characters:一",
     "上": "Characters:上",
+    "东": "Characters:东",
     "两": "Characters:两",
     "个": "Characters:个",
     "中": "Characters:中",
     "也": "Characters:也",
     "习": "Characters:习",
     "书": "Characters:书",
+    "买": "Characters:买",
     "二": "Characters:二",
     "五": "Characters:五",
     "些": "Characters:些",
@@ -56,11 +58,13 @@
     "你": "Characters:你",
     "做": "Characters:做",
     "儿": "Characters:儿",
+    "八": "Characters:八",
     "公": "Characters:公",
     "几": "Characters:几",
     "医": "Characters:医",
     "十": "Characters:十",
     "午": "Characters:午",
+    "去": "Characters:去",
     "友": "Characters:友",
     "司": "Characters:司",
     "吗": "Characters:吗",
@@ -88,6 +92,7 @@
     "小": "Characters:小",
     "岁": "Characters:岁",
     "工": "Characters:工",
+    "市": "Characters:市",
     "师": "Characters:师",
     "年": "Characters:年",
     "开": "Characters:开",
@@ -97,15 +102,18 @@
     "我": "Characters:我",
     "文": "Characters:文",
     "旁": "Characters:旁",
+    "星": "Characters:星",
     "是": "Characters:是",
     "晚": "Characters:晚",
     "有": "Characters:有",
     "朋": "Characters:朋",
+    "期": "Characters:期",
     "校": "Characters:校",
     "欢": "Characters:欢",
     "歌": "Characters:歌",
     "每": "Characters:每",
     "火": "Characters:火",
+    "点": "Characters:点",
     "爱": "Characters:爱",
     "爸": "Characters:爸",
     "猫": "Characters:猫",
@@ -118,9 +126,11 @@
     "的": "Characters:的",
     "看": "Characters:看",
     "老": "Characters:老",
+    "西": "Characters:西",
     "说": "Characters:说",
     "读": "Characters:读",
     "起": "Characters:起",
+    "超": "Characters:超",
     "车": "Characters:车",
     "边": "Characters:边",
     "这": "Characters:这",
@@ -128,16 +138,16 @@
     "都": "Characters:都",
     "院": "Characters:院",
     "饭": "Characters:饭",
-    "星": "Characters:星",
-    "期": "Characters:期",
-    "去": "Characters:去",
-    "超": "Characters:超",
-    "市": "Characters:市",
-    "买": "Characters:买",
-    "东": "Characters:东",
-    "西": "Characters:西",
-    "八": "Characters:八",
-    "点": "Characters:点"
+    "主": "Characters:主",
+    "事": "Characters:事",
+    "份": "Characters:份",
+    "名": "Characters:名",
+    "所": "Characters:所",
+    "拥": "Characters:拥",
+    "物": "Characters:物",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "身": "Characters:身"
   },
   "sections": {
     "overview": {
@@ -1034,7 +1044,6 @@
           "id": "pattern-1",
           "title": "Family ownership with 的 (de)",
           "explanation_en": "Use 的 (de) after a possessor when emphasizing whose person or thing it is. In close family relationships 的 is often omitted in natural speech.",
-          "formula_en": "person + 的 + noun",
           "examples": [
             {
               "hanzi": "这是我的哥哥。",
@@ -1046,13 +1055,15 @@
               "pinyin": "Wǒ māma zài jiā.",
               "english": "My mom is at home."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 的 + 名词",
+          "pattern_pinyin": "rén + de + míngcí",
+          "pattern_pseudo_translation": "<person> + 的 + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "Introducing a relationship",
           "explanation_en": "是 (shì) identifies someone; 有 (yǒu) tells what people or things someone has. Keep the predicates distinct.",
-          "formula_en": "X 是 Y / X 有 Y",
           "examples": [
             {
               "hanzi": "她是我妹妹。",
@@ -1064,7 +1075,10 @@
               "pinyin": "Wǒ yǒu liǎng ge háizi.",
               "english": "I have two children."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 是 + 身份 / 主语 + 有 + 所拥有的事物",
+          "pattern_pinyin": "zhǔyǔ + shì + shēnfèn / zhǔyǔ + yǒu + suǒ yǒngyǒu de shìwù",
+          "pattern_pseudo_translation": "<subject> + 是 + <identity> / <subject> + 有 + <thing owned>"
         }
       ],
       "guided_building": {

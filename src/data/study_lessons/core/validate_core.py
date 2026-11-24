@@ -89,7 +89,7 @@ def checks_lesson(lesson,catalog=None,allow_overlap=()):
             if len(hanzi)==1 and catalog.get(hanzi) and lesson['metadata']['catalog_character_id']!=catalog[hanzi]:
                 raise ValueError('headword catalog character ID mismatch')
     # Pedagogical v3.1 integrity rules beyond JSON Schema.
-    if lesson['schema_version'] in ('mandarin-topic-lesson/3.1.0','mandarin-topic-lesson/3.2.0','mandarin-topic-lesson/3.3.0'):
+    if lesson['schema_version'] in ('mandarin-topic-lesson/3.1.0','mandarin-topic-lesson/3.2.0','mandarin-topic-lesson/3.3.0','mandarin-topic-lesson/3.4.0'):
         t=lesson['sections']['teaching_plan']
         intro={ref['entry_id'] for v in lesson['sections']['vocabulary']['items']
                for ref in v.get('syllabus_refs',[]) if v.get('learning_role')=='introduced'}
@@ -130,7 +130,7 @@ def checks_lesson(lesson,catalog=None,allow_overlap=()):
             if not example.get('pinyin') or not example.get('english'):
                 raise ValueError('missing pinyin/English in new teaching example')
     # Authoring: do not allow source/provenance in learner-facing source blocks.
-    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0','/3.2.0','/3.3.0')):
+    if lesson['schema_version'].endswith(('/3.0.0','/3.1.0','/3.2.0','/3.3.0','/3.4.0')):
         forbidden={'report_intake','source_files','original_video','extraction_stats'}
         bad=[key for node in each_dict(lesson) for key in node if key in forbidden]
         if bad:raise ValueError('report-only field(s) in learner lesson: '+str(bad))

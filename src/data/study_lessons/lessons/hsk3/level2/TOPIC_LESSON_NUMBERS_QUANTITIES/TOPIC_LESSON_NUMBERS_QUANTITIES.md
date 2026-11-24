@@ -30,7 +30,11 @@ Count repeated events and use everyday measure words for people, rooms and long 
 
 Use 次 (cì) after a verb phrase to count how many times an action happened.
 
-**Pattern:** Action + number + 次
+**Pattern**
+
+动作 + 数字 + 次  
+*dòngzuò + shùzì + cì*  
+&lt;action&gt; + &lt;number&gt; + **次**
 
 **我每周来这个地方两次。**
 *Wǒ měi zhōu lái zhè ge dìfang liǎng cì.*
@@ -44,7 +48,11 @@ I have been here twice. There are many people here.
 
 Use 间 (jiān) for rooms, 位 (wèi) politely for people, and 条 (tiáo) for many long, narrow things.
 
-**Pattern:** Number + classifier + noun
+**Pattern**
+
+数字 + 量词 + 名词  
+*shùzì + liàngcí + míngcí*  
+&lt;number&gt; + &lt;classifier&gt; + &lt;noun&gt;
 
 **这里有四间教室。**
 *Zhèlǐ yǒu sì jiān jiàoshì.*

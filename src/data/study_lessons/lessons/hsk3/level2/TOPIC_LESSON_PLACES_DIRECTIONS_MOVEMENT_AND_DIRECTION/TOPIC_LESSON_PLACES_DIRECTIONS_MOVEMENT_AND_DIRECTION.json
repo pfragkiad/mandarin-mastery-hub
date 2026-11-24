@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-entering-leaving-and-returning",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -146,7 +146,11 @@
     "里": "Characters:里",
     "门": "Characters:门",
     "雨": "Characters:雨",
-    "面": "Characters:面"
+    "面": "Characters:面",
+    "位": "Characters:位",
+    "动": "Characters:动",
+    "移": "Characters:移",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -1116,7 +1120,6 @@
           "id": "pattern-1",
           "title": "Movement toward the reference point",
           "explanation_en": "来 (lái) signals movement toward the speaker or chosen reference point: 进来 (jìnlái), 出来 (chūlái), 回来 (huílái).",
-          "formula_en": "Movement verb + 来",
           "examples": [
             {
               "hanzi": "请你过来帮我一下。",
@@ -1128,13 +1131,15 @@
               "pinyin": "Kěyǐ, jìnlái ba! Wǒ zhèng yào chūqù.",
               "english": "Yes, come in! I’m just about to go out."
             }
-          ]
+          ],
+          "pattern_hanzi": "位移动词 + 来",
+          "pattern_pinyin": "wèiyí dòngcí + lái",
+          "pattern_pseudo_translation": "<movement verb> + 来"
         },
         {
           "id": "pattern-2",
           "title": "Movement away from the reference point",
           "explanation_en": "去 (qù) signals movement away from the speaker or chosen reference point: 进去 (jìnqù), 出去 (chūqù), 回去 (huíqù).",
-          "formula_en": "Movement verb + 去",
           "examples": [
             {
               "hanzi": "老师走进教室，学生们都站起来。",
@@ -1146,7 +1151,10 @@
               "pinyin": "Wǒ yíhuìr jiù huílái. Nǐ xiān shàngqù děng wǒ.",
               "english": "I’ll be back soon. Go upstairs and wait for me."
             }
-          ]
+          ],
+          "pattern_hanzi": "位移动词 + 去",
+          "pattern_pinyin": "wèiyí dòngcí + qù",
+          "pattern_pseudo_translation": "<movement verb> + 去"
         }
       ],
       "guided_building": {

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-phone-invitations",
   "lesson_type": "dialogue",
   "lesson": {
@@ -179,7 +179,8 @@
           "pinyin": "Qǐngwèn Lǐ xiānsheng zài ma?",
           "english": "May I speak to Mr Li?",
           "teaching_note": "This sounds courteous when another person answers the telephone."
-        }
+        },
+        "pattern_pseudo_translation": "请问 + <name or title> + 在吗？"
       },
       {
         "id": "grammar-2",
@@ -193,7 +194,8 @@
           "pinyin": "Jīnwǎn bù xíng, míngtiān ne?",
           "english": "Tonight does not work; how about tomorrow?",
           "teaching_note": "The follow-up invites the other speaker to consider another time."
-        }
+        },
+        "pattern_pseudo_translation": "<proposed time> + 不行；<another time> + 呢？"
       },
       {
         "id": "grammar-3",
@@ -207,7 +209,8 @@
           "pinyin": "Tài wǎn le, wǒmen zǎo diǎn jiàn.",
           "english": "That is too late; let us meet earlier.",
           "teaching_note": "Pair your objection with a concrete earlier meeting suggestion."
-        }
+        },
+        "pattern_pseudo_translation": "太晚了 + 早点见"
       },
       {
         "id": "key-expressions",

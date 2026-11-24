@@ -30,7 +30,11 @@ Locate everyday possessions in a bedroom and describe what to bring to school.
 
 Use 在 (zài) followed by a location phrase to say where an object is; distinguish 里面 (lǐmiàn) and 旁边 (pángbiān).
 
-**Pattern:** Object + 在 + location
+**Pattern**
+
+宾语 + 在 + 地点  
+*bīnyǔ + zài + dìdiǎn*  
+&lt;object&gt; + **在** + &lt;location&gt;
 
 **我的手表在书包里面。**
 *Wǒ de shǒubiǎo zài shūbāo lǐmiàn.*
@@ -44,7 +48,11 @@ On the bed, and your watch is next to it.
 
 拿 (ná) is used for picking up or taking an object; name the object directly after the verb.
 
-**Pattern:** Person + 拿 + object
+**Pattern**
+
+人 + 拿 + 宾语  
+*rén + ná + bīnyǔ*  
+&lt;person&gt; + **拿** + &lt;object&gt;
 
 **请把包放在床旁边。**
 *Qǐng bǎ bāo fàng zài chuáng pángbiān.*

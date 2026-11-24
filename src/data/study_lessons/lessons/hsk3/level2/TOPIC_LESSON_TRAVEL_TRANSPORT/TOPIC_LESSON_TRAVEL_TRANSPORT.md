@@ -30,7 +30,11 @@ Buy transport tickets and describe a journey by metro, bus or taxi.
 
 Use 先 (xiān) and 再 (zài) to describe successive stages of a trip: first one vehicle, then another.
 
-**Pattern:** 先 + action A, 再 + action B
+**Pattern**
+
+先 + 第一个动作，再 + 第二个动作  
+*xiān + dì yī ge dòngzuò, zài + dì èr ge dòngzuò*  
+**先** + &lt;action A&gt;，**再** + &lt;action B&gt;
 
 **从酒店到车站要走多远？**
 *Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?*
@@ -44,7 +48,11 @@ Yes, I’ve already bought my plane ticket.
 
 机票 (jīpiào) is an air ticket; 票 (piào) is a general ticket. Use 去 (qù) followed by the destination.
 
-**Pattern:** 去 + destination / 买 + 票
+**Pattern**
+
+去 + 目的地 / 买 + 票  
+*qù + mùdìdì / mǎi + piào*  
+**去** + &lt;destination&gt; / **买** + **票**
 
 **我想买两张地铁票。**
 *Wǒ xiǎng mǎi liǎng zhāng dìtiě piào.*

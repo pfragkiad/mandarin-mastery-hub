@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-nature-and-the-weather",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -131,7 +131,13 @@
     "飞": "Characters:飞",
     "高": "Characters:高",
     "鱼": "Characters:鱼",
-    "鸟": "Characters:鸟"
+    "鸟": "Characters:鸟",
+    "位": "Characters:位",
+    "地": "Characters:地",
+    "点": "Characters:点",
+    "物": "Characters:物",
+    "移": "Characters:移",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -711,7 +717,6 @@
           "id": "pattern-1",
           "title": "Talking about conditions",
           "explanation_en": "晴 (qíng) refers to clear, sunny weather; 阴 (yīn) refers to cloudy or overcast conditions.",
-          "formula_en": "今天 + 晴/阴 + 天",
           "examples": [
             {
               "hanzi": "那只小鸟会飞。",
@@ -723,13 +728,15 @@
               "pinyin": "Xiànzài shì qíngtiān, gōngyuán lǐ yǒu hěn duō huā.",
               "english": "It’s sunny now, and there are lots of flowers in the park."
             }
-          ]
+          ],
+          "pattern_hanzi": "今天 + 是 + 晴天/阴天",
+          "pattern_pinyin": "jīntiān + shì + qíngtiān/yīntiān",
+          "pattern_pseudo_translation": "今天 + 是 + 晴天/阴天"
         },
         {
           "id": "pattern-2",
           "title": "Describing movement in nature",
           "explanation_en": "飞 (fēi) describes flying, while 游 (yóu) describes moving through water.",
-          "formula_en": "Animal + 在 + place + movement verb",
           "examples": [
             {
               "hanzi": "今天阴天，我们在家看书吧。",
@@ -741,7 +748,10 @@
               "pinyin": "Yíhuìr kěnéng huì yīntiān, wǒmen xiān qù hú biān kànkan.",
               "english": "It may get cloudy soon; let’s look by the lake first."
             }
-          ]
+          ],
+          "pattern_hanzi": "动物 + 在 + 地点 + 位移动词",
+          "pattern_pinyin": "dòngwù + zài + dìdiǎn + wèiyí dòngcí",
+          "pattern_pseudo_translation": "<animal> + 在 + <place> + <movement verb>"
         }
       ],
       "guided_building": {

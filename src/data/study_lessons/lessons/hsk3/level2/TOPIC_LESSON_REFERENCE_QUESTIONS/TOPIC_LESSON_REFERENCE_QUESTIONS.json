@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-explaining-why-and-how",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -136,7 +136,13 @@
     "问": "Characters:问",
     "面": "Characters:面",
     "题": "Characters:题",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "主": "Characters:主",
+    "作": "Characters:作",
+    "分": "Characters:分",
+    "动": "Characters:动",
+    "句": "Characters:句",
+    "短": "Characters:短"
   },
   "sections": {
     "overview": {
@@ -711,7 +717,6 @@
           "id": "pattern-1",
           "title": "Asking for a reason",
           "explanation_en": "为什么 (wèi shénme) asks for the reason; a natural reply often begins with 因为 (yīnwèi).",
-          "formula_en": "为什么 + question?",
           "examples": [
             {
               "hanzi": "为什么你今天不去学校？",
@@ -723,13 +728,15 @@
               "pinyin": "Yīnwèi wǒ zìjǐ zuò wán le zhè dào tí!",
               "english": "Because I finished this problem by myself!"
             }
-          ]
+          ],
+          "pattern_hanzi": "为什么 + 分句？ / 主语 + 为什么 + 动词短语？",
+          "pattern_pinyin": "wèishénme + fēnjù? / zhǔyǔ + wèishénme + dòngcí duǎnyǔ?",
+          "pattern_pseudo_translation": "为什么 + <clause>？ / <subject> + 为什么 + <verb phrase>？"
         },
         {
           "id": "pattern-2",
           "title": "Referring to manner and self",
           "explanation_en": "这样 (zhèyàng) or 那样 (nàyàng) indicates a way of doing something; 自己 (zìjǐ) identifies the person acting independently.",
-          "formula_en": "Person + 自己 + action",
           "examples": [
             {
               "hanzi": "我想自己试一试。",
@@ -741,7 +748,10 @@
               "pinyin": "Wǒ xiān kàn shū, zài zhàozhe shàngmian de fāngfǎ zuò.",
               "english": "I read the book first, then followed the method in it."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 自己 + 动作",
+          "pattern_pinyin": "rén + zìjǐ + dòngzuò",
+          "pattern_pseudo_translation": "<person> + 自己 + <action>"
         }
       ],
       "guided_building": {

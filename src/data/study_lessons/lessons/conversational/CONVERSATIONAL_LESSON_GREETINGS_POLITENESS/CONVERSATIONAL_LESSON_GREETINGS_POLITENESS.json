@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-greetings-politeness",
   "lesson_type": "dialogue",
   "lesson": {
@@ -114,7 +114,8 @@
           "pinyin": "nǐ hǎo ma?",
           "english": "How are you?",
           "teaching_note": "This example is a friendly check on how the other person is doing."
-        }
+        },
+        "pattern_pseudo_translation": "<statement> + 吗？"
       },
       {
         "id": "grammar-2",
@@ -128,7 +129,8 @@
           "pinyin": "Qǐngwèn, xiànzài jǐ diǎn zhōng?",
           "english": "Excuse me, what time is it?",
           "teaching_note": "Use this opener when politely approaching someone you do not know."
-        }
+        },
+        "pattern_pseudo_translation": "请问 + <your question>"
       },
       {
         "id": "key-expressions",

@@ -32,7 +32,11 @@ Describe an outdoor scene with weather, birds, flowers and water.
 
 晴 (qíng) refers to clear, sunny weather; 阴 (yīn) refers to cloudy or overcast conditions.
 
-**Pattern:** 今天 + 晴/阴 + 天
+**Pattern**
+
+今天 + 是 + 晴天/阴天  
+*jīntiān + shì + qíngtiān/yīntiān*  
+**今天** + **是** + **晴天**/**阴天**
 
 **那只小鸟会飞。**
 *Nà zhī xiǎo niǎo huì fēi.*
@@ -46,7 +50,11 @@ It’s sunny now, and there are lots of flowers in the park.
 
 飞 (fēi) describes flying, while 游 (yóu) describes moving through water.
 
-**Pattern:** Animal + 在 + place + movement verb
+**Pattern**
+
+动物 + 在 + 地点 + 位移动词  
+*dòngwù + zài + dìdiǎn + wèiyí dòngcí*  
+&lt;animal&gt; + **在** + &lt;place&gt; + &lt;movement verb&gt;
 
 **今天阴天，我们在家看书吧。**
 *Jīntiān yīntiān, wǒmen zài jiā kàn shū ba.*

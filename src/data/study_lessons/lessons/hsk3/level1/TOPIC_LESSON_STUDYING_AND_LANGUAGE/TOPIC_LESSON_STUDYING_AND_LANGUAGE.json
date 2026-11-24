@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-studying-and-language",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -102,6 +102,7 @@
     "有": "Characters:有",
     "朋": "Characters:朋",
     "期": "Characters:期",
+    "来": "Characters:来",
     "校": "Characters:校",
     "欢": "Characters:欢",
     "歌": "Characters:歌",
@@ -129,7 +130,12 @@
     "这": "Characters:这",
     "里": "Characters:里",
     "门": "Characters:门",
-    "来": "Characters:来"
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "宾": "Characters:宾",
+    "技": "Characters:技",
+    "能": "Characters:能",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -1151,7 +1157,6 @@
           "id": "pattern-1",
           "title": "Learning versus a class session",
           "explanation_en": "学习 (xuéxí) means studying or learning; 上课 (shàngkè) means attending class; 下课 (xiàkè) means finishing class or the class period ending.",
-          "formula_en": "person + 在 + verb + object",
           "examples": [
             {
               "hanzi": "我在学习中文。",
@@ -1163,13 +1168,15 @@
               "pinyin": "Wǒmen shàngwǔ jiǔ diǎn shàngkè.",
               "english": "We have class at 9 a.m."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 在 + 动词 + 宾语",
+          "pattern_pinyin": "rén + zài + dòngcí + bīnyǔ",
+          "pattern_pseudo_translation": "<person> + 在 + <verb> + <object>"
         },
         {
           "id": "pattern-2",
           "title": "Four basic language skills",
           "explanation_en": "听 (tīng) is the act of listening and 听见 (tīngjiàn) is the result of hearing. Read with 读 (dú), speak with 说 (shuō), write with 写 (xiě).",
-          "formula_en": "我 + skill verb + object",
           "examples": [
             {
               "hanzi": "我喜欢听汉语。",
@@ -1181,7 +1188,10 @@
               "pinyin": "Tā měi tiān dú Zhōngwén shū.",
               "english": "She reads Chinese books every day."
             }
-          ]
+          ],
+          "pattern_hanzi": "我 + 技能动词 + 宾语",
+          "pattern_pinyin": "wǒ + jìnéng dòngcí + bīnyǔ",
+          "pattern_pseudo_translation": "我 + <skill verb> + <object>"
         }
       ],
       "guided_building": {

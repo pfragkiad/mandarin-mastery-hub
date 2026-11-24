@@ -42,3 +42,9 @@ Follow `LESSON_CREATOR_AUTHORING_GUIDELINES.md` for title, subtitle, description
 ## Expression-level usage notes (Core v3.4.0)
 
 For a `review_set.items[]` expression, optional `expression_id`, `usage_label`, and `usage_note` permit visible, source-respecting commentary immediately beside that expression. Do not replace a source-attested expression solely to enforce a more neutral register. Explain the contrast and optionally give a natural alternative in `usage_note`, accompanied by tone-marked pinyin. Review expressions without notes remain fully valid. Only complete spoken expressions are TTS targets; notes are never passed to TTS.
+
+### Grammar pattern pseudo-translation
+
+Set `pattern_pseudo_translation` when a pattern benefits from English labels. Keep the original Hanzi and pinyin on the first two lines. On the third line, use angle brackets for English placeholders and retain fixed Mandarin, for example `<statement> + 吗？` (paired pinyin on the preceding line: `chénshùjù + ma?`). Keep any English placeholders on the third line only. Use plain text without HTML or Markdown markup.
+
+Render the third line directly below the pinyin when present. Treat angle brackets as literal placeholder markers, render fixed Mandarin in bold with a Kai-style font, and leave the line out of speech synthesis. Keep the explicit spoken example as the audio source.

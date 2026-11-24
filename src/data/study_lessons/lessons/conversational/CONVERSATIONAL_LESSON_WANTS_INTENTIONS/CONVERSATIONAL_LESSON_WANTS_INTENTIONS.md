@@ -28,6 +28,8 @@ Learn to say what you want, decline food politely, and accept an offered drink. 
 
 **主语 + 想 + 动作** (zhǔyǔ + xiǎng + dòngzuò)
 
+&lt;who or what&gt; + **想** + &lt;what to do&gt;
+
 想 (xiǎng) expresses a wish or desire followed by a verb.
 
 我想吃午饭。 (wǒ xiǎng chī wǔfàn.) — I want to eat lunch.
@@ -36,6 +38,8 @@ A useful opening when suggesting what to eat or do next.
 ## Grammar structure and spoken example
 
 **想不想 + 动作？** (xiǎng bu xiǎng + dòngzuò?)
+
+**想不想** + &lt;what to do&gt;？
 
 An A-not-A question asks whether someone wants to do something.
 

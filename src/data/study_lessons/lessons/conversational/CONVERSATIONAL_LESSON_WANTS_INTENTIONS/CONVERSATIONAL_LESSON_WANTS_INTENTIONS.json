@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-wants-intentions",
   "lesson_type": "dialogue",
   "lesson": {
@@ -131,7 +131,8 @@
           "pinyin": "wǒ xiǎng chī wǔfàn.",
           "english": "I want to eat lunch.",
           "teaching_note": "A useful opening when suggesting what to eat or do next."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 想 + <what to do>"
       },
       {
         "id": "grammar-2",
@@ -145,7 +146,8 @@
           "pinyin": "nǐ xiǎng bu xiǎng hē chá?",
           "english": "Do you want to drink tea?",
           "teaching_note": "The listener can answer 想 (xiǎng) or 不想 (bù xiǎng)."
-        }
+        },
+        "pattern_pseudo_translation": "想不想 + <what to do>？"
       },
       {
         "id": "key-expressions",

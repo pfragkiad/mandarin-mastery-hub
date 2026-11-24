@@ -32,7 +32,11 @@ Ask someone to help with simple tasks, handle objects and complete everyday acti
 
 帮 (bāng) can precede a person and the action you assist them with.
 
-**Pattern:** 帮 + person + verb
+**Pattern**
+
+帮 + 人 + 动词  
+*bāng + rén + dòngcí*  
+**帮** + &lt;person&gt; + &lt;verb&gt;
 
 **请帮我拿一下这本书。**
 *Qǐng bāng wǒ ná yíxià zhè běn shū.*
@@ -46,7 +50,11 @@ Sure, I’ll pick up the bag first.
 
 完 (wán) follows a verb to indicate completion, as in 洗完 (xǐ wán).
 
-**Pattern:** Verb + 完 + object
+**Pattern**
+
+动词 + 完 + 宾语  
+*dòngcí + wán + bīnyǔ*  
+&lt;verb&gt; + **完** + &lt;object&gt;
 
 **我洗完衣服再出去。**
 *Wǒ xǐ wán yīfu zài chūqù.*

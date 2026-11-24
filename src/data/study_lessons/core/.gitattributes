@@ -1,6 +1,5 @@
-# Preserve canonical authoring-source bytes from the supplied Core ZIP.
+# Preserve exact canonical Core bytes.
 .gitattributes -text
-# Supplied Markdown uses trailing spaces for hard line breaks.
 *.md whitespace=-blank-at-eol
 CHARACTER_LESSON_TEMPLATE.json -text
 CHARACTER_LESSON_TEMPLATE.md -text

@@ -30,7 +30,11 @@ Describe regular activities, birthdays, past habits and things about to happen.
 
 经常 (jīngcháng) means often; 有时 (yǒushí) means sometimes. Put the frequency word before the main action.
 
-**Pattern:** Subject + frequency adverb + verb
+**Pattern**
+
+主语 + 频率副词 + 动词  
+*zhǔyǔ + pínlǜ fùcí + dòngcí*  
+&lt;subject&gt; + &lt;frequency adverb&gt; + &lt;verb&gt;
 
 **我经常星期六去运动。**
 *Wǒ jīngcháng xīngqīliù qù yùndòng.*
@@ -44,7 +48,11 @@ Yes, my birthday is coming soon!
 
 Use 快要 (kuàiyào) before an event or verb phrase, often with 了 (le) to signal an impending change.
 
-**Pattern:** 快要 + event + 了
+**Pattern**
+
+快要 + 事件 + 了  
+*kuàiyào + shìjiàn + le*  
+**快要** + &lt;event&gt; + **了**
 
 **电影快要开始了，我们进去吧。**
 *Diànyǐng kuàiyào kāishǐ le, wǒmen jìnqù ba.*

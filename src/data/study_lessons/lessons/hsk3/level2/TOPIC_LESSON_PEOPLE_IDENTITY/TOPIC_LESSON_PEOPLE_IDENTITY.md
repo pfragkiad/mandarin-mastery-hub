@@ -30,7 +30,11 @@ Introduce someone, ask about surnames and describe people in a friendly conversa
 
 姓 (xìng) introduces a family name; 姓名 (xìngmíng) means a full name. Ask 姓什么 (xìng shénme) when you want the family name.
 
-**Pattern:** Person + 姓 + family name
+**Pattern**
+
+人 + 姓 + 姓氏  
+*rén + xìng + xìngshì*  
+&lt;person&gt; + **姓** + &lt;family name&gt;
 
 **我姓李，叫李小红。**
 *Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.*
@@ -44,7 +48,11 @@ My surname is Wang. My full name is Wang Xiaoming.
 
 Use 个子 (gèzi) with 高 (gāo) or another suitable adjective to describe a person’s height.
 
-**Pattern:** Person + 个子 + adjective
+**Pattern**
+
+人 + 个子 + 形容词  
+*rén + gèzi + xíngróngcí*  
+&lt;person&gt; + **个子** + &lt;adjective&gt;
 
 **这个女孩儿个子不高。**
 *Zhè ge nǚháir gèzi bù gāo.*

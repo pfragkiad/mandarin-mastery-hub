@@ -36,6 +36,8 @@ Learn to identify yourself on a call, invite someone to dinner, and negotiate a 
 
 **请问 + 称呼 + 在吗？** (qǐngwèn + chēnghu + zài ma?)
 
+**请问** + &lt;name or title&gt; + **在吗**？
+
 Use 请问 (qǐngwèn) plus a name and 在吗 (zài ma) when asking if someone is available on the telephone.
 
 请问李先生在吗？ (Qǐngwèn Lǐ xiānsheng zài ma?) — May I speak to Mr Li?
@@ -45,6 +47,8 @@ This sounds courteous when another person answers the telephone.
 
 **时间 + 不行；另一个时间 + 呢？** (shíjiān + bù xíng; lìng yí ge shíjiān + ne?)
 
+&lt;proposed time&gt; + **不行**；&lt;another time&gt; + **呢**？
+
 The particle 呢 (ne) offers an elliptical alternative when the topic is already understood.
 
 今晚不行，明天呢？ (Jīnwǎn bù xíng, míngtiān ne?) — Tonight does not work; how about tomorrow?
@@ -53,6 +57,8 @@ The follow-up invites the other speaker to consider another time.
 ## Grammar structure and spoken example
 
 **太晚了 + 早点见** (tài wǎn le + zǎo diǎn jiàn)
+
+**太晚了** + **早点见**
 
 Use 太晚了 (tài wǎn le) to object and 早点 (zǎo diǎn) to suggest an earlier time.
 

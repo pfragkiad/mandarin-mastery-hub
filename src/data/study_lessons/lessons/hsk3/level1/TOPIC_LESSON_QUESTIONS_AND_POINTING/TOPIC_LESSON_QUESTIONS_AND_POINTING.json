@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-questions-and-pointing",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -32,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -53,6 +53,7 @@
     "今": "Characters:今",
     "他": "Characters:他",
     "以": "Characters:以",
+    "们": "Characters:们",
     "件": "Characters:件",
     "会": "Characters:会",
     "但": "Characters:但",
@@ -124,6 +125,7 @@
     "老": "Characters:老",
     "苹": "Characters:苹",
     "茶": "Characters:茶",
+    "菜": "Characters:菜",
     "衣": "Characters:衣",
     "要": "Characters:要",
     "觉": "Characters:觉",
@@ -144,8 +146,10 @@
     "院": "Characters:院",
     "题": "Characters:题",
     "饭": "Characters:饭",
-    "们": "Characters:们",
-    "菜": "Characters:菜"
+    "动": "Characters:动",
+    "名": "Characters:名",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -1291,7 +1295,6 @@
           "id": "pattern-1",
           "title": "This versus that",
           "explanation_en": "这 (zhè) points to something closer in the discourse or situation; 那 (nà) points to something more distant. Add a classifier when identifying a specific item.",
-          "formula_en": "这/那 + classifier + noun",
           "examples": [
             {
               "hanzi": "这个苹果很好吃。",
@@ -1303,13 +1306,15 @@
               "pinyin": "Nà jiàn yīfu hěn piàoliang.",
               "english": "That item of clothing is pretty."
             }
-          ]
+          ],
+          "pattern_hanzi": "这/那 + 量词 + 名词",
+          "pattern_pinyin": "zhè/nà + liàngcí + míngcí",
+          "pattern_pseudo_translation": "这/那 + <classifier> + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "Choose the right question word",
           "explanation_en": "什么 (shénme) asks “what”; 谁 (shéi) asks “who”; 哪 (nǎ) asks “which”; 哪里 (nǎlǐ) asks “where”; 怎么 (zěnme) asks “how”.",
-          "formula_en": "谁 + verb? / 在 + 哪里?",
           "examples": [
             {
               "hanzi": "谁是你的老师？",
@@ -1321,7 +1326,10 @@
               "pinyin": "Nǐ zhù zài nǎlǐ?",
               "english": "Where do you live?"
             }
-          ]
+          ],
+          "pattern_hanzi": "谁 + 动词？ / 在 + 哪里？",
+          "pattern_pinyin": "shéi + dòngcí? / zài + nǎlǐ?",
+          "pattern_pseudo_translation": "谁 + <verb>？ / 在 + 哪里？"
         }
       ],
       "guided_building": {

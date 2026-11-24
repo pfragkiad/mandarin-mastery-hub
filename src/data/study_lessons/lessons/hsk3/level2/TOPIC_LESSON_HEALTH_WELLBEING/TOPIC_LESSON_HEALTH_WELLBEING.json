@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-how-are-you-feeling",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -157,7 +157,10 @@
     "里": "Characters:里",
     "间": "Characters:间",
     "院": "Characters:院",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "人": "Characters:人",
+    "位": "Characters:位",
+    "部": "Characters:部"
   },
   "sections": {
     "overview": {
@@ -990,7 +993,6 @@
           "id": "pattern-1",
           "title": "Describing pain",
           "explanation_en": "Put 疼 (téng) after a body part such as 头 (tóu) or 手 (shǒu) to describe where something hurts.",
-          "formula_en": "Body part + 疼",
           "examples": [
             {
               "hanzi": "我今天很累，想早点儿睡觉。",
@@ -1002,13 +1004,15 @@
               "pinyin": "Wǒ tóu téng, yǎnjing yě bù shūfu.",
               "english": "I have a headache, and my eyes feel uncomfortable too."
             }
-          ]
+          ],
+          "pattern_hanzi": "身体部位 + 疼",
+          "pattern_pinyin": "shēntǐ bùwèi + téng",
+          "pattern_pseudo_translation": "<body part> + 疼"
         },
         {
           "id": "pattern-2",
           "title": "Describing how you feel",
           "explanation_en": "舒服 (shūfu) means comfortable; 不舒服 (bù shūfu) means uncomfortable or unwell.",
-          "formula_en": "Person + 不 + 舒服",
           "examples": [
             {
               "hanzi": "运动以后，我觉得很舒服。",
@@ -1020,7 +1024,10 @@
               "pinyin": "Wǒ xiān xiūxi yíxià, míngtiān shēntǐ hǎo le zài qù yóuyǒng.",
               "english": "I’ll rest first and go swimming tomorrow when I feel better."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 不 + 舒服",
+          "pattern_pinyin": "rén + bù + shūfu",
+          "pattern_pseudo_translation": "<person> + 不 + 舒服"
         }
       ],
       "guided_building": {

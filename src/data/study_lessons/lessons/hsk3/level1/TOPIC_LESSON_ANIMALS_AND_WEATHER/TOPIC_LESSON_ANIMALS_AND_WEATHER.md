@@ -32,7 +32,11 @@ Two friends decide whether to go outside and talk about the weather and a pet.
 
 Use 天气 (tiānqì) for the weather, then an adjective or weather event. 下雨 (xià yǔ) functions as “to rain”; do not translate it word-for-word as “down rain”.
 
-**Pattern:** 今天 + 天气 + 很 + adjective; / 今天 + 下雨
+**Pattern**
+
+今天 + 天气 + 很 + 形容词 / 今天 + 下雨  
+*jīntiān + tiānqì + hěn + xíngróngcí / jīntiān + xiàyǔ*  
+**今天** + **天气** + **很** + &lt;adjective&gt; / **今天** + **下雨**
 
 **今天天气很热。**
 *Jīntiān tiānqì hěn rè.*
@@ -46,7 +50,11 @@ It may rain tomorrow.
 
 在 (zài) locates the subject. The animal classifier 只 (zhī) introduces an individual cat or dog.
 
-**Pattern:** [那/这] + 只 + animal + 在 + place
+**Pattern**
+
+[那/这] + 只 + 动物 + 在 + 地点  
+*[nà/zhè] + zhī + dòngwù + zài + dìdiǎn*  
+[**那**/**这**] + **只** + &lt;animal&gt; + **在** + &lt;place&gt;
 
 **这只狗在房间里。**
 *Zhè zhī gǒu zài fángjiān lǐ.*

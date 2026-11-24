@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-understanding-clarification",
   "lesson_type": "dialogue",
   "lesson": {
@@ -119,7 +119,8 @@
           "pinyin": "wǒ bù míngbai.",
           "english": "I do not understand.",
           "teaching_note": "This is a natural way to signal difficulty following what someone says."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 不 + <verb like “understand”>"
       },
       {
         "id": "grammar-2",
@@ -133,7 +134,8 @@
           "pinyin": "nǐ shuō shénme?",
           "english": "What did you say?",
           "teaching_note": "In a conversation, this asks the other person to clarify their words."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 说 + 什么？"
       },
       {
         "id": "key-expressions",

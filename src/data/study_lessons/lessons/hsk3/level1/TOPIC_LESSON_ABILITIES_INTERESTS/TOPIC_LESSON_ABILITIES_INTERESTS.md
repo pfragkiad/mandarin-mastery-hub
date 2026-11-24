@@ -32,7 +32,11 @@ Two classmates are planning what to do after class. Notice how ability and desir
 
 会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.
 
-**Pattern:** Subject + 会/能 + verb
+**Pattern**
+
+主语 + 会/能 + 动词  
+*zhǔyǔ + huì/néng + dòngcí*  
+&lt;subject&gt; + **会**/**能** + &lt;verb&gt;
 
 **我也会说一点儿汉语。**
 *Wǒ yě huì shuō yìdiǎnr Hànyǔ.*
@@ -46,7 +50,11 @@ I can go today (circumstances allow).
 
 想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).
 
-**Pattern:** Subject + 想/要 + verb/noun
+**Pattern**
+
+主语 + 想/要 + 动词/名词  
+*zhǔyǔ + xiǎng/yào + dòngcí/míngcí*  
+&lt;subject&gt; + **想**/**要** + &lt;verb&gt;/&lt;noun&gt;
 
 **我想喝茶。**
 *Wǒ xiǎng hē chá.*

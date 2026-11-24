@@ -1,8 +1,8 @@
 # Conversational Mandarin lessons
 
-17 beginner dialogue lessons from the owner-supplied Other Lessons v3.4.0
+17 beginner dialogue lessons from the owner-supplied Other Lessons v3.6.0
 coverage v1.1.5 editorial release, including phone invitations and newspaper shopping. Each `CONVERSATIONAL_LESSON_*` directory keeps exactly the
-supplied JSON (`mandarin-general-lesson/3.3.0`), HTML, Markdown and `report.md`.
+supplied JSON (`mandarin-general-lesson/3.4.0`), HTML, Markdown and `report.md`.
 
 | File | Purpose | Consumer / generator |
 | --- | --- | --- |
@@ -14,14 +14,14 @@ supplied JSON (`mandarin-general-lesson/3.3.0`), HTML, Markdown and `report.md`.
 | `REGIONAL_EXPRESSION_MARKERS.json` | 49 supplied expression-specific regional markers. | Offline reference; not currently used by the app. |
 | `COLLECTION_README.md`, `PACKAGE_README.md` | Exact supplied collection and outer-package notes. | Authoring reference; not loaded. |
 
-Import/audit with `python scripts/import-lessons-v3.4.0.py [--write]` from the
+Import/audit with `python scripts/import-lessons-v3.6.1.py [--write]` from the
 repository root. The Python importer validates Core, exact catalog references,
 checkpoint targets and stable lesson/question identities before copying source
 bytes. No lesson text or pinyin is generated, guessed or rewritten during import.
 
 Course placement lives in [the curriculum](../curricula/CONVERSATIONAL_MANDARIN.json).
 The [source guide](../../../../../importer/data/lessons/README.md) records current
-packages and checksums; the [import audit](../../../../../reports/lessons-3.4.0-import.json)
+packages and checksums; the [import audit](../../../../../reports/lessons-3.6.1-import.json)
 records validation. The [original transcript/extraction inputs](../../../../../importer/data/lessons/conversational-mandarin/README.md)
 remain separate provenance, without implying that editorial teaching dialogues
 are verbatim transcripts. The supplied audit does not claim native-speaker certification.
@@ -38,3 +38,7 @@ JSON supplies learner-facing notes. The frontend display update is a separate
 handoff. Notes are explanatory text, never pronunciation input. The included
 v1.1.4 linguistic audit is explicitly marked historical and superseded for the
 five restored forms.
+
+The current package supplies 43 three-line grammar patterns. The additional
+`pattern_pseudo_translation` line is display-only. See the supplied
+[frontend migration report](../../../../../reports/Frontend_Migration_Report_Core_v3.6.0.md).

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-counting-numbers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -28,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -101,7 +101,13 @@
     "里": "Characters:里",
     "钱": "Characters:钱",
     "间": "Characters:间",
-    "零": "Characters:零"
+    "零": "Characters:零",
+    "位": "Characters:位",
+    "名": "Characters:名",
+    "字": "Characters:字",
+    "数": "Characters:数",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -850,8 +856,7 @@
         {
           "id": "pattern-1",
           "title": "Building larger numbers",
-          "explanation_en": "Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ).",
-          "formula_en": "hundreds + tens + ones",
+          "explanation_en": "Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ). The slots show place values up to the thousands. Use 零 (líng) where required for a gap. For 10–19, the initial one before 十 (shí) is normally omitted.",
           "examples": [
             {
               "hanzi": "二百三十六。",
@@ -863,13 +868,15 @@
               "pinyin": "Yì qiān líng èr.",
               "english": "One thousand and two."
             }
-          ]
+          ],
+          "pattern_hanzi": "(千位数字 + 千) + (百位数字 + 百) + (十位数字 + 十) + 个位数字",
+          "pattern_pinyin": "(qiānwèi shùzì + qiān) + (bǎiwèi shùzì + bǎi) + (shíwèi shùzì + shí) + gèwèi shùzì",
+          "pattern_pseudo_translation": "(<number of thousands> + 千) + (<number of hundreds> + 百) + (<number of tens> + 十) + <number of ones>"
         },
         {
           "id": "pattern-2",
           "title": "Numbers with nouns",
           "explanation_en": "Use a suitable classifier when counting most nouns. Do not put an English-style plural ending on the noun.",
-          "formula_en": "number + classifier + noun",
           "examples": [
             {
               "hanzi": "三本书。",
@@ -881,7 +888,10 @@
               "pinyin": "Shí ge rén.",
               "english": "Ten people."
             }
-          ]
+          ],
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pinyin": "shùzì + liàngcí + míngcí",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
         }
       ],
       "guided_building": {

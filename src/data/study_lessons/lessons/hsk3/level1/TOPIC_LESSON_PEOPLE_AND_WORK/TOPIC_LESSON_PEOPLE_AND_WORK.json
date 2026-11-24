@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-people-and-work",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -118,7 +118,9 @@
     "里": "Characters:里",
     "问": "Characters:问",
     "院": "Characters:院",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "主": "Characters:主",
+    "地": "Characters:地"
   },
   "sections": {
     "overview": {
@@ -746,7 +748,6 @@
           "id": "pattern-1",
           "title": "Asking and giving names",
           "explanation_en": "叫 (jiào) introduces a name in 我叫… (wǒ jiào …). With 您 (nín), the question becomes more formal and respectful.",
-          "formula_en": "我叫 + name; 您叫什么名字?",
           "examples": [
             {
               "hanzi": "我叫小李。",
@@ -758,13 +759,15 @@
               "pinyin": "Qǐngwèn, nín jiào shénme míngzi?",
               "english": "Excuse me, what is your name?"
             }
-          ]
+          ],
+          "pattern_hanzi": "我叫 + 名字; 您叫什么名字？",
+          "pattern_pinyin": "wǒ jiào + míngzi; nín jiào shénme míngzi?",
+          "pattern_pseudo_translation": "我叫 + <name>; 您叫什么名字？"
         },
         {
           "id": "pattern-2",
           "title": "Where someone works and when",
           "explanation_en": "在 (zài) introduces a workplace; 上班 (shàngbān) can mean going to work or being on duty; 下班 (xiàbān) means finishing work.",
-          "formula_en": "subject + 在 + place + 工作",
           "examples": [
             {
               "hanzi": "我在学校工作。",
@@ -776,7 +779,10 @@
               "pinyin": "Tā xiàwǔ liù diǎn xiàbān.",
               "english": "She finishes work at six in the afternoon."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 在 + 地点 + 工作",
+          "pattern_pinyin": "zhǔyǔ + zài + dìdiǎn + gōngzuò",
+          "pattern_pseudo_translation": "<subject> + 在 + <place> + 工作"
         }
       ],
       "guided_building": {

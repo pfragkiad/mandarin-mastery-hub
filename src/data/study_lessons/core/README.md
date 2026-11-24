@@ -1,3 +1,17 @@
+# Core v3.6.1
+
+Catalog reference repair for the HSK topic template. Lesson schema versions and schema files are unchanged from Core v3.6.0.
+
+# Core v3.6.0 · Taxonomy v2.0.0
+
+Topic lesson format v3.4.0 replaces `formula_en` with the shared three pattern fields. Earlier topic formats retain the legacy field. The character construction schema accepts the optional third line. General lesson format v3.4.0 continues to use it. Render placeholders as text and keep the pseudo-translation out of audio.
+
+# Core v3.5.0 · Taxonomy v2.0.0
+
+General lesson schema v3.4.0 adds optional `pattern_pseudo_translation` to `grammar_pattern`. Earlier general lesson format versions remain accepted. The topic lesson and character lesson formats use their own schemas.
+
+The four general JSON templates use v3.4.0. See the general lesson guide for authoring and rendering the optional third line.
+
 # Mandarin Tutor — Core Project Sources v3.4.0
 
 This **20-file** Project Source package is the **canonical authoring contract and authoring policy release**. The Core package version follows Semantic Versioning; the type-specific JSON Schema versions stay independently pinned. This MINOR release adds optional review-expression usage notes to the general-lesson JSON format while keeping all older general lessons and all HSK topic/character lessons compatible.

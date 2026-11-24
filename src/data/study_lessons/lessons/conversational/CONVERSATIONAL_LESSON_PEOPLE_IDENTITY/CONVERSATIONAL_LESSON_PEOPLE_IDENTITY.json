@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-people-identity",
   "lesson_type": "dialogue",
   "lesson": {
@@ -115,7 +115,8 @@
           "pinyin": "wǒ shì Zhōngguó rén.",
           "english": "I am Chinese.",
           "teaching_note": "Replace the nationality with another identity to introduce yourself or someone else."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 是 + <who they are>"
       },
       {
         "id": "grammar-2",
@@ -129,7 +130,8 @@
           "pinyin": "wǒ bú shì Měiguó rén.",
           "english": "I am not American.",
           "teaching_note": "The spoken reading changes to bú shì before fourth-tone 是 (shì)."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 不是 + <who they are>"
       },
       {
         "id": "key-expressions",
@@ -254,7 +256,8 @@
           "pinyin": "Nǐ shì bú shì Zhōngguó rén?",
           "english": "Are you Chinese?",
           "teaching_note": "A direct response may begin with 是 (shì) or 不是 (bú shì)."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 是不是 + <who they are>？"
       }
     ],
     "practice": {

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-shopping-and-things",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -33,7 +33,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -82,6 +82,7 @@
     "大": "Characters:大",
     "天": "Characters:天",
     "太": "Characters:太",
+    "她": "Characters:她",
     "好": "Characters:好",
     "妈": "Characters:妈",
     "子": "Characters:子",
@@ -135,6 +136,7 @@
     "西": "Characters:西",
     "要": "Characters:要",
     "话": "Characters:话",
+    "说": "Characters:说",
     "请": "Characters:请",
     "课": "Characters:课",
     "谁": "Characters:谁",
@@ -146,10 +148,14 @@
     "里": "Characters:里",
     "钱": "Characters:钱",
     "门": "Characters:门",
+    "问": "Characters:问",
     "间": "Characters:间",
-    "她": "Characters:她",
-    "说": "Characters:说",
-    "问": "Characters:问"
+    "品": "Characters:品",
+    "字": "Characters:字",
+    "客": "Characters:客",
+    "数": "Characters:数",
+    "物": "Characters:物",
+    "顾": "Characters:顾"
   },
   "sections": {
     "overview": {
@@ -1206,7 +1212,6 @@
           "id": "pattern-1",
           "title": "Prices: 元 (yuán) and 块 (kuài)",
           "explanation_en": "元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.",
-          "formula_en": "item + 多少钱? / number + 块",
           "examples": [
             {
               "hanzi": "这件衣服五十元。",
@@ -1218,13 +1223,15 @@
               "pinyin": "Nà zhāng zhuōzi yì bǎi kuài.",
               "english": "That table is one hundred yuan."
             }
-          ]
+          ],
+          "pattern_hanzi": "物品 + 多少钱？ / 数字 + 块",
+          "pattern_pinyin": "wùpǐn + duōshao qián? / shùzì + kuài",
+          "pattern_pseudo_translation": "<item> + 多少钱？ / <number> + 块"
         },
         {
           "id": "pattern-2",
           "title": "Buying versus selling",
           "explanation_en": "买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.",
-          "formula_en": "shop + 卖 + item; customer + 买 + item",
           "examples": [
             {
               "hanzi": "这家商店卖手机。",
@@ -1236,7 +1243,10 @@
               "pinyin": "Wǒ xiǎng mǎi xīn diànnǎo.",
               "english": "I want to buy a new computer."
             }
-          ]
+          ],
+          "pattern_hanzi": "商店 + 卖 + 物品; 顾客 + 买 + 物品",
+          "pattern_pinyin": "shāngdiàn + mài + wùpǐn; gùkè + mǎi + wùpǐn",
+          "pattern_pseudo_translation": "<shop> + 卖 + <item>; <customer> + 买 + <item>"
         }
       ],
       "guided_building": {

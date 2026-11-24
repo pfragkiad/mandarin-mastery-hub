@@ -32,7 +32,11 @@ Ask where places are and follow simple walking directions in an unfamiliar area.
 
 从 (cóng) introduces the starting location of a journey or movement.
 
-**Pattern:** 从 + starting point + verb
+**Pattern**
+
+从 + 出发点 + 动词  
+*cóng + chūfādiǎn + dòngcí*  
+**从** + &lt;starting point&gt; + &lt;verb&gt;
 
 **请从学校门口往左走。**
 *Qǐng cóng xuéxiào ménkǒu wǎng zuǒ zǒu.*
@@ -46,7 +50,11 @@ Walk forward from here, then turn right at the entrance.
 
 往 (wǎng) marks the direction of travel; combine it with 前 (qián), 左 (zuǒ), or 右 (yòu).
 
-**Pattern:** 往 + direction + 走
+**Pattern**
+
+往 + 方向 + 走  
+*wǎng + fāngxiàng + zǒu*  
+**往** + &lt;direction&gt; + **走**
 
 **洗手间就在前面。**
 *Xǐshǒujiān jiù zài qiánmiàn.*

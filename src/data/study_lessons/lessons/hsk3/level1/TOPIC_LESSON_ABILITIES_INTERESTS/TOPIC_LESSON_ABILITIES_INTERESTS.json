@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -34,7 +34,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -50,6 +50,7 @@
     "中": "Characters:中",
     "么": "Characters:么",
     "也": "Characters:也",
+    "习": "Characters:习",
     "书": "Characters:书",
     "买": "Characters:买",
     "什": "Characters:什",
@@ -66,6 +67,7 @@
     "做": "Characters:做",
     "儿": "Characters:儿",
     "八": "Characters:八",
+    "写": "Characters:写",
     "午": "Characters:午",
     "去": "Characters:去",
     "友": "Characters:友",
@@ -86,6 +88,7 @@
     "妈": "Characters:妈",
     "妹": "Characters:妹",
     "子": "Characters:子",
+    "字": "Characters:字",
     "学": "Characters:学",
     "孩": "Characters:孩",
     "小": "Characters:小",
@@ -143,9 +146,10 @@
     "里": "Characters:里",
     "间": "Characters:间",
     "院": "Characters:院",
-    "写": "Characters:写",
-    "字": "Characters:字",
-    "习": "Characters:习"
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "名": "Characters:名",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -961,7 +965,6 @@
           "id": "pattern-1",
           "title": "Ability: 会 (huì) versus 能 (néng)",
           "explanation_en": "会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.",
-          "formula_en": "Subject + 会/能 + verb",
           "examples": [
             {
               "hanzi": "我也会说一点儿汉语。",
@@ -973,13 +976,15 @@
               "pinyin": "Wǒ jīntiān néng qù.",
               "english": "I can go today (circumstances allow)."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 会/能 + 动词",
+          "pattern_pinyin": "zhǔyǔ + huì/néng + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 会/能 + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Desire: 想 (xiǎng) versus 要 (yào)",
           "explanation_en": "想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).",
-          "formula_en": "Subject + 想/要 + verb/noun",
           "examples": [
             {
               "hanzi": "我想喝茶。",
@@ -991,7 +996,10 @@
               "pinyin": "Wǒ yào kàn zhè běn shū.",
               "english": "I want to read this book."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 想/要 + 动词/名词",
+          "pattern_pinyin": "zhǔyǔ + xiǎng/yào + dòngcí/míngcí",
+          "pattern_pseudo_translation": "<subject> + 想/要 + <verb>/<noun>"
         }
       ],
       "guided_building": {

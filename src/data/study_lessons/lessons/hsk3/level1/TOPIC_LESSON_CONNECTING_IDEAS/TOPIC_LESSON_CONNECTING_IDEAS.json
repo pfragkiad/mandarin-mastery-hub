@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-connecting-ideas",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -125,7 +125,13 @@
     "门": "Characters:门",
     "非": "Characters:非",
     "饭": "Characters:饭",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "主": "Characters:主",
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "群": "Characters:群",
+    "词": "Characters:词",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -800,7 +806,6 @@
           "id": "pattern-1",
           "title": "Adding and combining information",
           "explanation_en": "也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.",
-          "formula_en": "subject + 也 + verb; group + 都 + verb",
           "examples": [
             {
               "hanzi": "妹妹也喜欢喝茶。",
@@ -812,13 +817,15 @@
               "pinyin": "Wǒmen dōu xǐhuan Zhōngwén.",
               "english": "We all like Chinese."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 也 + 动词; 一群人 + 都 + 动词",
+          "pattern_pinyin": "zhǔyǔ + yě + dòngcí; yì qún rén + dōu + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 也 + <verb>; <group> + 都 + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Degree and ongoing actions",
           "explanation_en": "很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.",
-          "formula_en": "subject + 正在 + verb",
           "examples": [
             {
               "hanzi": "她正在做饭。",
@@ -830,7 +837,10 @@
               "pinyin": "Jīntiān zhēn rè!",
               "english": "It is really hot today!"
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 正在 + 动词",
+          "pattern_pinyin": "zhǔyǔ + zhèngzài + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 正在 + <verb>"
         }
       ],
       "guided_building": {

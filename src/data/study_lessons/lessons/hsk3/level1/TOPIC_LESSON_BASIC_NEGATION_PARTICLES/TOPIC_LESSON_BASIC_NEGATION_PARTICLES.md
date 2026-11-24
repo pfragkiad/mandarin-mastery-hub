@@ -30,7 +30,11 @@ Listen to how small particles change the *function* of a sentence, not its main 
 
 不 (bù) typically negates identity, habitual actions, wants or future choices. 没有 (méiyǒu) negates possession and is used in common past-event negation.
 
-**Pattern:** 不 + adjective/verb; 没有 + noun
+**Pattern**
+
+不 + 形容词/动词; 没有 + 名词  
+*bù + xíngróngcí/dòngcí; méiyǒu + míngcí*  
+**不** + &lt;adjective&gt;/&lt;verb&gt;; **没有** + &lt;noun&gt;
 
 **我晚上不喝茶。**
 *Wǒ wǎnshang bù hē chá.*
@@ -44,7 +48,11 @@ My younger sister does not have a mobile phone.
 
 吗 (ma) turns a statement into a yes/no question; 呢 (ne) often returns the topic to the listener; 吧 (ba) can soften a suggestion.
 
-**Pattern:** statement + 吗?; topic + 呢?; suggestion + 吧
+**Pattern**
+
+陈述句 + 吗？; 话题 + 呢？; 建议 + 吧  
+*chénshùjù + ma?; huàtí + ne?; jiànyì + ba*  
+&lt;statement&gt; + **吗**？; &lt;topic&gt; + **呢**？; &lt;suggestion&gt; + **吧**
 
 **她是学生吗？**
 *Tā shì xuéshēng ma?*

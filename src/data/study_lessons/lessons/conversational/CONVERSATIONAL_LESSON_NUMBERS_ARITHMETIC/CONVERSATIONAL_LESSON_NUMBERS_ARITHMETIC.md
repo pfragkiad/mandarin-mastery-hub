@@ -28,6 +28,8 @@ Learn to say two-digit numbers and ask or answer simple addition questions. Use 
 
 **数字 + 加 + 数字 + 是多少？** (shùzì + jiā + shùzì + shì duōshao?)
 
+&lt;first number&gt; + **加** + &lt;second number&gt; + **是多少**？
+
 Use 加 (jiā) for addition; 多少 (duōshao) asks for the result.
 
 六加六是多少？ (liù jiā liù shì duōshao?) — What is six plus six?
@@ -36,6 +38,8 @@ Use the pattern to ask for a total during a purchase.
 ## Grammar structure and spoken example
 
 **数字 + 十 + 数字** (shùzì + shí + shùzì)
+
+&lt;tens digit&gt; + **十** + &lt;ones digit&gt;
 
 Numbers 11–19 use ten plus a digit, while 20–99 use tens plus a digit.
 

@@ -30,6 +30,8 @@ Pronunciation note: This course uses some northern-style 儿化 (érhuà) forms.
 
 **主语 + 会 + 说 + 语言** (zhǔyǔ + huì + shuō + yǔyán)
 
+&lt;who or what&gt; + **会** + **说** + &lt;language&gt;
+
 会 (huì) expresses acquired ability; add a language after 说 (shuō).
 
 我会说普通话。 (wǒ huì shuō Pǔtōnghuà.) — I can speak Mandarin.
@@ -38,6 +40,8 @@ Use this to describe a language you can speak, even if your ability is limited.
 ## Grammar structure and spoken example
 
 **主语 + 说 + 得 + 程度** (zhǔyǔ + shuō + de + chéngdù)
+
+&lt;who or what&gt; + **说** + **得** + &lt;how well&gt;
 
 得 (de) introduces how well the action is performed.
 
@@ -87,6 +91,8 @@ Speaking task: Ask a partner what language they speak; answer using 会 (huì), 
 
 **主语 + 说得 + 不太好** (zhǔyǔ + shuō de + bú tài hǎo)
 
+&lt;who or what&gt; + **说得** + **不太好**
+
 The result complement 得 (de) describes how well an action is performed; do not confuse it with 的 (de).
 
 我说得不太好。 (Wǒ shuō de bú tài hǎo.) — I do not speak very well.
@@ -95,6 +101,8 @@ A modest reply acknowledges limited ability without claiming you cannot speak at
 ## Grammar structure and spoken example
 
 **可是 + 对比的句子** (kěshì + duìbǐ de jùzi)
+
+**可是** + &lt;contrasting idea&gt;
 
 可是 (kěshì) introduces a contrast; 一点儿 (yìdiǎnr) has optional northern rhotic pronunciation.
 

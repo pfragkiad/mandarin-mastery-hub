@@ -36,6 +36,8 @@ Learn to ask for a newspaper, confirm its price, and respond when you lack the r
 
 **有没有 + 物品？** (yǒu méiyǒu + wùpǐn?)
 
+**有没有** + &lt;item&gt;？
+
 有没有 (yǒu méiyǒu) is the A-not-A form of 有 (yǒu), used for availability or possession.
 
 你有没有今天的报纸？ (Nǐ yǒu méiyǒu jīntiān de bàozhǐ?) — Do you have today’s newspaper?
@@ -45,6 +47,8 @@ Replace newspaper with another item when asking whether it is in stock.
 
 **物品 + 是不是 + 价格？** (wùpǐn + shì bú shì + jiàgé?)
 
+&lt;item&gt; + **是不是** + &lt;price&gt;？
+
 是不是 (shì bú shì) asks for confirmation without a final 吗 (ma).
 
 这个是不是八块？ (Zhège shì bú shì bā kuài?) — Is this eight yuan?
@@ -53,6 +57,8 @@ Use this to check the amount you think you heard.
 ## Grammar structure and spoken example
 
 **数字 + 不是 + 另一个数字** (shùzì + bú shì + lìng yí ge shùzì)
+
+&lt;number&gt; + **不是** + &lt;another number&gt;
 
 Check numbers carefully: 八 (bā) is eight, whereas 十八 (shíbā) is eighteen.
 

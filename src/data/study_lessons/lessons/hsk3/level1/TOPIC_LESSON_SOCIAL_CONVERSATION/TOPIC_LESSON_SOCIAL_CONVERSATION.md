@@ -30,7 +30,11 @@ Use realistic first-meeting and telephone exchanges. Focus on conventional repli
 
 请问 (qǐngwèn) introduces a polite request or question. 您 (nín) shows respect. At the start of a phone conversation 喂 (wèi) functions as a greeting/attention-getter.
 
-**Pattern:** 请问 + question
+**Pattern**
+
+请问 + 问题  
+*qǐngwèn + wèntí*  
+**请问** + &lt;question&gt;
 
 **请问，您认识王老师吗？**
 *Qǐngwèn, nín rènshi Wáng lǎoshī ma?*
@@ -44,7 +48,11 @@ Excuse me, where is the hospital?
 
 Use the conventional response matched to the situation: 对不起 (duìbuqǐ) → 没关系 (méi guānxi); 谢谢 (xièxie) → 不客气 (bú kèqi).
 
-**Pattern:** apology → reassurance; thanks → welcome
+**Pattern**
+
+对不起 → 没关系 / 谢谢 → 不客气  
+*duìbuqǐ → méi guānxi / xièxie → bú kèqi*  
+**对不起** → **没关系** / **谢谢** → **不客气**
 
 **对不起，我今天来晚了。**
 *Duìbuqǐ, wǒ jīntiān lái wǎn le.*

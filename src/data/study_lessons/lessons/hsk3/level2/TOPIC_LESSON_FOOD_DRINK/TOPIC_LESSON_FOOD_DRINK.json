@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-choosing-drinks-and-food",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -116,7 +116,12 @@
     "面": "Characters:面",
     "饭": "Characters:饭",
     "馆": "Characters:馆",
-    "鱼": "Characters:鱼"
+    "鱼": "Characters:鱼",
+    "人": "Characters:人",
+    "料": "Characters:料",
+    "物": "Characters:物",
+    "食": "Characters:食",
+    "饮": "Characters:饮"
   },
   "sections": {
     "overview": {
@@ -770,7 +775,6 @@
           "id": "pattern-1",
           "title": "Ordering at a restaurant",
           "explanation_en": "点 (diǎn) is a verb meaning to order in a restaurant, as well as having other uses in the language.",
-          "formula_en": "Person + 点 + food/drink",
           "examples": [
             {
               "hanzi": "你想喝红茶还是绿茶？",
@@ -782,13 +786,15 @@
               "pinyin": "Wǒ yào yì bēi lǜchá, péngyou xiǎng hē nǎichá.",
               "english": "I’ll have a cup of green tea, and my friend wants milk tea."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 点 + 食物/饮料",
+          "pattern_pinyin": "rén + diǎn + shíwù/yǐnliào",
+          "pattern_pseudo_translation": "<person> + 点 + <food>/<drink>"
         },
         {
           "id": "pattern-2",
           "title": "Kinds of tea and drinks",
           "explanation_en": "Use 红茶 (hóngchá), 绿茶 (lǜchá), 奶茶 (nǎichá), or 咖啡 (kāfēi) as the ordered drink.",
-          "formula_en": "一杯 + drink",
           "examples": [
             {
               "hanzi": "我想点一杯咖啡。",
@@ -800,7 +806,10 @@
               "pinyin": "Wǒ yào yú. Qǐng zài gěi wǒ yì bēi kāfēi.",
               "english": "I’ll have the fish. Please bring me a coffee too."
             }
-          ]
+          ],
+          "pattern_hanzi": "一杯 + 饮料",
+          "pattern_pinyin": "yì bēi + yǐnliào",
+          "pattern_pseudo_translation": "一杯 + <drink>"
         }
       ],
       "guided_building": {

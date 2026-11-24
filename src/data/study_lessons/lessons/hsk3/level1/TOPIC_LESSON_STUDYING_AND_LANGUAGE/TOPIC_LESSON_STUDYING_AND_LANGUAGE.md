@@ -30,7 +30,11 @@ Two classmates plan how to practise listening, speaking, reading and writing in 
 
 学习 (xuéxí) means studying or learning; 上课 (shàngkè) means attending class; 下课 (xiàkè) means finishing class or the class period ending.
 
-**Pattern:** person + 在 + verb + object
+**Pattern**
+
+人 + 在 + 动词 + 宾语  
+*rén + zài + dòngcí + bīnyǔ*  
+&lt;person&gt; + **在** + &lt;verb&gt; + &lt;object&gt;
 
 **我在学习中文。**
 *Wǒ zài xuéxí Zhōngwén.*
@@ -44,7 +48,11 @@ We have class at 9 a.m.
 
 听 (tīng) is the act of listening and 听见 (tīngjiàn) is the result of hearing. Read with 读 (dú), speak with 说 (shuō), write with 写 (xiě).
 
-**Pattern:** 我 + skill verb + object
+**Pattern**
+
+我 + 技能动词 + 宾语  
+*wǒ + jìnéng dòngcí + bīnyǔ*  
+**我** + &lt;skill verb&gt; + &lt;object&gt;
 
 **我喜欢听汉语。**
 *Wǒ xǐhuan tīng Hànyǔ.*

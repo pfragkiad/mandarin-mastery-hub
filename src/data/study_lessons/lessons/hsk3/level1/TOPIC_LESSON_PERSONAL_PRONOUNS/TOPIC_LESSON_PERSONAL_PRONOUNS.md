@@ -30,7 +30,11 @@ A group of classmates identifies who is speaking, whom they address, and whom th
 
 我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.
 
-**Pattern:** pronoun + 是 + identity
+**Pattern**
+
+代词 + 是 + 身份  
+*dàicí + shì + shēnfèn*  
+&lt;pronoun&gt; + **是** + &lt;identity&gt;
 
 **他们是老师。**
 *Tāmen shì lǎoshī.*
@@ -44,7 +48,11 @@ We are friends.
 
 These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.
 
-**Pattern:** 他/她/它 + verb
+**Pattern**
+
+他/她/它 + 动词  
+*tā/tā/tā + dòngcí*  
+**他**/**她**/**它** + &lt;verb&gt;
 
 **她在看书。**
 *Tā zài kàn shū.*

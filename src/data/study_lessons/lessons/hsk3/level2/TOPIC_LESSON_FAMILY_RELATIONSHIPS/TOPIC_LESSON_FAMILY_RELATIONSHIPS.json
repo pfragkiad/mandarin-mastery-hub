@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-talking-about-family-members",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -122,7 +122,12 @@
     "门": "Characters:门",
     "院": "Characters:院",
     "饭": "Characters:饭",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "亲": "Characters:亲",
+    "人": "Characters:人",
+    "属": "Characters:属",
+    "所": "Characters:所",
+    "者": "Characters:者"
   },
   "sections": {
     "overview": {
@@ -605,7 +610,6 @@
           "id": "pattern-1",
           "title": "Introducing relatives",
           "explanation_en": "Place a possessive phrase before a family term: 我的 (wǒ de) + 爷爷 (yéye) or 奶奶 (nǎinai).",
-          "formula_en": "Possessor + 的 + relative",
           "examples": [
             {
               "hanzi": "这是我爷爷，那是我奶奶。",
@@ -617,13 +621,15 @@
               "pinyin": "Wǒ yào qù kàn yéye hé nǎinai.",
               "english": "I am going to visit my grandpa and grandma."
             }
-          ]
+          ],
+          "pattern_hanzi": "所属者 + 的 + 亲属",
+          "pattern_pinyin": "suǒshǔzhě + de + qīnshǔ",
+          "pattern_pseudo_translation": "<possessor> + 的 + <relative>"
         },
         {
           "id": "pattern-2",
           "title": "Talking about a spouse",
           "explanation_en": "妻子 (qīzi) means wife and 丈夫 (zhàngfu) means husband. Use the ordinary verb phrase that follows to tell what they do.",
-          "formula_en": "Person + 的 + 妻子/丈夫",
           "examples": [
             {
               "hanzi": "她的丈夫星期六要上班。",
@@ -635,7 +641,10 @@
               "pinyin": "Bù yuǎn. Wǒ de zhàngfu yě xiǎng yìqǐ qù.",
               "english": "Not far. My husband wants to go together too."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 的 + 妻子/丈夫",
+          "pattern_pinyin": "rén + de + qīzi/zhàngfu",
+          "pattern_pseudo_translation": "<person> + 的 + 妻子/丈夫"
         }
       ],
       "guided_building": {

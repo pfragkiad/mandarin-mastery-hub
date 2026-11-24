@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-sports-games-and-hobbies",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -142,7 +142,8 @@
     "间": "Characters:间",
     "院": "Characters:院",
     "音": "Characters:音",
-    "鸟": "Characters:鸟"
+    "鸟": "Characters:鸟",
+    "活": "Characters:活"
   },
   "sections": {
     "overview": {
@@ -818,7 +819,6 @@
           "id": "pattern-1",
           "title": "Different sports verbs",
           "explanation_en": "Use 打 (dǎ) with 篮球 (lánqiú), but 踢 (tī) with 足球 (zúqiú). These are conventional verb-noun collocations.",
-          "formula_en": "打篮球 / 踢足球",
           "examples": [
             {
               "hanzi": "我的爱好是打篮球。",
@@ -830,13 +830,15 @@
               "pinyin": "Wǒ xǐhuan dǎ lánqiú, yě xǐhuan tī zúqiú.",
               "english": "I like playing basketball and football."
             }
-          ]
+          ],
+          "pattern_hanzi": "打篮球 / 踢足球",
+          "pattern_pinyin": "dǎ lánqiú / tī zúqiú",
+          "pattern_pseudo_translation": "打篮球 / 踢足球"
         },
         {
           "id": "pattern-2",
           "title": "Describing a hobby",
           "explanation_en": "爱好 (àihào) refers to a hobby or interest. Use 我的爱好是 (wǒ de àihào shì) before an activity.",
-          "formula_en": "我的爱好是 + activity",
           "examples": [
             {
               "hanzi": "星期六我们一起去踢足球吧。",
@@ -848,7 +850,10 @@
               "pinyin": "Hǎo a! Yùndòng yǐhòu, wǒmen hái kěyǐ huàhuà huòzhě tiàowǔ.",
               "english": "Sure! After exercising, we can also draw or dance."
             }
-          ]
+          ],
+          "pattern_hanzi": "我的爱好是 + 活动",
+          "pattern_pinyin": "wǒ de àihào shì + huódòng",
+          "pattern_pseudo_translation": "我的爱好是 + <activity>"
         }
       ],
       "guided_building": {

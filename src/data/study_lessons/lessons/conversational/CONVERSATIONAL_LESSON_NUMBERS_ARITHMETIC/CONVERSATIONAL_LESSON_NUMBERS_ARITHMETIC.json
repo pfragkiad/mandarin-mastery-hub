@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-numbers-arithmetic",
   "lesson_type": "dialogue",
   "lesson": {
@@ -114,7 +114,8 @@
           "pinyin": "liù jiā liù shì duōshao?",
           "english": "What is six plus six?",
           "teaching_note": "Use the pattern to ask for a total during a purchase."
-        }
+        },
+        "pattern_pseudo_translation": "<first number> + 加 + <second number> + 是多少？"
       },
       {
         "id": "grammar-2",
@@ -128,7 +129,8 @@
           "pinyin": "èrshíwǔ",
           "english": "Twenty-five.",
           "teaching_note": "二十五 (èrshíwǔ) consists of two tens plus five."
-        }
+        },
+        "pattern_pseudo_translation": "<tens digit> + 十 + <ones digit>"
       },
       {
         "id": "key-expressions",

@@ -30,7 +30,11 @@ Add useful details to sentences with aspect markers, complements and negative in
 
 过 (guo) after a verb points to an experience, while 着 (zhe) after a verb can mark a persisting state; they do not mean the same thing.
 
-**Pattern:** Verb + 过 / Verb + 着
+**Pattern**
+
+动词 + 过 / 动词 + 着  
+*dòngcí + guo / dòngcí + zhe*  
+&lt;verb&gt; + **过** / &lt;verb&gt; + **着**
 
 **我看过这部电影。**
 *Wǒ kàn guo zhè bù diànyǐng.*
@@ -44,7 +48,11 @@ Yes! I’ve already been twice.
 
 地 (de) can link a manner modifier to a verb, while 得 (de) follows the verb and introduces a complement describing its degree or result.
 
-**Pattern:** Modifier + 地 + verb / Verb + 得 + complement
+**Pattern**
+
+修饰语 + 地 + 动词 / 动词 + 得 + 补语  
+*xiūshìyǔ + de + dòngcí / dòngcí + de + bǔyǔ*  
+&lt;modifier&gt; + **地** + &lt;verb&gt; / &lt;verb&gt; + **得** + &lt;complement&gt;
 
 **她跑得很快。**
 *Tā pǎo de hěn kuài.*

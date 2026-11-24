@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-talking-about-meanings-and-situations",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -102,7 +102,8 @@
     "释": "Characters:释",
     "重": "Characters:重",
     "问": "Characters:问",
-    "题": "Characters:题"
+    "题": "Characters:题",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -424,7 +425,6 @@
           "id": "pattern-1",
           "title": "Asking for a meaning",
           "explanation_en": "Use 什么意思 (shénme yìsi) to ask what a word or phrase means. 意思 (yìsi) has other conversational meanings, but here it is about meaning.",
-          "formula_en": "Word/phrase + 是什么意思?",
           "examples": [
             {
               "hanzi": "我不明白这句话的意思。",
@@ -436,13 +436,15 @@
               "pinyin": "Hǎo de, shì shénme shìqing?",
               "english": "Okay, what is it about?"
             }
-          ]
+          ],
+          "pattern_hanzi": "词语 + 是什么意思？",
+          "pattern_pinyin": "cíyǔ + shì shénme yìsi?",
+          "pattern_pseudo_translation": "<word or phrase> + 是什么意思？"
         },
         {
           "id": "pattern-2",
           "title": "Discussing a matter",
           "explanation_en": "事情 (shìqing) names a matter or event, often with the classifier 件 (jiàn).",
-          "formula_en": "一件 + 事情",
           "examples": [
             {
               "hanzi": "这件事情很重要。",
@@ -454,7 +456,10 @@
               "pinyin": "Wǒ gàosu nǐ tā de yìsi, ránhòu yìqǐ kànkan lìzi.",
               "english": "I’ll tell you what it means, and then we’ll look at examples together."
             }
-          ]
+          ],
+          "pattern_hanzi": "一件事情",
+          "pattern_pinyin": "yí jiàn shìqing",
+          "pattern_pseudo_translation": "一件事情"
         }
       ],
       "guided_building": {

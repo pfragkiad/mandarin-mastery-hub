@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-routines-and-making-plans",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -157,7 +157,11 @@
     "那": "Characters:那",
     "门": "Characters:门",
     "面": "Characters:面",
-    "题": "Characters:题"
+    "题": "Characters:题",
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "短": "Characters:短",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -869,7 +873,6 @@
           "id": "pattern-1",
           "title": "Remembering and forgetting",
           "explanation_en": "记得 (jìde) means remember; 忘 (wàng) means forget. Place a following verb phrase after them when describing what happened.",
-          "formula_en": "记得/忘 + action",
           "examples": [
             {
               "hanzi": "我记得明天要考试。",
@@ -881,13 +884,15 @@
               "pinyin": "Děng yíxià, wǒ wàng le ná shūbāo.",
               "english": "Wait, I forgot to take my schoolbag."
             }
-          ]
+          ],
+          "pattern_hanzi": "记得 + 动词短语 / 忘了 + 动词短语",
+          "pattern_pinyin": "jìde + dòngcí duǎnyǔ / wàng le + dòngcí duǎnyǔ",
+          "pattern_pseudo_translation": "记得 + <verb phrase> / 忘了 + <verb phrase>"
         },
         {
           "id": "pattern-2",
           "title": "Doing an activity together",
           "explanation_en": "一起 (yìqǐ) comes before the verb phrase when multiple people do something together.",
-          "formula_en": "People + 一起 + verb",
           "examples": [
             {
               "hanzi": "我们准备好了，可以走了。",
@@ -899,7 +904,10 @@
               "pinyin": "Jìde! Xiān qù xuéxiào, ránhòu yìqǐ pǎobù.",
               "english": "Yes! First we go to school, then we run together."
             }
-          ]
+          ],
+          "pattern_hanzi": "人们 + 一起 + 动词",
+          "pattern_pinyin": "rénmen + yìqǐ + dòngcí",
+          "pattern_pseudo_translation": "<people> + 一起 + <verb>"
         }
       ],
       "guided_building": {

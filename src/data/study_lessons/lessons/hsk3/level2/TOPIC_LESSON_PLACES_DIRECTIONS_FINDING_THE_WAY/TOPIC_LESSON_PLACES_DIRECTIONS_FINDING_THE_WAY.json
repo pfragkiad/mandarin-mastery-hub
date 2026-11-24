@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-finding-the-way-in-town",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -130,7 +130,13 @@
     "院": "Characters:院",
     "面": "Characters:面",
     "饭": "Characters:饭",
-    "馆": "Characters:馆"
+    "馆": "Characters:馆",
+    "动": "Characters:动",
+    "发": "Characters:发",
+    "向": "Characters:向",
+    "方": "Characters:方",
+    "点": "Characters:点",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -713,7 +719,6 @@
           "id": "pattern-1",
           "title": "Where a route begins",
           "explanation_en": "从 (cóng) introduces the starting location of a journey or movement.",
-          "formula_en": "从 + starting point + verb",
           "examples": [
             {
               "hanzi": "请从学校门口往左走。",
@@ -725,13 +730,15 @@
               "pinyin": "Cóng zhèr wǎng qián zǒu, dào ménkǒu zài wǎng yòu zǒu.",
               "english": "Walk forward from here, then turn right at the entrance."
             }
-          ]
+          ],
+          "pattern_hanzi": "从 + 出发点 + 动词",
+          "pattern_pinyin": "cóng + chūfādiǎn + dòngcí",
+          "pattern_pseudo_translation": "从 + <starting point> + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Giving a direction",
           "explanation_en": "往 (wǎng) marks the direction of travel; combine it with 前 (qián), 左 (zuǒ), or 右 (yòu).",
-          "formula_en": "往 + direction + 走",
           "examples": [
             {
               "hanzi": "洗手间就在前面。",
@@ -743,7 +750,10 @@
               "pinyin": "Duì, jiù zài nà ge wàiguó fànguǎn de pángbiān.",
               "english": "Yes, it’s right next to that foreign restaurant."
             }
-          ]
+          ],
+          "pattern_hanzi": "往 + 方向 + 走",
+          "pattern_pinyin": "wǎng + fāngxiàng + zǒu",
+          "pattern_pseudo_translation": "往 + <direction> + 走"
         }
       ],
       "guided_building": {

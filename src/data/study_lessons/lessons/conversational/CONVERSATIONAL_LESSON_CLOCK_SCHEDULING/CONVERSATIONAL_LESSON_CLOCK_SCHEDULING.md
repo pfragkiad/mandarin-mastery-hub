@@ -28,6 +28,8 @@ Learn to propose a time for dinner, reject a conflicting time, and agree on anot
 
 **现在 + 几点钟？** (xiànzài + jǐ diǎn zhōng?)
 
+**现在** + **几点钟**？
+
 几点钟 (jǐ diǎn zhōng) asks for a clock time, not a duration.
 
 现在几点钟？ (xiànzài jǐ diǎn zhōng?) — What time is it now?
@@ -36,6 +38,8 @@ Ask for the current clock time before arranging a meeting.
 ## Grammar structure and spoken example
 
 **时间 + 不行** (shíjiān + bù xíng)
+
+&lt;proposed time&gt; + **不行**
 
 Reject a proposed time with 不行 (bù xíng), then suggest an alternative.
 
@@ -94,6 +98,8 @@ Speaking task: Negotiate a dinner time by proposing six, seven or eight o’cloc
 
 **时间 + 不行；另一个时间 + 可以** (shíjiān + bù xíng; lìng yí ge shíjiān + kěyǐ)
 
+&lt;proposed time&gt; + **不行**；&lt;another time&gt; + **可以**
+
 不行 (bù xíng) rejects a proposal; 可以 (kěyǐ) accepts an alternative.
 
 八点不行，九点可以。 (Bā diǎn bù xíng, jiǔ diǎn kěyǐ.) — Eight does not work; nine works.
@@ -102,6 +108,8 @@ This keeps negotiations moving by supplying an acceptable alternative.
 ## Grammar structure and spoken example
 
 **太 + 形容词 + 了** (tài + xíngróngcí + le)
+
+**太** + &lt;describing word&gt; + **了**
 
 太 (tài) + adjective + 了 (le) expresses an excessive degree or a strong judgment.
 

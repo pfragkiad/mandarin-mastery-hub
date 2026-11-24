@@ -32,7 +32,11 @@ Talk about personal schedules, remembered tasks, and getting ready to leave.
 
 记得 (jìde) means remember; 忘 (wàng) means forget. Place a following verb phrase after them when describing what happened.
 
-**Pattern:** 记得/忘 + action
+**Pattern**
+
+记得 + 动词短语 / 忘了 + 动词短语  
+*jìde + dòngcí duǎnyǔ / wàng le + dòngcí duǎnyǔ*  
+**记得** + &lt;verb phrase&gt; / **忘了** + &lt;verb phrase&gt;
 
 **我记得明天要考试。**
 *Wǒ jìde míngtiān yào kǎoshì.*
@@ -46,7 +50,11 @@ Wait, I forgot to take my schoolbag.
 
 一起 (yìqǐ) comes before the verb phrase when multiple people do something together.
 
-**Pattern:** People + 一起 + verb
+**Pattern**
+
+人们 + 一起 + 动词  
+*rénmen + yìqǐ + dòngcí*  
+&lt;people&gt; + **一起** + &lt;verb&gt;
 
 **我们准备好了，可以走了。**
 *Wǒmen zhǔnbèi hǎo le, kěyǐ zǒu le.*

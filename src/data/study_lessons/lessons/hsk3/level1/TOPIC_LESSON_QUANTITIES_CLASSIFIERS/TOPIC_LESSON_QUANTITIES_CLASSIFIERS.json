@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-quantities-classifiers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -51,8 +51,10 @@
     "二": "Characters:二",
     "五": "Characters:五",
     "些": "Characters:些",
+    "亮": "Characters:亮",
     "人": "Characters:人",
     "今": "Characters:今",
+    "他": "Characters:他",
     "们": "Characters:们",
     "件": "Characters:件",
     "会": "Characters:会",
@@ -69,12 +71,14 @@
     "吃": "Characters:吃",
     "吗": "Characters:吗",
     "唱": "Characters:唱",
+    "商": "Characters:商",
     "喜": "Characters:喜",
     "喝": "Characters:喝",
     "在": "Characters:在",
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "她": "Characters:她",
     "好": "Characters:好",
     "妹": "Characters:妹",
     "姐": "Characters:姐",
@@ -83,10 +87,12 @@
     "学": "Characters:学",
     "孩": "Characters:孩",
     "室": "Characters:室",
+    "家": "Characters:家",
     "小": "Characters:小",
     "少": "Characters:少",
     "师": "Characters:师",
     "店": "Characters:店",
+    "很": "Characters:很",
     "想": "Characters:想",
     "我": "Characters:我",
     "教": "Characters:教",
@@ -108,6 +114,7 @@
     "水": "Characters:水",
     "汉": "Characters:汉",
     "没": "Characters:没",
+    "漂": "Characters:漂",
     "点": "Characters:点",
     "猫": "Characters:猫",
     "玩": "Characters:玩",
@@ -139,13 +146,10 @@
     "里": "Characters:里",
     "钱": "Characters:钱",
     "饭": "Characters:饭",
-    "商": "Characters:商",
-    "很": "Characters:很",
-    "漂": "Characters:漂",
-    "亮": "Characters:亮",
-    "他": "Characters:他",
-    "家": "Characters:家",
-    "她": "Characters:她"
+    "名": "Characters:名",
+    "数": "Characters:数",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -1047,7 +1051,6 @@
           "id": "pattern-1",
           "title": "Classifiers for countable objects",
           "explanation_en": "Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.",
-          "formula_en": "number + classifier + noun",
           "examples": [
             {
               "hanzi": "桌子上有两本书。",
@@ -1059,13 +1062,15 @@
               "pinyin": "Wǒ mǎi le sān jiàn yīfu.",
               "english": "I bought three items of clothing."
             }
-          ]
+          ],
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pinyin": "shùzì + liàngcí + míngcí",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "两 (liǎng), 几 (jǐ), and 多少 (duōshao)",
           "explanation_en": "两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.",
-          "formula_en": "几 + classifier + noun?",
           "examples": [
             {
               "hanzi": "你有几个好朋友？",
@@ -1077,7 +1082,10 @@
               "pinyin": "Zhè běn shū duōshao qián?",
               "english": "How much does this book cost?"
             }
-          ]
+          ],
+          "pattern_hanzi": "几 + 量词 + 名词？",
+          "pattern_pinyin": "jǐ + liàngcí + míngcí?",
+          "pattern_pseudo_translation": "几 + <classifier> + <noun>？"
         }
       ],
       "guided_building": {

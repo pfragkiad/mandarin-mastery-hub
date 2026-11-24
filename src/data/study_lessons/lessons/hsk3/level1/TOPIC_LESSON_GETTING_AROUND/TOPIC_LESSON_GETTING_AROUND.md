@@ -32,7 +32,11 @@ A traveler asks how to get to the station and distinguishes arriving, returning,
 
 来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.
 
-**Pattern:** subject + 来/去/回 + place
+**Pattern**
+
+主语 + 来/去/回 + 地点  
+*zhǔyǔ + lái/qù/huí + dìdiǎn*  
+&lt;subject&gt; + **来**/**去**/**回** + &lt;place&gt;
 
 **朋友明天来我家。**
 *Péngyou míngtiān lái wǒ jiā.*
@@ -46,7 +50,11 @@ I will go home this afternoon.
 
 到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.
 
-**Pattern:** 坐 + vehicle + 去 + place
+**Pattern**
+
+坐 + 交通工具 + 去 + 地点  
+*zuò + jiāotōng gōngjù + qù + dìdiǎn*  
+**坐** + &lt;vehicle&gt; + **去** + &lt;place&gt;
 
 **我们坐火车去北京。**
 *Wǒmen zuò huǒchē qù Běijīng.*

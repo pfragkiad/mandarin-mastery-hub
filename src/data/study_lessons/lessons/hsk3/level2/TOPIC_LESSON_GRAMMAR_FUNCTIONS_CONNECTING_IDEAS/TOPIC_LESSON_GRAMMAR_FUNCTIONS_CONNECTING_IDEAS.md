@@ -30,7 +30,11 @@ Connect two thoughts naturally with because, so, but and choice questions.
 
 因为 (yīnwèi) introduces the reason; 所以 (suǒyǐ) introduces the consequence. One can also appear without the other when the relationship is clear.
 
-**Pattern:** 因为 + reason， 所以 + result
+**Pattern**
+
+因为 + 原因， 所以 + 结果  
+*yīnwèi + yuányīn,  suǒyǐ + jiéguǒ*  
+**因为** + &lt;reason&gt;， **所以** + &lt;result&gt;
 
 **我今天很累，所以想早点儿回家。**
 *Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.*
@@ -44,7 +48,11 @@ I want to go to the park, but it might rain.
 
 虽然 (suīrán) starts a concession and 但是 (dànshì) can introduce a contrasting main clause.
 
-**Pattern:** 虽然 + clause， 但是 + clause
+**Pattern**
+
+虽然 + 分句，但是 + 转折分句  
+*suīrán + fēnjù, dànshì + zhuǎnzhé fēnjù*  
+**虽然** + &lt;clause&gt;，**但是** + &lt;contrasting clause&gt;
 
 **你喝茶还是喝水？**
 *Nǐ hē chá háishi hē shuǐ?*

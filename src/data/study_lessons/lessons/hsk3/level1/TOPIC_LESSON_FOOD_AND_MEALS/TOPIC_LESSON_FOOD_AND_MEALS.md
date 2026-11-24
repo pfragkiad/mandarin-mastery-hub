@@ -30,7 +30,11 @@ Two friends order lunch and discuss what they do and do not want to eat.
 
 Use 吃 (chī) for eating and 喝 (hē) for drinking. 想 (xiǎng) makes a polite expression of what you would like.
 
-**Pattern:** 我想 + 吃/喝 + food/drink
+**Pattern**
+
+我想 + 吃/喝 + 食物/饮料  
+*wǒ xiǎng + chī/hē + shíwù/yǐnliào*  
+**我想** + **吃**/**喝** + &lt;food&gt;/&lt;drink&gt;
 
 **我晚上想吃面条儿。**
 *Wǒ wǎnshang xiǎng chī miàntiáor.*
@@ -44,7 +48,11 @@ She would like milk.
 
 要 (yào) can indicate wanting an item. Adding 还 (hái) asks whether someone wants more; 不要了 (bú yào le) politely closes an offer.
 
-**Pattern:** 还要 + item + 吗?
+**Pattern**
+
+还要 + 物品 + 吗？  
+*hái yào + wùpǐn + ma?*  
+**还要** + &lt;item&gt; + **吗**？
 
 **你还要水吗？**
 *Nǐ hái yào shuǐ ma?*

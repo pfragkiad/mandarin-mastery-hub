@@ -30,7 +30,11 @@ Ask about a word’s meaning and explain an everyday situation or problem.
 
 Use 什么意思 (shénme yìsi) to ask what a word or phrase means. 意思 (yìsi) has other conversational meanings, but here it is about meaning.
 
-**Pattern:** Word/phrase + 是什么意思?
+**Pattern**
+
+词语 + 是什么意思？  
+*cíyǔ + shì shénme yìsi?*  
+&lt;word or phrase&gt; + **是什么意思**？
 
 **我不明白这句话的意思。**
 *Wǒ bù míngbai zhè jù huà de yìsi.*
@@ -44,7 +48,11 @@ Okay, what is it about?
 
 事情 (shìqing) names a matter or event, often with the classifier 件 (jiàn).
 
-**Pattern:** 一件 + 事情
+**Pattern**
+
+一件事情  
+*yí jiàn shìqing*  
+**一件事情**
 
 **这件事情很重要。**
 *Zhè jiàn shìqing hěn zhòngyào.*

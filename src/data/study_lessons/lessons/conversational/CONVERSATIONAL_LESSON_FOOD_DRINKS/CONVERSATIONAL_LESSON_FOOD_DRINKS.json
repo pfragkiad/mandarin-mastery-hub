@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-food-drinks",
   "lesson_type": "dialogue",
   "lesson": {
@@ -130,7 +130,8 @@
           "pinyin": "nǐ xiǎng hē chá háishi píjiǔ?",
           "english": "Would you like tea or beer?",
           "teaching_note": "Offer two drinks and let the listener choose one."
-        }
+        },
+        "pattern_pseudo_translation": "想喝 + <first drink> + 还是 + <second drink>？"
       },
       {
         "id": "grammar-2",
@@ -144,7 +145,8 @@
           "pinyin": "wǒ yào liǎng bēi chá.",
           "english": "I want two cups of tea.",
           "teaching_note": "Use the classifier when ordering a specific number of cups."
-        }
+        },
+        "pattern_pseudo_translation": "<number or amount> + 杯 + <drink>"
       },
       {
         "id": "key-expressions",

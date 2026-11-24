@@ -32,7 +32,13 @@ Two people are getting ready to go out. Follow the order of activities and the d
 
 看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object.
 
-**Pattern:** look/search → result
+**Pattern**
+
+看 → 看见 / 找 → 找到  
+*kàn → kànjiàn / zhǎo → zhǎodào*  
+**看** → **看见** / **找** → **找到**
+
+The arrows show an action followed by the word for a successful result.
 
 **我在看外边。**
 *Wǒ zài kàn wàibian.*
@@ -46,7 +52,11 @@ I spotted that cat.
 
 给 (gěi) can introduce a recipient before a noun phrase or, in simple requests, act as a verb meaning “give”.
 
-**Pattern:** 给 + person + object
+**Pattern**
+
+给 + 接收者 + 所给的东西  
+*gěi + jiēshōuzhě + suǒ gěi de dōngxi*  
+**给** + &lt;recipient&gt; + &lt;thing given&gt;
 
 **请给我那本书。**
 *Qǐng gěi wǒ nà běn shū.*

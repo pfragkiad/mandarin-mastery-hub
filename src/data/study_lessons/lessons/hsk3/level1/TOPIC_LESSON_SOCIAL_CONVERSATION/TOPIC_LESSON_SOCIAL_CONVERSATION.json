@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-social-conversation",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -977,7 +977,6 @@
           "id": "pattern-1",
           "title": "Polite openings",
           "explanation_en": "请问 (qǐngwèn) introduces a polite request or question. 您 (nín) shows respect. At the start of a phone conversation 喂 (wèi) functions as a greeting/attention-getter.",
-          "formula_en": "请问 + question",
           "examples": [
             {
               "hanzi": "请问，您认识王老师吗？",
@@ -989,13 +988,15 @@
               "pinyin": "Qǐngwèn, yīyuàn zài nǎlǐ?",
               "english": "Excuse me, where is the hospital?"
             }
-          ]
+          ],
+          "pattern_hanzi": "请问 + 问题",
+          "pattern_pinyin": "qǐngwèn + wèntí",
+          "pattern_pseudo_translation": "请问 + <question>"
         },
         {
           "id": "pattern-2",
           "title": "Apologies and thanks",
           "explanation_en": "Use the conventional response matched to the situation: 对不起 (duìbuqǐ) → 没关系 (méi guānxi); 谢谢 (xièxie) → 不客气 (bú kèqi).",
-          "formula_en": "apology → reassurance; thanks → welcome",
           "examples": [
             {
               "hanzi": "对不起，我今天来晚了。",
@@ -1007,7 +1008,10 @@
               "pinyin": "Méi guānxi, wǒmen xiànzài kāishǐ ba.",
               "english": "That is all right. Let us start now."
             }
-          ]
+          ],
+          "pattern_hanzi": "对不起 → 没关系 / 谢谢 → 不客气",
+          "pattern_pinyin": "duìbuqǐ → méi guānxi / xièxie → bú kèqi",
+          "pattern_pseudo_translation": "对不起 → 没关系 / 谢谢 → 不客气"
         }
       ],
       "guided_building": {

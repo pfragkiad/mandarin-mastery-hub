@@ -27,6 +27,8 @@ Learn to greet someone, ask a polite question, and thank them for their answer. 
 
 **陈述句 + 吗？** (chénshùjù + ma?)
 
+&lt;statement&gt; + **吗**？
+
 The neutral-tone question particle 吗 (ma) can form a yes–no question.
 
 你好吗？ (nǐ hǎo ma?) — How are you?
@@ -35,6 +37,8 @@ This example is a friendly check on how the other person is doing.
 ## Grammar structure and spoken example
 
 **请问 + 问题** (qǐngwèn + wèntí)
+
+**请问** + &lt;your question&gt;
 
 A polite way to introduce a request for information.
 

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-places-to-meet",
   "lesson_type": "dialogue",
   "lesson": {
@@ -132,7 +132,8 @@
           "pinyin": "wǒ xiǎng qù fàndiàn chī.",
           "english": "I want to go to a restaurant to eat.",
           "teaching_note": "Link a proposed destination to the activity you want to do there."
-        }
+        },
+        "pattern_pseudo_translation": "想 + 去 + <place> + <what to do>"
       },
       {
         "id": "grammar-2",
@@ -146,7 +147,8 @@
           "pinyin": "wǒ xiǎng zài zhèr hē chá.",
           "english": "I want to drink tea here.",
           "teaching_note": "You can use this structure to suggest staying here instead of going elsewhere."
-        }
+        },
+        "pattern_pseudo_translation": "在 + <place> + <what to do>"
       },
       {
         "id": "key-expressions",

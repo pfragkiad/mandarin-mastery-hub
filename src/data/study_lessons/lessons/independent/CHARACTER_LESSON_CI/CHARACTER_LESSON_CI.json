@@ -324,7 +324,8 @@
             "meaning_en": "Go once"
           },
           "register": "neutral; spoken",
-          "usage_note": "一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo)."
+          "usage_note": "一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo).",
+          "pattern_pseudo_translation": "<verb> + 一次"
         },
         {
           "id": "last-time-pattern",
@@ -338,7 +339,8 @@
             "meaning_en": "Last time I did not understand what I heard"
           },
           "register": "everyday",
-          "usage_note": "Often appears at the start of a sentence as a time expression."
+          "usage_note": "Often appears at the start of a sentence as a time expression.",
+          "pattern_pseudo_translation": "上一次"
         },
         {
           "id": "this-time-pattern",
@@ -352,7 +354,8 @@
             "meaning_en": "This time I understood"
           },
           "register": "everyday",
-          "usage_note": "A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening."
+          "usage_note": "A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening.",
+          "pattern_pseudo_translation": "这一次"
         },
         {
           "id": "next-time-pattern",
@@ -366,7 +369,8 @@
             "meaning_en": "Let’s go together next time"
           },
           "register": "everyday",
-          "usage_note": "A sentence-initial temporal phrase; 下次 (xià cì) is common in speech."
+          "usage_note": "A sentence-initial temporal phrase; 下次 (xià cì) is common in speech.",
+          "pattern_pseudo_translation": "下一次"
         },
         {
           "id": "every-dou",
@@ -380,7 +384,8 @@
             "meaning_en": "Every time I see you, I am happy"
           },
           "register": "everyday",
-          "usage_note": "每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory."
+          "usage_note": "每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory.",
+          "pattern_pseudo_translation": "每一次 + <action>, <subject> + 都 + <comment>"
         },
         {
           "id": "once-again-adverbial",
@@ -394,7 +399,8 @@
             "meaning_en": "I want to thank you once again"
           },
           "register": "neutral; slightly emphatic",
-          "usage_note": "再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè)."
+          "usage_note": "再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè).",
+          "pattern_pseudo_translation": "再一次 + <verb>"
         },
         {
           "id": "repeat-v-count",
@@ -408,7 +414,8 @@
             "meaning_en": "Try one more time"
           },
           "register": "everyday",
-          "usage_note": "Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì)."
+          "usage_note": "Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì).",
+          "pattern_pseudo_translation": "再 + <verb> + 一次"
         }
       ],
       "structural_note": "Do not equate a postverbal frequency complement, a temporal noun phrase, a quantified temporal phrase, and a preverbal repetition adverbial. Similar surface vocabulary can fulfill different grammatical slots."

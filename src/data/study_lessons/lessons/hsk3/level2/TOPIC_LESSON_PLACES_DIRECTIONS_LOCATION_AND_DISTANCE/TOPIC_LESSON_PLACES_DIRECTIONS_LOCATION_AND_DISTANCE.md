@@ -32,7 +32,11 @@ Locate people and objects in buildings and compare relative positions.
 
 Place 旁边 (pángbiān), 左边 (zuǒbian), 右边 (yòubian) or another position term after a landmark to describe a location.
 
-**Pattern:** Landmark + position + 有/是 + place
+**Pattern**
+
+地标 + 方位 + 有/是 + 地点  
+*dìbiāo + fāngwèi + yǒu/shì + dìdiǎn*  
+&lt;landmark&gt; + &lt;position&gt; + **有**/**是** + &lt;place&gt;
 
 **我的书在桌子下面。**
 *Wǒ de shū zài zhuōzi xiàmiàn.*
@@ -46,7 +50,11 @@ On the second floor. The door is on the left.
 
 离 (lí) introduces a reference point; combine it with 近 (jìn) or 远 (yuǎn).
 
-**Pattern:** Place A + 离 + place B + 近/远
+**Pattern**
+
+地点甲 + 离 + 地点乙 + 近/远  
+*dìdiǎn jiǎ + lí + dìdiǎn yǐ + jìn/yuǎn*  
+&lt;place A&gt; + **离** + &lt;place B&gt; + **近**/**远**
 
 **我们家离学校很近。**
 *Wǒmen jiā lí xuéxiào hěn jìn.*

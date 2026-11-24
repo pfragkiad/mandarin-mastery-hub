@@ -32,7 +32,11 @@ Talk about going online and finding information on the internet in daily life.
 
 上网 (shàngwǎng) is a verb meaning go online or use the internet. Follow it with an optional purpose such as 学习 (xuéxí).
 
-**Pattern:** Subject + 上网 + activity
+**Pattern**
+
+主语 + 上网 + (目的)  
+*zhǔyǔ + shàngwǎng + (mùdì)*  
+&lt;subject&gt; + **上网** + (&lt;purpose&gt;)
 
 **我每天上网学习。**
 *Wǒ měitiān shàngwǎng xuéxí.*
@@ -46,7 +50,11 @@ I like going online to read the news.
 
 网上 (wǎngshang) is an online location or medium; use 在网上 (zài wǎngshang) before an activity.
 
-**Pattern:** Subject + 在网上 + verb
+**Pattern**
+
+主语 + 在网上 + 动词  
+*zhǔyǔ + zài wǎngshàng + dòngcí*  
+&lt;subject&gt; + **在网上** + &lt;verb&gt;
 
 **这本书可以在网上看。**
 *Zhè běn shū kěyǐ zài wǎngshang kàn.*

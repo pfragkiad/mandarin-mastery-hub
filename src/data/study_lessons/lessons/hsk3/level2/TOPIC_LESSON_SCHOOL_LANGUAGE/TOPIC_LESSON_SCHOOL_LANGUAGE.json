@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-words-classes-and-examinations",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -142,7 +142,13 @@
     "里": "Characters:里",
     "问": "Characters:问",
     "题": "Characters:题",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "人": "Characters:人",
+    "内": "Characters:内",
+    "容": "Characters:容",
+    "时": "Characters:时",
+    "者": "Characters:者",
+    "间": "Characters:间"
   },
   "sections": {
     "overview": {
@@ -972,7 +978,6 @@
           "id": "pattern-1",
           "title": "Learning a new word",
           "explanation_en": "Use 懂 (dǒng) to talk about understanding and 教 (jiāo) to say who teaches whom.",
-          "formula_en": "Person + 教 + person + content",
           "examples": [
             {
               "hanzi": "我不懂这个词，请你教我。",
@@ -984,13 +989,15 @@
               "pinyin": "Nǐ xiān kàn shū; bù dǒng de dìfang kěyǐ wèn wǒ.",
               "english": "Read the book first; you can ask me about what you do not understand."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 教 + 学习者 + 教学内容",
+          "pattern_pinyin": "rén + jiāo + xuéxízhě + jiàoxué nèiróng",
+          "pattern_pseudo_translation": "<person> + 教 + <learner> + <what is taught>"
         },
         {
           "id": "pattern-2",
           "title": "Talking about school tests",
           "explanation_en": "考试 (kǎoshì) is an examination; 考 (kǎo) can function as a verb, and 题 (tí) is a question or problem.",
-          "formula_en": "Time + 有 + 考试",
           "examples": [
             {
               "hanzi": "我们班的考试下星期开始。",
@@ -1002,7 +1009,10 @@
               "pinyin": "Méi guānxi, wǒ zhèr yǒu. Kǎoshì qián jìde zhǔnbèi hǎo!",
               "english": "No problem, I have some here. Remember to prepare before the exam!"
             }
-          ]
+          ],
+          "pattern_hanzi": "时间 + 有 + 考试",
+          "pattern_pinyin": "shíjiān + yǒu + kǎoshì",
+          "pattern_pseudo_translation": "<time> + 有 + 考试"
         }
       ],
       "guided_building": {

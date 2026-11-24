@@ -32,7 +32,11 @@ A conversation about a new film shows how different evaluative adjectives convey
 
 好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.
 
-**Pattern:** subject + 很 + adjective
+**Pattern**
+
+主语 + 很 + 形容词  
+*zhǔyǔ + hěn + xíngróngcí*  
+&lt;subject&gt; + **很** + &lt;adjective&gt;
 
 **这首歌很好听。**
 *Zhè shǒu gē hěn hǎotīng.*
@@ -46,7 +50,11 @@ Her new clothes are pretty.
 
 很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.
 
-**Pattern:** noun + 太 + adjective + 了
+**Pattern**
+
+名词 + 太 + 形容词 + 了  
+*míngcí + tài + xíngróngcí + le*  
+&lt;noun&gt; + **太** + &lt;adjective&gt; + **了**
 
 **这个房间太小了。**
 *Zhège fángjiān tài xiǎo le.*

@@ -32,7 +32,11 @@ A shopper compares prices and decides what to buy for a room.
 
 元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.
 
-**Pattern:** item + 多少钱? / number + 块
+**Pattern**
+
+物品 + 多少钱？ / 数字 + 块  
+*wùpǐn + duōshao qián? / shùzì + kuài*  
+&lt;item&gt; + **多少钱**？ / &lt;number&gt; + **块**
 
 **这件衣服五十元。**
 *Zhè jiàn yīfu wǔ shí yuán.*
@@ -46,7 +50,11 @@ That table is one hundred yuan.
 
 买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.
 
-**Pattern:** shop + 卖 + item; customer + 买 + item
+**Pattern**
+
+商店 + 卖 + 物品; 顾客 + 买 + 物品  
+*shāngdiàn + mài + wùpǐn; gùkè + mǎi + wùpǐn*  
+&lt;shop&gt; + **卖** + &lt;item&gt;; &lt;customer&gt; + **买** + &lt;item&gt;
 
 **这家商店卖手机。**
 *Zhè jiā shāngdiàn mài shǒujī.*

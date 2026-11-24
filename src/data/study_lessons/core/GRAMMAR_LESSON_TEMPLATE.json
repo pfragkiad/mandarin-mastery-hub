@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "grammar-negation-basic",
   "lesson_type": "grammar",
   "lesson": {
@@ -57,7 +57,8 @@
           "pinyin": "wǒ bù hē chá.",
           "english": "I do not drink tea.",
           "teaching_note": "Negation of a basic action."
-        }
+        },
+        "pattern_pseudo_translation": "不 + <action>"
       }
     ],
     "practice": {

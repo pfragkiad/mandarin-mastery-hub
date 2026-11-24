@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-health-and-rest",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -48,6 +48,7 @@
     "今": "Characters:今",
     "他": "Characters:他",
     "以": "Characters:以",
+    "们": "Characters:们",
     "休": "Characters:休",
     "作": "Characters:作",
     "你": "Characters:你",
@@ -63,6 +64,7 @@
     "后": "Characters:后",
     "吗": "Characters:吗",
     "喝": "Characters:喝",
+    "回": "Characters:回",
     "在": "Characters:在",
     "多": "Characters:多",
     "天": "Characters:天",
@@ -92,9 +94,11 @@
     "有": "Characters:有",
     "朋": "Characters:朋",
     "每": "Characters:每",
+    "气": "Characters:气",
     "水": "Characters:水",
     "没": "Characters:没",
     "点": "Characters:点",
+    "热": "Characters:热",
     "爸": "Characters:爸",
     "生": "Characters:生",
     "病": "Characters:病",
@@ -107,10 +111,11 @@
     "起": "Characters:起",
     "这": "Characters:这",
     "院": "Characters:院",
-    "气": "Characters:气",
-    "热": "Characters:热",
-    "回": "Characters:回",
-    "们": "Characters:们"
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "间": "Characters:间"
   },
   "sections": {
     "overview": {
@@ -743,7 +748,6 @@
           "id": "pattern-1",
           "title": "A condition versus getting medical attention",
           "explanation_en": "生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.",
-          "formula_en": "subject + 生病了; subject + 去 + 医院 + 看病",
           "examples": [
             {
               "hanzi": "弟弟生病了。",
@@ -755,13 +759,15 @@
               "pinyin": "Māma qù kànbìng.",
               "english": "Mom is going to see a doctor."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 生病了; 主语 + 去 + 医院 + 看病",
+          "pattern_pinyin": "zhǔyǔ + shēngbìng le; zhǔyǔ + qù + yīyuàn + kànbìng",
+          "pattern_pseudo_translation": "<subject> + 生病了; <subject> + 去 + 医院 + 看病"
         },
         {
           "id": "pattern-2",
           "title": "Rest and sleep",
           "explanation_en": "休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.",
-          "formula_en": "time + verb + 了",
           "examples": [
             {
               "hanzi": "我晚上十点睡觉。",
@@ -773,7 +779,10 @@
               "pinyin": "Tā zǎoshang qī diǎn qǐchuáng.",
               "english": "He gets up at seven in the morning."
             }
-          ]
+          ],
+          "pattern_hanzi": "时间 + 动词 + 了",
+          "pattern_pinyin": "shíjiān + dòngcí + le",
+          "pattern_pseudo_translation": "<time> + <verb> + 了"
         }
       ],
       "guided_building": {

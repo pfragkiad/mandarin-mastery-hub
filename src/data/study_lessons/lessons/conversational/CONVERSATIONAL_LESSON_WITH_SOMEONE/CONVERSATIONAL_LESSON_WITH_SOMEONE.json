@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-with-someone",
   "lesson_type": "dialogue",
   "lesson": {
@@ -126,7 +126,8 @@
           "pinyin": "wǒ xiǎng gēn nǐ yìqǐ chīfàn.",
           "english": "I would like to eat with you.",
           "teaching_note": "Use this when inviting someone to share a meal or activity."
-        }
+        },
+        "pattern_pseudo_translation": "跟 + <person> + 一起 + <what to do>"
       },
       {
         "id": "grammar-2",
@@ -140,7 +141,8 @@
           "pinyin": "wǒ yě xiǎng qù.",
           "english": "I want to go too.",
           "teaching_note": "A friendly response when you want to join someone else’s plan."
-        }
+        },
+        "pattern_pseudo_translation": "<who or what> + 也 + 想 + <what to do>"
       },
       {
         "id": "key-expressions",

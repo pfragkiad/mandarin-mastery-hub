@@ -6,6 +6,9 @@ Shuowen review exports and supplied originals in this directory stay local and u
 
 | File | Use |
 | --- | --- |
+| [lessons-3.6.1-import.json](lessons-3.6.1-import.json) | Corrected four-package import: all 65 lessons, 574 exact HSK bindings, stable activity/progress identities and 146 supplied three-line patterns, with source/file hashes. |
+| [Frontend_Migration_Report_Core_v3.6.0.md](Frontend_Migration_Report_Core_v3.6.0.md) | Exact owner-supplied migration handoff; applies to corrected Core/HSK v3.6.1 and Other Lessons v3.6.0. No frontend code changed by the import. |
+| [lessons-3.6.0-validation.json](lessons-3.6.0-validation.json) | Historical failed audit, resolved by v3.6.1. The superseded v3.6.0 packages: 65 schema-valid lessons and exact dictionary/progress checks, with missing catalog-reference identities listed for source correction. No runtime writes. |
 | [lessons-3.4.0-import.json](lessons-3.4.0-import.json) | Current Core v3.4.0 / coverage v1.1.5 import: exact source bytes, backward-compatible general schema, 65 active lessons, two curricula, 574 HSK bindings and five CMX-bound usage notes. |
 | [lessons-3.4.0-source-cleanup.json](lessons-3.4.0-source-cleanup.json) | Owner-removed uploads/Markdown: checksums and original Git revision. |
 | [lessons-3.3.2-import.json](lessons-3.3.2-import.json) | Historical Core v3.3.2 / conversational coverage v1.1.4 import: 20 Core files, 19 supplied lessons, 65 active lessons, both curricula, exact dictionary/catalog checks, preserved progress identities and checked expression/crosswalk/marker references. |

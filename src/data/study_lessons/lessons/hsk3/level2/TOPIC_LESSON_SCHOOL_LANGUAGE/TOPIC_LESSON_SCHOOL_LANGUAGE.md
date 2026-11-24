@@ -30,7 +30,11 @@ Talk about school, classrooms, word meanings, teachers, tests and stationery.
 
 Use 懂 (dǒng) to talk about understanding and 教 (jiāo) to say who teaches whom.
 
-**Pattern:** Person + 教 + person + content
+**Pattern**
+
+人 + 教 + 学习者 + 教学内容  
+*rén + jiāo + xuéxízhě + jiàoxué nèiróng*  
+&lt;person&gt; + **教** + &lt;learner&gt; + &lt;what is taught&gt;
 
 **我不懂这个词，请你教我。**
 *Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.*
@@ -44,7 +48,11 @@ Read the book first; you can ask me about what you do not understand.
 
 考试 (kǎoshì) is an examination; 考 (kǎo) can function as a verb, and 题 (tí) is a question or problem.
 
-**Pattern:** Time + 有 + 考试
+**Pattern**
+
+时间 + 有 + 考试  
+*shíjiān + yǒu + kǎoshì*  
+&lt;time&gt; + **有** + **考试**
 
 **我们班的考试下星期开始。**
 *Wǒmen bān de kǎoshì xià xīngqī kāishǐ.*

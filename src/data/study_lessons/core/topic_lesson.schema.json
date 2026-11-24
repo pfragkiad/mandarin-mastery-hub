@@ -21,7 +21,8 @@
         "mandarin-topic-lesson/3.0.0",
         "mandarin-topic-lesson/3.1.0",
         "mandarin-topic-lesson/3.2.0",
-        "mandarin-topic-lesson/3.3.0"
+        "mandarin-topic-lesson/3.3.0",
+        "mandarin-topic-lesson/3.4.0"
       ]
     },
     "lesson_id": {
@@ -77,7 +78,8 @@
             "3.0.0",
             "3.1.0",
             "3.2.0",
-            "3.3.0"
+            "3.3.0",
+            "3.4.0"
           ]
         },
         "audience": {
@@ -878,7 +880,6 @@
               "id",
               "title",
               "explanation_en",
-              "formula_en",
               "examples"
             ],
             "properties": {
@@ -925,6 +926,20 @@
                     }
                   }
                 }
+              },
+              "pattern_hanzi": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pattern_pinyin": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pattern_pseudo_translation": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$",
+                "description": "Optional plain-text third line. Use <English placeholder> for replaceable parts, and keep fixed Mandarin and structural punctuation. This line is display-only."
               }
             }
           }
@@ -1388,6 +1403,118 @@
                             "id"
                           ]
                         }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "mandarin-topic-lesson/3.4.0"
+          }
+        },
+        "required": [
+          "schema_version"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "required": [
+              "progress",
+              "estimated_minutes"
+            ],
+            "properties": {
+              "metadata": {
+                "properties": {
+                  "template_version": {
+                    "const": "3.4.0"
+                  }
+                }
+              },
+              "sections": {
+                "properties": {
+                  "teaching_plan": {
+                    "properties": {
+                      "guided_building": {
+                        "properties": {
+                          "substitutions": {
+                            "items": {
+                              "required": [
+                                "id"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "reading": {
+                        "properties": {
+                          "questions": {
+                            "items": {
+                              "required": [
+                                "id"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "teaching_plan"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "sections": {
+                "properties": {
+                  "teaching_plan": {
+                    "properties": {
+                      "patterns": {
+                        "items": {
+                          "required": [
+                            "pattern_hanzi",
+                            "pattern_pinyin",
+                            "pattern_pseudo_translation"
+                          ],
+                          "properties": {
+                            "formula_en": false
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "else": {
+        "properties": {
+          "sections": {
+            "properties": {
+              "teaching_plan": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "required": [
+                        "formula_en"
+                      ],
+                      "properties": {
+                        "pattern_hanzi": false,
+                        "pattern_pinyin": false,
+                        "pattern_pseudo_translation": false
                       }
                     }
                   }

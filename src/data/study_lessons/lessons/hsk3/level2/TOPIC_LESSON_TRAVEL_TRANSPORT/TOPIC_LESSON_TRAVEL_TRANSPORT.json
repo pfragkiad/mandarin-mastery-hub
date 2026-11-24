@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-planning-a-journey",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -141,7 +141,12 @@
     "门": "Characters:门",
     "院": "Characters:院",
     "雨": "Characters:雨",
-    "面": "Characters:面"
+    "面": "Characters:面",
+    "二": "Characters:二",
+    "作": "Characters:作",
+    "动": "Characters:动",
+    "目": "Characters:目",
+    "第": "Characters:第"
   },
   "sections": {
     "overview": {
@@ -967,7 +972,6 @@
           "id": "pattern-1",
           "title": "A journey with transfers",
           "explanation_en": "Use 先 (xiān) and 再 (zài) to describe successive stages of a trip: first one vehicle, then another.",
-          "formula_en": "先 + action A, 再 + action B",
           "examples": [
             {
               "hanzi": "从酒店到车站要走多远？",
@@ -979,13 +983,15 @@
               "pinyin": "Duì, wǒ de jīpiào yǐjīng mǎi hǎo le.",
               "english": "Yes, I’ve already bought my plane ticket."
             }
-          ]
+          ],
+          "pattern_hanzi": "先 + 第一个动作，再 + 第二个动作",
+          "pattern_pinyin": "xiān + dì yī ge dòngzuò, zài + dì èr ge dòngzuò",
+          "pattern_pseudo_translation": "先 + <action A>，再 + <action B>"
         },
         {
           "id": "pattern-2",
           "title": "Travel tickets and destinations",
           "explanation_en": "机票 (jīpiào) is an air ticket; 票 (piào) is a general ticket. Use 去 (qù) followed by the destination.",
-          "formula_en": "去 + destination / 买 + 票",
           "examples": [
             {
               "hanzi": "我想买两张地铁票。",
@@ -997,7 +1003,10 @@
               "pinyin": "Xiān zuò gōngjiāochē dào chēzhàn, zài zuò dìtiě.",
               "english": "First I’ll take the bus to the station, then the metro."
             }
-          ]
+          ],
+          "pattern_hanzi": "去 + 目的地 / 买 + 票",
+          "pattern_pinyin": "qù + mùdìdì / mǎi + piào",
+          "pattern_pseudo_translation": "去 + <destination> / 买 + 票"
         }
       ],
       "guided_building": {

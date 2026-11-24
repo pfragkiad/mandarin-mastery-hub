@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-asking-for-help-and-making-introductions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -143,7 +143,10 @@
     "都": "Characters:都",
     "里": "Characters:里",
     "问": "Characters:问",
-    "题": "Characters:题"
+    "题": "Characters:题",
+    "信": "Characters:信",
+    "息": "Characters:息",
+    "求": "Characters:求"
   },
   "sections": {
     "overview": {
@@ -714,7 +717,6 @@
           "id": "pattern-1",
           "title": "Making a polite request",
           "explanation_en": "Use 不好意思 (bù hǎoyìsi) as a polite opening, then ask someone to 帮忙 (bāngmáng) or 帮 (bāng) you with a specific action.",
-          "formula_en": "不好意思 + request",
           "examples": [
             {
               "hanzi": "请帮我拿一下这个包。",
@@ -726,13 +728,15 @@
               "pinyin": "Dāngrán kěyǐ! Nǐ xiǎng ràng wǒ zuò shénme?",
               "english": "Of course! What would you like me to do?"
             }
-          ]
+          ],
+          "pattern_hanzi": "不好意思 + 请求",
+          "pattern_pinyin": "bù hǎoyìsi + qǐngqiú",
+          "pattern_pseudo_translation": "不好意思 + <request>"
         },
         {
           "id": "pattern-2",
           "title": "Telling and introducing",
           "explanation_en": "告诉 (gàosu) introduces information shared with someone, while 介绍 (jièshào) introduces a person or explains something to someone.",
-          "formula_en": "告诉 + person + information",
           "examples": [
             {
               "hanzi": "我来介绍一下：这是我的同学。",
@@ -744,7 +748,10 @@
               "pinyin": "Wǒ dài nǐ qù, hái kěyǐ jièshào wǒ de péngyou.",
               "english": "I will take you there and can introduce my friend too."
             }
-          ]
+          ],
+          "pattern_hanzi": "告诉 + 人 + 信息",
+          "pattern_pinyin": "gàosu + rén + xìnxī",
+          "pattern_pseudo_translation": "告诉 + <person> + <information>"
         }
       ],
       "guided_building": {

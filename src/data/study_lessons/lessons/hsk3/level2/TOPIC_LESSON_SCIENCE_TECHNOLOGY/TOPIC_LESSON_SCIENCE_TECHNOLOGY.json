@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-using-the-internet",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -119,7 +119,11 @@
     "这": "Characters:这",
     "道": "Characters:道",
     "里": "Characters:里",
-    "闻": "Characters:闻"
+    "闻": "Characters:闻",
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "目": "Characters:目",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -498,7 +502,6 @@
           "id": "pattern-1",
           "title": "Going online",
           "explanation_en": "上网 (shàngwǎng) is a verb meaning go online or use the internet. Follow it with an optional purpose such as 学习 (xuéxí).",
-          "formula_en": "Subject + 上网 + activity",
           "examples": [
             {
               "hanzi": "我每天上网学习。",
@@ -510,13 +513,15 @@
               "pinyin": "Wǒ xǐhuan shàngwǎng kàn xīnwén.",
               "english": "I like going online to read the news."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 上网 + (目的)",
+          "pattern_pinyin": "zhǔyǔ + shàngwǎng + (mùdì)",
+          "pattern_pseudo_translation": "<subject> + 上网 + (<purpose>)"
         },
         {
           "id": "pattern-2",
           "title": "Doing something online",
           "explanation_en": "网上 (wǎngshang) is an online location or medium; use 在网上 (zài wǎngshang) before an activity.",
-          "formula_en": "Subject + 在网上 + verb",
           "examples": [
             {
               "hanzi": "这本书可以在网上看。",
@@ -528,7 +533,10 @@
               "pinyin": "Wǒ bù zhīdào. Wǒmen yìqǐ zài wǎngshang kànkan ba.",
               "english": "I don’t know. Let’s check online together."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 在网上 + 动词",
+          "pattern_pinyin": "zhǔyǔ + zài wǎngshàng + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 在网上 + <verb>"
         }
       ],
       "guided_building": {

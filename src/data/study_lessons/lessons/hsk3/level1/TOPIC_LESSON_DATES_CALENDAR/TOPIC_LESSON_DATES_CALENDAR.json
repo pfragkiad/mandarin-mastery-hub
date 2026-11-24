@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-dates-calendar",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -61,6 +61,7 @@
     "去": "Characters:去",
     "友": "Characters:友",
     "号": "Characters:号",
+    "吗": "Characters:吗",
     "和": "Characters:和",
     "四": "Characters:四",
     "国": "Characters:国",
@@ -75,6 +76,7 @@
     "小": "Characters:小",
     "岁": "Characters:岁",
     "市": "Characters:市",
+    "师": "Characters:师",
     "年": "Characters:年",
     "开": "Characters:开",
     "影": "Characters:影",
@@ -101,20 +103,24 @@
     "电": "Characters:电",
     "的": "Characters:的",
     "看": "Characters:看",
+    "老": "Characters:老",
     "要": "Characters:要",
     "见": "Characters:见",
     "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
     "课": "Characters:课",
     "超": "Characters:超",
     "这": "Characters:这",
     "里": "Characters:里",
-    "雨": "Characters:雨",
-    "老": "Characters:老",
-    "师": "Characters:师",
-    "说": "Characters:说",
-    "请": "Characters:请",
     "问": "Characters:问",
-    "吗": "Characters:吗"
+    "雨": "Characters:雨",
+    "主": "Characters:主",
+    "份": "Characters:份",
+    "动": "Characters:动",
+    "时": "Characters:时",
+    "词": "Characters:词",
+    "间": "Characters:间"
   },
   "sections": {
     "overview": {
@@ -962,7 +968,6 @@
           "id": "pattern-1",
           "title": "Dates: year, month, day",
           "explanation_en": "Chinese calendar dates move from larger to smaller units: 年 (nián), 月 (yuè), and 号 (hào) or 日 (rì). In speech, 号 (hào) is very common for the date.",
-          "formula_en": "year + 年 + month + 月 + day + 号",
           "examples": [
             {
               "hanzi": "今天是八月三号。",
@@ -974,13 +979,15 @@
               "pinyin": "Míngtiān shì xīngqī liù.",
               "english": "Tomorrow is Saturday."
             }
-          ]
+          ],
+          "pattern_hanzi": "年份 + 年 + 月份 + 月 + 日期 + 号",
+          "pattern_pinyin": "niánfèn + nián + yuèfèn + yuè + rìqī + hào",
+          "pattern_pseudo_translation": "<year> + 年 + <month> + 月 + <day> + 号"
         },
         {
           "id": "pattern-2",
           "title": "Relative days versus calendar days",
           "explanation_en": "昨天 (zuótiān), 今天 (jīntiān), 明天 (míngtiān) depend on when you speak. 星期 (xīngqī) names a week or a weekday according to context.",
-          "formula_en": "subject + day/time + verb",
           "examples": [
             {
               "hanzi": "我昨天上课。",
@@ -992,7 +999,10 @@
               "pinyin": "Wǒmen míngtiān jiàn.",
               "english": "See you tomorrow."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 时间 + 动词",
+          "pattern_pinyin": "zhǔyǔ + shíjiān + dòngcí",
+          "pattern_pseudo_translation": "<subject> + <time> + <verb>"
         }
       ],
       "guided_building": {

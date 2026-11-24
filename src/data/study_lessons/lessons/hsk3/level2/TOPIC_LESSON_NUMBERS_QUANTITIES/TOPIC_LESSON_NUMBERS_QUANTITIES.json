@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-counting-things-and-occasions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -138,7 +138,11 @@
     "面": "Characters:面",
     "饭": "Characters:饭",
     "馆": "Characters:馆",
-    "鱼": "Characters:鱼"
+    "鱼": "Characters:鱼",
+    "作": "Characters:作",
+    "动": "Characters:动",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -757,7 +761,6 @@
           "id": "pattern-1",
           "title": "Counting repeated actions",
           "explanation_en": "Use 次 (cì) after a verb phrase to count how many times an action happened.",
-          "formula_en": "Action + number + 次",
           "examples": [
             {
               "hanzi": "我每周来这个地方两次。",
@@ -769,13 +772,15 @@
               "pinyin": "Wǒ lái guo liǎng cì. Zhèr yǒu hěn duō rén.",
               "english": "I have been here twice. There are many people here."
             }
-          ]
+          ],
+          "pattern_hanzi": "动作 + 数字 + 次",
+          "pattern_pinyin": "dòngzuò + shùzì + cì",
+          "pattern_pseudo_translation": "<action> + <number> + 次"
         },
         {
           "id": "pattern-2",
           "title": "Choosing a classifier",
           "explanation_en": "Use 间 (jiān) for rooms, 位 (wèi) politely for people, and 条 (tiáo) for many long, narrow things.",
-          "formula_en": "Number + classifier + noun",
           "examples": [
             {
               "hanzi": "这里有四间教室。",
@@ -787,7 +792,10 @@
               "pinyin": "Sān wèi. Qǐng gěi wǒmen yì jiān ānjìng de fángjiān.",
               "english": "Three. Please give us a quiet room."
             }
-          ]
+          ],
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pinyin": "shùzì + liàngcí + míngcí",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
         }
       ],
       "guided_building": {

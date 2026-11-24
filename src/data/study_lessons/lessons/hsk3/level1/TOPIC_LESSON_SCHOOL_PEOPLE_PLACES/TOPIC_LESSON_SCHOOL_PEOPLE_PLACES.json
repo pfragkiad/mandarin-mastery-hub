@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-school-people-places",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -100,7 +100,9 @@
     "课": "Characters:课",
     "起": "Characters:起",
     "这": "Characters:这",
-    "里": "Characters:里"
+    "里": "Characters:里",
+    "主": "Characters:主",
+    "地": "Characters:地"
   },
   "sections": {
     "overview": {
@@ -728,8 +730,7 @@
         {
           "id": "pattern-1",
           "title": "School versus student",
-          "explanation_en": "学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level.",
-          "formula_en": "school name + 生 → student type",
+          "explanation_en": "学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level. Use one of the three school levels shown to form the corresponding student type.",
           "examples": [
             {
               "hanzi": "我弟弟是小学生。",
@@ -741,13 +742,15 @@
               "pinyin": "Tā zài dàxué xuéxí.",
               "english": "She studies at university."
             }
-          ]
+          ],
+          "pattern_hanzi": "小学/中学/大学 + 生",
+          "pattern_pinyin": "xiǎoxué/zhōngxué/dàxué + shēng",
+          "pattern_pseudo_translation": "小学/中学/大学 + 生"
         },
         {
           "id": "pattern-2",
           "title": "Attending school: 上学 (shàngxué)",
           "explanation_en": "上学 (shàngxué) describes attending school; 上课 (shàngkè) describes having/attending a class. The two do not mean exactly the same thing.",
-          "formula_en": "subject + 在 + place + 上学",
           "examples": [
             {
               "hanzi": "我在北京上学。",
@@ -759,7 +762,10 @@
               "pinyin": "Wǒmen shàngwǔ shàngkè.",
               "english": "We have class in the morning."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 在 + 地点 + 上学",
+          "pattern_pinyin": "zhǔyǔ + zài + dìdiǎn + shàngxué",
+          "pattern_pseudo_translation": "<subject> + 在 + <place> + 上学"
         }
       ],
       "guided_building": {

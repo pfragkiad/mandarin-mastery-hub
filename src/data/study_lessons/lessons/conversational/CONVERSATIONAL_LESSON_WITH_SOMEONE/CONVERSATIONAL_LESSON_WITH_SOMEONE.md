@@ -27,6 +27,8 @@ Learn to invite someone for lunch, accept or decline, and agree on a place to ea
 
 **跟 + 人 + 一起 + 动作** (gēn + rén + yìqǐ + dòngzuò)
 
+**跟** + &lt;person&gt; + **一起** + &lt;what to do&gt;
+
 跟 (gēn) introduces the person accompanying you; 一起 (yìqǐ) means together.
 
 我想跟你一起吃饭。 (wǒ xiǎng gēn nǐ yìqǐ chīfàn.) — I would like to eat with you.
@@ -35,6 +37,8 @@ Use this when inviting someone to share a meal or activity.
 ## Grammar structure and spoken example
 
 **主语 + 也 + 想 + 动作** (zhǔyǔ + yě + xiǎng + dòngzuò)
+
+&lt;who or what&gt; + **也** + **想** + &lt;what to do&gt;
 
 也 (yě) adds agreement or another participant doing the same thing.
 

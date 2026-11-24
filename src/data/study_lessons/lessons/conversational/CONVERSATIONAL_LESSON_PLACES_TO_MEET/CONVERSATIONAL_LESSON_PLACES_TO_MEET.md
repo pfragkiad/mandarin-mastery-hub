@@ -28,6 +28,8 @@ Learn to invite someone to meet for food, decline one place, and suggest another
 
 **想 + 去 + 地点 + 动作** (xiǎng + qù + dìdiǎn + dòngzuò)
 
+**想** + **去** + &lt;place&gt; + &lt;what to do&gt;
+
 Combine destination and purpose in one sentence.
 
 我想去饭店吃。 (wǒ xiǎng qù fàndiàn chī.) — I want to go to a restaurant to eat.
@@ -36,6 +38,8 @@ Link a proposed destination to the activity you want to do there.
 ## Grammar structure and spoken example
 
 **在 + 地点 + 动作** (zài + dìdiǎn + dòngzuò)
+
+**在** + &lt;place&gt; + &lt;what to do&gt;
 
 Use 在 (zài) before a place to say where an action happens.
 

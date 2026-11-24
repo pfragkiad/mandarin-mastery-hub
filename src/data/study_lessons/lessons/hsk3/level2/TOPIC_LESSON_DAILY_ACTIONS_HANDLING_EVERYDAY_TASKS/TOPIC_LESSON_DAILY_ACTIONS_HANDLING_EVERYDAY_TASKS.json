@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-helping-with-everyday-tasks",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -151,7 +151,10 @@
     "都": "Characters:都",
     "门": "Characters:门",
     "问": "Characters:问",
-    "题": "Characters:题"
+    "题": "Characters:题",
+    "人": "Characters:人",
+    "宾": "Characters:宾",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -819,7 +822,6 @@
           "id": "pattern-1",
           "title": "Helping someone do an action",
           "explanation_en": "帮 (bāng) can precede a person and the action you assist them with.",
-          "formula_en": "帮 + person + verb",
           "examples": [
             {
               "hanzi": "请帮我拿一下这本书。",
@@ -831,13 +833,15 @@
               "pinyin": "Hǎo, wǒ xiān bǎ bāo ná qǐlái.",
               "english": "Sure, I’ll pick up the bag first."
             }
-          ]
+          ],
+          "pattern_hanzi": "帮 + 人 + 动词",
+          "pattern_pinyin": "bāng + rén + dòngcí",
+          "pattern_pseudo_translation": "帮 + <person> + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Finishing one step",
           "explanation_en": "完 (wán) follows a verb to indicate completion, as in 洗完 (xǐ wán).",
-          "formula_en": "Verb + 完 + object",
           "examples": [
             {
               "hanzi": "我洗完衣服再出去。",
@@ -849,7 +853,10 @@
               "pinyin": "Méi wèntí. Wǒ bǎ zhèxiē dōngxi sòng jìnqù.",
               "english": "No problem. I’ll take these things inside."
             }
-          ]
+          ],
+          "pattern_hanzi": "动词 + 完 + 宾语",
+          "pattern_pinyin": "dòngcí + wán + bīnyǔ",
+          "pattern_pseudo_translation": "<verb> + 完 + <object>"
         }
       ],
       "guided_building": {

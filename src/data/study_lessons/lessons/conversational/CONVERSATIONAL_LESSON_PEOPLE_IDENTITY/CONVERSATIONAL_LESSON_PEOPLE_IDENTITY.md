@@ -27,6 +27,8 @@ Learn to introduce yourself, ask about someone’s nationality, and respond to a
 
 **主语 + 是 + 身份** (zhǔyǔ + shì + shēnfèn)
 
+&lt;who or what&gt; + **是** + &lt;who they are&gt;
+
 Use 是 (shì) to identify nationality or identity.
 
 我是中国人。 (wǒ shì Zhōngguó rén.) — I am Chinese.
@@ -35,6 +37,8 @@ Replace the nationality with another identity to introduce yourself or someone e
 ## Grammar structure and spoken example
 
 **主语 + 不是 + 身份** (zhǔyǔ + bú shì + shēnfèn)
+
+&lt;who or what&gt; + **不是** + &lt;who they are&gt;
 
 不 (bù) changes to bú before a fourth-tone syllable, as in 是 (shì).
 
@@ -71,6 +75,8 @@ Speaking task: Introduce yourself, ask whether someone is Chinese or American, a
 ## Grammar structure and spoken example
 
 **主语 + 是不是 + 身份？** (zhǔyǔ + shì bú shì + shēnfèn?)
+
+&lt;who or what&gt; + **是不是** + &lt;who they are&gt;？
 
 是不是 (shì bú shì) is a positive-negative question; normally omit final 吗 (ma) here.
 

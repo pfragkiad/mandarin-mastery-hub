@@ -30,7 +30,11 @@ Ask for assistance, apologize politely, introduce a friend and pass along inform
 
 Use 不好意思 (bù hǎoyìsi) as a polite opening, then ask someone to 帮忙 (bāngmáng) or 帮 (bāng) you with a specific action.
 
-**Pattern:** 不好意思 + request
+**Pattern**
+
+不好意思 + 请求  
+*bù hǎoyìsi + qǐngqiú*  
+**不好意思** + &lt;request&gt;
 
 **请帮我拿一下这个包。**
 *Qǐng bāng wǒ ná yíxià zhè ge bāo.*
@@ -44,7 +48,11 @@ Of course! What would you like me to do?
 
 告诉 (gàosu) introduces information shared with someone, while 介绍 (jièshào) introduces a person or explains something to someone.
 
-**Pattern:** 告诉 + person + information
+**Pattern**
+
+告诉 + 人 + 信息  
+*gàosu + rén + xìnxī*  
+**告诉** + &lt;person&gt; + &lt;information&gt;
 
 **我来介绍一下：这是我的同学。**
 *Wǒ lái jièshào yíxià: zhè shì wǒ de tóngxué.*

@@ -30,6 +30,8 @@ Pronunciation note: This course uses some northern-style 儿化 (érhuà) forms.
 
 **时间词 + 主语 + 动词** (shíjiāncí + zhǔyǔ + dòngcí)
 
+&lt;time word or phrase&gt; + &lt;who or what&gt; + &lt;action word&gt;
+
 Time words often precede the main verb or follow the topic.
 
 明天我想去。 (míngtiān wǒ xiǎng qù.) — I want to go tomorrow.
@@ -38,6 +40,8 @@ Mentioning tomorrow first highlights when the planned action will happen.
 ## Grammar structure and spoken example
 
 **过 + 一会儿 + 动词** (guò + yíhuìr + dòngcí)
+
+**过** + **一会儿** + &lt;action word&gt;
 
 This phrase means after a short while; 一 (yī) is pronounced yí before fourth-tone 会 (huì).
 

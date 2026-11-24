@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-getting-around",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -32,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -145,7 +145,13 @@
     "院": "Characters:院",
     "雨": "Characters:雨",
     "面": "Characters:面",
-    "飞": "Characters:飞"
+    "飞": "Characters:飞",
+    "主": "Characters:主",
+    "交": "Characters:交",
+    "具": "Characters:具",
+    "地": "Characters:地",
+    "语": "Characters:语",
+    "通": "Characters:通"
   },
   "sections": {
     "overview": {
@@ -1186,7 +1192,6 @@
           "id": "pattern-1",
           "title": "Movement from the speaker’s viewpoint",
           "explanation_en": "来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.",
-          "formula_en": "subject + 来/去/回 + place",
           "examples": [
             {
               "hanzi": "朋友明天来我家。",
@@ -1198,13 +1203,15 @@
               "pinyin": "Wǒ xiàwǔ huí jiā.",
               "english": "I will go home this afternoon."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 来/去/回 + 地点",
+          "pattern_pinyin": "zhǔyǔ + lái/qù/huí + dìdiǎn",
+          "pattern_pseudo_translation": "<subject> + 来/去/回 + <place>"
         },
         {
           "id": "pattern-2",
           "title": "Places and destinations",
           "explanation_en": "到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.",
-          "formula_en": "坐 + vehicle + 去 + place",
           "examples": [
             {
               "hanzi": "我们坐火车去北京。",
@@ -1216,7 +1223,10 @@
               "pinyin": "Tā wǎnshang dào xuéxiào.",
               "english": "He will arrive at school in the evening."
             }
-          ]
+          ],
+          "pattern_hanzi": "坐 + 交通工具 + 去 + 地点",
+          "pattern_pinyin": "zuò + jiāotōng gōngjù + qù + dìdiǎn",
+          "pattern_pseudo_translation": "坐 + <vehicle> + 去 + <place>"
         }
       ],
       "guided_building": {

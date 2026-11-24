@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-sharing-opinions-and-feelings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -133,7 +133,12 @@
     "错": "Characters:错",
     "间": "Characters:间",
     "饭": "Characters:饭",
-    "馆": "Characters:馆"
+    "馆": "Characters:馆",
+    "主": "Characters:主",
+    "分": "Characters:分",
+    "动": "Characters:动",
+    "句": "Characters:句",
+    "活": "Characters:活"
   },
   "sections": {
     "overview": {
@@ -712,7 +717,6 @@
           "id": "pattern-1",
           "title": "Evaluating an activity",
           "explanation_en": "有意思 (yǒu yìsi) means interesting; 没意思 (méi yìsi) expresses that something is uninteresting.",
-          "formula_en": "Activity + 很 + 有意思 / 没意思",
           "examples": [
             {
               "hanzi": "这个故事真有意思！",
@@ -724,13 +728,15 @@
               "pinyin": "Wǒ juéde hěn yǒu yìsi! Nǐ ne?",
               "english": "I think it is very interesting! How about you?"
             }
-          ]
+          ],
+          "pattern_hanzi": "活动 + 很有意思 / 活动 + 没意思",
+          "pattern_pinyin": "huódòng + hěn yǒu yìsi / huódòng + méiyìsi",
+          "pattern_pseudo_translation": "<activity> + 很有意思 / <activity> + 没意思"
         },
         {
           "id": "pattern-2",
           "title": "Expressing a hope",
           "explanation_en": "希望 (xīwàng) introduces what you hope will happen, followed by a clause.",
-          "formula_en": "Subject + 希望 + clause",
           "examples": [
             {
               "hanzi": "我希望明天的天气不错。",
@@ -742,7 +748,10 @@
               "pinyin": "Méi guānxi! Xīwàng xià cì wǒmen néng kàn gèng hǎo de diànyǐng.",
               "english": "No problem! I hope we can watch a better movie next time."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 希望 + 分句",
+          "pattern_pinyin": "zhǔyǔ + xīwàng + fēnjù",
+          "pattern_pseudo_translation": "<subject> + 希望 + <clause>"
         }
       ],
       "guided_building": {

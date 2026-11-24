@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-my-room-and-my-belongings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -127,7 +127,12 @@
     "门": "Characters:门",
     "间": "Characters:间",
     "面": "Characters:面",
-    "黑": "Characters:黑"
+    "黑": "Characters:黑",
+    "人": "Characters:人",
+    "地": "Characters:地",
+    "宾": "Characters:宾",
+    "点": "Characters:点",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -716,7 +721,6 @@
           "id": "pattern-1",
           "title": "Locating belongings",
           "explanation_en": "Use 在 (zài) followed by a location phrase to say where an object is; distinguish 里面 (lǐmiàn) and 旁边 (pángbiān).",
-          "formula_en": "Object + 在 + location",
           "examples": [
             {
               "hanzi": "我的手表在书包里面。",
@@ -728,13 +732,15 @@
               "pinyin": "Zài chuáng shang, pángbiān hái yǒu nǐ de shǒubiǎo.",
               "english": "On the bed, and your watch is next to it."
             }
-          ]
+          ],
+          "pattern_hanzi": "宾语 + 在 + 地点",
+          "pattern_pinyin": "bīnyǔ + zài + dìdiǎn",
+          "pattern_pseudo_translation": "<object> + 在 + <location>"
         },
         {
           "id": "pattern-2",
           "title": "Talking about what to take",
           "explanation_en": "拿 (ná) is used for picking up or taking an object; name the object directly after the verb.",
-          "formula_en": "Person + 拿 + object",
           "examples": [
             {
               "hanzi": "请把包放在床旁边。",
@@ -746,7 +752,10 @@
               "pinyin": "Zài mén hòumiàn. Bié wàng le ná nà ge bāo!",
               "english": "Behind the door. Don’t forget to take that bag!"
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 拿 + 宾语",
+          "pattern_pinyin": "rén + ná + bīnyǔ",
+          "pattern_pseudo_translation": "<person> + 拿 + <object>"
         }
       ],
       "guided_building": {

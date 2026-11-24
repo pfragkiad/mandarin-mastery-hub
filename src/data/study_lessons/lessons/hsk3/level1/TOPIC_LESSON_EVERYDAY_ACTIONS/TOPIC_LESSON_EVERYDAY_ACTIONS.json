@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-everyday-actions",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -138,7 +138,12 @@
     "那": "Characters:那",
     "里": "Characters:里",
     "门": "Characters:门",
-    "题": "Characters:题"
+    "题": "Characters:题",
+    "东": "Characters:东",
+    "接": "Characters:接",
+    "收": "Characters:收",
+    "者": "Characters:者",
+    "西": "Characters:西"
   },
   "sections": {
     "overview": {
@@ -909,8 +914,7 @@
         {
           "id": "pattern-1",
           "title": "Looking versus seeing",
-          "explanation_en": "看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object.",
-          "formula_en": "look/search → result",
+          "explanation_en": "看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object. The arrows show an action followed by the word for a successful result.",
           "examples": [
             {
               "hanzi": "我在看外边。",
@@ -922,13 +926,15 @@
               "pinyin": "Wǒ kànjiàn nà zhī māo le.",
               "english": "I spotted that cat."
             }
-          ]
+          ],
+          "pattern_hanzi": "看 → 看见 / 找 → 找到",
+          "pattern_pinyin": "kàn → kànjiàn / zhǎo → zhǎodào",
+          "pattern_pseudo_translation": "看 → 看见 / 找 → 找到"
         },
         {
           "id": "pattern-2",
           "title": "Give and receive",
           "explanation_en": "给 (gěi) can introduce a recipient before a noun phrase or, in simple requests, act as a verb meaning “give”.",
-          "formula_en": "给 + person + object",
           "examples": [
             {
               "hanzi": "请给我那本书。",
@@ -940,7 +946,10 @@
               "pinyin": "Wǒ gěi péngyou dǎ diànhuà.",
               "english": "I call a friend."
             }
-          ]
+          ],
+          "pattern_hanzi": "给 + 接收者 + 所给的东西",
+          "pattern_pinyin": "gěi + jiēshōuzhě + suǒ gěi de dōngxi",
+          "pattern_pseudo_translation": "给 + <recipient> + <thing given>"
         }
       ],
       "guided_building": {

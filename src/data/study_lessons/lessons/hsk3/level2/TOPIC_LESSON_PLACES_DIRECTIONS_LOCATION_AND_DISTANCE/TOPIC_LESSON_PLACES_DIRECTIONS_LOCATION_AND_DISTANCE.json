@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-describing-location-and-distance",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -135,7 +135,12 @@
     "面": "Characters:面",
     "饭": "Characters:饭",
     "馆": "Characters:馆",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "乙": "Characters:乙",
+    "位": "Characters:位",
+    "方": "Characters:方",
+    "标": "Characters:标",
+    "甲": "Characters:甲"
   },
   "sections": {
     "overview": {
@@ -1170,7 +1175,6 @@
           "id": "pattern-1",
           "title": "Relative positions",
           "explanation_en": "Place 旁边 (pángbiān), 左边 (zuǒbian), 右边 (yòubian) or another position term after a landmark to describe a location.",
-          "formula_en": "Landmark + position + 有/是 + place",
           "examples": [
             {
               "hanzi": "我的书在桌子下面。",
@@ -1182,13 +1186,15 @@
               "pinyin": "Zài èr lóu. Mén jiù zài zuǒbian.",
               "english": "On the second floor. The door is on the left."
             }
-          ]
+          ],
+          "pattern_hanzi": "地标 + 方位 + 有/是 + 地点",
+          "pattern_pinyin": "dìbiāo + fāngwèi + yǒu/shì + dìdiǎn",
+          "pattern_pseudo_translation": "<landmark> + <position> + 有/是 + <place>"
         },
         {
           "id": "pattern-2",
           "title": "Distance from a landmark",
           "explanation_en": "离 (lí) introduces a reference point; combine it with 近 (jìn) or 远 (yuǎn).",
-          "formula_en": "Place A + 离 + place B + 近/远",
           "examples": [
             {
               "hanzi": "我们家离学校很近。",
@@ -1200,7 +1206,10 @@
               "pinyin": "Bù yuǎn, jiù zài xǐshǒujiān pángbiān, bàngōngshì qiánmiàn.",
               "english": "Not far, next to the restroom, in front of the office."
             }
-          ]
+          ],
+          "pattern_hanzi": "地点甲 + 离 + 地点乙 + 近/远",
+          "pattern_pinyin": "dìdiǎn jiǎ + lí + dìdiǎn yǐ + jìn/yuǎn",
+          "pattern_pseudo_translation": "<place A> + 离 + <place B> + 近/远"
         }
       ],
       "guided_building": {

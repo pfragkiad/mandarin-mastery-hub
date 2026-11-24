@@ -28,6 +28,8 @@ Learn to offer two alternatives, ask someone to choose, and give a direct answer
 
 **喝 + 饮料 + 还是 + 饮料？** (hē + yǐnliào + háishi + yǐnliào?)
 
+**喝** + &lt;first drink&gt; + **还是** + &lt;second drink&gt;？
+
 还是 (háishi) is normal in questions that present a choice.
 
 你喝茶还是啤酒？ (nǐ hē chá háishi píjiǔ?) — Tea or beer?
@@ -36,6 +38,8 @@ The speaker is asking the listener to select one of the drinks.
 ## Grammar structure and spoken example
 
 **动词 + 名词 + 或者 + 名词** (dòngcí + míngcí + huòzhě + míngcí)
+
+&lt;action word&gt; + &lt;a thing or option&gt; + **或者** + &lt;a thing or option&gt;
 
 或者 (huòzhě) commonly offers alternatives in statements.
 

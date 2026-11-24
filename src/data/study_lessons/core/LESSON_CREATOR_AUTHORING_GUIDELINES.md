@@ -152,3 +152,11 @@ This authoring policy is included in **Core Project Sources v3.4.0**. It is an e
 The Core **package release** follows Semantic Versioning (major = incompatible format or validation contract; minor = backward-compatible format addition; patch = no lesson-format contract change, including policy, documentation, template-copy, and generator-instruction improvements). Changes that make previously valid lessons invalid are assessed for breaking compatibility, even if JSON field names stay unchanged.
 
 The **policy version** remains independently versioned; `1.0.0` was first adopted in Core v3.3.1 and `1.0.1` adds grammar-card de-duplication and TTS safeguards; `1.1.0` adds optional source-respecting expression usage notes. Course vocabulary and taxonomy versions are separate axes and must be pinned explicitly. A Markdown file does not automatically run as an Agent Skill: a lesson-authoring agent must be directed to read and apply this file. Legacy lessons are not silently rewritten by the policy.
+
+### Grammar pattern pseudo-translation
+
+Set `pattern_pseudo_translation` when a pattern benefits from English labels. Keep the original Hanzi and pinyin on the first two lines. On the third line, use angle brackets for English placeholders and retain fixed Mandarin, for example `<statement> + 吗？` (paired pinyin on the preceding line: `chénshùjù + ma?`). Keep any English placeholders on the third line only. Use plain text without HTML or Markdown markup.
+
+Render the third line directly below the pinyin when present. Treat angle brackets as literal placeholder markers, render fixed Mandarin in bold with a Kai-style font, and leave the line out of speech synthesis. Keep the explicit spoken example as the audio source.
+
+Use the same three-line layout across general, topic and character lessons. Topic v3.4.0 requires all three pattern fields. The pseudo-translation is optional for general patterns and character constructions.

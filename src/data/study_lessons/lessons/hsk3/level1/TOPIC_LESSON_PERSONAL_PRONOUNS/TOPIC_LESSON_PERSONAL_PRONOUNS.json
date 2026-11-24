@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-personal-pronouns",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -82,6 +82,7 @@
     "家": "Characters:家",
     "小": "Characters:小",
     "师": "Characters:师",
+    "年": "Characters:年",
     "很": "Characters:很",
     "您": "Characters:您",
     "我": "Characters:我",
@@ -118,7 +119,11 @@
     "都": "Characters:都",
     "里": "Characters:里",
     "问": "Characters:问",
-    "年": "Characters:年"
+    "代": "Characters:代",
+    "份": "Characters:份",
+    "动": "Characters:动",
+    "词": "Characters:词",
+    "身": "Characters:身"
   },
   "sections": {
     "overview": {
@@ -825,7 +830,6 @@
           "id": "pattern-1",
           "title": "Person and number",
           "explanation_en": "我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.",
-          "formula_en": "pronoun + 是 + identity",
           "examples": [
             {
               "hanzi": "他们是老师。",
@@ -837,13 +841,15 @@
               "pinyin": "Wǒmen shì péngyou.",
               "english": "We are friends."
             }
-          ]
+          ],
+          "pattern_hanzi": "代词 + 是 + 身份",
+          "pattern_pinyin": "dàicí + shì + shēnfèn",
+          "pattern_pseudo_translation": "<pronoun> + 是 + <identity>"
         },
         {
           "id": "pattern-2",
           "title": "Written 他 (tā), 她 (tā), 它 (tā)",
           "explanation_en": "These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.",
-          "formula_en": "他/她/它 + verb",
           "examples": [
             {
               "hanzi": "她在看书。",
@@ -855,7 +861,10 @@
               "pinyin": "Tā shì yì zhī xiǎo māo.",
               "english": "It is a small cat."
             }
-          ]
+          ],
+          "pattern_hanzi": "他/她/它 + 动词",
+          "pattern_pinyin": "tā/tā/tā + dòngcí",
+          "pattern_pseudo_translation": "他/她/它 + <verb>"
         }
       ],
       "guided_building": {

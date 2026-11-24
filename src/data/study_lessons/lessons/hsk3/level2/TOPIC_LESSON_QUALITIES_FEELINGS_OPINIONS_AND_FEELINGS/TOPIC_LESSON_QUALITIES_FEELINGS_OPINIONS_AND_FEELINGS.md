@@ -32,7 +32,11 @@ Say whether an activity is interesting, correct a mistake and express a personal
 
 有意思 (yǒu yìsi) means interesting; 没意思 (méi yìsi) expresses that something is uninteresting.
 
-**Pattern:** Activity + 很 + 有意思 / 没意思
+**Pattern**
+
+活动 + 很有意思 / 活动 + 没意思  
+*huódòng + hěn yǒu yìsi / huódòng + méiyìsi*  
+&lt;activity&gt; + **很有意思** / &lt;activity&gt; + **没意思**
 
 **这个故事真有意思！**
 *Zhè ge gùshi zhēn yǒu yìsi!*
@@ -46,7 +50,11 @@ I think it is very interesting! How about you?
 
 希望 (xīwàng) introduces what you hope will happen, followed by a clause.
 
-**Pattern:** Subject + 希望 + clause
+**Pattern**
+
+主语 + 希望 + 分句  
+*zhǔyǔ + xīwàng + fēnjù*  
+&lt;subject&gt; + **希望** + &lt;clause&gt;
 
 **我希望明天的天气不错。**
 *Wǒ xīwàng míngtiān de tiānqì búcuò.*

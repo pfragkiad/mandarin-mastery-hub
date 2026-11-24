@@ -30,7 +30,13 @@ A younger student and an older student compare which schools they attend.
 
 学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level.
 
-**Pattern:** school name + 生 → student type
+**Pattern**
+
+小学/中学/大学 + 生  
+*xiǎoxué/zhōngxué/dàxué + shēng*  
+**小学**/**中学**/**大学** + **生**
+
+Use one of the three school levels shown to form the corresponding student type.
 
 **我弟弟是小学生。**
 *Wǒ dìdi shì xiǎoxuéshēng.*
@@ -44,7 +50,11 @@ She studies at university.
 
 上学 (shàngxué) describes attending school; 上课 (shàngkè) describes having/attending a class. The two do not mean exactly the same thing.
 
-**Pattern:** subject + 在 + place + 上学
+**Pattern**
+
+主语 + 在 + 地点 + 上学  
+*zhǔyǔ + zài + dìdiǎn + shàngxué*  
+&lt;subject&gt; + **在** + &lt;place&gt; + **上学**
 
 **我在北京上学。**
 *Wǒ zài Běijīng shàngxué.*

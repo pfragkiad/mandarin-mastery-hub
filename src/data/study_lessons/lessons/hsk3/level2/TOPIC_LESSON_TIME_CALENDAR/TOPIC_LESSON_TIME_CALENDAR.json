@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-talking-about-time-and-habits",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -160,7 +160,14 @@
     "里": "Characters:里",
     "铁": "Characters:铁",
     "雨": "Characters:雨",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "主": "Characters:主",
+    "事": "Characters:事",
+    "件": "Characters:件",
+    "副": "Characters:副",
+    "率": "Characters:率",
+    "词": "Characters:词",
+    "频": "Characters:频"
   },
   "sections": {
     "overview": {
@@ -954,7 +961,6 @@
           "id": "pattern-1",
           "title": "Frequency in daily life",
           "explanation_en": "经常 (jīngcháng) means often; 有时 (yǒushí) means sometimes. Put the frequency word before the main action.",
-          "formula_en": "Subject + frequency adverb + verb",
           "examples": [
             {
               "hanzi": "我经常星期六去运动。",
@@ -966,13 +972,15 @@
               "pinyin": "Duì, wǒ de shēngrì kuàiyào dào le!",
               "english": "Yes, my birthday is coming soon!"
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 频率副词 + 动词",
+          "pattern_pinyin": "zhǔyǔ + pínlǜ fùcí + dòngcí",
+          "pattern_pseudo_translation": "<subject> + <frequency adverb> + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "An event is about to happen",
           "explanation_en": "Use 快要 (kuàiyào) before an event or verb phrase, often with 了 (le) to signal an impending change.",
-          "formula_en": "快要 + event + 了",
           "examples": [
             {
               "hanzi": "电影快要开始了，我们进去吧。",
@@ -984,7 +992,10 @@
               "pinyin": "Wǒ cóngxiǎo xǐhuan hé jiārén yìqǐ chī fàn. Yǒushí hái chàng gē.",
               "english": "Since childhood I have liked eating with family. Sometimes we also sang."
             }
-          ]
+          ],
+          "pattern_hanzi": "快要 + 事件 + 了",
+          "pattern_pinyin": "kuàiyào + shìjiàn + le",
+          "pattern_pseudo_translation": "快要 + <event> + 了"
         }
       ],
       "guided_building": {

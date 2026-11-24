@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-describing-actions-more-precisely",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -29,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -147,7 +147,11 @@
     "门": "Characters:门",
     "静": "Characters:静",
     "飞": "Characters:飞",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "修": "Characters:修",
+    "动": "Characters:动",
+    "补": "Characters:补",
+    "饰": "Characters:饰"
   },
   "sections": {
     "overview": {
@@ -853,7 +857,6 @@
           "id": "pattern-1",
           "title": "Experience and continuing state",
           "explanation_en": "过 (guo) after a verb points to an experience, while 着 (zhe) after a verb can mark a persisting state; they do not mean the same thing.",
-          "formula_en": "Verb + 过 / Verb + 着",
           "examples": [
             {
               "hanzi": "我看过这部电影。",
@@ -865,13 +868,15 @@
               "pinyin": "Qù guo a! Wǒ yǐjīng qù guo liǎng cì le.",
               "english": "Yes! I’ve already been twice."
             }
-          ]
+          ],
+          "pattern_hanzi": "动词 + 过 / 动词 + 着",
+          "pattern_pinyin": "dòngcí + guo / dòngcí + zhe",
+          "pattern_pseudo_translation": "<verb> + 过 / <verb> + 着"
         },
         {
           "id": "pattern-2",
           "title": "Modifying an action",
           "explanation_en": "地 (de) can link a manner modifier to a verb, while 得 (de) follows the verb and introduces a complement describing its degree or result.",
-          "formula_en": "Modifier + 地 + verb / Verb + 得 + complement",
           "examples": [
             {
               "hanzi": "她跑得很快。",
@@ -883,7 +888,10 @@
               "pinyin": "Wǒ zhèng rènzhēn de xiě zì ne. Bié shuōhuà, wǒ xiě de hěn màn.",
               "english": "I’m writing carefully right now. Please don’t talk; I write slowly."
             }
-          ]
+          ],
+          "pattern_hanzi": "修饰语 + 地 + 动词 / 动词 + 得 + 补语",
+          "pattern_pinyin": "xiūshìyǔ + de + dòngcí / dòngcí + de + bǔyǔ",
+          "pattern_pseudo_translation": "<modifier> + 地 + <verb> / <verb> + 得 + <complement>"
         }
       ],
       "guided_building": {

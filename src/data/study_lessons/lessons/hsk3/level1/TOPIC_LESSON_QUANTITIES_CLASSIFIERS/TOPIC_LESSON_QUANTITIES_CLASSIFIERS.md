@@ -30,7 +30,11 @@ A shopper chooses books and clothing. Practise different classifiers and small a
 
 Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.
 
-**Pattern:** number + classifier + noun
+**Pattern**
+
+数字 + 量词 + 名词  
+*shùzì + liàngcí + míngcí*  
+&lt;number&gt; + &lt;classifier&gt; + &lt;noun&gt;
 
 **桌子上有两本书。**
 *Zhuōzi shàng yǒu liǎng běn shū.*
@@ -44,7 +48,11 @@ I bought three items of clothing.
 
 两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.
 
-**Pattern:** 几 + classifier + noun?
+**Pattern**
+
+几 + 量词 + 名词？  
+*jǐ + liàngcí + míngcí?*  
+**几** + &lt;classifier&gt; + &lt;noun&gt;？
 
 **你有几个好朋友？**
 *Nǐ yǒu jǐ ge hǎo péngyou?*

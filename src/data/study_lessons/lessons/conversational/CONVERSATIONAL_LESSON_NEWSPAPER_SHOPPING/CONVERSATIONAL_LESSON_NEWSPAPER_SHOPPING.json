@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-newspaper-shopping",
   "lesson_type": "dialogue",
   "lesson": {
@@ -179,7 +179,8 @@
           "pinyin": "Nǐ yǒu méiyǒu jīntiān de bàozhǐ?",
           "english": "Do you have today’s newspaper?",
           "teaching_note": "Replace newspaper with another item when asking whether it is in stock."
-        }
+        },
+        "pattern_pseudo_translation": "有没有 + <item>？"
       },
       {
         "id": "grammar-2",
@@ -193,7 +194,8 @@
           "pinyin": "Zhège shì bú shì bā kuài?",
           "english": "Is this eight yuan?",
           "teaching_note": "Use this to check the amount you think you heard."
-        }
+        },
+        "pattern_pseudo_translation": "<item> + 是不是 + <price>？"
       },
       {
         "id": "grammar-3",
@@ -207,7 +209,8 @@
           "pinyin": "Bā kuài, bú shì shíbā kuài.",
           "english": "Eight yuan, not eighteen yuan.",
           "teaching_note": "Repeat the corrected number if the buyer misheard the price."
-        }
+        },
+        "pattern_pseudo_translation": "<number> + 不是 + <another number>"
       },
       {
         "id": "key-expressions",

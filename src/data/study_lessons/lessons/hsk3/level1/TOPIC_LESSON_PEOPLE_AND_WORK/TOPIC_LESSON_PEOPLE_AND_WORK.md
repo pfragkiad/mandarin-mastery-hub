@@ -30,7 +30,11 @@ Two people introduce themselves at a workplace, including names, jobs, and simpl
 
 叫 (jiào) introduces a name in 我叫… (wǒ jiào …). With 您 (nín), the question becomes more formal and respectful.
 
-**Pattern:** 我叫 + name; 您叫什么名字?
+**Pattern**
+
+我叫 + 名字; 您叫什么名字？  
+*wǒ jiào + míngzi; nín jiào shénme míngzi?*  
+**我叫** + &lt;name&gt;; **您叫什么名字**？
 
 **我叫小李。**
 *Wǒ jiào Xiǎo Lǐ.*
@@ -44,7 +48,11 @@ Excuse me, what is your name?
 
 在 (zài) introduces a workplace; 上班 (shàngbān) can mean going to work or being on duty; 下班 (xiàbān) means finishing work.
 
-**Pattern:** subject + 在 + place + 工作
+**Pattern**
+
+主语 + 在 + 地点 + 工作  
+*zhǔyǔ + zài + dìdiǎn + gōngzuò*  
+&lt;subject&gt; + **在** + &lt;place&gt; + **工作**
 
 **我在学校工作。**
 *Wǒ zài xuéxiào gōngzuò.*

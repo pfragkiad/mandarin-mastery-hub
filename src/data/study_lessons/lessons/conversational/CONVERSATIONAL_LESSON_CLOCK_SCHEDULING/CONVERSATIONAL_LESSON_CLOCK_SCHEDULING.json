@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-clock-scheduling",
   "lesson_type": "dialogue",
   "lesson": {
@@ -145,7 +145,8 @@
           "pinyin": "xiànzài jǐ diǎn zhōng?",
           "english": "What time is it now?",
           "teaching_note": "Ask for the current clock time before arranging a meeting."
-        }
+        },
+        "pattern_pseudo_translation": "现在 + 几点钟？"
       },
       {
         "id": "grammar-2",
@@ -159,7 +160,8 @@
           "pinyin": "bā diǎn zhōng bù xíng.",
           "english": "Eight o’clock does not work.",
           "teaching_note": "Give an alternative time after declining the first suggestion."
-        }
+        },
+        "pattern_pseudo_translation": "<proposed time> + 不行"
       },
       {
         "id": "key-expressions",
@@ -366,7 +368,8 @@
           "pinyin": "Bā diǎn bù xíng, jiǔ diǎn kěyǐ.",
           "english": "Eight does not work; nine works.",
           "teaching_note": "This keeps negotiations moving by supplying an acceptable alternative."
-        }
+        },
+        "pattern_pseudo_translation": "<proposed time> + 不行；<another time> + 可以"
       },
       {
         "id": "source-coverage-grammar-2",
@@ -380,7 +383,8 @@
           "pinyin": "Shí diǎn tài wǎn le.",
           "english": "Ten o’clock is too late.",
           "teaching_note": "In scheduling, it explains why a proposed time is unsuitable."
-        }
+        },
+        "pattern_pseudo_translation": "太 + <describing word> + 了"
       }
     ],
     "practice": {

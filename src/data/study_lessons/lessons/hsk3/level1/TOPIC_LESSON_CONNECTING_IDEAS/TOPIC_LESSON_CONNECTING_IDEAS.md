@@ -30,7 +30,11 @@ Two students compare their activities. Practise linkers, emphasis, and the diffe
 
 也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.
 
-**Pattern:** subject + 也 + verb; group + 都 + verb
+**Pattern**
+
+主语 + 也 + 动词; 一群人 + 都 + 动词  
+*zhǔyǔ + yě + dòngcí; yì qún rén + dōu + dòngcí*  
+&lt;subject&gt; + **也** + &lt;verb&gt;; &lt;group&gt; + **都** + &lt;verb&gt;
 
 **妹妹也喜欢喝茶。**
 *Mèimei yě xǐhuan hē chá.*
@@ -44,7 +48,11 @@ We all like Chinese.
 
 很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.
 
-**Pattern:** subject + 正在 + verb
+**Pattern**
+
+主语 + 正在 + 动词  
+*zhǔyǔ + zhèngzài + dòngcí*  
+&lt;subject&gt; + **正在** + &lt;verb&gt;
 
 **她正在做饭。**
 *Tā zhèngzài zuò fàn.*

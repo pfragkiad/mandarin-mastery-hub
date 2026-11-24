@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-describing-colors-and-comparing-things",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
     "language": "zh-CN",
     "date_reviewed": null
@@ -149,7 +149,13 @@
     "间": "Characters:间",
     "颜": "Characters:颜",
     "高": "Characters:高",
-    "黑": "Characters:黑"
+    "黑": "Characters:黑",
+    "乙": "Characters:乙",
+    "名": "Characters:名",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "甲": "Characters:甲",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -960,7 +966,6 @@
           "id": "pattern-1",
           "title": "Comparing two items",
           "explanation_en": "比 (bǐ) introduces the item used for comparison, followed by the relevant adjective.",
-          "formula_en": "A + 比 + B + adjective",
           "examples": [
             {
               "hanzi": "这条路比那条路长。",
@@ -972,13 +977,15 @@
               "pinyin": "Wǒ xǐhuan lǜsè de, búguò hēisè de yě búcuò.",
               "english": "I like the green one, though the black one is also nice."
             }
-          ]
+          ],
+          "pattern_hanzi": "甲 + 比 + 乙 + 形容词",
+          "pattern_pinyin": "jiǎ + bǐ + yǐ + xíngróngcí",
+          "pattern_pseudo_translation": "<A> + 比 + <B> + <adjective>"
         },
         {
           "id": "pattern-2",
           "title": "Describing colors",
           "explanation_en": "Use a color noun such as 红色 (hóngsè) before 的 (de) when modifying a noun.",
-          "formula_en": "Color + 的 + noun",
           "examples": [
             {
               "hanzi": "她走得很慢，我走得很快。",
@@ -990,7 +997,10 @@
               "pinyin": "Duì, érqiě báisè de nà tiáo bǐ zhè tiáo duǎn.",
               "english": "Yes, and the white pair is shorter than this one."
             }
-          ]
+          ],
+          "pattern_hanzi": "颜色 + 的 + 名词",
+          "pattern_pinyin": "yánsè + de + míngcí",
+          "pattern_pseudo_translation": "<color> + 的 + <noun>"
         }
       ],
       "guided_building": {

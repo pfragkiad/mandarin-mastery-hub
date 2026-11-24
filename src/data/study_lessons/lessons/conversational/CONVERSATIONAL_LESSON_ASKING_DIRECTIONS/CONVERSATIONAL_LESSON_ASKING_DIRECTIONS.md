@@ -30,6 +30,8 @@ Pronunciation note: This course uses some northern-style 儿化 (érhuà) forms.
 
 **地名 + 在 + 哪儿？** (dìmíng + zài + nǎr?)
 
+&lt;place you’re looking for&gt; + **在** + **哪儿**？
+
 Ask for a location with 在哪儿 (zài nǎr), without adding 吗 (ma).
 
 学院路在哪儿？ (Xuéyuàn Lù zài nǎr?) — Where is Xueyuan Road?
@@ -38,6 +40,8 @@ Replace the place name to ask about a street, building, or meeting point.
 ## Grammar structure and spoken example
 
 **不在 + 地点** (bú zài + dìdiǎn)
+
+**不在** + &lt;place&gt;
 
 Negate a location with 不在 (bú zài); the 不 changes tone before fourth-tone 在.
 

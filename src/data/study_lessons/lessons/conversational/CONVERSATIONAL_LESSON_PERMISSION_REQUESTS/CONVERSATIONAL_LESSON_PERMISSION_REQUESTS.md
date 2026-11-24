@@ -28,6 +28,8 @@ Learn to ask permission, request an item politely, and respond appropriately. Us
 
 **可不可以 + 动作？** (kě bu kěyǐ + dòngzuò?)
 
+**可不可以** + &lt;what to do&gt;？
+
 An A-not-A form of 可以 (kěyǐ) asks about possibility or permission.
 
 你可不可以买茶？ (nǐ kě bu kěyǐ mǎi chá?) — Can you buy tea?
@@ -36,6 +38,8 @@ Ask whether an action is possible or allowed in the situation.
 ## Grammar structure and spoken example
 
 **给 + 人 + 数量 + 物品** (gěi + rén + shùliàng + wùpǐn)
+
+**给** + &lt;person&gt; + &lt;number or amount&gt; + &lt;item&gt;
 
 给 (gěi) can mean to give something to someone.
 
@@ -83,6 +87,8 @@ Speaking task: Ask politely for an item and respond with permission, refusal or 
 ## Grammar structure and spoken example
 
 **主语 + 可不可以 + 动词 + 物品？** (zhǔyǔ + kě bu kěyǐ + dòngcí + wùpǐn?)
+
+&lt;who or what&gt; + **可不可以** + &lt;action word&gt; + &lt;item&gt;？
 
 可不可以 (kě bu kěyǐ) asks for permission or possibility as an A-not-A question.
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/mandarin/v3.1/general_lesson.schema.json",
-  "title": "General grammar, dialogue and review lessons — v3.3.0 (backward-compatible)",
+  "title": "General grammar, dialogue and review lessons — v3.4.0 (backward-compatible)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -21,7 +21,8 @@
         "mandarin-general-lesson/3.0.0",
         "mandarin-general-lesson/3.1.0",
         "mandarin-general-lesson/3.2.0",
-        "mandarin-general-lesson/3.3.0"
+        "mandarin-general-lesson/3.3.0",
+        "mandarin-general-lesson/3.4.0"
       ]
     },
     "lesson_id": {
@@ -340,6 +341,12 @@
                         "type": "string"
                       }
                     }
+                  },
+                  "pattern_pseudo_translation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$",
+                    "description": "Optional plain-text third line. Use <English placeholder> for replaceable parts, and keep fixed Mandarin and structural punctuation. This line is display-only."
                   }
                 }
               },

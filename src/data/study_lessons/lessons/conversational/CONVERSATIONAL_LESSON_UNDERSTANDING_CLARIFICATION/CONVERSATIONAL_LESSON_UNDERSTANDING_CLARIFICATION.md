@@ -27,6 +27,8 @@ Learn to say when you do not understand and ask someone to clarify their meaning
 
 **主语 + 不 + 心理动词** (zhǔyǔ + bù + xīnlǐ dòngcí)
 
+&lt;who or what&gt; + **不** + &lt;verb like “understand”&gt;
+
 Negate a mental state using 不 (bù); the next syllable is not fourth tone here.
 
 我不明白。 (wǒ bù míngbai.) — I do not understand.
@@ -35,6 +37,8 @@ This is a natural way to signal difficulty following what someone says.
 ## Grammar structure and spoken example
 
 **主语 + 说 + 什么？** (zhǔyǔ + shuō + shénme?)
+
+&lt;who or what&gt; + **说** + **什么**？
 
 什么 (shénme) occupies the position of the unknown thing in the sentence.
 

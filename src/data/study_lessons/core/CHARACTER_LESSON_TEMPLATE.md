@@ -58,3 +58,5 @@ One full lesson ZIP has exactly four root files: `CHARACTER_LESSON_<NAME>.json`,
 ## Authoring policy
 
 For finished lessons, replace illustrative tags with 2–3 specific content tags, use concise action-oriented learner copy, and apply `LESSON_CREATOR_AUTHORING_GUIDELINES.md`. Preserve all existing IDs during editorial revisions.
+
+Character constructions can include optional `pattern_pseudo_translation` below the Hanzi and pinyin.

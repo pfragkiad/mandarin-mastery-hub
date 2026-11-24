@@ -30,7 +30,11 @@ Make a simple plan by naming today, tomorrow and the date.
 
 Chinese calendar dates move from larger to smaller units: 年 (nián), 月 (yuè), and 号 (hào) or 日 (rì). In speech, 号 (hào) is very common for the date.
 
-**Pattern:** year + 年 + month + 月 + day + 号
+**Pattern**
+
+年份 + 年 + 月份 + 月 + 日期 + 号  
+*niánfèn + nián + yuèfèn + yuè + rìqī + hào*  
+&lt;year&gt; + **年** + &lt;month&gt; + **月** + &lt;day&gt; + **号**
 
 **今天是八月三号。**
 *Jīntiān shì bā yuè sān hào.*
@@ -44,7 +48,11 @@ Tomorrow is Saturday.
 
 昨天 (zuótiān), 今天 (jīntiān), 明天 (míngtiān) depend on when you speak. 星期 (xīngqī) names a week or a weekday according to context.
 
-**Pattern:** subject + day/time + verb
+**Pattern**
+
+主语 + 时间 + 动词  
+*zhǔyǔ + shíjiān + dòngcí*  
+&lt;subject&gt; + &lt;time&gt; + &lt;verb&gt;
 
 **我昨天上课。**
 *Wǒ zuótiān shàngkè.*

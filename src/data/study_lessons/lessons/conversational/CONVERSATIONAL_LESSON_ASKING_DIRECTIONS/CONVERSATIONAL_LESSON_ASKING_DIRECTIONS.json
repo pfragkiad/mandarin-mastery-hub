@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-asking-directions",
   "lesson_type": "dialogue",
   "lesson": {
@@ -124,7 +124,8 @@
           "pinyin": "Xuéyuàn Lù zài nǎr?",
           "english": "Where is Xueyuan Road?",
           "teaching_note": "Replace the place name to ask about a street, building, or meeting point."
-        }
+        },
+        "pattern_pseudo_translation": "<place you’re looking for> + 在 + 哪儿？"
       },
       {
         "id": "grammar-2",
@@ -138,7 +139,8 @@
           "pinyin": "bú zài zhèr.",
           "english": "It is not here.",
           "teaching_note": "After correcting a mistaken location, give the right place or direction."
-        }
+        },
+        "pattern_pseudo_translation": "不在 + <place>"
       },
       {
         "id": "key-expressions",

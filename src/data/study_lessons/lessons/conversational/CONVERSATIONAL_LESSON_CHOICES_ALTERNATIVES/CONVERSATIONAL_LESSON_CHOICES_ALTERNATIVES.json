@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-general-lesson/3.3.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "convm-choices-alternatives",
   "lesson_type": "dialogue",
   "lesson": {
@@ -153,7 +153,8 @@
           "pinyin": "nǐ hē chá háishi píjiǔ?",
           "english": "Tea or beer?",
           "teaching_note": "The speaker is asking the listener to select one of the drinks."
-        }
+        },
+        "pattern_pseudo_translation": "喝 + <first drink> + 还是 + <second drink>？"
       },
       {
         "id": "grammar-2",
@@ -167,7 +168,8 @@
           "pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
           "english": "I want to buy tea or beer.",
           "teaching_note": "This describes possibilities instead of directly requesting a choice."
-        }
+        },
+        "pattern_pseudo_translation": "<action word> + <a thing or option> + 或者 + <a thing or option>"
       },
       {
         "id": "key-expressions",

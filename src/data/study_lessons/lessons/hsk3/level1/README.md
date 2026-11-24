@@ -1,18 +1,17 @@
 # HSK 3.0 Level 1 lessons
 
-These 21 `TOPIC_LESSON_*` directories are the existing Level 1 lessons, updated
-from the owner's v3.3.0 rev2 bundle for taxonomy v2.0.0 and vocabulary v1.7.1.
-Every directory keeps exactly four supplied files: canonical JSON, HTML, Markdown
-and editorial `report.md`. Their original bytes are preserved.
+21 topic lessons from the supplied v3.6.1 package, schema
+`mandarin-topic-lesson/3.4.0`, with 42 recorded three-line teaching patterns.
+Each lesson directory keeps the four exact supplied JSON, HTML, Markdown and
+`report.md` files. `PACKAGE_README.md` keeps the supplied outer-package notes.
 
-`src/lib/lessons.ts` reads summary fields eagerly and the full lesson lazily.
-HTML/Markdown and editorial reports are not application inputs. Course order and
-membership stay in [the curriculum](../../curricula/HSK3_2025_LEVEL1.json).
+`src/lib/lessons.ts` reads summaries and lazy lesson content. Companions and reports
+are not loaded by the app. Course membership lives in the combined
+[curriculum](../../curricula/HSK3_2025_LEVEL1.json).
 
-The current source ZIP is recorded in the
-[source guide](../../../../../../importer/data/lessons/README.md).
-`python scripts/import-lessons-v3.4.0.py` audits all retained HSK lessons against
-the current Core schemas and exact runtime vocabulary without writing them.
-It validates headwords, readings, meanings, examples, catalog identities and
-checkpoint targets; see the [current audit](../../../../../../reports/lessons-3.4.0-import.json).
-The historical v3.2 importer requires source inputs retained in Git history.
+Run `python scripts/import-lessons-v3.6.1.py [--write]` from the repository root.
+The Python importer validates the entire four-package handoff before copying
+source bytes, preserving exact vocabulary, catalog, lesson and checkpoint identities.
+See the [source guide](../../../../../../importer/data/lessons/README.md),
+[import audit](../../../../../../reports/lessons-3.6.1-import.json), and
+[frontend handoff](../../../../../../reports/Frontend_Migration_Report_Core_v3.6.0.md).

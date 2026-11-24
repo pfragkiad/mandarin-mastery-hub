@@ -970,6 +970,12 @@
         },
         "usage_note": {
           "type": "string"
+        },
+        "pattern_pseudo_translation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$",
+          "description": "Optional plain-text third line. Use <English placeholder> for replaceable parts, and keep fixed Mandarin and structural punctuation. This line is display-only."
         }
       }
     },

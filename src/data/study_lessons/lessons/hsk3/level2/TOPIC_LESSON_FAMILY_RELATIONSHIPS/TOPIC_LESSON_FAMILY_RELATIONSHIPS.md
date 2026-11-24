@@ -30,7 +30,11 @@ Talk about grandparents and spouses, and describe a family visit in ordinary Man
 
 Place a possessive phrase before a family term: 我的 (wǒ de) + 爷爷 (yéye) or 奶奶 (nǎinai).
 
-**Pattern:** Possessor + 的 + relative
+**Pattern**
+
+所属者 + 的 + 亲属  
+*suǒshǔzhě + de + qīnshǔ*  
+&lt;possessor&gt; + **的** + &lt;relative&gt;
 
 **这是我爷爷，那是我奶奶。**
 *Zhè shì wǒ yéye, nà shì wǒ nǎinai.*
@@ -44,7 +48,11 @@ I am going to visit my grandpa and grandma.
 
 妻子 (qīzi) means wife and 丈夫 (zhàngfu) means husband. Use the ordinary verb phrase that follows to tell what they do.
 
-**Pattern:** Person + 的 + 妻子/丈夫
+**Pattern**
+
+人 + 的 + 妻子/丈夫  
+*rén + de + qīzi/zhàngfu*  
+&lt;person&gt; + **的** + **妻子**/**丈夫**
 
 **她的丈夫星期六要上班。**
 *Tā de zhàngfu xīngqīliù yào shàngbān.*

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-animals-and-weather",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -31,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -101,7 +101,13 @@
     "里": "Characters:里",
     "间": "Characters:间",
     "雨": "Characters:雨",
-    "雪": "Characters:雪"
+    "雪": "Characters:雪",
+    "动": "Characters:动",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "点": "Characters:点",
+    "物": "Characters:物",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -654,7 +660,6 @@
           "id": "pattern-1",
           "title": "Describing weather",
           "explanation_en": "Use 天气 (tiānqì) for the weather, then an adjective or weather event. 下雨 (xià yǔ) functions as “to rain”; do not translate it word-for-word as “down rain”.",
-          "formula_en": "今天 + 天气 + 很 + adjective; / 今天 + 下雨",
           "examples": [
             {
               "hanzi": "今天天气很热。",
@@ -666,13 +671,15 @@
               "pinyin": "Míngtiān kěnéng xià yǔ.",
               "english": "It may rain tomorrow."
             }
-          ]
+          ],
+          "pattern_hanzi": "今天 + 天气 + 很 + 形容词 / 今天 + 下雨",
+          "pattern_pinyin": "jīntiān + tiānqì + hěn + xíngróngcí / jīntiān + xiàyǔ",
+          "pattern_pseudo_translation": "今天 + 天气 + 很 + <adjective> / 今天 + 下雨"
         },
         {
           "id": "pattern-2",
           "title": "Talking about animal location",
           "explanation_en": "在 (zài) locates the subject. The animal classifier 只 (zhī) introduces an individual cat or dog.",
-          "formula_en": "[那/这] + 只 + animal + 在 + place",
           "examples": [
             {
               "hanzi": "这只狗在房间里。",
@@ -684,7 +691,10 @@
               "pinyin": "Māo zài zhuōzi xiàbian.",
               "english": "The cat is under the table."
             }
-          ]
+          ],
+          "pattern_hanzi": "[那/这] + 只 + 动物 + 在 + 地点",
+          "pattern_pinyin": "[nà/zhè] + zhī + dòngwù + zài + dìdiǎn",
+          "pattern_pseudo_translation": "[那/这] + 只 + <animal> + 在 + <place>"
         }
       ],
       "guided_building": {

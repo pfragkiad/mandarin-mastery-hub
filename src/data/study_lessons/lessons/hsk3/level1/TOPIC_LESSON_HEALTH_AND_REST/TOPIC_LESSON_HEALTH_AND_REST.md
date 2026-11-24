@@ -30,7 +30,11 @@ A student is unwell, explains symptoms simply, and asks for time to rest.
 
 生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.
 
-**Pattern:** subject + 生病了; subject + 去 + 医院 + 看病
+**Pattern**
+
+主语 + 生病了; 主语 + 去 + 医院 + 看病  
+*zhǔyǔ + shēngbìng le; zhǔyǔ + qù + yīyuàn + kànbìng*  
+&lt;subject&gt; + **生病了**; &lt;subject&gt; + **去** + **医院** + **看病**
 
 **弟弟生病了。**
 *Dìdi shēngbìng le.*
@@ -44,7 +48,11 @@ Mom is going to see a doctor.
 
 休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.
 
-**Pattern:** time + verb + 了
+**Pattern**
+
+时间 + 动词 + 了  
+*shíjiān + dòngcí + le*  
+&lt;time&gt; + &lt;verb&gt; + **了**
 
 **我晚上十点睡觉。**
 *Wǒ wǎnshang shí diǎn shuìjiào.*

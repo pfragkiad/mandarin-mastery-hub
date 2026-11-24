@@ -32,7 +32,11 @@ Describe the colors and physical qualities of objects, then compare two things.
 
 比 (bǐ) introduces the item used for comparison, followed by the relevant adjective.
 
-**Pattern:** A + 比 + B + adjective
+**Pattern**
+
+甲 + 比 + 乙 + 形容词  
+*jiǎ + bǐ + yǐ + xíngróngcí*  
+&lt;A&gt; + **比** + &lt;B&gt; + &lt;adjective&gt;
 
 **这条路比那条路长。**
 *Zhè tiáo lù bǐ nà tiáo lù cháng.*
@@ -46,7 +50,11 @@ I like the green one, though the black one is also nice.
 
 Use a color noun such as 红色 (hóngsè) before 的 (de) when modifying a noun.
 
-**Pattern:** Color + 的 + noun
+**Pattern**
+
+颜色 + 的 + 名词  
+*yánsè + de + míngcí*  
+&lt;color&gt; + **的** + &lt;noun&gt;
 
 **她走得很慢，我走得很快。**
 *Tā zǒu de hěn màn, wǒ zǒu de hěn kuài.*

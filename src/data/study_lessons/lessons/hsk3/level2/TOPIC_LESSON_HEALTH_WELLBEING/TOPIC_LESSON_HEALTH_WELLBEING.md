@@ -30,7 +30,11 @@ Describe pain and tiredness, ask about health and suggest exercise or rest.
 
 Put 疼 (téng) after a body part such as 头 (tóu) or 手 (shǒu) to describe where something hurts.
 
-**Pattern:** Body part + 疼
+**Pattern**
+
+身体部位 + 疼  
+*shēntǐ bùwèi + téng*  
+&lt;body part&gt; + **疼**
 
 **我今天很累，想早点儿睡觉。**
 *Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.*
@@ -44,7 +48,11 @@ I have a headache, and my eyes feel uncomfortable too.
 
 舒服 (shūfu) means comfortable; 不舒服 (bù shūfu) means uncomfortable or unwell.
 
-**Pattern:** Person + 不 + 舒服
+**Pattern**
+
+人 + 不 + 舒服  
+*rén + bù + shūfu*  
+&lt;person&gt; + **不** + **舒服**
 
 **运动以后，我觉得很舒服。**
 *Yùndòng yǐhòu, wǒ juéde hěn shūfu.*

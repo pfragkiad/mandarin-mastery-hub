@@ -30,7 +30,11 @@ A classmate asks about a meeting time. Learn to distinguish a clock reading from
 
 几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.
 
-**Pattern:** time + subject/verb or subject + time + verb
+**Pattern**
+
+时间 + 主语 + 动词 / 主语 + 时间 + 动词  
+*shíjiān + zhǔyǔ + dòngcí / zhǔyǔ + shíjiān + dòngcí*  
+&lt;time&gt; + &lt;subject&gt; + &lt;verb&gt; / &lt;subject&gt; + &lt;time&gt; + &lt;verb&gt;
 
 **我们下午三点见。**
 *Wǒmen xiàwǔ sān diǎn jiàn.*
@@ -44,7 +48,13 @@ It is 8:15 now.
 
 点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.
 
-**Pattern:** 九点 (clock) ≠ 九个小时 (duration)
+**Pattern**
+
+九点 ≠ 九个小时  
+*jiǔ diǎn ≠ jiǔ ge xiǎoshí*  
+**九点** ≠ **九个小时**
+
+The left side is a clock time. The right side is a duration.
 
 **我九点上班。**
 *Wǒ jiǔ diǎn shàngbān.*

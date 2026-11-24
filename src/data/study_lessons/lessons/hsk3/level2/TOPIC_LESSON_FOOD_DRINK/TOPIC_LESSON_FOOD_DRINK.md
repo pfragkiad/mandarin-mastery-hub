@@ -30,7 +30,11 @@ Read a simple menu and order different drinks and dishes at a restaurant.
 
 点 (diǎn) is a verb meaning to order in a restaurant, as well as having other uses in the language.
 
-**Pattern:** Person + 点 + food/drink
+**Pattern**
+
+人 + 点 + 食物/饮料  
+*rén + diǎn + shíwù/yǐnliào*  
+&lt;person&gt; + **点** + &lt;food&gt;/&lt;drink&gt;
 
 **你想喝红茶还是绿茶？**
 *Nǐ xiǎng hē hóngchá háishi lǜchá?*
@@ -44,7 +48,11 @@ I’ll have a cup of green tea, and my friend wants milk tea.
 
 Use 红茶 (hóngchá), 绿茶 (lǜchá), 奶茶 (nǎichá), or 咖啡 (kāfēi) as the ordered drink.
 
-**Pattern:** 一杯 + drink
+**Pattern**
+
+一杯 + 饮料  
+*yì bēi + yǐnliào*  
+**一杯** + &lt;drink&gt;
 
 **我想点一杯咖啡。**
 *Wǒ xiǎng diǎn yì bēi kāfēi.*

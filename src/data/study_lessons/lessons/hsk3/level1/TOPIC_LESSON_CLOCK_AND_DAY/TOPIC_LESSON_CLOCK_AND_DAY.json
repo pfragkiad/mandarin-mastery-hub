@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-clock-and-day",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -100,6 +100,7 @@
     "爸": "Characters:爸",
     "现": "Characters:现",
     "班": "Characters:班",
+    "生": "Characters:生",
     "电": "Characters:电",
     "白": "Characters:白",
     "的": "Characters:的",
@@ -119,7 +120,9 @@
     "钟": "Characters:钟",
     "间": "Characters:间",
     "饭": "Characters:饭",
-    "生": "Characters:生"
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -966,7 +969,6 @@
           "id": "pattern-1",
           "title": "Asking and stating clock time",
           "explanation_en": "几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.",
-          "formula_en": "time + subject/verb or subject + time + verb",
           "examples": [
             {
               "hanzi": "我们下午三点见。",
@@ -978,13 +980,15 @@
               "pinyin": "Xiànzài bā diǎn shíwǔ fēn.",
               "english": "It is 8:15 now."
             }
-          ]
+          ],
+          "pattern_hanzi": "时间 + 主语 + 动词 / 主语 + 时间 + 动词",
+          "pattern_pinyin": "shíjiān + zhǔyǔ + dòngcí / zhǔyǔ + shíjiān + dòngcí",
+          "pattern_pseudo_translation": "<time> + <subject> + <verb> / <subject> + <time> + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Time point versus duration",
-          "explanation_en": "点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.",
-          "formula_en": "九点 (clock) ≠ 九个小时 (duration)",
+          "explanation_en": "点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration. The left side is a clock time. The right side is a duration.",
           "examples": [
             {
               "hanzi": "我九点上班。",
@@ -996,7 +1000,10 @@
               "pinyin": "Wǒ xuéxí liǎng ge xiǎoshí.",
               "english": "I study for two hours."
             }
-          ]
+          ],
+          "pattern_hanzi": "九点 ≠ 九个小时",
+          "pattern_pinyin": "jiǔ diǎn ≠ jiǔ ge xiǎoshí",
+          "pattern_pseudo_translation": "九点 ≠ 九个小时"
         }
       ],
       "guided_building": {

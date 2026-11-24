@@ -1,0 +1,1153 @@
+{
+  "status": "blocked-before-runtime-writes",
+  "sources": {
+    "importer/data/lessons/Mandarin_Core_Project_Sources_v3.6.0_taxonomy-v2.0.0.zip": "3d02a0e5185926f83c9cd2a6c004f51b37fb668b08c7749227c7529037e6275b",
+    "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip": "e8707a907868ee811146b40772567113226c2e4404be9b719b2dd4afe3c3e8c6",
+    "importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip": "af281cf260e9986a260a68552221c4d6066834a8b0831f73d12c6746bfcb41ad",
+    "importer/data/lessons/Mandarin_Other_Lessons_v3.6.0_taxonomy-v2.0.0.zip": "e54d1a81c68d7c23b2e3287530c00d4f3e6fa80ccad85ba27d031bf29142b636"
+  },
+  "checks": {
+    "coreTemplateSelfTestsPassed": true,
+    "lessonFilesRead": 65,
+    "jsonSchemasPassed": 65,
+    "exactHskWordBindingsMatched": 574,
+    "lessonAndCheckpointIdentitiesPreserved": 65
+  },
+  "failures": [
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_ABILITIES_INTERESTS.zip",
+      "lessonId": "topic-abilities-interests",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主动名词",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "动": "Characters:动",
+        "名": "Characters:名",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 会/能 + 动词",
+          "pattern_pseudo_translation": "<subject> + 会/能 + <verb>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 想/要 + 动词/名词",
+          "pattern_pseudo_translation": "<subject> + 想/要 + <verb>/<noun>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_ANIMALS_AND_WEATHER.zip",
+      "lessonId": "topic-animals-and-weather",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 动容形点物词",
+      "missingCatalogCharacterRefs": {
+        "动": "Characters:动",
+        "容": "Characters:容",
+        "形": "Characters:形",
+        "点": "Characters:点",
+        "物": "Characters:物",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "今天 + 天气 + 很 + 形容词 / 今天 + 下雨",
+          "pattern_pseudo_translation": "今天 + 天气 + 很 + <adjective> / 今天 + 下雨"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "[那/这] + 只 + 动物 + 在 + 地点",
+          "pattern_pseudo_translation": "[那/这] + 只 + <animal> + 在 + <place>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_BASIC_NEGATION_PARTICLES.zip",
+      "lessonId": "topic-basic-negation-particles",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 动句名容建形议词话述陈题",
+      "missingCatalogCharacterRefs": {
+        "动": "Characters:动",
+        "句": "Characters:句",
+        "名": "Characters:名",
+        "容": "Characters:容",
+        "建": "Characters:建",
+        "形": "Characters:形",
+        "议": "Characters:议",
+        "词": "Characters:词",
+        "话": "Characters:话",
+        "述": "Characters:述",
+        "陈": "Characters:陈",
+        "题": "Characters:题"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "不 + 形容词/动词; 没有 + 名词",
+          "pattern_pseudo_translation": "不 + <adjective>/<verb>; 没有 + <noun>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "陈述句 + 吗？; 话题 + 呢？; 建议 + 吧",
+          "pattern_pseudo_translation": "<statement> + 吗？; <topic> + 呢？; <suggestion> + 吧"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_CLOCK_AND_DAY.zip",
+      "lessonId": "topic-clock-and-day",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主动词",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "动": "Characters:动",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "时间 + 主语 + 动词 / 主语 + 时间 + 动词",
+          "pattern_pseudo_translation": "<time> + <subject> + <verb> / <subject> + <time> + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_CONNECTING_IDEAS.zip",
+      "lessonId": "topic-connecting-ideas",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主人动群词语",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "人": "Characters:人",
+        "动": "Characters:动",
+        "群": "Characters:群",
+        "词": "Characters:词",
+        "语": "Characters:语"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 也 + 动词; 一群人 + 都 + 动词",
+          "pattern_pseudo_translation": "<subject> + 也 + <verb>; <group> + 都 + <verb>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 正在 + 动词",
+          "pattern_pseudo_translation": "<subject> + 正在 + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_COUNTING_NUMBERS.zip",
+      "lessonId": "topic-counting-numbers",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 位名字数词量",
+      "missingCatalogCharacterRefs": {
+        "位": "Characters:位",
+        "名": "Characters:名",
+        "字": "Characters:字",
+        "数": "Characters:数",
+        "词": "Characters:词",
+        "量": "Characters:量"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "(千位数字 + 千) + (百位数字 + 百) + (十位数字 + 十) + 个位数字",
+          "pattern_pseudo_translation": "(<number of thousands> + 千) + (<number of hundreds> + 百) + (<number of tens> + 十) + <number of ones>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_DATES_CALENDAR.zip",
+      "lessonId": "topic-dates-calendar",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主份动时词间",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "份": "Characters:份",
+        "动": "Characters:动",
+        "时": "Characters:时",
+        "词": "Characters:词",
+        "间": "Characters:间"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "年份 + 年 + 月份 + 月 + 日期 + 号",
+          "pattern_pseudo_translation": "<year> + 年 + <month> + 月 + <day> + 号"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 时间 + 动词",
+          "pattern_pseudo_translation": "<subject> + <time> + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_DESCRIBING_FEELINGS.zip",
+      "lessonId": "topic-describing-feelings",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主名容形词语",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "名": "Characters:名",
+        "容": "Characters:容",
+        "形": "Characters:形",
+        "词": "Characters:词",
+        "语": "Characters:语"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 很 + 形容词",
+          "pattern_pseudo_translation": "<subject> + 很 + <adjective>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "名词 + 太 + 形容词 + 了",
+          "pattern_pseudo_translation": "<noun> + 太 + <adjective> + 了"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_EVERYDAY_ACTIONS.zip",
+      "lessonId": "topic-everyday-actions",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 东接收者西",
+      "missingCatalogCharacterRefs": {
+        "东": "Characters:东",
+        "接": "Characters:接",
+        "收": "Characters:收",
+        "者": "Characters:者",
+        "西": "Characters:西"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "给 + 接收者 + 所给的东西",
+          "pattern_pseudo_translation": "给 + <recipient> + <thing given>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_FAMILY_AND_FRIENDS.zip",
+      "lessonId": "topic-family-and-friends",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主事份名所拥物词语身",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "事": "Characters:事",
+        "份": "Characters:份",
+        "名": "Characters:名",
+        "所": "Characters:所",
+        "拥": "Characters:拥",
+        "物": "Characters:物",
+        "词": "Characters:词",
+        "语": "Characters:语",
+        "身": "Characters:身"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 的 + 名词",
+          "pattern_pseudo_translation": "<person> + 的 + <noun>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 是 + 身份 / 主语 + 有 + 所拥有的事物",
+          "pattern_pseudo_translation": "<subject> + 是 + <identity> / <subject> + 有 + <thing owned>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_FOOD_AND_MEALS.zip",
+      "lessonId": "topic-food-and-meals",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 品料物食饮",
+      "missingCatalogCharacterRefs": {
+        "品": "Characters:品",
+        "料": "Characters:料",
+        "物": "Characters:物",
+        "食": "Characters:食",
+        "饮": "Characters:饮"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "我想 + 吃/喝 + 食物/饮料",
+          "pattern_pseudo_translation": "我想 + 吃/喝 + <food>/<drink>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "还要 + 物品 + 吗？",
+          "pattern_pseudo_translation": "还要 + <item> + 吗？"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_GETTING_AROUND.zip",
+      "lessonId": "topic-getting-around",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主交具地语通",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "交": "Characters:交",
+        "具": "Characters:具",
+        "地": "Characters:地",
+        "语": "Characters:语",
+        "通": "Characters:通"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 来/去/回 + 地点",
+          "pattern_pseudo_translation": "<subject> + 来/去/回 + <place>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "坐 + 交通工具 + 去 + 地点",
+          "pattern_pseudo_translation": "坐 + <vehicle> + 去 + <place>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_HEALTH_AND_REST.zip",
+      "lessonId": "topic-health-and-rest",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主动词语间",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "动": "Characters:动",
+        "词": "Characters:词",
+        "语": "Characters:语",
+        "间": "Characters:间"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 生病了; 主语 + 去 + 医院 + 看病",
+          "pattern_pseudo_translation": "<subject> + 生病了; <subject> + 去 + 医院 + 看病"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "时间 + 动词 + 了",
+          "pattern_pseudo_translation": "<time> + <verb> + 了"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_PEOPLE_AND_WORK.zip",
+      "lessonId": "topic-people-and-work",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主地",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "地": "Characters:地"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 在 + 地点 + 工作",
+          "pattern_pseudo_translation": "<subject> + 在 + <place> + 工作"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_PERSONAL_PRONOUNS.zip",
+      "lessonId": "topic-personal-pronouns",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 代份动词身",
+      "missingCatalogCharacterRefs": {
+        "代": "Characters:代",
+        "份": "Characters:份",
+        "动": "Characters:动",
+        "词": "Characters:词",
+        "身": "Characters:身"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "代词 + 是 + 身份",
+          "pattern_pseudo_translation": "<pronoun> + 是 + <identity>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "他/她/它 + 动词",
+          "pattern_pseudo_translation": "他/她/它 + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_QUANTITIES_CLASSIFIERS.zip",
+      "lessonId": "topic-quantities-classifiers",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 名数词量",
+      "missingCatalogCharacterRefs": {
+        "名": "Characters:名",
+        "数": "Characters:数",
+        "词": "Characters:词",
+        "量": "Characters:量"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "几 + 量词 + 名词？",
+          "pattern_pseudo_translation": "几 + <classifier> + <noun>？"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_QUESTIONS_AND_POINTING.zip",
+      "lessonId": "topic-questions-and-pointing",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 动名词量",
+      "missingCatalogCharacterRefs": {
+        "动": "Characters:动",
+        "名": "Characters:名",
+        "词": "Characters:词",
+        "量": "Characters:量"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "这/那 + 量词 + 名词",
+          "pattern_pseudo_translation": "这/那 + <classifier> + <noun>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "谁 + 动词？ / 在 + 哪里？",
+          "pattern_pseudo_translation": "谁 + <verb>？ / 在 + 哪里？"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES.zip",
+      "lessonId": "topic-school-people-places",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主地",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "地": "Characters:地"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 在 + 地点 + 上学",
+          "pattern_pseudo_translation": "<subject> + 在 + <place> + 上学"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_SHOPPING_AND_THINGS.zip",
+      "lessonId": "topic-shopping-and-things",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 品字客数物顾",
+      "missingCatalogCharacterRefs": {
+        "品": "Characters:品",
+        "字": "Characters:字",
+        "客": "Characters:客",
+        "数": "Characters:数",
+        "物": "Characters:物",
+        "顾": "Characters:顾"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "物品 + 多少钱？ / 数字 + 块",
+          "pattern_pseudo_translation": "<item> + 多少钱？ / <number> + 块"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "商店 + 卖 + 物品; 顾客 + 买 + 物品",
+          "pattern_pseudo_translation": "<shop> + 卖 + <item>; <customer> + 买 + <item>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level1_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "nestedZip": "hsk3/level1/TOPIC_LESSON_STUDYING_AND_LANGUAGE.zip",
+      "lessonId": "topic-studying-and-language",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人动宾技能词",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "动": "Characters:动",
+        "宾": "Characters:宾",
+        "技": "Characters:技",
+        "能": "Characters:能",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 在 + 动词 + 宾语",
+          "pattern_pseudo_translation": "<person> + 在 + <verb> + <object>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "我 + 技能动词 + 宾语",
+          "pattern_pseudo_translation": "我 + <skill verb> + <object>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_ABSTRACT_CONCEPTS.zip",
+      "lessonId": "topic-talking-about-meanings-and-situations",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 语",
+      "missingCatalogCharacterRefs": {
+        "语": "Characters:语"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "词语 + 是什么意思？",
+          "pattern_pseudo_translation": "<word or phrase> + 是什么意思？"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER.zip",
+      "lessonId": "topic-nature-and-the-weather",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 位地点物移词",
+      "missingCatalogCharacterRefs": {
+        "位": "Characters:位",
+        "地": "Characters:地",
+        "点": "Characters:点",
+        "物": "Characters:物",
+        "移": "Characters:移",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "动物 + 在 + 地点 + 位移动词",
+          "pattern_pseudo_translation": "<animal> + 在 + <place> + <movement verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_COMMUNICATION_SOCIAL.zip",
+      "lessonId": "topic-asking-for-help-and-making-introductions",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 信息求",
+      "missingCatalogCharacterRefs": {
+        "信": "Characters:信",
+        "息": "Characters:息",
+        "求": "Characters:求"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "不好意思 + 请求",
+          "pattern_pseudo_translation": "不好意思 + <request>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "告诉 + 人 + 信息",
+          "pattern_pseudo_translation": "告诉 + <person> + <information>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS.zip",
+      "lessonId": "topic-helping-with-everyday-tasks",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人宾词",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "宾": "Characters:宾",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "帮 + 人 + 动词",
+          "pattern_pseudo_translation": "帮 + <person> + <verb>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "动词 + 完 + 宾语",
+          "pattern_pseudo_translation": "<verb> + 完 + <object>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_ROUTINES_AND_PLANS.zip",
+      "lessonId": "topic-routines-and-making-plans",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人动短词",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "动": "Characters:动",
+        "短": "Characters:短",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "记得 + 动词短语 / 忘了 + 动词短语",
+          "pattern_pseudo_translation": "记得 + <verb phrase> / 忘了 + <verb phrase>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人们 + 一起 + 动词",
+          "pattern_pseudo_translation": "<people> + 一起 + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_FAMILY_RELATIONSHIPS.zip",
+      "lessonId": "topic-talking-about-family-members",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 亲人属所者",
+      "missingCatalogCharacterRefs": {
+        "亲": "Characters:亲",
+        "人": "Characters:人",
+        "属": "Characters:属",
+        "所": "Characters:所",
+        "者": "Characters:者"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "所属者 + 的 + 亲属",
+          "pattern_pseudo_translation": "<possessor> + 的 + <relative>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人 + 的 + 妻子/丈夫",
+          "pattern_pseudo_translation": "<person> + 的 + 妻子/丈夫"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_FOOD_DRINK.zip",
+      "lessonId": "topic-choosing-drinks-and-food",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人料物食饮",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "料": "Characters:料",
+        "物": "Characters:物",
+        "食": "Characters:食",
+        "饮": "Characters:饮"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 点 + 食物/饮料",
+          "pattern_pseudo_translation": "<person> + 点 + <food>/<drink>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "一杯 + 饮料",
+          "pattern_pseudo_translation": "一杯 + <drink>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_CONNECTING_IDEAS.zip",
+      "lessonId": "topic-linking-ideas-in-conversation",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 分原句折果结转",
+      "missingCatalogCharacterRefs": {
+        "分": "Characters:分",
+        "原": "Characters:原",
+        "句": "Characters:句",
+        "折": "Characters:折",
+        "果": "Characters:果",
+        "结": "Characters:结",
+        "转": "Characters:转"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "因为 + 原因， 所以 + 结果",
+          "pattern_pseudo_translation": "因为 + <reason>， 所以 + <result>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "虽然 + 分句，但是 + 转折分句",
+          "pattern_pseudo_translation": "虽然 + <clause>，但是 + <contrasting clause>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_PARTICLES_AND_MODIFIERS.zip",
+      "lessonId": "topic-describing-actions-more-precisely",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 修动补饰",
+      "missingCatalogCharacterRefs": {
+        "修": "Characters:修",
+        "动": "Characters:动",
+        "补": "Characters:补",
+        "饰": "Characters:饰"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "动词 + 过 / 动词 + 着",
+          "pattern_pseudo_translation": "<verb> + 过 / <verb> + 着"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "修饰语 + 地 + 动词 / 动词 + 得 + 补语",
+          "pattern_pseudo_translation": "<modifier> + 地 + <verb> / <verb> + 得 + <complement>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_HEALTH_WELLBEING.zip",
+      "lessonId": "topic-how-are-you-feeling",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人位部",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "位": "Characters:位",
+        "部": "Characters:部"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "身体部位 + 疼",
+          "pattern_pseudo_translation": "<body part> + 疼"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人 + 不 + 舒服",
+          "pattern_pseudo_translation": "<person> + 不 + 舒服"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_HOME_OBJECTS.zip",
+      "lessonId": "topic-my-room-and-my-belongings",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人地宾点语",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "地": "Characters:地",
+        "宾": "Characters:宾",
+        "点": "Characters:点",
+        "语": "Characters:语"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "宾语 + 在 + 地点",
+          "pattern_pseudo_translation": "<object> + 在 + <location>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人 + 拿 + 宾语",
+          "pattern_pseudo_translation": "<person> + 拿 + <object>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_LEISURE_MEDIA.zip",
+      "lessonId": "topic-sports-games-and-hobbies",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 活",
+      "missingCatalogCharacterRefs": {
+        "活": "Characters:活"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "我的爱好是 + 活动",
+          "pattern_pseudo_translation": "我的爱好是 + <activity>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_NUMBERS_QUANTITIES.zip",
+      "lessonId": "topic-counting-things-and-occasions",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 作动词量",
+      "missingCatalogCharacterRefs": {
+        "作": "Characters:作",
+        "动": "Characters:动",
+        "词": "Characters:词",
+        "量": "Characters:量"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "动作 + 数字 + 次",
+          "pattern_pseudo_translation": "<action> + <number> + 次"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_PEOPLE_IDENTITY.zip",
+      "lessonId": "topic-introducing-people-by-name",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人容形氏词",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "容": "Characters:容",
+        "形": "Characters:形",
+        "氏": "Characters:氏",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 姓 + 姓氏",
+          "pattern_pseudo_translation": "<person> + 姓 + <family name>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人 + 个子 + 形容词",
+          "pattern_pseudo_translation": "<person> + 个子 + <adjective>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_FINDING_THE_WAY.zip",
+      "lessonId": "topic-finding-the-way-in-town",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 动发向方点词",
+      "missingCatalogCharacterRefs": {
+        "动": "Characters:动",
+        "发": "Characters:发",
+        "向": "Characters:向",
+        "方": "Characters:方",
+        "点": "Characters:点",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "从 + 出发点 + 动词",
+          "pattern_pseudo_translation": "从 + <starting point> + <verb>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "往 + 方向 + 走",
+          "pattern_pseudo_translation": "往 + <direction> + 走"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_LOCATION_AND_DISTANCE.zip",
+      "lessonId": "topic-describing-location-and-distance",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 乙位方标甲",
+      "missingCatalogCharacterRefs": {
+        "乙": "Characters:乙",
+        "位": "Characters:位",
+        "方": "Characters:方",
+        "标": "Characters:标",
+        "甲": "Characters:甲"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "地标 + 方位 + 有/是 + 地点",
+          "pattern_pseudo_translation": "<landmark> + <position> + 有/是 + <place>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "地点甲 + 离 + 地点乙 + 近/远",
+          "pattern_pseudo_translation": "<place A> + 离 + <place B> + 近/远"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_MOVEMENT_AND_DIRECTION.zip",
+      "lessonId": "topic-entering-leaving-and-returning",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 位动移词",
+      "missingCatalogCharacterRefs": {
+        "位": "Characters:位",
+        "动": "Characters:动",
+        "移": "Characters:移",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "位移动词 + 来",
+          "pattern_pseudo_translation": "<movement verb> + 来"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "位移动词 + 去",
+          "pattern_pseudo_translation": "<movement verb> + 去"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_AND_COMPARISON.zip",
+      "lessonId": "topic-describing-colors-and-comparing-things",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 乙名容形甲词",
+      "missingCatalogCharacterRefs": {
+        "乙": "Characters:乙",
+        "名": "Characters:名",
+        "容": "Characters:容",
+        "形": "Characters:形",
+        "甲": "Characters:甲",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "甲 + 比 + 乙 + 形容词",
+          "pattern_pseudo_translation": "<A> + 比 + <B> + <adjective>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "颜色 + 的 + 名词",
+          "pattern_pseudo_translation": "<color> + 的 + <noun>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_OPINIONS_AND_FEELINGS.zip",
+      "lessonId": "topic-sharing-opinions-and-feelings",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主分动句活",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "分": "Characters:分",
+        "动": "Characters:动",
+        "句": "Characters:句",
+        "活": "Characters:活"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "活动 + 很有意思 / 活动 + 没意思",
+          "pattern_pseudo_translation": "<activity> + 很有意思 / <activity> + 没意思"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 希望 + 分句",
+          "pattern_pseudo_translation": "<subject> + 希望 + <clause>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_REFERENCE_QUESTIONS.zip",
+      "lessonId": "topic-explaining-why-and-how",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主作分动句短",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "作": "Characters:作",
+        "分": "Characters:分",
+        "动": "Characters:动",
+        "句": "Characters:句",
+        "短": "Characters:短"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "为什么 + 分句？ / 主语 + 为什么 + 动词短语？",
+          "pattern_pseudo_translation": "为什么 + <clause>？ / <subject> + 为什么 + <verb phrase>？"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "人 + 自己 + 动作",
+          "pattern_pseudo_translation": "<person> + 自己 + <action>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_SCHOOL_LANGUAGE.zip",
+      "lessonId": "topic-words-classes-and-examinations",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人内容时者间",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "内": "Characters:内",
+        "容": "Characters:容",
+        "时": "Characters:时",
+        "者": "Characters:者",
+        "间": "Characters:间"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 教 + 学习者 + 教学内容",
+          "pattern_pseudo_translation": "<person> + 教 + <learner> + <what is taught>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "时间 + 有 + 考试",
+          "pattern_pseudo_translation": "<time> + 有 + 考试"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_SCIENCE_TECHNOLOGY.zip",
+      "lessonId": "topic-using-the-internet",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主动目词",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "动": "Characters:动",
+        "目": "Characters:目",
+        "词": "Characters:词"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 上网 + (目的)",
+          "pattern_pseudo_translation": "<subject> + 上网 + (<purpose>)"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "主语 + 在网上 + 动词",
+          "pattern_pseudo_translation": "<subject> + 在网上 + <verb>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_SHOPPING_MONEY.zip",
+      "lessonId": "topic-buying-tickets-and-shopping",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 人动短词语金额",
+      "missingCatalogCharacterRefs": {
+        "人": "Characters:人",
+        "动": "Characters:动",
+        "短": "Characters:短",
+        "词": "Characters:词",
+        "语": "Characters:语",
+        "金": "Characters:金",
+        "额": "Characters:额"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "人 + 花 + 金额 + 动词短语",
+          "pattern_pseudo_translation": "<person> + 花 + <money amount> + <verb phrase>"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_TIME_CALENDAR.zip",
+      "lessonId": "topic-talking-about-time-and-habits",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 主事件副率词频",
+      "missingCatalogCharacterRefs": {
+        "主": "Characters:主",
+        "事": "Characters:事",
+        "件": "Characters:件",
+        "副": "Characters:副",
+        "率": "Characters:率",
+        "词": "Characters:词",
+        "频": "Characters:频"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "主语 + 频率副词 + 动词",
+          "pattern_pseudo_translation": "<subject> + <frequency adverb> + <verb>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "快要 + 事件 + 了",
+          "pattern_pseudo_translation": "快要 + <event> + 了"
+        }
+      ]
+    },
+    {
+      "package": "Mandarin_HSK_Level2_Lessons_v3.6.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "nestedZip": "hsk3/level2/TOPIC_LESSON_TRAVEL_TRANSPORT.zip",
+      "lessonId": "topic-planning-a-journey",
+      "gate": "catalog-and-current-semantic-validator",
+      "error": "missing catalog character references: 二作动目第",
+      "missingCatalogCharacterRefs": {
+        "二": "Characters:二",
+        "作": "Characters:作",
+        "动": "Characters:动",
+        "目": "Characters:目",
+        "第": "Characters:第"
+      },
+      "affectedPatterns": [
+        {
+          "id": "pattern-1",
+          "pattern_hanzi": "先 + 第一个动作，再 + 第二个动作",
+          "pattern_pseudo_translation": "先 + <action A>，再 + <action B>"
+        },
+        {
+          "id": "pattern-2",
+          "pattern_hanzi": "去 + 目的地 / 买 + 票",
+          "pattern_pseudo_translation": "去 + <destination> / 买 + 票"
+        }
+      ]
+    }
+  ],
+  "runtimeFilesWritten": 0,
+  "failureCount": 45,
+  "requiredSourceCorrection": "Populate catalog_character_refs for every catalog-resolvable Chinese character used by the new pattern fields, using exact catalog_ids.json mappings; preserve all source wording and identities. Do not infer readings or alter lesson text.",
+  "validationLimit": "The current validator predates topic format 3.4.0; its teaching-plan semantic checks will also need version support when implementing the importer. This report identifies blocking source catalog-reference failures, not a completed v3.6.0 import."
+}

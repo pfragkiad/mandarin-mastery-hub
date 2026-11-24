@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.3.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-food-and-meals",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -30,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.3.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -114,7 +114,12 @@
     "面": "Characters:面",
     "饭": "Characters:饭",
     "饺": "Characters:饺",
-    "鸡": "Characters:鸡"
+    "鸡": "Characters:鸡",
+    "品": "Characters:品",
+    "料": "Characters:料",
+    "物": "Characters:物",
+    "食": "Characters:食",
+    "饮": "Characters:饮"
   },
   "sections": {
     "overview": {
@@ -1214,7 +1219,6 @@
           "id": "pattern-1",
           "title": "Food and drink verbs",
           "explanation_en": "Use 吃 (chī) for eating and 喝 (hē) for drinking. 想 (xiǎng) makes a polite expression of what you would like.",
-          "formula_en": "我想 + 吃/喝 + food/drink",
           "examples": [
             {
               "hanzi": "我晚上想吃面条儿。",
@@ -1226,13 +1230,15 @@
               "pinyin": "Tā xiǎng hē niúnǎi.",
               "english": "She would like milk."
             }
-          ]
+          ],
+          "pattern_hanzi": "我想 + 吃/喝 + 食物/饮料",
+          "pattern_pinyin": "wǒ xiǎng + chī/hē + shíwù/yǐnliào",
+          "pattern_pseudo_translation": "我想 + 吃/喝 + <food>/<drink>"
         },
         {
           "id": "pattern-2",
           "title": "Offering and declining",
           "explanation_en": "要 (yào) can indicate wanting an item. Adding 还 (hái) asks whether someone wants more; 不要了 (bú yào le) politely closes an offer.",
-          "formula_en": "还要 + item + 吗?",
           "examples": [
             {
               "hanzi": "你还要水吗？",
@@ -1244,7 +1250,10 @@
               "pinyin": "Wǒ bú yào le, xièxie.",
               "english": "I do not want any more, thank you."
             }
-          ]
+          ],
+          "pattern_hanzi": "还要 + 物品 + 吗？",
+          "pattern_pinyin": "hái yào + wùpǐn + ma?",
+          "pattern_pseudo_translation": "还要 + <item> + 吗？"
         }
       ],
       "guided_building": {

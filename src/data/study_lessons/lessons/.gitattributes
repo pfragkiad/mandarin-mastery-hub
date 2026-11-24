@@ -23,3 +23,9 @@ conversational/COVERAGE_REPORT.md whitespace=-blank-at-eol
 conversational/LINGUISTIC_REVIEW_v1.1.4.md whitespace=-blank-at-eol
 conversational/EXPRESSION_USAGE_NOTES.tsv -text
 conversational/SOURCE_EXPRESSION_RESTORATION_v1.1.5.md -text whitespace=-blank-at-eol
+
+# Exact current HSK source companions and package notes.
+hsk3/level*/*_LESSON_*/* -text
+hsk3/level*/*_LESSON_*/*.md whitespace=-blank-at-eol
+hsk3/level*/PACKAGE_README.md -text whitespace=-blank-at-eol
+curricula/HSK3_2025_LEVEL1.json -text
