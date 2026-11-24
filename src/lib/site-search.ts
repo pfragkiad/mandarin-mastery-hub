@@ -4,7 +4,7 @@ import { vocabularyKind, type Word } from './mandarin';
 import { usageRank } from './usage-frequency';
 import { radicalSearchGlyphs } from './radical-identities';
 import { relatedGroup } from './character-variants';
-import { cardMeaning } from './glyph-presentation';
+import { cardMeaning, cardReadingSplit } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 import { pinyinReadingMatches } from './pinyin-tones';
 
@@ -44,7 +44,7 @@ const rowSearchText = (row: object, hanzi: string, pinyin: string, meaning: stri
 
 export type SearchHit =
   | { kind: 'Word'; word: Word }
-  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript };
+  | { kind: ReferenceKind; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; readingSplit?: { reading: string; meaning: string }[] };
 
 // Pinyin search modes shared with the library filters: 'pinyin' restricts the
 // query to readings, 'exact' additionally requires the whole reading to match
@@ -108,7 +108,7 @@ export function searchAll(items: Word[], query: string, includeTraditional = fal
       // Free-text fields belong only to unrestricted search; Pinyin/Exact must
       // not admit translation or source-note matches for reference entries.
       .filter(row => { const [hanzi, pinyin, meaning, note, script] = row; if (!includeScript(script, includeTraditional)) return false; const text = rowSearchText(row, hanzi, pinyin, meaning, note); return refMatch(text) || (pinyinMode === 'any' && (hanQuery ? text.written.includes(written) : text.text.includes(q))); })
-      .map(([hanzi, pinyin, meaning, note, script]) => ({ kind, hanzi, pinyin, meaning: (kind === 'Character' ? characterMeaning : cardMeaning)(hanzi, pinyin, meaning), note, ...(script ? { script } : {}) })),
+      .map(([hanzi, pinyin, meaning, note, script]) => { const readingSplit = cardReadingSplit(hanzi, pinyin, meaning); return { kind, hanzi, pinyin, meaning: (kind === 'Character' ? characterMeaning : cardMeaning)(hanzi, pinyin, meaning), note, ...(script ? { script } : {}), ...(readingSplit ? { readingSplit } : {}) }; }),
   );
   // Words lead, phrases follow all glyphs. Compare the recorded numeric ranks
   // across glyph kinds rather than letting catalogue groups dictate priority.

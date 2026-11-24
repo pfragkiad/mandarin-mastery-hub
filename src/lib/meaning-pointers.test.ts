@@ -28,7 +28,7 @@ describe('干 meaning and readings', () => {
     expect(catalog.readingAudio['干']).toEqual({ 'gān': 'cmn-syl-gan1', 'gàn': 'cmn-syl-gan4' });
   });
   it('shows the gàn translation on the grid card beside gān', () => {
-    expect(cardMeaning('干', 'gān / gàn', 'oppose, offend; invade; dried')).toBe('oppose, offend; invade; dried / trunk of tree or of human body');
+    expect(cardMeaning('干', 'gān / gàn', 'oppose, offend; invade; dried')).toBe('gān: oppose, offend; invade; dried / gàn: trunk of tree or of human body');
   });
   it('keeps the recorded card text when the record has only one of the readings', () => {
     expect(cardMeaning('了', 'le', 'to finish; particle of completed action')).toBe('to finish; particle of completed action');
@@ -50,7 +50,7 @@ describe('发 meaning and readings', () => {
     expect(readingMeanings('发')).toEqual([{ reading: 'fā', meaning: 'issue, dispatch, send out' }, { reading: 'fà', meaning: 'hair' }, { reading: 'fǎ', meaning: 'hair' }]);
   });
   it('shows hair once on the grid card for both fà and fǎ', () => {
-    expect(cardMeaning('发', 'fā / fà / fǎ', 'issue, dispatch, send out; hair')).toBe('issue, dispatch, send out / hair');
+    expect(cardMeaning('发', 'fā / fà / fǎ', 'issue, dispatch, send out; hair')).toBe('fā: issue, dispatch, send out / fà / fǎ: hair');
     expect(cardMeaningPointers('发', 'fā / fà / fǎ', 'issue, dispatch, send out; hair')).toEqual([[{ text: 'issue, dispatch, send out', related: '發' }], [{ text: 'hair', related: '髮' }]]);
   });
   it('points the hair line to 髮 and the fā line to 發', () => {

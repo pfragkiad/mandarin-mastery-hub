@@ -21,7 +21,7 @@ describe('meaning for each reading', () => {
     ];
     expect(readingMeanings('地')).toEqual(split);
     expect(cardReadingSplit(row[0], row[1], row[2])).toEqual(split);
-    expect(characterMeaning(row[0], row[1], row[2])).toBe(split.map(item => item.meaning).join(' / '));
+    expect(characterMeaning(row[0], row[1], row[2])).toBe(split.map(item => `${item.reading}: ${item.meaning}`).join(' / '));
     expect(row[2]).toBe('earth; soil, ground; region');
   });
 

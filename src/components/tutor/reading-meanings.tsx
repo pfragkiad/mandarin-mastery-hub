@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { MeaningText } from './meaning-text';
 import { PointedParts } from './pointed-meaning';
 import type { MeaningPart } from '@/lib/meaning-pointers';
@@ -22,4 +22,15 @@ export function ReadingMeanings({ items, speaker }: { items: { reading: string; 
       <span>{item.parts ? <PointedParts parts={item.parts}/> : <MeaningText text={item.meaning}/>}</span>
     </span>)}
   </h2>;
+}
+
+// Inline one-line rendering of a reviewed per-reading split for grid cards, tooltips and search
+// results: prefixes each grouped sense with its reading(s) in orange pinyin ink ("de: … / dì: …"),
+// keeping fixed card heights intact. Optional `pointerLines` (aligned with `groupReadingMeanings`)
+// adds plain "→ 乾" markers on characters that also carry reviewed meaning pointers. No state.
+export function InlineReadingMeanings({ items, pointerLines }: { items: { reading: string; meaning: string }[]; pointerLines?: MeaningPart[][] | null }) {
+  return <>{groupReadingMeanings(items).map((group, index) => {
+    const pointed = pointerLines?.[index];
+    return <Fragment key={group.readings.join('/')}>{index > 0 && ' / '}<span className="pinyin inline-reading-prefix" lang="zh-Latn-pinyin">{group.readings.join(' / ')}:</span> {pointed ? <PointedParts parts={pointed} plain/> : <MeaningText text={group.meaning}/>}</Fragment>;
+  })}</>;
 }

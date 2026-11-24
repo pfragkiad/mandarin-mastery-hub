@@ -1657,14 +1657,14 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
    and a click falls through to the card, which reveals it (card-peek.ts). */
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .catalog-entry-meaning,
 :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes,
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin { filter: blur(6px); pointer-events: none; user-select: none; transition: filter .15s; }
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .word-character .pinyin, :is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .inline-reading-prefix { filter: blur(6px); pointer-events: none; user-select: none; transition: filter .15s; }
 /* Hanzi are drawn far larger than text lines, so 6px still left simple characters (人, 了, 不)
    readable: hidden hanzi get a much stronger blur and a slight fade (owner request). */
 :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .usage-strokes { filter: blur(16px) opacity(.75); }
 /* Peeked card in a Hide mode: its hidden faces clear again, marked by a subtle outline. */
 :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .word-meaning, :is(.reveal-hide-meaning, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-meaning) .is-revealed .catalog-entry-meaning,
 :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .word-character > span[lang="zh-CN"], :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .tile-hanzi-row, :is(.reveal-hide-hanzi, .reveal-hide-hanzi-pinyin, .reveal-hide-hanzi-meaning) .is-revealed .usage-strokes,
-:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin { filter: none; pointer-events: auto; user-select: auto; }
+:is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .word-character .pinyin, :is(.reveal-hide-pinyin, .reveal-hide-pinyin-meaning, .reveal-hide-hanzi-pinyin) .is-revealed .inline-reading-prefix { filter: none; pointer-events: auto; user-select: auto; }
 /* Compact grid cards keep rank · strokes in the top label row only: their footer copy is
    hidden (below), and a child set to visibility:visible would poke through its hidden
    parent, so the peeked-card unhide above must never reach the footer. */

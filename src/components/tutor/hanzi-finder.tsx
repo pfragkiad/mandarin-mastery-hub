@@ -7,7 +7,8 @@ import { findMatches, FINDER_CAP_OPTIONS, FINDER_MIN_SCORE, loadFinderIndex, ref
 import { finderDestination, finderRecord, FINDER_SCOPES, type FinderScope } from '@/lib/hanzi-finder-records';
 import { accuracyGrade } from '@/lib/accuracy-grade';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
-import { cardMeaning, glyphPresentation } from '@/lib/glyph-presentation';
+import { cardMeaning, cardReadingSplit, glyphPresentation } from '@/lib/glyph-presentation';
+import { InlineReadingMeanings } from './reading-meanings';
 import { characterMeaning } from '@/lib/vocabulary-meaning';
 import { radicalVariantFallback, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
@@ -240,7 +241,7 @@ export function FinderHitTile({ hit, onOpen, onSimilar }: { hit: FinderHit; onOp
     <button type="button" className="finder-hit-open finder-hit-glyph-open" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}><FinderHitGlyph glyph={hit.glyph} traditional={hit.entry.script === 'Traditional'}/></button>
     <button type="button" className="finder-hit-open finder-hit-text" title={`Open ${hit.glyph} in ${hit.kind}`} onClick={onOpen}>
     <RecordReading glyph={hit.glyph} kind={hit.kind} entry={hit.entry} textClassName="finder-hit-pinyin"/>
-    <span className="finder-hit-meaning">{(hit.kind === 'Characters' ? characterMeaning : cardMeaning)(hit.glyph, hit.entry.pinyin, hit.entry.meaning)}</span>
+    <span className="finder-hit-meaning">{(() => { const split = cardReadingSplit(hit.glyph, hit.entry.pinyin, hit.entry.meaning); return split ? <InlineReadingMeanings items={split}/> : (hit.kind === 'Characters' ? characterMeaning : cardMeaning)(hit.glyph, hit.entry.pinyin, hit.entry.meaning); })()}</span>
     <span className="hit-kind">{hit.kindLabel}</span>
     </button>
   </div>;
