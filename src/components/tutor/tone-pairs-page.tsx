@@ -7,22 +7,23 @@
 // and `onChange(patch, replace)`, which the route turns into navigation. Choosing a cell, a
 // rule or a word pushes history (Back restores it); Listen first only replaces the entry.
 // State: the lazily loaded sidecars (tone pairs; the Sound chart's syllable recordings for
-// the chips) and the one playback status. Speed is the app-wide "Slower pronunciation"
+// the chips) and the playback state, which stays silent: the card shows no loading/playing/
+// finished label, only an error if a recording fails. Speed is the app-wide "Slower pronunciation"
 // preference, as for every other speaker; the page has no speed control of its own.
 //
 // Rules carried over from the handoff:
 // - The word speaker plays one exact whole-word recording (the word card's own CDN attachment);
 //   each syllable chip plays only the Sound chart's own recording of that exact syllable + tone.
 //   No TTS, no syllable joining, no automatic fallback on failure.
-// - Any selection change, page switch or unmount stops playback; the speaker is play-only
-//   (no stop state), exactly like every other card in the app.
+// - Any selection change, page switch or unmount stops playback; the word speaker and the
+//   syllable chips are play-only (no stop state, no stop icon), like every other card in the app.
 // - The dictionary tones, the exact source reading and the *expected in speech* draft stay
 //   separate; the draft is labelled as such and nothing here claims listening approval.
 // - Listen first hides every word name and reading (cells, list, card) but keeps the
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Square, Volume2 } from 'lucide-react';
+import { ArrowRight, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords, type Word } from '@/lib/mandarin';
@@ -60,7 +61,10 @@ function ToneDigit({ tone, compact = false }: { tone: number; compact?: boolean 
   return <span className={`tone-pair-digit tone-${tone}`}>{tone === 5 ? (compact ? '·' : 'neutral') : tone}</span>;
 }
 
-type Status = { kind: 'idle' | 'loading' | 'playing' | 'finished' | 'error'; text: string };
+// Playback state only. The card shows no text while a recording loads, plays or ends — every
+// other card in the app is silent about it — so `kind` exists to keep the speaker play-only and
+// the line below renders only for an error.
+type Status = { kind: 'idle' | 'loading' | 'playing' | 'error'; text: string };
 const IDLE: Status = { kind: 'idle', text: '' };
 
 export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMode; search: Search; onChange: (patch: ToneSoundsPatch, replace?: boolean) => void }) {
@@ -102,15 +106,15 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
     if (status.kind === 'loading' || status.kind === 'playing') return;
     chipStop.current(); chipPlayer.clearError();
     const mine = ++generation.current;
-    setStatus({ kind: 'loading', text: 'Loading recording…' });
+    setStatus({ kind: 'loading', text: '' });
     const onSettle = (how: RecordingSettle) => {
       if (mine !== generation.current) return;
-      if (how === 'ended') setStatus({ kind: 'finished', text: 'Finished. Say it back, then replay when you’re ready.' });
-      else if (how === 'failed') setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' });
+      // A finished recording leaves no label behind; only a failure says anything.
+      if (how === 'failed') setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' });
       else setStatus(IDLE);
     };
     const ok = await playRecordingAt(row.audio.url, slow ? SLOW_RATE : NORMAL_RATE, onSettle);
-    if (ok && mine === generation.current) setStatus({ kind: 'playing', text: `Playing the whole-word recording · ${row.audio.speaker}${slow ? ' · slower' : ''}` });
+    if (ok && mine === generation.current) setStatus({ kind: 'playing', text: '' });
   };
   return <div className="page-enter library-page pinyin-page tone-sounds-page">
     <div className="page-heading library-heading"><div>
@@ -201,6 +205,8 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * spelling match. Below: each dictionary syllable as a chip that plays the Sound chart's
  * own recording in place (no navigation). The dictionary → expected tone change lives in
  * the pill and the matrix tile header, not in a separate compare block.
+ * Both speakers are play-only and the card carries no playback label: nothing appears while
+ * a recording loads, plays or ends, and only a failure adds an error line.
  */
 function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips }: {
   row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
@@ -229,7 +235,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
             pinyinContent={<><span className="pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{pairing.paired ? pairing.pinyinText : reading}</span>{speaker}</>} meaning={row.english}/>}
     </SentenceHints>
     <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
-    <p className={`tone-sounds-status${status.kind === 'error' || chips.error ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{chips.error || status.text}</p>
+    {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
     {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
       <div className="tone-sounds-links">
         <span className="eyebrow">Each dictionary sound</span>
@@ -237,9 +243,11 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
           const id = soundId(l.base, l.tone);
           const recorded = chips.data ? hasRecording(chips.data, l.base, l.tone) : false;
           const on = chips.player.playing === id;
-          return <button key={`${id}-${i}`} type="button" className={`tone-sounds-chip tone-${l.tone}${on ? ' is-playing' : ''}`} disabled={!recorded} aria-pressed={on}
+          // Play-only, like every other speaker: the icon never becomes a stop button and a
+          // tap while sounding does nothing. The tint only marks which syllable is sounding.
+          return <button key={`${id}-${i}`} type="button" className={`tone-sounds-chip tone-${l.tone}${on ? ' is-playing' : ''}`} disabled={!recorded}
             aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : undefined}
-            onClick={() => { if (on) chips.player.stop(); else chips.onPlay(l.base, l.tone); }}>{l.reading}{on ? <Square/> : <Volume2/>}</button>;
+            onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>{l.reading}<Volume2/></button>;
         })}</div>
         {row.vocabularyEntryId && <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link">Open the word card<ArrowRight/></Link>}
       </div>
