@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Stroke practice: correct ㇝/㇋/㇎ source indices; remove unverified ㇘ outline and clear stale geometry
+- [x] Check stroke tile font coverage: Handwritten covers all; Sans/Print still lack ㇤/㇥ (no fabricated font glyphs)
+
 - [x] Phone library pages: equal top gaps (header→title→search→Filters→Study)
 - [x] Phone library pages: heading hanzi faint, larger, behind title at right, reserving no space
 - [x] Card Details/Trace/Recall row aligns left with the tiles
