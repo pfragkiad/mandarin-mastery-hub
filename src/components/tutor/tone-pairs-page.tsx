@@ -30,7 +30,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  listeningTip, loadTonePairs, nextExample, pairHasToneChange, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  listeningTip, loadTonePairs, pairHasToneChange, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -145,7 +145,6 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
         <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} playing={playing} status={status}
           chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
-          onNext={() => { const next = nextExample(pool, row.id); if (next) onChange({ example: next.id }); }}
           onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
       </div>}
   </div>;
@@ -197,12 +196,14 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * The hanzi get the detail cards' hover pairing with the pinyin and, inside SentenceHints (the
  * remembered Character hints switch), a click opens each character's quick card; the word
  * context is the exact Vocabulary record bound to this recording (vocabularyEntryId), never a
- * spelling match. Below: dictionary vs expected tones, Play / Next word, and each dictionary
- * syllable as a chip that plays the Sound chart's own recording in place (no navigation).
+ * spelling match. The speaker beside the pinyin is the only play control (it shows a stop
+ * square while playing); words are picked from the matrix, rule list or word list. Below:
+ * dictionary vs expected tones, and each dictionary syllable as a chip that plays the Sound
+ * chart's own recording in place (no navigation).
  */
-function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onNext, onReveal, chips }: {
+function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onReveal, chips }: {
   row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; playing: boolean; status: Status;
-  onPlay: () => void; onNext: () => void; onReveal: () => void; chips: SyllableChips;
+  onPlay: () => void; onReveal: () => void; chips: SyllableChips;
 }) {
   const changed = tonesChanged(row);
   const reading = row.expectedSpokenSyllables.join(' ');
@@ -226,10 +227,6 @@ function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onNext
       <div className={changed && !hidden ? 'is-changed' : undefined}><dt>Expected in speech · draft</dt><dd>{hidden ? 'Hidden' : toneLabel(row.expectedSpokenTones)}</dd></div>
     </dl>
     <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
-    <div className="tone-sounds-controls">
-      <Button variant="outline" size="sm" className="tone-sounds-play" onClick={onPlay}>{playing ? <><Square/>Stop</> : <><Volume2/>Play</>}</Button>
-      <Button variant="outline" size="sm" onClick={onNext}>Next word<ArrowRight/></Button>
-    </div>
     <p className={`tone-sounds-status${status.kind === 'error' || chips.error ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{chips.error || status.text}</p>
     {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
       <div className="tone-sounds-links">

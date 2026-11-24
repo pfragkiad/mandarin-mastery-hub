@@ -80,13 +80,6 @@ export const pairPool = (data: Pick<TonePairData, 'examples'>, pair: string) => 
 export const rulePool = (data: Pick<TonePairData, 'examples'>, rule: ToneRule) => data.examples.filter(e => e.rule === rule);
 /** The URL's exact example when it belongs to this pool, otherwise the pool's first word. */
 export const selectedExample = (pool: readonly TonePairExample[], id: string | undefined) => pool.find(e => e.id === id) ?? pool[0] ?? null;
-/** Next word in the pool, wrapping round (Next word never plays by itself). */
-export function nextExample(pool: readonly TonePairExample[], id: string): TonePairExample | null {
-  if (!pool.length) return null;
-  const index = pool.findIndex(e => e.id === id);
-  return pool[(index + 1) % pool.length] ?? null;
-}
-
 export const toneName = (tone: number) => tone === 5 ? 'neutral' : String(tone);
 /** "3 + neutral" style label for a tone list. */
 export const toneLabel = (tones: readonly number[]) => tones.map(toneName).join(' + ');
