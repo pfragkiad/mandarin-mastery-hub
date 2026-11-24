@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Hide unknown-only decomposition trees and availability controls across glyph cards, Practice and vocabulary; retain known alternatives
+- [x] Known parts include exact BabelStone parts and numbered source identities, not only dictionary glyphs
+
 - [x] Stroke practice: correct ㇝/㇋/㇎ source indices; remove unverified ㇘ outline and clear stale geometry
 - [x] Check stroke tile font coverage: Handwritten covers all; Sans/Print still lack ㇤/㇥ (no fabricated font glyphs)
 

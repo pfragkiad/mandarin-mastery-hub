@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { webcrypto } from 'node:crypto';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { catalog } from './catalog-store';
-import { gSourceDecompositions, matchesRecordedGSource, sameDecompositionTree, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
+import { decompositionHasContent, visibleGSourceDecompositions, gSourceDecompositions, matchesRecordedGSource, sameDecompositionTree, treeChecksum, validateEnrichment, type CharacterEnrichment, type BoundGeometry } from './character-enrichment';
 import { parseIdsTree } from './ids-tree';
 
 beforeAll(() => { vi.stubGlobal('crypto', webcrypto); });
@@ -18,6 +18,14 @@ function geometry(r: CharacterEnrichment): BoundGeometry {
   } };
 }
 describe('bound character enrichment', () => {
+  it('hides 讠 when the raw tree has only gaps and G-source only repeats 讠', () => {
+    expect(decompositionHasContent(parseIdsTree('⿻？？') ?? undefined, record('讠'))).toBe(false);
+    expect(visibleGSourceDecompositions(record('讠'))).toEqual([]);
+  });
+  it('retains 竹’s known G-source breakdown when its Hanzi tree has only gaps', () => {
+    expect(decompositionHasContent(parseIdsTree('⿰??') ?? undefined, record('竹'))).toBe(true);
+    expect(visibleGSourceDecompositions(record('竹')).length).toBeGreaterThan(0);
+  });
   it('matches 之 when only the missing bottom part differs from G-source component 100', () => {
     const g = parseIdsTree('⿱丶{100}') ?? undefined;
     const r = { glyph: '之', position: 'root', children: [
