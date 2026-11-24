@@ -2,6 +2,8 @@ import { readCatalog } from '@/test/catalog-fixture';
 import { beforeAll, describe, expect, it } from 'vitest';
 import fs from 'fs';
 import { catalog, hydrateCatalog, readingMeaning, readingMeanings, type CatalogData } from './catalog-store';
+import { cardReadingSplit } from './glyph-presentation';
+import { characterMeaning } from './vocabulary-meaning';
 
 const read = (f: string) => JSON.parse(fs.readFileSync(`public/data/${f}`, 'utf8'));
 let data: CatalogData;
@@ -11,6 +13,18 @@ beforeAll(() => {
 });
 
 describe('meaning for each reading', () => {
+  it('地 pairs the adverbial particle with de and land senses with dì across detail and card displays', () => {
+    const row = catalog.characters.find(item => item[0] === '地')!;
+    const split = [
+      { reading: 'de', meaning: 'structural particle marking an adverbial' },
+      { reading: 'dì', meaning: 'ground; land; earth; soil; region' },
+    ];
+    expect(readingMeanings('地')).toEqual(split);
+    expect(cardReadingSplit(row[0], row[1], row[2])).toEqual(split);
+    expect(characterMeaning(row[0], row[1], row[2])).toBe(split.map(item => item.meaning).join(' / '));
+    expect(row[2]).toBe('earth; soil, ground; region');
+  });
+
   it('了 liǎo means to finish / to understand, not the particle', () => {
     expect(readingMeaning('了', 'liǎo')).toBe('to finish; to understand (as in 了解)');
   });
