@@ -79,4 +79,3 @@ frontend: `ReviewSetItem` in `src/lib/lessons.ts`, labelled notes in
 `KeyExpressionCard`, and tests in `lesson-page.test.tsx`. Pattern cards also hide
 headings/notes that only repeat their examples/functions. The new three-line
 pattern contract and legacy fallbacks still follow the migration report above.
-
