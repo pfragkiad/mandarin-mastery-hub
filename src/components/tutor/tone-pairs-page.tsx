@@ -209,7 +209,11 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
   const word = useMemo(() => (row.vocabularyEntryId ? vocabularyWords.find(w => w.id === row.vocabularyEntryId) ?? null : null), [row.vocabularyEntryId]);
   // Play-only speaker, consistent with every other card: no stop state, no icon swap.
   const speaker = <Button variant="ghost" size="icon" aria-label={`Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} onClick={onPlay}><Volume2/></Button>;
-  const pill = <span className="word-hsk-id tone-pair-pill" title={`Dictionary tones: ${toneLabel(row.citationTones)}`}>{row.citationTones.map((t, i) => <span key={i}>{i > 0 && ' + '}<ToneDigit tone={t}/></span>)}</span>;
+  // The header pill names the pair; when speech changes the tones it shows the change too (3 + 3 → 2 + 3).
+  const digits = (tones: readonly number[]) => tones.map((t, i) => <span key={i}>{i > 0 && ' + '}<ToneDigit tone={t}/></span>);
+  const pill = <span className="word-hsk-id tone-pair-pill" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
+    {digits(row.citationTones)}{changed && <span className="tone-pair-change"> → {digits(row.expectedSpokenTones)}</span>}
+  </span>;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
     <div className="pinyin-player-head">
       <span className="eyebrow">{mode === 'pairs' ? 'Tone pair' : 'Tone change'} · {pool.findIndex(e => e.id === row.id) + 1} of {pool.length}</span>

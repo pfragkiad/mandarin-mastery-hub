@@ -4931,6 +4931,7 @@ html[data-display-size='comfortable'] .tone-sounds-chip svg { width: 16px; heigh
 .tone-sounds-card .catalog-detail-title { margin: 2px 0 0; }
 .tone-sounds-card .catalog-detail-glyph-row > strong.tone-sounds-hidden-glyph { color: var(--muted-foreground); letter-spacing: 4px; }
 .tone-pair-pill { color: var(--foreground); border-color: var(--border); font-size: 11px; letter-spacing: 0; padding: 2px 8px; }
+.tone-pair-pill .tone-pair-change { color: var(--muted-foreground); }
 html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding: 3px 10px; }
 .tone-sounds-chip:hover, .tone-sounds-chip:focus-visible { background: color-mix(in oklch, var(--tone-ink, var(--primary)) 14%, transparent); outline: none; }
 .tone-sounds-chip.tone-5 { --tone-ink: var(--muted-foreground); }
