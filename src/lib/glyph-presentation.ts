@@ -44,13 +44,13 @@ export function displayMeaning(meaning: string): string {
 }
 
 /** One-line card translation for a record whose readings carry reviewed separate meanings
- * (干 gān / gàn): the per-reading meanings joined with " / " in the record's own reading order,
- * mirroring its pinyin line, so a card never shows "gān / gàn" with only gān's senses.
+ * (干 gān / gàn): each grouped reading prefixed with "reading: " and joined with " / " in the
+ * record's own reading order, so a card pairs each pronunciation with its own senses.
  * Fails closed to the recorded meaning unless this record still has the reviewed combined text
  * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
 export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
   const split = cardReadingSplit(glyph, pinyin, meaning);
-  return displayMeaning(split ? groupReadingMeanings(split).map(group => group.meaning).join(' / ') : meaning);
+  return displayMeaning(split ? groupReadingMeanings(split).map(group => `${group.readings.join(' / ')}: ${group.meaning}`).join(' / ') : meaning);
 }
 
 /** The reviewed per-reading split a card may show for this exact record, or null (see cardMeaning). */

@@ -71,7 +71,7 @@ import { RadicalForms } from './radical-forms';
 import { useScriptFormsSourceNote, ScriptForms, RelatedWrittenForms, cardFormRecords } from './script-forms';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading, splitReadings } from './reading-speakers';
 import { SoundChartLink } from './sound-chart-link';
-import { ReadingMeanings } from './reading-meanings';
+import { InlineReadingMeanings, ReadingMeanings } from './reading-meanings';
 import { componentCardGlyphs, componentCardHead } from '@/lib/component-families';
 import { collapseScriptForms, scriptGroup, scriptHead } from '@/lib/character-variants';
 import { usePublishSections } from '@/lib/section-switch';
@@ -450,8 +450,9 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // Reviewed sense pointers (干: "dried → 乾", gàn "trunk of tree… → 幹") also mark the grid tile, unlinked
   // because the tile face is one button; the detail card keeps the clickable links.
   // Radical cards keep the split meaning but no pointers: a radical has no related characters.
+  const readingSplit = formMeanings.length <= 1 && !info.component && !fallback && kind !== 'Strokes' ? cardReadingSplit(entry.hanzi, entry.pinyin, entry.meaning) : null;
   const pointerLines = formMeanings.length <= 1 && !info.component && !fallback && kind !== 'Strokes' && kind !== 'Radicals' ? cardMeaningPointers(entry.hanzi, entry.pinyin, entry.meaning) : null;
-  const meaningText = pointerLines ? <>{pointerLines.map((line, index) => <Fragment key={index}>{index > 0 && ' / '}<PointedParts parts={line} plain/></Fragment>)}</> : formMeanings.length > 1 ? <>{formMeanings.map((item, index) => <Fragment key={item.text}>{index > 0 && ' / '}<span className={item.traditional ? 'traditional-character' : undefined}><MeaningText text={item.text}/></span></Fragment>)}</> : <MeaningText text={tileMeaning}/>;
+  const meaningText = readingSplit ? <InlineReadingMeanings items={readingSplit} pointerLines={pointerLines}/> : pointerLines ? <>{pointerLines.map((line, index) => <Fragment key={index}>{index > 0 && ' / '}<PointedParts parts={line} plain/></Fragment>)}</> : formMeanings.length > 1 ? <>{formMeanings.map((item, index) => <Fragment key={item.text}>{index > 0 && ' / '}<span className={item.traditional ? 'traditional-character' : undefined}><MeaningText text={item.text}/></span></Fragment>)}</> : <MeaningText text={tileMeaning}/>;
   // Every card body (Compact and Comfortable) first tries the side layout: the form boxes in one row
   // on the left, pinyin+audio over the translation on the right. useSideFit marks it data-stacked
   // when the boxes, the one-line pinyin or the two-line translation would be cut there, and CSS then
@@ -461,7 +462,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // A plain translation that overflows the card's line limit (two lines clamped in the Compact
   // grid, three in Comfortable) drops its last semicolon senses on the card, keeping at least
   // the first; the popup, tooltip and detail card keep them all.
-  const plainMeaning = !pointerLines && formMeanings.length <= 1;
+  const plainMeaning = !readingSplit && !pointerLines && formMeanings.length <= 1;
   const trimmedMeaning = useSenseTrim(tileRef, plainMeaning ? tileMeaning : '');
   const cardMeaningText = plainMeaning ? <MeaningText text={trimmedMeaning}/> : meaningText;
   useSideFit(tileRef, true, [tileMeaning, displayedForms.length, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning, preferences.includeTraditional], { shrinkText: true, rowSync: true });
