@@ -11,6 +11,7 @@ import { usePhrasePairing } from './phrase-pairing';
 import type { AudioRequest } from '@/lib/audio';
 import type { Word } from '@/lib/mandarin';
 import { segmentLessonExpression, type LessonSegment } from '@/lib/lesson-segments';
+import { pseudoTranslationParts } from '@/lib/lesson-pattern';
 
 /**
  * Shared text pieces for study lessons (lesson-page.tsx, lessons-index.tsx).
@@ -82,30 +83,35 @@ export function LessonPairedLine({ hanzi, pinyin, className = 'lesson-hanzi', fo
 }
 
 /**
- * A pattern's template line (陈述句 + 吗？) with its recorded pinyin and a speaker beside it.
- * Inputs: the recorded pattern hanzi/pinyin. Owner-approved: the computer voice reads the
- * template as written, slot labels (主语, 动词…) included. A "+" joiner is spoken as a short
- * pause rather than "加" — only the spoken text changes, never the displayed fields. A
- * template is never a dictionary entry, so it never borrows a word recording; a line with no
- * "+" goes through the ordinary LessonSpeaker rules instead.
+ * A pattern heading (Core v3.6.0 migration report): the recorded pseudo-translation, then the
+ * recorded Hanzi, then the recorded pinyin, each on its own line, wrapping inside the card. Owner
+ * decision 2026-11-24 (deviating from the report's Hanzi-first order): the pseudo-translation is the
+ * line a learner can read, so it leads and is the largest; the Mandarin template lines follow,
+ * smaller. Inputs: the three recorded fields; an empty pseudo-translation (legacy
+ * conversational/character cards) leaves the two Mandarin lines. Owner decision 2026-11-24: pattern lines have no speaker — formulas stay out of
+ * text-to-speech; the worked example below keeps its own audio. Hanzi still gets character
+ * hints and hover pairing like other lesson text.
  */
-export function LessonPatternLine({ hanzi, pinyin }: { hanzi: string; pinyin?: string | undefined }) {
+export function LessonPatternHeading({ hanzi, pinyin, pseudoTranslation }: { hanzi: string; pinyin?: string | undefined; pseudoTranslation?: string | undefined }) {
   const pair = useLessonPairing(hanzi, pinyin);
-  return <>
-    <span className="lesson-hanzi" lang="zh-CN">{pair.hanziBody}</span>
-    {pinyin && <span className="lesson-term-reading"><span className="pinyin">{pair.pinyinBody}</span><PatternSpeaker hanzi={hanzi} pinyin={pinyin}/></span>}
-  </>;
+  return <div className="lesson-pattern-line lesson-pattern-heading">
+    {pseudoTranslation && <PseudoTranslation value={pseudoTranslation}/>}
+    {hanzi && <span className="lesson-hanzi" lang="zh-CN">{pair.hanziBody}</span>}
+    {pinyin && <span className="pinyin">{pair.pinyinBody}</span>}
+  </div>;
 }
 
-/** Speech text for a pattern template: "+" joiners become pauses (see LessonPatternLine). */
-export function patternSpeechText(hanzi: string): string {
-  return hanzi.replace(/\s*[+＋]\s*/gu, '，').trim();
-}
-
-function PatternSpeaker({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
-  if (!/[+＋]/u.test(hanzi)) return <LessonSpeaker hanzi={hanzi} pinyin={pinyin}/>;
-  if (!/\p{Script=Han}/u.test(hanzi)) return null;
-  return <ExamplePronunciation request={{ text: patternSpeechText(hanzi), reading: pinyin, audio: null }} label={hanzi}/>;
+/**
+ * The third pattern line as React text nodes: <slot> placeholders stay visible (muted), fixed
+ * Mandarin is bold in the hanzi font, everything else is kept verbatim (see lesson-pattern.ts).
+ * It blurs with the EN face, as a translation.
+ */
+function PseudoTranslation({ value }: { value: string }) {
+  return <span className="lesson-pattern-gloss lesson-translation">
+    {pseudoTranslationParts(value).map((part, i) => part.kind === 'slot' ? <span key={i} className="lesson-pattern-slot">{part.text}</span>
+      : part.kind === 'mandarin' ? <strong key={i} lang="zh-CN">{part.text}</strong>
+      : <Fragment key={i}>{part.text}</Fragment>)}
+  </span>;
 }
 
 /** The lesson hero's headword: big glyph + reading + speaker, hover-paired. */

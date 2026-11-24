@@ -66,7 +66,9 @@ export type LessonSummary = {
 
 /* ---------- Full lesson document (mirrors core/character_lesson.schema.json) ---------- */
 export type LessonVocabItem = { id: string; catalog_id: string | null; hanzi: string; pinyin: string; part_of_speech: string; meaning_en: string; priority: 'A' | 'B' | 'C'; register: string; lexical_status: string; usage_note: string; hsk_level: number | null; hsk_syllabus_id: string | null; frequency_rank: number | null };
-export type LessonConstruction = { id: string; category: string; pattern_hanzi: string; pattern_pinyin: string; function_en: string; example: LessonTerm; register: string; usage_note: string };
+/** A character lesson construction. pattern_pseudo_translation is read by presence (Core v3.6.0+), since old
+ * and updated character records both declare format 3.2.0. */
+export type LessonConstruction = { id: string; category: string; pattern_hanzi: string; pattern_pinyin: string; pattern_pseudo_translation?: string; function_en: string; example: LessonTerm; register: string; usage_note: string };
 // v2.5 keeps learner content in JSON and editorial provenance in a separate report.
 // Optional provenance fields retain compatibility with earlier lesson documents.
 export type LessonExample = { id: string; title: string; hanzi: string; pinyin: string; english: string; context: string; register: string; teaching_note: string; provenance?: string; source_ids?: string[] };
@@ -110,7 +112,7 @@ export type LessonSections = {
 export type GeneralBlock =
   | { id: string; kind: 'explanation'; text: string }
   | { id: string; kind: 'dialogue'; title?: string; turns: { speaker: string; hanzi: string; pinyin: string; english: string }[] }
-  | { id: string; kind: 'grammar_pattern'; pattern_hanzi: string; pattern_pinyin: string; function_en: string; example: { id: string; hanzi: string; pinyin: string; english: string; teaching_note?: string } }
+  | { id: string; kind: 'grammar_pattern'; pattern_hanzi: string; pattern_pinyin: string; pattern_pseudo_translation?: string; function_en: string; example: { id: string; hanzi: string; pinyin: string; english: string; teaching_note?: string } }
   | { id: string; kind: 'review_set'; items: ReviewSetItem[] };
 
 /** One Key expressions item. General schema 3.3.0 adds optional permanent CMX expression IDs and a
@@ -131,7 +133,9 @@ export type PlanLine = { hanzi: string; pinyin: string; english: string };
  *  (dialogue → patterns → guided building → reading → speaking → pitfall/pronunciation → review). */
 export type TeachingPlan = {
   dialogue: { title: string; context_en: string; turns: (PlanLine & { speaker: string })[] };
-  patterns: { id: string; title: string; explanation_en: string; formula_en: string; examples: PlanLine[] }[];
+  /** Topic 3.4.0+ records the three-line heading (pattern_*); legacy 3.3.0 records a one-line formula_en.
+   *  Absent fields read as '' so the renderer picks whichever heading the record actually has. */
+  patterns: { id: string; title: string; explanation_en: string; pattern_hanzi: string; pattern_pinyin: string; pattern_pseudo_translation: string; formula_en: string; examples: PlanLine[] }[];
   guided_building: { instruction_en: string; model: PlanLine; substitutions: { id: string; cue_en: string; model_answer: PlanLine }[] };
   reading: { title: string; paragraphs: PlanLine[]; questions: { id: string; prompt_en: string; answer_en: string }[] };
   speaking_tasks: { id: string; scenario_en: string; model_answer: PlanLine }[];
@@ -301,7 +305,7 @@ export function toTeachingPlan(raw: Record<string, unknown>): TeachingPlan {
   const d = obj(raw['dialogue']), b = obj(raw['guided_building']), r = obj(raw['reading']), rv = obj(raw['review']);
   return {
     dialogue: { title: str(d['title']), context_en: str(d['context_en']), turns: arr<unknown>(d['turns']).map(t => ({ ...line(t), speaker: str(obj(t)['speaker']) })) },
-    patterns: arr<Record<string, unknown>>(raw['patterns']).map(p => ({ id: str(p['id']), title: str(p['title']), explanation_en: str(p['explanation_en']), formula_en: str(p['formula_en']), examples: arr<unknown>(p['examples']).map(line) })),
+    patterns: arr<Record<string, unknown>>(raw['patterns']).map(p => ({ id: str(p['id']), title: str(p['title']), explanation_en: str(p['explanation_en']), pattern_hanzi: str(p['pattern_hanzi']), pattern_pinyin: str(p['pattern_pinyin']), pattern_pseudo_translation: str(p['pattern_pseudo_translation']), formula_en: str(p['formula_en']), examples: arr<unknown>(p['examples']).map(line) })),
     guided_building: { instruction_en: str(b['instruction_en']), model: line(b['model']), substitutions: arr<Record<string, unknown>>(b['substitutions']).map(x => ({ id: str(x['id']), cue_en: str(x['cue_en']), model_answer: line(x['model_answer']) })) },
     reading: { title: str(r['title']), paragraphs: arr<unknown>(r['paragraphs']).map(line), questions: arr<Record<string, unknown>>(r['questions']).map(q => ({ id: str(q['id']), prompt_en: str(q['prompt_en']), answer_en: str(q['answer_en']) })) },
     speaking_tasks: arr<Record<string, unknown>>(raw['speaking_tasks']).map(t => ({ id: str(t['id']), scenario_en: str(t['scenario_en']), model_answer: line(t['model_answer']) })),

@@ -158,3 +158,6 @@
 - [x] Character hints switch in Glyphs/Vocabulary grids (hover ring + quick card on card hanzi)
 - [x] Grid hidden hanzi: much stronger blur so large simple characters are truly hidden
 - [x] Lesson sidebar + phone sheets use the grid toolbar look for Hanzi·Pinyin·EN and Character hints
+- [x] Lessons Core v3.6: three-line pattern headings (Hanzi, pinyin, pseudo-translation) in HSK, Conversational and character lessons; legacy formula fallback
+- [x] Pattern lines: no speaker (owner, following the migration report)
+- [x] Pattern pseudo-translation is the prominent line and comes first; Hanzi/pinyin smaller below

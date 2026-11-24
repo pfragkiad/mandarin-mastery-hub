@@ -51,8 +51,8 @@ describe('lesson index', () => {
     expect(ids.filter(id => id.startsWith('convm-')).length).toBe(17);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
     expect(ids.filter(id => id.startsWith('topic-')).length).toBe(46);
-    // Core v3.3 (checkpoint progress): topic lessons 3.3.0, character lessons 3.2.0.
-    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.3.0')).toBe(true);
+    // Core v3.6 (three-line patterns): topic lessons 3.4.0; character lessons still declare 3.2.0.
+    expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.4.0')).toBe(true);
     expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion === 'mandarin-character-lesson/3.2.0')).toBe(true);
   });
 });
@@ -200,8 +200,8 @@ describe('conversational lessons', () => {
   it('are 17 general dialogue lessons whose blocks are all kinds the page renders', () => {
     expect(docs.length).toBe(17);
     for (const d of docs) {
-      // Core v3.4 general lessons (schema 3.3.0: optional usage notes); 3.2.0 stays supported.
-      expect(['mandarin-general-lesson/3.2.0', 'mandarin-general-lesson/3.3.0']).toContain(d.schema_version);
+      // Core v3.6 general lessons (schema 3.4.0: pattern pseudo-translation); 3.2.0/3.3.0 stay supported.
+      expect(['mandarin-general-lesson/3.2.0', 'mandarin-general-lesson/3.3.0', 'mandarin-general-lesson/3.4.0']).toContain(d.schema_version);
       expect(d.lesson_type).toBe('dialogue');
       expect(d.sections.blocks.every(b => ['explanation', 'dialogue', 'grammar_pattern', 'review_set'].includes(b.kind))).toBe(true);
     }

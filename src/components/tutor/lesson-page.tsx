@@ -25,7 +25,8 @@ import { Button } from '@/components/ui/button';
 import { detailTrail } from '@/lib/detail-trail';
 import { parseAnswerLines } from '@/lib/lesson-answer';
 import { correctLessonChoices, lessonCharacterRefs, syllabusEntryFor, type PlanLine, type TopicExample, type TopicVocabItem, type LessonBlock, type LessonChoice, type LessonDocument, type LessonPreference, type LessonQuestion, type LessonSummary, type LessonVocabItem } from '@/lib/lessons';
-import { LessonHeadword, LessonPairedLine, LessonPatternLine, LessonTerm, LessonText, LessonWord } from './lesson-text';
+import { toPatternHeading } from '@/lib/lesson-pattern';
+import { LessonHeadword, LessonPairedLine, LessonPatternHeading, LessonTerm, LessonText, LessonWord } from './lesson-text';
 import { positionsOf, type LessonPosition } from '@/lib/lesson-curricula';
 import type { Word } from '@/lib/mandarin';
 import { WordIdentityPills } from './word-identity-pills';
@@ -257,8 +258,10 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
     if (p.patterns.length) sections.push({ id: 'patterns', title: 'How the language works', hint: count(p.patterns.length, 'pattern'), body: <div className="lesson-stack">
       {p.patterns.map(pat => <div key={pat.id} className="lesson-card lesson-pattern">
         <p className="lesson-card-title"><LessonText text={pat.title}/></p>
+        {(() => { const h = toPatternHeading(pat); return h.kind === 'modern' ? <LessonPatternHeading hanzi={h.hanzi} pinyin={h.pinyin} pseudoTranslation={h.pseudoTranslation}/> : null; })()}
         <p className="lesson-muted"><LessonText text={pat.explanation_en}/></p>
-        {pat.formula_en && <p className="lesson-formula"><LessonText text={pat.formula_en}/></p>}
+        {/* Legacy topic 3.3.0 cards record only a one-line formula, kept in its old pill. */}
+        {toPatternHeading(pat).kind === 'legacy' && <p className="lesson-formula"><LessonText text={pat.formula_en}/></p>}
         <div className="lesson-stack">{pat.examples.map((e, i) => <PlanSentence key={i} line={e}/>)}</div>
         <CardTick target={pat.id}/>
       </div>)}
@@ -342,7 +345,8 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   // example sentence itself as the formula (or the function verbatim as the teaching note), that
   // duplicate is shown once only — the recorded fields are untouched, only the repeat is hidden.
   if (patterns.length) sections.push({ id: 'block-patterns', title: 'Patterns', hint: count(patterns.length, 'pattern'), body: <div className="lesson-stack">{patterns.map(g => <div key={g.id} className="lesson-card lesson-pattern">
-    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() && <p className="lesson-pattern-line"><LessonPatternLine hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin}/></p>}
+    {g.pattern_hanzi.trim() !== g.example.hanzi.trim() ? <LessonPatternHeading hanzi={g.pattern_hanzi} pinyin={g.pattern_pinyin} pseudoTranslation={g.pattern_pseudo_translation}/>
+      : g.pattern_pseudo_translation && <LessonPatternHeading hanzi="" pseudoTranslation={g.pattern_pseudo_translation}/>}
     <p className="lesson-card-title"><LessonText text={g.function_en}/></p>
     <PlanSentence line={g.example}/>
     {g.example.teaching_note && g.example.teaching_note.trim() !== g.function_en.trim() && <p className="lesson-teaching"><LessonText text={g.example.teaching_note}/></p>}
@@ -376,7 +380,7 @@ export function LessonPage({ lesson, priority, onPriority }: { lesson: LessonDoc
   if (S.constructions?.enabled && S.constructions.items.length) sections.push({ id: 'constructions', title: 'Patterns', hint: count(S.constructions.items.length, 'reusable construction'), body: <>
     <div className="lesson-stack">{S.constructions.items.map(c => <div key={c.id} className="lesson-card lesson-pattern">
       <div className="lesson-card-top"><span className="lesson-register">{plain(c.category)}</span><span className="lesson-register"><LessonText text={c.register}/></span></div>
-      <p className="lesson-pattern-line"><LessonPatternLine hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin}/></p>
+      <LessonPatternHeading hanzi={c.pattern_hanzi} pinyin={c.pattern_pinyin} pseudoTranslation={c.pattern_pseudo_translation}/>
       <p className="lesson-card-title"><LessonText text={c.function_en}/></p>
       <LessonTerm hanzi={c.example.hanzi} pinyin={c.example.pinyin} meaning={c.example.meaning_en}/>
       {c.usage_note && <p className="lesson-muted"><LessonText text={c.usage_note}/></p>}
