@@ -1,6 +1,6 @@
 import { type MouseEvent, type SyntheticEvent } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
-import { AudioLines } from 'lucide-react';
+import { ArrowUpRight, AudioLines } from 'lucide-react';
 import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
 import { soundChartTarget, toneMark } from '@/lib/pinyin-guide';
 import { soundOrigin } from '@/lib/selection-scroll';
@@ -37,9 +37,9 @@ export function SoundChartLink({ reading, from, variant }: { reading: string; fr
       // Remember the grid card this came from, so closing the Sound card focuses it again.
       soundOrigin.set((event.currentTarget as HTMLElement).closest<HTMLElement>('[data-entry-id]')?.dataset['entryId'] ?? null); void navigate({ to: '/pinyin', search }); };
     return <span role="link" tabIndex={0} className="sound-chart-link is-tile" aria-label={label} title={label}
-      onClick={open} onKeyDown={event => { if (event.key === 'Enter') open(event); }}><AudioLines/></span>;
+      onClick={open} onKeyDown={event => { if (event.key === 'Enter') open(event); }}><AudioLines/><ArrowUpRight className="sound-chart-link-arrow" aria-hidden/></span>;
   }
   return <Link to="/pinyin" search={search} className="sound-chart-link" aria-label={label} title={label}
     // Only a plain click sets the Back step; opening in a new tab leaves this tab's trail alone.
-    onClick={event => { if (plainClick(event)) { remember(); soundOrigin.set(null); } }}><AudioLines/></Link>;
+    onClick={event => { if (plainClick(event)) { remember(); soundOrigin.set(null); } }}><AudioLines/><ArrowUpRight className="sound-chart-link-arrow" aria-hidden/></Link>;
 }
