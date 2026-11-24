@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-connecting-ideas",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -20,7 +20,9 @@
       "progressive",
       "connectives"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Express degree and emphasis.",
@@ -29,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -123,7 +125,13 @@
     "门": "Characters:门",
     "非": "Characters:非",
     "饭": "Characters:饭",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "主": "Characters:主",
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "群": "Characters:群",
+    "词": "Characters:词",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -170,7 +178,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 41
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-053",
@@ -211,7 +222,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 53
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-067",
@@ -251,7 +265,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 67
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-078",
@@ -293,7 +310,10 @@
               "entry_id": 78
             }
           ],
-          "pos_note": "Connects nouns and nominal phrases as and; with is a prepositional use."
+          "pos_note": "Connects nouns and nominal phrases as and; with is a prepositional use.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-079",
@@ -334,7 +354,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 79
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-206",
@@ -375,7 +398,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 206
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-253",
@@ -415,7 +441,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 253
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-270",
@@ -455,7 +484,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 270
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-271",
@@ -498,7 +530,10 @@
               "entry_id": 271
             }
           ],
-          "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb."
+          "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-285",
@@ -541,7 +576,10 @@
               "entry_id": 285
             }
           ],
-          "pos_note": "Degree adverb truly/really, sometimes adjectival."
+          "pos_note": "Degree adverb truly/really, sometimes adjectival.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         },
         {
           "id": "w-286",
@@ -581,7 +619,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 286
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "grammar-functions"
         }
       ],
       "related_entries": []
@@ -765,7 +806,6 @@
           "id": "pattern-1",
           "title": "Adding and combining information",
           "explanation_en": "也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.",
-          "formula_en": "subject + 也 + verb; group + 都 + verb",
           "examples": [
             {
               "hanzi": "妹妹也喜欢喝茶。",
@@ -777,13 +817,15 @@
               "pinyin": "Wǒmen dōu xǐhuan Zhōngwén.",
               "english": "We all like Chinese."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 也 + 动词; 一群人 + 都 + 动词",
+          "pattern_pinyin": "zhǔyǔ + yě + dòngcí; yì qún rén + dōu + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 也 + <verb>; <group> + 都 + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Degree and ongoing actions",
           "explanation_en": "很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.",
-          "formula_en": "subject + 正在 + verb",
           "examples": [
             {
               "hanzi": "她正在做饭。",
@@ -795,7 +837,10 @@
               "pinyin": "Jīntiān zhēn rè!",
               "english": "It is really hot today!"
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 正在 + 动词",
+          "pattern_pinyin": "zhǔyǔ + zhèngzài + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 正在 + <verb>"
         }
       ],
       "guided_building": {
@@ -812,7 +857,8 @@
               "hanzi": "我学习。他也学习。",
               "pinyin": "Wǒ xuéxí. Tā yě xuéxí.",
               "english": "I study. He studies too."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "drinking water",
@@ -820,7 +866,8 @@
               "hanzi": "我喝水。你也喝水。",
               "pinyin": "Wǒ hē shuǐ. Nǐ yě hē shuǐ.",
               "english": "I drink water. You drink water too."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -836,11 +883,13 @@
         "questions": [
           {
             "prompt_en": "Where are the brother and sister?",
-            "answer_en": "Both are at home."
+            "answer_en": "Both are at home.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Who is writing?",
-            "answer_en": "The younger sister."
+            "answer_en": "The younger sister.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -884,5 +933,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-connecting-ideas--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Adding and combining information",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-connecting-ideas--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Degree and ongoing actions",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: studying",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-connecting-ideas--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: drinking water",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--read--reading-q-01",
+            "kind": "question",
+            "label": "Where are the brother and sister?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-connecting-ideas--read--reading-q-02",
+            "kind": "question",
+            "label": "Who is writing?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Explain what you and a friend both like.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-connecting-ideas--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Describe what someone is doing right now.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-connecting-ideas--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-connecting-ideas--quiz--q-21-1",
+            "kind": "practice",
+            "label": "Which expression means “all”?",
+            "optional": true,
+            "target_id": "q-21-1"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--q-21-2",
+            "kind": "practice",
+            "label": "Which expression means “too”?",
+            "optional": true,
+            "target_id": "q-21-2"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--q-21-3",
+            "kind": "practice",
+            "label": "Which expression means “currently”?",
+            "optional": true,
+            "target_id": "q-21-3"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--q-21-4",
+            "kind": "practice",
+            "label": "In the example “我们都是学生。” (wǒmen dōu shì xuéshēng.), what is happening?",
+            "optional": false,
+            "target_id": "q-21-4"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--q-21-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “All the students are in the classroom.”",
+            "optional": false,
+            "target_id": "q-21-5"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Where are the brother and sister?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Who is writing?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Explain what you and a friend both like.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-connecting-ideas--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Describe what someone is doing right now.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

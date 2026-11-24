@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-social-conversation",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "politeness",
       "social-expressions"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Greet someone and say goodbye.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -176,7 +178,10 @@
               "entry_id": 14
             }
           ],
-          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately."
+          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-024",
@@ -217,7 +222,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 24
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-045",
@@ -258,7 +266,10 @@
               "entry_id": 45
             }
           ],
-          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression."
+          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-120",
@@ -299,7 +310,10 @@
               "entry_id": 120
             }
           ],
-          "pos_note": "Fixed reply meaning it is all right/it does not matter."
+          "pos_note": "Fixed reply meaning it is all right/it does not matter.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-121",
@@ -340,7 +354,10 @@
               "entry_id": 121
             }
           ],
-          "pos_note": "Fixed reassurance meaning nothing is wrong/no problem; other verbal uses exist."
+          "pos_note": "Fixed reassurance meaning nothing is wrong/no problem; other verbal uses exist.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-147",
@@ -380,7 +397,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 147
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-165",
@@ -421,7 +441,10 @@
               "entry_id": 165
             }
           ],
-          "pos_note": "Polite request/please, grammaticalized use of the verb invite/ask."
+          "pos_note": "Polite request/please, grammaticalized use of the verb invite/ask.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-166",
@@ -461,7 +484,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 166
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-171",
@@ -501,7 +527,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 171
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-218",
@@ -542,7 +571,10 @@
               "entry_id": 218
             }
           ],
-          "pos_note": "Attention-getting interjection; phone usage may be wéi or wèi depending on context."
+          "pos_note": "Attention-getting interjection; phone usage may be wéi or wèi depending on context.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-219",
@@ -582,7 +614,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 219
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-220",
@@ -594,8 +629,8 @@
             "noun"
           ],
           "topic_ids": [
-            "communication-social",
-            "abstract-concepts"
+            "abstract-concepts",
+            "communication-social"
           ],
           "examples": [
             {
@@ -623,7 +658,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 220
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "abstract-concepts"
         },
         {
           "id": "w-241",
@@ -663,7 +701,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 241
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-272",
@@ -705,7 +746,10 @@
               "entry_id": 272
             }
           ],
-          "pos_note": "Conventional farewell used as a fixed social expression; also analyzable as a verb."
+          "pos_note": "Conventional farewell used as a fixed social expression; also analyzable as a verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "communication-social"
         },
         {
           "id": "w-187",
@@ -746,7 +790,10 @@
               "entry_id": 187
             }
           ],
-          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb."
+          "pos_note": "Noun meaning a matter, thing, or affair (有事、一件事); a general concept rather than an action verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "abstract-concepts"
         }
       ],
       "related_entries": []
@@ -930,7 +977,6 @@
           "id": "pattern-1",
           "title": "Polite openings",
           "explanation_en": "请问 (qǐngwèn) introduces a polite request or question. 您 (nín) shows respect. At the start of a phone conversation 喂 (wèi) functions as a greeting/attention-getter.",
-          "formula_en": "请问 + question",
           "examples": [
             {
               "hanzi": "请问，您认识王老师吗？",
@@ -942,13 +988,15 @@
               "pinyin": "Qǐngwèn, yīyuàn zài nǎlǐ?",
               "english": "Excuse me, where is the hospital?"
             }
-          ]
+          ],
+          "pattern_hanzi": "请问 + 问题",
+          "pattern_pinyin": "qǐngwèn + wèntí",
+          "pattern_pseudo_translation": "请问 + <question>"
         },
         {
           "id": "pattern-2",
           "title": "Apologies and thanks",
           "explanation_en": "Use the conventional response matched to the situation: 对不起 (duìbuqǐ) → 没关系 (méi guānxi); 谢谢 (xièxie) → 不客气 (bú kèqi).",
-          "formula_en": "apology → reassurance; thanks → welcome",
           "examples": [
             {
               "hanzi": "对不起，我今天来晚了。",
@@ -960,7 +1008,10 @@
               "pinyin": "Méi guānxi, wǒmen xiànzài kāishǐ ba.",
               "english": "That is all right. Let us start now."
             }
-          ]
+          ],
+          "pattern_hanzi": "对不起 → 没关系 / 谢谢 → 不客气",
+          "pattern_pinyin": "duìbuqǐ → méi guānxi / xièxie → bú kèqi",
+          "pattern_pseudo_translation": "对不起 → 没关系 / 谢谢 → 不客气"
         }
       ],
       "guided_building": {
@@ -977,7 +1028,8 @@
               "hanzi": "对不起！→ 没关系！",
               "pinyin": "Duìbuqǐ! → Méi guānxi!",
               "english": "Sorry! → No problem!"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "farewell",
@@ -985,7 +1037,8 @@
               "hanzi": "再见！→ 再见！",
               "pinyin": "Zàijiàn! → Zàijiàn!",
               "english": "Goodbye! → Goodbye!"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1001,11 +1054,13 @@
         "questions": [
           {
             "prompt_en": "Who is Xiao Li meeting?",
-            "answer_en": "Teacher Wang."
+            "answer_en": "Teacher Wang.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Have they met before?",
-            "answer_en": "No, this is their first meeting."
+            "answer_en": "No, this is their first meeting.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1049,5 +1104,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-social-conversation--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Polite openings",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-social-conversation--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Apologies and thanks",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: apology",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-social-conversation--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: farewell",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--read--reading-q-01",
+            "kind": "question",
+            "label": "Who is Xiao Li meeting?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-social-conversation--read--reading-q-02",
+            "kind": "question",
+            "label": "Have they met before?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Introduce yourself politely on the phone.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-social-conversation--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Apologize for being late and give a fitting response.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-social-conversation--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-social-conversation--quiz--q-03-1",
+            "kind": "practice",
+            "label": "Which expression means “you're welcome”?",
+            "optional": true,
+            "target_id": "q-03-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-2",
+            "kind": "practice",
+            "label": "Which expression means “may I ask”?",
+            "optional": true,
+            "target_id": "q-03-2"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-3",
+            "kind": "practice",
+            "label": "Which expression means “matter”?",
+            "optional": true,
+            "target_id": "q-03-3"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-4",
+            "kind": "practice",
+            "label": "In the example “不客气！” (bú kèqi!), what is happening?",
+            "optional": false,
+            "target_id": "q-03-4"
+          },
+          {
+            "id": "topic-social-conversation--quiz--q-03-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “She said, \"You're welcome.\"”",
+            "optional": false,
+            "target_id": "q-03-5"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Who is Xiao Li meeting?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Have they met before?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Introduce yourself politely on the phone.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-social-conversation--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Apologize for being late and give a fitting response.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

@@ -64,6 +64,8 @@ a related verb phrase containing 来 (lái); not a shortening of 再一次 (zài
 
 ### 动词 + 一次 (dòngcí + yí cì)
 
+&lt;verb&gt; + **一次**
+
 Count one occurrence of a verb
 
 去一次 (qù yí cì) — Go once
@@ -71,6 +73,8 @@ Count one occurrence of a verb
 一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo).
 
 ### 上一次 (shàng yí cì)
+
+**上一次**
 
 Identify a previous occasion
 
@@ -80,6 +84,8 @@ Often appears at the start of a sentence as a time expression.
 
 ### 这一次 (zhè yí cì)
 
+**这一次**
+
 Identify this occasion
 
 这一次我明白了 (Zhè yí cì wǒ míngbai le) — This time I understood
@@ -87,6 +93,8 @@ Identify this occasion
 A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening.
 
 ### 下一次 (xià yí cì)
+
+**下一次**
 
 Identify the following occasion
 
@@ -96,6 +104,8 @@ A sentence-initial temporal phrase; 下次 (xià cì) is common in speech.
 
 ### 每一次 + 动作, ... 都 ... (měi yí cì + dòngzuò, ... dōu ...)
 
+**每一次** + &lt;action&gt;, &lt;subject&gt; + **都** + &lt;comment&gt;
+
 Apply a statement to each occurrence
 
 每一次见到你，我都很开心 (Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn) — Every time I see you, I am happy
@@ -104,6 +114,8 @@ Apply a statement to each occurrence
 
 ### 再一次 + 动词 (zài yí cì + dòngcí)
 
+**再一次** + &lt;verb&gt;
+
 Express one more repetition before a verb
 
 我想再一次感谢你 (Wǒ xiǎng zài yí cì gǎnxiè nǐ) — I want to thank you once again
@@ -111,6 +123,8 @@ Express one more repetition before a verb
 再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè).
 
 ### 再 + 动词 + 一次 (zài + dòngcí + yí cì)
+
+**再** + &lt;verb&gt; + **一次**
 
 Ask for or describe one more occurrence
 
@@ -317,3 +331,35 @@ The form and syntactic structure are different.
 
 **Production:** Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).
 **Answer:** 每一次见到你，我都很开心。(Měi yí cì jiàn dào nǐ, wǒ dōu hěn kāixīn.). A temporal every-time phrase and a main clause with 都 (dōu) express recurrence.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Meaning and usage
+- [ ] Understand the character meaning and usage — ID: `char-6B21--overview`
+
+### Vocabulary
+- [ ] Review vocabulary and pronunciation — ID: `char-6B21--vocabulary`
+
+### Constructions
+- [ ] Practice constructions — ID: `char-6B21--constructions`
+
+### Worked examples
+- [ ] Understand the worked examples — ID: `char-6B21--examples`
+
+### Usage contrasts
+- [ ] Distinguish contrasted expressions — ID: `char-6B21--contrasts`
+
+### Common mistakes
+- [ ] Avoid common usage mistakes — ID: `char-6B21--mistakes`
+
+### Practice
+- [ ] In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”? — ID: `char-6B21--quiz--q-how-many`
+- [ ] Choose the common shorter form of 下一次 (xià yí cì). — ID: `char-6B21--quiz--q-short`
+- [ ] Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin? — ID: `char-6B21--quiz--q-tone`
+- [ ] Which expression means “try one more time”? — ID: `char-6B21--quiz--q-zai`
+- [ ] Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu). — ID: `char-6B21--quiz--q-produce`
+
+### Extensions
+- [ ] Explore extra related material *(optional)* — ID: `char-6B21--extensions`

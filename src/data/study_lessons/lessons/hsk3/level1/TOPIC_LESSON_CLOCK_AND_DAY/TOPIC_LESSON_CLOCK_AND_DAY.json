@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-clock-and-day",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "time-of-day",
       "schedule"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Tell the time with hours and minutes.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -98,6 +100,7 @@
     "爸": "Characters:爸",
     "现": "Characters:现",
     "班": "Characters:班",
+    "生": "Characters:生",
     "电": "Characters:电",
     "白": "Characters:白",
     "的": "Characters:的",
@@ -116,7 +119,10 @@
     "还": "Characters:还",
     "钟": "Characters:钟",
     "间": "Characters:间",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -151,10 +157,10 @@
               "id": "ex-005-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "白天我在学校学习。",
-              "pinyin": "báitiān wǒ zài xuéxiào xuéxí.",
-              "english": "I study at school during the day.",
-              "teaching_note": ""
+              "hanzi": "学生们白天在学校学习。",
+              "pinyin": "xuéshengmen báitiān zài xuéxiào xuéxí.",
+              "english": "The students study at school during the day.",
+              "teaching_note": "The time word comes before the phrase that says where the students study."
             }
           ],
           "learning_role": "introduced",
@@ -163,7 +169,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 5
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-033",
@@ -206,7 +215,10 @@
               "entry_id": 33
             }
           ],
-          "pos_note": "Classifier and time unit in clock readings; also a noun for a point."
+          "pos_note": "Classifier and time unit in clock readings; also a noun for a point.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-055",
@@ -250,7 +262,10 @@
               "entry_id": 55
             }
           ],
-          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts."
+          "pos_note": "HSK 1 time measure word/minute marker in 八点十分; the official grammar syllabus groups 分 with time measure words. Also has separate verbal and nominal readings in other contexts.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-056",
@@ -292,7 +307,10 @@
               "entry_id": 56
             }
           ],
-          "pos_note": "Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time."
+          "pos_note": "Time measure word specifying duration, e.g. 十分钟 (“ten minutes”); unlike 分, it is not the minute marker of clock time.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-178",
@@ -332,7 +350,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 178
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-185",
@@ -372,7 +393,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 185
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-186",
@@ -412,7 +436,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 186
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-215",
@@ -452,7 +479,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 215
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-217",
@@ -492,7 +522,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 217
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-230",
@@ -532,7 +565,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 230
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-232",
@@ -573,7 +609,10 @@
               "entry_id": 232
             }
           ],
-          "pos_note": "Temporal noun meaning now, not a verb."
+          "pos_note": "Temporal noun meaning now, not a verb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-236",
@@ -614,7 +653,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 236
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-273",
@@ -654,7 +696,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 273
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-275",
@@ -694,7 +739,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 275
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         },
         {
           "id": "w-291",
@@ -734,7 +782,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 291
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "time-calendar"
         }
       ],
       "related_entries": []
@@ -837,10 +888,10 @@
         {
           "id": "q-07-5",
           "kind": "production",
-          "prompt": "Write this in Mandarin: “I study at school during the day.”",
+          "prompt": "Write this in Mandarin: “The students study at school during the day.”",
           "choices": [],
           "correct_choice_ids": [],
-          "answer": "白天我在学校学习。 (báitiān wǒ zài xuéxiào xuéxí.)",
+          "answer": "学生们白天在学校学习。 (xuéshengmen báitiān zài xuéxiào xuéxí.)",
           "explanation": "Compare your answer with the example and its tone-marked pinyin."
         },
         {
@@ -918,7 +969,6 @@
           "id": "pattern-1",
           "title": "Asking and stating clock time",
           "explanation_en": "几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.",
-          "formula_en": "time + subject/verb or subject + time + verb",
           "examples": [
             {
               "hanzi": "我们下午三点见。",
@@ -930,13 +980,15 @@
               "pinyin": "Xiànzài bā diǎn shíwǔ fēn.",
               "english": "It is 8:15 now."
             }
-          ]
+          ],
+          "pattern_hanzi": "时间 + 主语 + 动词 / 主语 + 时间 + 动词",
+          "pattern_pinyin": "shíjiān + zhǔyǔ + dòngcí / zhǔyǔ + shíjiān + dòngcí",
+          "pattern_pseudo_translation": "<time> + <subject> + <verb> / <subject> + <time> + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Time point versus duration",
-          "explanation_en": "点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.",
-          "formula_en": "九点 (clock) ≠ 九个小时 (duration)",
+          "explanation_en": "点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration. The left side is a clock time. The right side is a duration.",
           "examples": [
             {
               "hanzi": "我九点上班。",
@@ -948,7 +1000,10 @@
               "pinyin": "Wǒ xuéxí liǎng ge xiǎoshí.",
               "english": "I study for two hours."
             }
-          ]
+          ],
+          "pattern_hanzi": "九点 ≠ 九个小时",
+          "pattern_pinyin": "jiǔ diǎn ≠ jiǔ ge xiǎoshí",
+          "pattern_pseudo_translation": "九点 ≠ 九个小时"
         }
       ],
       "guided_building": {
@@ -965,7 +1020,8 @@
               "hanzi": "我们四点见。",
               "pinyin": "Wǒmen sì diǎn jiàn.",
               "english": "Let us meet at four."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "half past five",
@@ -973,7 +1029,8 @@
               "hanzi": "我们五点半见。",
               "pinyin": "Wǒmen wǔ diǎn bàn jiàn.",
               "english": "Let us meet at five thirty."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -989,11 +1046,13 @@
         "questions": [
           {
             "prompt_en": "At what time does Mom finish work?",
-            "answer_en": "2 p.m."
+            "answer_en": "2 p.m.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "At what time does she eat dinner?",
-            "answer_en": "7 p.m."
+            "answer_en": "7 p.m.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1037,5 +1096,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-clock-and-day--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Asking and stating clock time",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-clock-and-day--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Time point versus duration",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: four",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-clock-and-day--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: half past five",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--read--reading-q-01",
+            "kind": "question",
+            "label": "At what time does Mom finish work?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-clock-and-day--read--reading-q-02",
+            "kind": "question",
+            "label": "At what time does she eat dinner?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask the current time and answer.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-clock-and-day--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say how many hours you study, not when you study.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-clock-and-day--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-clock-and-day--quiz--q-07-1",
+            "kind": "practice",
+            "label": "Which expression means “daytime”?",
+            "optional": true,
+            "target_id": "q-07-1"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--q-07-2",
+            "kind": "practice",
+            "label": "Which expression means “late”?",
+            "optional": true,
+            "target_id": "q-07-2"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--q-07-3",
+            "kind": "practice",
+            "label": "Which expression means “noon”?",
+            "optional": true,
+            "target_id": "q-07-3"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--q-07-4",
+            "kind": "practice",
+            "label": "In the example “我白天上班。” (wǒ báitiān shàngbān.), what is happening?",
+            "optional": false,
+            "target_id": "q-07-4"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--q-07-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “The students study at school during the day.”",
+            "optional": false,
+            "target_id": "q-07-5"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: At what time does Mom finish work?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: At what time does she eat dinner?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask the current time and answer.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-clock-and-day--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say how many hours you study, not when you study.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

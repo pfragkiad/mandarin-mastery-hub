@@ -1,0 +1,1194 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-describing-actions-more-precisely",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Grammar & Function Words — Part 2: Describing Actions More Precisely",
+    "subtitle": "Aspect, complements and careful instructions",
+    "description": "Add useful details to sentences with aspect markers, complements and negative instructions.",
+    "slug": "describing-actions-more-precisely"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "aspect",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Recognize 过 (guo) for experiences and 着 (zhe) for ongoing states.",
+    "Use 得 (de) to introduce a complement and 地 (de) before a modifying action.",
+    "Give a negative instruction with 别 (bié)."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "京": "Characters:京",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "但": "Characters:但",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "几": "Characters:几",
+    "别": "Characters:别",
+    "北": "Characters:北",
+    "卖": "Characters:卖",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "安": "Characters:安",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "急": "Characters:急",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "教": "Characters:教",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "火": "Characters:火",
+    "王": "Characters:王",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "站": "Characters:站",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "认": "Characters:认",
+    "词": "Characters:词",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "跟": "Characters:跟",
+    "车": "Characters:车",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "部": "Characters:部",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "门": "Characters:门",
+    "静": "Characters:静",
+    "飞": "Characters:飞",
+    "饭": "Characters:饭",
+    "修": "Characters:修",
+    "动": "Characters:动",
+    "补": "Characters:补",
+    "饰": "Characters:饰"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Add useful details to sentences with aspect markers, complements and negative instructions.",
+      "focus": "Recognize 过 (guo) for experiences and 着 (zhe) for ongoing states."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-301",
+          "hanzi": "啊",
+          "pinyin": "a",
+          "meaning_en": "sentence-final exclamation particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-301-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你来了啊！",
+              "pinyin": "nǐ lái le a!",
+              "english": "Oh, you're here!",
+              "teaching_note": "Sentence-final 啊 is a particle, not an independent noun or verb."
+            },
+            {
+              "id": "ex-301-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“好啊，我们一起去！”她说。",
+              "pinyin": "“hǎo a, wǒmen yìqǐ qù!” tā shuō.",
+              "english": "\"Sure, let's go together!\" she said.",
+              "teaching_note": "Sentence-final 啊 is a particle, not an independent noun or verb."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 301
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Sentence-final 啊 is a particle, not an independent noun or verb."
+        },
+        {
+          "id": "w-311",
+          "hanzi": "别",
+          "pinyin": "bié",
+          "meaning_en": "do not; must not",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-311-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别走！",
+              "pinyin": "bié zǒu!",
+              "english": "Don't go!",
+              "teaching_note": "The official 别1 label identifies the adverbial entry; the displayed Hanzi is 别."
+            },
+            {
+              "id": "ex-311-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上课的时候，别玩手机。",
+              "pinyin": "shàngkè de shíhou, bié wán shǒujī.",
+              "english": "Don't play with your phone during class.",
+              "teaching_note": "The official 别1 label identifies the adverbial entry; the displayed Hanzi is 别."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 311
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "The official 别1 label identifies the adverbial entry; the displayed Hanzi is 别."
+        },
+        {
+          "id": "w-332",
+          "hanzi": "得",
+          "pinyin": "de",
+          "meaning_en": "structural particle introducing complements",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-332-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你说得很好！",
+              "pinyin": "nǐ shuō de hěn hǎo!",
+              "english": "You spoke very well!",
+              "teaching_note": "得 (de) introduces a manner or degree complement after a verb."
+            },
+            {
+              "id": "ex-332-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他汉语说得很好。",
+              "pinyin": "tā Hànyǔ shuō de hěn hǎo.",
+              "english": "He speaks Chinese very well.",
+              "teaching_note": "得 (de) introduces a manner or degree complement after a verb."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 332
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "得 (de) introduces a manner or degree complement after a verb."
+        },
+        {
+          "id": "w-333",
+          "hanzi": "地",
+          "pinyin": "de",
+          "meaning_en": "structural particle marking an adverbial",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-333-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你慢慢地说。",
+              "pinyin": "nǐ mànmàn de shuō.",
+              "english": "Speak slowly.",
+              "teaching_note": "地 (de) connects a manner phrase to the following verb."
+            },
+            {
+              "id": "ex-333-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他慢慢地走进教室。",
+              "pinyin": "tā mànmàn de zǒu jìn jiàoshì.",
+              "english": "He walks slowly into the classroom.",
+              "teaching_note": "地 (de) connects a manner phrase to the following verb."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 333
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "地 (de) connects a manner phrase to the following verb."
+        },
+        {
+          "id": "w-351",
+          "hanzi": "过",
+          "pinyin": "guo",
+          "meaning_en": "experiential aspect particle; have done",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-351-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去过中国吗？",
+              "pinyin": "nǐ qù guo Zhōngguó ma?",
+              "english": "Have you ever been to China?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-351-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我坐过飞机，但是没坐过火车。",
+              "pinyin": "wǒ zuò guo fēijī, dànshì méi zuò guo huǒchē.",
+              "english": "I have flown before, but I have never taken a train.",
+              "teaching_note": "This 过 (guo) is the neutral-tone experiential aspect particle, distinct from ID 347."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 351
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "This 过 (guo) is the neutral-tone experiential aspect particle, distinct from ID 347."
+        },
+        {
+          "id": "w-472",
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "meaning_en": "already",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-472-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你已经吃饭了吗？",
+              "pinyin": "nǐ yǐjīng chīfàn le ma?",
+              "english": "Have you eaten already?",
+              "teaching_note": "A short spoken example using 已经."
+            },
+            {
+              "id": "ex-472-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师已经回家了。",
+              "pinyin": "lǎoshī yǐjīng huí jiā le.",
+              "english": "The teacher has already gone home.",
+              "teaching_note": "A simple written example using 已经."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 472
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-490",
+          "hanzi": "着",
+          "pinyin": "zhe",
+          "meaning_en": "durative aspect particle; ongoing state",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-490-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "门开着呢。",
+              "pinyin": "mén kāi zhe ne.",
+              "english": "The door is open.",
+              "teaching_note": "着 (zhe) marks a continuing state or manner."
+            },
+            {
+              "id": "ex-490-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师站着跟学生说话。",
+              "pinyin": "lǎoshī zhàn zhe gēn xuéshēng shuōhuà.",
+              "english": "The teacher speaks to the students while standing.",
+              "teaching_note": "着 (zhe) marks a continuing state or manner."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 490
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "着 (zhe) marks a continuing state or manner."
+        },
+        {
+          "id": "w-491",
+          "hanzi": "正",
+          "pinyin": "zhèng",
+          "meaning_en": "just; right in the middle of an action",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-491-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我正吃饭呢。",
+              "pinyin": "wǒ zhèng chīfàn ne.",
+              "english": "I'm eating right now.",
+              "teaching_note": "正 (zhèng) before a verb signals an action in progress."
+            },
+            {
+              "id": "ex-491-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正给学生上课。",
+              "pinyin": "lǎoshī zhèng gěi xuéshēng shàngkè.",
+              "english": "The teacher is teaching the students right now.",
+              "teaching_note": "正 (zhèng) before a verb signals an action in progress."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 491
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "正 (zhèng) before a verb signals an action in progress."
+        },
+        {
+          "id": "w-498",
+          "hanzi": "最",
+          "pinyin": "zuì",
+          "meaning_en": "most; -est (superlative)",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-498-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你最喜欢什么菜？",
+              "pinyin": "nǐ zuì xǐhuan shénme cài?",
+              "english": "What dish do you like most?",
+              "teaching_note": "最 forms a superlative or marks the highest degree."
+            },
+            {
+              "id": "ex-498-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这是我最喜欢的书。",
+              "pinyin": "zhè shì wǒ zuì xǐhuan de shū.",
+              "english": "This is my favorite book.",
+              "teaching_note": "最 forms a superlative or marks the highest degree."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 498
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "最 forms a superlative or marks the highest degree."
+        },
+        {
+          "id": "w-004",
+          "hanzi": "吧",
+          "pinyin": "ba",
+          "meaning_en": "suggestion particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-004-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "我们走吧。",
+              "pinyin": "wǒmen zǒu ba.",
+              "english": "Let's go.",
+              "teaching_note": "Sentence-final 吧 softens a proposal into a friendly suggestion to go together."
+            },
+            {
+              "id": "ex-004-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“明天再来吧。”老师说。",
+              "pinyin": "“míngtiān zài lái ba.” lǎoshī shuō.",
+              "english": "\"Come back tomorrow,\" the teacher said.",
+              "teaching_note": "Written dialogue: 吧 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 4
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Sentence-final suggestion or softening particle."
+        },
+        {
+          "id": "w-013",
+          "hanzi": "不",
+          "pinyin": "bù",
+          "meaning_en": "not",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-013-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不喝茶。",
+              "pinyin": "wǒ bù hē chá.",
+              "english": "I do not drink tea.",
+              "teaching_note": "不 negates a general action or preference; there is no aspect marker for a habitual statement."
+            },
+            {
+              "id": "ex-013-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里不卖茶。",
+              "pinyin": "zhèlǐ bú mài chá.",
+              "english": "Tea is not sold here.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 不."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 13
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-015",
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "meaning_en": "do not want; don't",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "modal-verb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-015-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不要这个。",
+              "pinyin": "wǒ bú yào zhège.",
+              "english": "I don't want this one.",
+              "teaching_note": "不要 directly rejects an offered object; in some contexts it can sound firm."
+            },
+            {
+              "id": "ex-015-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请不要在这里吃东西。",
+              "pinyin": "qǐng búyào zài zhèlǐ chī dōngxi.",
+              "english": "Please don't eat here.",
+              "teaching_note": "Short everyday instruction or request using 不要; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 15
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Negative request/prohibition: 不 + 要; an expression rather than a single lexical category."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Experience and continuing state",
+        "explanation": "过 (guo) after a verb points to an experience, while 着 (zhe) after a verb can mark a persisting state; they do not mean the same thing.",
+        "example_id": "ex-301-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Modifying an action",
+        "explanation": "地 (de) can link a manner modifier to a verb, while 得 (de) follows the verb and introduces a complement describing its degree or result.",
+        "example_id": "ex-311-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-301-1",
+      "ex-311-1",
+      "ex-332-1",
+      "ex-333-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Xiao Wang writes quickly, but makes mistakes in a few characters. The teacher says, “Don’t rush; write it once more.”"
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I have seen this film before. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我看过这部电影。 (Wǒ kàn guo zhè bù diànyǐng.)",
+          "answer": "我看过这部电影。 (Wǒ kàn guo zhè bù diànyǐng.)"
+        },
+        {
+          "id": "recall-301",
+          "kind": "selection",
+          "prompt": "Which expression means “sentence-final exclamation particle”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "啊",
+              "pinyin": "a",
+              "meaning_en": "sentence-final exclamation particle"
+            },
+            {
+              "id": "b",
+              "hanzi": "别",
+              "pinyin": "bié",
+              "meaning_en": "do not; must not"
+            },
+            {
+              "id": "c",
+              "hanzi": "得",
+              "pinyin": "de",
+              "meaning_en": "structural particle introducing complements"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 啊 (a) with this meaning."
+        },
+        {
+          "id": "recall-311",
+          "kind": "selection",
+          "prompt": "Which expression means “do not”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "啊",
+              "pinyin": "a",
+              "meaning_en": "sentence-final exclamation particle"
+            },
+            {
+              "id": "c",
+              "hanzi": "得",
+              "pinyin": "de",
+              "meaning_en": "structural particle introducing complements"
+            },
+            {
+              "id": "a",
+              "hanzi": "别",
+              "pinyin": "bié",
+              "meaning_en": "do not; must not"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 别 (bié) with this meaning."
+        },
+        {
+          "id": "recall-332",
+          "kind": "selection",
+          "prompt": "Which expression means “structural particle introducing complements”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "别",
+              "pinyin": "bié",
+              "meaning_en": "do not; must not"
+            },
+            {
+              "id": "a",
+              "hanzi": "得",
+              "pinyin": "de",
+              "meaning_en": "structural particle introducing complements"
+            },
+            {
+              "id": "b",
+              "hanzi": "啊",
+              "pinyin": "a",
+              "meaning_en": "sentence-final exclamation particle"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 得 (de) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Describing Actions More Precisely",
+        "context_en": "Add useful details to sentences with aspect markers, complements and negative instructions.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你去过北京吗？",
+            "pinyin": "Nǐ qù guo Běijīng ma?",
+            "english": "Have you ever been to Beijing?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "去过啊！我已经去过两次了。",
+            "pinyin": "Qù guo a! Wǒ yǐjīng qù guo liǎng cì le.",
+            "english": "Yes! I’ve already been twice."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你现在正在做什么？",
+            "pinyin": "Nǐ xiànzài zhèngzài zuò shénme?",
+            "english": "What are you doing right now?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我正认真地写字呢。别说话，我写得很慢。",
+            "pinyin": "Wǒ zhèng rènzhēn de xiě zì ne. Bié shuōhuà, wǒ xiě de hěn màn.",
+            "english": "I’m writing carefully right now. Please don’t talk; I write slowly."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Experience and continuing state",
+          "explanation_en": "过 (guo) after a verb points to an experience, while 着 (zhe) after a verb can mark a persisting state; they do not mean the same thing.",
+          "examples": [
+            {
+              "hanzi": "我看过这部电影。",
+              "pinyin": "Wǒ kàn guo zhè bù diànyǐng.",
+              "english": "I have seen this film before."
+            },
+            {
+              "hanzi": "去过啊！我已经去过两次了。",
+              "pinyin": "Qù guo a! Wǒ yǐjīng qù guo liǎng cì le.",
+              "english": "Yes! I’ve already been twice."
+            }
+          ],
+          "pattern_hanzi": "动词 + 过 / 动词 + 着",
+          "pattern_pinyin": "dòngcí + guo / dòngcí + zhe",
+          "pattern_pseudo_translation": "<verb> + 过 / <verb> + 着"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Modifying an action",
+          "explanation_en": "地 (de) can link a manner modifier to a verb, while 得 (de) follows the verb and introduces a complement describing its degree or result.",
+          "examples": [
+            {
+              "hanzi": "她跑得很快。",
+              "pinyin": "Tā pǎo de hěn kuài.",
+              "english": "She runs fast."
+            },
+            {
+              "hanzi": "我正认真地写字呢。别说话，我写得很慢。",
+              "pinyin": "Wǒ zhèng rènzhēn de xiě zì ne. Bié shuōhuà, wǒ xiě de hěn màn.",
+              "english": "I’m writing carefully right now. Please don’t talk; I write slowly."
+            }
+          ],
+          "pattern_hanzi": "修饰语 + 地 + 动词 / 动词 + 得 + 补语",
+          "pattern_pinyin": "xiūshìyǔ + de + dòngcí / dòngcí + de + bǔyǔ",
+          "pattern_pseudo_translation": "<modifier> + 地 + <verb> / <verb> + 得 + <complement>"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你去过北京吗？",
+          "pinyin": "Nǐ qù guo Běijīng ma?",
+          "english": "Have you ever been to Beijing?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I have seen this film before.",
+            "model_answer": {
+              "hanzi": "我看过这部电影。",
+              "pinyin": "Wǒ kàn guo zhè bù diànyǐng.",
+              "english": "I have seen this film before."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: She runs fast.",
+            "model_answer": {
+              "hanzi": "她跑得很快。",
+              "pinyin": "Tā pǎo de hěn kuài.",
+              "english": "She runs fast."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: What are you doing right now?",
+            "model_answer": {
+              "hanzi": "你现在正在做什么？",
+              "pinyin": "Nǐ xiànzài zhèngzài zuò shénme?",
+              "english": "What are you doing right now?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Describing Actions More Precisely — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "教室里，老师正站着说话，学生们安静地听。今天大家已经学过这个词。",
+            "pinyin": "Jiàoshì lǐ, lǎoshī zhèng zhànzhe shuōhuà, xuéshēngmen ānjìng de tīng. Jīntiān dàjiā yǐjīng xué guo zhè ge cí.",
+            "english": "In the classroom, the teacher is standing and talking, and the students listen quietly. They have already studied this word today."
+          },
+          {
+            "hanzi": "小王写得很快，但有几个字写错了。老师说：“别着急，再写一次。”",
+            "pinyin": "Xiǎo Wáng xiě de hěn kuài, dàn yǒu jǐ ge zì xiě cuò le. Lǎoshī shuō: “Bié zháojí, zài xiě yí cì.”",
+            "english": "Xiao Wang writes quickly, but makes mistakes in a few characters. The teacher says, “Don’t rush; write it once more.”"
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "In the classroom, the teacher is standing and talking, and the students listen quietly. They have already studied this word today."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Xiao Wang writes quickly, but makes mistakes in a few characters. The teacher says, “Don’t rush; write it once more.”"
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I have seen this film before.",
+          "model_answer": {
+            "hanzi": "我看过这部电影。",
+            "pinyin": "Wǒ kàn guo zhè bù diànyǐng.",
+            "english": "I have seen this film before."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: She runs fast.",
+          "model_answer": {
+            "hanzi": "她跑得很快。",
+            "pinyin": "Tā pǎo de hěn kuài.",
+            "english": "She runs fast."
+          }
+        }
+      ],
+      "common_pitfall": "Do not mix up the written characters 地 (de), 得 (de) and 的 (de); their grammatical roles and positions differ. 别 (bié) is used to tell someone not to do something.",
+      "pronunciation_focus": "The grammatical particles 过 (guo), 着 (zhe), 地 (de) and 得 (de) are usually read in the neutral tone in these constructions.",
+      "review": {
+        "can_do": [
+          "Recognize 过 (guo) for experiences and 着 (zhe) for ongoing states.",
+          "Use 得 (de) to introduce a complement and 地 (de) before a modifying action.",
+          "Give a negative instruction with 别 (bié)."
+        ],
+        "entry_ids": [
+          301,
+          311,
+          332,
+          333,
+          351,
+          472,
+          490,
+          491,
+          498
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-describing-actions-more-precisely--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Experience and continuing state",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Modifying an action",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I have seen this film before.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: She runs fast.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: What are you doing right now?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I have seen this film before.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: She runs fast.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-actions-more-precisely--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-describing-actions-more-precisely--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I have seen this film before. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--question-recall-301",
+            "kind": "practice",
+            "label": "Which expression means “sentence-final exclamation particle”?",
+            "optional": true,
+            "target_id": "recall-301"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--question-recall-311",
+            "kind": "practice",
+            "label": "Which expression means “do not”?",
+            "optional": true,
+            "target_id": "recall-311"
+          },
+          {
+            "id": "topic-describing-actions-more-precisely--question-recall-332",
+            "kind": "practice",
+            "label": "Which expression means “structural particle introducing complements”?",
+            "optional": true,
+            "target_id": "recall-332"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 38
+}

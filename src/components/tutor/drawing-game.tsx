@@ -221,11 +221,11 @@ export function DrawingGamePage({
                       <>
                         <select
                           className="filter-select"
-                          aria-label="Collection"
+                          aria-label="Topic"
                           value={draft.collection ?? ""}
                           onChange={(event) => patch({ collection: event.target.value || undefined })}
                         >
-                          <option value="">All collections</option>
+                          <option value="">All topics</option>
                           {(facets?.collections ?? []).map((value) => (
                             <option key={value}>{value}</option>
                           ))}

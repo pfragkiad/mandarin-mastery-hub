@@ -2,9 +2,11 @@
 
 Store importer-only source files under `importer/data/`, grouped by dataset. Importer scripts currently remain under `scripts/`; generated application data remains under `public/data/` or `src/data/` according to its loading method. Standalone analysis reports and notes remain under `reports/`.
 
-The owner-supplied [HSK Level 1 and Level 2 handoffs](hsk/README.md) remain under `importer/hsk/` with their original raw bytes. Their shared topic sidecar is named [hsk3_topics.json](hsk/hsk3_topics.json). `scripts/import-hsk-level1.mjs` validates 300 Level 1 entries and 600 examples; `scripts/import-hsk-level2.mjs` validates 200 Level 2 entries and 400 examples through the same boundary. Each replaces only its selected level's study content. See that guide for audit/write commands and provenance limits.
+The owner-supplied [HSK Level 1–5 handoffs](hsk/README.md) remain under `importer/hsk/` with their original raw bytes. Their shared topic sidecar is named [hsk3_topics.json](hsk/hsk3_topics.json). `scripts/import-hsk-level1.mjs` validates 300 Level 1 entries and 600 examples; `scripts/import-hsk-level2.mjs` validates 200 Level 2 entries and 400 examples through the same boundary. Levels 3 and 4 use the same boundary for 500 and 1,000 entries. Each replaces only its selected level's study content and retains the shared v2 topic/subtopic assignments. See that guide for audit/write commands and provenance limits.
 
 The [Level 2 word-audio handoff](data/hsk-audio/README.md) pins the original Shtooka metadata, exact reading matches and audio-cmn checksums. The owner-requested temporary MP3 staging has been uploaded to the Lovable CDN, attached to the 166 eligible Level 2 words and removed; see [the completed Lovable upload instructions](data/hsk-audio/LOVABLE_HANDOFF.md) for re-imports.
+
+The [tone pairs source](data/tone-pairs/README.md) pins the 48 Tone pairs / Tone changes examples, their Shtooka recording checksums and licence notices; `scripts/import-tone-pairs.py` compiles them into `src/data/pinyin/tone-pairs.json` and verifies every word card and CDN recording matches exactly.
 
 ## Radical identities
 
@@ -47,3 +49,7 @@ Some importer dependencies also serve the application and retain their existing 
 - Generated catalogue rows, metadata, and sidecars are read by both the app and later import steps. They remain in their runtime data directories.
 
 Do not move shared runtime files merely because an importer also reads them. For future importer-only inputs, use `importer/data/<dataset>/` and update the importer, documentation, and source checksum references together. External source paths explicitly supplied through command-line arguments remain supported without copying those files into the repository.
+
+Level 5 terms and the owner-approved rewritten v1.0.1 draft examples are imported by `scripts/import-hsk-level5.mjs`. Level 1 now uses v1.7.1. Verified word-audio ZIPs are generated outside the repository by `scripts/prepare-hsk-word-audio.py`, with manifests in [the audio metadata directory](data/hsk-audio/README.md).
+
+The [lesson handoff guide](data/lessons/README.md) records the owner-supplied HSK Level 1 v3.2.0 lesson bundle (vocabulary v1.7.1) and canonical Core v3.2.0 Project Sources. Their import scripts validate exact lesson/vocabulary identities and preserve the original ZIPs and extracted source bytes.

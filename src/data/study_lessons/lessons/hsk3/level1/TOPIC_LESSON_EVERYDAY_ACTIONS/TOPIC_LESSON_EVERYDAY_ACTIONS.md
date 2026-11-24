@@ -1,5 +1,7 @@
 # Things We Do Every Day
 
+**Subtopics:** everyday-routines, physical-actions
+
 Recognize and use common verbs for everyday actions and routines.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -30,7 +32,13 @@ Two people are getting ready to go out. Follow the order of activities and the d
 
 看 (kàn) is the act of looking; 看见 (kànjiàn) expresses the result of perceiving visually. Searching with 找 (zhǎo) does not guarantee you find the object.
 
-**Pattern:** look/search → result
+**Pattern**
+
+看 → 看见 / 找 → 找到  
+*kàn → kànjiàn / zhǎo → zhǎodào*  
+**看** → **看见** / **找** → **找到**
+
+The arrows show an action followed by the word for a successful result.
 
 **我在看外边。**
 *Wǒ zài kàn wàibian.*
@@ -44,7 +52,11 @@ I spotted that cat.
 
 给 (gěi) can introduce a recipient before a noun phrase or, in simple requests, act as a verb meaning “give”.
 
-**Pattern:** 给 + person + object
+**Pattern**
+
+给 + 接收者 + 所给的东西  
+*gěi + jiēshōuzhě + suǒ gěi de dōngxi*  
+**给** + &lt;recipient&gt; + &lt;thing given&gt;
 
 **请给我那本书。**
 *Qǐng gěi wǒ nà běn shū.*
@@ -178,3 +190,46 @@ Do not confuse 看 (kàn, look) with 看见 (kànjiàn, perceive/see). The resul
 
 **Production:** Write this in Mandarin: “When it is cold, please wear more clothes.”
 **Answer:** 天气冷的时候，请多穿衣服。 (tiānqì lěng de shíhou, qǐng duō chuān yīfu.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-everyday-actions--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Looking versus seeing — ID: `topic-everyday-actions--pattern--pattern-1`
+- [ ] Apply: Give and receive — ID: `topic-everyday-actions--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: phone — ID: `topic-everyday-actions--build--build-sub-01`
+- [ ] Build a sentence: bag — ID: `topic-everyday-actions--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Why does Xiao Hong call a classmate? — ID: `topic-everyday-actions--read--reading-q-01`
+- [ ] Where is the book? — ID: `topic-everyday-actions--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask if a friend has seen your book. — ID: `topic-everyday-actions--speak--speaking-1`
+- [ ] Ask someone to hand you a book. — ID: `topic-everyday-actions--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-everyday-actions--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-everyday-actions--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-everyday-actions--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “wear”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-1`
+- [ ] Which expression means “catch sight of”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-2`
+- [ ] Which expression means “do”? *(optional)* — ID: `topic-everyday-actions--quiz--q-16-3`
+- [ ] In the example “今天我穿新衣服。” (jīntiān wǒ chuān xīn yīfu.), what is happening? — ID: `topic-everyday-actions--quiz--q-16-4`
+- [ ] Write this in Mandarin: “When it is cold, please wear more clothes.” — ID: `topic-everyday-actions--quiz--q-16-5`
+- [ ] Reading comprehension: Why does Xiao Hong call a classmate? — ID: `topic-everyday-actions--quiz--applied-reading-1`
+- [ ] Reading comprehension: Where is the book? — ID: `topic-everyday-actions--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask if a friend has seen your book. — ID: `topic-everyday-actions--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask someone to hand you a book. — ID: `topic-everyday-actions--quiz--applied-speaking-2`

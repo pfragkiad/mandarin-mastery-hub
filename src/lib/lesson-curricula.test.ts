@@ -54,15 +54,31 @@ describe('course building', () => {
 
 describe('topic-lesson words and Vocabulary records', () => {
   const entries = words.flatMap(w => w.entry ? [{ ...w.entry, word: w }] : []);
-  it('every HSK Level 1 topic-lesson word matches exactly one Vocabulary record', async () => {
-    const topics = lessonSummaries.filter(s => s.kind === 'topic');
+  it('every HSK topic-lesson word (Level 1 and Level 2 lessons) matches exactly one Vocabulary record', async () => {
+    const topics = lessonSummaries.filter(s => s.schemaVersion.startsWith('mandarin-topic-lesson/'));
     let checked = 0;
     for (const s of topics) for (const item of (await loadLesson(s.id))!.topic!.items) {
       const hit = syllabusEntryFor(item, entries);
       expect(hit?.simplified, `${s.id} ${item.hanzi}`).toBe(item.hanzi);
       checked++;
     }
-    expect(checked).toBe(300);
+    expect(checked).toBe(574); // 300 Level 1 + 274 Level 2 lesson items (200 new + reviews)
+  });
+  it('all 1,148 Level 1 + Level 2 word-card examples and recorded topic/subtopic IDs match the vocabulary', async () => {
+    let checked = 0;
+    for (const summary of lessonSummaries.filter(s => s.schemaVersion.startsWith('mandarin-topic-lesson/'))) {
+      for (const item of (await loadLesson(summary.id))!.topic!.items) {
+        const entry = syllabusEntryFor(item, entries);
+        if (!entry) throw new Error(`Missing exact vocabulary identity: ${item.hanzi}`);
+        expect(item.topic_ids).toEqual(entry.studyMetadata?.topicIds);
+        expect(item.primary_subtopic_id).toBe(entry.studyMetadata?.primarySubtopicId);
+        expect(item.subtopic_ids).toEqual(entry.studyMetadata?.subtopicIds);
+        expect(item.examples.map(ex => [ex.hanzi, ex.pinyin, ex.english, ex.style, ex.register])).toEqual(
+          entry.examples.map(ex => [ex.simplified, ex.pinyinDisplay, ex.english, ex.style, ex.register]));
+        checked += item.examples.length;
+      }
+    }
+    expect(checked).toBe(1148);
   });
   it('点 #33 and 点 #336 stay separate records', () => {
     const a = syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 33 }] }, entries);
@@ -80,28 +96,49 @@ describe('topic-lesson words and Vocabulary records', () => {
 describe('course lessons on word cards', () => {
   const word = (hsk_index: number | null, over: Partial<{ entryKind: string; hskVersion: string | null }> = {}) => ({ entryKind: 'word', hskVersion: '3.0', hsk_index, ...over });
   it('the manifest names exactly the HSK entries each lesson teaches', async () => {
-    for (const p of sectionPlacements(courses.find(c => c.id === 'hsk3-2025')!.sections[0]!)) {
+    for (const p of courses.find(c => c.id === 'hsk3-2025')!.sections.flatMap(sectionPlacements)) {
       const items = (await loadLesson(p.lesson.id))!.topic!.items;
       expect([...p.introducedEntryIds, ...p.reviewedEntryIds].sort((a, b) => a - b), p.lesson.id).toEqual(items.flatMap(i => i.syllabus_refs.map(r => r.entry_id)).sort((a, b) => a - b));
     }
   });
   it('会 (HSK 3.0 #82) is taught by "What I Can and Want to Do", lesson 17 of 21', () => {
     const [p, ...rest] = wordLessonPlacements(courses, word(82));
-    expect(rest).toEqual([]);
+    // Later Level 2 lessons only review it.
+    expect(rest.map(r => [r.section.id, r.introduced])).toEqual([['hsk3-l2', false], ['hsk3-l2', false]]);
     expect(p?.placement.lesson.id).toBe('topic-abilities-interests');
     expect(p?.index).toBe(17);
     expect(p?.introduced).toBe(true);
   });
-  it('every Level 1 word has exactly one lesson; other levels have none yet', () => {
+  it('every Level 1 word is introduced by exactly one Level 1 lesson', () => {
     const level1 = words.filter(w => w.entry?.entryKind === 'word' && w.entry.hskLevel === 1);
     expect(level1.length).toBe(300);
-    for (const w of level1) expect(wordLessonPlacements(courses, w.entry!), w.hanzi).toHaveLength(1);
-    const level2 = words.find(w => w.entry?.entryKind === 'word' && w.entry.hskLevel === 2)!;
-    expect(wordLessonPlacements(courses, level2.entry!)).toEqual([]);
+    for (const w of level1) expect(wordLessonPlacements(courses, w.entry!).filter(p => p.introduced).map(p => p.course.id), w.hanzi).toEqual(['hsk3-2025']);
+  });
+  it('Level 2 is the second section of the one HSK 3.0 course and introduces all 200 Level 2 records once', () => {
+    const level2 = words.filter(w => w.entry?.hskLevel === 2 && w.entry.hsk_index != null && w.entry.sentenceSource == null);
+    expect(level2.length).toBe(200); // 196 words + 4 syllabus phrases
+    for (const w of level2) expect(wordLessonPlacements(courses, w.entry!).filter(p => p.introduced).map(p => p.section.id), w.hanzi).toEqual(['hsk3-l2']);
+    const at = (n: number) => wordLessonPlacements(courses, level2.find(w => w.entry!.hsk_index === n)!.entry!)[0]?.placement.lesson.id;
+    expect(at(302)).toBe('topic-sports-games-and-hobbies'); // 爱好
+    expect(at(313)).toBe('topic-asking-for-help-and-making-introductions'); // 不好意思, a syllabus phrase
+    expect(courses.find(c => c.id === 'hsk3-2025')!.sections.map(s => sectionPlacements(s).length)).toEqual([21, 25]);
   });
   it('example phrases with their parent word\'s number, other editions and unnumbered words get no lessons', () => {
     expect(wordLessonPlacements(courses, word(82, { entryKind: 'phrase' }))).toEqual([]);
     expect(wordLessonPlacements(courses, word(82, { hskVersion: '2.0' }))).toEqual([]);
     expect(wordLessonPlacements(courses, word(null))).toEqual([]);
+  });
+});
+
+describe('Conversational Mandarin course', () => {
+  it('places its 17 lessons in manifest order, resolves every placement and teaches no HSK words', () => {
+    const conv = courses.find(c => c.id === 'conversational-mandarin');
+    expect(conv).toBeDefined();
+    const flat = sectionPlacements(conv!.sections[0]!);
+    expect(flat.map(p => p.lesson.id)).toEqual(['convm-greetings-politeness', 'convm-people-identity', 'convm-speaking-languages', 'convm-understanding-clarification', 'convm-asking-directions', 'convm-wants-intentions', 'convm-food-drinks', 'convm-places-to-meet', 'convm-with-someone', 'convm-clock-scheduling', 'convm-today-tomorrow-later', 'convm-choices-alternatives', 'convm-money-prices', 'convm-numbers-arithmetic', 'convm-permission-requests', 'convm-phone-invitations', 'convm-newspaper-shopping']);
+    expect(unresolvedPlacements).toEqual([]);
+    expect(flat.every(p => p.introducedEntryIds.length === 0 && p.reviewedEntryIds.length === 0)).toBe(true);
+    expect(projectIndependentLessons.some(l => l.id.startsWith('convm-'))).toBe(false);
+    expect(courses.map(c => c.id)).toEqual(['hsk3-2025', 'conversational-mandarin']);
   });
 });

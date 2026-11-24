@@ -1,0 +1,649 @@
+{
+  "version": "1.0.2",
+  "purpose": "Optional per-expression presentation hints; lesson schema unchanged.",
+  "label": "Northern-style -r",
+  "marker": "northern_style_erhua",
+  "description": "Pronunciation: This course often uses northern-influenced 儿化 (érhuà), especially 一点儿 (yìdiǎnr), 哪儿 (nǎr), 这儿 (zhèr), 那儿 (nàr) and 一会儿 (yíhuìr). A small Northern-style -r marker identifies affected expressions. These are not exclusive to northern China; alternative forms vary by word and context. The ending -r is not an additional spoken syllable.",
+  "expressions": [
+    {
+      "expression_id": "CMX-04A534C0C792",
+      "hanzi": "我们在这儿吃还是在那儿吃？",
+      "pinyin": "Wǒmen zài zhèr chī háishi zài nàr chī?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿",
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-choices-alternatives"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-0A130FD08498",
+      "hanzi": "过一会儿吧。",
+      "pinyin": "Guò yíhuìr ba.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-choices-alternatives"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-12BF15499731",
+      "hanzi": "在这儿",
+      "pinyin": "zài zhèr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-1345AC6AB480",
+      "hanzi": "你想去哪儿喝",
+      "pinyin": "nǐ xiǎng qù nǎr hē",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-143FCD826472",
+      "hanzi": "过一会儿不好",
+      "pinyin": "guò yíhuìr bù hǎo",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-today-tomorrow-later"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-1719CC5D682C",
+      "hanzi": "学院路在那儿",
+      "pinyin": "Xuéyuàn Lù zài nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-191CE461F3D4",
+      "hanzi": "请问，您知道长安街在哪儿吗？",
+      "pinyin": "Qǐngwèn, nín zhīdào Cháng'ān Jiē zài nǎr ma?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-1953B817759B",
+      "hanzi": "你想现在喝还是过一会儿喝？",
+      "pinyin": "Nǐ xiǎng xiànzài hē háishi guò yíhuìr hē?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-choices-alternatives"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-22A3183ECCAF",
+      "hanzi": "我会说一点儿，可是说得不好。",
+      "pinyin": "Wǒ huì shuō yìdiǎnr, kěshì shuō de bù hǎo.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-speaking-languages"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-23BAA5B8BC32",
+      "hanzi": "长安街不在这儿",
+      "pinyin": "Cháng'ān Jiē bú zài zhèr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-24DC082BDBBB",
+      "hanzi": "明天我们在哪儿见面？",
+      "pinyin": "Míngtiān wǒmen zài nǎr jiànmiàn?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-2887087F2BB8",
+      "hanzi": "北京饭店在哪儿",
+      "pinyin": "Běijīng Fàndiàn zài nǎr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-2CCF9F760368",
+      "hanzi": "过一会儿好吗",
+      "pinyin": "guò yíhuìr hǎo ma",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-today-tomorrow-later"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-31E829ED3833",
+      "hanzi": "你想去哪儿吃午饭？",
+      "pinyin": "Nǐ xiǎng qù nǎr chī wǔfàn?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-337E39C6EB66",
+      "hanzi": "现在还是过一会儿",
+      "pinyin": "xiànzài háishi guò yíhuìr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-choices-alternatives",
+        "convm-today-tomorrow-later"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-3529B1E4A26E",
+      "hanzi": "请问学院路在哪儿",
+      "pinyin": "Qǐngwèn, Xuéyuàn Lù zài nǎr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-38658AD2481C",
+      "hanzi": "你想去哪儿",
+      "pinyin": "nǐ xiǎng qù nǎr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-38C3EB9DDA2C",
+      "hanzi": "我们去哪儿吃？",
+      "pinyin": "Wǒmen qù nǎr chī?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-with-someone"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-45569FC06340",
+      "hanzi": "一会儿",
+      "pinyin": "yíhuìr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-phone-invitations"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-51B1D83B516C",
+      "hanzi": "学院路在这儿",
+      "pinyin": "Xuéyuàn Lù zài zhèr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-5592DB47B07E",
+      "hanzi": "好，我一会儿有时间。",
+      "pinyin": "Hǎo, wǒ yíhuìr yǒu shíjiān.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-wants-intentions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-58DF63309350",
+      "hanzi": "长安街也在那儿吗？",
+      "pinyin": "Cháng'ān Jiē yě zài nàr ma?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-592DB669FE1D",
+      "hanzi": "在那儿",
+      "pinyin": "Zài nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-601BDC780120",
+      "hanzi": "你想去哪儿吃",
+      "pinyin": "nǐ xiǎng qù nǎr chī",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-61359D9BD1C3",
+      "hanzi": "我会说一点儿英文",
+      "pinyin": "wǒ huì shuō yìdiǎnr Yīngwén",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-speaking-languages"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-6A2F4EED8AAC",
+      "hanzi": "可是我听得懂一点儿。",
+      "pinyin": "Kěshì wǒ tīng de dǒng yìdiǎnr.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-speaking-languages"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-6D4E670A00E9",
+      "hanzi": "过一会儿见。",
+      "pinyin": "guò yíhuìr jiàn.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-today-tomorrow-later"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-78B0E071159F",
+      "hanzi": "长安街在哪儿",
+      "pinyin": "Cháng'ān Jiē zài nǎr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-82E08AEF53C6",
+      "hanzi": "我想在这儿喝茶。",
+      "pinyin": "wǒ xiǎng zài zhèr hē chá.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-93CAC872B663",
+      "hanzi": "不在这儿",
+      "pinyin": "bú zài zhèr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-94ECC1391CE2",
+      "hanzi": "你知道长安街在哪儿吗",
+      "pinyin": "nǐ zhīdào Cháng'ān Jiē zài nǎr ma",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-AAF5F871A80E",
+      "hanzi": "过一会儿",
+      "pinyin": "guò yíhuìr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-today-tomorrow-later"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-ACA04D8C6FBA",
+      "hanzi": "我不想在这儿吃",
+      "pinyin": "wǒ bù xiǎng zài zhèr chī",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-B949FEDABB8E",
+      "hanzi": "去你那儿",
+      "pinyin": "qù nǐ nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-BC72BC1DD7DC",
+      "hanzi": "学院路在前面，可是长安街不在这儿。",
+      "pinyin": "Xuéyuàn Lù zài qiánmiàn, kěshì Cháng'ān Jiē bú zài zhèr.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-BE1126985DBD",
+      "hanzi": "长安街在这儿",
+      "pinyin": "Cháng'ān Jiē zài zhèr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-C01FB51C7DB6",
+      "hanzi": "我想去你那儿",
+      "pinyin": "wǒ xiǎng qù nǐ nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-C7CC93B1FAAA",
+      "hanzi": "我不想吃，我想喝一点儿水。",
+      "pinyin": "Wǒ bù xiǎng chī, wǒ xiǎng hē yìdiǎnr shuǐ.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-wants-intentions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-D25BEA653EA4",
+      "hanzi": "长安街在那儿",
+      "pinyin": "Cháng'ān Jiē zài nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-DD14EF8DB883",
+      "hanzi": "不在那儿",
+      "pinyin": "bú zài nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-E9B5993677CC",
+      "hanzi": "我想在这儿吃",
+      "pinyin": "wǒ xiǎng zài zhèr chī",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-E9E86F040039",
+      "hanzi": "不，长安街在这儿。",
+      "pinyin": "Bù, Cháng'ān Jiē zài zhèr.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-EF99EB1C6CD2",
+      "hanzi": "去我那儿",
+      "pinyin": "qù wǒ nàr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "那儿"
+      ],
+      "lesson_ids": [
+        "convm-places-to-meet"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F15B4CDE225A",
+      "hanzi": "那么我一会儿再来，谢谢。",
+      "pinyin": "Nàme wǒ yíhuìr zài lái, xièxie.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-newspaper-shopping"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F27E1EDE47C8",
+      "hanzi": "一会儿一起吃午饭，好吗？",
+      "pinyin": "Yíhuìr yìqǐ chī wǔfàn, hǎo ma?",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一会儿"
+      ],
+      "lesson_ids": [
+        "convm-wants-intentions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F4093FE9AF16",
+      "hanzi": "我们在这儿吃吧。",
+      "pinyin": "Wǒmen zài zhèr chī ba.",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "这儿"
+      ],
+      "lesson_ids": [
+        "convm-choices-alternatives"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F4D2B4776DE5",
+      "hanzi": "学院路在哪儿",
+      "pinyin": "Xuéyuàn Lù zài nǎr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "哪儿"
+      ],
+      "lesson_ids": [
+        "convm-asking-directions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F5A190FD48EF",
+      "hanzi": "我会说一点儿普通话",
+      "pinyin": "wǒ huì shuō yìdiǎnr Pǔtōnghuà",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-speaking-languages"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    },
+    {
+      "expression_id": "CMX-F9796AA1410A",
+      "hanzi": "一点儿",
+      "pinyin": "yìdiǎnr",
+      "marker": "northern_style_erhua",
+      "forms": [
+        "一点儿"
+      ],
+      "lesson_ids": [
+        "convm-speaking-languages",
+        "convm-wants-intentions"
+      ],
+      "note": "Northern-leaning rhotic style; these forms can also be valid Standard Mandarin and are not geographically exclusive."
+    }
+  ]
+}

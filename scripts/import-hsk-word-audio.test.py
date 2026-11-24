@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.dont_write_bytecode = True
@@ -41,10 +42,11 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest)
-        self.assertEqual(report['reusedExisting'], 3)
+        # Any other level's clip for the same word and reading counts, including Level 5's 才 cái (#2083).
+        self.assertEqual(report['reusedExisting'], 4)
         reused = sorted(entry['hsk_index'] for entry in data['entries'] if entry['hskLevel'] == 3 and entry.get('audio'))
-        self.assertEqual(reused, [660, 683, 966])  # 过去 guòqù, 会 huì, 站 zhàn
-        self.assertEqual(len(report['pendingUpload']), 440)
+        self.assertEqual(reused, [544, 660, 683, 966])  # 才 cái, 过去 guòqù, 会 huì, 站 zhàn
+        self.assertEqual(len(report['pendingUpload']), 439)
 
     def test_only_audio_and_timestamp_change_and_only_on_level_3(self):
         fresh = copy.deepcopy(self.vocabulary)
@@ -80,7 +82,7 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest, audio.INPUT / 'level3-uploads.json')
-        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 3, []))
+        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 4, []))
         self.assertEqual(sum(1 for e in data['entries'] if e['hskLevel'] == 3 and e.get('audio')), 443)
 
 
@@ -126,6 +128,40 @@ class Level4AudioImportTests(unittest.TestCase):
     def test_committed_attachments_cover_exactly_the_matched_entries(self):
         _, report = audio.import_audio(self.vocabulary, self.manifest)
         self.assertEqual((report['attached'], report['changed'], report['pendingUpload']), (797, 0, []))
+
+
+class Level5AudioCompatibilityTests(unittest.TestCase):
+    def setUp(self):
+        audio.configure(5)
+
+    def test_revised_source_keeps_the_original_recording_identities(self):
+        manifest = audio.load_manifest()
+        self.assertEqual(manifest['handoff']['file'], 'hsk3_level5_1.0.0.json')
+        self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.1.json' for row in manifest['compatibleHandoffs']))
+        self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.5.json' for row in manifest['compatibleHandoffs']))
+        vocabulary = audio.base.vocabulary_store.read_vocabulary()
+        before = copy.deepcopy(vocabulary)
+        _, report = audio.import_audio(vocabulary, manifest)
+        self.assertEqual((report['matched'], report['missing'], report['reading_mismatch']), (1306, 252, 42))
+        self.assertEqual(vocabulary, before)
+
+    def test_rejects_an_unbound_compatibility_checksum(self):
+        manifest = copy.deepcopy(audio.read(audio.MANIFEST))
+        for binding in manifest['compatibleHandoffs']:
+            if binding['file'] == audio.HANDOFF.name:
+                binding['sha256'] = 'incorrect'
+        original_read = audio.read
+        with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
+            with self.assertRaisesRegex(ValueError, 'different Level 5 handoff'):
+                audio.load_manifest()
+
+    def test_rejects_changed_identities_despite_a_valid_compatibility_checksum(self):
+        manifest = copy.deepcopy(audio.read(audio.MANIFEST))
+        manifest['entries'][0]['reading'] = 'incorrect'
+        original_read = audio.read
+        with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
+            with self.assertRaisesRegex(ValueError, 'identities differ'):
+                audio.load_manifest()
 
 
 if __name__ == '__main__':

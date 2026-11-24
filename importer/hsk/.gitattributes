@@ -1,7 +1,4 @@
 # Keep the supplied handoff bytes/checksums identical across platforms.
-hsk3_level1_1.6.1.json -text
-hsk3_level2_1.0.3.json -text
-hsk3_level3_1.0.4.json -text
-hsk3_level4_1.0.3.json -text
+hsk3_level*.json -text
 archive/*.json -text
 hsk3_topics.json -text

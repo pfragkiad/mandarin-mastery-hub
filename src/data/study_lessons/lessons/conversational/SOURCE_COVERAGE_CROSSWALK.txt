@@ -1,0 +1,299 @@
+# DEDUPLICATED SOURCE-TO-LESSON CONVERSATIONAL TARGETS — v1.1.5
+# Stable CMX IDs, source Hanzi and source pinyin unchanged. One source expression restored from FUNCTIONAL_VARIANT to EXACT_ENTRY.
+ID	SOURCE_HANZI	SOURCE_PINYIN	SOURCE_GLOSS	SOURCE_UNITS	COVERAGE_STATUS	LESSON_IDS	EXAMPLE_IN_LESSON	COVERAGE_EXPLANATION	REGIONAL_MARKER
+CMX-02811CEC0B73	呢	ne	and what about…? (particle)	3	IN_CONTEXT	convm-people-identity,convm-asking-directions,convm-clock-scheduling,convm-today-tomorrow-later,convm-phone-invitations	你呢	Exact teachable phrase or component appears in lesson expressions.	
+CMX-056B9C626275	谁	shéi	who	8	IN_CONTEXT	convm-with-someone	跟谁一起	Exact teachable phrase or component appears in lesson expressions.	
+CMX-063DD75D5D56	你有没有美国报纸	nǐ yǒu méi yǒu měi guó bào zhǐ	Do you have any American newspapers?	14	FUNCTIONAL_VARIANT	convm-newspaper-shopping	你有没有今天的报纸？	asking newspaper availability	
+CMX-06BA27715E26	我是	wǒ shì	I am. (context-dependent)	1	EXACT_ENTRY	convm-people-identity	我是	Phrase appears as an independent lesson expression.	
+CMX-077F9DB07895	你是	nǐ shì	You are. (context-dependent)	1	IN_CONTEXT	convm-people-identity	你是美国人吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-078C45851449	十八	shí bā	eighteen	14	EXACT_ENTRY	convm-numbers-arithmetic	十八	Phrase appears as an independent lesson expression.	
+CMX-084B42F6E95E	二	èr	two	12	IN_CONTEXT	convm-money-prices,convm-numbers-arithmetic	我有二十块人民币。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-08DDDEAC1319	点	diǎn	o’clock; point	9	IN_CONTEXT	convm-greetings-politeness,convm-speaking-languages,convm-wants-intentions,convm-food-drinks,convm-with-someone,convm-clock-scheduling,convm-choices-alternatives,convm-today-tomorrow-later,convm-money-prices,convm-permission-requests,convm-phone-invitations	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-09C7804E4FF8	路	lù	road	4	IN_CONTEXT	convm-asking-directions	请问学院路在哪儿	Exact teachable phrase or component appears in lesson expressions.	
+CMX-0EB863C78DA3	钱	qián	money	12	IN_CONTEXT	convm-money-prices,convm-numbers-arithmetic,convm-permission-requests	请问，一杯啤酒多少钱？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-0EF5C86FAB94	可以	kě yǐ	can; may (permission/possibility)	15	EXACT_ENTRY	convm-permission-requests	可以。	Phrase appears as an independent lesson expression.	
+CMX-0F86EC6A4240	请问你是中国人吗	qǐng wèn nǐ shì zhōng guó rén ma	Excuse me, are you Chinese?	4	FUNCTIONAL_VARIANT	convm-greetings-politeness	请问，现在几点钟？	Polite opening followed by a question, practised in several source contexts	
+CMX-12404A0B6381	在	zài	at; in; located at	4	IN_CONTEXT	convm-greetings-politeness,convm-asking-directions,convm-wants-intentions,convm-today-tomorrow-later,convm-places-to-meet,convm-clock-scheduling,convm-choices-alternatives,convm-permission-requests,convm-phone-invitations	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-148B16E60318	一点	yìdiǎn	a little	1	IN_CONTEXT	convm-speaking-languages,convm-wants-intentions,convm-food-drinks,convm-with-someone,convm-clock-scheduling,convm-choices-alternatives,convm-money-prices,convm-permission-requests	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-157CBEAB6CFE	对不起请问	Duìbuqǐ, qǐngwèn.	Excuse me, excuse me, may I ask?	1	FUNCTIONAL_VARIANT	convm-greetings-politeness	现在七点钟。	Polite opening followed by a question, practised in several source contexts	
+CMX-159100E0967A	可是我有啤酒	kě shì wǒ yǒu pí jiǔ	But i have beer.	15	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-1641A06DD345	不好	bù hǎo	not good; not okay	2	IN_CONTEXT	convm-speaking-languages,convm-understanding-clarification,convm-today-tomorrow-later,convm-choices-alternatives	我说得不好	Exact teachable phrase or component appears in lesson expressions.	
+CMX-16F3E7A5BA5B	我有人民币	wǒ yǒu rén mín bì	I have renminbi.	15	FUNCTIONAL_VARIANT	convm-money-prices	十块人民币	affirmative currency possession	
+CMX-1719CC5D682C	学院路在那儿	xué yuàn lù zài nà ér	College Road is over there.	6	EXACT_ENTRY	convm-asking-directions	学院路在那儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-17357590A919	我会说普通话	wǒ huì shuō pǔ tōng huà	I can speak Mandarin.	1	EXACT_ENTRY	convm-speaking-languages	我会说普通话	Phrase appears as an independent lesson expression.	
+CMX-18CBC25B2F5C	请问你会说英文吗	qǐng wèn nǐ huì shuō yīng wén ma	Excuse me, can you speak English?	1	EXACT_ENTRY	convm-speaking-languages	请问，你会说英文吗？	Phrase appears as an independent lesson expression.	
+CMX-193632BFFE7B	喝	hē	drink	5	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-today-tomorrow-later,convm-choices-alternatives,convm-places-to-meet,convm-with-someone	你想喝一点茶吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-1940119F0571	多	duō	much; many	14	IN_CONTEXT	convm-speaking-languages,convm-money-prices,convm-newspaper-shopping,convm-numbers-arithmetic,convm-permission-requests	谢谢！我还想多练习。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-19A29E87C975	这儿	zhèr	here	4	IN_CONTEXT	convm-asking-directions,convm-places-to-meet,convm-choices-alternatives	不，长安街在这儿。	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-1A65BD8F909C	我想喝一点东西	wǒ xiǎng hē yì diǎn dōng xī	I'd like something to drink.	5	EXACT_ENTRY	convm-wants-intentions,convm-food-drinks	我想喝一点东西	Phrase appears as an independent lesson expression.	
+CMX-1AA654F506A9	很多	hěn duō	a lot; many	14	IN_CONTEXT	convm-money-prices,convm-permission-requests	我有很多人民币	Exact teachable phrase or component appears in lesson expressions.	
+CMX-1B0542878C67	七	qī	seven	11	IN_CONTEXT	convm-greetings-politeness,convm-clock-scheduling,convm-today-tomorrow-later,convm-choices-alternatives,convm-money-prices,convm-numbers-arithmetic,convm-phone-invitations	现在七点钟。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-1BF7AC688560	谢谢	xiè xie	thank you	2	EXACT_ENTRY	convm-greetings-politeness,convm-money-prices	谢谢	Phrase appears as an independent lesson expression.	
+CMX-1CA22981984A	哪儿	nǎr	where	4	IN_CONTEXT	convm-asking-directions,convm-places-to-meet,convm-with-someone	请问学院路在哪儿	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-1E40959DFB9D	我想去酒店	wǒ xiǎng qù jiǔ diàn	I'd like to go to hotel.	8	EXACT_ENTRY	convm-places-to-meet	我想去酒店	Phrase appears as an independent lesson expression.	
+CMX-1E7C8976B135	你想做什么	nǐ xiǎng zuò shén me	What would you like to do?	8	EXACT_ENTRY	convm-wants-intentions	你想做什么	Phrase appears as an independent lesson expression.	
+CMX-2009A3368A46	去咖啡厅	qù kā fēi tīng	Go to a café.	7	EXACT_ENTRY	convm-places-to-meet	去咖啡厅	Phrase appears as an independent lesson expression.	
+CMX-20DCD00AB476	我那儿	wǒ nà ér	My place.	6	IN_CONTEXT	convm-places-to-meet	去我那儿	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-21600C1459EE	你有多少钱	nǐ yǒu duō shǎo qián	How much money do you have?	16	EXACT_ENTRY	convm-money-prices	你有多少钱？	Phrase appears as an independent lesson expression.	
+CMX-220AC6C5A360	一起	yì qǐ	together	8	EXACT_ENTRY	convm-with-someone	一起	Phrase appears as an independent lesson expression.	
+CMX-2313DBBB686A	不客气	bù kè qì	You're welcome.	14	EXACT_ENTRY	convm-greetings-politeness,convm-money-prices,convm-permission-requests,convm-newspaper-shopping	不客气	Phrase appears as an independent lesson expression.	
+CMX-232E567D31A2	我没有人民币	wǒ méi yǒu rén mín bì	I don't have any renminbi.	13	EXACT_ENTRY	convm-money-prices	我没有人民币	Phrase appears as an independent lesson expression.	
+CMX-254A75AEDE95	我想现在吃午饭	wǒ xiǎng xiàn zài chī wǔ fàn	I'd like to have lunch now.	8	EXACT_ENTRY	convm-wants-intentions	我想现在吃午饭	Original transcript expression restored as a learner-facing review item; the neutral word-order alternative is an explanatory usage note.	
+CMX-261C23B55843	街	jiē	street	6	IN_CONTEXT	convm-asking-directions	长安街也在那儿吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-2887087F2BB8	北京饭店在哪儿	běi jīng fàn diàn zài nǎ ér	Where is the Beijing Hotel?	7	EXACT_ENTRY	convm-places-to-meet	北京饭店在哪儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-29473899EFF5	十四	shí sì	fourteen	13	EXACT_ENTRY	convm-numbers-arithmetic	十四	Phrase appears as an independent lesson expression.	
+CMX-2B19AC78DC7F	吴先生	wú xiān sheng	Mr. Wu	16	EXACT_ENTRY	convm-people-identity	吴先生	Phrase appears as an independent lesson expression.	
+CMX-2BBF30AEF4FB	六块人民币	liù kuài rén mín bì	Six yuan.	12	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-2C467D367392	八	bā	eight	9	EXACT_ENTRY	convm-numbers-arithmetic	八。	Phrase appears as an independent lesson expression.	
+CMX-2CD2507D65DE	买	mǎi	buy	4	IN_CONTEXT	convm-wants-intentions,convm-choices-alternatives,convm-permission-requests	你想买什么	Exact teachable phrase or component appears in lesson expressions.	
+CMX-2E3DD2D42FA2	你会说普通话	nǐ huì shuō pǔ tōng huà	You can speak Mandarin.	1	EXACT_ENTRY	convm-speaking-languages	你会说普通话	Phrase appears as an independent lesson expression.	
+CMX-2F740E176968	十五	shí wǔ	fifteen	13	EXACT_ENTRY	convm-numbers-arithmetic	十五	Phrase appears as an independent lesson expression.	
+CMX-31B30DA0453F	你有没有茶	nǐ yǒu méi yǒu chá	Do you have any tea?	15	FUNCTIONAL_VARIANT	convm-newspaper-shopping	有没有	有没有 availability question, substitution of item	
+CMX-31B86E9372CA	我不知道	wǒ bù zhī dào	I don't know.	5	EXACT_ENTRY	convm-understanding-clarification,convm-asking-directions	我不知道	Phrase appears as an independent lesson expression.	
+CMX-31CF8C9CE5F8	八块人民币	bā kuài rén mín bì	Eight yuan.	12	EXACT_ENTRY	convm-newspaper-shopping	八块人民币。	Phrase appears as an independent lesson expression.	
+CMX-323290AC6163	我不会说	wǒ bú huì shuō	I cannot speak.	1	IN_CONTEXT	convm-speaking-languages	不会，我不会说英文。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-335DCD143FFA	太多了	tài duō le	That's too much.	16	EXACT_ENTRY	convm-permission-requests	太多了	Phrase appears as an independent lesson expression.	
+CMX-348EA84C6046	英文	Yīngwén	English (language)	1	IN_CONTEXT	convm-speaking-languages,convm-newspaper-shopping	请问，你会说英文吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-34AE7C34AEDE	我会说	wǒ huì shuō	I can speak.	1	IN_CONTEXT	convm-speaking-languages	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-3529B1E4A26E	请问学院路在哪儿	qǐng wèn xué yuàn lù zài nǎ ér	Excuse me, where is College Road?	4	EXACT_ENTRY	convm-asking-directions	请问学院路在哪儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-35B8262AB10C	我不想去酒店	wǒ bù xiǎng qù jiǔ diàn	I don't want to go to hotel.	10	IN_CONTEXT	convm-places-to-meet	我不想去酒店。咖啡厅怎么样？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-36D89C8F512D	块	kuài	yuan; monetary unit	12	IN_CONTEXT	convm-money-prices,convm-newspaper-shopping,convm-numbers-arithmetic,convm-permission-requests	十块人民币	Exact teachable phrase or component appears in lesson expressions.	
+CMX-36E1C55BA192	你想吃什么	nǐ xiǎng chī shén me	What would you like to eat?	7	EXACT_ENTRY	convm-food-drinks	你想吃什么	Phrase appears as an independent lesson expression.	
+CMX-383A53D95C2C	跟	gēn	with	8	EXACT_ENTRY	convm-with-someone	跟	Phrase appears as an independent lesson expression.	
+CMX-38BEB064FEE2	你呢	nǐ ne	And you?	3	EXACT_ENTRY	convm-people-identity	你呢	Phrase appears as an independent lesson expression.	
+CMX-38CA4A9C76B1	可是	kě shì	but; however	3	EXACT_ENTRY	convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-choices-alternatives	可是	Phrase appears as an independent lesson expression.	
+CMX-38E5B024A6D4	很好	hěn hǎo	Very well.	2	EXACT_ENTRY	convm-greetings-politeness	很好	Phrase appears as an independent lesson expression.	
+CMX-399085523259	陈小姐	chén xiǎo jie	Miss Chen	13	EXACT_ENTRY	convm-people-identity,convm-phone-invitations	陈小姐	Phrase appears as an independent lesson expression.	
+CMX-39B4D254B443	你知道吗	nǐ zhī dào ma	Do you know?	5	EXACT_ENTRY	convm-understanding-clarification	你知道吗	Phrase appears as an independent lesson expression.	
+CMX-39CE11BD86C8	可是我会说普通话	kě shì wǒ huì shuō pǔ tōng huà	But I can speak Mandarin.	3	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-3B3CAF00CC7B	会说	huì shuō	can speak	1	EXACT_ENTRY	convm-speaking-languages	会说	Phrase appears as an independent lesson expression.	
+CMX-3B3D41A15C0B	十三块人民币	shí sān kuài rén mín bì	Thirteen yuan.	12	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-3BC00DBA4DD5	去北京饭店	qù běi jīng fàn diàn	Go to the Beijing Hotel.	7	IN_CONTEXT	convm-places-to-meet	去北京饭店，好吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-3BD4FB48AB4B	去饭店	qù fàn diàn	Go to restaurant.	7	EXACT_ENTRY	convm-places-to-meet	去饭店	Phrase appears as an independent lesson expression.	
+CMX-3E011B82EC80	十二块人民币	shí èr kuài rén mín bì	Twelve yuan.	12	EXACT_ENTRY	convm-money-prices	十二块人民币	Phrase appears as an independent lesson expression.	
+CMX-3E94F491F99E	去哪儿	qù nǎ ér	Go to where.	6	IN_CONTEXT	convm-places-to-meet,convm-with-someone	你想去哪儿吃午饭？	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-400FF9C219B8	你普通话说得很好	nǐ pǔ tōng huà shuō dé hěn hǎo	You speak Mandarin very well.	3	EXACT_ENTRY	convm-speaking-languages	你普通话说得很好	Phrase appears as an independent lesson expression.	
+CMX-41A590105200	你会说	nǐ huì shuō	You can speak.	1	EXACT_ENTRY	convm-speaking-languages	你会说	Phrase appears as an independent lesson expression.	
+CMX-41CBC3E287CB	十一	shí yī	eleven	12	EXACT_ENTRY	convm-numbers-arithmetic	十一	Phrase appears as an independent lesson expression.	
+CMX-421C7F09607D	我想吃午饭	wǒ xiǎng chī wǔ fàn	I'd like to have lunch.	8	EXACT_ENTRY	convm-wants-intentions,convm-food-drinks	我想吃午饭	Phrase appears as an independent lesson expression.	
+CMX-42BE23D8344A	请问	qǐngwèn	excuse me, may I ask…	1	EXACT_ENTRY	convm-greetings-politeness,convm-phone-invitations	请问	Phrase appears as an independent lesson expression.	
+CMX-43584F37C1F4	现在	xiàn zài	now	6	EXACT_ENTRY	convm-today-tomorrow-later	现在	Phrase appears as an independent lesson expression.	
+CMX-43A188D1CB55	什么时候	shén me shí hòu	When?	6	EXACT_ENTRY	convm-today-tomorrow-later	什么时候	Phrase appears as an independent lesson expression.	
+CMX-45569FC06340	一会儿	yí huìr	a little while	6	EXACT_ENTRY	convm-phone-invitations	一会儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-4628C0E06F4B	问	wèn	ask	1	IN_CONTEXT	convm-greetings-politeness,convm-phone-invitations,convm-speaking-languages,convm-asking-directions,convm-money-prices,convm-permission-requests,convm-newspaper-shopping	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-477705C08B4E	可是学院路在这儿	kě shì xué yuàn lù zài zhè ér	But xueyuan Road is here.	5	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	NORTHERN_ERHUA
+CMX-4B0009153C06	十四块人民币	shí sì kuài rén mín bì	Fourteen yuan.	14	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-4F4828D7A235	十一块人民币	shí yī kuài rén mín bì	Eleven yuan.	12	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-50A7764E160B	我没有钱	wǒ méi yǒu qián	I don't have any money.	16	EXACT_ENTRY	convm-money-prices	我没有钱	Phrase appears as an independent lesson expression.	
+CMX-50F5D65D5729	人	rén	person; people	1	IN_CONTEXT	convm-people-identity,convm-choices-alternatives,convm-money-prices,convm-newspaper-shopping,convm-permission-requests	你是美国人吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-51A75F4634DF	一	yī	one	6	IN_CONTEXT	convm-speaking-languages,convm-wants-intentions,convm-food-drinks,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-choices-alternatives,convm-money-prices,convm-numbers-arithmetic,convm-permission-requests,convm-phone-invitations,convm-newspaper-shopping	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-51B1D83B516C	学院路在这儿	xué yuàn lù zài zhè ér	College Road is here.	4	EXACT_ENTRY	convm-asking-directions	学院路在这儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-544D495B5C89	我不想去你那儿	wǒ bù xiǎng qù nǐ nà ér	I don't want to go to your place.	7	FUNCTIONAL_VARIANT	convm-places-to-meet	去北京饭店，好吗？	refusing a suggested location	NORTHERN_ERHUA
+CMX-54673EA53C1F	我知道	wǒ zhī dào	I know.	5	EXACT_ENTRY	convm-understanding-clarification	我知道	Phrase appears as an independent lesson expression.	
+CMX-5484678BE4EF	时候	shí hou	time; occasion	6	IN_CONTEXT	convm-wants-intentions,convm-clock-scheduling,convm-today-tomorrow-later	你想什么时候吃	Exact teachable phrase or component appears in lesson expressions.	
+CMX-55530C6BF7B0	一块人民币	yī kuài rén mín bì	One yuan.	12	EXACT_ENTRY	convm-money-prices	一块人民币	Phrase appears as an independent lesson expression.	
+CMX-56461C529548	我会说一点普通话	wǒ huì shuō yì diǎn pǔ tōng huà	I can speak a little Mandarin.	1	EXACT_ENTRY	convm-speaking-languages	我会说一点普通话	Phrase appears as an independent lesson expression.	
+CMX-56AD3419FFDE	太太	tài tai	Mrs.; wife	15	NARRATION_NOT_TARGET			Narrative cue / named relationship, not a new learner task	
+CMX-5726F76F79A6	去长安街	qù cháng ān jiē	Go to Long Peace Street.	6	EXACT_ENTRY	convm-asking-directions	去长安街	Phrase appears as an independent lesson expression.	
+CMX-583ED24DEBA0	多少钱	duō shǎo qián	How much does it cost?	12	EXACT_ENTRY	convm-money-prices	多少钱	Phrase appears as an independent lesson expression.	
+CMX-584CD0FCF368	不是	bú shì	is not; no	2	IN_CONTEXT	convm-people-identity,convm-choices-alternatives,convm-permission-requests,convm-phone-invitations,convm-newspaper-shopping,convm-understanding-clarification,convm-numbers-arithmetic	不是，我是中国人。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-58857E5318F3	美国	Měiguó	United States; America	1	IN_CONTEXT	convm-people-identity,convm-newspaper-shopping	你是美国人吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-59322EEBEA94	酒店	jiǔ diàn	hotel	8	EXACT_ENTRY	convm-places-to-meet	酒店	Phrase appears as an independent lesson expression.	
+CMX-5A5420F01E11	晚饭	wǎn fàn	dinner	11	IN_CONTEXT	convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later	你想跟我一起吃晚饭吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-5AC1612110DE	吗	ma	yes–no question particle	1	IN_CONTEXT	convm-greetings-politeness,convm-people-identity,convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-permission-requests,convm-phone-invitations	你好吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-5B7BBECFF860	或者	huò zhě	or (in statements)	9	IN_CONTEXT	convm-choices-alternatives	我想买茶或者啤酒	Exact teachable phrase or component appears in lesson expressions.	
+CMX-5BA1E3C0EB63	会	huì	can; know how to	1	IN_CONTEXT	convm-speaking-languages,convm-wants-intentions,convm-today-tomorrow-later,convm-choices-alternatives,convm-phone-invitations,convm-newspaper-shopping	请问，你会说英文吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-5C3C7403F63A	美国报纸	měi guó bào zhǐ	American newspapers.	14	EXACT_ENTRY	convm-newspaper-shopping	美国报纸	Phrase appears as an independent lesson expression.	
+CMX-5F412482E3C1	今天晚上	jīn tiān wǎn shàng	Tonight.	11	EXACT_ENTRY	convm-clock-scheduling,convm-today-tomorrow-later	今天晚上	Phrase appears as an independent lesson expression.	
+CMX-602620AE3542	我明白	wǒ míng bái	I understand.	4	EXACT_ENTRY	convm-understanding-clarification	我明白	Phrase appears as an independent lesson expression.	
+CMX-61359D9BD1C3	我会说一点儿英文	wǒ huì shuō yì diǎn ér yīng wén	I can speak a little English.	3	EXACT_ENTRY	convm-speaking-languages	我会说一点儿英文	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-62CD7AAD407B	你不会说	nǐ bú huì shuō	You cannot speak.	1	IN_CONTEXT	convm-speaking-languages	你不会说英文	Exact teachable phrase or component appears in lesson expressions.	
+CMX-62F99C9A0C50	少	shǎo	few; little	12	IN_CONTEXT	convm-money-prices,convm-numbers-arithmetic	请问，一杯啤酒多少钱？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-649A0CB5CB7F	请问你会说普通话吗	qǐng wèn nǐ huì shuō pǔ tōng huà ma	Excuse me, can you speak Mandarin?	2	FUNCTIONAL_VARIANT	convm-greetings-politeness	请问，现在几点钟？	Polite opening followed by a question, practised in several source contexts	
+CMX-65394354B5C5	你有美金吗	nǐ yǒu měi jīn ma	Do you have US dollars?	16	EXACT_ENTRY	convm-money-prices	你有美金吗？	Phrase appears as an independent lesson expression.	
+CMX-658605835BFC	也	yě	also; too	6	IN_CONTEXT	convm-asking-directions,convm-with-someone,convm-clock-scheduling,convm-newspaper-shopping	长安街也在那儿吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-65B2649553BC	我不会	wǒ bú huì	I can't.	2	IN_CONTEXT	convm-speaking-languages	不会，我不会说英文。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-6700FB960291	长安街	cháng ān jiē	Long Peace Street (Long Peace Street)	4	EXACT_ENTRY	convm-asking-directions	长安街	Phrase appears as an independent lesson expression.	
+CMX-670D9743542C	你好	nǐ hǎo	hello; hi	2	EXACT_ENTRY	convm-greetings-politeness	你好	Phrase appears as an independent lesson expression.	
+CMX-67A76F79C9AC	我有美金	wǒ yǒu měi jīn	I have US dollars.	15	IN_CONTEXT	convm-newspaper-shopping	我有美金，可是没有人民币。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-68C77E155132	北京	běi jīng	Beijing	7	IN_CONTEXT	convm-places-to-meet	去北京饭店，好吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-6AF537D6A30D	明天晚上	míng tiān wǎn shàng	Tomorrow evening.	11	EXACT_ENTRY	convm-today-tomorrow-later	明天晚上	Phrase appears as an independent lesson expression.	
+CMX-6CE042F4036C	啤酒	pí jiǔ	beer	7	EXACT_ENTRY	convm-food-drinks	啤酒	Phrase appears as an independent lesson expression.	
+CMX-6D95E5A7BECE	我会	wǒ huì	I can; I know how to	1	IN_CONTEXT	convm-speaking-languages	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-6E24F430147F	你想喝啤酒吗	nǐ xiǎng hē pí jiǔ ma	Would you like to drink beer?	8	EXACT_ENTRY	convm-food-drinks	你想喝啤酒吗	Phrase appears as an independent lesson expression.	
+CMX-6E55FB9D8A3D	给	gěi	give; for; to	14	IN_CONTEXT	convm-permission-requests,convm-newspaper-shopping	你可不可以给我一点钱	Exact teachable phrase or component appears in lesson expressions.	
+CMX-70AE3DB5B1AC	我不会说普通话	wǒ bú huì shuō pǔ tōng huà	I can't speak Mandarin.	1	EXACT_ENTRY	convm-speaking-languages	我不会说普通话	Phrase appears as an independent lesson expression.	
+CMX-71B1ED11149D	得	de	complement marker (how an action is done)	2	IN_CONTEXT	convm-speaking-languages,convm-understanding-clarification	你普通话说得很好	Exact teachable phrase or component appears in lesson expressions.	
+CMX-7209B6855342	你说什么	nǐ shuō shén me	What did you say?	15	EXACT_ENTRY	convm-understanding-clarification	你说什么	Phrase appears as an independent lesson expression.	
+CMX-720EC669F15B	咖啡	kā fēi	coffee	7	IN_CONTEXT	convm-places-to-meet,convm-choices-alternatives	去咖啡厅	Exact teachable phrase or component appears in lesson expressions.	
+CMX-735A3F0EAF6D	你想什么时候吃	nǐ xiǎng shén me shí hòu chī	When would you like to eat?	6	EXACT_ENTRY	convm-wants-intentions	你想什么时候吃	Phrase appears as an independent lesson expression.	
+CMX-73CC81388C9B	对不起	duìbuqǐ	excuse me; sorry	1	EXACT_ENTRY	convm-greetings-politeness	对不起	Phrase appears as an independent lesson expression.	
+CMX-74FA9D6A54D4	客气	kè qi	polite; courteous	14	IN_CONTEXT	convm-greetings-politeness,convm-money-prices,convm-permission-requests,convm-newspaper-shopping	不客气	Exact teachable phrase or component appears in lesson expressions.	
+CMX-74FF2D7E528A	饭店	fàn diàn	restaurant; hotel	7	EXACT_ENTRY	convm-places-to-meet	饭店	Phrase appears as an independent lesson expression.	
+CMX-754A9D5828D5	四	sì	four	10	IN_CONTEXT	convm-clock-scheduling,convm-choices-alternatives,convm-money-prices,convm-numbers-arithmetic	现在四点钟	Exact teachable phrase or component appears in lesson expressions.	
+CMX-7604BD60130E	十六块人民币	shí liù kuài rén mín bì	Sixteen yuan.	13	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-768174390AF7	是十点钟吗	shì shí diǎn zhōng ma	Is it ten o’clock?	12	EXACT_ENTRY	convm-clock-scheduling	是十点钟吗	Phrase appears as an independent lesson expression.	
+CMX-773A774A40F0	咖啡厅	kā fēi tīng	café	7	EXACT_ENTRY	convm-places-to-meet	咖啡厅	Phrase appears as an independent lesson expression.	
+CMX-78508FD411A2	你有没有钱	nǐ yǒu méi yǒu qián	Do you have any money?	16	FUNCTIONAL_VARIANT	convm-permission-requests	有没有	有没有 plus money/possession	
+CMX-78B0E071159F	长安街在哪儿	cháng ān jiē zài nǎ ér	Where is Long Peace Street?	5	EXACT_ENTRY	convm-asking-directions	长安街在哪儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-79163BE712DA	十九块人民币	shí jiǔ kuài rén mín bì	Nineteen yuan.	15	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-7DA2D46206E3	我会说英文	wǒ huì shuō yīng wén	I can speak English.	1	EXACT_ENTRY	convm-speaking-languages	我会说英文	Phrase appears as an independent lesson expression.	
+CMX-7E005BA311F8	茶	chá	tea	7	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-choices-alternatives,convm-places-to-meet,convm-money-prices,convm-permission-requests	你想喝一点茶吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-7FEC193D8E9D	可是我想喝一点东西	kě shì wǒ xiǎng hē yì diǎn dōng xī	But i'd like something to drink.	6	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-805DBB2D7DAA	你不是中国人	nǐ bú shì zhōng guó rén	You're not Chinese.	3	EXACT_ENTRY	convm-people-identity	你不是中国人	Phrase appears as an independent lesson expression.	
+CMX-80B044F1AFC9	十二	shí èr	twelve	12	EXACT_ENTRY	convm-numbers-arithmetic	十二	Phrase appears as an independent lesson expression.	
+CMX-83323941033C	我不明白你说什么	wǒ bù míng bái nǐ shuō shén me	I don't understand what you're saying.	4	EXACT_ENTRY	convm-understanding-clarification	我不明白你说什么	Phrase appears as an independent lesson expression.	
+CMX-83385D2EDAFE	两	liǎng	two (before measure words)	9	IN_CONTEXT	convm-food-drinks,convm-clock-scheduling,convm-choices-alternatives,convm-numbers-arithmetic	我要两杯茶。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-83B38794F27C	中国人	zhōng guó rén	Chinese (person)	3	EXACT_ENTRY	convm-people-identity	中国人	Phrase appears as an independent lesson expression.	
+CMX-84403A4202EE	美国人	měi guó rén	American (person)	1	EXACT_ENTRY	convm-people-identity	美国人	Phrase appears as an independent lesson expression.	
+CMX-84A5F7A062DD	小姐	xiǎo jie	Miss; young woman	8	IN_CONTEXT	convm-people-identity,convm-phone-invitations	王小姐	Exact teachable phrase or component appears in lesson expressions.	
+CMX-87BDFC2DD7FA	李先生	lǐ xiān sheng	Mr. Li	8	EXACT_ENTRY	convm-people-identity	李先生	Phrase appears as an independent lesson expression.	
+CMX-88573B5D4539	我是中国人	wǒ shì zhōng guó rén	I'm Chinese.	3	EXACT_ENTRY	convm-people-identity	我是中国人	Phrase appears as an independent lesson expression.	
+CMX-886CB2708AD7	不会说	bú huì shuō	cannot speak	1	EXACT_ENTRY	convm-speaking-languages	不会说	Phrase appears as an independent lesson expression.	
+CMX-88CBDF740C09	我普通话说得不好	wǒ pǔ tōng huà shuō dé bù hǎo	I don't speak Mandarin well.	5	EXACT_ENTRY	convm-understanding-clarification	我普通话说得不好	Phrase appears as an independent lesson expression.	
+CMX-88D5840FAB77	请	qǐng	please	1	IN_CONTEXT	convm-greetings-politeness,convm-phone-invitations,convm-speaking-languages,convm-asking-directions,convm-money-prices,convm-permission-requests,convm-newspaper-shopping	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-8AA07F1595BD	再	zài	again	2	IN_CONTEXT	convm-greetings-politeness,convm-phone-invitations,convm-newspaper-shopping	再见	Exact teachable phrase or component appears in lesson expressions.	
+CMX-8AAA2EE628BE	谢谢你	xiè xiè nǐ	Thank you.	3	EXACT_ENTRY	convm-greetings-politeness,convm-permission-requests	谢谢你	Phrase appears as an independent lesson expression.	
+CMX-8C4D8E09AD14	我有钱	wǒ yǒu qián	I have money.	16	IN_CONTEXT	convm-permission-requests	我有钱，可是只有十块。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-8C9212704E25	明天见	míng tiān jiàn	See you tomorrow.	11	EXACT_ENTRY	convm-greetings-politeness,convm-today-tomorrow-later	明天见	Phrase appears as an independent lesson expression.	
+CMX-8D2AD44EA1D5	我想喝啤酒	wǒ xiǎng hē pí jiǔ	I'd like to drink beer.	12	EXACT_ENTRY	convm-food-drinks	我想喝啤酒	Phrase appears as an independent lesson expression.	
+CMX-8E37CD5F7F76	明白	míng bai	understand; be clear	4	IN_CONTEXT	convm-understanding-clarification	你明白吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-8E3B1F8C6558	请问你有没有美国报纸	qǐng wèn nǐ yǒu méi yǒu měi guó bào zhǐ	Excuse me, do you have any American newspapers?	14	FUNCTIONAL_VARIANT	convm-greetings-politeness	请问，现在几点钟？	Polite opening followed by a question, practised in several source contexts	
+CMX-8F40872E5CF9	可是我知道	kě shì wǒ zhī dào	But i know.	5	FUNCTIONAL_VARIANT	convm-speaking-languages	可是	可是 contrast modelled in multiple practical responses	
+CMX-8F460533456F	四点钟	sì diǎn zhōng	Four o’clock.	10	IN_CONTEXT	convm-clock-scheduling,convm-choices-alternatives	现在四点钟	Exact teachable phrase or component appears in lesson expressions.	
+CMX-90CE0F66F094	有	yǒu	have; there is	13	IN_CONTEXT	convm-wants-intentions,convm-choices-alternatives,convm-money-prices,convm-newspaper-shopping,convm-permission-requests,convm-phone-invitations	好，我一会儿有时间。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-9107415837C0	不想	bù xiǎng	do not want to	5	IN_CONTEXT	convm-wants-intentions,convm-choices-alternatives,convm-places-to-meet,convm-with-someone,convm-today-tomorrow-later	我不想吃。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-91B8C2940F73	你要美金吗	nǐ yào měi jīn ma	Do you want US dollars?	16	FUNCTIONAL_VARIANT	convm-money-prices	十块人民币	asking whether a currency is wanted, yes/no question	
+CMX-91EEA5FAC969	王小姐	wáng xiǎo jie	Miss Wang	8	EXACT_ENTRY	convm-people-identity	王小姐	Phrase appears as an independent lesson expression.	
+CMX-9340996FC6C4	十九	shí jiǔ	nineteen	14	EXACT_ENTRY	convm-numbers-arithmetic	十九	Phrase appears as an independent lesson expression.	
+CMX-94E6C1790353	你那儿	nǐ nà ér	Your place.	6	IN_CONTEXT	convm-places-to-meet	我想去你那儿	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-94EE8C09A089	不是很好	bú shì hěn hǎo	Not very well.	4	EXACT_ENTRY	convm-understanding-clarification	不是很好	Phrase appears as an independent lesson expression.	
+CMX-94F5404441E8	做	zuò	do; make	8	IN_CONTEXT	convm-wants-intentions	你想做什么	Exact teachable phrase or component appears in lesson expressions.	
+CMX-95061D90E762	我想吃一点东西	wǒ xiǎng chī yì diǎn dōng xī	I'd like something to eat.	5	EXACT_ENTRY	convm-wants-intentions,convm-food-drinks	我想吃一点东西	Phrase appears as an independent lesson expression.	
+CMX-956533BDF775	一会儿见	yī huì er jiàn	See you later.	15	IN_CONTEXT	convm-today-tomorrow-later	过一会儿见。	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-95E4A5CB7F4D	我是美国人	wǒ shì měi guó rén	I'm American.	1	EXACT_ENTRY	convm-people-identity	我是美国人	Phrase appears as an independent lesson expression.	
+CMX-96CEC4EA5789	可是我想吃一点东西	kě shì wǒ xiǎng chī yì diǎn dōng xī	But i'd like something to eat.	5	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-975F35218ED8	要	yào	want; need; going to	8	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-choices-alternatives,convm-money-prices,convm-permission-requests	我想要一点茶	Exact teachable phrase or component appears in lesson expressions.	
+CMX-97A6D75DE91F	可不可以	kě bù kě yǐ	can or cannot?; may I?	15	EXACT_ENTRY	convm-permission-requests	可不可以	Phrase appears as an independent lesson expression.	
+CMX-99AE21EA6C39	去	qù	go	6	IN_CONTEXT	convm-asking-directions,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-today-tomorrow-later,convm-permission-requests	去长安街	Exact teachable phrase or component appears in lesson expressions.	
+CMX-99D582B924EF	太晚	tài wǎn	too late	16	EXACT_ENTRY	convm-today-tomorrow-later,convm-choices-alternatives,convm-phone-invitations	太晚	Phrase appears as an independent lesson expression.	
+CMX-9A7DD516464B	你可以吗	nǐ kě yǐ ma	Can you?	16	FUNCTIONAL_VARIANT	convm-permission-requests	我不可以	permission / possibility	
+CMX-9B8B3CF9FE82	你有没有人民币	nǐ yǒu méi yǒu rén mín bì	Do you have any renminbi?	13	EXACT_ENTRY	convm-choices-alternatives,convm-money-prices	你有没有人民币	Phrase appears as an independent lesson expression.	
+CMX-9BA359E542EE	不行	bù xíng	not possible; won't work	9	EXACT_ENTRY	convm-clock-scheduling,convm-phone-invitations	不行	Phrase appears as an independent lesson expression.	
+CMX-9BBFBBC76F7A	您	nín	you (polite)	6	EXACT_ENTRY	convm-asking-directions	您	Phrase appears as an independent lesson expression.	
+CMX-9E27D43472E7	十七	shí qī	seventeen	14	EXACT_ENTRY	convm-numbers-arithmetic	十七	Phrase appears as an independent lesson expression.	
+CMX-A0C7716669B5	你	nǐ	you (singular)	1	IN_CONTEXT	convm-greetings-politeness,convm-permission-requests,convm-people-identity,convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-choices-alternatives,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-newspaper-shopping	你好	Exact teachable phrase or component appears in lesson expressions.	
+CMX-A216875BBC48	你会说吗	nǐ huì shuō ma	Can you speak?	1	FUNCTIONAL_VARIANT	convm-speaking-languages	说得不好	ability question with 吗	
+CMX-A245FC55ED9C	我想吃晚饭	wǒ xiǎng chī wǎn fàn	I'd like to eat dinner.	13	FUNCTIONAL_VARIANT	convm-today-tomorrow-later	我想现在喝	wanting dinner; inviting and accepting	
+CMX-A4C3313DEB18	三	sān	three	10	IN_CONTEXT	convm-clock-scheduling,convm-money-prices,convm-numbers-arithmetic,convm-permission-requests	三点钟不行	Exact teachable phrase or component appears in lesson expressions.	
+CMX-A59AFB3A6052	你是中国人吗	nǐ shì zhōng guó rén ma	Are you Chinese?	3	EXACT_ENTRY	convm-people-identity	你是中国人吗	Phrase appears as an independent lesson expression.	
+CMX-A5EE3F0D180E	点钟	diǎn zhōng	o’clock	9	IN_CONTEXT	convm-greetings-politeness,convm-clock-scheduling,convm-choices-alternatives,convm-today-tomorrow-later,convm-phone-invitations	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-A61F02E145A7	那么	nà me	in that case; so	11	EXACT_ENTRY	convm-clock-scheduling,convm-choices-alternatives,convm-phone-invitations	那么	Phrase appears as an independent lesson expression.	
+CMX-A7ADB85EFA63	你想吃一点东西吗	nǐ xiǎng chī yì diǎn dōng xī ma	Would you like something to eat?	5	EXACT_ENTRY	convm-wants-intentions	你想吃一点东西吗	Phrase appears as an independent lesson expression.	
+CMX-A8380E2A515D	你想喝什么	nǐ xiǎng hē shén me	What would you like to drink?	7	EXACT_ENTRY	convm-food-drinks	你想喝什么	Phrase appears as an independent lesson expression.	
+CMX-A8CA2371ED82	我有一点	wǒ yǒu yì diǎn	I have a little.	15	IN_CONTEXT	convm-money-prices	我有一点美金	Exact teachable phrase or component appears in lesson expressions.	
+CMX-A90B56B14300	你想去酒店吗	nǐ xiǎng qù jiǔ diàn ma	Would you like to go to hotel?	8	EXACT_ENTRY	convm-places-to-meet	你想去酒店吗	Phrase appears as an independent lesson expression.	
+CMX-A91B9AC3ED0D	十三	shí sān	thirteen	12	EXACT_ENTRY	convm-numbers-arithmetic	十三	Phrase appears as an independent lesson expression.	
+CMX-A9B1124B3461	晚上	wǎn shang	evening; night	11	EXACT_ENTRY	convm-phone-invitations	晚上	Phrase appears as an independent lesson expression.	
+CMX-AA227102842B	李明	lǐ míng	Li Ming (personal name)	12	EXACT_ENTRY	convm-people-identity	李明	Phrase appears as an independent lesson expression.	
+CMX-AC6455D103CB	我想去饭店	wǒ xiǎng qù fàn diàn	I'd like to go to restaurant.	7	EXACT_ENTRY	convm-places-to-meet	我想去饭店。	Phrase appears as an independent lesson expression.	
+CMX-AD5760E79F29	我会说一点	wǒ huì shuō yì diǎn	I can speak a little.	1	IN_CONTEXT	convm-speaking-languages	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-ADFF0166A2F6	十六	shí liù	sixteen	13	EXACT_ENTRY	convm-numbers-arithmetic	十六	Phrase appears as an independent lesson expression.	
+CMX-AFD07CD884F1	我会说一点儿	wǒ huì shuō yì diǎn ér	I can speak a little.	3	IN_CONTEXT	convm-speaking-languages	我会说一点儿普通话	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-B02DFE2160C6	不	bù / bú	not (tone changes before fourth tone)	1	IN_CONTEXT	convm-greetings-politeness,convm-money-prices,convm-permission-requests,convm-newspaper-shopping,convm-people-identity,convm-choices-alternatives,convm-phone-invitations,convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-numbers-arithmetic	对不起	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B1813501860B	东西	dōng xi	thing; something	4	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-with-someone,convm-today-tomorrow-later,convm-choices-alternatives,convm-money-prices	你想吃一点东西吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B1AA0959AA6C	你想喝一点东西吗	nǐ xiǎng hē yì diǎn dōng xī ma	Would you like something to drink?	5	EXACT_ENTRY	convm-wants-intentions	你想喝一点东西吗	Phrase appears as an independent lesson expression.	
+CMX-B1C57D1CF657	见	jiàn	see; meet	2	IN_CONTEXT	convm-greetings-politeness,convm-today-tomorrow-later,convm-understanding-clarification,convm-places-to-meet,convm-clock-scheduling,convm-phone-invitations	再见	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B1D841B978FB	明天	míng tiān	tomorrow	11	EXACT_ENTRY	convm-today-tomorrow-later,convm-phone-invitations	明天	Phrase appears as an independent lesson expression.	
+CMX-B2DD27E84F07	了	le	change-of-state particle	16	IN_CONTEXT	convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-permission-requests,convm-phone-invitations	十点太晚了。八点钟呢？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B439ADD36516	我说得不好	wǒ shuō dé bù hǎo	I don't speak well.	2	EXACT_ENTRY	convm-speaking-languages	我说得不好	Phrase appears as an independent lesson expression.	
+CMX-B4444021AD3E	那儿	nàr	there	4	IN_CONTEXT	convm-asking-directions,convm-places-to-meet,convm-choices-alternatives	在那儿	Exact teachable phrase or component appears in lesson expressions.	NORTHERN_ERHUA
+CMX-B5141D3D19E9	是	shì	to be; yes (in response)	1	IN_CONTEXT	convm-people-identity,convm-choices-alternatives,convm-permission-requests,convm-phone-invitations,convm-newspaper-shopping,convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-food-drinks,convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-numbers-arithmetic	你是美国人吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B561464BB03C	你不会说英文	nǐ bú huì shuō yīng wén	You can't speak English.	3	EXACT_ENTRY	convm-speaking-languages	你不会说英文	Phrase appears as an independent lesson expression.	
+CMX-B5B00E28125C	现在几点钟	xiàn zài jǐ diǎn zhōng	What time is it?	10	EXACT_ENTRY	convm-clock-scheduling	现在几点钟	Phrase appears as an independent lesson expression.	
+CMX-B5E447633AA4	我没有美金	wǒ méi yǒu měi jīn	I don't have any US dollars.	14	FUNCTIONAL_VARIANT	convm-money-prices	我没有人民币	negative currency possession	
+CMX-B70BB4ACC048	我	wǒ	I; me	1	IN_CONTEXT	convm-people-identity,convm-speaking-languages,convm-understanding-clarification,convm-asking-directions,convm-wants-intentions,convm-food-drinks,convm-today-tomorrow-later,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-choices-alternatives,convm-money-prices,convm-permission-requests,convm-phone-invitations,convm-newspaper-shopping	不是，我是中国人。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B790AEE7B7D7	吃晚饭	chī wǎn fàn	have dinner	11	IN_CONTEXT	convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later	你想跟我一起吃晚饭吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B81CF36B8312	北京饭店	běi jīng fàn diàn	Beijing Hotel	7	EXACT_ENTRY	convm-places-to-meet	北京饭店	Phrase appears as an independent lesson expression.	
+CMX-B8A520620906	去酒店	qù jiǔ diàn	Go to hotel.	8	IN_CONTEXT	convm-places-to-meet	我想去酒店	Exact teachable phrase or component appears in lesson expressions.	
+CMX-B949FEDABB8E	去你那儿	qù nǐ nà ér	Go to your place.	6	EXACT_ENTRY	convm-places-to-meet	去你那儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-BA166C7BC196	有没有	yǒu méi yǒu	have or not; do you have?	13	EXACT_ENTRY	convm-permission-requests,convm-newspaper-shopping	有没有	Phrase appears as an independent lesson expression.	
+CMX-BA9771CA730D	人民币	rén mín bì	renminbi (Chinese currency)	12	EXACT_ENTRY	convm-money-prices,convm-newspaper-shopping	人民币	Phrase appears as an independent lesson expression.	
+CMX-BAD8B6C7AE2E	吧	ba	suggestion particle	11	IN_CONTEXT	convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-choices-alternatives	好，我们去饭店吧。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-BB77ACE7BD62	十块人民币	shí kuài rén mín bì	Ten yuan.	12	EXACT_ENTRY	convm-money-prices	十块人民币	Phrase appears as an independent lesson expression.	
+CMX-BCA0C5811E07	你是美国人吗	nǐ shì měi guó rén ma	Are you American?	1	EXACT_ENTRY	convm-people-identity	你是美国人吗	Phrase appears as an independent lesson expression.	
+CMX-BCFDAB64303E	可是你普通话说得很好	kě shì nǐ pǔ tōng huà shuō dé hěn hǎo	But you speak Mandarin very well.	3	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-BD6566EE9D1B	学院路	xué yuàn lù	College Road (College Road)	4	EXACT_ENTRY	convm-asking-directions	学院路	Phrase appears as an independent lesson expression.	
+CMX-BDD34DCDBAA6	报纸	bào zhǐ	newspaper	14	EXACT_ENTRY	convm-newspaper-shopping	报纸	Phrase appears as an independent lesson expression.	
+CMX-BE10EA8C4E5D	你好吗	nǐ hǎo ma	How are you?	2	EXACT_ENTRY	convm-greetings-politeness	你好吗	Phrase appears as an independent lesson expression.	
+CMX-BE1126985DBD	长安街在这儿	cháng ān jiē zài zhè ér	Long Peace Street is here.	5	EXACT_ENTRY	convm-asking-directions	长安街在这儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-BE6E902E4CBC	我会说一点英文	wǒ huì shuō yì diǎn yīng wén	I can speak a little English.	1	EXACT_ENTRY	convm-speaking-languages	我会说一点英文	Phrase appears as an independent lesson expression.	
+CMX-BF8B5D378F01	电话	diàn huà	telephone; phone call	13	EXACT_ENTRY	convm-phone-invitations	电话	Phrase appears as an independent lesson expression.	
+CMX-C01FB51C7DB6	我想去你那儿	wǒ xiǎng qù nǐ nà ér	I'd like to go to your place.	7	EXACT_ENTRY	convm-places-to-meet	我想去你那儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-C0AF73A126D2	你会说英文	nǐ huì shuō yīng wén	You can speak English.	1	EXACT_ENTRY	convm-speaking-languages	你会说英文	Phrase appears as an independent lesson expression.	
+CMX-C1B52E0E64A3	什么	shén me	what	4	IN_CONTEXT	convm-understanding-clarification,convm-wants-intentions,convm-food-drinks,convm-clock-scheduling,convm-today-tomorrow-later	你说什么	Exact teachable phrase or component appears in lesson expressions.	
+CMX-C1EB0A782C39	可是我没有人民币	kě shì wǒ méi yǒu rén mín bì	But i don't have any renminbi.	14	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses	
+CMX-C2B61BCCC85F	你想吃午饭吗	nǐ xiǎng chī wǔ fàn ma	Would you like to eat lunch?	9	EXACT_ENTRY	convm-food-drinks	你想吃午饭吗？	Phrase appears as an independent lesson expression.	
+CMX-C3A02E8158E3	你会说英文吗	nǐ huì shuō yīng wén ma	Can you speak English?	1	EXACT_ENTRY	convm-speaking-languages	你会说英文吗	Phrase appears as an independent lesson expression.	
+CMX-C5992BCAC75A	太多	tài duō	too much	16	EXACT_ENTRY	convm-money-prices,convm-newspaper-shopping	太多	Phrase appears as an independent lesson expression.	
+CMX-C628972F22A1	十五块人民币	shí wǔ kuài rén mín bì	Fifteen yuan.	13	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-C62F156AFC6A	我不是美国人	wǒ bú shì měi guó rén	I'm not American.	2	EXACT_ENTRY	convm-people-identity	我不是美国人	Phrase appears as an independent lesson expression.	
+CMX-C6A353853A08	说得不好	shuō dé bù hǎo	not speak well	2	EXACT_ENTRY	convm-speaking-languages,convm-understanding-clarification	说得不好	Phrase appears as an independent lesson expression.	
+CMX-C6CA65304E1F	我没有茶	wǒ méi yǒu chá	I don't have any tea.	15	FUNCTIONAL_VARIANT	convm-choices-alternatives	你有没有	negative availability in a drink choice	
+CMX-C6EAE9116DE3	现在太晚了	xiàn zài tài wǎn le	It's too late now.	16	EXACT_ENTRY	convm-today-tomorrow-later	现在太晚了	Phrase appears as an independent lesson expression.	
+CMX-C75313BE8CFF	是今天吗	shì jīn tiān ma	Is it today?	13	FUNCTIONAL_VARIANT	convm-today-tomorrow-later	今天晚上	confirming the day	
+CMX-C7AE73A94D49	不会	bú huì	cannot; do not know how to	1	IN_CONTEXT	convm-speaking-languages	不会，我不会说英文。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-C814805BC6D0	吃	chī	eat	5	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-choices-alternatives,convm-permission-requests,convm-phone-invitations	你想吃一点东西吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-C90A1CDB561D	再见	zài jiàn	goodbye	2	EXACT_ENTRY	convm-greetings-politeness	再见	Phrase appears as an independent lesson expression.	
+CMX-C930571F1513	想要	xiǎng yào	would like; want	8	EXACT_ENTRY	convm-food-drinks	想要	Phrase appears as an independent lesson expression.	
+CMX-CB49DCC3792E	是八点钟吗	shì bā diǎn zhōng ma	Is it eight o’clock?	9	FUNCTIONAL_VARIANT	convm-clock-scheduling	六点钟好吗	confirming a proposed clock time	
+CMX-CBB5964237AC	几点钟	jǐ diǎn zhōng	what time; what o’clock	9	IN_CONTEXT	convm-greetings-politeness,convm-clock-scheduling	请问，现在几点钟？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-CC8FB2F536F6	我不会说英文	wǒ bú huì shuō yīng wén	I can't speak English.	1	EXACT_ENTRY	convm-speaking-languages	我不会说英文	Phrase appears as an independent lesson expression.	
+CMX-CCCA74461399	说	shuō	to speak; to say	1	IN_CONTEXT	convm-speaking-languages,convm-understanding-clarification	请问，你会说英文吗？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-CD98E43DA31B	先生	xiān sheng	Mr.; gentleman	15	IN_CONTEXT	convm-people-identity,convm-phone-invitations	李先生	Exact teachable phrase or component appears in lesson expressions.	
+CMX-CF3FD8E44D15	两杯	liǎng bēi	two cups/glasses	8	EXACT_ENTRY	convm-food-drinks	两杯	Phrase appears as an independent lesson expression.	
+CMX-D02DC6B66D6F	你是美国人	nǐ shì měi guó rén	You're American.	1	EXACT_ENTRY	convm-people-identity	你是美国人	Phrase appears as an independent lesson expression.	
+CMX-D25BEA653EA4	长安街在那儿	cháng ān jiē zài nà ér	Long Peace Street is over there.	4	EXACT_ENTRY	convm-asking-directions	长安街在那儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-D5036A01D88E	你有钱吗	nǐ yǒu qián ma	Do you have money?	16	EXACT_ENTRY	convm-money-prices	你有钱吗	Phrase appears as an independent lesson expression.	
+CMX-D5F5A7A01073	今天	jīn tiān	today	11	EXACT_ENTRY	convm-today-tomorrow-later,convm-phone-invitations	今天	Phrase appears as an independent lesson expression.	
+CMX-D736C7E45952	一次	yí cì	one time; once	13	NARRATION_NOT_TARGET			Narrative cue / named relationship, not a new learner task	
+CMX-D7B6472B1124	知道	zhī dao	know	5	IN_CONTEXT	convm-understanding-clarification,convm-asking-directions	我不知道	Exact teachable phrase or component appears in lesson expressions.	
+CMX-DA9FC26A49E4	美金	měi jīn	US dollars	13	EXACT_ENTRY	convm-money-prices,convm-newspaper-shopping	美金	Phrase appears as an independent lesson expression.	
+CMX-DAC152A14772	午饭	wǔ fàn	lunch	8	IN_CONTEXT	convm-wants-intentions,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling	我想吃午饭	Exact teachable phrase or component appears in lesson expressions.	
+CMX-DCDE5F95E6BA	两块人民币	liǎng kuài rén mín bì	Two yuan.	12	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-DDCE490B34DF	我不是中国人	wǒ bú shì zhōng guó rén	I'm not Chinese.	3	EXACT_ENTRY	convm-people-identity	我不是中国人	Phrase appears as an independent lesson expression.	
+CMX-DE07B5383874	六	liù	six	11	IN_CONTEXT	convm-clock-scheduling,convm-choices-alternatives,convm-numbers-arithmetic	六点钟好吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-DF0D25193874	想	xiǎng	want to; would like to	4	IN_CONTEXT	convm-speaking-languages,convm-wants-intentions,convm-food-drinks,convm-choices-alternatives,convm-today-tomorrow-later,convm-places-to-meet,convm-with-someone,convm-clock-scheduling	谢谢！我还想多练习。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-DF897DA6E02E	九	jiǔ	nine	9	IN_CONTEXT	convm-clock-scheduling,convm-choices-alternatives,convm-money-prices,convm-numbers-arithmetic	是九点钟吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-DFAA7D6F73C1	还是	hái shì	or (in questions)	8	IN_CONTEXT	convm-food-drinks,convm-choices-alternatives,convm-clock-scheduling,convm-today-tomorrow-later,convm-numbers-arithmetic	你想喝茶还是啤酒	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E042223097E8	我有很多	wǒ yǒu hěn duō	I have a lot of.	15	IN_CONTEXT	convm-money-prices	我有很多人民币	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E15DE8052D2E	你会说普通话吗	nǐ huì shuō pǔ tōng huà ma	Can you speak Mandarin?	1	EXACT_ENTRY	convm-speaking-languages	你会说普通话吗	Phrase appears as an independent lesson expression.	
+CMX-E1858C537630	你明白	nǐ míng bái	You understand.	4	EXACT_ENTRY	convm-understanding-clarification	你明白	Phrase appears as an independent lesson expression.	
+CMX-E1D2A9310891	吃饭	chī fàn	have a meal	11	IN_CONTEXT	convm-with-someone,convm-phone-invitations	我想跟你一起吃饭。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E1E735AAE75A	你不是美国人	nǐ bú shì měi guó rén	You're not American.	3	IN_CONTEXT	convm-people-identity	你不是美国人吗	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E2793BD0553E	是不是	shì bú shì	is it or not?; whether	14	EXACT_ENTRY	convm-people-identity,convm-choices-alternatives,convm-permission-requests,convm-phone-invitations,convm-newspaper-shopping	是不是	Phrase appears as an independent lesson expression.	
+CMX-E4021788C5B7	我想去北京饭店	wǒ xiǎng qù běi jīng fàn diàn	I'd like to go to the Beijing Hotel.	7	EXACT_ENTRY	convm-places-to-meet	我想去北京饭店	Phrase appears as an independent lesson expression.	
+CMX-E43D6B8F9E4D	你想什么时候喝	nǐ xiǎng shén me shí hòu hē	When would you like to drink?	7	FUNCTIONAL_VARIANT	convm-choices-alternatives	你喝茶还是啤酒？	asking when and choosing now or later	
+CMX-E5BA7A370C8F	七块人民币	qī kuài rén mín bì	Seven yuan.	12	FUNCTIONAL_VARIANT	convm-numbers-arithmetic	一共二十六块。	Productive number + 块 + 人民币 pattern, practised through prices	
+CMX-E5EC573B3977	二十	èr shí	twenty	16	EXACT_ENTRY	convm-numbers-arithmetic	二十	Phrase appears as an independent lesson expression.	
+CMX-E7ACE7ADF264	太	tài	too; excessively	16	IN_CONTEXT	convm-speaking-languages,convm-clock-scheduling,convm-today-tomorrow-later,convm-choices-alternatives,convm-phone-invitations,convm-money-prices,convm-newspaper-shopping,convm-permission-requests	我说得不太好。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E7C5112578A7	你有人民币吗	nǐ yǒu rén mín bì ma	Do you have renminbi?	13	FUNCTIONAL_VARIANT	convm-money-prices	一杯茶多少钱？	asking whether someone has renminbi	
+CMX-E829469B46E0	太多钱了	tài duō qián le	That's too much money.	16	IN_CONTEXT	convm-money-prices	太多钱了！我只有八块，不够。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-E8E8E6A7418C	你有没有美金	nǐ yǒu méi yǒu měi jīn	Do you have any US dollars?	14	FUNCTIONAL_VARIANT	convm-money-prices	你有没有人民币	availability of US dollars; 有没有 question taught	
+CMX-EB973353844B	你有没有啤酒	nǐ yǒu méi yǒu pí jiǔ	Do you have any beer?	15	FUNCTIONAL_VARIANT	convm-newspaper-shopping	有没有	有没有 availability question, substitution of product	
+CMX-EE4BD422DE62	我不明白	wǒ bù míng bái	I don't understand.	4	EXACT_ENTRY	convm-understanding-clarification	我不明白	Phrase appears as an independent lesson expression.	
+CMX-EF7002AC2B0A	你想买什么	nǐ xiǎng mǎi shén me	What would you like to buy?	8	EXACT_ENTRY	convm-wants-intentions	你想买什么	Phrase appears as an independent lesson expression.	
+CMX-EF99EB1C6CD2	去我那儿	qù wǒ nà ér	Go to my place.	6	EXACT_ENTRY	convm-places-to-meet	去我那儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-F0E9521611BB	中国	zhōng guó	China	3	IN_CONTEXT	convm-people-identity	不是，我是中国人。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-F127804B9227	没有	méi yǒu	do not have; there isn't	13	EXACT_ENTRY	convm-money-prices,convm-newspaper-shopping	没有	Phrase appears as an independent lesson expression.	
+CMX-F2B91797EA3A	很	hěn	very	2	IN_CONTEXT	convm-greetings-politeness,convm-speaking-languages,convm-understanding-clarification,convm-today-tomorrow-later,convm-money-prices,convm-permission-requests	很好，谢谢！	Exact teachable phrase or component appears in lesson expressions.	
+CMX-F43591B09C1B	普通话	Pǔtōnghuà	Standard Mandarin	1	IN_CONTEXT	convm-speaking-languages,convm-understanding-clarification	我会说一点普通话	Exact teachable phrase or component appears in lesson expressions.	
+CMX-F4D2B4776DE5	学院路在哪儿	xué yuàn lù zài nǎ ér	Where is College Road?	4	EXACT_ENTRY	convm-asking-directions	学院路在哪儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-F7778934807D	过	guò	after; to pass	6	IN_CONTEXT	convm-today-tomorrow-later,convm-choices-alternatives	过一会儿见。	Exact teachable phrase or component appears in lesson expressions.	
+CMX-F7DB96024B4F	我没有啤酒	wǒ méi yǒu pí jiǔ	I don't have any beer.	14	FUNCTIONAL_VARIANT	convm-choices-alternatives	你有没有	negative availability and alternative drinks	
+CMX-F867F3417859	好	hǎo	good; well; okay	2	IN_CONTEXT	convm-greetings-politeness,convm-speaking-languages,convm-understanding-clarification,convm-wants-intentions,convm-food-drinks,convm-places-to-meet,convm-with-someone,convm-clock-scheduling,convm-today-tomorrow-later,convm-choices-alternatives,convm-phone-invitations,convm-newspaper-shopping	你好	Exact teachable phrase or component appears in lesson expressions.	
+CMX-F9796AA1410A	一点儿	yìdiǎnr	a little (with -r suffix)	1,3	EXACT_ENTRY	convm-speaking-languages,convm-wants-intentions	一点儿	Phrase appears as an independent lesson expression.	NORTHERN_ERHUA
+CMX-FB8F01CB6D4B	多少	duō shǎo	how much; how many	12	IN_CONTEXT	convm-money-prices,convm-numbers-arithmetic	请问，一杯啤酒多少钱？	Exact teachable phrase or component appears in lesson expressions.	
+CMX-FC5AD7699E3F	我有一点儿	wǒ yǒu yì diǎn ér	I have a little.	15	FUNCTIONAL_VARIANT	convm-speaking-languages	你说得很好。	one small amount: 一点儿, also possession with 有	NORTHERN_ERHUA
+CMX-FC7EDD399A5C	十	shí	ten	11	IN_CONTEXT	convm-clock-scheduling,convm-today-tomorrow-later,convm-money-prices,convm-newspaper-shopping,convm-numbers-arithmetic,convm-permission-requests,convm-phone-invitations	十点钟	Exact teachable phrase or component appears in lesson expressions.	
+CMX-FE09EC564B31	可是你会说普通话	kě shì nǐ huì shuō pǔ tōng huà	But you can speak Mandarin.	4	FUNCTIONAL_VARIANT	convm-speaking-languages	可是我听得懂一点儿。	可是 contrast modelled in multiple practical responses

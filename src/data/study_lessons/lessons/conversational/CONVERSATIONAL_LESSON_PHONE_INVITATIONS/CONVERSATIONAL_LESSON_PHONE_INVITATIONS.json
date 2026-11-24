@@ -1,0 +1,464 @@
+{
+  "schema_version": "mandarin-general-lesson/3.4.0",
+  "lesson_id": "convm-phone-invitations",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Arranging Plans by Telephone",
+    "subtitle": "Answering calls, invitations, and changing times",
+    "description": "Learn to identify yourself on a call, invite someone to dinner, and negotiate a convenient time.",
+    "slug": "arranging-plans-by-telephone"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social",
+      "time-calendar",
+      "family-relationships"
+    ],
+    "tags": [
+      "telephone-calls",
+      "invitations",
+      "rescheduling"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "phone-invitations"
+      }
+    ],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Open a telephone call and ask for someone by name.",
+    "Invite someone to dinner and propose another time when needed.",
+    "Explain politely that a proposed time is too late."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "今": "Characters:今",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "再": "Characters:再",
+    "十": "Characters:十",
+    "另": "Characters:另",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "呢": "Characters:呢",
+    "呼": "Characters:呼",
+    "哪": "Characters:哪",
+    "喂": "Characters:喂",
+    "在": "Characters:在",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "姐": "Characters:姐",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "怎": "Characters:怎",
+    "您": "Characters:您",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "李": "Characters:李",
+    "林": "Characters:林",
+    "样": "Characters:样",
+    "点": "Characters:点",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "称": "Characters:称",
+    "行": "Characters:行",
+    "见": "Characters:见",
+    "话": "Characters:话",
+    "请": "Characters:请",
+    "起": "Characters:起",
+    "那": "Characters:那",
+    "钟": "Characters:钟",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "陈": "Characters:陈",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Learn to identify yourself on a call, invite someone to dinner, and negotiate a convenient time. practice the new dialogue and the examples, then complete the role-play."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "喂，您好！请问陈小姐在吗？",
+            "pinyin": "Wèi, nín hǎo! Qǐngwèn Chén xiǎojiě zài ma?",
+            "english": "Hello! Excuse me, is Miss Chen there?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我就是。请问您是哪位？",
+            "pinyin": "Wǒ jiù shì. Qǐngwèn nín shì nǎ wèi?",
+            "english": "Speaking. May I ask who is calling?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我是李明。今天晚上可以一起吃饭吗？",
+            "pinyin": "Wǒ shì Lǐ Míng. Jīntiān wǎnshang kěyǐ yìqǐ chīfàn ma?",
+            "english": "This is Li Ming. Could we have dinner together tonight?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "今天不行，我有事。明天怎么样？",
+            "pinyin": "Jīntiān bù xíng, wǒ yǒu shì. Míngtiān zěnmeyàng?",
+            "english": "Today does not work; I am busy. How about tomorrow?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "明天晚上十点钟可以吗？",
+            "pinyin": "Míngtiān wǎnshang shí diǎn zhōng kěyǐ ma?",
+            "english": "Would ten tomorrow night work?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "十点太晚了。七点可以。",
+            "pinyin": "Shí diǎn tài wǎn le. Qī diǎn kěyǐ.",
+            "english": "Ten is too late. Seven works."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "好的，那么明天七点见。",
+            "pinyin": "Hǎo de, nàme míngtiān qī diǎn jiàn.",
+            "english": "All right. See you at seven tomorrow."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，再见！",
+            "pinyin": "Hǎo, zàijiàn!",
+            "english": "Okay, goodbye!"
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "请问 + 称呼 + 在吗？",
+        "pattern_pinyin": "qǐngwèn + chēnghu + zài ma?",
+        "function_en": "Use 请问 (qǐngwèn) plus a name and 在吗 (zài ma) when asking if someone is available on the telephone.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "请问李先生在吗？",
+          "pinyin": "Qǐngwèn Lǐ xiānsheng zài ma?",
+          "english": "May I speak to Mr Li?",
+          "teaching_note": "This sounds courteous when another person answers the telephone."
+        },
+        "pattern_pseudo_translation": "请问 + <name or title> + 在吗？"
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "时间 + 不行；另一个时间 + 呢？",
+        "pattern_pinyin": "shíjiān + bù xíng; lìng yí ge shíjiān + ne?",
+        "function_en": "The particle 呢 (ne) offers an elliptical alternative when the topic is already understood.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "今晚不行，明天呢？",
+          "pinyin": "Jīnwǎn bù xíng, míngtiān ne?",
+          "english": "Tonight does not work; how about tomorrow?",
+          "teaching_note": "The follow-up invites the other speaker to consider another time."
+        },
+        "pattern_pseudo_translation": "<proposed time> + 不行；<another time> + 呢？"
+      },
+      {
+        "id": "grammar-3",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "太晚了 + 早点见",
+        "pattern_pinyin": "tài wǎn le + zǎo diǎn jiàn",
+        "function_en": "Use 太晚了 (tài wǎn le) to object and 早点 (zǎo diǎn) to suggest an earlier time.",
+        "example": {
+          "id": "pattern-ex-3",
+          "hanzi": "太晚了，我们早点见。",
+          "pinyin": "Tài wǎn le, wǒmen zǎo diǎn jiàn.",
+          "english": "That is too late; let us meet earlier.",
+          "teaching_note": "Pair your objection with a concrete earlier meeting suggestion."
+        },
+        "pattern_pseudo_translation": "太晚了 + 早点见"
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "电话",
+            "pinyin": "diànhuà",
+            "meaning_en": "telephone; phone call"
+          },
+          {
+            "hanzi": "打电话",
+            "pinyin": "dǎ diànhuà",
+            "meaning_en": "make a phone call"
+          },
+          {
+            "hanzi": "喂",
+            "pinyin": "wèi",
+            "meaning_en": "hello (on the phone)"
+          },
+          {
+            "hanzi": "请问",
+            "pinyin": "qǐngwèn",
+            "meaning_en": "excuse me, may I ask"
+          },
+          {
+            "hanzi": "是吗",
+            "pinyin": "shì ma",
+            "meaning_en": "is that so?"
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it or not?"
+          },
+          {
+            "hanzi": "太晚",
+            "pinyin": "tài wǎn",
+            "meaning_en": "too late"
+          },
+          {
+            "hanzi": "不行",
+            "pinyin": "bù xíng",
+            "meaning_en": "that does not work"
+          },
+          {
+            "hanzi": "那么",
+            "pinyin": "nàme",
+            "meaning_en": "then; in that case"
+          },
+          {
+            "hanzi": "一会儿",
+            "pinyin": "yíhuìr",
+            "meaning_en": "in a little while"
+          },
+          {
+            "hanzi": "今天",
+            "pinyin": "jīntiān",
+            "meaning_en": "today"
+          },
+          {
+            "hanzi": "明天",
+            "pinyin": "míngtiān",
+            "meaning_en": "tomorrow"
+          },
+          {
+            "hanzi": "晚上",
+            "pinyin": "wǎnshang",
+            "meaning_en": "evening"
+          },
+          {
+            "hanzi": "陈小姐",
+            "pinyin": "Chén xiǎojiě",
+            "meaning_en": "Miss Chen"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Call a friend, identify yourself, invite them to dinner, negotiate a time, and end the call."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "Why does speaker B refuse the first invitation?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "今天不行，我有事。 (Jīntiān bù xíng, wǒ yǒu shì.) — Today does not work because B has something to do.",
+          "explanation": "The response gives a reason and proposes an alternative."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Say politely on the telephone: “Is Miss Chen there?”",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问陈小姐在吗？ (Qǐngwèn Chén xiǎojiě zài ma?) — May I speak to Miss Chen?",
+          "explanation": "Use 请问 (qǐngwèn) before asking for someone."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Reject ten o’clock as too late, then suggest seven.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "十点太晚了，七点可以吗？ (Shí diǎn tài wǎn le, qī diǎn kěyǐ ma?) — Ten is too late; would seven work?",
+          "explanation": "Give both the objection and an alternative."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Call a friend, identify yourself, invite them to dinner, negotiate a time, and end the call.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A: 喂，你好！我是小林。今天晚上一起吃晚饭，好吗？ (Wèi, nǐ hǎo! Wǒ shì Xiǎo Lín. Jīntiān wǎnshang yìqǐ chī wǎnfàn, hǎo ma?) — Hello! This is Xiao Lin. Shall we have dinner tonight?\nB: 今天不行，明天晚上怎么样？ (Jīntiān bù xíng, míngtiān wǎnshang zěnmeyàng?) — Today does not work. How about tomorrow evening?\nA: 明天七点可以吗？ (Míngtiān qī diǎn kěyǐ ma?) — Would seven tomorrow work?\nB: 可以，明天见！ (Kěyǐ, míngtiān jiàn!) — Yes, see you tomorrow!\nA: 好，再见！ (Hǎo, zàijiàn!) — Okay, goodbye!",
+          "explanation": "The answer includes every step: calling, identifying, inviting, negotiating and closing."
+        }
+      ]
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-phone-invitations--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Understand the lesson goal",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-phone-invitations--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "practice the model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-phone-invitations--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--grammar--grammar-1",
+            "kind": "section",
+            "label": "Use grammar pattern 1",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-phone-invitations--grammar--grammar-2",
+            "kind": "section",
+            "label": "Use grammar pattern 2",
+            "optional": false,
+            "target_id": "grammar-2"
+          },
+          {
+            "id": "convm-phone-invitations--grammar--grammar-3",
+            "kind": "section",
+            "label": "Use grammar pattern 3",
+            "optional": false,
+            "target_id": "grammar-3"
+          }
+        ]
+      },
+      {
+        "id": "convm-phone-invitations--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--review--key-expressions",
+            "kind": "section",
+            "label": "Review the key expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-phone-invitations--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Prepare the full role-play",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-phone-invitations--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-phone-invitations--practice--q-dialogue",
+            "kind": "practice",
+            "label": "Why does speaker B refuse the first invitation?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-phone-invitations--practice--q-translation",
+            "kind": "practice",
+            "label": "Say politely on the telephone: “Is Miss Chen there?”",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-phone-invitations--practice--q-grammar",
+            "kind": "practice",
+            "label": "Reject ten o’clock as too late, then suggest seven.",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-phone-invitations--practice--q-speaking",
+            "kind": "practice",
+            "label": "Call a friend, identify yourself, invite them to dinner, negotiate a time, and end the call.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

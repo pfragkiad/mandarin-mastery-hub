@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-counting-numbers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -17,7 +17,9 @@
       "basic-numbers",
       "counting"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Read the digits and basic round numbers.",
@@ -26,7 +28,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -99,7 +101,13 @@
     "里": "Characters:里",
     "钱": "Characters:钱",
     "间": "Characters:间",
-    "零": "Characters:零"
+    "零": "Characters:零",
+    "位": "Characters:位",
+    "名": "Characters:名",
+    "字": "Characters:字",
+    "数": "Characters:数",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -146,7 +154,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 2
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-006",
@@ -186,7 +197,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 6
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-049",
@@ -226,7 +240,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 49
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-095",
@@ -266,7 +283,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 95
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-112",
@@ -306,7 +326,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 112
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-113",
@@ -346,7 +369,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 113
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-160",
@@ -386,7 +412,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 160
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-162",
@@ -426,7 +455,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 162
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-173",
@@ -466,7 +498,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 173
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-184",
@@ -506,7 +541,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 184
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-198",
@@ -546,7 +584,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 198
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-223",
@@ -586,7 +627,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 223
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-254",
@@ -626,7 +670,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 254
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         }
       ],
       "related_entries": []
@@ -809,8 +856,7 @@
         {
           "id": "pattern-1",
           "title": "Building larger numbers",
-          "explanation_en": "Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ).",
-          "formula_en": "hundreds + tens + ones",
+          "explanation_en": "Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ). The slots show place values up to the thousands. Use 零 (líng) where required for a gap. For 10–19, the initial one before 十 (shí) is normally omitted.",
           "examples": [
             {
               "hanzi": "二百三十六。",
@@ -822,13 +868,15 @@
               "pinyin": "Yì qiān líng èr.",
               "english": "One thousand and two."
             }
-          ]
+          ],
+          "pattern_hanzi": "(千位数字 + 千) + (百位数字 + 百) + (十位数字 + 十) + 个位数字",
+          "pattern_pinyin": "(qiānwèi shùzì + qiān) + (bǎiwèi shùzì + bǎi) + (shíwèi shùzì + shí) + gèwèi shùzì",
+          "pattern_pseudo_translation": "(<number of thousands> + 千) + (<number of hundreds> + 百) + (<number of tens> + 十) + <number of ones>"
         },
         {
           "id": "pattern-2",
           "title": "Numbers with nouns",
           "explanation_en": "Use a suitable classifier when counting most nouns. Do not put an English-style plural ending on the noun.",
-          "formula_en": "number + classifier + noun",
           "examples": [
             {
               "hanzi": "三本书。",
@@ -840,7 +888,10 @@
               "pinyin": "Shí ge rén.",
               "english": "Ten people."
             }
-          ]
+          ],
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pinyin": "shùzì + liàngcí + míngcí",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
         }
       ],
       "guided_building": {
@@ -857,7 +908,8 @@
               "hanzi": "我有五本书。",
               "pinyin": "Wǒ yǒu wǔ běn shū.",
               "english": "I have five books."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "ten",
@@ -865,7 +917,8 @@
               "hanzi": "我现在有十本书。",
               "pinyin": "Wǒ xiànzài yǒu shí běn shū.",
               "english": "I now have ten books."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -881,11 +934,13 @@
         "questions": [
           {
             "prompt_en": "How many people are in the class?",
-            "answer_en": "Twenty."
+            "answer_en": "Twenty.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "How many students came today?",
-            "answer_en": "Eighteen."
+            "answer_en": "Eighteen.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -931,5 +986,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-counting-numbers--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Building larger numbers",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-counting-numbers--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Numbers with nouns",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: five",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-counting-numbers--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: ten",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--read--reading-q-01",
+            "kind": "question",
+            "label": "How many people are in the class?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-counting-numbers--read--reading-q-02",
+            "kind": "question",
+            "label": "How many students came today?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Say the number 105 in Mandarin.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-counting-numbers--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Describe how many books you have.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-counting-numbers--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-counting-numbers--quiz--q-05-1",
+            "kind": "practice",
+            "label": "Which expression means “eight”?",
+            "optional": true,
+            "target_id": "q-05-1"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--q-05-2",
+            "kind": "practice",
+            "label": "Which expression means “seven”?",
+            "optional": true,
+            "target_id": "q-05-2"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--q-05-3",
+            "kind": "practice",
+            "label": "Which expression means “one”?",
+            "optional": true,
+            "target_id": "q-05-3"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--q-05-4",
+            "kind": "practice",
+            "label": "In the example “我有八本书。” (wǒ yǒu bā běn shū.), what is happening?",
+            "optional": false,
+            "target_id": "q-05-4"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--q-05-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Eight students have class today.”",
+            "optional": false,
+            "target_id": "q-05-5"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: How many people are in the class?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: How many students came today?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Say the number 105 in Mandarin.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-counting-numbers--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Describe how many books you have.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

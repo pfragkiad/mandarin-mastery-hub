@@ -1,14 +1,15 @@
-import { useEffect, useId, useState } from 'react';
+import { Fragment, useEffect, useId, useState } from 'react';
 import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { Link } from '@tanstack/react-router';
-import { ChevronDown, History } from 'lucide-react';
+import { ArrowRight, ChevronDown, History, TriangleAlert } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { SourceInfo } from './source-info';
+import { HintBody, SourceInfo } from './source-info';
 import { HowellEntry, HowellKeyInfo } from './howell-entry';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
-import { hasOwnEtymologyText, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView } from '@/lib/etymology';
+import { hasOwnEtymologyText, inheritableCounterpart, loadEtymologyIndex, resolveEtymology, type EtymologyEntry, type EtymologyIndex, type EtymologyRequest, type EtymologyView, type RelatedForm } from '@/lib/etymology';
 
 /**
  * Etymology tab content of a glyph detail card (Characters, Components, Radicals and radical
@@ -57,30 +58,72 @@ function HowellBlock({ entry, glyph }: { entry: EtymologyEntry; glyph: string })
   </div>;
 }
 
-/** Separate drafts and supplied editorial readings from the unchanged Chinese.
- * Duplicate headwords retain source IDs; changed review headwords are disclosed
- * without changing library associations, pronunciation or geometry. */
+/** Per-entry review wording: English counts as corrected only when the supplied review
+ * changed the translation itself; flag-only or assessment-only reviews leave it unchanged. */
+const corrected = (entry: EtymologyEntry) => entry.translation?.editorialReview?.changes.includes('translation') ?? false;
+const DECISION_LABEL = { clear: 'uncertainty flag cleared', revised_retained: 'English revised, uncertainty retained', checked_retained: 'checked, English unchanged, uncertainty retained' } as const;
+
+/** Warning triangle before an uncertain English passage (owner-requested, replacing the
+ *  visible uncertainty sentence). Its popup says whether the latest review checked the
+ *  passage, so checked and unchecked uncertainties stay distinguishable. */
+function UncertainMark({ checked }: { checked: boolean }) {
+  return <Popover>
+    <PopoverTrigger className="etymology-uncertain-trigger" aria-label="Uncertain translation"><TriangleAlert aria-hidden="true"/></PopoverTrigger>
+    <PopoverContent className="source-info-popover" align="start"><HintBody>
+      Uncertain translation<br/>
+      {checked ? 'The latest review checked this passage and kept the flag.' : 'Not checked in the latest review.'}<br/>
+      Compare with the original Chinese under Advanced.
+    </HintBody></PopoverContent>
+  </Popover>;
+}
+
+/** Every review note for the Shuowen block, one (i) row each (owner-requested: the visible
+ *  block keeps only the title, English and ⚠). Per passage: whether the supplied review
+ *  changed the English, a changed review headword, the editorial-reading note and the
+ *  reviewer's decision + reason. Several passages are numbered so notes stay attached. */
+function ShuowenReviewNotes({ entries }: { entries: EtymologyEntry[] }) {
+  const translated = entries.filter(entry => entry.translation);
+  const editorial = translated.some(entry => entry.translation?.editorialReview);
+  const many = translated.length > 1;
+  return <SourceInfo inline className="detail-footnote">
+    {editorial ? 'English · AI-generated draft, partly reviewed; not verified modern etymology' : 'English · AI-generated draft, not reviewed; not verified modern etymology'}
+    {translated.map((entry, index) => {
+      const review = entry.translation!.editorialReview;
+      const reading = review?.sourceReading;
+      const prefix = many ? `Passage ${index + 1}: ` : '';
+      return <Fragment key={entry.id}>
+        {editorial && <><br/>{prefix}{corrected(entry) ? 'English partly corrected in a supplied editorial review.' : review ? 'English unchanged by the supplied editorial review.' : 'Not reviewed.'}</>}
+        {reading && reading.headword !== entry.headword && <><br/>{prefix}Translated for the review headword <span lang="lzh">{reading.headword}</span>, not <span lang="lzh">{entry.headword}</span>.</>}
+        {reading && <><br/>{prefix}Editorial reading (shown under Advanced): {reading.note}</>}
+        {review?.caseEvidence && <><br/>{prefix}Supplied reviewer assessment · {DECISION_LABEL[review.caseEvidence.decision]}. {review.caseEvidence.reviewerNote}</>}
+      </Fragment>;
+    })}
+  </SourceInfo>;
+}
+
+/** Shuowen block, kept deliberately short (owner-requested simplification): visible = title
+ *  with a small "AI draft" tag (the handoff requires the draft label to stay visible) and the
+ *  review-notes (i), then each English passage (⚠ when uncertain). The unchanged Classical
+ *  Chinese, plus any editorial Chinese reading, sits behind the remembered Advanced toggle.
+ *  Duplicate headwords keep their own source IDs; review headwords never change library
+ *  associations, pronunciation or geometry. */
 export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   const panelId = useId();
   const [open, toggle] = useClassicalOpen();
   const translated = entries.some(entry => entry.translation);
-  const editorial = entries.some(entry => entry.translation?.editorialReview);
+  const hasReading = entries.some(entry => entry.translation?.editorialReview?.sourceReading);
   return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}${translated ? ' has-translation' : ''}`}>
     <div className="etymology-entry-head">
       <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
-      <span className="etymology-source-kind">historical dictionary</span>
+      <span className="etymology-source-kind">{translated ? 'historical dictionary · English: AI draft' : 'historical dictionary'}</span>
+      {translated && <ShuowenReviewNotes entries={entries}/>}
     </div>
-    {translated && <>
-      <p className="etymology-advanced-note">{editorial ? 'English translation · AI-generated draft with partial editorial corrections; not fully verified.' : 'English translation · AI-generated draft, not reviewed.'}</p>
-      {entries.map(entry => entry.translation && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
-        {entry.translation.editorialReview?.sourceReading && <p className="etymology-advanced-note">
-          This translation follows an editorial Chinese reading shown under Advanced.
-          {entry.translation.editorialReview.sourceReading.headword !== entry.headword && <> Review headword: <span lang="lzh">{entry.translation.editorialReview.sourceReading.headword}</span>; source headword: <span lang="lzh">{entry.headword}</span>. These notes concern the review headword.</>}
-        </p>}
-        <p className="etymology-text" lang="en">{entry.translation.text}</p>
-        {entry.translation.uncertain && <p className="etymology-advanced-note">This passage is uncertain; consult the original Chinese.</p>}
-      </div>)}
-    </>}
+    {entries.map(entry => {
+      const t = entry.translation;
+      return t && <div key={entry.id} className="etymology-translation" data-source-entry={entry.id}>
+        <p className="etymology-text" lang="en">{t.uncertain && <UncertainMark checked={Boolean(t.editorialReview?.caseEvidence)}/>}{t.text}</p>
+      </div>;
+    })}
     <button type="button" className="etymology-advanced-toggle" aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={toggle}>
       <ChevronDown className="etymology-advanced-chevron" aria-hidden="true"/>
       <span className="etymology-level-pill">Advanced</span>
@@ -88,38 +131,48 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
       <span className="etymology-advanced-action">{open ? 'Hide' : 'Show'}</span>
     </button>
     {open && <div id={panelId} className="etymology-advanced-body more-examples-panel">
-      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (editorial ? ' English drafts follow the original entry or the separate editorial reading identified below. Historical accounts are not verified modern etymology.' : ' English drafts above are translations of these exact source entries, not verified modern etymology.')}</p>
-      {entries.map(entry => <div key={entry.id}>
-        <p className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>
-        {entry.translation?.editorialReview?.sourceReading && <>
-          <p className="etymology-advanced-note">Editorial reading · partial review · imported original above is unchanged</p>
-          <p className="etymology-text etymology-classical" lang="lzh">{entry.translation.editorialReview.sourceReading.headword} — {entry.translation.editorialReview.sourceReading.text}</p>
-          <p className="etymology-advanced-note">{entry.translation.editorialReview.sourceReading.note}</p>
-        </>}
-        {entry.translation?.editorialReview?.caseEvidence && <>
-          <p className="etymology-advanced-note">Supplied reviewer assessment · {entry.translation.editorialReview.caseEvidence.decision === 'clear' ? 'uncertainty flag cleared' : 'uncertainty retained'}</p>
-          <p className="etymology-advanced-note">{entry.translation.editorialReview.caseEvidence.reviewerNote}</p>
-        </>}
-      </div>)}
+      <p className="etymology-advanced-note">The original is written in Classical Chinese (文言).{translated && (hasReading ? ' Some English follows a separate editorial reading shown below.' : '')}</p>
+      {entries.map(entry => {
+        const reading = entry.translation?.editorialReview?.sourceReading;
+        return <div key={entry.id} className="etymology-classical-entry">
+          <p className="etymology-text etymology-classical" lang="lzh">{entry.text}</p>
+          {reading && <>
+            <p className="etymology-advanced-note">Editorial reading · partial review · imported original above is unchanged</p>
+            <p className="etymology-text etymology-classical" lang="lzh">{reading.headword} — {reading.text}</p>
+          </>}
+        </div>;
+      })}
     </div>}
   </div>;
 }
 
-/** Resolves the view for the exact request while `enabled`; earlier results for other requests are ignored. */
-export function useEtymologyView(request: EtymologyRequest | null, enabled: boolean): EtymologyView | null | undefined {
-  const key = request ? [request.recordId, request.glyph, request.familyId ?? '', request.formKey ?? ''].join('|') : '';
-  const [state, setState] = useState<{ key: string; view: EtymologyView | null } | null>(null);
+const requestKey = (request: EtymologyRequest) => [request.recordId, request.glyph, request.familyId ?? '', request.formKey ?? ''].join('|');
+const NO_REQUESTS: EtymologyRequest[] = [];
+
+/** Resolves every exact request (in order) while `enabled`; earlier results for other request
+ *  lists are ignored. `undefined` until all have resolved; each item is a view or null (fail
+ *  closed). Used by word cards, whose Etymology tab lists each of the word's characters. */
+export function useEtymologyViews(requests: readonly EtymologyRequest[], enabled: boolean): (EtymologyView | null)[] | undefined {
+  const key = requests.map(requestKey).join('\u241e');
+  const [state, setState] = useState<{ key: string; views: (EtymologyView | null)[] } | null>(null);
   const known = state?.key === key;
   useEffect(() => {
-    if (!request || !enabled || known) return;
+    if (!requests.length || !enabled || known) return;
     let live = true;
-    void resolveEtymology(request).then(view => { if (live) setState({ key, view }); });
+    void Promise.all(requests.map(request => resolveEtymology(request))).then(views => { if (live) setState({ key, views }); });
     return () => { live = false; };
-    // `key` encodes every request field.
+    // `key` encodes every field of every request.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, enabled, known]);
+  if (!requests.length) return [];
+  return state && known ? state.views : undefined;
+}
+
+/** Resolves the view for one exact request while `enabled` (glyph detail cards). */
+export function useEtymologyView(request: EtymologyRequest | null, enabled: boolean): EtymologyView | null | undefined {
+  const views = useEtymologyViews(request ? [request] : NO_REQUESTS, enabled);
   if (!request) return null;
-  return state && state.key === key ? state.view : undefined;
+  return views === undefined ? undefined : views[0] ?? null;
 }
 
 /** Owner's rule: only source text or a record to link counts; absent or blocked states
@@ -134,31 +187,92 @@ export function etymologyHasContent(view: EtymologyView | null): view is Etymolo
 
 /** The tab's source note: disclaimer, coverage, each entry's source link, licences and import date. */
 export function EtymologyInfo({ view }: { view: EtymologyView }) {
-  const meta = view.metadata;
+  return <EtymologySourcesInfo views={[view]}/>;
+}
+
+/** Source note for one or several resolved views. `perCharacter` (word cards) prefixes each
+ *  coverage line and source link with its own character and states that the notes belong to
+ *  the characters, never to the word, so no word history is implied. */
+export function EtymologySourcesInfo({ views, perCharacter = false }: { views: EtymologyView[]; perCharacter?: boolean }) {
+  const meta = views[0]?.metadata;
+  if (!meta) return null;
+  const entries = views.flatMap(view => view.entries);
   const licenses = [...new Set(meta.license_notices.map(notice => `${notice.source_id === 'howell' ? 'Howell' : notice.source_id === 'shuowen' ? 'Shuowen Jiezi' : notice.source_id} · ${notice.license}`))];
+  const prefix = (glyph: string) => perCharacter ? <><span lang="zh-CN">{glyph}</span> · </> : null;
   return <SourceInfo inline className="detail-footnote">
     {meta.disclaimer}<br/>
-    {COVERAGE[view.coverage] && <>{COVERAGE[view.coverage]}<br/></>}
-    {view.entries.map(entry => <span key={entry.id}>{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
-    {view.entries.some(entry => entry.translation) && <>{view.entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
+    {perCharacter && <>Each note belongs to its own character, not to the history of this word.<br/></>}
+    {views.map(view => COVERAGE[view.coverage] && <span key={view.glyph}>{prefix(view.glyph)}{COVERAGE[view.coverage]}<br/></span>)}
+    {entries.map(entry => <span key={entry.id}>{prefix(entry.headword)}{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
+    {entries.some(entry => entry.translation) && <>{entries.some(corrected) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft, checked in a partial editorial review (English unchanged)' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
     {licenses.join(' · ')}<br/>
     Imported {meta.import_date}
   </SourceInfo>;
 }
 
-/** The tab's body; `undefined` (still resolving) shows pulsing text lines. */
-export function EtymologyPanel({ view }: { view: EtymologyView | null | undefined }) {
+/** Exact record link tile: the recorded ID wins; the glyph index only supplies its page.
+ *  Opening it asks the next card to show its Etymology tab. Inputs: record ID and its glyph. */
+export function EtymologyRecordLink({ id, glyph }: { id: string; glyph: string }) {
   const { preferences } = useWorkspace();
-  if (view === undefined) return <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
+  const tab = id.split(':')[0] as 'Characters';
+  const destination = libraryDestination(glyph, preferences.includeTraditional);
+  const search = destination && destination.id === id ? destination : { tab, id };
+  const hint = openDetailsHint(glyph, tab);
+  return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(glyph) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>;
+}
+
+const LoadingLines = () => <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;
+
+/**
+ * Traditional-form notes shown in place for a simplified character without its own entry
+ * (owner-requested: saves opening 師 to read 师's history). `form` comes from
+ * inheritableCounterpart (one plain simplified → traditional pair only, using exact script
+ * metadata), and `inherited` is that form's own resolved view, loaded only while `enabled`.
+ * The notes stay attributed to the traditional form and are labelled suggested/unreviewed;
+ * nothing is copied into the simplified record. `undefined` = still loading.
+ */
+export function useInheritedEtymology(view: EtymologyView | null | undefined, enabled: boolean): { form: RelatedForm | null; inherited: EtymologyView | null | undefined } {
+  const form = inheritableCounterpart(view, glyph => glyphScript(glyph) === 'Traditional');
+  const inherited = useEtymologyView(form ? { recordId: form.recordId, glyph: form.glyph } : null, enabled && Boolean(form));
+  const usable = inherited === undefined ? undefined : inherited?.status === 'exact-headword' && etymologyHasContent(inherited) ? inherited : null;
+  return { form, inherited: form ? usable : null };
+}
+
+/** "师 → 師" on one line: the simplified glyph (static, it is this record), an arrow and the
+ *  traditional form's record link (opens its card on Etymology). */
+export function ScriptPairArrow({ form }: { form: RelatedForm }) {
+  return <><ArrowRight className="etymology-pair-arrow" aria-label="traditional form"/><EtymologyRecordLink id={form.recordId} glyph={form.glyph}/></>;
+}
+
+/** Note + the traditional form's notes. `headless` drops the "师 → 師" row when the caller's own
+ *  heading already shows it (word cards). */
+function InheritedEtymology({ view, form, inherited, headless }: { view: EtymologyView; form: RelatedForm; inherited: EtymologyView; headless: boolean }) {
+  return <div className="etymology-inherited">
+    {!headless && <div className="etymology-inherited-row"><span className="decomposition-glyph decomposition-glyph-static"><strong lang="zh-CN">{view.glyph}</strong></span><ScriptPairArrow form={form}/></div>}
+    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span> (suggested, not reviewed):<EtymologyInfo view={inherited}/></p>
+    <EtymologyPanel view={inherited}/>
+  </div>;
+}
+
+/** "No exact headword": the traditional form's notes in place when inheritableCounterpart
+ *  allows it, otherwise the related forms as links with their recorded notes. */
+function RelatedEtymology({ view, headless }: { view: EtymologyView; headless: boolean }) {
+  const { form, inherited } = useInheritedEtymology(view, true);
+  if (form && inherited === undefined) return <LoadingLines/>;
+  if (form && inherited) return <InheritedEtymology view={view} form={form} inherited={inherited} headless={headless}/>;
+  const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
+  return <>
+    <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. Related written forms have their own notes (suggested, not reviewed):</p>
+    <div className="glyph-usage-parents">{view.related.map(item => <div key={item.recordId} className="glyph-usage-reference">{recordLink(item.recordId, item.glyph)}{item.explanation && <span className="glyph-usage-meaning">{item.explanation}</span>}</div>)}</div>
+  </>;
+}
+
+/** The tab's body; `undefined` (still resolving) shows pulsing text lines. `headless`: see
+ *  InheritedEtymology (the caller already shows the simplified → traditional pair). */
+export function EtymologyPanel({ view, headless = false }: { view: EtymologyView | null | undefined; headless?: boolean }) {
+  if (view === undefined) return <LoadingLines/>;
   if (!etymologyHasContent(view)) return null;
-  // Exact record links: the recorded ID wins; the glyph index only supplies its page.
-  const recordLink = (id: string, target: string) => {
-    const tab = id.split(':')[0] as 'Characters';
-    const destination = libraryDestination(target, preferences.includeTraditional);
-    const search = destination && destination.id === id ? destination : { tab, id };
-    const hint = openDetailsHint(target, tab);
-    return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(target) === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{target}</strong></Link></Button>;
-  };
+  const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
   if (view.status === 'exact-headword') {
     const howell = view.entries.filter(entry => entry.sourceId === 'howell');
     const shuowen = view.entries.filter(entry => entry.sourceId === 'shuowen');
@@ -170,10 +284,7 @@ export function EtymologyPanel({ view }: { view: EtymologyView | null | undefine
   if (view.status === 'context-review-required') {
     return view.standalone && <div className="glyph-usage-reference">{recordLink(view.standalone, view.glyph)}<span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
   }
-  return <>
-    <p className="glyph-usage-meaning">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. Related written forms have their own notes (suggested, not reviewed):</p>
-    <div className="glyph-usage-parents">{view.related.map(item => <div key={item.recordId} className="glyph-usage-reference">{recordLink(item.recordId, item.glyph)}{item.explanation && <span className="glyph-usage-meaning">{item.explanation}</span>}</div>)}</div>
-  </>;
+  return <RelatedEtymology view={view} headless={headless}/>;
 }
 
 // The index once loaded, so cards mounted later (paging, Start shuffles) mark at once.

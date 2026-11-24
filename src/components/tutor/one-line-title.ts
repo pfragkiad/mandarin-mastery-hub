@@ -91,7 +91,7 @@ function naturalOneLineWidth(el: HTMLElement): number {
  * pass re-measures the line at the size just applied and shrinks again until it fits or the
  * floor is reached, so the fixed parts are accounted for exactly.
  */
-export function fitOneLineTitle(el: HTMLElement, minSize = ONE_LINE_TITLE_MIN_PX): number {
+export function fitOneLineTitle(el: HTMLElement, minSize = ONE_LINE_TITLE_MIN_PX, onlyIfFits = false): number {
   // Drop the previous answer first so the stylesheet size is what gets read as the base.
   el.style.fontSize = '';
   const baseSize = parseFloat(getComputedStyle(el).fontSize) || 0;
@@ -103,6 +103,9 @@ export function fitOneLineTitle(el: HTMLElement, minSize = ONE_LINE_TITLE_MIN_PX
     size = next;
     el.style.fontSize = `${size}px`;
   }
+  // `onlyIfFits`: a title that still needs more than one line at the floor goes back to its
+  // stylesheet size and wraps there, so it is never shrunk without the one-line payoff.
+  if (onlyIfFits && size !== baseSize && naturalOneLineWidth(el) > el.clientWidth + 0.5) size = baseSize;
   // Nothing had to change: hand the element back to the stylesheet instead of pinning it.
   if (size === baseSize) el.style.fontSize = '';
   return size;
@@ -115,16 +118,18 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
  * useOneLineTitle — keeps a heading's text on a single line at every screen size.
  *
  * Inputs: a ref to the heading element and a `key` that changes when the heading's words
- * change. The element's inline font size is owned by this hook; components must not set
+ * change; optional `minSize` (readable floor) and `onlyIfFits` (shrink only when that
+ * actually yields one line, otherwise keep the stylesheet size and wrap). The element's inline font size is owned by this hook; components must not set
  * fontSize on it.
  */
-export function useOneLineTitle(ref: RefObject<HTMLElement | null>, key: string) {
+export function useOneLineTitle(ref: RefObject<HTMLElement | null>, key: string, options: { minSize?: number; onlyIfFits?: boolean } = {}) {
+  const { minSize = ONE_LINE_TITLE_MIN_PX, onlyIfFits = false } = options;
   const lastWidth = useRef(0);
   useIsoLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
     let cancelled = false;
-    const measure = () => { if (!cancelled) fitOneLineTitle(el); };
+    const measure = () => { if (!cancelled) fitOneLineTitle(el, minSize, onlyIfFits); };
     lastWidth.current = el.clientWidth;
     measure();
     // The display font arrives after first paint, and a web font can start loading *after*
@@ -156,5 +161,5 @@ export function useOneLineTitle(ref: RefObject<HTMLElement | null>, key: string)
       observer.disconnect();
       document.fonts?.removeEventListener('loadingdone', onFontsLoaded);
     };
-  }, [ref, key]);
+  }, [ref, key, minSize, onlyIfFits]);
 }

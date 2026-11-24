@@ -1,23 +1,25 @@
-# HSK Level 1–4 handoffs
+# HSK Level 1–5 handoffs
 
-These owner-supplied source files retain their original UTF-8 bytes and versioned filenames. All four levels use the shared topic sidecar `hsk3_topics.json`. They are offline inputs read by the importers and compatibility tests, never imported by browser modules. Previous checksum-bound inputs are retained in [archive/](archive/README.md).
+These owner-supplied source files retain their original UTF-8 bytes and versioned filenames. All five levels use the shared topic sidecar `hsk3_topics.json`. They are offline inputs read by the importers and compatibility tests, never imported by browser modules. Previous checksum-bound inputs are retained in [archive/](archive/README.md).
 
 | File | Purpose and consumers | Producer |
 | --- | --- | --- |
-| [hsk3_level1_1.6.1.json](hsk3_level1_1.6.1.json) | 300 headwords and 600 examples, with 24 revised sentences. Read by the Level 1 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.6.1. |
-| [hsk3_level2_1.0.3.json](hsk3_level2_1.0.3.json) | 200 syllabus entries (301–500) and 400 examples, with six revised sentences. Read by the Level 2 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.3. |
-| [hsk3_level3_1.0.4.json](hsk3_level3_1.0.4.json) | 500 syllabus entries (501–1000), meanings, readings, 1,000 examples and editorial metadata. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.4. |
-| [hsk3_level4_1.0.3.json](hsk3_level4_1.0.3.json) | 1,000 syllabus entries (1001–2000), meanings, readings, 2,000 examples and editorial metadata. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.2.0`, data version 1.0.3. |
-| [hsk3_topics.json](hsk3_topics.json) | Shared 20-topic taxonomy; all importers require exact agreement with embedded topics. | Supplied taxonomy sidecar, version 1.1.0. |
+| [hsk3_level1_1.7.1.json](hsk3_level1_1.7.1.json) | 300 headwords and 600 examples; v1.7.1 revises 33 sentences across 32 entries. Read by the Level 1 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.7.1. |
+| [hsk3_level2_1.1.1.json](hsk3_level2_1.1.1.json) | 200 syllabus entries (301–500) and 400 examples; v1.1.1 updates 25 examples, including 10 revised sentence texts. Read by the Level 2 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
+| [hsk3_level3_1.1.2.json](hsk3_level3_1.1.2.json) | 500 syllabus entries (501–1000), meanings, readings and 1,000 examples; v1.1.2 revises 23 examples across 21 entries. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.2. |
+| [hsk3_level4_1.1.1.json](hsk3_level4_1.1.1.json) | 1,000 syllabus entries (1001–2000) and 2,000 examples; v1.1.1 revises 43 examples across 38 entries. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
+| [hsk3_level5_1.0.5.json](hsk3_level5_1.0.5.json) | 1,600 draft syllabus terms (2001–3600) and 3,200 draft examples; v1.0.5 revises 190 examples and 69 meanings. | Supplied `hsk-example-pairs/1.3.0`, data version 1.0.5. |
+| [hsk3_topics.json](hsk3_topics.json) | Versioned shared taxonomy with 22 parent topics and 25 subtopics; all importers require exact agreement with both embedded registries. | Supplied `hsk-topics/2.0.0` sidecar, version 2.0.0. |
 | `.gitattributes` | Disables Git line-ending conversion for current and archived checksum-bound sources. | Maintained alongside the pinned inputs. |
 
 Source SHA-256 values:
 
-- Level 1: `b86822f2e34f1ca0f068ccc3382514c8c1294a5265f46f8f168912ea0fe64a08`
-- Level 2: `f361dcb92b838ab403099b3bab2887073f6ae330fe1cb9f1fc4240108f92d68c`
-- Level 3: `119cc3981a6096859892145d667878d138c73a072c935adc40319368aeeedd5d`
-- Level 4: `10a5dcb07bb97dc1939bbd5e64e6bf575bd3399ffc77e8efd9103a12621a7ee9`
-- Topics: `b3d5ef85064afb3fd7a7e835b47ff3d43e693e7751190dc30a9de3c06da5165d`
+- Level 1: `825b7b60f91fd55dc79b856f419cc240a327b38195936af064113e8efd821c49`
+- Level 2: `3b1fdb54b150f48550b8a0276098206fcf80274fcf956f18f9d34f832f804f50`
+- Level 3: `d482af00f9c6223aad5af2ee73aec1a087602e69ca38ff609206d36d21c4a434`
+- Level 4: `bf7ff1b42c19069f41869e754ad140e1b6110be49b441ae7bfdeaa5583e976c3`
+- Level 5: `cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727`
+- Topics: `d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f`
 
 From the repository root:
 
@@ -30,6 +32,11 @@ node scripts/import-hsk-level1.mjs --write
 
 # Optionally write a candidate elsewhere and generate an audit report.
 node scripts/import-hsk-level1.mjs --write --output /tmp/vocabulary.json --report /tmp/hsk-import.json
+
+# Audit or import Level 5 terms and rewritten draft examples.
+node scripts/import-hsk-level5.mjs
+node scripts/import-hsk-level5.mjs --write --report reports/hsk-level5-1.0.5-import.json
+node --test scripts/import-hsk-level5.test.mjs
 
 node --test scripts/import-hsk-level1.test.mjs
 
@@ -48,9 +55,13 @@ node scripts/import-hsk-level4.mjs --write
 node --test scripts/import-hsk-level1.test.mjs scripts/import-hsk-level2.test.mjs scripts/import-hsk-level3.test.mjs scripts/import-hsk-level4.test.mjs
 ```
 
-Use `--source`, `--topics` and `--vocabulary` to supply alternate input paths; `--output` selects a candidate output with `--write`. Vocabulary paths may be a split directory or a combined `.json` file. The Level 2–4 CLIs call the shared boundary in `scripts/import-hsk-level1.mjs`. All importers support their pinned schema/version and fail before writing if identities, taxonomy references or readings are incompatible.
+Use `--source`, `--topics` and `--vocabulary` to supply alternate input paths; `--output` selects a candidate output with `--write`. Vocabulary paths may be a split directory or a combined `.json` file. The Level 2–5 CLIs call the shared boundary in `scripts/import-hsk-level1.mjs`. All importers support their pinned schema/version and fail before writing if identities, taxonomy references or readings are incompatible.
 
-Reimports match the existing syllabus ID **and exact headword**, retaining entry UUIDs, explicit word/phrase kinds, compatible entry recordings and existing syllabus provenance. Levels 3 and 4 create stable UUIDs from syllabus IDs and treat the supplied headwords as word entries, without inferring phrase kinds from length. They record the handoff itself as the syllabus source, rather than claiming independently verified primary-source provenance. Other levels remain unchanged; shared topics keep the same category UUIDs across all levels.
+The v2 migration recategorizes all 2,000 syllabus entries without changing headwords, readings, meanings, POS or examples. Parent topics remain the browser collections, with stable category UUIDs; exact `primarySubtopicId` and `subtopicIds` are retained in `studyMetadata` for the 25 parented subtopics. Taxonomy and classification remain editorial drafts. See the [supplied migration report](../../reports/hsk3_topics_v2_migration_report.md), [supplied change list](../../reports/hsk3_topics_v2_migration_changes.csv), and [verified import audit](../../reports/hsk-topics-v2-import.json). The supplied reports are preserved byte-for-byte under `reports/`; optional compatibility-export filenames mentioned inside the report were not supplied here.
+
+Two owner-approved example pinyin spacing corrections remain applied by the importer (Level 1 ID 36 conversational; Level 3 ID 873 written). Each correction is bound to its exact sentence and source reading; other source readings stay untouched. Earlier source releases and taxonomy are archived byte-for-byte; Level 3/4 audio manifests continue to validate against those exact archived releases.
+
+Reimports match the existing syllabus ID **and exact headword**, retaining entry UUIDs, explicit word/phrase kinds, compatible entry recordings and existing syllabus provenance. Levels 3–5 create stable UUIDs from syllabus IDs and treat the supplied headwords as word entries, without inferring phrase kinds from length. They record the handoff itself as the syllabus source, rather than claiming independently verified primary-source provenance. Other levels remain unchanged; shared topics keep the same category UUIDs across all levels.
 
 Level 1's handoff explicitly does not independently certify official serial numbers. It retains example UUIDs/audio for unchanged sentence text and gives new sentences deterministic UUIDs. Its former unofficial phrases are removed.
 
@@ -79,3 +90,37 @@ Level 2's retained syllabus POS annotations add 代副形数缀连量. Two furth
 Level 3 adds 253 Han characters absent from the existing subsets. Two additional Google Fonts `text=` subsets in `src/styles.css` cover these exact code points; their WOFF2 character maps were checked against the requested characters.
 
 Level 4 adds a further 429 Han characters; two additional Google Fonts `text=` subsets cover them, with their WOFF2 character maps checked against the requested characters.
+
+## Level 5 source revisions
+
+The initial v1.0.0 import added 1,600 draft terms and deferred its algorithmic examples. The owner-approved v1.0.1 update now imports all 3,200 rewritten examples and 30 revised meanings, retaining the exact word identities, readings, taxonomy, source metadata and draft review status. Sentence pinyin remains mechanically generated and is not native-speaker certified. Unchanged example text/reading preserves its deterministic ID and any compatible recording. Explicit `includeExamples: false` calls retain the terms-only policy and preserve existing examples. See the [v1.0.1 import audit](../../reports/hsk-level5-1.0.1-import.json); the [initial v1.0.0 audit](../../reports/hsk-level5-import.json) remains historical.
+
+Sentence alternatives are accepted only when both readings are recorded for one exact single-character vocabulary identity. Both alternate alignments must pass and differ only at that exact glyph. The first sourced reading supplies character tokens; the whole sentence retains its original alternatives in `pinyinDisplay`. Unrecorded alternatives, mismatched glyphs or ambiguous alignment fail before writing.
+
+Word-audio preparation uses the pinned Shtooka source with exact readings; the [package report](../../reports/hsk-level5-audio-package.json) records exclusions and ZIP checksums. The ZIP and all MP3s are outside the repository, ready for the owner to upload to the CDN. The [audio guide](../data/hsk-audio/README.md) contains reproduction and attachment commands.
+
+Level 5 terms add 431 Han code points beyond the previous vocabulary subsets. `scripts/extend-vocabulary-fonts.py` adds verified public font slices to both vocabulary font families; its requests contain public font-family names only, without sending the draft text. Both actual WOFF2 character maps were checked locally. [The font audit](../../reports/hsk-level5-fonts.json) records URLs, checksums, ranges and coverage.
+
+## Level 1 v1.7.1
+
+The current source replaces 33 examples across 32 entries, including sentence text, pinyin, translations, notes and register. All 300 word IDs, lexical fields, topics and 276 recordings are retained; the 567 unchanged examples keep their IDs. New sentence IDs are deterministic and never inherit recordings from replaced text. The previous v1.7.0 source is archived byte-for-byte. The supplied verification note explicitly excludes these revised sentences from its earlier vocabulary-boundary audit. See [the import report](../../reports/hsk-level1-1.7.1-import.json).
+
+## Level 2 v1.1.1
+
+This sentence-only release updates 25 examples across 25 entries: 10 changed Hanzi texts and 15 pinyin-only revisions. All 200 word/phrase identities, meanings, readings, POS, topics and 166 word recordings remain exact; 390 example IDs survive and the 10 changed texts receive deterministic new IDs. A changed sentence reading never inherits an old sentence recording. The supplied verification note retains editorial status and explicitly states that this release has no independent full word-level vocabulary audit. The previous v1.1.0 input is archived byte-for-byte. See [the import audit](../../reports/hsk-level2-1.1.1-import.json).
+
+## Level 3 v1.1.2
+
+This release revises 23 sentence examples across 21 entries. All 500 word IDs, lexical fields, POS, topics and 443 word recordings remain exact; 977 example IDs survive and replaced texts receive deterministic new IDs. The owner-approved ID 873 written-example pinyin spacing correction remains applied, bound to its exact source text and reading. All 1,000 examples pass structural pinyin alignment; this does not certify pronunciation, naturalness or the supplied vocabulary-boundary claim. The supplied verification text still mentions 20 topics, while the embedded registry exactly matches the current 22-parent/25-subtopic sidecar; that source wording is retained unchanged. The previous v1.1.0 input is archived byte-for-byte. See [the import audit](../../reports/hsk-level3-1.1.2-import.json).
+
+## Level 4 v1.1.1
+
+Only sentence examples change: 43 revised examples across 38 entries, including Hanzi, readings, translations and associated source metadata. All 1,000 word IDs, lexical fields, POS, topics and 797 word recordings remain exact. The 1,957 unchanged examples retain their IDs; the 43 replacement texts receive deterministic IDs and never inherit recordings from replaced sentences. All 2,000 examples pass structural pinyin alignment, without claiming linguistic or native-speaker certification. The source still mentions 20 topics in prose; its unchanged embedded registry matches the shared 22-parent/25-subtopic taxonomy exactly. The previous v1.1.0 input is archived byte-for-byte, while audio remains bound to its existing archived v1.0.3 source. See [the import audit](../../reports/hsk-level4-1.1.1-import.json).
+
+## Level 5 v1.0.5
+
+The current release revises 190 example sentences across 166 entries and 69 meanings (168 entries affected in total). All 1,600 word identities, headwords, readings, POS and topic/subtopic assignments remain unchanged. Reimporting preserves all 1,306 attached word recordings and 3,010 unchanged example IDs; changed text receives new deterministic IDs and no borrowed sentence audio. Every sourced headword and all 3,200 examples pass structural pinyin alignment. Review status and verification limits remain sourced.
+
+The target `src/data/vocabulary/level-5.json` uses the existing compact-per-entry format and is **7,515,284 bytes**, below the strict 10,000,000-byte limit. Both storage writers retain that format for future imports, and the runtime data test guards the size and line count. The raw source is unchanged; the previous v1.0.1 source is archived byte-for-byte. Audio compatibility is checksum-bound to the new handoff after validating every exact ID/headword/reading. See [the import audit](../../reports/hsk-level5-1.0.5-import.json).
+
+The revised examples add 灌 and 骤 beyond prior vocabulary font coverage. Both vocabulary font families include verified public slices for these two exact code points; [the font audit](../../reports/hsk-level5-1.0.5-fonts.json) records the URLs and checksums. No vocabulary text is sent in font requests.

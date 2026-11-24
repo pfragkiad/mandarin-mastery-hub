@@ -13,21 +13,32 @@ import { useSyllableInventory } from './use-syllable-inventory';
  * headword containing whitespace (unless `allowSpaces`: lesson patterns such as
  * "再 + 动词 + 一次"), or for an ambiguous spelling, `glyph`/`pinyin` render
  * the plain recorded text.
+ * `groups` (optional, one key per Array.from(hanzi) index): glyphs sharing a key — the lessons'
+ * identified words — ring together with all their syllables, so 对不起 lights as one word.
  */
-export function usePhrasePairing(hanzi: string, pinyin: string | null | undefined, enabled: boolean, allowSpaces = false) {
+export function usePhrasePairing(hanzi: string, pinyin: string | null | undefined, enabled: boolean, allowSpaces = false, groups?: readonly (number | null)[]) {
   const syllables = useSyllableInventory();
   const inventory = useMemo(() => (syllables ? new Set(syllables.map(s => s.base)) : null), [syllables]);
   const pairing = useMemo(
     () => (enabled && inventory && pinyin && (allowSpaces || !/\s/.test(hanzi)) ? alignPhrasePinyin(hanzi, pinyin, inventory) : null),
     [enabled, inventory, hanzi, pinyin, allowSpaces],
   );
-  const [hovered, setHovered] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
+  // Pair → hover key: its glyph's word group when one is given, else the pair itself.
+  const keyOf = useMemo(() => {
+    const keys = new Map<number, string>();
+    pairing?.glyphPairs.forEach((pair, i) => { const g = groups?.[i]; if (pair != null) keys.set(pair, g != null ? `g${g}` : `p${pair}`); });
+    return (pair: number) => keys.get(pair) ?? `p${pair}`;
+  }, [pairing, groups]);
 
-  const props = (pair: number, className: string) => ({
-    className: `${className}${hovered === pair ? ' sentence-pair-hover' : ''}`,
-    onMouseEnter: () => setHovered(pair),
-    onMouseLeave: () => setHovered(current => (current === pair ? null : current)),
-  });
+  const props = (pair: number, className: string) => {
+    const key = keyOf(pair);
+    return {
+      className: `${className}${hovered === key ? ' sentence-pair-hover' : ''}`,
+      onMouseEnter: () => setHovered(key),
+      onMouseLeave: () => setHovered(current => (current === key ? null : current)),
+    };
+  };
 
   /** One headword glyph by its Array.from(hanzi) index; unpaired glyphs stay plain text. */
   const glyph = (ch: string, index: number): ReactNode => {

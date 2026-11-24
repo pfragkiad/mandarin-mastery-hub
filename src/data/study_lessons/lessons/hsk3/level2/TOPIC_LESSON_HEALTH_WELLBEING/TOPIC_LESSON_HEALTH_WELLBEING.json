@@ -1,0 +1,1333 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-how-are-you-feeling",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "How Are You Feeling?",
+    "subtitle": "Health, rest and exercise",
+    "description": "Describe pain and tiredness, ask about health and suggest exercise or rest.",
+    "slug": "how-are-you-feeling"
+  },
+  "classification": {
+    "primary_topic_id": "health-wellbeing",
+    "topic_ids": [
+      "health-wellbeing"
+    ],
+    "tags": [
+      "health",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Identify basic body parts and pain.",
+    "Talk about feeling comfortable or tired.",
+    "Explain why you are visiting a pharmacy."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "体": "Characters:体",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "再": "Characters:再",
+    "决": "Characters:决",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "口": "Characters:口",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "哥": "Characters:哥",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "因": "Characters:因",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "头": "Characters:头",
+    "女": "Characters:女",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "始": "Characters:始",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "定": "Characters:定",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "常": "Characters:常",
+    "平": "Characters:平",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "怎": "Characters:怎",
+    "息": "Characters:息",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "所": "Characters:所",
+    "手": "Characters:手",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "泳": "Characters:泳",
+    "洗": "Characters:洗",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "爷": "Characters:爷",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "疼": "Characters:疼",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "眼": "Characters:眼",
+    "睛": "Characters:睛",
+    "睡": "Characters:睡",
+    "累": "Characters:累",
+    "给": "Characters:给",
+    "舒": "Characters:舒",
+    "药": "Characters:药",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "身": "Characters:身",
+    "边": "Characters:边",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "饭": "Characters:饭",
+    "人": "Characters:人",
+    "位": "Characters:位",
+    "部": "Characters:部"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Describe pain and tiredness, ask about health and suggest exercise or rest.",
+      "focus": "Identify basic body parts and pain."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-388",
+          "hanzi": "累",
+          "pinyin": "lèi",
+          "meaning_en": "tired; exhausted",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-388-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你累不累？",
+              "pinyin": "nǐ lèi bu lèi?",
+              "english": "Are you tired?",
+              "teaching_note": "A short spoken example using 累."
+            },
+            {
+              "id": "ex-388-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈上了一天班，很累。",
+              "pinyin": "māma shàng le yì tiān bān, hěn lèi.",
+              "english": "Mom is tired after working all day.",
+              "teaching_note": "A simple written example using 累."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 388
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-415",
+          "hanzi": "跑步",
+          "pinyin": "pǎobù",
+          "meaning_en": "to jog; to run for exercise",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-415-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们一起跑步吧！",
+              "pinyin": "wǒmen yìqǐ pǎobù ba!",
+              "english": "Let's go running together!",
+              "teaching_note": "A short spoken example using 跑步."
+            },
+            {
+              "id": "ex-415-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天早上跑步半个小时。",
+              "pinyin": "tā měi tiān zǎoshang pǎobù bàn gè xiǎoshí.",
+              "english": "He runs for half an hour every morning.",
+              "teaching_note": "A simple written example using 跑步."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 415
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-429",
+          "hanzi": "身体",
+          "pinyin": "shēntǐ",
+          "meaning_en": "body; health",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-429-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你身体怎么样？",
+              "pinyin": "nǐ shēntǐ zěnmeyàng?",
+              "english": "How is your health?",
+              "teaching_note": "A short spoken example using 身体."
+            },
+            {
+              "id": "ex-429-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷身体很好，因为他每天都运动。",
+              "pinyin": "yéye shēntǐ hěn hǎo, yīnwèi tā měi tiān dōu yùndòng.",
+              "english": "Grandpa is in good health because he exercises every day.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 429
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-433",
+          "hanzi": "手",
+          "pinyin": "shǒu",
+          "meaning_en": "hand",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-433-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的手怎么了？",
+              "pinyin": "nǐ de shǒu zěnme le?",
+              "english": "What happened to your hand?",
+              "teaching_note": "A short spoken example using 手."
+            },
+            {
+              "id": "ex-433-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "吃饭前要洗手。",
+              "pinyin": "chīfàn qián yào xǐ shǒu.",
+              "english": "Wash your hands before eating.",
+              "teaching_note": "A simple written example using 手."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 433
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-436",
+          "hanzi": "舒服",
+          "pinyin": "shūfu",
+          "meaning_en": "comfortable; feeling well",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-436-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "坐在这里真舒服！",
+              "pinyin": "zuò zài zhèlǐ zhēn shūfu!",
+              "english": "It is really comfortable to sit here!",
+              "teaching_note": "A short spoken example using 舒服."
+            },
+            {
+              "id": "ex-436-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个房间不大，但是很舒服。",
+              "pinyin": "zhège fángjiān bú dà, dànshì hěn shūfu.",
+              "english": "This room isn't big, but it's very comfortable.",
+              "teaching_note": "A simple written example using 舒服."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 436
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-440",
+          "hanzi": "疼",
+          "pinyin": "téng",
+          "meaning_en": "painful; to ache",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-440-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的头还疼吗？",
+              "pinyin": "nǐ de tóu hái téng ma?",
+              "english": "Does your head still hurt?",
+              "teaching_note": "A short spoken example using 疼."
+            },
+            {
+              "id": "ex-440-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他今天头疼，没有去上学。",
+              "pinyin": "tā jīntiān tóu téng, méiyǒu qù shàngxué.",
+              "english": "He has a headache today and didn't go to school.",
+              "teaching_note": "A simple written example using 疼."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 440
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-445",
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "meaning_en": "head",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-445-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你头疼吗？",
+              "pinyin": "nǐ tóu téng ma?",
+              "english": "Does your head hurt?",
+              "teaching_note": "A short spoken example using 头."
+            },
+            {
+              "id": "ex-445-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他生病了，头很疼。",
+              "pinyin": "tā shēngbìng le, tóu hěn téng.",
+              "english": "He is ill and his head hurts a lot.",
+              "teaching_note": "A simple written example using 头."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 445
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-467",
+          "hanzi": "眼睛",
+          "pinyin": "yǎnjing",
+          "meaning_en": "eye; eyes",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-467-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的眼睛怎么了？",
+              "pinyin": "nǐ de yǎnjing zěnme le?",
+              "english": "What happened to your eyes?",
+              "teaching_note": "A short spoken example using 眼睛."
+            },
+            {
+              "id": "ex-467-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个女孩儿的眼睛很大。",
+              "pinyin": "zhège nǚháir de yǎnjing hěn dà.",
+              "english": "This girl has big eyes.",
+              "teaching_note": "A simple written example using 眼睛."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 467
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-468",
+          "hanzi": "药",
+          "pinyin": "yào",
+          "meaning_en": "medicine; medication",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-468-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你吃药了吗？",
+              "pinyin": "nǐ chī yào le ma?",
+              "english": "Have you taken your medicine?",
+              "teaching_note": "A short spoken example using 药."
+            },
+            {
+              "id": "ex-468-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医生给了我一些药。",
+              "pinyin": "yīshēng gěi le wǒ yìxiē yào.",
+              "english": "The doctor gave me some medicine.",
+              "teaching_note": "A simple written example using 药."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 468
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-469",
+          "hanzi": "药店",
+          "pinyin": "yàodiàn",
+          "meaning_en": "pharmacy; drugstore",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-469-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这边有药店吗？",
+              "pinyin": "zhèbiān yǒu yàodiàn ma?",
+              "english": "Is there a pharmacy around here?",
+              "teaching_note": "A short spoken example using 药店."
+            },
+            {
+              "id": "ex-469-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医院旁边有一家药店。",
+              "pinyin": "yīyuàn pángbiān yǒu yì jiā yàodiàn.",
+              "english": "There is a pharmacy next to the hospital.",
+              "teaching_note": "A simple written example using 药店."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 469
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-478",
+          "hanzi": "游泳",
+          "pinyin": "yóuyǒng",
+          "meaning_en": "to swim; to go swimming",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-478-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会游泳吗？",
+              "pinyin": "nǐ huì yóuyǒng ma?",
+              "english": "Can you swim?",
+              "teaching_note": "A short spoken example using 游泳."
+            },
+            {
+              "id": "ex-478-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "哥哥每个星期都去游泳。",
+              "pinyin": "gēge měi gè xīngqī dōu qù yóuyǒng.",
+              "english": "My older brother goes swimming every week.",
+              "teaching_note": "A simple written example using 游泳."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 478
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-485",
+          "hanzi": "运动",
+          "pinyin": "yùndòng",
+          "meaning_en": "sport; exercise; to exercise",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "leisure-media"
+          ],
+          "examples": [
+            {
+              "id": "ex-485-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你今天运动了吗？",
+              "pinyin": "nǐ jīntiān yùndòng le ma?",
+              "english": "Did you exercise today?",
+              "teaching_note": "A short spoken example using 运动."
+            },
+            {
+              "id": "ex-485-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们每天上午都运动。",
+              "pinyin": "xuéshēngmen měi tiān shàngwǔ dōu yùndòng.",
+              "english": "The students exercise every morning.",
+              "teaching_note": "A simple written example using 运动."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 485
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-012",
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "meaning_en": "illness",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-012-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他生病了。",
+              "pinyin": "tā shēngbìng le.",
+              "english": "He is ill.",
+              "teaching_note": "生病 is the ordinary way to say someone is ill; 有病 can sound judgmental in conversation."
+            },
+            {
+              "id": "ex-012-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的病好了。",
+              "pinyin": "tā de bìng hǎo le.",
+              "english": "His illness has gotten better.",
+              "teaching_note": "Short beginner-level description illustrating 病 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 12
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Illness as a noun; also occurs in verbal uses."
+        },
+        {
+          "id": "w-100",
+          "hanzi": "看病",
+          "pinyin": "kànbìng",
+          "meaning_en": "see a doctor",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-100-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我生病了，要去看病。",
+              "pinyin": "wǒ shēngbìng le, yào qù kànbìng.",
+              "english": "I am sick and need to see a doctor.",
+              "teaching_note": "看病 means consult a doctor or seek medical care, not merely “look at illness.”"
+            },
+            {
+              "id": "ex-100-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "医生上午九点开始看病。",
+              "pinyin": "yīshēng shàngwǔ jiǔ diǎn kāishǐ kànbìng.",
+              "english": "The doctor starts seeing patients at nine in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 看病 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 100
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-104",
+          "hanzi": "口",
+          "pinyin": "kǒu",
+          "meaning_en": "mouth",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "examples": [
+            {
+              "id": "ex-104-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喝了一口水。",
+              "pinyin": "wǒ hē le yì kǒu shuǐ.",
+              "english": "I took a sip of water.",
+              "teaching_note": "口 acts as a measure word for a sip or mouthful, not the noun “mouth” here."
+            },
+            {
+              "id": "ex-104-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "天气很热，他回家后喝了三口水。",
+              "pinyin": "tiānqì hěn rè, tā huí jiā hòu hē le sān kǒu shuǐ.",
+              "english": "It was hot. After he got home, he took three sips of water.",
+              "teaching_note": "The measure word counts mouthfuls of water."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 104
+            }
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Noun for mouth; also classifier in expressions such as population count."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Describing pain",
+        "explanation": "Put 疼 (téng) after a body part such as 头 (tóu) or 手 (shǒu) to describe where something hurts.",
+        "example_id": "ex-388-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Describing how you feel",
+        "explanation": "舒服 (shūfu) means comfortable; 不舒服 (bù shūfu) means uncomfortable or unwell.",
+        "example_id": "ex-415-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-388-1",
+      "ex-415-1",
+      "ex-429-1",
+      "ex-433-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Today his hand hurts a bit and he feels unwell, so he decides to rest for a day."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I am tired today and want to sleep earlier. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我今天很累，想早点儿睡觉。 (Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.)",
+          "answer": "我今天很累，想早点儿睡觉。 (Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.)"
+        },
+        {
+          "id": "recall-388",
+          "kind": "selection",
+          "prompt": "Which expression means “tired”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "累",
+              "pinyin": "lèi",
+              "meaning_en": "tired; exhausted"
+            },
+            {
+              "id": "b",
+              "hanzi": "跑步",
+              "pinyin": "pǎobù",
+              "meaning_en": "to jog; to run for exercise"
+            },
+            {
+              "id": "c",
+              "hanzi": "身体",
+              "pinyin": "shēntǐ",
+              "meaning_en": "body; health"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 累 (lèi) with this meaning."
+        },
+        {
+          "id": "recall-415",
+          "kind": "selection",
+          "prompt": "Which expression means “to jog”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "累",
+              "pinyin": "lèi",
+              "meaning_en": "tired; exhausted"
+            },
+            {
+              "id": "c",
+              "hanzi": "身体",
+              "pinyin": "shēntǐ",
+              "meaning_en": "body; health"
+            },
+            {
+              "id": "a",
+              "hanzi": "跑步",
+              "pinyin": "pǎobù",
+              "meaning_en": "to jog; to run for exercise"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 跑步 (pǎobù) with this meaning."
+        },
+        {
+          "id": "recall-429",
+          "kind": "selection",
+          "prompt": "Which expression means “body”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "跑步",
+              "pinyin": "pǎobù",
+              "meaning_en": "to jog; to run for exercise"
+            },
+            {
+              "id": "a",
+              "hanzi": "身体",
+              "pinyin": "shēntǐ",
+              "meaning_en": "body; health"
+            },
+            {
+              "id": "b",
+              "hanzi": "累",
+              "pinyin": "lèi",
+              "meaning_en": "tired; exhausted"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 身体 (shēntǐ) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "How Are You Feeling?",
+        "context_en": "Describe pain and tiredness, ask about health and suggest exercise or rest.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你怎么了？看起来很累。",
+            "pinyin": "Nǐ zěnme le? Kàn qǐlái hěn lèi.",
+            "english": "What’s wrong? You look tired."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我头疼，眼睛也不舒服。",
+            "pinyin": "Wǒ tóu téng, yǎnjing yě bù shūfu.",
+            "english": "I have a headache, and my eyes feel uncomfortable too."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那你要去药店买药吗？",
+            "pinyin": "Nà nǐ yào qù yàodiàn mǎi yào ma?",
+            "english": "Then do you need to go to the pharmacy to buy medicine?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我先休息一下，明天身体好了再去游泳。",
+            "pinyin": "Wǒ xiān xiūxi yíxià, míngtiān shēntǐ hǎo le zài qù yóuyǒng.",
+            "english": "I’ll rest first and go swimming tomorrow when I feel better."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Describing pain",
+          "explanation_en": "Put 疼 (téng) after a body part such as 头 (tóu) or 手 (shǒu) to describe where something hurts.",
+          "examples": [
+            {
+              "hanzi": "我今天很累，想早点儿睡觉。",
+              "pinyin": "Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.",
+              "english": "I am tired today and want to sleep earlier."
+            },
+            {
+              "hanzi": "我头疼，眼睛也不舒服。",
+              "pinyin": "Wǒ tóu téng, yǎnjing yě bù shūfu.",
+              "english": "I have a headache, and my eyes feel uncomfortable too."
+            }
+          ],
+          "pattern_hanzi": "身体部位 + 疼",
+          "pattern_pinyin": "shēntǐ bùwèi + téng",
+          "pattern_pseudo_translation": "<body part> + 疼"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Describing how you feel",
+          "explanation_en": "舒服 (shūfu) means comfortable; 不舒服 (bù shūfu) means uncomfortable or unwell.",
+          "examples": [
+            {
+              "hanzi": "运动以后，我觉得很舒服。",
+              "pinyin": "Yùndòng yǐhòu, wǒ juéde hěn shūfu.",
+              "english": "I feel comfortable after exercising."
+            },
+            {
+              "hanzi": "我先休息一下，明天身体好了再去游泳。",
+              "pinyin": "Wǒ xiān xiūxi yíxià, míngtiān shēntǐ hǎo le zài qù yóuyǒng.",
+              "english": "I’ll rest first and go swimming tomorrow when I feel better."
+            }
+          ],
+          "pattern_hanzi": "人 + 不 + 舒服",
+          "pattern_pinyin": "rén + bù + shūfu",
+          "pattern_pseudo_translation": "<person> + 不 + 舒服"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你怎么了？看起来很累。",
+          "pinyin": "Nǐ zěnme le? Kàn qǐlái hěn lèi.",
+          "english": "What’s wrong? You look tired."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I am tired today and want to sleep earlier.",
+            "model_answer": {
+              "hanzi": "我今天很累，想早点儿睡觉。",
+              "pinyin": "Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.",
+              "english": "I am tired today and want to sleep earlier."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I feel comfortable after exercising.",
+            "model_answer": {
+              "hanzi": "运动以后，我觉得很舒服。",
+              "pinyin": "Yùndòng yǐhòu, wǒ juéde hěn shūfu.",
+              "english": "I feel comfortable after exercising."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Then do you need to go to the pharmacy to buy medicine?",
+            "model_answer": {
+              "hanzi": "那你要去药店买药吗？",
+              "pinyin": "Nà nǐ yào qù yàodiàn mǎi yào ma?",
+              "english": "Then do you need to go to the pharmacy to buy medicine?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "How Are You Feeling? — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小李平时很喜欢运动，常常跑步，有时也去游泳。",
+            "pinyin": "Xiǎo Lǐ píngshí hěn xǐhuan yùndòng, chángcháng pǎobù, yǒushí yě qù yóuyǒng.",
+            "english": "Xiao Li usually likes exercise, often runs and sometimes swims."
+          },
+          {
+            "hanzi": "今天他的手有点儿疼，身体不太舒服，所以决定休息一天。",
+            "pinyin": "Jīntiān tā de shǒu yǒudiǎnr téng, shēntǐ bú tài shūfu, suǒyǐ juédìng xiūxi yì tiān.",
+            "english": "Today his hand hurts a bit and he feels unwell, so he decides to rest for a day."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiao Li usually likes exercise, often runs and sometimes swims."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Today his hand hurts a bit and he feels unwell, so he decides to rest for a day."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I am tired today and want to sleep earlier.",
+          "model_answer": {
+            "hanzi": "我今天很累，想早点儿睡觉。",
+            "pinyin": "Wǒ jīntiān hěn lèi, xiǎng zǎo diǎnr shuìjiào.",
+            "english": "I am tired today and want to sleep earlier."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I feel comfortable after exercising.",
+          "model_answer": {
+            "hanzi": "运动以后，我觉得很舒服。",
+            "pinyin": "Yùndòng yǐhòu, wǒ juéde hěn shūfu.",
+            "english": "I feel comfortable after exercising."
+          }
+        }
+      ],
+      "common_pitfall": "疼 (téng) identifies pain; 累 (lèi) identifies tiredness. Do not use them as interchangeable descriptions.",
+      "pronunciation_focus": "Practise the neutral endings of 舒服 (shūfu) and 眼睛 (yǎnjing).",
+      "review": {
+        "can_do": [
+          "Identify basic body parts and pain.",
+          "Talk about feeling comfortable or tired.",
+          "Explain why you are visiting a pharmacy."
+        ],
+        "entry_ids": [
+          388,
+          415,
+          429,
+          433,
+          436,
+          440,
+          445,
+          467,
+          468,
+          469,
+          478,
+          485
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-how-are-you-feeling--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Describing pain",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-how-are-you-feeling--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Describing how you feel",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I am tired today and want to sleep earlier.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-how-are-you-feeling--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I feel comfortable after exercising.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-how-are-you-feeling--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Then do you need to go to the pharmacy to buy medicine?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-how-are-you-feeling--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I am tired today and want to sleep earlier.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-how-are-you-feeling--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I feel comfortable after exercising.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-how-are-you-feeling--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-how-are-you-feeling--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-how-are-you-feeling--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I am tired today and want to sleep earlier. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-how-are-you-feeling--question-recall-388",
+            "kind": "practice",
+            "label": "Which expression means “tired”?",
+            "optional": true,
+            "target_id": "recall-388"
+          },
+          {
+            "id": "topic-how-are-you-feeling--question-recall-415",
+            "kind": "practice",
+            "label": "Which expression means “to jog”?",
+            "optional": true,
+            "target_id": "recall-415"
+          },
+          {
+            "id": "topic-how-are-you-feeling--question-recall-429",
+            "kind": "practice",
+            "label": "Which expression means “body”?",
+            "optional": true,
+            "target_id": "recall-429"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 44
+}

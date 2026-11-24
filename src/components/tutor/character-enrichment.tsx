@@ -2,7 +2,8 @@ import { SquareDashedMousePointer } from 'lucide-react';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { useEffect, useRef, useState } from 'react';
 import type { DecompositionNode } from '@/lib/character-library';
-import { gSourceDecompositions, resolveEnrichment, recordedLayoutDifferences, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { visibleGSourceDecompositions, resolveEnrichment, recordedLayoutDifferences, type CharacterEnrichment } from '@/lib/character-enrichment';
+import { hasKnownDecomposition } from '@/lib/ids-tree';
 import { Button } from '@/components/ui/button';
 import { DecompositionTree } from './decomposition-tree';
 import { useSharedLabelColumn } from './decomposition-labels';
@@ -41,24 +42,26 @@ export function CharacterDecomposition({ character, tree, source, status }: { ch
  *  display:contents wrapper, so the surrounding layout is untouched), keeping long labels
  *  out of their tiles and same-depth tiles left-aligned across both breakdowns. */
 export function RecordedDecomposition({ character, tree, source, status, record }: { character?: string | undefined; tree: DecompositionNode; source: string; status?: string | undefined; record: CharacterEnrichment | null }) {
-  const alternatives = gSourceDecompositions(record);
+  const alternatives = visibleGSourceDecompositions(record);
+  const hasHanziStructure = hasKnownDecomposition(tree);
   // Agreement with any G-source tree: the same parts in the same order count as a match even when
   // only the layout operator differs (止 ⿽上丨 vs ⿻上丨), so the G-source tree shows alone with the
   // usual "matches" line (owner's choice); a real part difference (null) keeps both trees.
   const matchesGSource = alternatives.some(alternative => recordedLayoutDifferences(alternative.tree ?? undefined, tree, character) !== null);
   const treesRef = useRef<HTMLDivElement | null>(null);
   useSharedLabelColumn(treesRef, `${character}|${record ? 'enriched' : 'plain'}|${alternatives.length}|${matchesGSource}`);
+  if (!hasHanziStructure && !alternatives.length) return null;
   return <div ref={treesRef} className="decomposition-trees">
     {alternatives.map((alternative, index) => <div key={`${alternative.expression}-${index}`}>
       <h4 className="library-note">BabelStone · G-source<SourceInfo inline className="detail-footnote">BabelStone IDS · 2025-06-27 / Unicode 16.0<br/>IDS source qualifiers · {alternative.qualifiers}<br/>Structural description · not verified etymology or stroke geometry</SourceInfo></h4>
       {alternative.tree ? <ul className="decomposition-tree" aria-label={`BabelStone G-source ${index + 1}`}><DecompositionTree node={alternative.tree} owner={character}/></ul> : <p className="enrichment-expression"><span lang="zh-CN"><SourceGlyphs text={alternative.expression}/></span><small>Source notation retained; tree unavailable.</small></p>}
     </div>)}
-    {matchesGSource
+    {hasHanziStructure && (matchesGSource
       ? <p className="enrichment-expression"><small>The recorded graphical structure matches the G-source breakdown above.</small></p>
       : <>
         <h4 className="library-note">Hanzi graphical structure<SourceInfo inline className="detail-footnote">Source · {source}<br/>{status ?? 'Imported graphical structure · not verified etymology'}</SourceInfo></h4>
         <ul className="decomposition-tree" aria-label="Hanzi graphical structure"><DecompositionTree node={tree} owner={character}/></ul>
-      </>}
+      </>)}
   </div>;
 }
 export function ComponentPicker({ record, selected, onSelect }: { groupingSource?: string; onGroupingSourceChange?: ((source: string) => void) | undefined; record: CharacterEnrichment; selected: string; onSelect: (path: string) => void }) {

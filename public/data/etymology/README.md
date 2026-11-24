@@ -5,7 +5,9 @@ association evidence without changing `catalog.json`, any section rows, record
 IDs, readings, meanings, radical identities, IDS trees or handwriting geometry.
 There is no hosted database. The browser reads these files only through
 `src/lib/etymology.ts` (rendered by `src/components/tutor/etymology-section.tsx`
-on glyph detail cards); this guide is its integration contract.
+on glyph detail cards, and per character by `src/components/tutor/word-etymology.tsx` on
+word detail cards through the same exact `Characters:<glyph>` lookup); this guide is its
+integration contract.
 
 ## Files, consumers and generators
 

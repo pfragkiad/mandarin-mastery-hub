@@ -1,0 +1,480 @@
+{
+  "schema_version": "mandarin-general-lesson/3.4.0",
+  "lesson_id": "convm-wants-intentions",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Expressing Wants and Intentions",
+    "subtitle": "Offering food, declining, and accepting a drink",
+    "description": "Learn to say what you want, decline food politely, and accept an offered drink.",
+    "slug": "conversational-wants-intentions"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "daily-actions"
+    ],
+    "tags": [
+      "wants",
+      "intentions",
+      "offers"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "wants-intentions"
+      }
+    ],
+    "subtopic_ids": [
+      "everyday-routines"
+    ],
+    "primary_subtopic_id": null
+  },
+  "learning_objectives": [
+    "Use 想 and 要 for wants and intentions.",
+    "Decline an offer naturally.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "买": "Characters:买",
+    "什": "Characters:什",
+    "会": "Characters:会",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "好": "Characters:好",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "水": "Characters:水",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "语": "Characters:语",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "间": "Characters:间",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Learn to say what you want, decline food politely, and accept an offered drink. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想吃一点东西吗？",
+            "pinyin": "Nǐ xiǎng chī yìdiǎn dōngxi ma?",
+            "english": "Would you like something to eat?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我不想吃。",
+            "pinyin": "Wǒ bù xiǎng chī.",
+            "english": "I do not want to eat."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想喝一点茶吗？",
+            "pinyin": "Nǐ xiǎng hē yìdiǎn chá ma?",
+            "english": "Would you like some tea?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我想喝一点茶。",
+            "pinyin": "Hǎo, wǒ xiǎng hē yìdiǎn chá.",
+            "english": "Yes, I would like a little tea."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "主语 + 想 + 动作",
+        "pattern_pinyin": "zhǔyǔ + xiǎng + dòngzuò",
+        "function_en": "想 (xiǎng) expresses a wish or desire followed by a verb.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我想吃午饭。",
+          "pinyin": "wǒ xiǎng chī wǔfàn.",
+          "english": "I want to eat lunch.",
+          "teaching_note": "A useful opening when suggesting what to eat or do next."
+        },
+        "pattern_pseudo_translation": "<who or what> + 想 + <what to do>"
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "想不想 + 动作？",
+        "pattern_pinyin": "xiǎng bu xiǎng + dòngzuò?",
+        "function_en": "An A-not-A question asks whether someone wants to do something.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "你想不想喝茶？",
+          "pinyin": "nǐ xiǎng bu xiǎng hē chá?",
+          "english": "Do you want to drink tea?",
+          "teaching_note": "The listener can answer 想 (xiǎng) or 不想 (bù xiǎng)."
+        },
+        "pattern_pseudo_translation": "想不想 + <what to do>？"
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "我想",
+            "pinyin": "wǒ xiǎng",
+            "meaning_en": "I would like to; I want to."
+          },
+          {
+            "hanzi": "你想",
+            "pinyin": "nǐ xiǎng",
+            "meaning_en": "You would like to; you want to."
+          },
+          {
+            "hanzi": "我不想",
+            "pinyin": "wǒ bù xiǎng",
+            "meaning_en": "I do not want to."
+          },
+          {
+            "hanzi": "我想吃",
+            "pinyin": "wǒ xiǎng chī",
+            "meaning_en": "I want to eat."
+          },
+          {
+            "hanzi": "我想喝一点东西",
+            "pinyin": "wǒ xiǎng hē yìdiǎn dōngxi",
+            "meaning_en": "I would like something to drink."
+          },
+          {
+            "hanzi": "你想买什么",
+            "pinyin": "nǐ xiǎng mǎi shénme",
+            "meaning_en": "What do you want to buy?"
+          },
+          {
+            "hanzi": "我想要一点茶",
+            "pinyin": "wǒ xiǎng yào yìdiǎn chá",
+            "meaning_en": "I would like a little tea."
+          },
+          {
+            "hanzi": "你想不想",
+            "pinyin": "nǐ xiǎng bu xiǎng",
+            "meaning_en": "Do you want to (or not)?"
+          },
+          {
+            "hanzi": "我不要",
+            "pinyin": "wǒ bú yào",
+            "meaning_en": "I do not want it."
+          },
+          {
+            "hanzi": "你想吃一点东西吗",
+            "pinyin": "nǐ xiǎng chī yìdiǎn dōngxi ma",
+            "meaning_en": "Would you like something to eat?"
+          },
+          {
+            "hanzi": "我想吃一点东西",
+            "pinyin": "wǒ xiǎng chī yìdiǎn dōngxi",
+            "meaning_en": "I would like something to eat."
+          },
+          {
+            "hanzi": "我不想现在吃",
+            "pinyin": "wǒ bù xiǎng xiànzài chī",
+            "meaning_en": "I do not want to eat now."
+          },
+          {
+            "hanzi": "我想现在喝",
+            "pinyin": "wǒ xiǎng xiànzài hē",
+            "meaning_en": "I would like to drink now."
+          },
+          {
+            "hanzi": "我要现在吃午饭",
+            "pinyin": "wǒ yào xiànzài chī wǔfàn",
+            "meaning_en": "I intend to have lunch now.",
+            "expression_id": "CMX-121F2BDD3E59",
+            "usage_label": "Emphasis",
+            "usage_note": "Placing 现在 (xiànzài) after 要 (yào) gives extra emphasis to eating now rather than later. For a neutral statement, 我现在要吃午饭 (wǒ xiànzài yào chī wǔfàn) is more common."
+          },
+          {
+            "hanzi": "我不要吃",
+            "pinyin": "wǒ bú yào chī",
+            "meaning_en": "I do not want to eat."
+          },
+          {
+            "hanzi": "你想什么时候吃",
+            "pinyin": "nǐ xiǎng shénme shíhou chī",
+            "meaning_en": "When would you like to eat?"
+          },
+          {
+            "hanzi": "一点儿",
+            "pinyin": "yìdiǎnr",
+            "meaning_en": "a little (optional -r pronunciation)"
+          },
+          {
+            "hanzi": "可是",
+            "pinyin": "kěshì",
+            "meaning_en": "but; however"
+          },
+          {
+            "hanzi": "你想做什么",
+            "pinyin": "nǐ xiǎng zuò shénme",
+            "meaning_en": "what would you like to do?"
+          },
+          {
+            "hanzi": "你想喝一点东西吗",
+            "pinyin": "nǐ xiǎng hē yìdiǎn dōngxi ma",
+            "meaning_en": "would you like something to drink?"
+          },
+          {
+            "hanzi": "我想现在吃午饭",
+            "pinyin": "wǒ xiǎng xiànzài chī wǔfàn",
+            "meaning_en": "I would like to have lunch now.",
+            "expression_id": "CMX-254A75AEDE95",
+            "usage_label": "Emphasis",
+            "usage_note": "Placing 现在 (xiànzài) after 想 (xiǎng) highlights the desired time: now rather than later. The more neutral order is 我现在想吃午饭 (wǒ xiànzài xiǎng chī wǔfàn)."
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Offer food and drink, accept one offer and politely decline another."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Eating Now or Drinking Later",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你现在想吃东西吗？",
+            "pinyin": "Nǐ xiànzài xiǎng chī dōngxi ma?",
+            "english": "Do you want something to eat now?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我不想吃，我想喝一点儿水。",
+            "pinyin": "Wǒ bù xiǎng chī, wǒ xiǎng hē yìdiǎnr shuǐ.",
+            "english": "I do not want to eat; I would like a little water."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "一会儿一起吃午饭，好吗？",
+            "pinyin": "Yíhuìr yìqǐ chī wǔfàn, hǎo ma?",
+            "english": "Shall we have lunch together in a little while?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我一会儿有时间。",
+            "pinyin": "Hǎo, wǒ yíhuìr yǒu shíjiān.",
+            "english": "Sure. I have time a little later."
+          }
+        ]
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "How does speaker B decline the offer of food?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我不想吃。 (Wǒ bù xiǎng chī.) — I do not want to eat.",
+          "explanation": "Check the model dialogue and identify the relevant response."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: I want to eat.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想吃 (wǒ xiǎng chī)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Ask someone whether they would like tea, using 想不想 (xiǎng bu xiǎng).",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "你想不想喝茶？ (Nǐ xiǎng bu xiǎng hē chá?) — Would you like to drink tea?",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Offer food and drink, accept one offer and politely decline another.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A: 你想吃一点东西吗？ (Nǐ xiǎng chī yìdiǎn dōngxi ma?) — Would you like something to eat?\nB: 我不想吃，谢谢。 (Wǒ bù xiǎng chī, xièxie.) — I do not want to eat, thank you.\nA: 你想喝一点茶吗？ (Nǐ xiǎng hē yìdiǎn chá ma?) — Would you like some tea?\nB: 好，我想喝一点茶。 (Hǎo, wǒ xiǎng hē yìdiǎn chá.) — Yes, I would like some tea.",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
+        }
+      ]
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-wants-intentions--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Understand the lesson goal",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "practice the model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--grammar--grammar-1",
+            "kind": "section",
+            "label": "Understand: 想 (xiǎng) expresses a wish or desire followed by a verb.",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-wants-intentions--grammar--grammar-2",
+            "kind": "section",
+            "label": "Understand: An A-not-A question asks whether someone wants to do something.",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--review--key-expressions",
+            "kind": "section",
+            "label": "Review the key expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Offer food and drink, accept one offer and politely decline another.",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "How does speaker B decline the offer of food?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-wants-intentions--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: I want to eat.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-wants-intentions--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Ask someone whether they would like tea, using 想不想 (xiǎng bu xiǎng).",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-wants-intentions--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Offer food and drink, accept one offer and politely decline another.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-wants-intentions--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-wants-intentions--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Eating Now or Drinking Later",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
+}

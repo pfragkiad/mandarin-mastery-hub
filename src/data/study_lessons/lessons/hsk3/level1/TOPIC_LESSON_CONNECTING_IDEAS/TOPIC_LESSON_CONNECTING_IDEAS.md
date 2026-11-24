@@ -30,7 +30,11 @@ Two students compare their activities. Practise linkers, emphasis, and the diffe
 
 也 (yě) means “also” and usually goes before the verb. 都 (dōu) means “all/both” when applied to an established group; 和 (hé) connects nouns or noun phrases.
 
-**Pattern:** subject + 也 + verb; group + 都 + verb
+**Pattern**
+
+主语 + 也 + 动词; 一群人 + 都 + 动词  
+*zhǔyǔ + yě + dòngcí; yì qún rén + dōu + dòngcí*  
+&lt;subject&gt; + **也** + &lt;verb&gt;; &lt;group&gt; + **都** + &lt;verb&gt;
 
 **妹妹也喜欢喝茶。**
 *Mèimei yě xǐhuan hē chá.*
@@ -44,7 +48,11 @@ We all like Chinese.
 
 很 (hěn), 非常 (fēicháng), 真 (zhēn) and 太 (tài) modify degree with different nuance. 正在 (zhèngzài) explicitly signals an activity in progress.
 
-**Pattern:** subject + 正在 + verb
+**Pattern**
+
+主语 + 正在 + 动词  
+*zhǔyǔ + zhèngzài + dòngcí*  
+&lt;subject&gt; + **正在** + &lt;verb&gt;
 
 **她正在做饭。**
 *Tā zhèngzài zuò fàn.*
@@ -174,3 +182,46 @@ He is writing characters right now.
 
 **Production:** Write this in Mandarin: “All the students are in the classroom.”
 **Answer:** 学生们都在教室里。 (xuéshēngmen dōu zài jiàoshì lǐ.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-connecting-ideas--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Adding and combining information — ID: `topic-connecting-ideas--pattern--pattern-1`
+- [ ] Apply: Degree and ongoing actions — ID: `topic-connecting-ideas--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: studying — ID: `topic-connecting-ideas--build--build-sub-01`
+- [ ] Build a sentence: drinking water — ID: `topic-connecting-ideas--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Where are the brother and sister? — ID: `topic-connecting-ideas--read--reading-q-01`
+- [ ] Who is writing? — ID: `topic-connecting-ideas--read--reading-q-02`
+
+### Speaking practice
+- [ ] Explain what you and a friend both like. — ID: `topic-connecting-ideas--speak--speaking-1`
+- [ ] Describe what someone is doing right now. — ID: `topic-connecting-ideas--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-connecting-ideas--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-connecting-ideas--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-connecting-ideas--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “all”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-1`
+- [ ] Which expression means “too”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-2`
+- [ ] Which expression means “currently”? *(optional)* — ID: `topic-connecting-ideas--quiz--q-21-3`
+- [ ] In the example “我们都是学生。” (wǒmen dōu shì xuéshēng.), what is happening? — ID: `topic-connecting-ideas--quiz--q-21-4`
+- [ ] Write this in Mandarin: “All the students are in the classroom.” — ID: `topic-connecting-ideas--quiz--q-21-5`
+- [ ] Reading comprehension: Where are the brother and sister? — ID: `topic-connecting-ideas--quiz--applied-reading-1`
+- [ ] Reading comprehension: Who is writing? — ID: `topic-connecting-ideas--quiz--applied-reading-2`
+- [ ] Say this aloud: Explain what you and a friend both like. — ID: `topic-connecting-ideas--quiz--applied-speaking-1`
+- [ ] Say this aloud: Describe what someone is doing right now. — ID: `topic-connecting-ideas--quiz--applied-speaking-2`

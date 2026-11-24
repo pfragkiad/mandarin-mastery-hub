@@ -1,0 +1,23 @@
+# Preserve exact canonical Core bytes.
+.gitattributes -text
+*.md whitespace=-blank-at-eol
+CHARACTER_LESSON_TEMPLATE.json -text
+CHARACTER_LESSON_TEMPLATE.md -text
+CURRICULUM_CONVERSATIONAL_MANDARIN_TEMPLATE.json -text
+CURRICULUM_HSK3_TEMPLATE.json -text
+DIALOGUE_LESSON_TEMPLATE.json -text
+GENERAL_LESSON_TEMPLATE.md -text
+GENERIC_LESSON_TEMPLATE.json -text
+GRAMMAR_LESSON_TEMPLATE.json -text
+LESSON_CREATOR_AUTHORING_GUIDELINES.md -text
+README.md -text
+REVIEW_LESSON_TEMPLATE.json -text
+TOPIC_LESSON_TEMPLATE.json -text
+TOPIC_LESSON_TEMPLATE.md -text
+character_lesson.schema.json -text
+curriculum.schema.json -text
+general_lesson.schema.json -text
+lesson_categories.json -text
+lesson_categories.schema.json -text
+lesson_common.schema.json -text
+topic_lesson.schema.json -text

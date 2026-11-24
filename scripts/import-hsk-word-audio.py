@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Attach verified HSK Level 3/4 word recordings from owner-supplied Shtooka packages.
+"""Attach verified HSK Level 3–5 word recordings from checksum-bound Shtooka packages.
 
 Each package (hsk-level-N-audio.zip) carries levelN-manifest.json plus checksum-named
 MP3s; --level N selects the manifest, pinned handoff and committed upload map. This script reuses the Level 2 importer's exact-reading rules and source checks:
@@ -8,7 +8,7 @@ handoff, every MP3 must match its Git blob, byte count and SHA-256, and only
 "matched" rows (one exact headword+reading candidate) can receive audio. Missing and
 reading-mismatch rows stay empty; no tone, neutral tone or syllable is ever borrowed.
 
-  --level N        3 or 4 (default 3)
+  --level N        3, 4 or 5 (default 3)
   --cache DIR      extracted package "recordings/" directory (outside the repository)
   --upload         upload pending clips once each with lovable-assets (resumable)
   --uploads PATH   pointer JSONs written by --upload, named <gitBlob>.json, or the
@@ -35,7 +35,8 @@ ROOT = base.ROOT
 INPUT = base.INPUT
 VOCABULARY = base.VOCABULARY
 # Per-level inputs: manifest and upload map live beside the shared Shtooka index.
-LEVELS = {3: ('hsk3_level3_1.0.4.json', 500), 4: ('hsk3_level4_1.0.3.json', 1000)}
+LEVELS = {3: ('archive/hsk3_level3_1.0.4.json', 500), 4: ('archive/hsk3_level4_1.0.3.json', 1000),
+          5: ('hsk3_level5_1.0.5.json', 1600)}
 LEVEL = SIZE = MANIFEST = HANDOFF = UPLOAD_MAP = None
 
 
@@ -64,14 +65,22 @@ def load_manifest():
     if manifest['level'] != LEVEL or source['commit'] != base.COMMIT or source['name'] != base.SOURCE \
             or source['license'] != base.LICENSE or source['metadataSha256'] != sha256(index_raw):
         raise ValueError('Manifest source differs from the pinned Shtooka inputs')
-    if manifest['handoff']['sha256'] != sha256(HANDOFF.read_bytes()):
+    handoff_bindings = [manifest['handoff'], *manifest.get('compatibleHandoffs', [])]
+    if not any(binding['file'] == HANDOFF.name and binding['sha256'] == sha256(HANDOFF.read_bytes()) for binding in handoff_bindings):
         raise ValueError(f'Manifest is bound to a different Level {LEVEL} handoff')
     if source['noticeSha256'] != sha256((INPUT / 'cmn-caen-tan-readme.txt').read_bytes()):
         raise ValueError('Source notice checksum mismatch')
+    handoff = read(HANDOFF)
+    expected_identities = {(entry['id'], entry['headword'], entry['pinyin']) for entry in handoff['entries']}
+    actual_identities = {(row['hskIndex'], row['headword'], row['reading']) for row in manifest['entries']}
+    if len(manifest['entries']) != SIZE or len(actual_identities) != SIZE or actual_identities != expected_identities:
+        raise ValueError('Manifest identities differ from the pinned handoff')
     for row in manifest['entries']:
         expected = base.match({'id': row['entryId'], 'hsk_index': row['hskIndex'], 'simplified': row['headword'],
                                'pinyinDisplay': row['reading']}, index)
-        if row['sourceCandidates'] != expected['sourceCandidates'] or row['status'] != expected['status']:
+        # A missing pinned MP3 is an excluded match, never an eligible attachment.
+        missing_file = row['status'] == 'missing_audio_file' and expected['status'] == 'matched' and 'recording' not in row
+        if row['sourceCandidates'] != expected['sourceCandidates'] or (row['status'] != expected['status'] and not missing_file):
             raise ValueError(f"Manifest does not match the preserved source metadata: {row['hskIndex']}")
         if row['status'] == 'matched' and row['recording']['path'] != f"64k/hsk/cmn-{row['headword']}.mp3":
             raise ValueError(f"Unexpected recording path: {row['hskIndex']}")

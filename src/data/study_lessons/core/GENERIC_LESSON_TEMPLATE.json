@@ -1,11 +1,11 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "generic-pronunciation-tips",
   "lesson_type": "generic",
   "lesson": {
-    "title": "Pronunciation Practice Notes",
-    "subtitle": "A course-independent study note.",
-    "description": "Organize pronunciation observations without assigning an artificial course or topic.",
+    "title": "Practising Mandarin Pronunciation",
+    "subtitle": "Tone contours and careful repetition.",
+    "description": "Learn to recognise tone contours and practise clear Mandarin pronunciation.",
     "slug": "pronunciation-practice-notes"
   },
   "classification": {
@@ -13,16 +13,18 @@
     "topic_ids": [],
     "tags": [
       "pronunciation",
-      "independent-study"
+      "tone-practice"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Practice a focused pronunciation point independently."
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.3.0",
     "audience": "Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -33,12 +35,32 @@
       {
         "id": "note-1",
         "kind": "explanation",
-        "text": "Use this general format for a course-neutral lesson that is discoverable using tags only."
+        "text": "Listen closely to each tone contour. Repeat the syllable slowly, then at a natural conversational pace."
       }
     ],
     "practice": {
       "enabled": false,
       "questions": []
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "generic-pronunciation-tips--section--explanation",
+        "section_key": "explanation",
+        "title": "Understanding",
+        "checkpoints": [
+          {
+            "id": "generic-pronunciation-tips--explanation--note-1",
+            "kind": "section",
+            "label": "Practise pronunciation carefully",
+            "optional": false,
+            "target_id": "note-1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 12
 }

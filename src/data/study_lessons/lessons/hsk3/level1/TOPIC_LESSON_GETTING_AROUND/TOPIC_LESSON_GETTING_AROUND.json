@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-getting-around",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,11 @@
       "directions",
       "locations"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "position-direction"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Name common modes of transport.",
@@ -28,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -141,7 +145,13 @@
     "院": "Characters:院",
     "雨": "Characters:雨",
     "面": "Characters:面",
-    "飞": "Characters:飞"
+    "飞": "Characters:飞",
+    "主": "Characters:主",
+    "交": "Characters:交",
+    "具": "Characters:具",
+    "地": "Characters:地",
+    "语": "Characters:语",
+    "通": "Characters:通"
   },
   "sections": {
     "overview": {
@@ -188,7 +198,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 20
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-022",
@@ -228,7 +241,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 22
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-029",
@@ -268,7 +284,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 29
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-054",
@@ -308,7 +327,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 54
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-081",
@@ -349,7 +371,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 81
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-083",
@@ -389,7 +414,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 83
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-098",
@@ -430,7 +458,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 98
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-106",
@@ -470,7 +501,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 106
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-167",
@@ -510,7 +544,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 167
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "travel-transport"
         },
         {
           "id": "w-011",
@@ -552,7 +589,10 @@
               "entry_id": 11
             }
           ],
-          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions."
+          "pos_note": "Primarily a bound locative suffix in 这边、那边、前边; also a noun meaning side or edge in other constructions.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-066",
@@ -592,7 +632,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 66
             }
-          ]
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-080",
@@ -635,7 +680,12 @@
               "entry_id": 80
             }
           ],
-          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal."
+          "pos_note": "After/behind: temporal or spatial localizer; can also be nominal.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-110",
@@ -677,7 +727,12 @@
               "entry_id": 110
             }
           ],
-          "pos_note": "Localizer meaning inside, traditionally also categorized as a location noun."
+          "pos_note": "Localizer meaning inside, traditionally also categorized as a location noun.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-163",
@@ -719,7 +774,12 @@
               "entry_id": 163
             }
           ],
-          "pos_note": "Before/in front of; a time or place localizer."
+          "pos_note": "Before/in front of; a time or place localizer.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-175",
@@ -762,7 +822,12 @@
               "entry_id": 175
             }
           ],
-          "pos_note": "On/above as a localizer or verb for ascending/attending, depending on context."
+          "pos_note": "On/above as a localizer or verb for ascending/attending, depending on context.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-212",
@@ -802,7 +867,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 212
             }
-          ]
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-213",
@@ -842,7 +912,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 213
             }
-          ]
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-226",
@@ -872,10 +947,10 @@
               "id": "ex-226-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "书在椅子下。",
-              "pinyin": "shū zài yǐzi xià.",
+              "hanzi": "书在椅子下面。",
+              "pinyin": "shū zài yǐzi xiàmiàn.",
               "english": "The book is under the chair.",
-              "teaching_note": "A short, concrete location sentence: 在 indicates location, and 下 means beneath or below the chair."
+              "teaching_note": "The target word appears in the location word for “under.”"
             }
           ],
           "learning_role": "introduced",
@@ -885,7 +960,12 @@
               "entry_id": 226
             }
           ],
-          "pos_note": "Below/under as a localizer, but verb and measure-word uses also exist."
+          "pos_note": "Below/under as a localizer, but verb and measure-word uses also exist.",
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "primary_topic_id": "places-directions"
         },
         {
           "id": "w-289",
@@ -925,7 +1005,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 289
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "places-directions"
         }
       ],
       "related_entries": []
@@ -1109,7 +1192,6 @@
           "id": "pattern-1",
           "title": "Movement from the speaker’s viewpoint",
           "explanation_en": "来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.",
-          "formula_en": "subject + 来/去/回 + place",
           "examples": [
             {
               "hanzi": "朋友明天来我家。",
@@ -1121,13 +1203,15 @@
               "pinyin": "Wǒ xiàwǔ huí jiā.",
               "english": "I will go home this afternoon."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 来/去/回 + 地点",
+          "pattern_pinyin": "zhǔyǔ + lái/qù/huí + dìdiǎn",
+          "pattern_pseudo_translation": "<subject> + 来/去/回 + <place>"
         },
         {
           "id": "pattern-2",
           "title": "Places and destinations",
           "explanation_en": "到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.",
-          "formula_en": "坐 + vehicle + 去 + place",
           "examples": [
             {
               "hanzi": "我们坐火车去北京。",
@@ -1139,7 +1223,10 @@
               "pinyin": "Tā wǎnshang dào xuéxiào.",
               "english": "He will arrive at school in the evening."
             }
-          ]
+          ],
+          "pattern_hanzi": "坐 + 交通工具 + 去 + 地点",
+          "pattern_pinyin": "zuò + jiāotōng gōngjù + qù + dìdiǎn",
+          "pattern_pseudo_translation": "坐 + <vehicle> + 去 + <place>"
         }
       ],
       "guided_building": {
@@ -1156,7 +1243,8 @@
               "hanzi": "我坐飞机去北京。",
               "pinyin": "Wǒ zuò fēijī qù Běijīng.",
               "english": "I fly to Beijing."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "taxi",
@@ -1164,7 +1252,8 @@
               "hanzi": "我坐出租车去北京。",
               "pinyin": "Wǒ zuò chūzūchē qù Běijīng.",
               "english": "I take a taxi to Beijing."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1180,11 +1269,13 @@
         "questions": [
           {
             "prompt_en": "Who takes a taxi?",
-            "answer_en": "Mom."
+            "answer_en": "Mom.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "How does the speaker return home?",
-            "answer_en": "By train."
+            "answer_en": "By train.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1233,5 +1324,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-getting-around--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Movement from the speaker’s viewpoint",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-getting-around--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Places and destinations",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: plane",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-getting-around--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: taxi",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--read--reading-q-01",
+            "kind": "question",
+            "label": "Who takes a taxi?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-getting-around--read--reading-q-02",
+            "kind": "question",
+            "label": "How does the speaker return home?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask where a place is.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-getting-around--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say how you get home.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-getting-around--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-getting-around--quiz--q-13-1",
+            "kind": "practice",
+            "label": "Which expression means “vehicle”?",
+            "optional": true,
+            "target_id": "q-13-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-2",
+            "kind": "practice",
+            "label": "Which expression means “side”?",
+            "optional": true,
+            "target_id": "q-13-2"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-3",
+            "kind": "practice",
+            "label": "Which expression means “China”?",
+            "optional": true,
+            "target_id": "q-13-3"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-4",
+            "kind": "practice",
+            "label": "In the example “这是我爸爸的车。” (zhè shì wǒ bàba de chē.), what is happening?",
+            "optional": false,
+            "target_id": "q-13-4"
+          },
+          {
+            "id": "topic-getting-around--quiz--q-13-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “There are many cars at the school entrance.”",
+            "optional": false,
+            "target_id": "q-13-5"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Who takes a taxi?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: How does the speaker return home?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask where a place is.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-getting-around--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say how you get home.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

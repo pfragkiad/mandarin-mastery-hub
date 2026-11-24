@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-quantities-classifiers",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "amounts",
       "approximation"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Use common classifiers with familiar nouns.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -49,8 +51,10 @@
     "二": "Characters:二",
     "五": "Characters:五",
     "些": "Characters:些",
+    "亮": "Characters:亮",
     "人": "Characters:人",
     "今": "Characters:今",
+    "他": "Characters:他",
     "们": "Characters:们",
     "件": "Characters:件",
     "会": "Characters:会",
@@ -67,12 +71,14 @@
     "吃": "Characters:吃",
     "吗": "Characters:吗",
     "唱": "Characters:唱",
+    "商": "Characters:商",
     "喜": "Characters:喜",
     "喝": "Characters:喝",
     "在": "Characters:在",
     "多": "Characters:多",
     "大": "Characters:大",
     "天": "Characters:天",
+    "她": "Characters:她",
     "好": "Characters:好",
     "妹": "Characters:妹",
     "姐": "Characters:姐",
@@ -81,10 +87,12 @@
     "学": "Characters:学",
     "孩": "Characters:孩",
     "室": "Characters:室",
+    "家": "Characters:家",
     "小": "Characters:小",
     "少": "Characters:少",
     "师": "Characters:师",
     "店": "Characters:店",
+    "很": "Characters:很",
     "想": "Characters:想",
     "我": "Characters:我",
     "教": "Characters:教",
@@ -106,6 +114,7 @@
     "水": "Characters:水",
     "汉": "Characters:汉",
     "没": "Characters:没",
+    "漂": "Characters:漂",
     "点": "Characters:点",
     "猫": "Characters:猫",
     "玩": "Characters:玩",
@@ -136,7 +145,11 @@
     "那": "Characters:那",
     "里": "Characters:里",
     "钱": "Characters:钱",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "名": "Characters:名",
+    "数": "Characters:数",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -186,7 +199,10 @@
               "entry_id": 7
             }
           ],
-          "pos_note": "Primarily the numeral “half” (半个小时, 八点半). Also has a restricted adverbial role meaning partly/half- in advanced patterns; that secondary role is not a Level 1 teaching priority."
+          "pos_note": "Primarily the numeral “half” (半个小时, 八点半). Also has a restricted adverbial role meaning partly/half- in advanced patterns; that secondary role is not a Level 1 teaching priority.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-010",
@@ -226,7 +242,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 10
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-031",
@@ -267,7 +286,10 @@
               "entry_id": 31
             }
           ],
-          "pos_note": "Ordinal prefix before numerals."
+          "pos_note": "Ordinal prefix before numerals.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-060",
@@ -307,7 +329,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 60
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-085",
@@ -350,7 +375,10 @@
               "entry_id": 85
             }
           ],
-          "pos_note": "Interrogative quantity pronoun/numeral meaning how many (几个人、几本书). 个 or 本 is the classifier; 几 is NOT a classifier."
+          "pos_note": "Interrogative quantity pronoun/numeral meaning how many (几个人、几本书). 个 or 本 is the classifier; 几 is NOT a classifier.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-089",
@@ -378,10 +406,10 @@
               "id": "ex-089-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我有三件新衣服。",
-              "pinyin": "wǒ yǒu sān jiàn xīn yīfu.",
-              "english": "I have three new items of clothing.",
-              "teaching_note": ""
+              "hanzi": "商店里有一件很漂亮的衣服。",
+              "pinyin": "shāngdiàn lǐ yǒu yí jiàn hěn piàoliang de yīfu.",
+              "english": "There is a very pretty piece of clothing in the shop.",
+              "teaching_note": "The classifier counts an individual garment."
             }
           ],
           "learning_role": "introduced",
@@ -390,7 +418,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 89
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-111",
@@ -430,7 +461,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 111
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-239",
@@ -472,7 +506,10 @@
               "entry_id": 239
             }
           ],
-          "pos_note": "Indefinite quantity word, conventionally classified as a classifier/quantifier."
+          "pos_note": "Indefinite quantity word, conventionally classified as a classifier/quantifier.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-258",
@@ -501,10 +538,10 @@
               "id": "ex-258-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这本书我读了一半。",
-              "pinyin": "zhè běn shū wǒ dú le yíbàn.",
-              "english": "I've read half of this book.",
-              "teaching_note": ""
+              "hanzi": "今天有一半的学生没有来上课。",
+              "pinyin": "jīntiān yǒu yíbàn de xuésheng méiyǒu lái shàngkè.",
+              "english": "Half the students didn’t come to class today.",
+              "teaching_note": "The fraction describes the share of students who missed class."
             }
           ],
           "learning_role": "introduced",
@@ -514,7 +551,10 @@
               "entry_id": 258
             }
           ],
-          "pos_note": "Fractional numeral phrase meaning one half."
+          "pos_note": "Fractional numeral phrase meaning one half.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-259",
@@ -556,7 +596,10 @@
               "entry_id": 259
             }
           ],
-          "pos_note": "Verb-quantity complement meaning briefly/once; also adverbial in some uses."
+          "pos_note": "Verb-quantity complement meaning briefly/once; also adverbial in some uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-261",
@@ -583,11 +626,11 @@
             {
               "id": "ex-261-2",
               "style": "written",
-              "register": "polite_instruction",
-              "hanzi": "请给我一点儿水。",
-              "pinyin": "qǐng gěi wǒ yìdiǎnr shuǐ.",
-              "english": "Please give me a little water.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“请给我一点儿水。”他说。",
+              "pinyin": "“qǐng gěi wǒ yìdiǎnr shuǐ.” tā shuō.",
+              "english": "“Please give me a little water,” he said.",
+              "teaching_note": "The quantity expression modifies water in a quoted request."
             }
           ],
           "learning_role": "introduced",
@@ -597,7 +640,10 @@
               "entry_id": 261
             }
           ],
-          "pos_note": "Quantity expression a little, typically used in object phrases."
+          "pos_note": "Quantity expression a little, typically used in object phrases.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-262",
@@ -638,7 +684,10 @@
               "entry_id": 262
             }
           ],
-          "pos_note": "Quantity expression some."
+          "pos_note": "Quantity expression some.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-264",
@@ -680,7 +729,10 @@
               "entry_id": 264
             }
           ],
-          "pos_note": "Indefinite/pronominal expression meaning some of a group (有的人、有的学生). The Level 1 grammar outline groups 有的 among demonstrative pronouns; it is not a degree adverb."
+          "pos_note": "Indefinite/pronominal expression meaning some of a group (有的人、有的学生). The Level 1 grammar outline groups 有的 among demonstrative pronouns; it is not a degree adverb.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-265",
@@ -708,11 +760,11 @@
             {
               "id": "ex-265-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这个饭店的菜有点儿贵。",
-              "pinyin": "zhège fàndiàn de cài yǒudiǎnr guì.",
-              "english": "The food at this restaurant is a little expensive.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这家饭店的菜有点儿贵。”她说。",
+              "pinyin": "“zhè jiā fàndiàn de cài yǒudiǎnr guì.” tā shuō.",
+              "english": "“The food at this restaurant is a little expensive,” she said.",
+              "teaching_note": "The degree adverb softens a mildly negative evaluation."
             }
           ],
           "learning_role": "introduced",
@@ -722,7 +774,10 @@
               "entry_id": 265
             }
           ],
-          "pos_note": "Degree adverb meaning a little; often conveys an undesirable degree."
+          "pos_note": "Degree adverb meaning a little; often conveys an undesirable degree.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-266",
@@ -765,7 +820,10 @@
               "entry_id": 266
             }
           ],
-          "pos_note": "At beginner level, pronominal/determiner use means some or certain (有些学生). A secondary degree-adverb use means somewhat (有些冷), included as later-level usage."
+          "pos_note": "At beginner level, pronominal/determiner use means some or certain (有些学生). A secondary degree-adverb use means somewhat (有些冷), included as later-level usage.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         },
         {
           "id": "w-287",
@@ -806,7 +864,10 @@
               "entry_id": 287
             }
           ],
-          "pos_note": "Classifier for animals and certain objects; not the adverb 只 (zhǐ) meaning only."
+          "pos_note": "Classifier for animals and certain objects; not the adverb 只 (zhǐ) meaning only.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "numbers-quantities"
         }
       ],
       "related_entries": []
@@ -990,7 +1051,6 @@
           "id": "pattern-1",
           "title": "Classifiers for countable objects",
           "explanation_en": "Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.",
-          "formula_en": "number + classifier + noun",
           "examples": [
             {
               "hanzi": "桌子上有两本书。",
@@ -1002,13 +1062,15 @@
               "pinyin": "Wǒ mǎi le sān jiàn yīfu.",
               "english": "I bought three items of clothing."
             }
-          ]
+          ],
+          "pattern_hanzi": "数字 + 量词 + 名词",
+          "pattern_pinyin": "shùzì + liàngcí + míngcí",
+          "pattern_pseudo_translation": "<number> + <classifier> + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "两 (liǎng), 几 (jǐ), and 多少 (duōshao)",
           "explanation_en": "两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.",
-          "formula_en": "几 + classifier + noun?",
           "examples": [
             {
               "hanzi": "你有几个好朋友？",
@@ -1020,7 +1082,10 @@
               "pinyin": "Zhè běn shū duōshao qián?",
               "english": "How much does this book cost?"
             }
-          ]
+          ],
+          "pattern_hanzi": "几 + 量词 + 名词？",
+          "pattern_pinyin": "jǐ + liàngcí + míngcí?",
+          "pattern_pseudo_translation": "几 + <classifier> + <noun>？"
         }
       ],
       "guided_building": {
@@ -1037,7 +1102,8 @@
               "hanzi": "我有三件衣服。",
               "pinyin": "Wǒ yǒu sān jiàn yīfu.",
               "english": "I have three pieces of clothing."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "two cats",
@@ -1045,7 +1111,8 @@
               "hanzi": "我有两只猫。",
               "pinyin": "Wǒ yǒu liǎng zhī māo.",
               "english": "I have two cats."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1061,11 +1128,13 @@
         "questions": [
           {
             "prompt_en": "How many books belong to the speaker?",
-            "answer_en": "Two."
+            "answer_en": "Two.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Who bought more clothing?",
-            "answer_en": "The older sister."
+            "answer_en": "The older sister.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1107,5 +1176,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-quantities-classifiers--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Classifiers for countable objects",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-quantities-classifiers--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: 两 (liǎng), 几 (jǐ), and 多少 (duōshao)",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: three pieces of clothing",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-quantities-classifiers--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: two cats",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--read--reading-q-01",
+            "kind": "question",
+            "label": "How many books belong to the speaker?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-quantities-classifiers--read--reading-q-02",
+            "kind": "question",
+            "label": "Who bought more clothing?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask how many books someone has.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-quantities-classifiers--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say you need a little water.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-quantities-classifiers--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-quantities-classifiers--quiz--q-06-1",
+            "kind": "practice",
+            "label": "Which expression means “half”?",
+            "optional": true,
+            "target_id": "q-06-1"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--q-06-2",
+            "kind": "practice",
+            "label": "Which expression means “half”?",
+            "optional": true,
+            "target_id": "q-06-2"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--q-06-3",
+            "kind": "practice",
+            "label": "Which expression means “measure word for animals”?",
+            "optional": true,
+            "target_id": "q-06-3"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--q-06-4",
+            "kind": "practice",
+            "label": "In the example “现在是八点半。” (xiànzài shì bā diǎn bàn.), what is happening?",
+            "optional": false,
+            "target_id": "q-06-4"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--q-06-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Classes at the school start at 8:30 a.m.”",
+            "optional": false,
+            "target_id": "q-06-5"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: How many books belong to the speaker?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Who bought more clothing?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask how many books someone has.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-quantities-classifiers--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say you need a little water.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

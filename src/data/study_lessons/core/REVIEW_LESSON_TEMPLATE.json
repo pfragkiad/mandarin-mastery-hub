@@ -1,11 +1,11 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "review-greetings",
   "lesson_type": "review",
   "lesson": {
     "title": "Greetings Review",
     "subtitle": "Recall greetings you have learned.",
-    "description": "Review familiar greeting vocabulary and reinforce its meaning.",
+    "description": "Review familiar greetings and practise responding politely.",
     "slug": "greetings-review"
   },
   "classification": {
@@ -14,16 +14,19 @@
       "communication-social"
     ],
     "tags": [
-      "review"
+      "greetings",
+      "courtesy"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Recall previously learned greetings without introducing new vocabulary."
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.3.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -43,7 +46,9 @@
             "hanzi": "你好",
             "pinyin": "nǐ hǎo",
             "meaning_en": "hello",
-            "syllabus_refs": []
+            "syllabus_refs": [],
+            "usage_label": "Register",
+            "usage_note": "A neutral, common greeting that fits both informal and ordinary polite conversations."
           }
         ]
       }
@@ -74,5 +79,39 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "review-greetings--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "review-greetings--review--r1",
+            "kind": "section",
+            "label": "Review familiar expressions",
+            "optional": false,
+            "target_id": "r1"
+          }
+        ]
+      },
+      {
+        "id": "review-greetings--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "review-greetings--quiz--q1",
+            "kind": "practice",
+            "label": "Which expression means hello?",
+            "optional": false,
+            "target_id": "q1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 12
 }

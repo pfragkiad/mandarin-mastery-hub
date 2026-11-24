@@ -1,0 +1,2514 @@
+{
+ "schemaVersion": "tone-pairs-sidecar/1",
+ "generatedFrom": "importer/data/tone-pairs/manifest.json",
+ "acquiredOn": "2026-11-24",
+ "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+ "source": {
+  "repository": "https://github.com/hugolpz/audio-cmn",
+  "commit": "f759a0f18f27690742957619e1248ed91e9b3f2c",
+  "speaker": "Yue Tan",
+  "collection": "Shtooka cmn-caen-tan",
+  "copyright": "© 2009 Yue Tan",
+  "license": "CC BY-SA 3.0 US",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+  "processingCredits": "Hugo Lopez and Nicolas Vion (audio-cmn)"
+ },
+ "examples": [
+  {
+   "id": "shtooka:cmn-901eb874",
+   "sourceFileIds": [
+    "cmn-901eb874.mp3"
+   ],
+   "headword": "医生",
+   "sourceReading": "yīshēng",
+   "citationSyllables": [
+    "yī",
+    "shēng"
+   ],
+   "citationTones": [
+    1,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "yī",
+    "shēng"
+   ],
+   "expectedSpokenTones": [
+    1,
+    1
+   ],
+   "pair": "1-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "doctor",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "85ad2b80-79de-4b47-be3f-941462c2b149",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "shēng",
+     "base": "sheng",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/149792f1-6c7d-4c37-8f7d-91be0c945d0c/cmn-075083eeca6e.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%8C%BB%E7%94%9F.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "f5789cccd831feaf22f2ce7b22779f327f8f6539042a720c5bfea20de0c93081"
+   }
+  },
+  {
+   "id": "shtooka:cmn-c6681ef0",
+   "sourceFileIds": [
+    "cmn-c6681ef0.mp3"
+   ],
+   "headword": "咖啡",
+   "sourceReading": "kāfēi",
+   "citationSyllables": [
+    "kā",
+    "fēi"
+   ],
+   "citationTones": [
+    1,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "kā",
+    "fēi"
+   ],
+   "expectedSpokenTones": [
+    1,
+    1
+   ],
+   "pair": "1-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "coffee",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "85fc88e9-6bd7-4a6f-912d-97ff6688e599",
+   "chartLinks": [
+    {
+     "reading": "kā",
+     "base": "ka",
+     "tone": 1
+    },
+    {
+     "reading": "fēi",
+     "base": "fei",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/2f1ec041-b6d1-4f16-8218-cbd8a6f1c595/hsk2-c05483395b6480b9.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%92%96%E5%95%A1.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "c05483395b6480b968b0f73645392df0be4561ed6d7cedc9c137a909b52bede9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-f66b58e0",
+   "sourceFileIds": [
+    "cmn-f66b58e0.mp3"
+   ],
+   "headword": "新闻",
+   "sourceReading": "xīnwén",
+   "citationSyllables": [
+    "xīn",
+    "wén"
+   ],
+   "citationTones": [
+    1,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "xīn",
+    "wén"
+   ],
+   "expectedSpokenTones": [
+    1,
+    2
+   ],
+   "pair": "1-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "news",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "d07ebe01-dbfa-5b04-b6ee-57683a5e99ed",
+   "chartLinks": [
+    {
+     "reading": "xīn",
+     "base": "xin",
+     "tone": 1
+    },
+    {
+     "reading": "wén",
+     "base": "wen",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/03f25d9c-81d4-48ab-a2ab-fd6aa8bde098/hsk3-b67bcbb3fb132d66.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%96%B0%E9%97%BB.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "b67bcbb3fb132d669c1c6aadde4fd635715760b243ac4a36cb485b69d587edaf"
+   }
+  },
+  {
+   "id": "shtooka:cmn-5a09ed37",
+   "sourceFileIds": [
+    "cmn-5a09ed37.mp3"
+   ],
+   "headword": "中文",
+   "sourceReading": "zhōngwén",
+   "citationSyllables": [
+    "zhōng",
+    "wén"
+   ],
+   "citationTones": [
+    1,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "zhōng",
+    "wén"
+   ],
+   "expectedSpokenTones": [
+    1,
+    2
+   ],
+   "pair": "1-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "Chinese language",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "8e71dd8f-1032-4cbc-9484-7a6efd83c50b",
+   "chartLinks": [
+    {
+     "reading": "zhōng",
+     "base": "zhong",
+     "tone": 1
+    },
+    {
+     "reading": "wén",
+     "base": "wen",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/0acb0bae-9232-404f-a0e3-787faf96e9fb/cmn-3ecf2345ac8d.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%AD%E6%96%87.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "cb7d30cbae9a267d2c4602d0d751f67e31febbbac39ee96a0798ff1bcb470d98"
+   }
+  },
+  {
+   "id": "shtooka:cmn-4e8fb01c",
+   "sourceFileIds": [
+    "cmn-4e8fb01c.mp3"
+   ],
+   "headword": "机场",
+   "sourceReading": "jīchǎng",
+   "citationSyllables": [
+    "jī",
+    "chǎng"
+   ],
+   "citationTones": [
+    1,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "jī",
+    "chǎng"
+   ],
+   "expectedSpokenTones": [
+    1,
+    3
+   ],
+   "pair": "1-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "airport",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "98b7c222-7b4d-459a-8ff4-801c4b837d72",
+   "chartLinks": [
+    {
+     "reading": "jī",
+     "base": "ji",
+     "tone": 1
+    },
+    {
+     "reading": "chǎng",
+     "base": "chang",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/785b56cb-adeb-4806-9448-fadb8e7a90cf/hsk2-fba77f611f2ca0be.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%9C%BA%E5%9C%BA.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "fba77f611f2ca0be929174f2996f756fc2d08d8b2431eb0cf26fc156dc96e085"
+   }
+  },
+  {
+   "id": "shtooka:cmn-ad01bc3e",
+   "sourceFileIds": [
+    "cmn-ad01bc3e.mp3"
+   ],
+   "headword": "方法",
+   "sourceReading": "fāngfǎ",
+   "citationSyllables": [
+    "fāng",
+    "fǎ"
+   ],
+   "citationTones": [
+    1,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "fāng",
+    "fǎ"
+   ],
+   "expectedSpokenTones": [
+    1,
+    3
+   ],
+   "pair": "1-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "method",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "ce38cbcd-a445-57f1-8e24-b0f228ce93ac",
+   "chartLinks": [
+    {
+     "reading": "fāng",
+     "base": "fang",
+     "tone": 1
+    },
+    {
+     "reading": "fǎ",
+     "base": "fa",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/7f74cd45-a907-4734-8652-fe19e29f820b/hsk3-d90af8bd1656d8f2.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%96%B9%E6%B3%95.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "d90af8bd1656d8f2e28083edda75085ac36f9a9f37907536b305a7158b49fd7f"
+   }
+  },
+  {
+   "id": "shtooka:cmn-fc4711bc",
+   "sourceFileIds": [
+    "cmn-fc4711bc.mp3"
+   ],
+   "headword": "天气",
+   "sourceReading": "tiānqì",
+   "citationSyllables": [
+    "tiān",
+    "qì"
+   ],
+   "citationTones": [
+    1,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "tiān",
+    "qì"
+   ],
+   "expectedSpokenTones": [
+    1,
+    4
+   ],
+   "pair": "1-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "weather",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "f328c7fd-0a0c-4fff-ab0d-73ab38802fda",
+   "chartLinks": [
+    {
+     "reading": "tiān",
+     "base": "tian",
+     "tone": 1
+    },
+    {
+     "reading": "qì",
+     "base": "qi",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/e950e37e-4071-49c2-a10b-dcbb7f18f42a/cmn-20197678191f.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%A4%A9%E6%B0%94.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "64cfc2c385eafcb1fb6e72b8d0c92519706f73bfb0c443d3f413ac9c19cf504e"
+   }
+  },
+  {
+   "id": "shtooka:cmn-29206147",
+   "sourceFileIds": [
+    "cmn-29206147.mp3"
+   ],
+   "headword": "工作",
+   "sourceReading": "gōngzuò",
+   "citationSyllables": [
+    "gōng",
+    "zuò"
+   ],
+   "citationTones": [
+    1,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "gōng",
+    "zuò"
+   ],
+   "expectedSpokenTones": [
+    1,
+    4
+   ],
+   "pair": "1-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "work",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "779b9fae-6033-4f39-9ed4-6df54856643a",
+   "chartLinks": [
+    {
+     "reading": "gōng",
+     "base": "gong",
+     "tone": 1
+    },
+    {
+     "reading": "zuò",
+     "base": "zuo",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/5af6dd8c-afe8-41aa-8401-9d7cae086808/cmn-7e11989e5fd3.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%B7%A5%E4%BD%9C.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "97f08425d29d6573bfdc62d3f995fef3a1728f303383a880f8df6c58c9707f79"
+   }
+  },
+  {
+   "id": "shtooka:cmn-c4698257",
+   "sourceFileIds": [
+    "cmn-c4698257.mp3"
+   ],
+   "headword": "东西",
+   "sourceReading": "dōngxi",
+   "citationSyllables": [
+    "dōng",
+    "xi"
+   ],
+   "citationTones": [
+    1,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "dōng",
+    "xi"
+   ],
+   "expectedSpokenTones": [
+    1,
+    5
+   ],
+   "pair": "1-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "things",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "1181eb1a-9a7d-41b6-a3e4-c9e20dcdae24",
+   "chartLinks": [
+    {
+     "reading": "dōng",
+     "base": "dong",
+     "tone": 1
+    },
+    {
+     "reading": "xi",
+     "base": "xi",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/84c7f0f7-966b-4116-8381-5bb8a67c7614/cmn-033da4ca6153.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%9C%E8%A5%BF.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "87cf3ac90951b63a8976cce54ac27b726009b67e4857ea2eb394769d64e99b73"
+   }
+  },
+  {
+   "id": "shtooka:cmn-94d6dd46",
+   "sourceFileIds": [
+    "cmn-94d6dd46.mp3"
+   ],
+   "headword": "妈妈",
+   "sourceReading": "māma",
+   "citationSyllables": [
+    "mā",
+    "ma"
+   ],
+   "citationTones": [
+    1,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "mā",
+    "ma"
+   ],
+   "expectedSpokenTones": [
+    1,
+    5
+   ],
+   "pair": "1-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "mother",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "98afb004-d77f-417d-ac03-d0d4e554763f",
+   "chartLinks": [
+    {
+     "reading": "mā",
+     "base": "ma",
+     "tone": 1
+    },
+    {
+     "reading": "ma",
+     "base": "ma",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/57fa1572-db59-4fa1-a8bb-c4f5a2f3dab0/cmn-7c3329713167.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%A6%88%E5%A6%88.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "79e275d65845ae0cc99862afeb9ce00bf7ea9f02c32f7485049ae98ff5579a1e"
+   }
+  },
+  {
+   "id": "shtooka:cmn-5767840f",
+   "sourceFileIds": [
+    "cmn-5767840f.mp3"
+   ],
+   "headword": "明天",
+   "sourceReading": "míngtiān",
+   "citationSyllables": [
+    "míng",
+    "tiān"
+   ],
+   "citationTones": [
+    2,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "míng",
+    "tiān"
+   ],
+   "expectedSpokenTones": [
+    2,
+    1
+   ],
+   "pair": "2-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "tomorrow",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "9c87270a-5199-455b-8ac3-1541010ca2d7",
+   "chartLinks": [
+    {
+     "reading": "míng",
+     "base": "ming",
+     "tone": 2
+    },
+    {
+     "reading": "tiān",
+     "base": "tian",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/603e131f-be04-4f8d-b297-a956658c9adf/cmn-ccd7c164df58.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%98%8E%E5%A4%A9.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "0f658d8009146c3b4309cd8caa33d612ff6936623dd6e7b0ef4ec4dcac4c8fe3"
+   }
+  },
+  {
+   "id": "shtooka:cmn-032a3e41",
+   "sourceFileIds": [
+    "cmn-032a3e41.mp3"
+   ],
+   "headword": "国家",
+   "sourceReading": "guójiā",
+   "citationSyllables": [
+    "guó",
+    "jiā"
+   ],
+   "citationTones": [
+    2,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "guó",
+    "jiā"
+   ],
+   "expectedSpokenTones": [
+    2,
+    1
+   ],
+   "pair": "2-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "country",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "2cfbdfd6-4007-58df-8060-f723eb7e8a6a",
+   "chartLinks": [
+    {
+     "reading": "guó",
+     "base": "guo",
+     "tone": 2
+    },
+    {
+     "reading": "jiā",
+     "base": "jia",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/1a8345e0-373e-41d8-97d5-12c0c0f5b33f/hsk3-ba224fedf4589176.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%9B%BD%E5%AE%B6.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "ba224fedf4589176ee87aed8820591f23301783a3714625e3472d524dacfb140"
+   }
+  },
+  {
+   "id": "shtooka:cmn-5ac6f809",
+   "sourceFileIds": [
+    "cmn-5ac6f809.mp3"
+   ],
+   "headword": "学习",
+   "sourceReading": "xuéxí",
+   "citationSyllables": [
+    "xué",
+    "xí"
+   ],
+   "citationTones": [
+    2,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "xué",
+    "xí"
+   ],
+   "expectedSpokenTones": [
+    2,
+    2
+   ],
+   "pair": "2-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "study",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "75fedfcf-59a6-444e-87a5-77b3250a4d57",
+   "chartLinks": [
+    {
+     "reading": "xué",
+     "base": "xue",
+     "tone": 2
+    },
+    {
+     "reading": "xí",
+     "base": "xi",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/a25f501b-68ff-4a61-abf4-a849395a846f/cmn-d6284889f91e.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%AD%A6%E4%B9%A0.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "90a3586aca2c32240401b7c58f7c61d1b16ad4d88145380d445883e07903d027"
+   }
+  },
+  {
+   "id": "shtooka:cmn-dad564d4",
+   "sourceFileIds": [
+    "cmn-dad564d4.mp3"
+   ],
+   "headword": "银行",
+   "sourceReading": "yínháng",
+   "citationSyllables": [
+    "yín",
+    "háng"
+   ],
+   "citationTones": [
+    2,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "yín",
+    "háng"
+   ],
+   "expectedSpokenTones": [
+    2,
+    2
+   ],
+   "pair": "2-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "bank",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "f536cbb1-2c83-5c2a-a7c4-8029c3707cc5",
+   "chartLinks": [
+    {
+     "reading": "yín",
+     "base": "yin",
+     "tone": 2
+    },
+    {
+     "reading": "háng",
+     "base": "hang",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/2a89b315-d05a-4c7c-8d7b-815aee9c3615/hsk3-11b78fd39c32b375.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E9%93%B6%E8%A1%8C.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "11b78fd39c32b3753ecaf907f298e8094709afff73cbb175c620021de35a6e51"
+   }
+  },
+  {
+   "id": "shtooka:cmn-568d6c36",
+   "sourceFileIds": [
+    "cmn-568d6c36.mp3"
+   ],
+   "headword": "苹果",
+   "sourceReading": "píngguǒ",
+   "citationSyllables": [
+    "píng",
+    "guǒ"
+   ],
+   "citationTones": [
+    2,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "píng",
+    "guǒ"
+   ],
+   "expectedSpokenTones": [
+    2,
+    3
+   ],
+   "pair": "2-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "apple",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "e042e8de-f355-4606-8307-0564dcd396f0",
+   "chartLinks": [
+    {
+     "reading": "píng",
+     "base": "ping",
+     "tone": 2
+    },
+    {
+     "reading": "guǒ",
+     "base": "guo",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/e433814e-88f5-4e90-9954-c5801c3ed23d/cmn-75ed77db6548.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E8%8B%B9%E6%9E%9C.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "b10596e39ef599d7d7a71f983b5d9d031d8c964e6dc99db3e88223b1b46f3ded"
+   }
+  },
+  {
+   "id": "shtooka:cmn-326f7281",
+   "sourceFileIds": [
+    "cmn-326f7281.mp3"
+   ],
+   "headword": "牛奶",
+   "sourceReading": "niúnǎi",
+   "citationSyllables": [
+    "niú",
+    "nǎi"
+   ],
+   "citationTones": [
+    2,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "niú",
+    "nǎi"
+   ],
+   "expectedSpokenTones": [
+    2,
+    3
+   ],
+   "pair": "2-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "milk",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "ca6f3d0f-c4d9-486f-8b82-b9d2af1722aa",
+   "chartLinks": [
+    {
+     "reading": "niú",
+     "base": "niu",
+     "tone": 2
+    },
+    {
+     "reading": "nǎi",
+     "base": "nai",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/02d190ac-d744-46b8-bbeb-c2b612935071/cmn-0b5ca74fd9cd.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E7%89%9B%E5%A5%B6.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "4f9635da3f0115317f67bbe3b1fb8f1ecc4d1f50e67927869938f34a6a8cc5d8"
+   }
+  },
+  {
+   "id": "shtooka:cmn-7e64f673",
+   "sourceFileIds": [
+    "cmn-7e64f673.mp3"
+   ],
+   "headword": "文化",
+   "sourceReading": "wénhuà",
+   "citationSyllables": [
+    "wén",
+    "huà"
+   ],
+   "citationTones": [
+    2,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "wén",
+    "huà"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "2-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "culture",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "09a2c205-6fa4-56c9-bc59-9645180d8b35",
+   "chartLinks": [
+    {
+     "reading": "wén",
+     "base": "wen",
+     "tone": 2
+    },
+    {
+     "reading": "huà",
+     "base": "hua",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/8cda7099-87a3-417d-a5ac-76de26678be0/hsk3-ec39fdf0823b171f.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%96%87%E5%8C%96.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "ec39fdf0823b171ff49c0125c48b9dece18a1928e034dacd23d018722aa8bb0a"
+   }
+  },
+  {
+   "id": "shtooka:cmn-b545b5e9",
+   "sourceFileIds": [
+    "cmn-b545b5e9.mp3"
+   ],
+   "headword": "学校",
+   "sourceReading": "xuéxiào",
+   "citationSyllables": [
+    "xué",
+    "xiào"
+   ],
+   "citationTones": [
+    2,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "xué",
+    "xiào"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "2-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "school",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "941fa3e1-b9de-4389-84ba-50cc0808325a",
+   "chartLinks": [
+    {
+     "reading": "xué",
+     "base": "xue",
+     "tone": 2
+    },
+    {
+     "reading": "xiào",
+     "base": "xiao",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/45004b2c-0039-4b9b-8028-3df938269530/cmn-81da32fed8e9.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%AD%A6%E6%A0%A1.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "22d281e57df7a7c82c3e7e7a8cf2c4d36d9c10a932ef7dde7b06e6633587e7c4"
+   }
+  },
+  {
+   "id": "shtooka:cmn-36296e70",
+   "sourceFileIds": [
+    "cmn-36296e70.mp3"
+   ],
+   "headword": "朋友",
+   "sourceReading": "péngyou",
+   "citationSyllables": [
+    "péng",
+    "you"
+   ],
+   "citationTones": [
+    2,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "péng",
+    "you"
+   ],
+   "expectedSpokenTones": [
+    2,
+    5
+   ],
+   "pair": "2-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "friend",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "48b9494d-5882-4161-ad8c-ad1224347af9",
+   "chartLinks": [
+    {
+     "reading": "péng",
+     "base": "peng",
+     "tone": 2
+    },
+    {
+     "reading": "you",
+     "base": "you",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/2b484ac9-fc2a-4168-af1c-156a83bacfb8/cmn-8b991442f12d.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%9C%8B%E5%8F%8B.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "888d6563ae4b6c910437d23881a2db29cf61e89547cf9b1ee49fc41c85053cb6"
+   }
+  },
+  {
+   "id": "shtooka:cmn-0b106591",
+   "sourceFileIds": [
+    "cmn-0b106591.mp3"
+   ],
+   "headword": "孩子",
+   "sourceReading": "háizi",
+   "citationSyllables": [
+    "hái",
+    "zi"
+   ],
+   "citationTones": [
+    2,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "hái",
+    "zi"
+   ],
+   "expectedSpokenTones": [
+    2,
+    5
+   ],
+   "pair": "2-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "child",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "462f627f-5663-4990-a525-c57bdd134b4e",
+   "chartLinks": [
+    {
+     "reading": "hái",
+     "base": "hai",
+     "tone": 2
+    },
+    {
+     "reading": "zi",
+     "base": "zi",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/531b50f7-a4af-48ba-acb9-d8ef0fee440f/cmn-117e2e9e5d0b.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%AD%A9%E5%AD%90.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "8fb6e7fbb587d3f7a36089fdc391a8683ea69cdee2bf10f35a3f973609d3e337"
+   }
+  },
+  {
+   "id": "shtooka:cmn-cf806469",
+   "sourceFileIds": [
+    "cmn-cf806469.mp3"
+   ],
+   "headword": "老师",
+   "sourceReading": "lǎoshī",
+   "citationSyllables": [
+    "lǎo",
+    "shī"
+   ],
+   "citationTones": [
+    3,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "lǎo",
+    "shī"
+   ],
+   "expectedSpokenTones": [
+    3,
+    1
+   ],
+   "pair": "3-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "teacher",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "a960dc1c-23bc-472e-b07a-9203bca99aa9",
+   "chartLinks": [
+    {
+     "reading": "lǎo",
+     "base": "lao",
+     "tone": 3
+    },
+    {
+     "reading": "shī",
+     "base": "shi",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/be08289f-eb92-42b9-9e98-5fdc99f78d23/cmn-6c689a764797.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E8%80%81%E5%B8%88.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "84c8babb0abdbf71b1bbdb0f90ff625b5b4d6c92ab231a8813ed18e2d33bfb7a"
+   }
+  },
+  {
+   "id": "shtooka:cmn-ea73f74d",
+   "sourceFileIds": [
+    "cmn-ea73f74d.mp3"
+   ],
+   "headword": "小心",
+   "sourceReading": "xiǎoxīn",
+   "citationSyllables": [
+    "xiǎo",
+    "xīn"
+   ],
+   "citationTones": [
+    3,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "xiǎo",
+    "xīn"
+   ],
+   "expectedSpokenTones": [
+    3,
+    1
+   ],
+   "pair": "3-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "be careful",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "7d987168-5841-56c7-8d66-ddf4aa57f759",
+   "chartLinks": [
+    {
+     "reading": "xiǎo",
+     "base": "xiao",
+     "tone": 3
+    },
+    {
+     "reading": "xīn",
+     "base": "xin",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/926e52fc-1d96-4f75-935c-b887eee8c4f1/hsk3-e0ac53cd8686f3cc.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%B0%8F%E5%BF%83.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "e0ac53cd8686f3cccc446b60e86f5347496865bcb74e7df228f42a473b5cb93c"
+   }
+  },
+  {
+   "id": "shtooka:cmn-8cb75729",
+   "sourceFileIds": [
+    "cmn-8cb75729.mp3"
+   ],
+   "headword": "旅游",
+   "sourceReading": "lǚyóu",
+   "citationSyllables": [
+    "lǚ",
+    "yóu"
+   ],
+   "citationTones": [
+    3,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "lǚ",
+    "yóu"
+   ],
+   "expectedSpokenTones": [
+    3,
+    2
+   ],
+   "pair": "3-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "travel",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "e79b85a0-439a-4c5d-80d6-0e4dde6af84e",
+   "chartLinks": [
+    {
+     "reading": "lǚ",
+     "base": "lü",
+     "tone": 3
+    },
+    {
+     "reading": "yóu",
+     "base": "you",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/d17a2324-12d9-439d-9d67-ed1dcee9c07d/hsk2-951787c76b4aa62c.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%97%85%E6%B8%B8.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "951787c76b4aa62c93c37a27ca886a4de384a0f1ea4ef9665d9f942f08f0c28f"
+   }
+  },
+  {
+   "id": "shtooka:cmn-2a34c50a",
+   "sourceFileIds": [
+    "cmn-2a34c50a.mp3"
+   ],
+   "headword": "语言",
+   "sourceReading": "yǔyán",
+   "citationSyllables": [
+    "yǔ",
+    "yán"
+   ],
+   "citationTones": [
+    3,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "yǔ",
+    "yán"
+   ],
+   "expectedSpokenTones": [
+    3,
+    2
+   ],
+   "pair": "3-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "language",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "a4e482b9-b3b3-5967-9137-c8bdc2e20a73",
+   "chartLinks": [
+    {
+     "reading": "yǔ",
+     "base": "yu",
+     "tone": 3
+    },
+    {
+     "reading": "yán",
+     "base": "yan",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/d99c3427-65bc-4744-bad5-a49615b95fc3/hsk3-517a4e5d765b687b.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E8%AF%AD%E8%A8%80.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "517a4e5d765b687b8e38115c3eebc771b68b79c3a83034cf7c7ae8136873bd96"
+   }
+  },
+  {
+   "id": "shtooka:cmn-481c5c0c",
+   "sourceFileIds": [
+    "cmn-481c5c0c.mp3"
+   ],
+   "headword": "水果",
+   "sourceReading": "shuǐguǒ",
+   "citationSyllables": [
+    "shuǐ",
+    "guǒ"
+   ],
+   "citationTones": [
+    3,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "shuí",
+    "guǒ"
+   ],
+   "expectedSpokenTones": [
+    2,
+    3
+   ],
+   "pair": "3-3",
+   "rule": "third",
+   "inPairMatrix": true,
+   "english": "fruit",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "d9ee3408-28f7-4028-a515-1009fa23ffbd",
+   "chartLinks": [
+    {
+     "reading": "shuǐ",
+     "base": "shui",
+     "tone": 3
+    },
+    {
+     "reading": "guǒ",
+     "base": "guo",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/2aca1b5a-ab68-44e1-bdf0-10e170dc41fa/cmn-9584d2c00189.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%B0%B4%E6%9E%9C.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "7cc2ced94631121a43af6a01b25d373971732f3bd78c1d6dc2f59b37c7e07fdf"
+   }
+  },
+  {
+   "id": "shtooka:cmn-de935dea",
+   "sourceFileIds": [
+    "cmn-de935dea.mp3"
+   ],
+   "headword": "可以",
+   "sourceReading": "kěyǐ",
+   "citationSyllables": [
+    "kě",
+    "yǐ"
+   ],
+   "citationTones": [
+    3,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "ké",
+    "yǐ"
+   ],
+   "expectedSpokenTones": [
+    2,
+    3
+   ],
+   "pair": "3-3",
+   "rule": "third",
+   "inPairMatrix": true,
+   "english": "can; may",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "68e068b9-cc35-4635-be95-32391ffd8d3a",
+   "chartLinks": [
+    {
+     "reading": "kě",
+     "base": "ke",
+     "tone": 3
+    },
+    {
+     "reading": "yǐ",
+     "base": "yi",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/51c7e962-55cd-4d02-9602-e05ed87561ce/cmn-a339e2380c16.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%8F%AF%E4%BB%A5.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "5cc38898df1335af7645b34061add76b7bbcf77fbbcd351f22bd0e9194bf74b9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-aba7f4a8",
+   "sourceFileIds": [
+    "cmn-aba7f4a8.mp3"
+   ],
+   "headword": "好看",
+   "sourceReading": "hǎokàn",
+   "citationSyllables": [
+    "hǎo",
+    "kàn"
+   ],
+   "citationTones": [
+    3,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "hǎo",
+    "kàn"
+   ],
+   "expectedSpokenTones": [
+    3,
+    4
+   ],
+   "pair": "3-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "good-looking",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "d126c577-b416-432d-96d6-326ad8bf844a",
+   "chartLinks": [
+    {
+     "reading": "hǎo",
+     "base": "hao",
+     "tone": 3
+    },
+    {
+     "reading": "kàn",
+     "base": "kan",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/ec521dcb-ff36-4fb4-87c2-b868d792015d/cmn-5b50d0c477e4.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%A5%BD%E7%9C%8B.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "1f347c86c055ad468a4c010aba34a94a974a508a88a3db8164521458271c70f9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-0bd4d7fe",
+   "sourceFileIds": [
+    "cmn-0bd4d7fe.mp3"
+   ],
+   "headword": "考试",
+   "sourceReading": "kǎoshì",
+   "citationSyllables": [
+    "kǎo",
+    "shì"
+   ],
+   "citationTones": [
+    3,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "kǎo",
+    "shì"
+   ],
+   "expectedSpokenTones": [
+    3,
+    4
+   ],
+   "pair": "3-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "exam",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "f484ebe1-3394-4075-a570-1f7e0e8c3bcd",
+   "chartLinks": [
+    {
+     "reading": "kǎo",
+     "base": "kao",
+     "tone": 3
+    },
+    {
+     "reading": "shì",
+     "base": "shi",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/76619b90-b44b-422e-972c-a5127e4033da/hsk2-2d677b852a992c0b.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E8%80%83%E8%AF%95.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "2d677b852a992c0ba9cc2ce15e5c3faf9f92eb863011206d532850f32c9600c0"
+   }
+  },
+  {
+   "id": "shtooka:cmn-830fc462",
+   "sourceFileIds": [
+    "cmn-830fc462.mp3"
+   ],
+   "headword": "我们",
+   "sourceReading": "wǒmen",
+   "citationSyllables": [
+    "wǒ",
+    "men"
+   ],
+   "citationTones": [
+    3,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "wǒ",
+    "men"
+   ],
+   "expectedSpokenTones": [
+    3,
+    5
+   ],
+   "pair": "3-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "we",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "b7339cc1-0af4-43f5-b7de-90ce791e5444",
+   "chartLinks": [
+    {
+     "reading": "wǒ",
+     "base": "wo",
+     "tone": 3
+    },
+    {
+     "reading": "men",
+     "base": "men",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/82166290-df6f-487d-b42f-b84209571cde/cmn-2c13f5fa0837.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%88%91%E4%BB%AC.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "697e456c852d9725105d93cef3335375ba5b765ebab668b12049ef0aaf90f6fd"
+   }
+  },
+  {
+   "id": "shtooka:cmn-6a7065c8",
+   "sourceFileIds": [
+    "cmn-6a7065c8.mp3"
+   ],
+   "headword": "椅子",
+   "sourceReading": "yǐzi",
+   "citationSyllables": [
+    "yǐ",
+    "zi"
+   ],
+   "citationTones": [
+    3,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "yǐ",
+    "zi"
+   ],
+   "expectedSpokenTones": [
+    3,
+    5
+   ],
+   "pair": "3-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "chair",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "c82a8af3-7288-42ab-8d89-8223f2726064",
+   "chartLinks": [
+    {
+     "reading": "yǐ",
+     "base": "yi",
+     "tone": 3
+    },
+    {
+     "reading": "zi",
+     "base": "zi",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/91dd9e83-19cd-4b4f-8b66-9a244c0dfcb9/cmn-a1ff6cf36d82.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%A4%85%E5%AD%90.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "4466837e48be8f84ce51f2e88c49edbe695c5e5b8068e08e7aaee1a1771b28c0"
+   }
+  },
+  {
+   "id": "shtooka:cmn-ebb06b65",
+   "sourceFileIds": [
+    "cmn-ebb06b65.mp3"
+   ],
+   "headword": "面包",
+   "sourceReading": "miànbāo",
+   "citationSyllables": [
+    "miàn",
+    "bāo"
+   ],
+   "citationTones": [
+    4,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "miàn",
+    "bāo"
+   ],
+   "expectedSpokenTones": [
+    4,
+    1
+   ],
+   "pair": "4-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "bread",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "d954da9d-8810-4ae8-ba37-5de5185482a2",
+   "chartLinks": [
+    {
+     "reading": "miàn",
+     "base": "mian",
+     "tone": 4
+    },
+    {
+     "reading": "bāo",
+     "base": "bao",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/87cd96f2-3ba5-4323-bfbe-0b4ff7c053c3/cmn-a7fc3ba91b6d.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E9%9D%A2%E5%8C%85.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "1865fb4bfa29eae8f566c5a4ca38d8034795c8d2bd2347e656de17c001ebe5d9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-7a4fb9ef",
+   "sourceFileIds": [
+    "cmn-7a4fb9ef.mp3"
+   ],
+   "headword": "汽车",
+   "sourceReading": "qìchē",
+   "citationSyllables": [
+    "qì",
+    "chē"
+   ],
+   "citationTones": [
+    4,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "qì",
+    "chē"
+   ],
+   "expectedSpokenTones": [
+    4,
+    1
+   ],
+   "pair": "4-1",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "car",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "00822b40-6ee4-5c4b-885c-e8a260c06aa0",
+   "chartLinks": [
+    {
+     "reading": "qì",
+     "base": "qi",
+     "tone": 4
+    },
+    {
+     "reading": "chē",
+     "base": "che",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/306ef516-2d3b-4c13-8dfa-87ff1e064e51/hsk3-5959653385868c71.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E6%B1%BD%E8%BD%A6.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "5959653385868c71da4a3b1d4eb8ad6419b489dc2c45884abf604a57eb589393"
+   }
+  },
+  {
+   "id": "shtooka:cmn-2965e54a",
+   "sourceFileIds": [
+    "cmn-2965e54a.mp3"
+   ],
+   "headword": "大学",
+   "sourceReading": "dàxué",
+   "citationSyllables": [
+    "dà",
+    "xué"
+   ],
+   "citationTones": [
+    4,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "dà",
+    "xué"
+   ],
+   "expectedSpokenTones": [
+    4,
+    2
+   ],
+   "pair": "4-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "university",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "507cb0ba-6780-4d06-9011-579155d0a85d",
+   "chartLinks": [
+    {
+     "reading": "dà",
+     "base": "da",
+     "tone": 4
+    },
+    {
+     "reading": "xué",
+     "base": "xue",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/c4f619f6-44b4-4866-9a51-d62f8554cfae/cmn-ec61d59ae98e.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%A4%A7%E5%AD%A6.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "7c34f28830e9e78d4394ee19cd7b42bf05e3d2a01f5e37f3596f3651920043b3"
+   }
+  },
+  {
+   "id": "shtooka:cmn-8acd50ed",
+   "sourceFileIds": [
+    "cmn-8acd50ed.mp3"
+   ],
+   "headword": "问题",
+   "sourceReading": "wèntí",
+   "citationSyllables": [
+    "wèn",
+    "tí"
+   ],
+   "citationTones": [
+    4,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "wèn",
+    "tí"
+   ],
+   "expectedSpokenTones": [
+    4,
+    2
+   ],
+   "pair": "4-2",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "question; problem",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "ba339c0a-5077-460e-aed7-b5397ec53b8b",
+   "chartLinks": [
+    {
+     "reading": "wèn",
+     "base": "wen",
+     "tone": 4
+    },
+    {
+     "reading": "tí",
+     "base": "ti",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/7803bf95-d7b8-4849-9250-75f4064cc466/cmn-0436487f5ef4.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E9%97%AE%E9%A2%98.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "1bb47167f8a091f770c1f8dff24d36ae5b12269c807dd4194befd2bebd1d2692"
+   }
+  },
+  {
+   "id": "shtooka:cmn-cbbfca64",
+   "sourceFileIds": [
+    "cmn-cbbfca64.mp3"
+   ],
+   "headword": "电脑",
+   "sourceReading": "diànnǎo",
+   "citationSyllables": [
+    "diàn",
+    "nǎo"
+   ],
+   "citationTones": [
+    4,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "diàn",
+    "nǎo"
+   ],
+   "expectedSpokenTones": [
+    4,
+    3
+   ],
+   "pair": "4-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "computer",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "0f42a458-efda-421b-a4ad-dd6dd87a45f5",
+   "chartLinks": [
+    {
+     "reading": "diàn",
+     "base": "dian",
+     "tone": 4
+    },
+    {
+     "reading": "nǎo",
+     "base": "nao",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/5d8640f2-0b55-4be9-b8f4-e9a10bbae0c3/cmn-79f6301250fa.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E7%94%B5%E8%84%91.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "a5f39dc5c0af54b17709860c89a28533fdc9310116cbf7a1e891a531e47e71c9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-f68df445",
+   "sourceFileIds": [
+    "cmn-f68df445.mp3"
+   ],
+   "headword": "电影",
+   "sourceReading": "diànyǐng",
+   "citationSyllables": [
+    "diàn",
+    "yǐng"
+   ],
+   "citationTones": [
+    4,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "diàn",
+    "yǐng"
+   ],
+   "expectedSpokenTones": [
+    4,
+    3
+   ],
+   "pair": "4-3",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "film",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "f5d31b4f-ee15-47a5-a93a-96cc71554248",
+   "chartLinks": [
+    {
+     "reading": "diàn",
+     "base": "dian",
+     "tone": 4
+    },
+    {
+     "reading": "yǐng",
+     "base": "ying",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/00d2eb83-216a-47fa-af9c-65d46be642a9/cmn-e65c74439de9.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E7%94%B5%E5%BD%B1.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "d6b0e2a8752276ed171c11498248ac561f65c23314c3ffc906959912ad555003"
+   }
+  },
+  {
+   "id": "shtooka:cmn-b4797b26",
+   "sourceFileIds": [
+    "cmn-b4797b26.mp3"
+   ],
+   "headword": "电话",
+   "sourceReading": "diànhuà",
+   "citationSyllables": [
+    "diàn",
+    "huà"
+   ],
+   "citationTones": [
+    4,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "diàn",
+    "huà"
+   ],
+   "expectedSpokenTones": [
+    4,
+    4
+   ],
+   "pair": "4-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "telephone",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "60b97887-c631-4ad4-85ad-27b00daedb37",
+   "chartLinks": [
+    {
+     "reading": "diàn",
+     "base": "dian",
+     "tone": 4
+    },
+    {
+     "reading": "huà",
+     "base": "hua",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/6e0a8086-712d-4dd1-92c0-dafb79c9c30e/cmn-9aac08e420a0.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E7%94%B5%E8%AF%9D.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "eda9fccad6767a9b10d51f1b5d96b1d9b59bb075d554da7915bf7a38fb3815c3"
+   }
+  },
+  {
+   "id": "shtooka:cmn-0ad618c6",
+   "sourceFileIds": [
+    "cmn-0ad618c6.mp3"
+   ],
+   "headword": "再见",
+   "sourceReading": "zàijiàn",
+   "citationSyllables": [
+    "zài",
+    "jiàn"
+   ],
+   "citationTones": [
+    4,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "zài",
+    "jiàn"
+   ],
+   "expectedSpokenTones": [
+    4,
+    4
+   ],
+   "pair": "4-4",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "goodbye",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "a782e3af-f10d-4bcb-9d0b-d17b81ed846d",
+   "chartLinks": [
+    {
+     "reading": "zài",
+     "base": "zai",
+     "tone": 4
+    },
+    {
+     "reading": "jiàn",
+     "base": "jian",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/697f7077-8118-4b30-b281-7ec216dc8c52/cmn-cc34d6f90adb.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%86%8D%E8%A7%81.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "d1b03dc012ec510a6d11efd604418b9972ca851608abe5ae17c88dd9677920e0"
+   }
+  },
+  {
+   "id": "shtooka:cmn-799ef867",
+   "sourceFileIds": [
+    "cmn-799ef867.mp3"
+   ],
+   "headword": "爸爸",
+   "sourceReading": "bàba",
+   "citationSyllables": [
+    "bà",
+    "ba"
+   ],
+   "citationTones": [
+    4,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "bà",
+    "ba"
+   ],
+   "expectedSpokenTones": [
+    4,
+    5
+   ],
+   "pair": "4-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "father",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "383b3f58-e897-4f6b-8086-f309538e1d3d",
+   "chartLinks": [
+    {
+     "reading": "bà",
+     "base": "ba",
+     "tone": 4
+    },
+    {
+     "reading": "ba",
+     "base": "ba",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/0dfa9d6a-28c4-4037-a6dc-b174bad70ef4/cmn-784013ff3b45.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E7%88%B8%E7%88%B8.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "36090e54548ceae9466954c670bd42f92e448feed7d85115cba740360237b74f"
+   }
+  },
+  {
+   "id": "shtooka:cmn-40b6425f",
+   "sourceFileIds": [
+    "cmn-40b6425f.mp3"
+   ],
+   "headword": "弟弟",
+   "sourceReading": "dìdi",
+   "citationSyllables": [
+    "dì",
+    "di"
+   ],
+   "citationTones": [
+    4,
+    5
+   ],
+   "expectedSpokenSyllables": [
+    "dì",
+    "di"
+   ],
+   "expectedSpokenTones": [
+    4,
+    5
+   ],
+   "pair": "4-5",
+   "rule": null,
+   "inPairMatrix": true,
+   "english": "younger brother",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "83d9be17-14cf-44b7-b6e8-522ace096871",
+   "chartLinks": [
+    {
+     "reading": "dì",
+     "base": "di",
+     "tone": 4
+    },
+    {
+     "reading": "di",
+     "base": "di",
+     "tone": 5
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/09cd175b-6f43-49d8-b0ec-02a7fc130347/cmn-29c988522e1f.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E5%BC%9F%E5%BC%9F.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "a3956e991445f22d63b5379cb061ceabf0ba04c9c49e4f8709e184aafd9acbd9"
+   }
+  },
+  {
+   "id": "shtooka:cmn-26e5795b",
+   "sourceFileIds": [
+    "cmn-26e5795b.mp3"
+   ],
+   "headword": "一些",
+   "sourceReading": "yìxiē",
+   "citationSyllables": [
+    "yī",
+    "xiē"
+   ],
+   "citationTones": [
+    1,
+    1
+   ],
+   "expectedSpokenSyllables": [
+    "yì",
+    "xiē"
+   ],
+   "expectedSpokenTones": [
+    4,
+    1
+   ],
+   "pair": "1-1",
+   "rule": "yi",
+   "inPairMatrix": false,
+   "english": "some",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "8a844a8d-8dc6-4e05-bda6-e82f4aa219ac",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "xiē",
+     "base": "xie",
+     "tone": 1
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/da8a180b-0d69-4062-a09b-54f3fef84b88/cmn-76e477afe304.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%80%E4%BA%9B.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "7a02bd2df9fe58cdb096cd3f48b4d86b15fcd03e9fabacfac54b237ec35f24b5"
+   }
+  },
+  {
+   "id": "shtooka:cmn-03edefb8",
+   "sourceFileIds": [
+    "cmn-03edefb8.mp3"
+   ],
+   "headword": "一直",
+   "sourceReading": "yìzhí",
+   "citationSyllables": [
+    "yī",
+    "zhí"
+   ],
+   "citationTones": [
+    1,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "yì",
+    "zhí"
+   ],
+   "expectedSpokenTones": [
+    4,
+    2
+   ],
+   "pair": "1-2",
+   "rule": "yi",
+   "inPairMatrix": false,
+   "english": "continuously",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "1de7448e-8545-50ce-a203-e36f4e2cb4e1",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "zhí",
+     "base": "zhi",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/efe8b3c2-d6ce-4979-a87a-5b285d8461f2/hsk3-87ea695d2b909c51.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%80%E7%9B%B4.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "87ea695d2b909c51a5eff6db37d4db0017179a513456121ed67f9872e6de8d09"
+   }
+  },
+  {
+   "id": "shtooka:cmn-9abff013",
+   "sourceFileIds": [
+    "cmn-9abff013.mp3"
+   ],
+   "headword": "一起",
+   "sourceReading": "yìqǐ",
+   "citationSyllables": [
+    "yī",
+    "qǐ"
+   ],
+   "citationTones": [
+    1,
+    3
+   ],
+   "expectedSpokenSyllables": [
+    "yì",
+    "qǐ"
+   ],
+   "expectedSpokenTones": [
+    4,
+    3
+   ],
+   "pair": "1-3",
+   "rule": "yi",
+   "inPairMatrix": false,
+   "english": "together",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "85c6ecbd-8a53-4f8f-afb6-b877f13215bd",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "qǐ",
+     "base": "qi",
+     "tone": 3
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/95dd13c8-b0fb-4221-902b-3543cc98df48/hsk2-40e11209de3952e0.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%80%E8%B5%B7.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "40e11209de3952e0d5f65a9626769558fe0df043d01fc4fc082cc793042a1249"
+   }
+  },
+  {
+   "id": "shtooka:cmn-a442f086",
+   "sourceFileIds": [
+    "cmn-a442f086.mp3"
+   ],
+   "headword": "一共",
+   "sourceReading": "yígòng",
+   "citationSyllables": [
+    "yī",
+    "gòng"
+   ],
+   "citationTones": [
+    1,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "yí",
+    "gòng"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "1-4",
+   "rule": "yi",
+   "inPairMatrix": false,
+   "english": "altogether",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "b7a67643-43e6-51b4-a5f2-342af1808d34",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "gòng",
+     "base": "gong",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/b02a3bf4-1c56-46b2-94d6-b001d4d46a46/hsk3-d38224f8ffe8824d.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%80%E5%85%B1.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "d38224f8ffe8824da3e3c741be4a25ec7d92348494d5ad2d7846a13f0add370d"
+   }
+  },
+  {
+   "id": "shtooka:cmn-7e8ef4af",
+   "sourceFileIds": [
+    "cmn-7e8ef4af.mp3"
+   ],
+   "headword": "一定",
+   "sourceReading": "yídìng",
+   "citationSyllables": [
+    "yī",
+    "dìng"
+   ],
+   "citationTones": [
+    1,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "yí",
+    "dìng"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "1-4",
+   "rule": "yi",
+   "inPairMatrix": false,
+   "english": "certainly",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "39929bb5-f7b6-5da1-9d8e-a4d5f9595fae",
+   "chartLinks": [
+    {
+     "reading": "yī",
+     "base": "yi",
+     "tone": 1
+    },
+    {
+     "reading": "dìng",
+     "base": "ding",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/69e7fa72-5982-4a08-84b8-fe79c6b5094b/hsk3-e0605a597aee44fc.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%80%E5%AE%9A.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "e0605a597aee44fc70ea454530960dbff34b1eb915d8ad3e23e423538b1deacd"
+   }
+  },
+  {
+   "id": "shtooka:cmn-c680fcc5",
+   "sourceFileIds": [
+    "cmn-c680fcc5.mp3"
+   ],
+   "headword": "不要",
+   "sourceReading": "búyào",
+   "citationSyllables": [
+    "bù",
+    "yào"
+   ],
+   "citationTones": [
+    4,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "bú",
+    "yào"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "4-4",
+   "rule": "bu",
+   "inPairMatrix": false,
+   "english": "do not; do not want",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "e1c41fde-ff57-4cfd-af6a-632a17896fb4",
+   "chartLinks": [
+    {
+     "reading": "bù",
+     "base": "bu",
+     "tone": 4
+    },
+    {
+     "reading": "yào",
+     "base": "yao",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/a9f454fb-5e03-43f1-94bd-4eff699df2a1/cmn-9d9f065a799e.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%8D%E8%A6%81.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "703568d4e153294b1f998c2e5f44f0588a62bc6b45f2a0fd573783548513065c"
+   }
+  },
+  {
+   "id": "shtooka:cmn-395e5ad5",
+   "sourceFileIds": [
+    "cmn-395e5ad5.mp3"
+   ],
+   "headword": "不错",
+   "sourceReading": "búcuò",
+   "citationSyllables": [
+    "bù",
+    "cuò"
+   ],
+   "citationTones": [
+    4,
+    4
+   ],
+   "expectedSpokenSyllables": [
+    "bú",
+    "cuò"
+   ],
+   "expectedSpokenTones": [
+    2,
+    4
+   ],
+   "pair": "4-4",
+   "rule": "bu",
+   "inPairMatrix": false,
+   "english": "quite good",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "b3d15a3f-3b5d-43b5-8258-8d511c334a88",
+   "chartLinks": [
+    {
+     "reading": "bù",
+     "base": "bu",
+     "tone": 4
+    },
+    {
+     "reading": "cuò",
+     "base": "cuo",
+     "tone": 4
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/24867485-8272-4214-b7ea-472d34547d24/hsk2-2d6bdaef0a0720de.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%8D%E9%94%99.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "2d6bdaef0a0720ded79d0af40f9a8b887d9a94dacbfb081c729461957afed9cf"
+   }
+  },
+  {
+   "id": "shtooka:cmn-f77016bf",
+   "sourceFileIds": [
+    "cmn-f77016bf.mp3"
+   ],
+   "headword": "不行",
+   "sourceReading": "bùxíng",
+   "citationSyllables": [
+    "bù",
+    "xíng"
+   ],
+   "citationTones": [
+    4,
+    2
+   ],
+   "expectedSpokenSyllables": [
+    "bù",
+    "xíng"
+   ],
+   "expectedSpokenTones": [
+    4,
+    2
+   ],
+   "pair": "4-2",
+   "rule": "bu",
+   "inPairMatrix": false,
+   "english": "not possible",
+   "reviewStatus": "editorial_draft_audio_not_listening_reviewed",
+   "vocabularyEntryId": "711dffad-9d9d-57c7-8320-feabc1d8859b",
+   "chartLinks": [
+    {
+     "reading": "bù",
+     "base": "bu",
+     "tone": 4
+    },
+    {
+     "reading": "xíng",
+     "base": "xing",
+     "tone": 2
+    }
+   ],
+   "audio": {
+    "url": "/__l5e/assets-v1/ee853f71-99c8-4a56-96fd-3fcd853bed75/hsk3-fcecb173b1ead29b.mp3",
+    "upstreamUrl": "https://raw.githubusercontent.com/hugolpz/audio-cmn/f759a0f18f27690742957619e1248ed91e9b3f2c/64k/hsk/cmn-%E4%B8%8D%E8%A1%8C.mp3",
+    "speaker": "Yue Tan",
+    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "recordingKind": "whole-word",
+    "sha256": "fcecb173b1ead29b3737602a74881b17b8571410b3959b16ceb4064db95df88b"
+   }
+  }
+ ]
+}

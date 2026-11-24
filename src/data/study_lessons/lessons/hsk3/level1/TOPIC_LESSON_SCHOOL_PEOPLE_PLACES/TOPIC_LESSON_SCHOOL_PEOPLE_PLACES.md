@@ -30,7 +30,13 @@ A younger student and an older student compare which schools they attend.
 
 学校 (xuéxiào) is a school or educational institution; 学生 (xuéshēng) is a learner. Combining 小学/中学/大学 with 生 specifies the student level.
 
-**Pattern:** school name + 生 → student type
+**Pattern**
+
+小学/中学/大学 + 生  
+*xiǎoxué/zhōngxué/dàxué + shēng*  
+**小学**/**中学**/**大学** + **生**
+
+Use one of the three school levels shown to form the corresponding student type.
 
 **我弟弟是小学生。**
 *Wǒ dìdi shì xiǎoxuéshēng.*
@@ -44,7 +50,11 @@ She studies at university.
 
 上学 (shàngxué) describes attending school; 上课 (shàngkè) describes having/attending a class. The two do not mean exactly the same thing.
 
-**Pattern:** subject + 在 + place + 上学
+**Pattern**
+
+主语 + 在 + 地点 + 上学  
+*zhǔyǔ + zài + dìdiǎn + shàngxué*  
+&lt;subject&gt; + **在** + &lt;place&gt; + **上学**
 
 **我在北京上学。**
 *Wǒ zài Běijīng shàngxué.*
@@ -172,3 +182,46 @@ My friend is a university student.
 
 **Production:** Write this in Mandarin: “There are many students at the university.”
 **Answer:** 大学里有很多学生。 (dàxué lǐ yǒu hěn duō xuéshēng.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-school-people-places--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: School versus student — ID: `topic-school-people-places--pattern--pattern-1`
+- [ ] Apply: Attending school: 上学 (shàngxué) — ID: `topic-school-people-places--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: university — ID: `topic-school-people-places--build--build-sub-01`
+- [ ] Build a sentence: primary school — ID: `topic-school-people-places--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Which child is in primary school? — ID: `topic-school-people-places--read--reading-q-01`
+- [ ] Do they travel to school together? — ID: `topic-school-people-places--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask where someone attends school. — ID: `topic-school-people-places--speak--speaking-1`
+- [ ] Say a friend is a university student. — ID: `topic-school-people-places--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-school-people-places--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-school-people-places--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-school-people-places--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “university”? *(optional)* — ID: `topic-school-people-places--quiz--q-14-1`
+- [ ] Which expression means “primary pupil”? *(optional)* — ID: `topic-school-people-places--quiz--q-14-2`
+- [ ] Which expression means “middle school student”? *(optional)* — ID: `topic-school-people-places--quiz--q-14-3`
+- [ ] In the example “我在大学学习中文。” (wǒ zài dàxué xuéxí Zhōngwén.), what is happening? — ID: `topic-school-people-places--quiz--q-14-4`
+- [ ] Write this in Mandarin: “There are many students at the university.” — ID: `topic-school-people-places--quiz--q-14-5`
+- [ ] Reading comprehension: Which child is in primary school? — ID: `topic-school-people-places--quiz--applied-reading-1`
+- [ ] Reading comprehension: Do they travel to school together? — ID: `topic-school-people-places--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask where someone attends school. — ID: `topic-school-people-places--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say a friend is a university student. — ID: `topic-school-people-places--quiz--applied-speaking-2`

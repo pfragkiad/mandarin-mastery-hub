@@ -1,5 +1,7 @@
 # Buying Everyday Things
 
+**Subtopics:** shopping-commerce, everyday-objects
+
 Buy and describe common things, ask prices and talk about personal possessions.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -30,7 +32,11 @@ A shopper compares prices and decides what to buy for a room.
 
 元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.
 
-**Pattern:** item + 多少钱? / number + 块
+**Pattern**
+
+物品 + 多少钱？ / 数字 + 块  
+*wùpǐn + duōshao qián? / shùzì + kuài*  
+&lt;item&gt; + **多少钱**？ / &lt;number&gt; + **块**
 
 **这件衣服五十元。**
 *Zhè jiàn yīfu wǔ shí yuán.*
@@ -44,7 +50,11 @@ That table is one hundred yuan.
 
 买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.
 
-**Pattern:** shop + 卖 + item; customer + 买 + item
+**Pattern**
+
+商店 + 卖 + 物品; 顾客 + 买 + 物品  
+*shāngdiàn + mài + wùpǐn; gùkè + mǎi + wùpǐn*  
+&lt;shop&gt; + **卖** + &lt;item&gt;; &lt;customer&gt; + **买** + &lt;item&gt;
 
 **这家商店卖手机。**
 *Zhè jiā shāngdiàn mài shǒujī.*
@@ -190,3 +200,46 @@ I want to buy a phone.
 
 **Production:** Write this in Mandarin: “The supermarket opens at eight in the morning.”
 **Answer:** 超市早上八点开门。 (chāoshì zǎoshang bā diǎn kāimén.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-shopping-and-things--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Prices: 元 (yuán) and 块 (kuài) — ID: `topic-shopping-and-things--pattern--pattern-1`
+- [ ] Apply: Buying versus selling — ID: `topic-shopping-and-things--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: phone — ID: `topic-shopping-and-things--build--build-sub-01`
+- [ ] Build a sentence: table — ID: `topic-shopping-and-things--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What two things does Mom want to buy? — ID: `topic-shopping-and-things--read--reading-q-01`
+- [ ] Which object is cheaper? — ID: `topic-shopping-and-things--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask for something less expensive. — ID: `topic-shopping-and-things--speak--speaking-1`
+- [ ] Say you want to buy a phone. — ID: `topic-shopping-and-things--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-shopping-and-things--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-shopping-and-things--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-shopping-and-things--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “supermarket”? *(optional)* — ID: `topic-shopping-and-things--quiz--q-12-1`
+- [ ] Which expression means “yuan (currency)”? *(optional)* — ID: `topic-shopping-and-things--quiz--q-12-2`
+- [ ] Which expression means “table”? *(optional)* — ID: `topic-shopping-and-things--quiz--q-12-3`
+- [ ] In the example “我去超市买水果。” (wǒ qù chāoshì mǎi shuǐguǒ.), what is happening? — ID: `topic-shopping-and-things--quiz--q-12-4`
+- [ ] Write this in Mandarin: “The supermarket opens at eight in the morning.” — ID: `topic-shopping-and-things--quiz--q-12-5`
+- [ ] Reading comprehension: What two things does Mom want to buy? — ID: `topic-shopping-and-things--quiz--applied-reading-1`
+- [ ] Reading comprehension: Which object is cheaper? — ID: `topic-shopping-and-things--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask for something less expensive. — ID: `topic-shopping-and-things--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say you want to buy a phone. — ID: `topic-shopping-and-things--quiz--applied-speaking-2`

@@ -1,5 +1,7 @@
 # Getting Around
 
+**Subtopics:** position-direction
+
 Talk about travelling, moving between places and locating people and objects.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -30,7 +32,11 @@ A traveler asks how to get to the station and distinguishes arriving, returning,
 
 来 (lái) means motion toward a reference point; 去 (qù) means away. 回 (huí) conveys returning.
 
-**Pattern:** subject + 来/去/回 + place
+**Pattern**
+
+主语 + 来/去/回 + 地点  
+*zhǔyǔ + lái/qù/huí + dìdiǎn*  
+&lt;subject&gt; + **来**/**去**/**回** + &lt;place&gt;
 
 **朋友明天来我家。**
 *Péngyou míngtiān lái wǒ jiā.*
@@ -44,7 +50,11 @@ I will go home this afternoon.
 
 到 (dào) marks arrival at a destination. In the simplest travel patterns, use 坐 (zuò) for taking transport such as a taxi or train.
 
-**Pattern:** 坐 + vehicle + 去 + place
+**Pattern**
+
+坐 + 交通工具 + 去 + 地点  
+*zuò + jiāotōng gōngjù + qù + dìdiǎn*  
+**坐** + &lt;vehicle&gt; + **去** + &lt;place&gt;
 
 **我们坐火车去北京。**
 *Wǒmen zuò huǒchē qù Běijīng.*
@@ -190,3 +200,46 @@ Do not reverse 来 (lái) and 去 (qù); choose the viewpoint before you speak.
 
 **Production:** Write this in Mandarin: “There are many cars at the school entrance.”
 **Answer:** 学校门口有很多车。 (xuéxiào ménkǒu yǒu hěn duō chē.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-getting-around--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Movement from the speaker’s viewpoint — ID: `topic-getting-around--pattern--pattern-1`
+- [ ] Apply: Places and destinations — ID: `topic-getting-around--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: plane — ID: `topic-getting-around--build--build-sub-01`
+- [ ] Build a sentence: taxi — ID: `topic-getting-around--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Who takes a taxi? — ID: `topic-getting-around--read--reading-q-01`
+- [ ] How does the speaker return home? — ID: `topic-getting-around--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask where a place is. — ID: `topic-getting-around--speak--speaking-1`
+- [ ] Say how you get home. — ID: `topic-getting-around--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-getting-around--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-getting-around--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-getting-around--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “vehicle”? *(optional)* — ID: `topic-getting-around--quiz--q-13-1`
+- [ ] Which expression means “side”? *(optional)* — ID: `topic-getting-around--quiz--q-13-2`
+- [ ] Which expression means “China”? *(optional)* — ID: `topic-getting-around--quiz--q-13-3`
+- [ ] In the example “这是我爸爸的车。” (zhè shì wǒ bàba de chē.), what is happening? — ID: `topic-getting-around--quiz--q-13-4`
+- [ ] Write this in Mandarin: “There are many cars at the school entrance.” — ID: `topic-getting-around--quiz--q-13-5`
+- [ ] Reading comprehension: Who takes a taxi? — ID: `topic-getting-around--quiz--applied-reading-1`
+- [ ] Reading comprehension: How does the speaker return home? — ID: `topic-getting-around--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask where a place is. — ID: `topic-getting-around--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say how you get home. — ID: `topic-getting-around--quiz--applied-speaking-2`

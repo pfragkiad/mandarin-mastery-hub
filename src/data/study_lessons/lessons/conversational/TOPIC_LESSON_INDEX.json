@@ -1,0 +1,239 @@
+{
+  "course_id": "conversational-mandarin",
+  "taxonomy_version": "hsk-topics/2.0.0",
+  "lessons": [
+    {
+      "lesson_id": "convm-greetings-politeness",
+      "title": "Greetings and Politeness",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.zip",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social"
+      ],
+      "term_count": 10,
+      "dialogue_turn_count": 4,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-people-identity",
+      "title": "Introducing Yourself and Others",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.zip",
+      "primary_topic_id": "people-identity",
+      "topic_ids": [
+        "people-identity",
+        "family-relationships"
+      ],
+      "term_count": 20,
+      "dialogue_turn_count": 4,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-speaking-languages",
+      "title": "Talking About Language Ability",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.zip",
+      "primary_topic_id": "school-language",
+      "topic_ids": [
+        "school-language",
+        "communication-social",
+        "daily-actions"
+      ],
+      "term_count": 22,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-understanding-clarification",
+      "title": "Asking for Clarification",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.zip",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social",
+        "reference-questions"
+      ],
+      "term_count": 15,
+      "dialogue_turn_count": 4,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-asking-directions",
+      "title": "Asking Where Places Are",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.zip",
+      "primary_topic_id": "places-directions",
+      "topic_ids": [
+        "places-directions",
+        "travel-transport"
+      ],
+      "term_count": 21,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-wants-intentions",
+      "title": "Expressing Wants and Intentions",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.zip",
+      "primary_topic_id": "grammar-functions",
+      "topic_ids": [
+        "grammar-functions",
+        "daily-actions"
+      ],
+      "term_count": 21,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": [
+        "everyday-routines"
+      ]
+    },
+    {
+      "lesson_id": "convm-food-drinks",
+      "title": "Ordering Food and Drinks",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_FOOD_DRINKS.zip",
+      "primary_topic_id": "food-drink",
+      "topic_ids": [
+        "food-drink",
+        "shopping-money"
+      ],
+      "term_count": 23,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": [
+        "shopping-commerce"
+      ]
+    },
+    {
+      "lesson_id": "convm-places-to-meet",
+      "title": "Choosing Where to Meet",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PLACES_TO_MEET.zip",
+      "primary_topic_id": "travel-transport",
+      "topic_ids": [
+        "travel-transport",
+        "places-directions",
+        "food-drink"
+      ],
+      "term_count": 19,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-with-someone",
+      "title": "Doing Things Together",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_WITH_SOMEONE.zip",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social",
+        "family-relationships",
+        "daily-actions"
+      ],
+      "term_count": 16,
+      "dialogue_turn_count": 4,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-clock-scheduling",
+      "title": "Agreeing on a Meeting Time",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.zip",
+      "primary_topic_id": "time-calendar",
+      "topic_ids": [
+        "time-calendar",
+        "numbers-quantities"
+      ],
+      "term_count": 29,
+      "dialogue_turn_count": 9,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-today-tomorrow-later",
+      "title": "Today, Tomorrow, and Later",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.zip",
+      "primary_topic_id": "time-calendar",
+      "topic_ids": [
+        "time-calendar",
+        "daily-actions"
+      ],
+      "term_count": 20,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-choices-alternatives",
+      "title": "Choosing Between Alternatives",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.zip",
+      "primary_topic_id": "grammar-functions",
+      "topic_ids": [
+        "grammar-functions",
+        "communication-social",
+        "food-drink"
+      ],
+      "term_count": 18,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-money-prices",
+      "title": "Asking About Prices",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_MONEY_PRICES.zip",
+      "primary_topic_id": "shopping-money",
+      "topic_ids": [
+        "shopping-money",
+        "numbers-quantities"
+      ],
+      "term_count": 29,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-numbers-arithmetic",
+      "title": "Counting and Simple Addition",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.zip",
+      "primary_topic_id": "numbers-quantities",
+      "topic_ids": [
+        "numbers-quantities"
+      ],
+      "term_count": 26,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-permission-requests",
+      "title": "Asking Permission Politely",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.zip",
+      "primary_topic_id": "grammar-functions",
+      "topic_ids": [
+        "grammar-functions",
+        "communication-social"
+      ],
+      "term_count": 21,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-phone-invitations",
+      "title": "Arranging Plans by Telephone",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.zip",
+      "primary_topic_id": "communication-social",
+      "topic_ids": [
+        "communication-social",
+        "time-calendar",
+        "family-relationships"
+      ],
+      "term_count": 14,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": []
+    },
+    {
+      "lesson_id": "convm-newspaper-shopping",
+      "title": "Buying a Newspaper",
+      "file": "conversational_mandarin/topics/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.zip",
+      "primary_topic_id": "shopping-money",
+      "topic_ids": [
+        "shopping-money",
+        "numbers-quantities",
+        "reference-questions",
+        "communication-social"
+      ],
+      "term_count": 12,
+      "dialogue_turn_count": 8,
+      "subtopic_ids": [
+        "shopping-commerce",
+        "money-finance"
+      ]
+    }
+  ]
+}

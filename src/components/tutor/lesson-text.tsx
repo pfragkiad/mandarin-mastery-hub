@@ -10,6 +10,8 @@ import { HintChar, HintGlyphs, useLessonHints } from './lesson-hints';
 import { usePhrasePairing } from './phrase-pairing';
 import type { AudioRequest } from '@/lib/audio';
 import type { Word } from '@/lib/mandarin';
+import { segmentLessonExpression, type LessonSegment } from '@/lib/lesson-segments';
+import { pseudoTranslationParts } from '@/lib/lesson-pattern';
 
 /**
  * Shared text pieces for study lessons (lesson-page.tsx, lessons-index.tsx).
@@ -22,8 +24,9 @@ import type { Word } from '@/lib/mandarin';
  *   Vocabulary entry with exactly that headword. Anything else (patterns like 以 X 为 Y,
  *   ambiguous or unknown forms) stays plain text, so no record identity is guessed.
  * - LessonTerm: hanzi + orange pinyin + speaker (+ meaning). The speaker uses the matched
- *   word's own recording, a single character's exact-reading recording, or browser speech
- *   for the recorded pinyin through the shared audio pipeline.
+ *   word's own recording (only when its reading is the lesson's, see sameReading), a single
+ *   character's exact-reading recording, or browser speech for the recorded pinyin through
+ *   the shared audio pipeline.
  * - LessonWord: a vocabulary card's headword, linked as a whole to its exact record (see below).
  *
  * LessonText also pairs prose "hanzi (pinyin)" terms (inlineSegments + useLessonPairing), so
@@ -52,11 +55,19 @@ const HAN_CHAR = /^\p{Script=Han}$/u;
  */
 export function useLessonPairing(hanzi: string, pinyin: string | null | undefined, focusable = true) {
   const hints = useLessonHints();
-  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin), true);
-  const word = hints?.enabled ? hints.wordFor(hanzi) : null;
+  // Identified words (words-first, lesson-segments.ts) group the hover: hovering any
+  // character rings the whole word and its syllables, with hints on or off.
+  const allWords = useMemo(() => hints ? hints.wordsFor(hanzi) : null, [hints, hanzi]);
+  const groups = useMemo(() => {
+    if (!allWords) return undefined;
+    let id = 0; let prev: unknown = null;
+    return allWords.map(w => { if (!w) { prev = null; return null; } if (w !== prev) { id++; prev = w; } return id; });
+  }, [allWords]);
+  const pairing = usePhrasePairing(hanzi, pinyin, Boolean(pinyin), true, groups);
+  const words = hints?.enabled ? allWords : null;
   const hanziBody = Array.from(hanzi).map((ch, i) => {
     if (!HAN_CHAR.test(ch)) return ch;
-    if (hints?.enabled) return <HintChar key={i} glyph={ch} word={word} focusable={focusable} {...pairing.glyphProps(i)}/>;
+    if (hints?.enabled) return <HintChar key={i} glyph={ch} word={words?.[i] ?? null} focusable={focusable} {...pairing.glyphProps(i)}/>;
     return pairing.paired ? pairing.glyph(ch, i) : ch;
   });
   return { hanziBody, pinyinBody: pairing.pinyinText };
@@ -69,6 +80,38 @@ export function LessonPairedLine({ hanzi, pinyin, className = 'lesson-hanzi', fo
     <span className={className} lang="zh-CN">{pair.hanziBody}</span>
     {pinyin && <span className="pinyin">{pair.pinyinBody}</span>}
   </>;
+}
+
+/**
+ * A pattern heading (Core v3.6.0 migration report): the recorded pseudo-translation, then the
+ * recorded Hanzi, then the recorded pinyin, each on its own line, wrapping inside the card. Owner
+ * decision 2026-11-24 (deviating from the report's Hanzi-first order): the pseudo-translation is the
+ * line a learner can read, so it leads and is the largest; the Mandarin template lines follow,
+ * smaller. Inputs: the three recorded fields; an empty pseudo-translation (legacy
+ * conversational/character cards) leaves the two Mandarin lines. Owner decision 2026-11-24: pattern lines have no speaker — formulas stay out of
+ * text-to-speech; the worked example below keeps its own audio. Hanzi still gets character
+ * hints and hover pairing like other lesson text.
+ */
+export function LessonPatternHeading({ hanzi, pinyin, pseudoTranslation }: { hanzi: string; pinyin?: string | undefined; pseudoTranslation?: string | undefined }) {
+  const pair = useLessonPairing(hanzi, pinyin);
+  return <div className="lesson-pattern-line lesson-pattern-heading">
+    {pseudoTranslation && <PseudoTranslation value={pseudoTranslation}/>}
+    {hanzi && <span className="lesson-hanzi" lang="zh-CN">{pair.hanziBody}</span>}
+    {pinyin && <span className="pinyin">{pair.pinyinBody}</span>}
+  </div>;
+}
+
+/**
+ * The third pattern line as React text nodes: <slot> placeholders stay visible (muted), fixed
+ * Mandarin is bold in the hanzi font, everything else is kept verbatim (see lesson-pattern.ts).
+ * It blurs with the EN face, as a translation.
+ */
+function PseudoTranslation({ value }: { value: string }) {
+  return <span className="lesson-pattern-gloss lesson-translation">
+    {pseudoTranslationParts(value).map((part, i) => part.kind === 'slot' ? <span key={i} className="lesson-pattern-slot">{part.text}</span>
+      : part.kind === 'mandarin' ? <strong key={i} lang="zh-CN">{part.text}</strong>
+      : <Fragment key={i}>{part.text}</Fragment>)}
+  </span>;
 }
 
 /** The lesson hero's headword: big glyph + reading + speaker, hover-paired. */
@@ -125,7 +168,7 @@ export function LessonText({ text }: { text: string | null | undefined }) {
   })}</>;
 }
 
-type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'phrase'; word: string }; audio: AudioRequest['audio'] };
+type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'phrase'; word: string }; audio: AudioRequest['audio']; reading?: string };
 
 /** Exact-match destination for one recorded hanzi field, or null. Re-evaluated when the catalogue loads. */
 export function useHanziTarget(hanzi: string): HanziTarget | null {
@@ -136,7 +179,7 @@ export function useHanziTarget(hanzi: string): HanziTarget | null {
     if (chars.length === 1) { const dest = libraryDestination(hanzi, preferences.includeTraditional); return dest ? { kind: 'glyph', search: dest } : null; }
     const matches = items.filter(w => w.hanzi === hanzi);
     const only = matches.length === 1 ? matches[0] : undefined;
-    return only ? { kind: 'word', search: { tab: vocabularyKind(only), word: only.id }, audio: only.audio ?? null } : null;
+    return only ? { kind: 'word', search: { tab: vocabularyKind(only), word: only.id }, audio: only.audio ?? null, reading: only.pinyin } : null;
     // catalogVersion: libraryDestination reads the lazily loaded catalogue.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hanzi, items, preferences.includeTraditional, catalogVersion]);
@@ -157,7 +200,9 @@ export function LessonHanzi({ hanzi, className = '', focusable = true }: { hanzi
 export function LessonSpeaker({ hanzi, pinyin }: { hanzi: string; pinyin: string }) {
   const target = useHanziTarget(hanzi);
   if (!pinyin || !HAN_TEST.test(hanzi.replace(/[，。？！、\s]/gu, ''))) return null;
-  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: target.audio ?? null }
+  // Same rule as LessonWord: the matched card's recording plays only under the card's own
+  // reading; a different lesson reading falls back to speech for the lesson's pinyin.
+  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading(target.reading, pinyin) ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
   return <ExamplePronunciation request={request} label={hanzi}/>;
 }
@@ -172,7 +217,19 @@ export function LessonTerm({ hanzi, pinyin, meaning, size = 'md', after }: { han
   </span>;
 }
 
-const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
+/**
+ * Whether a recorded word reading is the lesson's reading, so that word's recording may be
+ * played under the lesson's pinyin. Only spelling noise is ignored — Unicode composition,
+ * case, spaces, syllable apostrophes and punctuation ("Nǐ hǎo!" = "nǐhǎo") — never tone marks
+ * or letters, so a sandhi spelling (bú kèqi vs bù kèqi) or another reading falls back to speech.
+ * An unknown record reading (undefined) never matches.
+ */
+export function sameReading(recorded: string | null | undefined, lesson: string): boolean {
+  if (!recorded) return false;
+  const norm = (p: string) => p.normalize('NFC').toLowerCase().replace(/[\s'’‘`,.!?;:，。！？；：、…"“”-]+/gu, '');
+  const a = norm(recorded);
+  return a.length > 0 && a === norm(lesson);
+}
 
 /**
  * A lesson's own word (a vocabulary card's headword): the hanzi links straight to its
@@ -186,24 +243,71 @@ const spacing = (pinyin: string) => pinyin.replace(/\s+/g, '').toLowerCase();
  *
  * The link is the word's own target, so it replaces the per-character hint cards on this
  * one heading (a hint click inside a link would open two things). The record's recording
- * is used only when its reading is the lesson's reading (ignoring spaces and case), so a
+ * is used only when its reading is the lesson's reading (sameReading), so a
  * recording of another reading is never played under this pinyin.
+ *
+ * `tile` lays it out like a Vocabulary grid card: the hanzi in its own bordered box
+ * (coloured by `inkClass`, the record's card ink, foreground by default) with the reading
+ * and translation stacked to its right. Links, audio and hints are unchanged.
  */
-export function LessonWord({ hanzi, pinyin, meaning, record }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined }) {
+export function LessonWord({ hanzi, pinyin, meaning, record, tile = false, inkClass = '' }: { hanzi: string; pinyin: string; meaning?: string | undefined; record?: Word | null | undefined; tile?: boolean; inkClass?: string }) {
   const fallback = useHanziTarget(hanzi);
+  const segments = useLessonSegments(hanzi);
+  // On a lesson page an expression no single record matches uses the hint popups (word + arrow).
+  const hints = useLessonHints();
+  const pair = useLessonPairing(hanzi, pinyin);
+  // On a lesson page every unresolved-by-caller expression uses the hint cards, even one with an exact
+  // record (its card offers the word link), so all key expressions behave alike.
+  const segmented = hints != null && record === undefined && segments.some(s => s.kind !== 'text');
   const target: HanziTarget | null = record === undefined ? fallback
     : record ? { kind: 'word', search: { tab: vocabularyKind(record), word: record.id }, audio: record.audio ?? null } : null;
-  const sameReading = record ? spacing(record.pinyin) === spacing(pinyin) : true;
-  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading ? target.audio ?? null : null }
+  // A recording is borrowed only from a record read exactly as the lesson reads it, whether the
+  // record was passed in or found by exact headword (谢谢你 never plays another reading's audio).
+  const linkedReading = record ? record.pinyin : target?.kind === 'word' ? target.reading : undefined;
+  const request: AudioRequest = target?.kind === 'word' ? { text: hanzi, reading: pinyin, audio: sameReading(linkedReading, pinyin) ? target.audio ?? null : null }
     : Array.from(hanzi).length === 1 ? characterAudioRequest(hanzi, pinyin) : { text: hanzi, reading: pinyin, audio: null };
-  const head = target?.kind === 'glyph'
+  const head = segmented
+    ? <span className={`lesson-hanzi lesson-word-segments${target ? ' is-recorded' : ''}`} lang="zh-CN">{pair.hanziBody}</span>
+    : target?.kind === 'glyph'
     ? <Link to="/characters" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
     : target?.kind === 'word'
       ? <Link to="/vocabulary" search={target.search} className="lesson-hanzi is-linked lesson-word-link" lang="zh-CN" title={openDetailsHint(hanzi, target.search.tab)}>{hanzi}</Link>
-      : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
+      : record === undefined && segments.some(s => s.kind !== 'text')
+        ? <span className="lesson-hanzi lesson-word-segments" lang="zh-CN">{hints ? pair.hanziBody : segments.map((s, i) => <SegmentLink key={i} segment={s}/>)}</span>
+        : <span className="lesson-hanzi" lang="zh-CN">{hanzi}</span>;
+  const reading = <span className="lesson-term-reading"><span className="pinyin">{segmented ? pair.pinyinBody : pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>;
+  const gloss = meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>;
+  if (tile) return <span className="lesson-term is-tile">
+    <span className={`lesson-word-tile${inkClass ? ` ${inkClass}` : ''}`}>{head}</span>
+    <span className="lesson-term-side">{reading}{gloss}</span>
+  </span>;
   return <span className="lesson-term is-lg">
     {head}
-    <span className="lesson-term-reading"><span className="pinyin">{pinyin}</span>{HAN_TEST.test(hanzi) && <ExamplePronunciation request={request} label={hanzi}/>}</span>
-    {meaning && <span className="lesson-term-meaning"><LessonText text={meaning}/></span>}
+    {reading}
+    {gloss}
   </span>;
+}
+
+/** Unique-headword segmentation of an expression no single record matches (lesson-segments.ts). */
+function useLessonSegments(hanzi: string): LessonSegment[] {
+  const { items } = useWorkspace();
+  return useMemo(() => {
+    const byHead = new Map<string, string | null>();
+    for (const w of items) byHead.set(w.hanzi, byHead.has(w.hanzi) ? null : w.id);
+    return segmentLessonExpression(hanzi, h => byHead.get(h) ?? null);
+  }, [hanzi, items]);
+}
+
+/** One piece of a segmented expression: its exact word record, else its Glyphs record, else plain. */
+function SegmentLink({ segment }: { segment: LessonSegment }) {
+  const { items, preferences } = useWorkspace();
+  if (segment.kind === 'word') {
+    const word = items.find(w => w.id === segment.id);
+    if (word) { const tab = vocabularyKind(word); return <Link to="/vocabulary" search={{ tab, word: word.id }} className="is-linked lesson-word-link" title={openDetailsHint(segment.text, tab)}>{segment.text}</Link>; }
+  }
+  if (segment.kind === 'char') {
+    const dest = libraryDestination(segment.text, preferences.includeTraditional);
+    if (dest) return <Link to="/characters" search={dest} className="is-linked lesson-word-link" title={openDetailsHint(segment.text, dest.tab)}>{segment.text}</Link>;
+  }
+  return <>{segment.text}</>;
 }

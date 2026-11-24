@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Mandarin Tutor v3.1.0: deterministic learner HTML/Markdown/ZIP generator.
+"""Mandarin Tutor: deterministic learner HTML/Markdown/ZIP generator.
 
-Supported schemas: mandarin-character-lesson/3.0.0, mandarin-topic-lesson/3.0.0 and /3.1.0,
-mandarin-general-lesson/3.0.0 (generic/grammar/dialogue/review).
+Supported schemas: mandarin-character-lesson/3.0.0 and /3.1.0,
+mandarin-topic-lesson/3.0.0, /3.1.0 and /3.2.0,
+mandarin-general-lesson/3.0.0 and /3.1.0 (generic/grammar/dialogue/review).
 The JSON is authoritative. Provenance lives exclusively in report.md.
 No internet services, third-party fonts, or paid libraries are used.
 
@@ -163,7 +164,7 @@ def render_topic_v31(data, refs):
     return ''.join(a),'\n\n'.join(x for x in m if x!='')+'\n'
 
 def render_topic(data,refs):
-    if data['schema_version']=='mandarin-topic-lesson/3.1.0':
+    if data['schema_version'] in ('mandarin-topic-lesson/3.1.0', 'mandarin-topic-lesson/3.2.0'):
         return render_topic_v31(data,refs)
     sec=data['sections']; a=['<h2>Learning objectives</h2><ul>']
     for obj in data['learning_objectives']:a.append(f'<li>{rich(obj,refs)}</li>')

@@ -1,12 +1,12 @@
 {
   "schema_version": "mandarin-curriculum/3.0.0",
   "curriculum_id": "hsk3-2025",
-  "title": "HSK 3.0 (2025) — Level 1 Learning Path",
+  "title": "HSK 3.0 (2025) — Level 1 and Level 2 Learning Path",
   "kind": "syllabus",
   "language": "zh-CN",
   "edition": "2025-11",
   "status": "draft",
-  "description": "A proposed Level 1 path using 300 entries across 21 focused lessons. Later levels can add sections without reassigning lesson IDs.",
+  "description": "Practise foundational Mandarin through complete thematic lessons covering all 300 Level 1 and 200 Level 2 vocabulary entries, with conversations, grammar, reading, speaking and progress checkpoints.",
   "course_topics": [
     {
       "id": "numbers-quantities",
@@ -146,6 +146,13 @@
       "label": "Abstract & General Concepts",
       "global_topic_ids": [
         "abstract-concepts"
+      ]
+    },
+    {
+      "id": "science-technology",
+      "label": "Science & Technology",
+      "global_topic_ids": [
+        "science-technology"
       ]
     }
   ],
@@ -825,6 +832,728 @@
                 286
               ],
               "reviewed_syllabus_entry_ids": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "hsk3-l2",
+      "title": "HSK 3.0 Level 2 — Everyday Communication",
+      "level_number": 2,
+      "sequence": 2,
+      "units": [
+        {
+          "unit_id": "hsk3-l2-u-01",
+          "title": "People, Family and Communication",
+          "sequence": 1,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-01",
+              "lesson_id": "topic-introducing-people-by-name",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [],
+              "course_topic_ids": [
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [
+                344,
+                410,
+                412,
+                461,
+                464,
+                465
+              ],
+              "reviewed_syllabus_entry_ids": [
+                130,
+                142,
+                152
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-02",
+              "lesson_id": "topic-talking-about-family-members",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-introducing-people-by-name"
+              ],
+              "course_topic_ids": [
+                "family-relationships"
+              ],
+              "introduced_syllabus_entry_ids": [
+                409,
+                417,
+                470,
+                487
+              ],
+              "reviewed_syllabus_entry_ids": [
+                1,
+                3,
+                32
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-03",
+              "lesson_id": "topic-asking-for-help-and-making-introductions",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-talking-about-family-members"
+              ],
+              "course_topic_ids": [
+                "communication-social"
+              ],
+              "introduced_syllabus_entry_ids": [
+                306,
+                313,
+                343,
+                369,
+                422,
+                463
+              ],
+              "reviewed_syllabus_entry_ids": [
+                14,
+                24,
+                45
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-04",
+              "lesson_id": "topic-explaining-why-and-how",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-asking-for-help-and-making-introductions"
+              ],
+              "course_topic_ids": [
+                "reference-questions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                406,
+                407,
+                454,
+                488,
+                489,
+                494
+              ],
+              "reviewed_syllabus_entry_ids": [
+                26,
+                47,
+                131
+              ]
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l2-u-02",
+          "title": "Learning, Time and Daily Purchases",
+          "sequence": 2,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-05",
+              "lesson_id": "topic-words-classes-and-examinations",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-explaining-why-and-how"
+              ],
+              "course_topic_ids": [
+                "school-language"
+              ],
+              "introduced_syllabus_entry_ids": [
+                304,
+                308,
+                310,
+                322,
+                337,
+                342,
+                367,
+                368,
+                379,
+                380,
+                381,
+                442
+              ],
+              "reviewed_syllabus_entry_ids": [
+                27,
+                28,
+                42
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-06",
+              "lesson_id": "topic-talking-about-time-and-habits",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-words-classes-and-examinations"
+              ],
+              "course_topic_ids": [
+                "time-calendar"
+              ],
+              "introduced_syllabus_entry_ids": [
+                325,
+                349,
+                374,
+                378,
+                386,
+                430,
+                431,
+                462,
+                471,
+                480,
+                492
+              ],
+              "reviewed_syllabus_entry_ids": [
+                5,
+                33,
+                55
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-07",
+              "lesson_id": "topic-counting-things-and-occasions",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-talking-about-time-and-habits"
+              ],
+              "course_topic_ids": [
+                "numbers-quantities"
+              ],
+              "introduced_syllabus_entry_ids": [
+                323,
+                366,
+                399,
+                404,
+                443,
+                449,
+                453
+              ],
+              "reviewed_syllabus_entry_ids": [
+                2,
+                6,
+                7
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-08",
+              "lesson_id": "topic-choosing-drinks-and-food",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-counting-things-and-occasions"
+              ],
+              "course_topic_ids": [
+                "food-drink"
+              ],
+              "introduced_syllabus_entry_ids": [
+                336,
+                339,
+                354,
+                377,
+                395,
+                408,
+                423,
+                483
+              ],
+              "reviewed_syllabus_entry_ids": [
+                8,
+                16,
+                17
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-09",
+              "lesson_id": "topic-buying-tickets-and-shopping",
+              "sequence": 5,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-choosing-drinks-and-food"
+              ],
+              "course_topic_ids": [
+                "shopping-money"
+              ],
+              "introduced_syllabus_entry_ids": [
+                357,
+                402,
+                424
+              ],
+              "reviewed_syllabus_entry_ids": [
+                19,
+                34,
+                65
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-10",
+              "lesson_id": "topic-my-room-and-my-belongings",
+              "sequence": 6,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-buying-tickets-and-shopping"
+              ],
+              "course_topic_ids": [
+                "home-objects"
+              ],
+              "introduced_syllabus_entry_ids": [
+                307,
+                321,
+                383,
+                400,
+                434,
+                435
+              ],
+              "reviewed_syllabus_entry_ids": [
+                9,
+                40,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l2-u-03",
+          "title": "Places, Movement and Journeys",
+          "sequence": 3,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-11",
+              "lesson_id": "topic-describing-location-and-distance",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-my-room-and-my-belongings"
+              ],
+              "course_topic_ids": [
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                356,
+                371,
+                389,
+                390,
+                391,
+                403,
+                413,
+                419,
+                426,
+                447,
+                459,
+                481,
+                482,
+                484,
+                499,
+                500
+              ],
+              "reviewed_syllabus_entry_ids": [
+                11,
+                66,
+                80
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-12",
+              "lesson_id": "topic-entering-leaving-and-returning",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-describing-location-and-distance"
+              ],
+              "course_topic_ids": [
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                316,
+                318,
+                320,
+                347,
+                348,
+                350,
+                361,
+                362,
+                370,
+                372,
+                373,
+                425,
+                427,
+                458,
+                460
+              ],
+              "reviewed_syllabus_entry_ids": [
+                11,
+                66,
+                80
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-13",
+              "lesson_id": "topic-finding-the-way-in-town",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-entering-leaving-and-returning"
+              ],
+              "course_topic_ids": [
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                324,
+                392,
+                401,
+                446,
+                450,
+                457
+              ],
+              "reviewed_syllabus_entry_ids": [
+                11,
+                66,
+                80
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-14",
+              "lesson_id": "topic-planning-a-journey",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-finding-the-way-in-town"
+              ],
+              "course_topic_ids": [
+                "travel-transport"
+              ],
+              "introduced_syllabus_entry_ids": [
+                315,
+                317,
+                328,
+                335,
+                346,
+                363,
+                364,
+                375,
+                393,
+                394,
+                416,
+                486
+              ],
+              "reviewed_syllabus_entry_ids": [
+                20,
+                22,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l2-u-04",
+          "title": "Routines, Health, Nature and Recreation",
+          "sequence": 4,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-15",
+              "lesson_id": "topic-helping-with-everyday-tasks",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-planning-a-journey"
+              ],
+              "course_topic_ids": [
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                305,
+                329,
+                334,
+                338,
+                405,
+                418,
+                437,
+                456
+              ],
+              "reviewed_syllabus_entry_ids": [
+                23,
+                61,
+                82
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-16",
+              "lesson_id": "topic-routines-and-making-plans",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-helping-with-everyday-tasks"
+              ],
+              "course_topic_ids": [
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                319,
+                365,
+                414,
+                448,
+                452,
+                473,
+                493,
+                495,
+                496
+              ],
+              "reviewed_syllabus_entry_ids": [
+                23,
+                61,
+                82
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-17",
+              "lesson_id": "topic-how-are-you-feeling",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-routines-and-making-plans"
+              ],
+              "course_topic_ids": [
+                "health-wellbeing"
+              ],
+              "introduced_syllabus_entry_ids": [
+                388,
+                415,
+                429,
+                433,
+                436,
+                440,
+                445,
+                467,
+                468,
+                469,
+                478,
+                485
+              ],
+              "reviewed_syllabus_entry_ids": [
+                12,
+                100,
+                104
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-18",
+              "lesson_id": "topic-nature-and-the-weather",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-how-are-you-feeling"
+              ],
+              "course_topic_ids": [
+                "animals-weather"
+              ],
+              "introduced_syllabus_entry_ids": [
+                340,
+                358,
+                411,
+                420,
+                475,
+                477
+              ],
+              "reviewed_syllabus_entry_ids": [
+                64,
+                109,
+                119
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-19",
+              "lesson_id": "topic-sports-games-and-hobbies",
+              "sequence": 5,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-nature-and-the-weather"
+              ],
+              "course_topic_ids": [
+                "leisure-media"
+              ],
+              "introduced_syllabus_entry_ids": [
+                302,
+                327,
+                359,
+                387,
+                421,
+                441,
+                444,
+                497
+              ],
+              "reviewed_syllabus_entry_ids": [
+                18,
+                37,
+                38
+              ]
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l2-u-05",
+          "title": "Descriptions, Feelings and Connecting Ideas",
+          "sequence": 5,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-20",
+              "lesson_id": "topic-describing-colors-and-comparing-things",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-sports-games-and-hobbies"
+              ],
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                303,
+                309,
+                314,
+                341,
+                353,
+                355,
+                360,
+                384,
+                396,
+                397,
+                466
+              ],
+              "reviewed_syllabus_entry_ids": [
+                25,
+                44,
+                46
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-21",
+              "lesson_id": "topic-sharing-opinions-and-feelings",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-describing-colors-and-comparing-things"
+              ],
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                312,
+                326,
+                385,
+                398,
+                455,
+                479
+              ],
+              "reviewed_syllabus_entry_ids": [
+                25,
+                44,
+                46
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-22",
+              "lesson_id": "topic-linking-ideas-in-conversation",
+              "sequence": 3,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-sharing-opinions-and-feelings"
+              ],
+              "course_topic_ids": [
+                "grammar-functions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                330,
+                331,
+                345,
+                352,
+                376,
+                382,
+                438,
+                439,
+                476
+              ],
+              "reviewed_syllabus_entry_ids": [
+                4,
+                13,
+                15
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-23",
+              "lesson_id": "topic-describing-actions-more-precisely",
+              "sequence": 4,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-linking-ideas-in-conversation"
+              ],
+              "course_topic_ids": [
+                "grammar-functions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                301,
+                311,
+                332,
+                333,
+                351,
+                472,
+                490,
+                491,
+                498
+              ],
+              "reviewed_syllabus_entry_ids": [
+                4,
+                13,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l2-u-06",
+          "title": "Meaning and Life Online",
+          "sequence": 6,
+          "placements": [
+            {
+              "placement_id": "hsk3-l2-p-24",
+              "lesson_id": "topic-talking-about-meanings-and-situations",
+              "sequence": 1,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-describing-actions-more-precisely"
+              ],
+              "course_topic_ids": [
+                "abstract-concepts"
+              ],
+              "introduced_syllabus_entry_ids": [
+                432,
+                474
+              ],
+              "reviewed_syllabus_entry_ids": [
+                187,
+                220
+              ]
+            },
+            {
+              "placement_id": "hsk3-l2-p-25",
+              "lesson_id": "topic-using-the-internet",
+              "sequence": 2,
+              "role": "core",
+              "prerequisite_lesson_ids": [
+                "topic-talking-about-meanings-and-situations"
+              ],
+              "course_topic_ids": [
+                "science-technology"
+              ],
+              "introduced_syllabus_entry_ids": [
+                428,
+                451
+              ],
+              "reviewed_syllabus_entry_ids": [
+                35,
+                36,
+                189
+              ]
             }
           ]
         }

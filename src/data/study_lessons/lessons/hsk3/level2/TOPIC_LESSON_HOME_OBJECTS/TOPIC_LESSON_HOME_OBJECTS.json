@@ -1,0 +1,1055 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-my-room-and-my-belongings",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "My Room and My Belongings",
+    "subtitle": "Clothes, bags and things at home",
+    "description": "Locate everyday possessions in a bedroom and describe what to bring to school.",
+    "slug": "my-room-and-my-belongings"
+  },
+  "classification": {
+    "primary_topic_id": "home-objects",
+    "topic_ids": [
+      "home-objects"
+    ],
+    "tags": [
+      "clothes",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name a bed, door and everyday bags.",
+    "Describe clothing and a watch.",
+    "Use position phrases to locate belongings."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "亮": "Characters:亮",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "包": "Characters:包",
+    "去": "Characters:去",
+    "发": "Characters:发",
+    "口": "Characters:口",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "呢": "Characters:呢",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "在": "Characters:在",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "床": "Characters:床",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "忘": "Characters:忘",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "拿": "Characters:拿",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "明": "Characters:明",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "本": "Characters:本",
+    "条": "Characters:条",
+    "杯": "Characters:杯",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "漂": "Characters:漂",
+    "爸": "Characters:爸",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "穿": "Characters:穿",
+    "笔": "Characters:笔",
+    "色": "Characters:色",
+    "表": "Characters:表",
+    "裤": "Characters:裤",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "请": "Characters:请",
+    "谁": "Characters:谁",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "边": "Characters:边",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "面": "Characters:面",
+    "黑": "Characters:黑",
+    "人": "Characters:人",
+    "地": "Characters:地",
+    "宾": "Characters:宾",
+    "点": "Characters:点",
+    "语": "Characters:语"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Locate everyday possessions in a bedroom and describe what to bring to school.",
+      "focus": "Name a bed, door and everyday bags."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-307",
+          "hanzi": "包",
+          "pinyin": "bāo",
+          "meaning_en": "bag; package; to wrap; classifier for packages",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb",
+            "classifier"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-307-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个包是谁的？",
+              "pinyin": "zhège bāo shì shéi de?",
+              "english": "Whose bag is this?",
+              "teaching_note": "A short spoken example using 包."
+            },
+            {
+              "id": "ex-307-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸昨天买了一个白色的包。",
+              "pinyin": "bàba zuótiān mǎi le yí ge báisè de bāo.",
+              "english": "Dad bought a white bag yesterday.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 307
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ]
+        },
+        {
+          "id": "w-321",
+          "hanzi": "床",
+          "pinyin": "chuáng",
+          "meaning_en": "bed",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-321-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是你的床吗？",
+              "pinyin": "zhè shì nǐ de chuáng ma?",
+              "english": "Is this your bed?",
+              "teaching_note": "A short spoken example using 床."
+            },
+            {
+              "id": "ex-321-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "房间里有床和桌子。",
+              "pinyin": "fángjiān lǐ yǒu chuáng hé zhuōzi.",
+              "english": "There is a bed and a table in the room.",
+              "teaching_note": "A simple written example using 床."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 321
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ]
+        },
+        {
+          "id": "w-383",
+          "hanzi": "裤子",
+          "pinyin": "kùzi",
+          "meaning_en": "trousers; pants",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-383-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条裤子多少钱？",
+              "pinyin": "zhè tiáo kùzi duōshao qián?",
+              "english": "How much are these trousers?",
+              "teaching_note": "A short spoken example using 裤子."
+            },
+            {
+              "id": "ex-383-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸昨天买了两条新裤子，都是黑色的。",
+              "pinyin": "bàba zuótiān mǎi le liǎng tiáo xīn kùzi, dōu shì hēisè de.",
+              "english": "Dad bought two new pairs of trousers yesterday; both are black.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 383
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ]
+        },
+        {
+          "id": "w-400",
+          "hanzi": "门",
+          "pinyin": "mén",
+          "meaning_en": "door; gate",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-400-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请开门。",
+              "pinyin": "qǐng kāi mén.",
+              "english": "Please open the door.",
+              "teaching_note": "A short spoken example using 门."
+            },
+            {
+              "id": "ex-400-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "教室的门是白色的，门口有很多学生。",
+              "pinyin": "jiàoshì de mén shì báisè de, ménkǒu yǒu hěn duō xuéshēng.",
+              "english": "The classroom door is white, and there are many students near the doorway.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 400
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ]
+        },
+        {
+          "id": "w-434",
+          "hanzi": "手表",
+          "pinyin": "shǒubiǎo",
+          "meaning_en": "watch; wristwatch",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-434-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的手表很漂亮！",
+              "pinyin": "nǐ de shǒubiǎo hěn piàoliang!",
+              "english": "Your watch is beautiful!",
+              "teaching_note": "A short spoken example using 手表."
+            },
+            {
+              "id": "ex-434-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这块手表是爸爸的。",
+              "pinyin": "zhè kuài shǒubiǎo shì bàba de.",
+              "english": "This watch belongs to Dad.",
+              "teaching_note": "A simple written example using 手表."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 434
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ]
+        },
+        {
+          "id": "w-435",
+          "hanzi": "书包",
+          "pinyin": "shūbāo",
+          "meaning_en": "schoolbag; backpack",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-435-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "书包里有什么？",
+              "pinyin": "shūbāo lǐ yǒu shénme?",
+              "english": "What's in the schoolbag?",
+              "teaching_note": "A short spoken example using 书包."
+            },
+            {
+              "id": "ex-435-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "书包里有书、笔和本子。",
+              "pinyin": "shūbāo lǐ yǒu shū, bǐ hé běnzi.",
+              "english": "The schoolbag contains books, pens, and notebooks.",
+              "teaching_note": "A simple written example using 书包."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 435
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ]
+        },
+        {
+          "id": "w-009",
+          "hanzi": "杯子",
+          "pinyin": "bēizi",
+          "meaning_en": "cup",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "food-drink"
+          ],
+          "examples": [
+            {
+              "id": "ex-009-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个杯子是我的。",
+              "pinyin": "zhège bēizi shì wǒ de.",
+              "english": "This cup is mine.",
+              "teaching_note": "The final 我的 stands for “my cup,” with the repeated noun left understood."
+            },
+            {
+              "id": "ex-009-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有三个杯子。",
+              "pinyin": "zhuōzi shàng yǒu sān gè bēizi.",
+              "english": "There are three cups on the table.",
+              "teaching_note": "Short beginner-level description illustrating 杯子 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 9
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ]
+        },
+        {
+          "id": "w-040",
+          "hanzi": "东西",
+          "pinyin": "dōngxi",
+          "meaning_en": "thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-040-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这些东西是谁的？",
+              "pinyin": "zhèxiē dōngxi shì shéi de?",
+              "english": "Whose things are these?",
+              "teaching_note": "谁 asks about the owner; 谁 can be pronounced shéi or shuí, here read shéi."
+            },
+            {
+              "id": "ex-040-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请拿好你的东西。",
+              "pinyin": "qǐng ná hǎo nǐ de dōngxi.",
+              "english": "Please take care of your belongings.",
+              "teaching_note": "Short everyday instruction or request using 东西; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 40
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ]
+        },
+        {
+          "id": "w-052",
+          "hanzi": "房间",
+          "pinyin": "fángjiān",
+          "meaning_en": "room",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "home-objects",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-052-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的房间很小。",
+              "pinyin": "wǒ de fángjiān hěn xiǎo.",
+              "english": "My room is small.",
+              "teaching_note": "房间 is a room; 很小 describes its physical size."
+            },
+            {
+              "id": "ex-052-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有三个大房间。",
+              "pinyin": "xuéxiào lǐ yǒu sān gè dà fángjiān.",
+              "english": "There are three large rooms at the school.",
+              "teaching_note": "School or study context showing 房间 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 52
+            }
+          ],
+          "primary_topic_id": "home-objects",
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Locating belongings",
+        "explanation": "Use 在 (zài) followed by a location phrase to say where an object is; distinguish 里面 (lǐmiàn) and 旁边 (pángbiān).",
+        "example_id": "ex-307-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Talking about what to take",
+        "explanation": "拿 (ná) is used for picking up or taking an object; name the object directly after the verb.",
+        "example_id": "ex-321-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-307-1",
+      "ex-321-1",
+      "ex-383-1",
+      "ex-400-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "He puts on his trousers, picks up his bag, opens the door and goes out."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: My watch is inside the schoolbag. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我的手表在书包里面。 (Wǒ de shǒubiǎo zài shūbāo lǐmiàn.)",
+          "answer": "我的手表在书包里面。 (Wǒ de shǒubiǎo zài shūbāo lǐmiàn.)"
+        },
+        {
+          "id": "recall-307",
+          "kind": "selection",
+          "prompt": "Which expression means “bag”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "包",
+              "pinyin": "bāo",
+              "meaning_en": "bag; package; to wrap; classifier for packages"
+            },
+            {
+              "id": "b",
+              "hanzi": "床",
+              "pinyin": "chuáng",
+              "meaning_en": "bed"
+            },
+            {
+              "id": "c",
+              "hanzi": "裤子",
+              "pinyin": "kùzi",
+              "meaning_en": "trousers; pants"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 包 (bāo) with this meaning."
+        },
+        {
+          "id": "recall-321",
+          "kind": "selection",
+          "prompt": "Which expression means “bed”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "包",
+              "pinyin": "bāo",
+              "meaning_en": "bag; package; to wrap; classifier for packages"
+            },
+            {
+              "id": "c",
+              "hanzi": "裤子",
+              "pinyin": "kùzi",
+              "meaning_en": "trousers; pants"
+            },
+            {
+              "id": "a",
+              "hanzi": "床",
+              "pinyin": "chuáng",
+              "meaning_en": "bed"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 床 (chuáng) with this meaning."
+        },
+        {
+          "id": "recall-383",
+          "kind": "selection",
+          "prompt": "Which expression means “trousers”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "床",
+              "pinyin": "chuáng",
+              "meaning_en": "bed"
+            },
+            {
+              "id": "a",
+              "hanzi": "裤子",
+              "pinyin": "kùzi",
+              "meaning_en": "trousers; pants"
+            },
+            {
+              "id": "b",
+              "hanzi": "包",
+              "pinyin": "bāo",
+              "meaning_en": "bag; package; to wrap; classifier for packages"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 裤子 (kùzi) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "My Room and My Belongings",
+        "context_en": "Locate everyday possessions in a bedroom and describe what to bring to school.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我的书包在哪儿？",
+            "pinyin": "Wǒ de shūbāo zài nǎr?",
+            "english": "Where is my schoolbag?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "在床上，旁边还有你的手表。",
+            "pinyin": "Zài chuáng shang, pángbiān hái yǒu nǐ de shǒubiǎo.",
+            "english": "On the bed, and your watch is next to it."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我的裤子呢？我今天要出门。",
+            "pinyin": "Wǒ de kùzi ne? Wǒ jīntiān yào chūmén.",
+            "english": "What about my trousers? I need to go out today."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "在门后面。别忘了拿那个包！",
+            "pinyin": "Zài mén hòumiàn. Bié wàng le ná nà ge bāo!",
+            "english": "Behind the door. Don’t forget to take that bag!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Locating belongings",
+          "explanation_en": "Use 在 (zài) followed by a location phrase to say where an object is; distinguish 里面 (lǐmiàn) and 旁边 (pángbiān).",
+          "examples": [
+            {
+              "hanzi": "我的手表在书包里面。",
+              "pinyin": "Wǒ de shǒubiǎo zài shūbāo lǐmiàn.",
+              "english": "My watch is inside the schoolbag."
+            },
+            {
+              "hanzi": "在床上，旁边还有你的手表。",
+              "pinyin": "Zài chuáng shang, pángbiān hái yǒu nǐ de shǒubiǎo.",
+              "english": "On the bed, and your watch is next to it."
+            }
+          ],
+          "pattern_hanzi": "宾语 + 在 + 地点",
+          "pattern_pinyin": "bīnyǔ + zài + dìdiǎn",
+          "pattern_pseudo_translation": "<object> + 在 + <location>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Talking about what to take",
+          "explanation_en": "拿 (ná) is used for picking up or taking an object; name the object directly after the verb.",
+          "examples": [
+            {
+              "hanzi": "请把包放在床旁边。",
+              "pinyin": "Qǐng bǎ bāo fàng zài chuáng pángbiān.",
+              "english": "Please put the bag beside the bed."
+            },
+            {
+              "hanzi": "在门后面。别忘了拿那个包！",
+              "pinyin": "Zài mén hòumiàn. Bié wàng le ná nà ge bāo!",
+              "english": "Behind the door. Don’t forget to take that bag!"
+            }
+          ],
+          "pattern_hanzi": "人 + 拿 + 宾语",
+          "pattern_pinyin": "rén + ná + bīnyǔ",
+          "pattern_pseudo_translation": "<person> + 拿 + <object>"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "我的书包在哪儿？",
+          "pinyin": "Wǒ de shūbāo zài nǎr?",
+          "english": "Where is my schoolbag?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: My watch is inside the schoolbag.",
+            "model_answer": {
+              "hanzi": "我的手表在书包里面。",
+              "pinyin": "Wǒ de shǒubiǎo zài shūbāo lǐmiàn.",
+              "english": "My watch is inside the schoolbag."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Please put the bag beside the bed.",
+            "model_answer": {
+              "hanzi": "请把包放在床旁边。",
+              "pinyin": "Qǐng bǎ bāo fàng zài chuáng pángbiān.",
+              "english": "Please put the bag beside the bed."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: What about my trousers? I need to go out today.",
+            "model_answer": {
+              "hanzi": "我的裤子呢？我今天要出门。",
+              "pinyin": "Wǒ de kùzi ne? Wǒ jīntiān yào chūmén.",
+              "english": "What about my trousers? I need to go out today."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "My Room and My Belongings — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小明早上找书包，发现书包在床下面，手表在书桌上面。",
+            "pinyin": "Xiǎomíng zǎoshang zhǎo shūbāo, fāxiàn shūbāo zài chuáng xiàmiàn, shǒubiǎo zài shūzhuō shàngmiàn.",
+            "english": "In the morning, Xiaoming looks for his schoolbag and finds it under the bed, while his watch is on the desk."
+          },
+          {
+            "hanzi": "他穿好裤子，拿起包，打开门走了出去。",
+            "pinyin": "Tā chuān hǎo kùzi, ná qǐ bāo, dǎkāi mén zǒu le chūqù.",
+            "english": "He puts on his trousers, picks up his bag, opens the door and goes out."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "In the morning, Xiaoming looks for his schoolbag and finds it under the bed, while his watch is on the desk."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "He puts on his trousers, picks up his bag, opens the door and goes out."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: My watch is inside the schoolbag.",
+          "model_answer": {
+            "hanzi": "我的手表在书包里面。",
+            "pinyin": "Wǒ de shǒubiǎo zài shūbāo lǐmiàn.",
+            "english": "My watch is inside the schoolbag."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Please put the bag beside the bed.",
+          "model_answer": {
+            "hanzi": "请把包放在床旁边。",
+            "pinyin": "Qǐng bǎ bāo fàng zài chuáng pángbiān.",
+            "english": "Please put the bag beside the bed."
+          }
+        }
+      ],
+      "common_pitfall": "Do not confuse 包 (bāo), a general bag, with 书包 (shūbāo), the more specific schoolbag.",
+      "pronunciation_focus": "Listen for the neutral suffix in 裤子 (kùzi) and the third tone of 表 (biǎo).",
+      "review": {
+        "can_do": [
+          "Name a bed, door and everyday bags.",
+          "Describe clothing and a watch.",
+          "Use position phrases to locate belongings."
+        ],
+        "entry_ids": [
+          307,
+          321,
+          383,
+          400,
+          434,
+          435
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-my-room-and-my-belongings--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Locating belongings",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Talking about what to take",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: My watch is inside the schoolbag.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please put the bag beside the bed.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: What about my trousers? I need to go out today.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: My watch is inside the schoolbag.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Please put the bag beside the bed.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-my-room-and-my-belongings--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-my-room-and-my-belongings--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: My watch is inside the schoolbag. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--question-recall-307",
+            "kind": "practice",
+            "label": "Which expression means “bag”?",
+            "optional": true,
+            "target_id": "recall-307"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--question-recall-321",
+            "kind": "practice",
+            "label": "Which expression means “bed”?",
+            "optional": true,
+            "target_id": "recall-321"
+          },
+          {
+            "id": "topic-my-room-and-my-belongings--question-recall-383",
+            "kind": "practice",
+            "label": "Which expression means “trousers”?",
+            "optional": true,
+            "target_id": "recall-383"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

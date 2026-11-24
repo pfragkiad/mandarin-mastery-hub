@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NavigationShortcuts } from './navigation-shortcuts';
 import { detailTrail, historyEntry, historyPosition, visitAt, type TrailStep } from '@/lib/detail-trail';
+
+/** How long a form switch may hold the previous content height (see DetailSheet). */
+const HOLD_MS = 1500;
 
 /** True below the width where the library's side detail column stacks under the cards. */
 export function useNarrowLibrary(maxWidth = 850) {
@@ -69,11 +72,34 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
   // Back's target is the newest step that is not this card's own form switch: a form
   // switch only changes the shown form, so Back must land where Close would.
   const back = [...trail].reverse().find(step => !step.sameCard);
-  // Reset only the panel's scroll for a different record; also drop a Back step
+  // Reset the panel's scroll for a different record (below); also drop a Back step
   // once history has returned to it (our Back button or the browser's). Steps are
   // keyed by history entry, not URL: switching 亻 → 人 → 亻 by links is a new entry
   // for 亻 and must keep Back, not be mistaken for a return.
-  useEffect(() => { body.current?.scrollTo?.({ top: 0 }); detailTrail.sync(historyEntry()); }, [title]);
+  // A form switch (simplified ↔ traditional, radical variants) is the same card: the reader
+  // keeps their place. The click records the panel's scroll and content height; the new form
+  // remounts its details, which are briefly shorter (notes and breakdowns load after mount),
+  // so before paint the content is pinned to the old height and the scroll put back. The pin
+  // lifts once the new content is at least as tall, or after HOLD_MS for a shorter form.
+  // Stamped with the click time, so a click that never changed the card cannot affect a
+  // much later, different card.
+  const content = useRef<HTMLDivElement>(null);
+  const formSwitch = useRef<{ at: number; top: number; height: number } | null>(null);
+  useLayoutEffect(() => {
+    const kept = formSwitch.current; formSwitch.current = null;
+    const panel = body.current, inner = content.current;
+    if (!kept || Date.now() - kept.at > 3000 || !panel || !inner) { panel?.scrollTo?.({ top: 0 }); return; }
+    inner.style.minHeight = `${kept.height}px`;
+    panel.scrollTop = kept.top;
+    const release = () => { inner.style.minHeight = ''; observer?.disconnect(); clearTimeout(timer); };
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => {
+      if (inner.firstElementChild instanceof HTMLElement && inner.firstElementChild.offsetHeight >= kept.height - 1) release();
+    });
+    if (inner.firstElementChild) observer?.observe(inner.firstElementChild);
+    const timer = setTimeout(release, HOLD_MS);
+    return release;
+  }, [title]);
+  useEffect(() => { detailTrail.sync(historyEntry()); }, [title]);
   // Read after mount (history is browser-only); the window keeps it while it stays open,
   // through form switches, neighbour steps and links to other cards in the same library.
   const [openedAt, setOpenedAt] = useState<number | null>(null);
@@ -142,9 +168,14 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
         // A link to the page already shown (the selected form tile) adds no history entry.
         if ((link as HTMLAnchorElement).href === window.location.href) return;
-        // The card's own form switch keeps the same card: Close steps over that entry.
-        detailTrail.push({ label: label ?? title, href: historyEntry(), ...(link.closest('.form-switch') ? { sameCard: true } : {}) });
-      }}>{children}
+        // The card's own form switch keeps the same card: Close steps over that entry
+        // and the panel keeps its scroll position.
+        // Related tiles change the displayed exact record, not the navigation destination.
+        // Limit this to tiles: source/spelling-note links still navigate normally.
+        const sameCard = Boolean(link.closest('.form-switch, .related-forms .related-form-choice'));
+        if (sameCard) formSwitch.current = { at: Date.now(), top: event.currentTarget.scrollTop, height: content.current?.offsetHeight ?? 0 };
+        detailTrail.push({ label: label ?? title, href: historyEntry(), ...(sameCard ? { sameCard: true } : {}) });
+      }}><div ref={content}>{children}</div>
       </div>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;

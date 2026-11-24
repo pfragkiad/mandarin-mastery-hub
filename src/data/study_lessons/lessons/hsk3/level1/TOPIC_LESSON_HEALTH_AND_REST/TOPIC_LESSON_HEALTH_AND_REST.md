@@ -30,7 +30,11 @@ A student is unwell, explains symptoms simply, and asks for time to rest.
 
 生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.
 
-**Pattern:** subject + 生病了; subject + 去 + 医院 + 看病
+**Pattern**
+
+主语 + 生病了; 主语 + 去 + 医院 + 看病  
+*zhǔyǔ + shēngbìng le; zhǔyǔ + qù + yīyuàn + kànbìng*  
+&lt;subject&gt; + **生病了**; &lt;subject&gt; + **去** + **医院** + **看病**
 
 **弟弟生病了。**
 *Dìdi shēngbìng le.*
@@ -44,7 +48,11 @@ Mom is going to see a doctor.
 
 休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.
 
-**Pattern:** time + verb + 了
+**Pattern**
+
+时间 + 动词 + 了  
+*shíjiān + dòngcí + le*  
+&lt;time&gt; + &lt;verb&gt; + **了**
 
 **我晚上十点睡觉。**
 *Wǒ wǎnshang shí diǎn shuìjiào.*
@@ -172,3 +180,46 @@ Are you going to see a doctor?
 
 **Production:** Write this in Mandarin: “His illness has gotten better.”
 **Answer:** 他的病好了。 (tā de bìng hǎo le.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-health-and-rest--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: A condition versus getting medical attention — ID: `topic-health-and-rest--pattern--pattern-1`
+- [ ] Apply: Rest and sleep — ID: `topic-health-and-rest--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: my younger sister — ID: `topic-health-and-rest--build--build-sub-01`
+- [ ] Build a sentence: my father — ID: `topic-health-and-rest--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Why does the speaker want to rest? — ID: `topic-health-and-rest--read--reading-q-01`
+- [ ] Where does the speaker want to rest? — ID: `topic-health-and-rest--read--reading-q-02`
+
+### Speaking practice
+- [ ] Explain that you are unwell and want to rest. — ID: `topic-health-and-rest--speak--speaking-1`
+- [ ] Ask whether someone is going to see a doctor. — ID: `topic-health-and-rest--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-health-and-rest--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-health-and-rest--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-health-and-rest--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “illness”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-1`
+- [ ] Which expression means “sleep”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-2`
+- [ ] Which expression means “hospital”? *(optional)* — ID: `topic-health-and-rest--quiz--q-19-3`
+- [ ] In the example “他生病了。” (tā shēngbìng le.), what is happening? — ID: `topic-health-and-rest--quiz--q-19-4`
+- [ ] Write this in Mandarin: “His illness has gotten better.” — ID: `topic-health-and-rest--quiz--q-19-5`
+- [ ] Reading comprehension: Why does the speaker want to rest? — ID: `topic-health-and-rest--quiz--applied-reading-1`
+- [ ] Reading comprehension: Where does the speaker want to rest? — ID: `topic-health-and-rest--quiz--applied-reading-2`
+- [ ] Say this aloud: Explain that you are unwell and want to rest. — ID: `topic-health-and-rest--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask whether someone is going to see a doctor. — ID: `topic-health-and-rest--quiz--applied-speaking-2`

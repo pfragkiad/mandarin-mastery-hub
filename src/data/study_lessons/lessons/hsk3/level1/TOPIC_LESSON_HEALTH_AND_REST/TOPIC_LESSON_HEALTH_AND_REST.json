@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-health-and-rest",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "illness",
       "rest"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Express basic illness and health needs.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -46,6 +48,7 @@
     "今": "Characters:今",
     "他": "Characters:他",
     "以": "Characters:以",
+    "们": "Characters:们",
     "休": "Characters:休",
     "作": "Characters:作",
     "你": "Characters:你",
@@ -61,6 +64,7 @@
     "后": "Characters:后",
     "吗": "Characters:吗",
     "喝": "Characters:喝",
+    "回": "Characters:回",
     "在": "Characters:在",
     "多": "Characters:多",
     "天": "Characters:天",
@@ -90,9 +94,11 @@
     "有": "Characters:有",
     "朋": "Characters:朋",
     "每": "Characters:每",
+    "气": "Characters:气",
     "水": "Characters:水",
     "没": "Characters:没",
     "点": "Characters:点",
+    "热": "Characters:热",
     "爸": "Characters:爸",
     "生": "Characters:生",
     "病": "Characters:病",
@@ -104,7 +110,12 @@
     "课": "Characters:课",
     "起": "Characters:起",
     "这": "Characters:这",
-    "院": "Characters:院"
+    "院": "Characters:院",
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "间": "Characters:间"
   },
   "sections": {
     "overview": {
@@ -153,7 +164,10 @@
               "entry_id": 12
             }
           ],
-          "pos_note": "Illness as a noun; also occurs in verbal uses."
+          "pos_note": "Illness as a noun; also occurs in verbal uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-100",
@@ -194,7 +208,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 100
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-104",
@@ -223,10 +240,10 @@
               "id": "ex-104-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "他喝了三口水。",
-              "pinyin": "tā hē le sān kǒu shuǐ.",
-              "english": "He took three sips of water.",
-              "teaching_note": ""
+              "hanzi": "天气很热，他回家后喝了三口水。",
+              "pinyin": "tiānqì hěn rè, tā huí jiā hòu hē le sān kǒu shuǐ.",
+              "english": "It was hot. After he got home, he took three sips of water.",
+              "teaching_note": "The measure word counts mouthfuls of water."
             }
           ],
           "learning_role": "introduced",
@@ -236,7 +253,10 @@
               "entry_id": 104
             }
           ],
-          "pos_note": "Noun for mouth; also classifier in expressions such as population count."
+          "pos_note": "Noun for mouth; also classifier in expressions such as population count.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-161",
@@ -265,10 +285,10 @@
               "id": "ex-161-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "起床后，我喝一点儿水。",
-              "pinyin": "qǐchuáng hòu, wǒ hē yìdiǎnr shuǐ.",
-              "english": "After getting up, I drink a little water.",
-              "teaching_note": ""
+              "hanzi": "学生们每天早上七点起床，八点上课。",
+              "pinyin": "xuéshengmen měitiān zǎoshang qī diǎn qǐchuáng, bā diǎn shàngkè.",
+              "english": "The students get up at seven and start class at eight every morning.",
+              "teaching_note": "The two time expressions describe a daily routine."
             }
           ],
           "learning_role": "introduced",
@@ -277,7 +297,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 161
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-183",
@@ -317,7 +340,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 183
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-194",
@@ -358,7 +384,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 194
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-195",
@@ -399,7 +428,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 195
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-246",
@@ -440,7 +472,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 246
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-256",
@@ -482,7 +517,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 256
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         },
         {
           "id": "w-257",
@@ -523,7 +561,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 257
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "health-wellbeing"
         }
       ],
       "related_entries": []
@@ -707,7 +748,6 @@
           "id": "pattern-1",
           "title": "A condition versus getting medical attention",
           "explanation_en": "生病 (shēngbìng) describes becoming or being ill. 看病 (kànbìng) refers to consulting a doctor about illness; 医生 (yīshēng) is the person, 医院 (yīyuàn) the place.",
-          "formula_en": "subject + 生病了; subject + 去 + 医院 + 看病",
           "examples": [
             {
               "hanzi": "弟弟生病了。",
@@ -719,13 +759,15 @@
               "pinyin": "Māma qù kànbìng.",
               "english": "Mom is going to see a doctor."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 生病了; 主语 + 去 + 医院 + 看病",
+          "pattern_pinyin": "zhǔyǔ + shēngbìng le; zhǔyǔ + qù + yīyuàn + kànbìng",
+          "pattern_pseudo_translation": "<subject> + 生病了; <subject> + 去 + 医院 + 看病"
         },
         {
           "id": "pattern-2",
           "title": "Rest and sleep",
           "explanation_en": "休息 (xiūxi) means to rest; 睡觉 (shuìjiào) specifically means to sleep. 起床 (qǐchuáng) means getting out of bed.",
-          "formula_en": "time + verb + 了",
           "examples": [
             {
               "hanzi": "我晚上十点睡觉。",
@@ -737,7 +779,10 @@
               "pinyin": "Tā zǎoshang qī diǎn qǐchuáng.",
               "english": "He gets up at seven in the morning."
             }
-          ]
+          ],
+          "pattern_hanzi": "时间 + 动词 + 了",
+          "pattern_pinyin": "shíjiān + dòngcí + le",
+          "pattern_pseudo_translation": "<time> + <verb> + 了"
         }
       ],
       "guided_building": {
@@ -754,7 +799,8 @@
               "hanzi": "我妹妹生病了。",
               "pinyin": "Wǒ mèimei shēngbìng le.",
               "english": "My younger sister is ill."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "my father",
@@ -762,7 +808,8 @@
               "hanzi": "我爸爸生病了。",
               "pinyin": "Wǒ bàba shēngbìng le.",
               "english": "My father is ill."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -778,11 +825,13 @@
         "questions": [
           {
             "prompt_en": "Why does the speaker want to rest?",
-            "answer_en": "They were very busy and went to sleep late."
+            "answer_en": "They were very busy and went to sleep late.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Where does the speaker want to rest?",
-            "answer_en": "At home."
+            "answer_en": "At home.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -826,5 +875,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-health-and-rest--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: A condition versus getting medical attention",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-health-and-rest--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Rest and sleep",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: my younger sister",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-health-and-rest--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: my father",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--read--reading-q-01",
+            "kind": "question",
+            "label": "Why does the speaker want to rest?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-health-and-rest--read--reading-q-02",
+            "kind": "question",
+            "label": "Where does the speaker want to rest?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Explain that you are unwell and want to rest.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-health-and-rest--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask whether someone is going to see a doctor.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-health-and-rest--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-health-and-rest--quiz--q-19-1",
+            "kind": "practice",
+            "label": "Which expression means “illness”?",
+            "optional": true,
+            "target_id": "q-19-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-2",
+            "kind": "practice",
+            "label": "Which expression means “sleep”?",
+            "optional": true,
+            "target_id": "q-19-2"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-3",
+            "kind": "practice",
+            "label": "Which expression means “hospital”?",
+            "optional": true,
+            "target_id": "q-19-3"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-4",
+            "kind": "practice",
+            "label": "In the example “他生病了。” (tā shēngbìng le.), what is happening?",
+            "optional": false,
+            "target_id": "q-19-4"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--q-19-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “His illness has gotten better.”",
+            "optional": false,
+            "target_id": "q-19-5"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Why does the speaker want to rest?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Where does the speaker want to rest?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Explain that you are unwell and want to rest.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-health-and-rest--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask whether someone is going to see a doctor.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

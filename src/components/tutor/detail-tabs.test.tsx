@@ -13,10 +13,10 @@ vi.mock('@/lib/detail-trail', async importOriginal => ({
   ...(await importOriginal<typeof import('@/lib/detail-trail')>()),
   historyPosition: () => ({ ...(trail.key ? { key: trail.key } : {}), ...(trail.index !== undefined ? { index: trail.index } : {}) }),
 }));
-const etymology = vi.hoisted(() => ({ result: null as unknown, calls: 0 }));
+const etymology = vi.hoisted(() => ({ result: null as unknown, calls: 0, byGlyph: null as Record<string, unknown> | null }));
 vi.mock('@/lib/etymology', async importOriginal => ({
   ...(await importOriginal<typeof import('@/lib/etymology')>()),
-  resolveEtymology: async () => { etymology.calls += 1; return etymology.result; },
+  resolveEtymology: async (request: { glyph: string }) => { etymology.calls += 1; return etymology.byGlyph ? etymology.byGlyph[request.glyph] ?? null : etymology.result; },
 }));
 
 const howellView = {
@@ -29,7 +29,7 @@ const request = { recordId: 'Characters:古', glyph: '古' };
 const flush = () => act(async () => { await Promise.resolve(); await Promise.resolve(); });
 
 describe('Glyph detail drawer tabs', () => {
-  beforeEach(() => { localStorage.clear(); etymology.result = null; etymology.calls = 0; });
+  beforeEach(() => { localStorage.clear(); etymology.result = null; etymology.calls = 0; etymology.byGlyph = null; });
 
   it('opens on Decomposition, even after Etymology was chosen on another card', async () => {
     etymology.result = howellView;
@@ -73,6 +73,21 @@ describe('Glyph detail drawer tabs', () => {
     expect(etymology.calls).toBe(0);
   });
 
+  it('collapses when the open tab is clicked again, and reopens on the next click', async () => {
+    etymology.result = howellView;
+    render(<GlyphDetailTabs cardKey="Characters:toggle" decomposition={decomposition} etymology={request}/>);
+    await flush();
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.queryByText('breakdown body')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Expand details' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
+    // Switching to the other tab keeps the drawer open.
+    fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
+    expect(screen.getAllByText('ancient').length).toBeGreaterThan(0);
+  });
+
   it('hides the Etymology tab once the card turns out to have no notes', async () => {
     render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
@@ -84,5 +99,21 @@ describe('Glyph detail drawer tabs', () => {
     const { container } = render(<GlyphDetailTabs cardKey="Characters:古" decomposition={null} etymology={request}/>);
     await flush();
     expect(container.textContent).toBe('');
+  });
+
+  it('word cards list each character with its own notes and say when a character has none', async () => {
+    etymology.byGlyph = { 古: howellView };
+    render(<GlyphDetailTabs cardKey="word-test-1" decomposition={decomposition} etymology={[{ recordId: 'Characters:古', glyph: '古' }, { recordId: 'Characters:们', glyph: '们' }]}/>);
+    await flush();
+    fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
+    expect(screen.getByRole('listitem', { name: 'Etymology of 古' })).toHaveTextContent('ancient');
+    expect(screen.getByRole('listitem', { name: 'Etymology of 们' })).toHaveTextContent('No entry for 们 in Howell or Shuowen Jiezi.');
+  });
+
+  it('hides the word Etymology tab when none of its characters has notes', async () => {
+    etymology.byGlyph = {};
+    render(<GlyphDetailTabs cardKey="word-test-2" decomposition={decomposition} etymology={[{ recordId: 'Characters:们', glyph: '们' }, { recordId: 'Characters:脑', glyph: '脑' }]}/>);
+    await flush();
+    expect(screen.queryByRole('tab', { name: 'Etymology' })).not.toBeInTheDocument();
   });
 });

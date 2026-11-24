@@ -50,9 +50,9 @@ function PinyinShell({ mode, children }: { mode: PinyinMode; children: (ctx: Pin
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, headings[mode]);
   const onSlow = (slow: boolean) => setPreferences({ ...preferences, slow });
-  // In a quiz the header's game switcher (section-picker.tsx) stops this player
-  // before moving to another game; the Sound chart has no switcher.
-  usePublishSections(mode === 'chart' ? 'chart' : 'games', null, { beforeSwitch: () => player.stop() });
+  // The header switcher (section-picker.tsx) stops this player before moving on: the
+  // game switcher in a quiz, the Pinyin sounds switcher on the Sound chart.
+  usePublishSections(mode === 'chart' ? 'pinyin-sounds' : 'games', null, { beforeSwitch: () => player.stop() });
 
   return <div className={`page-enter library-page pinyin-page${mode === 'chart' ? '' : ' game-page'}`}>
     <div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">LISTEN · COMPARE · REPEAT</div><h1 ref={titleRef}>{headings[mode]}{data && <SourceInfo inline className="detail-footnote pinyin-source">

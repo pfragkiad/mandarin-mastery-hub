@@ -1,0 +1,82 @@
+{
+  "source": {
+    "path": "importer/hsk/hsk3_level5_1.0.5.json",
+    "sha256": "cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727",
+    "dataVersion": "1.0.5"
+  },
+  "topics": {
+    "path": "importer/hsk/hsk3_topics.json",
+    "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+    "version": "2.0.0",
+    "count": 22,
+    "subtopicCount": 25,
+    "matchesEmbeddedTaxonomy": true
+  },
+  "beforeEntries": 3601,
+  "afterEntries": 3601,
+  "replacedWords": 1600,
+  "replacedEntries": 1600,
+  "replacedPhrases": 0,
+  "removedLegacyExamples": 190,
+  "preservedWordRecordings": 1306,
+  "preservedExampleIds": 3010,
+  "examples": 3200,
+  "alignedHeadwords": 1600,
+  "alignedExamples": 3200,
+  "primaryTopicCounts": {
+    "numbers-quantities": 39,
+    "time-calendar": 44,
+    "family-relationships": 23,
+    "people-identity": 27,
+    "reference-questions": 9,
+    "food-drink": 37,
+    "school-language": 34,
+    "work-jobs": 41,
+    "shopping-money": 56,
+    "home-objects": 37,
+    "travel-transport": 23,
+    "health-wellbeing": 42,
+    "animals-weather": 31,
+    "daily-actions": 446,
+    "leisure-media": 36,
+    "places-directions": 40,
+    "communication-social": 44,
+    "qualities-feelings": 210,
+    "grammar-functions": 36,
+    "abstract-concepts": 266,
+    "science-technology": 44,
+    "society-government-law": 35
+  },
+  "assignedPrimarySubtopics": 935,
+  "secondaryTopicWords": 3,
+  "verification": {
+    "status": "full_editorial_example_rewrite_draft_not_independently_native_certified",
+    "word_id_source": "November 2025 HSK 3.0 examination syllabus, cumulative official IDs 2001–3600 (numbered homograph headwords preserved).",
+    "reference_url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2%EF%BC%88%E8%AF%8D%E6%B1%87%E3%80%81%E6%B1%89%E5%AD%97%E3%80%81%E8%AF%AD%E6%B3%95%EF%BC%89.pdf",
+    "transcription_reference": "https://github.com/uranbekanarbaev/hsk-3.0-vocabulary-dataset/blob/main/word-lists/hsk-5.md",
+    "gloss_source": "Initial English glosses from existing Level5 data, with additional 1.0.1 manual corrections. Glosses are editorial drafts pending independent item-by-item verification.",
+    "sentence_policy": "All 1,600 entries have two individually authored or previously curated contextual sentences. The 1,378 defective generic-template entry pairs have been replaced. Independent native-speaker certification remains outstanding.",
+    "pinyin_policy": "Sentence pinyin was recomputed mechanically using the cumulative HSK 1–5 lexicon, longest-match heuristic and ICU fallback; polyphony, sandhi, punctuation and word boundaries still need item-level verification.",
+    "vocabulary_boundary_policy": "Target cumulative HSK 1–5 IDs 1–3600; example vocabulary boundary and word-level segmentation are not independently certified.",
+    "taxonomy_policy": "Identical hsk3_topics.json v2.0.0: 22 parent topics and 25 subtopics. No new categories, no changes to Levels 1–4.",
+    "review_limitations": "All generic POS-based sentence frames have been replaced, but this is NOT a native-speaker proofread, corpus attestation, strict level-bounded vocabulary audit, formal-register certification or complete gloss-by-gloss verification."
+  },
+  "changedSourceEntries": 168,
+  "changedSourceExamples": 190,
+  "changedMeanings": 69,
+  "output": {
+    "path": "src/data/vocabulary/level-5.json",
+    "format": "one compact entry per line",
+    "bytes": 7515284,
+    "maxBytesExclusive": 10000000
+  },
+  "checks": {
+    "entryIdsAndOrderPreserved": true,
+    "wordRecordingsPreserved": true,
+    "otherLevelsPreserved": true,
+    "categoriesPreserved": true,
+    "repeatImportIdempotent": true,
+    "compactAndUnder10MB": true
+  },
+  "entriesWithChangedExamples": 166
+}

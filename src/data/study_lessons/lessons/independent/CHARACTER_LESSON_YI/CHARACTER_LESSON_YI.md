@@ -68,6 +68,8 @@ Introduces an undesirable outcome to prevent.
 
 ### 以 + 名词短语 (yǐ + míngcí duǎnyǔ)
 
+**以** + &lt;noun phrase&gt;
+
 Using or by a particular means
 
 以书面形式提交 (yǐ shūmiàn xíngshì tíjiāo) — Submit in writing
@@ -75,6 +77,8 @@ Using or by a particular means
 Abstract means and manner are frequent; it is not restricted to abstract nouns.
 
 ### 以 X 为 Y (yǐ X wéi Y)
+
+**以** &lt;person or thing&gt; **为** &lt;role or standard&gt;
 
 Take or treat X as Y
 
@@ -84,6 +88,8 @@ X and Y denote variable constituents, not necessarily single characters.
 
 ### 以 X 为主 (yǐ X wéi zhǔ)
 
+**以** &lt;main focus&gt; **为主**
+
 Make X the principal focus
 
 以学习为主 (yǐ xuéxí wéi zhǔ) — Focus mainly on studying
@@ -91,6 +97,8 @@ Make X the principal focus
 Keep the fixed element 为主 (wéi zhǔ) distinct from the general slots.
 
 ### 以 X 为例 (yǐ X wéi lì)
+
+**以** &lt;example&gt; **为例**
 
 Use X as an example
 
@@ -231,3 +239,33 @@ The phrase 以城 (yǐ chéng) identifies what would be given. The comparison wi
 
 **Production:** Translate “May I come in?” using 可以 (kěyǐ).
 **Answer:** 我可以进去吗？(Wǒ kěyǐ jìnqù ma?). The complete modal verb expresses permission.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Meaning and usage
+- [ ] Understand the character meaning and usage — ID: `char-4EE5--overview`
+
+### Vocabulary
+- [ ] Review vocabulary and pronunciation — ID: `char-4EE5--vocabulary`
+
+### Constructions
+- [ ] Practice constructions — ID: `char-4EE5--constructions`
+
+### Worked examples
+- [ ] Understand the worked examples — ID: `char-4EE5--examples`
+
+### Usage contrasts
+- [ ] Distinguish contrasted expressions — ID: `char-4EE5--contrasts`
+
+### Common mistakes
+- [ ] Avoid common usage mistakes — ID: `char-4EE5--mistakes`
+
+### Historical usage
+- [ ] Review historical usage — ID: `char-4EE5--historical`
+
+### Practice
+- [ ] In 我以前住在北京 (Wǒ yǐqián zhù zài Běijīng), does the speaker refer to present or earlier residence? — ID: `char-4EE5--quiz--q-01`
+- [ ] Which sounds natural for casual “eat with chopsticks”? — ID: `char-4EE5--quiz--q-02`
+- [ ] Translate “May I come in?” using 可以 (kěyǐ). — ID: `char-4EE5--quiz--q-03`

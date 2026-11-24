@@ -1,3 +1,5 @@
+import { orderVocabulary, newShuffleSeed, type LibrarySort as Sort } from '@/lib/library-order';
+import { LibrarySort } from './library-sort';
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CatalogPagination, StickyPagination } from './catalog-pagination';
@@ -10,6 +12,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
+import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions, wordSubtopicIds } from '@/lib/vocabulary-subtopics';
 import { matchesPhraseStyle } from '@/lib/data-contract';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { vocabularyPage } from '@/lib/vocabulary-page';
@@ -21,6 +24,7 @@ import { GridCardPlaceholder } from './section-placeholder';
 import { DraftFilterForm } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
+import { LessonHintsProvider } from './lesson-hints';
 import { useCardPeek } from './card-peek';
 import { SourceInfo, HintBody } from './source-info';
 import { usePublishSections } from '@/lib/section-switch';
@@ -45,18 +49,18 @@ function ExperimentalTag() {
     </HintBody></PopoverContent>
   </Popover>;
 }
-type Filters = { q?: string; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
+type Filters = { sort?: Sort | undefined; seed?: number | undefined; q?: string; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string };
 /** Route callbacks own applied filters and selection; local state only owns the add-entry dialog. */
 // Adding words is hidden: without storage or accounts, additions would vanish on reload.
 // The dialog and session-only addWord stay in place so it can return when storage exists.
 const ADD_WORD_ENABLED = false;
 
-export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, collection = 'All collections', level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; tab?: 'word' | 'phrase'; page?: number; collection?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
+export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, page, sort = 'rank', seed = 1, collection = 'All collections', subtopic = ALL_SUBTOPICS, level = 'All levels', status = 'All words', py = undefined, pos = 'All types', style = 'All styles', onWordOpen, onPageChange, onFiltersChange }: { initialQuery?: string; initialWordId?: string; sort?: Sort | undefined; seed?: number | undefined; tab?: 'word' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; onWordOpen?: (id: string | null, page?: number) => void; onPageChange?: (page: number) => void; onFiltersChange?: (filters: Filters, replace?: boolean) => void } = {}) {
   const { items, saved, addWord, preferences } = useWorkspace();
   const detailLoading = useDetailLoading();
   const query = initialQuery;
-  const appliedFilters = { q: query, collection, level, pos, py, style };
-  const activeFilters = Boolean(query || collection !== 'All collections' || level !== 'All levels' || pos !== 'All types' || style !== 'All styles' || py || status !== 'All words');
+  const appliedFilters = { q: query, collection, subtopic, level, pos, py, style };
+  const activeFilters = Boolean(query || collection !== 'All collections' || subtopic !== ALL_SUBTOPICS || level !== 'All levels' || pos !== 'All types' || style !== 'All styles' || py || status !== 'All words');
   const setStatus = (status: string) => onFiltersChange?.({ status });
   const [adding, setAdding] = useState(false);
   // The word records are bundled with the app, so the grid's only loading window is the beat
@@ -88,7 +92,12 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // each other from the form's current (draft) picks, so e.g. choosing a level
   // leaves only the styles and types recorded at that level.
   const facetBase = useMemo(() => filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kindItems, query, status, saved, py]);
-  const filtered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact'), initialWordId);
+  const unordered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
+  const wordSort = sort === 'pinyin' || sort === 'hsk' || sort === 'random' ? sort : 'rank';
+  const filtered = orderVocabulary(unordered, wordSort, seed);
+  // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
+  const hasSubtopics = useMemo(() => kindItems.some(w => wordSubtopicIds(w).length > 0), [kindItems]);
+  const appliedSubtopic = subtopicById(subtopic);
   // Keep a directly linked entry reachable even when old browsing filters would
   // exclude it; pagination uses that same pool for reference-window navigation.
   const density = useLibraryDensity(() => onPageChange?.(1));
@@ -100,7 +109,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     onPageChange: onPageChange ?? (() => undefined),
   };
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide); reset on tab/page/filter change.
-  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}`, preferences.rememberCardReveals);
+  const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${status}|${JSON.stringify(appliedFilters)}|${wordSort}|${seed}`, preferences.rememberCardReveals);
   // An absent selection is an empty string, not undefined; block paging only
   // while the same conditions below actually render the floating reference.
   const detailOpen = Boolean(onWordOpen && linkedWord);
@@ -118,20 +127,35 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     if (previous === null || previous === (page ?? 1) || initialWordId) return;
     topPaginationRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
   }, [page, initialWordId]);
-  const reset = () => { const empty = { q: '', collection: 'All collections', level: 'All levels', py: undefined, pos: 'All types', style: 'All styles' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
+  const reset = () => { const empty = { q: '', collection: 'All collections', subtopic: ALL_SUBTOPICS, level: 'All levels', py: undefined, pos: 'All types', style: 'All styles' }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}<ExperimentalTag/></div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
     <TabsContent value={kind}>
-    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections' } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => { const facets = vocabularyFacetOptions(facetBase, { collection: draft.collection ?? 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: kind === 'phrase' ? draft.style ?? facetStyle : 'All styles' }); return <>
-      <select className="filter-select" aria-label="Collection" value={draft.collection} onChange={e => patch({ collection: e.target.value })}><option>All collections</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
+    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
+      // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed
+      // by every other draft pick (topic, level, type) but never by themselves.
+      const draftTopic = draft.collection ?? 'All collections';
+      const draftSubtopic = draft.subtopic ?? ALL_SUBTOPICS;
+      const facets = vocabularyFacetOptions(facetBase.filter(w => inSubtopic(w, draftSubtopic)), { collection: draftTopic, level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: kind === 'phrase' ? draft.style ?? facetStyle : 'All styles' });
+      const subtopics = subtopicOptions(filterWords(facetBase, '', draftTopic, draft.level ?? 'All levels', 'All words', [], false, draft.pos ?? 'All types'), draftTopic, draftSubtopic);
+      // Picking a topic that does not own the current subtopic clears the subtopic.
+      const pickTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
+      return <>
+      <select className="filter-select" aria-label="Topic" value={draft.collection} onChange={e => pickTopic(e.target.value)}><option value="All collections">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
+      {hasSubtopics && <select className="filter-select" aria-label="Subtopic" value={draftSubtopic} disabled={!subtopics.length && draftSubtopic === ALL_SUBTOPICS} onChange={e => patch({ subtopic: e.target.value })}>
+        <option value={ALL_SUBTOPICS}>{subtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics'}</option>
+        {draftTopic !== 'All collections'
+          ? subtopics.map(st => <option key={st.id} value={st.id}>{st.label}</option>)
+          : [...new Set(subtopics.map(st => st.parentLabel))].map(parent => <optgroup key={parent} label={parent}>{subtopics.filter(st => st.parentLabel === parent).map(st => <option key={st.id} value={st.id}>{st.label}</option>)}</optgroup>)}
+      </select>}
       <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>
       <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.pos.map(p => <option key={p}>{p}</option>)}</select>
       {kind === 'phrase' && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? 'All styles'} onChange={e => patch({ style: e.target.value })}><option>All styles</option>{facets.styles.map(s => <option key={s}>{s}</option>)}</select>}
     </>; }}>{({ draft, patch }) => <>
       <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
     </>}</DraftFilterForm>
-    <LibraryTools flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
-    <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}><section className="catalog-results" aria-label={`${label} results`} aria-busy={!gridReady}>
+    <LibraryTools sort={<LibrarySort words value={wordSort} onChange={next => onFiltersChange?.({ sort: next, seed: next === 'random' ? newShuffleSeed(seed) : undefined })} onReshuffle={() => onFiltersChange?.({ sort: 'random', seed: newShuffleSeed(seed) })}/>} flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
+    <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}>{/* Grid character hints (own `gridHints` switch, apart from lessons and detail cards, which sit outside this provider). */}<LessonHintsProvider enabled={preferences.gridHints === true} backLabel={label}><section className="catalog-results" aria-label={`${label} results`} aria-busy={!gridReady}>
       {!gridReady ? <div ref={gridRef} className={`word-grid vocab-grid vocab-${kind}-grid ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}><GridCardPlaceholder/></div>
       : filtered.length ? <>
       <StickyPagination key={`sticky-${kind}`} label={`Page ${paged.current} / ${paged.pages}`} current={paged.current} pages={paged.pages} onPageChange={onPageChange ?? (() => undefined)} watchRef={topPaginationRef}/>
@@ -140,8 +164,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
         onOpenChange: next => { if (next) peek.reveal(w.id); else onWordOpen(null, paged.current); }, onDetails: () => void detailLoading.run(w.id, () => onWordOpen(w.id, paged.current)) } : {})}/>)}</div>
       <CatalogPagination {...paginationProps} />
     </> : <div className="empty-state"><BookOpen size={32}/><h3>{status === 'Saved words' ? 'A place for your favorite words.' : `No ${label} found.`}</h3><p>{status === 'Saved words' ? 'Your bookmarked vocabulary will be right here.' : 'Try another meaning, Chinese character, or pinyin.'}</p><Button variant="outline" onClick={reset}>Clear filters</Button></div>}
-    </section></div>{onWordOpen && linkedWord && (() => { const index = filtered.findIndex(w => w.id === linkedWord.id); const step = (i: number) => { const target = filtered[i]; if (target) void detailLoading.run(target.id, () => onWordOpen(target.id, Math.floor(i / paged.size) + 1)); }; return <DetailSheet open title={`Details for ${linkedWord.hanzi}`} label={linkedWord.hanzi} position={index} total={filtered.length} onClose={() => { onWordOpen(null, paged.current); focusRecordCard(linkedWord.id); }} onPrevious={index > 0 ? () => step(index - 1) : undefined} onNext={index >= 0 && index < filtered.length - 1 ? () => step(index + 1) : undefined}><DetailLoading loading={detailLoading}><section className="catalog-detail word-detail-panel"><WordDetailContent key={linkedWord.id} word={linkedWord}/></section></DetailLoading></DetailSheet>; })()}
+    </section></LessonHintsProvider></div>{onWordOpen && linkedWord && (() => { const index = filtered.findIndex(w => w.id === linkedWord.id); const step = (i: number) => { const target = filtered[i]; if (target) void detailLoading.run(target.id, () => onWordOpen(target.id, Math.floor(i / paged.size) + 1)); }; return <DetailSheet open title={`Details for ${linkedWord.hanzi}`} label={linkedWord.hanzi} position={index} total={filtered.length} onClose={() => { onWordOpen(null, paged.current); focusRecordCard(linkedWord.id); }} onPrevious={index > 0 ? () => step(index - 1) : undefined} onNext={index >= 0 && index < filtered.length - 1 ? () => step(index + 1) : undefined}><DetailLoading loading={detailLoading}><section className="catalog-detail word-detail-panel"><WordDetailContent key={linkedWord.id} word={linkedWord}/></section></DetailLoading></DetailSheet>; })()}
     </TabsContent></Tabs>
-    <Dialog open={adding} onOpenChange={setAdding}><DialogContent><DialogTitle className="font-display text-2xl">A new word to know.</DialogTitle><DialogDescription>Add to your collection for this session.</DialogDescription><form onSubmit={e => { e.preventDefault(); const data = new FormData(e.currentTarget); const hanzi = String(data.get('hanzi')).trim(); const meaning = String(data.get('meaning')).trim(); if (!hanzi || !meaning) return; addWord({ id: `custom-${Date.now()}`, hanzi, pinyin: String(data.get('pinyin')).trim(), meaning, type: String(data.get('kind')) === 'phrase' ? 'Personal phrase' : 'Personal word', entryKind: String(data.get('kind')) === 'phrase' ? 'phrase' : 'word', collection: String(data.get('collection')), level: 'Unclassified', sentence: '', translation: '' }); setAdding(false); }}><div className="form-grid"><label className="form-field full">Entry type<select name="kind" defaultValue={kind}><option value="word">Word</option><option value="phrase">Phrase / expression</option></select></label><label className="form-field">Chinese<input name="hanzi" lang="zh-CN" required maxLength={12} placeholder="学习"/></label><label className="form-field">Pinyin<input name="pinyin" placeholder="xué xí"/></label><label className="form-field full">Meaning<input name="meaning" required placeholder="To learn"/></label><label className="form-field full">Collection<select name="collection">{collections.map(c => <option key={c}>{c}</option>)}</select></label></div><Button type="submit" className="mt-6 w-full"><Check/>Add to collection</Button></form></DialogContent></Dialog>
+    <Dialog open={adding} onOpenChange={setAdding}><DialogContent><DialogTitle className="font-display text-2xl">A new word to know.</DialogTitle><DialogDescription>Add to your collection for this session.</DialogDescription><form onSubmit={e => { e.preventDefault(); const data = new FormData(e.currentTarget); const hanzi = String(data.get('hanzi')).trim(); const meaning = String(data.get('meaning')).trim(); if (!hanzi || !meaning) return; addWord({ id: `custom-${Date.now()}`, hanzi, pinyin: String(data.get('pinyin')).trim(), meaning, type: String(data.get('kind')) === 'phrase' ? 'Personal phrase' : 'Personal word', entryKind: String(data.get('kind')) === 'phrase' ? 'phrase' : 'word', collection: String(data.get('collection')), level: 'Unclassified', sentence: '', translation: '' }); setAdding(false); }}><div className="form-grid"><label className="form-field full">Entry type<select name="kind" defaultValue={kind}><option value="word">Word</option><option value="phrase">Phrase / expression</option></select></label><label className="form-field">Chinese<input name="hanzi" lang="zh-CN" required maxLength={12} placeholder="学习"/></label><label className="form-field">Pinyin<input name="pinyin" placeholder="xué xí"/></label><label className="form-field full">Meaning<input name="meaning" required placeholder="To learn"/></label><label className="form-field full">Topic<select name="collection">{collections.map(c => <option key={c}>{c}</option>)}</select></label></div><Button type="submit" className="mt-6 w-full"><Check/>Add to collection</Button></form></DialogContent></Dialog>
   </div>;
 }

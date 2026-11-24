@@ -1,11 +1,11 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-abilities-interests",
   "lesson_type": "topic_vocabulary",
   "lesson": {
     "title": "What I Can and Want to Do",
     "subtitle": "Abilities, Preferences and Leisure",
-    "description": "Express what you can do, what you want and what you enjoy doing in free time.",
+    "description": "Learn to express what you can do, what you want to do, and which leisure activities you enjoy.",
     "slug": "abilities-interests"
   },
   "classification": {
@@ -16,11 +16,12 @@
     ],
     "tags": [
       "ability",
-      "desire",
       "preferences",
-      "entertainment"
+      "leisure"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Express ability and intention.",
@@ -29,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -137,7 +138,11 @@
     "那": "Characters:那",
     "里": "Characters:里",
     "间": "Characters:间",
-    "院": "Characters:院"
+    "院": "Characters:院",
+    "主": "Characters:主",
+    "动": "Characters:动",
+    "名": "Characters:名",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -185,7 +190,9 @@
               "entry_id": 82
             }
           ],
-          "pos_note": "Modal use for learned ability; the full word has other uses."
+          "pos_note": "Modal use for learned ability; the full word has other uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-096",
@@ -225,7 +232,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 96
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-102",
@@ -267,7 +276,9 @@
               "entry_id": 102
             }
           ],
-          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use."
+          "pos_note": "Modal/verb expressing permission or possibility; some lexical sources also label adjectival use.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-145",
@@ -307,7 +318,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 145
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-225",
@@ -348,7 +361,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 225
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-233",
@@ -390,7 +405,9 @@
               "entry_id": 233
             }
           ],
-          "pos_note": "Modal sense want/would like, also lexical verb think/miss."
+          "pos_note": "Modal sense want/would like, also lexical verb think/miss.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-252",
@@ -432,7 +449,9 @@
               "entry_id": 252
             }
           ],
-          "pos_note": "Modal of intention/need, also a lexical verb meaning want."
+          "pos_note": "Modal of intention/need, also a lexical verb meaning want.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-263",
@@ -472,7 +491,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 263
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-018",
@@ -513,7 +534,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 18
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-037",
@@ -553,7 +576,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 37
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-038",
@@ -593,7 +618,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 38
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-039",
@@ -634,7 +661,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 39
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-058",
@@ -675,7 +704,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 58
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         },
         {
           "id": "w-075",
@@ -715,7 +746,9 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 75
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
         }
       ],
       "related_entries": []
@@ -899,7 +932,6 @@
           "id": "pattern-1",
           "title": "Ability: 会 (huì) versus 能 (néng)",
           "explanation_en": "会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.",
-          "formula_en": "Subject + 会/能 + verb",
           "examples": [
             {
               "hanzi": "我也会说一点儿汉语。",
@@ -911,13 +943,15 @@
               "pinyin": "Wǒ jīntiān néng qù.",
               "english": "I can go today (circumstances allow)."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 会/能 + 动词",
+          "pattern_pinyin": "zhǔyǔ + huì/néng + dòngcí",
+          "pattern_pseudo_translation": "<subject> + 会/能 + <verb>"
         },
         {
           "id": "pattern-2",
           "title": "Desire: 想 (xiǎng) versus 要 (yào)",
           "explanation_en": "想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).",
-          "formula_en": "Subject + 想/要 + verb/noun",
           "examples": [
             {
               "hanzi": "我想喝茶。",
@@ -929,7 +963,10 @@
               "pinyin": "Wǒ yào kàn zhè běn shū.",
               "english": "I want to read this book."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 想/要 + 动词/名词",
+          "pattern_pinyin": "zhǔyǔ + xiǎng/yào + dòngcí/míngcí",
+          "pattern_pseudo_translation": "<subject> + 想/要 + <verb>/<noun>"
         }
       ],
       "guided_building": {
@@ -946,7 +983,8 @@
               "hanzi": "你想唱歌吗？",
               "pinyin": "Nǐ xiǎng chàng gē ma?",
               "english": "Do you want to sing?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "drink tea",
@@ -954,7 +992,8 @@
               "hanzi": "你想喝茶吗？",
               "pinyin": "Nǐ xiǎng hē chá ma?",
               "english": "Do you want to drink tea?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -975,11 +1014,13 @@
         "questions": [
           {
             "prompt_en": "Why can Xiaoming not go to the cinema today?",
-            "answer_en": "He is busy today."
+            "answer_en": "He is busy today.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "When does he want to go?",
-            "answer_en": "Tomorrow."
+            "answer_en": "Tomorrow.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1024,5 +1065,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-abilities-interests--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Ability: 会 (huì) versus 能 (néng)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-abilities-interests--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Desire: 想 (xiǎng) versus 要 (yào)",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: sing",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-abilities-interests--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: drink tea",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--read--reading-q-01",
+            "kind": "question",
+            "label": "Why can Xiaoming not go to the cinema today?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-abilities-interests--read--reading-q-02",
+            "kind": "question",
+            "label": "When does he want to go?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask a friend which activity they would like to do today.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-abilities-interests--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Explain a learned skill and one thing you cannot do today.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-abilities-interests--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-abilities-interests--quiz--q-17-1",
+            "kind": "practice",
+            "label": "Which expression means “can”?",
+            "optional": true,
+            "target_id": "q-17-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-2",
+            "kind": "practice",
+            "label": "Which expression means “have”?",
+            "optional": true,
+            "target_id": "q-17-2"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-3",
+            "kind": "practice",
+            "label": "Which expression means “fun”?",
+            "optional": true,
+            "target_id": "q-17-3"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-4",
+            "kind": "practice",
+            "label": "In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening?",
+            "optional": false,
+            "target_id": "q-17-4"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--q-17-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “My younger sister can sing.”",
+            "optional": false,
+            "target_id": "q-17-5"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Why can Xiaoming not go to the cinema today?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: When does he want to go?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask a friend which activity they would like to do today.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-abilities-interests--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Explain a learned skill and one thing you cannot do today.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

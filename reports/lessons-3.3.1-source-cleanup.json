@@ -1,0 +1,121 @@
+{
+  "reason": "Owner-requested removal of superseded lesson uploads and obsolete upload Markdown; published history preserved.",
+  "historyCommit": "400f5c6a8f94c8944d43d059bc4f79881f2cbde2",
+  "retainedPackages": [
+    "Mandarin_Core_Project_Sources_v3.3.1_taxonomy-v2.0.0.zip",
+    "Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1_rev2.zip",
+    "Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1_rev2.zip",
+    "Mandarin_Other_Lessons_v3.3.1_taxonomy-v2.0.0.zip"
+  ],
+  "removedFiles": [
+    {
+      "path": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.2.0_taxonomy-v2.0.0.zip",
+      "sha256": "ff4f2a86ee3f0f073b263e0d6ece1c305320d878069a9cf8d4b58b38a8661a31",
+      "gitBlobSha256": "ff4f2a86ee3f0f073b263e0d6ece1c305320d878069a9cf8d4b58b38a8661a31"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0.zip",
+      "sha256": "e0088c00715faeb4dfe7583fd198f1a03bf02282f1f4b5eb16436b213e7bf161",
+      "gitBlobSha256": "e0088c00715faeb4dfe7583fd198f1a03bf02282f1f4b5eb16436b213e7bf161"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.0_taxonomy-v2.0.0_rev2.zip",
+      "sha256": "cceb74b6f1d10c157db78e3d4105256c6c34100ec018c32734414fe0a2e63cc7",
+      "gitBlobSha256": "cceb74b6f1d10c157db78e3d4105256c6c34100ec018c32734414fe0a2e63cc7"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.2.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "sha256": "e4f0774372b58ca6f6bb1aa28f099d9dcdf87e3ccb21c97306bc3d3730e8830a",
+      "gitBlobSha256": "e4f0774372b58ca6f6bb1aa28f099d9dcdf87e3ccb21c97306bc3d3730e8830a"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0.zip",
+      "sha256": "fd3a1e9c870d7e0d7b829b4a4b4db55473bf1b8f47853758e262ce32dbd353f0",
+      "gitBlobSha256": "fd3a1e9c870d7e0d7b829b4a4b4db55473bf1b8f47853758e262ce32dbd353f0"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level1_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.7.1.zip",
+      "sha256": "2eefe312a98a2ac5e8cf0b477ec3988193d6be230c66adb0c7039a673fe53afb",
+      "gitBlobSha256": "2eefe312a98a2ac5e8cf0b477ec3988193d6be230c66adb0c7039a673fe53afb"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level2_Lessons_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "sha256": "3129da6b0ca0511f9ee8accb59fdee5bbf1bf1b7427f1b13895e1e3ef26ceffa",
+      "gitBlobSha256": "3129da6b0ca0511f9ee8accb59fdee5bbf1bf1b7427f1b13895e1e3ef26ceffa"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0.zip",
+      "sha256": "ea113939b3a49cf0239f1181f047e97a634a6b986a331dbb49326d7726f2c6c6",
+      "gitBlobSha256": "ea113939b3a49cf0239f1181f047e97a634a6b986a331dbb49326d7726f2c6c6"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev2.zip",
+      "sha256": "35bd7c5561b3b67a1d823ad04e067da84bf46cb2369d80ef5c889dc371336257",
+      "gitBlobSha256": "35bd7c5561b3b67a1d823ad04e067da84bf46cb2369d80ef5c889dc371336257"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.0_taxonomy-v2.0.0_rev3.zip",
+      "sha256": "cb0fd9137583c4092c1801ba10f069988fed4d20960cc7604d0c0db4092c29a2",
+      "gitBlobSha256": "cb0fd9137583c4092c1801ba10f069988fed4d20960cc7604d0c0db4092c29a2"
+    },
+    {
+      "path": "importer/data/lessons/TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_v3.3.0_taxonomy-v2.0.0_vocab-v1.1.1.zip",
+      "sha256": "a0cdd9b3cab411cfd9a6f2773e8d23d4b7c7d93fcfdcaeacb4df32fd2a86c7fd",
+      "gitBlobSha256": "a0cdd9b3cab411cfd9a6f2773e8d23d4b7c7d93fcfdcaeacb4df32fd2a86c7fd"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_HSK_Level1_Vocabulary_Regression_Report_v3.3.0_vocab-v1.7.1.md",
+      "sha256": "ea35a5486ed0d816d1bf4ff95a27f75057f0bc4e8415b8935bfc1bf3f62c3a85",
+      "gitBlobSha256": "4466da01db265eb3415288d23259992ac0d30ee84575d09bd3ee76342eebe215"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Progress_Migration_Report_v3.3.0.md",
+      "sha256": "0f61f16d8a33e18e64fd8ae1e9de596408e245378eb24d375fc9258ba2cb3bce",
+      "gitBlobSha256": "6befa88693d07458747c5f7336aa8e9e8918e2a5ccf52a495eff6bd6b102ed2f"
+    },
+    {
+      "path": "importer/data/lessons/TOPIC_LESSON_MAKING_PLANS_TOGETHER_HSK2_report.md",
+      "sha256": "a64b6f31c2c7607b1c44c59057c6472bab50000b3c224accf4530608ac1de08f",
+      "gitBlobSha256": "6a884e44e81572fa9f76bb151c10230fb9243f51574f869e2411243c2be6bc02"
+    },
+    {
+      "path": "reports/lessons-3.3.0-example-regression.md",
+      "sha256": "276a39ae8974d7deaccff1d3eacf2e72715da210f1cdc43864d81875e74bb6b5",
+      "gitBlobSha256": "a25dfe54dc59d0126cfcce831bc86e63f1facbcefd271fbb61031726ba9e0b7e"
+    },
+    {
+      "path": "reports/lessons-3.3.0-vocab-v1.7.1-check.md",
+      "sha256": "70b23c39c1d86e0aaf4730f3b2f9480ffb21998272c49b279e1507067a092cbd",
+      "gitBlobSha256": "7589bbf8052dea20f96dbea96180ddb1bca5709f567964bab6b3d72aef5f53f9"
+    },
+    {
+      "path": "reports/lessons-taxonomy-v2-sync-report.md",
+      "sha256": "75b70ca195519af11cb3c895f31f7fff3e94d28c42fd86484438edfc77c868db",
+      "gitBlobSha256": "b5c0098c5707677ee51a2a77163245e3ba969ec648891edf0b93cb8a6f8c9419"
+    },
+    {
+      "path": "src/data/study_lessons/lessons/PACKAGE_README.md",
+      "sha256": "20fb2f3bcb17e60ab6b775047a679181523b7d8debb188f1ec312b8c2c72be80",
+      "gitBlobSha256": "2bcc854cf04939a424f92908f15d60a9f416d89062b2f6df4a70ac328421d3ac"
+    },
+    {
+      "path": "src/data/study_lessons/lessons/REPORT.md",
+      "sha256": "e89624701c746cf261f19ae18384abef846291a1dae3b5083213f3cc59f22298",
+      "gitBlobSha256": "0c665b825dcf9ca2d4006d0dbffa5791fbff06277d937d7e5330c52954810e9a"
+    },
+    {
+      "path": "src/data/study_lessons/lessons/HSK_LEVEL1_PACKAGE_README.md",
+      "sha256": "e091fab7b4e59bc6de92c4b410f21295210f8cd03533febecbdc049d72c235b2",
+      "gitBlobSha256": "e091fab7b4e59bc6de92c4b410f21295210f8cd03533febecbdc049d72c235b2"
+    },
+    {
+      "path": "src/data/study_lessons/core/CHANGELOG.md",
+      "sha256": "1fceec8f876e5892ba1e9eda1d326deae02c9f128efb86ff2769d20c69574690",
+      "gitBlobSha256": "08bdfd7d0db3fe5c85f88c95a467158dc779ba730e49b701a86da6c618d8a690"
+    }
+  ],
+  "counts": {
+    "zips": 11,
+    "markdown": 10
+  }
+}

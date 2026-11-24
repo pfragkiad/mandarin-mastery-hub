@@ -1,0 +1,23 @@
+{
+  "checkedOn": "2026-11-24",
+  "recordings": {
+    "repository": "https://github.com/hugolpz/audio-cmn",
+    "commit": "f759a0f18f27690742957619e1248ed91e9b3f2c",
+    "directory": "64k/hsk",
+    "speaker": "Yue Tan",
+    "collection": "Shtooka cmn-caen-tan",
+    "copyright": "© 2009 Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+    "licenseTextUrl": "https://creativecommons.org/licenses/by-sa/3.0/us/legalcode",
+    "noticePath": "../hsk-audio/cmn-caen-tan-readme.txt",
+    "indexPath": "../hsk-audio/cmn-caen-tan-index.xml.bz2",
+    "processingCredits": "Hugo Lopez and Nicolas Vion (audio-cmn)"
+  },
+  "references": [
+    {"name": "Pīnyīn Explorer", "url": "https://pinyinexplorer.com/exercises/mandarin-two-syllable-tone-drills/", "use": "Reference for tone combinations, neutral endings and 一/不 practice; credits the same audio-cmn collection. No site data or interface copied."},
+    {"name": "Yoyo Chinese", "url": "https://yoyochinese.com/chinese-learning-tools/tone-pairs", "use": "Reference for a 4 × 5 tone-pair matrix. Audio not acquired: no redistribution permission established."},
+    {"name": "EdUHK Mandarin pronunciation corpus", "url": "https://corpus.eduhk.hk/mandarin_pronunciation/?page_id=1321", "use": "Reference for third-tone sandhi and longer sequences. Audio not acquired: no redistribution permission established."},
+    {"name": "Sinosplice", "url": "https://www.sinosplice.com/learn-chinese/tone-pair-drills", "use": "Further drill reference; some pages returned HTTP 403. No recordings acquired."}
+  ]
+}

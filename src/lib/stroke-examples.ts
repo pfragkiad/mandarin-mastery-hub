@@ -1,4 +1,6 @@
-/** Explicit representative single-stroke selections (zero-based indices in Hanzi Writer Data 2.0.1), carried over from the original Mandarin Tutor stroke reference — never inferred from shape. */
+/** Explicit representative single-stroke selections (zero-based indices in Hanzi Writer Data 2.0.1).
+ * Corrected occurrences keep the recorded source character and writing order, never a
+ * font outline or shape guess. ㇘ has no verified occurrence and intentionally stays absent. */
 export type StrokeExample = { code: string; character: string; strokeIndex: number };
 export const strokeExamples: Record<string, StrokeExample> = {
   '㇀': { code: 'T', character: '我', strokeIndex: 3 },
@@ -11,10 +13,10 @@ export const strokeExamples: Record<string, StrokeExample> = {
   '㇈': { code: 'HZWG', character: '九', strokeIndex: 1 },
   '㇉': { code: 'SZWG', character: '弓', strokeIndex: 2 },
   '㇊': { code: 'HZT', character: '计', strokeIndex: 1 },
-  '㇋': { code: 'HZZP', character: '及', strokeIndex: 0 },
+  '㇋': { code: 'HZZP', character: '及', strokeIndex: 1 },
   '㇌': { code: 'HPWG', character: '阝', strokeIndex: 0 },
   '㇍': { code: 'HZW', character: '投', strokeIndex: 4 },
-  '㇎': { code: 'HZZZ', character: '凸', strokeIndex: 0 },
+  '㇎': { code: 'HZZZ', character: '凸', strokeIndex: 3 },
   '㇏': { code: 'N', character: '受', strokeIndex: 7 },
   '㇐': { code: 'H', character: '一', strokeIndex: 0 },
   '㇑': { code: 'S', character: '十', strokeIndex: 1 },
@@ -24,12 +26,11 @@ export const strokeExamples: Record<string, StrokeExample> = {
   '㇕': { code: 'HZ', character: '口', strokeIndex: 1 },
   '㇖': { code: 'HG', character: '学', strokeIndex: 4 },
   '㇗': { code: 'SZ', character: '山', strokeIndex: 1 },
-  '㇘': { code: 'SWZ', character: '肅', strokeIndex: 5 },
   '㇙': { code: 'ST', character: '民', strokeIndex: 2 },
   '㇚': { code: 'SG', character: '我', strokeIndex: 2 },
   '㇛': { code: 'PD', character: '女', strokeIndex: 0 },
   '㇜': { code: 'PZ', character: '么', strokeIndex: 1 },
-  '㇝': { code: 'TN', character: '入', strokeIndex: 0 },
+  '㇝': { code: 'TN', character: '入', strokeIndex: 1 },
   '㇞': { code: 'SZZ', character: '亞', strokeIndex: 3 },
   '㇟': { code: 'SWG', character: '儿', strokeIndex: 1 },
   '㇠': { code: 'HXWG', character: '乙', strokeIndex: 0 },

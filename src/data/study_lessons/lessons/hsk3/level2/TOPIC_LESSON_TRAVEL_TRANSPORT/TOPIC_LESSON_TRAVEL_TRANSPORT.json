@@ -1,0 +1,1312 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-planning-a-journey",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Planning a Journey",
+    "subtitle": "Stations, tickets and getting around",
+    "description": "Buy transport tickets and describe a journey by metro, bus or taxi.",
+    "slug": "planning-a-journey"
+  },
+  "classification": {
+    "primary_topic_id": "travel-transport",
+    "topic_ids": [
+      "travel-transport"
+    ],
+    "tags": [
+      "stations",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name a station, airport and hotel.",
+    "Choose a transport method.",
+    "Talk about tickets and a trip abroad."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "交": "Characters:交",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "再": "Characters:再",
+    "决": "Characters:决",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "姐": "Characters:姐",
+    "学": "Characters:学",
+    "定": "Characters:定",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "已": "Characters:已",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "旅": "Characters:旅",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "末": "Characters:末",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "爸": "Characters:爸",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "票": "Characters:票",
+    "离": "Characters:离",
+    "租": "Characters:租",
+    "站": "Characters:站",
+    "等": "Characters:等",
+    "经": "Characters:经",
+    "网": "Characters:网",
+    "要": "Characters:要",
+    "课": "Characters:课",
+    "贵": "Characters:贵",
+    "走": "Characters:走",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "远": "Characters:远",
+    "那": "Characters:那",
+    "酒": "Characters:酒",
+    "铁": "Characters:铁",
+    "门": "Characters:门",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "二": "Characters:二",
+    "作": "Characters:作",
+    "动": "Characters:动",
+    "目": "Characters:目",
+    "第": "Characters:第"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Buy transport tickets and describe a journey by metro, bus or taxi.",
+      "focus": "Name a station, airport and hotel."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-315",
+          "hanzi": "车站",
+          "pinyin": "chēzhàn",
+          "meaning_en": "station; stop",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-315-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "车站在哪儿？",
+              "pinyin": "chēzhàn zài nǎr?",
+              "english": "Where is the station?",
+              "teaching_note": "A short spoken example using 车站."
+            },
+            {
+              "id": "ex-315-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公交车站在学校前面。",
+              "pinyin": "gōngjiāochē zhàn zài xuéxiào qiánmiàn.",
+              "english": "The bus stop is in front of the school.",
+              "teaching_note": "A simple written example using 车站."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 315
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-317",
+          "hanzi": "出国",
+          "pinyin": "chūguó",
+          "meaning_en": "to go abroad",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-317-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想出国吗？",
+              "pinyin": "nǐ xiǎng chūguó ma?",
+              "english": "Do you want to go abroad?",
+              "teaching_note": "A short spoken example using 出国."
+            },
+            {
+              "id": "ex-317-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她明年想出国学习。",
+              "pinyin": "tā míngnián xiǎng chūguó xuéxí.",
+              "english": "She wants to study abroad next year.",
+              "teaching_note": "A simple written example using 出国."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 317
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-328",
+          "hanzi": "打车",
+          "pinyin": "dǎchē",
+          "meaning_en": "to take a taxi",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-328-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们打车去吧。",
+              "pinyin": "wǒmen dǎchē qù ba.",
+              "english": "Let's take a taxi.",
+              "teaching_note": "A short spoken example using 打车."
+            },
+            {
+              "id": "ex-328-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨的时候，他经常打车上班。",
+              "pinyin": "xià yǔ de shíhou, tā jīngcháng dǎchē shàngbān.",
+              "english": "When it rains, he often takes a taxi to work.",
+              "teaching_note": "A simple written example using 打车."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 328
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-335",
+          "hanzi": "地铁",
+          "pinyin": "dìtiě",
+          "meaning_en": "subway; metro",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-335-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们坐地铁吧！",
+              "pinyin": "wǒmen zuò dìtiě ba!",
+              "english": "Let's take the subway!",
+              "teaching_note": "A short spoken example using 地铁."
+            },
+            {
+              "id": "ex-335-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校离地铁站很近，学生们经常坐地铁来上课。",
+              "pinyin": "xuéxiào lí dìtiězhàn hěn jìn, xuéshēngmen jīngcháng zuò dìtiě lái shàngkè.",
+              "english": "The school is close to the subway station, and students often take the subway to class.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 335
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-346",
+          "hanzi": "公交车",
+          "pinyin": "gōngjiāochē",
+          "meaning_en": "public bus",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-346-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们坐公交车吧。",
+              "pinyin": "wǒmen zuò gōngjiāochē ba.",
+              "english": "Let's take the bus.",
+              "teaching_note": "A short spoken example using 公交车."
+            },
+            {
+              "id": "ex-346-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我每天坐公交车去学校。",
+              "pinyin": "wǒ měi tiān zuò gōngjiāochē qù xuéxiào.",
+              "english": "I take the bus to school every day.",
+              "teaching_note": "A simple written example using 公交车."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 346
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-363",
+          "hanzi": "机场",
+          "pinyin": "jīchǎng",
+          "meaning_en": "airport",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-363-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "机场在哪儿？",
+              "pinyin": "jīchǎng zài nǎr?",
+              "english": "Where is the airport?",
+              "teaching_note": "A short spoken example using 机场."
+            },
+            {
+              "id": "ex-363-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他明天上午去机场。",
+              "pinyin": "tā míngtiān shàngwǔ qù jīchǎng.",
+              "english": "He is going to the airport tomorrow morning.",
+              "teaching_note": "A simple written example using 机场."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 363
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-364",
+          "hanzi": "机票",
+          "pinyin": "jīpiào",
+          "meaning_en": "plane ticket; airfare ticket",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-364-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你买机票了吗？",
+              "pinyin": "nǐ mǎi jīpiào le ma?",
+              "english": "Have you bought the plane ticket?",
+              "teaching_note": "A short spoken example using 机票."
+            },
+            {
+              "id": "ex-364-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐今天在网上买了机票。",
+              "pinyin": "jiějie jīntiān zài wǎngshang mǎi le jīpiào.",
+              "english": "My older sister bought a plane ticket online today.",
+              "teaching_note": "A simple written example using 机票."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 364
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-375",
+          "hanzi": "酒店",
+          "pinyin": "jiǔdiàn",
+          "meaning_en": "hotel",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-375-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这家酒店贵吗？",
+              "pinyin": "zhè jiā jiǔdiàn guì ma?",
+              "english": "Is this hotel expensive?",
+              "teaching_note": "A short spoken example using 酒店."
+            },
+            {
+              "id": "ex-375-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他住的酒店离机场很近。",
+              "pinyin": "tā zhù de jiǔdiàn lí jīchǎng hěn jìn.",
+              "english": "The hotel where he is staying is very close to the airport.",
+              "teaching_note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 375
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-393",
+          "hanzi": "路上",
+          "pinyin": "lùshang",
+          "meaning_en": "on the road; on the way",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-393-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我还在路上。",
+              "pinyin": "wǒ hái zài lùshang.",
+              "english": "I'm still on the way.",
+              "teaching_note": "A short spoken example using 路上."
+            },
+            {
+              "id": "ex-393-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上学路上有很多车。",
+              "pinyin": "shàngxué lùshang yǒu hěn duō chē.",
+              "english": "There are many cars on the way to school.",
+              "teaching_note": "A simple written example using 路上."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 393
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-394",
+          "hanzi": "旅游",
+          "pinyin": "lǚyóu",
+          "meaning_en": "to travel; to go sightseeing",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-394-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢旅游吗？",
+              "pinyin": "nǐ xǐhuan lǚyóu ma?",
+              "english": "Do you like traveling?",
+              "teaching_note": "A short spoken example using 旅游."
+            },
+            {
+              "id": "ex-394-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们明年想去中国旅游。",
+              "pinyin": "wǒmen míngnián xiǎng qù Zhōngguó lǚyóu.",
+              "english": "We want to travel to China next year.",
+              "teaching_note": "A simple written example using 旅游."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 394
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-416",
+          "hanzi": "票",
+          "pinyin": "piào",
+          "meaning_en": "ticket",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-416-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的票在哪儿？",
+              "pinyin": "nǐ de piào zài nǎr?",
+              "english": "Where is your ticket?",
+              "teaching_note": "A short spoken example using 票."
+            },
+            {
+              "id": "ex-416-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸今天在网上买了票。",
+              "pinyin": "bàba jīntiān zài wǎngshang mǎi le piào.",
+              "english": "Dad bought tickets online today.",
+              "teaching_note": "A simple written example using 票."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 416
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-486",
+          "hanzi": "站",
+          "pinyin": "zhàn",
+          "meaning_en": "stop; station",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-486-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "下一站是哪儿？",
+              "pinyin": "xià yí zhàn shì nǎr?",
+              "english": "What is the next stop?",
+              "teaching_note": "A short spoken example using 站."
+            },
+            {
+              "id": "ex-486-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校前面有一个公交车站。",
+              "pinyin": "xuéxiào qiánmiàn yǒu yí ge gōngjiāochē zhàn.",
+              "english": "There is a bus stop in front of the school.",
+              "teaching_note": "A simple written example using 站."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 486
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-020",
+          "hanzi": "车",
+          "pinyin": "chē",
+          "meaning_en": "vehicle",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-020-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我爸爸的车。",
+              "pinyin": "zhè shì wǒ bàba de chē.",
+              "english": "This is my dad's car.",
+              "teaching_note": "Family or daily-life description using 车 without advanced grammar."
+            },
+            {
+              "id": "ex-020-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校门口有很多车。",
+              "pinyin": "xuéxiào ménkǒu yǒu hěn duō chē.",
+              "english": "There are many cars at the school entrance.",
+              "teaching_note": "School or study context showing 车 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 20
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-022",
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning_en": "taxi",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-022-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐出租车去学校。",
+              "pinyin": "wǒ zuò chūzūchē qù xuéxiào.",
+              "english": "I take a taxi to school.",
+              "teaching_note": "坐出租车 means travel by taxi, rather than literally sit in a taxi."
+            },
+            {
+              "id": "ex-022-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从学校到医院可以坐出租车。",
+              "pinyin": "cóng xuéxiào dào yīyuàn kěyǐ zuò chūzūchē.",
+              "english": "You can take a taxi from the school to the hospital.",
+              "teaching_note": "School or study context showing 出租车 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 22
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-029",
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning_en": "arrive",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "examples": [
+            {
+              "id": "ex-029-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他九点到学校。",
+              "pinyin": "tā jiǔ diǎn dào xuéxiào.",
+              "english": "He arrives at school at nine.",
+              "teaching_note": "九点 gives the arrival time; 到 indicates reaching the school."
+            },
+            {
+              "id": "ex-029-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从家到学校可以坐车。",
+              "pinyin": "cóng jiā dào xuéxiào kěyǐ zuò chē.",
+              "english": "You can go from home to school by car.",
+              "teaching_note": "School or study context showing 到 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 29
+            }
+          ],
+          "primary_topic_id": "travel-transport",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "A journey with transfers",
+        "explanation": "Use 先 (xiān) and 再 (zài) to describe successive stages of a trip: first one vehicle, then another.",
+        "example_id": "ex-315-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Travel tickets and destinations",
+        "explanation": "机票 (jīpiào) is an air ticket; 票 (piào) is a general ticket. Use 去 (qù) followed by the destination.",
+        "example_id": "ex-317-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-315-1",
+      "ex-317-1",
+      "ex-328-1",
+      "ex-335-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "On the day of his trip abroad, he waits for the bus, then decides to take a taxi to the airport."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: How far is it to walk from the hotel to the station? Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 从酒店到车站要走多远？ (Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?)",
+          "answer": "从酒店到车站要走多远？ (Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?)"
+        },
+        {
+          "id": "recall-315",
+          "kind": "selection",
+          "prompt": "Which expression means “station”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "车站",
+              "pinyin": "chēzhàn",
+              "meaning_en": "station; stop"
+            },
+            {
+              "id": "b",
+              "hanzi": "出国",
+              "pinyin": "chūguó",
+              "meaning_en": "to go abroad"
+            },
+            {
+              "id": "c",
+              "hanzi": "打车",
+              "pinyin": "dǎchē",
+              "meaning_en": "to take a taxi"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 车站 (chēzhàn) with this meaning."
+        },
+        {
+          "id": "recall-317",
+          "kind": "selection",
+          "prompt": "Which expression means “to go abroad”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "车站",
+              "pinyin": "chēzhàn",
+              "meaning_en": "station; stop"
+            },
+            {
+              "id": "c",
+              "hanzi": "打车",
+              "pinyin": "dǎchē",
+              "meaning_en": "to take a taxi"
+            },
+            {
+              "id": "a",
+              "hanzi": "出国",
+              "pinyin": "chūguó",
+              "meaning_en": "to go abroad"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 出国 (chūguó) with this meaning."
+        },
+        {
+          "id": "recall-328",
+          "kind": "selection",
+          "prompt": "Which expression means “to take a taxi”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "出国",
+              "pinyin": "chūguó",
+              "meaning_en": "to go abroad"
+            },
+            {
+              "id": "a",
+              "hanzi": "打车",
+              "pinyin": "dǎchē",
+              "meaning_en": "to take a taxi"
+            },
+            {
+              "id": "b",
+              "hanzi": "车站",
+              "pinyin": "chēzhàn",
+              "meaning_en": "station; stop"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 打车 (dǎchē) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Planning a Journey",
+        "context_en": "Buy transport tickets and describe a journey by metro, bus or taxi.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你明天去机场吗？",
+            "pinyin": "Nǐ míngtiān qù jīchǎng ma?",
+            "english": "Are you going to the airport tomorrow?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，我的机票已经买好了。",
+            "pinyin": "Duì, wǒ de jīpiào yǐjīng mǎi hǎo le.",
+            "english": "Yes, I’ve already bought my plane ticket."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想打车还是坐地铁？",
+            "pinyin": "Nǐ xiǎng dǎchē háishi zuò dìtiě?",
+            "english": "Do you want a taxi or to take the metro?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "先坐公交车到车站，再坐地铁。",
+            "pinyin": "Xiān zuò gōngjiāochē dào chēzhàn, zài zuò dìtiě.",
+            "english": "First I’ll take the bus to the station, then the metro."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "A journey with transfers",
+          "explanation_en": "Use 先 (xiān) and 再 (zài) to describe successive stages of a trip: first one vehicle, then another.",
+          "examples": [
+            {
+              "hanzi": "从酒店到车站要走多远？",
+              "pinyin": "Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?",
+              "english": "How far is it to walk from the hotel to the station?"
+            },
+            {
+              "hanzi": "对，我的机票已经买好了。",
+              "pinyin": "Duì, wǒ de jīpiào yǐjīng mǎi hǎo le.",
+              "english": "Yes, I’ve already bought my plane ticket."
+            }
+          ],
+          "pattern_hanzi": "先 + 第一个动作，再 + 第二个动作",
+          "pattern_pinyin": "xiān + dì yī ge dòngzuò, zài + dì èr ge dòngzuò",
+          "pattern_pseudo_translation": "先 + <action A>，再 + <action B>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Travel tickets and destinations",
+          "explanation_en": "机票 (jīpiào) is an air ticket; 票 (piào) is a general ticket. Use 去 (qù) followed by the destination.",
+          "examples": [
+            {
+              "hanzi": "我想买两张地铁票。",
+              "pinyin": "Wǒ xiǎng mǎi liǎng zhāng dìtiě piào.",
+              "english": "I would like to buy two metro tickets."
+            },
+            {
+              "hanzi": "先坐公交车到车站，再坐地铁。",
+              "pinyin": "Xiān zuò gōngjiāochē dào chēzhàn, zài zuò dìtiě.",
+              "english": "First I’ll take the bus to the station, then the metro."
+            }
+          ],
+          "pattern_hanzi": "去 + 目的地 / 买 + 票",
+          "pattern_pinyin": "qù + mùdìdì / mǎi + piào",
+          "pattern_pseudo_translation": "去 + <destination> / 买 + 票"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你明天去机场吗？",
+          "pinyin": "Nǐ míngtiān qù jīchǎng ma?",
+          "english": "Are you going to the airport tomorrow?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: How far is it to walk from the hotel to the station?",
+            "model_answer": {
+              "hanzi": "从酒店到车站要走多远？",
+              "pinyin": "Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?",
+              "english": "How far is it to walk from the hotel to the station?"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: I would like to buy two metro tickets.",
+            "model_answer": {
+              "hanzi": "我想买两张地铁票。",
+              "pinyin": "Wǒ xiǎng mǎi liǎng zhāng dìtiě piào.",
+              "english": "I would like to buy two metro tickets."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Do you want a taxi or to take the metro?",
+            "model_answer": {
+              "hanzi": "你想打车还是坐地铁？",
+              "pinyin": "Nǐ xiǎng dǎchē háishi zuò dìtiě?",
+              "english": "Do you want a taxi or to take the metro?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Planning a Journey — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "周末，小张想去外地旅游。他先在网上看酒店和机票，最后买了票。",
+            "pinyin": "Zhōumò, Xiǎo Zhāng xiǎng qù wàidì lǚyóu. Tā xiān zài wǎngshang kàn jiǔdiàn hé jīpiào, zuìhòu mǎi le piào.",
+            "english": "On the weekend, Xiao Zhang wants to travel to another region. He checks hotels and air tickets online, then buys a ticket."
+          },
+          {
+            "hanzi": "出国那天，他在路上等公交车，后来决定打车去机场。",
+            "pinyin": "Chūguó nà tiān, tā zài lùshang děng gōngjiāochē, hòulái juédìng dǎchē qù jīchǎng.",
+            "english": "On the day of his trip abroad, he waits for the bus, then decides to take a taxi to the airport."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "On the weekend, Xiao Zhang wants to travel to another region. He checks hotels and air tickets online, then buys a ticket."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "On the day of his trip abroad, he waits for the bus, then decides to take a taxi to the airport."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: How far is it to walk from the hotel to the station?",
+          "model_answer": {
+            "hanzi": "从酒店到车站要走多远？",
+            "pinyin": "Cóng jiǔdiàn dào chēzhàn yào zǒu duō yuǎn?",
+            "english": "How far is it to walk from the hotel to the station?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: I would like to buy two metro tickets.",
+          "model_answer": {
+            "hanzi": "我想买两张地铁票。",
+            "pinyin": "Wǒ xiǎng mǎi liǎng zhāng dìtiě piào.",
+            "english": "I would like to buy two metro tickets."
+          }
+        }
+      ],
+      "common_pitfall": "车站 (chēzhàn) is a station; 机场 (jīchǎng) is an airport. 站 (zhàn) alone has other uses, so retain context.",
+      "pronunciation_focus": "Note the fourth tone in 站 (zhàn), and the first tone in 机票 (jīpiào) starts with jī.",
+      "review": {
+        "can_do": [
+          "Name a station, airport and hotel.",
+          "Choose a transport method.",
+          "Talk about tickets and a trip abroad."
+        ],
+        "entry_ids": [
+          315,
+          317,
+          328,
+          335,
+          346,
+          363,
+          364,
+          375,
+          393,
+          394,
+          416,
+          486
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-planning-a-journey--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: A journey with transfers",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-planning-a-journey--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Travel tickets and destinations",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: How far is it to walk from the hotel to the station?",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-planning-a-journey--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I would like to buy two metro tickets.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-planning-a-journey--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Do you want a taxi or to take the metro?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-planning-a-journey--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: How far is it to walk from the hotel to the station?",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-planning-a-journey--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I would like to buy two metro tickets.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-planning-a-journey--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-planning-a-journey--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-planning-a-journey--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: How far is it to walk from the hotel to the station? Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-planning-a-journey--question-recall-315",
+            "kind": "practice",
+            "label": "Which expression means “station”?",
+            "optional": true,
+            "target_id": "recall-315"
+          },
+          {
+            "id": "topic-planning-a-journey--question-recall-317",
+            "kind": "practice",
+            "label": "Which expression means “to go abroad”?",
+            "optional": true,
+            "target_id": "recall-317"
+          },
+          {
+            "id": "topic-planning-a-journey--question-recall-328",
+            "kind": "practice",
+            "label": "Which expression means “to take a taxi”?",
+            "optional": true,
+            "target_id": "recall-328"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 44
+}

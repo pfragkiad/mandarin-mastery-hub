@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-character-lesson/3.0.0",
+  "schema_version": "mandarin-character-lesson/3.2.0",
   "lesson_id": "char-6B21",
   "lesson": {
     "title": "Talking About Times & Occasions",
@@ -9,7 +9,7 @@
   },
   "metadata": {
     "status": "reviewed",
-    "template_version": "3.0.0",
+    "template_version": "3.2.0",
     "audience": "HSK beginner; foundational Mandarin grammar",
     "language": "zh-CN",
     "date_reviewed": "2026-11-15",
@@ -324,7 +324,8 @@
             "meaning_en": "Go once"
           },
           "register": "neutral; spoken",
-          "usage_note": "一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo)."
+          "usage_note": "一次 (yí cì) follows the verb and answers “How many times?”; also possible with experience marker 过 (guo).",
+          "pattern_pseudo_translation": "<verb> + 一次"
         },
         {
           "id": "last-time-pattern",
@@ -338,7 +339,8 @@
             "meaning_en": "Last time I did not understand what I heard"
           },
           "register": "everyday",
-          "usage_note": "Often appears at the start of a sentence as a time expression."
+          "usage_note": "Often appears at the start of a sentence as a time expression.",
+          "pattern_pseudo_translation": "上一次"
         },
         {
           "id": "this-time-pattern",
@@ -352,7 +354,8 @@
             "meaning_en": "This time I understood"
           },
           "register": "everyday",
-          "usage_note": "A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening."
+          "usage_note": "A sentence-initial temporal phrase; 这次 (zhè cì) is a common shortening.",
+          "pattern_pseudo_translation": "这一次"
         },
         {
           "id": "next-time-pattern",
@@ -366,7 +369,8 @@
             "meaning_en": "Let’s go together next time"
           },
           "register": "everyday",
-          "usage_note": "A sentence-initial temporal phrase; 下次 (xià cì) is common in speech."
+          "usage_note": "A sentence-initial temporal phrase; 下次 (xià cì) is common in speech.",
+          "pattern_pseudo_translation": "下一次"
         },
         {
           "id": "every-dou",
@@ -380,7 +384,8 @@
             "meaning_en": "Every time I see you, I am happy"
           },
           "register": "everyday",
-          "usage_note": "每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory."
+          "usage_note": "每一次 (měi yí cì) and 都 (dōu) are conventionally paired, but 都 is not universally obligatory.",
+          "pattern_pseudo_translation": "每一次 + <action>, <subject> + 都 + <comment>"
         },
         {
           "id": "once-again-adverbial",
@@ -394,7 +399,8 @@
             "meaning_en": "I want to thank you once again"
           },
           "register": "neutral; slightly emphatic",
-          "usage_note": "再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè)."
+          "usage_note": "再一次 (zài yí cì) modifies the verb 感谢 (gǎnxiè).",
+          "pattern_pseudo_translation": "再一次 + <verb>"
         },
         {
           "id": "repeat-v-count",
@@ -408,7 +414,8 @@
             "meaning_en": "Try one more time"
           },
           "register": "everyday",
-          "usage_note": "Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì)."
+          "usage_note": "Compare the postverbal count in 再试一次 (zài shì yí cì) with the preverbal adverbial 再一次 (zài yí cì).",
+          "pattern_pseudo_translation": "再 + <verb> + 一次"
         }
       ],
       "structural_note": "Do not equate a postverbal frequency complement, a temporal noun phrase, a quantified temporal phrase, and a preverbal repetition adverbial. Similar surface vocabulary can fulfill different grammatical slots."
@@ -929,10 +936,151 @@
       "classifiers",
       "tone-sandhi"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Count occurrences with 次 (cì), identify particular occasions, and express repetition with 再 (zài).",
     "Learn the six main expressions, practice natural sentences, then explore conversational shortenings, frequency complements, and tone sandhi."
-  ]
+  ],
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "char-6B21--section--overview",
+        "section_key": "overview",
+        "title": "Meaning and usage",
+        "checkpoints": [
+          {
+            "id": "char-6B21--overview",
+            "kind": "section",
+            "label": "Understand the character meaning and usage",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--vocabulary",
+        "section_key": "vocabulary",
+        "title": "Vocabulary",
+        "checkpoints": [
+          {
+            "id": "char-6B21--vocabulary",
+            "kind": "section",
+            "label": "Review vocabulary and pronunciation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--constructions",
+        "section_key": "constructions",
+        "title": "Constructions",
+        "checkpoints": [
+          {
+            "id": "char-6B21--constructions",
+            "kind": "section",
+            "label": "Practice constructions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--examples",
+        "section_key": "examples",
+        "title": "Worked examples",
+        "checkpoints": [
+          {
+            "id": "char-6B21--examples",
+            "kind": "section",
+            "label": "Understand the worked examples",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--contrasts",
+        "section_key": "contrasts",
+        "title": "Usage contrasts",
+        "checkpoints": [
+          {
+            "id": "char-6B21--contrasts",
+            "kind": "section",
+            "label": "Distinguish contrasted expressions",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--mistakes",
+        "section_key": "mistakes",
+        "title": "Common mistakes",
+        "checkpoints": [
+          {
+            "id": "char-6B21--mistakes",
+            "kind": "section",
+            "label": "Avoid common usage mistakes",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "char-6B21--quiz--q-how-many",
+            "kind": "practice",
+            "label": "In 我去过北京一次 (Wǒ qù guo Běijīng yí cì), does 一次 (yí cì) answer “how many times” or “which occasion”?",
+            "optional": false,
+            "target_id": "q-how-many"
+          },
+          {
+            "id": "char-6B21--quiz--q-short",
+            "kind": "practice",
+            "label": "Choose the common shorter form of 下一次 (xià yí cì).",
+            "optional": false,
+            "target_id": "q-short"
+          },
+          {
+            "id": "char-6B21--quiz--q-tone",
+            "kind": "practice",
+            "label": "Why is 一次 (yí cì) written with yí rather than yī in contextual pinyin?",
+            "optional": false,
+            "target_id": "q-tone"
+          },
+          {
+            "id": "char-6B21--quiz--q-zai",
+            "kind": "practice",
+            "label": "Which expression means “try one more time”?",
+            "optional": false,
+            "target_id": "q-zai"
+          },
+          {
+            "id": "char-6B21--quiz--q-produce",
+            "kind": "practice",
+            "label": "Say “Every time I see you, I’m very happy” using 每一次 (měi yí cì) and 都 (dōu).",
+            "optional": false,
+            "target_id": "q-produce"
+          }
+        ]
+      },
+      {
+        "id": "char-6B21--section--extensions",
+        "section_key": "extensions",
+        "title": "Extensions",
+        "checkpoints": [
+          {
+            "id": "char-6B21--extensions",
+            "kind": "section",
+            "label": "Explore extra related material",
+            "optional": true
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-questions-and-pointing",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,11 @@
       "demonstratives",
       "pointing"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "position-direction"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Ask basic information questions.",
@@ -28,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -49,6 +53,7 @@
     "今": "Characters:今",
     "他": "Characters:他",
     "以": "Characters:以",
+    "们": "Characters:们",
     "件": "Characters:件",
     "会": "Characters:会",
     "但": "Characters:但",
@@ -120,6 +125,7 @@
     "老": "Characters:老",
     "苹": "Characters:苹",
     "茶": "Characters:茶",
+    "菜": "Characters:菜",
     "衣": "Characters:衣",
     "要": "Characters:要",
     "觉": "Characters:觉",
@@ -139,7 +145,11 @@
     "问": "Characters:问",
     "院": "Characters:院",
     "题": "Characters:题",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "动": "Characters:动",
+    "名": "Characters:名",
+    "词": "Characters:词",
+    "量": "Characters:量"
   },
   "sections": {
     "overview": {
@@ -189,7 +199,10 @@
               "entry_id": 47
             }
           ],
-          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun."
+          "pos_note": "Interrogative pronoun asking how many or how much (多少钱、多少人). It is not itself a classifier and can directly precede a noun.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-131",
@@ -216,11 +229,11 @@
             {
               "id": "ex-131-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "你想读哪本书？",
-              "pinyin": "nǐ xiǎng dú nǎ běn shū?",
-              "english": "Which book do you want to read?",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "老师问：“你们想读哪本书？”",
+              "pinyin": "lǎoshī wèn: “nǐmen xiǎng dú nǎ běn shū?”",
+              "english": "The teacher asked, “Which book would you like to read?”",
+              "teaching_note": "The question word comes before the book classifier."
             }
           ],
           "learning_role": "introduced",
@@ -229,7 +242,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 131
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-132",
@@ -269,7 +285,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 132
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-133",
@@ -309,7 +328,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 133
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-134",
@@ -349,7 +371,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 134
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-135",
@@ -389,7 +414,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 135
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-136",
@@ -431,7 +459,10 @@
               "entry_id": 136
             }
           ],
-          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses."
+          "pos_note": "Demonstrative pronoun; can also have discourse-connecting uses.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-137",
@@ -471,7 +502,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 137
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-138",
@@ -511,7 +545,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 138
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-139",
@@ -551,7 +588,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 139
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-140",
@@ -578,11 +618,11 @@
             {
               "id": "ex-140-2",
               "style": "written",
-              "register": "polite_instruction",
-              "hanzi": "请在那儿等老师。",
-              "pinyin": "qǐng zài nàr děng lǎoshī.",
-              "english": "Please wait for the teacher there.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“请在那儿等老师。”她说。",
+              "pinyin": "“qǐng zài nàr děng lǎoshī.” tā shuō.",
+              "english": "“Please wait for the teacher over there,” she said.",
+              "teaching_note": "The quoted speaker uses the erhua form for “there.”"
             }
           ],
           "learning_role": "introduced",
@@ -591,7 +631,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 140
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-141",
@@ -631,7 +674,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 141
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-181",
@@ -671,7 +717,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 181
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-182",
@@ -711,7 +760,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 182
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-276",
@@ -753,7 +805,10 @@
               "entry_id": 276
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how, often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-277",
@@ -781,11 +836,11 @@
             {
               "id": "ex-277-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这个饭店怎么样？",
-              "pinyin": "zhège fàndiàn zěnmeyàng?",
-              "english": "What do you think of this restaurant?",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这家饭店的菜怎么样？”他问。",
+              "pinyin": "“zhè jiā fàndiàn de cài zěnmeyàng?” tā wèn.",
+              "english": "“How’s the food at this restaurant?” he asked.",
+              "teaching_note": "The question word asks for an evaluation in quoted speech."
             }
           ],
           "learning_role": "introduced",
@@ -795,7 +850,10 @@
               "entry_id": 277
             }
           ],
-          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences."
+          "pos_note": "Interrogative pro-form meaning how/how about; often adverbial in sentences.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-279",
@@ -835,7 +893,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 279
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-280",
@@ -875,7 +936,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 280
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-281",
@@ -915,7 +979,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 281
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-282",
@@ -955,7 +1022,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 282
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-283",
@@ -982,11 +1052,11 @@
             {
               "id": "ex-283-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这儿有一家书店。",
-              "pinyin": "zhèr yǒu yì jiā shūdiàn.",
-              "english": "There is a bookstore here.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这儿有一家书店。”她说。",
+              "pinyin": "“zhèr yǒu yì jiā shūdiàn.” tā shuō.",
+              "english": "“There’s a bookstore here,” she said.",
+              "teaching_note": "The quoted speaker uses the erhua form for “here.”"
             }
           ],
           "learning_role": "introduced",
@@ -995,7 +1065,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 283
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-284",
@@ -1035,7 +1108,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 284
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []
@@ -1219,7 +1295,6 @@
           "id": "pattern-1",
           "title": "This versus that",
           "explanation_en": "这 (zhè) points to something closer in the discourse or situation; 那 (nà) points to something more distant. Add a classifier when identifying a specific item.",
-          "formula_en": "这/那 + classifier + noun",
           "examples": [
             {
               "hanzi": "这个苹果很好吃。",
@@ -1231,13 +1306,15 @@
               "pinyin": "Nà jiàn yīfu hěn piàoliang.",
               "english": "That item of clothing is pretty."
             }
-          ]
+          ],
+          "pattern_hanzi": "这/那 + 量词 + 名词",
+          "pattern_pinyin": "zhè/nà + liàngcí + míngcí",
+          "pattern_pseudo_translation": "这/那 + <classifier> + <noun>"
         },
         {
           "id": "pattern-2",
           "title": "Choose the right question word",
           "explanation_en": "什么 (shénme) asks “what”; 谁 (shéi) asks “who”; 哪 (nǎ) asks “which”; 哪里 (nǎlǐ) asks “where”; 怎么 (zěnme) asks “how”.",
-          "formula_en": "谁 + verb? / 在 + 哪里?",
           "examples": [
             {
               "hanzi": "谁是你的老师？",
@@ -1249,7 +1326,10 @@
               "pinyin": "Nǐ zhù zài nǎlǐ?",
               "english": "Where do you live?"
             }
-          ]
+          ],
+          "pattern_hanzi": "谁 + 动词？ / 在 + 哪里？",
+          "pattern_pinyin": "shéi + dòngcí? / zài + nǎlǐ?",
+          "pattern_pseudo_translation": "谁 + <verb>？ / 在 + 哪里？"
         }
       ],
       "guided_building": {
@@ -1266,7 +1346,8 @@
               "hanzi": "你想买哪本书？",
               "pinyin": "Nǐ xiǎng mǎi nǎ běn shū?",
               "english": "Which book do you want to buy?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "which clothes",
@@ -1274,7 +1355,8 @@
               "hanzi": "你想买哪件衣服？",
               "pinyin": "Nǐ xiǎng mǎi nǎ jiàn yīfu?",
               "english": "Which item of clothing do you want to buy?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1290,11 +1372,13 @@
         "questions": [
           {
             "prompt_en": "What is Xiao Li shopping for?",
-            "answer_en": "A mobile phone."
+            "answer_en": "A mobile phone.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Which phone is cheaper?",
-            "answer_en": "That one."
+            "answer_en": "That one.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1337,5 +1421,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-questions-and-pointing--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: This versus that",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-questions-and-pointing--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Choose the right question word",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: which book",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-questions-and-pointing--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: which clothes",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--read--reading-q-01",
+            "kind": "question",
+            "label": "What is Xiao Li shopping for?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-questions-and-pointing--read--reading-q-02",
+            "kind": "question",
+            "label": "Which phone is cheaper?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask where the school is.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-questions-and-pointing--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask which book someone wants.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-questions-and-pointing--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-questions-and-pointing--quiz--q-04-1",
+            "kind": "practice",
+            "label": "Which expression means “how many”?",
+            "optional": true,
+            "target_id": "q-04-1"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--q-04-2",
+            "kind": "practice",
+            "label": "Which expression means “those”?",
+            "optional": true,
+            "target_id": "q-04-2"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--q-04-3",
+            "kind": "practice",
+            "label": "Which expression means “these”?",
+            "optional": true,
+            "target_id": "q-04-3"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--q-04-4",
+            "kind": "practice",
+            "label": "In the example “这个多少钱？” (zhège duōshao qián?), what is happening?",
+            "optional": false,
+            "target_id": "q-04-4"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--q-04-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “How many students are in this class?”",
+            "optional": false,
+            "target_id": "q-04-5"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What is Xiao Li shopping for?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Which phone is cheaper?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask where the school is.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-questions-and-pointing--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask which book someone wants.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

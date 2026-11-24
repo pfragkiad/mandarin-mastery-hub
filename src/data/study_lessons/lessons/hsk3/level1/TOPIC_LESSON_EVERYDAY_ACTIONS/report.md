@@ -1,3 +1,14 @@
+# Current release source synchronization — topic-everyday-actions
+
+- Embedded HSK Level 1 word cards: `hsk3_level1_1.7.1.json` (data version **1.7.1**, 300 syllabus entries).
+- Topic taxonomy: `hsk3_topics(2).json` / taxonomy **v2.0.0**.
+- Lesson contract: `mandarin-topic-lesson/3.3.0`; stable `lesson_id`, checkpoints, and curriculum placements unchanged.
+- Source-card examples updated in this lesson for syllabus IDs: none.
+- Existing corrected segmentation for ID 36 `电脑` retained where applicable.
+- The historical input/provenance section below describes the original authoring baseline, **not** the current word-card release.
+
+---
+
 # Content report: Things We Do Every Day
 
 ## Input and provenance
@@ -26,3 +37,12 @@
 - Original five short word-recall questions preserved as optional practice; four more comprehension/production questions created.
 - Quality status: editorial draft only. Native-speaker review, full lexical level audit and final tone/word-segmentation proofreading remain necessary.
 - Any references to higher-level vocabulary in newly authored activities are scaffolding, not silently added Level 1 syllabus entries.
+
+## Source-taxonomy synchronization (2026-11-22)
+- JSON Schema and Core version unchanged at v3.2.0.
+- Shared taxonomy synchronized with user-supplied hsk-topics/2.0.0 (25 active subtopics).
+- All original communicative teaching material, stable lesson IDs, and curriculum placements preserved.
+- Only topic/subtopic classifications were synchronized. Original word-card example pairs were not rewritten.
+- HSK Level 1 entry classifications follow hsk3_level1_1.7.0 source JSON by syllabus ID.
+- Classification and teaching-content validation passed.
+

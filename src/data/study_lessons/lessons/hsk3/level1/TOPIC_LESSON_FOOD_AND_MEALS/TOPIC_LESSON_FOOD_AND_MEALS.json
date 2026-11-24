@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-food-and-meals",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "drinks",
       "meals"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify foods, drinks and meals.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -112,7 +114,12 @@
     "面": "Characters:面",
     "饭": "Characters:饭",
     "饺": "Characters:饺",
-    "鸡": "Characters:鸡"
+    "鸡": "Characters:鸡",
+    "品": "Characters:品",
+    "料": "Characters:料",
+    "物": "Characters:物",
+    "食": "Characters:食",
+    "饮": "Characters:饮"
   },
   "sections": {
     "overview": {
@@ -159,7 +166,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 8
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-016",
@@ -199,7 +209,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 16
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-017",
@@ -239,7 +252,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 17
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-021",
@@ -280,7 +296,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 21
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-050",
@@ -320,7 +339,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 50
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-051",
@@ -362,7 +384,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 51
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-072",
@@ -390,10 +415,10 @@
               "id": "ex-072-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这家饭店的面条儿很好吃。",
-              "pinyin": "zhè jiā fàndiàn de miàntiáor hěn hǎochī.",
+              "hanzi": "这家饭店的面条很好吃。",
+              "pinyin": "zhè jiā fàndiàn de miàntiáo hěn hǎochī.",
               "english": "The noodles at this restaurant are delicious.",
-              "teaching_note": ""
+              "teaching_note": "The adjective describes how the noodles taste."
             }
           ],
           "learning_role": "introduced",
@@ -402,7 +427,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 72
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-077",
@@ -443,7 +471,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 77
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-084",
@@ -483,7 +514,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 84
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-090",
@@ -523,7 +557,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 90
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-125",
@@ -563,7 +600,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 125
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-126",
@@ -603,7 +643,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 126
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-127",
@@ -631,10 +674,10 @@
               "id": "ex-127-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这家店的面条儿很好吃。",
-              "pinyin": "zhè jiā diàn de miàntiáor hěn hǎochī.",
+              "hanzi": "这家店的面条很好吃。",
+              "pinyin": "zhè jiā diàn de miàntiáo hěn hǎochī.",
               "english": "The noodles at this shop are delicious.",
-              "teaching_note": ""
+              "teaching_note": "This example uses the written form without the erhua ending."
             }
           ],
           "learning_role": "introduced",
@@ -643,7 +686,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 127
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-151",
@@ -683,7 +729,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 151
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-159",
@@ -723,7 +772,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 159
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-192",
@@ -764,7 +816,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 192
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-193",
@@ -804,7 +859,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 193
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-216",
@@ -844,7 +902,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 216
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-224",
@@ -884,7 +945,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 224
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-274",
@@ -924,7 +988,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 274
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         },
         {
           "id": "w-300",
@@ -965,7 +1032,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 300
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "food-drink"
         }
       ],
       "related_entries": []
@@ -1149,7 +1219,6 @@
           "id": "pattern-1",
           "title": "Food and drink verbs",
           "explanation_en": "Use 吃 (chī) for eating and 喝 (hē) for drinking. 想 (xiǎng) makes a polite expression of what you would like.",
-          "formula_en": "我想 + 吃/喝 + food/drink",
           "examples": [
             {
               "hanzi": "我晚上想吃面条儿。",
@@ -1161,13 +1230,15 @@
               "pinyin": "Tā xiǎng hē niúnǎi.",
               "english": "She would like milk."
             }
-          ]
+          ],
+          "pattern_hanzi": "我想 + 吃/喝 + 食物/饮料",
+          "pattern_pinyin": "wǒ xiǎng + chī/hē + shíwù/yǐnliào",
+          "pattern_pseudo_translation": "我想 + 吃/喝 + <food>/<drink>"
         },
         {
           "id": "pattern-2",
           "title": "Offering and declining",
           "explanation_en": "要 (yào) can indicate wanting an item. Adding 还 (hái) asks whether someone wants more; 不要了 (bú yào le) politely closes an offer.",
-          "formula_en": "还要 + item + 吗?",
           "examples": [
             {
               "hanzi": "你还要水吗？",
@@ -1179,7 +1250,10 @@
               "pinyin": "Wǒ bú yào le, xièxie.",
               "english": "I do not want any more, thank you."
             }
-          ]
+          ],
+          "pattern_hanzi": "还要 + 物品 + 吗？",
+          "pattern_pinyin": "hái yào + wùpǐn + ma?",
+          "pattern_pseudo_translation": "还要 + <item> + 吗？"
         }
       ],
       "guided_building": {
@@ -1196,7 +1270,8 @@
               "hanzi": "我想喝一杯水。",
               "pinyin": "Wǒ xiǎng hē yì bēi shuǐ.",
               "english": "I would like a glass of water."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "milk",
@@ -1204,7 +1279,8 @@
               "hanzi": "我想喝一杯牛奶。",
               "pinyin": "Wǒ xiǎng hē yì bēi niúnǎi.",
               "english": "I would like a glass of milk."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1220,11 +1296,13 @@
         "questions": [
           {
             "prompt_en": "What does the speaker eat for breakfast?",
-            "answer_en": "Eggs and bread."
+            "answer_en": "Eggs and bread.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Who cooks dinner?",
-            "answer_en": "Dad."
+            "answer_en": "Dad.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1273,5 +1351,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-food-and-meals--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Food and drink verbs",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-food-and-meals--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Offering and declining",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: water",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-food-and-meals--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: milk",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--read--reading-q-01",
+            "kind": "question",
+            "label": "What does the speaker eat for breakfast?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-food-and-meals--read--reading-q-02",
+            "kind": "question",
+            "label": "Who cooks dinner?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Order food and a drink.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-food-and-meals--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Politely decline more food.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-food-and-meals--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-food-and-meals--quiz--q-11-1",
+            "kind": "practice",
+            "label": "Which expression means “steamed bun”?",
+            "optional": true,
+            "target_id": "q-11-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-2",
+            "kind": "practice",
+            "label": "Which expression means “cooked rice”?",
+            "optional": true,
+            "target_id": "q-11-2"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-3",
+            "kind": "practice",
+            "label": "Which expression means “cook”?",
+            "optional": true,
+            "target_id": "q-11-3"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-4",
+            "kind": "practice",
+            "label": "In the example “我早上吃包子。” (wǒ zǎoshang chī bāozi.), what is happening?",
+            "optional": false,
+            "target_id": "q-11-4"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--q-11-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “The steamed buns at this shop are delicious.”",
+            "optional": false,
+            "target_id": "q-11-5"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What does the speaker eat for breakfast?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Who cooks dinner?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Order food and a drink.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-food-and-meals--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Politely decline more food.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

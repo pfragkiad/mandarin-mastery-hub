@@ -1,0 +1,1021 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-introducing-people-by-name",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Introducing People by Name",
+    "subtitle": "Names, children and personal descriptions",
+    "description": "Introduce someone, ask about surnames and describe people in a friendly conversation.",
+    "slug": "introducing-people-by-name"
+  },
+  "classification": {
+    "primary_topic_id": "people-identity",
+    "topic_ids": [
+      "people-identity"
+    ],
+    "tags": [
+      "names",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Ask and answer questions about a surname and full name.",
+    "Introduce boys, girls and children politely.",
+    "Describe someone’s height in everyday language."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "写": "Characters:写",
+    "十": "Characters:十",
+    "友": "Characters:友",
+    "叫": "Characters:叫",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "和": "Characters:和",
+    "喜": "Characters:喜",
+    "在": "Characters:在",
+    "外": "Characters:外",
+    "天": "Characters:天",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "姓": "Characters:姓",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "小": "Characters:小",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "很": "Characters:很",
+    "性": "Characters:性",
+    "我": "Characters:我",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "本": "Characters:本",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "步": "Characters:步",
+    "王": "Characters:王",
+    "班": "Characters:班",
+    "球": "Characters:球",
+    "生": "Characters:生",
+    "男": "Characters:男",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "红": "Characters:红",
+    "老": "Characters:老",
+    "自": "Characters:自",
+    "要": "Characters:要",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "谁": "Characters:谁",
+    "足": "Characters:足",
+    "跑": "Characters:跑",
+    "踢": "Characters:踢",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "面": "Characters:面",
+    "高": "Characters:高",
+    "人": "Characters:人",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "氏": "Characters:氏",
+    "词": "Characters:词"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Introduce someone, ask about surnames and describe people in a friendly conversation.",
+      "focus": "Ask and answer questions about a surname and full name."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-344",
+          "hanzi": "个子",
+          "pinyin": "gèzi",
+          "meaning_en": "height; stature",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-344-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你个子真高！",
+              "pinyin": "nǐ gèzi zhēn gāo!",
+              "english": "You're really tall!",
+              "teaching_note": "A short spoken example using 个子."
+            },
+            {
+              "id": "ex-344-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个男孩儿个子很高。",
+              "pinyin": "zhège nánháir gèzi hěn gāo.",
+              "english": "This boy is very tall.",
+              "teaching_note": "A simple written example using 个子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 344
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-410",
+          "hanzi": "男孩儿",
+          "pinyin": "nánháir",
+          "meaning_en": "boy",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity",
+            "family-relationships"
+          ],
+          "examples": [
+            {
+              "id": "ex-410-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "那个男孩儿是谁？",
+              "pinyin": "nàge nánháir shì shéi?",
+              "english": "Who is that boy?",
+              "teaching_note": "A short spoken example using 男孩儿."
+            },
+            {
+              "id": "ex-410-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "有一个男孩儿在踢足球。",
+              "pinyin": "yǒu yí ge nánháir zài tī zúqiú.",
+              "english": "A boy is playing football.",
+              "teaching_note": "A simple written example using 男孩儿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 410
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-412",
+          "hanzi": "女孩儿",
+          "pinyin": "nǚháir",
+          "meaning_en": "girl",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-412-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个女孩儿叫什么名字？",
+              "pinyin": "zhège nǚháir jiào shénme míngzi?",
+              "english": "What is this girl's name?",
+              "teaching_note": "A short spoken example using 女孩儿."
+            },
+            {
+              "id": "ex-412-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "两个女孩儿在学校外面跑步。",
+              "pinyin": "liǎng gè nǚháir zài xuéxiào wàimiàn pǎobù.",
+              "english": "Two girls are running outside the school.",
+              "teaching_note": "A simple written example using 女孩儿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 412
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-461",
+          "hanzi": "小孩儿",
+          "pinyin": "xiǎoháir",
+          "meaning_en": "child; little child",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-461-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "那个小孩儿是谁？",
+              "pinyin": "nàge xiǎoháir shì shéi?",
+              "english": "Who is that child?",
+              "teaching_note": "A short spoken example using 小孩儿."
+            },
+            {
+              "id": "ex-461-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个小孩儿喜欢看书。",
+              "pinyin": "zhège xiǎoháir xǐhuan kàn shū.",
+              "english": "This child likes reading books.",
+              "teaching_note": "A simple written example using 小孩儿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 461
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-464",
+          "hanzi": "姓",
+          "pinyin": "xìng",
+          "meaning_en": "surname; to be surnamed",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-464-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你姓什么？",
+              "pinyin": "nǐ xìng shénme?",
+              "english": "What is your surname?",
+              "teaching_note": "A short spoken example using 姓."
+            },
+            {
+              "id": "ex-464-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“请问，那位先生姓什么？”她问。",
+              "pinyin": "“qǐngwèn, nà wèi xiānsheng xìng shénme?” tā wèn.",
+              "english": "“Excuse me, what is that gentleman’s surname?” she asked.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 464
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-465",
+          "hanzi": "姓名",
+          "pinyin": "xìngmíng",
+          "meaning_en": "full name",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-465-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请写你的姓名。",
+              "pinyin": "qǐng xiě nǐ de xìngmíng.",
+              "english": "Please write your full name.",
+              "teaching_note": "A short spoken example using 姓名."
+            },
+            {
+              "id": "ex-465-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师要我们在本子上写姓名。",
+              "pinyin": "lǎoshī yào wǒmen zài běnzi shàng xiě xìngmíng.",
+              "english": "The teacher asks us to write our full names in our notebooks.",
+              "teaching_note": "A simple written example using 姓名."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 465
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-130",
+          "hanzi": "名字",
+          "pinyin": "míngzi",
+          "meaning_en": "name",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-130-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你的名字是什么？",
+              "pinyin": "nǐ de míngzi shì shénme?",
+              "english": "What is your name?",
+              "teaching_note": "你的名字是什么 is a direct question about someone’s name; 叫什么名字 is another common wording."
+            },
+            {
+              "id": "ex-130-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在这里写名字。",
+              "pinyin": "qǐng zài zhèlǐ xiě míngzi.",
+              "english": "Please write your name here.",
+              "teaching_note": "Short everyday instruction or request using 名字; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 130
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-142",
+          "hanzi": "男",
+          "pinyin": "nán",
+          "meaning_en": "male",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-142-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个男学生是我的朋友。",
+              "pinyin": "nàge nán xuéshēng shì wǒ de péngyou.",
+              "english": "That male student is my friend.",
+              "teaching_note": "男 is an adjective specifying a male student; more formal contexts may use 男性."
+            },
+            {
+              "id": "ex-142-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有十个男学生。",
+              "pinyin": "zhège bān yǒu shí gè nán xuéshēng.",
+              "english": "There are ten male students in this class.",
+              "teaching_note": "School or study context showing 男 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 142
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-152",
+          "hanzi": "女",
+          "pinyin": "nǚ",
+          "meaning_en": "female",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "topic_ids": [
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-152-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个女学生在看书。",
+              "pinyin": "nàge nǚ xuéshēng zài kàn shū.",
+              "english": "That female student is reading a book.",
+              "teaching_note": "女 modifies 学生 to specify a female student."
+            },
+            {
+              "id": "ex-152-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有八个女学生。",
+              "pinyin": "zhège bān yǒu bā gè nǚ xuéshēng.",
+              "english": "There are eight female students in this class.",
+              "teaching_note": "School or study context showing 女 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 152
+            }
+          ],
+          "primary_topic_id": "people-identity",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Surnames and full names",
+        "explanation": "姓 (xìng) introduces a family name; 姓名 (xìngmíng) means a full name. Ask 姓什么 (xìng shénme) when you want the family name.",
+        "example_id": "ex-344-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Descriptions of people",
+        "explanation": "Use 个子 (gèzi) with 高 (gāo) or another suitable adjective to describe a person’s height.",
+        "example_id": "ex-410-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-344-1",
+      "ex-410-1",
+      "ex-412-1",
+      "ex-461-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "The teacher asked for their full names, and both children said their names."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: My surname is Li, and my name is Li Xiaohong. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我姓李，叫李小红。 (Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.)",
+          "answer": "我姓李，叫李小红。 (Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.)"
+        },
+        {
+          "id": "recall-344",
+          "kind": "selection",
+          "prompt": "Which expression means “height”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "个子",
+              "pinyin": "gèzi",
+              "meaning_en": "height; stature"
+            },
+            {
+              "id": "b",
+              "hanzi": "男孩儿",
+              "pinyin": "nánháir",
+              "meaning_en": "boy"
+            },
+            {
+              "id": "c",
+              "hanzi": "女孩儿",
+              "pinyin": "nǚháir",
+              "meaning_en": "girl"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 个子 (gèzi) with this meaning."
+        },
+        {
+          "id": "recall-410",
+          "kind": "selection",
+          "prompt": "Which expression means “boy”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "个子",
+              "pinyin": "gèzi",
+              "meaning_en": "height; stature"
+            },
+            {
+              "id": "c",
+              "hanzi": "女孩儿",
+              "pinyin": "nǚháir",
+              "meaning_en": "girl"
+            },
+            {
+              "id": "a",
+              "hanzi": "男孩儿",
+              "pinyin": "nánháir",
+              "meaning_en": "boy"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 男孩儿 (nánháir) with this meaning."
+        },
+        {
+          "id": "recall-412",
+          "kind": "selection",
+          "prompt": "Which expression means “girl”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "男孩儿",
+              "pinyin": "nánháir",
+              "meaning_en": "boy"
+            },
+            {
+              "id": "a",
+              "hanzi": "女孩儿",
+              "pinyin": "nǚháir",
+              "meaning_en": "girl"
+            },
+            {
+              "id": "b",
+              "hanzi": "个子",
+              "pinyin": "gèzi",
+              "meaning_en": "height; stature"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 女孩儿 (nǚháir) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Introducing People by Name",
+        "context_en": "Introduce someone, ask about surnames and describe people in a friendly conversation.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你好！请问，你姓什么？",
+            "pinyin": "Nǐ hǎo! Qǐngwèn, nǐ xìng shénme?",
+            "english": "Hello! Excuse me, what is your surname?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我姓王。我的姓名是王小明。",
+            "pinyin": "Wǒ xìng Wáng. Wǒ de xìngmíng shì Wáng Xiǎomíng.",
+            "english": "My surname is Wang. My full name is Wang Xiaoming."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那个男孩儿是你的朋友吗？",
+            "pinyin": "Nà ge nánháir shì nǐ de péngyou ma?",
+            "english": "Is that boy your friend?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是的，他是我的朋友，个子很高。",
+            "pinyin": "Shì de, tā shì wǒ de péngyou, gèzi hěn gāo.",
+            "english": "Yes, he is my friend, and he is tall."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Surnames and full names",
+          "explanation_en": "姓 (xìng) introduces a family name; 姓名 (xìngmíng) means a full name. Ask 姓什么 (xìng shénme) when you want the family name.",
+          "examples": [
+            {
+              "hanzi": "我姓李，叫李小红。",
+              "pinyin": "Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.",
+              "english": "My surname is Li, and my name is Li Xiaohong."
+            },
+            {
+              "hanzi": "我姓王。我的姓名是王小明。",
+              "pinyin": "Wǒ xìng Wáng. Wǒ de xìngmíng shì Wáng Xiǎomíng.",
+              "english": "My surname is Wang. My full name is Wang Xiaoming."
+            }
+          ],
+          "pattern_hanzi": "人 + 姓 + 姓氏",
+          "pattern_pinyin": "rén + xìng + xìngshì",
+          "pattern_pseudo_translation": "<person> + 姓 + <family name>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Descriptions of people",
+          "explanation_en": "Use 个子 (gèzi) with 高 (gāo) or another suitable adjective to describe a person’s height.",
+          "examples": [
+            {
+              "hanzi": "这个女孩儿个子不高。",
+              "pinyin": "Zhè ge nǚháir gèzi bù gāo.",
+              "english": "This girl is not tall."
+            },
+            {
+              "hanzi": "是的，他是我的朋友，个子很高。",
+              "pinyin": "Shì de, tā shì wǒ de péngyou, gèzi hěn gāo.",
+              "english": "Yes, he is my friend, and he is tall."
+            }
+          ],
+          "pattern_hanzi": "人 + 个子 + 形容词",
+          "pattern_pinyin": "rén + gèzi + xíngróngcí",
+          "pattern_pseudo_translation": "<person> + 个子 + <adjective>"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "你好！请问，你姓什么？",
+          "pinyin": "Nǐ hǎo! Qǐngwèn, nǐ xìng shénme?",
+          "english": "Hello! Excuse me, what is your surname?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: My surname is Li, and my name is Li Xiaohong.",
+            "model_answer": {
+              "hanzi": "我姓李，叫李小红。",
+              "pinyin": "Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.",
+              "english": "My surname is Li, and my name is Li Xiaohong."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: This girl is not tall.",
+            "model_answer": {
+              "hanzi": "这个女孩儿个子不高。",
+              "pinyin": "Zhè ge nǚháir gèzi bù gāo.",
+              "english": "This girl is not tall."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Is that boy your friend?",
+            "model_answer": {
+              "hanzi": "那个男孩儿是你的朋友吗？",
+              "pinyin": "Nà ge nánháir shì nǐ de péngyou ma?",
+              "english": "Is that boy your friend?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Introducing People by Name — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "今天有两个小孩儿来学校，一个男孩儿和一个女孩儿。他们是朋友。",
+            "pinyin": "Jīntiān yǒu liǎng ge xiǎoháir lái xuéxiào, yí ge nánháir hé yí ge nǚháir. Tāmen shì péngyou.",
+            "english": "Two children came to school today, a boy and a girl. They are friends."
+          },
+          {
+            "hanzi": "老师问他们的姓名，两个孩子都说了自己的名字。",
+            "pinyin": "Lǎoshī wèn tāmen de xìngmíng, liǎng ge háizi dōu shuō le zìjǐ de míngzi.",
+            "english": "The teacher asked for their full names, and both children said their names."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Two children came to school today, a boy and a girl. They are friends."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "The teacher asked for their full names, and both children said their names."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: My surname is Li, and my name is Li Xiaohong.",
+          "model_answer": {
+            "hanzi": "我姓李，叫李小红。",
+            "pinyin": "Wǒ xìng Lǐ, jiào Lǐ Xiǎohóng.",
+            "english": "My surname is Li, and my name is Li Xiaohong."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: This girl is not tall.",
+          "model_answer": {
+            "hanzi": "这个女孩儿个子不高。",
+            "pinyin": "Zhè ge nǚháir gèzi bù gāo.",
+            "english": "This girl is not tall."
+          }
+        }
+      ],
+      "common_pitfall": "Do not confuse 姓 (xìng), a surname, with 姓名 (xìngmíng), a full name; 个子 (gèzi) describes stature, not someone’s name.",
+      "pronunciation_focus": "Practise 姓 (xìng) with the fourth tone, and the neutral syllable in 个子 (gèzi).",
+      "review": {
+        "can_do": [
+          "Ask and answer questions about a surname and full name.",
+          "Introduce boys, girls and children politely.",
+          "Describe someone’s height in everyday language."
+        ],
+        "entry_ids": [
+          344,
+          410,
+          412,
+          461,
+          464,
+          465
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-introducing-people-by-name--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Surnames and full names",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-introducing-people-by-name--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Descriptions of people",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: My surname is Li, and my name is Li Xiaohong.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-introducing-people-by-name--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: This girl is not tall.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-introducing-people-by-name--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Is that boy your friend?",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-introducing-people-by-name--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: My surname is Li, and my name is Li Xiaohong.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-introducing-people-by-name--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: This girl is not tall.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-introducing-people-by-name--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-introducing-people-by-name--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-introducing-people-by-name--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: My surname is Li, and my name is Li Xiaohong. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-introducing-people-by-name--question-recall-344",
+            "kind": "practice",
+            "label": "Which expression means “height”?",
+            "optional": true,
+            "target_id": "recall-344"
+          },
+          {
+            "id": "topic-introducing-people-by-name--question-recall-410",
+            "kind": "practice",
+            "label": "Which expression means “boy”?",
+            "optional": true,
+            "target_id": "recall-410"
+          },
+          {
+            "id": "topic-introducing-people-by-name--question-recall-412",
+            "kind": "practice",
+            "label": "Which expression means “girl”?",
+            "optional": true,
+            "target_id": "recall-412"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

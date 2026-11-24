@@ -1,11 +1,13 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState, type HTMLAttributes, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
 import { stableContext } from '@/lib/stable-context';
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import { ArrowUpRight, X } from 'lucide-react';
 import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover';
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
-import { lessonGlyphHint, lessonGlyphHintById } from '@/lib/lesson-hints';
+import { lessonGlyphHint, lessonGlyphHintById, lessonGlyphHints } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
+import { wordInk } from '@/lib/card-ink';
+import { useSentenceWords } from './use-sentence-words';
 import { useWorkspace } from './workspace';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -28,15 +30,17 @@ import { MeaningText } from './meaning-text';
  *   gated) it renders plain text — no ring, no popup, no link. Outside a provider callers
  *   keep their own rendering (useLessonHints() returns null).
  *
- * Word context uses only an exact, unique Vocabulary headword match for the whole recorded
- * field/run (same rule as lesson links); sentences never guess a segmentation.
+ * Word context: an exact, unique Vocabulary headword for the whole recorded field/run first;
+ * otherwise (owner-requested) the run is split words-first by segmentLessonExpression
+ * (greedy longest unique headword, lesson-segments.ts) and each character gets the 2+-character
+ * word it falls in, or no word. Presentation only — the recorded text is never changed.
  * The popup is transient UI (not a library selection), so it is not stored in the URL;
  * closing it (Esc, ×, outside click) returns focus to the character without scrolling.
  */
 
 export type HintWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
 type OpenState = { el: HTMLElement; glyph: string; word: HintWord | null };
-type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; refFor: (glyph: string) => string | null };
+type HintsContext = { enabled: boolean; backLabel: string; open: (el: HTMLElement, glyph: string, word: HintWord | null) => void; wordFor: (hanzi: string) => HintWord | null; wordsFor: (text: string, wholeFirst?: boolean, exclude?: string) => (HintWord | null)[]; refFor: (glyph: string) => string | null };
 
 const Ctx = stableContext<HintsContext | null>('lessonHints', null);
 export const useLessonHints = () => useContext(Ctx);
@@ -47,17 +51,8 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
   const { items } = useWorkspace();
   const [state, setState] = useState<OpenState | null>(null);
   const anchorRef = useRef<HTMLElement | null>(null);
-  // Exact headword → its single Vocabulary entry; ambiguous headwords stay unmatched.
-  const words = useMemo(() => {
-    const map = new Map<string, Word | null>();
-    for (const w of items) map.set(w.hanzi, map.has(w.hanzi) ? null : w);
-    return map;
-  }, [items]);
-  const wordFor = useCallback((hanzi: string): HintWord | null => {
-    if (Array.from(hanzi).length < 2) return null;
-    const w = words.get(hanzi);
-    return w ? { hanzi: w.hanzi, pinyin: w.pinyin, meaning: w.meaning, search: { tab: vocabularyKind(w), word: w.id }, audio: w.audio ?? null } : null;
-  }, [words]);
+  // Shared words-first rule (use-sentence-words.ts), identical to detail-card sentences.
+  const { wordFor, wordsFor } = useSentenceWords();
   const close = useCallback(() => setState(null), []);
   const open = useCallback((el: HTMLElement, glyph: string, word: HintWord | null) => {
     setState(current => current?.el === el ? null : { el, glyph, word });
@@ -73,7 +68,7 @@ export function LessonHintsProvider({ enabled, backLabel = 'Lesson', characterRe
   useEffect(() => { if (!enabled) setState(null); }, [enabled]);
   // The lesson's recorded catalog_character_refs: an exact record ID per character, or null.
   const refFor = useCallback((glyph: string) => characterRefs?.[glyph] ?? null, [characterRefs]);
-  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, refFor }), [enabled, backLabel, open, wordFor, refFor]);
+  const value = useMemo(() => ({ enabled, backLabel, open, wordFor, wordsFor, refFor }), [enabled, backLabel, open, wordFor, wordsFor, refFor]);
   return <Ctx.Provider value={value}>
     {children}
     <Popover open={Boolean(state)} onOpenChange={next => { if (!next) close(); }}>
@@ -111,14 +106,40 @@ export function HintChar({ glyph, word, focusable = true, className = '', ...res
 export function HintGlyphs({ text, focusable = true, wordHanzi }: { text: string; focusable?: boolean; wordHanzi?: string }) {
   const hints = useLessonHints();
   if (!hints?.enabled) return <>{text}</>;
-  const word = hints.wordFor(wordHanzi ?? text);
-  return <>{Array.from(text).map((ch, i) => HAN_CHAR.test(ch) ? <HintChar key={i} glyph={ch} word={word} focusable={focusable}/> : ch)}</>;
+  const fixed = wordHanzi ? hints.wordFor(wordHanzi) : undefined;
+  const perChar = fixed === undefined ? hints.wordsFor(text) : null;
+  const chars = Array.from(text);
+  const wordAt = (i: number) => perChar ? perChar[i] ?? null : fixed ?? null;
+  // Consecutive characters of one identified word sit in one .lesson-hint-word span, so
+  // hovering any of them rings the whole word (each character still opens its own card).
+  const out: ReactNode[] = [];
+  for (let i = 0; i < chars.length;) {
+    const ch = chars[i]!;
+    if (!HAN_CHAR.test(ch)) { out.push(ch); i++; continue; }
+    const w = wordAt(i);
+    let end = i + 1;
+    while (w && end < chars.length && HAN_CHAR.test(chars[end]!) && wordAt(end) === w) end++;
+    const run = chars.slice(i, end).map((c, k) => <HintChar key={i + k} glyph={c} word={w} focusable={focusable}/>);
+    out.push(end - i > 1 ? <span key={`w${i}`} className="lesson-hint-run">{run}</span> : run);
+    i = end;
+  }
+  return <>{out}</>;
 }
 
-/** The popup body: minimal facts for one exact record, plus the containing word. */
+/** The popup body: minimal facts for one exact record, plus the containing word.
+ *  Every record that exists for the exact written form gets its own row ("As a
+ *  character/component/radical", lessonGlyphHints) next to the word row, so 八 offers
+ *  all three of its cards. A row that points at the card the popup sits on (the same
+ *  word or glyph record in the URL) stays visible for completeness but is not a link.
+ *  Kind rows show their own pinyin + speaker and translation unless that exact text
+ *  already appears in the word entry. A one-character word (我) is the head entry itself;
+ *  glyph rank/strokes then sit on the row of the record they belong to. */
 function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | null; onClose: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
   const hints = useLessonHints();
+  const location = useLocation();
+  const currentSearch = location.search as Record<string, unknown>;
+  const wordIsCurrent = word != null && location.pathname === '/vocabulary' && currentSearch['word'] === word.search.word;
   // Leaving the lesson for a full card records one Back step (like Practice does),
   // so the details window's Back returns here. Keyed by history entry, not URL.
   const rememberReturn = () => detailTrail.replace({ label: hints?.backLabel ?? 'Lesson', href: historyEntry() });
@@ -133,33 +154,97 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   }, [glyph, preferences.includeTraditional, catalogVersion, hints]);
   const traditional = hint?.script === 'Traditional';
   const facts = hint ? [hint.rank ? `Rank #${hint.rank}` : null, hint.strokes ? `${hint.strokes} ${hint.strokes === 1 ? 'stroke' : 'strokes'}` : null].filter(Boolean).join(' · ') : '';
+  // Every exact record for this written form (八: character + component + radical).
+  // catalogVersion: the catalogue loads lazily; recompute once it arrives.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const allHints = useMemo(() => lessonGlyphHints(glyph, preferences.includeTraditional), [glyph, preferences.includeTraditional, catalogVersion]);
+  const rowIsCurrent = (id: string) => location.pathname === '/characters' && currentSearch['id'] === id;
+  // A one-character word that is itself a sourced radical (八) wears the same gold as its
+  // Words card (card-ink.ts wordInk); other words keep the link colouring. Traditional
+  // words are left to the row's own colour, so nothing new is implied for them.
+  const wordHanziInk = word && wordInk({ hanzi: word.hanzi }) === 'card-ink-radical' ? 'card-ink-radical' : '';
+  const kindLabel = (kind: string) => kind === 'Components' ? 'As a component' : kind === 'Radicals' ? 'As a radical' : 'As a character';
+  // Words first: when the tapped glyph is itself a one-character word (我), the word is the
+  // popup's main entry — its reading, recording and HSK translation lead, and the separate
+  // "As a word" row folds into the head. Multi-character words keep the glyph head and an
+  // "In the word" row, since the head then describes a different record than the word.
+  const wordLeads = word != null && Array.from(word.hanzi).length === 1 && word.hanzi === glyph;
+  const headInk = wordLeads && wordHanziInk ? wordHanziInk : hint?.ink ?? '';
   return <div className="lesson-hint-body">
     <button type="button" className="lesson-hint-close" aria-label="Close" onClick={onClose}><X size={14} aria-hidden="true"/></button>
     <div className="lesson-hint-head">
-      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''}${hint?.kind === 'Radicals' ? ' is-radical' : ''}`}>{glyph}</span>
+      {/* The glyph wears its record's identity ink (record-ink.ts), the same as its library card:
+          八 is gold whichever record the popup describes. */}
+      <span lang="zh-CN" className={`lesson-hint-glyph${traditional ? ' traditional-character' : ''} ${headInk}`.trim()}>{glyph}</span>
       <div className="lesson-hint-reading">
+        {wordLeads && <span className="lesson-hint-word-label">Word</span>}
         {(traditional || hint?.radicalNumber) && <span className="lesson-hint-pills">
           {traditional && <span className="lesson-hint-pill is-traditional">繁 Traditional</span>}
           {hint?.radicalNumber && <span className="lesson-hint-pill is-radical">部 Radical #{hint.radicalNumber}</span>}
         </span>}
-        {hint?.pinyin ? (isMultiReading(hint.pinyin)
-          ? <span className="lesson-hint-pinyin"><MultiReadingSpeakers spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>
-          : <span className="lesson-hint-pinyin"><span className="pinyin">{hint.pinyin}</span><GlyphReadingSpeaker spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>)
-          : hint?.componentName ? <span className="lesson-hint-pinyin"><span className="pinyin">Name · {hint.componentName}</span></span> : null}
-        {hint ? <p className="lesson-hint-meaning"><MeaningText text={hint.meaning}/></p>
-          : <p className="lesson-hint-meaning is-absent">{catalogVersion ? 'No Glyphs card for this character yet.' : 'Loading…'}</p>}
-        {facts && <p className="lesson-hint-facts">{facts}</p>}
+        {wordLeads && word
+          ? <>
+            <span className="lesson-hint-pinyin">
+              {wordIsCurrent
+                ? <span className="pinyin">{word.pinyin}</span>
+                : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
+              {/* Speaker stays outside the link so listening never navigates. */}
+              {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
+            </span>
+            {word.meaning && <p className="lesson-hint-meaning"><MeaningText text={word.meaning}/></p>}
+          </>
+          : <>
+            {hint?.pinyin ? (isMultiReading(hint.pinyin)
+              ? <span className="lesson-hint-pinyin"><MultiReadingSpeakers spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>
+              : <span className="lesson-hint-pinyin"><span className="pinyin">{hint.pinyin}</span><GlyphReadingSpeaker spoken={hint.spoken} reading={hint.pinyin} variant="example"/></span>)
+              : hint?.componentName ? <span className="lesson-hint-pinyin"><span className="pinyin">Name · {hint.componentName}</span></span> : null}
+            {hint ? <p className="lesson-hint-meaning"><MeaningText text={hint.meaning}/></p>
+              : <p className="lesson-hint-meaning is-absent">{catalogVersion ? 'No Glyphs card for this character yet.' : 'Loading…'}</p>}
+            {facts && <p className="lesson-hint-facts">{facts}</p>}
+          </>}
       </div>
     </div>
-    {word && <div className="lesson-hint-word">
+    {word && !wordLeads && <div className="lesson-hint-word">
       <span className="lesson-hint-word-label">In the word</span>
       <span className="lesson-hint-word-row">
-        <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className="lesson-hint-word-hanzi">{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>
-        {/* Speaker stays outside the link so listening never navigates. */}
+        {wordIsCurrent
+          ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing"><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span></span>
+          : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span lang="zh-CN" className={`lesson-hint-word-hanzi ${wordHanziInk}`.trim()}>{word.hanzi}</span><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
         {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
       </span>
       {word.meaning && <span className="lesson-hint-word-meaning"><MeaningText text={word.meaning}/></span>}
     </div>}
-    {hint && <Link to="/characters" search={hint.search} className="lesson-hint-open" onClick={rememberReturn}>Open full card<ArrowUpRight size={14} aria-hidden="true"/></Link>}
+    {allHints.map(row => {
+      // Each kind row carries its own reading (with speaker) and translation, except a
+      // field that is exactly the same text as the word row's — 一 as a character keeps
+      // its longer meaning but drops the repeated "yī". Exact string comparison only:
+      // nothing is normalised, so a different recorded reading is never hidden.
+      const showPinyin = Boolean(row.pinyin) && row.pinyin !== word?.pinyin;
+      const showName = !row.pinyin && Boolean(row.componentName);
+      const showMeaning = Boolean(row.meaning) && row.meaning.trim() !== word?.meaning.trim();
+      const multi = showPinyin && isMultiReading(row.pinyin);
+      // Single readings sit inside the link like the word row; joined readings get one
+      // speaker each (MultiReadingSpeakers) and therefore stay outside it.
+      const inlineReading = showPinyin && !multi ? <span className="pinyin">{row.pinyin}</span>
+        : showName ? <span className="pinyin">Name · {row.componentName}</span> : null;
+      const glyphEl = <span lang="zh-CN" className={`lesson-hint-word-hanzi ${row.ink}`.trim()}>{row.glyph}</span>;
+      // With the word in the head, rank and stroke count (glyph facts, never word facts)
+      // move to the row of the record they were read from.
+      const rowFacts = wordLeads && row.id === hint?.id ? facts : '';
+      return <div key={row.id} className="lesson-hint-word">
+        <span className="lesson-hint-word-label">{kindLabel(row.kind)}</span>
+        <span className="lesson-hint-word-row">
+          {rowIsCurrent(row.search.id)
+            ? <span className="lesson-hint-word-link is-current" title="This is the card you are viewing">{glyphEl}{inlineReading}</span>
+            : <Link to="/characters" search={row.search} className="lesson-hint-word-link" title={`Open the ${row.kind === 'Components' ? 'component' : row.kind === 'Radicals' ? 'radical' : 'character'} ${row.glyph}`} onClick={rememberReturn}>{glyphEl}{inlineReading}<ArrowUpRight size={13} aria-hidden="true"/></Link>}
+          {/* Speakers stay outside the link so listening never navigates. */}
+          {showPinyin && (multi
+            ? <span className="lesson-hint-pinyin"><MultiReadingSpeakers spoken={row.spoken} reading={row.pinyin} variant="example"/></span>
+            : <GlyphReadingSpeaker spoken={row.spoken} reading={row.pinyin} variant="example"/>)}
+        </span>
+        {showMeaning && <span className="lesson-hint-word-meaning"><MeaningText text={row.meaning}/></span>}
+        {rowFacts && <span className="lesson-hint-facts">{rowFacts}</span>}
+      </div>;
+    })}
   </div>;
 }

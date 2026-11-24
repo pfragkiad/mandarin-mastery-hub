@@ -1,0 +1,465 @@
+{
+  "schema_version": "mandarin-general-lesson/3.4.0",
+  "lesson_id": "convm-places-to-meet",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Choosing Where to Meet",
+    "subtitle": "Restaurants, cafés, and proposing a place",
+    "description": "Learn to invite someone to meet for food, decline one place, and suggest another.",
+    "slug": "conversational-places-to-meet"
+  },
+  "classification": {
+    "primary_topic_id": "travel-transport",
+    "topic_ids": [
+      "travel-transport",
+      "places-directions",
+      "food-drink"
+    ],
+    "tags": [
+      "meeting-places",
+      "invitations",
+      "alternatives"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "places-to-meet"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Suggest where to go.",
+    "Accept or reject a proposed location.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "么": "Characters:么",
+    "京": "Characters:京",
+    "们": "Characters:们",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "动": "Characters:动",
+    "北": "Characters:北",
+    "午": "Characters:午",
+    "厅": "Characters:厅",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "咖": "Characters:咖",
+    "哪": "Characters:哪",
+    "啡": "Characters:啡",
+    "喝": "Characters:喝",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "店": "Characters:店",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "明": "Characters:明",
+    "样": "Characters:样",
+    "点": "Characters:点",
+    "茶": "Characters:茶",
+    "见": "Characters:见",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "酒": "Characters:酒",
+    "钟": "Characters:钟",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Learn to invite someone to meet for food, decline one place, and suggest another. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想去哪儿吃午饭？",
+            "pinyin": "Nǐ xiǎng qù nǎr chī wǔfàn?",
+            "english": "Where would you like to have lunch?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想去饭店。",
+            "pinyin": "Wǒ xiǎng qù fàndiàn.",
+            "english": "I would like to go to a restaurant."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "去北京饭店，好吗？",
+            "pinyin": "Qù Běijīng Fàndiàn, hǎo ma?",
+            "english": "How about going to the Beijing Hotel?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我们去吧。",
+            "pinyin": "Hǎo, wǒmen qù ba.",
+            "english": "Okay, let us go."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "想 + 去 + 地点 + 动作",
+        "pattern_pinyin": "xiǎng + qù + dìdiǎn + dòngzuò",
+        "function_en": "Combine destination and purpose in one sentence.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "我想去饭店吃。",
+          "pinyin": "wǒ xiǎng qù fàndiàn chī.",
+          "english": "I want to go to a restaurant to eat.",
+          "teaching_note": "Link a proposed destination to the activity you want to do there."
+        },
+        "pattern_pseudo_translation": "想 + 去 + <place> + <what to do>"
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "在 + 地点 + 动作",
+        "pattern_pinyin": "zài + dìdiǎn + dòngzuò",
+        "function_en": "Use 在 (zài) before a place to say where an action happens.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我想在这儿喝茶。",
+          "pinyin": "wǒ xiǎng zài zhèr hē chá.",
+          "english": "I want to drink tea here.",
+          "teaching_note": "You can use this structure to suggest staying here instead of going elsewhere."
+        },
+        "pattern_pseudo_translation": "在 + <place> + <what to do>"
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你想去哪儿",
+            "pinyin": "nǐ xiǎng qù nǎr",
+            "meaning_en": "Where do you want to go?"
+          },
+          {
+            "hanzi": "你想去哪儿吃",
+            "pinyin": "nǐ xiǎng qù nǎr chī",
+            "meaning_en": "Where do you want to eat?"
+          },
+          {
+            "hanzi": "去咖啡厅",
+            "pinyin": "qù kāfēitīng",
+            "meaning_en": "Go to a café."
+          },
+          {
+            "hanzi": "去饭店",
+            "pinyin": "qù fàndiàn",
+            "meaning_en": "Go to a restaurant."
+          },
+          {
+            "hanzi": "我想去酒店",
+            "pinyin": "wǒ xiǎng qù jiǔdiàn",
+            "meaning_en": "I want to go to the hotel."
+          },
+          {
+            "hanzi": "我想去北京饭店",
+            "pinyin": "wǒ xiǎng qù Běijīng Fàndiàn",
+            "meaning_en": "I want to go to the Beijing Hotel."
+          },
+          {
+            "hanzi": "我想去你那儿",
+            "pinyin": "wǒ xiǎng qù nǐ nàr",
+            "meaning_en": "I want to go to your place."
+          },
+          {
+            "hanzi": "我不想在这儿吃",
+            "pinyin": "wǒ bù xiǎng zài zhèr chī",
+            "meaning_en": "I do not want to eat here."
+          },
+          {
+            "hanzi": "你想去哪儿喝",
+            "pinyin": "nǐ xiǎng qù nǎr hē",
+            "meaning_en": "Where would you like to go for a drink?"
+          },
+          {
+            "hanzi": "北京饭店在哪儿",
+            "pinyin": "Běijīng Fàndiàn zài nǎr",
+            "meaning_en": "Where is the Beijing Hotel?"
+          },
+          {
+            "hanzi": "你想去酒店吗",
+            "pinyin": "nǐ xiǎng qù jiǔdiàn ma",
+            "meaning_en": "Do you want to go to the hotel?"
+          },
+          {
+            "hanzi": "去你那儿",
+            "pinyin": "qù nǐ nàr",
+            "meaning_en": "Go to your place."
+          },
+          {
+            "hanzi": "去我那儿",
+            "pinyin": "qù wǒ nàr",
+            "meaning_en": "Go to my place."
+          },
+          {
+            "hanzi": "在饭店",
+            "pinyin": "zài fàndiàn",
+            "meaning_en": "At a restaurant."
+          },
+          {
+            "hanzi": "我想在这儿吃",
+            "pinyin": "wǒ xiǎng zài zhèr chī",
+            "meaning_en": "I want to eat here."
+          },
+          {
+            "hanzi": "北京饭店",
+            "pinyin": "Běijīng Fàndiàn",
+            "meaning_en": "Beijing Hotel; hotel name"
+          },
+          {
+            "hanzi": "咖啡厅",
+            "pinyin": "kāfēitīng",
+            "meaning_en": "café"
+          },
+          {
+            "hanzi": "饭店",
+            "pinyin": "fàndiàn",
+            "meaning_en": "restaurant; hotel, context-dependent"
+          },
+          {
+            "hanzi": "酒店",
+            "pinyin": "jiǔdiàn",
+            "meaning_en": "hotel"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Invite a friend to a café, restaurant or hotel; decline one place and suggest another."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Meeting at a Café Rather Than a Hotel",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "明天我们在哪儿见面？",
+            "pinyin": "Míngtiān wǒmen zài nǎr jiànmiàn?",
+            "english": "Where shall we meet tomorrow?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你想去北京饭店吗？",
+            "pinyin": "Nǐ xiǎng qù Běijīng Fàndiàn ma?",
+            "english": "Would you like to go to the Beijing Hotel?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我不想去酒店。咖啡厅怎么样？",
+            "pinyin": "Wǒ bù xiǎng qù jiǔdiàn. Kāfēitīng zěnmeyàng?",
+            "english": "I would rather not go to a hotel. How about a café?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，我们在咖啡厅见。",
+            "pinyin": "Hǎo, wǒmen zài kāfēitīng jiàn.",
+            "english": "Fine, let us meet at the café."
+          }
+        ]
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "Where does speaker B first suggest meeting?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想去饭店。 (Wǒ xiǎng qù fàndiàn.) — I would like to go to a restaurant.",
+          "explanation": "Check the model dialogue and identify the relevant response."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Go to a restaurant.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "去饭店 (qù fàndiàn)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Say you want to drink tea here, using 在 (zài) before the location.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想在这儿喝茶。 (Wǒ xiǎng zài zhèr hē chá.) — I want to drink tea here.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A: 你想在饭店吃午饭吗？ (Nǐ xiǎng zài fàndiàn chī wǔfàn ma?) — Would you like to have lunch at a restaurant?\nB: 不想，我想去咖啡馆。 (Bù xiǎng, wǒ xiǎng qù kāfēiguǎn.) — No, I would rather go to a café.\nA: 好，我们去咖啡馆吧。 (Hǎo, wǒmen qù kāfēiguǎn ba.) — Okay, let us go to the café.\nB: 好，下午一点钟见。 (Hǎo, xiàwǔ yì diǎn zhōng jiàn.) — Okay, see you at one in the afternoon.",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
+        }
+      ]
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-places-to-meet--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Understand the lesson goal",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "practice the model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--grammar--grammar-1",
+            "kind": "section",
+            "label": "Understand: Combine destination and purpose in one sentence.",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-places-to-meet--grammar--grammar-2",
+            "kind": "section",
+            "label": "Understand: Use 在 (zài) before a place to say where an action happens.",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--review--key-expressions",
+            "kind": "section",
+            "label": "Review the key expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "Where does speaker B first suggest meeting?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: Go to a restaurant.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Say you want to drink tea here, using 在 (zài) before the location.",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-places-to-meet--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Invite a friend to a café, restaurant or hotel; decline one place and suggest another.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-places-to-meet--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-places-to-meet--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Meeting at a Café Rather Than a Hotel",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
+}

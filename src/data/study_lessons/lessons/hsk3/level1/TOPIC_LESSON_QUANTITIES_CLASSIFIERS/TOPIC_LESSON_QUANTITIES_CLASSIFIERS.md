@@ -30,7 +30,11 @@ A shopper chooses books and clothing. Practise different classifiers and small a
 
 Chinese normally uses a measure word between a numeral and a noun. 本 (běn) counts bound books; 件 (jiàn) counts many items of clothing; 个 (gè) is common but not universal.
 
-**Pattern:** number + classifier + noun
+**Pattern**
+
+数字 + 量词 + 名词  
+*shùzì + liàngcí + míngcí*  
+&lt;number&gt; + &lt;classifier&gt; + &lt;noun&gt;
 
 **桌子上有两本书。**
 *Zhuōzi shàng yǒu liǎng běn shū.*
@@ -44,7 +48,11 @@ I bought three items of clothing.
 
 两 (liǎng) generally precedes classifiers for two items; 几 (jǐ) is natural for small expected numbers; 多少 (duōshao) has a broader numerical range.
 
-**Pattern:** 几 + classifier + noun?
+**Pattern**
+
+几 + 量词 + 名词？  
+*jǐ + liàngcí + míngcí?*  
+**几** + &lt;classifier&gt; + &lt;noun&gt;？
 
 **你有几个好朋友？**
 *Nǐ yǒu jǐ ge hǎo péngyou?*
@@ -184,3 +192,46 @@ Do not use the same classifier for all nouns. For a book use 本 (běn), not 件
 
 **Production:** Write this in Mandarin: “Classes at the school start at 8:30 a.m.”
 **Answer:** 学校上午八点半上课。 (xuéxiào shàngwǔ bā diǎn bàn shàngkè.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-quantities-classifiers--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Classifiers for countable objects — ID: `topic-quantities-classifiers--pattern--pattern-1`
+- [ ] Apply: 两 (liǎng), 几 (jǐ), and 多少 (duōshao) — ID: `topic-quantities-classifiers--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: three pieces of clothing — ID: `topic-quantities-classifiers--build--build-sub-01`
+- [ ] Build a sentence: two cats — ID: `topic-quantities-classifiers--build--build-sub-02`
+
+### Reading comprehension
+- [ ] How many books belong to the speaker? — ID: `topic-quantities-classifiers--read--reading-q-01`
+- [ ] Who bought more clothing? — ID: `topic-quantities-classifiers--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask how many books someone has. — ID: `topic-quantities-classifiers--speak--speaking-1`
+- [ ] Say you need a little water. — ID: `topic-quantities-classifiers--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-quantities-classifiers--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-quantities-classifiers--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-quantities-classifiers--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “half”? *(optional)* — ID: `topic-quantities-classifiers--quiz--q-06-1`
+- [ ] Which expression means “half”? *(optional)* — ID: `topic-quantities-classifiers--quiz--q-06-2`
+- [ ] Which expression means “measure word for animals”? *(optional)* — ID: `topic-quantities-classifiers--quiz--q-06-3`
+- [ ] In the example “现在是八点半。” (xiànzài shì bā diǎn bàn.), what is happening? — ID: `topic-quantities-classifiers--quiz--q-06-4`
+- [ ] Write this in Mandarin: “Classes at the school start at 8:30 a.m.” — ID: `topic-quantities-classifiers--quiz--q-06-5`
+- [ ] Reading comprehension: How many books belong to the speaker? — ID: `topic-quantities-classifiers--quiz--applied-reading-1`
+- [ ] Reading comprehension: Who bought more clothing? — ID: `topic-quantities-classifiers--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask how many books someone has. — ID: `topic-quantities-classifiers--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say you need a little water. — ID: `topic-quantities-classifiers--quiz--applied-speaking-2`

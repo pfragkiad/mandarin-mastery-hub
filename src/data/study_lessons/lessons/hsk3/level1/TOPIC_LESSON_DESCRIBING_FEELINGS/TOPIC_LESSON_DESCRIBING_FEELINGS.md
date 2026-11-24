@@ -1,5 +1,7 @@
 # Describing People and Things
 
+**Subtopics:** emotions-attitudes, judgments-evaluation
+
 Use common adjectives and evaluative language to describe people and objects.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -30,7 +32,11 @@ A conversation about a new film shows how different evaluative adjectives convey
 
 好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.
 
-**Pattern:** subject + 很 + adjective
+**Pattern**
+
+主语 + 很 + 形容词  
+*zhǔyǔ + hěn + xíngróngcí*  
+&lt;subject&gt; + **很** + &lt;adjective&gt;
 
 **这首歌很好听。**
 *Zhè shǒu gē hěn hǎotīng.*
@@ -44,7 +50,11 @@ Her new clothes are pretty.
 
 很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.
 
-**Pattern:** noun + 太 + adjective + 了
+**Pattern**
+
+名词 + 太 + 形容词 + 了  
+*míngcí + tài + xíngróngcí + le*  
+&lt;noun&gt; + **太** + &lt;adjective&gt; + **了**
 
 **这个房间太小了。**
 *Zhège fángjiān tài xiǎo le.*
@@ -176,3 +186,46 @@ Do not use 好听 (hǎotīng) for food or 好吃 (hǎochī) for a song; each eva
 
 **Production:** Write this in Mandarin: “This university is very big.”
 **Answer:** 这个大学很大。 (zhège dàxué hěn dà.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-describing-feelings--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Quality adjectives are specific — ID: `topic-describing-feelings--pattern--pattern-1`
+- [ ] Apply: Degree and contrasting sizes — ID: `topic-describing-feelings--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: song — ID: `topic-describing-feelings--build--build-sub-01`
+- [ ] Build a sentence: food — ID: `topic-describing-feelings--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What is new? — ID: `topic-describing-feelings--read--reading-q-01`
+- [ ] What does the younger sister think about the price? — ID: `topic-describing-feelings--read--reading-q-02`
+
+### Speaking practice
+- [ ] Compliment the sound of a song. — ID: `topic-describing-feelings--speak--speaking-1`
+- [ ] Say a room is too small. — ID: `topic-describing-feelings--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-describing-feelings--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-describing-feelings--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-describing-feelings--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “big”? *(optional)* — ID: `topic-describing-feelings--quiz--q-18-1`
+- [ ] Which expression means “pleasant to hear”? *(optional)* — ID: `topic-describing-feelings--quiz--q-18-2`
+- [ ] Which expression means “new”? *(optional)* — ID: `topic-describing-feelings--quiz--q-18-3`
+- [ ] In the example “这个房间很大。” (zhège fángjiān hěn dà.), what is happening? — ID: `topic-describing-feelings--quiz--q-18-4`
+- [ ] Write this in Mandarin: “This university is very big.” — ID: `topic-describing-feelings--quiz--q-18-5`
+- [ ] Reading comprehension: What is new? — ID: `topic-describing-feelings--quiz--applied-reading-1`
+- [ ] Reading comprehension: What does the younger sister think about the price? — ID: `topic-describing-feelings--quiz--applied-reading-2`
+- [ ] Say this aloud: Compliment the sound of a song. — ID: `topic-describing-feelings--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say a room is too small. — ID: `topic-describing-feelings--quiz--applied-speaking-2`

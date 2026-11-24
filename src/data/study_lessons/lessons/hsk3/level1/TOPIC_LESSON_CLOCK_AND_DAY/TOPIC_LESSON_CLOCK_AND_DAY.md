@@ -30,7 +30,11 @@ A classmate asks about a meeting time. Learn to distinguish a clock reading from
 
 几点 (jǐ diǎn) asks for a clock time; put the time before the action to say when something happens. 半 (bàn) gives half past.
 
-**Pattern:** time + subject/verb or subject + time + verb
+**Pattern**
+
+时间 + 主语 + 动词 / 主语 + 时间 + 动词  
+*shíjiān + zhǔyǔ + dòngcí / zhǔyǔ + shíjiān + dòngcí*  
+&lt;time&gt; + &lt;subject&gt; + &lt;verb&gt; / &lt;subject&gt; + &lt;time&gt; + &lt;verb&gt;
 
 **我们下午三点见。**
 *Wǒmen xiàwǔ sān diǎn jiàn.*
@@ -44,7 +48,13 @@ It is 8:15 now.
 
 点 (diǎn) is a clock hour. 小时 (xiǎoshí) expresses hours of duration; 分钟 (fēnzhōng) expresses minutes of duration.
 
-**Pattern:** 九点 (clock) ≠ 九个小时 (duration)
+**Pattern**
+
+九点 ≠ 九个小时  
+*jiǔ diǎn ≠ jiǔ ge xiǎoshí*  
+**九点** ≠ **九个小时**
+
+The left side is a clock time. The right side is a duration.
 
 **我九点上班。**
 *Wǒ jiǔ diǎn shàngbān.*
@@ -180,5 +190,48 @@ Do not confuse 三点 (sān diǎn, 3 o’clock) with 三个小时 (sān ge xiǎo
 **Comprehension:** In the example “我白天上班。” (wǒ báitiān shàngbān.), what is happening?
 **Answer:** I work during the day.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “I study at school during the day.”
-**Answer:** 白天我在学校学习。 (báitiān wǒ zài xuéxiào xuéxí.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “The students study at school during the day.”
+**Answer:** 学生们白天在学校学习。 (xuéshengmen báitiān zài xuéxiào xuéxí.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-clock-and-day--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Asking and stating clock time — ID: `topic-clock-and-day--pattern--pattern-1`
+- [ ] Apply: Time point versus duration — ID: `topic-clock-and-day--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: four — ID: `topic-clock-and-day--build--build-sub-01`
+- [ ] Build a sentence: half past five — ID: `topic-clock-and-day--build--build-sub-02`
+
+### Reading comprehension
+- [ ] At what time does Mom finish work? — ID: `topic-clock-and-day--read--reading-q-01`
+- [ ] At what time does she eat dinner? — ID: `topic-clock-and-day--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask the current time and answer. — ID: `topic-clock-and-day--speak--speaking-1`
+- [ ] Say how many hours you study, not when you study. — ID: `topic-clock-and-day--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-clock-and-day--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-clock-and-day--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-clock-and-day--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “daytime”? *(optional)* — ID: `topic-clock-and-day--quiz--q-07-1`
+- [ ] Which expression means “late”? *(optional)* — ID: `topic-clock-and-day--quiz--q-07-2`
+- [ ] Which expression means “noon”? *(optional)* — ID: `topic-clock-and-day--quiz--q-07-3`
+- [ ] In the example “我白天上班。” (wǒ báitiān shàngbān.), what is happening? — ID: `topic-clock-and-day--quiz--q-07-4`
+- [ ] Write this in Mandarin: “The students study at school during the day.” — ID: `topic-clock-and-day--quiz--q-07-5`
+- [ ] Reading comprehension: At what time does Mom finish work? — ID: `topic-clock-and-day--quiz--applied-reading-1`
+- [ ] Reading comprehension: At what time does she eat dinner? — ID: `topic-clock-and-day--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask the current time and answer. — ID: `topic-clock-and-day--quiz--applied-speaking-1`
+- [ ] Say this aloud: Say how many hours you study, not when you study. — ID: `topic-clock-and-day--quiz--applied-speaking-2`

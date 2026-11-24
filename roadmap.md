@@ -1,5 +1,15 @@
 # Roadmap
 
+- [x] Glyphs: frequency/Pinyin/Shuffle sorting with stable URL-backed order and Reshuffle
+- [x] Words and Phrases: Pinyin/HSK index/Shuffle, Pinyin default for HSK entries, existing default order for non-HSK entries
+- [x] Verify sorting, reshuffle, pagination and browser history
+
+- [x] Hide unknown-only decomposition trees and availability controls across glyph cards, Practice and vocabulary; retain known alternatives
+- [x] Known parts include exact BabelStone parts and numbered source identities, not only dictionary glyphs
+
+- [x] Stroke practice: correct ㇝/㇋/㇎ source indices; remove unverified ㇘ outline and clear stale geometry
+- [x] Check stroke tile font coverage: Handwritten covers all; Sans/Print still lack ㇤/㇥ (no fabricated font glyphs)
+
 - [x] Phone library pages: equal top gaps (header→title→search→Filters→Study)
 - [x] Phone library pages: heading hanzi faint, larger, behind title at right, reserving no space
 - [x] Card Details/Trace/Recall row aligns left with the tiles
@@ -78,3 +88,91 @@
 - [x] Lessons index: By Course (default; Course → Level → Unit → Lesson) / By Topic (shared topics + tags), Independent lessons section, URL-backed
 - [x] 电脑 example pinyin (shàng xuéxí) fixed in the word list, plus the same slip in HSK 3 学生在网站上学习汉语
 - [x] Word cards/details: Lessons section + book icon for lessons that teach that exact HSK word (owner: HSK lessons only)
+
+- [x] Lesson key expressions: split into words first, characters last (对不起请问)
+- [x] Lessons: word popup hints with details arrow, like character hints
+- [x] Lessons: hover/pinyin pairing groups per identified word (whole word + its syllables), all lessons
+- [x] Lessons: "Hide translations" side switch beside Hide pinyin
+- [x] Lessons: "Hide hanzi" side switch
+- [x] Lessons: sentence lines (conversation etc.) group hover/popups per identified word (学生)
+- [x] Shuowen section: English + ⚠ for uncertain passages visible; every review note in one (i) popup
+- [x] Omit self-links in sentence popups (word link + Open full card)
+- [x] Single-character popups: show both "As a word" and "As a character" rows
+- [x] Kind row label follows record kind: As a character / component / radical
+- [x] Self-pointing popup rows hidden entirely (no plain-text remnant)
+- [x] Popup offers every existing record for the exact glyph (character/component/radical rows)
+- [x] Self rows visible again but without a link
+- [x] Radical gold everywhere from one central rule (card-ink.ts): hint popups (header, pill, every row incl. self), word cards grid + detail (gold hanzi + Radical #N pill), glyph detail titles
+- [x] Hint popup kind rows: own pinyin + speaker and translation, omitted only when exactly equal to the word row
+- [x] Hint popup: a one-character word is the main (top) entry; glyph rank/strokes move to its character row
+
+- [x] Flashcards: "Lesson" deck choice (Characters from recorded catalog refs, Words from course syllabus IDs), URL-backed
+- [x] Flashcards: card back links to lessons that teach that exact record
+- [x] Rename the "Collection" dropdown to "Topic" on Flashcards, Drawing and Vocabulary
+- [x] Detail cards: lines only around the facts row and above the action buttons
+- [x] Detail cards: one section gap; half gap after facts line, before and after the action line
+- [x] Lessons: import v3.2.0 taxonomy-v2 sync (core registry + 21 HSK L1 + 2 conversational lessons)
+- [x] Vocabulary: Subtopic dropdown beside Topic, filtering by recorded subtopic IDs
+- [x] Lessons: Key expressions cards wrap so long pinyin never overflows
+- [x] Lessons: one search box with scope (All lessons / one course), matching everything in each lesson (titles, topics, hanzi, pinyin, English)
+- [x] Lesson search: numbered pinyin queries (ma1, xue2sheng1, lv4) match tone-marked text
+- [x] Lessons: speaker (TTS) buttons don't play on lesson pages (e.g. convm-choices-alternatives)
+
+## Lessons index redesign (mockups 816/817)
+- [x] Tags inside card footer (max 3), equal heights
+- [x] Topic icon hanzi + colour per topic
+- [x] Cookie progress: bar per card, Continue card, unit x/y, course x of y
+- [x] Course path: connectors, Up next, dim not-started, collapsible units
+- [x] Learner copy; caveats in (i); no Pimsleur/ID notes
+- [x] Estimated time on lesson cards and pages (from each lesson's estimated_minutes)
+- [x] Lesson Word bank / Words to review: simplified Vocabulary grid card look (hanzi box in card ink, reading + translation at its right, HSK pill)
+- [x] Lesson progress: Show answer then going back must not leave the course view at zero
+- [x] Lesson page: progress shown on the left while studying
+- [x] Fix: lesson progress never saved in the preview (cookies refused in embedded frame) — moved to browser storage
+- [x] Quiz answers (incl. optional recall quiz) count toward progress
+- [x] Progress bar + Reset progress always visible at the start of each lesson
+- [x] Complete lesson returns to the course/topic screen
+- [x] Remove the Draft pill from lessons
+
+- [x] Lessons v3.3: regression report on word-card examples (handoff vs current) — which version is newer
+- [x] Lessons v3.3: wire checkpoint progress, estimated minutes and icon glyph into lesson pages and cards
+- [x] Lessons v3.3: re-import the corrected HSK lesson package (vocab v1.7.1)
+- [x] Lessons v3.3: import Other Lessons rev2
+- [x] Lessons v3.3: Core rev2 imported
+- [x] Lessons: conversation intros fixed (Other Lessons rev3)
+- [x] Lessons: designer sidebar (pinned progress card with ⋯ reset menu + inline confirm, scrolling list, pinned toggles) and phone strip with Sections/Settings sheets; Undo toast on every reset
+- [x] Lessons: "Start over" text link at the top (only with progress) + "Practice this lesson again" outline button at the end, same confirm + Undo
+- [x] Lessons: phone Settings "Reset this section" row under Progress (Undo toast)
+- [x] Lessons: first HSK 3.0 Level 2 lesson (Making Plans Together) in its own Level 2 course card after Level 1
+
+- [x] Lessons: import corrected HSK Level 2 package (rev2)
+- [x] Lessons: each course level (Level 1, Level 2) folds open/closed like units
+
+- [x] Lesson top (small screens): less cramped header per mockup; Next + title + arrow on one line
+- [x] Lesson top: hide boilerplate subtitle ("Topic-based beginner conversation lesson") and the transcript/source sentence in descriptions
+- [x] Lesson tags: hide long audience pill and course/format tags (topic lesson, beginner, conversational mandarin…); review tag guideline for lesson creator
+- [x] Lesson top: drop the repeated progress bar above "In this lesson you will" at every width; time moves beside the lesson type
+- [x] Lesson-creator guideline update for subtitles/descriptions/tags
+- [x] Etymology: simplified character without its own entry shows "师 → 師" + the traditional form's notes (labelled suggested, not reviewed)
+- [x] Etymology (character card): left simplified tile same size as the traditional tile
+- [x] Lessons index on small screens: progress on its own full-width line, arrows beside titles (never alone), clearly visible; course title slightly smaller only when that fits one line
+- [x] Lesson Key expressions: neutral PHRASE pill on non-entry expressions
+- [x] Lessons v3.4.0: Key expressions usage label/note; pattern cards hide repeated formula/note
+- [x] Audit lesson pinyin vs word-card readings (spacing/other differences) that could block recordings
+- [x] Pattern template lines: speaker beside pinyin (owner: read as written)
+- [x] Pattern template lines: character hints / clickable words like other lesson text
+- [x] Lesson side panel stays on narrower pages (switch when reading column < ~440px)
+- [x] Shared Hanzi·Pinyin·EN toggles in lessons and Glyphs/Vocabulary grids (separate saved choices)
+- [x] Grid hidden faces blur instead of blank; click a card to reveal
+- [x] Lessons: blurred text click-to-reveal (now)
+- [x] Character hints switch in Glyphs/Vocabulary grids (hover ring + quick card on card hanzi)
+- [x] Grid hidden hanzi: much stronger blur so large simple characters are truly hidden
+- [x] Lesson sidebar + phone sheets use the grid toolbar look for Hanzi·Pinyin·EN and Character hints
+- [x] Lessons Core v3.6: three-line pattern headings (Hanzi, pinyin, pseudo-translation) in HSK, Conversational and character lessons; legacy formula fallback
+- [x] Pattern lines: no speaker (owner, following the migration report)
+- [x] Pattern pseudo-translation is the prominent line and comes first; Hanzi/pinyin smaller below
+- [x] Pinyin sounds: Tone pairs and Tone changes pages from the handoff (48 whole-word recordings, draft tone labels), under one "Pinyin sounds" menu item
+
+## Flashcards lesson deck placement
+- [x] Flashcards: category list unchanged; a Course dropdown beside Topic, and the lesson list follows from the course (both narrow the deck)
+- [x] Flashcards: no Course/Lesson dropdown for Words or Phrases (Pavlos 2026-11-24) — picker stays for Characters only

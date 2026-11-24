@@ -1,0 +1,454 @@
+{
+  "schema_version": "mandarin-general-lesson/3.4.0",
+  "lesson_id": "convm-newspaper-shopping",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Buying a Newspaper",
+    "subtitle": "Checking availability, prices, and currencies",
+    "description": "Learn to ask for a newspaper, confirm its price, and respond when you lack the right currency.",
+    "slug": "buying-a-newspaper"
+  },
+  "classification": {
+    "primary_topic_id": "shopping-money",
+    "topic_ids": [
+      "shopping-money",
+      "numbers-quantities",
+      "reference-questions",
+      "communication-social"
+    ],
+    "tags": [
+      "newspapers",
+      "price-confirmation",
+      "currency"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "newspaper-shopping"
+      }
+    ],
+    "primary_subtopic_id": "shopping-commerce",
+    "subtopic_ids": [
+      "shopping-commerce",
+      "money-finance"
+    ]
+  },
+  "learning_objectives": [
+    "Ask whether a shop sells a particular kind of newspaper.",
+    "Confirm prices using positive-negative questions.",
+    "Explain currency limitations and end the transaction politely."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "们": "Characters:们",
+    "价": "Characters:价",
+    "份": "Characters:份",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "再": "Characters:再",
+    "十": "Characters:十",
+    "另": "Characters:另",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "吗": "Characters:吗",
+    "品": "Characters:品",
+    "国": "Characters:国",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "够": "Characters:够",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "字": "Characters:字",
+    "客": "Characters:客",
+    "币": "Characters:币",
+    "您": "Characters:您",
+    "我": "Characters:我",
+    "报": "Characters:报",
+    "收": "Characters:收",
+    "数": "Characters:数",
+    "文": "Characters:文",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "来": "Characters:来",
+    "格": "Characters:格",
+    "民": "Characters:民",
+    "气": "Characters:气",
+    "没": "Characters:没",
+    "物": "Characters:物",
+    "的": "Characters:的",
+    "纸": "Characters:纸",
+    "给": "Characters:给",
+    "美": "Characters:美",
+    "英": "Characters:英",
+    "见": "Characters:见",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "金": "Characters:金",
+    "问": "Characters:问"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Learn to ask for a newspaper, confirm its price, and respond when you lack the right currency. practice the new dialogue and the examples, then complete the role-play."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "您好，请问你们有没有美国报纸？",
+            "pinyin": "Nín hǎo, qǐngwèn nǐmen yǒu méiyǒu Měiguó bàozhǐ?",
+            "english": "Hello, do you have American newspapers?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "有，也有英文报纸。",
+            "pinyin": "Yǒu, yě yǒu Yīngwén bàozhǐ.",
+            "english": "Yes, and we also have English-language newspapers."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这份报纸是不是十八块？",
+            "pinyin": "Zhè fèn bàozhǐ shì bú shì shíbā kuài?",
+            "english": "Does this newspaper cost eighteen yuan?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不是十八块，是八块人民币。",
+            "pinyin": "Bú shì shíbā kuài, shì bā kuài rénmínbì.",
+            "english": "Not eighteen; it is eight yuan."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我有美金，可是没有人民币。",
+            "pinyin": "Wǒ yǒu měijīn, kěshì méiyǒu rénmínbì.",
+            "english": "I have US dollars but no yuan."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "这里只收人民币。",
+            "pinyin": "Zhèlǐ zhǐ shōu rénmínbì.",
+            "english": "We only accept yuan here."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那么我一会儿再来，谢谢。",
+            "pinyin": "Nàme wǒ yíhuìr zài lái, xièxie.",
+            "english": "Then I will come back in a little while, thank you."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "不客气！",
+            "pinyin": "Bú kèqi!",
+            "english": "You are welcome!"
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "有没有 + 物品？",
+        "pattern_pinyin": "yǒu méiyǒu + wùpǐn?",
+        "function_en": "有没有 (yǒu méiyǒu) is the A-not-A form of 有 (yǒu), used for availability or possession.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "你有没有今天的报纸？",
+          "pinyin": "Nǐ yǒu méiyǒu jīntiān de bàozhǐ?",
+          "english": "Do you have today’s newspaper?",
+          "teaching_note": "Replace newspaper with another item when asking whether it is in stock."
+        },
+        "pattern_pseudo_translation": "有没有 + <item>？"
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "物品 + 是不是 + 价格？",
+        "pattern_pinyin": "wùpǐn + shì bú shì + jiàgé?",
+        "function_en": "是不是 (shì bú shì) asks for confirmation without a final 吗 (ma).",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "这个是不是八块？",
+          "pinyin": "Zhège shì bú shì bā kuài?",
+          "english": "Is this eight yuan?",
+          "teaching_note": "Use this to check the amount you think you heard."
+        },
+        "pattern_pseudo_translation": "<item> + 是不是 + <price>？"
+      },
+      {
+        "id": "grammar-3",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "数字 + 不是 + 另一个数字",
+        "pattern_pinyin": "shùzì + bú shì + lìng yí ge shùzì",
+        "function_en": "Check numbers carefully: 八 (bā) is eight, whereas 十八 (shíbā) is eighteen.",
+        "example": {
+          "id": "pattern-ex-3",
+          "hanzi": "八块，不是十八块。",
+          "pinyin": "Bā kuài, bú shì shíbā kuài.",
+          "english": "Eight yuan, not eighteen yuan.",
+          "teaching_note": "Repeat the corrected number if the buyer misheard the price."
+        },
+        "pattern_pseudo_translation": "<number> + 不是 + <another number>"
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "报纸",
+            "pinyin": "bàozhǐ",
+            "meaning_en": "newspaper"
+          },
+          {
+            "hanzi": "美国报纸",
+            "pinyin": "Měiguó bàozhǐ",
+            "meaning_en": "American newspaper"
+          },
+          {
+            "hanzi": "有没有",
+            "pinyin": "yǒu méiyǒu",
+            "meaning_en": "have or not have; do you have?"
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it or not?"
+          },
+          {
+            "hanzi": "八块",
+            "pinyin": "bā kuài",
+            "meaning_en": "eight yuan"
+          },
+          {
+            "hanzi": "十八块",
+            "pinyin": "shíbā kuài",
+            "meaning_en": "eighteen yuan"
+          },
+          {
+            "hanzi": "人民币",
+            "pinyin": "rénmínbì",
+            "meaning_en": "renminbi"
+          },
+          {
+            "hanzi": "美金",
+            "pinyin": "měijīn",
+            "meaning_en": "US dollars"
+          },
+          {
+            "hanzi": "给你",
+            "pinyin": "gěi nǐ",
+            "meaning_en": "here you are"
+          },
+          {
+            "hanzi": "太多",
+            "pinyin": "tài duō",
+            "meaning_en": "too much"
+          },
+          {
+            "hanzi": "不够",
+            "pinyin": "bú gòu",
+            "meaning_en": "not enough"
+          },
+          {
+            "hanzi": "没有",
+            "pinyin": "méiyǒu",
+            "meaning_en": "do not have"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Ask for a newspaper, verify its price, explain your currency problem, then close politely."
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "What price does the shopkeeper confirm?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "八块人民币。 (Bā kuài rénmínbì.) — Eight yuan.",
+          "explanation": "Do not confuse eight with eighteen."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Ask if the shop has American newspapers.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，你们有没有美国报纸？ (Qǐngwèn, nǐmen yǒu méiyǒu Měiguó bàozhǐ?) — Excuse me, do you have American newspapers?",
+          "explanation": "Use 有没有 (yǒu méiyǒu) for availability."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Ask for confirmation that a newspaper costs eighteen yuan.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这份报纸是不是十八块？ (Zhè fèn bàozhǐ shì bú shì shíbā kuài?) — Is this newspaper eighteen yuan?",
+          "explanation": "The 是不是 (shì bú shì) form asks for confirmation."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Ask for a newspaper, verify its price, explain your currency problem, then close politely.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A: 您好，请问有报纸吗？ (Nín hǎo, qǐngwèn yǒu bàozhǐ ma?) — Hello. Do you have newspapers?\nB: 有，一份八块。 (Yǒu, yí fèn bā kuài.) — Yes, eight yuan each.\nA: 是不是十八块？ (Shì bú shì shíbā kuài?) — Is it eighteen yuan?\nB: 不是，是八块。 (Bú shì, shì bā kuài.) — No, it is eight yuan.\nA: 我只有美金，没有人民币。我一会儿再来，谢谢！ (Wǒ zhǐ yǒu měijīn, méiyǒu rénmínbì. Wǒ yíhuìr zài lái, xièxie!) — I only have dollars, no yuan. I will return shortly, thanks!\nB: 不客气，再见！ (Bú kèqi, zàijiàn!) — You are welcome. Goodbye!",
+          "explanation": "A complete buying exchange covers availability, correction, payment and farewell."
+        }
+      ]
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-newspaper-shopping--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Understand the lesson goal",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-newspaper-shopping--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "practice the model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-newspaper-shopping--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--grammar--grammar-1",
+            "kind": "section",
+            "label": "Use grammar pattern 1",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-newspaper-shopping--grammar--grammar-2",
+            "kind": "section",
+            "label": "Use grammar pattern 2",
+            "optional": false,
+            "target_id": "grammar-2"
+          },
+          {
+            "id": "convm-newspaper-shopping--grammar--grammar-3",
+            "kind": "section",
+            "label": "Use grammar pattern 3",
+            "optional": false,
+            "target_id": "grammar-3"
+          }
+        ]
+      },
+      {
+        "id": "convm-newspaper-shopping--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--review--key-expressions",
+            "kind": "section",
+            "label": "Review the key expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-newspaper-shopping--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Prepare the full role-play",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-newspaper-shopping--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-newspaper-shopping--practice--q-dialogue",
+            "kind": "practice",
+            "label": "What price does the shopkeeper confirm?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-newspaper-shopping--practice--q-translation",
+            "kind": "practice",
+            "label": "Ask if the shop has American newspapers.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-newspaper-shopping--practice--q-grammar",
+            "kind": "practice",
+            "label": "Ask for confirmation that a newspaper costs eighteen yuan.",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-newspaper-shopping--practice--q-speaking",
+            "kind": "practice",
+            "label": "Ask for a newspaper, verify its price, explain your currency problem, then close politely.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

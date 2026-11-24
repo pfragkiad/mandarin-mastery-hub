@@ -1,19 +1,40 @@
-# Mandarin Tutor — lessons bundle v3.1.0
+# Lesson documents
 
-Compatible with `core.zip` v3.1.0. **This is an instructional curriculum, not a duplicated vocabulary listing.**
+Current Core v3.6.1 library: HSK Levels 1–2, Conversational Mandarin and two independent character lessons. Each `*_LESSON_*` directory holds one canonical
+lesson JSON plus its generated Markdown/HTML companions and an editorial `report.md`:
 
-- HSK 3.0 Level 1: 21 lessons containing 300 introduced vocabulary entries and their 600 existing source examples (retained solely in canonical JSON).
-- 84 newly written conversation turns, 42 explicit grammar/pattern explanations (2 worked examples each), 42 guided substitutions, 22 connected reading paragraphs, 42 speaking scenarios, and 189 total quiz prompts, including 84 applied comprehension/speaking questions.
-- Two independent character-usage lessons, 次 (cì) and 以 (yǐ), unchanged from their v3.0.0 format and validated with the shared core.
-- A Level 1 course manifest with stable lesson IDs, lesson order and syllabus entry coverage.
-- Every lesson ZIP has exactly four root files: canonical JSON, HTML, Markdown and independent `report.md`.
+| Path | Purpose | Consumer |
+| --- | --- | --- |
+| `hsk3/level1/TOPIC_LESSON_*/` | 21 HSK 3.0 Level 1 topic lessons (`mandarin-topic-lesson/3.4.0`) with a required `sections.teaching_plan`; 300 syllabus words whose 600 source examples stay in the JSON but are not shown on the lesson page. | `src/lib/lessons.ts` (summary keys eagerly, whole file lazily on its page). |
+| `independent/CHARACTER_LESSON_CI/`, `independent/CHARACTER_LESSON_YI/` | Character lessons 次 (cì) and 以 (yǐ), migrated to `mandarin-character-lesson/3.2.0`, IDs unchanged. | `src/lib/lessons.ts`; in no course, so listed under "Independent lessons". |
+| [`conversational/`](conversational/README.md) | 17 supplied v3.6.0 editorial lessons, schema `mandarin-general-lesson/3.4.0`. | `src/lib/lessons.ts`; placed by `curricula/CONVERSATIONAL_MANDARIN.json`. |
+| [`hsk3/level2/`](hsk3/level2/README.md) | HSK 3.0 Level 2 topic lessons (`mandarin-topic-lesson/3.4.0`), the complete 25-lesson set covering all 200 Level 2 entries, imported by `scripts/import-lessons-v3.6.1.py` (imported as supplied). | `src/lib/lessons.ts`; placed by the Level 2 section of `curricula/HSK3_2025_LEVEL1.json`. |
+| `lesson-cards.json` | Task totals and time per lesson for the index cards, regenerated from every lesson by `scripts/lesson_cards.py`. | `src/lib/lessons.ts`. |
+| `curricula/CONVERSATIONAL_MANDARIN.json` | Conversational Mandarin course: one section of 17 topic units, one lesson each, independent of HSK. | `src/lib/lesson-curricula.ts`. |
+| `curricula/HSK3_2025_LEVEL1.json` | Course placement manifest: levels → units → placements (lesson ID, order, prerequisites, syllabus entries). | `src/lib/lesson-curricula.ts` (By course view, lesson position). |
+| `legacy/` | Pre-v3 copies of the two character lessons, kept for migration only. | Not loaded (excluded from the lesson globs, would duplicate lesson IDs). |
+| `manifest.json` | Historical HSK package index; current source packages and versions are recorded in the source handoff guide. | Authoring reference; not loaded. |
 
-## Important content distinction
+Lesson files are discovered by `lessons/**/*_LESSON_*/*.json`. The directory name starts
+with the lesson kind (`CHARACTER_`, `WORD_`, `PHRASE_` record a `headword`; `TOPIC_` and
+general kinds do not); `lessons.ts` reads `headword` only from those headword kinds, and
+`lessons.test.ts` checks every file carries each eagerly read key, because a missing
+named key fails the whole app in the browser.
 
-The lesson's *main view* now teaches: dialogue → two worked grammar patterns → substitutions → connected reading with comprehension → speaking → common error/pronunciation → applied checks → review.
+General lessons (`mandarin-general-lesson`) render their recorded `sections.blocks` in order (explanation, dialogue, grammar pattern, review set); their words link only to a unique exact-headword record, and a recording plays only when that record's pinyin matches.
 
-The original example sentences are still present in the lesson JSON so older word-detail card consumers retain source data, but the v3.1 HTML/Markdown renderer does **not** print those 600 examples. It prints a collapsible reference word bank with HSK entry IDs instead. Please use a vocabulary-card route in your web app to open each entry; no route is invented by the generated files.
+Topic-lesson words link to Vocabulary only through their recorded `syllabus_refs`
+(HSK 3.0 entry number) plus the exact headword. Source entry 36's example pinyin was
+corrected in the lesson (see its `report.md`) and the same correction is applied to the
+Vocabulary word list (`src/data/vocabulary/level-1.json`); the importer source under
+`importer/hsk/` is kept byte-for-byte, so a re-import must reapply it.
 
-## Review caveat
+Use the [core templates](../core/README.md) for new lessons and the
+[study lessons guide](../README.md) for IDs, topics and exact record links.
 
-New material is **editorially authored draft content**, not official HSK text, independently native-speaker certified, or fully audited against the cumulative HSK1 lexicon/grammar. Some naturally communicative contexts use supporting vocabulary from higher levels. Pinyin is manually written and needs a second linguistic review prior to authoritative publication.
+The [current import audit](../../../../reports/lessons-3.6.1-import.json) records
+Core/schema, exact HSK dictionary, catalog-reference and checkpoint validation.
+`python scripts/import-lessons-v3.6.1.py [--write]` stages the complete replacement
+and copies supplied conversational/independent files without content rewriting.
+Current packages are in [lesson handoffs](../../../../importer/data/lessons/README.md);
+older upload ZIPs and notes are recoverable from Git history.

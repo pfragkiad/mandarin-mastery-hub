@@ -1,0 +1,459 @@
+{
+  "sources": {
+    "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.2_taxonomy-v2.0.0.zip": "522b94b431e069c536c91acc9f596fca3c23bbfcc43dc6195d7fdbb7edd74bfa",
+    "importer/data/lessons/Mandarin_Other_Lessons_v3.3.2_taxonomy-v2.0.0_coverage-v1.1.4.zip": "3ba35311ce9d208e3649e8d3645fee15b542eb0e0855d16d6b46132cfe89a560"
+  },
+  "core": {
+    "files": {
+      "CHARACTER_LESSON_TEMPLATE.json": "44dceb787a3d102d4c2e6f139869bfff3ed95ba9f6e2563bdb4fe51ca7718d1d",
+      "CHARACTER_LESSON_TEMPLATE.md": "3fef5ed5298c3e1f8d30913798d883af99e9f2d3aee000fed877c14c0d57d8cd",
+      "CURRICULUM_CONVERSATIONAL_MANDARIN_TEMPLATE.json": "837e885b891c24f67a14f91ba5543bab750aab3382a4cb0daff23019e3496ad4",
+      "CURRICULUM_HSK3_TEMPLATE.json": "6c48c5be9ee25e43e5581dc6b3cb5d83b9de4d0fbe232d7ee4ccfb2bc62e9175",
+      "DIALOGUE_LESSON_TEMPLATE.json": "f4d2c30ab6b95b65e85c49b151a315e09afca741edaad6b74d9b53f2db0a44cb",
+      "GENERAL_LESSON_TEMPLATE.md": "84be347323575de95416c3a70d059ab2b4aeff40982127162ade5f5b60bd2672",
+      "GENERIC_LESSON_TEMPLATE.json": "c8fbac2e9d797d5d6f60305584c69219f7769abe430d319a7f8fb17762b856f4",
+      "GRAMMAR_LESSON_TEMPLATE.json": "d9327569efb2960d674c48b7d4162e15759a995ddb8945c8a302f21960e5b3b1",
+      "LESSON_CREATOR_AUTHORING_GUIDELINES.md": "78cfdeea000460d68e20c712e5e73afaba254f2f3b8b3db75b55a8584663ddfb",
+      "README.md": "f33aab8bfc351e3f663325b35a3f99c60d0af26b40d71801c40e117153532230",
+      "REVIEW_LESSON_TEMPLATE.json": "f0f1c7250dfcd01dcdccd3a3249fc1822bd43473f8a871f92e1b6b8e06df38ab",
+      "TOPIC_LESSON_TEMPLATE.json": "f318b8258d793e02e4a9e748f1feaae14642a396dc4061ee517a6c866b56911c",
+      "TOPIC_LESSON_TEMPLATE.md": "bf9ca94ffaa6372be6fb300aa7ade6e1670c87c9737b90c0672bc494c3541a19",
+      "character_lesson.schema.json": "826347b7d1ecb44bb4209a3fb9bf384ad18b79093a53a56aea495459b513cd4f",
+      "curriculum.schema.json": "b8144546fee11e1d3e2db42066d4dc9fbb3326a00dc95b92a3d58579ce422e3b",
+      "general_lesson.schema.json": "c1404aa171332988bd438dc72d0f2d0094a58f3dca81d789f3b6fe05281d921a",
+      "lesson_categories.json": "cbed73977a9bdcc01501eacd7f29d4c3f7bd99a12434280e88ad7239812547f4",
+      "lesson_categories.schema.json": "ce64e47e5f6ddbe92257bdcd9d9ddca96f83a075e674174d381b9dbf4df8273b",
+      "lesson_common.schema.json": "5cd7ca9590217abe949abc3f53a7d289a620d99ffbf715aed8be32b2e24a4743",
+      "topic_lesson.schema.json": "33689b170922d8e5d6cb62c275c8122fd0af851eee3268a37a8592c9a4e7a6e9"
+    },
+    "schemaAndTaxonomyBytesUnchanged": true,
+    "templatesValidated": 8
+  },
+  "lessons": {
+    "convm-asking-directions": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS",
+      "nested_sha256": "6f4371b2ad4eafd805cac87ef06e27ec7ece931278cd40498e294bdcc505007c",
+      "files": {
+        "CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.json": "5bda5178188e939140236f5deca2777764033f49428d53e791517da871de3b95",
+        "CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.html": "87fb5922462d2d25a98aef18480f1936d3e56de00b28305207429378f396d15f",
+        "CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.md": "74952df603437bff1348ed4f208b6cf044525455679489cbab80ba73c2dd2a6e",
+        "report.md": "4dd7a8daab2e7284c2502d7e140938925b113bffd77de34c2cfa4e37ccae01eb"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-choices-alternatives": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES",
+      "nested_sha256": "d892b514ad96a986cc4cb3bc7a80721a78fbff7924b6235c74e8164584b826fd",
+      "files": {
+        "CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.json": "75457a9d47492f51753be8ddd89624e5b4c2398bf4212020ad8ae1cdc12047f7",
+        "CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.html": "47455d5f683731cdc24e5a7d2c63bc654587bc203689bacdd9cd06ae7b826565",
+        "CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.md": "9153d601c30dd5e09f8bb0f0040ecd1b7e103f595ca52e187e6b3af0fc09a6bb",
+        "report.md": "e60b31f499c8c50e363a5bdcc61322d8cec171c5a73ddbb03ab27a136b15622e"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-clock-scheduling": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING",
+      "nested_sha256": "fe76c468632c0b50c91ec9650ea9e9554b5dbdfd220ef1b9a8cd367998758a86",
+      "files": {
+        "CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.json": "ec87898f341afc658e3bf7dc29f5a59231a2db0f45b94d27b133a5763363ed8b",
+        "CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.html": "5e41ac7c60e4debf8f0494ddfd4b52e661b46f683a6dbe5138dadb93d099b57a",
+        "CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.md": "611d72c2ff13b388696950715499da30903df9d5fa98d78fca11e1a1711cfffd",
+        "report.md": "f2c6cf0295bcf6baa86dd1b03d4b50233832c67f6c38be5fbd54e9abb77657d3"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 3,
+      "estimated_minutes": 15
+    },
+    "convm-food-drinks": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS",
+      "nested_sha256": "46c2a592f05f5ad2d99936dcba1d5a8c37d2d44555abe7b43cda0e0addc9f1f6",
+      "files": {
+        "CONVERSATIONAL_LESSON_FOOD_DRINKS.json": "21fac22146de7cf6ecdffb1326c6d3c8730076c059eccd4d0bdd9487a56a8edc",
+        "CONVERSATIONAL_LESSON_FOOD_DRINKS.html": "726c9f6c049e49e257a93e34a3ffbb97ce449c9f7f35d0d4a414758c30f9ed28",
+        "CONVERSATIONAL_LESSON_FOOD_DRINKS.md": "34be11fc5028e4590dca4f8cbfcb50b1a21fee7175982492a9fe6b2a2502f24e",
+        "report.md": "abe3563702fb5fbe9443cebd7194edea6abb057d37d4442ec23195983233ca26"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-greetings-politeness": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS",
+      "nested_sha256": "79af8b89f6247e07692c6572ae65c83441ad3a4f6e0e5d35b6eb38238bc10070",
+      "files": {
+        "CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.json": "c96180b0ba0ef23a6cd8a1130bd9967b17ad3cbf5630786947c8a6971c4d1a0b",
+        "CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.html": "b7c676a5cb98beee6a69b74f78f6daa20c7297a89617db9ea83a43b1d4781daf",
+        "CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.md": "cf1e1127f90e6df2a96f30a280ee9991e24023e99dc6148ab7d21de401b18fd4",
+        "report.md": "90b1667a02a40429f68112c5681ccd99c4c31cca90e178720e6e36e39d552d73"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 0,
+      "estimated_minutes": 15
+    },
+    "convm-money-prices": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES",
+      "nested_sha256": "c06a1dfb19c361badc1bb824a92d608e3266cd13baba769ec25367323eee897d",
+      "files": {
+        "CONVERSATIONAL_LESSON_MONEY_PRICES.json": "a1e05af4750a2649a9c500ea321f1b4bba904a1ba5f3857c56fa9f2ce5324fb5",
+        "CONVERSATIONAL_LESSON_MONEY_PRICES.html": "a7bd99201dbe61f2c1a484d518ef953c4b34d2a3943de672de82ec30c59edd67",
+        "CONVERSATIONAL_LESSON_MONEY_PRICES.md": "9f7e4faa277b8a8f8fa6a0f81d2f490dcff720ab6bfbc1c2574d9363ab50f60f",
+        "report.md": "f9d64da84afac74c9c98ae25697d6a44e4ee200f462ccc6aac2528928c972cda"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 2,
+      "estimated_minutes": 15
+    },
+    "convm-newspaper-shopping": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING",
+      "nested_sha256": "d388cb939ef53bfc9090d265dbaf736795f08606dfadcda154cbebe0604ddee8",
+      "files": {
+        "CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.json": "86aa7dac9253ef79715abd9ea264c789b3ded25254a0d61c5a645fa489167aab",
+        "CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.html": "d83d828ab201aed9252af94584b2c094ce23b73a723e0fc9458246ba91ab8eb0",
+        "CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.md": "b19feafd31a2496ea9845031296dc31d3f95201037811f977656eee43d18582c",
+        "report.md": "7ae6984d42ee7f905a0e5b225afdeae9d05fb937983a52192bc67dd77bf14573"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": true,
+      "contentChanged": true,
+      "required": 11,
+      "optional": 0,
+      "estimated_minutes": 20
+    },
+    "convm-numbers-arithmetic": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC",
+      "nested_sha256": "dfdb7660b7cfdfaffc81521d08cb2f4e9b5b7d6ed053625613a3a7e101d730d6",
+      "files": {
+        "CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.json": "808fb37278418818a2118d5a17bd70f8a841487e3b338ad7e1eb18d7fba128ed",
+        "CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.html": "7dbd13bd7a6a68e2bd7563900835dddc6ed8e8edb90fe4ed3248bcd1c156e8c3",
+        "CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.md": "844188dde4dc58ad4472bebe4befced38ef2ad9b24432c94becf60b5170935da",
+        "report.md": "da4777cefab519eee76973e786d92fed344ad0ac4dbc64b1537bc4db6af4b981"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-people-identity": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY",
+      "nested_sha256": "00c54079a939a40c53b7107ee0bad6087032379fe889886b2392f8e529cdba7e",
+      "files": {
+        "CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.json": "ea5488bc727d431a1f5e34d079faf684bc58747d3ed77d4ad3ba50701be926bb",
+        "CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.html": "76e1df358391e56bef4e3f7f430bb154c180f27824766805f74acdc2df6c19cd",
+        "CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.md": "dcc1661b58582048b5c8d33a3bfbabc540277bc3135f060e22c7e3e868a3e071",
+        "report.md": "015129e255526074cf0da0aebe7feaf64eebd834ab3c40753c3a3dea254cdbe6"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-permission-requests": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS",
+      "nested_sha256": "68ee88b3887eb1c2f74bd751e221099d2614aa7c2869b0ecf34c43521a12f87f",
+      "files": {
+        "CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.json": "4d4539d7344d86ac11c5404ef468147420697140f2865ceee6ae0cd7d424bbbd",
+        "CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.html": "8f5ef8b4ca6a2f6c5234514d0e5c33e814cd9cb94451ff4131e586626db35c45",
+        "CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.md": "3b82b440e8dac321b8aaf0769dbff5d8f867b4890f465af3496e830c43f436d3",
+        "report.md": "fa496443e72e1e2a8836c1d0f534e2be22e70e7aabe8f089b860fcdd7e9b0426"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 2,
+      "estimated_minutes": 15
+    },
+    "convm-phone-invitations": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS",
+      "nested_sha256": "38d7fd8141c4ec7703731e3e6806b7d48ab79c93d6d0f5257fe75d0a0fb173d1",
+      "files": {
+        "CONVERSATIONAL_LESSON_PHONE_INVITATIONS.json": "b8bbd81442d55efdbbfc41be7bc7a68f8262ee1a9f2875212146774a051a33bf",
+        "CONVERSATIONAL_LESSON_PHONE_INVITATIONS.html": "1aa15d26a006cc8668a4a211802c4ddd30058395703313fbe13b813d15f4b4a5",
+        "CONVERSATIONAL_LESSON_PHONE_INVITATIONS.md": "565eb65fe232ced5f1acc7d62d7b097a624dcbd1cbcd92e27a4cef29fd5ba794",
+        "report.md": "ca069ecde8ff906284fe8895f62b26831b7e47383292963522a2bbd7b5e0bbe7"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": true,
+      "contentChanged": true,
+      "required": 11,
+      "optional": 0,
+      "estimated_minutes": 20
+    },
+    "convm-places-to-meet": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET",
+      "nested_sha256": "1125687e1946bfc28773a4b1dbbce451d215eadaa88123e8443265dbe51bbe67",
+      "files": {
+        "CONVERSATIONAL_LESSON_PLACES_TO_MEET.json": "96067e4e83ececfff6954f3990caf681d966f5a0c7799b5cc90312f9dfcd854e",
+        "CONVERSATIONAL_LESSON_PLACES_TO_MEET.html": "5ad03aaca0678a10e563523b89af63cf934e3a27494ecb27e0889705cc1fb34a",
+        "CONVERSATIONAL_LESSON_PLACES_TO_MEET.md": "879980e4e45eccf256e5b8741fc22c3aa17c365a286a16bb9c7886ef02b5bb8b",
+        "report.md": "70e7d54d39d26d2f82870ff01eb8f910f6a482034fc024cffce83923b9bdeac8"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-speaking-languages": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES",
+      "nested_sha256": "cf603199a2e633a6755d80b83afcaee490d6fe513d6cb1ea3dd9567676a541dd",
+      "files": {
+        "CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.json": "60d74d1c34f1c6272aede4dcf7bcef06e04c6e152357f3f9f5fd2175a3afb0a4",
+        "CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.html": "1e15188f4faf296754ab1ba18d537df678dc6880de2225f62fb4918adb464c4a",
+        "CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.md": "8dff5f5aa23026cefea4f08e44be76eeb22564caad5851eea015c0cec3336a5e",
+        "report.md": "72478c95252321223e30e860e5631a0803e9eb054c01e3c3d115063cb3a89c2e"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 3,
+      "estimated_minutes": 15
+    },
+    "convm-today-tomorrow-later": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER",
+      "nested_sha256": "73600e3f046d8db50fae37c743a0d1823c3a4700458a064df9f6da016018e952",
+      "files": {
+        "CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.json": "8fa2beb41e4d968a72a9d6e37cdddd0e69ef6ba5f856cef9f1a82571b4ff19ae",
+        "CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.html": "148988c5f615d064c0b035de2e892cce1df393df0ee33cfead76aac1c13603f7",
+        "CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.md": "8c52a7216c510921a4423eeaa5e09bfe66264400b65db86fc46611d0139039c4",
+        "report.md": "1adc1831a36ed95645861e63f830782ed57dfad9112e8bed35170c3f4a3eefd0"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-understanding-clarification": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION",
+      "nested_sha256": "63b02ebc6f5f917f4850a3b1767e6683c0a473d6267873e9ffc61fe041ffc8a1",
+      "files": {
+        "CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.json": "46005d7e2dcf0f82a32d39815ffe1e12cc2f6eb93a15094d9d57aad806f5ff5f",
+        "CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.html": "63773b635b5f3becf7ad298f5e8a2ab1f45ee5004422e44acd6354790084cac3",
+        "CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.md": "377dcc70e878c5e494ef295cf8023e2418c78ec7c67ebe87fcdce9a443661f0d",
+        "report.md": "5001549374597a8aed0425c7caec6455ba2a3bb1f45e139f97fee9925e0a4aef"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 0,
+      "estimated_minutes": 15
+    },
+    "convm-wants-intentions": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS",
+      "nested_sha256": "2d1deedaf3bbc9d5c101afaa931ffc0950122bfac74bb9937058be3d4c93df0c",
+      "files": {
+        "CONVERSATIONAL_LESSON_WANTS_INTENTIONS.json": "8061ef764081eef15bab86804f756b3b02aa10001c81e64a9a362867e10e4fa5",
+        "CONVERSATIONAL_LESSON_WANTS_INTENTIONS.html": "df417ecbaad36e194320f50f58057430f8f58f0789640964afb6787e944f9fda",
+        "CONVERSATIONAL_LESSON_WANTS_INTENTIONS.md": "1d18728b3fb9003439a6c359e2a4ccd35c4dbc390e98336cd28f2d6cc04e58ee",
+        "report.md": "da1dbe884a11407c8514ff61effe1f4b29d27b8e03fc64c67292b53fb4978f83"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 1,
+      "estimated_minutes": 15
+    },
+    "convm-with-someone": {
+      "directory": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE",
+      "nested_sha256": "5f1a15ff5dd80e79de17ed361cf674563f51c152aea51e619de8be31801d96bd",
+      "files": {
+        "CONVERSATIONAL_LESSON_WITH_SOMEONE.json": "7af0fdcefbbd05790a3cc0f06834a4f2e72ee8073b318e4aa500bc1955444032",
+        "CONVERSATIONAL_LESSON_WITH_SOMEONE.html": "e0871a891f4d565cf8ee21f6103c5136480296da0adfbe478eb41402385e0dd2",
+        "CONVERSATIONAL_LESSON_WITH_SOMEONE.md": "93104f6d4026dca9054745949ef3930d1209c950edd9005f9537bcecd7734c92",
+        "report.md": "ad16e9b6127fe3296973a338b5a531cdcb8d251138907d71644260e127f8c8c7"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": true,
+      "required": 10,
+      "optional": 0,
+      "estimated_minutes": 15
+    },
+    "char-6B21": {
+      "directory": "src/data/study_lessons/lessons/independent/CHARACTER_LESSON_CI",
+      "nested_sha256": "b206d7cf678f6103f61abb5af48665dc24989457cf38e1f898c01101ad65c9e2",
+      "files": {
+        "CHARACTER_LESSON_CI.html": "ec73aa0b523f7ddb24be34e68b6704457c115d949bd5ad1efd7c8387d048e79d",
+        "CHARACTER_LESSON_CI.json": "c9e307ca2eb238770cce5afdc88a9c068f2622293f1ee0dcfb085bed337ee8dc",
+        "CHARACTER_LESSON_CI.md": "5c78cb1fcd0a2482f62e534418541a379b174094622d8660e7a48dbc881fb068",
+        "report.md": "488091cb7789a343af59ba68536365a22905685c059553244176abbe301518e3"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": false,
+      "required": 11,
+      "optional": 1,
+      "estimated_minutes": 20
+    },
+    "char-4EE5": {
+      "directory": "src/data/study_lessons/lessons/independent/CHARACTER_LESSON_YI",
+      "nested_sha256": "2e3569fce6c25b9ea882b3b412561aaa8f82f576666a95e97133dfc450923fe5",
+      "files": {
+        "CHARACTER_LESSON_YI.html": "9414aecd2454756462ba9a339f345352b4c4117b114136dd7b4f09eb3240a85b",
+        "CHARACTER_LESSON_YI.json": "75bb565d03ace461ad0add73b41dd1e8fee9dc50a0bb1eba5c03305b0a8009b7",
+        "CHARACTER_LESSON_YI.md": "aa836ba753138b064b248d737dbb6087f93d282190f83cab2b2c31344424d95a",
+        "report.md": "b1c320418950c31256c210b2f6c7cb780460ffae2b35a551d1467bc6909dc0eb"
+      },
+      "checkpointIdentitiesPreserved": true,
+      "newLesson": false,
+      "contentChanged": false,
+      "required": 10,
+      "optional": 0,
+      "estimated_minutes": 20
+    }
+  },
+  "collection": {
+    "expressions": 441,
+    "sourceCrosswalk": 296,
+    "regionalMarkers": 49,
+    "requiredCheckpoints": 172,
+    "optionalCheckpoints": 18
+  },
+  "collectionFiles": {
+    "README.md": "ebbd0c0514a8eba042dbd0662d13e17a251c9ce03355415fad1b9c1aa105a971",
+    "BROWSE_BY_TOPIC.html": "0ceb47c356286560fb2629d4d901390f6026b9fd73d0df7a1690c94b374a4a14",
+    "QUALITY_REPORT.json": "ee2e4c0bc5a3fb6ef58fa14c56b092e328306c653164bff2ff50d1c159ac81b4",
+    "TOPIC_LESSON_INDEX.json": "8e6e88891d6e79c43825ce4bc0c5db2c4b0c3ce8b7cee24d75bbc60c1a6e86d1",
+    "COVERAGE_REPORT.md": "67e63aaee6e240b1507afae38275591f938c710570cc12b71103067837c0d2a5",
+    "COVERAGE_AUDIT.json": "0f288ec50dc40cb3dfd0127802285739c50b8127c477c95f0c3a4b88eef7c50c",
+    "CONVERSATIONAL_EXPRESSION_REVIEW.txt": "b8b3e56a0ca858a1410c591ebdf0a9abc5f28f5af4853b7ec328cdf15ea84636",
+    "SOURCE_COVERAGE_CROSSWALK.txt": "bd8e438bf5d6e9bad7ac7fb06f45cedb2486950aa87e6694aaf718f2873c755a",
+    "REGIONAL_EXPRESSION_MARKERS.json": "295c8bcda085f7cf602339dbe3329114d3ba38b89bff81f4434da454585a5cd9",
+    "GRAMMAR_DEDUP_AUDIT.json": "db0fb8196eadd7dd3d75cf17a10c80ef211e2ea93c75c789cac43d9dfa92ebf6",
+    "LINGUISTIC_REVIEW_v1.1.4.md": "c7b10a9897b7212c4369f5dd06389046f40e5deb577676db8a8890243d8f98f4"
+  },
+  "checks": {
+    "validatedActiveLessons": 65,
+    "validatedCurricula": 2,
+    "exactHskWordBindingsMatched": 574,
+    "replacementHskWordBindings": 0,
+    "unlinkedExpressions": "Preserved as supplied; no HSK identity or dictionary match inferred.",
+    "curriculumPlacementsPreserved": true,
+    "runtimeVocabularyUntouched": true,
+    "hskLessonsUntouched": true,
+    "sourceContentRewritten": false
+  },
+  "obsoleteFilesRemoved": [
+    "src/data/study_lessons/lessons/conversational/REPORT.md",
+    "src/data/study_lessons/lessons/conversational/EDITORIAL_AUDIT.md"
+  ],
+  "outputFilesChanged": [
+    "src/data/study_lessons/core/LESSON_CREATOR_AUTHORING_GUIDELINES.md",
+    "src/data/study_lessons/core/README.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS/CONVERSATIONAL_LESSON_FOOD_DRINKS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS/CONVERSATIONAL_LESSON_FOOD_DRINKS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS/CONVERSATIONAL_LESSON_FOOD_DRINKS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES/CONVERSATIONAL_LESSON_MONEY_PRICES.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES/CONVERSATIONAL_LESSON_MONEY_PRICES.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES/CONVERSATIONAL_LESSON_MONEY_PRICES.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET/CONVERSATIONAL_LESSON_PLACES_TO_MEET.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET/CONVERSATIONAL_LESSON_PLACES_TO_MEET.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET/CONVERSATIONAL_LESSON_PLACES_TO_MEET.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS/report.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE/CONVERSATIONAL_LESSON_WITH_SOMEONE.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE/CONVERSATIONAL_LESSON_WITH_SOMEONE.html",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE/CONVERSATIONAL_LESSON_WITH_SOMEONE.md",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE/report.md",
+    "src/data/study_lessons/lessons/curricula/CONVERSATIONAL_MANDARIN.json",
+    "src/data/study_lessons/lessons/conversational/COLLECTION_README.md",
+    "src/data/study_lessons/lessons/conversational/BROWSE_BY_TOPIC.html",
+    "src/data/study_lessons/lessons/conversational/QUALITY_REPORT.json",
+    "src/data/study_lessons/lessons/conversational/TOPIC_LESSON_INDEX.json",
+    "src/data/study_lessons/lessons/conversational/COVERAGE_REPORT.md",
+    "src/data/study_lessons/lessons/conversational/COVERAGE_AUDIT.json",
+    "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_EXPRESSION_REVIEW.txt",
+    "src/data/study_lessons/lessons/conversational/SOURCE_COVERAGE_CROSSWALK.txt",
+    "src/data/study_lessons/lessons/conversational/REGIONAL_EXPRESSION_MARKERS.json",
+    "src/data/study_lessons/lessons/conversational/GRAMMAR_DEDUP_AUDIT.json",
+    "src/data/study_lessons/lessons/conversational/LINGUISTIC_REVIEW_v1.1.4.md",
+    "src/data/study_lessons/lessons/conversational/PACKAGE_README.md",
+    "src/data/study_lessons/lessons/lesson-cards.json"
+  ]
+}

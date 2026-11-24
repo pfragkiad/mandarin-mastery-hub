@@ -30,7 +30,11 @@ A group of classmates identifies who is speaking, whom they address, and whom th
 
 我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.
 
-**Pattern:** pronoun + 是 + identity
+**Pattern**
+
+代词 + 是 + 身份  
+*dàicí + shì + shēnfèn*  
+&lt;pronoun&gt; + **是** + &lt;identity&gt;
 
 **他们是老师。**
 *Tāmen shì lǎoshī.*
@@ -44,7 +48,11 @@ We are friends.
 
 These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.
 
-**Pattern:** 他/她/它 + verb
+**Pattern**
+
+他/她/它 + 动词  
+*tā/tā/tā + dòngcí*  
+**他**/**她**/**它** + &lt;verb&gt;
 
 **她在看书。**
 *Tā zài kàn shū.*
@@ -176,3 +184,46 @@ It is a small cat.
 
 **Production:** Write this in Mandarin: “Everyone comes to class at two in the afternoon.”
 **Answer:** 大家下午两点来上课。 (dàjiā xiàwǔ liǎng diǎn lái shàngkè.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-personal-pronouns--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Person and number — ID: `topic-personal-pronouns--pattern--pattern-1`
+- [ ] Apply: Written 他 (tā), 她 (tā), 它 (tā) — ID: `topic-personal-pronouns--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: we — ID: `topic-personal-pronouns--build--build-sub-01`
+- [ ] Build a sentence: they — ID: `topic-personal-pronouns--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Who does 我们 (wǒmen) refer to in this passage? — ID: `topic-personal-pronouns--read--reading-q-01`
+- [ ] Are they at the same school? — ID: `topic-personal-pronouns--read--reading-q-02`
+
+### Speaking practice
+- [ ] Address several classmates with a yes/no question. — ID: `topic-personal-pronouns--speak--speaking-1`
+- [ ] Point to a pet and say it is a cat. — ID: `topic-personal-pronouns--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-personal-pronouns--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-personal-pronouns--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-personal-pronouns--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “everyone”? *(optional)* — ID: `topic-personal-pronouns--quiz--q-01-1`
+- [ ] Which expression means “she”? *(optional)* — ID: `topic-personal-pronouns--quiz--q-01-2`
+- [ ] Which expression means “we”? *(optional)* — ID: `topic-personal-pronouns--quiz--q-01-3`
+- [ ] In the example “大家都来了。” (dàjiā dōu lái le.), what is happening? — ID: `topic-personal-pronouns--quiz--q-01-4`
+- [ ] Write this in Mandarin: “Everyone comes to class at two in the afternoon.” — ID: `topic-personal-pronouns--quiz--q-01-5`
+- [ ] Reading comprehension: Who does 我们 (wǒmen) refer to in this passage? — ID: `topic-personal-pronouns--quiz--applied-reading-1`
+- [ ] Reading comprehension: Are they at the same school? — ID: `topic-personal-pronouns--quiz--applied-reading-2`
+- [ ] Say this aloud: Address several classmates with a yes/no question. — ID: `topic-personal-pronouns--quiz--applied-speaking-1`
+- [ ] Say this aloud: Point to a pet and say it is a cat. — ID: `topic-personal-pronouns--quiz--applied-speaking-2`

@@ -1,15 +1,15 @@
 {
   "package_name": "mandarin-tutor-core",
-  "package_version": "3.1.0",
+  "package_version": "3.3.0 (Rev. 2)",
   "lesson_schema_versions": [
-    "mandarin-character-lesson/3.0.0",
-    "mandarin-topic-lesson/3.1.0",
-    "mandarin-general-lesson/3.0.0"
+    "mandarin-character-lesson/3.2.0",
+    "mandarin-topic-lesson/3.3.0",
+    "mandarin-general-lesson/3.2.0"
   ],
   "curriculum_schema_version": "mandarin-curriculum/3.0.0",
   "renderer": "generate_lesson.py",
   "validator": "validate_core.py",
   "category_registry": "lesson_categories.json",
   "catalog": "catalog_ids.json (external Project Source)",
-  "note": "Core v3.1 adds topic communicative teaching sections and a non-redundant lesson renderer. Older v3.0 character/general/topic lessons remain valid; character and general schemas unchanged."
+  "note": "Core v3.3 adds checkpoint progress (progress.sections[].checkpoints with stable IDs and target_id), estimated_minutes and classification.icon_glyph. Older lesson versions remain valid. validate_core.py here also checks progress target IDs; generate_lesson.py is the v3.1 renderer."
 }

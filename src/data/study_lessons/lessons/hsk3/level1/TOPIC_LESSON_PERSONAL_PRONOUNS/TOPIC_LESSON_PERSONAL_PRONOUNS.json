@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-personal-pronouns",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,9 @@
       "pronouns",
       "personal-reference"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Identify first-, second- and third-person pronouns.",
@@ -27,7 +29,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -80,6 +82,7 @@
     "家": "Characters:家",
     "小": "Characters:小",
     "师": "Characters:师",
+    "年": "Characters:年",
     "很": "Characters:很",
     "您": "Characters:您",
     "我": "Characters:我",
@@ -115,7 +118,12 @@
     "进": "Characters:进",
     "都": "Characters:都",
     "里": "Characters:里",
-    "问": "Characters:问"
+    "问": "Characters:问",
+    "代": "Characters:代",
+    "份": "Characters:份",
+    "动": "Characters:动",
+    "词": "Characters:词",
+    "身": "Characters:身"
   },
   "sections": {
     "overview": {
@@ -162,7 +170,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 26
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-146",
@@ -202,7 +213,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 146
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-148",
@@ -229,11 +243,11 @@
             {
               "id": "ex-148-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "你们明天上午九点来。",
-              "pinyin": "nǐmen míngtiān shàngwǔ jiǔ diǎn lái.",
-              "english": "You all come tomorrow at nine in the morning.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "老师说：“你们明天上午九点来上课。”",
+              "pinyin": "lǎoshī shuō: “nǐmen míngtiān shàngwǔ jiǔ diǎn lái shàngkè.”",
+              "english": "The teacher said, “Come to class tomorrow at nine in the morning.”",
+              "teaching_note": "The teacher addresses a group directly in the quotation."
             }
           ],
           "learning_role": "introduced",
@@ -242,7 +256,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 148
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-150",
@@ -269,11 +286,11 @@
             {
               "id": "ex-150-2",
               "style": "written",
-              "register": "polite_instruction",
-              "hanzi": "您好，请进。",
-              "pinyin": "nín hǎo, qǐng jìn.",
-              "english": "Hello, please come in.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“您好，请进。”老师说。",
+              "pinyin": "“nín hǎo, qǐng jìn.” lǎoshī shuō.",
+              "english": "“Hello, please come in,” the teacher said.",
+              "teaching_note": "The respectful form of “you” is part of the greeting."
             }
           ],
           "learning_role": "introduced",
@@ -282,7 +299,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 150
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-200",
@@ -322,7 +342,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 200
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-201",
@@ -362,7 +385,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 201
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-202",
@@ -402,7 +428,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 202
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-203",
@@ -442,7 +471,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 203
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-204",
@@ -482,7 +514,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 204
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-205",
@@ -522,7 +557,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 205
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-221",
@@ -549,11 +587,11 @@
             {
               "id": "ex-221-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "我每天上午学习汉语。",
-              "pinyin": "wǒ měitiān shàngwǔ xuéxí Hànyǔ.",
-              "english": "I study Chinese every morning.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“我每天上午在学校学习汉语。”她说。",
+              "pinyin": "“wǒ měitiān shàngwǔ zài xuéxiào xuéxí hànyǔ.” tā shuō.",
+              "english": "“I study Chinese at school every morning,” she said.",
+              "teaching_note": "The first-person pronoun refers to the quoted speaker."
             }
           ],
           "learning_role": "introduced",
@@ -562,7 +600,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 221
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         },
         {
           "id": "w-222",
@@ -590,10 +631,10 @@
               "id": "ex-222-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我们每天一起读书。",
-              "pinyin": "wǒmen měitiān yìqǐ dúshū.",
-              "english": "We read together every day.",
-              "teaching_note": ""
+              "hanzi": "去年，我们一起在这个学校学习。",
+              "pinyin": "qùnián, wǒmen yìqǐ zài zhè ge xuéxiào xuéxí.",
+              "english": "Last year, we studied together at this school.",
+              "teaching_note": "The opening time word places this first-person account in the past."
             }
           ],
           "learning_role": "introduced",
@@ -602,7 +643,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 222
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "reference-questions"
         }
       ],
       "related_entries": []
@@ -786,7 +830,6 @@
           "id": "pattern-1",
           "title": "Person and number",
           "explanation_en": "我 (wǒ) and 我们 (wǒmen) represent the speaker and a group including the speaker. 你 (nǐ) and 你们 (nǐmen) address one or multiple people; 他们 (tāmen) refers to a group.",
-          "formula_en": "pronoun + 是 + identity",
           "examples": [
             {
               "hanzi": "他们是老师。",
@@ -798,13 +841,15 @@
               "pinyin": "Wǒmen shì péngyou.",
               "english": "We are friends."
             }
-          ]
+          ],
+          "pattern_hanzi": "代词 + 是 + 身份",
+          "pattern_pinyin": "dàicí + shì + shēnfèn",
+          "pattern_pseudo_translation": "<pronoun> + 是 + <identity>"
         },
         {
           "id": "pattern-2",
           "title": "Written 他 (tā), 她 (tā), 它 (tā)",
           "explanation_en": "These are pronounced identically in standard Mandarin but use different written characters for typical male, female, and nonhuman referents. Do not invent pronunciation differences.",
-          "formula_en": "他/她/它 + verb",
           "examples": [
             {
               "hanzi": "她在看书。",
@@ -816,7 +861,10 @@
               "pinyin": "Tā shì yì zhī xiǎo māo.",
               "english": "It is a small cat."
             }
-          ]
+          ],
+          "pattern_hanzi": "他/她/它 + 动词",
+          "pattern_pinyin": "tā/tā/tā + dòngcí",
+          "pattern_pseudo_translation": "他/她/它 + <verb>"
         }
       ],
       "guided_building": {
@@ -833,7 +881,8 @@
               "hanzi": "我们是学生。",
               "pinyin": "Wǒmen shì xuéshēng.",
               "english": "We are students."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "they",
@@ -841,7 +890,8 @@
               "hanzi": "他们是学生。",
               "pinyin": "Tāmen shì xuéshēng.",
               "english": "They are students."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -857,11 +907,13 @@
         "questions": [
           {
             "prompt_en": "Who does 我们 (wǒmen) refer to in this passage?",
-            "answer_en": "The speaker and their older sister."
+            "answer_en": "The speaker and their older sister.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Are they at the same school?",
-            "answer_en": "Yes."
+            "answer_en": "Yes.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -905,5 +957,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-personal-pronouns--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Person and number",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-personal-pronouns--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Written 他 (tā), 她 (tā), 它 (tā)",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: we",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-personal-pronouns--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: they",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--read--reading-q-01",
+            "kind": "question",
+            "label": "Who does 我们 (wǒmen) refer to in this passage?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-personal-pronouns--read--reading-q-02",
+            "kind": "question",
+            "label": "Are they at the same school?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Address several classmates with a yes/no question.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-personal-pronouns--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Point to a pet and say it is a cat.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-personal-pronouns--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-personal-pronouns--quiz--q-01-1",
+            "kind": "practice",
+            "label": "Which expression means “everyone”?",
+            "optional": true,
+            "target_id": "q-01-1"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--q-01-2",
+            "kind": "practice",
+            "label": "Which expression means “she”?",
+            "optional": true,
+            "target_id": "q-01-2"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--q-01-3",
+            "kind": "practice",
+            "label": "Which expression means “we”?",
+            "optional": true,
+            "target_id": "q-01-3"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--q-01-4",
+            "kind": "practice",
+            "label": "In the example “大家都来了。” (dàjiā dōu lái le.), what is happening?",
+            "optional": false,
+            "target_id": "q-01-4"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--q-01-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Everyone comes to class at two in the afternoon.”",
+            "optional": false,
+            "target_id": "q-01-5"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Who does 我们 (wǒmen) refer to in this passage?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Are they at the same school?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Address several classmates with a yes/no question.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-personal-pronouns--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Point to a pet and say it is a cat.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

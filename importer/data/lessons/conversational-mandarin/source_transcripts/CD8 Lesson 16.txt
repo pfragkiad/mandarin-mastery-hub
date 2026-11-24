@@ -1,0 +1,299 @@
+[1.87 - 5.87] This is Unit 16 of Pimsleur's Mandarin Chinese 1.
+[6.81 - 8.87] 请(qǐng) 听(tīng) 这段(zhè duàn) 电话(diàn huà) 对话(duì huà)。
+[9.65 - 11.87] Please listen to this telephone conversation.
+[12.81 - 14.81] Ms. Wang is speaking with Mr. Wu.
+[15.63 - 17.87] In the conversation, you will hear the man say,
+[18.11 - 18.87] 现在(xiàn zài) 太晚(tài wǎn) 了(le)。
+[19.67 - 21.39] or, now it's too late.
+[23.87 - 24.87] 请(qǐng) 听(tīng) 这段(zhè duàn) 电话(diàn huà) 对话(duì huà)。
+[25.39 - 26.93] 是(shì) 吴先生(wú xiān shēng) 吗(ma)?
+[27.35 - 27.87] 你好(nǐ hǎo)。
+[28.39 - 30.09] 王小姐(wáng xiǎo jiě),你好(nǐ hǎo)。
+[30.09 - 33.23] 吴先生(wú xiān shēng),你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃晚饭(chī wǎn fàn) 吗(ma)?
+[33.73 - 38.51] 什么(shén me) 时候(shí hòu)?今天(jīn tiān) 晚上(wǎn shàng) 不行(bù xíng),现在(xiàn zài) 太晚(tài wǎn) 了(le)。
+[38.97 - 43.39] 不是(bú shì) 今天(jīn tiān) 晚上(wǎn shàng),明天(míng tiān) 晚上(wǎn shàng) 七点钟(qī diǎn zhōng),好(hǎo) 吗(ma)?
+[43.87 - 45.75] 好(hǎo),再(zài) 听(tīng) 一次(yī cì)。
+[46.75 - 48.59] 是(shì) 吴先生(wú xiān shēng) 吗(ma)?你好(nǐ hǎo)。
+[49.25 - 50.39] 王小姐(wáng xiǎo jiě),你好(nǐ hǎo)。
+[50.97 - 54.09] 吴先生(wú xiān shēng),你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 吃晚饭(chī wǎn fàn) 吗(ma)?
+[54.09 - 59.39] 什么(shén me) 时候(shí hòu)?今天(jīn tiān) 晚上(wǎn shàng) 不行(bù xíng),现在(xiàn zài) 太晚(tài wǎn) 了(le)。
+[59.39 - 64.25] 不是(bú shì) 今天(jīn tiān) 晚上(wǎn shàng),明天(míng tiān) 晚上(wǎn shàng) 七点钟(qī diǎn zhōng),好(hǎo) 吗(ma)?
+[64.71 - 65.07] 好(hǎo)
+[65.07 - 70.61] Do you remember the word you use when handing something to somebody?
+[73.47 - 76.84] No, no
+[76.84 - 80.90] Say, for you
+[80.90 - 91.46] 给(gěi) 你(nǐ) 的(de),给(gěi) 你(nǐ) 的(de)
+[91.46 - 97.13] Try to ask, is it for me?
+[101.60 - 107.68] 是不是(shì bú shì) 给(gěi) 我(wǒ) 的(de),是不是(shì bú shì)?
+[108.34 - 112.56] How else could you ask this question?
+[116.09 - 120.80] 是(shì) 给(gěi) 我(wǒ) 的(de) 吗(ma),吗(ma)?
+[120.80 - 125.72] In this unit, we'll use both forms.
+[126.42 - 128.12] Ask again, is it for me?
+[128.88 - 131.48] Use the 吗(ma) form first.
+[135.00 - 140.50] 是(shì) 给(gěi) 我(wǒ) 的(de) 吗(ma)?是不是(shì bú shì) 给(gěi) 我(wǒ) 的(de)?
+[141.00 - 146.66] How does he answer, yes, it is for you?
+[151.76 - 162.60] 是(shì),是(shì) 给(gěi) 你(nǐ) 的(de),是(shì) 给(gěi) 你(nǐ) 的(de)。
+[162.60 - 163.36] Thank you.
+[166.94 - 167.48] 谢谢(xiè xiè) 你(nǐ)。
+[170.48 - 171.56] Don't mention it.
+[174.57 - 175.61] 不(bù) 客气(kè qì)。
+[175.61 - 179.93] Ask, what did you say?
+[183.40 - 184.18] 你(nǐ) 说(shuō) 什么(shén me)?
+[184.18 - 190.12] Now try to ask, what would you like to buy?
+[195.02 - 196.24] 你(nǐ) 想(xiǎng) 买(mǎi) 什么(shén me)?
+[202.24 - 207.65] Say, I don't know.
+[211.07 - 211.63] 我(wǒ) 不(bù) 知道(zhī dào)
+[211.63 - 217.37] Ask him how much money it is.
+[221.25 - 221.95] 多少(duō shǎo) 钱(qián)?
+[225.39 - 227.83] How would he say, ten renminbi?
+[232.84 - 233.52] 十块(shí kuài) 人民币(rén mín bì)
+[233.52 - 244.90] Say, I don't have any.
+[252.03 - 252.67] 我(wǒ) 没有(méi yǒu)
+[252.67 - 259.47] Ask, what about American dollars? How much money?
+[265.28 - 267.06] 美金(měi jīn) 呢(ne)?多少(duō shǎo) 钱(qián)?
+[274.88 - 282.72] He says, give me renminbi.
+[287.04 - 292.44] 给(gěi) 我(wǒ) 人民币(rén mín bì)。
+[292.44 - 299.94] Tell him you don't have any renminbi.
+[304.57 - 305.85] 我(wǒ) 没有(méi yǒu) 人民币(rén mín bì)。
+[305.85 - 311.72] He answers, I don't understand.
+[320.49 - 321.29] 我(wǒ) 不(bù) 明白(míng bái)。明白(míng bái)。
+[321.29 - 325.70] How do you say, I can?
+[325.84 - 328.10] In the sense of, I am able to.
+[331.26 - 332.18] 我(wǒ) 可以(kě yǐ)。
+[332.18 - 338.17] 可以(kě yǐ)。
+[338.17 - 339.87] Say, you can.
+[344.38 - 345.14] 你(nǐ) 可以(kě yǐ)。
+[345.14 - 350.76] And how do you ask, can you?
+[360.50 - 360.90] 你(nǐ) 可以(kě yǐ) 吗(ma)?你(nǐ) 可不可以(kě bù kě yǐ)?
+[361.52 - 367.91] Say, I can give you American dollars.
+[373.56 - 374.44] 我(wǒ) 可以(kě yǐ) 给(gěi) 你(nǐ) 美金(měi jīn)。
+[374.44 - 381.08] Ask me if I want any American dollars.
+[386.04 - 392.18] 你(nǐ) 要(yào) 美金(měi jīn) 吗(ma)?你(nǐ) 要(yào) 不要(bú yào) 美金(měi jīn)?
+[392.18 - 399.51] Say, I don't want any American dollars
+[399.51 - 405.34] 我(wǒ) 不要(bú yào) 美金(měi jīn)
+[405.34 - 410.86] 我(wǒ) 不要(bú yào)
+[410.86 - 415.90] Say, I give
+[415.90 - 417.56] Or, I'm giving
+[417.56 - 420.70] 我(wǒ) 给(gěi)
+[420.70 - 423.79] 我(wǒ) 给(gěi)
+[423.79 - 429.97] Now say, I'm giving you 17 American dollars
+[429.97 - 438.32] 我(wǒ) 给(gěi) 你(nǐ)17块(kuài) 美金(měi jīn)
+[438.32 - 445.04] 17
+[445.04 - 450.57] Try to say, that's a lot of money
+[450.57 - 452.63] That's is understood
+[452.63 - 457.23] 很多(hěn duō) 钱(qián)
+[457.23 - 461.85] hǎn duō qián
+[461.85 - 466.00] Now say,
+[466.40 - 469.34] Eighteen American dollars, that's a lot of money.
+[476.55 - 479.23] shí bā kuài měi jīn, hǎn duō qián
+[479.23 - 488.43] You want to say, it's too much.
+[489.11 - 490.51] First the word, too.
+[491.51 - 492.53] qǐng gēn zhè shuō
+[492.53 - 500.58] tài, tài, tài
+[500.58 - 503.04] is pronounced with a falling tone.
+[503.68 - 506.12] Say, too, or excessively.
+[508.96 - 513.16] tài, it's too much.
+[514.24 - 536.82] 请(qǐng) 跟着(gēn zhe) 说(shuō),太多(tài duō) 了(le),了(le),了(le),多(duō) 了(le),太(tài),太多(tài duō) 了(le)。
+[536.82 - 541.48] The 了(le) sound at the end is pronounced with a soft falling tone.
+[542.26 - 546.50] It's a particle which has no equivalent in English, but it's used with too.
+[547.30 - 548.88] Say, it's too much.
+[551.82 - 552.62] 太多(tài duō) 了(le)。
+[552.62 - 557.52] Now try to say, it's too much money.
+[558.20 - 559.74] 了(le) will go at the end.
+[563.82 - 567.70] 太多(tài duō) 钱(qián) 了(le)。
+[567.70 - 571.91] 太多(tài duō) 钱(qián) 了(le)。
+[571.91 - 576.85] Ask me how much money I have.
+[581.76 - 582.48] 你(nǐ) 有(yǒu) 多少(duō shǎo) 钱(qián)?
+[586.82 - 588.72] And now say twelve.
+[591.54 - 594.64] 十二(shí èr)。
+[594.64 - 597.28] Try to say twenty or two ten.
+[603.83 - 604.51] 二十(èr shí)。
+[604.51 - 609.83] Now try to say I have twenty American dollars.
+[617.56 - 623.37] 我(wǒ) 有(yǒu) 二十块(èr shí kuài) 美金(měi jīn)。
+[623.37 - 624.41] 二十(èr shí)。
+[624.41 - 628.63] Try to say twenty-four.
+[632.82 - 635.94] 二十四(èr shí sì)。
+[635.94 - 639.83] 四(sì) 二十四(èr shí sì)
+[639.83 - 645.92] Try to tell me you have twenty-five American dollars.
+[653.07 - 661.96] 我(wǒ) 有(yǒu) 二十五块(èr shí wǔ kuài) 美金(měi jīn) 二十五(èr shí wǔ)
+[661.96 - 667.03] Now say the number twenty-eight.
+[669.97 - 674.51] 二十八(èr shí bā) 二十八(èr shí bā)
+[674.51 - 679.28] Say, that's a lot of money.
+[682.92 - 688.44] 很多(hěn duō) 钱(qián) 很多(hěn duō) 钱(qián)
+[688.44 - 694.32] And how do you say, it's too much?
+[694.32 - 704.54] 太多(tài duō) 了(le) 太太(tài tài) 多(duō) 了(le)
+[707.33 - 709.05] Say, it's too much money.
+[712.70 - 717.28] 太多(tài duō) 钱(qián) 了(le)。
+[717.28 - 724.14] Can you guess how you would say thirty?
+[731.37 - 732.01] 三十(sān shí)。
+[732.01 - 738.16] That's a high-level tone and a falling tone.
+[739.04 - 740.18] Say again, thirty.
+[743.75 - 744.43] 三十(sān shí)。
+[744.43 - 749.72] Now say, I have thirty American dollars.
+[757.14 - 757.90] 我(wǒ) 有(yǒu) 三十块(sān shí kuài) 美金(měi jīn)。
+[757.90 - 765.42] Tell me that you have thirty renminbi.
+[772.94 - 781.92] Now tell me that you have thirty-nine renminbi.
+[789.60 - 798.25] 我(wǒ) 有(yǒu) 三十九(sān shí jiǔ) 块(kuài) 人民币(rén mín bì)。
+[798.25 - 803.19] 三十九(sān shí jiǔ)。
+[803.19 - 805.51] Try to say twenty-nine units.
+[810.35 - 814.62] 二十九(èr shí jiǔ) 块(kuài)。
+[814.62 - 816.28] Now say nineteen.
+[824.60 - 825.24] 十九(shí jiǔ)。
+[825.24 - 829.96] Ask, is it for me?
+[839.19 - 839.67] 是(shì) 给(gěi) 我(wǒ) 的(de) 吗(ma)?是不是(shì bú shì) 给(gěi) 我(wǒ) 的(de)?
+[840.17 - 845.74] How do you say, that's too much?
+[848.65 - 849.45] 太多(tài duō) 了(le)。
+[849.45 - 854.08] Here's how to say, it's enough.
+[855.08 - 857.38] 请(qǐng) 跟着(gēn zhe) 说(shuō)。
+[857.38 - 860.86] 够(gòu) 了(le)。
+[860.86 - 863.40] 了(le)。
+[863.40 - 866.53] 够(gòu)。
+[866.53 - 869.80] 够(gòu)。
+[869.80 - 870.96] 够(gòu) 了(le)。
+[870.96 - 875.96] This is pronounced with two falling tones.
+[876.66 - 877.88] Say, it's enough.
+[880.92 - 881.80] 够(gòu) 了(le)。
+[881.80 - 886.32] Try to say, it's not enough.
+[886.74 - 888.92] With the negative, you don't need.
+[889.30 - 892.82] 了(le)。
+[892.82 - 893.86] 不够(bù gòu)。
+[893.86 - 897.07] 不够(bù gòu)。
+[897.07 - 901.72] Now say together, it's enough.
+[901.72 - 903.24] It's not enough.
+[908.60 - 915.33] 够(gòu) 了(le),不够(bù gòu)。
+[915.33 - 917.75] Say, thirty-five, it's enough.
+[922.61 - 928.50] 三十五(sān shí wǔ),够(gòu) 了(le)。
+[928.50 - 929.68] Is it too much?
+[933.02 - 938.40] 太多(tài duō) 了(le) 吗(ma)?是不是(shì bú shì) 太多(tài duō) 了(le)?
+[942.48 - 945.08] Try to say, no, but it's enough.
+[950.12 - 959.51] 不是(bú shì),可是(kě shì) 够(gòu) 了(le),不是(bú shì)。
+[959.51 - 961.45] Now say, it's too much.
+[964.90 - 965.90] 太多(tài duō) 了(le)。
+[965.90 - 970.46] Say, it's too much money.
+[974.57 - 975.61] 太多(tài duō) 钱(qián) 了(le)。
+[975.61 - 980.58] Try to say the number forty.
+[985.00 - 996.01] Forty is pronounced with first a falling tone, then a rising tone.
+[996.51 - 998.55] Say, forty American dollars.
+[1003.20 - 1004.58] 四十块(sì shí kuài) 美金(měi jīn)
+[1004.58 - 1012.48] And how would you say, fourteen American dollars?
+[1018.42 - 1023.06] 十四块(shí sì kuài) 美金(měi jīn)
+[1023.06 - 1023.82] 十四(shí sì)
+[1023.82 - 1029.58] Say, forty, fourteen.
+[1037.19 - 1037.83] 四十(sì shí),十四(shí sì)
+[1037.83 - 1046.52] Try to say, give me forty-seven renminbi.
+[1046.52 - 1062.56] 给(gěi) 我(wǒ) 四十七(sì shí qī) 块(kuài) 人民币(rén mín bì),四十七(sì shí qī)
+[1062.56 - 1068.67] Say, forty-six, it's enough
+[1068.67 - 1075.64] 四十六(sì shí liù),够(gòu) 了(le)
+[1075.64 - 1085.76] How would you ask if it's for you?
+[1089.92 - 1095.75] 是(shì) 给(gěi) 我(wǒ) 的(de) 吗(ma)?是不是(shì bú shì) 给(gěi) 我(wǒ) 的(de)?
+[1096.25 - 1102.03] Now say, it's not enough
+[1102.03 - 1108.13] 不够(bù gòu),不够(bù gòu)
+[1108.13 - 1113.36] Say, I want forty-eight renminbi
+[1113.36 - 1128.68] 我要(wǒ yào) 四十八(sì shí bā) 块(kuài) 人民币(rén mín bì),四十八(sì shí bā)
+[1128.68 - 1133.29] Say, thirty-eight.
+[1136.73 - 1141.67] 三十八(sān shí bā),三十八(sān shí bā)
+[1141.67 - 1146.50] Now say, twenty-eight.
+[1149.64 - 1154.34] 二十八(èr shí bā),二十八(èr shí bā)
+[1154.34 - 1158.15] Eighteen.
+[1161.00 - 1165.20] 十八(shí bā),十八(shí bā)
+[1165.20 - 1169.16] Say, nineteen.
+[1172.74 - 1177.74] 十九(shí jiǔ),十九(shí jiǔ)
+[1177.74 - 1183.89] Ask, how many American dollars do you want?
+[1188.73 - 1196.34] 你(nǐ) 要(yào) 多少(duō shǎo) 美金(měi jīn)?多少(duō shǎo) 美金(měi jīn)?
+[1196.34 - 1203.40] Now say, give me some American dollars.
+[1208.46 - 1210.06] 给(gěi) 我(wǒ) 一点(yì diǎn) 美金(měi jīn)
+[1210.06 - 1216.69] Say, I can't.
+[1220.87 - 1221.85] 我(wǒ) 不(bù) 可以(kě yǐ)
+[1221.85 - 1234.35] Say, I don't have any American dollars.
+[1238.70 - 1239.96] 我(wǒ) 没有(méi yǒu) 美金(měi jīn)
+[1239.96 - 1251.58] Say, I don't have any.
+[1255.09 - 1256.01] 我(wǒ) 没有(méi yǒu)
+[1256.01 - 1266.49] Try to ask, do you have any money?
+[1266.49 - 1274.87] 你(nǐ) 有钱(yǒu qián) 吗(ma)?你(nǐ) 有没有(yǒu méi yǒu) 钱(qián)?
+[1278.89 - 1280.71] Say, I want some money.
+[1285.84 - 1286.64] 我要(wǒ yào) 一点(yì diǎn) 钱(qián)。
+[1286.64 - 1293.45] And how would you tell me that you would like to buy something?
+[1299.55 - 1300.31] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 东西(dōng xī)。
+[1300.31 - 1308.86] How do you ask, can you, or are you able to?
+[1316.18 - 1316.42] 你(nǐ) 可以(kě yǐ) 吗(ma)?你(nǐ) 可不可以(kě bù kě yǐ)?
+[1320.16 - 1323.30] Ask the man if he is able to give some money to you.
+[1330.33 - 1337.30] 你(nǐ) 可以(kě yǐ) 给(gěi) 我(wǒ) 一点(yì diǎn) 钱(qián) 吗(ma)?你(nǐ) 可不可以(kě bù kě yǐ)?
+[1337.32 - 1339.48] 你(nǐ) 可以(kě yǐ) 给(gěi) 我(wǒ) 一点(yì diǎn) 钱(qián)。
+[1339.48 - 1347.85] Say, I don't have any money.
+[1357.44 - 1358.24] 我(wǒ) 没有(méi yǒu) 钱(qián),我(wǒ) 没有(méi yǒu)。
+[1358.24 - 1363.14] Try to say, yes, you have some.
+[1374.64 - 1378.10] 有(yǒu),你(nǐ) 有(yǒu),你(nǐ) 有(yǒu)。
+[1378.10 - 1379.98] Say, you have a lot.
+[1388.61 - 1389.45] 你(nǐ) 有(yǒu) 很多(hěn duō),你(nǐ) 有(yǒu) 很多(hěn duō)。
+[1389.45 - 1395.79] Say, okay, here's 25 renminbi.
+[1403.38 - 1413.64] 好(hǎo),25块(kuài) 人民币(rén mín bì)。
+[1413.64 - 1421.98] No, 二十五块(èr shí wǔ kuài) 人民币(rén mín bì)。
+[1421.98 - 1423.88] Say, thank you, it's enough.
+[1428.42 - 1436.95] 谢谢(xiè xiè) 你(nǐ),够(gòu) 了(le),够(gòu) 了(le)。
+[1436.95 - 1439.11] Respond, don't mention it.
+[1442.12 - 1449.10] 不(bù) 客气(kè qì),不(bù) 客气(kè qì)。
+[1449.10 - 1451.16] Now some arithmetic in Mandarin.
+[1452.02 - 1453.74] 请(qǐng) 回答(huí dá) 问题(wèn tí)。
+[1453.74 - 1455.32] Please answer the questions.
+[1458.06 - 1459.50] 请(qǐng) 回答(huí dá) 问题(wèn tí)。
+[1459.50 - 1462.30] 二加(èr jiā) 三(sān) 是(shì) 多少(duō shǎo)?
+[1462.30 - 1465.94] 2加(jiā)3是(shì) 多少(duō shǎo)?
+[1469.31 - 1469.83] 5
+[1469.83 - 1475.44] 5加(jiā)3是(shì) 多少(duō shǎo)?
+[1478.50 - 1478.80] 8
+[1478.80 - 1484.63] 8加(jiā)5是(shì) 多少(duō shǎo)?
+[1488.20 - 1488.76] 13
+[1488.76 - 1498.48] 11加(jiā)4是(shì) 多少(duō shǎo)?
+[1501.66 - 1502.44] 15
+[1502.44 - 1511.66] 13加(jiā)4是(shì) 多少(duō shǎo)?
+[1515.30 - 1515.98] 17
+[1515.98 - 1525.40] 十六(shí liù) 加四是(jiā sì shì) 多少(duō shǎo)
+[1525.40 - 1529.07] 二十(èr shí)
+[1529.07 - 1537.77] 二十(èr shí) 加六是(jiā liù shì) 多少(duō shǎo)
+[1537.77 - 1541.84] 二十六(èr shí liù)
+[1541.84 - 1551.42] 二十八(èr shí bā) 加四是(jiā sì shì) 多少(duō shǎo)
+[1551.42 - 1555.42] 二十八(èr shí bā) 加四是(jiā sì shì) 多少(duō shǎo)
+[1555.42 - 1560.01] 三十二(sān shí èr)
+[1560.01 - 1569.20] 三十二(sān shí èr) 加二是(jiā èr shì) 多少(duō shǎo)
+[1569.20 - 1573.68] 三十二(sān shí èr) 加二是(jiā èr shì) 多少(duō shǎo)?
+[1578.04 - 1578.92] 三十四(sān shí sì)
+[1578.92 - 1589.83] 三十三(sān shí sān) 加十是(jiā shí shì) 多少(duō shǎo)?
+[1590.93 - 1594.37] 三十三(sān shí sān) 加十是(jiā shí shì) 多少(duō shǎo)?
+[1597.73 - 1598.55] 四十三(sì shí sān)
+[1598.55 - 1607.12] It's enough
+[1607.12 - 1613.56] 够(gòu) 了(le)
+[1613.56 - 1622.12] 现在(xiàn zài) 你(nǐ) 会(huì) 跟(gēn) 这位(zhè wèi) 先生(xiān shēng) 对话(duì huà)
+[1622.12 - 1625.38] Now a conversation with the gentleman
+[1625.38 - 1629.52] 现在(xiàn zài) 你(nǐ) 会(huì) 跟(gēn) 这位(zhè wèi) 先生(xiān shēng) 对话(duì huà)
+[1629.52 - 1632.06] Please answer affirmatively
+[1632.06 - 1636.84] The secret of the conversation is that you should listen for the verb
+[1636.84 - 1643.02] For example, if he says, can you do so-and-so, then you answer, yes, I can
+[1643.02 - 1650.06] If he says, do you have so-and-so, then you answer, yes, I have, and so on
+[1650.06 - 1651.30] Let's begin
+[1651.30 - 1654.36] 请问(qǐng wèn),你(nǐ) 有钱(yǒu qián) 吗(ma)?
+[1660.14 - 1661.70] 有(yǒu),我(wǒ) 有钱(yǒu qián)
+[1661.70 - 1666.99] 我(wǒ) 有(yǒu)
+[1666.99 - 1671.27] 你(nǐ) 有(yǒu) 很多(hěn duō) 钱(qián) 吗(ma)?
+[1677.94 - 1679.88] 是(shì),我(wǒ) 有(yǒu) 很多(hěn duō) 钱(qián)
+[1679.88 - 1686.77] 我(wǒ) 有(yǒu) 很多(hěn duō) 钱(qián)
+[1686.77 - 1692.62] 你(nǐ) 有(yǒu) 美金(měi jīn) 吗(ma)?
+[1698.51 - 1700.13] 有(yǒu),我(wǒ) 有(yǒu) 美金(měi jīn)
+[1700.13 - 1708.50] 你(nǐ) 想(xiǎng) 跟(gēn) 我(wǒ) 一起(yì qǐ) 喝(hē) 一点(yì diǎn) 东西(dōng xī) 吗(ma)?
+[1711.53 - 1715.56] 想(xiǎng),想(xiǎng)
+[1715.56 - 1718.72] 我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 喝(hē) 一点(yì diǎn) 东西(dōng xī)
+[1718.72 - 1737.13] 我(wǒ) 想(xiǎng) 跟(gēn) 你(nǐ) 一起(yì qǐ) 喝(hē) 一点(yì diǎn) 东西(dōng xī)。
+[1737.13 - 1739.07] 你(nǐ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 啤酒(pí jiǔ) 吗(ma)?
+[1746.09 - 1746.33] 想(xiǎng)。
+[1747.25 - 1749.33] 我(wǒ) 想(xiǎng) 喝(hē) 一点(yì diǎn) 啤酒(pí jiǔ)。
+[1756.59 - 1758.05] 可是(kě shì) 我(wǒ) 没有(méi yǒu)。
+[1758.83 - 1760.33] 你(nǐ) 可以(kě yǐ) 买(mǎi) 一点(yì diǎn) 吗(ma)?
+[1763.87 - 1763.93] 可以(kě yǐ)。
+[1767.60 - 1768.30] 我(wǒ) 可以(kě yǐ) 买(mǎi) 一点(yì diǎn)。
+[1773.76 - 1774.26] 好(hǎo)。
+[1774.94 - 1777.66] This is the end of Unit 16.
+[1778.62 - 1781.02] We hope you've enjoyed learning your new language.
+[1781.02 - 1788.18] To continue your study of Mandarin Chinese using the Pimsleur method, please visit us at pimsleur.com.
+[1789.12 - 1791.84] This has been a presentation of Simon & Schuster Audio.
+[1792.92 - 1796.70] Copyright 2005 by Simon & Schuster Incorporated.
+[1797.42 - 1801.50] Recording copyright 2005 by Simon & Schuster Incorporated.
+[1802.16 - 1803.18] All rights reserved.

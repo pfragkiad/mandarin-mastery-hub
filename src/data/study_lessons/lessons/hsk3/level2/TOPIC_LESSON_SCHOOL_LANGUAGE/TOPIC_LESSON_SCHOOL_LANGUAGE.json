@@ -1,0 +1,1318 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-words-classes-and-examinations",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Words, Classes and Examinations",
+    "subtitle": "Classroom objects and study skills",
+    "description": "Talk about school, classrooms, word meanings, teachers, tests and stationery.",
+    "slug": "words-classes-and-examinations"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language"
+    ],
+    "tags": [
+      "classroom-objects-and-study-skills",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Ask about a word and recognize the reply.",
+    "Identify classroom items such as 笔 (bǐ) and 本子 (běnzi).",
+    "Discuss tests and the school year."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "全": "Characters:全",
+    "关": "Characters:关",
+    "写": "Characters:写",
+    "准": "Characters:准",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "可": "Characters:可",
+    "同": "Characters:同",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "备": "Characters:备",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忘": "Characters:忘",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "懂": "Characters:懂",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "笔": "Characters:笔",
+    "系": "Characters:系",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "能": "Characters:能",
+    "认": "Characters:认",
+    "让": "Characters:让",
+    "记": "Characters:记",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "题": "Characters:题",
+    "高": "Characters:高",
+    "人": "Characters:人",
+    "内": "Characters:内",
+    "容": "Characters:容",
+    "时": "Characters:时",
+    "者": "Characters:者",
+    "间": "Characters:间"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Talk about school, classrooms, word meanings, teachers, tests and stationery.",
+      "focus": "Ask about a word and recognize the reply."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-304",
+          "hanzi": "班",
+          "pinyin": "bān",
+          "meaning_en": "class; group of students",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "numbers-quantities"
+          ],
+          "examples": [
+            {
+              "id": "ex-304-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在哪个班？",
+              "pinyin": "nǐ zài nǎge bān?",
+              "english": "Which class are you in?",
+              "teaching_note": "A short spoken example using 班."
+            },
+            {
+              "id": "ex-304-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们班有二十个学生。",
+              "pinyin": "wǒmen bān yǒu èr shí gè xuéshēng.",
+              "english": "Our class has twenty students.",
+              "teaching_note": "A simple written example using 班."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 304
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-308",
+          "hanzi": "本子",
+          "pinyin": "běnzi",
+          "meaning_en": "notebook; exercise book",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-308-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的本子在哪儿？",
+              "pinyin": "nǐ de běnzi zài nǎr?",
+              "english": "Where is your notebook?",
+              "teaching_note": "A short spoken example using 本子."
+            },
+            {
+              "id": "ex-308-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生在本子上写汉字。",
+              "pinyin": "xuéshēng zài běnzi shàng xiě Hànzì.",
+              "english": "The students write Chinese characters in their notebooks.",
+              "teaching_note": "A simple written example using 本子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 308
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-310",
+          "hanzi": "笔",
+          "pinyin": "bǐ",
+          "meaning_en": "pen; writing instrument",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "home-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-310-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有笔吗？",
+              "pinyin": "nǐ yǒu bǐ ma?",
+              "english": "Do you have a pen?",
+              "teaching_note": "A short spoken example using 笔."
+            },
+            {
+              "id": "ex-310-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上有笔和本子。",
+              "pinyin": "zhuōzi shàng yǒu bǐ hé běnzi.",
+              "english": "There are pens and notebooks on the table.",
+              "teaching_note": "A simple written example using 笔."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 310
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-322",
+          "hanzi": "词",
+          "pinyin": "cí",
+          "meaning_en": "word; term",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-322-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个词是什么意思？",
+              "pinyin": "zhège cí shì shénme yìsi?",
+              "english": "What does this word mean?",
+              "teaching_note": "A short spoken example using 词."
+            },
+            {
+              "id": "ex-322-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师今天教了五个新词。",
+              "pinyin": "lǎoshī jīntiān jiāo le wǔ gè xīn cí.",
+              "english": "The teacher taught five new words today.",
+              "teaching_note": "A simple written example using 词."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 322
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-337",
+          "hanzi": "懂",
+          "pinyin": "dǒng",
+          "meaning_en": "to understand",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-337-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你懂了吗？",
+              "pinyin": "nǐ dǒng le ma?",
+              "english": "Do you understand?",
+              "teaching_note": "A short spoken example using 懂."
+            },
+            {
+              "id": "ex-337-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生能听懂中文。",
+              "pinyin": "xuéshēng néng tīng dǒng Zhōngwén.",
+              "english": "The students can understand spoken Chinese.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 337
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-342",
+          "hanzi": "高中",
+          "pinyin": "gāozhōng",
+          "meaning_en": "senior high school",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-342-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你上高中了吗？",
+              "pinyin": "nǐ shàng gāozhōng le ma?",
+              "english": "Are you in high school now?",
+              "teaching_note": "A short spoken example using 高中."
+            },
+            {
+              "id": "ex-342-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我姐姐明年上高中。",
+              "pinyin": "wǒ jiějie míngnián shàng gāozhōng.",
+              "english": "My older sister will attend high school next year.",
+              "teaching_note": "A simple written example using 高中."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 342
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-367",
+          "hanzi": "教",
+          "pinyin": "jiāo",
+          "meaning_en": "to teach",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-367-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "谁教你汉语？",
+              "pinyin": "shéi jiāo nǐ Hànyǔ?",
+              "english": "Who teaches you Chinese?",
+              "teaching_note": "A short spoken example using 教."
+            },
+            {
+              "id": "ex-367-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师每天教学生写汉字。",
+              "pinyin": "lǎoshī měi tiān jiāo xuéshēng xiě Hànzì.",
+              "english": "The teacher teaches the students to write Chinese characters every day.",
+              "teaching_note": "A simple written example using 教."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 367
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-368",
+          "hanzi": "教室",
+          "pinyin": "jiàoshì",
+          "meaning_en": "classroom",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-368-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "教室在哪儿？",
+              "pinyin": "jiàoshì zài nǎr?",
+              "english": "Where is the classroom?",
+              "teaching_note": "A short spoken example using 教室."
+            },
+            {
+              "id": "ex-368-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们在教室里看书。",
+              "pinyin": "xuéshēngmen zài jiàoshì lǐ kàn shū.",
+              "english": "The students are reading in the classroom.",
+              "teaching_note": "A simple written example using 教室."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 368
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-379",
+          "hanzi": "开学",
+          "pinyin": "kāixué",
+          "meaning_en": "school term begins",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-379-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "明天开学吗？",
+              "pinyin": "míngtiān kāixué ma?",
+              "english": "Does school start tomorrow?",
+              "teaching_note": "A short spoken example using 开学."
+            },
+            {
+              "id": "ex-379-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校下个星期一开学。",
+              "pinyin": "xuéxiào xià gè xīngqī yì kāixué.",
+              "english": "The school term starts next Monday.",
+              "teaching_note": "A simple written example using 开学."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 379
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-380",
+          "hanzi": "考",
+          "pinyin": "kǎo",
+          "meaning_en": "to take an exam; to test",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-380-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你明天考汉语吗？",
+              "pinyin": "nǐ míngtiān kǎo Hànyǔ ma?",
+              "english": "Are you taking a Chinese test tomorrow?",
+              "teaching_note": "A short spoken example using 考."
+            },
+            {
+              "id": "ex-380-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师今天考了我们十个汉字。",
+              "pinyin": "lǎoshī jīntiān kǎo le wǒmen shí gè Hànzì.",
+              "english": "The teacher tested us on ten Chinese characters today.",
+              "teaching_note": "A simple written example using 考."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 380
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-381",
+          "hanzi": "考试",
+          "pinyin": "kǎoshì",
+          "meaning_en": "exam; examination; to take an exam",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-381-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你明天考试吗？",
+              "pinyin": "nǐ míngtiān kǎoshì ma?",
+              "english": "Do you have an exam tomorrow?",
+              "teaching_note": "A short spoken example using 考试."
+            },
+            {
+              "id": "ex-381-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天下午有汉语考试。",
+              "pinyin": "jīntiān xiàwǔ yǒu Hànyǔ kǎoshì.",
+              "english": "There is a Chinese exam this afternoon.",
+              "teaching_note": "A simple written example using 考试."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 381
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-442",
+          "hanzi": "题",
+          "pinyin": "tí",
+          "meaning_en": "question; exercise; problem (in a test)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language"
+          ],
+          "examples": [
+            {
+              "id": "ex-442-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这题怎么做？",
+              "pinyin": "zhè tí zěnme zuò?",
+              "english": "How do you solve this question?",
+              "teaching_note": "A short spoken example using 题."
+            },
+            {
+              "id": "ex-442-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天的考试有很多题。",
+              "pinyin": "jīntiān de kǎoshì yǒu hěn duō tí.",
+              "english": "Today's exam has many questions.",
+              "teaching_note": "A simple written example using 题."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 442
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-027",
+          "hanzi": "大学",
+          "pinyin": "dàxué",
+          "meaning_en": "university",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "places-directions"
+          ],
+          "examples": [
+            {
+              "id": "ex-027-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在大学学习中文。",
+              "pinyin": "wǒ zài dàxué xuéxí Zhōngwén.",
+              "english": "I study Chinese at university.",
+              "teaching_note": "大学 is the institution; 在 + place gives the location of the study activity."
+            },
+            {
+              "id": "ex-027-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学里有很多学生。",
+              "pinyin": "dàxué lǐ yǒu hěn duō xuéshēng.",
+              "english": "There are many students at the university.",
+              "teaching_note": "School or study context showing 大学 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 27
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-028",
+          "hanzi": "大学生",
+          "pinyin": "dàxuéshēng",
+          "meaning_en": "university student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-028-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是大学生。",
+              "pinyin": "tā shì dàxuéshēng.",
+              "english": "She is a university student.",
+              "teaching_note": "大学生 refers to a university-level student, not an elementary-school pupil."
+            },
+            {
+              "id": "ex-028-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学生也可以在这里读书。",
+              "pinyin": "dàxuéshēng yě kěyǐ zài zhèlǐ dúshū.",
+              "english": "University students can also study here.",
+              "teaching_note": "School or study context showing 大学生 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 28
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-042",
+          "hanzi": "读",
+          "pinyin": "dú",
+          "meaning_en": "read",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "school-language",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-042-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会读汉字。",
+              "pinyin": "wǒ huì dú Hànzì.",
+              "english": "I can read Chinese characters.",
+              "teaching_note": "读 refers to reading aloud or decoding written characters in this example."
+            },
+            {
+              "id": "ex-042-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请读这一课。",
+              "pinyin": "qǐng dú zhè yí kè.",
+              "english": "Please read this lesson.",
+              "teaching_note": "Short everyday instruction or request using 读; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 42
+            }
+          ],
+          "primary_topic_id": "school-language",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Learning a new word",
+        "explanation": "Use 懂 (dǒng) to talk about understanding and 教 (jiāo) to say who teaches whom.",
+        "example_id": "ex-304-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Talking about school tests",
+        "explanation": "考试 (kǎoshì) is an examination; 考 (kǎo) can function as a verb, and 题 (tí) is a question or problem.",
+        "example_id": "ex-308-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-304-1",
+      "ex-308-1",
+      "ex-310-1",
+      "ex-322-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "There is an exam next week, and the teacher asks the whole class to work carefully. Everyone wants to do well."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I do not understand this word. Please teach me. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我不懂这个词，请你教我。 (Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.)",
+          "answer": "我不懂这个词，请你教我。 (Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.)"
+        },
+        {
+          "id": "recall-304",
+          "kind": "selection",
+          "prompt": "Which expression means “class”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "班",
+              "pinyin": "bān",
+              "meaning_en": "class; group of students"
+            },
+            {
+              "id": "b",
+              "hanzi": "本子",
+              "pinyin": "běnzi",
+              "meaning_en": "notebook; exercise book"
+            },
+            {
+              "id": "c",
+              "hanzi": "笔",
+              "pinyin": "bǐ",
+              "meaning_en": "pen; writing instrument"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 班 (bān) with this meaning."
+        },
+        {
+          "id": "recall-308",
+          "kind": "selection",
+          "prompt": "Which expression means “notebook”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "班",
+              "pinyin": "bān",
+              "meaning_en": "class; group of students"
+            },
+            {
+              "id": "c",
+              "hanzi": "笔",
+              "pinyin": "bǐ",
+              "meaning_en": "pen; writing instrument"
+            },
+            {
+              "id": "a",
+              "hanzi": "本子",
+              "pinyin": "běnzi",
+              "meaning_en": "notebook; exercise book"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 本子 (běnzi) with this meaning."
+        },
+        {
+          "id": "recall-310",
+          "kind": "selection",
+          "prompt": "Which expression means “pen”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "本子",
+              "pinyin": "běnzi",
+              "meaning_en": "notebook; exercise book"
+            },
+            {
+              "id": "a",
+              "hanzi": "笔",
+              "pinyin": "bǐ",
+              "meaning_en": "pen; writing instrument"
+            },
+            {
+              "id": "b",
+              "hanzi": "班",
+              "pinyin": "bān",
+              "meaning_en": "class; group of students"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 笔 (bǐ) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Words, Classes and Examinations",
+        "context_en": "Talk about school, classrooms, word meanings, teachers, tests and stationery.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "老师，这个词是什么意思？",
+            "pinyin": "Lǎoshī, zhè ge cí shì shénme yìsi?",
+            "english": "Teacher, what does this word mean?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你先看书；不懂的地方可以问我。",
+            "pinyin": "Nǐ xiān kàn shū; bù dǒng de dìfang kěyǐ wèn wǒ.",
+            "english": "Read the book first; you can ask me about what you do not understand."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我忘带笔和本子了。",
+            "pinyin": "Wǒ wàng dài bǐ hé běnzi le.",
+            "english": "I forgot to bring a pen and notebook."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没关系，我这儿有。考试前记得准备好！",
+            "pinyin": "Méi guānxi, wǒ zhèr yǒu. Kǎoshì qián jìde zhǔnbèi hǎo!",
+            "english": "No problem, I have some here. Remember to prepare before the exam!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Learning a new word",
+          "explanation_en": "Use 懂 (dǒng) to talk about understanding and 教 (jiāo) to say who teaches whom.",
+          "examples": [
+            {
+              "hanzi": "我不懂这个词，请你教我。",
+              "pinyin": "Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.",
+              "english": "I do not understand this word. Please teach me."
+            },
+            {
+              "hanzi": "你先看书；不懂的地方可以问我。",
+              "pinyin": "Nǐ xiān kàn shū; bù dǒng de dìfang kěyǐ wèn wǒ.",
+              "english": "Read the book first; you can ask me about what you do not understand."
+            }
+          ],
+          "pattern_hanzi": "人 + 教 + 学习者 + 教学内容",
+          "pattern_pinyin": "rén + jiāo + xuéxízhě + jiàoxué nèiróng",
+          "pattern_pseudo_translation": "<person> + 教 + <learner> + <what is taught>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Talking about school tests",
+          "explanation_en": "考试 (kǎoshì) is an examination; 考 (kǎo) can function as a verb, and 题 (tí) is a question or problem.",
+          "examples": [
+            {
+              "hanzi": "我们班的考试下星期开始。",
+              "pinyin": "Wǒmen bān de kǎoshì xià xīngqī kāishǐ.",
+              "english": "Our class exams begin next week."
+            },
+            {
+              "hanzi": "没关系，我这儿有。考试前记得准备好！",
+              "pinyin": "Méi guānxi, wǒ zhèr yǒu. Kǎoshì qián jìde zhǔnbèi hǎo!",
+              "english": "No problem, I have some here. Remember to prepare before the exam!"
+            }
+          ],
+          "pattern_hanzi": "时间 + 有 + 考试",
+          "pattern_pinyin": "shíjiān + yǒu + kǎoshì",
+          "pattern_pseudo_translation": "<time> + 有 + 考试"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "老师，这个词是什么意思？",
+          "pinyin": "Lǎoshī, zhè ge cí shì shénme yìsi?",
+          "english": "Teacher, what does this word mean?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I do not understand this word. Please teach me.",
+            "model_answer": {
+              "hanzi": "我不懂这个词，请你教我。",
+              "pinyin": "Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.",
+              "english": "I do not understand this word. Please teach me."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Our class exams begin next week.",
+            "model_answer": {
+              "hanzi": "我们班的考试下星期开始。",
+              "pinyin": "Wǒmen bān de kǎoshì xià xīngqī kāishǐ.",
+              "english": "Our class exams begin next week."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: I forgot to bring a pen and notebook.",
+            "model_answer": {
+              "hanzi": "我忘带笔和本子了。",
+              "pinyin": "Wǒ wàng dài bǐ hé běnzi le.",
+              "english": "I forgot to bring a pen and notebook."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Words, Classes and Examinations — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "高中开学了。新同学来到教室，老师教他们读新词。",
+            "pinyin": "Gāozhōng kāixué le. Xīn tóngxué lái dào jiàoshì, lǎoshī jiāo tāmen dú xīn cí.",
+            "english": "High school has started. New students come to the classroom, and the teacher teaches them to read new words."
+          },
+          {
+            "hanzi": "下周有考试，老师让全班认真做题。大家都想考得好。",
+            "pinyin": "Xià zhōu yǒu kǎoshì, lǎoshī ràng quán bān rènzhēn zuò tí. Dàjiā dōu xiǎng kǎo de hǎo.",
+            "english": "There is an exam next week, and the teacher asks the whole class to work carefully. Everyone wants to do well."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "High school has started. New students come to the classroom, and the teacher teaches them to read new words."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "There is an exam next week, and the teacher asks the whole class to work carefully. Everyone wants to do well."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I do not understand this word. Please teach me.",
+          "model_answer": {
+            "hanzi": "我不懂这个词，请你教我。",
+            "pinyin": "Wǒ bù dǒng zhè ge cí, qǐng nǐ jiāo wǒ.",
+            "english": "I do not understand this word. Please teach me."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Our class exams begin next week.",
+          "model_answer": {
+            "hanzi": "我们班的考试下星期开始。",
+            "pinyin": "Wǒmen bān de kǎoshì xià xīngqī kāishǐ.",
+            "english": "Our class exams begin next week."
+          }
+        }
+      ],
+      "common_pitfall": "Do not treat 考 (kǎo) and 考试 (kǎoshì) as interchangeable in every construction; notice whether the sentence needs a verb or a noun.",
+      "pronunciation_focus": "Distinguish 教 (jiāo), a first tone, from 考 (kǎo), a third tone; 本子 (běnzi) has a neutral second syllable.",
+      "review": {
+        "can_do": [
+          "Ask about a word and recognize the reply.",
+          "Identify classroom items such as 笔 (bǐ) and 本子 (běnzi).",
+          "Discuss tests and the school year."
+        ],
+        "entry_ids": [
+          304,
+          308,
+          310,
+          322,
+          337,
+          342,
+          367,
+          368,
+          379,
+          380,
+          381,
+          442
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-words-classes-and-examinations--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Learning a new word",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Talking about school tests",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I do not understand this word. Please teach me.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Our class exams begin next week.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I forgot to bring a pen and notebook.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I do not understand this word. Please teach me.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Our class exams begin next week.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-words-classes-and-examinations--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-words-classes-and-examinations--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I do not understand this word. Please teach me. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--question-recall-304",
+            "kind": "practice",
+            "label": "Which expression means “class”?",
+            "optional": true,
+            "target_id": "recall-304"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--question-recall-308",
+            "kind": "practice",
+            "label": "Which expression means “notebook”?",
+            "optional": true,
+            "target_id": "recall-308"
+          },
+          {
+            "id": "topic-words-classes-and-examinations--question-recall-310",
+            "kind": "practice",
+            "label": "Which expression means “pen”?",
+            "optional": true,
+            "target_id": "recall-310"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 44
+}

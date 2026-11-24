@@ -30,7 +30,11 @@ Two classmates plan how to practise listening, speaking, reading and writing in 
 
 学习 (xuéxí) means studying or learning; 上课 (shàngkè) means attending class; 下课 (xiàkè) means finishing class or the class period ending.
 
-**Pattern:** person + 在 + verb + object
+**Pattern**
+
+人 + 在 + 动词 + 宾语  
+*rén + zài + dòngcí + bīnyǔ*  
+&lt;person&gt; + **在** + &lt;verb&gt; + &lt;object&gt;
 
 **我在学习中文。**
 *Wǒ zài xuéxí Zhōngwén.*
@@ -44,7 +48,11 @@ We have class at 9 a.m.
 
 听 (tīng) is the act of listening and 听见 (tīngjiàn) is the result of hearing. Read with 读 (dú), speak with 说 (shuō), write with 写 (xiě).
 
-**Pattern:** 我 + skill verb + object
+**Pattern**
+
+我 + 技能动词 + 宾语  
+*wǒ + jìnéng dòngcí + bīnyǔ*  
+**我** + &lt;skill verb&gt; + &lt;object&gt;
 
 **我喜欢听汉语。**
 *Wǒ xǐhuan tīng Hànyǔ.*
@@ -190,3 +198,46 @@ Can you write Chinese characters?
 
 **Production:** Write this in Mandarin: “Please read this lesson.”
 **Answer:** 请读这一课。 (qǐng dú zhè yí kè.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-studying-and-language--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Learning versus a class session — ID: `topic-studying-and-language--pattern--pattern-1`
+- [ ] Apply: Four basic language skills — ID: `topic-studying-and-language--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: speak — ID: `topic-studying-and-language--build--build-sub-01`
+- [ ] Build a sentence: write characters — ID: `topic-studying-and-language--build--build-sub-02`
+
+### Reading comprehension
+- [ ] What does Xiao Wang do in the morning? — ID: `topic-studying-and-language--read--reading-q-01`
+- [ ] When does he speak Chinese with friends? — ID: `topic-studying-and-language--read--reading-q-02`
+
+### Speaking practice
+- [ ] Tell a friend which language skill you practise. — ID: `topic-studying-and-language--speak--speaking-1`
+- [ ] Ask a classmate whether they can write Chinese characters. — ID: `topic-studying-and-language--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-studying-and-language--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-studying-and-language--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-studying-and-language--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “read”? *(optional)* — ID: `topic-studying-and-language--quiz--q-15-1`
+- [ ] Which expression means “say”? *(optional)* — ID: `topic-studying-and-language--quiz--q-15-2`
+- [ ] Which expression means “character”? *(optional)* — ID: `topic-studying-and-language--quiz--q-15-3`
+- [ ] In the example “我会读汉字。” (wǒ huì dú Hànzì.), what is happening? — ID: `topic-studying-and-language--quiz--q-15-4`
+- [ ] Write this in Mandarin: “Please read this lesson.” — ID: `topic-studying-and-language--quiz--q-15-5`
+- [ ] Reading comprehension: What does Xiao Wang do in the morning? — ID: `topic-studying-and-language--quiz--applied-reading-1`
+- [ ] Reading comprehension: When does he speak Chinese with friends? — ID: `topic-studying-and-language--quiz--applied-reading-2`
+- [ ] Say this aloud: Tell a friend which language skill you practise. — ID: `topic-studying-and-language--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask a classmate whether they can write Chinese characters. — ID: `topic-studying-and-language--quiz--applied-speaking-2`

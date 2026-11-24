@@ -1,0 +1,481 @@
+{
+  "schema_version": "mandarin-general-lesson/3.4.0",
+  "lesson_id": "convm-choices-alternatives",
+  "lesson_type": "dialogue",
+  "lesson": {
+    "title": "Choosing Between Alternatives",
+    "subtitle": "Choice questions with 还是 and statements with 或者",
+    "description": "Learn to offer two alternatives, ask someone to choose, and give a direct answer.",
+    "slug": "conversational-choices-alternatives"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions",
+      "communication-social",
+      "food-drink"
+    ],
+    "tags": [
+      "choice-questions",
+      "alternatives",
+      "contrast"
+    ],
+    "course_topic_refs": [
+      {
+        "curriculum_id": "conversational-mandarin",
+        "course_topic_id": "choices-alternatives"
+      }
+    ]
+  },
+  "learning_objectives": [
+    "Choose between two options in a question.",
+    "Distinguish question-or from statement-or.",
+    "Use the additional situational conversation to apply the lesson in a longer exchange."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.3.0",
+    "audience": "Mandarin learners",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "买": "Characters:买",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "六": "Characters:六",
+    "动": "Characters:动",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "名": "Characters:名",
+    "吧": "Characters:吧",
+    "咖": "Characters:咖",
+    "啡": "Characters:啡",
+    "啤": "Characters:啤",
+    "喝": "Characters:喝",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "就": "Characters:就",
+    "币": "Characters:币",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "料": "Characters:料",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "果": "Characters:果",
+    "样": "Characters:样",
+    "民": "Characters:民",
+    "水": "Characters:水",
+    "汁": "Characters:汁",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "现": "Characters:现",
+    "美": "Characters:美",
+    "者": "Characters:者",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "词": "Characters:词",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "酒": "Characters:酒",
+    "里": "Characters:里",
+    "金": "Characters:金",
+    "钟": "Characters:钟",
+    "饮": "Characters:饮"
+  },
+  "sections": {
+    "blocks": [
+      {
+        "id": "lesson-intro",
+        "kind": "explanation",
+        "text": "Learn to offer two alternatives, ask someone to choose, and give a direct answer. Use the model conversation to notice the expressions, then practice the patterns and speak aloud."
+      },
+      {
+        "id": "model-dialogue",
+        "kind": "dialogue",
+        "title": "Model conversation",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想喝咖啡还是茶？",
+            "pinyin": "Nǐ xiǎng hē kāfēi háishi chá?",
+            "english": "Would you like coffee or tea?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想喝咖啡。",
+            "pinyin": "Wǒ xiǎng hē kāfēi.",
+            "english": "I would like coffee."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "你想现在喝还是过一会儿喝？",
+            "pinyin": "Nǐ xiǎng xiànzài hē háishi guò yíhuìr hē?",
+            "english": "Do you want it now or later?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "过一会儿吧。",
+            "pinyin": "Guò yíhuìr ba.",
+            "english": "A little later, please."
+          }
+        ]
+      },
+      {
+        "id": "grammar-1",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "喝 + 饮料 + 还是 + 饮料？",
+        "pattern_pinyin": "hē + yǐnliào + háishi + yǐnliào?",
+        "function_en": "还是 (háishi) is normal in questions that present a choice.",
+        "example": {
+          "id": "pattern-ex-1",
+          "hanzi": "你喝茶还是啤酒？",
+          "pinyin": "nǐ hē chá háishi píjiǔ?",
+          "english": "Tea or beer?",
+          "teaching_note": "The speaker is asking the listener to select one of the drinks."
+        },
+        "pattern_pseudo_translation": "喝 + <first drink> + 还是 + <second drink>？"
+      },
+      {
+        "id": "grammar-2",
+        "kind": "grammar_pattern",
+        "pattern_hanzi": "动词 + 名词 + 或者 + 名词",
+        "pattern_pinyin": "dòngcí + míngcí + huòzhě + míngcí",
+        "function_en": "或者 (huòzhě) commonly offers alternatives in statements.",
+        "example": {
+          "id": "pattern-ex-2",
+          "hanzi": "我想买茶或者啤酒。",
+          "pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ.",
+          "english": "I want to buy tea or beer.",
+          "teaching_note": "This describes possibilities instead of directly requesting a choice."
+        },
+        "pattern_pseudo_translation": "<action word> + <a thing or option> + 或者 + <a thing or option>"
+      },
+      {
+        "id": "key-expressions",
+        "kind": "review_set",
+        "items": [
+          {
+            "hanzi": "你想喝茶还是啤酒",
+            "pinyin": "nǐ xiǎng hē chá háishi píjiǔ",
+            "meaning_en": "Would you like tea or beer?"
+          },
+          {
+            "hanzi": "我想买茶或者啤酒",
+            "pinyin": "wǒ xiǎng mǎi chá huòzhě píjiǔ",
+            "meaning_en": "I want to buy tea or beer."
+          },
+          {
+            "hanzi": "一点钟还是两点钟",
+            "pinyin": "yì diǎn zhōng háishi liǎng diǎn zhōng",
+            "meaning_en": "One o’clock or two o’clock?"
+          },
+          {
+            "hanzi": "四点钟或者五点钟",
+            "pinyin": "sì diǎn zhōng huòzhě wǔ diǎn zhōng",
+            "meaning_en": "Four or five o’clock."
+          },
+          {
+            "hanzi": "你要不要",
+            "pinyin": "nǐ yào bu yào",
+            "meaning_en": "Do you want it?"
+          },
+          {
+            "hanzi": "你想不想",
+            "pinyin": "nǐ xiǎng bu xiǎng",
+            "meaning_en": "Do you want to?"
+          },
+          {
+            "hanzi": "你有没有",
+            "pinyin": "nǐ yǒu méiyǒu",
+            "meaning_en": "Do you have any?"
+          },
+          {
+            "hanzi": "好不好",
+            "pinyin": "hǎo bu hǎo",
+            "meaning_en": "Is that okay?"
+          },
+          {
+            "hanzi": "八点钟还是九点钟",
+            "pinyin": "bā diǎn zhōng háishi jiǔ diǎn zhōng",
+            "meaning_en": "Eight or nine o'clock?"
+          },
+          {
+            "hanzi": "你想要茶还是啤酒",
+            "pinyin": "nǐ xiǎng yào chá háishi píjiǔ",
+            "meaning_en": "Would you like tea or beer?"
+          },
+          {
+            "hanzi": "你要不要美金",
+            "pinyin": "nǐ yào bu yào měijīn",
+            "meaning_en": "Do you want US dollars?"
+          },
+          {
+            "hanzi": "你有没有人民币",
+            "pinyin": "nǐ yǒu méiyǒu rénmínbì",
+            "meaning_en": "Do you have any RMB?"
+          },
+          {
+            "hanzi": "你想不想吃一点东西",
+            "pinyin": "nǐ xiǎng bu xiǎng chī yìdiǎn dōngxi",
+            "meaning_en": "Do you want something to eat?"
+          },
+          {
+            "hanzi": "现在还是过一会儿",
+            "pinyin": "xiànzài háishi guò yíhuìr",
+            "meaning_en": "Now or later?"
+          },
+          {
+            "hanzi": "可是",
+            "pinyin": "kěshì",
+            "meaning_en": "but; however"
+          },
+          {
+            "hanzi": "是不是",
+            "pinyin": "shì bú shì",
+            "meaning_en": "is it or not?"
+          },
+          {
+            "hanzi": "太晚",
+            "pinyin": "tài wǎn",
+            "meaning_en": "too late"
+          },
+          {
+            "hanzi": "那么",
+            "pinyin": "nàme",
+            "meaning_en": "then; in that case"
+          }
+        ]
+      },
+      {
+        "id": "guided-speaking",
+        "kind": "explanation",
+        "text": "Speaking task: Ask three choice questions: drinks, location, and time. Answer using a complete sentence."
+      },
+      {
+        "id": "source-coverage-dialogue",
+        "kind": "dialogue",
+        "title": "Polite Disagreement and Alternatives",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你想喝茶还是咖啡？",
+            "pinyin": "Nǐ xiǎng hē chá háishi kāfēi?",
+            "english": "Do you want tea or coffee?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想喝茶，可是这里没有茶。",
+            "pinyin": "Wǒ xiǎng hē chá, kěshì zhèlǐ méiyǒu chá.",
+            "english": "I want tea, but there is none here."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那么喝水或者果汁怎么样？",
+            "pinyin": "Nàme hē shuǐ huòzhě guǒzhī zěnmeyàng?",
+            "english": "Then how about water or juice?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好，那就喝水吧。",
+            "pinyin": "Hǎo, nà jiù hē shuǐ ba.",
+            "english": "Sure, I will have water then."
+          }
+        ]
+      }
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "q-dialogue",
+          "kind": "comprehension",
+          "prompt": "Which drink does speaker B choose in the first exchange?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想喝咖啡。 (Wǒ xiǎng hē kāfēi.) — I would like coffee.",
+          "explanation": "Check the model dialogue and identify the relevant response."
+        },
+        {
+          "id": "q-translation",
+          "kind": "production",
+          "prompt": "Translate into Mandarin: Four or five o’clock.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "四点钟或者五点钟 (sì diǎn zhōng huòzhě wǔ diǎn zhōng)",
+          "explanation": "One model answer; another natural equivalent may be acceptable."
+        },
+        {
+          "id": "q-grammar",
+          "kind": "production",
+          "prompt": "Use 或者 (huòzhě) to say you want to buy tea or beer.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我想买茶或者啤酒。 (Wǒ xiǎng mǎi chá huòzhě píjiǔ.) — I want to buy tea or beer.",
+          "explanation": "One natural model response; alternatives that express the same meaning are possible."
+        },
+        {
+          "id": "q-speaking",
+          "kind": "production",
+          "prompt": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "A: 你想喝水还是茶？ (Nǐ xiǎng hē shuǐ háishi chá?) — Would you like water or tea?\nB: 我想喝水。 (Wǒ xiǎng hē shuǐ.) — I would like water.\nA: 我们在这儿吃还是在那儿吃？ (Wǒmen zài zhèr chī háishi zài nàr chī?) — Shall we eat here or over there?\nB: 我们在这儿吃吧。 (Wǒmen zài zhèr chī ba.) — Let us eat here.\nA: 六点钟还是七点钟？ (Liù diǎn zhōng háishi qī diǎn zhōng?) — Six or seven o'clock?\nB: 七点钟吧。 (Qī diǎn zhōng ba.) — Seven o'clock.",
+          "explanation": "Complete sample role-play. practice both speakers, then substitute your own details."
+        }
+      ]
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "convm-choices-alternatives--section--introduction",
+        "section_key": "introduction",
+        "title": "Introduction",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--introduction--lesson-intro",
+            "kind": "section",
+            "label": "Understand the lesson goal",
+            "optional": false,
+            "target_id": "lesson-intro"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--dialogue--model-dialogue",
+            "kind": "section",
+            "label": "practice the model conversation",
+            "optional": false,
+            "target_id": "model-dialogue"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--grammar--grammar-1",
+            "kind": "section",
+            "label": "Understand: 还是 (háishi) is normal in questions that present a choice.",
+            "optional": false,
+            "target_id": "grammar-1"
+          },
+          {
+            "id": "convm-choices-alternatives--grammar--grammar-2",
+            "kind": "section",
+            "label": "Understand: 或者 (huòzhě) commonly offers alternatives in statements.",
+            "optional": false,
+            "target_id": "grammar-2"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--review",
+        "section_key": "review",
+        "title": "Expression review",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--review--key-expressions",
+            "kind": "section",
+            "label": "Review the key expressions",
+            "optional": false,
+            "target_id": "key-expressions"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--guided-speaking",
+        "section_key": "guided-speaking",
+        "title": "Guided speaking",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--guided-speaking--guided-speaking",
+            "kind": "section",
+            "label": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
+            "optional": false,
+            "target_id": "guided-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--quiz--q-dialogue",
+            "kind": "practice",
+            "label": "Which drink does speaker B choose in the first exchange?",
+            "optional": false,
+            "target_id": "q-dialogue"
+          },
+          {
+            "id": "convm-choices-alternatives--quiz--q-translation",
+            "kind": "practice",
+            "label": "Translate into Mandarin: Four or five o’clock.",
+            "optional": false,
+            "target_id": "q-translation"
+          },
+          {
+            "id": "convm-choices-alternatives--quiz--q-grammar",
+            "kind": "practice",
+            "label": "Use 或者 (huòzhě) to say you want to buy tea or beer.",
+            "optional": false,
+            "target_id": "q-grammar"
+          },
+          {
+            "id": "convm-choices-alternatives--quiz--q-speaking",
+            "kind": "practice",
+            "label": "Ask three choice questions: drinks, location, and time. Answer using a complete sentence.",
+            "optional": false,
+            "target_id": "q-speaking"
+          }
+        ]
+      },
+      {
+        "id": "convm-choices-alternatives--section--extended-dialogue",
+        "section_key": "extended-dialogue",
+        "title": "Extended Dialogue",
+        "checkpoints": [
+          {
+            "id": "convm-choices-alternatives--extended-dialogue--source-coverage-dialogue",
+            "kind": "section",
+            "label": "practice: Polite Disagreement and Alternatives",
+            "optional": true,
+            "target_id": "source-coverage-dialogue"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
+}

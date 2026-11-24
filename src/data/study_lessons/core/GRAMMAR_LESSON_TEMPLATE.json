@@ -1,11 +1,11 @@
 {
-  "schema_version": "mandarin-general-lesson/3.0.0",
+  "schema_version": "mandarin-general-lesson/3.4.0",
   "lesson_id": "grammar-negation-basic",
   "lesson_type": "grammar",
   "lesson": {
     "title": "Negating Simple Actions",
     "subtitle": "Use 不 (bù) before common verbs.",
-    "description": "Learn the basic negative statement pattern and practice short conversational examples.",
+    "description": "Learn to negate simple actions in everyday conversations.",
     "slug": "negating-simple-actions"
   },
   "classification": {
@@ -15,16 +15,19 @@
       "communication-social"
     ],
     "tags": [
-      "negation"
+      "negation",
+      "action-statements"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
   },
   "learning_objectives": [
     "Use basic negation in a statement."
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.0.0",
+    "template_version": "3.3.0",
     "audience": "Beginner learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -54,7 +57,8 @@
           "pinyin": "wǒ bù hē chá.",
           "english": "I do not drink tea.",
           "teaching_note": "Negation of a basic action."
-        }
+        },
+        "pattern_pseudo_translation": "不 + <action>"
       }
     ],
     "practice": {
@@ -83,5 +87,53 @@
         }
       ]
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "grammar-negation-basic--section--explanation",
+        "section_key": "explanation",
+        "title": "Understanding",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--explanation--b1",
+            "kind": "section",
+            "label": "Read the explanation",
+            "optional": false,
+            "target_id": "b1"
+          }
+        ]
+      },
+      {
+        "id": "grammar-negation-basic--section--grammar",
+        "section_key": "grammar",
+        "title": "Grammar patterns",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--grammar--b2",
+            "kind": "section",
+            "label": "Understand negation of actions",
+            "optional": false,
+            "target_id": "b2"
+          }
+        ]
+      },
+      {
+        "id": "grammar-negation-basic--section--practice",
+        "section_key": "practice",
+        "title": "Practice",
+        "checkpoints": [
+          {
+            "id": "grammar-negation-basic--quiz--q1",
+            "kind": "practice",
+            "label": "Which negates an action?",
+            "optional": false,
+            "target_id": "q1"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
 }

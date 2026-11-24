@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { importLevel4 } from './import-hsk-level4.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourceRaw = readFileSync('importer/hsk/hsk3_level4_1.0.3.json');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level4_1.1.1.json');
 const source = JSON.parse(sourceRaw);
 const vocabulary = readVocabulary();
 const checksum = createHash('sha256').update(sourceRaw).digest('hex');
@@ -17,7 +17,7 @@ function fixture(t, data = vocabulary, editSource = () => {}) {
   const directory = mkdtempSync(join(tmpdir(), 'mandarin-hsk4-import-'));
   t.after(() => rmSync(directory, { recursive: true, force: true }));
   const vocabularyPath = join(directory, 'vocabulary.json');
-  const sourcePath = join(directory, 'hsk3_level4_1.0.3.json');
+  const sourcePath = join(directory, 'hsk3_level4_1.1.1.json');
   const edited = structuredClone(source);
   editSource(edited);
   writeFileSync(sourcePath, JSON.stringify(edited) === JSON.stringify(source) ? sourceRaw : JSON.stringify(edited));
@@ -41,7 +41,8 @@ test('creates all Level 4 records and reimports them without changing any record
     assert.deepEqual(entry.meanings, recorded.meaning_en.split(';').map(s => s.trim()).filter(Boolean));
     assert.equal(entry.studyMetadata.sourceSha256, checksum);
     assert.equal(entry.studyMetadata.verificationStatus, source.verification.status);
-    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english]), recorded.examples.map(e => [e.hanzi, e.pinyin, e.english]));
+    assert.deepEqual(entry.examples.map(e => [e.simplified, e.pinyinDisplay, e.english, e.notes, e.register, e.reviewStatus]),
+      recorded.examples.map(e => [e.hanzi, e.pinyin, e.english, e.note, e.register, e.review_status]));
     assert.ok(entry.audio === null && entry.examples.every(e => e.audio === null && e.tokens.map(t => t.text).join('') === e.simplified));
   }
   const homographs = entries.filter(e => e.simplified === '重');
@@ -51,9 +52,17 @@ test('creates all Level 4 records and reimports them without changing any record
   assert.equal(entries.find(e => e.hsk_index === 1534).tokens[0].pinyin, 'ǹg');
   writeFileSync(paths.vocabularyPath, JSON.stringify(data));
   assert.deepEqual(importLevel4(paths).data, data);
-  const withoutTimestamps = entries => entries.map(({ createdAt, updatedAt, ...entry }) =>
+  // Fresh records cite the current handoff; existing records retain their original syllabus provenance.
+  const withoutTimestamps = entries => entries.map(({ createdAt, updatedAt, sourceName, sourceVersion, hskSource, secondarySources, ...entry }) =>
     entry.hskLevel === 4 ? { ...entry, audio: null } : entry);
-  assert.deepEqual(withoutTimestamps(data.entries), withoutTimestamps(vocabulary.entries));
+  // A fresh Level 4 is appended after any later levels; compare its stable identities
+  // independently of that creation order. The other-level order was checked above.
+  const byId = (a, b) => a.id.localeCompare(b.id);
+  assert.deepEqual(withoutTimestamps(data.entries).sort(byId), withoutTimestamps(vocabulary.entries).sort(byId));
+});
+
+test('reimports the current Level 4 with all existing identities and recordings intact', t => {
+  assert.deepEqual(importLevel4(fixture(t)).data, vocabulary);
 });
 
 test('fails closed for an erhua r not paired with 儿 or a syllabic nasal on another glyph', t => {

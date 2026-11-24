@@ -1,0 +1,1051 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-asking-for-help-and-making-introductions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Asking for Help and Making Introductions",
+    "subtitle": "Polite requests and helpful answers",
+    "description": "Ask for assistance, apologize politely, introduce a friend and pass along information.",
+    "slug": "asking-for-help-and-making-introductions"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social"
+    ],
+    "tags": [
+      "polite-requests-and-helpful-answers",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Ask for help politely with 帮忙 (bāngmáng).",
+    "Use 不好意思 (bù hǎoyìsi) before an interruption or apology.",
+    "Introduce others and relay simple information."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "介": "Characters:介",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "动": "Characters:动",
+    "包": "Characters:包",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "告": "Characters:告",
+    "哪": "Characters:哪",
+    "因": "Characters:因",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "当": "Characters:当",
+    "很": "Characters:很",
+    "忙": "Characters:忙",
+    "思": "Characters:思",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "气": "Characters:气",
+    "没": "Characters:没",
+    "然": "Characters:然",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "知": "Characters:知",
+    "笑": "Characters:笑",
+    "第": "Characters:第",
+    "绍": "Characters:绍",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "让": "Characters:让",
+    "诉": "Characters:诉",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "起": "Characters:起",
+    "跟": "Characters:跟",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "道": "Characters:道",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "题": "Characters:题",
+    "信": "Characters:信",
+    "息": "Characters:息",
+    "求": "Characters:求"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Ask for assistance, apologize politely, introduce a friend and pass along information.",
+      "focus": "Ask for help politely with 帮忙 (bāngmáng)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-306",
+          "hanzi": "帮忙",
+          "pinyin": "bāngmáng",
+          "meaning_en": "to help; to do a favor",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-306-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你能帮忙吗？",
+              "pinyin": "nǐ néng bāngmáng ma?",
+              "english": "Can you help?",
+              "teaching_note": "A short spoken example using 帮忙."
+            },
+            {
+              "id": "ex-306-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "有问题的时候，可以请老师帮忙。",
+              "pinyin": "yǒu wèntí de shíhou, kěyǐ qǐng lǎoshī bāngmáng.",
+              "english": "When there is a problem, you can ask the teacher for help.",
+              "teaching_note": "A simple written example using 帮忙."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 306
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-313",
+          "hanzi": "不好意思",
+          "pinyin": "bù hǎoyìsi",
+          "meaning_en": "excuse me; sorry; embarrassed",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-313-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "不好意思，我来晚了。",
+              "pinyin": "bù hǎoyìsi, wǒ lái wǎn le.",
+              "english": "Sorry, I'm late.",
+              "teaching_note": "A short spoken example using 不好意思."
+            },
+            {
+              "id": "ex-313-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“不好意思，这里有人坐吗？”他问。",
+              "pinyin": "“bù hǎoyìsi, zhèlǐ yǒu rén zuò ma?” tā wèn.",
+              "english": "\"Excuse me, is anyone sitting here?\" he asked.",
+              "teaching_note": "A simple written example using 不好意思."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 313
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-343",
+          "hanzi": "告诉",
+          "pinyin": "gàosu",
+          "meaning_en": "to tell; to inform",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-343-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请告诉我你的名字。",
+              "pinyin": "qǐng gàosu wǒ nǐ de míngzi.",
+              "english": "Please tell me your name.",
+              "teaching_note": "A short spoken example using 告诉."
+            },
+            {
+              "id": "ex-343-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师告诉学生明天有考试。",
+              "pinyin": "lǎoshī gàosu xuéshēng míngtiān yǒu kǎoshì.",
+              "english": "The teacher told the students there would be a test tomorrow.",
+              "teaching_note": "A simple written example using 告诉."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 343
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-369",
+          "hanzi": "介绍",
+          "pinyin": "jièshào",
+          "meaning_en": "to introduce; introduction",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social",
+            "people-identity"
+          ],
+          "examples": [
+            {
+              "id": "ex-369-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你能介绍一下自己吗？",
+              "pinyin": "nǐ néng jièshào yíxià zìjǐ ma?",
+              "english": "Can you introduce yourself briefly?",
+              "teaching_note": "A short spoken example using 介绍."
+            },
+            {
+              "id": "ex-369-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师介绍了一位新同学。",
+              "pinyin": "lǎoshī jièshào le yí wèi xīn tóngxué.",
+              "english": "The teacher introduced a new classmate.",
+              "teaching_note": "A simple written example using 介绍."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 369
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-422",
+          "hanzi": "让",
+          "pinyin": "ràng",
+          "meaning_en": "to let; to ask; to make (someone do something)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-422-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "让我看看。",
+              "pinyin": "ràng wǒ kànkan.",
+              "english": "Let me have a look.",
+              "teaching_note": "A short spoken example using 让."
+            },
+            {
+              "id": "ex-422-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师让学生打开书。",
+              "pinyin": "lǎoshī ràng xuéshēng dǎkāi shū.",
+              "english": "The teacher asks the students to open their books.",
+              "teaching_note": "A simple written example using 让."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 422
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-463",
+          "hanzi": "笑",
+          "pinyin": "xiào",
+          "meaning_en": "to laugh; to smile",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-463-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你笑什么？",
+              "pinyin": "nǐ xiào shénme?",
+              "english": "What are you laughing at?",
+              "teaching_note": "A short spoken example using 笑."
+            },
+            {
+              "id": "ex-463-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师笑着跟学生说话。",
+              "pinyin": "lǎoshī xiào zhe gēn xuéshēng shuōhuà.",
+              "english": "The teacher speaks to the students with a smile.",
+              "teaching_note": "A simple written example using 笑."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 463
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-014",
+          "hanzi": "不客气",
+          "pinyin": "bú kèqi",
+          "meaning_en": "you're welcome",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-014-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "不客气！",
+              "pinyin": "bú kèqi!",
+              "english": "You're welcome!",
+              "teaching_note": "不客气 is a standard spoken response to thanks; the short answer is a complete utterance."
+            },
+            {
+              "id": "ex-014-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "她说：“不客气。”",
+              "pinyin": "tā shuō: “bú kèqi.”",
+              "english": "She said, \"You're welcome.\"",
+              "teaching_note": "Written dialogue: 不客气 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 14
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Conventional response to thanks; classify as a fixed expression, not by the characters separately."
+        },
+        {
+          "id": "w-024",
+          "hanzi": "打电话",
+          "pinyin": "dǎ diànhuà",
+          "meaning_en": "make a phone call",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "topic_ids": [
+            "communication-social",
+            "daily-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-024-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我要给妈妈打电话。",
+              "pinyin": "wǒ yào gěi māma dǎ diànhuà.",
+              "english": "I want to call my mother.",
+              "teaching_note": "给妈妈 identifies the recipient of the phone call; 打电话 is a verb-object expression."
+            },
+            {
+              "id": "ex-024-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请明天上午给老师打电话。",
+              "pinyin": "qǐng míngtiān shàngwǔ gěi lǎoshī dǎ diànhuà.",
+              "english": "Please call the teacher tomorrow morning.",
+              "teaching_note": "Short everyday instruction or request using 打电话; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 24
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-045",
+          "hanzi": "对不起",
+          "pinyin": "duìbuqǐ",
+          "meaning_en": "sorry",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "topic_ids": [
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-045-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "对不起，我来晚了。",
+              "pinyin": "duìbuqǐ, wǒ lái wǎn le.",
+              "english": "Sorry, I came late.",
+              "teaching_note": "对不起 is an apology; 来晚了 means arriving late, with 了 indicating the completed situation."
+            },
+            {
+              "id": "ex-045-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“对不起，我没有看见你。”她说。",
+              "pinyin": "“duìbuqǐ, wǒ méiyǒu kànjiàn nǐ.” tā shuō.",
+              "english": "\"I'm sorry, I didn't see you,\" she said.",
+              "teaching_note": "Written dialogue: 对不起 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 45
+            }
+          ],
+          "primary_topic_id": "communication-social",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Conventional apology; can be analyzed as a verb phrase, but functions as a fixed social expression."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "Making a polite request",
+        "explanation": "Use 不好意思 (bù hǎoyìsi) as a polite opening, then ask someone to 帮忙 (bāngmáng) or 帮 (bāng) you with a specific action.",
+        "example_id": "ex-306-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Telling and introducing",
+        "explanation": "告诉 (gàosu) introduces information shared with someone, while 介绍 (jièshào) introduces a person or explains something to someone.",
+        "example_id": "ex-313-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-306-1",
+      "ex-313-1",
+      "ex-343-1",
+      "ex-369-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "The teacher asks Xiao Li to introduce the new classmate. Everyone laughs because the newcomer speaks amusingly."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: Please help me carry this bag. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 请帮我拿一下这个包。 (Qǐng bāng wǒ ná yíxià zhè ge bāo.)",
+          "answer": "请帮我拿一下这个包。 (Qǐng bāng wǒ ná yíxià zhè ge bāo.)"
+        },
+        {
+          "id": "recall-306",
+          "kind": "selection",
+          "prompt": "Which expression means “to help”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "帮忙",
+              "pinyin": "bāngmáng",
+              "meaning_en": "to help; to do a favor"
+            },
+            {
+              "id": "b",
+              "hanzi": "不好意思",
+              "pinyin": "bù hǎoyìsi",
+              "meaning_en": "excuse me; sorry; embarrassed"
+            },
+            {
+              "id": "c",
+              "hanzi": "告诉",
+              "pinyin": "gàosu",
+              "meaning_en": "to tell; to inform"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 帮忙 (bāngmáng) with this meaning."
+        },
+        {
+          "id": "recall-313",
+          "kind": "selection",
+          "prompt": "Which expression means “excuse me”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "帮忙",
+              "pinyin": "bāngmáng",
+              "meaning_en": "to help; to do a favor"
+            },
+            {
+              "id": "c",
+              "hanzi": "告诉",
+              "pinyin": "gàosu",
+              "meaning_en": "to tell; to inform"
+            },
+            {
+              "id": "a",
+              "hanzi": "不好意思",
+              "pinyin": "bù hǎoyìsi",
+              "meaning_en": "excuse me; sorry; embarrassed"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 不好意思 (bù hǎoyìsi) with this meaning."
+        },
+        {
+          "id": "recall-343",
+          "kind": "selection",
+          "prompt": "Which expression means “to tell”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "不好意思",
+              "pinyin": "bù hǎoyìsi",
+              "meaning_en": "excuse me; sorry; embarrassed"
+            },
+            {
+              "id": "a",
+              "hanzi": "告诉",
+              "pinyin": "gàosu",
+              "meaning_en": "to tell; to inform"
+            },
+            {
+              "id": "b",
+              "hanzi": "帮忙",
+              "pinyin": "bāngmáng",
+              "meaning_en": "to help; to do a favor"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 告诉 (gàosu) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Asking for Help and Making Introductions",
+        "context_en": "Ask for assistance, apologize politely, introduce a friend and pass along information.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "不好意思，你能帮我一个忙吗？",
+            "pinyin": "Bù hǎoyìsi, nǐ néng bāng wǒ yí ge máng ma?",
+            "english": "Excuse me, can you help me with something?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "当然可以！你想让我做什么？",
+            "pinyin": "Dāngrán kěyǐ! Nǐ xiǎng ràng wǒ zuò shénme?",
+            "english": "Of course! What would you like me to do?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "请告诉我教室在哪儿。",
+            "pinyin": "Qǐng gàosu wǒ jiàoshì zài nǎr.",
+            "english": "Please tell me where the classroom is."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我带你去，还可以介绍我的朋友。",
+            "pinyin": "Wǒ dài nǐ qù, hái kěyǐ jièshào wǒ de péngyou.",
+            "english": "I will take you there and can introduce my friend too."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Making a polite request",
+          "explanation_en": "Use 不好意思 (bù hǎoyìsi) as a polite opening, then ask someone to 帮忙 (bāngmáng) or 帮 (bāng) you with a specific action.",
+          "examples": [
+            {
+              "hanzi": "请帮我拿一下这个包。",
+              "pinyin": "Qǐng bāng wǒ ná yíxià zhè ge bāo.",
+              "english": "Please help me carry this bag."
+            },
+            {
+              "hanzi": "当然可以！你想让我做什么？",
+              "pinyin": "Dāngrán kěyǐ! Nǐ xiǎng ràng wǒ zuò shénme?",
+              "english": "Of course! What would you like me to do?"
+            }
+          ],
+          "pattern_hanzi": "不好意思 + 请求",
+          "pattern_pinyin": "bù hǎoyìsi + qǐngqiú",
+          "pattern_pseudo_translation": "不好意思 + <request>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Telling and introducing",
+          "explanation_en": "告诉 (gàosu) introduces information shared with someone, while 介绍 (jièshào) introduces a person or explains something to someone.",
+          "examples": [
+            {
+              "hanzi": "我来介绍一下：这是我的同学。",
+              "pinyin": "Wǒ lái jièshào yíxià: zhè shì wǒ de tóngxué.",
+              "english": "Let me introduce someone: this is my classmate."
+            },
+            {
+              "hanzi": "我带你去，还可以介绍我的朋友。",
+              "pinyin": "Wǒ dài nǐ qù, hái kěyǐ jièshào wǒ de péngyou.",
+              "english": "I will take you there and can introduce my friend too."
+            }
+          ],
+          "pattern_hanzi": "告诉 + 人 + 信息",
+          "pattern_pinyin": "gàosu + rén + xìnxī",
+          "pattern_pseudo_translation": "告诉 + <person> + <information>"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "不好意思，你能帮我一个忙吗？",
+          "pinyin": "Bù hǎoyìsi, nǐ néng bāng wǒ yí ge máng ma?",
+          "english": "Excuse me, can you help me with something?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: Please help me carry this bag.",
+            "model_answer": {
+              "hanzi": "请帮我拿一下这个包。",
+              "pinyin": "Qǐng bāng wǒ ná yíxià zhè ge bāo.",
+              "english": "Please help me carry this bag."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Let me introduce someone: this is my classmate.",
+            "model_answer": {
+              "hanzi": "我来介绍一下：这是我的同学。",
+              "pinyin": "Wǒ lái jièshào yíxià: zhè shì wǒ de tóngxué.",
+              "english": "Let me introduce someone: this is my classmate."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Please tell me where the classroom is.",
+            "model_answer": {
+              "hanzi": "请告诉我教室在哪儿。",
+              "pinyin": "Qǐng gàosu wǒ jiàoshì zài nǎr.",
+              "english": "Please tell me where the classroom is."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Asking for Help and Making Introductions — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小张第一次来学校，不知道教室在哪儿。小李主动来帮忙。",
+            "pinyin": "Xiǎo Zhāng dì yī cì lái xuéxiào, bù zhīdào jiàoshì zài nǎr. Xiǎo Lǐ zhǔdòng lái bāngmáng.",
+            "english": "Xiao Zhang is at school for the first time and does not know where the classroom is. Xiao Li offers to help."
+          },
+          {
+            "hanzi": "老师让小李介绍新同学。大家听了以后都笑了，因为新同学说话很有意思。",
+            "pinyin": "Lǎoshī ràng Xiǎo Lǐ jièshào xīn tóngxué. Dàjiā tīng le yǐhòu dōu xiào le, yīnwèi xīn tóngxué shuōhuà hěn yǒu yìsi.",
+            "english": "The teacher asks Xiao Li to introduce the new classmate. Everyone laughs because the newcomer speaks amusingly."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiao Zhang is at school for the first time and does not know where the classroom is. Xiao Li offers to help."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "The teacher asks Xiao Li to introduce the new classmate. Everyone laughs because the newcomer speaks amusingly."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: Please help me carry this bag.",
+          "model_answer": {
+            "hanzi": "请帮我拿一下这个包。",
+            "pinyin": "Qǐng bāng wǒ ná yíxià zhè ge bāo.",
+            "english": "Please help me carry this bag."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Let me introduce someone: this is my classmate.",
+          "model_answer": {
+            "hanzi": "我来介绍一下：这是我的同学。",
+            "pinyin": "Wǒ lái jièshào yíxià: zhè shì wǒ de tóngxué.",
+            "english": "Let me introduce someone: this is my classmate."
+          }
+        }
+      ],
+      "common_pitfall": "帮忙 (bāngmáng) commonly means lend a hand; 帮 (bāng) can take a person and the action directly. Keep the person and requested action clear.",
+      "pronunciation_focus": "Practise the neutral ending of 告诉 (gàosu) and the fourth tone in 介绍 (jièshào).",
+      "review": {
+        "can_do": [
+          "Ask for help politely with 帮忙 (bāngmáng).",
+          "Use 不好意思 (bù hǎoyìsi) before an interruption or apology.",
+          "Introduce others and relay simple information."
+        ],
+        "entry_ids": [
+          306,
+          313,
+          343,
+          369,
+          422,
+          463
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Making a polite request",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Telling and introducing",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please help me carry this bag.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Let me introduce someone: this is my classmate.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Please tell me where the classroom is.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Please help me carry this bag.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Let me introduce someone: this is my classmate.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-for-help-and-making-introductions--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-asking-for-help-and-making-introductions--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: Please help me carry this bag. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--question-recall-306",
+            "kind": "practice",
+            "label": "Which expression means “to help”?",
+            "optional": true,
+            "target_id": "recall-306"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--question-recall-313",
+            "kind": "practice",
+            "label": "Which expression means “excuse me”?",
+            "optional": true,
+            "target_id": "recall-313"
+          },
+          {
+            "id": "topic-asking-for-help-and-making-introductions--question-recall-343",
+            "kind": "practice",
+            "label": "Which expression means “to tell”?",
+            "optional": true,
+            "target_id": "recall-343"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 32
+}

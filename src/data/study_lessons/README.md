@@ -3,9 +3,10 @@
 Lesson content for the Lessons pages (`/lessons`, `/lessons/<lesson_id>`), read by
 [`src/lib/lessons.ts`](../../lib/lessons.ts).
 
-The library uses core v3.1.0: 21 HSK 3.0 Level 1 topic lessons (schema mandarin-topic-lesson/3.1.0, whose required `sections.teaching_plan` the lesson page renders as its teaching path, with the words as a collapsed word bank) placed by
-a course manifest, plus two independent character lessons (次, 以). Learner content only;
-editorial references live in each lesson's `report.md`, which the app never loads.
+The library uses the canonical Core v3.6.1 authoring release: 21 HSK Level 1
+and 25 HSK Level 2 topic lessons, 17 conversational lessons and two independent
+character lessons (次, 以). Topic and general schemas are 3.4.0, character schema remains 3.2.0 and curricula 3.0.0. Editorial references live in each lesson's `report.md`,
+which the app never loads.
 
 v3 moved topics into `classification` (`primary_topic_id`, `topic_ids`, `tags`) and adds
 `lesson_type` and `learning_objectives`; course order lives only in `lessons/curricula/`,
@@ -18,10 +19,10 @@ See [core/README.md](core/README.md) for schemas and templates and
 
 | Path | Purpose | Consumer |
 | --- | --- | --- |
-| `core/lesson_categories.json` | Shared topic registry (`id`, `label`, `description`, `status`). Lessons reference topics by ID; only `active` entries are shown. | Static import in `lessons.ts` (By topic grouping and filter). |
+| `core/lesson_categories.json` | Canonical registry with 22 active parent topics, 25 active subtopics and deprecated aliases (`kind`, `parent_topic_id`, `status`). Top-level lesson discovery uses active parents only; recorded subtopic IDs stay attached to each lesson/word. | Static import in `lessons.ts` (By topic grouping and filter). |
 | `core/lesson_categories.schema.json` | JSON Schema for the registry. | Reference only. |
-| `core/*.schema.json`, `core/*_TEMPLATE.*` | v3 schemas (character, topic, general, curriculum, common) and blank templates; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
-| `core/generate_lesson.py`, `core/validate_core.py` | Supplied generator and validator for the Markdown/HTML companions. | Authoring tools; not loaded. |
+| `core/*.schema.json`, `core/*_TEMPLATE.*` | Canonical v3.6.1 Core release (topic/general schema v3.4; character v3.2; curriculum v3.0), accepting older lesson versions; `core/legacy/` keeps older versions. | Reference; the page types in `lessons.ts` / `lesson-curricula.ts` mirror them. |
+| `core/generate_lesson.py`, `core/validate_core.py` | Separately maintained generator and validator for the Markdown/HTML companions; see core/TOOLS.md. | Authoring tools; not loaded. |
 | `lessons/**/<KIND>_LESSON_<KEY>/<FILE>.json` | One lesson per directory: the canonical lesson. | `lessons.ts`: `lesson_id`, `schema_version`, `lesson_type`, `lesson`, `classification`, `learning_objectives`, `metadata`, `catalog_character_refs` (and `headword` for headword kinds) eagerly as summaries; the whole file lazily on its page. |
 | `lessons/curricula/*.json` | Course manifests (levels, units, placements, prerequisites). | `lesson-curricula.ts`. |
 | `lessons/**/<FILE>.md`, `.html`, `report.md` | Generated companions and editorial provenance. | Not loaded. |
@@ -35,3 +36,46 @@ See [lessons/README.md](lessons/README.md) for the directories.
 - A character lesson appears on that character's Glyphs card and details only when `metadata.catalog_character_id` equals the record ID (for example `Characters:次`), or, when that is null, when `headword.hanzi` is exactly the record's character.
 - Hanzi in lesson fields link to Glyphs or Vocabulary only on an exact written-form match; nothing is inferred.
 - Selection questions record stable `choices[].id` values and `correct_choice_ids`. Each correct ID must refer to a unique choice in that question. The application grades selections only against validated recorded IDs; open-ended and legacy questions retain their reference-answer behavior.
+
+## Header copy (lesson creator guideline)
+
+The top of a lesson page shows: course line, lesson type and time, `lesson.title`, `lesson.subtitle`, `lesson.description` and up to three `classification.tags`. Everything there must be about this lesson's content:
+
+- `lesson.subtitle`: a short line naming this lesson's own content (e.g. "Stations, tickets and getting around"), or empty. Never a line shared by a whole course ("Topic-based beginner conversation lesson").
+- `lesson.description`: one or two learner-facing sentences starting with a verb ("Learn to start a polite conversation: greet, thank and close a short exchange."). No notes about sources, transcripts, audio tracks, versions or how the lesson was made.
+- `classification.tags`: 2–3 short content tags, most important first (`greetings`, `apologies`, `courtesy`). No course, level, audience or format tags (`beginner`, `hsk-level-2`, `topic-lesson`, `topic-study`, `conversational-mandarin`) — the course line already shows those.
+- `metadata.audience` is not shown to learners; keep it short if recorded.
+
+Until a package follows this, `src/lib/lesson-header-copy.ts` hides the exact listed boilerplate subtitle, the transcript sentence and course/level/format tags (nothing is rewritten; search still matches the recorded text).
+
+## Current package import and frontend handoff
+
+`scripts/import-lessons-v3.6.1.py` imports all four supplied packages
+after complete validation: 20 Core files, 46 HSK lessons, 17 conversational lessons and two
+character lessons. It validates all 65 records, 574 exact HSK vocabulary bindings,
+full catalog references, taxonomy, existing activity/checkpoint identities,
+92 HSK patterns, 43 conversational patterns and 11 character constructions.
+The two runtime course manifests retain their recorded identities and placements.
+
+Each pattern uses `pattern_hanzi`, `pattern_pinyin`, and
+`pattern_pseudo_translation`. New topic format 3.4.0 requires all three and rejects
+`formula_en`; older topic formats retain the legacy field. General format 3.4.0
+and character format 3.2.0 accept the optional third line. Render it by presence,
+as plain text with literal angle-bracket slots and bold fixed Mandarin. Keep all
+formulas and pseudo-translations out of pronunciation; use the recorded worked
+example audio. Existing usage notes and permanent CMX identities remain intact.
+
+Frontend code is unchanged in this import. Follow the owner's exact
+[frontend migration report](../../../reports/Frontend_Migration_Report_Core_v3.6.0.md)
+for shared heading rendering, TypeScript/parser updates, legacy fallbacks and
+acceptance checks. Do not eager-import the offline inventories or audit files.
+
+See the [source guide](../../../importer/data/lessons/README.md) and
+[current audit](../../../reports/lessons-3.6.1-import.json). The earlier v3.6.0
+catalog-reference errors are fixed by the supplied v3.6.1 Core/HSK packages.
+
+The preceding usage-note UI handoff is already implemented in the incoming
+frontend: `ReviewSetItem` in `src/lib/lessons.ts`, labelled notes in
+`KeyExpressionCard`, and tests in `lesson-page.test.tsx`. Pattern cards also hide
+headings/notes that only repeat their examples/functions. The new three-line
+pattern contract and legacy fallbacks still follow the migration report above.

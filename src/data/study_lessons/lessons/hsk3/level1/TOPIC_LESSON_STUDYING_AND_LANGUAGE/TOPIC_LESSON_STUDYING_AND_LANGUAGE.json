@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-studying-and-language",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -20,7 +20,9 @@
       "writing",
       "speaking"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Describe language learning activities.",
@@ -29,7 +31,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -100,6 +102,7 @@
     "有": "Characters:有",
     "朋": "Characters:朋",
     "期": "Characters:期",
+    "来": "Characters:来",
     "校": "Characters:校",
     "欢": "Characters:欢",
     "歌": "Characters:歌",
@@ -126,7 +129,13 @@
     "边": "Characters:边",
     "这": "Characters:这",
     "里": "Characters:里",
-    "门": "Characters:门"
+    "门": "Characters:门",
+    "人": "Characters:人",
+    "动": "Characters:动",
+    "宾": "Characters:宾",
+    "技": "Characters:技",
+    "能": "Characters:能",
+    "词": "Characters:词"
   },
   "sections": {
     "overview": {
@@ -174,7 +183,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 42
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-043",
@@ -215,7 +227,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 43
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-069",
@@ -255,7 +270,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 69
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-070",
@@ -295,7 +313,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 70
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-103",
@@ -335,7 +356,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 103
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-107",
@@ -377,7 +401,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 107
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-177",
@@ -417,7 +444,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 177
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-190",
@@ -457,7 +487,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 190
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-191",
@@ -499,7 +532,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 191
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-196",
@@ -540,7 +576,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 196
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-197",
@@ -559,11 +598,11 @@
             {
               "id": "ex-197-1",
               "style": "conversational",
-              "register": "polite",
-              "hanzi": "请不要说话。",
-              "pinyin": "qǐng bú yào shuōhuà.",
-              "english": "Please don't talk.",
-              "teaching_note": "请不要… is a polite negative request, often heard in public or class settings."
+              "register": "informal",
+              "hanzi": "你不要说话了，老师来了。",
+              "pinyin": "nǐ bú yào shuōhuà le, lǎoshī lái le.",
+              "english": "Stop talking. The teacher is here.",
+              "teaching_note": "The second clause explains why the speaker asks the listener to stop talking."
             },
             {
               "id": "ex-197-2",
@@ -581,7 +620,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 197
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-209",
@@ -622,7 +664,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 209
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-210",
@@ -663,7 +708,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 210
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-229",
@@ -704,7 +752,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 229
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-240",
@@ -746,7 +797,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 240
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-247",
@@ -786,7 +840,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 247
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-249",
@@ -827,7 +884,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 249
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-290",
@@ -867,7 +927,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 290
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         },
         {
           "id": "w-296",
@@ -907,7 +970,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 296
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "school-language"
         }
       ],
       "related_entries": []
@@ -1091,7 +1157,6 @@
           "id": "pattern-1",
           "title": "Learning versus a class session",
           "explanation_en": "学习 (xuéxí) means studying or learning; 上课 (shàngkè) means attending class; 下课 (xiàkè) means finishing class or the class period ending.",
-          "formula_en": "person + 在 + verb + object",
           "examples": [
             {
               "hanzi": "我在学习中文。",
@@ -1103,13 +1168,15 @@
               "pinyin": "Wǒmen shàngwǔ jiǔ diǎn shàngkè.",
               "english": "We have class at 9 a.m."
             }
-          ]
+          ],
+          "pattern_hanzi": "人 + 在 + 动词 + 宾语",
+          "pattern_pinyin": "rén + zài + dòngcí + bīnyǔ",
+          "pattern_pseudo_translation": "<person> + 在 + <verb> + <object>"
         },
         {
           "id": "pattern-2",
           "title": "Four basic language skills",
           "explanation_en": "听 (tīng) is the act of listening and 听见 (tīngjiàn) is the result of hearing. Read with 读 (dú), speak with 说 (shuō), write with 写 (xiě).",
-          "formula_en": "我 + skill verb + object",
           "examples": [
             {
               "hanzi": "我喜欢听汉语。",
@@ -1121,7 +1188,10 @@
               "pinyin": "Tā měi tiān dú Zhōngwén shū.",
               "english": "She reads Chinese books every day."
             }
-          ]
+          ],
+          "pattern_hanzi": "我 + 技能动词 + 宾语",
+          "pattern_pinyin": "wǒ + jìnéng dòngcí + bīnyǔ",
+          "pattern_pseudo_translation": "我 + <skill verb> + <object>"
         }
       ],
       "guided_building": {
@@ -1138,7 +1208,8 @@
               "hanzi": "我每天说汉语。",
               "pinyin": "Wǒ měi tiān shuō Hànyǔ.",
               "english": "I speak Chinese every day."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "write characters",
@@ -1146,7 +1217,8 @@
               "hanzi": "我每天写汉字。",
               "pinyin": "Wǒ měi tiān xiě Hànzì.",
               "english": "I write Chinese characters every day."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1162,11 +1234,13 @@
         "questions": [
           {
             "prompt_en": "What does Xiao Wang do in the morning?",
-            "answer_en": "Listens to Chinese."
+            "answer_en": "Listens to Chinese.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "When does he speak Chinese with friends?",
-            "answer_en": "In the evening."
+            "answer_en": "In the evening.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1215,5 +1289,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-studying-and-language--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Learning versus a class session",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-studying-and-language--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Four basic language skills",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: speak",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-studying-and-language--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: write characters",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--read--reading-q-01",
+            "kind": "question",
+            "label": "What does Xiao Wang do in the morning?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-studying-and-language--read--reading-q-02",
+            "kind": "question",
+            "label": "When does he speak Chinese with friends?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Tell a friend which language skill you practise.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-studying-and-language--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask a classmate whether they can write Chinese characters.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-studying-and-language--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-studying-and-language--quiz--q-15-1",
+            "kind": "practice",
+            "label": "Which expression means “read”?",
+            "optional": true,
+            "target_id": "q-15-1"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--q-15-2",
+            "kind": "practice",
+            "label": "Which expression means “say”?",
+            "optional": true,
+            "target_id": "q-15-2"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--q-15-3",
+            "kind": "practice",
+            "label": "Which expression means “character”?",
+            "optional": true,
+            "target_id": "q-15-3"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--q-15-4",
+            "kind": "practice",
+            "label": "In the example “我会读汉字。” (wǒ huì dú Hànzì.), what is happening?",
+            "optional": false,
+            "target_id": "q-15-4"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--q-15-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Please read this lesson.”",
+            "optional": false,
+            "target_id": "q-15-5"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What does Xiao Wang do in the morning?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: When does he speak Chinese with friends?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Tell a friend which language skill you practise.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-studying-and-language--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask a classmate whether they can write Chinese characters.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

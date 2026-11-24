@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { DecompositionNode } from './character-library';
-import { parseIdsTree } from './ids-tree';
+import { parseIdsTree, hasKnownDecomposition } from './ids-tree';
 import { childOwner, sameContextualForm } from './radical-context';
 import { breakdownDisplayGlyph } from './radical-identities';
 import supplementaryOutlines from '@/data/supplementary-outlines.json';
@@ -24,6 +24,14 @@ export type CharacterEnrichment = z.infer<typeof envelopeSchema>['record'];
 export function gSourceDecompositions(record: CharacterEnrichment | null) {
   return (record?.comparison.alternatives ?? []).filter(alternative => alternative.directG)
     .map(alternative => ({ ...alternative, tree: parseIdsTree(alternative.expression) }));
+}
+/** Unknown-only and self-only sources offer no breakdown. Unparsed notation remains raw,
+ * since unsupported syntax is not evidence that its recorded parts are unknown. */
+export function visibleGSourceDecompositions(record: CharacterEnrichment | null) {
+  return gSourceDecompositions(record).filter(alternative => !alternative.tree || hasKnownDecomposition(alternative.tree));
+}
+export function decompositionHasContent(tree: DecompositionNode | undefined, record: CharacterEnrichment | null): boolean {
+  return hasKnownDecomposition(tree) || visibleGSourceDecompositions(record).length > 0;
 }
 export type ComponentOccurrence = z.infer<typeof groupSchema>;
 const geometrySchema = z.object({ strokes: z.array(z.string()), medians: z.array(z.array(z.tuple([z.number(), z.number()]))) }).passthrough();

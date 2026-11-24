@@ -1,0 +1,276 @@
+[1.33 - 5.29] This is Unit 4 of Pimsleur's Mandarin Chinese 1.
+[5.95 - 7.17] Listen to this conversation.
+[8.37 - 11.25] 对不起(duì bù qǐ),请问(qǐng wèn) 你(nǐ) 是(shì) 中国(zhōng guó) 人(rén) 吗(ma)?
+[11.51 - 13.93] 是(shì),我(wǒ) 是(shì) 中国(zhōng guó) 人(rén)。你(nǐ) 呢(ne)?
+[14.93 - 15.97] 我(wǒ) 是(shì) 美国(měi guó) 人(rén)。
+[15.97 - 18.29] 可是(kě shì) 你(nǐ) 会(huì) 说(shuō) 普通话(pǔ tōng huà)。
+[18.29 - 21.73] 我会(wǒ huì) 说(shuō) 一点儿(yì diǎn ér)。我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo)。
+[21.73 - 24.29] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[24.29 - 25.97] 谢谢(xiè xiè) 你(nǐ)。
+[25.97 - 27.29] Listen again.
+[28.53 - 31.23] 对不起(duì bù qǐ),请问(qǐng wèn) 你(nǐ) 是(shì) 中国(zhōng guó) 人(rén) 吗(ma)?
+[31.33 - 33.91] 是(shì),我(wǒ) 是(shì) 中国(zhōng guó) 人(rén),你(nǐ) 呢(ne)?
+[34.27 - 36.01] 我(wǒ) 是(shì) 美国(měi guó) 人(rén)。
+[36.01 - 38.27] 可是(kě shì) 你(nǐ) 会(huì) 说(shuō) 普通话(pǔ tōng huà)。
+[38.27 - 41.71] 我会(wǒ huì) 说(shuō) 一点(yì diǎn),我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo)。
+[41.71 - 44.31] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[44.31 - 45.87] 谢谢(xiè xiè) 你(nǐ)。
+[45.87 - 48.41] Do you remember how to say, hello?
+[51.32 - 52.28] 你好(nǐ hǎo)。
+[52.28 - 58.89] The tones in hello rise, fall, and begin to rise again.
+[59.83 - 61.05] Say again, hello.
+[63.85 - 64.89] 你好(nǐ hǎo)。
+[64.89 - 68.52] Now say, goodbye.
+[68.88 - 70.92] Remember the two falling tones.
+[73.87 - 77.35] 再见(zài jiàn),再见(zài jiàn)
+[77.35 - 82.45] How would you ask a good friend, how are you?
+[85.31 - 85.91] 你好(nǐ hǎo) 吗(ma)?
+[89.47 - 93.23] Say, very well.
+[96.92 - 97.54] 很(hěn) 好(hǎo)
+[97.54 - 101.46] Thank you.
+[104.56 - 108.75] 谢谢(xiè xiè) 你(nǐ),谢谢(xiè xiè) 你(nǐ)
+[108.75 - 113.96] Ask your friend again, how are you?
+[116.56 - 117.20] 你好(nǐ hǎo) 吗(ma)?
+[117.20 - 121.73] Try to say, not very well.
+[122.47 - 124.63] Literally, am not very well.
+[128.23 - 129.09] 不是(bú shì) 很(hěn) 好(hǎo)
+[129.09 - 139.28] Now say, I can't speak Mandarin.
+[145.74 - 152.32] And how do you say, I don't speak well?
+[163.43 - 170.11] Do you remember how to ask someone, are you American?
+[176.05 - 182.04] How would you answer this question? Yes.
+[188.66 - 192.76] Ask the woman if she is American.
+[199.03 - 199.67] 你(nǐ) 不是(bú shì) 美国(měi guó) 人(rén) 吗(ma)?
+[204.21 - 207.01] Now say to her, you are not American.
+[211.89 - 217.48] 你(nǐ) 不是(bú shì) 美国(měi guó) 人(rén),不是(bú shì)。
+[217.48 - 222.71] Say, I'm American, how about you?
+[228.64 - 230.08] 我(wǒ) 是(shì) 美国(měi guó) 人(rén),你(nǐ) 呢(ne)?
+[235.87 - 240.51] Now say, I'm not American.
+[245.11 - 246.31] 我(wǒ) 不是(bú shì) 美国(měi guó) 人(rén)。
+[246.31 - 251.98] How does she say, you are not Chinese?
+[263.16 - 263.92] 你(nǐ) 不是(bú shì) 中国(zhōng guó) 人(rén),中国(zhōng guó) 人(rén)。
+[263.92 - 268.43] Ask her if she is Chinese.
+[273.80 - 274.92] 你(nǐ) 是(shì) 中国(zhōng guó) 人(rén) 吗(ma)?
+[275.36 - 280.70] How does she answer, yes?
+[283.60 - 286.63] 是(shì),是(shì)
+[286.63 - 291.02] Ask her if she can speak English.
+[296.55 - 297.93] 你(nǐ) 会(huì) 说(shuō) 英文(yīng wén) 吗(ma)?
+[298.39 - 303.91] How would she answer, no?
+[306.64 - 309.94] 不会(bú huì),不会(bú huì)
+[309.94 - 314.90] And how does she tell you that she can't speak English?
+[321.22 - 321.86] 我(wǒ) 不会(bú huì) 说(shuō) 英文(yīng wén)
+[321.86 - 327.93] Ask, how about you?
+[330.72 - 334.06] 你(nǐ) 呢(ne),你(nǐ) 呢(ne)
+[334.06 - 338.94] Tell her, I can speak a little Mandarin.
+[345.30 - 346.90] 说(shuō) 一点(yì diǎn) 普通话(pǔ tōng huà)。
+[346.90 - 353.64] Here's how to say, you understand.
+[354.32 - 355.16] Listen and repeat.
+[378.45 - 381.56] 你(nǐ) 明白(míng bái)。
+[381.56 - 385.16] 明白(míng bái) is pronounced with two rising tones.
+[385.82 - 387.58] Try to say, you understand.
+[391.58 - 394.60] 你(nǐ) 明白(míng bái)。
+[394.60 - 397.86] In Chinese, this means understand the situation
+[397.86 - 399.90] or understand what's happening.
+[400.64 - 403.24] It's not used to say understand a language.
+[404.12 - 405.86] Say, you can speak Mandarin.
+[410.81 - 420.34] 你(nǐ) 会(huì) 说(shuō) 普通话(pǔ tōng huà)。
+[420.34 - 422.52] Now say, I understand.
+[430.16 - 430.84] 我(wǒ) 明白(míng bái)。
+[430.84 - 436.62] And how do you think you would say, I don't understand?
+[447.52 - 448.20] 我(wǒ) 不(bù) 明白(míng bái)。
+[448.20 - 453.14] Say, I can speak a little.
+[458.46 - 459.22] 我会(wǒ huì) 说(shuō) 一点儿(yì diǎn ér)。
+[459.22 - 489.98] But, 可是(kě shì),可是(kě shì), I don't speak well. 我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo),我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo)。
+[489.98 - 494.22] She says, you speak Mandarin very well. Listen and repeat.
+[497.26 - 511.94] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo),说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[511.94 - 526.59] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō),你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[526.59 - 528.11] Notice the word order.
+[528.73 - 531.01] Say, you speak Mandarin very well.
+[538.96 - 540.04] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[540.04 - 554.30] Remember to use 得(dé) to say speak very well.
+[554.94 - 557.50] Say again, you speak Mandarin very well.
+[565.09 - 566.33] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[566.33 - 573.48] Tell her you don't understand.
+[577.46 - 578.98] 我(wǒ) 不(bù) 明白(míng bái)。
+[578.98 - 584.31] However, in most cases, it's better to say,
+[584.87 - 586.91] I don't understand what you're saying.
+[587.69 - 589.11] Here's how to say, what.
+[589.91 - 590.75] Listen and repeat.
+[592.13 - 595.91] 什么(shén me) 吗(ma)?
+[598.31 - 598.69] 什么(shén me)?
+[604.77 - 605.25] 什么(shén me)?
+[605.69 - 610.64] The tone first rises, then falls.
+[611.32 - 612.20] Say, what.
+[615.24 - 615.60] 什么(shén me)?
+[616.04 - 620.74] And now say, I don't understand.
+[624.46 - 625.34] 我(wǒ) 不(bù) 明白(míng bái)。
+[625.34 - 635.19] I don't understand what you're saying, or literally, I don't understand you speak what. Try it.
+[642.78 - 648.90] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)。
+[648.90 - 661.32] Ask, can you speak English?
+[666.20 - 666.76] 你(nǐ) 会(huì) 说(shuō) 英文(yīng wén) 吗(ma)?
+[670.56 - 672.54] Say, I can speak a little.
+[677.67 - 678.43] 我会(wǒ huì) 说(shuō) 一点(yì diǎn)。
+[678.43 - 683.70] Ask, what about you?
+[686.47 - 686.95] 你(nǐ) 呢(ne)?
+[686.95 - 692.48] Do you remember how to say, I don't speak well?
+[697.25 - 698.45] 我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo)。
+[698.45 - 710.55] Say, I don't understand what you're saying.
+[717.28 - 722.00] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)。
+[722.00 - 733.83] Tell her, I'm not Chinese.
+[739.12 - 743.45] 我(wǒ) 不是(bú shì) 中国(zhōng guó) 人(rén)。
+[743.45 - 745.73] What's the Mandarin word, but?
+[748.67 - 751.42] 可是(kě shì)。
+[751.42 - 753.76] Say, but I can speak Mandarin.
+[753.82 - 767.32] 可是(kě shì) 我会(wǒ huì) 说(shuō) 普通话(pǔ tōng huà) I can speak a little Mandarin
+[767.32 - 782.81] 我会(wǒ huì) 说(shuō) 一点(yì diǎn) 普通话(pǔ tōng huà) Now say, I don't speak well
+[782.81 - 794.92] 我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo) She says, you are not Chinese
+[794.92 - 806.36] 你(nǐ) 不是(bú shì) 中国(zhōng guó) 人(rén) But
+[806.36 - 818.30] 可是(kě shì) 可是(kě shì) She tells you, you speak Mandarin very well
+[818.30 - 826.74] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)
+[826.74 - 841.97] 可是(kě shì) 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[841.97 - 843.21] Say thank you.
+[846.48 - 850.03] 谢谢(xiè xiè) 你(nǐ)。
+[850.03 - 855.56] Let's learn to ask for directions.
+[856.44 - 859.04] We'll start by asking the way to College Road.
+[859.66 - 861.20] Just listen, don't repeat.
+[862.24 - 865.24] 对不起(duì bù qǐ),请问(qǐng wèn) 学院路(xué yuàn lù) 在(zài) 哪儿(nǎ ér)?
+[865.78 - 868.12] Listen and repeat the street's name.
+[868.12 - 870.02] 学院(xué yuàn)
+[870.02 - 873.40] 院(yuàn)
+[873.40 - 876.35] 院(yuàn)
+[876.35 - 879.62] 学(xué)
+[879.62 - 890.62] 学(xué) 学(xué) 学院(xué yuàn) 学院(xué yuàn)
+[890.62 - 895.84] The tone first rises, then falls.
+[896.54 - 897.58] Say the name again.
+[900.64 - 901.32] 学院(xué yuàn)
+[901.32 - 905.63] Here's the word for road,
+[906.09 - 908.51] which is pronounced with a high, falling tone.
+[909.39 - 910.19] Listen and repeat.
+[911.43 - 917.89] 路(lù) 路(lù) 路(lù)
+[917.89 - 922.00] Say again. Road.
+[924.89 - 928.08] 路(lù) 路(lù)
+[928.08 - 932.84] Now try to say college road.
+[932.84 - 937.16] 学院(xué yuàn)
+[937.58 - 938.10] 学院路(xué yuàn lù)
+[938.10 - 948.89] Here's how to ask where this road is.
+[949.49 - 950.97] First, the word for where.
+[951.67 - 952.45] Listen and repeat.
+[953.65 - 954.19] 哪儿(nǎ ér)
+[954.19 - 963.68] 那儿(nà ér)
+[963.68 - 966.78] 那儿(nà ér)
+[966.78 - 972.26] That's pronounced with a falling, rising tone.
+[972.86 - 974.06] Say again, where.
+[977.18 - 977.78] 哪儿(nǎ ér)
+[977.78 - 983.12] Now you want to ask, where is College Road?
+[983.12 - 987.98] In Chinese, you literally ask, College Road located where?
+[988.64 - 989.42] Listen and repeat.
+[990.82 - 992.28] 学院路(xué yuàn lù) 在(zài) 哪儿(nǎ ér)?
+[996.99 - 997.79] 在(zài)。
+[997.79 - 1000.52] 在(zài)。
+[1000.52 - 1004.48] What part of that means located?
+[1010.43 - 1012.89] 在(zài)。
+[1012.89 - 1013.33] 在(zài)。
+[1013.33 - 1015.39] Is pronounced with a falling tone.
+[1016.03 - 1017.83] Try to ask, located where?
+[1018.43 - 1021.71] It's not a yes-no question, so you don't need
+[1021.71 - 1022.23] 吗(ma)?
+[1026.33 - 1027.09] 在(zài) 哪儿(nǎ ér)?
+[1030.68 - 1031.36] 在(zài) 哪儿(nǎ ér)?
+[1031.70 - 1037.06] Now ask where College Road is located.
+[1037.78 - 1038.90] Remember the word order.
+[1039.28 - 1052.54] Here is the Mandarin word for street.
+[1053.24 - 1054.06] Listen and repeat.
+[1061.92 - 1066.75] This word is pronounced with a high-level tone.
+[1067.39 - 1068.75] Say again, street.
+[1072.13 - 1076.41] Here's the name, Long Peace Street.
+[1077.13 - 1077.87] Listen and repeat.
+[1095.68 - 1107.29] That's pronounced with first a rising tone, then two high-level tones.
+[1108.01 - 1110.21] Say again, Long Peace Street.
+[1115.10 - 1120.42] Try to ask where this street is located.
+[1133.38 - 1138.72] The answer is here.
+[1139.52 - 1140.96] Listen and repeat, here.
+[1140.96 - 1160.27] Say here with a high falling tone
+[1160.27 - 1172.40] Try to answer here or literally located here
+[1172.40 - 1182.19] Ask where Long Peace Street is located
+[1182.19 - 1196.58] Do you remember how to say college road?
+[1196.58 - 1200.90] 学院路(xué yuàn lù)
+[1200.90 - 1210.44] Ask, where is College Road located?
+[1214.76 - 1216.24] 学院路(xué yuàn lù) 在(zài) 哪儿(nǎ ér)?
+[1220.04 - 1222.20] How would you answer, located here?
+[1225.34 - 1228.70] 在(zài) 这儿(zhè ér)
+[1228.70 - 1234.27] Do you remember how to say, what?
+[1237.18 - 1237.64] 什么(shén me)
+[1237.64 - 1246.04] Tell her you don't understand what she is saying.
+[1246.04 - 1253.77] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)
+[1253.77 - 1264.82] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)。
+[1264.82 - 1267.38] You want to ask, is it located here?
+[1268.04 - 1268.86] Listen and repeat.
+[1279.53 - 1283.34] 是(shì) 在(zài) 这儿(zhè ér) 吗(ma)?
+[1283.34 - 1287.16] Because you're asking, is it, rather than where is,
+[1287.72 - 1288.90] you use 是(shì).
+[1289.46 - 1291.84] Ask again, is it located here?
+[1300.74 - 1301.34] 是(shì) 在(zài) 这儿(zhè ér) 吗(ma)?
+[1301.78 - 1307.68] Try to answer, yes, it's located here.
+[1312.60 - 1321.08] Now try to say, no, it's not located here.
+[1328.62 - 1337.14] Tell the woman, I don't understand what you are saying.
+[1344.37 - 1351.52] She says, it's located over there.
+[1352.40 - 1353.20] Listen and repeat.
+[1362.68 - 1367.82] 那儿(nà ér) is pronounced with a falling tone.
+[1368.54 - 1369.18] Say it again.
+[1375.34 - 1382.04] Now ask, where is College Road located?
+[1393.34 - 1399.35] Did you remember the falling, rising tone in the word where?
+[1400.21 - 1402.83] Listen and repeat, where, over there.
+[1405.65 - 1413.15] How would she answer, not over there?
+[1413.97 - 1416.79] Say literally, not located over there.
+[1416.79 - 1428.88] And now ask again
+[1428.88 - 1430.48] Is it located here?
+[1442.49 - 1448.50] Say, Long Peace Street is located here
+[1448.50 - 1461.04] Ask where College Road is located
+[1461.04 - 1472.46] Answer, not here
+[1472.46 - 1487.19] Answer, over there
+[1487.19 - 1497.30] 在(zài) 那儿(nà ér),不(bù) 在(zài) 这儿(zhè ér),在(zài) 那儿(nà ér)。
+[1497.30 - 1499.98] Tell her that you don't understand what she is saying.
+[1506.03 - 1512.90] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)。
+[1512.90 - 1520.94] Say goodbye to her.
+[1523.43 - 1526.28] 再见(zài jiàn)。
+[1526.28 - 1531.14] Let's try a Mandarin conversation.
+[1531.90 - 1534.48] The woman will say things to which you are to respond.
+[1535.30 - 1537.38] When the answer isn't clear, I'll help.
+[1538.14 - 1538.76] Let's begin.
+[1540.08 - 1541.08] 你好(nǐ hǎo)。
+[1541.08 - 1546.38] 你好(nǐ hǎo)。
+[1546.38 - 1547.74] 你(nǐ) 是(shì) 美国(měi guó) 人(rén) 吗(ma)?
+[1550.03 - 1558.58] 是(shì),是(shì),我(wǒ) 是(shì) 美国(měi guó) 人(rén)。
+[1558.58 - 1561.82] 我(wǒ) 是(shì) 中国(zhōng guó) 人(rén),你(nǐ) 会(huì) 说(shuō) 普通话(pǔ tōng huà) 吗(ma)?
+[1564.49 - 1574.69] 一点(yì diǎn),我会(wǒ huì) 说(shuō) 一点(yì diǎn) 普通话(pǔ tōng huà)。
+[1574.69 - 1577.05] Say, I can speak a little Mandarin.
+[1583.94 - 1589.44] 我会(wǒ huì) 说(shuō) 一点(yì diǎn) 普通话(pǔ tōng huà)。
+[1589.44 - 1591.36] Tell her you don't speak well.
+[1602.95 - 1603.71] 我(wǒ) 说(shuō) 得(dé) 不好(bù hǎo)。
+[1603.71 - 1610.54] And how would she say, you speak Mandarin very well?
+[1620.48 - 1621.08] 你(nǐ) 普通话(pǔ tōng huà) 说(shuō) 得(dé) 很(hěn) 好(hǎo)。
+[1621.08 - 1627.91] Say, thank you.
+[1634.60 - 1635.20] 谢谢(xiè xiè) 你(nǐ)。
+[1635.20 - 1639.76] Now she'll ask you for some directions.
+[1640.64 - 1641.84] I'll tell you how to answer.
+[1646.18 - 1646.90] 对不起(duì bù qǐ),请问(qǐng wèn) 学院路(xué yuàn lù) 在(zài) 哪儿(nǎ ér)?
+[1647.30 - 1650.30] How does she ask, is it located here?
+[1658.98 - 1659.58] 是(shì) 在(zài) 这儿(zhè ér) 吗(ma)?
+[1659.58 - 1665.55] Tell her that, yes, it is located here.
+[1677.45 - 1684.68] How does she ask, where is Long Peace Street located?
+[1699.04 - 1704.90] Tell her, located over there.
+[1715.24 - 1720.83] Tell her that College Road is not located over there.
+[1727.60 - 1733.00] 不(bù) 在(zài) 那儿(nà ér)
+[1733.00 - 1738.90] Tell her that Long Peace Street is located over there
+[1738.90 - 1744.64] 长安街(cháng ān jiē) 在(zài) 那儿(nà ér)
+[1744.64 - 1751.22] Say, but College Road is located here
+[1751.22 - 1758.95] 可是(kě shì),学院路(xué yuàn lù) 在(zài) 这儿(zhè ér)
+[1758.95 - 1765.33] Now she'll say something
+[1765.33 - 1769.11] If you don't understand what she is saying, tell her so
+[1769.11 - 1772.81] 我(wǒ) 想(xiǎng) 买(mǎi) 一点(yì diǎn) 东西(dōng xī),你(nǐ) 呢(ne)?
+[1777.95 - 1779.81] 我(wǒ) 不(bù) 明白(míng bái) 你(nǐ) 说(shuō) 什么(shén me)
+[1779.81 - 1786.29] Say goodbye to her
+[1786.29 - 1789.73] 再见(zài jiàn)
+[1789.73 - 1799.11] This is the end of Unit 4
+[1799.11 - 1804.07] Copyright 2005 by Simon & Schuster Incorporated
+[1804.07 - 1808.89] Recording Copyright 2005 by Simon & Schuster Incorporated
+[1808.89 - 1810.65] All rights reserved

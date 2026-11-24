@@ -1,0 +1,22 @@
+{
+  "reason": "Keep only current source uploads and their Markdown notes, as requested by the owner.",
+  "historyCommit": "6b36919db0e75ad0e96d7e6fd73bcda17a07998a",
+  "removedFiles": [
+    {
+      "path": "importer/data/lessons/Mandarin_Core_Project_Sources_v3.3.1_taxonomy-v2.0.0.zip",
+      "gitBlobSha256": "69dd542a0273b79f2c98e24c87c0d570861ef2d7ac32719b14d8374950d38502"
+    },
+    {
+      "path": "importer/data/lessons/Mandarin_Other_Lessons_v3.3.1_taxonomy-v2.0.0.zip",
+      "gitBlobSha256": "4cb7941a7562dc372d263b1211698d8d59cacfe05bcfda3361c36ae227e79315"
+    },
+    {
+      "path": "reports/Mandarin_Core_Project_Sources_v3.3.1_Release_Audit.md",
+      "gitBlobSha256": "81b04eb0b4aa610aa485edc206900188c498c8f305888a15f159c32fd902c5e7"
+    },
+    {
+      "path": "reports/Mandarin_Conversational_Lessons_Core-v3.3.1_Editorial_Audit.md",
+      "gitBlobSha256": "e3032840d6afd78842c34fade25fee6e715d1833621d682bbf8c8d8b8a423d10"
+    }
+  ]
+}

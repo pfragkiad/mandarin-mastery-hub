@@ -30,7 +30,11 @@ Two new classmates introduce the people in their families and clarify family rel
 
 Use 的 (de) after a possessor when emphasizing whose person or thing it is. In close family relationships 的 is often omitted in natural speech.
 
-**Pattern:** person + 的 + noun
+**Pattern**
+
+人 + 的 + 名词  
+*rén + de + míngcí*  
+&lt;person&gt; + **的** + &lt;noun&gt;
 
 **这是我的哥哥。**
 *Zhè shì wǒ de gēge.*
@@ -44,7 +48,11 @@ My mom is at home.
 
 是 (shì) identifies someone; 有 (yǒu) tells what people or things someone has. Keep the predicates distinct.
 
-**Pattern:** X 是 Y / X 有 Y
+**Pattern**
+
+主语 + 是 + 身份 / 主语 + 有 + 所拥有的事物  
+*zhǔyǔ + shì + shēnfèn / zhǔyǔ + yǒu + suǒ yǒngyǒu de shìwù*  
+&lt;subject&gt; + **是** + &lt;identity&gt; / &lt;subject&gt; + **有** + &lt;thing owned&gt;
 
 **她是我妹妹。**
 *Tā shì wǒ mèimei.*
@@ -184,3 +192,46 @@ How many people are in your family?
 
 **Production:** Write this in Mandarin: “Dad loves watching Chinese-language movies.”
 **Answer:** 爸爸爱看中文电影。 (bàba ài kàn Zhōngwén diànyǐng.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-family-and-friends--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Family ownership with 的 (de) — ID: `topic-family-and-friends--pattern--pattern-1`
+- [ ] Apply: Introducing a relationship — ID: `topic-family-and-friends--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: younger brother — ID: `topic-family-and-friends--build--build-sub-01`
+- [ ] Build a sentence: older brother — ID: `topic-family-and-friends--build--build-sub-02`
+
+### Reading comprehension
+- [ ] How many younger siblings does the speaker have? — ID: `topic-family-and-friends--read--reading-q-01`
+- [ ] Who likes reading? — ID: `topic-family-and-friends--read--reading-q-02`
+
+### Speaking practice
+- [ ] Introduce one family member. — ID: `topic-family-and-friends--speak--speaking-1`
+- [ ] Ask how many people are in someone’s family. — ID: `topic-family-and-friends--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-family-and-friends--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-family-and-friends--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-family-and-friends--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “love”? *(optional)* — ID: `topic-family-and-friends--quiz--q-09-1`
+- [ ] Which expression means “older sister”? *(optional)* — ID: `topic-family-and-friends--quiz--q-09-2`
+- [ ] Which expression means “child”? *(optional)* — ID: `topic-family-and-friends--quiz--q-09-3`
+- [ ] In the example “我爱我的家。” (wǒ ài wǒ de jiā.), what is happening? — ID: `topic-family-and-friends--quiz--q-09-4`
+- [ ] Write this in Mandarin: “Dad loves watching Chinese-language movies.” — ID: `topic-family-and-friends--quiz--q-09-5`
+- [ ] Reading comprehension: How many younger siblings does the speaker have? — ID: `topic-family-and-friends--quiz--applied-reading-1`
+- [ ] Reading comprehension: Who likes reading? — ID: `topic-family-and-friends--quiz--applied-reading-2`
+- [ ] Say this aloud: Introduce one family member. — ID: `topic-family-and-friends--quiz--applied-speaking-1`
+- [ ] Say this aloud: Ask how many people are in someone’s family. — ID: `topic-family-and-friends--quiz--applied-speaking-2`

@@ -3,6 +3,8 @@ import { libraryEntries, radicalVariantFallback, type LibraryKind } from './char
 import { glyphPresentation } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 import { usageRank } from './usage-frequency';
+import { glyphRecordInk } from './record-ink';
+import type { CardInk } from './card-ink';
 import type { CharacterScript } from './learning-preferences';
 
 /**
@@ -33,6 +35,8 @@ export type LessonGlyphHint = {
   radicalNumber?: number | undefined;
   /** Full-card destination: the exact record ID (an explicit ID beats any page number). */
   search: { tab: LibraryKind; id: string };
+  /** The record's identity ink, the same one its library card wears (record-ink.ts). */
+  ink: CardInk;
 };
 
 const ORDER: LibraryKind[] = ['Characters', 'Components', 'Radicals'];
@@ -56,6 +60,7 @@ function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries
     script: entry.script,
     radicalNumber: entry.kangxiIndex ?? info.characterRadical?.number,
     search: { tab: kind, id: entry.id },
+    ink: glyphRecordInk(entry, kind),
   };
 }
 
@@ -66,6 +71,19 @@ export function lessonGlyphHint(glyph: string, includeTraditional: boolean): Les
     if (entry) return hintForEntry(kind, entry, includeTraditional);
   }
   return null;
+}
+
+/** Every exact record for one written form, one per library that has it (Characters,
+ *  Components, Radicals) — 八 exists in all three. Same exact-form lookup rules as
+ *  lessonGlyphHint, so no identity is inferred across kinds; presentation only. */
+export function lessonGlyphHints(glyph: string, includeTraditional: boolean): LessonGlyphHint[] {
+  if (Array.from(glyph).length !== 1) return [];
+  const out: LessonGlyphHint[] = [];
+  for (const kind of ORDER) {
+    const entry = libraryEntries(kind).find(item => item.hanzi === glyph);
+    if (entry) out.push(hintForEntry(kind, entry, includeTraditional));
+  }
+  return out;
 }
 
 /** Hint for a lesson's recorded catalog_character_refs ID ("Characters:次"). The ID's kind

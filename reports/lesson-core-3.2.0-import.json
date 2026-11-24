@@ -1,0 +1,57 @@
+{
+  "source": {
+    "file": "Mandarin_Core_Project_Sources_v3.2.0_taxonomy-v2.0.0.zip",
+    "sha256": "ff4f2a86ee3f0f073b263e0d6ece1c305320d878069a9cf8d4b58b38a8661a31"
+  },
+  "files": {
+    "CHARACTER_LESSON_TEMPLATE.json": "8004bcc79fddb35a9a5dbd5cd95bab53b00bbb6268fe6efaaadce2b746f4ce17",
+    "CHARACTER_LESSON_TEMPLATE.md": "f43c197f986b01732dfd2e4dfd8d65ad8b31c6318ada11a05def2bb9e44f68a2",
+    "CURRICULUM_HSK3_TEMPLATE.json": "6c48c5be9ee25e43e5581dc6b3cb5d83b9de4d0fbe232d7ee4ccfb2bc62e9175",
+    "CURRICULUM_PIMSLEUR_TEMPLATE.json": "2361abaaa461f50d47b1a3fd2ddf0903e61fa7b4f641be15a0d15510bc6b4d99",
+    "DIALOGUE_LESSON_TEMPLATE.json": "673f58ac9f2caa31f4ef0b6400511e7e8c8036072c19789451f478fc79efa5f0",
+    "GENERAL_LESSON_TEMPLATE.md": "4a2493742d3813e913cbecedf10b2c02ddebc6adf0942462199e65064bc28e9f",
+    "GENERIC_LESSON_TEMPLATE.json": "d55a9faeb8ec381229a3e57765becadcdfe7a18cfea069cc1441bfbfef1354d2",
+    "GRAMMAR_LESSON_TEMPLATE.json": "9dd1818962237343c9c1013b33a820507f76d56a9af08873c2144dcbb8fac66c",
+    "README.md": "8f0f3e57f10bd27a3634ef435f0cf37504a6c91c41de5e8b1b4fac06564a284a",
+    "REVIEW_LESSON_TEMPLATE.json": "eed339be21eeae691b915521421658630f583376d6a5912bc459b5881acd9692",
+    "TOPIC_LESSON_TEMPLATE.json": "ceada294ce25d6c64d9218413723016d88c8a90c3dfa9dcb0a75a78297f93a5c",
+    "TOPIC_LESSON_TEMPLATE.md": "63ab0416988352fdda6bcf9169794c70db7ce680b074c66348a71df159f4f10d",
+    "character_lesson.schema.json": "473534db25798be4ca95fb157a5223187a2ff46e8937f81eb697c4c86a913eb5",
+    "curriculum.schema.json": "b8144546fee11e1d3e2db42066d4dc9fbb3326a00dc95b92a3d58579ce422e3b",
+    "general_lesson.schema.json": "aab16e9c6b8c40c633292789d5787acedb62aaab81b86f6a6fd0abae4d5ec9db",
+    "lesson_categories.json": "cbed73977a9bdcc01501eacd7f29d4c3f7bd99a12434280e88ad7239812547f4",
+    "lesson_categories.schema.json": "ce64e47e5f6ddbe92257bdcd9d9ddca96f83a075e674174d381b9dbf4df8273b",
+    "lesson_common.schema.json": "74aa03f0cd3191c642539689938dffee82f9d5980d2d850f764bd41a45537d3b",
+    "topic_lesson.schema.json": "9ee867b13d9b8d713c7af0d2d8df27f9d556be0a23161a813d266384a6d65667"
+  },
+  "validatedActiveLessonsAndCurricula": 40,
+  "changedFiles": [
+    "CHARACTER_LESSON_TEMPLATE.json",
+    "CHARACTER_LESSON_TEMPLATE.md",
+    "CURRICULUM_HSK3_TEMPLATE.json",
+    "CURRICULUM_PIMSLEUR_TEMPLATE.json",
+    "DIALOGUE_LESSON_TEMPLATE.json",
+    "GENERAL_LESSON_TEMPLATE.md",
+    "GENERIC_LESSON_TEMPLATE.json",
+    "GRAMMAR_LESSON_TEMPLATE.json",
+    "README.md",
+    "REVIEW_LESSON_TEMPLATE.json",
+    "TOPIC_LESSON_TEMPLATE.json",
+    "TOPIC_LESSON_TEMPLATE.md",
+    "character_lesson.schema.json",
+    "curriculum.schema.json",
+    "general_lesson.schema.json",
+    "lesson_categories.json",
+    "lesson_categories.schema.json",
+    "lesson_common.schema.json",
+    "topic_lesson.schema.json"
+  ],
+  "checks": {
+    "templatesAndSchemasValidated": true,
+    "allActiveDocumentsAccepted": true,
+    "pythonToolsAndLegacySnapshotsPreserved": true,
+    "all19ExtractedFilesByteExact": true,
+    "repeatImportIdempotent": true,
+    "parentAndSubtopicIdentitiesMatchHskTaxonomyV2": true
+  }
+}

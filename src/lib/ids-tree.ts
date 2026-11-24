@@ -12,6 +12,19 @@ const positions: Record<string, readonly string[]> = {
   '⿾': ['original'], '⿿': ['original'], '㇯': ['base', 'removed'],
 };
 
+/** Presentation only: layout operators and explicit gaps are not known parts.
+ * Keep source trees untouched for checksums, and keep numbered source identities known. */
+export function hasKnownDecompositionParts(tree?: DecompositionNode | null): boolean {
+  if (!tree) return false;
+  const namedPart = Boolean(tree.glyph.trim()) && !/^[?？]$/.test(tree.glyph) && !positions[tree.glyph];
+  return namedPart || Boolean(tree.children?.some(hasKnownDecompositionParts));
+}
+
+/** A root glyph alone describes no breakdown; the owner's identity isn't a part. */
+export function hasKnownDecomposition(tree?: DecompositionNode | null): boolean {
+  return Boolean(tree?.children?.length && tree.children.some(hasKnownDecompositionParts));
+}
+
 /** Parse recorded prefix IDS only; unknown notation stays raw instead of guessed. */
 export function parseIdsTree(expression: string): DecompositionNode | null {
   const tokens = Array.from(expression);

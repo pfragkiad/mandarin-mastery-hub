@@ -55,7 +55,9 @@ const shardSchema = z.object({ format: z.string(), schemaVersion: z.literal(1), 
   characters: z.record(z.string(), z.unknown()) });
 
 export type EtymologyRequest = { recordId: string; glyph: string; familyId?: number | undefined; formKey?: string | undefined };
-export type RelatedForm = { glyph: string; recordId: string; explanation?: string };
+/** `classification`: the written-form note's recorded classification for this pair
+ *  (context_dependent_not_error, orthographic_variant, …), absent when none is recorded. */
+export type RelatedForm = { glyph: string; recordId: string; explanation?: string; classification?: string };
 export type EtymologyView = {
   glyph: string; status: EtymologyStatus;
   /** Source entries allowed for display — only for exact-headword Characters records. */
@@ -114,12 +116,29 @@ export function etymologyView(index: EtymologyIndex, request: EtymologyRequest, 
       const id = item.recordId;
       // Only forms whose own record exists with its own exact headword become links.
       if (!id || index.records[id]?.glyph !== item.glyph || index.records[id]?.status !== 'exact-headword') return [];
-      const explanation = item.recordedNotes?.[item.glyph]?.explanation;
-      return [{ glyph: item.glyph, recordId: id, ...(explanation ? { explanation } : {}) }];
+      const note = item.recordedNotes?.[item.glyph];
+      const explanation = note?.explanation;
+      const classification = typeof note?.['classification'] === 'string' ? note['classification'] : undefined;
+      return [{ glyph: item.glyph, recordId: id, ...(explanation ? { explanation } : {}), ...(classification ? { classification } : {}) }];
     });
     return { ...base, related };
   }
   return base;
+}
+
+/**
+ * The one traditional form whose notes a simplified character without its own entry may show
+ * in place (owner-requested, labelled as that form's notes and "suggested, not reviewed"), or
+ * null. Only a plain one-to-one pair qualifies: exactly one related form with its own exact
+ * headword, recorded as Traditional (`isTraditional`, the caller's exact script metadata), and
+ * no note other than a plain "traditional" one — so context-dependent pairs (发 → 發 / 髮,
+ * 后 → 後) and orthographic/regional variants keep only their links, never borrowed text.
+ */
+export function inheritableCounterpart(view: EtymologyView | null | undefined, isTraditional: (glyph: string) => boolean): RelatedForm | null {
+  if (!view || view.status !== 'no-exact-headword' || view.related.length !== 1) return null;
+  const form = view.related[0]!;
+  if (form.classification !== undefined && form.classification !== 'traditional') return null;
+  return isTraditional(form.glyph) ? form : null;
 }
 
 /** Howell marks glossed senses with *asterisks*; split them out for emphasis without altering text.

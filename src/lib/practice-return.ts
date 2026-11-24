@@ -59,6 +59,8 @@ export function originLabel(href: string | null): string {
     case '/flashcards': return 'Flashcards';
     case '/drawing': return 'Drawing game';
     case '/pinyin': return 'Sound chart';
+    case '/pinyin/tone-pairs': return 'Tone pairs';
+    case '/pinyin/tone-changes': return 'Tone changes';
     case '/pinyin/tone-quiz': return 'Tone quiz';
     case '/pinyin/sound-alikes': return 'Sound-alikes';
     case '/pinyin/type-what-you-hear': return 'Type what you hear';

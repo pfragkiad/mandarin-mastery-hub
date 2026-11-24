@@ -1,7 +1,21 @@
 import { describe, expect, it } from 'vitest';
-import { parseIdsTree } from './ids-tree';
+import { parseIdsTree, hasKnownDecomposition } from './ids-tree';
 
 describe('BabelStone IDS trees', () => {
+  it('hides unknown-only breakdowns such as 讠, including nested missing parts', () => {
+    expect(hasKnownDecomposition(parseIdsTree('⿻？？'))).toBe(false);
+    expect(hasKnownDecomposition(parseIdsTree('⿰⿱??？'))).toBe(false);
+    expect(hasKnownDecomposition({ glyph: '讠', position: 'root', children: [{ glyph: '?', position: 'first' }, { glyph: '？', position: 'second' }] })).toBe(false);
+  });
+  it('keeps incomplete breakdowns with a known part or numbered source identity', () => {
+    expect(hasKnownDecomposition(parseIdsTree('⿱一？'))).toBe(true);
+    expect(hasKnownDecomposition(parseIdsTree('⿰?{24}'))).toBe(true);
+    expect(hasKnownDecomposition({ glyph: '⿰', position: 'root', children: [{ glyph: '木', position: 'left', children: [{ glyph: '?', position: 'top' }] }, { glyph: '？', position: 'right' }] })).toBe(true);
+    expect(hasKnownDecomposition({ glyph: '⿰', position: 'root', children: [{ glyph: '\uE000', position: 'left' }, { glyph: '？', position: 'right' }] })).toBe(true);
+  });
+  it('does not treat the whole glyph by itself as a decomposition', () => {
+    expect(hasKnownDecomposition(parseIdsTree('讠'))).toBe(false);
+  });
   it('parses 气 into the recorded three-part top–middle–bottom structure', () => {
     expect(parseIdsTree('⿳𠂉一⺄')).toEqual({ glyph: '⿳', position: 'root', children: [
       { glyph: '𠂉', position: 'top' }, { glyph: '一', position: 'middle' }, { glyph: '⺄', position: 'bottom' },

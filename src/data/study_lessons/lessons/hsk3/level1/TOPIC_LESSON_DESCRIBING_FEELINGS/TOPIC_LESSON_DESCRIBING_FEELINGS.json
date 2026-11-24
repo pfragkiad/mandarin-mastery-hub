@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-describing-feelings",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -18,7 +18,12 @@
       "feelings",
       "evaluation"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "emotions-attitudes",
+      "judgments-evaluation"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Describe appearance, size and quality.",
@@ -27,7 +32,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -125,7 +130,13 @@
     "颜": "Characters:颜",
     "饭": "Characters:饭",
     "首": "Characters:首",
-    "高": "Characters:高"
+    "高": "Characters:高",
+    "主": "Characters:主",
+    "名": "Characters:名",
+    "容": "Characters:容",
+    "形": "Characters:形",
+    "词": "Characters:词",
+    "语": "Characters:语"
   },
   "sections": {
     "overview": {
@@ -172,7 +183,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 25
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-044",
@@ -215,7 +229,12 @@
               "entry_id": 44
             }
           ],
-          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages."
+          "pos_note": "Primarily an adjective meaning correct here; also preposition/verb in other usages.",
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-046",
@@ -257,7 +276,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 46
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-057",
@@ -297,7 +319,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 57
             }
-          ]
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-071",
@@ -338,7 +365,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 71
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-073",
@@ -378,7 +410,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 73
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-074",
@@ -419,7 +456,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 74
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-118",
@@ -460,7 +500,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 118
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-158",
@@ -500,7 +543,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 158
             }
-          ]
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-180",
@@ -541,7 +589,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 180
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-234",
@@ -582,7 +633,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 234
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         },
         {
           "id": "w-242",
@@ -622,7 +676,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 242
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "qualities-feelings"
         }
       ],
       "related_entries": []
@@ -806,7 +863,6 @@
           "id": "pattern-1",
           "title": "Quality adjectives are specific",
           "explanation_en": "好看 (hǎokàn) evaluates how something looks or is to watch; 好听 (hǎotīng) evaluates sounds; 好吃 (hǎochī) evaluates taste. Choose based on the sense.",
-          "formula_en": "subject + 很 + adjective",
           "examples": [
             {
               "hanzi": "这首歌很好听。",
@@ -818,13 +874,15 @@
               "pinyin": "Tā de xīn yīfu hěn piàoliang.",
               "english": "Her new clothes are pretty."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 很 + 形容词",
+          "pattern_pinyin": "zhǔyǔ + hěn + xíngróngcí",
+          "pattern_pseudo_translation": "<subject> + 很 + <adjective>"
         },
         {
           "id": "pattern-2",
           "title": "Degree and contrasting sizes",
           "explanation_en": "很 (hěn) before an adjective can be a neutral predicate linker; 太 (tài) adds a strong degree. 大 (dà), 小 (xiǎo), 多 (duō), 少 (shǎo) are not interchangeable.",
-          "formula_en": "noun + 太 + adjective + 了",
           "examples": [
             {
               "hanzi": "这个房间太小了。",
@@ -836,7 +894,10 @@
               "pinyin": "Zhège píngguǒ hěn dà.",
               "english": "This apple is big."
             }
-          ]
+          ],
+          "pattern_hanzi": "名词 + 太 + 形容词 + 了",
+          "pattern_pinyin": "míngcí + tài + xíngróngcí + le",
+          "pattern_pseudo_translation": "<noun> + 太 + <adjective> + 了"
         }
       ],
       "guided_building": {
@@ -853,7 +914,8 @@
               "hanzi": "这首歌很好听。",
               "pinyin": "Zhè shǒu gē hěn hǎotīng.",
               "english": "This song sounds good."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "food",
@@ -861,7 +923,8 @@
               "hanzi": "这个菜很好吃。",
               "pinyin": "Zhège cài hěn hǎochī.",
               "english": "This dish tastes good."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -877,11 +940,13 @@
         "questions": [
           {
             "prompt_en": "What is new?",
-            "answer_en": "An item of clothing."
+            "answer_en": "An item of clothing.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "What does the younger sister think about the price?",
-            "answer_en": "It is a bit expensive."
+            "answer_en": "It is a bit expensive.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -926,5 +991,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-describing-feelings--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Quality adjectives are specific",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-describing-feelings--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Degree and contrasting sizes",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: song",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-describing-feelings--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: food",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--read--reading-q-01",
+            "kind": "question",
+            "label": "What is new?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-describing-feelings--read--reading-q-02",
+            "kind": "question",
+            "label": "What does the younger sister think about the price?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Compliment the sound of a song.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-describing-feelings--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say a room is too small.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-describing-feelings--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-describing-feelings--quiz--q-18-1",
+            "kind": "practice",
+            "label": "Which expression means “big”?",
+            "optional": true,
+            "target_id": "q-18-1"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--q-18-2",
+            "kind": "practice",
+            "label": "Which expression means “pleasant to hear”?",
+            "optional": true,
+            "target_id": "q-18-2"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--q-18-3",
+            "kind": "practice",
+            "label": "Which expression means “new”?",
+            "optional": true,
+            "target_id": "q-18-3"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--q-18-4",
+            "kind": "practice",
+            "label": "In the example “这个房间很大。” (zhège fángjiān hěn dà.), what is happening?",
+            "optional": false,
+            "target_id": "q-18-4"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--q-18-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “This university is very big.”",
+            "optional": false,
+            "target_id": "q-18-5"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What is new?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: What does the younger sister think about the price?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Compliment the sound of a song.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-describing-feelings--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say a room is too small.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

@@ -61,6 +61,9 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
   speedRef.current = speed;
 
   useEffect(() => {
+    // Clear the previous exact stroke even when the replacement has no verified
+    // example; otherwise printing or overlays could retain another glyph's path.
+    setOutline(null); setMedian([]); setReady(false); setMode('idle');
     if (!example || !target.current) return;
     let active = true;
     animationRun.current += 1;
@@ -83,7 +86,8 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
               const path = data.strokes[example.strokeIndex]; const median = data.medians[example.strokeIndex];
               // Extract the recorded occurrence from the representative character;
               // missing geometry is an error, not permission to draw a substitute.
-              if (!path || !median) throw new Error('missing stroke');
+              if (data.strokes.length !== data.medians.length || !path || !median || median.length < 2) throw new Error('missing stroke');
+              if (!active) return;
               if (active) { setOutline(path); setMedian(median); }
               onLoad({ strokes: [path], medians: [median] } as never);
             })
@@ -95,7 +99,7 @@ export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { gl
         onLoadCharDataError: () => { if (active) setMessage('Stroke data couldn’t load. Please try again.'); },
       });
     }).catch(() => { if (active) setMessage('Writing practice couldn’t load.'); });
-    return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); writer.current = null; node.innerHTML = ''; };
+    return () => { active = false; animationRun.current += 1; writer.current?.cancelQuiz(); void writer.current?.pauseAnimation(); writer.current = null; node.innerHTML = ''; };
   }, [example, theme, Boolean(entry)]);
 
   const setSpeed = (instance: HanziWriter) => { (instance as unknown as { _options: { strokeAnimationSpeed: number } })._options.strokeAnimationSpeed = speedRef.current; };

@@ -1,5 +1,7 @@
 # What I Can and Want to Do
 
+**Subtopics:** arts-entertainment
+
 Express what you can do, what you want and what you enjoy doing in free time.
 
 > A teaching lesson: contextual communication, grammar, guided production, reading and speaking. Word-detail cards hold the original two examples per entry.
@@ -30,7 +32,11 @@ Two classmates are planning what to do after class. Notice how ability and desir
 
 会 (huì) often refers to a learned skill; 能 (néng) refers to capability or what circumstances permit. They can overlap in some situations.
 
-**Pattern:** Subject + 会/能 + verb
+**Pattern**
+
+主语 + 会/能 + 动词  
+*zhǔyǔ + huì/néng + dòngcí*  
+&lt;subject&gt; + **会**/**能** + &lt;verb&gt;
 
 **我也会说一点儿汉语。**
 *Wǒ yě huì shuō yìdiǎnr Hànyǔ.*
@@ -44,7 +50,11 @@ I can go today (circumstances allow).
 
 想 (xiǎng) generally makes a wish softer; 要 (yào) can express a firmer desire, intention or need. Neither is an automatic substitute for 会 (huì).
 
-**Pattern:** Subject + 想/要 + verb/noun
+**Pattern**
+
+主语 + 想/要 + 动词/名词  
+*zhǔyǔ + xiǎng/yào + dòngcí/míngcí*  
+&lt;subject&gt; + **想**/**要** + &lt;verb&gt;/&lt;noun&gt;
 
 **我想喝茶。**
 *Wǒ xiǎng hē chá.*
@@ -182,5 +192,48 @@ Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choos
 **Comprehension:** In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening?
 **Answer:** I can speak Chinese.. Use the complete sentence meaning as your guide.
 
-**Production:** Write this in Mandarin: “My younger sister can sing.”
-**Answer:** 我妹妹会唱歌。 (wǒ mèimei huì chàng gē.). Compare your answer with the example and its tone-marked pinyin.
+**Production:** Write this in Mandarin: “She can write many Chinese characters.”
+**Answer:** 她会写很多汉字。 (tā huì xiě hěn duō hànzì.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-abilities-interests--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Ability: 会 (huì) versus 能 (néng) — ID: `topic-abilities-interests--pattern--pattern-1`
+- [ ] Apply: Desire: 想 (xiǎng) versus 要 (yào) — ID: `topic-abilities-interests--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: sing — ID: `topic-abilities-interests--build--build-sub-01`
+- [ ] Build a sentence: drink tea — ID: `topic-abilities-interests--build--build-sub-02`
+
+### Reading comprehension
+- [ ] Why can Xiaoming not go to the cinema today? — ID: `topic-abilities-interests--read--reading-q-01`
+- [ ] When does he want to go? — ID: `topic-abilities-interests--read--reading-q-02`
+
+### Speaking practice
+- [ ] Ask a friend which activity they would like to do today. — ID: `topic-abilities-interests--speak--speaking-1`
+- [ ] Explain a learned skill and one thing you cannot do today. — ID: `topic-abilities-interests--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-abilities-interests--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-abilities-interests--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-abilities-interests--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “can”? *(optional)* — ID: `topic-abilities-interests--quiz--q-17-1`
+- [ ] Which expression means “have”? *(optional)* — ID: `topic-abilities-interests--quiz--q-17-2`
+- [ ] Which expression means “fun”? *(optional)* — ID: `topic-abilities-interests--quiz--q-17-3`
+- [ ] In the example “我会说汉语。” (wǒ huì shuō Hànyǔ.), what is happening? — ID: `topic-abilities-interests--quiz--q-17-4`
+- [ ] Write this in Mandarin: “She can write many Chinese characters.” — ID: `topic-abilities-interests--quiz--q-17-5`
+- [ ] Reading comprehension: Why can Xiaoming not go to the cinema today? — ID: `topic-abilities-interests--quiz--applied-reading-1`
+- [ ] Reading comprehension: When does he want to go? — ID: `topic-abilities-interests--quiz--applied-reading-2`
+- [ ] Say this aloud: Ask a friend which activity they would like to do today. — ID: `topic-abilities-interests--quiz--applied-speaking-1`
+- [ ] Say this aloud: Explain a learned skill and one thing you cannot do today. — ID: `topic-abilities-interests--quiz--applied-speaking-2`

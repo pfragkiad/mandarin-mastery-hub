@@ -30,7 +30,13 @@ Use prices, ages and quantities to practise number structure without memorizing 
 
 Chinese number order follows thousands, hundreds, tens and ones. 零 (líng) marks a missing internal place where needed, as in 一百零五 (yì bǎi líng wǔ).
 
-**Pattern:** hundreds + tens + ones
+**Pattern**
+
+(千位数字 + 千) + (百位数字 + 百) + (十位数字 + 十) + 个位数字  
+*(qiānwèi shùzì + qiān) + (bǎiwèi shùzì + bǎi) + (shíwèi shùzì + shí) + gèwèi shùzì*  
+(&lt;number of thousands&gt; + **千**) + (&lt;number of hundreds&gt; + **百**) + (&lt;number of tens&gt; + **十**) + &lt;number of ones&gt;
+
+The slots show place values up to the thousands. Use 零 (líng) where required for a gap. For 10–19, the initial one before 十 (shí) is normally omitted.
 
 **二百三十六。**
 *Èr bǎi sān shí liù.*
@@ -44,7 +50,11 @@ One thousand and two.
 
 Use a suitable classifier when counting most nouns. Do not put an English-style plural ending on the noun.
 
-**Pattern:** number + classifier + noun
+**Pattern**
+
+数字 + 量词 + 名词  
+*shùzì + liàngcí + míngcí*  
+&lt;number&gt; + &lt;classifier&gt; + &lt;noun&gt;
 
 **三本书。**
 *Sān běn shū.*
@@ -178,3 +188,46 @@ A missing tens place may need 零 (líng): 一百零五 (yì bǎi líng wǔ), no
 
 **Production:** Write this in Mandarin: “Eight students have class today.”
 **Answer:** 今天有八个学生上课。 (jīntiān yǒu bā gè xuéshēng shàngkè.). Compare your answer with the example and its tone-marked pinyin.
+
+
+## Learning checkpoints
+Track completed checkpoints, not time spent. Optional items are bonuses.
+
+### Conversation
+- [ ] Understand the conversation — ID: `topic-counting-numbers--dialogue`
+
+### Grammar & usage patterns
+- [ ] Apply: Building larger numbers — ID: `topic-counting-numbers--pattern--pattern-1`
+- [ ] Apply: Numbers with nouns — ID: `topic-counting-numbers--pattern--pattern-2`
+
+### Guided sentence building
+- [ ] Build a sentence: five — ID: `topic-counting-numbers--build--build-sub-01`
+- [ ] Build a sentence: ten — ID: `topic-counting-numbers--build--build-sub-02`
+
+### Reading comprehension
+- [ ] How many people are in the class? — ID: `topic-counting-numbers--read--reading-q-01`
+- [ ] How many students came today? — ID: `topic-counting-numbers--read--reading-q-02`
+
+### Speaking practice
+- [ ] Say the number 105 in Mandarin. — ID: `topic-counting-numbers--speak--speaking-1`
+- [ ] Describe how many books you have. — ID: `topic-counting-numbers--speak--speaking-2`
+
+### Common pitfalls
+- [ ] Recognize the common pitfall — ID: `topic-counting-numbers--pitfall`
+
+### Pronunciation
+- [ ] Practice the pronunciation focus — ID: `topic-counting-numbers--pronunciation`
+
+### Review
+- [ ] Complete the review checklist — ID: `topic-counting-numbers--review`
+
+### Practice & optional recall quizzes
+- [ ] Which expression means “eight”? *(optional)* — ID: `topic-counting-numbers--quiz--q-05-1`
+- [ ] Which expression means “seven”? *(optional)* — ID: `topic-counting-numbers--quiz--q-05-2`
+- [ ] Which expression means “one”? *(optional)* — ID: `topic-counting-numbers--quiz--q-05-3`
+- [ ] In the example “我有八本书。” (wǒ yǒu bā běn shū.), what is happening? — ID: `topic-counting-numbers--quiz--q-05-4`
+- [ ] Write this in Mandarin: “Eight students have class today.” — ID: `topic-counting-numbers--quiz--q-05-5`
+- [ ] Reading comprehension: How many people are in the class? — ID: `topic-counting-numbers--quiz--applied-reading-1`
+- [ ] Reading comprehension: How many students came today? — ID: `topic-counting-numbers--quiz--applied-reading-2`
+- [ ] Say this aloud: Say the number 105 in Mandarin. — ID: `topic-counting-numbers--quiz--applied-speaking-1`
+- [ ] Say this aloud: Describe how many books you have. — ID: `topic-counting-numbers--quiz--applied-speaking-2`

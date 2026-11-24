@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Adapt the versioned HSK example-pairs handoff to the vocabulary API shape.
- * Shared boundary for the pinned Level 1–4 handoffs; the CLI defaults to Level 1.
+ * Shared boundary for the pinned Level 1–5 handoffs; the CLI defaults to Level 1.
  * Audits by default; --write replaces the selected level's study content.
  * Recorded UUIDs, syllabus identities and audio survive exact ID/headword matches.
  * Pinyin tokenization uses the same fail-closed alignment as sentence rendering.
@@ -19,6 +19,12 @@ const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const requireThat = (condition, message) => { if (!condition) throw new Error(message); };
 const compactReading = value => value.normalize('NFC').toLowerCase().replace(/[\s'’]/g, '');
+// Owner-approved spacing corrections (2026-11-22) already present in vocabulary.
+// Bind each to exact text and source reading so later revisions remain sourced.
+const spacingCorrections = {
+  '1:36:conversational': ['我在电脑上学习。', 'wǒ zài diànnǎo shàngxué xí.', 'wǒ zài diànnǎo shàng xuéxí.'],
+  '3:873:written': ['学生在网站上学习汉语。', 'xuéshēng zài wǎngzhàn shàngxué xí Hànyǔ.', 'xuéshēng zài wǎngzhàn shàng xuéxí Hànyǔ.'],
+};
 // Stable UUIDv5 namespace for new topics and sentences; never regenerate entry UUIDs.
 function identity(value, level = 1) {
   const namespace = Buffer.from('6ba7b8119dad11d180b400c04fd430c8', 'hex');
@@ -34,17 +40,18 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * Level 1 removes legacy unofficial phrases; Level 2 retains all 200 syllabus entries,
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
-export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.6.1', 2: '1.0.3', 3: '1.0.4', 4: '1.0.3' };
+export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
+  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
-  const count = level === 1 ? 300 : level === 2 ? 200 : level === 3 ? 500 : 1000;
-  const firstId = level === 1 ? 1 : level === 2 ? 301 : level === 3 ? 501 : 1001, lastId = firstId + count - 1;
-  const source = read(sourcePath), topics = read(topicsPath), original = readVocabulary(vocabularyPath);
+  const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600 }[level];
+  const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001 }[level], lastId = firstId + count - 1;
+  const source = read(sourcePath), taxonomy = read(topicsPath), original = readVocabulary(vocabularyPath);
+  const { topics, subtopics } = taxonomy;
   const data = structuredClone(original);
   const inventory = new Set(read(inventoryPath).syllables.map(s => s.base));
   const syllabicNg = source.entries.some(e => e.headword === '嗯' && e.pinyin?.normalize('NFC').toLowerCase() === 'ǹg');
   if (syllabicNg) inventory.add('ng');
-  requireThat(source.schema_version === 'hsk-example-pairs/1.2.0', 'Unsupported handoff schema');
+  requireThat(source.schema_version === 'hsk-example-pairs/1.3.0', 'Unsupported handoff schema');
   requireThat(source.data_version === versions[level] && source.syllabus.level === level && source.syllabus.edition === '2025-11', 'Unexpected dataset version or syllabus');
   requireThat(source.entries.length === count && source.syllabus.entry_count === count, `Expected ${count} entries`);
   requireThat(JSON.stringify(source.syllabus.id_range) === JSON.stringify([firstId, lastId]), 'Unexpected syllabus ID range');
@@ -52,10 +59,16 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   // Level 2's 过 and 花 each have two sourced entries. The ID/headword check below
   // preserves those separate records; the displayed form alone is not an identity.
   if (level === 1) requireThat(new Set(source.entries.map(e => e.headword)).size === count, 'Duplicate headwords');
-  requireThat(JSON.stringify(topics) === JSON.stringify(source.taxonomy.topics), 'Topic sidecar differs from the embedded taxonomy');
+  requireThat(taxonomy.schema_version === 'hsk-topics/2.0.0' && taxonomy.version === '2.0.0' &&
+    taxonomy.version === source.taxonomy.version && Array.isArray(topics) && Array.isArray(subtopics), 'Unsupported topic taxonomy');
+  requireThat(JSON.stringify(topics) === JSON.stringify(source.taxonomy.topics) &&
+    JSON.stringify(subtopics) === JSON.stringify(source.taxonomy.subtopics), 'Topic sidecar differs from the embedded taxonomy');
   const topicMap = new Map(topics.map(t => [t.id, t]));
+  const subtopicMap = new Map(subtopics.map(t => [t.id, t]));
   const posMap = new Map(source.taxonomy.parts_of_speech.map(p => [p.id, p]));
-  requireThat(topicMap.size === topics.length && posMap.size === source.taxonomy.parts_of_speech.length, 'Duplicate taxonomy IDs');
+  requireThat(topicMap.size === topics.length && subtopicMap.size === subtopics.length &&
+    posMap.size === source.taxonomy.parts_of_speech.length, 'Duplicate taxonomy IDs');
+  requireThat(subtopics.every(t => topicMap.has(t.parent_topic_id)), 'Unknown subtopic parent');
   const oldLevel = original.entries.filter(e => e.hskLevel === level);
   const oldEntries = level === 1 ? oldLevel.filter(e => e.entryKind === 'word') : oldLevel;
   const byId = new Map(oldEntries.map(e => [e.hsk_index, e]));
@@ -66,13 +79,42 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const importedAt = new Date().toISOString();
   const topicCategories = topics.map(t => ({ id: identity(`topic:${t.id}`), name: t.label, description: t.description }));
   const categoryMap = new Map(topics.map((t, i) => [t.id, topicCategories[i].id]));
+  // Sentence alternatives are accepted only when the same exact two readings are
+  // already recorded for one unambiguous single-character vocabulary identity.
+  const readingAlternatives = new Map();
+  for (const entry of [...original.entries.map(e => ({ glyph: e.simplified, reading: e.pinyinDisplay })),
+    ...source.entries.map(e => ({ glyph: e.headword, reading: e.pinyin }))]) {
+    const choices = entry.reading?.split('/').map(compactReading);
+    if (Array.from(entry.glyph).length !== 1 || !/\p{Script=Han}/u.test(entry.glyph) || choices?.length !== 2) continue;
+    const key = choices.join('/');
+    const glyphs = readingAlternatives.get(key) ?? new Set();
+    glyphs.add(entry.glyph); readingAlternatives.set(key, glyphs);
+  }
 
   function tokens(text, pinyin, context) {
     // The handoff's standalone erhua r joins its preceding syllable for alignment only.
     const alignmentPinyin = pinyin.replace(/-/g, ' ').replace(/(\p{L})\s+r(?=[\s\p{P}]|$)/gu, '$1r');
-    const paired = alignPhrasePinyin(text, alignmentPinyin, inventory);
+    const alternativesPattern = /(?<![\p{L}\p{M}])([\p{L}\p{M}]+)\s*\/\s*([\p{L}\p{M}]+)(?![\p{L}\p{M}])/gu;
+    const alternatives = [...alignmentPinyin.matchAll(alternativesPattern)].map(match => {
+      const glyphs = readingAlternatives.get(`${compactReading(match[1])}/${compactReading(match[2])}`);
+      requireThat(glyphs?.size === 1, `Unrecorded or ambiguous reading alternatives: ${context}`);
+      return [...glyphs][0];
+    });
+    const chooseReadings = (selected = -1) => {
+      let index = 0;
+      return alignmentPinyin.replace(alternativesPattern, (_raw, first, second) => index++ === selected ? second : first);
+    };
+    const paired = alignPhrasePinyin(text, chooseReadings(), inventory);
     requireThat(paired, `Ambiguous or mismatched pinyin: ${context}`);
     const readings = paired.tokens.flatMap(t => t.pieces.filter(p => p.pair != null).map(p => p.text));
+    const hanGlyphs = Array.from(text).filter(ch => /\p{Script=Han}/u.test(ch));
+    for (const [index, glyph] of alternatives.entries()) {
+      const alternate = alignPhrasePinyin(text, chooseReadings(index), inventory);
+      requireThat(alternate, `Ambiguous or mismatched alternative pinyin: ${context}`);
+      const other = alternate.tokens.flatMap(t => t.pieces.filter(p => p.pair != null).map(p => p.text));
+      const changed = readings.flatMap((reading, pair) => compactReading(reading) !== compactReading(other[pair]) ? [pair] : []);
+      requireThat(changed.length === 1 && hanGlyphs[changed[0]] === glyph, `Reading alternatives do not match their recorded glyph: ${context}`);
+    }
     return Array.from(text).map((ch, index) => {
       const hanzi = /\p{Script=Han}/u.test(ch), space = /\s/u.test(ch);
       const pair = paired.glyphPairs[index];
@@ -97,24 +139,32 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     for (const [key, primary, map] of [['topic_ids', 'primary_topic_id', topicMap], ['pos_ids', 'primary_pos_id', posMap]]) {
       requireThat(e[key]?.length && e[key].includes(e[primary]) && (key !== 'topic_ids' || e[key][0] === e[primary]) && new Set(e[key]).size === e[key].length && e[key].every(id => map.has(id)), `Invalid ${key}: ${e.id}`);
     }
+    // Subtopics retain their exact source IDs; they do not become top-level collections.
+    requireThat(Array.isArray(e.subtopic_ids) && new Set(e.subtopic_ids).size === e.subtopic_ids.length &&
+      e.subtopic_ids.every(id => subtopicMap.has(id) && e.topic_ids.includes(subtopicMap.get(id).parent_topic_id)), `Invalid subtopic_ids: ${e.id}`);
+    requireThat(e.primary_subtopic_id === null || (e.subtopic_ids[0] === e.primary_subtopic_id &&
+      subtopicMap.get(e.primary_subtopic_id)?.parent_topic_id === e.primary_topic_id), `Invalid primary_subtopic_id: ${e.id}`);
     const readings = e.pinyin.split('/').map(p => p.trim());
     requireThat(readings.some(r => compactReading(r) === compactReading(old.pinyinDisplay.split('/')[0])), `Changed lexical reading for ${e.id}; existing audio needs review`);
-    requireThat(e.examples.length === 2 && e.examples[0].style === 'conversational' && e.examples[1].style === 'written', `Expected two ordered example styles: ${e.id}`);
-    const examples = e.examples.map(ex => {
+    if (includeExamples) requireThat(e.examples.length === 2 && e.examples[0].style === 'conversational' && e.examples[1].style === 'written', `Expected two ordered example styles: ${e.id}`);
+    // Explicit terms-only imports preserve existing examples; current handoffs import examples by default.
+    const examples = includeExamples ? e.examples.map(ex => {
       requireThat(ex.hanzi?.trim() && ex.english?.trim() && ex.pinyin?.trim(), `Incomplete example: ${e.id}/${ex.style}`);
+      const correction = spacingCorrections[`${level}:${e.id}:${ex.style}`];
+      const pinyin = correction && ex.hanzi === correction[0] && ex.pinyin === correction[1] ? correction[2] : ex.pinyin;
       // Level 2 replaces legacy examples even when text matches. Only recordings already
       // attached to this handoff's exact sentence ID and reading survive a later import.
       const exampleId = identity(`example:${old.id}:${ex.style}:${ex.hanzi}`, level);
-      const previous = old.examples.find(x => x.simplified === ex.hanzi && (level === 1 || (x.id === exampleId && x.pinyinDisplay === ex.pinyin)));
+      const previous = old.examples.find(x => x.simplified === ex.hanzi && (level === 1 || (x.id === exampleId && x.pinyinDisplay === pinyin)));
       return {
         id: previous?.id ?? exampleId,
-        simplified: ex.hanzi, tokens: tokens(ex.hanzi, ex.pinyin, `${e.id}/${ex.style}`),
-        pinyinDisplay: ex.pinyin, english: ex.english, notes: ex.note,
-        audio: previous?.pinyinDisplay === ex.pinyin ? previous.audio ?? null : null,
+        simplified: ex.hanzi, tokens: tokens(ex.hanzi, pinyin, `${e.id}/${ex.style}`),
+        pinyinDisplay: pinyin, english: ex.english, notes: ex.note,
+        audio: previous?.pinyinDisplay === pinyin ? previous.audio ?? null : null,
         source: sourceRef(e.id), style: ex.style, register: ex.register,
         reviewStatus: ex.review_status, provenance: ex.provenance, linguisticSource: ex.linguistic_source,
       };
-    });
+    }) : old.examples;
     const result = {
       ...old, pinyinDisplay: e.pinyin, tokens: tokens(e.headword, readings[0], `${e.id}/headword`),
       meanings: e.meaning_en.split(';').map(s => s.trim()).filter(Boolean),
@@ -125,8 +175,10 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
       studyMetadata: {
         source: sourceRef(e.id), sourceSha256: inputSha256, taxonomyVersion: source.taxonomy.version,
         primaryTopicId: e.primary_topic_id, topicIds: e.topic_ids,
+        primarySubtopicId: e.primary_subtopic_id, subtopicIds: e.subtopic_ids,
         primaryPosId: e.primary_pos_id, posIds: e.pos_ids, posLabels: e.pos_ids.map(id => posMap.get(id).label), posNote: e.pos_note ?? null,
         verificationStatus: source.verification.status,
+        ...(!includeExamples ? { exampleImportPolicy: 'terms_only_preserve_existing' } : {}),
         ...(e.syllabus_headword != null ? { syllabusHeadword: e.syllabus_headword } : {}),
         ...(e.syllabus_pos_zh != null ? { syllabusPosZh: e.syllabus_pos_zh } : {}),
       },
@@ -152,7 +204,8 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   requireThat([...used].every(id => categories.has(id)), 'Dangling output categories');
   const report = {
     source: { path: relative(root, sourcePath).replaceAll('\\', '/'), sha256: inputSha256, dataVersion: source.data_version },
-    topics: { path: relative(root, topicsPath).replaceAll('\\', '/'), sha256: hash(topicsPath), count: topics.length, matchesEmbeddedTaxonomy: true },
+    topics: { path: relative(root, topicsPath).replaceAll('\\', '/'), sha256: hash(topicsPath), version: taxonomy.version,
+      count: topics.length, subtopicCount: subtopics.length, matchesEmbeddedTaxonomy: true },
     beforeEntries: original.entries.length, afterEntries: data.entries.length,
     replacedWords: entries.filter(e => e.entryKind === 'word').length,
     ...(level === 1 ? { removedLevel1Phrases: oldLevel.filter(e => e.entryKind === 'phrase').length } : {
@@ -161,8 +214,10 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     }),
     preservedWordRecordings: entries.filter(e => e.audio).length,
     preservedExampleIds: entries.flatMap(e => e.examples).filter(ex => oldEntries.some(e => e.examples.some(old => old.id === ex.id))).length,
-    examples: entries.flatMap(e => e.examples).length, alignedHeadwords: entries.length, alignedExamples: count * 2,
+    examples: entries.flatMap(e => e.examples).length, alignedHeadwords: entries.length, alignedExamples: includeExamples ? count * 2 : 0,
+    ...(!includeExamples ? { withheldDraftExamples: source.entries.reduce((sum, e) => sum + (e.examples?.length ?? 0), 0) } : {}),
     primaryTopicCounts: Object.fromEntries(topics.map(t => [t.id, source.entries.filter(e => e.primary_topic_id === t.id).length])),
+    assignedPrimarySubtopics: source.entries.filter(e => e.primary_subtopic_id !== null).length,
     secondaryTopicWords: source.entries.filter(e => e.topic_ids.length > 1).length,
     verification: source.verification,
   };
@@ -179,7 +234,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   }
   const vocabularyPath = resolve(options.vocabulary ?? VOCABULARY_DIRECTORY);
   const { data, report } = importLevel1({
-    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level1_1.6.1.json'),
+    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level1_1.7.1.json'),
     topicsPath: resolve(options.topics ?? 'importer/hsk/hsk3_topics.json'), vocabularyPath,
   });
   if (options.write) writeVocabulary(resolve(options.output ?? vocabularyPath), data);

@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-people-and-work",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,9 @@
       "jobs",
       "work"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Introduce people by name or title.",
@@ -28,7 +30,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -116,7 +118,9 @@
     "里": "Characters:里",
     "问": "Characters:问",
     "院": "Characters:院",
-    "饭": "Characters:饭"
+    "饭": "Characters:饭",
+    "主": "Characters:主",
+    "地": "Characters:地"
   },
   "sections": {
     "overview": {
@@ -164,7 +168,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 130
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-142",
@@ -205,7 +212,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 142
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-152",
@@ -246,7 +256,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 152
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-155",
@@ -286,7 +299,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 155
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-170",
@@ -326,7 +342,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 170
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-231",
@@ -366,7 +385,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 231
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "people-identity"
         },
         {
           "id": "w-062",
@@ -407,7 +429,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 62
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-063",
@@ -449,7 +474,10 @@
               "entry_id": 63
             }
           ],
-          "pos_note": "Can be the verb work or the noun work/job."
+          "pos_note": "Can be the verb work or the noun work/job.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-176",
@@ -477,10 +505,10 @@
               "id": "ex-176-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "我的哥哥早上八点上班。",
-              "pinyin": "wǒ de gēge zǎoshang bā diǎn shàngbān.",
-              "english": "My older brother goes to work at eight in the morning.",
-              "teaching_note": ""
+              "hanzi": "很多人每天早上八点上班。",
+              "pinyin": "hěn duō rén měitiān zǎoshang bā diǎn shàngbān.",
+              "english": "Many people start work at eight every morning.",
+              "teaching_note": "The time phrase states when the workday starts."
             }
           ],
           "learning_role": "introduced",
@@ -489,7 +517,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 176
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         },
         {
           "id": "w-228",
@@ -530,7 +561,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 228
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "work-jobs"
         }
       ],
       "related_entries": []
@@ -714,7 +748,6 @@
           "id": "pattern-1",
           "title": "Asking and giving names",
           "explanation_en": "叫 (jiào) introduces a name in 我叫… (wǒ jiào …). With 您 (nín), the question becomes more formal and respectful.",
-          "formula_en": "我叫 + name; 您叫什么名字?",
           "examples": [
             {
               "hanzi": "我叫小李。",
@@ -726,13 +759,15 @@
               "pinyin": "Qǐngwèn, nín jiào shénme míngzi?",
               "english": "Excuse me, what is your name?"
             }
-          ]
+          ],
+          "pattern_hanzi": "我叫 + 名字; 您叫什么名字？",
+          "pattern_pinyin": "wǒ jiào + míngzi; nín jiào shénme míngzi?",
+          "pattern_pseudo_translation": "我叫 + <name>; 您叫什么名字？"
         },
         {
           "id": "pattern-2",
           "title": "Where someone works and when",
           "explanation_en": "在 (zài) introduces a workplace; 上班 (shàngbān) can mean going to work or being on duty; 下班 (xiàbān) means finishing work.",
-          "formula_en": "subject + 在 + place + 工作",
           "examples": [
             {
               "hanzi": "我在学校工作。",
@@ -744,7 +779,10 @@
               "pinyin": "Tā xiàwǔ liù diǎn xiàbān.",
               "english": "She finishes work at six in the afternoon."
             }
-          ]
+          ],
+          "pattern_hanzi": "主语 + 在 + 地点 + 工作",
+          "pattern_pinyin": "zhǔyǔ + zài + dìdiǎn + gōngzuò",
+          "pattern_pseudo_translation": "<subject> + 在 + <place> + 工作"
         }
       ],
       "guided_building": {
@@ -761,7 +799,8 @@
               "hanzi": "我在学校工作。",
               "pinyin": "Wǒ zài xuéxiào gōngzuò.",
               "english": "I work at a school."
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "hospital",
@@ -769,7 +808,8 @@
               "hanzi": "我在医院工作。",
               "pinyin": "Wǒ zài yīyuàn gōngzuò.",
               "english": "I work at a hospital."
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -785,11 +825,13 @@
         "questions": [
           {
             "prompt_en": "Where does Mr. Wang work?",
-            "answer_en": "At a company."
+            "answer_en": "At a company.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "When does Mr. Wang finish work?",
-            "answer_en": "At 5 p.m."
+            "answer_en": "At 5 p.m.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -833,5 +875,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-people-and-work--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Asking and giving names",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-people-and-work--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Where someone works and when",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: school",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-people-and-work--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: hospital",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--read--reading-q-01",
+            "kind": "question",
+            "label": "Where does Mr. Wang work?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-people-and-work--read--reading-q-02",
+            "kind": "question",
+            "label": "When does Mr. Wang finish work?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Introduce your name.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-people-and-work--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Ask politely where someone works.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-work--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-work--quiz--q-10-1",
+            "kind": "practice",
+            "label": "Which expression means “name”?",
+            "optional": true,
+            "target_id": "q-10-1"
+          },
+          {
+            "id": "topic-people-and-work--quiz--q-10-2",
+            "kind": "practice",
+            "label": "Which expression means “Mr.”?",
+            "optional": true,
+            "target_id": "q-10-2"
+          },
+          {
+            "id": "topic-people-and-work--quiz--q-10-3",
+            "kind": "practice",
+            "label": "Which expression means “finish work”?",
+            "optional": true,
+            "target_id": "q-10-3"
+          },
+          {
+            "id": "topic-people-and-work--quiz--q-10-4",
+            "kind": "practice",
+            "label": "In the example “你的名字是什么？” (nǐ de míngzi shì shénme?), what is happening?",
+            "optional": false,
+            "target_id": "q-10-4"
+          },
+          {
+            "id": "topic-people-and-work--quiz--q-10-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “Please write your name here.”",
+            "optional": false,
+            "target_id": "q-10-5"
+          },
+          {
+            "id": "topic-people-and-work--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: Where does Mr. Wang work?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-people-and-work--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: When does Mr. Wang finish work?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-people-and-work--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Introduce your name.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-people-and-work--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Ask politely where someone works.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

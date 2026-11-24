@@ -1,146 +1,182 @@
 {
-  "registry_version": "3.0.0",
-  "description": "Global shared thematic taxonomy; 20 active topics, with two legacy deprecated aliases. Private course topics belong in curriculum manifests.",
+  "registry_version": "3.2.0",
+  "description": "Global shared Mandarin taxonomy synced with user-provided hsk-topics/2.0.0: 22 active top-level topics and 25 active parented subtopics. Two original deprecated top-level IDs and deprecated subtopic animals are retained for backward compatibility. Curriculum-private topics remain separate.",
   "categories": [
-    {
-      "id": "abstract-concepts",
-      "label": "Abstract & General Concepts",
-      "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "animals-weather",
-      "label": "Animals & Weather",
-      "description": "Animals, weather conditions, and the natural environment.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "communication-social",
-      "label": "Communication & Social Language",
-      "description": "Greetings, requests, apologizing, thanking, and speaking with others.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "daily-actions",
-      "label": "Daily Actions & Activities",
-      "description": "Common everyday actions, physical activities, and routines.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "family-relationships",
-      "label": "Family & Relationships",
-      "description": "Relatives, family life, friendship, and relationships.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "food-drink",
-      "label": "Food, Drinks & Meals",
-      "description": "Meals, eating, drinking, ingredients, and restaurants.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "grammar-functions",
-      "label": "Grammar & Function Words",
-      "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "health-wellbeing",
-      "label": "Health & Wellbeing",
-      "description": "Illness, medical care, sleep, and rest.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "home-objects",
-      "label": "Home, Clothing & Objects",
-      "description": "Home interiors, everyday belongings, clothing, and household objects.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "leisure-media",
-      "label": "Leisure, Music & Media",
-      "description": "Films, music, games, recreation, and entertainment.",
-      "aliases": [],
-      "status": "active"
-    },
     {
       "id": "numbers-quantities",
       "label": "Numbers & Quantities",
       "description": "Counting, amounts, measurements, ordinals, and classifiers.",
       "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "people-identity",
-      "label": "People & Identity",
-      "description": "People, gender, personal information, and forms of address.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "places-directions",
-      "label": "Places, Position & Direction",
-      "description": "Countries, positions, directions, and spatial relations.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "qualities-feelings",
-      "label": "Qualities, Feelings & Evaluation",
-      "description": "Descriptors, personal feelings, properties, and judgments.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "reference-questions",
-      "label": "Pronouns, Questions & Pointing",
-      "description": "Personal and demonstrative pronouns; asking and pointing.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "school-language",
-      "label": "Education & Language",
-      "description": "Learning, school, teachers, reading, writing, and languages.",
-      "aliases": [],
-      "status": "active"
-    },
-    {
-      "id": "shopping-money",
-      "label": "Shopping & Money",
-      "description": "Stores, prices, buying, selling, and currency.",
-      "aliases": [],
-      "status": "active"
+      "status": "active",
+      "kind": "topic"
     },
     {
       "id": "time-calendar",
       "label": "Time & Calendar",
       "description": "Dates, times of day, periods, age and scheduling.",
       "aliases": [],
-      "status": "active"
+      "status": "active",
+      "kind": "topic"
     },
     {
-      "id": "travel-transport",
-      "label": "Travel & Transport",
-      "description": "Vehicles, travel, driving, and going from place to place.",
+      "id": "family-relationships",
+      "label": "Family & Relationships",
+      "description": "Relatives, family life, friendship, and relationships.",
       "aliases": [],
-      "status": "active"
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "people-identity",
+      "label": "People & Identity",
+      "description": "People, gender, personal information, and forms of address.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "reference-questions",
+      "label": "Pronouns, Questions & Pointing",
+      "description": "Personal and demonstrative pronouns; asking and pointing.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "food-drink",
+      "label": "Food, Drinks & Meals",
+      "description": "Meals, eating, drinking, ingredients, and restaurants.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "school-language",
+      "label": "Education & Language",
+      "description": "Learning, school, teachers, reading, writing, and languages.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
     },
     {
       "id": "work-jobs",
       "label": "Work & Jobs",
       "description": "Workplaces, occupations, and the working day.",
       "aliases": [],
-      "status": "active"
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "shopping-money",
+      "label": "Shopping & Money",
+      "description": "Stores, prices, buying, selling, and currency.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "home-objects",
+      "label": "Home, Clothing & Objects",
+      "description": "Home interiors, everyday belongings, clothing, and household objects.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "travel-transport",
+      "label": "Travel & Transport",
+      "description": "Vehicles, travel, driving, and going from place to place.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "health-wellbeing",
+      "label": "Health & Wellbeing",
+      "description": "Illness, medical care, sleep, and rest.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "animals-weather",
+      "label": "Animals & Weather",
+      "description": "Animals, weather conditions, and the natural environment.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "daily-actions",
+      "label": "Daily Actions & Activities",
+      "description": "Common everyday actions, physical activities, and routines.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "leisure-media",
+      "label": "Leisure, Music & Media",
+      "description": "Films, music, games, recreation, and entertainment.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "places-directions",
+      "label": "Places, Position & Direction",
+      "description": "Countries, positions, directions, and spatial relations.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "communication-social",
+      "label": "Communication & Social Language",
+      "description": "Greetings, requests, apologizing, thanking, and speaking with others.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "qualities-feelings",
+      "label": "Qualities, Feelings & Evaluation",
+      "description": "Descriptors, personal feelings, properties, and judgments.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "grammar-functions",
+      "label": "Grammar & Function Words",
+      "description": "Particles, markers, and general structural or discourse words lacking a useful thematic domain.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "abstract-concepts",
+      "label": "Abstract & General Concepts",
+      "description": "General matters, issues, ideas, and nonphysical concepts referred to in everyday conversation and learning.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "science-technology",
+      "label": "Science & Technology",
+      "description": "Scientific ideas, research, computing, communications technology, engineering, and technical devices.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
+    },
+    {
+      "id": "society-government-law",
+      "label": "Society, Government & Law",
+      "description": "Public institutions, government, laws, civic rights, public safety, and social structures.",
+      "aliases": [],
+      "status": "active",
+      "kind": "topic"
     },
     {
       "id": "time-frequency-repetition",
@@ -153,7 +189,8 @@
         "repetition",
         "times and occasions"
       ],
-      "status": "deprecated"
+      "status": "deprecated",
+      "kind": "topic"
     },
     {
       "id": "vocabulary-grammar-patterns",
@@ -164,7 +201,244 @@
         "grammar and vocabulary",
         "usage patterns"
       ],
-      "status": "deprecated"
+      "status": "deprecated",
+      "kind": "topic"
+    },
+    {
+      "id": "animals-wildlife",
+      "label": "Animals & Wildlife",
+      "description": "Animals, pets, wildlife, and animal habitats.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "weather-climate",
+      "label": "Weather & Climate",
+      "description": "Weather, seasons, temperature, air conditions, and climate.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "nature-ecology",
+      "label": "Nature & Ecology",
+      "description": "Landforms, plants, water, landscapes, conservation, and environmental processes.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "animals-weather"
+    },
+    {
+      "id": "emotions-attitudes",
+      "label": "Emotions & Attitudes",
+      "description": "Feelings, moods, desires, dispositions, and emotional responses.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "physical-properties",
+      "label": "Physical Properties",
+      "description": "Observable characteristics such as dimensions, shape, color, texture, and temperature.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "judgments-evaluation",
+      "label": "Judgments & Evaluation",
+      "description": "Subjective and objective appraisal, suitability, quality, and comparative evaluation.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "qualities-feelings"
+    },
+    {
+      "id": "everyday-routines",
+      "label": "Everyday Routines",
+      "description": "Recurring activities, ordinary personal habits, and household routines.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "physical-actions",
+      "label": "Physical Actions",
+      "description": "Physical motions, manual manipulation, placement, and handling objects.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "processes-change",
+      "label": "Processes & Change",
+      "description": "Changes of state, processes, progress, events, and general operations.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "daily-actions"
+    },
+    {
+      "id": "home-household",
+      "label": "Home & Household",
+      "description": "Housing, furniture, rooms, interior spaces, and household appliances.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "clothing-accessories",
+      "label": "Clothing & Accessories",
+      "description": "Clothes, fashion accessories, dressing, and personal belongings worn.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "everyday-objects",
+      "label": "Everyday Objects",
+      "description": "Common handheld objects, tools, physical materials, and miscellaneous belongings.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "home-objects"
+    },
+    {
+      "id": "sports-recreation",
+      "label": "Sports & Recreation",
+      "description": "Sports, games, athletics, fitness recreation, and leisure activities.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "arts-entertainment",
+      "label": "Arts & Entertainment",
+      "description": "Music, performing arts, visual arts, cinema, cultural performances, and entertainment.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "media-literature",
+      "label": "Media & Literature",
+      "description": "Books, literature, publishing, broadcasting, journalism, and news media.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "leisure-media"
+    },
+    {
+      "id": "geography-places",
+      "label": "Geography & Places",
+      "description": "Countries, cities, geographic regions, locations, and built places.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "places-directions"
+    },
+    {
+      "id": "position-direction",
+      "label": "Position & Direction",
+      "description": "Relative location, spatial relationships, compass directions, and movement orientation.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "places-directions"
+    },
+    {
+      "id": "shopping-commerce",
+      "label": "Shopping & Commerce",
+      "description": "Retail, products, purchases, selling, and commercial exchange.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "shopping-money"
+    },
+    {
+      "id": "money-finance",
+      "label": "Money & Finance",
+      "description": "Money, accounts, banking, prices, wages, budgeting, and payments.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "shopping-money"
+    },
+    {
+      "id": "digital-technology",
+      "label": "Digital Technology",
+      "description": "Computers, internet services, digital devices, software, and electronic communications.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "science-research",
+      "label": "Science & Research",
+      "description": "Science, scientific methods, mathematics, and research activity.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "engineering-devices",
+      "label": "Engineering & Devices",
+      "description": "Machines, engineered systems, tools, electricity, and industrial technology.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "science-technology"
+    },
+    {
+      "id": "government-politics",
+      "label": "Government & Politics",
+      "description": "Government, state institutions, political systems, public administration, and diplomacy.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "society-government-law"
+    },
+    {
+      "id": "law-rights",
+      "label": "Law & Rights",
+      "description": "Legal systems, law enforcement, regulations, rights, and legal procedures.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "society-government-law"
+    },
+    {
+      "id": "society-community",
+      "label": "Society & Community",
+      "description": "Community institutions, public services, social structures, and shared civic life.",
+      "aliases": [],
+      "status": "active",
+      "kind": "subtopic",
+      "parent_topic_id": "society-government-law"
+    },
+    {
+      "id": "animals",
+      "label": "Animals",
+      "description": "Animal names, animal behaviour, and references to creatures.",
+      "aliases": [
+        "animals-wildlife"
+      ],
+      "status": "deprecated",
+      "kind": "subtopic",
+      "parent_topic_id": "animals-weather"
     }
   ]
 }

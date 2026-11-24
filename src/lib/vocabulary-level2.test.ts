@@ -5,7 +5,7 @@ import { examplePinyin, vocabularyData } from './data-contract';
 import { alignPhrasePinyin } from './phrase-pinyin-align';
 import { partOfSpeechList, vocabularyFacetOptions, vocabularyKind, wordCollections, words } from './mandarin';
 
-const raw = readFileSync('importer/hsk/hsk3_level2_1.0.3.json', 'utf8');
+const raw = readFileSync('importer/hsk/hsk3_level2_1.1.1.json', 'utf8');
 const source = JSON.parse(raw) as {
   data_version: string; taxonomy: { topics: { id: string; label: string }[]; parts_of_speech: { id: string; label: string }[] };
   entries: { id: number; headword: string; pinyin: string; meaning_en: string; topic_ids: string[]; pos_ids: string[]; syllabus_headword: string; syllabus_pos_zh: string;
@@ -51,7 +51,7 @@ describe('Versioned Level 2 replacement', () => {
         expect(example.register).toBe(supplied.register);
         expect(example.notes).toBe(supplied.note);
         expect(example.reviewStatus).toBe(supplied.review_status);
-        expect(example.source).toEqual({ sourceName: 'hsk3_level2_1.0.3.json', sourceVersion: '1.0.3', sourceId: String(recorded.id) });
+        expect(example.source).toEqual({ sourceName: 'hsk3_level2_1.1.1.json', sourceVersion: '1.1.1', sourceId: String(recorded.id) });
         expect(example.tokens.map(t => t.text).join('')).toBe(supplied.hanzi);
         const pairing = alignPhrasePinyin(supplied.hanzi, supplied.pinyin, inventory)!;
         expect(pairing).not.toBeNull();

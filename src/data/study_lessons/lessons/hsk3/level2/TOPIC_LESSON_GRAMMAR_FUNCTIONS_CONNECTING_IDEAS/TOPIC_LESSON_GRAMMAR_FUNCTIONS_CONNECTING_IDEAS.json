@@ -1,0 +1,1205 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-linking-ideas-in-conversation",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Grammar & Function Words — Part 1: Linking Ideas in Conversation",
+    "subtitle": "Reasons, contrasts, alternatives and possibilities",
+    "description": "Connect two thoughts naturally with because, so, but and choice questions.",
+    "slug": "linking-ideas-in-conversation"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "reasons",
+      "hsk-level-2",
+      "topic-study"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Explain a reason with 因为 (yīnwèi) and a result with 所以 (suǒyǐ).",
+    "Contrast statements with 但是 (dànshì).",
+    "Ask about alternatives with 还是 (háishi)."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 2 learners with Level 1 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "为": "Characters:为",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "再": "Characters:再",
+    "冷": "Characters:冷",
+    "动": "Characters:动",
+    "卖": "Characters:卖",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "吧": "Characters:吧",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "啊": "Characters:啊",
+    "啡": "Characters:啡",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "因": "Characters:因",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "外": "Characters:外",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "师": "Characters:师",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "息": "Characters:息",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "所": "Characters:所",
+    "文": "Characters:文",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "本": "Characters:本",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "病": "Characters:病",
+    "看": "Characters:看",
+    "累": "Characters:累",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "茶": "Characters:茶",
+    "虽": "Characters:虽",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跟": "Characters:跟",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "分": "Characters:分",
+    "原": "Characters:原",
+    "句": "Characters:句",
+    "折": "Characters:折",
+    "果": "Characters:果",
+    "结": "Characters:结",
+    "转": "Characters:转"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Connect two thoughts naturally with because, so, but and choice questions.",
+      "focus": "Explain a reason with 因为 (yīnwèi) and a result with 所以 (suǒyǐ)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-330",
+          "hanzi": "但",
+          "pinyin": "dàn",
+          "meaning_en": "but; however",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-330-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想去，但今天没时间。",
+              "pinyin": "wǒ xiǎng qù, dàn jīntiān méi shíjiān.",
+              "english": "I want to go, but I don't have time today.",
+              "teaching_note": "A short spoken example using 但."
+            },
+            {
+              "id": "ex-330-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他很忙，但每天都学习汉语。",
+              "pinyin": "tā hěn máng, dàn měi tiān dōu xuéxí Hànyǔ.",
+              "english": "He is busy, but he studies Chinese every day.",
+              "teaching_note": "A simple written example using 但."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 330
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-331",
+          "hanzi": "但是",
+          "pinyin": "dànshì",
+          "meaning_en": "but; however",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "communication-social"
+          ],
+          "examples": [
+            {
+              "id": "ex-331-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我喜欢茶，但是不喜欢咖啡。",
+              "pinyin": "wǒ xǐhuan chá, dànshì bù xǐhuan kāfēi.",
+              "english": "I like tea, but I don't like coffee.",
+              "teaching_note": "A short spoken example using 但是."
+            },
+            {
+              "id": "ex-331-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天很冷，但是没有下雨。",
+              "pinyin": "jīntiān hěn lěng, dànshì méiyǒu xià yǔ.",
+              "english": "It is cold today, but it isn't raining.",
+              "teaching_note": "A simple written example using 但是."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 331
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-345",
+          "hanzi": "跟",
+          "pinyin": "gēn",
+          "meaning_en": "with; and; to follow",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition",
+            "conjunction"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-345-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我跟你一起去。",
+              "pinyin": "wǒ gēn nǐ yìqǐ qù.",
+              "english": "I'll go with you.",
+              "teaching_note": "A short spoken example using 跟."
+            },
+            {
+              "id": "ex-345-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师跟学生说话。",
+              "pinyin": "lǎoshī gēn xuéshēng shuōhuà.",
+              "english": "The teacher talks with the students.",
+              "teaching_note": "A simple written example using 跟."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 345
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-352",
+          "hanzi": "还是",
+          "pinyin": "háishi",
+          "meaning_en": "or (in questions); still",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "reference-questions"
+          ],
+          "examples": [
+            {
+              "id": "ex-352-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喝茶还是咖啡？",
+              "pinyin": "nǐ hē chá háishi kāfēi?",
+              "english": "Do you drink tea or coffee?",
+              "teaching_note": "In these questions 还是 joins alternatives (conjunction); it may also function as an adverb."
+            },
+            {
+              "id": "ex-352-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她问：“今天是星期六，还是星期日？”",
+              "pinyin": "tā wèn: “jīntiān shì xīngqīliù, háishi xīngqīrì?”",
+              "english": "She asked, “Is today Saturday or Sunday?”",
+              "teaching_note": "In these questions 还是 joins alternatives (conjunction); it may also function as an adverb."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 352
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "In these questions 还是 joins alternatives (conjunction); it may also function as an adverb."
+        },
+        {
+          "id": "w-376",
+          "hanzi": "就",
+          "pinyin": "jiù",
+          "meaning_en": "then; just; right away; precisely",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions",
+            "time-calendar"
+          ],
+          "examples": [
+            {
+              "id": "ex-376-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我现在就去！",
+              "pinyin": "wǒ xiànzài jiù qù!",
+              "english": "I'll go right now!",
+              "teaching_note": "就 expresses immediate succession or emphasis depending on context."
+            },
+            {
+              "id": "ex-376-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他下课就回家。",
+              "pinyin": "tā xiàkè jiù huí jiā.",
+              "english": "He goes home as soon as class ends.",
+              "teaching_note": "就 expresses immediate succession or emphasis depending on context."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 376
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "就 expresses immediate succession or emphasis depending on context."
+        },
+        {
+          "id": "w-382",
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "meaning_en": "possible; perhaps; may",
+          "primary_pos_id": "modal-verb",
+          "pos_ids": [
+            "modal-verb",
+            "adjective",
+            "noun",
+            "verb",
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-382-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他今天可能不来。",
+              "pinyin": "tā jīntiān kěnéng bù lái.",
+              "english": "He might not come today.",
+              "teaching_note": "可能 expresses possibility, often functioning as a modal adverb in these examples."
+            },
+            {
+              "id": "ex-382-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天可能下雨。",
+              "pinyin": "míngtiān kěnéng xià yǔ.",
+              "english": "It might rain tomorrow.",
+              "teaching_note": "可能 expresses possibility, often functioning as a modal adverb in these examples."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 382
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "可能 expresses possibility, often functioning as a modal adverb in these examples."
+        },
+        {
+          "id": "w-438",
+          "hanzi": "虽然",
+          "pinyin": "suīrán",
+          "meaning_en": "although; even though",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-438-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "虽然下雨，但我还是想去。",
+              "pinyin": "suīrán xià yǔ, dàn wǒ háishi xiǎng qù.",
+              "english": "Although it's raining, I still want to go.",
+              "teaching_note": "Although  虽然 is usually paired with 但是/但 in beginner models."
+            },
+            {
+              "id": "ex-438-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "虽然他很忙，但是每天都学中文。",
+              "pinyin": "suīrán tā hěn máng, dànshì měi tiān dōu xué Zhōngwén.",
+              "english": "Although he is busy, he studies Chinese every day.",
+              "teaching_note": "Although  虽然 is usually paired with 但是/但 in beginner models."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 438
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Although  虽然 is usually paired with 但是/但 in beginner models."
+        },
+        {
+          "id": "w-439",
+          "hanzi": "所以",
+          "pinyin": "suǒyǐ",
+          "meaning_en": "therefore; so",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-439-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我累了，所以想休息。",
+              "pinyin": "wǒ lèi le, suǒyǐ xiǎng xiūxi.",
+              "english": "I'm tired, so I want to rest.",
+              "teaching_note": "所以 introduces the result or consequence."
+            },
+            {
+              "id": "ex-439-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "昨天他生病了，所以没有去上班。",
+              "pinyin": "zuótiān tā shēngbìng le, suǒyǐ méiyǒu qù shàngbān.",
+              "english": "He got sick yesterday, so he didn’t go to work.",
+              "teaching_note": "所以 introduces the result or consequence."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 439
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "所以 introduces the result or consequence."
+        },
+        {
+          "id": "w-476",
+          "hanzi": "因为",
+          "pinyin": "yīnwèi",
+          "meaning_en": "because",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "preposition"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-476-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "因为我生病了，今天不能来。",
+              "pinyin": "yīnwèi wǒ shēngbìng le, jīntiān bù néng lái.",
+              "english": "Because I'm ill, I can't come today.",
+              "teaching_note": "因为 introduces a reason and may precede 所以."
+            },
+            {
+              "id": "ex-476-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "因为今天下雨，我们在家看电影。",
+              "pinyin": "yīnwèi jīntiān xià yǔ, wǒmen zài jiā kàn diànyǐng.",
+              "english": "Because it's raining today, we're watching a movie at home.",
+              "teaching_note": "因为 introduces a reason and may precede 所以."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 476
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "因为 introduces a reason and may precede 所以."
+        },
+        {
+          "id": "w-004",
+          "hanzi": "吧",
+          "pinyin": "ba",
+          "meaning_en": "suggestion particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-004-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "我们走吧。",
+              "pinyin": "wǒmen zǒu ba.",
+              "english": "Let's go.",
+              "teaching_note": "Sentence-final 吧 softens a proposal into a friendly suggestion to go together."
+            },
+            {
+              "id": "ex-004-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“明天再来吧。”老师说。",
+              "pinyin": "“míngtiān zài lái ba.” lǎoshī shuō.",
+              "english": "\"Come back tomorrow,\" the teacher said.",
+              "teaching_note": "Written dialogue: 吧 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 4
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Sentence-final suggestion or softening particle."
+        },
+        {
+          "id": "w-013",
+          "hanzi": "不",
+          "pinyin": "bù",
+          "meaning_en": "not",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-013-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不喝茶。",
+              "pinyin": "wǒ bù hē chá.",
+              "english": "I do not drink tea.",
+              "teaching_note": "不 negates a general action or preference; there is no aspect marker for a habitual statement."
+            },
+            {
+              "id": "ex-013-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里不卖茶。",
+              "pinyin": "zhèlǐ bú mài chá.",
+              "english": "Tea is not sold here.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 不."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 13
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": []
+        },
+        {
+          "id": "w-015",
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "meaning_en": "do not want; don't",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "modal-verb"
+          ],
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "examples": [
+            {
+              "id": "ex-015-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不要这个。",
+              "pinyin": "wǒ bú yào zhège.",
+              "english": "I don't want this one.",
+              "teaching_note": "不要 directly rejects an offered object; in some contexts it can sound firm."
+            },
+            {
+              "id": "ex-015-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请不要在这里吃东西。",
+              "pinyin": "qǐng búyào zài zhèlǐ chī dōngxi.",
+              "english": "Please don't eat here.",
+              "teaching_note": "Short everyday instruction or request using 不要; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 15
+            }
+          ],
+          "primary_topic_id": "grammar-functions",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "pos_note": "Negative request/prohibition: 不 + 要; an expression rather than a single lexical category."
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "grammar-1",
+        "title": "A reason and its result",
+        "explanation": "因为 (yīnwèi) introduces the reason; 所以 (suǒyǐ) introduces the consequence. One can also appear without the other when the relationship is clear.",
+        "example_id": "ex-330-1"
+      },
+      {
+        "id": "grammar-2",
+        "title": "Concession and contrast",
+        "explanation": "虽然 (suīrán) starts a concession and 但是 (dànshì) can introduce a contrasting main clause.",
+        "example_id": "ex-331-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-330-1",
+      "ex-331-1",
+      "ex-345-1",
+      "ex-352-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is happening in the second part of the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the details in the second paragraph to justify your answer.",
+          "answer": "Because the weather is bad, Xiao Li goes to the cinema with a friend. Although he likes sports, he also likes movies."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write the Mandarin sentence for: I am tired today, so I want to go home earlier. Give both Hanzi and pinyin.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "explanation": "Use the expressions and grammar you have practised. Suggested answer: 我今天很累，所以想早点儿回家。 (Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.)",
+          "answer": "我今天很累，所以想早点儿回家。 (Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.)"
+        },
+        {
+          "id": "recall-330",
+          "kind": "selection",
+          "prompt": "Which expression means “but”?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "但",
+              "pinyin": "dàn",
+              "meaning_en": "but; however"
+            },
+            {
+              "id": "b",
+              "hanzi": "但是",
+              "pinyin": "dànshì",
+              "meaning_en": "but; however"
+            },
+            {
+              "id": "c",
+              "hanzi": "跟",
+              "pinyin": "gēn",
+              "meaning_en": "with; and; to follow"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 但 (dàn) with this meaning."
+        },
+        {
+          "id": "recall-331",
+          "kind": "selection",
+          "prompt": "Which expression means “but”?",
+          "choices": [
+            {
+              "id": "b",
+              "hanzi": "但",
+              "pinyin": "dàn",
+              "meaning_en": "but; however"
+            },
+            {
+              "id": "c",
+              "hanzi": "跟",
+              "pinyin": "gēn",
+              "meaning_en": "with; and; to follow"
+            },
+            {
+              "id": "a",
+              "hanzi": "但是",
+              "pinyin": "dànshì",
+              "meaning_en": "but; however"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 但是 (dànshì) with this meaning."
+        },
+        {
+          "id": "recall-345",
+          "kind": "selection",
+          "prompt": "Which expression means “with”?",
+          "choices": [
+            {
+              "id": "c",
+              "hanzi": "但是",
+              "pinyin": "dànshì",
+              "meaning_en": "but; however"
+            },
+            {
+              "id": "a",
+              "hanzi": "跟",
+              "pinyin": "gēn",
+              "meaning_en": "with; and; to follow"
+            },
+            {
+              "id": "b",
+              "hanzi": "但",
+              "pinyin": "dàn",
+              "meaning_en": "but; however"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "The source vocabulary lists 跟 (gēn) with this meaning."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Linking Ideas in Conversation",
+        "context_en": "Connect two thoughts naturally with because, so, but and choice questions.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天我们去公园还是去电影院？",
+            "pinyin": "Jīntiān wǒmen qù gōngyuán háishi qù diànyǐngyuàn?",
+            "english": "Are we going to the park or to the cinema today?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我想去公园，但是可能会下雨。",
+            "pinyin": "Wǒ xiǎng qù gōngyuán, dànshì kěnéng huì xià yǔ.",
+            "english": "I want to go to the park, but it might rain."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "因为天气不好，所以我们去看电影吧。",
+            "pinyin": "Yīnwèi tiānqì bù hǎo, suǒyǐ wǒmen qù kàn diànyǐng ba.",
+            "english": "Because the weather is bad, let’s go see a movie."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊！我跟你一起去，现在就走。",
+            "pinyin": "Hǎo a! Wǒ gēn nǐ yìqǐ qù, xiànzài jiù zǒu.",
+            "english": "Great! I’ll go with you; let’s leave right now."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "A reason and its result",
+          "explanation_en": "因为 (yīnwèi) introduces the reason; 所以 (suǒyǐ) introduces the consequence. One can also appear without the other when the relationship is clear.",
+          "examples": [
+            {
+              "hanzi": "我今天很累，所以想早点儿回家。",
+              "pinyin": "Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.",
+              "english": "I am tired today, so I want to go home earlier."
+            },
+            {
+              "hanzi": "我想去公园，但是可能会下雨。",
+              "pinyin": "Wǒ xiǎng qù gōngyuán, dànshì kěnéng huì xià yǔ.",
+              "english": "I want to go to the park, but it might rain."
+            }
+          ],
+          "pattern_hanzi": "因为 + 原因， 所以 + 结果",
+          "pattern_pinyin": "yīnwèi + yuányīn,  suǒyǐ + jiéguǒ",
+          "pattern_pseudo_translation": "因为 + <reason>， 所以 + <result>"
+        },
+        {
+          "id": "pattern-2",
+          "title": "Concession and contrast",
+          "explanation_en": "虽然 (suīrán) starts a concession and 但是 (dànshì) can introduce a contrasting main clause.",
+          "examples": [
+            {
+              "hanzi": "你喝茶还是喝水？",
+              "pinyin": "Nǐ hē chá háishi hē shuǐ?",
+              "english": "Do you drink tea or water?"
+            },
+            {
+              "hanzi": "好啊！我跟你一起去，现在就走。",
+              "pinyin": "Hǎo a! Wǒ gēn nǐ yìqǐ qù, xiànzài jiù zǒu.",
+              "english": "Great! I’ll go with you; let’s leave right now."
+            }
+          ],
+          "pattern_hanzi": "虽然 + 分句，但是 + 转折分句",
+          "pattern_pinyin": "suīrán + fēnjù, dànshì + zhuǎnzhé fēnjù",
+          "pattern_pseudo_translation": "虽然 + <clause>，但是 + <contrasting clause>"
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Make your own sentence from each cue, say it aloud, then reveal the model answer.",
+        "model": {
+          "hanzi": "今天我们去公园还是去电影院？",
+          "pinyin": "Jīntiān wǒmen qù gōngyuán háishi qù diànyǐngyuàn?",
+          "english": "Are we going to the park or to the cinema today?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say in Mandarin: I am tired today, so I want to go home earlier.",
+            "model_answer": {
+              "hanzi": "我今天很累，所以想早点儿回家。",
+              "pinyin": "Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.",
+              "english": "I am tired today, so I want to go home earlier."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say in Mandarin: Do you drink tea or water?",
+            "model_answer": {
+              "hanzi": "你喝茶还是喝水？",
+              "pinyin": "Nǐ hē chá háishi hē shuǐ?",
+              "english": "Do you drink tea or water?"
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say in Mandarin: Because the weather is bad, let’s go see a movie.",
+            "model_answer": {
+              "hanzi": "因为天气不好，所以我们去看电影吧。",
+              "pinyin": "Yīnwèi tiānqì bù hǎo, suǒyǐ wǒmen qù kàn diànyǐng ba.",
+              "english": "Because the weather is bad, let’s go see a movie."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Linking Ideas in Conversation — short reading",
+        "paragraphs": [
+          {
+            "hanzi": "小李本来想在外面运动，但今天下雨了。他觉得可能不能去公园。",
+            "pinyin": "Xiǎo Lǐ běnlái xiǎng zài wàimiàn yùndòng, dàn jīntiān xià yǔ le. Tā juéde kěnéng bù néng qù gōngyuán.",
+            "english": "Xiao Li originally wanted to exercise outdoors, but it is raining. He thinks he may not be able to go to the park."
+          },
+          {
+            "hanzi": "因为天气不好，所以小李跟朋友去了电影院。虽然他喜欢运动，但他也喜欢看电影。",
+            "pinyin": "Yīnwèi tiānqì bù hǎo, suǒyǐ Xiǎo Lǐ gēn péngyou qù le diànyǐngyuàn. Suīrán tā xǐhuan yùndòng, dàn tā yě xǐhuan kàn diànyǐng.",
+            "english": "Because the weather is bad, Xiao Li goes to the cinema with a friend. Although he likes sports, he also likes movies."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-q-1",
+            "prompt_en": "What do we learn about the people or situation in the first part of the reading?",
+            "answer_en": "Xiao Li originally wanted to exercise outdoors, but it is raining. He thinks he may not be able to go to the park."
+          },
+          {
+            "id": "reading-q-2",
+            "prompt_en": "What happens or is explained in the second part of the reading?",
+            "answer_en": "Because the weather is bad, Xiao Li goes to the cinema with a friend. Although he likes sports, he also likes movies."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Explain to a classmate: I am tired today, so I want to go home earlier.",
+          "model_answer": {
+            "hanzi": "我今天很累，所以想早点儿回家。",
+            "pinyin": "Wǒ jīntiān hěn lèi, suǒyǐ xiǎng zǎo diǎnr huí jiā.",
+            "english": "I am tired today, so I want to go home earlier."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain to a classmate: Do you drink tea or water?",
+          "model_answer": {
+            "hanzi": "你喝茶还是喝水？",
+            "pinyin": "Nǐ hē chá háishi hē shuǐ?",
+            "english": "Do you drink tea or water?"
+          }
+        }
+      ],
+      "common_pitfall": "还是 (háishi) between alternatives commonly marks a choice question; 和 (hé) or 跟 (gēn) usually joins people or things rather than asking which one to choose.",
+      "pronunciation_focus": "Practise the tone change in 但是 (dànshì) and the second-tone first syllable of 还是 (háishi).",
+      "review": {
+        "can_do": [
+          "Explain a reason with 因为 (yīnwèi) and a result with 所以 (suǒyǐ).",
+          "Contrast statements with 但是 (dànshì).",
+          "Ask about alternatives with 还是 (háishi)."
+        ],
+        "entry_ids": [
+          330,
+          331,
+          345,
+          352,
+          376,
+          382,
+          438,
+          439,
+          476
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-linking-ideas-in-conversation--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: A reason and its result",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Concession and contrast",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: I am tired today, so I want to go home earlier.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Do you drink tea or water?",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Because the weather is bad, let’s go see a movie.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--read-reading-q-1",
+            "kind": "question",
+            "label": "What do we learn about the people or situation in the first part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-1"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--read-reading-q-2",
+            "kind": "question",
+            "label": "What happens or is explained in the second part of the reading?",
+            "optional": false,
+            "target_id": "reading-q-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak aloud",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--speak-speaking-1",
+            "kind": "speaking",
+            "label": "Explain to a classmate: I am tired today, so I want to go home earlier.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--speak-speaking-2",
+            "kind": "speaking",
+            "label": "Explain to a classmate: Do you drink tea or water?",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--pitfall",
+            "kind": "section",
+            "label": "Understand the common usage distinction",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--pronunciation",
+            "kind": "section",
+            "label": "Practise the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--review",
+            "kind": "review",
+            "label": "Demonstrate the learning objectives",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-linking-ideas-in-conversation--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-linking-ideas-in-conversation--question-applied-reading",
+            "kind": "practice",
+            "label": "What is happening in the second part of the reading?",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--question-applied-production",
+            "kind": "practice",
+            "label": "Write the Mandarin sentence for: I am tired today, so I want to go home earlier. Give both Hanzi and pinyin.",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--question-recall-330",
+            "kind": "practice",
+            "label": "Which expression means “but”?",
+            "optional": true,
+            "target_id": "recall-330"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--question-recall-331",
+            "kind": "practice",
+            "label": "Which expression means “but”?",
+            "optional": true,
+            "target_id": "recall-331"
+          },
+          {
+            "id": "topic-linking-ideas-in-conversation--question-recall-345",
+            "kind": "practice",
+            "label": "Which expression means “with”?",
+            "optional": true,
+            "target_id": "recall-345"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 38
+}

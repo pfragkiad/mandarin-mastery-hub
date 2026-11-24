@@ -1,3 +1,4 @@
+import { shuffleSeed } from '@/lib/library-order';
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { CharactersPage, type CharactersSearch } from '@/components/tutor/characters-page';
 import { pageHead } from '@/lib/mandarin';
@@ -9,6 +10,8 @@ const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
 export const Route = createFileRoute('/characters')({
   validateSearch: (search: Record<string, unknown>): CharactersSearch => {
     const out: CharactersSearch = {};
+    if (search['sort'] === 'pinyin' || search['sort'] === 'random') out.sort = search['sort'];
+    const seed = shuffleSeed(search['seed']); if (seed) out.seed = seed;
     const character = str(search['character']); if (character) out.character = character;
     const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
     const usage = (['Characters', 'Radicals', 'Components'] as const).flatMap(k => usageGroups(k)).find(group => group.value === search['usage']); if (usage) out.usage = usage.value;

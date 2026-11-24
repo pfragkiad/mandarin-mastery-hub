@@ -1,5 +1,5 @@
 {
-  "schema_version": "mandarin-topic-lesson/3.1.0",
+  "schema_version": "mandarin-topic-lesson/3.4.0",
   "lesson_id": "topic-shopping-and-things",
   "lesson_type": "topic_vocabulary",
   "lesson": {
@@ -19,7 +19,12 @@
       "prices",
       "objects"
     ],
-    "course_topic_refs": []
+    "course_topic_refs": [],
+    "subtopic_ids": [
+      "shopping-commerce",
+      "everyday-objects"
+    ],
+    "primary_subtopic_id": null
   },
   "learning_objectives": [
     "Ask and answer basic price questions.",
@@ -28,7 +33,7 @@
   ],
   "metadata": {
     "status": "draft",
-    "template_version": "3.1.0",
+    "template_version": "3.4.0",
     "audience": "Beginner Mandarin learners",
     "language": "zh-CN",
     "date_reviewed": null
@@ -77,6 +82,7 @@
     "大": "Characters:大",
     "天": "Characters:天",
     "太": "Characters:太",
+    "她": "Characters:她",
     "好": "Characters:好",
     "妈": "Characters:妈",
     "子": "Characters:子",
@@ -130,6 +136,7 @@
     "西": "Characters:西",
     "要": "Characters:要",
     "话": "Characters:话",
+    "说": "Characters:说",
     "请": "Characters:请",
     "课": "Characters:课",
     "谁": "Characters:谁",
@@ -141,7 +148,14 @@
     "里": "Characters:里",
     "钱": "Characters:钱",
     "门": "Characters:门",
-    "间": "Characters:间"
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "品": "Characters:品",
+    "字": "Characters:字",
+    "客": "Characters:客",
+    "数": "Characters:数",
+    "物": "Characters:物",
+    "顾": "Characters:顾"
   },
   "sections": {
     "overview": {
@@ -189,7 +203,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 19
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-034",
@@ -229,7 +248,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 34
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-065",
@@ -270,7 +294,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 65
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-105",
@@ -299,11 +328,11 @@
             {
               "id": "ex-105-2",
               "style": "written",
-              "register": "neutral_written",
-              "hanzi": "这本书二十块钱。",
-              "pinyin": "zhè běn shū èr shí kuài qián.",
-              "english": "This book costs twenty yuan.",
-              "teaching_note": ""
+              "register": "written_dialogue",
+              "hanzi": "“这本书二十块钱。”她说。",
+              "pinyin": "“zhè běn shū èrshí kuài qián.” tā shuō.",
+              "english": "“This book costs twenty yuan,” she said.",
+              "teaching_note": "The everyday currency unit appears in quoted speech."
             }
           ],
           "learning_role": "introduced",
@@ -313,7 +342,10 @@
               "entry_id": 105
             }
           ],
-          "pos_note": "Classifier and colloquial monetary unit; also used for pieces."
+          "pos_note": "Classifier and colloquial monetary unit; also used for pieces.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-116",
@@ -353,7 +385,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 116
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-117",
@@ -393,7 +430,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 117
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-157",
@@ -434,7 +476,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 157
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-164",
@@ -474,7 +521,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 164
             }
-          ]
+          ],
+          "primary_subtopic_id": "money-finance",
+          "subtopic_ids": [
+            "money-finance"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-174",
@@ -515,7 +567,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 174
             }
-          ]
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-268",
@@ -535,20 +592,20 @@
             {
               "id": "ex-268-1",
               "style": "conversational",
-              "register": "neutral",
-              "hanzi": "这个杯子十元。",
-              "pinyin": "zhège bēizi shí yuán.",
-              "english": "This cup costs ten yuan.",
-              "teaching_note": "元 is the currency unit yuan; price follows the item directly."
+              "register": "polite",
+              "hanzi": "请问，这个杯子十元吗？",
+              "pinyin": "qǐngwèn, zhè ge bēizi shí yuán ma?",
+              "english": "Excuse me, is this cup ten yuan?",
+              "teaching_note": "The formal currency unit is used in a polite price question."
             },
             {
               "id": "ex-268-2",
               "style": "written",
               "register": "neutral_written",
-              "hanzi": "这本书二十元。",
-              "pinyin": "zhè běn shū èr shí yuán.",
-              "english": "This book costs twenty yuan.",
-              "teaching_note": ""
+              "hanzi": "这本中文书二十元。",
+              "pinyin": "zhè běn zhōngwén shū èrshí yuán.",
+              "english": "This Chinese-language book costs twenty yuan.",
+              "teaching_note": "The sentence states a price using the standard written currency unit."
             }
           ],
           "learning_role": "introduced",
@@ -558,7 +615,10 @@
               "entry_id": 268
             }
           ],
-          "pos_note": "Currency unit yuan, functioning as a measure word."
+          "pos_note": "Currency unit yuan, functioning as a measure word.",
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "shopping-money"
         },
         {
           "id": "w-009",
@@ -599,7 +659,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 9
             }
-          ]
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "primary_topic_id": "home-objects"
         },
         {
           "id": "w-035",
@@ -611,7 +676,7 @@
             "noun"
           ],
           "topic_ids": [
-            "home-objects",
+            "science-technology",
             "communication-social"
           ],
           "examples": [
@@ -640,7 +705,10 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 35
             }
-          ]
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "primary_topic_id": "science-technology"
         },
         {
           "id": "w-036",
@@ -652,7 +720,7 @@
             "noun"
           ],
           "topic_ids": [
-            "home-objects",
+            "science-technology",
             "school-language",
             "work-jobs"
           ],
@@ -682,7 +750,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 36
             }
-          ]
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "primary_topic_id": "science-technology"
         },
         {
           "id": "w-040",
@@ -722,7 +795,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 40
             }
-          ]
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "primary_topic_id": "home-objects"
         },
         {
           "id": "w-052",
@@ -763,7 +841,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 52
             }
-          ]
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "primary_topic_id": "home-objects"
         },
         {
           "id": "w-189",
@@ -775,8 +858,9 @@
             "noun"
           ],
           "topic_ids": [
-            "home-objects",
-            "communication-social"
+            "science-technology",
+            "communication-social",
+            "home-objects"
           ],
           "examples": [
             {
@@ -804,7 +888,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 189
             }
-          ]
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "primary_topic_id": "science-technology"
         },
         {
           "id": "w-255",
@@ -844,7 +933,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 255
             }
-          ]
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "primary_topic_id": "home-objects"
         },
         {
           "id": "w-260",
@@ -884,7 +978,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 260
             }
-          ]
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "primary_topic_id": "home-objects"
         },
         {
           "id": "w-295",
@@ -924,7 +1023,12 @@
               "curriculum_id": "hsk3-2025",
               "entry_id": 295
             }
-          ]
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "primary_topic_id": "home-objects"
         }
       ],
       "related_entries": []
@@ -1108,7 +1212,6 @@
           "id": "pattern-1",
           "title": "Prices: 元 (yuán) and 块 (kuài)",
           "explanation_en": "元 (yuán) names the currency unit; 块 (kuài) is a common colloquial word for yuan. Use 多少钱 (duōshao qián) to ask price.",
-          "formula_en": "item + 多少钱? / number + 块",
           "examples": [
             {
               "hanzi": "这件衣服五十元。",
@@ -1120,13 +1223,15 @@
               "pinyin": "Nà zhāng zhuōzi yì bǎi kuài.",
               "english": "That table is one hundred yuan."
             }
-          ]
+          ],
+          "pattern_hanzi": "物品 + 多少钱？ / 数字 + 块",
+          "pattern_pinyin": "wùpǐn + duōshao qián? / shùzì + kuài",
+          "pattern_pseudo_translation": "<item> + 多少钱？ / <number> + 块"
         },
         {
           "id": "pattern-2",
           "title": "Buying versus selling",
           "explanation_en": "买 (mǎi) means “buy” and 卖 (mài) means “sell”. Their tone difference changes the meaning. 贵 (guì) and 便宜 (piányi) describe price.",
-          "formula_en": "shop + 卖 + item; customer + 买 + item",
           "examples": [
             {
               "hanzi": "这家商店卖手机。",
@@ -1138,7 +1243,10 @@
               "pinyin": "Wǒ xiǎng mǎi xīn diànnǎo.",
               "english": "I want to buy a new computer."
             }
-          ]
+          ],
+          "pattern_hanzi": "商店 + 卖 + 物品; 顾客 + 买 + 物品",
+          "pattern_pinyin": "shāngdiàn + mài + wùpǐn; gùkè + mǎi + wùpǐn",
+          "pattern_pseudo_translation": "<shop> + 卖 + <item>; <customer> + 买 + <item>"
         }
       ],
       "guided_building": {
@@ -1155,7 +1263,8 @@
               "hanzi": "这个手机多少钱？",
               "pinyin": "Zhège shǒujī duōshao qián?",
               "english": "How much is this phone?"
-            }
+            },
+            "id": "build-sub-01"
           },
           {
             "cue_en": "table",
@@ -1163,7 +1272,8 @@
               "hanzi": "这张桌子多少钱？",
               "pinyin": "Zhè zhāng zhuōzi duōshao qián?",
               "english": "How much is this table?"
-            }
+            },
+            "id": "build-sub-02"
           }
         ]
       },
@@ -1179,11 +1289,13 @@
         "questions": [
           {
             "prompt_en": "What two things does Mom want to buy?",
-            "answer_en": "A chair and a table."
+            "answer_en": "A chair and a table.",
+            "id": "reading-q-01"
           },
           {
             "prompt_en": "Which object is cheaper?",
-            "answer_en": "The chair."
+            "answer_en": "The chair.",
+            "id": "reading-q-02"
           }
         ]
       },
@@ -1234,5 +1346,217 @@
         ]
       }
     }
-  }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-shopping-and-things--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--dialogue",
+            "kind": "section",
+            "label": "Understand the conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pattern--pattern-1",
+            "kind": "section",
+            "label": "Apply: Prices: 元 (yuán) and 块 (kuài)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-shopping-and-things--pattern--pattern-2",
+            "kind": "section",
+            "label": "Apply: Buying versus selling",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Guided sentence building",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--build--build-sub-01",
+            "kind": "reveal",
+            "label": "Build a sentence: phone",
+            "optional": false,
+            "target_id": "build-sub-01"
+          },
+          {
+            "id": "topic-shopping-and-things--build--build-sub-02",
+            "kind": "reveal",
+            "label": "Build a sentence: table",
+            "optional": false,
+            "target_id": "build-sub-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--reading",
+        "section_key": "reading",
+        "title": "Reading comprehension",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--read--reading-q-01",
+            "kind": "question",
+            "label": "What two things does Mom want to buy?",
+            "optional": false,
+            "target_id": "reading-q-01"
+          },
+          {
+            "id": "topic-shopping-and-things--read--reading-q-02",
+            "kind": "question",
+            "label": "Which object is cheaper?",
+            "optional": false,
+            "target_id": "reading-q-02"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--speaking",
+        "section_key": "speaking",
+        "title": "Speaking practice",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--speak--speaking-1",
+            "kind": "speaking",
+            "label": "Ask for something less expensive.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-shopping-and-things--speak--speaking-2",
+            "kind": "speaking",
+            "label": "Say you want to buy a phone.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Common pitfalls",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pitfall",
+            "kind": "section",
+            "label": "Recognize the common pitfall",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--pronunciation",
+        "section_key": "pronunciation",
+        "title": "Pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--pronunciation",
+            "kind": "section",
+            "label": "Practice the pronunciation focus",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--review",
+            "kind": "review",
+            "label": "Complete the review checklist",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-shopping-and-things--section--practice",
+        "section_key": "practice",
+        "title": "Practice & optional recall quizzes",
+        "checkpoints": [
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-1",
+            "kind": "practice",
+            "label": "Which expression means “supermarket”?",
+            "optional": true,
+            "target_id": "q-12-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-2",
+            "kind": "practice",
+            "label": "Which expression means “yuan (currency)”?",
+            "optional": true,
+            "target_id": "q-12-2"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-3",
+            "kind": "practice",
+            "label": "Which expression means “table”?",
+            "optional": true,
+            "target_id": "q-12-3"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-4",
+            "kind": "practice",
+            "label": "In the example “我去超市买水果。” (wǒ qù chāoshì mǎi shuǐguǒ.), what is happening?",
+            "optional": false,
+            "target_id": "q-12-4"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--q-12-5",
+            "kind": "practice",
+            "label": "Write this in Mandarin: “The supermarket opens at eight in the morning.”",
+            "optional": false,
+            "target_id": "q-12-5"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-reading-1",
+            "kind": "practice",
+            "label": "Reading comprehension: What two things does Mom want to buy?",
+            "optional": false,
+            "target_id": "applied-reading-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-reading-2",
+            "kind": "practice",
+            "label": "Reading comprehension: Which object is cheaper?",
+            "optional": false,
+            "target_id": "applied-reading-2"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-speaking-1",
+            "kind": "practice",
+            "label": "Say this aloud: Ask for something less expensive.",
+            "optional": false,
+            "target_id": "applied-speaking-1"
+          },
+          {
+            "id": "topic-shopping-and-things--quiz--applied-speaking-2",
+            "kind": "practice",
+            "label": "Say this aloud: Say you want to buy a phone.",
+            "optional": false,
+            "target_id": "applied-speaking-2"
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
 }

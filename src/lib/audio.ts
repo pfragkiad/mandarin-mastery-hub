@@ -64,6 +64,9 @@ export function ttsAvailable(): boolean {
   return Boolean(pickMandarinVoice(voices));
 }
 
+/** The utterance being spoken, held so the browser cannot garbage-collect it mid-speech. */
+let speaking: SpeechSynthesisUtterance | null = null;
+
 // onEnd fires once when the utterance finishes, errors or is cancelled, so callers
 // (stroke Play) can wait for the spoken name. A timeout guards browsers whose
 // speech engine never reports the end; if speech can't start, onEnd is not called.
@@ -73,16 +76,29 @@ export function speakTts(text: string, rate = NORMAL_RATE, onEnd?: () => void): 
   if (!voices.length) voices = window.speechSynthesis.getVoices();
   const voice = pickMandarinVoice(voices);
   if (!voice) return { ok: false, candidate, reason: 'no-mandarin-voice', canUseTts: false };
-  window.speechSynthesis.cancel();
+  const synth = window.speechSynthesis;
+  // Chrome quirks this works around: cancel() immediately followed by speak() can drop the new
+  // utterance silently, an engine left paused never starts again until resume(), and an
+  // utterance with no live reference can be garbage-collected mid-speech. So only a busy engine
+  // is cancelled (then speech starts a moment later), a paused one is resumed, and the current
+  // utterance is kept in `speaking`.
+  const busy = synth.speaking || synth.pending;
+  if (busy) synth.cancel();
+  if (synth.paused) synth.resume();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = voice.lang; u.voice = voice; u.rate = clampRate(rate);
+  speaking = u;
+  const clear = () => { if (speaking === u) speaking = null; };
   if (onEnd) {
     let done = false;
-    const finish = () => { if (done) return; done = true; window.clearTimeout(guard); onEnd(); };
+    const finish = () => { if (done) return; done = true; window.clearTimeout(guard); clear(); onEnd(); };
     const guard = window.setTimeout(finish, 4000 + text.length * 600);
     u.onend = finish; u.onerror = finish;
+  } else {
+    u.onend = clear; u.onerror = clear;
   }
-  window.speechSynthesis.speak(u);
+  if (busy) window.setTimeout(() => { if (speaking === u) synth.speak(u); }, 60);
+  else synth.speak(u);
   return { ok: true, candidate };
 }
 
@@ -122,6 +138,36 @@ export async function playRecordingUrl(url: string, slow = false, onEnded?: () =
   }
 }
 
+/** How one exact recording finished: naturally, stopped (by Stop, another speaker or navigation) or failed to play. */
+export type RecordingSettle = 'ended' | 'stopped' | 'failed';
+
+/**
+ * Play one exact recording URL at an explicit rate through the shared element (stopping any
+ * other speaker), with pitch preservation requested. `onSettle` fires exactly once: 'ended'
+ * when it finishes, 'stopped' when anything pauses it (stopRecording, another speaker), or
+ * 'failed' when it cannot load/play. Never falls back to TTS or another recording.
+ */
+export async function playRecordingAt(url: string, rate: number, onSettle: (how: RecordingSettle) => void): Promise<boolean> {
+  current?.pause();
+  const el = new Audio(url);
+  el.playbackRate = clampRate(rate);
+  el.preservesPitch = true;
+  current = el;
+  let settled = false;
+  const settle = (how: RecordingSettle) => { if (!settled) { settled = true; onSettle(how); } };
+  el.addEventListener('ended', () => settle('ended'), { once: true });
+  // A natural end also fires 'pause' first; el.ended tells the two apart.
+  el.addEventListener('pause', () => { if (!el.ended) settle('stopped'); });
+  el.addEventListener('error', () => settle('failed'), { once: true });
+  try {
+    await el.play();
+    return true;
+  } catch (error) {
+    settle(error instanceof DOMException && error.name === 'AbortError' ? 'stopped' : 'failed');
+    return false;
+  }
+}
+
 /** Stop whichever recording is playing. */
 export function stopRecording() {
   current?.pause();
@@ -132,6 +178,7 @@ export function stopRecording() {
  *  A cancelled utterance still fires its onEnd guard, so chained callers settle. */
 export function stopAllAudio() {
   stopRecording();
+  speaking = null;
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
 }
 
