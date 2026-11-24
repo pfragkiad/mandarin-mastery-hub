@@ -11,7 +11,8 @@
  * Neutral tone is stored as 5 and shown as "neutral" (a dot in compact cells).
  *
  * URL search (validated here, owned by the routes): pair / rule, exact example id,
- * listen=1 (Listen first: word names hidden) and speed=slow (0.8× playback).
+ * listen=1 (Listen first: word names hidden). Playback speed is the app-wide "Slower
+ * pronunciation" preference, not part of the URL (older speed=slow links are dropped).
  */
 
 export type PairTone = 1 | 2 | 3 | 4 | 5;
@@ -35,8 +36,6 @@ export const FIRST_TONES = [1, 2, 3, 4] as const;
 export const SECOND_TONES = [1, 2, 3, 4, 5] as const;
 export const DEFAULT_PAIR = '3-3';
 export const DEFAULT_RULE: ToneRule = 'third';
-/** The handoff's slow speed: the same recording at 0.8×, not a separate slow recording. */
-export const SLOW_PLAYBACK_RATE = 0.8;
 
 /** Authored teaching copy for the three tone-change focus areas (from the owner's prototype). */
 export const TONE_RULES: Record<ToneRule, { symbol: string; hanzi: boolean; title: string; short: string; description: string; detail: string }> = {
@@ -50,7 +49,7 @@ const PAIR_RE = /^[1-4]-[1-5]$/;
 export const isPair = (value: unknown): value is string => typeof value === 'string' && PAIR_RE.test(value);
 export const isRule = (value: unknown): value is ToneRule => value === 'third' || value === 'yi' || value === 'bu';
 
-export type ToneSoundsSearch = { example?: string | undefined; listen?: true | undefined; speed?: 'slow' | undefined };
+export type ToneSoundsSearch = { example?: string | undefined; listen?: true | undefined };
 export type TonePairsSearch = ToneSoundsSearch & { pair?: string | undefined };
 export type ToneChangesSearch = ToneSoundsSearch & { rule?: ToneRule | undefined };
 
@@ -62,7 +61,6 @@ function common(search: Record<string, unknown>): ToneSoundsSearch {
   // The router may parse listen=1 as a number.
   const listen = search['listen'];
   if (listen === 1 || listen === '1' || listen === true) out.listen = true;
-  if (search['speed'] === 'slow') out.speed = 'slow';
   return out;
 }
 export function validateTonePairsSearch(search: Record<string, unknown>): TonePairsSearch {
@@ -101,7 +99,7 @@ export function listeningTip(e: TonePairExample): string {
   if (e.rule) return TONE_RULES[e.rule].detail;
   if (e.citationTones[1] === 5) return 'The second syllable is neutral. Listen to its short, light delivery after the first tone.';
   if (e.citationTones[0] === 3) return 'The first third tone is often low here, without the full rise heard in isolation.';
-  return 'Listen once, pause, then say the whole word. Use the Sound chart links below to revisit each dictionary syllable.';
+  return 'Listen once, pause, then say the whole word. Play each dictionary sound below to compare the syllables on their own.';
 }
 
 let loading: Promise<TonePairData> | null = null;

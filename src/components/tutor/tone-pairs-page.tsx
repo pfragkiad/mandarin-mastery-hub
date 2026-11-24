@@ -3,40 +3,50 @@
 //
 // Purpose: hear two-syllable words as whole-word recordings, grouped by dictionary tone pair
 // (a 4 × 5 matrix, neutral second tone last) or by tone change (3 + 3, 一, 不).
-// Inputs: `mode`, the route's validated search (pair or rule, exact example id, listen,
-// speed) and `onChange(patch, replace)`, which the route turns into navigation. Choosing a
-// cell, a rule or a word pushes history (Back restores it); Listen first and speed only
-// replace the entry. State: the lazily loaded sidecar and the one playback status.
+// Inputs: `mode`, the route's validated search (pair or rule, exact example id, listen)
+// and `onChange(patch, replace)`, which the route turns into navigation. Choosing a cell, a
+// rule or a word pushes history (Back restores it); Listen first only replaces the entry.
+// State: the lazily loaded sidecars (tone pairs; the Sound chart's syllable recordings for
+// the chips) and the one playback status. Speed is the app-wide "Slower pronunciation"
+// preference, as for every other speaker; the page has no speed control of its own.
 //
 // Rules carried over from the handoff:
-// - One speaker plays one exact whole-word recording (the word card's own CDN attachment) at
-//   normal or 0.8× speed. No TTS, no syllable joining, no automatic fallback on failure.
+// - The word speaker plays one exact whole-word recording (the word card's own CDN attachment);
+//   each syllable chip plays only the Sound chart's own recording of that exact syllable + tone.
+//   No TTS, no syllable joining, no automatic fallback on failure.
 // - Any selection change, page switch or unmount stops playback; Next word never autoplays.
 // - The dictionary tones, the exact source reading and the *expected in speech* draft stay
 //   separate; the draft is labelled as such and nothing here claims listening approval.
 // - Listen first hides every word name and reading (cells, list, card) but keeps the
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, Square, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { playRecordingAt, stopRecording, NORMAL_RATE, type RecordingSettle } from '@/lib/audio';
-import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
-import { soundOrigin } from '@/lib/selection-scroll';
+import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
+import { words as vocabularyWords, type Word } from '@/lib/mandarin';
+import { isHanziChar } from '@/lib/sentence-align';
 import { usePublishSections } from '@/lib/section-switch';
-import { toneMark } from '@/lib/pinyin-guide';
+import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
-  DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, SLOW_PLAYBACK_RATE, TONE_RULES,
+  DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
   listeningTip, loadTonePairs, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
-import { ToneContour } from './pinyin-shared';
+import { ToneContour, usePinyinPlayer, sound, type PinyinPlayer } from './pinyin-shared';
+import { RecordDetailTitle } from './record-detail-title';
+import { SentenceHints } from './sentence-section';
+import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
+import { usePhrasePairing } from './phrase-pairing';
+import { useWorkspace } from './workspace';
 import { useOneLineTitle } from './one-line-title';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
-export type ToneSoundsPatch = { pair?: string | undefined; rule?: ToneRule | undefined; example?: string | undefined; listen?: true | undefined; speed?: 'slow' | undefined };
+export type ToneSoundsPatch = { pair?: string | undefined; rule?: ToneRule | undefined; example?: string | undefined; listen?: true | undefined };
+/** The Sound chart recordings behind the card's syllable chips (lazy), and their player. */
+type SyllableChips = { data: PinyinData | null; player: PinyinPlayer; error: string; onPlay: (base: string, tone: Tone) => void };
 
 const headings: Record<ToneSoundsMode, string> = { pairs: 'Hear tones together.', changes: 'Hear tones change.' };
 const intros: Record<ToneSoundsMode, string> = {
@@ -63,12 +73,19 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   const [status, setStatus] = useState<Status>(IDLE);
   // Each play gets a generation number; a settle from an older play is ignored.
   const generation = useRef(0);
-  const stop = () => { generation.current += 1; stopRecording(); setStatus(IDLE); };
+  const stop = () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); };
   // The header's Pinyin sounds switcher stops playback before changing page.
   usePublishSections('pinyin-sounds', null, { beforeSwitch: stop });
 
+  const { preferences } = useWorkspace();
+  const slow = preferences.slow;
   const hidden = Boolean(search.listen);
-  const slow = search.speed === 'slow';
+  // Syllable chips: the Sound chart's recordings, loaded lazily with the page.
+  const [chartData, setChartData] = useState<PinyinData | null>(null);
+  useEffect(() => { let live = true; loadPinyinData().then(d => { if (live) setChartData(d); }, () => {}); return () => { live = false; }; }, []);
+  const chipPlayer = usePinyinPlayer(chartData, slow);
+  const chipStop = useRef(chipPlayer.stop);
+  chipStop.current = chipPlayer.stop;
   const pair = search.pair ?? DEFAULT_PAIR;
   const rule = search.rule ?? DEFAULT_RULE;
   const pool = data ? (mode === 'pairs' ? pairPool(data, pair) : rulePool(data, rule)) : [];
@@ -76,11 +93,12 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
 
   // Any change of what is selected (or leaving the page) stops the current recording.
   const selectionKey = `${mode}|${pair}|${rule}|${row?.id ?? ''}`;
-  useEffect(() => () => { generation.current += 1; stopRecording(); setStatus(IDLE); }, [selectionKey]);
+  useEffect(() => () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); }, [selectionKey]);
 
   const play = async () => {
     if (!row) return;
     if (status.kind === 'loading' || status.kind === 'playing') { stop(); return; }
+    chipStop.current(); chipPlayer.clearError();
     const mine = ++generation.current;
     setStatus({ kind: 'loading', text: 'Loading recording…' });
     const onSettle = (how: RecordingSettle) => {
@@ -89,8 +107,8 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
       else if (how === 'failed') setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' });
       else setStatus(IDLE);
     };
-    const ok = await playRecordingAt(row.audio.url, slow ? SLOW_PLAYBACK_RATE : NORMAL_RATE, onSettle);
-    if (ok && mine === generation.current) setStatus({ kind: 'playing', text: `Playing the whole-word recording · ${row.audio.speaker}${slow ? ' · 0.8× speed' : ''}` });
+    const ok = await playRecordingAt(row.audio.url, slow ? SLOW_RATE : NORMAL_RATE, onSettle);
+    if (ok && mine === generation.current) setStatus({ kind: 'playing', text: `Playing the whole-word recording · ${row.audio.speaker}${slow ? ' · slower' : ''}` });
   };
   const playing = status.kind === 'loading' || status.kind === 'playing';
 
@@ -102,7 +120,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
         <a href={data.source.licenseUrl} target="_blank" rel="noreferrer">{data.source.license}</a> · MP3 processing: {data.source.processingCredits}<br/>
         <a href={`${data.source.repository}/tree/${data.source.commit}`} target="_blank" rel="noreferrer">audio-cmn ({data.source.commit.slice(0, 7)})</a> · each the word card’s own recording, unchanged<br/>
         Dictionary and expected-in-speech labels are teaching drafts, not listening-reviewed<br/>
-        0.8× slows the same recording in the browser; it is not a separate recording
+        Syllable chips play the Sound chart’s own recordings; Slower pronunciation (Preferences) slows the same files
       </SourceInfo>}</h1>
       <p>{intros[mode]}</p>
     </div></div>
@@ -124,11 +142,11 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             </div>
           </section>
         </div>
-        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} slow={slow} playing={playing} status={status}
+        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} playing={playing} status={status}
+          chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
           onNext={() => { const next = nextExample(pool, row.id); if (next) onChange({ example: next.id }); }}
-          onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}
-          onSpeed={value => { stop(); onChange({ speed: value ? 'slow' : undefined }, true); }}/>
+          onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
       </div>}
   </div>;
 }
@@ -171,50 +189,69 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
   </section>;
 }
 
-/** The selected word: face, tones, listening tip, playback, Sound chart links and source. */
-function PracticeCard({ row, pool, mode, hidden, slow, playing, status, onPlay, onNext, onReveal, onSpeed }: {
-  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; slow: boolean; playing: boolean; status: Status;
-  onPlay: () => void; onNext: () => void; onReveal: () => void; onSpeed: (slow: boolean) => void;
+/**
+ * The selected word, laid out like every other detail card (RecordDetailTitle): hanzi, then
+ * pinyin with its speaker and the translation, and the tone-pair pill at the top right.
+ * The hanzi get the detail cards' hover pairing with the pinyin and, inside SentenceHints (the
+ * remembered Character hints switch), a click opens each character's quick card; the word
+ * context is the exact Vocabulary record bound to this recording (vocabularyEntryId), never a
+ * spelling match. Below: dictionary vs expected tones, Play / Next word, and each dictionary
+ * syllable as a chip that plays the Sound chart's own recording in place (no navigation).
+ */
+function PracticeCard({ row, pool, mode, hidden, playing, status, onPlay, onNext, onReveal, chips }: {
+  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; playing: boolean; status: Status;
+  onPlay: () => void; onNext: () => void; onReveal: () => void; chips: SyllableChips;
 }) {
   const changed = tonesChanged(row);
-  // Sound chart links set the Sound card's Back step to this word (as glyph cards do).
-  const rememberTrail = () => { soundTrail.replace({ label: row.headword, href: historyEntry(), lang: 'zh-CN' }); soundChartArrival.request(); soundOrigin.set(null); };
+  const reading = row.expectedSpokenSyllables.join(' ');
+  const pairing = usePhrasePairing(row.headword, reading, !hidden);
+  const word = useMemo(() => (row.vocabularyEntryId ? vocabularyWords.find(w => w.id === row.vocabularyEntryId) ?? null : null), [row.vocabularyEntryId]);
+  const speaker = <Button variant="ghost" size="icon" aria-label={playing ? `Stop ${hidden ? 'the recording' : row.headword}` : `Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} aria-pressed={playing} onClick={onPlay}>{playing ? <Square/> : <Volume2/>}</Button>;
+  const pill = <span className="word-hsk-id tone-pair-pill" title={`Dictionary tones: ${toneLabel(row.citationTones)}`}>{row.citationTones.map((t, i) => <span key={i}>{i > 0 && ' + '}<ToneDigit tone={t}/></span>)}</span>;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
     <div className="pinyin-player-head">
       <span className="eyebrow">{mode === 'pairs' ? 'Tone pair' : 'Tone change'} · {pool.findIndex(e => e.id === row.id) + 1} of {pool.length}</span>
       <Button variant="ghost" size="sm" className="tone-sounds-reveal" aria-pressed={hidden} onClick={onReveal}>{hidden ? 'Reveal word' : 'Listen first'}</Button>
     </div>
-    {hidden
-      ? <div className="tone-sounds-face is-hidden"><div className="tone-sounds-hanzi" aria-hidden="true">••</div><div className="tone-sounds-reading">Listen, then reveal</div><div className="tone-sounds-meaning">Say back what you hear.</div></div>
-      : <div className="tone-sounds-face">
-        <div className="tone-sounds-hanzi" lang="zh-CN">{row.headword}</div>
-        <div className="tone-sounds-reading pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{row.expectedSpokenSyllables.join(' ')}</div>
-        <div className="tone-sounds-meaning">{row.english}</div>
-      </div>}
+    <SentenceHints backLabel={row.headword}>
+      {hidden
+        ? <RecordDetailTitle hanzi="••" glyphClassName="tone-sounds-hidden-glyph" pill={pill} pinyinContent={<><span className="pinyin">Listen, then reveal</span>{speaker}</>} meaning="Say back what you hear."/>
+        : <RecordDetailTitle hanzi={row.headword} glyphContent={<ToneHeadword headword={row.headword} word={word} pairing={pairing}/>} pill={pill}
+            pinyinContent={<><span className="pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{pairing.paired ? pairing.pinyinText : reading}</span>{speaker}</>} meaning={row.english}/>}
+    </SentenceHints>
     <dl className="tone-sounds-compare">
       <div><dt>Dictionary tones</dt><dd>{hidden ? 'Hidden' : toneLabel(row.citationTones)}</dd></div>
       <div className={changed && !hidden ? 'is-changed' : undefined}><dt>Expected in speech · draft</dt><dd>{hidden ? 'Hidden' : toneLabel(row.expectedSpokenTones)}</dd></div>
     </dl>
     <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
     <div className="tone-sounds-controls">
-      <Button variant="outline" size="sm" className="tone-sounds-play" onClick={onPlay}>{playing ? <><Square/>Stop</> : <><Volume2/>Play recording</>}</Button>
+      <Button variant="outline" size="sm" className="tone-sounds-play" onClick={onPlay}>{playing ? <><Square/>Stop</> : <><Volume2/>Play</>}</Button>
       <Button variant="outline" size="sm" onClick={onNext}>Next word<ArrowRight/></Button>
     </div>
-    <div className="tone-sounds-speed-row"><span>Speed</span>
-      <div className="tone-sounds-speed" role="group" aria-label="Playback speed">
-        <button type="button" aria-pressed={!slow} className={!slow ? 'is-current' : undefined} onClick={() => onSpeed(false)}>Normal</button>
-        <button type="button" aria-pressed={slow} className={slow ? 'is-current' : undefined} onClick={() => onSpeed(true)}>0.8×</button>
-      </div>
-    </div>
-    <p className={`tone-sounds-status${status.kind === 'error' ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{status.text}</p>
-    {hidden ? <p className="tone-sounds-helper">Reveal the word to open its syllables.</p> : <>
+    <p className={`tone-sounds-status${status.kind === 'error' || chips.error ? ' pinyin-audio-error' : ''}`} role="status" aria-live="polite">{chips.error || status.text}</p>
+    {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
       <div className="tone-sounds-links">
         <span className="eyebrow">Each dictionary sound</span>
-        <div className="tone-sounds-chips">{row.chartLinks.map((l, i) => <Link key={`${l.base}${l.tone}-${i}`} to="/pinyin" search={{ s: l.base, t: l.tone }} className={`tone-sounds-chip tone-${l.tone}`} title={`Open ${toneMark(l.base, l.tone)} in Sound chart`}
-          onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) rememberTrail(); }}>{l.reading}</Link>)}</div>
+        <div className="tone-sounds-chips">{row.chartLinks.map((l, i) => {
+          const id = soundId(l.base, l.tone);
+          const recorded = chips.data ? hasRecording(chips.data, l.base, l.tone) : false;
+          const on = chips.player.playing === id;
+          return <button key={`${id}-${i}`} type="button" className={`tone-sounds-chip tone-${l.tone}${on ? ' is-playing' : ''}`} disabled={!recorded} aria-pressed={on}
+            aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : undefined}
+            onClick={() => { if (on) chips.player.stop(); else chips.onPlay(l.base, l.tone); }}>{l.reading}{on ? <Square/> : <Volume2/>}</button>;
+        })}</div>
         {row.vocabularyEntryId && <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link">Open the word card<ArrowRight/></Link>}
       </div>
       {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
     </>}
   </section>;
+}
+
+/** The card's hanzi: hover pairing with the pinyin, plus quick-card targets when Character hints are on. */
+function ToneHeadword({ headword, word, pairing }: { headword: string; word: Word | null; pairing: ReturnType<typeof usePhrasePairing> }) {
+  const hints = useLessonHints();
+  const chars = Array.from(headword);
+  if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
+  const own: HintWord | null = word ? { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: 'word', word: word.id }, audio: word.audio ?? null } : null;
+  return <>{chars.map((ch, i) => isHanziChar(ch) ? <HintChar key={i} glyph={ch} word={own} {...pairing.glyphProps(i)}/> : pairing.glyph(ch, i))}</>;
 }

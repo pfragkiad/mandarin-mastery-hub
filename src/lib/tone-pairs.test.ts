@@ -60,7 +60,7 @@ describe('exact bindings', () => {
 describe('URL search', () => {
   it('drops unknown pairs, rules and modes instead of guessing', () => {
     expect(validateTonePairsSearch({ pair: '5-1', listen: 'yes', speed: 'fast' })).toEqual({});
-    expect(validateTonePairsSearch({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: 1, speed: 'slow' })).toEqual({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: true, speed: 'slow' });
+    expect(validateTonePairsSearch({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: 1, speed: 'slow' })).toEqual({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: true });
     expect(validateToneChangesSearch({ rule: 'sandhi' })).toEqual({});
     expect(validateToneChangesSearch({ rule: 'bu', listen: '1' })).toEqual({ rule: 'bu', listen: true });
   });
