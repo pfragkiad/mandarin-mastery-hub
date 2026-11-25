@@ -8,6 +8,11 @@ import { ComponentPronunciation } from './component-pronunciation';
 import { stripKangxiLabel } from './characters-page';
 import { ExampleCardMeta } from './sentence-section';
 import { radicalIdentity } from '@/lib/radical-identities';
+// The Radicals library icon (section-icons.ts), so this heading's mark matches the
+// sidebar/Start card mark for the same section instead of inventing a second one.
+import { sectionIcons } from '@/lib/section-icons';
+
+const RadicalIcon = sectionIcons.Radicals;
 import { cardMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
 
@@ -16,7 +21,7 @@ export function RadicalIdentityNote({ glyph }: { glyph: string }) {
   const identity = radicalIdentity(glyph);
   const sources = identity.sourceIds.flatMap(id => catalog.radicalIdentities.sources[id] ? [catalog.radicalIdentities.sources[id]] : []);
   return <div className="decomposition-section">
-    <h3 className="eyebrow">KANGXI IDENTITY{identity.radicals.length ? <SourceInfo inline className="detail-footnote identity-footnote">{identity.kind === 'canonical' ? 'Canonical Kangxi radical.' : 'Sourced Kangxi radical form.'}{identity.equivalentGlyphs.length > 0 && <><br/>Unicode-equivalent forms · <span lang="zh-CN">{identity.equivalentGlyphs.join(' · ')}</span></>}<br/>Source · {[...new Set(sources.map(source => `${source.provider} ${source.version}`))].join(' · ')} · Unicode License V3</SourceInfo> : null}</h3>
+    <h3 className="eyebrow"><RadicalIcon size={13} aria-hidden="true"/>KANGXI IDENTITY{identity.radicals.length ? <SourceInfo inline className="detail-footnote identity-footnote">{identity.kind === 'canonical' ? 'Canonical Kangxi radical.' : 'Sourced Kangxi radical form.'}{identity.equivalentGlyphs.length > 0 && <><br/>Unicode-equivalent forms · <span lang="zh-CN">{identity.equivalentGlyphs.join(' · ')}</span></>}<br/>Source · {[...new Set(sources.map(source => `${source.provider} ${source.version}`))].join(' · ')} · Unicode License V3</SourceInfo> : null}</h3>
     {identity.radicals.length ? <div className="kangxi-identity-rows">{identity.radicals.map(radical => {
       const destination = libraryDestination(radical.glyph, preferences.includeTraditional);
       // Reviewed per-reading meanings (干 gān / gàn) join with " / " like the grid card (cardMeaning

@@ -8,4 +8,6 @@ import type { GameIcon } from '@/components/tutor/game-catalog';
  */
 export type SectionName = 'Characters' | 'Components' | 'Radicals' | 'Strokes' | 'Words' | 'Idioms' | 'Phrases';
 
-export const sectionIcons: Record<SectionName, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Idioms: ScrollText, Phrases: Quote };
+// `satisfies` keeps every entry's own lucide type (so a caller can pass size/aria-hidden)
+// while still requiring one icon per library section.
+export const sectionIcons = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Idioms: ScrollText, Phrases: Quote } satisfies Record<SectionName, GameIcon>;
