@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { vocabularyData, phraseStyle, entryTypeLabel } from './data-contract';
 import { vocabularyKind, words } from './mandarin';
+import { inSubtopic, wordSubtopicIds } from './vocabulary-subtopics';
 
 describe('Full Level 1 replacement', () => {
   it('removes all unofficial Level 1 phrase records and their orphan collections', () => {
@@ -60,5 +61,13 @@ describe('Sentence phrases', () => {
     expect(derived.some(w => phraseStyle(w.entry) === 'Written')).toBe(true);
     const standalone = words.find(w => w.hanzi === '不好意思')!.entry!;
     expect(phraseStyle({ ...standalone, style: 'conversational' })).toBe('Conversational');
+  });
+  it('inherits recorded subtopics from parent words so Phrases filter by subtopic consistently with Words', () => {
+    const withSubtopics = derived.filter(w => wordSubtopicIds(w).length > 0);
+    expect(withSubtopics.length).toBeGreaterThan(0);
+    const samplePhrase = withSubtopics[0]!;
+    const firstSubtopic = wordSubtopicIds(samplePhrase)[0]!;
+    expect(inSubtopic(samplePhrase, firstSubtopic)).toBe(true);
+    expect(inSubtopic(samplePhrase, 'nonexistent-subtopic')).toBe(false);
   });
 });

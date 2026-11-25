@@ -8,8 +8,8 @@ const bands: IdiomRankClass[] = [
 ];
 
 const sample = [
-  idiomToWord({ id: 'idiom-1', rank: 1, hanzi: '坚定不移', traditional: '堅定不移', pinyin: 'jiān dìng bù yí', meaning: 'firm and unwavering', score: 100, docFreq: 54113, cumPct: 0.53 }, 'THUOCL'),
-  idiomToWord({ id: 'idiom-2', rank: 2, hanzi: '随时随地', traditional: '隨時隨地', pinyin: 'suí shí suí dì', meaning: 'anytime and anywhere', score: 97.04, docFreq: 52510, cumPct: 1.04 }, 'THUOCL'),
+  idiomToWord({ id: 'idiom-1', rank: 1, hanzi: '坚定不移', traditional: '堅定不移', pinyin: 'jiān dìng bù yí', meaning: 'firm and unwavering', score: 100, docFreq: 54113, cumPct: 0.53, topic: 'Qualities, Feelings & Evaluation', subtopics: ['emotions-attitudes'] }, 'THUOCL'),
+  idiomToWord({ id: 'idiom-2', rank: 2, hanzi: '随时随地', traditional: '隨時隨地', pinyin: 'suí shí suí dì', meaning: 'anytime and anywhere', score: 97.04, docFreq: 52510, cumPct: 1.04, topic: 'Time & Calendar', topics: ['Time & Calendar', 'Places & Directions'], subtopics: ['position-direction'] }, 'THUOCL'),
   idiomToWord({ id: 'idiom-150', rank: 150, hanzi: '画蛇添足', traditional: '畫蛇添足', pinyin: 'huà shé tiān zú', meaning: 'ruin the effect by adding what is superfluous', score: 25.1, docFreq: 13580, cumPct: 22.1 }, 'THUOCL'),
 ];
 
@@ -40,5 +40,11 @@ describe('idioms helpers', () => {
   it('orders idioms by frequency rank by default and by pinyin when requested', () => {
     expect(orderLibrary(sample, 'rank').map(w => w.id)).toEqual(['idiom-1', 'idiom-2', 'idiom-150']);
     expect(orderLibrary(sample, 'pinyin').map(w => w.id)).toEqual(['idiom-150', 'idiom-1', 'idiom-2']);
+  });
+
+  it('filters idioms by topic and subtopic', () => {
+    expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'All collections', 'emotions-attitudes').map(w => w.id)).toEqual(['idiom-1']);
+    expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'Places & Directions', 'position-direction').map(w => w.id)).toEqual(['idiom-2']);
+    expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'Time & Calendar', 'emotions-attitudes')).toEqual([]);
   });
 });

@@ -10,6 +10,7 @@ export type Word = {
   type: string;
   collection: string;
   collections?: string[];
+  subtopics?: string[];
   level: string;
   sentence: string;
   translation: string;

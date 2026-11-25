@@ -46,12 +46,17 @@ def build_payload() -> dict:
     with TOPICS_PATH.open("r", encoding="utf-8") as f:
         topics_data = json.load(f)
     topic_label_by_id = {t["id"]: t["label"] for t in topics_data["taxonomy"]["topics"]}
-    topics_by_id: dict[str, tuple[str | None, list[str]]] = {}
+    valid_subtopics = {s["id"] for s in topics_data["taxonomy"].get("subtopics", [])}
+    topics_by_id: dict[str, tuple[str | None, list[str], list[str]]] = {}
     for te in topics_data["entries"]:
         primary_id = te.get("primaryTopicId")
         primary_label = topic_label_by_id.get(primary_id) if primary_id else None
         labels = [topic_label_by_id[tid] for tid in (te.get("topicIds") or []) if tid in topic_label_by_id]
-        topics_by_id[str(te["id"])] = (primary_label, labels)
+        sub_ids: list[str] = []
+        for sid in [te.get("primarySubtopicId"), *(te.get("subtopicIds") or [])]:
+            if sid and sid in valid_subtopics and sid not in sub_ids:
+                sub_ids.append(sid)
+        topics_by_id[str(te["id"])] = (primary_label, labels, sub_ids)
 
     entries = []
     with TSV_PATH.open("r", encoding="utf-8", newline="") as f:
@@ -59,7 +64,7 @@ def build_payload() -> dict:
         for row in reader:
             rank = int(row["frequency_rank"])
             cum = cum_by_rank.get(rank)
-            primary_topic, all_topics = topics_by_id.get(str(row["id"]), (None, []))
+            primary_topic, all_topics, subtopics = topics_by_id.get(str(row["id"]), (None, [], []))
             entry: dict = {
                 "id": f"idiom-{row['id']}",
                 "rank": rank,
@@ -78,6 +83,8 @@ def build_payload() -> dict:
                 entry["topic"] = primary_topic
             if len(all_topics) > 1:
                 entry["topics"] = all_topics
+            if subtopics:
+                entry["subtopics"] = subtopics
             entries.append(entry)
 
     entries.sort(key=lambda e: e["rank"])

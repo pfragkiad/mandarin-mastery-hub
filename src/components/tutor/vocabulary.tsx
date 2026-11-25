@@ -112,13 +112,13 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const idiomRankClasses = idiomsState?.dataset.rankClasses ?? [];
   const facetBase = useMemo(() => kind === 'idiom' ? [] : filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kind, kindItems, query, status, saved, py]);
   const unordered = kind === 'idiom'
-    ? includeSelectedRecord(kindItems, filterIdioms(kindItems, idiomRankClasses, query, band, status, saved, Boolean(py), py === 'exact', bandUpTo === '1', collection), initialWordId)
+    ? includeSelectedRecord(kindItems, filterIdioms(kindItems, idiomRankClasses, query, band, status, saved, Boolean(py), py === 'exact', bandUpTo === '1', collection, subtopic), initialWordId)
     : includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
   // Legacy URLs may still carry sort=hsk; that is now simply the default order.
   const wordSort = sort === 'pinyin' || sort === 'random' ? sort : 'rank';
   const filtered = kind === 'idiom' ? orderLibrary(unordered, wordSort, seed) : orderVocabulary(unordered, wordSort, seed);
-  // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
-  const hasSubtopics = useMemo(() => kind !== 'idiom' && kindItems.some(w => wordSubtopicIds(w).length > 0), [kind, kindItems]);
+  // Subtopic dropdown wherever this tab's records carry subtopics (Words, Idioms, and derived Phrases).
+  const hasSubtopics = useMemo(() => kindItems.some(w => wordSubtopicIds(w).length > 0), [kindItems]);
   const appliedSubtopic = subtopicById(subtopic);
   // Keep a directly linked entry reachable even when old browsing filters would
   // exclude it; pagination uses that same pool for reference-window navigation.
@@ -157,17 +157,26 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : kind === 'idiom' ? (idiomsState?.dataset.source ?? 'THUOCL chengyu frequency list · unreviewed English glosses') : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}{kind !== 'idiom' && <ExperimentalTag/>}</div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
     <TabsContent value={kind}>
-    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(kind === 'idiom' && band !== ALL_IDIOM_BANDS ? [{ label: appliedBand ? (bandUpTo === '1' ? bandRangeLabel({ from: 1, to: appliedBand.to }) : bandRangeLabel(appliedBand)) : band, clear: { band: ALL_IDIOM_BANDS, bandUpTo: undefined } }] : []), ...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(kind !== 'idiom' && pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(kind === 'phrase' && style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
+    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(kind === 'idiom' && band !== ALL_IDIOM_BANDS ? [{ label: appliedBand ? (bandUpTo === '1' ? bandRangeLabel({ from: 1, to: appliedBand.to }) : bandRangeLabel(appliedBand)) : band, clear: { band: ALL_IDIOM_BANDS, bandUpTo: undefined } }] : []), ...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(kind !== 'idiom' && pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(kind === 'phrase' && style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
       if (kind === 'idiom') {
         const draftBand = idiomRankClasses.find(c => c.id === (draft.band ?? ALL_IDIOM_BANDS));
         const draftTopic = draft.collection ?? 'All collections';
+        const draftSubtopic = draft.subtopic ?? ALL_SUBTOPICS;
         const idiomPool = filterIdioms(kindItems, idiomRankClasses, query, draft.band ?? ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1');
-        const idiomTopics = collections.filter(c => c === draftTopic || idiomPool.some(w => w.collection === c || w.collections?.includes(c)));
+        const idiomTopics = collections.filter(c => c === draftTopic || idiomPool.filter(w => inSubtopic(w, draftSubtopic)).some(w => w.collection === c || w.collections?.includes(c)));
+        const idiomSubtopics = subtopicOptions(filterIdioms(kindItems, idiomRankClasses, query, draft.band ?? ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1', draftTopic), draftTopic, draftSubtopic);
+        const pickIdiomTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
         // "Include lower ranks" mirrors the Glyphs rank filter: the selected band widens to
         // rank 1..band end (idioms.ts matchesIdiomBand). Picking "All ranks" drops the widening.
         return <>
           <span className="filter-field-row"><Select value={draft.band ?? ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>
-          <select className="filter-select" aria-label="Topic" value={draftTopic} onChange={e => patch({ collection: e.target.value })}><option value="All collections">All topics</option>{idiomTopics.map(c => <option key={c}>{c}</option>)}</select>
+          <select className="filter-select" aria-label="Topic" value={draftTopic} onChange={e => pickIdiomTopic(e.target.value)}><option value="All collections">All topics</option>{idiomTopics.map(c => <option key={c}>{c}</option>)}</select>
+          {hasSubtopics && <select className="filter-select" aria-label="Subtopic" value={draftSubtopic} disabled={!idiomSubtopics.length && draftSubtopic === ALL_SUBTOPICS} onChange={e => patch({ subtopic: e.target.value })}>
+            <option value={ALL_SUBTOPICS}>{idiomSubtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics'}</option>
+            {draftTopic !== 'All collections'
+              ? idiomSubtopics.map(st => <option key={st.id} value={st.id}>{st.label}</option>)
+              : [...new Set(idiomSubtopics.map(st => st.parentLabel))].map(parent => <optgroup key={parent} label={parent}>{idiomSubtopics.filter(st => st.parentLabel === parent).map(st => <option key={st.id} value={st.id}>{st.label}</option>)}</optgroup>)}
+          </select>}
         </>;
       }
       // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed

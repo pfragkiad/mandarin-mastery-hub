@@ -21,7 +21,7 @@ export type Entry = {
   /** Set only on phrases derived from a word's recorded example sentence (sentencePhraseEntries). */
   /** Optional recorded style for a standalone phrase ("conversational" | "written"); absent = Unclassified. */
   style?: 'conversational' | 'written';
-  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null; hskFromWord: string | null; hskFromWordId: string | null };
+  sentenceSource?: { exampleId: string; wordIds: string[]; style: 'conversational' | 'written' | null; notes: string | null; hskFromWord: string | null; hskFromWordId: string | null; subtopicIds?: string[] };
   phraseMetadata?: { internalId: string; syllabusStatus: string; entryType: string; matchedVocabularyIds: number[]; reviewNotes: string | null; linguisticStatus?: string | null; outOfLevelDetail?: string | null; editorialCorrection?: string | null };
   studyMetadata?: {
     source: SourceRef; sourceSha256: string; taxonomyVersion: string;
@@ -135,13 +135,14 @@ export function sentencePhraseEntries(entries: Entry[]): Entry[] {
     const first = words[0]!;
     const owner = words.reduce((best, word) => ((word.hskLevel ?? 0) > (best.hskLevel ?? 0) ? word : best), first);
     const topics = [...new Set(words.flatMap(word => [word.categoryId, ...(word.categoryIds ?? [])].filter((id): id is string => Boolean(id))))];
+    const subtopicIds = [...new Set(words.flatMap(word => [word.studyMetadata?.primarySubtopicId, ...(word.studyMetadata?.subtopicIds ?? [])].filter((id): id is string => Boolean(id))))];
     phrases.push({
       id: `sentence-${example.id}`, sourceId: null, sourceName: example.source?.sourceName ?? first.sourceName, sourceVersion: example.source?.sourceVersion ?? first.sourceVersion,
       simplified: example.simplified, traditional: null, tokens: example.tokens, pinyinDisplay: examplePinyin(example), meanings: [alignSentenceEnding(examplePinyin(example), example.english)],
       entryKind: 'phrase', hskLevel: owner.hskLevel, hskVersion: owner.hskVersion, hsk_index: owner.hsk_index, hskSource: owner.hskSource,
       categoryId: first.categoryId, categoryIds: topics, partOfSpeech: null, contentStatus: 'draft',
       audio: example.audio ?? null, examples: [], createdAt: first.createdAt, updatedAt: first.updatedAt,
-      sentenceSource: { exampleId: example.id, wordIds: words.map(word => word.id), style: example.style ?? null, notes: example.notes ?? null, hskFromWord: owner.simplified, hskFromWordId: owner.id },
+      sentenceSource: { exampleId: example.id, wordIds: words.map(word => word.id), style: example.style ?? null, notes: example.notes ?? null, hskFromWord: owner.simplified, hskFromWordId: owner.id, ...(subtopicIds.length ? { subtopicIds } : {}) },
     });
   }
   return phrases;

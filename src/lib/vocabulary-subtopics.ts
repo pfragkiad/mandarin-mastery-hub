@@ -38,9 +38,10 @@ export const subtopicById = (id: string | undefined): VocabularySubtopic | undef
 
 /** The word's recorded subtopic IDs (primary first), or none. */
 export function wordSubtopicIds(word: Word): string[] {
+  if (word.subtopics?.length) return word.subtopics;
   const meta = word.entry?.studyMetadata;
-  if (!meta) return [];
-  return [...new Set([...(meta.primarySubtopicId ? [meta.primarySubtopicId] : []), ...(meta.subtopicIds ?? [])])];
+  if (meta) return [...new Set([...(meta.primarySubtopicId ? [meta.primarySubtopicId] : []), ...(meta.subtopicIds ?? [])])];
+  return word.entry?.sentenceSource?.subtopicIds ?? [];
 }
 
 export const inSubtopic = (word: Word, subtopic: string | undefined): boolean =>

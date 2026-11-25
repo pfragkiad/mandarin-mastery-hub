@@ -1,4 +1,5 @@
 import { filterWords, type Word } from './mandarin';
+import { ALL_SUBTOPICS, inSubtopic } from './vocabulary-subtopics';
 
 export type IdiomRankClass = {
   id: string;
@@ -21,6 +22,7 @@ export type IdiomRecord = {
   cumPct?: number;
   topic?: string;
   topics?: string[];
+  subtopics?: string[];
 };
 
 export type IdiomDataset = {
@@ -47,6 +49,7 @@ export function idiomToWord(entry: IdiomRecord, source: string): Word {
     type: '',
     collection: entry.topic ?? '',
     ...(entry.topics?.length ? { collections: entry.topics } : {}),
+    ...(entry.subtopics?.length ? { subtopics: entry.subtopics } : {}),
     level: '',
     sentence: '',
     translation: '',
@@ -113,7 +116,9 @@ export function filterIdioms(
   /** '1'-style widening: include every more frequent rank above the selected band. */
   bandUpTo = false,
   collection = 'All collections',
+  subtopic = ALL_SUBTOPICS,
 ): Word[] {
   const byBand = band && band !== ALL_IDIOM_BANDS ? idioms.filter(w => matchesIdiomBand(w, band, rankClasses, bandUpTo)) : idioms;
-  return filterWords(byBand, query, collection, 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
+  const byWords = filterWords(byBand, query, collection, 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
+  return subtopic && subtopic !== ALL_SUBTOPICS ? byWords.filter(w => inSubtopic(w, subtopic)) : byWords;
 }
