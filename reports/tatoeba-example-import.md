@@ -1,31 +1,49 @@
-# Tatoeba first-candidate import
+# Tatoeba teaching-example selection
 
-Imported **1,224 exact character assignments**, covering 877 distinct
-Chinese/English source pairs. Existing HSK vocabulary and lesson examples keep priority.
+Selected **1,028 short, passing character examples** from the 1,224 reviewed
+first candidates, covering 748 Chinese/English source pairs.
+Existing vocabulary and lesson examples stay first and retain their own annotations.
+
+## Learner suitability gate
+
+- Latest review must be **Pass**. Minor Review and Needs Fix remain offline.
+- At most **20 Han characters**, 40 total Chinese-line characters and 180 English characters.
+- No unfinished XXX templates, ellipses or multiline passages.
+- A longer Pass source may supply an individually checked complete clause with
+  an exact matching English span. Preserve both full-source links, span offsets,
+  parent text hashes and the separate assistant excerpt check. Never crop by length.
+
+Kept 969 first choices and replaced 59 with suitable
+already-reviewed sentences containing the same exact character. **196 characters
+remain without a suitable Tatoeba example**; a gap is preferable to an unresolved or long passage.
+The 255 excluded first candidates and replacement decisions are preserved in the
+[offline audit](tatoeba-example-import.json), including the long Biden sentence for 州.
+The selection includes **14 assignments from 12 checked excerpts**.
+Only terminal punctuation and initial English capitalization change; no lexical text is invented.
 
 | Most recent recorded review | Assignments |
 | --- | ---: |
-| Pass | 1041 |
-| Minor_Review | 109 |
-| Needs_Fix | 74 |
+| Pass | 1028 |
 
-**183 assignments show warning triangles** for unresolved findings.
-These are imported learning examples with recorded review status, not universal linguistic certification.
+No unresolved review cases are published as learning examples. The browser repeats
+the suitability gate, rejecting stale pre-filter data and overlong/flagged rows.
+Public source hints retain attribution and original wording after edits, without
+exposing internal review workflow.
 
 Round 3 returned 94 character-specific IDs. Its reviewed sentence pairs cover
-142 assignments in this full set; the same corrected wording is reused
+107 selected assignments; the same corrected wording is reused
 with explicit evidence IDs. This does not turn unreturned character IDs into returned reviews.
-Chinese changes affect 18 assignments and English changes affect
-28; counts overlap. Earlier assistant-only drafts are not substituted.
+Chinese changes affect 15 assignments and English changes affect
+21; counts overlap. Earlier assistant-only drafts are not substituted.
 
 Every row retains both Tatoeba sentence IDs, contributors, source links, CC BY 2.0 FR
 attribution and original/display text hashes. Original text remains in the source metadata.
 The popup distinguishes original text and editorial wording and shows reviewer notes.
 
-Pinyin is recorded source transcription, never generated from the character reading.
-It is withheld for changed Chinese. Source transcriptions remain unverified here.
+Source pinyin transcriptions remain preserved as provenance and are withheld after
+Chinese edits. The frontend retains the site's current pinyin/audio presentation.
 External recordings are allowed when the exact displayed Chinese and per-recording
-reuse permission are confirmed. All 94 recordings attached to these candidates
+reuse permission are confirmed. All 85 recordings attached to these candidates
 lack a reuse licence in the preserved export, so none is attached for playback.
 Existing validated Mandarin TTS is available only where a source sentence reading is present.
 See the [official audio attribution guidance](https://en.wiki.tatoeba.org/articles/show/faq).

@@ -11,6 +11,7 @@ under `public/data`, with explicit review flags and attribution.
 | `.gitattributes` | Preserves manifest and generated JSONL/TSV bytes across platform checkouts, including bounded part sizes. |
 | [raw/](raw/README.md) | Original download bytes; local and excluded from Git. Read by `scripts/prepare-tatoeba.py`. |
 | [selected/](selected/README.md) | Exact positive-mark inventory and filtered review spreadsheets, with source text/attribution, reviews/tags, raw pinyin/conversions, direct English links and audio licence metadata. |
+| `teaching-excerpts.json` | Individually assistant-checked complete Chinese clauses and matching English spans from reviewed Pass parents; pinned parent hashes, stable excerpt IDs and explicit check authorship. Consumed by `scripts/import-tatoeba-examples.py`, never loaded by the app directly. Only terminal punctuation/capitalization may change. |
 | [reports/](reports/README.md) | Owner-created supplied-review directory and consolidated review report for the 375-row OK batch, with consecutive reviewer history and separate proposals and partial Round 3 feedback. Generated/checked by `scripts/reconcile-tatoeba-reviews.py`; no app import or final approval. |
 
 Run `python scripts/prepare-tatoeba.py --download --check` from the repository root.
@@ -27,11 +28,14 @@ An existing download is accepted only with its manifest checksum. Text attributi
 must retain individual sentence IDs and contributor names. Audio licences are
 separate per recording; this stage downloads metadata only, never media files.
 
-Import the full 1,224 first candidates with latest returned review wording using
+Select teaching examples from the 1,224 reviewed first candidates using
 `python scripts/import-tatoeba-examples.py --write` (`--check` to verify).
-This preserves these inputs, skips unreviewed assistant-only wording, retains
-unresolved warnings and generates the separately loaded runtime examples and
-availability index. See [the import audit](../../../reports/tatoeba-example-import.md)
+This preserves these inputs and publishes only short Pass examples: at most 20 Han
+characters, 40 total Chinese characters and 180 English characters, without unfinished
+templates. Unsuitable first choices may use a suitable already-reviewed alternative
+or an individually checked bilingual excerpt. Flagged/long candidates remain in
+the offline audit; unresolved cases never appear as learner examples. The runtime
+sidecar and availability index are version 2. See [the import audit](../../../reports/tatoeba-example-import.md)
 and [frontend sentence annotations](../../../public/data/TATOEBA_SENTENCES.md).
 Existing vocabulary/lesson sentences stay first; Tatoeba can add another separately
 annotated sentence. No recording is attached without exact text and explicit reuse permission.

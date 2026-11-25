@@ -18,7 +18,7 @@ import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 import { SectionPlaceholder } from './section-placeholder';
 import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
-import { loadCharacterTatoebaExample, ownSentencePinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
+import { isLearningExample, loadCharacterTatoebaExample, ownSentencePinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
 import { TatoebaSentenceSource } from './tatoeba-sentence-source';
 
 /** Optional sourced examples, fetched only for a Characters detail card.
@@ -78,7 +78,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const fallback = useFallbackExample(entry.id, kind === 'Characters', examples.length === 0);
   const hskExample = fallback?.hsk;
-  const tatoeba = fallback?.tatoeba;
+  const tatoeba = fallback?.tatoeba && isLearningExample(fallback.tatoeba) ? fallback.tatoeba : null;
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;

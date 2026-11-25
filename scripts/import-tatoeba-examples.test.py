@@ -19,35 +19,43 @@ class TatoebaImportTests(unittest.TestCase):
         cls.data, cls.outputs = module.build()
         cls.rows = cls.data['examples']
 
-    def test_complete_first_candidates_keep_exact_source_identities(self):
+    def test_teaching_selection_keeps_exact_targets_and_review_evidence(self):
         originals = module.review.keyed(module.review.read_tsv(ROOT / 'reports/tatoeba-translation-review.tsv'))
-        self.assertEqual(len(self.rows), 1224)
-        self.assertEqual({row['id'] for row in self.rows.values()}, set(originals))
+        self.assertEqual(len(self.rows), 1028)
+        self.assertTrue({row['character'] for row in self.rows.values()} <= {row['character'] for row in originals.values()})
         for record_id, row in self.rows.items():
             self.assertEqual(record_id, 'Characters:' + row['character'])
             self.assertIn(row['character'], row['sentence'])
-            original = originals[row['id']]
+            original = originals[row['selection']['reviewEvidenceId']]
             self.assertEqual(row['source']['chinese']['text'], original['sentence'])
             self.assertEqual(row['source']['english']['text'], original['translation'])
             for name, text in [('originalChinese', original['sentence']), ('originalEnglish', original['translation']),
                                ('displayChinese', row['sentence']), ('displayEnglish', row['translation'])]:
                 self.assertEqual(row['binding'][name + 'Sha256'], module.review.sha(text))
 
-    def test_unresolved_findings_remain_warnings_and_reviews_stay_scoped(self):
+    def test_unresolved_and_long_candidates_stay_offline(self):
         counts = self.data['counts']
-        self.assertEqual(counts['latestReviewStatus'], {'Pass': 1041, 'Minor_Review': 109, 'Needs_Fix': 74})
-        self.assertEqual(counts['warningTriangles'], 183)
+        self.assertEqual(counts['latestReviewStatus'], {'Pass': 1028})
+        self.assertEqual(counts['warningTriangles'], 0)
+        self.assertEqual(counts['unfilledCharacters'], 196)
+        self.assertEqual(counts['maximumDisplayedHanzi'], 20)
+        audit = json.loads(self.outputs[module.AUDIT])
+        zhou = next(row for row in audit['heldCandidates'] if row['character'] == chr(0x5dde))
+        self.assertEqual(zhou['reviewStatus'], 'Needs_Fix')
+        self.assertIsNone(zhou['replacementId'])
+        self.assertNotIn('Characters:' + chr(0x5dde), self.rows)
         for row in self.rows.values():
-            self.assertEqual(row['display']['marker'], 'source_info' if row['review']['status'] == 'Pass' else 'warning_triangle')
+            self.assertEqual(module.exclusion_reasons(row), [])
+            self.assertEqual(row['display']['marker'], 'source_info')
             self.assertFalse(row['review']['pinyinVerified'])
             self.assertFalse(row['review']['targetCharacterSenseVerified'])
-            if not row['review']['round3']:
+            if not row['review']['round3'] and 'excerpt' not in row['editorial']:
                 self.assertEqual(row['sentence'], row['source']['chinese']['text'])
                 self.assertEqual(row['translation'], row['source']['english']['text'])
 
     def test_reviewed_pairs_share_corrections_without_inventing_returned_ids(self):
-        self.assertEqual(self.data['counts']['round3ReturnedIds'], 94)
-        self.assertEqual(self.data['counts']['round3ReviewedPairAssignments'], 142)
+        self.assertEqual(self.data['counts']['round3ReturnedIds'], 75)
+        self.assertEqual(self.data['counts']['round3ReviewedPairAssignments'], 107)
         pairs = {}
         for row in self.rows.values():
             if row['review']['latestRound'] != 3:
@@ -58,13 +66,34 @@ class TatoebaImportTests(unittest.TestCase):
             self.assertEqual(row['review']['round3ReturnedForThisId'], row['id'] in row['review']['round3EvidenceIds'])
 
     def test_changed_chinese_never_inherits_original_pinyin_or_recordings(self):
-        self.assertEqual(self.data['counts']['chineseEditedAssignments'], 18)
+        self.assertEqual(self.data['counts']['chineseEditedAssignments'], 15)
         for row in self.rows.values():
             self.assertIsNone(row['audio'])
             if row['editorial']['chineseChanged']:
                 self.assertIsNone(row['pinyin'])
                 self.assertTrue(row['editorial']['pinyinWithheldAfterChineseEdit'])
-        self.assertEqual(self.data['counts']['sourceRecordingsWithoutLicense'], 94)
+        self.assertEqual(self.data['counts']['sourceRecordingsWithoutLicense'], 85)
+
+    def test_checked_excerpts_are_exact_parent_spans_not_automatic_crops(self):
+        definitions = json.loads(module.EXCERPTS.read_bytes())['excerpts']
+        rows = [row for row in self.rows.values() if 'excerpt' in row['editorial']]
+        self.assertEqual(len(rows), 14)
+        for row in rows:
+            excerpt = row['editorial']['excerpt']
+            for lang in ('chinese', 'english'):
+                span = excerpt['spans'][lang]
+                parent = row['source'][lang]['text']
+                self.assertEqual(parent[span['start']:span['end']], span['text'])
+                self.assertEqual(module.review.sha(parent), excerpt['parent' + lang.title() + 'Sha256'])
+            self.assertIn(':excerpt:', row['id'])
+            self.assertFalse(row['review']['round3ReturnedForThisId'])
+        row = next(row for row in rows if row['editorial']['excerpt']['id'] == definitions[0]['id'])
+        parent = {**row, 'id': row['selection']['reviewEvidenceId'], 'sentence': row['source']['chinese']['text'],
+                  'translation': row['source']['english']['text']}
+        with self.assertRaises(ValueError):
+            module.checked_excerpts({'test': parent}, [{**definitions[0], 'english': 'invented words'}])
+        with self.assertRaises(ValueError):
+            module.checked_excerpts({'test': {**parent, 'review': {**parent['review'], 'status': 'Needs_Fix'}}}, [definitions[0]])
 
     def test_source_holds_changed_text_and_lost_targets_are_rejected(self):
         original = {'id': 'test', 'character': 'x', 'sentence': 'x source', 'translation': 'source'}

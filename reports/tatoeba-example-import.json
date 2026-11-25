@@ -1,23 +1,29 @@
 {
-  "version": 1,
+  "version": 2,
   "generator": "scripts/import-tatoeba-examples.py",
   "counts": {
-    "characterAssignments": 1224,
-    "distinctSourcePairs": 877,
+    "characterAssignments": 1028,
+    "reviewedCandidateAssignments": 1224,
+    "retainedFirstChoices": 969,
+    "replacedFirstChoices": 59,
+    "heldOriginalCandidates": 255,
+    "unfilledCharacters": 196,
+    "excerptAssignments": 14,
+    "distinctExcerptsUsed": 12,
+    "maximumDisplayedHanzi": 20,
+    "distinctSourcePairs": 748,
     "latestReviewStatus": {
-      "Pass": 1041,
-      "Minor_Review": 109,
-      "Needs_Fix": 74
+      "Pass": 1028
     },
-    "warningTriangles": 183,
-    "round3ReturnedIds": 94,
-    "round3ReviewedPairAssignments": 142,
-    "chineseEditedAssignments": 18,
-    "englishEditedAssignments": 28,
-    "withSourcePinyin": 1206,
+    "warningTriangles": 0,
+    "round3ReturnedIds": 75,
+    "round3ReviewedPairAssignments": 107,
+    "chineseEditedAssignments": 15,
+    "englishEditedAssignments": 21,
+    "withSourcePinyin": 1013,
     "importedRecordings": 0,
-    "sourceRecordings": 94,
-    "sourceRecordingsWithoutLicense": 94
+    "sourceRecordings": 85,
+    "sourceRecordingsWithoutLicense": 85
   },
   "inputs": [
     {
@@ -91,11 +97,3271 @@
       "bytes": 8745
     },
     {
+      "file": "importer/data/tatoeba/teaching-excerpts.json",
+      "sha256": "8b156fd1f9be0d9ed3b1b67255b9de9c8eb55c9263e717b0b7d9234eac4bd42f",
+      "bytes": 5232
+    },
+    {
       "file": "public/data/character-hsk-examples.json",
       "sha256": "d4fb0d2a35052d46a0bf317b11b1f47349563c17e159d682174de41dd6dfb5cf",
       "bytes": 3406
     }
   ],
-  "policy": "Full owner-requested 1224 first candidates. Latest Round 3 pair wording is shared consistently with evidence IDs, without claiming every character ID was returned. Otherwise retain source wording and R2-or-R1 findings. Unresolved flags use warning triangles. No unreviewed assistant-only wording, generated pinyin or imported recordings.",
+  "learningPolicy": {
+    "requiredStatus": "Pass",
+    "maxHanzi": 20,
+    "maxChineseLength": 40,
+    "maxEnglishLength": 180,
+    "allowUnfinishedTemplates": false
+  },
+  "heldCandidates": [
+    {
+      "recordId": "Characters:並",
+      "candidateId": "tatoeba:763867:5933564:U+4E26",
+      "character": "並",
+      "sentence": "我希望離開這個村子並且再也不要回來。",
+      "translation": "I'd like to leave this town and never come back.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:4794644:4794426:U+4E26"
+    },
+    {
+      "recordId": "Characters:井",
+      "candidateId": "tatoeba:391598:242920:U+4E95",
+      "character": "井",
+      "sentence": "我今天有點不舒服。那戶井水是許多疾病的源頭。",
+      "translation": "I don't feel well today. That well water is the cause of many illnesses.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:仇",
+      "candidateId": "tatoeba:729503:35094:U+4EC7",
+      "character": "仇",
+      "sentence": "我再看一次《王子復仇記》，加起來一共就看過三次了。",
+      "translation": "I will have read Hamlet three times if I read it again.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:伊",
+      "candidateId": "tatoeba:13533654:32488:U+4F0A",
+      "character": "伊",
+      "sentence": "木乃伊哭了。",
+      "translation": "Mummy cried.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:1360008:262351:U+4F0A"
+    },
+    {
+      "recordId": "Characters:伎",
+      "candidateId": "tatoeba:333336:10253656:U+4F0E",
+      "character": "伎",
+      "sentence": "比起歌舞伎，我更喜欢能乐表演，因为我觉得后者比前者优雅。",
+      "translation": "I prefer Noh to Kabuki because I find the former to be more elegant than the latter.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:333336:10253656:U+4F0E:excerpt:performance-preference"
+    },
+    {
+      "recordId": "Characters:伦",
+      "candidateId": "tatoeba:2335946:1837490:U+4F26",
+      "character": "伦",
+      "sentence": "为什么克里斯托弗·哥伦布离婚了？",
+      "translation": "Why did Christopher Columbus get divorced?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:4265060:2852917:U+4F26"
+    },
+    {
+      "recordId": "Characters:佈",
+      "candidateId": "tatoeba:13578087:3854443:U+4F48",
+      "character": "佈",
+      "sentence": "人們很容易將能源和電力小組委員會的大多數成員描述為笨蛋。他們散佈石油和煤炭公司炮製的虛假信息，以最大限度地減少全球氣候變遷的重要性，被稱為科學文盲。",
+      "translation": "One can easily characterize a majority of the energy and power subcommittee members as nincompoops — scientific illiterates who spread misinformation crafted by oil and coal companies in order to minimize the significance of global climate change.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:係",
+      "candidateId": "tatoeba:785217:785220:U+4FC2",
+      "character": "係",
+      "sentence": "你也許不同意他們某些重大政策，這可能會影響你的工作關係。",
+      "translation": "You may not agree with some of their major policies and this could affect your working relationship.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:346912:308291:U+4FC2"
+    },
+    {
+      "recordId": "Characters:俯",
+      "candidateId": "tatoeba:392303:392300:U+4FEF",
+      "character": "俯",
+      "sentence": "冯迪索在做俯卧撑时，并不是把自身往上推，而是在把地球向下推。",
+      "translation": "When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:507419:258854:U+4FEF"
+    },
+    {
+      "recordId": "Characters:倫",
+      "candidateId": "tatoeba:5494311:3134498:U+502B",
+      "character": "倫",
+      "sentence": "倫敦過去因為經濟和文化的緣故，十分重要。",
+      "translation": "London was very important for economical and cultural reasons.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:债",
+      "candidateId": "tatoeba:8581076:8577834:U+503A",
+      "character": "债",
+      "sentence": "在美国，由于投资者纷纷涌向包括黄金和美国国债在内的安全港，因此主要的股票价格指数在星期一一度下跌了3个百分点。",
+      "translation": "In the United States, the major stock market indices at one point were down three percentage points on Monday, as investors rushed to safe havens, including gold and U.S. Treasury bonds.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:偏",
+      "candidateId": "tatoeba:5957633:2806272:U+504F",
+      "character": "偏",
+      "sentence": "我不喜歡假陽具，我更偏愛真的𣬠𣬶。",
+      "translation": "I don't like using dildos, I prefer real cocks.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:傭",
+      "candidateId": "tatoeba:13926732:12933978:U+50AD",
+      "character": "傭",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:傳",
+      "candidateId": "tatoeba:3663355:3663353:U+50B3",
+      "character": "傳",
+      "sentence": "他們其中的75％以上都擔心技術導致傳統法語的衰落。",
+      "translation": "More than 75% of them fear that technology is causing the decline of the traditional French language.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:僅",
+      "candidateId": "tatoeba:413243:67739:U+50C5",
+      "character": "僅",
+      "sentence": "亞馬遜河的長度僅次於尼羅河，是世界第二長的河。",
+      "translation": "The Amazon is the second longest river in the world after the Nile.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:僕",
+      "candidateId": "tatoeba:7300206:470448:U+50D5",
+      "character": "僕",
+      "sentence": "連他的僕人都鄙視他",
+      "translation": "Even his servants despised him.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:儀",
+      "candidateId": "tatoeba:1414431:1412062:U+5100",
+      "character": "儀",
+      "sentence": "無論你在世界的哪一個角落，你都可以使用全球定位儀來找出你的所在。",
+      "translation": "A GPS device can pinpoint your location anywhere in the world.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:儘",
+      "candidateId": "tatoeba:13532107:1067139:U+5118",
+      "character": "儘",
+      "sentence": "我建立了部落格。我會儘量努力，不想成為那種只在初期短暫活躍發文，然後就放棄的人。",
+      "translation": "I started a new blog. I'll do my best not to be one of those people who blogs a lot right at the start and then quits blogging.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:13532107:1067139:U+5118:excerpt:blog-effort"
+    },
+    {
+      "recordId": "Characters:優",
+      "candidateId": "tatoeba:10041958:11272870:U+512A",
+      "character": "優",
+      "sentence": "這隻貓咪氣場全開，走著貓步，相當優雅，然後摔倒了，真是糗大了。",
+      "translation": "The cat glided along, very refined, but ended up falling, which was very embarrassing.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:党",
+      "candidateId": "tatoeba:1214747:1214787:U+515A",
+      "character": "党",
+      "sentence": "没有共产党就没有新中国",
+      "translation": "There would be no New China without the communist party.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:兰",
+      "candidateId": "tatoeba:388260:388261:U+5170",
+      "character": "兰",
+      "sentence": "XXX用荷兰语怎么说？",
+      "translation": "How do you say XXX in Dutch?",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "unfinished_template_or_context"
+      ],
+      "replacementId": "tatoeba:3378115:3378116:U+5170"
+    },
+    {
+      "recordId": "Characters:冈",
+      "candidateId": "tatoeba:333270:64801:U+5188",
+      "character": "冈",
+      "sentence": "一个从俄勒冈州来的朋友，布朗先生明天会来拜访我们。",
+      "translation": "Mr. Brown, a friend from Oregon, will visit us tomorrow.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:冯",
+      "candidateId": "tatoeba:392303:392300:U+51AF",
+      "character": "冯",
+      "sentence": "冯迪索在做俯卧撑时，并不是把自身往上推，而是在把地球向下推。",
+      "translation": "When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:刪",
+      "candidateId": "tatoeba:776957:776430:U+522A",
+      "character": "刪",
+      "sentence": "你可以刪除「需要母語者確認」的標簽。",
+      "translation": "You can remove the NNC.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:割",
+      "candidateId": "tatoeba:4913659:13486253:U+5272",
+      "character": "割",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:創",
+      "candidateId": "tatoeba:6403032:6403012:U+5275",
+      "character": "創",
+      "sentence": "​我們​來​自​世界​各​地，有​不​同​的​文化​背景，説​不​同​的​語言。可是，我們​十分​團結，大家​都​有​同樣​的​目標。最​重要​的​是，我們​都​渴望​尊榮​耶和華，耶和華​就是​聖經​所​説​的​上帝，他​是​萬物​的​創造主。我們​盡力​效法​耶穌基督，以​身​為​基督徒​為​榮。我們​每​個​人​都​常常​花​時間​幫助​別人​認識​聖經​和​上帝​的​王國。由於​我們​為​耶和華​上帝​和​他​的​王國​作​見證，也​就是​向​別人​傳講​上帝​和​他​王國​的​真理，所以​我們​稱​為​耶和華見證人。",
+      "translation": "We come from hundreds of ethnic and language backgrounds, yet we are united by common goals. Above all, we want to honor Jehovah, the God of the Bible and the Creator of all things. We do our best to imitate Jesus Christ and are proud to be called Christians. Each of us regularly spends time helping people learn about the Bible and God’s Kingdom. Because we witness, or talk, about Jehovah God and his Kingdom, we are known as Jehovah’s Witnesses.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:勾",
+      "candidateId": "tatoeba:1097589:319877:U+52FE",
+      "character": "勾",
+      "sentence": "那篇關於佛教的文章再次勾起了我對東方宗教的興趣。",
+      "translation": "The article on Buddhism revived my interest in Eastern religions.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:卑",
+      "candidateId": "tatoeba:4913659:13486253:U+5351",
+      "character": "卑",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:卸",
+      "candidateId": "tatoeba:4313894:4313548:U+5378",
+      "character": "卸",
+      "sentence": "有人说，玛丽·安托瓦内特对法国大革命有着不可推卸的责任。",
+      "translation": "They say that Marie Antoinette was responsible for the French Revolution.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:卻",
+      "candidateId": "tatoeba:380303:270280:U+537B",
+      "character": "卻",
+      "sentence": "人類有思考和說話的能力，動物卻沒有。這就是人和動物的分別。",
+      "translation": "Human beings differ from animals in that they can think and speak.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:呃",
+      "candidateId": "tatoeba:5663567:3061904:U+5443",
+      "character": "呃",
+      "sentence": "“湯姆，我得告訴你點事。我愛某箇人。他的名字以T開頭以M結尾。”“呃，那能是誰？我認識嗎？",
+      "translation": "\"Tom, I have to tell you something. I love someone. His name starts with T and ends with M.\" \"Er, who would that be? Is it someone I know?\"",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:呆",
+      "candidateId": "tatoeba:347310:18059:U+5446",
+      "character": "呆",
+      "sentence": "你要在这里呆多久就呆多久",
+      "translation": "You may stay here as long as you like.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:咎",
+      "candidateId": "tatoeba:343638:298755:U+548E",
+      "character": "咎",
+      "sentence": "他把他的错误归咎于坏运气。",
+      "translation": "He ascribes his failure to bad luck.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:咕",
+      "candidateId": "tatoeba:7781719:7121489:U+5495",
+      "character": "咕",
+      "sentence": "你咕咕哝哝的来着。",
+      "translation": "You mumbled.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:哝",
+      "candidateId": "tatoeba:7781719:7121489:U+54DD",
+      "character": "哝",
+      "sentence": "你咕咕哝哝的来着。",
+      "translation": "You mumbled.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:嗨",
+      "candidateId": "tatoeba:876420:30313:U+55E8",
+      "character": "嗨",
+      "sentence": "嗨，比爾。你好嗎?",
+      "translation": "Hi, Bill. How are you?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:嚴",
+      "candidateId": "tatoeba:408362:239506:U+56B4",
+      "character": "嚴",
+      "sentence": "嚴格來說，蕃茄不是蔬菜，是水果。",
+      "translation": "Strictly speaking, the tomato is not a vegetable. It's a fruit.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:圓",
+      "candidateId": "tatoeba:9054728:258656:U+5713",
+      "character": "圓",
+      "sentence": "我有幾支圓珠筆。",
+      "translation": "I have some pens.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:團",
+      "candidateId": "tatoeba:6403032:6403012:U+5718",
+      "character": "團",
+      "sentence": "​我們​來​自​世界​各​地，有​不​同​的​文化​背景，説​不​同​的​語言。可是，我們​十分​團結，大家​都​有​同樣​的​目標。最​重要​的​是，我們​都​渴望​尊榮​耶和華，耶和華​就是​聖經​所​説​的​上帝，他​是​萬物​的​創造主。我們​盡力​效法​耶穌基督，以​身​為​基督徒​為​榮。我們​每​個​人​都​常常​花​時間​幫助​別人​認識​聖經​和​上帝​的​王國。由於​我們​為​耶和華​上帝​和​他​的​王國​作​見證，也​就是​向​別人​傳講​上帝​和​他​王國​的​真理，所以​我們​稱​為​耶和華見證人。",
+      "translation": "We come from hundreds of ethnic and language backgrounds, yet we are united by common goals. Above all, we want to honor Jehovah, the God of the Bible and the Creator of all things. We do our best to imitate Jesus Christ and are proud to be called Christians. Each of us regularly spends time helping people learn about the Bible and God’s Kingdom. Because we witness, or talk, about Jehovah God and his Kingdom, we are known as Jehovah’s Witnesses.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:坦",
+      "candidateId": "tatoeba:407739:407734:U+5766",
+      "character": "坦",
+      "sentence": "普京对胡锦涛说：“咱们必须帮吉尔吉斯斯坦”……不过那只是在我梦里的情形。",
+      "translation": "\"We need to help Kyrgyzstan,\" said Putin to Hu Jintao... in my dream.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "unfinished_template_or_context"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:垒",
+      "candidateId": "tatoeba:343964:240411:U+5792",
+      "character": "垒",
+      "sentence": "不要在公园玩垒球。",
+      "translation": "Don't play baseball in the park.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:垢",
+      "candidateId": "tatoeba:12996195:12996196:U+57A2",
+      "character": "垢",
+      "sentence": "Tom洗去盘子上的污垢。",
+      "translation": "Tom is washing the dirt off the plates.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:堪",
+      "candidateId": "tatoeba:8593089:5695971:U+582A",
+      "character": "堪",
+      "sentence": "斯堪的纳维亚现在已经不流行戴维京人那种有角的头盔了。",
+      "translation": "Viking helmets with horns aren't in style in Scandinavia anymore.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:奉",
+      "candidateId": "tatoeba:461500:282968:U+5949",
+      "character": "奉",
+      "sentence": "他越是奉承我，我越觉得他讨厌。",
+      "translation": "The more he flatters, the less I like him.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:奎",
+      "candidateId": "tatoeba:13926732:12933978:U+594E",
+      "character": "奎",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:奧",
+      "candidateId": "tatoeba:736323:579657:U+5967",
+      "character": "奧",
+      "sentence": "瑪麗海特本週在紐奧良。",
+      "translation": "Mary Hat was in New Orleans this week.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:妨",
+      "candidateId": "tatoeba:819787:51884:U+59A8",
+      "character": "妨",
+      "sentence": "罢工妨碍了国家经济。",
+      "translation": "The strike hampered the nation's economy.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:妮",
+      "candidateId": "tatoeba:9401715:9419233:U+59AE",
+      "character": "妮",
+      "sentence": "别再欺负弱小的詹妮弗了！",
+      "translation": "Stop bullying the weak Jennifer!",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:妳",
+      "candidateId": "tatoeba:724317:724318:U+59B3",
+      "character": "妳",
+      "sentence": "一旦撿到一顆你喜歡的石頭，盡快將它帶回家並好好對待它，因為那是妳唯一得到的石頭。",
+      "translation": "Once you've picked up a stone that you like, take it home as soon as you can and treat it well, because that's the only stone you've got.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:1130525:73526:U+59B3"
+    },
+    {
+      "recordId": "Characters:姻",
+      "candidateId": "tatoeba:724337:724341:U+59FB",
+      "character": "姻",
+      "sentence": "現在女性考慮婚姻的唯一條件，應該就是妳愛不愛他，他愛不愛妳，是不是真心真意對妳，跟他在一起會不會有壓力，會不會快樂，而非他擁有什麼！",
+      "translation": "Today, women's only consideration in marriage is probably if you love him or not, if he loves you or not, whether he is sincere and heartfelt towards you, whether there will be pressure with him, whether there will be happiness, and not what his possessions are!",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:婭",
+      "candidateId": "tatoeba:9135860:9460356:U+5A6D",
+      "character": "婭",
+      "sentence": "瑪麗婭拿了一個雞蛋，並將它在碗沿上敲開。",
+      "translation": "Mary took an egg and cracked it open on the rim of the bowl.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:媽",
+      "candidateId": "tatoeba:2105833:13557069:U+5ABD",
+      "character": "媽",
+      "sentence": "媽媽把被單連同床單一起拿去洗了。",
+      "translation": "Mom took the blanket along with the bedsheet to wash.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:嫁",
+      "candidateId": "tatoeba:4844652:4843017:U+5AC1",
+      "character": "嫁",
+      "sentence": "我不会嫁给一个愚蠢的男人。",
+      "translation": "I don't want to marry a stupid man!",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:宁",
+      "candidateId": "tatoeba:502909:1932:U+5B81",
+      "character": "宁",
+      "sentence": "我母亲宁愿选彩票机上的任意数字，也不选我的幸运数字。",
+      "translation": "My mother prefers the arbitrary selection of the lottery machines over my lucky numbers.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:6386938:13540930:U+5B81"
+    },
+    {
+      "recordId": "Characters:宗",
+      "candidateId": "tatoeba:1097589:319877:U+5B97",
+      "character": "宗",
+      "sentence": "那篇關於佛教的文章再次勾起了我對東方宗教的興趣。",
+      "translation": "The article on Buddhism revived my interest in Eastern religions.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:寂",
+      "candidateId": "tatoeba:1700169:10276529:U+5BC2",
+      "character": "寂",
+      "sentence": "从中学的时候我就知道，我能够花很多功夫去学习仅仅是因为我过得很寂寞。",
+      "translation": "I knew since middle school that only because I was so lonely was I able to expend so much energy on studying.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:1700169:10276529:U+5BC2:excerpt:loneliness"
+    },
+    {
+      "recordId": "Characters:寞",
+      "candidateId": "tatoeba:1700169:10276529:U+5BDE",
+      "character": "寞",
+      "sentence": "从中学的时候我就知道，我能够花很多功夫去学习仅仅是因为我过得很寂寞。",
+      "translation": "I knew since middle school that only because I was so lonely was I able to expend so much energy on studying.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:1700169:10276529:U+5BDE:excerpt:loneliness"
+    },
+    {
+      "recordId": "Characters:寨",
+      "candidateId": "tatoeba:1956506:1956508:U+5BE8",
+      "character": "寨",
+      "sentence": "我似乎不太喜欢小米，我觉得小米是屌丝用的手机，就是个山寨机。",
+      "translation": "I don't really like Xiaomi phones, and I think that they're for losers. They're like knock-offs.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:專",
+      "candidateId": "tatoeba:805728:528570:U+5C08",
+      "character": "專",
+      "sentence": "但是Tatoeba專案不是文字天堂，請不要再加文字了。",
+      "translation": "But Tatoeba Project is not a word heaven. Please stop adding words.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:346710:296848:U+5C08"
+    },
+    {
+      "recordId": "Characters:導",
+      "candidateId": "tatoeba:3663355:3663353:U+5C0E",
+      "character": "導",
+      "sentence": "他們其中的75％以上都擔心技術導致傳統法語的衰落。",
+      "translation": "More than 75% of them fear that technology is causing the decline of the traditional French language.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:13545640:12390934:U+5C0E"
+    },
+    {
+      "recordId": "Characters:屌",
+      "candidateId": "tatoeba:1956506:1956508:U+5C4C",
+      "character": "屌",
+      "sentence": "我似乎不太喜欢小米，我觉得小米是屌丝用的手机，就是个山寨机。",
+      "translation": "I don't really like Xiaomi phones, and I think that they're for losers. They're like knock-offs.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:岔",
+      "candidateId": "tatoeba:4271755:7766372:U+5C94",
+      "character": "岔",
+      "sentence": "别打岔!",
+      "translation": "Don't cut in!",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:州",
+      "candidateId": "tatoeba:347820:330451:U+5DDE",
+      "character": "州",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:巷",
+      "candidateId": "tatoeba:13926732:12933978:U+5DF7",
+      "character": "巷",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:幹",
+      "candidateId": "tatoeba:460837:33439:U+5E79",
+      "character": "幹",
+      "sentence": "我們上班時的情緒，就像坐過山車一樣 ﹣ 老闆臉上一現出不悅的神色，我們就要吃苦頭；老闆臉上有了笑容，我們才能鬆一口氣。這樣的工作，我不想再幹下去了。",
+      "translation": "I can't keep this up. It's an emotional roller coaster around here and all we have to do is look at the boss's face to know whether everybody is going to be happy or sad.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:廉",
+      "candidateId": "tatoeba:4761401:1110329:U+5EC9",
+      "character": "廉",
+      "sentence": "威廉是从巴西来的。他是巴西人。",
+      "translation": "Guilherme is from Brazil. He is Brazilian.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:廓",
+      "candidateId": "tatoeba:13543156:11119807:U+5ED3",
+      "character": "廓",
+      "sentence": "線條藝術強調形式和輪廓，而不是顏色、陰影和紋理。",
+      "translation": "Line art emphasizes form and outline, over color, shading, and texture.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:13543156:11119807:U+5ED3:excerpt:line-art-outline"
+    },
+    {
+      "recordId": "Characters:廣",
+      "candidateId": "tatoeba:13926732:12933978:U+5EE3",
+      "character": "廣",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": "tatoeba:734916:257389:U+5EE3"
+    },
+    {
+      "recordId": "Characters:弗",
+      "candidateId": "tatoeba:2335946:1837490:U+5F17",
+      "character": "弗",
+      "sentence": "为什么克里斯托弗·哥伦布离婚了？",
+      "translation": "Why did Christopher Columbus get divorced?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:張",
+      "candidateId": "tatoeba:4732062:2121206:U+5F35",
+      "character": "張",
+      "sentence": "我們買了張舒適的扶手椅。",
+      "translation": "We bought a comfortable new armchair.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:780614:436635:U+5F35"
+    },
+    {
+      "recordId": "Characters:役",
+      "candidateId": "tatoeba:1324001:295666:U+5F79",
+      "character": "役",
+      "sentence": "他在服役。",
+      "translation": "He is on duty.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:後",
+      "candidateId": "tatoeba:4809347:4809293:U+5F8C",
+      "character": "後",
+      "sentence": "你後悔跟我結婚嗎?",
+      "translation": "Do you regret marrying me?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:13531824:804176:U+5F8C"
+    },
+    {
+      "recordId": "Characters:徵",
+      "candidateId": "tatoeba:690500:690494:U+5FB5",
+      "character": "徵",
+      "sentence": "被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。",
+      "translation": "Translated into many languages, The International has been and is still singing symbol of social struggles around the world.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:徹",
+      "candidateId": "tatoeba:13549673:7870174:U+5FB9",
+      "character": "徹",
+      "sentence": "湯姆沒有徹底清洗鍋碗瓢盆，導致瑪莉得了痢疾。",
+      "translation": "Because Tom didn't thoroughly clean the pots, Mary got dysentery.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:悅",
+      "candidateId": "tatoeba:460837:33439:U+6085",
+      "character": "悅",
+      "sentence": "我們上班時的情緒，就像坐過山車一樣 ﹣ 老闆臉上一現出不悅的神色，我們就要吃苦頭；老闆臉上有了笑容，我們才能鬆一口氣。這樣的工作，我不想再幹下去了。",
+      "translation": "I can't keep this up. It's an emotional roller coaster around here and all we have to do is look at the boss's face to know whether everybody is going to be happy or sad.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:慨",
+      "candidateId": "tatoeba:4913659:13486253:U+6168",
+      "character": "慨",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:慮",
+      "candidateId": "tatoeba:724337:724341:U+616E",
+      "character": "慮",
+      "sentence": "現在女性考慮婚姻的唯一條件，應該就是妳愛不愛他，他愛不愛妳，是不是真心真意對妳，跟他在一起會不會有壓力，會不會快樂，而非他擁有什麼！",
+      "translation": "Today, women's only consideration in marriage is probably if you love him or not, if he loves you or not, whether he is sincere and heartfelt towards you, whether there will be pressure with him, whether there will be happiness, and not what his possessions are!",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:慷",
+      "candidateId": "tatoeba:4913659:13486253:U+6177",
+      "character": "慷",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:憤",
+      "candidateId": "tatoeba:13926732:12933978:U+61A4",
+      "character": "憤",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:托",
+      "candidateId": "tatoeba:2335946:1837490:U+6258",
+      "character": "托",
+      "sentence": "为什么克里斯托弗·哥伦布离婚了？",
+      "translation": "Why did Christopher Columbus get divorced?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:1570835:570946:U+6258"
+    },
+    {
+      "recordId": "Characters:扼",
+      "candidateId": "tatoeba:502877:1906:U+627C",
+      "character": "扼",
+      "sentence": "当我们发电报的时候，简明扼要是关键，因为是以字计费的。",
+      "translation": "When you send a telegram, brevity is essential because you will be charged for every word.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:502877:1906:U+627C:excerpt:telegram-brevity"
+    },
+    {
+      "recordId": "Characters:揉",
+      "candidateId": "tatoeba:332758:1102851:U+63C9",
+      "character": "揉",
+      "sentence": "爱，就是一个人把另一个人的心揉碎的过程。",
+      "translation": "Love is the process of breaking and mending the heart of another.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:換",
+      "candidateId": "tatoeba:3763650:4008871:U+63DB",
+      "character": "換",
+      "sentence": "我要怎麼換我的手機鈴聲呢?",
+      "translation": "How do I change my cell phone's ringtone?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:撑",
+      "candidateId": "tatoeba:392303:392300:U+6491",
+      "character": "撑",
+      "sentence": "冯迪索在做俯卧撑时，并不是把自身往上推，而是在把地球向下推。",
+      "translation": "When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:撒",
+      "candidateId": "tatoeba:2026506:37079:U+6492",
+      "character": "撒",
+      "sentence": "汤姆太老实了，连撒谎都不会。",
+      "translation": "Tom is too honest to even tell a lie.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:擔",
+      "candidateId": "tatoeba:3663355:3663353:U+64D4",
+      "character": "擔",
+      "sentence": "他們其中的75％以上都擔心技術導致傳統法語的衰落。",
+      "translation": "More than 75% of them fear that technology is causing the decline of the traditional French language.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:據",
+      "candidateId": "tatoeba:1947739:1927952:U+64DA",
+      "character": "據",
+      "sentence": "書中滿是遙不可及、沒有科學根據的理論。",
+      "translation": "The book is full of far-flung theories without any basis in scientific fact.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:895874:59382:U+64DA"
+    },
+    {
+      "recordId": "Characters:於",
+      "candidateId": "tatoeba:1097589:319877:U+65BC",
+      "character": "於",
+      "sentence": "那篇關於佛教的文章再次勾起了我對東方宗教的興趣。",
+      "translation": "The article on Buddhism revived my interest in Eastern religions.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:3470139:703054:U+65BC"
+    },
+    {
+      "recordId": "Characters:旷",
+      "candidateId": "tatoeba:2777942:7790179:U+65F7",
+      "character": "旷",
+      "sentence": "汤姆总是旷课。",
+      "translation": "Tom is always absent.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:昌",
+      "candidateId": "tatoeba:737828:737831:U+660C",
+      "character": "昌",
+      "sentence": "馬不但象徵著剛健、高昂、昌盛、發達，還代表著奮鬥不止、自強不息的民族精神。",
+      "translation": "The horse does not just represent energy, high spirits, prosperity, development, but also stands for a national spirit of struggling on without stopping, and of striving on without giving up.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:昧",
+      "candidateId": "tatoeba:3054543:7781145:U+6627",
+      "character": "昧",
+      "sentence": "他们的关系有些暧昧。",
+      "translation": "Their relationship is dubious.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:暧",
+      "candidateId": "tatoeba:3054543:7781145:U+66A7",
+      "character": "暧",
+      "sentence": "他们的关系有些暧昧。",
+      "translation": "Their relationship is dubious.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:暫",
+      "candidateId": "tatoeba:13532107:1067139:U+66AB",
+      "character": "暫",
+      "sentence": "我建立了部落格。我會儘量努力，不想成為那種只在初期短暫活躍發文，然後就放棄的人。",
+      "translation": "I started a new blog. I'll do my best not to be one of those people who blogs a lot right at the start and then quits blogging.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:杏",
+      "candidateId": "tatoeba:13544356:2267949:U+674F",
+      "character": "杏",
+      "sentence": "杏樹正在開花。",
+      "translation": "The almond trees are in bloom.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:東",
+      "candidateId": "tatoeba:13695499:619646:U+6771",
+      "character": "東",
+      "sentence": "那個東西是甚麽？",
+      "translation": "What is that thing?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:1583260:268650:U+6771"
+    },
+    {
+      "recordId": "Characters:柏",
+      "candidateId": "tatoeba:13926732:12933978:U+67CF",
+      "character": "柏",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:柔",
+      "candidateId": "tatoeba:3130803:7797406:U+67D4",
+      "character": "柔",
+      "sentence": "我的灵魂里有很多地方玩世不恭，对人傲慢无礼，但是它有一个核心，这个核心害怕黑暗，柔弱得像绵羊一样。",
+      "translation": "In my soul there are many places that are cynical and arrogant, but at its core, it fears the darkness and is as weak as a sheep.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:槽",
+      "candidateId": "tatoeba:13926732:12933978:U+69FD",
+      "character": "槽",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:樂",
+      "candidateId": "tatoeba:2036746:706874:U+6A02",
+      "character": "樂",
+      "sentence": "母親節快樂!",
+      "translation": "Happy Mother's Day!",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:892521:508799:U+6A02"
+    },
+    {
+      "recordId": "Characters:檔",
+      "candidateId": "tatoeba:347820:330451:U+6A94",
+      "character": "檔",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:檢",
+      "candidateId": "tatoeba:5926165:3408654:U+6AA2",
+      "character": "檢",
+      "sentence": "你檢查這箇了嗎？",
+      "translation": "Did you check this?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:檬",
+      "candidateId": "tatoeba:13549586:3650062:U+6AAC",
+      "character": "檬",
+      "sentence": "給我泡杯檸檬茶。",
+      "translation": "Bring me a glass of tea with lemon.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:檸",
+      "candidateId": "tatoeba:13549586:3650062:U+6AB8",
+      "character": "檸",
+      "sentence": "給我泡杯檸檬茶。",
+      "translation": "Bring me a glass of tea with lemon.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:欺",
+      "candidateId": "tatoeba:1704363:302875:U+6B3A",
+      "character": "欺",
+      "sentence": "他欺骗了她。",
+      "translation": "He swindled her.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:歷",
+      "candidateId": "tatoeba:472850:24402:U+6B77",
+      "character": "歷",
+      "sentence": "換了是我，就會要孩子自己一個人去遊歷一下。他現在這個年紀，吃一點苦是好的。",
+      "translation": "I'd send my kid out on his own for a while if I were you. A few hard knocks at this point might do him some good.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:残",
+      "candidateId": "tatoeba:4844787:4834102:U+6B8B",
+      "character": "残",
+      "sentence": "妈妈有一张残缺的脸。",
+      "translation": "Mama had a disfigured face.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:氫",
+      "candidateId": "tatoeba:481454:270937:U+6C2B",
+      "character": "氫",
+      "sentence": "一個水分子是由兩個氫原子和一個氧原子組成的。",
+      "translation": "A water molecule has two hydrogen atoms and one oxygen atom.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:況",
+      "candidateId": "tatoeba:774039:274355:U+6CC1",
+      "character": "況",
+      "sentence": "人們送禮通常都不會送錢，但是也會有例外的情況。",
+      "translation": "On gift-giving occasions, people generally avoid giving money, but there are exceptions.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:涌",
+      "candidateId": "tatoeba:8581076:8577834:U+6D8C",
+      "character": "涌",
+      "sentence": "在美国，由于投资者纷纷涌向包括黄金和美国国债在内的安全港，因此主要的股票价格指数在星期一一度下跌了3个百分点。",
+      "translation": "In the United States, the major stock market indices at one point were down three percentage points on Monday, as investors rushed to safe havens, including gold and U.S. Treasury bonds.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:涎",
+      "candidateId": "tatoeba:1567759:1567771:U+6D8E",
+      "character": "涎",
+      "sentence": "小家伙一听到有好吃的，口涎就流出来好长！",
+      "translation": "The little child drools whenever he hears of something delicious.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:涛",
+      "candidateId": "tatoeba:407739:407734:U+6D9B",
+      "character": "涛",
+      "sentence": "普京对胡锦涛说：“咱们必须帮吉尔吉斯斯坦”……不过那只是在我梦里的情形。",
+      "translation": "\"We need to help Kyrgyzstan,\" said Putin to Hu Jintao... in my dream.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "unfinished_template_or_context"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:溏",
+      "candidateId": "tatoeba:616236:277306:U+6E8F",
+      "character": "溏",
+      "sentence": "池溏的四周長滿了樹木。",
+      "translation": "The pond was encircled with trees.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:濟",
+      "candidateId": "tatoeba:5494311:3134498:U+6FDF",
+      "character": "濟",
+      "sentence": "倫敦過去因為經濟和文化的緣故，十分重要。",
+      "translation": "London was very important for economical and cultural reasons.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:炭",
+      "candidateId": "tatoeba:13578087:3854443:U+70AD",
+      "character": "炭",
+      "sentence": "人們很容易將能源和電力小組委員會的大多數成員描述為笨蛋。他們散佈石油和煤炭公司炮製的虛假信息，以最大限度地減少全球氣候變遷的重要性，被稱為科學文盲。",
+      "translation": "One can easily characterize a majority of the energy and power subcommittee members as nincompoops — scientific illiterates who spread misinformation crafted by oil and coal companies in order to minimize the significance of global climate change.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:炮",
+      "candidateId": "tatoeba:8591281:402599:U+70AE",
+      "character": "炮",
+      "sentence": "我不是想要老婆，我想找个炮友而已。",
+      "translation": "It's not a wife that I want, but a sex friend.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:焦",
+      "candidateId": "tatoeba:10028092:11272813:U+7126",
+      "character": "焦",
+      "sentence": "日历上画着红圈的截稿日期使我陷入了焦虑。",
+      "translation": "The red circle on the calendar marking the deadline causes me to fall into anxiety.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:煤",
+      "candidateId": "tatoeba:13578087:3854443:U+7164",
+      "character": "煤",
+      "sentence": "人們很容易將能源和電力小組委員會的大多數成員描述為笨蛋。他們散佈石油和煤炭公司炮製的虛假信息，以最大限度地減少全球氣候變遷的重要性，被稱為科學文盲。",
+      "translation": "One can easily characterize a majority of the energy and power subcommittee members as nincompoops — scientific illiterates who spread misinformation crafted by oil and coal companies in order to minimize the significance of global climate change.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:爭",
+      "candidateId": "tatoeba:690500:690494:U+722D",
+      "character": "爭",
+      "sentence": "被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。",
+      "translation": "Translated into many languages, The International has been and is still singing symbol of social struggles around the world.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:13531824:804176:U+722D"
+    },
+    {
+      "recordId": "Characters:牲",
+      "candidateId": "tatoeba:334030:330406:U+7272",
+      "character": "牲",
+      "sentence": "他为美国承受了比我们大多数人所能想象的更多的牺牲。",
+      "translation": "He has endured sacrifices for America that most of us cannot begin to imagine.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:牺",
+      "candidateId": "tatoeba:334030:330406:U+727A",
+      "character": "牺",
+      "sentence": "他为美国承受了比我们大多数人所能想象的更多的牺牲。",
+      "translation": "He has endured sacrifices for America that most of us cannot begin to imagine.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:狡",
+      "candidateId": "tatoeba:1066696:4737000:U+72E1",
+      "character": "狡",
+      "sentence": "你真狡猾。",
+      "translation": "You're a clever one.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:狭",
+      "candidateId": "tatoeba:3625821:3625823:U+72ED",
+      "character": "狭",
+      "sentence": "他在一条狭窄的道路上走。",
+      "translation": "The man is hiking on a narrow path.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:猶",
+      "candidateId": "tatoeba:10689396:10689024:U+7336",
+      "character": "猶",
+      "sentence": "烏克蘭總統是猶太人。︀",
+      "translation": "Ukraine's president is Jewish.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:猾",
+      "candidateId": "tatoeba:1066696:4737000:U+733E",
+      "character": "猾",
+      "sentence": "你真狡猾。",
+      "translation": "You're a clever one.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:珊",
+      "candidateId": "tatoeba:833005:54605:U+73CA",
+      "character": "珊",
+      "sentence": "你好，蘇珊。你好吗?",
+      "translation": "Hi, Susan. How are you?",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:1397043:954341:U+73CA"
+    },
+    {
+      "recordId": "Characters:珠",
+      "candidateId": "tatoeba:9054728:258656:U+73E0",
+      "character": "珠",
+      "sentence": "我有幾支圓珠筆。",
+      "translation": "I have some pens.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:5989634:281728:U+73E0"
+    },
+    {
+      "recordId": "Characters:環",
+      "candidateId": "tatoeba:13539393:10545031:U+74B0",
+      "character": "環",
+      "sentence": "隨著板塊的移動，各大洲因地理隔離而出現了適應不同環境的獨特恐龍物種。",
+      "translation": "As tectonic plates shifted, uniquely adapted species of dinosaur emerged on each continent through vicariance.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:瓢",
+      "candidateId": "tatoeba:13549673:7870174:U+74E2",
+      "character": "瓢",
+      "sentence": "湯姆沒有徹底清洗鍋碗瓢盆，導致瑪莉得了痢疾。",
+      "translation": "Because Tom didn't thoroughly clean the pots, Mary got dysentery.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:瓦",
+      "candidateId": "tatoeba:4313894:4313548:U+74E6",
+      "character": "瓦",
+      "sentence": "有人说，玛丽·安托瓦内特对法国大革命有着不可推卸的责任。",
+      "translation": "They say that Marie Antoinette was responsible for the French Revolution.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:4816292:44483:U+74E6"
+    },
+    {
+      "recordId": "Characters:異",
+      "candidateId": "tatoeba:724315:724316:U+7570",
+      "character": "異",
+      "sentence": "有人形容，跟異性交往就好像在海邊撿石頭，大家都能撿喜歡的那一個。",
+      "translation": "The way some people see it, associating with the opposite sex is just like going to the seaside and gathering stones; everyone can pick up the ones they like.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:痢",
+      "candidateId": "tatoeba:13549673:7870174:U+75E2",
+      "character": "痢",
+      "sentence": "湯姆沒有徹底清洗鍋碗瓢盆，導致瑪莉得了痢疾。",
+      "translation": "Because Tom didn't thoroughly clean the pots, Mary got dysentery.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:痪",
+      "candidateId": "tatoeba:4913659:13486253:U+75EA",
+      "character": "痪",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:瘫",
+      "candidateId": "tatoeba:4913659:13486253:U+762B",
+      "character": "瘫",
+      "sentence": "在你面前有一百万美金。你可以自己留下或帮一个你不认识的快全身瘫痪的人做手术。他不认识你，你也不认识他。当然，无论你慷慨地把所有的钱都捐给了一个素不相识的人去做手术，还是卑鄙地拿走这笔钱，让那个人今生都只能卧床不起，都不会有人知道。你会怎么做呢？这笔钱不可割分。",
+      "translation": "There's a million dollars in front of you. You can keep it for yourself or pay with it for a surgery for a person you don't know who is in danger of becoming paralysed. You don't know each other. No one will ever know how nobly you acted by giving away all the money for a stranger's surgery, or what base choice you made to take the money confining that person to a wheelchair for the rest of their life. What would you do? Sharing the money is not an option.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:盔",
+      "candidateId": "tatoeba:8593089:5695971:U+76D4",
+      "character": "盔",
+      "sentence": "斯堪的纳维亚现在已经不流行戴维京人那种有角的头盔了。",
+      "translation": "Viking helmets with horns aren't in style in Scandinavia anymore.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:盛",
+      "candidateId": "tatoeba:737828:737831:U+76DB",
+      "character": "盛",
+      "sentence": "馬不但象徵著剛健、高昂、昌盛、發達，還代表著奮鬥不止、自強不息的民族精神。",
+      "translation": "The horse does not just represent energy, high spirits, prosperity, development, but also stands for a national spirit of struggling on without stopping, and of striving on without giving up.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:盜",
+      "candidateId": "tatoeba:13543299:10693861:U+76DC",
+      "character": "盜",
+      "sentence": "當我們其他人辛苦工作時，強盜貴族卻用鍍金餐具吃飯。",
+      "translation": "While the rest of us toil, the robber barons eat from gilt tableware.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:督",
+      "candidateId": "tatoeba:6403032:6403012:U+7763",
+      "character": "督",
+      "sentence": "​我們​來​自​世界​各​地，有​不​同​的​文化​背景，説​不​同​的​語言。可是，我們​十分​團結，大家​都​有​同樣​的​目標。最​重要​的​是，我們​都​渴望​尊榮​耶和華，耶和華​就是​聖經​所​説​的​上帝，他​是​萬物​的​創造主。我們​盡力​效法​耶穌基督，以​身​為​基督徒​為​榮。我們​每​個​人​都​常常​花​時間​幫助​別人​認識​聖經​和​上帝​的​王國。由於​我們​為​耶和華​上帝​和​他​的​王國​作​見證，也​就是​向​別人​傳講​上帝​和​他​王國​的​真理，所以​我們​稱​為​耶和華見證人。",
+      "translation": "We come from hundreds of ethnic and language backgrounds, yet we are united by common goals. Above all, we want to honor Jehovah, the God of the Bible and the Creator of all things. We do our best to imitate Jesus Christ and are proud to be called Christians. Each of us regularly spends time helping people learn about the Bible and God’s Kingdom. Because we witness, or talk, about Jehovah God and his Kingdom, we are known as Jehovah’s Witnesses.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:睬",
+      "candidateId": "tatoeba:803797:62710:U+776C",
+      "character": "睬",
+      "sentence": "凱特看了克里斯一眼，然後不理睬他，使他感到痛苦。",
+      "translation": "Kate glanced at Chris and then ignored him, making him feel miserable.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:瞧",
+      "candidateId": "tatoeba:2047862:314425:U+77A7",
+      "character": "瞧",
+      "sentence": "她很瞧不起我，认为我没有幽默细胞。",
+      "translation": "She looks down on me and thinks I have no sense of humor.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:砸",
+      "candidateId": "tatoeba:13926732:12933978:U+7838",
+      "character": "砸",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:磁",
+      "candidateId": "tatoeba:13926732:12933978:U+78C1",
+      "character": "磁",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:磚",
+      "candidateId": "tatoeba:13926732:12933978:U+78DA",
+      "character": "磚",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:禮",
+      "candidateId": "tatoeba:774039:274355:U+79AE",
+      "character": "禮",
+      "sentence": "人們送禮通常都不會送錢，但是也會有例外的情況。",
+      "translation": "On gift-giving occasions, people generally avoid giving money, but there are exceptions.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:2757207:5149614:U+79AE"
+    },
+    {
+      "recordId": "Characters:稿",
+      "candidateId": "tatoeba:10028092:11272813:U+7A3F",
+      "character": "稿",
+      "sentence": "日历上画着红圈的截稿日期使我陷入了焦虑。",
+      "translation": "The red circle on the calendar marking the deadline causes me to fall into anxiety.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:穌",
+      "candidateId": "tatoeba:6403032:6403012:U+7A4C",
+      "character": "穌",
+      "sentence": "​我們​來​自​世界​各​地，有​不​同​的​文化​背景，説​不​同​的​語言。可是，我們​十分​團結，大家​都​有​同樣​的​目標。最​重要​的​是，我們​都​渴望​尊榮​耶和華，耶和華​就是​聖經​所​説​的​上帝，他​是​萬物​的​創造主。我們​盡力​效法​耶穌基督，以​身​為​基督徒​為​榮。我們​每​個​人​都​常常​花​時間​幫助​別人​認識​聖經​和​上帝​的​王國。由於​我們​為​耶和華​上帝​和​他​的​王國​作​見證，也​就是​向​別人​傳講​上帝​和​他​王國​的​真理，所以​我們​稱​為​耶和華見證人。",
+      "translation": "We come from hundreds of ethnic and language backgrounds, yet we are united by common goals. Above all, we want to honor Jehovah, the God of the Bible and the Creator of all things. We do our best to imitate Jesus Christ and are proud to be called Christians. Each of us regularly spends time helping people learn about the Bible and God’s Kingdom. Because we witness, or talk, about Jehovah God and his Kingdom, we are known as Jehovah’s Witnesses.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:窃",
+      "candidateId": "tatoeba:8727935:407128:U+7A83",
+      "character": "窃",
+      "sentence": "那个时候，我们只能听到关于盗窃、杀人、以及饿死了人的故事。",
+      "translation": "During that time, we only heard about thieves, about murders, about men who had died of hunger.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:競",
+      "candidateId": "tatoeba:347820:330451:U+7AF6",
+      "character": "競",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:笛",
+      "candidateId": "tatoeba:844500:33248:U+7B1B",
+      "character": "笛",
+      "sentence": "鮑伯和瑪麗演奏直笛​​。",
+      "translation": "Bob and Mary play the recorder.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:筒",
+      "candidateId": "tatoeba:13926732:12933978:U+7B52",
+      "character": "筒",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:節",
+      "candidateId": "tatoeba:2036746:706874:U+7BC0",
+      "character": "節",
+      "sentence": "母親節快樂!",
+      "translation": "Happy Mother's Day!",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:825919:387470:U+7BC0"
+    },
+    {
+      "recordId": "Characters:範",
+      "candidateId": "tatoeba:778001:10541634:U+7BC4",
+      "character": "範",
+      "sentence": "您可以示範一下嗎?",
+      "translation": "Can you demonstrate it?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:簾",
+      "candidateId": "tatoeba:772137:310649:U+7C3E",
+      "character": "簾",
+      "sentence": "她拉上了窗簾。",
+      "translation": "She drew up the curtain.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:糗",
+      "candidateId": "tatoeba:10041958:11272870:U+7CD7",
+      "character": "糗",
+      "sentence": "這隻貓咪氣場全開，走著貓步，相當優雅，然後摔倒了，真是糗大了。",
+      "translation": "The cat glided along, very refined, but ended up falling, which was very embarrassing.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:紋",
+      "candidateId": "tatoeba:13543156:11119807:U+7D0B",
+      "character": "紋",
+      "sentence": "線條藝術強調形式和輪廓，而不是顏色、陰影和紋理。",
+      "translation": "Line art emphasizes form and outline, over color, shading, and texture.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:紐",
+      "candidateId": "tatoeba:736323:579657:U+7D10",
+      "character": "紐",
+      "sentence": "瑪麗海特本週在紐奧良。",
+      "translation": "Mary Hat was in New Orleans this week.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:組",
+      "candidateId": "tatoeba:481454:270937:U+7D44",
+      "character": "組",
+      "sentence": "一個水分子是由兩個氫原子和一個氧原子組成的。",
+      "translation": "A water molecule has two hydrogen atoms and one oxygen atom.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:絆",
+      "candidateId": "tatoeba:13926732:12933978:U+7D46",
+      "character": "絆",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:結",
+      "candidateId": "tatoeba:4809347:4809293:U+7D50",
+      "character": "結",
+      "sentence": "你後悔跟我結婚嗎?",
+      "translation": "Do you regret marrying me?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:3718260:3962728:U+7D50"
+    },
+    {
+      "recordId": "Characters:統",
+      "candidateId": "tatoeba:3663355:3663353:U+7D71",
+      "character": "統",
+      "sentence": "他們其中的75％以上都擔心技術導致傳統法語的衰落。",
+      "translation": "More than 75% of them fear that technology is causing the decline of the traditional French language.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:綿",
+      "candidateId": "tatoeba:1450726:56778:U+7DBF",
+      "character": "綿",
+      "sentence": "這些綿襪很耐洗。",
+      "translation": "These cotton socks bear washing well.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:緒",
+      "candidateId": "tatoeba:460837:33439:U+7DD2",
+      "character": "緒",
+      "sentence": "我們上班時的情緒，就像坐過山車一樣 ﹣ 老闆臉上一現出不悅的神色，我們就要吃苦頭；老闆臉上有了笑容，我們才能鬆一口氣。這樣的工作，我不想再幹下去了。",
+      "translation": "I can't keep this up. It's an emotional roller coaster around here and all we have to do is look at the boss's face to know whether everybody is going to be happy or sad.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:縱",
+      "candidateId": "tatoeba:13926732:12933978:U+7E31",
+      "character": "縱",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:绵",
+      "candidateId": "tatoeba:3130803:7797406:U+7EF5",
+      "character": "绵",
+      "sentence": "我的灵魂里有很多地方玩世不恭，对人傲慢无礼，但是它有一个核心，这个核心害怕黑暗，柔弱得像绵羊一样。",
+      "translation": "In my soul there are many places that are cynical and arrogant, but at its core, it fears the darkness and is as weak as a sheep.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:绸",
+      "candidateId": "tatoeba:4815116:4811890:U+7EF8",
+      "character": "绸",
+      "sentence": "你最好未雨绸缪。",
+      "translation": "You'd better keep your money for a rainy day.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:缪",
+      "candidateId": "tatoeba:4815116:4811890:U+7F2A",
+      "character": "缪",
+      "sentence": "你最好未雨绸缪。",
+      "translation": "You'd better keep your money for a rainy day.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:罢",
+      "candidateId": "tatoeba:819787:51884:U+7F62",
+      "character": "罢",
+      "sentence": "罢工妨碍了国家经济。",
+      "translation": "The strike hampered the nation's economy.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:耶",
+      "candidateId": "tatoeba:6403032:6403012:U+8036",
+      "character": "耶",
+      "sentence": "​我們​來​自​世界​各​地，有​不​同​的​文化​背景，説​不​同​的​語言。可是，我們​十分​團結，大家​都​有​同樣​的​目標。最​重要​的​是，我們​都​渴望​尊榮​耶和華，耶和華​就是​聖經​所​説​的​上帝，他​是​萬物​的​創造主。我們​盡力​效法​耶穌基督，以​身​為​基督徒​為​榮。我們​每​個​人​都​常常​花​時間​幫助​別人​認識​聖經​和​上帝​的​王國。由於​我們​為​耶和華​上帝​和​他​的​王國​作​見證，也​就是​向​別人​傳講​上帝​和​他​王國​的​真理，所以​我們​稱​為​耶和華見證人。",
+      "translation": "We come from hundreds of ethnic and language backgrounds, yet we are united by common goals. Above all, we want to honor Jehovah, the God of the Bible and the Creator of all things. We do our best to imitate Jesus Christ and are proud to be called Christians. Each of us regularly spends time helping people learn about the Bible and God’s Kingdom. Because we witness, or talk, about Jehovah God and his Kingdom, we are known as Jehovah’s Witnesses.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:胞",
+      "candidateId": "tatoeba:2047862:314425:U+80DE",
+      "character": "胞",
+      "sentence": "她很瞧不起我，认为我没有幽默细胞。",
+      "translation": "She looks down on me and thinks I have no sense of humor.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:脫",
+      "candidateId": "tatoeba:761291:61905:U+812B",
+      "character": "脫",
+      "sentence": "在這裡我必須脫鞋嗎?",
+      "translation": "Do I have to take off my shoes here?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:脹",
+      "candidateId": "tatoeba:13539404:7815413:U+8139",
+      "character": "脹",
+      "sentence": "鷹嘴豆和青豆等豆類雖然會引起脹氣，但卻是極佳的美食。",
+      "translation": "Some legumes, like chickpeas and green beans, cause flatulence but are excellent foods.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:膝",
+      "candidateId": "tatoeba:13926732:12933978:U+819D",
+      "character": "膝",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:舅",
+      "candidateId": "tatoeba:353610:266622:U+8205",
+      "character": "舅",
+      "sentence": "我舅舅给我买的这本书。",
+      "translation": "My uncle bought me this book.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:與",
+      "candidateId": "tatoeba:347820:330451:U+8207",
+      "character": "與",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": "tatoeba:472884:472882:U+8207"
+    },
+    {
+      "recordId": "Characters:舉",
+      "candidateId": "tatoeba:347820:330451:U+8209",
+      "character": "舉",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:荷",
+      "candidateId": "tatoeba:388260:388261:U+8377",
+      "character": "荷",
+      "sentence": "XXX用荷兰语怎么说？",
+      "translation": "How do you say XXX in Dutch?",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "unfinished_template_or_context"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:莲",
+      "candidateId": "tatoeba:7767663:920282:U+83B2",
+      "character": "莲",
+      "sentence": "我的生日是六月十二日。玛格达莲娜和我同年同日生。",
+      "translation": "My birthday is June 12. Magdalena was born on the same day and year as me.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:7767663:920282:U+83B2:excerpt:same-birthday"
+    },
+    {
+      "recordId": "Characters:蒜",
+      "candidateId": "tatoeba:1870687:1806440:U+849C",
+      "character": "蒜",
+      "sentence": "我上大學的時候，忘了帶隨身聽、相機，只不過是雞毛蒜皮的小事；可是到了這個年代，忘了帶智能手機，麻煩可就大了！",
+      "translation": "When I was in college, I could forget to bring my music player or my camera and still be ok. These days, if I forget my smartphone, I'm screwed!",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:蒼",
+      "candidateId": "tatoeba:339249:292370:U+84BC",
+      "character": "蒼",
+      "sentence": "他把蒼蠅拍走了。",
+      "translation": "He flapped the flies away.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:蓋",
+      "candidateId": "tatoeba:13926732:12933978:U+84CB",
+      "character": "蓋",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:蕃",
+      "candidateId": "tatoeba:408362:239506:U+8543",
+      "character": "蕃",
+      "sentence": "嚴格來說，蕃茄不是蔬菜，是水果。",
+      "translation": "Strictly speaking, the tomato is not a vegetable. It's a fruit.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:藹",
+      "candidateId": "tatoeba:1132326:300448:U+85F9",
+      "character": "藹",
+      "sentence": "他天生就是一個和藹可親的人，所以很受住在附近的孩子歡迎。",
+      "translation": "He is by nature a kind person and is popular with the children in his neighborhood.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:1132326:300448:U+85F9:excerpt:kind-person"
+    },
+    {
+      "recordId": "Characters:蘇",
+      "candidateId": "tatoeba:833005:54605:U+8607",
+      "character": "蘇",
+      "sentence": "你好，蘇珊。你好吗?",
+      "translation": "Hi, Susan. How are you?",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:13543829:9452923:U+8607"
+    },
+    {
+      "recordId": "Characters:蘭",
+      "candidateId": "tatoeba:347820:330451:U+862D",
+      "character": "蘭",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": "tatoeba:1570835:570946:U+862D"
+    },
+    {
+      "recordId": "Characters:虱",
+      "candidateId": "tatoeba:9964325:329281:U+8671",
+      "character": "虱",
+      "sentence": "“虱子”的复数形式是“虱子们”",
+      "translation": "The plural form of \"louse\" is \"lice\".",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:蜚",
+      "candidateId": "tatoeba:2615102:425402:U+871A",
+      "character": "蜚",
+      "sentence": "人们唯一不喜欢流言蜚语的时间，就是当你讨论他们自己的时候。",
+      "translation": "The only time people dislike gossip is when you gossip about them.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:蝕",
+      "candidateId": "tatoeba:6961318:281147:U+8755",
+      "character": "蝕",
+      "sentence": "日蝕只會偶爾發生。",
+      "translation": "An eclipse of the sun is a rare appearance.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:螢",
+      "candidateId": "tatoeba:838454:1076752:U+87A2",
+      "character": "螢",
+      "sentence": "你看得見我打在螢幕上的字，卻看不到我掉在鍵盤上的淚。",
+      "translation": "You see the words that I typed on the screen, but you don't see the tears that I shed over the keyboard.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:838454:1076752:U+87A2:excerpt:screen-words"
+    },
+    {
+      "recordId": "Characters:蠅",
+      "candidateId": "tatoeba:339249:292370:U+8805",
+      "character": "蠅",
+      "sentence": "他把蒼蠅拍走了。",
+      "translation": "He flapped the flies away.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:衰",
+      "candidateId": "tatoeba:3663355:3663353:U+8870",
+      "character": "衰",
+      "sentence": "他們其中的75％以上都擔心技術導致傳統法語的衰落。",
+      "translation": "More than 75% of them fear that technology is causing the decline of the traditional French language.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:袍",
+      "candidateId": "tatoeba:727692:727677:U+888D",
+      "character": "袍",
+      "sentence": "旗袍是一种17世纪起源于中国的传统式样的女性服装。",
+      "translation": "The qipao is a classic female garment that originated in 17th century China.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:製",
+      "candidateId": "tatoeba:13578087:3854443:U+88FD",
+      "character": "製",
+      "sentence": "人們很容易將能源和電力小組委員會的大多數成員描述為笨蛋。他們散佈石油和煤炭公司炮製的虛假信息，以最大限度地減少全球氣候變遷的重要性，被稱為科學文盲。",
+      "translation": "One can easily characterize a majority of the energy and power subcommittee members as nincompoops — scientific illiterates who spread misinformation crafted by oil and coal companies in order to minimize the significance of global climate change.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:親",
+      "candidateId": "tatoeba:2036746:706874:U+89AA",
+      "character": "親",
+      "sentence": "母親節快樂!",
+      "translation": "Happy Mother's Day!",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:825133:469183:U+89AA"
+    },
+    {
+      "recordId": "Characters:記",
+      "candidateId": "tatoeba:724319:724320:U+8A18",
+      "character": "記",
+      "sentence": "而且要記住，從此後不要再到海邊去。（永遠相信，我已經找到最大、最好、最適合我的那一顆。）",
+      "translation": "What's more, from now on you must remember that you cannot go to the seaside again (by believing forever that I have already found the biggest, best and most fitting one for me).",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": "tatoeba:406511:67930:U+8A18"
+    },
+    {
+      "recordId": "Characters:訴",
+      "candidateId": "tatoeba:4805729:2656988:U+8A34",
+      "character": "訴",
+      "sentence": "你可以告訴我如何到火車站嗎?",
+      "translation": "Can you tell me how to get to the train station?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:895581:274700:U+8A34"
+    },
+    {
+      "recordId": "Characters:論",
+      "candidateId": "tatoeba:1947739:1927952:U+8AD6",
+      "character": "論",
+      "sentence": "書中滿是遙不可及、沒有科學根據的理論。",
+      "translation": "The book is full of far-flung theories without any basis in scientific fact.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:342708:36807:U+8AD6"
+    },
+    {
+      "recordId": "Characters:謂",
+      "candidateId": "tatoeba:708567:53733:U+8B02",
+      "character": "謂",
+      "sentence": "Jane 又胖、又沒禮貌、又煙不離手，可是 Ken 卻覺得她可愛、動人，所謂「愛情是盲目的」，大概就是這個意思了吧。",
+      "translation": "Jane is fat and rude, and smokes too much. However, Ken thinks she's lovely and charming. That's why they say love is blind.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:謝",
+      "candidateId": "tatoeba:347820:330451:U+8B1D",
+      "character": "謝",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:譯",
+      "candidateId": "tatoeba:690500:690494:U+8B6F",
+      "character": "譯",
+      "sentence": "被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。",
+      "translation": "Translated into many languages, The International has been and is still singing symbol of social struggles around the world.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:谎",
+      "candidateId": "tatoeba:2026506:37079:U+8C0E",
+      "character": "谎",
+      "sentence": "汤姆太老实了，连撒谎都不会。",
+      "translation": "Tom is too honest to even tell a lie.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:谐",
+      "candidateId": "tatoeba:729707:729709:U+8C10",
+      "character": "谐",
+      "sentence": "我想知道哪个国家会第一个和谐Tatoeba？",
+      "translation": "I wonder which country will be the first to censor Tatoeba.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:谣",
+      "candidateId": "tatoeba:9958200:325462:U+8C23",
+      "character": "谣",
+      "sentence": "人们常说不要乱相信谣言，但说起来容易做起来难。",
+      "translation": "They say you shouldn't take rumors seriously, but that's easier said than done.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:9958200:325462:U+8C23:excerpt:rumor-advice"
+    },
+    {
+      "recordId": "Characters:貝",
+      "candidateId": "tatoeba:13926732:12933978:U+8C9D",
+      "character": "貝",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:買",
+      "candidateId": "tatoeba:4732062:2121206:U+8CB7",
+      "character": "買",
+      "sentence": "我們買了張舒適的扶手椅。",
+      "translation": "We bought a comfortable new armchair.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:861375:311984:U+8CB7"
+    },
+    {
+      "recordId": "Characters:賓",
+      "candidateId": "tatoeba:13926732:12933978:U+8CD3",
+      "character": "賓",
+      "sentence": "我在黑暗的巷子中絆倒，膝蓋砸在柏油路上。一塊木板蓋著巷弄的房屋之間的電線。深夜的巷弄非常之暗。我的眼鏡從眼睛上掉了下來。幸好有一位帶著手電筒的廣東工人幫忙。我的膝蓋只是擦破了皮。我想起另一次膝蓋摔傷是在菲律賓奎松市的唐荷西高地。那裡有一大片火星般的紅土地，遍地長滿了「塔拉希布」草。有時工人會故意縱火燒草。我和哥哥當時還在外面玩。那時我們還未到青春期。在燃燒的野草旁，我摔倒了，膝蓋著地。我的貝貝姥姥憤怒不已。家裡的女傭在車庫後面的大磁磚水槽裡幫我清洗了雙腿。",
+      "translation": "I tripped in the alleyway in the darkness, as I crashed my knees on the asphalt. There was a wooden board that covered a wire between houses across the alleyway. It was very dark there at night. My eyeglasses fell off my face. Luckily, a Cantonese labourer with a flashlight helped me. My knees just got scraped. I remember another time when I crashed on my knees. It was at Don José Heights in Quezon City in the Philippines. There was a vastness of Martianesque red soil, wherein the \"talahib\" grass grew. Sometimes, workers intentionally set the grass on fire. My brother and I were still playing, even then, outside. We were still prepubescent. Near burning grass, I stumbled on my knees. My grandmother, Lola Bebe, was so angry. A maid washed my legs in the big tiled sink behind the garage.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:贪",
+      "candidateId": "tatoeba:2394479:390638:U+8D2A",
+      "character": "贪",
+      "sentence": "洛克希德丑闻是席卷美国主要飞机制造行业的世界性贪污丑闻。1976年2月被公布于众的洛克希德丑闻主要涉及到客机交易中的贪污受贿行为。",
+      "translation": "The Lockheed scandal is a worldwide corruption scandal involving the major American plane manufacturer Lockheed. It came to light in February 1976 and revolved mainly around the acceptance of passenger plane contracts.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:贿",
+      "candidateId": "tatoeba:2394479:390638:U+8D3F",
+      "character": "贿",
+      "sentence": "洛克希德丑闻是席卷美国主要飞机制造行业的世界性贪污丑闻。1976年2月被公布于众的洛克希德丑闻主要涉及到客机交易中的贪污受贿行为。",
+      "translation": "The Lockheed scandal is a worldwide corruption scandal involving the major American plane manufacturer Lockheed. It came to light in February 1976 and revolved mainly around the acceptance of passenger plane contracts.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:趕",
+      "candidateId": "tatoeba:46:1329:U+8D95",
+      "character": "趕",
+      "sentence": "趕快!",
+      "translation": "Hurry up.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:躍",
+      "candidateId": "tatoeba:13532107:1067139:U+8E8D",
+      "character": "躍",
+      "sentence": "我建立了部落格。我會儘量努力，不想成為那種只在初期短暫活躍發文，然後就放棄的人。",
+      "translation": "I started a new blog. I'll do my best not to be one of those people who blogs a lot right at the start and then quits blogging.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:輪",
+      "candidateId": "tatoeba:13543156:11119807:U+8F2A",
+      "character": "輪",
+      "sentence": "線條藝術強調形式和輪廓，而不是顏色、陰影和紋理。",
+      "translation": "Line art emphasizes form and outline, over color, shading, and texture.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:13543156:11119807:U+8F2A:excerpt:line-art-outline"
+    },
+    {
+      "recordId": "Characters:輯",
+      "candidateId": "tatoeba:6105187:2639725:U+8F2F",
+      "character": "輯",
+      "sentence": "最合逻輯的放鞋處是門口附近。",
+      "translation": "The most logical place to keep your shoes is near the door.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:辜",
+      "candidateId": "tatoeba:2919612:9981682:U+8F9C",
+      "character": "辜",
+      "sentence": "你这样做，辜负了朋友对你的信任。",
+      "translation": "Doing this is to betray the trust of your friends.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:迈",
+      "candidateId": "tatoeba:2000400:1962604:U+8FC8",
+      "character": "迈",
+      "sentence": "迈克是组长。",
+      "translation": "Mike is the team's captain.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:迪",
+      "candidateId": "tatoeba:392303:392300:U+8FEA",
+      "character": "迪",
+      "sentence": "冯迪索在做俯卧撑时，并不是把自身往上推，而是在把地球向下推。",
+      "translation": "When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:816912:814516:U+8FEA"
+    },
+    {
+      "recordId": "Characters:週",
+      "candidateId": "tatoeba:736323:579657:U+9031",
+      "character": "週",
+      "sentence": "瑪麗海特本週在紐奧良。",
+      "translation": "Mary Hat was in New Orleans this week.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:874700:272754:U+9031"
+    },
+    {
+      "recordId": "Characters:逼",
+      "candidateId": "tatoeba:2004549:1122844:U+903C",
+      "character": "逼",
+      "sentence": "这不是我们的错……大家都是逼不得已才这么做。",
+      "translation": "It wasn't our fault... We all had to do it.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "unfinished_template_or_context"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:遙",
+      "candidateId": "tatoeba:1947739:1927952:U+9059",
+      "character": "遙",
+      "sentence": "書中滿是遙不可及、沒有科學根據的理論。",
+      "translation": "The book is full of far-flung theories without any basis in scientific fact.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:809760:10540428:U+9059"
+    },
+    {
+      "recordId": "Characters:遜",
+      "candidateId": "tatoeba:413243:67739:U+905C",
+      "character": "遜",
+      "sentence": "亞馬遜河的長度僅次於尼羅河，是世界第二長的河。",
+      "translation": "The Amazon is the second longest river in the world after the Nile.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:適",
+      "candidateId": "tatoeba:4732062:2121206:U+9069",
+      "character": "適",
+      "sentence": "我們買了張舒適的扶手椅。",
+      "translation": "We bought a comfortable new armchair.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:13546216:10945976:U+9069"
+    },
+    {
+      "recordId": "Characters:遷",
+      "candidateId": "tatoeba:13578087:3854443:U+9077",
+      "character": "遷",
+      "sentence": "人們很容易將能源和電力小組委員會的大多數成員描述為笨蛋。他們散佈石油和煤炭公司炮製的虛假信息，以最大限度地減少全球氣候變遷的重要性，被稱為科學文盲。",
+      "translation": "One can easily characterize a majority of the energy and power subcommittee members as nincompoops — scientific illiterates who spread misinformation crafted by oil and coal companies in order to minimize the significance of global climate change.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:選",
+      "candidateId": "tatoeba:347820:330451:U+9078",
+      "character": "選",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": "tatoeba:4265778:280824:U+9078"
+    },
+    {
+      "recordId": "Characters:邏",
+      "candidateId": "tatoeba:793341:26312:U+908F",
+      "character": "邏",
+      "sentence": "我找不到任何英文拼寫的邏輯。\"Ghoti\" 可以被發音成\"fish\"。",
+      "translation": "I can't find any logic to English spelling. “Ghoti” can be pronounced as “fish.”",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鄙",
+      "candidateId": "tatoeba:7300206:470448:U+9119",
+      "character": "鄙",
+      "sentence": "連他的僕人都鄙視他",
+      "translation": "Even his servants despised him.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:酷",
+      "candidateId": "tatoeba:2081720:1786892:U+9177",
+      "character": "酷",
+      "sentence": "当人们认为战争残酷时，它还是很吸引人的。当人们认为战争粗俗时，它就没那么受欢迎了。",
+      "translation": "As long as war is regarded as wicked, it will always have its fascination. When it is looked upon as vulgar, it will cease to be popular.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:針",
+      "candidateId": "tatoeba:3149496:32010:U+91DD",
+      "character": "針",
+      "sentence": "我打電話過去時，瑪莉已經做了一小時的針線活兒。",
+      "translation": "Mary had been knitting for an hour when I called.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鈕",
+      "candidateId": "tatoeba:2756666:60508:U+9215",
+      "character": "鈕",
+      "sentence": "這個鈕扣鬆了",
+      "translation": "This button is loose.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鈴",
+      "candidateId": "tatoeba:3763650:4008871:U+9234",
+      "character": "鈴",
+      "sentence": "我要怎麼換我的手機鈴聲呢?",
+      "translation": "How do I change my cell phone's ringtone?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:874715:852616:U+9234"
+    },
+    {
+      "recordId": "Characters:鉴",
+      "candidateId": "tatoeba:2516723:293397:U+9274",
+      "character": "鉴",
+      "sentence": "他对鉴品红酒很有一套。",
+      "translation": "He has a good palate for wine.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:錢",
+      "candidateId": "tatoeba:774039:274355:U+9322",
+      "character": "錢",
+      "sentence": "人們送禮通常都不會送錢，但是也會有例外的情況。",
+      "translation": "On gift-giving occasions, people generally avoid giving money, but there are exceptions.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:6568344:5752056:U+9322"
+    },
+    {
+      "recordId": "Characters:鍵",
+      "candidateId": "tatoeba:838454:1076752:U+9375",
+      "character": "鍵",
+      "sentence": "你看得見我打在螢幕上的字，卻看不到我掉在鍵盤上的淚。",
+      "translation": "You see the words that I typed on the screen, but you don't see the tears that I shed over the keyboard.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鍾",
+      "candidateId": "tatoeba:724313:724314:U+937E",
+      "character": "鍾",
+      "sentence": "「一見鍾情」以及「從一而終」的感情是不切實際的，我們需要的不是這種不切實際而虛幻的感情。",
+      "translation": "The feelings of \"love at first sight\" and \"faithful unto death\" are unrealistic; this sort of unrealistic and illusory feeling is not what we need.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:钉",
+      "candidateId": "tatoeba:3709299:11554609:U+9489",
+      "character": "钉",
+      "sentence": "这个人只顾自己，不顾别人，你要他帮忙，准得碰钉子。",
+      "translation": "This person only thinks about themselves and doesn’t consider others. If you ask for their help, you’re bound to run into trouble.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:铜",
+      "candidateId": "tatoeba:334995:64816:U+94DC",
+      "character": "铜",
+      "sentence": "在奥运会的竞赛中，金牌代表第一名，银牌代表第二名，铜牌是第三名。",
+      "translation": "In Olympic competitions, a gold medal is for first place, a silver medal for second, and a bronze medal is for third place.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:334995:64816:U+94DC:excerpt:bronze-place"
+    },
+    {
+      "recordId": "Characters:锦",
+      "candidateId": "tatoeba:407739:407734:U+9526",
+      "character": "锦",
+      "sentence": "普京对胡锦涛说：“咱们必须帮吉尔吉斯斯坦”……不过那只是在我梦里的情形。",
+      "translation": "\"We need to help Kyrgyzstan,\" said Putin to Hu Jintao... in my dream.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length",
+        "unfinished_template_or_context"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:閃",
+      "candidateId": "tatoeba:526618:325173:U+9583",
+      "character": "閃",
+      "sentence": "光傳播得比聲音快，所以我們先看到閃電，然後才會聽見雷聲。",
+      "translation": "It is because light travels faster than sound that we see lightning before we hear thunder.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:526618:325173:U+9583:excerpt:lightning-thunder"
+    },
+    {
+      "recordId": "Characters:闆",
+      "candidateId": "tatoeba:460837:33439:U+95C6",
+      "character": "闆",
+      "sentence": "我們上班時的情緒，就像坐過山車一樣 ﹣ 老闆臉上一現出不悅的神色，我們就要吃苦頭；老闆臉上有了笑容，我們才能鬆一口氣。這樣的工作，我不想再幹下去了。",
+      "translation": "I can't keep this up. It's an emotional roller coaster around here and all we have to do is look at the boss's face to know whether everybody is going to be happy or sad.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:闪",
+      "candidateId": "tatoeba:813507:325172:U+95EA",
+      "character": "闪",
+      "sentence": "一道闪电划破天空。",
+      "translation": "A sharp crack of thunder split the sky.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:陷",
+      "candidateId": "tatoeba:10028092:11272813:U+9677",
+      "character": "陷",
+      "sentence": "日历上画着红圈的截稿日期使我陷入了焦虑。",
+      "translation": "The red circle on the calendar marking the deadline causes me to fall into anxiety.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:際",
+      "candidateId": "tatoeba:690500:690494:U+969B",
+      "character": "際",
+      "sentence": "被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。",
+      "translation": "Translated into many languages, The International has been and is still singing symbol of social struggles around the world.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:6120764:1975727:U+969B"
+    },
+    {
+      "recordId": "Characters:雖",
+      "candidateId": "tatoeba:13539404:7815413:U+96D6",
+      "character": "雖",
+      "sentence": "鷹嘴豆和青豆等豆類雖然會引起脹氣，但卻是極佳的美食。",
+      "translation": "Some legumes, like chickpeas and green beans, cause flatulence but are excellent foods.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:雞",
+      "candidateId": "tatoeba:9135860:9460356:U+96DE",
+      "character": "雞",
+      "sentence": "瑪麗婭拿了一個雞蛋，並將它在碗沿上敲開。",
+      "translation": "Mary took an egg and cracked it open on the rim of the bowl.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:離",
+      "candidateId": "tatoeba:763867:5933564:U+96E2",
+      "character": "離",
+      "sentence": "我希望離開這個村子並且再也不要回來。",
+      "translation": "I'd like to leave this town and never come back.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": "tatoeba:12962830:12962827:U+96E2"
+    },
+    {
+      "recordId": "Characters:韩",
+      "candidateId": "tatoeba:2620242:2628654:U+97E9",
+      "character": "韩",
+      "sentence": "我了解的情况是看韩剧者基本上是一些无所事事的女人。",
+      "translation": "From what I understand, people who watch Korean dramas are basically women with nothing to do.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:6967108:7767807:U+97E9"
+    },
+    {
+      "recordId": "Characters:響",
+      "candidateId": "tatoeba:785217:785220:U+97FF",
+      "character": "響",
+      "sentence": "你也許不同意他們某些重大政策，這可能會影響你的工作關係。",
+      "translation": "You may not agree with some of their major policies and this could affect your working relationship.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": "tatoeba:785217:785220:U+97FF:excerpt:working-relationship"
+    },
+    {
+      "recordId": "Characters:頭",
+      "candidateId": "tatoeba:347820:330451:U+982D",
+      "character": "頭",
+      "sentence": "我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，並和他們一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。",
+      "translation": "I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length",
+        "english_length"
+      ],
+      "replacementId": "tatoeba:1180683:2111740:U+982D"
+    },
+    {
+      "recordId": "Characters:顆",
+      "candidateId": "tatoeba:724319:724320:U+9846",
+      "character": "顆",
+      "sentence": "而且要記住，從此後不要再到海邊去。（永遠相信，我已經找到最大、最好、最適合我的那一顆。）",
+      "translation": "What's more, from now on you must remember that you cannot go to the seaside again (by believing forever that I have already found the biggest, best and most fitting one for me).",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length",
+        "chinese_total_length"
+      ],
+      "replacementId": "tatoeba:13539435:9191823:U+9846"
+    },
+    {
+      "recordId": "Characters:饥",
+      "candidateId": "tatoeba:802851:504821:U+9965",
+      "character": "饥",
+      "sentence": "我是只饥饿的蜘蛛。",
+      "translation": "I'm a starved spider.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:駝",
+      "candidateId": "tatoeba:470260:40838:U+99DD",
+      "character": "駝",
+      "sentence": "駝鳥不會在空中飛。",
+      "translation": "An ostrich does not fly through the air.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:騙",
+      "candidateId": "tatoeba:1178822:762140:U+9A19",
+      "character": "騙",
+      "sentence": "爲什麽騙人呢？",
+      "translation": "Why do you lie?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:骯",
+      "candidateId": "tatoeba:772001:2372:U+9AAF",
+      "character": "骯",
+      "sentence": "沒有骯髒的愛情, 也沒有美麗的監獄。",
+      "translation": "No love is foul nor prison fair.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:體",
+      "candidateId": "tatoeba:5968312:7829894:U+9AD4",
+      "character": "體",
+      "sentence": "這座體育館下藏著一個重要的遺址。",
+      "translation": "There is an important ruin hidden under this gym.",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鬥",
+      "candidateId": "tatoeba:690500:690494:U+9B25",
+      "character": "鬥",
+      "sentence": "被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。",
+      "translation": "Translated into many languages, The International has been and is still singing symbol of social struggles around the world.",
+      "reviewStatus": "Needs_Fix",
+      "reasons": [
+        "unresolved_review",
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:鷹",
+      "candidateId": "tatoeba:13539404:7815413:U+9DF9",
+      "character": "鷹",
+      "sentence": "鷹嘴豆和青豆等豆類雖然會引起脹氣，但卻是極佳的美食。",
+      "translation": "Some legumes, like chickpeas and green beans, cause flatulence but are excellent foods.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:麽",
+      "candidateId": "tatoeba:13695499:619646:U+9EBD",
+      "character": "麽",
+      "sentence": "那個東西是甚麽？",
+      "translation": "What is that thing?",
+      "reviewStatus": "Minor_Review",
+      "reasons": [
+        "unresolved_review"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:齊",
+      "candidateId": "tatoeba:1080874:259846:U+9F4A",
+      "character": "齊",
+      "sentence": "每個星期天，我都會把自己的房間收拾得整整齊齊。",
+      "translation": "I clean up my room every Sunday.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    },
+    {
+      "recordId": "Characters:龍",
+      "candidateId": "tatoeba:13539393:10545031:U+9F8D",
+      "character": "龍",
+      "sentence": "隨著板塊的移動，各大洲因地理隔離而出現了適應不同環境的獨特恐龍物種。",
+      "translation": "As tectonic plates shifted, uniquely adapted species of dinosaur emerged on each continent through vicariance.",
+      "reviewStatus": "Pass",
+      "reasons": [
+        "chinese_hanzi_length"
+      ],
+      "replacementId": null
+    }
+  ],
+  "policy": "Only short, passing, complete examples appear in learner cards. Retain eligible first choices; replace unsuitable ones with an already reviewed Pass sentence or an individually checked bilingual excerpt containing the exact target. Preserve parent review evidence and separate excerpt checks. Hold unresolved, long and template candidates offline. Never crop by length or invent lexical wording. Keep latest reviewed wording, attribution and original bindings.",
   "applicationPriority": "Existing vocabulary examples, then exact HSK/lesson fallback, then exact Tatoeba assignment."
 }

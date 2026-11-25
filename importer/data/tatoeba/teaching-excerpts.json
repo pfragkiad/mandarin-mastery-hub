@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "authorship": "assistant_selected_and_checked_source_excerpts",
+  "policy": "Only reviewed Pass parents. Exact contiguous Chinese and English spans, checked for a complete statement and matching meaning. Only terminal punctuation and initial English capitalization may change. These are excerpt checks, not new external reviewer decisions.",
+  "excerpts": [
+    {
+      "id": "performance-preference",
+      "pair": [
+        333336,
+        10253656
+      ],
+      "chinese": "比起歌舞伎，我更喜欢能乐表演",
+      "english": "I prefer Noh to Kabuki",
+      "parentChineseSha256": "590de76330e9b0ffbe41c87b976b71740f001f10d44ae58ea4b38c668dab37c7",
+      "parentEnglishSha256": "286cec0031c038bb1db35c18ea90c3c8eec6f318b362ba6ea9c2035c35ac3ea7"
+    },
+    {
+      "id": "blog-effort",
+      "pair": [
+        13532107,
+        1067139
+      ],
+      "chinese": "我會儘量努力",
+      "english": "I'll do my best",
+      "parentChineseSha256": "9363e4d7fb41be26eab92e44c0c4d2d36b2287f728c6078ef548e965a54ed592",
+      "parentEnglishSha256": "7cdae394a4a64f22f1a71336bf7d8aecce827c67f64ffa21a4f3fe164f07cea9"
+    },
+    {
+      "id": "line-art-outline",
+      "pair": [
+        13543156,
+        11119807
+      ],
+      "chinese": "線條藝術強調形式和輪廓",
+      "english": "Line art emphasizes form and outline",
+      "parentChineseSha256": "a01a9ac5f25ab72b7f1df326ca799338ba5bb1bccbcdda662858852478424eb9",
+      "parentEnglishSha256": "7de3cc5ea8b55f54807332333267c1b908f18e456cb4d7158111c65091a0b97d"
+    },
+    {
+      "id": "telegram-brevity",
+      "pair": [
+        502877,
+        1906
+      ],
+      "chinese": "当我们发电报的时候，简明扼要是关键",
+      "english": "When you send a telegram, brevity is essential",
+      "parentChineseSha256": "cae538056184363a0ea9eed163407e94e3acf298907671d6ffc39b8b20163a19",
+      "parentEnglishSha256": "df5e1c048395f74304c07503b5ddc8d0ab40c9097cd70cf66eef2739f2116a72"
+    },
+    {
+      "id": "loneliness",
+      "pair": [
+        1700169,
+        10276529
+      ],
+      "chinese": "我过得很寂寞",
+      "english": "I was so lonely",
+      "parentChineseSha256": "4880c1574a263cec98ff779d434de1a60e144f1d4023bf816ba7e48ca6cf3f5a",
+      "parentEnglishSha256": "df21cf126bb9191765d95242d1609660134866127205ae2febe27b43358e9b58"
+    },
+    {
+      "id": "kind-person",
+      "pair": [
+        1132326,
+        300448
+      ],
+      "chinese": "他天生就是一個和藹可親的人",
+      "english": "He is by nature a kind person",
+      "parentChineseSha256": "84cb2668ba3b0b249c5ed5e4b3786eab9273824e2862acbf600d35348f54ee20",
+      "parentEnglishSha256": "caa9f9c3b171c5f35d5820f302c65a73e686cf077ef9f1e30edf9402cce34bfe"
+    },
+    {
+      "id": "screen-words",
+      "pair": [
+        838454,
+        1076752
+      ],
+      "chinese": "你看得見我打在螢幕上的字",
+      "english": "You see the words that I typed on the screen",
+      "parentChineseSha256": "0aff2814d5d5201e7ffa3b6925272cac39cad55b5daa59423884f8d4f001a3c4",
+      "parentEnglishSha256": "32ac0a22edcaeb5a872b915bc738f205c8589c343356166f0683d7e283128a69"
+    },
+    {
+      "id": "rumor-advice",
+      "pair": [
+        9958200,
+        325462
+      ],
+      "chinese": "人们常说不要乱相信谣言",
+      "english": "They say you shouldn't take rumors seriously",
+      "parentChineseSha256": "6e93d9700dd230a08da48fa169092cc5dfa0e847a907be9cd10287d7a54621c0",
+      "parentEnglishSha256": "84db7d84648682eabd656a1bb6b9b8e3cf9342141e8345f5a6dd896bfd64febe"
+    },
+    {
+      "id": "bronze-place",
+      "pair": [
+        334995,
+        64816
+      ],
+      "chinese": "铜牌是第三名",
+      "english": "a bronze medal is for third place",
+      "parentChineseSha256": "ca54fc31aee68f913a76eb234c2f05bb82c2add4cd1cf8716e0be26d6865ebfa",
+      "parentEnglishSha256": "afb80ff903a9f12ea7ed63409007a4c1cb38022589694e672b91f4742014c7f1"
+    },
+    {
+      "id": "lightning-thunder",
+      "pair": [
+        526618,
+        325173
+      ],
+      "chinese": "我們先看到閃電，然後才會聽見雷聲",
+      "english": "we see lightning before we hear thunder",
+      "parentChineseSha256": "bcb9062a78e57861407c00b2ec8d016f29216db92ca3c20a88dd99dbb4db1c38",
+      "parentEnglishSha256": "69bed4ef481939933d86107be5ac754aefad6d554b6b14077abe7cb1ff682d31"
+    },
+    {
+      "id": "working-relationship",
+      "pair": [
+        785217,
+        785220
+      ],
+      "chinese": "這可能會影響你的工作關係",
+      "english": "this could affect your working relationship",
+      "parentChineseSha256": "1d3581f9730c7a1ce2ee4c1c6fef029943e74ecaf75b3e463b240199a8b9a269",
+      "parentEnglishSha256": "eb7f0ad5f55008409d24e70e7f4e8c20861ca14bafc71bc82afc730d2d532366"
+    },
+    {
+      "id": "same-birthday",
+      "pair": [
+        7767663,
+        920282
+      ],
+      "chinese": "玛格达莲娜和我同年同日生",
+      "english": "Magdalena was born on the same day and year as me.",
+      "parentChineseSha256": "05ce97292d3cd54ad7ba60a504db0f22e8e496da13c66bf125517bf63aedf392",
+      "parentEnglishSha256": "36938761e54402a3e5c6d787127937a1671160fb1ee3d335216a23339b22e543"
+    }
+  ]
+}

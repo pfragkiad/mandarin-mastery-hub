@@ -27,7 +27,7 @@ describe('Exact Tatoeba sentence assignments', () => {
       { ...example, sentence: example.sentence + ' changed', pinyin: 'old reading' },
     ]) {
       vi.resetModules();
-      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({ version: 1, examples: { [recordId]: changed } }) }));
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({ ...data, examples: { [recordId]: changed } }) }));
       const { loadCharacterTatoebaExample: load } = await import('./character-tatoeba-examples');
       expect(await load(recordId)).toBeNull();
     }
@@ -71,18 +71,44 @@ describe('Exact Tatoeba sentence assignments', () => {
       for (const ch of Array.from(ex.sentence)) if (isHanziChar(ch) && !readings.has(ch)) missing.add(ch);
     }
     // The only unrecorded sentence glyphs are these traditional forms; their sentences show no pinyin line.
-    expect([...missing].sort()).toEqual(['爲', '箇', '説', '鍍']);
+    for (const glyph of missing) expect(['爲', '箇', '説', '鍍']).toContain(glyph);
     const uncovered = Object.values(data.examples).filter(ex => Array.from(ex.sentence).some(ch => isHanziChar(ch) && !readings.has(ch))).length;
     expect(covered).toBe(Object.keys(data.examples).length - uncovered);
   });
 
   it('loads the small grid index independently of sentence bodies', async () => {
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ version: 1, records: { [recordId]: 'warning_triangle' } }) });
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ version: 2, records: { [recordId]: 'source_info' } }) });
     vi.stubGlobal('fetch', fetchMock);
     const { loadCharacterSentenceAvailability: load } = await import('./character-tatoeba-examples');
     expect(await load(recordId)).toBe(true);
     expect(await load('Characters:unknown')).toBe(false);
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(fetchMock).toHaveBeenCalledWith('/data/character-sentence-index.json');
+  });
+
+  it('rejects the old unfiltered sidecar and ignores unresolved grid entries', async () => {
+    const fetchMock = vi.fn().mockImplementation(async (url: string) => ({ ok: true, json: async () =>
+      url.includes('index') ? { version: 2, records: { [recordId]: 'warning_triangle' } } : { ...data, version: 1 } }));
+    vi.stubGlobal('fetch', fetchMock);
+    const { loadCharacterTatoebaExample: load, loadCharacterSentenceAvailability: available } = await import('./character-tatoeba-examples');
+    expect(await load(recordId)).toBeNull();
+    expect(await available(recordId)).toBe(false);
+  });
+
+  it('keeps only passing short examples, including checked complete excerpts', async () => {
+    const { isLearningExample, TATOEBA_LEARNING_POLICY } = await import('./character-tatoeba-examples');
+    expect((data as unknown as { learningPolicy: unknown }).learningPolicy).toEqual(TATOEBA_LEARNING_POLICY);
+    for (const row of Object.values(data.examples)) expect(isLearningExample(row)).toBe(true);
+    for (const changed of [
+      { ...example, review: { ...example.review, status: 'Needs_Fix' as const } },
+      { ...example, review: { ...example.review, status: 'Minor_Review' as const } },
+      { ...example, sentence: example.character.repeat(21) },
+      { ...example, sentence: example.character + 'XXX' },
+      { ...example, translation: 'x'.repeat(181) },
+    ]) expect(isLearningExample(changed)).toBe(false);
+    const excerptEntry = Object.entries(data.examples).find(([, row]) => row.editorial.excerpt)!;
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => data }));
+    const { loadCharacterTatoebaExample: load } = await import('./character-tatoeba-examples');
+    expect(await load(excerptEntry[0])).toEqual(excerptEntry[1]);
   });
 });

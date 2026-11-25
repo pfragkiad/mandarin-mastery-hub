@@ -19,6 +19,7 @@ export function TatoebaSentenceSource({ example }: { example: CharacterTatoebaEx
       <a href={source.chinese.url} target="_blank" rel="noopener noreferrer">Tatoeba · Chinese #{source.chinese.id}</a> · {source.chinese.contributor ?? 'Unassigned contributor'}<br/>
       <a href={source.english.url} target="_blank" rel="noopener noreferrer">English #{source.english.id}</a> · {source.english.contributor ?? 'Unassigned contributor'}<br/>
       <a href={source.licenseUrl} target="_blank" rel="noopener noreferrer">CC BY 2.0 FR</a>{changed && ' · Edited from the attributed originals'}<br/>
+      {editorial.excerpt && <>Excerpt from the linked longer sentence; terminal punctuation may be adjusted.<br/></>}
       {editorial.chineseChanged && <>Original Chinese: <span lang="zh-CN">{source.chinese.text}</span><br/></>}
       {editorial.englishChanged && <>Original English: {source.english.text}<br/></>}
       {warning && review.notes && <>Note: {review.notes}</>}

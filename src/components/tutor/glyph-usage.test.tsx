@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { readFileSync } from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
@@ -61,22 +61,34 @@ vi.mock('./workspace', () => ({
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
 describe('Absent-record notes', () => {
-  it('shows public attribution plus the learner-meaningful note on warning cases, never internal review process', async () => {
-    const example = Object.values(tatoebaData.examples).find(row => row.review.latestRound === 3 && row.review.status === 'Needs_Fix')!;
+  it('shows only the checked short excerpt with public attribution to the full original', async () => {
+    const example = Object.values(tatoebaData.examples).find(row => row.editorial.excerpt)!;
     vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
     const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
     const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
-    const hint = await screen.findByRole('button', { name: 'Sentence source and usage note' });
-    expect(hint).toHaveAttribute('data-variant', 'warning');
+    const hint = await screen.findByRole('button', { name: 'Sentence source' });
+    expect(hint).toHaveAttribute('data-variant', 'info');
     expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(example.sentence);
-    expect(container.querySelector('.sentence-pinyin')).toBeNull();
+    expect(example.sentence.length).toBeLessThanOrEqual(40);
+    expect(screen.queryByText(example.source.chinese.text)).toBeNull();
     fireEvent.click(hint);
     expect(await screen.findByRole('link', { name: `Tatoeba · Chinese #${example.source.chinese.id}` })).toHaveAttribute('href', example.source.chinese.url);
     expect(screen.getByText(example.source.chinese.text)).toBeInTheDocument();
-    // The learner-meaningful note stays; review rounds, reviewers and ratings never appear.
-    expect(screen.getByText(`Note: ${example.review.notes}`)).toBeInTheDocument();
+    expect(screen.getByText(/Excerpt from the linked longer sentence/)).toBeInTheDocument();
     expect(screen.queryByText(/Review round/)).toBeNull();
-    expect(screen.queryByText(/positive rating/)).toBeNull();
+  });
+
+  it.each(['Needs_Fix', 'Minor_Review', 'long'] as const)('never renders a stale %s candidate as a learning example', async state => {
+    const base = Object.values(tatoebaData.examples)[0]!;
+    const example = { ...base, sentence: state === 'long' ? base.character.repeat(21) : base.sentence,
+      review: { ...base.review, status: state === 'long' ? 'Pass' as const : state } };
+    vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
+    const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
+    const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
+    await act(async () => { await Promise.resolve(); });
+    await screen.findByText('No recorded example sentence yet.');
+    expect(container.querySelector('.sentence-hanzi')).toBeNull();
+    expect(screen.queryByRole('button', { name: /Sentence source/ })).toBeNull();
   });
 
   it('hides the process note on Pass cases and uses the plain info marker', async () => {

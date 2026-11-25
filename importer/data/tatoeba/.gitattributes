@@ -1,4 +1,5 @@
 # Preserve the bounded generated records and manifest across Windows checkouts.
 manifest.json -text
+teaching-excerpts.json -text
 selected/*.jsonl -text
 selected/*.tsv -text
