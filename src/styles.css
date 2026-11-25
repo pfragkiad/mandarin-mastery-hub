@@ -1821,9 +1821,10 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .saved-filter-row > svg { width: 18px; height: 18px; flex-shrink: 0; }
 .saved-filter-row-label { flex: 1 1 auto; min-width: 0; }
 .saved-filter-row-count { color: var(--muted-foreground); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.filter-submit { display: flex; gap: 2px; align-items: center; }
-.filter-submit button { height: 36px; }
-.filter-submit button[type='button'] { width: 32px; }
+.filter-submit { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); align-items: center; }
+.filter-submit button { height: 36px; flex-shrink: 0; }
+/* Only the library's icon-only clear control has a fixed width; game Reset has text. */
+.filter-submit button.close-x { width: 32px; }
 .shared-filter-form .catalog-results-count { margin-left: auto; font-size: 11px; color: var(--muted-foreground); }
 .catalog-tools-row { gap: 8px; margin-bottom: 12px; }
 .catalog-tools-row > button { height: 32px; font-size: 11px; }
