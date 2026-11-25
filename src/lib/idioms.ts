@@ -1,4 +1,3 @@
-import { orderLibrary, type LibrarySort } from './library-order';
 import { filterWords, type Word } from './mandarin';
 
 export type IdiomRankClass = {
@@ -113,10 +112,4 @@ export function filterIdioms(
 ): Word[] {
   const byBand = band && band !== ALL_IDIOM_BANDS ? idioms.filter(w => matchesIdiomBand(w, band, rankClasses, bandUpTo)) : idioms;
   return filterWords(byBand, query, 'All collections', 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
-}
-
-/** Order idioms by recorded frequency rank (default), pinyin, or seeded shuffle. */
-export function orderIdioms(idioms: readonly Word[], sort: LibrarySort = 'rank', seed = 1): Word[] {
-  const effective = sort === 'pinyin' || sort === 'random' ? sort : 'rank';
-  return orderLibrary(idioms, effective, seed);
 }

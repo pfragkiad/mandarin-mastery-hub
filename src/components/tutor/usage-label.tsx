@@ -10,8 +10,9 @@ export function usageRankTier(rank: number | null): 'none' | 'top' | 'inter' | '
   return rank === null ? 'none' : rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
 }
 
-export function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
-  const group = usageGroupFor(kind, rank);
+export function UsageLabel({ rank, kind, compact = false, prefix, title }: { rank: number | null; kind?: LibraryKind; compact?: boolean; prefix?: string; title?: string }) {
+  const group = kind ? usageGroupFor(kind, rank) : undefined;
   const tier = usageRankTier(rank);
-  return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? 'Unranked' : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
+  const formatted = rank === null ? 'Unranked' : prefix !== undefined ? `${prefix}${rank.toLocaleString('en-US')}` : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`;
+  return <span className={`component-reuse-label usage-${tier}`} title={title}>{formatted}</span>;
 }

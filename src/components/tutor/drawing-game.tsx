@@ -17,7 +17,7 @@ import {
   type DrawingResult,
   type DrawingSearch,
 } from "@/lib/drawing-game";
-import { DraftFilterForm } from "./filter-form";
+import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
 import { SavedFilterToggle } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
@@ -273,15 +273,12 @@ export function DrawingGamePage({
                           ))}
                         </select>
                         {draft.usage && draft.usage !== UNRANKED && (
-                          <button
-                            type="button"
-                            className={`filter-upto-toggle${draft.usageUpTo ? " active" : ""}`}
-                            aria-pressed={draft.usageUpTo === "1"}
+                          <FilterWideningToggle
+                            active={draft.usageUpTo === "1"}
+                            onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : "1" })}
+                            label="+ lower ranks"
                             title="Also include every more frequent rank above the selected group"
-                            onClick={() => patch({ usageUpTo: draft.usageUpTo ? undefined : "1" })}
-                          >
-                            + lower ranks
-                          </button>
+                          />
                         )}
                       </span>
                     )}
@@ -301,15 +298,12 @@ export function DrawingGamePage({
                             ))}
                         </select>
                         {draft.strokes && (
-                          <button
-                            type="button"
-                            className={`filter-upto-toggle${draft.strokesUpTo ? " active" : ""}`}
-                            aria-pressed={draft.strokesUpTo === "1"}
+                          <FilterWideningToggle
+                            active={draft.strokesUpTo === "1"}
+                            onToggle={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : "1" })}
+                            label="+ fewer strokes"
                             title="Also include every smaller stroke count"
-                            onClick={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : "1" })}
-                          >
-                            + fewer strokes
-                          </button>
+                          />
                         )}
                       </span>
                     )}

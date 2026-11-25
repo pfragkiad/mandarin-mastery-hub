@@ -1,9 +1,19 @@
-import { useEffect, useRef, useState, useTransition, type ReactNode, type SetStateAction } from 'react';
-import { Check, X, SlidersHorizontal } from 'lucide-react';
+import { useEffect, useRef, useState, useTransition, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react';
+import { Check, Search, X, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { useSmallLibraryScreen } from './use-small-library-screen';
 import { SavedFilterRow, SavedFilterToggle, type SavedFilter } from './saved-filter';
+
+/** Dashed-outline filter toggle shared by "+ lower ranks", "+ fewer strokes", and "Hide radicals". */
+export function FilterWideningToggle({ active, onToggle, label, title }: { active: boolean; onToggle: () => void; label: string; title: string }) {
+  return <button type="button" className={`filter-upto-toggle${active ? ' active' : ''}`} aria-pressed={active} title={title} onClick={onToggle}>{label}</button>;
+}
+
+/** Shared search input with embedded Pinyin and Exact mode toggles. */
+export function PinyinSearchInput({ value, onChange, py, onPyChange, ariaLabel, placeholder, autoFocus, onKeyDown }: { value: string; onChange: (value: string) => void; py: 'pinyin' | 'exact' | undefined; onPyChange: (next: 'pinyin' | 'exact' | undefined) => void; ariaLabel: string; placeholder: string; autoFocus?: boolean; onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void }) {
+  return <div className="search-field"><Search/><input autoFocus={autoFocus} aria-label={ariaLabel} placeholder={placeholder} value={value} onChange={e => onChange(e.target.value)} onKeyDown={onKeyDown}/><Button type="button" variant="ghost" className={`search-toggle${py ? ' on' : ''}`} aria-pressed={Boolean(py)} title="Search pinyin only" onClick={() => onPyChange(py ? undefined : 'pinyin')}>Pinyin</Button>{py && <Button type="button" variant="ghost" className={`search-toggle${py === 'exact' ? ' on' : ''}`} aria-pressed={py === 'exact'} title="Match the exact pinyin reading only" onClick={() => onPyChange(py === 'exact' ? 'pinyin' : 'exact')}>Exact</Button>}</div>;
+}
 
 /** Draft edits never change the applied URL or result pool. History restores the form. */
 export function useDraftFilters<T extends object>(applied: T) {

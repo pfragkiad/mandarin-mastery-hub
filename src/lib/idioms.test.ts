@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { ALL_IDIOM_BANDS, filterIdioms, idiomToWord, matchesIdiomBand, orderIdioms, type IdiomRankClass } from './idioms';
+import { ALL_IDIOM_BANDS, filterIdioms, idiomToWord, matchesIdiomBand, type IdiomRankClass } from './idioms';
+import { orderLibrary } from './library-order';
 
 const bands: IdiomRankClass[] = [
   { id: '1-100', label: 'Top 100', from: 1, to: 100, bandCoveragePct: 17.64, cumulativePct: 17.64 },
@@ -37,7 +38,7 @@ describe('idioms helpers', () => {
   });
 
   it('orders idioms by frequency rank by default and by pinyin when requested', () => {
-    expect(orderIdioms(sample, 'rank').map(w => w.id)).toEqual(['idiom-1', 'idiom-2', 'idiom-150']);
-    expect(orderIdioms(sample, 'pinyin').map(w => w.id)).toEqual(['idiom-150', 'idiom-1', 'idiom-2']);
+    expect(orderLibrary(sample, 'rank').map(w => w.id)).toEqual(['idiom-1', 'idiom-2', 'idiom-150']);
+    expect(orderLibrary(sample, 'pinyin').map(w => w.id)).toEqual(['idiom-150', 'idiom-1', 'idiom-2']);
   });
 });

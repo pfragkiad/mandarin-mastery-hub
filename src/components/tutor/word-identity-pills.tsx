@@ -3,7 +3,7 @@ import { vocabularyKind } from '@/lib/mandarin';
 import { phraseStyle } from '@/lib/data-contract';
 import { wordRadicalNumber } from '@/lib/card-ink';
 import { RadicalPill } from './radical-pill';
-import { usageRankTier } from './usage-label';
+import { UsageLabel } from './usage-label';
 
 /**
  * One source for the identity pills a Words/Phrases record wears, shared by the grid card's top
@@ -23,7 +23,7 @@ export function WordIdentityPills({ word, traditional = true }: { word: Word; tr
   const idiomRank = word.idiomMeta?.rank;
   return <>
     {hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>}
-    {idiomRank != null && <span className={`component-reuse-label usage-${usageRankTier(idiomRank)}`} title={`Frequency rank #${idiomRank.toLocaleString('en-US')} in the THUOCL chengyu corpus`}>Rank #{idiomRank.toLocaleString('en-US')}</span>}
+    {idiomRank != null && <UsageLabel rank={idiomRank} compact title={`Frequency rank #${idiomRank.toLocaleString('en-US')} in the THUOCL chengyu corpus`}/>}
     {radicalNumber !== undefined && <RadicalPill number={radicalNumber} title="Sourced Kangxi radical identity of this character"/>}
     {traditional && word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
     {isPhrase && <PhraseStylePill word={word}/>}

@@ -1,4 +1,4 @@
-import { orderVocabulary, newShuffleSeed, type LibrarySort as Sort } from '@/lib/library-order';
+import { orderLibrary, orderVocabulary, newShuffleSeed, type LibrarySort as Sort } from '@/lib/library-order';
 import { LibrarySort } from './library-sort';
 import { DetailSheet } from './detail-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
-import { ALL_IDIOM_BANDS, filterIdioms, loadIdioms, orderIdioms, type IdiomDataset } from '@/lib/idioms';
+import { ALL_IDIOM_BANDS, filterIdioms, loadIdioms, type IdiomDataset } from '@/lib/idioms';
 import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions, wordSubtopicIds } from '@/lib/vocabulary-subtopics';
 import { matchesPhraseStyle } from '@/lib/data-contract';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
@@ -23,7 +23,7 @@ import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { GridCardPlaceholder } from './section-placeholder';
-import { DraftFilterForm } from './filter-form';
+import { DraftFilterForm, FilterWideningToggle, PinyinSearchInput } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { LessonHintsProvider } from './lesson-hints';
@@ -116,7 +116,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     : includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
   // Legacy URLs may still carry sort=hsk; that is now simply the default order.
   const wordSort = sort === 'pinyin' || sort === 'random' ? sort : 'rank';
-  const filtered = kind === 'idiom' ? orderIdioms(unordered, wordSort, seed) : orderVocabulary(unordered, wordSort, seed);
+  const filtered = kind === 'idiom' ? orderLibrary(unordered, wordSort, seed) : orderVocabulary(unordered, wordSort, seed);
   // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
   const hasSubtopics = useMemo(() => kind !== 'idiom' && kindItems.some(w => wordSubtopicIds(w).length > 0), [kind, kindItems]);
   const appliedSubtopic = subtopicById(subtopic);
@@ -162,7 +162,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
         const draftBand = idiomRankClasses.find(c => c.id === (draft.band ?? ALL_IDIOM_BANDS));
         // "Include lower ranks" mirrors the Glyphs rank filter: the selected band widens to
         // rank 1..band end (idioms.ts matchesIdiomBand). Picking "All ranks" drops the widening.
-        return <span className="filter-field-row"><Select value={draft.band ?? ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <button type="button" className={`filter-upto-toggle${draft.bandUpTo ? ' active' : ''}`} aria-pressed={draft.bandUpTo === '1'} title="Also include every more frequent rank above the selected group" onClick={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })}>+ lower ranks</button>}</span>;
+        return <span className="filter-field-row"><Select value={draft.band ?? ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>;
       }
       // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed
       // by every other draft pick (topic, level, type) but never by themselves.
@@ -184,9 +184,9 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.pos.map(p => <option key={p}>{p}</option>)}</select>
       {kind === 'phrase' && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? 'All styles'} onChange={e => patch({ style: e.target.value })}><option>All styles</option>{facets.styles.map(s => <option key={s}>{s}</option>)}</select>}
     </>; }}>{({ draft, patch }) => <>
-      <div className="search-field"><Search/><input aria-label="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…" value={draft.q} onChange={e => patch({ q: e.target.value })}/><Button type="button" variant="ghost" className={`search-toggle${draft.py ? ' on' : ''}`} aria-pressed={Boolean(draft.py)} title="Search pinyin only" onClick={() => patch({ py: draft.py ? undefined : 'pinyin' })}>Pinyin</Button>{draft.py && <Button type="button" variant="ghost" className={`search-toggle${draft.py === 'exact' ? ' on' : ''}`} aria-pressed={draft.py === 'exact'} title="Match the exact pinyin reading only" onClick={() => patch({ py: draft.py === 'exact' ? 'pinyin' : 'exact' })}>Exact</Button>}</div>
+      <PinyinSearchInput value={draft.q} onChange={q => patch({ q })} py={draft.py} onPyChange={py => patch({ py })} ariaLabel="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…"/>
     </>}</DraftFilterForm>
-    <LibraryTools sort={<LibrarySort words={kind !== 'idiom'} value={wordSort} onChange={next => onFiltersChange?.({ sort: next, seed: next === 'random' ? newShuffleSeed(seed) : undefined })} onReshuffle={() => onFiltersChange?.({ sort: 'random', seed: newShuffleSeed(seed) })}/>} flashcards={{ category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }} drawing={{ kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) }}/>
+    <LibraryTools sort={<LibrarySort words={kind !== 'idiom'} value={wordSort} onChange={next => onFiltersChange?.({ sort: next, seed: next === 'random' ? newShuffleSeed(seed) : undefined })} onReshuffle={() => onFiltersChange?.({ sort: 'random', seed: newShuffleSeed(seed) })}/>} flashcards={kind !== 'idiom' ? { category: kind === 'phrase' ? 'Phrases' : 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) } : undefined} drawing={kind === 'word' ? { kind: 'Words', ...(status === 'Saved words' ? { saved: true } : {}), ...(collection !== 'All collections' ? { collection } : {}), ...(level !== 'All levels' ? { level } : {}), ...(pos !== 'All types' ? { pos } : {}) } : undefined}/>
     <div className={`vocabulary-workspace ${cardRevealClass(preferences.cardReveal)}`}>{/* Grid character hints (own `gridHints` switch, apart from lessons and detail cards, which sit outside this provider). */}<LessonHintsProvider enabled={preferences.gridHints === true} backLabel={label}><section className="catalog-results" aria-label={`${label} results`} aria-busy={!resultsReady}>
       {!resultsReady ? <div ref={gridRef} className={`word-grid vocab-grid ${gridKindClass} ${preferences.libraryView === 'list' ? 'list-view library-list-view' : ''}`}><GridCardPlaceholder/></div>
       : kind === 'idiom' && idiomsError ? <div className="empty-state"><BookOpen size={32}/><h3>Could not load idioms.</h3><p>{idiomsError}</p></div>
