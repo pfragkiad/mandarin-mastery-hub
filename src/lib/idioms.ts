@@ -36,6 +36,12 @@ export type IdiomDataset = {
 export const ALL_IDIOM_BANDS = 'All ranks';
 
 let cachedDataset: IdiomDataset | null = null;
+
+/** Return the recorded rank-band label ("Rank 1–100") for an idiom rank once the dataset is loaded. */
+export function idiomRankBandLabel(rank: number): string | undefined {
+  const band = cachedDataset?.rankClasses.find(c => rank >= c.from && rank <= c.to);
+  return band ? `Rank ${band.from.toLocaleString('en-US')}–${band.to.toLocaleString('en-US')}` : undefined;
+}
 let cachedWords: Word[] | null = null;
 let pendingLoad: Promise<{ dataset: IdiomDataset; words: Word[] }> | null = null;
 

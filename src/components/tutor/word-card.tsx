@@ -28,6 +28,9 @@ import { isHanziChar } from '@/lib/sentence-align';
 import { RecordDetailTitle } from './record-detail-title';
 import { WordIdentityPills, wordHskPill } from './word-identity-pills';
 import { UsageLabel } from './usage-label';
+import { SourceInfo } from './source-info';
+import { formatUsagePercentage } from '@/lib/usage-frequency';
+import { idiomRankBandLabel } from '@/lib/idioms';
 import { wordInk, wordRadicalNumber } from '@/lib/card-ink';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
@@ -105,7 +108,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const hskPill = wordHskPill(word);
   const idiom = word.idiomMeta;
   const idiomTraditional = preferences.includeTraditional && idiom?.traditional && idiom.traditional !== word.hanzi ? idiom.traditional : null;
-  const hasPills = hskPill !== null || idiom != null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
+  const idiomBand = idiom ? idiomRankBandLabel(idiom.rank) : undefined;
+  const hasPills = hskPill !== null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
   const topics = wordCollections(word).filter(Boolean);
   // Phrases pair each heading character with its pinyin syllable on hover (as in "In a phrase").
   // Multi-character words pair the same way; single glyphs have nothing to pair.
@@ -116,13 +120,13 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const headwordHints = true;
   // One hints provider for the whole card: the heading and "In a phrase" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
-    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(idiomTraditional ? { glyphAside: <strong lang="zh-Hant" className="traditional-character tile-stamp-traditional idiom-traditional-glyph" title="Traditional form"><HeadwordGlyphs word={word} text={idiomTraditional} pairing={pairing}/></strong> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(idiomTraditional ? { glyphAside: <strong lang="zh-Hant" className="traditional-character tile-stamp-traditional idiom-traditional-glyph" title="Traditional form"><HeadwordGlyphs word={word} text={idiomTraditional} pairing={pairing}/></strong> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(idiom ? { pill: <span className="practice-kind">Idiom</span> } : hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
         row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
     {(word.type || topics.length > 0 || (!hskPill && word.level) || idiom) && <dl className="catalog-facts">
-      {idiom && <div><dt>Frequency rank</dt><dd className="catalog-record-value"><UsageLabel rank={idiom.rank} prefix="#"/></dd></div>}
-      {idiom?.score != null && <div><dt>Frequency score</dt><dd className="catalog-record-value">{idiom.score}</dd></div>}
+      {idiom && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">Corpus frequency rank · THUOCL chengyu frequency list · Percentage is the cumulative share of idiom occurrences up to this rank.</SourceInfo></dt><dd><UsageLabel rank={idiom.rank} groupLabel={idiomBand}/></dd></div>}
+      {idiom?.cumPct != null && <div><dt>Corpus frequency</dt><dd>{formatUsagePercentage(idiom.cumPct)}</dd></div>}
       {!hskPill && !idiom && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
       {word.type && <div><dt>Part of speech</dt><dd className="catalog-record-value">{word.type}</dd></div>}
       {topics.length > 0 && <div><dt>{topics.length > 1 ? 'Topics' : 'Topic'}</dt><dd className="catalog-record-value">{topics.join(' · ')}</dd></div>}
