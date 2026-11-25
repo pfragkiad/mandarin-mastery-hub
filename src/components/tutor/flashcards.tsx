@@ -1,6 +1,7 @@
 import { SavedFilterToggle } from './saved-filter';
 import { DraftFilterForm, FilterWideningToggle } from './filter-form';
-import { FilterSelect, type FilterSelectItem } from './filter-select';
+import { FilterSelect } from './filter-select';
+import { TopicSelect } from './topic-select';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
@@ -108,15 +109,16 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     if (vocabKind === 'idiom') {
       const draftTopic = draft.collection || 'All collections';
       const idiomPool = filterIdioms(idiomWords, idiomRankClasses, '', draft.usage || ALL_IDIOM_BANDS, draft.saved ? 'Saved words' : 'All words', saved, false, false, draft.usageUpTo === '1');
-      const idiomTopics = allCollections.filter(c => c !== 'All collections' && (c === draftTopic || idiomPool.filter(w => inSubtopic(w, draftSubtopic)).some(w => w.collection === c || w.collections?.includes(c))));
-      const idiomSubtopics = subtopicOptions(filterIdioms(idiomWords, idiomRankClasses, '', draft.usage || ALL_IDIOM_BANDS, draft.saved ? 'Saved words' : 'All words', saved, false, false, draft.usageUpTo === '1', draftTopic), draftTopic, draftSubtopic);
+      const idiomTopics = allCollections.filter(c => c !== 'All collections' && (c === draftTopic || idiomPool.some(w => w.collection === c || w.collections?.includes(c))));
+      const idiomSubtopics = subtopicOptions(filterIdioms(idiomWords, idiomRankClasses, '', draft.usage || ALL_IDIOM_BANDS, draft.saved ? 'Saved words' : 'All words', saved, false, false, draft.usageUpTo === '1'), 'All collections', draftSubtopic);
       return { styles: [] as string[], collections: idiomTopics, levels: [] as string[], posOptions: [] as string[], subtopics: idiomSubtopics };
     }
     const inLesson = lessonIds(draft);
     const kindItems = vocabKind ? items.filter(w => vocabularyKind(w) === vocabKind && (!draft.saved || saved.includes(w.id)) && (!inLesson || inLesson.has(w.id))) : [];
     const facets = vocabularyFacetOptions(kindItems.filter(w => inSubtopic(w, draftSubtopic)), { collection: draft.collection || 'All collections', level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: vocabKind === 'phrase' ? draft.style : undefined });
-    const subtopics = subtopicOptions(filterWords(kindItems, '', draft.collection || 'All collections', draft.level ?? 'All levels', 'All words', [], false, draft.pos ?? 'All types'), draft.collection || 'All collections', draftSubtopic);
-    return { styles: vocabKind === 'phrase' && kindItems.length ? facets.styles : [], collections: facets.collections, levels: facets.levels, posOptions: facets.pos, subtopics };
+    const topicFacets = vocabularyFacetOptions(kindItems, { collection: 'All collections', level: draft.level, pos: draft.pos, style: vocabKind === 'phrase' ? draft.style : undefined });
+    const subtopics = subtopicOptions(filterWords(kindItems, '', 'All collections', draft.level ?? 'All levels', 'All words', [], false, draft.pos ?? 'All types').filter(w => matchesPhraseStyle(w.entry, vocabKind === 'phrase' ? draft.style : undefined)), 'All collections', draftSubtopic);
+    return { styles: vocabKind === 'phrase' && kindItems.length ? facets.styles : [], collections: topicFacets.collections, levels: facets.levels, posOptions: facets.pos, subtopics };
   };
   // Glyph decks: rank groups and stroke counts narrow each other the same way the
   // Glyphs library does, for Characters, Components and Radicals alike.
@@ -259,7 +261,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     return () => window.removeEventListener('keydown', onKey);
   }, [setSession]);
   const setup = (action: ReactNode, summary: ReactNode) => <>
-      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch }) => { const draftReference = draft.category.startsWith('Ref:'); const draftIdiom = draft.category === 'Idioms'; const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; const { courses, lessons } = lessonChoices(draft); const draftSubtopic = draft.subtopic || ALL_SUBTOPICS; const pickTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic && current.parentLabel !== topic ? { subtopic: '' } : {}) }); }; return <>
+      <GameSetup summary={summary} action={action} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch }) => { const draftReference = draft.category.startsWith('Ref:'); const draftIdiom = draft.category === 'Idioms'; const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; const { courses, lessons } = lessonChoices(draft); const draftSubtopic = draft.subtopic || ALL_SUBTOPICS; return <>
         {/* Row 1: what kind of card; for Characters the course and the lesson that follows
             it, beside Topic; then the vocabulary collection / level / type. */}
         <div className="game-filter-row">
@@ -274,13 +276,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             <FilterSelect ariaLabel="Lesson" value={draft.lesson ?? ''} onValueChange={v => patch({ lesson: v || undefined })} items={[{ value: '', label: 'All lessons' }, ...lessons.map(g => ({ label: g.label, options: g.lessons.map(l => ({ value: l.id, label: l.title })) }))]} />
           </>}
           {!draftReference && <>
-            {facets.collections.length > 0 && <FilterSelect ariaLabel="Topic" value={draft.collection ?? ''} onValueChange={pickTopic} items={[{ value: '', label: 'All topics' }, ...facets.collections.map(c => ({ value: c, label: c }))]} />}
-            {(facets.subtopics.length > 0 || draftSubtopic !== ALL_SUBTOPICS) && <FilterSelect ariaLabel="Subtopic" value={draftSubtopic} onValueChange={st => patch({ subtopic: st === ALL_SUBTOPICS ? '' : st })} items={[
-              { value: ALL_SUBTOPICS, label: 'All subtopics' },
-              ...(draft.collection
-                ? facets.subtopics.map(st => ({ value: st.id, label: st.label }))
-                : [...new Set(facets.subtopics.map(st => st.parentLabel))].map(parent => ({ label: parent, options: facets.subtopics.filter(st => st.parentLabel === parent).map(st => ({ value: st.id, label: st.label })) })) as FilterSelectItem[]),
-            ]} />}
+            <TopicSelect topics={facets.collections} subtopics={facets.subtopics} collection={draft.collection || ''} subtopic={draftSubtopic} allTopics="" allSubtopics="" onChange={patch}/>
             {facets.levels.length > 0 && <FilterSelect ariaLabel="HSK level" value={draft.level} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} />}
             {facets.posOptions.length > 0 && <FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.posOptions.map(p => ({ value: p, label: p }))]} />}
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}

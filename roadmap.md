@@ -188,5 +188,6 @@
 - [x] Rename the hints switch to "Glyph quick cards" (the ring also covers components and radicals, which are not characters); saved choices untouched
 
 ## Unified dropdown styling
+- [x] Combine Topics/Subtopics in Vocabulary and Flashcards with selectable parents and indented children; preserve existing filters and history.
 - [x] Replace remaining native `<select>` filter/settings dropdowns with one shared `FilterSelect` component (consistent themed popover, arrow inset, and text-to-arrow gap)
 - [x] Keep unchanged All topics and All types defaults from creating phantom Apply state; retain real edits and explicit empty-option clearing.

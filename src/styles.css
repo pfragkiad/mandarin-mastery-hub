@@ -1248,6 +1248,10 @@ select.filter-select,.form-field select,.practice-options select { appearance: n
 /* Radix Select triggers are buttons whose chevron is a real flex child, so they
    only need the inset itself, not the 34px room the background arrow reserves. */
 button.filter-select { padding-right: var(--select-arrow-inset); }
+/* Explicit nested options only; shared flat dropdowns keep their existing spacing. */
+:root { --select-option-indent: 20px; }
+.filter-option-nested { padding-left: calc(8px + var(--select-option-indent)); }
+.filter-option-parent { font-weight: 600; }
 .practice-preview-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; font-size: 11px; color: var(--muted-foreground); }
 .practice-preview-meta > span { display: flex; align-items: center; gap: 7px; font-weight: 500; color: var(--foreground); }
 .practice-preview-meta p { line-height: 1.6; }

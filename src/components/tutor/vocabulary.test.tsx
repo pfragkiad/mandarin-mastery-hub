@@ -18,6 +18,8 @@ vi.mock('./word-card', () => ({ WordCard: () => null, WordDetailContent: () => n
 vi.mock('./catalog-pagination', () => ({ CatalogPagination: () => null, StickyPagination: () => null }));
 vi.mock('./filter-form', () => ({ DraftFilterForm: () => null }));
 vi.mock('./library-play-menu', () => ({ LibraryPlayMenu: () => null }));
+// Library action links need a router; this test isolates paging, not navigation.
+vi.mock('./library-tools', () => ({ LibraryTools: () => null }));
 vi.mock('./card-reveal-toggle', () => ({ CardRevealToggle: () => null, cardRevealClass: () => '' }));
 vi.mock('./source-info', async () => { const actual = await vi.importActual<typeof import('./source-info')>('./source-info'); return { ...actual, SourceInfo: () => null }; });
 

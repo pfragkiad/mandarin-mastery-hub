@@ -19,6 +19,9 @@ export interface FilterSelectOption {
   /** Shorter label shown in the closed trigger when menu items carry extra detail. */
   triggerLabel?: string;
   disabled?: boolean;
+  /** Explicit hierarchy only: ordinary grouped options retain their flat styling. */
+  nested?: boolean;
+  parent?: boolean;
 }
 
 export interface FilterSelectGroup {
@@ -85,13 +88,13 @@ export function FilterSelect({
             <SelectGroup key={`${item.label}-${idx}`}>
               <SelectLabel>{item.label}</SelectLabel>
               {item.options.map(opt => (
-                <SelectItem key={encode(opt.value)} value={encode(opt.value)} {...(opt.disabled ? { disabled: true } : {})}>
+                <SelectItem key={encode(opt.value)} value={encode(opt.value)} className={cn(opt.nested && 'filter-option-nested', opt.parent && 'filter-option-parent')} {...(opt.disabled ? { disabled: true } : {})}>
                   {opt.label}
                 </SelectItem>
               ))}
             </SelectGroup>
           ) : (
-            <SelectItem key={encode(item.value)} value={encode(item.value)} {...(item.disabled ? { disabled: true } : {})}>
+            <SelectItem key={encode(item.value)} value={encode(item.value)} className={cn(item.nested && 'filter-option-nested', item.parent && 'filter-option-parent')} {...(item.disabled ? { disabled: true } : {})}>
               {item.label}
             </SelectItem>
           ),
