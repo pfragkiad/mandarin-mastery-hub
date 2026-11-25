@@ -196,9 +196,9 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
           ? subtopics.map(st => ({ value: st.id, label: st.label }))
           : [...new Set(subtopics.map(st => st.parentLabel))].map(parent => ({ label: parent, options: subtopics.filter(st => st.parentLabel === parent).map(st => ({ value: st.id, label: st.label })) })) as FilterSelectItem[]),
       ]} />}
-      <FilterSelect ariaLabel="HSK level" value={draft.level} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} />
-      <FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.pos.map(p => ({ value: p, label: p }))]} />
-      {kind === 'phrase' && <FilterSelect ariaLabel="Sentence style" value={draft.style ?? 'All styles'} onValueChange={style => patch({ style })} items={[{ value: 'All styles', label: 'All styles' }, ...facets.styles.map(s => ({ value: s, label: s }))]} />}
+      <FilterSelect ariaLabel="HSK level" value={draft.level || 'All levels'} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} />
+      <FilterSelect ariaLabel="Part of speech" value={draft.pos || 'All types'} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.pos.map(p => ({ value: p, label: p }))]} />
+      {kind === 'phrase' && <FilterSelect ariaLabel="Sentence style" value={draft.style || 'All styles'} onValueChange={style => patch({ style })} items={[{ value: 'All styles', label: 'All styles' }, ...facets.styles.map(s => ({ value: s, label: s }))]} />}
     </>; }}>{({ draft, patch }) => <>
       <PinyinSearchInput value={draft.q} onChange={q => patch({ q })} py={draft.py} onPyChange={py => patch({ py })} ariaLabel="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…"/>
     </>}</DraftFilterForm>

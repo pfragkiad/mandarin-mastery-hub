@@ -58,11 +58,17 @@ export function FilterSelect({
   className?: string;
 }) {
   const flat = items.flatMap(item => (isGroup(item) ? item.options : [item]));
-  const selected = flat.find(option => option.value === value);
+  // Never render an empty trigger: when `value` is empty (or matches an option with an
+  // empty label), fall back to the first labelled option (e.g. "All levels", "All types").
+  const hasLabel = (option: FilterSelectOption) => (option.triggerLabel ?? option.label).trim() !== '';
+  const selected = flat.find(option => option.value === value && hasLabel(option))
+    ?? (!value ? flat.find(hasLabel) : undefined);
+  const resolvedValue = selected ? selected.value : value;
+  const triggerText = (selected ? (selected.triggerLabel ?? selected.label) : value) || flat.find(hasLabel)?.triggerLabel || flat.find(hasLabel)?.label || '';
   return (
-    <Select value={encode(value)} onValueChange={next => onValueChange(decode(next))} {...(disabled ? { disabled: true } : {})}>
+    <Select value={encode(resolvedValue)} onValueChange={next => onValueChange(decode(next))} {...(disabled ? { disabled: true } : {})}>
       <SelectTrigger id={id} className={cn('filter-select gap-3', className)} aria-label={ariaLabel}>
-        <SelectValue>{selected ? (selected.triggerLabel ?? selected.label) : value}</SelectValue>
+        <SelectValue>{triggerText}</SelectValue>
       </SelectTrigger>
       <SelectContent>
         {items.map((item, idx) =>
