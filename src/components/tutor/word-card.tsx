@@ -45,14 +45,14 @@ import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
  * card); a phrase's characters get the words-first words it contains, never itself.
  * Hints off: the plain pairing glyphs, unchanged.
  */
-function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typeof usePhrasePairing> }) {
+function HeadwordGlyphs({ word, pairing, text = word.hanzi }: { word: Word; pairing: ReturnType<typeof usePhrasePairing>; text?: string }) {
   const hints = useLessonHints();
   const phrase = vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom';
-  const chars = Array.from(word.hanzi);
+  const chars = Array.from(text);
   const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: vocabularyKind(word), word: word.id }, audio: word.audio ?? null };
-  const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
+  const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(text, false, text) : null), [hints, phrase, text]);
   // shows this word (unlinked, the open card) plus the Character/Component/Radical rows.
-  if (!phrase && chars.length === 1) return hints?.enabled && isHanziChar(word.hanzi) ? <HintChar glyph={word.hanzi} word={own}/> : <>{word.hanzi}</>;
+  if (!phrase && chars.length === 1) return hints?.enabled && isHanziChar(text) ? <HintChar glyph={text} word={own}/> : <>{text}</>;
   if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
   return <>{chars.map((ch, i) => isHanziChar(ch)
     ? <HintChar key={i} glyph={ch} word={phrase ? contexts?.[i] ?? null : own} {...pairing.glyphProps(i)}/>
@@ -103,6 +103,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   // gold Radical #N, phrase style; Traditional comes from the title's own `script` pill.
   const hskPill = wordHskPill(word);
   const idiom = word.idiomMeta;
+  const idiomTraditional = preferences.includeTraditional && idiom?.traditional && idiom.traditional !== word.hanzi ? idiom.traditional : null;
   const hasPills = hskPill !== null || idiom != null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
   const topics = wordCollections(word).filter(Boolean);
   // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
@@ -114,13 +115,12 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const headwordHints = true;
   // One hints provider for the whole card: the heading and "In a sentence" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
-    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(idiomTraditional ? { glyphAside: <strong lang="zh-Hant" className="traditional-character tile-stamp-traditional idiom-traditional-glyph" title="Traditional form"><HeadwordGlyphs word={word} text={idiomTraditional} pairing={pairing}/></strong> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
         row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
     {(word.type || topics.length > 0 || (!hskPill && word.level) || idiom) && <dl className="catalog-facts">
       {idiom && <div><dt>Frequency rank</dt><dd className="catalog-record-value"><UsageLabel rank={idiom.rank} prefix="#"/></dd></div>}
-      {idiom?.traditional && <div><dt>Traditional</dt><dd className="catalog-record-value" lang="zh-Hant">{idiom.traditional}</dd></div>}
       {idiom?.score != null && <div><dt>Frequency score</dt><dd className="catalog-record-value">{idiom.score}</dd></div>}
       {!hskPill && !idiom && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
       {word.type && <div><dt>Part of speech</dt><dd className="catalog-record-value">{word.type}</dd></div>}
@@ -220,6 +220,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // attached one (primary first), otherwise the parent topic. Nothing is inferred from the
   // idiom's text, so a record with neither shows no subject label at all.
   const idiomTopicLabel = vocabularyKind(word) === 'idiom' ? primarySubtopicLabel(word) ?? word.collection : '';
+  const idiomTraditional = vocabularyKind(word) === 'idiom' && preferences.includeTraditional && word.idiomMeta?.traditional && word.idiomMeta.traditional !== word.hanzi ? word.idiomMeta.traditional : null;
   // Phrase cards wear the same subject label where the type used to sit: the recorded subtopic
   // (inherited from the parent word) when there is one, otherwise the parent topic. A phrase
   // with neither keeps its type text, so the row is never left without a label.
@@ -233,7 +234,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // A translation that overflows the card's line limit (two lines clamped in the Compact grid,
   // three in Comfortable) drops its last semicolon senses on the card only; the first always stays.
   const cardMeaning = useSenseTrim(bodyRef, word.meaning);
-  useSideFit(bodyRef, true, [word.hanzi, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView], { shrinkText: true, rowSync: true });
+  useSideFit(bodyRef, true, [word.hanzi, idiomTraditional, word.pinyin, word.meaning, preferences.pinyin, preferences.meaning, preferences.font, preferences.libraryView], { shrinkText: true, rowSync: true });
   // The HSK, Radical, Traditional and phrase-style pills come from WordIdentityPills, shared with the detail card.
   // One-character words that are sourced radicals (八, 门) share their Characters card's gold
   // ink and Radical #N pill (card-ink.ts wordInk/wordRadicalNumber, the one central rule).
@@ -256,7 +257,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
-    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired || hintsOn ? Array.from(line).map((ch, i) => cardGlyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={cardMeaning}/></span>}</Button>
+    {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired || hintsOn ? Array.from(line).map((ch, i) => cardGlyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : idiomTraditional ? <span className="tile-hanzi-row word-hanzi-forms"><span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span><span lang="zh-Hant" className={`word-hanzi-tile traditional-character tile-stamp-traditional${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style} title="Traditional form">{(() => { const tradFit = wordTileFit(idiomTraditional); const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tradFit.lines === 2 ? <><span className="word-hanzi-line">{g(tradFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tradFit.parts[1]!, Array.from(tradFit.parts[0]!).length)}</span></> : g(idiomTraditional, 0); })()}</span></span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={cardMeaning}/></span>}</Button>
     <RecordCardFooter footerRef={footerRef} metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
   </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
 }

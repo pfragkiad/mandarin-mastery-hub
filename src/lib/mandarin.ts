@@ -70,7 +70,7 @@ export function filterWords(
   const matches = (w: Word) =>
     pinyinOnly
       ? pinyinReadingMatches(w.pinyin, query, pinyinExact)
-      : normalize(`${w.hanzi} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q) ||
+      : normalize(`${w.hanzi} ${w.idiomMeta?.traditional ?? ""} ${w.pinyin} ${w.meaning} ${w.type}`).includes(q) ||
         pinyinReadingMatches(w.pinyin, query, false);
   return items.filter(
     (w) =>

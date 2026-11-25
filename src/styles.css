@@ -805,7 +805,8 @@ this keeps the number right beside the stroke tile. */
 :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
-    .pinyin-character-glyph.is-traditional) { position: relative; }
+    .pinyin-character-glyph.is-traditional,
+    .tile-stamp-traditional) { position: relative; }
 :is(.tile-form.traditional-character,
     .decomposition-glyph.traditional-character,
     .radical-form-choice.is-traditional,
@@ -2381,6 +2382,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 /* Compact word headwords get the same thin box as Compact glyph tiles (.tile-form:
    1.34em square, same radius); longer words widen it on one line. */
 .word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 1.34em; height: 1.34em; padding: 0 calc(.17em - 1px); line-height: 1; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; white-space: nowrap; }
+.word-card .word-hanzi-forms { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; max-width: 100%; }
+.catalog-detail-glyph-row > .idiom-traditional-glyph { font-family: var(--font-hanzi); font-weight: 400; }
 .library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
 .library-list-view .word-card.comfortable-word-card > .word-card-bottom > span:first-child { visibility: hidden; }
 .library-list-view .word-card.comfortable-word-card .catalog-card-indicators { justify-self: end; display: flex; align-items: center; gap: 8px; }
