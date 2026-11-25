@@ -15,6 +15,6 @@ export function CharacterSentenceIndicator({ recordId }: { recordId: string }) {
     return () => { cancelled = true; };
   }, [recordId]);
   return loaded?.recordId === recordId && loaded.available
-    ? <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>
+    ? <span title="In a phrase available"><Quote className="catalog-source-icon" aria-label="In a phrase available"/></span>
     : null;
 }

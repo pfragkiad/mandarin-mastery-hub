@@ -20,8 +20,10 @@ vi.mock('@/lib/character-tatoeba-examples', async () => ({
 vi.mock('@/lib/character-hsk-examples', () => ({ loadCharacterHskExample: vi.fn(async () => null) }));
 
 vi.mock('@tanstack/react-router', () => ({
-  // Forward props so Button asChild classes (e.g. traditional-character) reach the anchor.
-  Link: ({ children, to, params, ...props }: { children?: ReactNode; to?: string; params?: { lessonId?: string } } & Record<string, unknown>) => <a href={to?.replace('$lessonId', params?.lessonId ?? '')} {...props}>{children}</a>,
+  // Forward props so Button asChild classes (e.g. traditional-character) reach the anchor,
+  // and fold `search` into the href the way the real router does, so link assertions can
+  // check the destination's filters (e.g. the phrase section's "Search in phrases").
+  Link: ({ children, to, params, search, ...props }: { children?: ReactNode; to?: string; params?: { lessonId?: string }; search?: Record<string, unknown> } & Record<string, unknown>) => <a href={`${to?.replace('$lessonId', params?.lessonId ?? '')}${search ? `?${new URLSearchParams(Object.entries(search).map(([k, v]) => [k, String(v)]))}` : ''}`} {...props}>{children}</a>,
   useNavigate: () => () => {},
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false, items: [] as Word[] }));
@@ -86,7 +88,7 @@ describe('Absent-record notes', () => {
     const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
     const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
     await act(async () => { await Promise.resolve(); });
-    await screen.findByText('No recorded example sentence yet.');
+    await screen.findByText('No recorded example phrase yet.');
     expect(container.querySelector('.sentence-hanzi')).toBeNull();
     expect(screen.queryByRole('button', { name: /Sentence source/ })).toBeNull();
   });
@@ -138,18 +140,30 @@ describe('Absent-record notes', () => {
     expect(screen.getByText(/Draft lesson example/)).toBeInTheDocument();
     rerender(<GlyphUsageExamples entry={{ ...lang, id: 'Characters:崾', hanzi: '崾' }} kind="Characters" />);
     expect(container.querySelector('.sentence-hanzi')).toBeNull();
-    expect(screen.getByText('No recorded example sentence yet.')).toBeInTheDocument();
+    expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
   });
 
-  it('keeps the sentence section with an external search when a character has no example', () => {
+  it('keeps the phrase section with its internal search when a character has no example', () => {
     const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
     render(<GlyphUsageExamples entry={he} kind="Characters" />);
-    expect(screen.getByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toBeInTheDocument();
-    expect(screen.getByText('No recorded example sentence yet.')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'IN A PHRASE' })).toBeInTheDocument();
+    expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
+    const link = screen.getByRole('link', { name: /Search in phrases/ });
+    expect(decodeURI(link.getAttribute('href') ?? '')).toBe('/vocabulary?tab=phrase&q=和');
+    // The external search is no longer in the section head: it lives in the card's action row.
+    expect(screen.queryByRole('link', { name: /Search on the internet/ })).toBeNull();
+  });
+
+  it('puts the external example search in the detail card\'s action row', () => {
+    const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
+    const { container } = render(<CharacterDetails entry={he} kind="Characters" />);
     const link = screen.getByRole('link', { name: /Search on the internet/ });
     expect(decodeURI(link.getAttribute('href') ?? '')).toBe('https://www.purpleculture.net/sample-sentences/?word=和');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link.getAttribute('rel')).toContain('noopener');
+    // It sits in the bottom action row, beside Trace/Recall/Bookmark, not above the examples.
+    expect(link.closest('.word-detail-actions')).not.toBeNull();
+    expect(container.querySelector('.sentence-section .find-examples-link.external-examples-link')).toBeNull();
   });
 
   it('shows the recorded breakdown on a radical card, like characters and components', () => {

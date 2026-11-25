@@ -25,7 +25,7 @@ export function CharacterLessonsSection({ recordId, hanzi }: { recordId: string;
   </section>;
 }
 
-/** Card indicator (top row, beside "In a sentence available"): a book when a lesson covers this exact character. */
+/** Card indicator (top row, beside "In a phrase available"): a book when a lesson covers this exact character. */
 export function CharacterLessonIndicator({ recordId, hanzi }: { recordId: string; hanzi: string }) {
   const count = characterLessons(recordId, hanzi).length;
   if (!count) return null;

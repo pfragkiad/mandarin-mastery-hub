@@ -5,7 +5,7 @@ import { useWorkspace } from './workspace';
 
 /**
  * The one shared words-first rule for recorded Chinese text (lesson lines and every
- * "In a sentence" example on detail cards), so grouping and navigation never drift.
+ * "In a phrase" example on detail cards), so grouping and navigation never drift.
  *
  * Returns `wordFor` (an exact, unique Vocabulary headword — one-character words too (owner-requested: 我's word entry carries HSK/lesson content, so it outranks the plain character), else null) and
  * `wordsFor` (per Array.from(text) index: the identified word the character sits in —

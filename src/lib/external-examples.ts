@@ -1,5 +1,5 @@
 /**
- * External example-sentence searches offered from the "In a sentence" section.
+ * External example-phrase searches offered from the detail card's action row.
  *
  * These are plain search links to third-party sites — nothing is fetched, imported or
  * stored, so no external sentence ever becomes a recorded example in the catalogue.

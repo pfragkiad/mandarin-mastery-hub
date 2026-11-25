@@ -1,31 +1,33 @@
 import { useId, useState, type ReactNode, type SyntheticEvent } from 'react';
-import { ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { externalExampleSources } from '@/lib/external-examples';
 import { LessonHintsProvider, useLessonHints } from './lesson-hints';
 import { useWorkspace } from './workspace';
 
 /**
- * The shared "In a sentence" section of word and character detail cards.
+ * The shared "In a phrase" section of word and character detail cards.
  *
- * Inputs: `hanzi` — the exact written form searched externally; `children` — the
+ * Inputs: `hanzi` — the exact written form searched; `children` — the
  * recorded examples, or nothing. With no recorded example the section still shows
- * (label + absent note) so "Find more examples" is always reachable.
+ * (label + absent note) so the search links are always reachable.
  *
- * "Find more examples" is a plain link opening the external search in a new
- * window/tab (target=_blank, noopener) so the current page stays open; nothing from
- * the external site is imported into the catalogue.
+ * The head carries the internal "Search in phrases" link, the same shape as the idiom
+ * section's "Search in idioms": a router Link into the Vocabulary Phrases tab filtered
+ * by this exact written form, so the results are the app's own records. The external
+ * search ("Search on the internet") sits in the card's action row (DetailRecordActions),
+ * beside Trace/Recall/Bookmark, as a plain new-window link.
  */
 export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
-  const source = externalExampleSources(hanzi)[0];
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
-  return <section className="glyph-usage-section sentence-section" aria-label="In a sentence">
+  return <section className="glyph-usage-section sentence-section" aria-label="In a phrase">
     <div className="sentence-section-head">
-      <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A SENTENCE</h3>
-      {source && <a className="find-examples-link" href={source.url} target="_blank" rel="noopener noreferrer" title={`Search ${source.name} for example sentences with ${hanzi} (opens in a new window)`}>
-        Search on the internet<ExternalExamplesIcon/>
-      </a>}
+      <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A PHRASE</h3>
+      <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'phrase', q: hanzi }} title={`Search phrases containing ${hanzi}`}>
+        Search in phrases<ArrowRight className="find-examples-icon" aria-hidden="true"/>
+      </Link>
     </div>
-    {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}
+    {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example phrase yet.</p></div>}
   </section>;
 }
 
@@ -53,8 +55,8 @@ export function MoreExamples({ examples }: { examples: ReactNode[] }) {
   </>;
 }
 
-/** External-search icon shared by "Find more examples" and the cards' "Examples" button:
- *  the familiar up-right arrow that says "opens outside the app". */
+/** External-search icon shared by the cards' "Examples" button and the detail action row's
+ *  "Search on the internet" link: the familiar up-right arrow that says "opens outside the app". */
 export function ExternalExamplesIcon() {
   return <ArrowUpRight className="find-examples-icon" aria-hidden="true"/>;
 }
@@ -78,7 +80,7 @@ export function TileExamplesLink({ hanzi }: { hanzi: string }) {
 /**
  * Detail-card sentences get the same quick-card popups as lessons (one shared
  * LessonHintsProvider, same remembered "Character hints" switch, absent = on), so tapping
- * a character in "In a sentence" opens its mini card with the containing word. Inside a
+ * a character in "In a phrase" opens its mini card with the containing word. Inside a
  * lesson (a provider already above) nothing is added, so there is never a second popup.
  * Word/phrase detail cards wrap their whole content in it (word-card.tsx) so the heading's
  * characters and the sentences share that one popup.

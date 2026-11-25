@@ -46,7 +46,7 @@ const HAN_CHAR = /^\p{Script=Han}$/u;
 /**
  * One hover pairing shared by a recorded hanzi field and its recorded pinyin
  * (phrase-pairing.tsx): hovering either side rings its counterpart, exactly like the
- * phrase cards and the "In a sentence" cross-highlight. This is independent of the
+ * phrase cards and the "In a phrase" cross-highlight. This is independent of the
  * character-hints switch — hints own click (quick card), pairing owns hover — so the
  * borders work with hints on or off. Fails closed to the plain recorded text until the
  * syllable inventory loads or the recorded pinyin does not align with the characters.

@@ -1,7 +1,7 @@
 /**
  * Pairs a phrase headword's characters with the syllables of its recorded pinyin, so phrase
  * cards and the phrase detail heading can cross-highlight character ↔ syllable on hover
- * (the same interaction as "In a sentence", see sentence-align.ts).
+ * (the same interaction as "In a phrase", see sentence-align.ts).
  *
  * Phrase pinyin is recorded word by word ("bù hǎoyìsi", "Xièxie nǐ!"), not one token per
  * character, and phrases carry no per-character readings. So each recorded token is split
@@ -117,7 +117,7 @@ export function alignPhrasePinyin(hanzi: string, pinyin: string, inventory: Read
 }
 
 /**
- * Pairing for a recorded example sentence ("In a sentence", lesson examples). Sentence
+ * Pairing for a recorded example sentence ("In a phrase", lesson examples). Sentence
  * pinyin is recorded either one token per character ("Shàng yí cì wǒ…"), which pairs by
  * position (alignSentencePinyin), or word by word ("Wǒ qù guo Běijīng yí cì."), which is
  * split into syllables exactly like phrase pinyin (alignPhrasePinyin, needs the inventory).

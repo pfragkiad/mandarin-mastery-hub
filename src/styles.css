@@ -442,9 +442,9 @@ html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example
 .glyph-usage-relation { margin-top: 5px; font-size: 11px; color: var(--muted-foreground); }
 .glyph-usage-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
 .glyph-usage-section > .glyph-usage-example:first-of-type > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
-/* "In a sentence" label row: label left, "Find more examples" right; wraps under the label
+/* "In a phrase" label row: label left, "Search in phrases" right; wraps under the label
    when the card is too narrow for both. The link reads by accent colour on hover, no underline. */
-/* The row is only as tall as its heading, so "In a sentence" starts the same distance below its
+/* The row is only as tall as its heading, so "In a phrase" starts the same distance below its
    divider as every other section label; the link's hover badge (3px padding) overhangs the line. */
 .sentence-section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; }
 .sentence-section-head > .find-examples-link { margin-block: -5px; }
@@ -1885,7 +1885,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .radical-family-section { margin: 14px 0; padding-top: 12px; }
 /* Dividers and spacing in the detail window. Only the facts row (Part of speech, Topic, Rank,
    Strokes…) is framed above and below, and the bottom actions row keeps its top line as a footer;
-   other sections (In a sentence, Lessons, Decomposition | Etymology drawer, radical family) are
+   other sections (In a phrase, Lessons, Decomposition | Etymology drawer, radical family) are
    separated by whitespace alone, so bordered content such as lesson cards never stacks against an
    extra hairline. One unit, --detail-section-pad, sets every boundary distance:
      facts content ↔ its lines, facts line → first section, last section → action line,
@@ -3173,7 +3173,7 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 .stroke-tab-list { display: flex; align-items: center; gap: 22px; min-width: 0; flex-wrap: wrap; }
 .stroke-tab-item { display: inline-flex; align-items: center; gap: 8px; }
 .stroke-tab-item .source-info-trigger { margin-top: 0; flex-shrink: 0; }
-/* Drawer tab labels match the section eyebrows ("IN A SENTENCE", "LESSONS"): small,
+/* Drawer tab labels match the section eyebrows ("IN A PHRASE", "LESSONS"): small,
    uppercase, wide-tracked, muted; the open tab reads in full colour with its underline. */
 .stroke-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; background: none; border: 0; padding: 10px 2px 12px; font: inherit; font-size: 9px; letter-spacing: 1.65px; font-weight: 600; text-transform: uppercase; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
 .stroke-tab:hover:not(:disabled) { color: var(--foreground); }

@@ -4,7 +4,7 @@ import { useSyllableInventory } from './use-syllable-inventory';
 
 /**
  * Character ↔ syllable hover pairing for a phrase headword (phrase cards' hanzi box and
- * the phrase detail heading), matching the "In a sentence" cross-highlight: hovering a
+ * the phrase detail heading), matching the "In a phrase" cross-highlight: hovering a
  * character draws a small ring around its pinyin syllable and vice versa; leaving either
  * side removes it.
  * Inputs: the recorded hanzi and pinyin, and `enabled` (phrases only).

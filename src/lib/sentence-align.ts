@@ -1,6 +1,6 @@
 /**
  * Aligns a recorded example sentence's hanzi characters with the syllables of its
- * recorded pinyin, so the "In a sentence" section can cross-highlight the
+ * recorded pinyin, so the "In a phrase" section can cross-highlight the
  * character ↔ syllable pair under the pointer.
  *
  * Pure presentation pairing: the sentence and its pinyin are both recorded data,

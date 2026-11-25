@@ -21,6 +21,7 @@ import { VocabularyDecomposition, VocabularyDecompositionInfo } from './vocabula
 import { GlyphDetailTabs } from './detail-tabs';
 import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './lesson-links';
 import { SentenceExample } from './sentence-example';
+import { externalExampleSources } from '@/lib/external-examples';
 import { MoreExamples, SentenceHints, SentenceSection, TileExamplesLink } from './sentence-section';
 import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
 import { isHanziChar } from '@/lib/sentence-align';
@@ -40,7 +41,7 @@ import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
  * Inputs: the record and its character ↔ syllable `pairing` (usePhrasePairing).
  * Hover keeps the per-character pairing ring; with the remembered "Character hints" switch
  * on, each Han character is also a quick-card target (the same popup as lessons and
- * "In a sentence"), so a tap reaches that character's Characters/Components/Radicals cards.
+ * "In a phrase"), so a tap reaches that character's Characters/Components/Radicals cards.
  * Word context: a word's characters sit in that exact record (shown unlinked, it is the open
  * card); a phrase's characters get the words-first words it contains, never itself.
  * Hints off: the plain pairing glyphs, unchanged.
@@ -106,14 +107,14 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   const idiomTraditional = preferences.includeTraditional && idiom?.traditional && idiom.traditional !== word.hanzi ? idiom.traditional : null;
   const hasPills = hskPill !== null || idiom != null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
   const topics = wordCollections(word).filter(Boolean);
-  // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
+  // Phrases pair each heading character with its pinyin syllable on hover (as in "In a phrase").
   // Multi-character words pair the same way; single glyphs have nothing to pair.
   const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
   const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
   // Every heading is a hint target: multi-character headings per character, one-character
   // words as a whole, so 八 reaches its Character/Component/Radical cards in one tap.
   const headwordHints = true;
-  // One hints provider for the whole card: the heading and "In a sentence" share one popup.
+  // One hints provider for the whole card: the heading and "In a phrase" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
     <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(idiomTraditional ? { glyphAside: <strong lang="zh-Hant" className="traditional-character tile-stamp-traditional idiom-traditional-glyph" title="Traditional form"><HeadwordGlyphs word={word} text={idiomTraditional} pairing={pairing}/></strong> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
@@ -127,8 +128,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       {topics.length > 0 && <div><dt>{topics.length > 1 ? 'Topics' : 'Topic'}</dt><dd className="catalog-record-value">{topics.join(' · ')}</dd></div>}
     </dl>}
     {word.entry?.studyMetadata?.posNote && <p className="library-note">{word.entry.studyMetadata.posNote}</p>}
-    {/* Words always show "In a sentence" (with "Find more examples"), even with no recorded
-        sentence; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
+    {/* Words always show "In a phrase" (with its search links), even with no recorded
+        example; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
     {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
       {/* The first conversational example is always visible (orderExamples, stable);
           further ones open from the show-more arrow. Each keeps its own exact audio and note. */}
@@ -143,8 +144,9 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
         (one headed block per unique character, like the Decomposition list); phrases have none. */}
     <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={etymology}
       decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
-    {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph). */}
-    <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close}/></div>
+    {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph).
+        The external example search joins the row exactly when the "In a phrase" section above is shown. */}
+    <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close} internetSearch={word.sentence || vocabularyKind(word) === 'word' ? externalExampleSources(word.hanzi)[0] : undefined}/></div>
   </SentenceHints>;
 }
 
@@ -253,7 +255,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{(phraseTopicLabel || word.type) && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{phraseTopicLabel || word.type}</span></CardTopMeta>}<WordIdentityPills word={word}/>{vocabularyKind(word) === 'idiom' && idiomTopicLabel && <CardTopMeta><span className="card-top-pos">{idiomTopicLabel}</span></CardTopMeta>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
+    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{(phraseTopicLabel || word.type) && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{phraseTopicLabel || word.type}</span></CardTopMeta>}<WordIdentityPills word={word}/>{vocabularyKind(word) === 'idiom' && idiomTopicLabel && <CardTopMeta><span className="card-top-pos">{idiomTopicLabel}</span></CardTopMeta>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a phrase available"><Quote className="catalog-source-icon" aria-label="In a phrase available"/></span>}</span>}</div>}
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}

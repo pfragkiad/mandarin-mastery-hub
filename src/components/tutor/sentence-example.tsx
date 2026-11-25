@@ -28,7 +28,7 @@ import { useSentenceWords } from './use-sentence-words';
  * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
  * links while hints are on, and plain text while they are off; pairing works either way.
  */
-export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest, sourceDetails }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null | undefined; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest; sourceDetails?: ReactNode }) {
+export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A PHRASE', onNavigate, audioRequest, sourceDetails }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null | undefined; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest; sourceDetails?: ReactNode }) {
   const { preferences } = useWorkspace();
   const hints = useLessonHints();
   // Pairing state: the index of the hovered/focused pair, or null. Both sides

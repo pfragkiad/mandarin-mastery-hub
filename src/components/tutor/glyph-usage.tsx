@@ -123,7 +123,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       </span>
     </div>)}</div>
   </section>;
-  // "In a sentence" always shows for characters, even with no recorded example, so
+  // "In a phrase" always shows for characters, even with no recorded example, so
   // External search of the exact hanzi is always reachable. Imported file names
   // and review status identifiers are internal metadata, not learner hints.
   const sentenceExamples = examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
