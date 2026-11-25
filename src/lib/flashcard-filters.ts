@@ -13,13 +13,14 @@ export const flashcardKinds = [
   { value: 'Ref:Radical', label: 'Radicals' },
   { value: 'Words', label: 'Words' },
   { value: 'Phrases', label: 'Phrases' },
+  { value: 'Idioms', label: 'Idioms' },
 ] as const;
 export type FlashcardKind = typeof flashcardKinds[number]['value'];
 export const DEFAULT_FLASHCARD_KIND: FlashcardKind = 'Ref:Character';
 export const flashcardKindLabel = (kind: string) => flashcardKinds.find(k => k.value === kind)?.label ?? kind;
-/** 'word' / 'phrase' for vocabulary kinds, undefined for reference kinds. */
-export const flashcardVocabularyKind = (kind: string): 'word' | 'phrase' | undefined =>
-  kind === 'Words' ? 'word' : kind === 'Phrases' ? 'phrase' : undefined;
+/** 'word' / 'phrase' / 'idiom' for vocabulary kinds, undefined for reference kinds. */
+export const flashcardVocabularyKind = (kind: string): 'word' | 'phrase' | 'idiom' | undefined =>
+  kind === 'Words' ? 'word' : kind === 'Phrases' ? 'phrase' : kind === 'Idioms' ? 'idiom' : undefined;
 
 export function normalizeFlashcardCategory(category: string | undefined, collection: string | undefined, knownCollections: readonly string[]): { category: FlashcardKind; collection: string } {
   const kind = flashcardKinds.find(k => k.value === category);

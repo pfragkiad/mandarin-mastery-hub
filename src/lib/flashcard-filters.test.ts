@@ -6,6 +6,7 @@ describe('normalizeFlashcardCategory', () => {
   it('defaults to Characters', () => expect(normalizeFlashcardCategory(undefined, undefined, known)).toEqual({ category: 'Ref:Character', collection: '' }));
   it('keeps a vocabulary collection only for Words/Phrases', () => {
     expect(normalizeFlashcardCategory('Phrases', 'Greetings', known)).toEqual({ category: 'Phrases', collection: 'Greetings' });
+    expect(normalizeFlashcardCategory('Idioms', 'Actions & Change', known)).toEqual({ category: 'Idioms', collection: 'Actions & Change' });
     expect(normalizeFlashcardCategory('Ref:Radical', 'Greetings', known)).toEqual({ category: 'Ref:Radical', collection: '' });
   });
   it('reads older collection links as Words of that collection', () => {
