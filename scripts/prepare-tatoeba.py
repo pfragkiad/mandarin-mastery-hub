@@ -167,6 +167,40 @@ def audio_reuse(license_name):
     return 'explicit_license_requires_terms_review'
 
 
+def sentence_metadata(sentence, mark):
+    """Frontend handoff: recorded concerns are warnings; pending review is neutral.
+
+    The text hash binds later external/AI findings to the exact reviewed wording.
+    Chinese, English and pinyin remain independently reviewable source fields.
+    """
+    messages = {
+        'negative_user_review': 'At least one contributor rated this sentence not OK.',
+        'all_positive_marks_predate_text_edit': 'The positive marks predate the latest recorded text edit.',
+    }
+    concerns = [{'code': code, 'scope': 'sentence', 'message': messages[code]}
+                for code in mark['holds'] if code in messages]
+    for tag in mark['excludedTags']:
+        scope = 'pinyin' if 'transliter' in tag or 'transcription' in tag else 'translation' if 'translation' in tag else 'audio' if 'audio' in tag else 'sentence'
+        concerns.append({'code': 'source_tag', 'scope': scope, 'sourceTag': tag,
+                         'message': f'Tatoeba source tag: {tag}'})
+    return {
+        'schemaVersion': 1,
+        'binding': {'sentenceId': sentence['id'], 'language': sentence['language'],
+                    'textSha256': hashlib.sha256(sentence['text'].encode('utf-8')).hexdigest()},
+        'source': {'kind': 'tatoeba', 'label': 'Tatoeba', 'url': sentence['url'],
+                   'contributor': sentence['contributor'], 'license': 'CC BY 2.0 FR'},
+        'review': {'status': 'concerns' if concerns else 'source_marked' if mark['positiveMarked'] else 'unrecorded',
+                   'method': 'source_metadata_only', 'okTag': mark['okTag'],
+                   'positiveRatings': mark['positiveReviews'], 'negativeRatings': mark['negativeReviews'],
+                   'unsureRatings': mark['unsureReviews'], 'concerns': concerns,
+                   'secondaryReview': 'not_started', 'aiReviewed': False,
+                   'translationVerified': False, 'pinyinVerified': False,
+                   'targetCharacterSenseVerified': False},
+        'display': {'marker': 'warning_triangle' if concerns else 'source_info',
+                    'label': 'Recorded concerns: review needed' if concerns else 'Sentence source and review details'},
+    }
+
+
 def filter_sources(write=False, check=False):
     manifest = check_sources()
     source_paths = {key: DEST / value['path'] for key, value in manifest['files'].items()}
@@ -245,9 +279,10 @@ def filter_sources(write=False, check=False):
 
     def annotated(sentence):
         identity = sentence['id']
+        mark = marking(sentence, tags[identity], reviews[identity], taggings[identity])
         return {**sentence, 'license': 'CC BY 2.0 FR', 'tags': sorted(tags[identity]),
                 'reviews': reviews[identity], 'taggings': taggings[identity],
-                'marking': marking(sentence, tags[identity], reviews[identity], taggings[identity])}
+                'marking': mark, 'sentenceMetadata': sentence_metadata(sentence, mark)}
 
     records = []
     for identity in sorted(marked):

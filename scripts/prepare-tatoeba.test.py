@@ -1,5 +1,6 @@
 """Boundary checks for source-mark filtering, evidence dates and exact identities."""
 import importlib.util
+import csv
 import json
 from pathlib import Path
 import sys
@@ -61,6 +62,18 @@ class MarkingTests(unittest.TestCase):
         self.assertEqual(module.audio_reuse(''), 'not_permitted_without_separate_permission')
         self.assertEqual(module.audio_reuse('CC BY-NC 4.0'), 'noncommercial_terms_only')
 
+    def test_frontend_marker_distinguishes_pending_review_from_recorded_concerns(self):
+        sentence = {'id': 2, 'language': 'cmn', 'text': 'source text', 'contributor': 'owner', 'url': 'https://tatoeba.org/en/sentences/show/2'}
+        positive = module.marking(self.sentence(), ['OK'], [], [])
+        pending = module.sentence_metadata(sentence, positive)
+        self.assertEqual(pending['display']['marker'], 'source_info')
+        self.assertFalse(pending['review']['translationVerified'])
+        flagged = module.marking(self.sentence(), ['OK', '@wrong transliteration'], [], [])
+        metadata = module.sentence_metadata(sentence, flagged)
+        self.assertEqual(metadata['display']['marker'], 'warning_triangle')
+        self.assertEqual(metadata['review']['concerns'][0]['scope'], 'pinyin')
+        self.assertEqual(len(metadata['binding']['textSha256']), 64)
+
     def test_snapshot_outputs_contain_only_positive_marked_records(self):
         report_path = ROOT / 'reports/tatoeba-positive-inventory.json'
         if not report_path.exists():
@@ -79,6 +92,34 @@ class MarkingTests(unittest.TestCase):
         audio = report['audio']
         self.assertLessEqual(audio['distinctSentenceIdsInAudioExport'], audio['recordingRows'])
         self.assertEqual(sum(audio['licenseCounts'].values()), audio['recordingRows'])
+
+    def test_translation_handoff_has_only_four_columns_and_exact_direct_source_pairs(self):
+        path = ROOT / 'reports/tatoeba-translation-review.tsv'
+        if not path.exists():
+            self.skipTest('Translation report has not been exported')
+        inventory = json.loads((ROOT / 'reports/tatoeba-positive-inventory.json').read_text('utf-8'))
+        sources = {row['id']: row for part in inventory['parts']
+                   for row in (json.loads(line) for line in (module.DEST / 'selected' / part).read_text('utf-8').splitlines())}
+        with path.open(encoding='utf-8', newline='') as stream:
+            reader = csv.reader(stream, delimiter='\t')
+            self.assertEqual(next(reader), ['id', 'character', 'sentence', 'translation'])
+            rows = list(reader)
+        self.assertEqual(len(rows), inventory['counts']['possibleAdditionalCharactersWithCleanDirectEnglish'])
+        self.assertEqual(len({row[0] for row in rows}), len(rows))
+        self.assertEqual(len({row[1] for row in rows}), len(rows))
+        for row in rows:
+            self.assertEqual(len(row), 4)
+            identity, glyph, chinese, english = row
+            prefix, cmn_id, eng_id, codepoint = identity.split(':')
+            self.assertEqual(prefix, 'tatoeba')
+            self.assertEqual(ord(glyph), int(codepoint.removeprefix('U+'), 16))
+            source = sources[int(cmn_id)]
+            self.assertTrue(source['marking']['eligibleForSecondaryReview'])
+            self.assertIn(glyph, chinese)
+            self.assertEqual(source['text'], chinese)
+            translation = next(item for item in source['englishTranslations'] if item['id'] == int(eng_id))
+            self.assertFalse(translation['marking']['holds'])
+            self.assertEqual(translation['text'], english)
 
 
 if __name__ == '__main__':

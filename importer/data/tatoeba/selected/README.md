@@ -26,3 +26,30 @@ review has run; nothing here is approved or imported into the application.
 Audio entries are metadata only. A blank licence does not permit reuse outside
 Tatoeba; the snapshot's explicitly licensed Mandarin clips are noncommercial.
 No audio binaries are downloaded, committed or attached to app records.
+
+## Frontend marker metadata
+
+Each Mandarin and linked English record has its own `sentenceMetadata` object:
+
+| Field | Contract |
+| --- | --- |
+| `schemaVersion` | `1`. |
+| `binding` | Exact source sentence ID, language (`cmn` or `eng`) and SHA-256 of its unchanged UTF-8 text. Later review results must match this binding. |
+| `source` | `kind: tatoeba`, source label/URL, named contributor and text licence. This is the attribution behind the information marker. |
+| `review.status` | `source_marked`, `concerns` or `unrecorded`. Positive source marks are not an independent certification. |
+| `review.concerns[]` | Stable `code`, affected `scope` (`sentence`, `translation`, `pinyin` or `audio`), readable `message`, plus exact `sourceTag` when applicable. |
+| `review.okTag`, `positiveRatings`, `negativeRatings`, `unsureRatings` | Separate evidence fields; never collapsed into a quality percentage. Full identities/dates remain in the containing record's reviews/taggings. |
+| `review.secondaryReview`, `aiReviewed` | Currently `not_started` / `false`; pending review alone is not a warning. |
+| `translationVerified`, `pinyinVerified`, `targetCharacterSenseVerified` | Currently false, independently scoped; sentence approval never approves these other fields. Named transcription reviewers remain on each transcription. |
+| `display.marker` | `source_info` for ordinary source/pending metadata; `warning_triangle` when recorded concerns exist. |
+| `display.label` | Accessible label for the corresponding marker. A triangle must expose its concern text, not rely on colour alone. |
+
+The frontend should render these recorded marker fields with the app's existing
+source-information/warning popover pattern. No UI publication or sentence import
+is performed by this preparation step. Chinese and English can have different
+markers; do not inherit approval across a translation link or audio attachment.
+
+The minimal [external translation review TSV](../../../../reports/tatoeba-translation-review.tsv)
+contains one representative candidate per uncovered exact character and only
+four columns. Its stable IDs retain both source sentence IDs and the character
+code point, linking feedback back to this evidence without extra TSV columns.
