@@ -91,7 +91,7 @@ def download_sources():
             try:
                 key, metadata = job.result()
                 manifest['files'][key] = metadata
-                manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+                manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
             except Exception as error:
                 failures.append(str(error))
     if failures:
