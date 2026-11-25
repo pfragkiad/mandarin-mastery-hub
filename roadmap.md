@@ -1,5 +1,8 @@
 # Roadmap
 
+## Compact game setup
+- [x] Bring filters and submission actions together, place switches side by side when they fit, and tighten shared spacing; verify games on wide and narrow screens.
+
 ## Always-visible game filters
 - [x] Remove character Course/Lesson choices and the shared Filters disclosure; retain vocabulary topics and floating range editors, then verify both games.
 
