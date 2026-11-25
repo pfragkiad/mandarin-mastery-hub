@@ -203,8 +203,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       const identity = radicalIdentity(entry.hanzi).radicals.find(radical => radical.glyph === noteRadical);
       const destination = libraryDestination(noteRadical, preferences.includeTraditional);
       return <span className="facts-radical">{destination
-        ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={identity ? `Open Kangxi radical ${identity.number}` : `Open radical ${noteRadical}`}><strong lang="zh-CN">{noteRadical}</strong></Link></Button>
-        : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{noteRadical}</strong>}</span>;
+        ? <Button asChild variant="ghost" className="decomposition-glyph is-radical"><Link to="/characters" search={destination} resetScroll={false} aria-label={identity ? `Open Kangxi radical ${identity.number}` : `Open radical ${noteRadical}`}><strong lang="zh-CN">{noteRadical}</strong></Link></Button>
+        : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static is-radical">{noteRadical}</strong>}</span>;
     }
     return (info.canonicalRadical?.number ?? kangxiNumber) ? <span className="word-hsk-id radical-tag">Radical #{kangxiNumber}</span> : null;
   })();

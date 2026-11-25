@@ -6,6 +6,7 @@ import { GitBranch } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { catalog, characterAudioRequest } from '@/lib/catalog-store';
 import { glyphIndex, libraryDestination, TREE_SOURCE } from '@/lib/character-library';
+import { radicalIdentity } from '@/lib/radical-identities';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
 import { phraseParts, wordCharacters, isChineseGlyph } from '@/lib/vocabulary-decomposition';
 import { useWorkspace } from './workspace';
@@ -42,7 +43,8 @@ export function VocabularyDecomposition({ word, bare = false }: { word: Word; ba
         return <li key={index}><div className="decomposition-part">
         <div className="phrase-part-characters">{Array.from(part.text).filter(isChineseGlyph).map((glyph, glyphIndex) => {
           const destination = libraryDestination(glyph, preferences.includeTraditional);
-          return destination ? <Button key={glyphIndex} asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
+          const rad = radicalIdentity(glyph).radicals.length ? ' is-radical' : '';
+          return destination ? <Button key={glyphIndex} asChild variant="ghost" className={`decomposition-glyph${rad}`}><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button> : <strong key={glyphIndex} lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${rad}`}>{glyph}</strong>;
         })}</div>
         {/* A matched word stays one clear pill link (word + reading); its glyph boxes
             above remain separate character links, so either destination is reachable. */}
@@ -56,7 +58,7 @@ export function VocabularyDecomposition({ word, bare = false }: { word: Word; ba
         const facts = glyphIndex()[part.text];
         const tree = catalog.trees[part.text];
         return <li key={index}><div className="decomposition-part">
-          {destination ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(part.text, destination.tab)} aria-label={openDetailsHint(part.text, destination.tab)}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{part.text}</strong>}
+          {destination ? <Button asChild variant="ghost" className={`decomposition-glyph${radicalIdentity(part.text).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(part.text, destination.tab)} aria-label={openDetailsHint(part.text, destination.tab)}><strong lang="zh-CN">{part.text}</strong></Link></Button> : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${radicalIdentity(part.text).radicals.length ? ' is-radical' : ''}`}>{part.text}</strong>}
           <div className="vocabulary-part-facts"><span className="example-pinyin-row">{Array.from(part.text).length === 1 && isMultiReading(part.pinyin || facts?.pinyin) ? <MultiReadingSpeakers spoken={part.text} reading={part.pinyin || facts?.pinyin || ''} variant="example"/> : <><span className="pinyin">{part.pinyin || facts?.pinyin || '—'}</span><ExamplePronunciation request={characterAudioRequest(part.text, part.pinyin || facts?.pinyin)} label={`character ${part.text}`}/></>}</span><small>{facts?.meaning || 'Meaning not recorded'}</small></div>
         </div>{tree ? <CharacterDecomposition character={part.text} tree={tree} source={TREE_SOURCE}/> : Boolean(catalogVersion) && <p className="library-note">No recorded character breakdown.</p>}</li>;
       })}</ul>

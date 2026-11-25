@@ -1,4 +1,5 @@
 import { glyphIndex, libraryDestination } from '@/lib/character-library';
+import { radicalIdentity } from '@/lib/radical-identities';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { openDetailsHint } from '@/lib/tile-hints';
 import type { EtymologyRequest, EtymologyView } from '@/lib/etymology';
@@ -33,11 +34,12 @@ function CharacterHeading({ glyph, hasNotes, counterpart }: { glyph: string; has
   const facts = glyphIndex()[glyph];
   const reading = facts?.pinyin ?? '';
   const destination = libraryDestination(glyph, preferences.includeTraditional);
+  const rad = radicalIdentity(glyph).radicals.length ? ' is-radical' : '';
   const tile = hasNotes
     ? <EtymologyRecordLink id={`Characters:${glyph}`} glyph={glyph}/>
     : destination
-      ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button>
-      : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
+      ? <Button asChild variant="ghost" className={`decomposition-glyph${rad}`}><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(glyph, destination.tab)} aria-label={openDetailsHint(glyph, destination.tab)}><strong lang="zh-CN">{glyph}</strong></Link></Button>
+      : <strong lang="zh-CN" className={`decomposition-glyph decomposition-glyph-static${rad}`}>{glyph}</strong>;
   // Same heading markup as the word Decomposition list (vocabulary-decomposition.tsx):
   // tile, then reading + speaker over the meaning, so both tabs introduce a character alike.
   return <div className="decomposition-part">
