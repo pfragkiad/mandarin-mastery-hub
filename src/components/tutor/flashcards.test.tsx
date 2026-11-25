@@ -6,6 +6,9 @@ import { FlashcardSessionProvider } from './flashcard-session';
 import { detailTrail } from '@/lib/detail-trail';
 
 const bookmarks = vi.hoisted(() => ({ saved: [] as string[], toggle: vi.fn() }));
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class { observe() {} unobserve() {} disconnect() {} };
+}
 beforeEach(() => { bookmarks.saved = []; bookmarks.toggle.mockReset(); bookmarks.toggle.mockImplementation((id: string) => bookmarks.saved.push(id)); });
 const numbers = ['二', '三', '四', '五', '六', '七', '八', '九', '十', '百', '千'].map((hanzi, i) => ({ id: `number-${i}`, hanzi, pinyin: `èr-${i}`, meaning: `number ${i}`, collection: 'Numbers', level: 'Level 1' }));
 vi.mock('./workspace', () => ({ useWorkspace: () => ({ items: [{ id: 'hello', hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'hello', collection: 'Greetings', level: 'Level 1', audio: { url: 'https://example.com/hello.mp3', source: 'Test', license: 'Test' } }, ...numbers, { id: 'phrase-1', hanzi: '你好吗', pinyin: 'nǐ hǎo ma', meaning: 'how are you', collection: 'Greetings', level: 'Level 1', entryKind: 'phrase' }], saved: bookmarks.saved, toggleSaved: bookmarks.toggle, preferences: { includeTraditional: false }, catalogVersion: 1 }) }));
@@ -193,7 +196,7 @@ describe('Deck size', () => {
   });
   it('caps the round size to the filtered pool', async () => {
     await renderWords();
-    fireEvent.click(screen.getByRole('button', { name: '50' }));
+    fireEvent.click(screen.getByRole('button', { name: '20' }));
     expect(screen.getByRole('button', { name: 'Start · 12 cards' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Start · 12 cards' }));
     expect(screen.getByText('Card 1 of 12')).toBeInTheDocument();

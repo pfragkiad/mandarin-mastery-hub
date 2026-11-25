@@ -1,6 +1,7 @@
 import { radicalCardRecord, type LibraryEntry, type LibraryKind } from './character-library';
 import { includeScript } from './learning-preferences';
 import { usageGroupFor, usageGroups, usageRank, usageRankMatches } from './usage-frequency';
+import { matchesStrokeFilter } from './stroke-range';
 
 /** Available opposite-filter choices from recorded entries, not pages or selected
  * detail exceptions. Each facet ignores itself so replacing it remains possible.
@@ -11,7 +12,6 @@ import { usageGroupFor, usageGroups, usageRank, usageRankMatches } from './usage
 export function libraryFilterOptions(entries: readonly LibraryEntry[], kind: LibraryKind, includeTraditional: boolean, usage?: string, strokes = '', usageUpTo = false, strokesUpTo = false, hideRadicals = false) {
   const counts = new Set<number>();
   const ranks = new Set<string>();
-  const maxStrokes = strokesUpTo && strokes ? Number(strokes) : null;
   for (const entry of entries) {
     if (!includeScript(entry.script, includeTraditional)) continue;
     // The "hide radicals" switch is an applied pick too, so a hidden radical card can never
@@ -20,7 +20,7 @@ export function libraryFilterOptions(entries: readonly LibraryEntry[], kind: Lib
     const rank = usageRank(entry, kind, includeTraditional);
     const group = usageGroupFor(kind, rank);
     const usageOk = !usage || usageRankMatches(kind, rank, usage, usageUpTo);
-    const strokesOk = !strokes || (maxStrokes !== null ? entry.strokes !== undefined && entry.strokes <= maxStrokes : entry.strokes === Number(strokes));
+    const strokesOk = matchesStrokeFilter(entry.strokes, strokes, strokesUpTo);
     if (usageOk && entry.strokes) counts.add(entry.strokes);
     if (strokesOk && group) ranks.add(group.value);
   }

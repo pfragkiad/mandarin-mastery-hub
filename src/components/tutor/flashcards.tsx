@@ -4,7 +4,8 @@ import { FilterSelect } from './filter-select';
 import { TopicSelect } from './topic-select';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
-import { GameChoices, GameFilters, GameField } from './game-controls';
+import { GameChoices, GameFilters, GameField, StrokeRangeControl } from './game-controls';
+import { formatStrokeRangeLabel, matchesStrokeFilter } from '@/lib/stroke-range';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
 import { ExamplePronunciation } from './example-pronunciation';
 import { TileBookmark } from './record-card-footer';
@@ -156,10 +157,9 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       // Stroke counts come from the library's exact records; a card without a
       // recorded count never matches a stroke filter (fail closed).
       const strokeMap = new Map(refKind ? libraryEntries(refKind).map(entry => [entry.hanzi, entry.strokes] as const) : []);
-      const maxStrokes = f.strokesUpTo === '1' && f.strokes ? Number(f.strokes) : null;
       base = referenceCards(f.category.slice(4) as ReferenceKind)
         .filter(card => !group || !refKind || usageRankMatches(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional), group, f.usageUpTo === '1'))
-        .filter(card => !f.strokes || (maxStrokes !== null ? (strokeMap.get(card.hanzi) ?? Infinity) <= maxStrokes : strokeMap.get(card.hanzi) === Number(f.strokes)));
+        .filter(card => matchesStrokeFilter(strokeMap.get(card.hanzi), f.strokes, f.strokesUpTo === '1'));
       if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
     } else {
       const vocabKind = flashcardVocabularyKind(f.category);
@@ -202,7 +202,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
     const idiomBand = category === 'Idioms' && usage ? idiomRankClasses.find(c => c.id === usage) : undefined;
     const subtopicLabel = subtopic ? subtopicById(subtopic)?.label ?? subtopic : '';
-    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && subtopicLabel ? [subtopicLabel] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(course ? [courseLabel(course)] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(idiomBand ? [usageUpTo === '1' ? `Rank 1–${idiomBand.to.toLocaleString('en-US')}` : `Rank ${idiomBandRangeLabel(idiomBand)}`] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [strokesUpTo === '1' ? `Up to ${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}` : `${strokes} ${strokes === '1' ? 'stroke' : 'strokes'}`] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && subtopicLabel ? [subtopicLabel] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(course ? [courseLabel(course)] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(idiomBand ? [usageUpTo === '1' ? `Rank 1–${idiomBand.to.toLocaleString('en-US')}` : `Rank ${idiomBandRangeLabel(idiomBand)}`] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [formatStrokeRangeLabel(strokes, strokesUpTo === '1')] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     return parts.join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -285,10 +285,10 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}
             {facets.styles.length > 0 && <GameField label="Sentence style"><FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} /></GameField>}
           </>}
-        {/* Rank and stroke filters retain their exact recorded groups. */}
+        {/* Rank filter retains its exact recorded groups; stroke count uses a dual-thumb range. */}
         {draftIdiom && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={draft.usage || ALL_IDIOM_BANDS} onValueChange={usage => patch({ usage: usage === ALL_IDIOM_BANDS ? '' : usage, usageUpTo: undefined })} items={[{ value: ALL_IDIOM_BANDS, label: 'All ranks' }, ...idiomRankClasses.map(c => ({ value: c.id, label: `${idiomBandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%`, triggerLabel: idiomBandRangeLabel(c) }))]} /></GameField>{draft.usage && draft.usage !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
         {draftReference && draftRefKind && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onValueChange={usage => patch({ usage, usageUpTo: undefined })} items={[{ value: '', label: 'All ranks' }, ...(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ value: group.value, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional), triggerLabel: group.label }))]} /></GameField>{draft.usage && draft.usage !== UNRANKED && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
-        {draftReference && draftRefKind && <span className="filter-field-row"><GameField label="Stroke count"><FilterSelect ariaLabel="Stroke count" value={draft.strokes ?? ''} onValueChange={strokes => patch({ strokes, strokesUpTo: undefined })} items={[{ value: '', label: 'All stroke counts' }, ...(glyph?.strokes ?? []).map(n => ({ value: String(n), label: `${n} ${n === 1 ? 'stroke' : 'strokes'}` }))]} /></GameField>{draft.strokes && <FilterWideningToggle active={draft.strokesUpTo === '1'} onToggle={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })} label="+ fewer strokes" title="Also include every smaller stroke count"/>}</span>}
+        {draftReference && draftRefKind && <StrokeRangeControl value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} onChange={strokes => patch({ strokes, strokesUpTo: undefined })} />}
         {/* Saved-only: the same bookmark + count toggle as the libraries, last in the row; it stays part of the auto-applied draft. */}
         <SavedFilterToggle labelled on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
         </GameFilters>

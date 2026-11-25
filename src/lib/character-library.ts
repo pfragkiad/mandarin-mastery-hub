@@ -9,6 +9,7 @@ import { contextualVariantIdentity } from './radical-contextual-identity';
 import { relatedGroup, scriptHead } from './character-variants';
 import { componentCardHead } from './component-families';
 import { glyphCardInk, isRadicalGlyph } from './card-ink';
+import { matchesStrokeFilter } from './stroke-range';
 
 export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
@@ -134,7 +135,7 @@ export function filterLibrary(entries: LibraryEntry[], query: string, strokeCoun
   // usageRankMatches); unranked records have no rank and stay out.
   const matchesUsage = (entry: LibraryEntry) => !usage || !kind || usageRankMatches(kind, usageRank(entry, kind, includeTraditional), usage, usageUpTo);
   // "Include fewer strokes" widens an exact stroke count into 1..count.
-  const matchesStrokes = (entry: LibraryEntry) => !strokeCount || (strokesUpTo ? entry.strokes !== undefined && entry.strokes <= Number(strokeCount) : entry.strokes === Number(strokeCount));
+  const matchesStrokes = (entry: LibraryEntry) => matchesStrokeFilter(entry.strokes, strokeCount, strokesUpTo);
   const matched = [...entries, ...variants].filter(entry => (!saved || saved.has(entry.id)) && includeScript(entry.script, includeTraditional) && matchesQuery(entry) && matchesStrokes(entry) && (!sourceOnly || Boolean(entry.decomposition)) && matchesUsage(entry));
   return kind ? sortByUsage(matched, kind, includeTraditional) : matched;
 }

@@ -21,7 +21,8 @@ import {
 import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
 import { SavedFilterToggle } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
-import { GameChoices, GameFilters, GameField } from "./game-controls";
+import { GameChoices, GameFilters, GameField, StrokeRangeControl } from "./game-controls";
+import { formatStrokeRangeLabel } from "@/lib/stroke-range";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
 import { TileBookmark } from "./record-card-footer";
 import { ExamplePronunciation } from "./example-pronunciation";
@@ -128,7 +129,7 @@ export function DrawingGamePage({
       ...(kind === "Words" && search.pos ? [search.pos] : []),
       // Only the rank range ("Rank 1–100"); the dropdown's coverage share would crowd the chip.
       ...(group ? [search.usageUpTo === '1' && group.value !== UNRANKED ? `Rank 1–${group.max.toLocaleString("en-US")}` : usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
-      ...(search.strokes ? [search.strokesUpTo === '1' ? `Up to ${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}` : `${search.strokes} ${search.strokes === "1" ? "stroke" : "strokes"}`] : []),
+      ...(search.strokes ? [formatStrokeRangeLabel(search.strokes, search.strokesUpTo === '1')] : []),
     ].join(" · ");
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -256,22 +257,11 @@ export function DrawingGamePage({
                       </span>
                     )}
                     {filtered && (
-                      <span className="filter-field-row">
-                        <GameField label="Stroke count"><FilterSelect
-                          ariaLabel="Stroke count"
-                          value={draft.strokes ?? ""}
-                          onValueChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
-                          items={[{ value: "", label: "All stroke counts" }, ...(glyph?.strokes ?? []).map((value) => ({ value: String(value), label: `${value} ${value === 1 ? "stroke" : "strokes"}` }))]}
-                        /></GameField>
-                        {draft.strokes && (
-                          <FilterWideningToggle
-                            active={draft.strokesUpTo === "1"}
-                            onToggle={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : "1" })}
-                            label="+ fewer strokes"
-                            title="Also include every smaller stroke count"
-                          />
-                        )}
-                      </span>
+                      <StrokeRangeControl
+                        value={draft.strokes ?? ""}
+                        strokesUpTo={draft.strokesUpTo === "1"}
+                        onChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
+                      />
                     )}
                     {/* Saved-only: the libraries' bookmark + count toggle, last in the row; part of the auto-applied draft. */}
                     <SavedFilterToggle

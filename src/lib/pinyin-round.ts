@@ -5,7 +5,7 @@
 import type { PinyinSound } from './pinyin-guide';
 
 // Round sizes offered by every game (Pinyin games, Flashcards, Drawing), smallest first.
-export const ROUND_SIZES = [5, 10, 15, 20, 30, 40, 50] as const;
+export const ROUND_SIZES = [5, 10, 20] as const;
 export type RoundSize = (typeof ROUND_SIZES)[number];
 
 export function shuffle<T>(list: readonly T[], random = Math.random): T[] {

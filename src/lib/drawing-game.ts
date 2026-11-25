@@ -2,6 +2,7 @@ import { filterLibrary, type LibraryEntry } from './character-library';
 import { parseUsageGroup } from './usage-frequency';
 import { matchesTopic, partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
+import { isValidStrokeFilter } from './stroke-range';
 
 export const drawingKinds = ['Characters', 'Components', 'Radicals', 'Words'] as const;
 export type DrawingKind = typeof drawingKinds[number];
@@ -14,13 +15,14 @@ export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const usage = kind && kind !== 'Words' ? parseUsageGroup(kind, search['usage']) : undefined;
   const strokes = String(search['strokes'] ?? '');
   const filtered = kind === 'Radicals' || kind === 'Components';
-  return { ...(kind ? { kind } : {}), ...(filtered && /^[1-9]\d*$/.test(strokes) ? { strokes } : {}),
+  const validStrokes = filtered && isValidStrokeFilter(strokes);
+  return { ...(kind ? { kind } : {}), ...(validStrokes ? { strokes } : {}),
     ...(kind === 'Words' && typeof search['collection'] === 'string' && search['collection'].trim() ? { collection: search['collection'] } : {}),
     ...(kind === 'Words' && typeof search['level'] === 'string' && search['level'].trim() ? { level: search['level'] } : {}),
     ...(kind === 'Words' && typeof search['pos'] === 'string' && search['pos'].trim() ? { pos: search['pos'] } : {}),
     ...(usage ? { usage } : {}),
     ...(usage && (search['usageUpTo'] === '1' || search['usageUpTo'] === true) ? { usageUpTo: '1' as const } : {}),
-    ...(filtered && /^[1-9]\d*$/.test(strokes) && (search['strokesUpTo'] === '1' || search['strokesUpTo'] === true) ? { strokesUpTo: '1' as const } : {}),
+    ...(validStrokes && (search['strokesUpTo'] === '1' || search['strokesUpTo'] === true) ? { strokesUpTo: '1' as const } : {}),
     ...(search['saved'] === true || search['saved'] === '1' ? { saved: true } : {}) };
 }
 
