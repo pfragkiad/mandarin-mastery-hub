@@ -176,3 +176,6 @@
 ## Flashcards lesson deck placement
 - [x] Flashcards: category list unchanged; a Course dropdown beside Topic, and the lesson list follows from the course (both narrow the deck)
 - [x] Flashcards: no Course/Lesson dropdown for Words or Phrases (Pavlos 2026-11-24) — picker stays for Characters only
+- [x] Tatoeba sentence hint: show only public Tatoeba resource (links, contributors, licence, edited originals); no internal review info
+- [x] Tatoeba sentences: replace recorded Tatoeba transcription pinyin with our own per-character pinyin; careful with common-name characters (multi-reading)
+- [x] Tatoeba popover: keep learner-meaningful notes (e.g. lost negative sense); hide only internal review-process chatter

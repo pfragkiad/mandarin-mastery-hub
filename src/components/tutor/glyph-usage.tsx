@@ -18,7 +18,7 @@ import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 import { SectionPlaceholder } from './section-placeholder';
 import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
-import { loadCharacterTatoebaExample, tatoebaPinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
+import { loadCharacterTatoebaExample, ownSentencePinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
 import { TatoebaSentenceSource } from './tatoeba-sentence-source';
 
 /** Optional sourced examples, fetched only for a Characters detail card.
@@ -83,6 +83,18 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;
   const parents = loadedParents?.slice(0, 6) ?? [];
+  // Reading lookup for the Tatoeba sentence's own pinyin line: exact glyph → recorded
+  // reading, Characters first, then Components and Radicals as fallback. Built only
+  // when a Tatoeba example is shown; multi-reading entries keep their " / " join for
+  // ownSentencePinyin to take the dictionary-primary first reading.
+  const tatoebaReadingFor = useMemo(() => {
+    if (!tatoeba) return null;
+    const readings = new Map<string, string>();
+    for (const entryKind of ['Characters', 'Components', 'Radicals'] as const)
+      for (const row of libraryEntries(entryKind))
+        if (row.hanzi && row.pinyin && !readings.has(row.hanzi)) readings.set(row.hanzi, row.pinyin);
+    return (glyph: string) => readings.get(glyph) ?? null;
+  }, [tatoeba, catalogVersion]);
   // While the BabelStone sidecars load (up to ~20s on a first component card), show a pulsing
   // placeholder in the section's own shape; once loaded with no sourced parent characters, hide
   // the whole "In a character" section (owner choice).
@@ -122,7 +134,9 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       <p className="detail-footnote">Source: <Link to="/lessons/$lessonId" params={{ lessonId: hskExample.source.lessonId }}>{hskExample.source.collection} · {hskExample.source.title}</Link>{hskExample.source.status === 'draft' && ' · Draft lesson example'}</p>
     </div>);
   if (tatoeba) sentenceExamples.push(<div className="glyph-usage-example" key={tatoeba.id}>
-      <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaPinyin(tatoeba)} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
+      {/* Pinyin is our own, built per character from recorded catalogue readings
+          (ownSentencePinyin), never the Tatoeba transcription. */}
+      <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaReadingFor ? ownSentencePinyin(tatoeba.sentence, tatoebaReadingFor) : undefined} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
     </div>);
   return <SentenceSection hanzi={entry.hanzi}>
     {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples}/> : null}

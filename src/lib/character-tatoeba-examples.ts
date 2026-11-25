@@ -1,4 +1,4 @@
-import { numberedToMarks } from './lesson-search';
+import { isHanziChar } from './sentence-align';
 
 type SentenceSource = { id: number; text: string; url: string; contributor: string | null; license: string };
 type SuppliedReview = { overall_status: string; zh_issues: string; en_issues: string; review_notes: string };
@@ -63,12 +63,39 @@ export async function loadCharacterTatoebaExample(recordId: string): Promise<Cha
   return example;
 }
 
-/** Format recorded tone numbers with the existing pinyin helper, preserving capitals.
- * This changes notation only; absent or stale source readings remain absent.
+/** Builds our own pinyin line for the exact displayed Tatoeba sentence from each
+ * hanzi's recorded catalogue reading — never from the Tatoeba transcription, whose
+ * word grouping does not match our translations. Pure presentation:
+ * - multi-reading characters use the first recorded reading (the dictionary-primary
+ *   one); name-specific readings cannot be detected and are never guessed;
+ * - a sentence containing any hanzi without a recorded reading fails closed to no
+ *   pinyin line at all, rather than showing a partial, misaligned one;
+ * - Latin text, digits and punctuation pass through as recorded, syllables are
+ *   spaced per character (which also keeps hover pairing exact), and the first
+ *   syllable after sentence-ending punctuation is capitalized.
  */
-export function tatoebaPinyin(example: Pick<CharacterTatoebaExample, 'pinyin'>): string | undefined {
-  return example.pinyin?.replace(/[a-zü:v]+[1-5]/gi, part => {
-    const marked = numberedToMarks(part.toLowerCase());
-    return part[0] === part[0]?.toUpperCase() ? marked.charAt(0).toUpperCase() + marked.slice(1) : marked;
-  });
+export function ownSentencePinyin(sentence: string, readingFor: (glyph: string) => string | null): string | undefined {
+  const NO_SPACE_BEFORE = new Set([...',.!?;:)%\\]』」’”…、，。！？；：']);
+  const NO_SPACE_AFTER = new Set([...'([『「‘“']);
+  const tokens: { text: string; syllable: boolean }[] = [];
+  let latin = '';
+  const flush = () => { if (latin) { tokens.push({ text: latin, syllable: false }); latin = ''; } };
+  for (const ch of Array.from(sentence)) {
+    if (isHanziChar(ch)) {
+      flush();
+      const reading = readingFor(ch)?.split(' / ')[0]?.trim();
+      if (!reading) return undefined;
+      tokens.push({ text: reading, syllable: true });
+    } else if (/\s/.test(ch)) flush();
+    else latin += ch;
+  }
+  flush();
+  let out = '';
+  let capitalize = true;
+  for (const token of tokens) {
+    if (out && !NO_SPACE_BEFORE.has(token.text.charAt(0)) && !NO_SPACE_AFTER.has(out.charAt(out.length - 1))) out += ' ';
+    out += token.syllable && capitalize ? token.text.charAt(0).toUpperCase() + token.text.slice(1) : token.text;
+    capitalize = /[.!?。！？]$/.test(token.text) ? true : token.syllable || /[A-Za-z0-9]/.test(token.text) ? false : capitalize;
+  }
+  return out;
 }

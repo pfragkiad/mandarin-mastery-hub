@@ -61,18 +61,34 @@ vi.mock('./workspace', () => ({
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
 describe('Absent-record notes', () => {
-  it('renders the latest reviewed wording with its own warning and original-source disclosure', async () => {
+  it('shows public attribution plus the learner-meaningful note on warning cases, never internal review process', async () => {
     const example = Object.values(tatoebaData.examples).find(row => row.review.latestRound === 3 && row.review.status === 'Needs_Fix')!;
     vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
     const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
     const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
-    const hint = await screen.findByRole('button', { name: example.display.label });
+    const hint = await screen.findByRole('button', { name: 'Sentence source and usage note' });
     expect(hint).toHaveAttribute('data-variant', 'warning');
     expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(example.sentence);
     expect(container.querySelector('.sentence-pinyin')).toBeNull();
     fireEvent.click(hint);
     expect(await screen.findByRole('link', { name: `Tatoeba · Chinese #${example.source.chinese.id}` })).toHaveAttribute('href', example.source.chinese.url);
     expect(screen.getByText(example.source.chinese.text)).toBeInTheDocument();
+    // The learner-meaningful note stays; review rounds, reviewers and ratings never appear.
+    expect(screen.getByText(`Note: ${example.review.notes}`)).toBeInTheDocument();
+    expect(screen.queryByText(/Review round/)).toBeNull();
+    expect(screen.queryByText(/positive rating/)).toBeNull();
+  });
+
+  it('hides the process note on Pass cases and uses the plain info marker', async () => {
+    const example = Object.values(tatoebaData.examples).find(row => row.review.status === 'Pass' && row.review.notes)!;
+    vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
+    const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
+    render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
+    const hint = await screen.findByRole('button', { name: 'Sentence source' });
+    expect(hint).toHaveAttribute('data-variant', 'info');
+    fireEvent.click(hint);
+    expect(await screen.findByRole('link', { name: `Tatoeba · Chinese #${example.source.chinese.id}` })).toBeInTheDocument();
+    expect(screen.queryByText(`Note: ${example.review.notes}`)).toBeNull();
   });
 
   it('keeps an existing sentence first and gives an additional Tatoeba sentence a separate hint', async () => {
