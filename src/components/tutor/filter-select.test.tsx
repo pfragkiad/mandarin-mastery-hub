@@ -51,4 +51,12 @@ describe('Dropdown defaults are not filter edits', () => {
     fireEvent.click(screen.getByText('Empty option'));
     expect(change).toHaveBeenCalledExactlyOnceWith('');
   });
+  it('ignores hidden resets even when an explicit All option exists', () => {
+    const change = vi.fn();
+    render(<FilterSelect value="range:37-300" onValueChange={change} items={[{ value: '', label: 'All ranks' }, { value: 'range:37-300', label: 'Rank 37–300' }]}/>);
+    fireEvent.click(screen.getByText('Form reset'));
+    expect(change).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByText('Empty option'));
+    expect(change).toHaveBeenCalledExactlyOnceWith('');
+  });
 });

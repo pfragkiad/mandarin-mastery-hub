@@ -1,5 +1,6 @@
 import { filterWords, type Word } from './mandarin';
 import { ALL_SUBTOPICS, inSubtopic } from './vocabulary-subtopics';
+import { parseRankRange, rankRangeMatches } from './rank-range';
 
 export type IdiomRankClass = {
   id: string;
@@ -102,6 +103,8 @@ export function loadIdioms(): Promise<{ dataset: IdiomDataset; words: Word[] }> 
 export function matchesIdiomBand(word: Word, bandId: string, rankClasses: readonly IdiomRankClass[], upTo = false): boolean {
   if (!bandId || bandId === ALL_IDIOM_BANDS) return true;
   const rank = word.idiomMeta?.rank;
+  const range = parseRankRange(bandId);
+  if (range) return rankRangeMatches(rank, range);
   if (rank == null) return false;
   const band = rankClasses.find(c => c.id === bandId);
   if (!band) return false;

@@ -2,6 +2,7 @@
 // derived exposure estimates). Loaded lazily from /data/usage-order.json alongside the catalogue.
 // The rank scope follows the Traditional preference: "all" includes traditional-only forms.
 import type { LibraryEntry, LibraryKind } from './character-library';
+import { parseRankRange, rankRangeMatches } from './rank-range';
 
 export type UsageScope = 'all' | 'simplified';
 type ScopeRanks = { characters: Record<string, number>; components: Record<string, number>; radicals: Record<string, number>; individual?: { characters: Record<string, number>; components: Record<string, number>; radicals?: Record<string, number> }; cumulative?: { characters: Record<string, number>; components: Record<string, number> }; groupCumulative?: { characters: Record<string, number>; components: Record<string, number>; radicals?: Record<string, number> } };
@@ -23,6 +24,17 @@ export const usageGroupsByKind: Record<'Characters' | 'Radicals' | 'Components',
 export const hasUsageGroups = (kind: string): kind is keyof typeof usageGroupsByKind => kind in usageGroupsByKind;
 export function usageGroups(kind: string): UsageGroup[] { return hasUsageGroups(kind) ? usageGroupsByKind[kind] : []; }
 export function parseUsageGroup(kind: string, value: unknown): string | undefined { return usageGroups(kind).find(group => group.value === value)?.value; }
+/** Games accept custom ranges without changing the reference library's recorded class parser. */
+export function parseGameUsageFilter(kind: string, value: unknown): string | undefined {
+  return hasUsageGroups(kind) && parseRankRange(value) && typeof value === 'string' ? value : parseUsageGroup(kind, value);
+}
+
+/** Slider bounds come from the selected scope's recorded ranks, never catalogue size. */
+export function usageRankMaximum(kind: string, includeTraditional: boolean): number {
+  const scope = usageOrder.data?.scopes[scopeFor(includeTraditional)];
+  const ranks = kind === 'Characters' ? scope?.characters : kind === 'Components' ? scope?.components : kind === 'Radicals' ? scope?.radicals : undefined;
+  return ranks ? Math.max(0, ...Object.values(ranks)) : 0;
+}
 
 export const scopeFor = (includeTraditional: boolean): UsageScope => includeTraditional ? 'all' : 'simplified';
 const smallPercentage = new Intl.NumberFormat('en-US', { minimumSignificantDigits: 2, maximumSignificantDigits: 2, useGrouping: false });
@@ -67,6 +79,8 @@ export function usageGroupFor(kind: LibraryKind, rank: number | null): UsageGrou
  * group becomes rank 1..group.max. Unranked records (no rank) stay out, and the
  * Unranked group itself has nothing below it, so the flag never changes it. */
 export function usageRankMatches(kind: string, rank: number | null, usage: string, upTo = false): boolean {
+  const range = parseRankRange(usage);
+  if (range) return hasUsageGroups(kind) && rankRangeMatches(rank, range);
   const group = usageGroups(kind).find(g => g.value === usage);
   if (!group) return false;
   if (upTo && group.value !== UNRANKED && Number.isFinite(group.max)) return rank !== null && rank <= group.max;

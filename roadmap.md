@@ -1,5 +1,10 @@
 # Roadmap
 
+## Expandable game range filters
+- [x] Put the stroke range behind a shared summary dropdown button in Flashcards and Drawing.
+- [x] Add an expandable Frequency panel with custom From/To ranks, slider and presets using recorded rank data.
+- [x] Preserve Apply/Reset, URL history and active rounds; test ranges and verify both games.
+
 ## Game bookmark collection
 - [x] Replace the ambiguous Saved control with a shared Saved collections field and Bookmarks count, matching the mockup without custom collections.
 - [x] Verify empty and selected states and existing saved-deck filtering.

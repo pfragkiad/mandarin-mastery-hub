@@ -2,6 +2,10 @@ import { useId, useState, type ReactNode } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { FilterSelect } from './filter-select';
+import { FilterWideningToggle } from './filter-form';
+import { formatRankRange, parseRankRange, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
 import { STROKE_SLIDER_MAX, STROKE_SLIDER_MIN, formatStrokeRangeLabel, formatStrokeRangeValue, parseStrokeRange } from '@/lib/stroke-range';
 
 /** Single-choice buttons reuse the Preferences segmented control; values remain owned by the game. */
@@ -35,6 +39,81 @@ export function GameField({ label, children }: { label: string; children: ReactN
   return <div className="game-setting-field"><span className="game-field-label">{label}</span>{children}</div>;
 }
 
+/** A compact range summary opens its editing panel without applying or discarding drafts.
+ * Children stay mounted so keyboard editing and secondary disclosure state survive closing. */
+function GameRangeDisclosure({ label, summary, active, children }: {
+  label: string; summary: string; active: boolean; children: ReactNode;
+}) {
+  const id = useId();
+  const [open, setOpen] = useState(false);
+  return <div className="game-range-field">
+    <Button type="button" variant="outline" size="sm"
+      className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
+      aria-label={`${label}: ${summary}`} aria-expanded={open} aria-controls={id}
+      onClick={() => setOpen(previous => !previous)}>
+      <span>{label}: {summary}</span><ChevronDown className={open ? 'is-open' : ''}/>
+    </Button>
+    <div id={id} hidden={!open}>{children}</div>
+  </div>;
+}
+
+export type GameRankGroup = { value: string; label: string; min: number; max: number };
+
+/** Source-defined rank groups remain the quick choices. Advanced uses exact inclusive
+ * numeric ranks (not class positions); unranked is an independent, explicit inclusion.
+ * The parent owns URL-backed drafts and Apply; panel state never changes the pool. */
+export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, allowUnranked = true, onChange }: {
+  value: string; upTo?: boolean; groups: readonly GameRankGroup[]; maxRank: number;
+  allowUnranked?: boolean; onChange: (value: string, upTo: boolean) => void;
+}) {
+  const [advanced, setAdvanced] = useState(false);
+  const advancedId = useId();
+  const custom = parseRankRange(value);
+  const group = groups.find(candidate => candidate.value === value);
+  const max = Math.max(1, maxRank);
+  const lo = custom?.min ?? (group && group.value !== 'unranked' && !upTo ? group.min : 1);
+  const hi = custom?.max ?? (group && group.value !== 'unranked' ? Math.min(group.max, max) : max);
+  const unranked = custom?.unranked ?? value === 'unranked';
+  const summary = custom ? rankRangeLabel(custom) : value === 'unranked' ? 'Unranked' : group ? Number.isFinite(group.max) ? `${upTo ? 1 : group.min}–${group.max}` : `${upTo ? 1 : group.min}+` : 'Any';
+  const update = (min: number, end: number, include = unranked) => {
+    if (!Number.isFinite(min) || !Number.isFinite(end)) return;
+    onChange(formatRankRange(Math.max(1, Math.min(max, Math.round(min))), Math.max(1, Math.min(max, Math.round(end))), include), false);
+  };
+  const ticks = [...new Set([1, ...groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max)).map(g => g.max), max])].filter(n => n <= max).sort((a, b) => a - b);
+  const finiteGroups = groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max) && g.max <= max);
+  const presets = finiteGroups.length >= 5 ? [finiteGroups[0], finiteGroups[1], finiteGroups[3], finiteGroups[4]].filter((g): g is GameRankGroup => Boolean(g)) : finiteGroups.slice(0, 4);
+  return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)}>
+    <div className={`stroke-range-card${value ? ' is-active' : ''}`}>
+      <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · {summary}</span>
+        <Button type="button" variant="ghost" className="stroke-range-any" disabled={!value} onClick={() => onChange('', false)}>Clear</Button>
+      </div>
+      <GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={value} onValueChange={v => onChange(v, false)}
+        items={[{ value: '', label: 'All ranks' }, ...groups.map(g => ({ value: g.value, label: g.label })), ...(custom ? [{ value, label: `Rank ${rankRangeLabel(custom)}` }] : [])]}/></GameField>
+      {group && group.value !== 'unranked' && <FilterWideningToggle active={upTo} onToggle={() => onChange(value, !upTo)} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}
+      <Button type="button" variant="ghost" size="sm" className="game-range-advanced-toggle" aria-expanded={advanced} aria-controls={advancedId} onClick={() => setAdvanced(previous => !previous)}>
+        Advanced<ChevronDown className={advanced ? 'is-open' : ''}/>
+      </Button>
+      <div id={advancedId} className="game-rank-advanced" hidden={!advanced}>
+        <div className="game-rank-inputs">
+          <GameField label="From rank"><Input type="number" aria-label="From rank" min={1} max={max} value={lo} disabled={!maxRank}
+            onChange={e => { if (e.target.value) { const next = Math.max(1, Math.min(max, Number(e.target.value))); update(next, Math.max(next, hi)); } }}/></GameField>
+          <GameField label="To rank"><Input type="number" aria-label="To rank" min={1} max={max} value={hi} disabled={!maxRank}
+            onChange={e => { if (e.target.value) { const next = Math.max(1, Math.min(max, Number(e.target.value))); update(Math.min(lo, next), next); } }}/></GameField>
+          {allowUnranked && <Button type="button" size="sm" variant="outline" aria-pressed={unranked} className={unranked ? 'filter-select-active' : ''} disabled={!maxRank} onClick={() => update(lo, hi, !unranked)}>+ Unranked</Button>}
+        </div>
+        <SliderPrimitive.Root className="stroke-range-slider" min={0} max={Math.max(1, (ticks.length - 1) * 1000)} step={1} disabled={!maxRank}
+          value={[rankSliderPosition(lo, ticks), rankSliderPosition(hi, ticks)]} onValueChange={([min, end]) => { if (min !== undefined && end !== undefined) update(sliderPositionRank(min, ticks), sliderPositionRank(end, ticks)); }} aria-label="Frequency rank range">
+          <SliderPrimitive.Track className="stroke-range-track"><SliderPrimitive.Range className="stroke-range-fill"/></SliderPrimitive.Track>
+          <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum rank" aria-valuetext={String(lo)}/><SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum rank" aria-valuetext={String(hi)}/>
+        </SliderPrimitive.Root>
+        <div className="game-rank-ticks" aria-hidden="true">{ticks.map(tick => <span key={tick}>{tick.toLocaleString('en-US')}{groups.find(g => g.max === tick)?.label.split(' · ')[1] && <small>{groups.find(g => g.max === tick)?.label.split(' · ')[1]}</small>}</span>)}</div>
+        <div className="stroke-range-presets" role="group" aria-label="Rank presets">{presets.map(preset => <Button key={preset.value} type="button" size="sm" variant="ghost"
+          className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}>Top {preset.max.toLocaleString('en-US')}</Button>)}</div>
+      </div>
+    </div>
+  </GameRangeDisclosure>;
+}
+
 const STROKE_PRESETS = [
   { value: '1-5', label: '1–5' },
   { value: '6-10', label: '6–10' },
@@ -57,7 +136,7 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
     onChange(formatStrokeRangeValue(nextLo, max));
   };
 
-  return <div className="game-setting-field stroke-range-field"><span className="game-field-label">Stroke count</span><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
+  return <GameRangeDisclosure label="Strokes" summary={active ? formatStrokeRangeLabel(value, strokesUpTo).replace(/ strokes?$/, '') : 'Any'} active={active}><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
       {/* Keep one control mounted: changing tag exposed only the active label to button sizing rules. */}
@@ -89,5 +168,5 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
           onClick={() => onChange(isSelected ? '' : preset.value)}>{preset.label}</Button>;
       })}
     </div>
-  </div></div>;
+  </div></GameRangeDisclosure>;
 }

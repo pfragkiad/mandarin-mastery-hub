@@ -187,6 +187,7 @@ it('asks before ending once the first card is answered, and keeps that card in t
 it('drafts the stroke range without changing the pool or URL until Apply', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.click(screen.getByRole('button', { name: /^Filters/ }));
+  fireEvent.click(screen.getByRole('button', { name: /^Strokes:/ }));
   fireEvent.click(screen.getByRole('button', { name: '6–10' }));
   expect(onSearch).not.toHaveBeenCalled();
   expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();

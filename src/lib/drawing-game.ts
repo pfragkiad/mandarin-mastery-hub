@@ -1,5 +1,5 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
-import { parseUsageGroup } from './usage-frequency';
+import { parseGameUsageFilter } from './usage-frequency';
 import { matchesTopic, partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 import { isValidStrokeFilter } from './stroke-range';
@@ -14,7 +14,7 @@ export type DrawingResult = 'correct' | 'guided' | 'passed' | 'unavailable';
 
 export function drawingSearch(search: Record<string, unknown>): DrawingSearch {
   const kind = drawingKinds.find(value => value === search['kind']);
-  const usage = kind && kind !== 'Words' ? parseUsageGroup(kind, search['usage']) : undefined;
+  const usage = kind !== 'Words' ? parseGameUsageFilter(kind ?? 'Characters', search['usage']) : undefined;
   const strokes = String(search['strokes'] ?? '');
   const filtered = kind !== 'Words';
   const validStrokes = filtered && isValidStrokeFilter(strokes);

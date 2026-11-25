@@ -10,7 +10,8 @@ import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions } from "@/lib/
 import { lessonCourseIds, lessonDeckGroups, lessonDeckIds, lessonDeckTitle, type LessonDeckGroup } from "@/lib/flashcard-lessons";
 import { libraryFilterOptions } from "@/lib/library-filter-options";
 import { includeScript } from "@/lib/learning-preferences";
-import { UNRANKED, usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
+import { UNRANKED, usageGroupLabel, usageGroups, usageRankMaximum } from "@/lib/usage-frequency";
+import { parseRankRange, rankRangeLabel } from '@/lib/rank-range';
 import {
   drawingKinds,
   drawingPool,
@@ -20,10 +21,10 @@ import {
   type DrawingResult,
   type DrawingSearch,
 } from "@/lib/drawing-game";
-import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
+import { DraftFilterForm } from "./filter-form";
 import { GameBookmarkCollection } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
-import { GameChoices, GameFilters, GameField, StrokeRangeControl } from "./game-controls";
+import { GameChoices, GameFilters, GameField, StrokeRangeControl, FrequencyRangeControl } from "./game-controls";
 import { TopicSelect } from "./topic-select";
 import { formatStrokeRangeLabel } from "@/lib/stroke-range";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
@@ -172,6 +173,7 @@ export function DrawingGamePage({
       ...(search.lesson ? [lessonDeckTitle(search.lesson) ?? search.lesson] : []),
       // Only the rank range ("Rank 1–100"); the dropdown's coverage share would crowd the chip.
       ...(group ? [search.usageUpTo === '1' && group.value !== UNRANKED ? `Rank 1–${group.max.toLocaleString("en-US")}` : usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
+      ...(() => { const range = parseRankRange(search.usage); return range ? [`Rank ${rankRangeLabel(range)}`] : []; })(),
       ...(search.strokes ? [formatStrokeRangeLabel(search.strokes, search.strokesUpTo === '1')] : []),
     ].join(" · ");
   };
@@ -298,24 +300,12 @@ export function DrawingGamePage({
                         /></GameField>
                       </>
                     )}
-                    {/* Exact rank and stroke groups; no new range semantics. */}
+                    {/* Both range panels edit drafts only; Apply commits them together. */}
                     {draftKind !== "Words" && (
-                      <span className="filter-field-row">
-                        <GameField label="Frequency"><FilterSelect
-                          ariaLabel="Frequency"
-                          value={draft.usage ?? ""}
-                          onValueChange={(value) => patch({ usage: parseUsageGroup(draftKind, value), usageUpTo: undefined })}
-                          items={[{ value: "", label: "All ranks" }, ...(glyph?.ranks ?? []).map((group) => ({ value: group.value, label: usageGroupLabel(group, draftKind, preferences.includeTraditional), triggerLabel: group.label }))]}
-                        /></GameField>
-                        {draft.usage && draft.usage !== UNRANKED && (
-                          <FilterWideningToggle
-                            active={draft.usageUpTo === "1"}
-                            onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : "1" })}
-                            label="+ lower ranks"
-                            title="Also include every more frequent rank above the selected group"
-                          />
-                        )}
-                      </span>
+                      <FrequencyRangeControl value={draft.usage ?? ""} upTo={draft.usageUpTo === "1"}
+                        groups={(glyph?.ranks ?? []).map(group => ({ ...group, label: usageGroupLabel(group, draftKind, preferences.includeTraditional) }))}
+                        maxRank={usageRankMaximum(draftKind, preferences.includeTraditional)}
+                        onChange={(usage, upTo) => patch({ usage: usage || undefined, usageUpTo: upTo ? "1" : undefined })}/>
                     )}
                     {draftKind !== "Words" && (
                       <StrokeRangeControl

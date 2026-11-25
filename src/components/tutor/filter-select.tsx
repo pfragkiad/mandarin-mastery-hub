@@ -95,6 +95,9 @@ export function FilterSelect({
   // That is not an edit when this dropdown has no explicit empty option: keep the
   // displayed default rather than drafting an invisible, different filter value.
   const changeValue = (next: string) => {
+    // A user-selected empty option is encoded as __empty__. A literal empty value
+    // is only Radix's hidden form reset while dynamic options mount, never an edit.
+    if (next === '') return;
     const decoded = decode(next);
     const option = flat.find(item => item.value === decoded);
     const nextValue = option ? decoded : !decoded ? resolvedValue : decoded;

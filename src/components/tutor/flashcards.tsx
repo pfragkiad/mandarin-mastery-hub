@@ -1,10 +1,11 @@
 import { GameBookmarkCollection } from './saved-filter';
-import { DraftFilterForm, FilterWideningToggle } from './filter-form';
+import { DraftFilterForm } from './filter-form';
 import { FilterSelect } from './filter-select';
 import { TopicSelect } from './topic-select';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
-import { GameChoices, GameFilters, GameField, StrokeRangeControl } from './game-controls';
+import { GameChoices, GameFilters, GameField, StrokeRangeControl, FrequencyRangeControl } from './game-controls';
+import { parseRankRange, rankRangeLabel } from '@/lib/rank-range';
 import { formatStrokeRangeLabel, matchesStrokeFilter } from '@/lib/stroke-range';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
 import { ExamplePronunciation } from './example-pronunciation';
@@ -35,7 +36,7 @@ import { referenceCatalog, libraryEntries, savedGlyphEntry, savedGlyphDestinatio
 import { cardMeaning } from '@/lib/glyph-presentation';
 import { characterMeaning } from '@/lib/vocabulary-meaning';
 import { useWorkspace } from './workspace';
-import { UNRANKED, usageGroupLabel, usageGroups, usageRank, usageRankMatches, parseUsageGroup } from '@/lib/usage-frequency';
+import { UNRANKED, usageGroupLabel, usageGroups, usageRank, usageRankMatches, parseGameUsageFilter, usageRankMaximum } from '@/lib/usage-frequency';
 
 type Card = FlashCard;
 const libraryKinds: Record<ReferenceKind, LibraryKind> = { Radical: 'Radicals', Component: 'Components', Character: 'Characters' };
@@ -129,8 +130,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     const entries = inLesson ? libraryEntries(refKind).filter(entry => inLesson.has(entry.id)) : libraryEntries(refKind);
     const allStrokes = [...new Set(entries.flatMap(entry => entry.strokes ? [entry.strokes] : []))].sort((a, b) => a - b);
     if (refKind !== 'Characters' && refKind !== 'Components' && refKind !== 'Radicals') return { strokes: allStrokes, ranks: usageGroups(refKind) };
-    const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseUsageGroup(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
-    const current = parseUsageGroup(refKind, draft.usage);
+    const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseGameUsageFilter(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
+    const current = parseGameUsageFilter(refKind, draft.usage);
     const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
     const ranks = current && !options.ranks.some(g => g.value === current) ? usageGroups(refKind).filter(g => g.value === current || options.ranks.some(o => o.value === g.value)) : options.ranks;
     return { strokes, ranks };
@@ -152,7 +153,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     let base: Card[];
     if (f.category.startsWith('Ref:')) {
       const refKind = libraryKinds[f.category.slice(4) as ReferenceKind];
-      const group = refKind ? parseUsageGroup(refKind, f.usage) : undefined;
+      const group = refKind ? parseGameUsageFilter(refKind, f.usage) : undefined;
       const kangxi = new Map(refKind === 'Radicals' ? referenceCatalog.find(c => c.kind === 'Radical')?.entries.map(row => [row[0], Number((row[3] ?? "").match(/\bRadical #(\d+)\b/i)?.[1]) || undefined] as const) ?? [] : []);
       // Stroke counts come from the library's exact records; a card without a
       // recorded count never matches a stroke filter (fail closed).
@@ -160,7 +161,15 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       base = referenceCards(f.category.slice(4) as ReferenceKind)
         .filter(card => !group || !refKind || usageRankMatches(refKind, usageRank({ ...card, ...(kangxi.get(card.hanzi) ? { kangxiIndex: kangxi.get(card.hanzi) as number } : {}) }, refKind, preferences.includeTraditional), group, f.usageUpTo === '1'))
         .filter(card => matchesStrokeFilter(strokeMap.get(card.hanzi), f.strokes, f.strokesUpTo === '1'));
-      if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => { const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined; return entry && includeScript(entry.script, preferences.includeTraditional) ? [{ ...entry, libraryKind: 'Radicals' as const }] : []; })];
+      if (savedFilter && refKind === 'Radicals') base = [...base, ...saved.flatMap(id => {
+        const entry = id.includes(':variant:') ? savedGlyphEntry(id) : undefined;
+        // Exact saved variants obey the same family rank and exact-form stroke
+        // filters as the main radical pool; adding them must not bypass a range.
+        return entry && includeScript(entry.script, preferences.includeTraditional)
+          && (!group || usageRankMatches('Radicals', usageRank(entry, 'Radicals', preferences.includeTraditional), group, f.usageUpTo === '1'))
+          && matchesStrokeFilter(entry.strokes, f.strokes, f.strokesUpTo === '1')
+          ? [{ ...entry, libraryKind: 'Radicals' as const }] : [];
+      })];
     } else {
       const vocabKind = flashcardVocabularyKind(f.category);
       if (vocabKind === 'idiom') {
@@ -206,12 +215,13 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
   // Play-bar summary of the settings a round is dealt with, e.g. "All vocabulary · Chinese → English · 10 cards".
   const settingsLabel = () => {
     const refKind = isReference ? libraryKinds[category.slice(4) as ReferenceKind] : undefined;
-    const group = refKind ? parseUsageGroup(refKind, usage) : undefined;
+    const group = refKind ? parseGameUsageFilter(refKind, usage) : undefined;
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
     const idiomBand = category === 'Idioms' && usage ? idiomRankClasses.find(c => c.id === usage) : undefined;
     const subtopicLabel = subtopic ? subtopicById(subtopic)?.label ?? subtopic : '';
     const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && subtopicLabel ? [subtopicLabel] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(course ? [courseLabel(course)] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(idiomBand ? [usageUpTo === '1' ? `Rank 1–${idiomBand.to.toLocaleString('en-US')}` : `Rank ${idiomBandRangeLabel(idiomBand)}`] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [formatStrokeRangeLabel(strokes, strokesUpTo === '1')] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
-    return parts.join(' · ');
+    const customRange = parseRankRange(usage);
+    return [...parts, ...(customRange ? [`Rank ${rankRangeLabel(customRange)}`] : [])].join(' · ');
   };
   const [settingsOpen, setSettingsOpen] = useState(false);
   /** Deal a round: a fresh deck from `cards` (capped to the deck size) or, for a review, every card in `cards`. */
@@ -294,8 +304,14 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             {facets.styles.length > 0 && <GameField label="Sentence style"><FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} /></GameField>}
           </>}
         {/* Rank filter retains its exact recorded groups; stroke count uses a dual-thumb range. */}
-        {draftIdiom && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={draft.usage || ALL_IDIOM_BANDS} onValueChange={usage => patch({ usage: usage === ALL_IDIOM_BANDS ? '' : usage, usageUpTo: undefined })} items={[{ value: ALL_IDIOM_BANDS, label: 'All ranks' }, ...idiomRankClasses.map(c => ({ value: c.id, label: `${idiomBandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%`, triggerLabel: idiomBandRangeLabel(c) }))]} /></GameField>{draft.usage && draft.usage !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
-        {draftReference && draftRefKind && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onValueChange={usage => patch({ usage, usageUpTo: undefined })} items={[{ value: '', label: 'All ranks' }, ...(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ value: group.value, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional), triggerLabel: group.label }))]} /></GameField>{draft.usage && draft.usage !== UNRANKED && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
+        {draftIdiom && <FrequencyRangeControl value={draft.usage === ALL_IDIOM_BANDS ? '' : draft.usage} upTo={draft.usageUpTo === '1'} allowUnranked={false}
+          groups={idiomRankClasses.map(c => ({ value: c.id, min: c.from, max: c.to, label: `${idiomBandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%` }))}
+          maxRank={Math.max(0, ...idiomWords.map(word => word.idiomMeta?.rank ?? 0))}
+          onChange={(usage, upTo) => patch({ usage, usageUpTo: upTo ? '1' : undefined })}/>}
+        {draftReference && draftRefKind && <FrequencyRangeControl value={parseGameUsageFilter(draftRefKind, draft.usage) ?? ''} upTo={draft.usageUpTo === '1'}
+          groups={(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ ...group, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional) }))}
+          maxRank={usageRankMaximum(draftRefKind, preferences.includeTraditional)}
+          onChange={(usage, upTo) => patch({ usage, usageUpTo: upTo ? '1' : undefined })}/>}
         {draftReference && draftRefKind && <StrokeRangeControl value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} onChange={strokes => patch({ strokes, strokesUpTo: undefined })} />}
         {/* Bookmarks narrow the next pool only after Apply, just like other filters. */}
         <GameBookmarkCollection on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
