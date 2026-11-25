@@ -109,7 +109,7 @@ export function FilterSelect({
         {orderedItems.map((item, idx) =>
           isGroup(item) ? (
             <SelectGroup key={`${item.label}-${idx}`}>
-              <SelectLabel>{item.label}</SelectLabel>
+              <SelectLabel className={item.options.some(option => option.nested) ? 'filter-option-parent' : undefined}>{item.label}</SelectLabel>
               {item.options.map(opt => (
                 <SelectItem key={encode(opt.value)} value={encode(opt.value)} className={optionClassName(opt)} {...(opt.disabled ? { disabled: true } : {})}>
                   {opt.label}

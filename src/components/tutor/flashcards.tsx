@@ -266,8 +266,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             it, beside Topic; then the vocabulary collection / level / type. */}
         <div className="game-filter-row">
           <FilterSelect ariaLabel="Category" value={draft.category} onValueChange={category => patch({ category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', usageUpTo: undefined, strokes: '', strokesUpTo: undefined, style: undefined, course: undefined, lesson: undefined })} items={[
-            { label: 'Glyphs', options: flashcardKinds.filter(k => k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label })) },
-            { label: 'Vocabulary', options: flashcardKinds.filter(k => !k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label })) },
+            { label: 'Glyphs', options: flashcardKinds.filter(k => k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label, nested: true })) },
+            { label: 'Vocabulary', options: flashcardKinds.filter(k => !k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label, nested: true })) },
           ]} />
           {/* Characters only: the course narrows the lesson list, and both narrow the deck.
               "All courses" / "All lessons" leave the deck unfiltered by lesson. */}

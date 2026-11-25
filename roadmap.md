@@ -188,6 +188,7 @@
 - [x] Rename the hints switch to "Glyph quick cards" (the ring also covers components and radicals, which are not characters); saved choices untouched
 
 ## Unified dropdown styling
+- [x] Apply nested choices to the Practise menu in Hanzi games.
 - [x] Distinguish parent topic colour, add empty-topic Unclassified filtering, and keep all Unclassified options last and italic; verify library/game handoff.
 - [x] Combine Topics/Subtopics in Vocabulary and Flashcards with selectable parents and indented children; preserve existing filters and history.
 - [x] Replace remaining native `<select>` filter/settings dropdowns with one shared `FilterSelect` component (consistent themed popover, arrow inset, and text-to-arrow gap)
