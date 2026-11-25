@@ -8,7 +8,8 @@ import { Bookmark, ChevronDown, ChevronRight, Shuffle, Volume2 } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { useWorkspace } from './workspace';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
-import { randomOverviewWord, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from '@/lib/overview';
+import { randomOverviewWord, randomOverviewIdiom, overviewWordDestination, randomOverviewCharacter, overviewCharacterDestination } from '@/lib/overview';
+import { loadIdioms, type IdiomRankClass } from '@/lib/idioms';
 import { catalog, characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { libraryEntries, filterLibrary, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
@@ -23,12 +24,13 @@ import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { sectionIcons } from '@/lib/section-icons';
 import type { GameIcon } from './game-catalog';
 
-export type DiscoveryCategory = 'word' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
+export type DiscoveryCategory = 'word' | 'idiom' | 'phrase' | 'Characters' | 'Components' | 'Radicals';
 
 // Each tile wears the same icon as its sidebar section (src/lib/section-icons.ts),
 // so the menu and the Start cards never show a section with two different icons.
 const CATEGORY_META: Record<DiscoveryCategory, { icon: GameIcon; label: string; note: string }> = {
   word: { icon: sectionIcons.Words, label: 'Words', note: 'HSK & everyday vocabulary' },
+  idiom: { icon: sectionIcons.Idioms, label: 'Idioms', note: 'Top 3 frequency rank groups' },
   phrase: { icon: sectionIcons.Phrases, label: 'Phrases', note: 'Including unofficial practice phrases' },
   Characters: { icon: sectionIcons.Characters, label: 'Characters', note: 'Full imported catalogue' },
   Components: { icon: sectionIcons.Components, label: 'Components', note: 'Structural building blocks' },
@@ -42,8 +44,8 @@ const CATEGORY_META: Record<DiscoveryCategory, { icon: GameIcon; label: string; 
 const picksByEntry = new Map<string, string>();
 const pickKey = (category: DiscoveryCategory) => `${historyEntry()}|${category}`;
 
-function isVocabulary(category: DiscoveryCategory): category is 'word' | 'phrase' {
-  return category === 'word' || category === 'phrase';
+function isVocabulary(category: DiscoveryCategory): category is 'word' | 'idiom' | 'phrase' {
+  return category === 'word' || category === 'idiom' || category === 'phrase';
 }
 
 /**
@@ -129,29 +131,43 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState<string>();
   const [audioError, setAudioError] = useState<string | null>(null);
+  const [idioms, setIdioms] = useState<{ words: Word[]; rankClasses: IdiomRankClass[]; total: number } | null>(null);
+
+  useEffect(() => {
+    if (category !== 'idiom') return;
+    let active = true;
+    loadIdioms().then(({ dataset, words }) => {
+      if (active) setIdioms({ words, rankClasses: dataset.rankClasses, total: dataset.total });
+    }).catch(() => {});
+    return () => { active = false; };
+  }, [category]);
 
   const vocabularyPool = useMemo(
-    () => (isVocabulary(category) ? items.filter(word => vocabularyKind(word) === category && word.script !== 'Traditional') : []),
-    [items, category],
+    () => (category === 'idiom' ? (idioms?.words ?? []) : isVocabulary(category) ? items.filter(word => vocabularyKind(word) === category && word.script !== 'Traditional') : []),
+    [items, category, idioms],
   );
   const entries = useMemo(() => (isVocabulary(category) ? [] : libraryEntries(category as LibraryKind)), [category, catalogVersion]);
   const visible = useMemo(() => (entries.length ? filterLibrary(entries, '', '', false, false) : []), [entries]);
 
   useEffect(() => {
+    if (category === 'idiom' && !idioms) return;
     const kept = picksByEntry.get(pickKey(category));
     const keptValid = kept && (isVocabulary(category) ? vocabularyPool.some(word => word.id === kept) : entries.some(candidate => candidate.id === kept));
     if (keptValid) setSelectedId(kept);
+    else if (category === 'idiom' && idioms) setSelectedId(randomOverviewIdiom(idioms.words, idioms.rankClasses)?.id);
     else if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, undefined, Math.random, category)?.id);
     else setSelectedId(randomOverviewCharacter(entries)?.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, catalogVersion]);
+  }, [category, catalogVersion, idioms]);
   // Remember the current pick (including shuffles) for this history entry; see picksByEntry.
   useEffect(() => { if (selectedId) picksByEntry.set(pickKey(category), selectedId); }, [category, selectedId]);
 
   const word = isVocabulary(category) ? vocabularyPool.find(candidate => candidate.id === selectedId) ?? vocabularyPool[0] : undefined;
   const entry = !isVocabulary(category) ? entries.find(candidate => candidate.id === selectedId) ?? visible[0] : undefined;
 
-  const count = isVocabulary(category)
+  const count = category === 'idiom'
+    ? (idioms?.total ?? null)
+    : isVocabulary(category)
     ? vocabularyPool.length
     : catalogVersion
       ? category === 'Characters'
@@ -163,7 +179,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
 
   const shuffle = () => {
     setAudioError(null);
-    if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, word?.id, Math.random, category)?.id);
+    if (category === 'idiom' && idioms) setSelectedId(randomOverviewIdiom(idioms.words, idioms.rankClasses, word?.id)?.id);
+    else if (isVocabulary(category)) setSelectedId(randomOverviewWord(items, word?.id, Math.random, category)?.id);
     else setSelectedId(randomOverviewCharacter(entries, entry?.id)?.id);
   };
 

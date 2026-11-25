@@ -18,11 +18,11 @@ import { OverviewGames } from './overview-games';
 // Phone list labels follow the side menu's Learn items (names and icons from shell.tsx).
 const DISCOVERY_GROUPS: DiscoveryGroup[] = [
   { title: 'Glyphs', icon: <Library/>, categories: ['Characters', 'Components', 'Radicals'] },
-  { title: 'Vocabulary', icon: <BookOpen/>, categories: ['word', 'phrase'] },
+  { title: 'Vocabulary', icon: <BookOpen/>, categories: ['word', 'idiom', 'phrase'] },
   { title: 'Sound chart', icon: <AudioLines/>, categories: [], sound: true },
 ];
 
-const START_CARD_COLUMNS = [6, 3, 2, 1] as const;
+const START_CARD_COLUMNS = [7, 4, 3, 2, 1] as const;
 
 export function OverviewPage() {
   const { items, preferences, catalogVersion } = useWorkspace();

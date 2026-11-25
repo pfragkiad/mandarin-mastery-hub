@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ALL_IDIOM_BANDS, filterIdioms, idiomsForCharacter, idiomToWord, matchesIdiomBand, type IdiomRankClass } from './idioms';
 import { orderLibrary } from './library-order';
+import { randomOverviewIdiom } from './overview';
 
 const bands: IdiomRankClass[] = [
   { id: '1-100', label: 'Top 100', from: 1, to: 100, bandCoveragePct: 17.64, cumulativePct: 17.64 },
@@ -58,5 +59,21 @@ describe('idioms helpers', () => {
     expect(idiomsForCharacter(pool, '一').map(w => w.id)).toEqual(['idiom-10', 'idiom-50']);
     expect(idiomsForCharacter(pool, '堅', 'Traditional').map(w => w.id)).toEqual(['idiom-1']);
     expect(idiomsForCharacter(pool, '龍').map(w => w.id)).toEqual([]);
+  });
+
+  it('picks Start random idioms only from the top 3 rank classes', () => {
+    const fourBands: IdiomRankClass[] = [
+      { id: '1-100', label: 'Top 100', from: 1, to: 100, bandCoveragePct: 17.64, cumulativePct: 17.64 },
+      { id: '101-300', label: '101–300', from: 101, to: 300, bandCoveragePct: 16.88, cumulativePct: 34.52 },
+      { id: '301-500', label: '301–500', from: 301, to: 500, bandCoveragePct: 10.89, cumulativePct: 45.41 },
+      { id: '501-1000', label: '501–1,000', from: 501, to: 1000, bandCoveragePct: 17.43, cumulativePct: 62.84 },
+    ];
+    const pool = [
+      idiomToWord({ id: 'idiom-100', rank: 100, hanzi: '卓有成效', pinyin: 'zhuó yǒu chéng xiào', meaning: 'highly effective' }, 'THUOCL'),
+      idiomToWord({ id: 'idiom-500', rank: 500, hanzi: '一言为定', pinyin: 'yī yán wéi dìng', meaning: 'settled' }, 'THUOCL'),
+      idiomToWord({ id: 'idiom-501', rank: 501, hanzi: '画蛇添足', pinyin: 'huà shé tiān zú', meaning: 'gild the lily' }, 'THUOCL'),
+    ];
+    expect(randomOverviewIdiom(pool, fourBands, undefined, () => 0.99)?.id).toBe('idiom-500');
+    expect(randomOverviewIdiom(pool, fourBands, 'idiom-500', () => 0.5)?.id).toBe('idiom-100');
   });
 });

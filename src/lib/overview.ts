@@ -3,10 +3,20 @@ import { filterLibrary, LIBRARY_PAGE_SIZE, type LibraryEntry, type LibraryKind }
 import { usageRank } from './usage-frequency';
 
 /** Pick a real vocabulary record of the given kind, excluding the previous pick when possible. Traditional forms are never chosen at random. */
-export function randomOverviewWord(items: Word[], previousId?: string, random = Math.random, kind: 'word' | 'phrase' = 'word'): Word | undefined {
+export function randomOverviewWord(items: Word[], previousId?: string, random = Math.random, kind: 'word' | 'idiom' | 'phrase' = 'word'): Word | undefined {
   const words = items.filter(word => vocabularyKind(word) === kind && word.script !== 'Traditional');
   const alternatives = words.filter(word => word.id !== previousId);
   const pool = alternatives.length ? alternatives : words;
+  return pool[Math.floor(random() * pool.length)];
+}
+
+/** Pick a random idiom restricted to the top 3 frequency rank classes (ranks 1..500),
+ *  excluding the previous pick when possible. */
+export function randomOverviewIdiom(words: Word[], rankClasses: { to: number }[], previousId?: string, random = Math.random): Word | undefined {
+  const maxRank = rankClasses[2]?.to ?? 500;
+  const top = words.filter(word => (word.idiomMeta?.rank ?? Infinity) <= maxRank);
+  const alternatives = top.filter(word => word.id !== previousId);
+  const pool = alternatives.length ? alternatives : top;
   return pool[Math.floor(random() * pool.length)];
 }
 
