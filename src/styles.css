@@ -427,8 +427,8 @@ html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example
 .idiom-example-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
 /* Metadata belongs above its idiom; the quieter inner rule distinguishes examples
    from the full-weight dividers between different detail sections. */
-.idiom-examples-section .glyph-usage-example { margin-top: 12px; }
-.idiom-examples-section .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); padding-top: 12px; }
+.idiom-examples-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); margin-top: var(--detail-example-gap, 6px); }
+.idiom-examples-section .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); margin-top: var(--detail-section-gap, 14px); padding-top: var(--detail-section-gap, 14px); }
 .idiom-examples-section .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
@@ -1876,9 +1876,9 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    floating window reads as one compact card, so section gaps shrink. */
 .detail-sheet .catalog-detail-title { margin-bottom: 14px; }
 .detail-sheet .word-detail-actions { margin: 0 0 4px; }
-/* One section rhythm for the whole floating detail window: --detail-section-pad is the half gap;
-   --detail-section-gap (two half gaps) is derived from it in the divider rules further below. */
-.detail-sheet { --detail-section-pad: 14px; }
+/* One boundary gap for every detail section, including the first section after facts.
+   Example lines use a separate smaller unit, never stacked paragraph margins. */
+.detail-sheet { --detail-section-pad: 14px; --detail-example-gap: 6px; }
 /* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
 .detail-sheet .catalog-facts { margin-top: 16px; padding: var(--detail-section-pad) 0 0; }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
@@ -1887,11 +1887,10 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    Strokes…) is framed above and below, and the bottom actions row keeps its top line as a footer;
    other sections (In a sentence, Lessons, Decomposition | Etymology drawer, radical family) are
    separated by whitespace alone, so bordered content such as lesson cards never stacks against an
-   extra hairline. One unit, --detail-section-pad (the "half gap"), sets every distance:
+   extra hairline. One unit, --detail-section-pad, sets every boundary distance:
      facts content ↔ its lines, facts line → first section, last section → action line,
-     action line → buttons: one half gap each;
-     between two sections: two half gaps (--detail-section-gap). */
-.detail-sheet { --detail-section-gap: calc(2 * var(--detail-section-pad)); }
+     action line → buttons and between sections: the same gap (--detail-section-gap). */
+.detail-sheet { --detail-section-gap: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .catalog-facts { border-bottom: 1px solid var(--border); padding-bottom: var(--detail-section-pad); }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section, .detail-sheet .radical-family-section, .detail-sheet .catalog-detail .detail-tabs { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
 .detail-sheet .catalog-detail .catalog-facts + :not(.detail-reference-row) { margin-top: var(--detail-section-pad); }
@@ -1903,6 +1902,12 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 /* The sentence speaker button (26px) is taller than the pinyin line (~21px); letting it overhang the
    line keeps a sentence-final section's last line exactly one section gap from the next heading. */
 .detail-sheet .sentence-reading .sentence-pinyin > button { margin-block: -3px; }
+/* Rank → hanzi → reading → wrapped translation all use this single line-gap token.
+   Grid contains paragraph margins; resetting them avoids the old 15 + 4 + 4px stack. */
+.detail-sheet .sentence { display: grid; gap: var(--detail-example-gap); }
+.detail-sheet .sentence p.sentence-hanzi { margin: 0; }
+.detail-sheet .sentence-reading { margin-top: 0; row-gap: var(--detail-example-gap); }
+.detail-sheet .sentence-section:not(.idiom-examples-section) > .sentence-section-head { margin-bottom: var(--detail-example-gap); }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
