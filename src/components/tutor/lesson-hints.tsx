@@ -163,7 +163,7 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
   // Words card (card-ink.ts wordInk); other words keep the link colouring. Traditional
   // words are left to the row's own colour, so nothing new is implied for them.
   const wordHanziInk = word && wordInk({ hanzi: word.hanzi }) === 'card-ink-radical' ? 'card-ink-radical' : '';
-  const kindLabel = (kind: string) => kind === 'Components' ? 'As a component' : kind === 'Radicals' ? 'As a radical' : 'As a character';
+  const kindLabel = (kind: string) => kind === 'Components' ? 'As a component' : kind === 'Radicals' ? 'As a radical' : kind === 'Strokes' ? 'As a stroke' : 'As a character';
   // Words first: when the tapped glyph is itself a one-character word (我), the word is the
   // popup's main entry — its reading, recording and HSK translation lead, and the separate
   // "As a word" row folds into the head. Multi-character words keep the glyph head and an

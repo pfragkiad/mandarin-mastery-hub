@@ -73,6 +73,16 @@ export async function cncharStrokeNames(character: string): Promise<StrokeName[]
   return names;
 }
 
+/** The word a voice can say for a stroke: the Chinese name the source records (横).
+ * A stroke glyph (㇐) has no sound of its own and an English note is not a pronunciation,
+ * so anything that isn't Chinese leaves the control with nothing to speak. Shared by the
+ * Strokes grid, its detail card, Practice and the hint popup. */
+export function strokeSpeech(entry?: { note: string; pinyin: string }) {
+  const name = entry?.note.split(' · ')[0]?.trim() ?? '';
+  const reading = entry?.pinyin.split(' / ')[0] || null;
+  return { name: /^[㐀-鿿]+$/.test(name) ? name : null, reading: /^[㐀-鿿]+$/.test(name) ? reading : null };
+}
+
 /** Compact stroke range for component headings: 1-based, "4–5" when contiguous, otherwise a list. */
 export function formatStrokeIndices(indices: number[]): string {
   const oneBased = indices.map(i => i + 1).sort((a, b) => a - b);

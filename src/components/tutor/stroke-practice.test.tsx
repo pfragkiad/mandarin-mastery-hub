@@ -1,7 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
-import { StrokePractice, strokeSpeech } from './stroke-practice';
+import { StrokePractice } from './stroke-practice';
+import { strokeSpeech } from '@/lib/stroke-names';
 import { hydrateCatalog } from '@/lib/catalog-store';
 
 vi.mock('@tanstack/react-router', () => ({

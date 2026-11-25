@@ -17,6 +17,16 @@ describe('lessonGlyphHint', () => {
     expect(hint.pinyin).toBe('cì');
     expect(hint.strokes).toBe(6);
   });
+  it('resolves a stroke symbol to its exact Strokes record, speaking its recorded Chinese name', () => {
+    const hint = lessonGlyphHint('㇐', false)!;
+    expect(hint.kind).toBe('Strokes');
+    expect(hint.search).toEqual({ tab: 'Strokes', id: 'Strokes:㇐' });
+    expect(hint.spoken).toBe('横');
+    expect(hint.pinyin).toBe('héng');
+  });
+  it('keeps the lexical record as the head for a form that is also a stroke sample', () => {
+    expect(lessonGlyphHint('一', false)!.kind).toBe('Characters');
+  });
 });
 
 describe('lessonGlyphHintById', () => {

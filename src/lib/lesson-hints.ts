@@ -4,6 +4,7 @@ import { glyphPresentation } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 import { usageRank } from './usage-frequency';
 import { glyphRecordInk } from './record-ink';
+import { strokeSpeech } from './stroke-names';
 import type { CardInk } from './card-ink';
 import type { CharacterScript } from './learning-preferences';
 
@@ -39,12 +40,14 @@ export type LessonGlyphHint = {
   ink: CardInk;
 };
 
-const ORDER: LibraryKind[] = ['Characters', 'Components', 'Radicals'];
+// Strokes last: a form shared with a lexical record (一 is also a stroke sample) keeps
+// its character/component/radical card as the head; the stroke row only adds to it.
+const ORDER: LibraryKind[] = ['Characters', 'Components', 'Radicals', 'Strokes'];
 const KINDS = new Set<LibraryKind>(ORDER);
 
 function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries>[number], includeTraditional: boolean): LessonGlyphHint {
   const glyph = entry.hanzi;
-  const row = (kind === 'Characters' ? catalog.characters : kind === 'Components' ? catalog.components : catalog.radicals).find(item => item[0] === glyph);
+  const row = (kind === 'Characters' ? catalog.characters : kind === 'Components' ? catalog.components : kind === 'Radicals' ? catalog.radicals : catalog.strokes).find(item => item[0] === glyph);
   const info = glyphPresentation(glyph, kind, row?.[1] ?? '', row?.[2] ?? '');
   // Components with no own reading inherit their radical family's reading, as in reference cards.
   const fallback = kind === 'Components' && !entry.pinyin ? radicalVariantFallback(glyph, '') : null;
@@ -52,7 +55,8 @@ function hintForEntry(kind: LibraryKind, entry: ReturnType<typeof libraryEntries
   return {
     glyph, kind, id: entry.id,
     pinyin: fallback?.pinyin ?? entry.pinyin,
-    spoken: fallback?.spoken ?? glyph,
+    // A stroke symbol has no sound of its own; the popup speaks its recorded Chinese name (横).
+    spoken: fallback?.spoken ?? (kind === 'Strokes' ? strokeSpeech(entry).name ?? glyph : glyph),
     componentName: !fallback && info.componentName ? info.componentName.pinyin : undefined,
     meaning,
     strokes: entry.strokes,

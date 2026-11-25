@@ -7,6 +7,7 @@ import { PracticeModeTabs } from './practice-mode-tabs';
 import { practiceModeOptions, type PracticeMode } from '@/lib/practice-mode';
 import { libraryEntries } from '@/lib/character-library';
 import { strokeExamples } from '@/lib/stroke-examples';
+import { strokeSpeech } from '@/lib/stroke-names';
 import { characterRecording, playCharacter } from '@/lib/catalog-store';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
@@ -22,15 +23,6 @@ const toHex = (value: string) => {
   ctx.fillStyle = value; ctx.fillRect(0, 0, 1, 1);
   return `#${Array.from(ctx.getImageData(0, 0, 1, 1).data).slice(0, 3).map(c => c.toString(16).padStart(2, '0')).join('')}`;
 };
-
-/** The word a voice can say for a stroke: the Chinese name the source records (横).
- * A stroke glyph (㇐) has no sound of its own and an English note is not a pronunciation,
- * so anything that isn't Chinese leaves the control with nothing to speak. */
-export function strokeSpeech(entry?: { note: string; pinyin: string }) {
-  const name = entry?.note.split(' · ')[0]?.trim() ?? '';
-  const reading = entry?.pinyin.split(' / ')[0] || null;
-  return { name: /^[㐀-鿿]+$/.test(name) ? name : null, reading: /^[㐀-鿿]+$/.test(name) ? reading : null };
-}
 
 /** Watch and trace the real Hanzi Writer outline of one stroke, taken from an explicit representative character. */
 export function StrokePractice({ glyph, mode: selectedMode, onModeChange }: { glyph: string; mode?: PracticeMode | undefined; onModeChange?: (mode: PracticeMode) => void }) {

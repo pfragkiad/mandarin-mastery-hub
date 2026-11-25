@@ -31,7 +31,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { UNRANKED, usageGroups, usageGroupLabel, usagePercentage, formatUsagePercentage, usageGroupFor, usageRank, parseUsageGroup, usageOrder } from '@/lib/usage-frequency';
 import { libraryEntries, glyphDecomposition, filterLibrary, libraryPage, libraryDestination, glyphIndex, glyphScript, plannedCounts, radicalCardRecord, radicalVariantFallback, radicalVariantMeaning, radicalVariantEntry, savedGlyphEntry, savedGlyphDestination, type LibraryKind, type LibraryEntry } from '@/lib/character-library';
 import { playCharacter, characterRecording, catalog, readingMeanings } from '@/lib/catalog-store';
-import { strokeSpeech } from './stroke-practice';
+import { strokeSpeech } from '@/lib/stroke-names';
 import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { CharacterSentenceIndicator } from './character-sentence-indicator';
 import { includeSelectedRecord } from '@/lib/record-selection';
@@ -479,9 +479,11 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   const hanziHidden = !revealed && !revealToFaceView(preferences.cardReveal).hanzi;
   // Grid Character hints (gridHints, provider around the results): a form drawn as itself is a
   // quick-card target (not a tab stop inside the card button); a stand-in drawing (⺴ shown as 冗)
-  // stays plain so the hint never names the stand-in instead of the exact form.
+  // stays plain so the hint never names the stand-in instead of the exact form. Stroke symbols
+  // (㇐) are not Script=Han, but the Strokes tile always draws the exact recorded glyph, so
+  // they are hint targets too — the popup shows the stroke's own record.
   const gridHints = useLessonHints();
-  const hintGlyph = (glyph: string, drawn: ReactNode) => gridHints?.enabled && drawn === glyph && /^\p{Script=Han}$/u.test(glyph) ? <HintChar glyph={glyph} focusable={false}/> : drawn;
+  const hintGlyph = (glyph: string, drawn: ReactNode) => gridHints?.enabled && drawn === glyph && (kind === 'Strokes' || /^\p{Script=Han}$/u.test(glyph)) ? <HintChar glyph={glyph} focusable={false}/> : drawn;
   // The popup repeats this card's pinyin, speaker and translation (MnemonicFacts).
   const mnemonicFacts = { pinyin: fallback ? fallback.pinyin : info.reading || undefined, meaning: hasMeaning ? meaningText : undefined, ...(audioAvailable && spoken ? { onListen: async () => setAudioError(await playCharacter(spoken, preferences.slow, reading)), listenLabel: `Listen to ${spoken}` } : {}) };
   const mnemonicButton = mnemonic && !hanziHidden ? <TileMnemonicButton mnemonic={mnemonic} facts={mnemonicFacts} family={family ? radicalMnemonicFamily(entry, preferences.slow, setAudioError, { glyph: entry.hanzi, facts: mnemonicFacts }) : undefined}/> : null;
