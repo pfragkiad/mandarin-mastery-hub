@@ -71,6 +71,7 @@ describe('alignPhrasePinyin on lesson patterns', () => {
 
   it('leaves X/Y slots and ellipses unpaired', () => {
     expect(paired('以 X 为 Y', 'yǐ X wéi Y')).toBe('[0:yǐ] X [1:wéi] Y');
+    expect(paired('XXX用荷兰语怎么说？', 'XXX yòng hé lán yǔ zěn me shuō？')).toBe('XXX [0:yòng] [1:hé] [2:lán] [3:yǔ] [4:zěn] [5:me] [6:shuō]？');
     const pairing = alignPhrasePinyin('每一次 + 动作，……都……', 'měi yí cì + dòngzuò, ... dōu ...', syllables);
     expect(pairing?.glyphPairs.filter(p => p != null)).toEqual([0, 1, 2, 3, 4, 5]);
     expect(paired('每一次 + 动作，……都……', 'měi yí cì + dòngzuò, ... dōu ...')).toBe('[0:měi] [1:yí] [2:cì] + [3:dòng][4:zuò], ... [5:dōu] ...');

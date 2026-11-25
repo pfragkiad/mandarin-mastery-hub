@@ -76,7 +76,7 @@ export function alignPhrasePinyin(hanzi: string, pinyin: string, inventory: Read
   const tokens = splitPinyinDisplayTokens(pinyin);
   if (!hanIndexes.length || !tokens.some(t => t.syllable)) return null;
   // Latin words written in the hanzi itself (pattern slots such as X and Y).
-  const slots = new Set(hanzi.split(/\s+/).filter(w => /^[A-Za-z]+$/.test(w)));
+  const slots = new Set(hanzi.match(/[A-Za-z]+/g) ?? []);
   const passThrough = (t: { syllable: string }) => !t.syllable || slots.has(t.syllable);
   const options = tokens.map(t => passThrough(t) ? [[]] as Array<Array<[number, number]>> : tokenSplits(t.syllable, inventory));
   if (options.some(o => o.length === 0)) return null;
