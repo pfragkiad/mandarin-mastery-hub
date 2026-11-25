@@ -121,6 +121,33 @@ class MarkingTests(unittest.TestCase):
             self.assertFalse(translation['marking']['holds'])
             self.assertEqual(translation['text'], english)
 
+    def test_review_batches_partition_first_candidates_without_replacing_text(self):
+        def rows(name):
+            with (ROOT / 'reports' / name).open(encoding='utf-8', newline='') as stream:
+                reader = csv.DictReader(stream, delimiter='\t')
+                self.assertEqual(reader.fieldnames, ['id', 'character', 'sentence', 'translation'])
+                return list(reader)
+        first_path = ROOT / 'reports/tatoeba-chinese-english-review-01-ok.tsv'
+        if not first_path.exists():
+            self.skipTest('Chinese/English review batches have not been exported')
+        full = {row['id']: row for row in rows('tatoeba-translation-review.tsv')}
+        first = rows(first_path.name)
+        other = rows('tatoeba-chinese-english-review-02-positive.tsv')
+        inventory = json.loads((ROOT / 'reports/tatoeba-positive-inventory.json').read_bytes())
+        sources = {row['id']: row for part in inventory['parts']
+                   for row in (json.loads(line) for line in (module.DEST / 'selected' / part).read_text('utf-8').splitlines())}
+        first_ids = {row['id'] for row in first}
+        other_ids = {row['id'] for row in other}
+        self.assertFalse(first_ids & other_ids)
+        self.assertEqual(first_ids | other_ids, set(full))
+        self.assertEqual(len(first) + len(other), len(full))
+        for is_ok, group in ((True, first), (False, other)):
+            for row in group:
+                self.assertEqual(row, full[row['id']])
+                source = sources[int(row['id'].split(':')[1])]
+                self.assertEqual(source['marking']['okTag'], is_ok)
+                self.assertTrue(source['marking']['eligibleForSecondaryReview'])
+
 
 if __name__ == '__main__':
     unittest.main()
