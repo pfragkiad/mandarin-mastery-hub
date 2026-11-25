@@ -5,9 +5,13 @@
 import { usageGroupFor } from '@/lib/usage-frequency';
 import type { LibraryKind } from '@/lib/character-library';
 
+/** Exact rank colour tier shared by glyph and idiom frequency labels: ≤300 top, 301–500 inter, 501–1000 mid, >1000 low. */
+export function usageRankTier(rank: number | null): 'none' | 'top' | 'inter' | 'mid' | 'low' {
+  return rank === null ? 'none' : rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
+}
+
 export function UsageLabel({ rank, kind, compact = false }: { rank: number | null; kind: LibraryKind; compact?: boolean }) {
   const group = usageGroupFor(kind, rank);
-  // Colour tiers by exact rank: ≤300 top, 301–500 intermediate, 501–1000 mid, >1000 low.
-  const tier = rank === null ? 'none' : rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
+  const tier = usageRankTier(rank);
   return <span className={`component-reuse-label usage-${tier}`}>{rank === null ? 'Unranked' : compact ? `Rank #${rank.toLocaleString('en-US')}` : `#${rank.toLocaleString('en-US')} · ${group?.label ?? ''}`}</span>;
 }

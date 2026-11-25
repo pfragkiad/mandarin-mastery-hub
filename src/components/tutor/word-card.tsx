@@ -25,6 +25,7 @@ import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
 import { isHanziChar } from '@/lib/sentence-align';
 import { RecordDetailTitle } from './record-detail-title';
 import { WordIdentityPills, wordHskPill } from './word-identity-pills';
+import { usageRankTier } from './usage-label';
 import { wordInk, wordRadicalNumber } from '@/lib/card-ink';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
@@ -117,7 +118,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
         row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
     {(word.type || topics.length > 0 || (!hskPill && word.level) || idiom) && <dl className="catalog-facts">
-      {idiom && <div><dt>Frequency rank</dt><dd className="catalog-record-value">#{idiom.rank.toLocaleString()}</dd></div>}
+      {idiom && <div><dt>Frequency rank</dt><dd className="catalog-record-value"><span className={`component-reuse-label usage-${usageRankTier(idiom.rank)}`}>#{idiom.rank.toLocaleString('en-US')}</span></dd></div>}
       {idiom?.traditional && <div><dt>Traditional</dt><dd className="catalog-record-value" lang="zh-Hant">{idiom.traditional}</dd></div>}
       {idiom?.score != null && <div><dt>Frequency score</dt><dd className="catalog-record-value">{idiom.score}</dd></div>}
       {!hskPill && !idiom && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
