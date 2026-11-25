@@ -1834,9 +1834,11 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-setup-label { font-size: 10px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted-foreground); }
 .game-setup .shared-filter-form { margin: 0; gap: 10px; }
 .game-setup .shared-filter-form .filter-select,
-.game-setup .game-options .filter-select { height: 36px; flex: 0 1 auto; max-width: 100%; min-width: 0; field-sizing: content; }
-/* field-sizing sizes each dropdown to its chosen option (not its longest one), so a short
-   choice like "All levels" never reserves the width of a long collection name. */
+.game-setup .game-options .filter-select { height: 36px; flex: 0 1 auto; width: fit-content; max-width: 100%; min-width: 0; }
+/* Each trigger is only as wide as the value it shows: the shadcn trigger carries its own
+   w-full, which stretched a short choice like "All levels" across the whole setup box, and
+   field-sizing has no effect on a <button>. The open menu still grows to the longest option
+   (Radix keeps the trigger width as its minimum), so nothing is clipped. */
 .game-setup .game-options { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0; }
 .game-setup .game-option-row { display: flex; flex-wrap: wrap; gap: 10px; max-width: 100%; }
 .game-setup .vocabulary-saved-filter button { height: 36px; }
@@ -3854,7 +3856,9 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
 /* Game setup "What to practise": row 1 picks the kind (and vocabulary collection/level/type),
    row 2 holds the narrowing filters (rank, strokes, Saved). The clear X follows row 2 inline. */
 .game-setup .shared-filter-form { flex-wrap: wrap; }
-.game-setup .game-filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-width: 0; max-width: 100%; }
+/* One dropdown per line, each left-aligned at its own content width: the setup keeps its
+   spanned reading order (kind → topic → level → type …) without a wide empty trigger. */
+.game-setup .game-filter-row { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; max-width: 100%; }
 .game-setup .game-filter-row:first-child { flex: 1 0 100%; }
 .game-setup .game-filter-row:empty { display: none; }
 

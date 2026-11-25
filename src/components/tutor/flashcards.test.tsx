@@ -271,10 +271,10 @@ describe('Last card and finish', () => {
 });
 
 describe('What to practise kinds', () => {
-  it('lists glyph kinds first, then Words and Phrases, defaulting to Characters', async () => {
+  it('lists glyph kinds first, then Words, Phrases and Idioms, defaulting to Characters', async () => {
     render(<FlashcardsPage />);
     const select = screen.getByRole('combobox', { name: 'Category' });
-    expect(optionLabels(select)).toEqual(['Characters', 'Components', 'Radicals', 'Words', 'Phrases']);
+    expect(optionLabels(select)).toEqual(['Characters', 'Components', 'Radicals', 'Words', 'Phrases', 'Idioms']);
     expect(select).toHaveTextContent('Characters');
     expect(screen.queryByRole('combobox', { name: 'Topic' })).not.toBeInTheDocument();
   });
