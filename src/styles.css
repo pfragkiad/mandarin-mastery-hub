@@ -2609,8 +2609,21 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-parts dd { font-size: 13px; color: var(--foreground); }
 .pinyin-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
 .pinyin-alikes > div:last-child { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.pinyin-alike { border: 1px solid var(--border); border-radius: 999px; padding: 3px 11px; background: transparent; font-size: 13px; color: var(--terracotta); cursor: pointer; transition: border-color .15s, color .15s; }
-.pinyin-alike:hover, .pinyin-alike:focus-visible { border-color: var(--primary); color: var(--primary); outline: none; }
+/* One pill, two regions: the spelling (opens that sound) and a speaker that plays the same
+   recording in place. The border lives on the wrapper so both halves read as one case. */
+.pinyin-alike { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 999px; background: transparent; font-size: 13px; color: var(--terracotta); transition: border-color .15s, color .15s, background .15s; }
+.pinyin-alike-say { display: inline-flex; align-items: center; border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; padding: 3px 11px; border-radius: 999px; }
+/* A recording plays through the white speaker, never the accent green; the pill's own
+   hover tint carries the accent instead. */
+.pinyin-alike-audio { display: inline-flex; align-items: center; border: 0; background: transparent; color: var(--foreground); cursor: pointer; padding: 0 9px 0 2px; border-radius: 999px; }
+.pinyin-alike-audio svg { width: 13px; height: 13px; }
+.pinyin-alike:hover, .pinyin-alike:focus-within { border-color: var(--primary); color: var(--primary); }
+.pinyin-alike-say:hover, .pinyin-alike-say:focus-visible { outline: none; color: var(--primary); }
+/* The speaker keeps the white recording colour even under the pointer: only a soft round
+   tint marks it, so the accent never paints an audio icon. */
+.pinyin-alike-audio:hover, .pinyin-alike-audio:focus-visible { outline: none; background: color-mix(in oklch, var(--foreground) 12%, transparent); }
+/* The clip now sounding keeps its pill lit; nothing else on the card changes. */
+.pinyin-alike.is-playing { border-color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); }
 
 .pinyin-source a { color: var(--primary); text-decoration: none; }
 .pinyin-score { font-size: 12px; color: var(--muted-foreground); margin-left: auto; }
@@ -2699,7 +2712,10 @@ html[data-display-size='comfortable'] .pinyin-parts { gap: 6px 18px; padding-top
 html[data-display-size='comfortable'] .pinyin-parts dt { font-size: 12px; letter-spacing: 0; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-parts dd { font-size: 16px; line-height: 1.5; }
 html[data-display-size='comfortable'] :is(.pinyin-note, .pinyin-characters-note) { font-size: 16px; line-height: 1.6; }
-html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; padding: 5px 14px; }
+html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; }
+html[data-display-size='comfortable'] .pinyin-alike-say { padding: 5px 14px; }
+html[data-display-size='comfortable'] .pinyin-alike-audio { padding: 0 12px 0 2px; }
+html[data-display-size='comfortable'] .pinyin-alike-audio svg { width: 15px; height: 15px; }
 html[data-display-size='comfortable'] .pinyin-character-list { row-gap: var(--record-tile-gap); column-gap: 12px; }
 html[data-display-size='comfortable'] .pinyin-character-glyphs { gap: 8px; }
 html[data-display-size='comfortable'] .pinyin-character-glyph { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
