@@ -1688,17 +1688,18 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .card-ink-radical { --card-ink: var(--hsk-id); }
 .card-ink-character { --card-ink: var(--primary); }
 .card-ink-component { --card-ink: var(--foreground); }
+.word-card.stroke-card { --card-ink: var(--component-ink-0); }
 .word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
 /* Words cards: a one-character word that is a sourced radical (八, 门; card-ink.ts wordInk)
    wears the radical gold on its headword, like its Characters card. */
 .word-card.card-ink.card-ink-radical .word-hanzi-tile { color: var(--card-ink); }
-.word-card.card-ink:hover { border-color: var(--card-ink); }
-.word-card.card-ink.is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
-.word-card.card-ink.is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
-.word-card.card-ink[tabindex="-1"]:focus,
-.word-card.card-ink :is(.word-open, .catalog-entry):focus-visible { outline-color: var(--card-ink); }
-.word-card.card-ink:hover :is(.catalog-entry-meaning, .word-meaning),
-.word-card.card-ink .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
+.word-card:is(.card-ink, .stroke-card):hover { border-color: var(--card-ink); }
+.word-card:is(.card-ink, .stroke-card).is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
+.word-card:is(.card-ink, .stroke-card).is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
+.word-card:is(.card-ink, .stroke-card)[tabindex="-1"]:focus,
+.word-card:is(.card-ink, .stroke-card) :is(.word-open, .catalog-entry):focus-visible { outline-color: var(--card-ink); }
+.word-card:is(.card-ink, .stroke-card):hover :is(.catalog-entry-meaning, .word-meaning),
+.word-card:is(.card-ink, .stroke-card) .catalog-entry:is(:hover, :focus-visible) :is(strong, .catalog-entry-meaning):not(.traditional-character) { color: var(--card-ink); }
 /* Variant tiles inside a traditional radical card are other forms, not traditional
    themselves — keep them muted despite the `.is-traditional [lang]` rule above. */
 .word-card.is-traditional .radical-tile-forms [lang="zh-CN"] { color: var(--muted-foreground); }
