@@ -204,9 +204,7 @@ export function EtymologySourcesInfo({ views, perCharacter = false }: { views: E
     {perCharacter && <>Each note belongs to its own character, not to the history of this word.<br/></>}
     {views.map(view => COVERAGE[view.coverage] && <span key={view.glyph}>{prefix(view.glyph)}{COVERAGE[view.coverage]}<br/></span>)}
     {entries.map(entry => <span key={entry.id}>{prefix(entry.headword)}{SOURCE_LABEL[entry.sourceId].name} · <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">Source entry</a><br/></span>)}
-    {entries.some(entry => entry.translation) && <>{entries.some(corrected) ? 'Shuowen English · AI-generated draft with partial editorial corrections' : entries.some(entry => entry.translation?.editorialReview) ? 'Shuowen English · AI-generated draft, checked in a partial editorial review (English unchanged)' : 'Shuowen English · AI-generated draft, not reviewed'}<br/></>}
-    {licenses.join(' · ')}<br/>
-    Imported {meta.import_date}
+    {licenses.join(' · ')}
   </SourceInfo>;
 }
 
@@ -249,7 +247,7 @@ export function ScriptPairArrow({ form }: { form: RelatedForm }) {
 function InheritedEtymology({ view, form, inherited, headless }: { view: EtymologyView; form: RelatedForm; inherited: EtymologyView; headless: boolean }) {
   return <div className="etymology-inherited">
     {!headless && <div className="etymology-inherited-row"><span className="decomposition-glyph decomposition-glyph-static"><strong lang="zh-CN">{view.glyph}</strong></span><ScriptPairArrow form={form}/></div>}
-    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span> (suggested, not reviewed):<EtymologyInfo view={inherited}/></p>
+    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span> (suggested, not reviewed):</p>
     <EtymologyPanel view={inherited}/>
   </div>;
 }
@@ -279,7 +277,6 @@ function StandaloneEtymology({ view }: { view: EtymologyView }) {
       <div className="glyph-usage-meaning etymology-inherited-note etymology-standalone-note">
         <span>These notes are for the standalone character</span>
         <EtymologyRecordLink id={view.standalone} glyph={view.glyph}/>
-        <EtymologyInfo view={standalone}/>
       </div>
       <EtymologyPanel view={standalone}/>
     </div>;
