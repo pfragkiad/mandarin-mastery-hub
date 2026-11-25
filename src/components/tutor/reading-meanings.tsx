@@ -15,8 +15,8 @@ import { groupReadingMeanings } from '@/lib/catalog-store';
 // pinyin label, so the detail heading drops its separate pinyin line instead of listing readings twice.
 // Readings sharing one meaning (发 fà / fǎ "hair") share one line, each label keeping its own speaker.
 // No state. Lines sit in a two-column grid so meanings align even when labels differ in width.
-export function ReadingMeanings({ items, speaker }: { items: { reading: string; meaning: string; parts?: MeaningPart[] | null }[]; speaker?: ((reading: string) => ReactNode) | undefined }) {
-  return <h2 className="reading-meanings pointed-meaning">
+export function ReadingMeanings({ items, speaker, className }: { items: { reading: string; meaning: string; parts?: MeaningPart[] | null }[]; speaker?: ((reading: string) => ReactNode) | undefined; className?: string | undefined }) {
+  return <h2 className={`reading-meanings pointed-meaning${className ? ` ${className}` : ''}`}>
     {groupReadingMeanings(items).map(({ readings, first: item }) => <span key={readings.join('/')} className="reading-meaning">
       <span className="reading-meaning-label">{readings.map((reading, index) => <span key={reading} className="reading-meaning-reading">{index > 0 && <span className="pinyin reading-meaning-separator" aria-hidden="true">/</span>}<span className="pinyin" lang="zh-Latn-pinyin">{reading}</span>{speaker?.(reading)}</span>)}</span>
       <span>{item.parts ? <PointedParts parts={item.parts}/> : <MeaningText text={item.meaning}/>}</span>

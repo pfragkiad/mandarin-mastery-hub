@@ -10,9 +10,10 @@ import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { dailyCharacter, greeting, overviewWordDestination } from '@/lib/overview';
 import { libraryEntries, libraryDestination, savedGlyphEntry, savedGlyphDestination, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { characterAudioRequest, characterRecording, playCharacter } from '@/lib/catalog-store';
+import { characterAudioRequest, characterRecording, playCharacter, readingMeanings } from '@/lib/catalog-store';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
+import { ReadingMeanings } from './reading-meanings';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { SoundChartLink } from './sound-chart-link';
 
@@ -88,6 +89,7 @@ export function DailyCharacterHero({ children }: { children?: React.ReactNode })
   const hello = greeting(now?.getHours() ?? 9);
   const component = entry?.decomposition?.root.children?.find(child => child.glyph && child.glyph !== entry.hanzi)?.glyph;
   const destination = entry ? libraryDestination(entry.hanzi, preferences.includeTraditional) : undefined;
+  const perReading = entry ? readingMeanings(entry.hanzi) : null;
   return <section className="daily-hero" aria-label="Character of the day">
     <div className="daily-hero-copy">
       {/* Greeting laid out like a glyph tile: hanzi on the left, reading over translation on its right. */}
@@ -107,7 +109,7 @@ export function DailyCharacterHero({ children }: { children?: React.ReactNode })
       {entry ? <>
         <DailyPinyin entry={entry} slow={preferences.slow} showPinyin={preferences.pinyin} chartLinks={preferences.soundChartLinks !== false}/>
         <StrokeReveal hanzi={entry.hanzi}/>
-        <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>
+        {perReading ? <ReadingMeanings className="daily-hero-meaning" items={perReading}/> : <h2 className="daily-hero-meaning" title={entry.meaning}><MeaningText text={entry.meaning}/></h2>}
         <div className="daily-hero-actions">
           {destination && <Button asChild variant="outline" size="sm"><Link to="/characters" search={destination}><DetailsIcon aria-hidden="true"/>Details</Link></Button>}
           <Button asChild variant="outline" size="sm"><Link to="/strokes" search={{ character: entry.hanzi, mode: 'trace' }}><PracticeIcon aria-hidden="true"/>Trace</Link></Button>

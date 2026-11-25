@@ -1399,6 +1399,8 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .daily-hero-pinyin > button svg { width: 24px; height: 24px; }
 .daily-hero-pinyin .library-note { flex-basis: 100%; margin: 0; }
 .daily-hero-meaning { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin: 0; max-width: 32ch; text-align: center; }
+:is(.daily-hero-card, .discovery-tile-body) h2.reading-meanings { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 12px; row-gap: 4px; align-items: baseline; text-align: left; }
+:is(.daily-hero-card, .discovery-tile-body) h2.reading-meanings .reading-meaning-label { font-family: var(--font-sans); min-width: 0; }
 .daily-hero-actions { position: relative; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: auto; }
 .saved-strip { margin: -12px 0 32px; display: flex; flex-direction: column; gap: 10px; }
 .saved-strip .eyebrow { display: inline-flex; align-items: center; gap: 6px; }

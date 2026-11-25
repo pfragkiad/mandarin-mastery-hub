@@ -16,6 +16,8 @@ import { audioCandidates, playPronunciation, audioMessage } from '@/lib/audio';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { DetailsIcon, ExpertPracticeIcon, PracticeIcon } from './practice-icons';
 import { SoundChartLink } from './sound-chart-link';
+import { InlineReadingMeanings, ReadingMeanings } from './reading-meanings';
+import { cardMeaning, cardReadingSplit } from '@/lib/glyph-presentation';
 import { historyEntry } from '@/lib/detail-trail';
 import { glyphCardInk, isRadicalGlyph } from '@/lib/card-ink';
 import { sectionIcons } from '@/lib/section-icons';
@@ -183,7 +185,8 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
   const chartLinks = preferences.soundChartLinks !== false;
   const hanzi = word ? word.hanzi : entry?.hanzi;
   const pinyin = word ? word.pinyin : entry?.pinyin || '—';
-  const meaning = word ? word.meaning : entry?.meaning || '—';
+  const readingSplit = !word && entry ? cardReadingSplit(entry.hanzi, entry.pinyin, entry.meaning) : null;
+  const meaning = word ? word.meaning : entry ? (cardMeaning(entry.hanzi, entry.pinyin, entry.meaning) || '—') : '—';
   // Glyph picks wear the same identity ink as their library cards (purple traditional,
   // gold radical, green character, text-colour component); Words/Phrases keep the accent.
   const bodyId = `discovery-body-${category}`;
@@ -209,7 +212,7 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
     </Link>
     <DiscoveryRowToggle open={open} onToggle={onToggle} controls={bodyId} icon={<meta.icon/>} label={meta.label} count={count}
       pick={record ? <span lang="zh-CN" className={`discovery-row-hanzi${ink ? ` ${ink}` : ''}`} style={{ '--pick-chars': Array.from(hanzi ?? '').length || 1 } as React.CSSProperties}>{hanzi}</span> : `Loading ${meta.label.toLowerCase()}…`}
-      line={record ? (rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{meaning}</span>) : undefined}
+      line={record ? (rowPinyin ? <span className="discovery-row-meaning discovery-row-pinyin">{pinyin}</span> : preferences.meaning && <span className="discovery-row-meaning">{readingSplit ? <InlineReadingMeanings items={readingSplit}/> : meaning}</span>) : undefined}
       lineAction={rowPinyin && record ? <span className="discovery-row-audio"><DiscoveryAudio word={word} entry={entry} slow={preferences.slow} onError={setAudioError}/></span> : undefined}/>
     <Button variant="ghost" size="icon" title={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} aria-label={`Show another random ${meta.label.toLowerCase().replace(/s$/, '')}`} onClick={shuffle} disabled={!record}>
       <Shuffle />
@@ -249,7 +252,7 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           </div>
           <Link to={recordLink.to} search={recordLink.search} className={`overview-record-link${ink ? ` ${ink}` : ''}`} title={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)} aria-label={openDetailsHint(hanzi ?? '', word ? vocabularyKind(word) : category)}>
             <strong lang="zh-CN" className={hanzi && hanzi.length > 2 ? 'is-long' : undefined}>{hanzi}</strong>
-            {preferences.meaning && <h2 title={meaning}>{meaning}</h2>}
+            {preferences.meaning && (readingSplit ? <ReadingMeanings items={readingSplit}/> : <h2 title={meaning}>{meaning}</h2>)}
           </Link>
         </div>
       ) : (
