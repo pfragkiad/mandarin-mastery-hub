@@ -60,13 +60,11 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
   return <div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
-      {active ? (
-        <button type="button" className="stroke-range-any is-reset" onClick={() => onChange('')} aria-label="Reset stroke range to any">
-          any: {STROKE_SLIDER_MIN} – {STROKE_SLIDER_MAX}+
-        </button>
-      ) : (
-        <span className="stroke-range-any">any: {STROKE_SLIDER_MIN} – {STROKE_SLIDER_MAX}+</span>
-      )}
+      {/* Keep one control mounted: changing tag exposed only the active label to button sizing rules. */}
+      <Button type="button" variant="ghost" className={`stroke-range-any${active ? ' is-reset' : ''}`}
+        disabled={!active} onClick={() => onChange('')} aria-label="Reset stroke range to any">
+        any: {STROKE_SLIDER_MIN} – {STROKE_SLIDER_MAX}+
+      </Button>
     </div>
     <SliderPrimitive.Root
       className="stroke-range-slider"
