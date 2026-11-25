@@ -1,0 +1,5 @@
+# Review/source bindings use exact supplied bytes across platforms.
+*.tsv -text whitespace=-blank-at-eol,cr-at-eol
+*.json -text
+*.jsonl -text
+sources/* -text

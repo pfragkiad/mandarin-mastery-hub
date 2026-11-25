@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "rows": 8519,
+  "originalEnglishPreserved": 105,
+  "newEnglish": 8414,
+  "missingEnglish": 0,
+  "methods": {
+    "provided_unchanged": 105,
+    "cc_cedict": 5159,
+    "assistant_draft": 2158,
+    "petci_dictionary": 182,
+    "wiktionary": 915
+  },
+  "columnsUnchangedExcept": "meaning_en",
+  "newTranslationsVerified": false,
+  "applicationDataModified": false,
+  "pronunciations": {
+    "rows": 8519,
+    "suppliedPinyinPreserved": true,
+    "withSourcedReadings": 7817,
+    "withAlternatives": 1590,
+    "comparison": {
+      "matches_at_least_one_source": 6804,
+      "no_dictionary_reading": 702,
+      "differs_from_all_listed_sources_review": 1013
+    },
+    "audioCmnExactFileMatches": 134,
+    "listeningReviewed": 0
+  },
+  "inputs": [
+    {
+      "file": "importer/data/idioms/chengyu_all8519_english_review.original.tsv",
+      "bytes": 483642,
+      "sha256": "cf96427b41a23f53aacb18fd79f556016c84a404cc868d5b3e91dbc4f3333cf2"
+    },
+    {
+      "file": "importer/data/character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "bytes": 3987142,
+      "sha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8"
+    },
+    {
+      "file": "importer/data/idioms/sources/manifest.json",
+      "bytes": 1551,
+      "sha256": "6270c9883510e7d7d750840b162265447647ad746e8a344ec1232c9f6fbd424a"
+    },
+    {
+      "file": "importer/data/idioms/sources/wiktionary-matched.jsonl.gz",
+      "bytes": 3148793,
+      "sha256": "7d364c74b933a6f41ed6c399c0b437204d654d4f1ebf11dd9a7d7471ebe27738"
+    },
+    {
+      "file": "importer/data/idioms/sources/petci-raw.json",
+      "bytes": 1883720,
+      "sha256": "3e6968b0dcfc425fcb27ad8a6a1166492120361b51faa00e1cadcbb88e5f2ae4"
+    },
+    {
+      "file": "importer/data/idioms/sources/chinese-xinhua-idiom.json.gz",
+      "bytes": 3588195,
+      "sha256": "00d4b6b2e4951656171ef17cd22add80bb8e896e887178d92c6584d6650fa699"
+    },
+    {
+      "file": "importer/data/idioms/sources/audio-cmn-matches.json",
+      "bytes": 85877,
+      "sha256": "d2eec6a0d5e4e8a9899305a3d5f27eb8aaf75da4cd4a6f116727d3313f8e2142"
+    },
+    {
+      "file": "importer/data/idioms/chengyu_english_drafts.json",
+      "bytes": 128829,
+      "sha256": "f289104e099efdfbf2af55afde6d58d4ba0a73f383eaad1b282ba5a66cc63018"
+    }
+  ]
+}

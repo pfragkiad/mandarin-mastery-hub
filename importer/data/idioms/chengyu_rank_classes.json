@@ -1,0 +1,61 @@
+{
+  "total_document_frequency": 10261242,
+  "rank_classes": [
+    {
+      "rank_from": 1,
+      "rank_to": 100,
+      "document_frequency": 1810258,
+      "band_coverage_pct": 17.64170458,
+      "cumulative_frequency_pct": 17.64170458
+    },
+    {
+      "rank_from": 101,
+      "rank_to": 300,
+      "document_frequency": 1731777,
+      "band_coverage_pct": 16.87687514,
+      "cumulative_frequency_pct": 34.51857972
+    },
+    {
+      "rank_from": 301,
+      "rank_to": 500,
+      "document_frequency": 1117473,
+      "band_coverage_pct": 10.89023142,
+      "cumulative_frequency_pct": 45.40881114
+    },
+    {
+      "rank_from": 501,
+      "rank_to": 1000,
+      "document_frequency": 1788655,
+      "band_coverage_pct": 17.43117451,
+      "cumulative_frequency_pct": 62.83998565
+    },
+    {
+      "rank_from": 1001,
+      "rank_to": 2000,
+      "document_frequency": 1849793,
+      "band_coverage_pct": 18.02698933,
+      "cumulative_frequency_pct": 80.86697497
+    },
+    {
+      "rank_from": 2001,
+      "rank_to": 3500,
+      "document_frequency": 1206085,
+      "band_coverage_pct": 11.7537916,
+      "cumulative_frequency_pct": 92.62076657
+    },
+    {
+      "rank_from": 3501,
+      "rank_to": 5000,
+      "document_frequency": 484800,
+      "band_coverage_pct": 4.72457428,
+      "cumulative_frequency_pct": 97.34534085
+    },
+    {
+      "rank_from": 5001,
+      "rank_to": 8519,
+      "document_frequency": 272401,
+      "band_coverage_pct": 2.65465915,
+      "cumulative_frequency_pct": 100.0
+    }
+  ]
+}

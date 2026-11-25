@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "files": {
+    "petci-raw.json": {
+      "url": "https://raw.githubusercontent.com/kenantang/petci/main/data/json/raw.json",
+      "lastModified": null,
+      "downloadedAt": "2026-11-25T15:32:45.713990+00:00",
+      "bytes": 1883720,
+      "sha256": "3e6968b0dcfc425fcb27ad8a6a1166492120361b51faa00e1cadcbb88e5f2ae4"
+    },
+    "kaikki-Chinese.jsonl.gz": {
+      "url": "https://kaikki.org/dictionary/Chinese/kaikki.org-dictionary-Chinese.jsonl.gz",
+      "lastModified": "Fri, 30 Oct 2026 23:19:26 GMT",
+      "downloadedAt": "2026-11-25T15:32:46.171412+00:00",
+      "bytes": 155996429,
+      "sha256": "9663c01322014cea417fbe4812cc073ca2d6a6998946edb244bf4f26853819c9"
+    },
+    "chinese-xinhua-idiom.json": {
+      "url": "https://raw.githubusercontent.com/pwxcoo/chinese-xinhua/master/data/idiom.json",
+      "lastModified": null,
+      "downloadedAt": "2026-11-25T15:36:07.101421+00:00",
+      "bytes": 10319857,
+      "sha256": "1d4b4f454ce1c416d6a1ab2369d6e66c0ff99e04390172eef70790499e21ce19",
+      "storedAs": "chinese-xinhua-idiom.json.gz",
+      "storedSha256": "00d4b6b2e4951656171ef17cd22add80bb8e896e887178d92c6584d6650fa699"
+    }
+  },
+  "selectedWiktionary": {
+    "file": "wiktionary-matched.jsonl.gz",
+    "sha256": "7d364c74b933a6f41ed6c399c0b437204d654d4f1ebf11dd9a7d7471ebe27738",
+    "bytes": 3148793,
+    "records": 9050,
+    "source": "kaikki-Chinese.jsonl.gz",
+    "method": "Exact supplied simplified/traditional headword or explicitly recorded form, retaining complete original JSONL records."
+  }
+}
