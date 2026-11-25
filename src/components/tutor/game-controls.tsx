@@ -22,16 +22,13 @@ export function GameChoices({ label, value, options, onChange }: {
     </div></div>;
 }
 
-/** Optional filters stay mounted behind a disclosure so opening it never resets URL-backed drafts. */
+/** All game filters stay visible; only individual range editors float behind their buttons. */
 export function GameFilters({ count, children }: { count: number; children: ReactNode }) {
-  const id = useId();
-  const [open, setOpen] = useState(count > 0);
   return <div className="game-filter-disclosure">
-    <Button type="button" variant="ghost" className={`game-filter-heading${count ? ' active' : ''}`}
-      aria-expanded={open} aria-controls={id} onClick={() => setOpen(previous => !previous)}>
-      <SlidersHorizontal/>Filters{count > 0 && <span className="game-filter-number">{count}</span>}<ChevronDown className={open ? 'is-open' : ''}/>
-    </Button>
-    <div id={id} className="game-filter-grid" hidden={!open}>{children}</div>
+    <div className="game-filter-heading">
+      <SlidersHorizontal/><span>Filters</span>{count > 0 && <span className="game-filter-number">{count}</span>}
+    </div>
+    <div className="game-filter-grid">{children}</div>
   </div>;
 }
 

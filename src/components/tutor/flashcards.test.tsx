@@ -64,7 +64,7 @@ const optionLabels = (trigger: HTMLElement) => {
   fireEvent.keyDown(document.activeElement ?? trigger, { key: 'Escape' });
   return labels;
 };
-const openFilters = () => { const button = screen.getByRole('button', { name: /^Filters/ }); if (button.getAttribute('aria-expanded') !== 'true') fireEvent.click(button); };
+const openFilters = () => { expect(screen.queryByRole('button', { name: /^Filters/ })).not.toBeInTheDocument(); };
 const renderWords = async (ui: React.ReactElement = <FlashcardsPage />) => { const view = render(ui); fireEvent.click(screen.getByRole('button', { name: 'Words' })); await screen.findByRole('button', { name: 'Start · 10 cards' }); openFilters(); return view; };
 /** While a round runs the setup is folded into the play bar's settings chip. */
 const openSettings = () => { fireEvent.click(screen.getByTitle('Change settings for the next round')); openFilters(); };
@@ -311,17 +311,13 @@ describe('Flashcard course and lesson pickers', () => {
     expect(screen.queryByRole('combobox', { name: 'Course' })).not.toBeInTheDocument();
     expect(screen.queryByRole('combobox', { name: 'Lesson' })).not.toBeInTheDocument();
   });
-  it('offers the pair for Characters and lists only the course’s own lessons', async () => {
+  it('keeps glyph filters visible without topic, course or lesson choices', async () => {
     render(<FlashcardsPage />);
-    // Only the course whose lessons record characters is offered; the words course is not.
     openFilters();
-    const course = screen.getByRole('combobox', { name: 'Course' });
-    expect(optionLabels(course)).toEqual(['All courses', 'Other course']);
-    pickOption(course, 'Other course');
-    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
-    const lesson = screen.getByRole('combobox', { name: 'Lesson' });
-    expect(optionLabels(lesson)).toEqual(['All lessons', 'First characters']);
-    pickOption(lesson, 'First characters');
-    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Topic' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Course' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: 'Lesson' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^Rank:/ })).toBeVisible();
+    expect(screen.getByRole('button', { name: /^Strokes:/ })).toBeVisible();
   });
 });

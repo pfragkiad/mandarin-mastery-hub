@@ -259,7 +259,7 @@ export function DrawingGamePage({
                       onChange={value => { const next = drawingKinds.find(k => k === value); if (next) configure({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
                     </div>
                     <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection, draft.level, draft.pos, draft.course, draft.lesson, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
-                    {courses.length > 0 && (
+                    {draftKind === "Words" && courses.length > 0 && (
                       <>
                         <GameField label="Course"><FilterSelect
                           ariaLabel="Course"

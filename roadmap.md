@@ -1,5 +1,8 @@
 # Roadmap
 
+## Always-visible game filters
+- [x] Remove character Course/Lesson choices and the shared Filters disclosure; retain vocabulary topics and floating range editors, then verify both games.
+
 ## Floating game ranges
 - [x] Anchor Rank and Strokes panels below their buttons, with separate Clear and outside-click dismissal; verify drafts and both games.
 
