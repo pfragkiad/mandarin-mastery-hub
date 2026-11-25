@@ -1907,7 +1907,37 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .sentence { display: grid; gap: var(--detail-example-gap); }
 .detail-sheet .sentence p.sentence-hanzi { margin: 0; }
 .detail-sheet .sentence-reading { margin-top: 0; row-gap: var(--detail-example-gap); }
-.detail-sheet .sentence-section:not(.idiom-examples-section) > .sentence-section-head { margin-bottom: var(--detail-example-gap); }
+/* Detail-sheet phrase and idiom examples sit in small bordered grid cards (matching
+   .lesson-link) so each example's hanzi, pinyin and translation read as one clear unit. */
+.detail-sheet .sentence-section > .sentence-section-head { margin-bottom: 8px; }
+.detail-sheet .sentence-section .glyph-usage-example {
+  display: grid;
+  gap: var(--detail-example-gap);
+  margin-top: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: color-mix(in oklch, var(--secondary) 40%, transparent);
+}
+.detail-sheet .sentence-section .glyph-usage-example + .glyph-usage-example {
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.detail-sheet .sentence-section .glyph-usage-example > .sentence {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+.detail-sheet .sentence-section .more-examples-panel {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.detail-sheet .sentence-section .more-examples-panel > .glyph-usage-example + .glyph-usage-example {
+  margin-top: 0;
+}
+.detail-sheet .sentence-section .more-examples-toggle { margin-top: 8px; }
 .detail-sheet .catalog-record-note { margin: 12px 0 0; }
 
 .catalog-pagination > div { flex-wrap: wrap; }
