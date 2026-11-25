@@ -4827,7 +4827,7 @@ html[data-display-size] .lesson-toc-tools .face-toggles.is-toolbar > .face-toggl
    height, input-coloured border, background and text size per display size. The generic
    comfortable "toolbar buttons are ≥40px" rule must not reach the segments: they would outgrow
    the clipped frame and sit low, so the segments fill the frame's height exactly instead. */
-.face-toggles.is-toolbar { flex: none; height: 32px; border-color: var(--input); border-radius: var(--radius-md, 6px); background: var(--background); box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / .05)); }
+.face-toggles.is-toolbar { flex: none; width: fit-content; height: 32px; border-color: var(--input); border-radius: var(--radius-md, 6px); background: var(--background); box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / .05)); }
 .face-toggles.is-toolbar .face-toggle + .face-toggle { border-left-color: var(--input); }
 html[data-display-size] .face-toggles.is-toolbar > .face-toggle { flex: none; height: 100%; min-height: 0; padding: 0 12px; font-size: 11px; line-height: 1; }
 .face-toggles.is-toolbar .face-toggle-mark { font-size: 1em; }
