@@ -585,7 +585,7 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
 .catalog-record-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
 .catalog-entry.has-reuse { height: 144px; gap: 3px; }
 .catalog-entry > .component-reuse-label { margin-top: 2px; }
-.filter-bar .reuse-filter { width: 210px; flex-shrink: 0; background: var(--card); padding-right: 13px; }
+.filter-bar .reuse-filter { width: 210px; flex-shrink: 0; background: var(--card); padding-right: var(--select-arrow-inset); }
 .catalog-filter-count { margin: 0 0 10px; font-size: 12px; font-weight: 500; color: var(--foreground); }
 .decomposition-section { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 22px; }
 .writer-controls-arranged { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
@@ -1235,9 +1235,15 @@ html[data-display-size='comfortable'] .kangxi-identity-rows { margin-top: 8px; }
 .practice-options .toggle label { font-size: 12px; color: var(--foreground); cursor: pointer; }
 .practice-options .toggle > button { flex-shrink: 0; }
 .practice-options .practice-preview-print { margin-left: auto; height: 40px; font-size: 12px; }
-:root { --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23566159' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
+/* One inset for every dropdown arrow: native <select>s draw it as a background
+   image at this distance from the right border, Radix triggers (buttons) reserve
+   the same room with padding so their inline chevron lands in the same place. */
+:root { --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23566159' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); --select-arrow-inset: 13px; }
 :root.dark { --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23adb3ac' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
-select.filter-select,.form-field select,.practice-options select { appearance: none; -webkit-appearance: none; background-image: var(--select-arrow); background-repeat: no-repeat; background-position: right 13px center; background-size: 13px 13px; }
+select.filter-select,.form-field select,.practice-options select { appearance: none; -webkit-appearance: none; background-image: var(--select-arrow); background-repeat: no-repeat; background-position: right var(--select-arrow-inset) center; background-size: 13px 13px; }
+/* Radix Select triggers are buttons whose chevron is a real flex child, so they
+   only need the inset itself, not the 34px room the background arrow reserves. */
+button.filter-select { padding-right: var(--select-arrow-inset); }
 .practice-preview-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; font-size: 11px; color: var(--muted-foreground); }
 .practice-preview-meta > span { display: flex; align-items: center; gap: 7px; font-weight: 500; color: var(--foreground); }
 .practice-preview-meta p { line-height: 1.6; }
