@@ -4,6 +4,8 @@ Keep source files required only for offline data generation here, grouped by dat
 
 | Directory | Usage |
 | --- | --- |
+| [tatoeba/](tatoeba/README.md) | Official `cmn` sentence/tag/review/pinyin/direct-English/audio-metadata snapshot and offline positive-only review candidates; acquired and filtered by `scripts/prepare-tatoeba.py`. Raw downloads stay local; nothing is imported into the application. |
+| [private-chinese-examples/](private-chinese-examples/README.md) | Private, locally stored real-source Chinese research examples. Source pages, exact quotations, context and attribution/licence evidence are excluded from Git and the app. |
 | [character-readings/](character-readings/README.md) | Complete multi-reading character audit, explicit editorial mappings, pinned CC-CEDICT export and supplementary dictionary/source evidence; consumed by `scripts/import-reading-meanings.py`. |
 | [radical-identities/](radical-identities/README.md) | Supplied exact-identity review and pinned Unicode records consumed by `scripts/import-radical-identities.py`. |
 | [etymology/](etymology/README.md) | Pinned Howell and Shuowen sources, licenses and schema-versioned checksum manifest; acquired/audited by `scripts/download-etymology-sources.py`. Not loaded by the app. |

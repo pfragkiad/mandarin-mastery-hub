@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "language": "cmn",
+  "source": "Tatoeba official exports",
+  "documentation": "https://tatoeba.org/en/downloads",
+  "textLicense": {
+    "name": "CC BY 2.0 FR",
+    "url": "https://creativecommons.org/licenses/by/2.0/fr/"
+  },
+  "audioLicense": "Per recording; an empty licence does not permit reuse outside Tatoeba.",
+  "files": {
+    "mandarin": {
+      "path": "raw/cmn_sentences_detailed.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_detailed.tsv.bz2",
+      "bytes": 1728820,
+      "lastModified": "Sat, 21 Nov 2026 06:30:12 GMT",
+      "etag": "\"6b013a74-1a6134\"",
+      "downloadedAt": "2026-11-25T08:19:16.220088+00:00",
+      "sha256": "48b42fd1531c8a75c1f586a9b287c07910f3dbc719219e62970bef70cfcd42eb"
+    },
+    "mandarin_tags": {
+      "path": "raw/cmn_tags.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_tags.tsv.bz2",
+      "bytes": 7990,
+      "lastModified": "Sat, 21 Nov 2026 06:42:44 GMT",
+      "etag": "\"6b013d64-1f36\"",
+      "downloadedAt": "2026-11-25T08:19:13.232094+00:00",
+      "sha256": "ee4fa249518ae85641b5508d5100f3796c8833502175ae589fde81765c399e96"
+    },
+    "tag_details": {
+      "path": "raw/tags_detailed.tar.bz2",
+      "url": "https://downloads.tatoeba.org/exports/tags_detailed.tar.bz2",
+      "bytes": 9105222,
+      "lastModified": "Sat, 21 Nov 2026 06:28:17 GMT",
+      "etag": "\"6b013a01-8aef46\"",
+      "downloadedAt": "2026-11-25T08:19:12.822072+00:00",
+      "sha256": "d889d52dc0d7681790297a06125f40643028ca8478566ff888d35deb3b41accc"
+    },
+    "reviews": {
+      "path": "raw/users_sentences.csv",
+      "url": "https://downloads.tatoeba.org/exports/users_sentences.csv",
+      "bytes": 98916910,
+      "lastModified": "Sat, 21 Nov 2026 06:10:26 GMT",
+      "etag": "\"6b0135d2-5e55a2e\"",
+      "downloadedAt": "2026-11-25T08:19:16.554901+00:00",
+      "sha256": "2587042b9589ef0736aa913f0505a23a87f481b1ba5450740abbcfaad31de54f"
+    },
+    "transcriptions": {
+      "path": "raw/cmn_transcriptions.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_transcriptions.tsv.bz2",
+      "bytes": 2643691,
+      "lastModified": "Sat, 21 Nov 2026 06:31:38 GMT",
+      "etag": "\"6b013aca-2856eb\"",
+      "downloadedAt": "2026-11-25T08:19:14.502265+00:00",
+      "sha256": "bfb4991702fddb71b0d61df91337c566285a6b638468be81bb9f7c11bf7a126d"
+    },
+    "mandarin_user_languages": {
+      "path": "raw/cmn_user_languages.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_user_languages.tsv.bz2",
+      "bytes": 18597,
+      "lastModified": "Sat, 21 Nov 2026 06:41:31 GMT",
+      "etag": "\"6b013d1b-48a5\"",
+      "downloadedAt": "2026-11-25T08:19:18.009349+00:00",
+      "sha256": "2dd965893bec42183f0e52b97b00a353c6f318b191c63747c9e58a68e4f0ebb2"
+    },
+    "mandarin_english_links": {
+      "path": "raw/cmn-eng_links.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn-eng_links.tsv.bz2",
+      "bytes": 482212,
+      "lastModified": "Sat, 21 Nov 2026 06:41:29 GMT",
+      "etag": "\"6b013d19-75ba4\"",
+      "downloadedAt": "2026-11-25T08:19:16.742410+00:00",
+      "sha256": "8f576a5de794ccc86ab7f8f4e156e3f37c72b1d24d43e57c50dcd8d35b22443f"
+    },
+    "english": {
+      "path": "raw/eng_sentences_detailed.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences_detailed.tsv.bz2",
+      "bytes": 35004488,
+      "lastModified": "Sat, 21 Nov 2026 06:30:12 GMT",
+      "etag": "\"6b013a74-2162048\"",
+      "downloadedAt": "2026-11-25T08:19:18.204645+00:00",
+      "sha256": "3a0e7a2fdd7cbad76f226de4c28371a15a2fc4d115001617288b16a35c6293db"
+    },
+    "english_tags": {
+      "path": "raw/eng_tags.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_tags.tsv.bz2",
+      "bytes": 2339314,
+      "lastModified": "Sat, 21 Nov 2026 06:42:44 GMT",
+      "etag": "\"6b013d64-23b1f2\"",
+      "downloadedAt": "2026-11-25T08:19:17.354610+00:00",
+      "sha256": "f7683a50d9cb56b618a85e6035ba93c7aab18660e6ad920003457f7689a01c23"
+    },
+    "audio_metadata": {
+      "path": "raw/cmn_sentences_with_audio.tsv.bz2",
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_with_audio.tsv.bz2",
+      "bytes": 28126,
+      "lastModified": "Sat, 21 Nov 2026 06:46:35 GMT",
+      "etag": "\"6b013e4b-6dde\"",
+      "downloadedAt": "2026-11-25T08:19:17.603585+00:00",
+      "sha256": "9d2fc5c03bc3967473201eb6640ee9196bc9b59acaefad0f2de93fad0677d171"
+    },
+    "tag_metadata": {
+      "path": "raw/tag_metadata.csv",
+      "url": "https://downloads.tatoeba.org/exports/tag_metadata.csv",
+      "bytes": 605521,
+      "lastModified": "Sat, 21 Nov 2026 06:04:04 GMT",
+      "etag": "\"6b013454-93d51\"",
+      "downloadedAt": "2026-11-25T08:20:07.172524+00:00",
+      "sha256": "10dfb1341fd1a398c325a41600271ffe864dfe26ccd94004778f44a569eb345d"
+    }
+  }
+}

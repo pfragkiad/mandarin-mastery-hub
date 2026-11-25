@@ -1,0 +1,810 @@
+sentence_id	contributor	chinese	pinyin_as_exported	direct_english	OK_tag	positive_reviews	holds	audio_recordings	owner_self_reported_cmn_level	pinyin_marked_reviewed	ready_for_bilingual_secondary_review	sentence_url
+2	fucongcong	我该去睡觉了。	Wo3 gai1 qu4 shui4jiao4 le5.	I have to go to sleep. | I have to go to bed. | I need to hit the sack. | I need to go to sleep. | I need to get to bed. | I need to go to bed.	True	0		1		False	True	https://tatoeba.org/en/sentences/show/2
+3	sysko	你在干什麼啊？	Ni3 zai4 gan4 shen2me5 a1?	What are you doing? | What're you doing?	True	0		1	3	True	True	https://tatoeba.org/en/sentences/show/3
+4	Martha	這是什麼啊？	Zhe4 shi4 shen2 me5 a1?	What is this? | What's this?	True	0		1		True	True	https://tatoeba.org/en/sentences/show/4
+15	sysko	我以前在山里。	Wo3 yi3qian2 zai4 shan1 li3.	I was in the mountains.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/15
+18	fucongcong	剛才我的麥克風沒起作用，不知道為什麼。	Gang1cai2 wo3 de5 mai4ke4feng1 mei2 qi3zuo4yong4, bu4 zhi1dao4 wei4shen2me5.	For some reason the microphone didn't work earlier.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/18
+19	fucongcong	到了最後，大家一定要靠自己學習。	Dao4 le5 zui4 hou4, da4jia1 yi1ding4yao4 kao4 zi4ji3 xue2xi2.	Everyone must learn on their own in the end.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/19
+22	fucongcong	這樣做的話什麼都不會改變的。	Zhe4yang4 zuo4 de5hua4 shen2me5 dou1 bu4 hui4 gai3bian4 de5.	That won't change anything. | That will change nothing. | It won't change anything. | That'll change nothing.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/22
+25	fucongcong	也许我会马上放弃然后去打盹。	Ye3xu3 wo3 hui4 ma3shang4 fang4qi4 ran2hou4 qu4 da3dun3.	I may give up soon and just nap instead. | Maybe I'll just give up soon and take a nap instead. | I may give up soon and just take a nap. | I might give up soon and have a kip instead.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/25
+27	fucongcong	我会尽量不打扰你复习。	Wo3 hui4 jin3liang4 bu4 da3rao3 ni3 fu4xi2.	I'll do my best not to disturb your studying. | I will try not to interrupt you while you are studying. | I will try not to disturb you while you are studying. | I'll try not to disturb you while you're studying.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/27
+31	nickyeow	我一直都比較喜歡神秘一點的人物。	Wo3 yi1zhi2 dou1 bi3jiao4 xi3huan5 shen2mi4 yi1dian3 de5 ren2wu4.	I always liked mysterious characters more.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/31
+35	Zifre	我不能这样活着。	Wo3 bu4 neng2 zhe4yang4 huo2zhe5.	I can't live that kind of life.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/35
+38	fucongcong	可惜这是真的。	Ke3xi1 zhe4 shi4 zhen1 de5.	It is unfortunately true. | Unfortunately, it's true. | It's unfortunately true.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/38
+39	Martha	大部份的人覺得我瘋了。	Da4bu4 fen4 de5 ren2 jue2de5 wo3 feng1 le5.	Most people think I'm crazy.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/39
+45	fucongcong	哦！有一隻蝴蝶！	O2! you3 yi1 zhi1 hu2die2!	Oh, there's a butterfly!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/45
+46	fucongcong	趕快!	Gan3kuai4!	Hurry up.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/46
+48	nickyeow	你是在跟我開玩笑吧？！	Ni3 shi4 zai4 gen1 wo3 kai1wan2xiao4 ba5?!	Are you freaking kidding me?!	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/48
+74	fucongcong	罗马不是一天建成的。	Luo2ma3 bu4 shi4 yi1 tian1 jian4cheng2 de5.	Rome wasn't built in a day. | Rome was not built in a day.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/74
+119950	9h0ost	墨西哥有很多贫民窟。	Mo4xi1ge1 you3 hen3 duo1 pin2min2ku1.	There are many slums in Mexico. | There are many shantytowns in Mexico. | There are a lot of slums in Mexico.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/119950
+332434	fucongcong	我丢了我的伞。	Wo3 diu1 le5 wo3 de5 san3.	I have lost my umbrella. | I lost my umbrella. | I've lost my umbrella.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/332434
+332559	fucongcong	这件事至关重要。	Zhe4 jian4 shi4 zhi4guan1zhong4yao4.	This is a matter of the utmost importance.	True	0		1		True	False	https://tatoeba.org/en/sentences/show/332559
+332594	fucongcong	他给我讲述了他的一生。	Ta1 gei3 wo3 jiang3shu4 le5 ta1 de5 yi1sheng1.	He told me the story of his life.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/332594
+332737	popolady	我不知道他什么时候从法国回来。	Wo3 bu4 zhi1dao4 ta1 shen2me5shi2hou5 cong2 Fa3guo2 hui2lai5.	I don't know when he returned from France. | I don't know when he got back from France.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/332737
+332738	popolady	我有一个大家庭。	Wo3 you3 yi1 ge4 da4 jia1ting2.	I have a large family.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/332738
+332742	popolady	我错拿了你的雨伞。	Wo3 cuo4 na2 le5 ni3 de5 yu3san3.	I took your umbrella by mistake. | I took your umbrella by a mistake.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/332742
+332745	popolady	如果你没有其它可说的，那对我说“嗨，你怎么样？”就毫无意义。	"Ru2guo3 ni3 mei2you3 qi2ta1 ke3 shuo1 de5, na4 dui4 wo3 shuo1 ""hai1, ni3 zen3me5yang4?"" jiu4 hao2wu2 yi4yi4."	"There's no point saying ""Hi, how are you?"" to me if you have nothing else to say."	True	1		0		False	False	https://tatoeba.org/en/sentences/show/332745
+332751	popolady	我对摄影感兴趣。	Wo3 dui4 she4ying3 gan3xing4qu4.	I have an interest in photography. | I'm interested in photography.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/332751
+332755	popolady	他说得好像知道这个秘密一样。	Ta1 shuo1 de5 hao3xiang4 zhi1dao4 zhe4ge5 mi4mi4 yi1yang4.	He talks as if he knew the secret.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/332755
+332758	popolady	爱，就是一个人把另一个人的心揉碎的过程。	Ai4, jiu4shi4 yi1ge4ren2 ba3 ling4yi1 ge4ren2 de5 xin1 rou2sui4 de5 guo4cheng2.	Love is the process of breaking and mending the heart of another.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/332758
+332764	fucongcong	这个诗人兼学者死了。	Zhe4ge5 shi1ren2 jian1 xue2zhe3 si3 le5.	The poet and scholar is dead.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/332764
+332770	fucongcong	他在森林中迷了路。	Ta1 zai4 sen1lin2 zhong1 mi2 le5 lu4.	He lost his way in the woods.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/332770
+333002	fucongcong	他们的旅行因为火车延期了。	Ta1men5 de5 lv3xing2 yin1wei4 huo3che1 yan2qi1 le5.	Their journey was delayed because of the train.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333002
+333390	fucongcong	我听了，但什么也没听到。	Wo3 ting1 le5, dan4 shen2me5 ye3 mei2 ting1dao4.	I listened, but I didn't hear anything.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333390
+333403	fucongcong	我爸爸是哈佛大学毕业的。	Wo3 ba4ba5 shi4 Ha1fo2 Da4xue2 bi4ye4 de5.	My father graduated from Harvard University.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333403
+333603	al	王小明说英语,但英语书不多.	Wang2 xiao3 ming2 shuo1 Ying1yu3, dan4 Ying1yu3 shu1 bu4 duo1.	Wang Xiaoming speaks English, but doesn't have a lot of English books.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/333603
+333758	fucongcong	湖上的冰太薄了，承受不了你的重量。	Hu2 shang4 de5 bing1 tai4 bao2 le5, cheng2shou4 bu4 liao3 ni3 de5 zhong4liang4.	The ice on the lake is too thin to bear your weight.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333758
+333761	fucongcong	把手举起来！	Ba3 shou3 ju3qi3 lai2!	Put your hands up! | Hands up!	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333761
+333801	CynthiaGAN	那解释了为什么门是开着的。	Na4 jie3shi4 le5 wei4shen2me5 men2 shi4 kai1 zhe5 de5.	That accounts for why the door was open.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/333801
+333989	fucongcong	雨下了一周。	Yu3 xia4 le5 yi1 zhou1.	The rain lasted a week. | It rained for a week.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/333989
+334467	fucongcong	很可能等待着我们的幸福根本不是我们要的那种幸福。	Hen3 ke3neng2 deng3dai4 zhe5 wo3men5 de5 xing4fu2 gen1ben3 bu4 shi4 wo3men5 yao4 de5 na4zhong3 xing4fu2.	It may be that the happiness awaiting us is not at all the sort of happiness we would want.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/334467
+335090	fucongcong	他网球打得很好。	Ta1 wang3qiu2 da3 de5 hen3 hao3.	He was very good at playing tennis. | He can play tennis very well.	True	0		1		True	True	https://tatoeba.org/en/sentences/show/335090
+335103	fucongcong	您能教我下国际象棋吗？	Nin2 neng2 jiao1 wo3 xia4 guo2ji4 xiang4qi2 ma5?	Can you teach me to play chess?	True	0		1		True	True	https://tatoeba.org/en/sentences/show/335103
+335284	fucongcong	你想把耳朵露出来吗？	Ni3 xiang3 ba3 er3duo5 lu4chu1 lai2 ma5?	Would you like your ears to show?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/335284
+335508	fucongcong	他就是那样脱离危险的。	Ta1 jiu4shi4 na4yang4 tuo1li2wei1xian3 de5.	That is how he got out of danger.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/335508
+335520	fucongcong	前几天我见到了她。	Qian2ji3tian1 wo3 jian4dao4 le5 ta1.	I saw her just the other day.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/335520
+335709	fucongcong	感谢最后为我说明了为什么人们把我当作傻瓜了。	Gan3xie4 zui4 hou4 wei4 wo3 shuo1ming2 le5 wei4shen2me5 ren2men5 ba3 wo3 dang4zuo4 sha3gua1 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/335709
+335719	fucongcong	你该结束这种愚蠢的行为了。	Ni3 gai1 jie2shu4 zhe4zhong3 yu2chun3 de5 xing2wei2 le5.	You must put an end to this foolish behavior.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/335719
+336451	fucongcong	他有点活泼。	Ta1 you3dian3 huo2po5.	He is rather an active person. | He's a bit lively. | He's a bit energetic.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/336451
+336456	fucongcong	她是个倔强的女孩。	Ta1 shi4 ge4 jue2jiang4 de5 nv3hai2.	She is an obstinate girl. | She's a stubborn girl.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/336456
+336457	fucongcong	他对他女儿发火了。	Ta1 dui4 ta1 nv3'er2 fa1huo3 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/336457
+336500	fucongcong	谣言最后被证明是假的。	Yao2yan2 zui4 hou4 bei4 zheng4ming2 shi4 jia3de5.	The rumor turned out to be false. | It turned out that the rumor was false.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/336500
+336631	fucongcong	了解一个国家最好的方法是亲自去看一看。	Liao3jie3 yi1 ge4 guo2jia1 zui4 hao3 de5 fang1fa3 shi4 qin1zi4 qu4 kan4yi1kan4.	The best way to know what a country is like is to go and see it with your own eyes.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/336631
+336887	fucongcong	空中有一大片乌云。	Kong1zhong1 you3 yi1 da4pian4 wu1yun2.	There is a mass of dark clouds in the sky.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/336887
+336926	fucongcong	公开表示你对某人的爱。	Gong1kai1 biao3shi4 ni3 dui4 mou3ren2 de5 ai4.	Publicly express your love for someone.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/336926
+336952	fucongcong	这是我看过的最差劲的电影了。	Zhe4 shi4 wo3 kan4 guo5 de5 zui4 cha4jin4 de5 dian4ying3 le5.	This is the worst movie I have ever seen. | This is the worst movie I've ever seen. | This is the worst film I've ever seen.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/336952
+337306	nickyeow	希望她早日康復。	Xi1wang4 ta1 zao3ri4 kang1fu4.	I hope that she'll get well soon. | I hope that she will get well soon.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/337306
+343642	fucongcong	她很努力工作。	Ta1 hen3 nu3li4 gong1zuo4.	She works very hard.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/343642
+344502	nickyeow	你會在這裏逗留多久？	Ni3 hui4 zai4 zhe4li3 dou4liu2 duo1jiu3?	How long will you stay here?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/344502
+344977	zhouj1955	我想，当你从更长远的角度考虑时，情况就会不同了。	Wo3 xiang3, dang1 ni3 cong2 geng4 chang2yuan3 de5 jiao3du4 kao3lv4 shi2, qing2kuang4 jiu4 hui4 bu4 tong2 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/344977
+345369	zhouj1955	肯和弟弟长得很像。	Ken3 he2 di4di5 zhang3 dei3 hen3 xiang4.		True	0		0		True	False	https://tatoeba.org/en/sentences/show/345369
+345720	fucongcong	我爸爸明年春天就要退休了。	Wo3 ba4ba5 ming2nian2 chun1tian1 jiu4yao4 tui4xiu1 le5.	My father is retiring next spring.	True	2		0		False	True	https://tatoeba.org/en/sentences/show/345720
+346180	nickyeow	如果我錯了，請你指正。	Ru2guo3 wo3 cuo4 le5, qing3 ni3 zhi3zheng4.	Correct me if I am wrong. | Correct me if I am mistaken. | Correct me if I'm wrong.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/346180
+346183	nickyeow	但是，數量不對。	Dan4shi4, shu4liang4 bu4 dui4.	However, the quantity was not correct.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/346183
+346912	nickyeow	她認罪不認罪都沒關係。	Ta1 ren4zui4 bu4 ren4zui4 dou1 mei2guan1xi5.	It doesn't matter whether she admits her guilt or not.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/346912
+347051	fucongcong	先到先得。	Xian1 dao4 xian1 de2.	First come, first serve.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/347051
+347134	zhouj1955	他被冻死了。	Ta1 bei4 dong4si3 le5.	He was frozen to death. | He froze to death.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/347134
+347165	zhouj1955	爱她爱得要死。	Ai4 ta1 ai4 de5 yao4 si3.	I loved her to death.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/347165
+347166	Martha	我愛她愛得要命。	Wo3 ai4 ta1 ai4 dei3yao4 ming4.	I love her so much I could die.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/347166
+347218	tommyfang95	猫坐在桌子上。	Mao1 zuo4 zai4 zhuo1zi5 shang4.	The cat is sitting on top of the table. | The cat is sitting on the table.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/347218
+347252	zhouj1955	便后请洗手。	Bian4 hou4 qing3 xi3shou3.	Please wash your hands after using the bathroom.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/347252
+347342	sysko	我是上海人。	Wo3 shi4 shang4hai3ren2.	I'm Shanghainese.	True	1		0	3	True	True	https://tatoeba.org/en/sentences/show/347342
+347820	Martha	我要感謝我的選舉搭檔，這位先生全心全意競選，為與他在史克蘭頓街頭一起長大的男男女女代言，并和我一起乘火車回德拉瓦州，他就是副總統當選人，拜登先生。	Wo3 yao4 gan3xie4 wo3 de5 xuan3ju3 da1dang4, zhe4wei4 xian1sheng5 quan2xin1quan2yi4 jing4xuan3, wei4 yu3 ta1 zai4 shi3 ke4 lan2 dun4 jie1tou2 yi1qi3 zhang3da4 de5 nan2 nan2nv3 nv3 dai4yan2, bing4 he2 wo3 yi1qi3 cheng2 huo3che1 hui2 de2 la1 wa3 zhou1, ta1 jiu4shi4 fu4zong3tong3 dang1xuan3 ren2, Bai4deng1 xian1sheng5.	I want to thank my partner in this journey, a man who campaigned from his heart, and spoke for the men and women he grew up with on the streets of Scranton, and rode with on the train home to Delaware, the vice president-elect of the United States, Joe Biden.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/347820
+348187	zhouj1955	我聽到了遠處的狗叫聲。	Wo3 ting1 dao4 le5 yuan3chu4 de5 gou3 jiao4sheng1.	I heard a dog barking in the distance.	True	1		0		True	True	https://tatoeba.org/en/sentences/show/348187
+348445	zhouj1955	今天是星期一。	Jin1tian1 shi4 Xing1qi1yi1.	It's Monday. | It's Monday today.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/348445
+348459	nickyeow	我們的老師總是準時來上課。	Wo3men5 de5 lao3shi1 zong3shi4 zhun3shi2 lai2 shang4ke4.	Our teacher is always on time for class.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/348459
+348586	zhouj1955	他是英国人。	Ta1 shi4 Ying1guo2ren2.	He is British. | He's English.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/348586
+349685	zhouj1955	请让我看一下您的护照好吗？	Qing3 rang4 wo3 kan4 yi1xia4 nin2 de5 hu4zhao4 hao3 ma5?	May I see your passport, please?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/349685
+353483	zhouj1955	你不去吗？	Ni3 bu4 qu4 ma5?	Won't you go?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/353483
+353512	ruicong	我没有任何可以谈这件事的朋友。	Wo3 mei2you3 ren4he2 ke3yi3 tan2 zhe4 jian4 shi4 de5 peng2you5.	I have no friend with whom to talk about it. | I don't have a friend with whom I can talk about this.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/353512
+353685	ruicong	我的姐姐从事英语教学工作。	Wo3 de5 jie3jie5 cong2shi4 Ying1yu3jiao1xue2 gong1zuo4.	My sister's work is teaching English.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/353685
+372358	nickyeow	我要求她離去。	Wo3 yao1qiu2 ta1 li2qu4.	I demanded that she should go.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/372358
+374825	sysko	谢谢你。	Xie4xie5 ni3.	I thank you. | Thank you! | Thank you.	True	1		0	3	True	True	https://tatoeba.org/en/sentences/show/374825
+375255	nickyeow	他在回家途中出了意外。	Ta1 zai4 hui2jia1 tu2zhong1 chu1 le5 yi4wai4.	He had an accident on his way home.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/375255
+378874	dreiundzwanzig	这块蛋糕很甜。	Zhe4 kuai4 dan4gao1 hen3 tian2.	This cake is very sweet.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/378874
+379145	kellenparker	这辆车像新的。	Zhe4 liang4 che1 xiang4 xin1 de5.	This car is like new.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/379145
+380260	kellenparker	外国人很好玩。	Wai4guo2ren2 hen3 hao3wan2.	Foreign people are amusing.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/380260
+380721	sherryyyf	他是个天才。	Ta1 shi4 ge4 tian1cai2.	He is a genius.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/380721
+380728	sherryyyf	我对这个计划一无所知。	Wo3 dui4 zhe4ge5 ji4hua4 yi1wu2suo3zhi1.	I am quite ignorant of the plan. | I know nothing about this project.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/380728
+382379	sysko	因为我什么都弄完了，所以我要去休息一下。	Yin1wei4 wo3 shen2me5 dou1 nong4 wan2le5, suo3yi3 wo3 yao4 qu4 xiu1xi5 yi1xia4.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/382379
+383117	sysko	快点写完你的作业，我们好去打游戏机。	Kuai4dian3 xie3wan2 ni3 de5 zuo4ye4, wo3men5 hao3qu4 da3 you2xi4ji1.	Finish your homework faster, so that we can play video games.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/383117
+383128	sysko	中国政府控制了网络，以免让人民知道六四事件的真相。	Zhong1guo2 zheng4fu3 kong4zhi4 le5 wang3luo4, yi3mian3 rang4 ren2min2 zhi1dao4 Liu4 Si4 Shi4jian4 de5 zhen1xiang4.	The Chinese government controlled the internet to prevent the people from knowing the truth of the Tiananmen Square Massacre.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/383128
+386860	nickyeow	這個箱子裏裝滿了蘋果。	Zhe4ge5 xiang1zi5 li3 zhuang1man3 le5 ping2guo3.	This box is filled with apples.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/386860
+388260	sysko	XXX用荷兰语怎么说？	XXX yong4 He2lan2yu3 zen3me5 shuo1?	How to say XXX in Dutch?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/388260
+391101	sysko	这条弄堂一直走走到底。	Zhe4 tiao2 long4tang2 yi1zhi2 zou3 zou3 dao4di3.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/391101
+391441	zhouj1955	田中好像通过考试了。	Tian2zhong1 hao3xiang4 tong1guo4 kao3shi4 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/391441
+391588	nickyeow	他不會開車。	Ta1 bu4hui4 kai1che1.	He does not know how to drive a car.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/391588
+392287	FeuDRenais	有借有还，再借不难。有借不还，再借就难。	You3jie4you3huan2, zai4jie4bu4nan2. you3 jie4 bu4 hai2, zai4 jie4 jiu4 nan2.	Borrow and return, then you can borrow again. Borrow and don't return, and then the borrowing gets difficult.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/392287
+392303	FeuDRenais	冯迪索在做俯卧撑时，并不是把自身往上推，而是在把地球向下推。	Feng2 di2 suo3 zai4 zuo4 fu3wo4cheng1 shi2, bing4bu4 shi4 ba3 zi4shen1 wang3 shang4 tui1, er2shi4 zai4 ba3 di4qiu2 xiang4xia4 tui1.	When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/392303
+392673	fucongcong	我想你把真相告诉我。	Wo3 xiang3 ni3 ba3 zhen1xiang4 gao4su5 wo3.	I want you to tell me the truth.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/392673
+392939	nickyeow	我們早點走你會介意嗎？	Wo3men5 zao3dian3 zou3ni3 hui4 jie4yi4 ma5?	Do you mind our leaving a little earlier?	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/392939
+396894	GlossaMatik	您可以走了。	Nin2 ke3yi3 zou3 le5.	You may go. | You can go. | You're free to go. | You are free to go.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/396894
+401004	fucongcong	你愿意等吗 ?	Ni3 yuan4yi4 deng3 ma5?	Would you like to wait? | Do you want to wait?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/401004
+401212	fucongcong	Roland女士，你对这个问题怎么看？	Roland nv3shi4, ni3 dui4 zhe4ge5 wen4ti2 zen3me5 kan4?	Ms. Roland, what do you think about this problem?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/401212
+402941	nickyeow	這兩天我沒時間洗碗，現在廚房的洗碗槽裏已經堆滿了碗碗碟碟。	Zhe4 liang3 tian1 wo3 mei2 shi2jian1 xi3wan3, xian4zai4 chu2fang2 de5 xi3wan3 cao2 li3 yi3jing1 dui1man3 le5 wan3 wan3 die2 die2.	I haven't had time to do the dishes for two days; they are in a pile in the kitchen sink.	True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/402941
+405752	fucongcong	她把画挂反了。	Ta1 ba3 hua4 gua4 fan3 le5.	She hung the picture upside down.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/405752
+408362	nickyeow	嚴格來說，蕃茄不是蔬菜，是水果。	Yan2ge2lai2shuo1, fan1qie2 bu4 shi4 shu1cai4, shi4 shui3guo3.	Strictly speaking, the tomato is not a vegetable. It's a fruit.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/408362
+408813	fucongcong	这里发生了一起交通事故。	Zhe4li3 fa1sheng1 le5 yi1qi3 jiao1tong1 shi4gu4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/408813
+410733	nickyeow	我只能那樣做。	Wo3 zhi3neng2 na4yang4 zuo4.	I couldn't do otherwise.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/410733
+410874	fucongcong	乌云是下雨的征兆。	Wu1yun2 shi4 xia4yu3 de5 zheng1zhao4.	Dark clouds are a sign of rain.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/410874
+410875	fucongcong	你怎么敢对我说这样的话?	Ni3 zen3me5 gan3 dui4 wo3 shuo1 zhe4yang4 de5 hua4?		True	1		0		True	False	https://tatoeba.org/en/sentences/show/410875
+414042	fucongcong	他刚进房间，她就泣不成声了。	Ta1 gang1 jin4 fang2jian1, ta1 jiu4 qi4 bu4 cheng2 sheng1 le5.	Hardly had he entered the room, when she burst into tears.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/414042
+419924	sysko	你到底答应吗？	Ni3 dao4di3 da1ying5 ma5?	Did you eventually respond?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/419924
+419928	sysko	他考GRE、TOEFL，你到底知道吗？	Ta1 kao3 GRE, T OEFL, ni3 dao4di3 zhi1dao4 ma5?		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/419928
+421040	sysko	下班时间还没到，大家就想溜走。	Xia4ban1 shi2jian1 hai2 mei2 dao4, da4jia1 jiu4 xiang3 liu1zou3.	It still isn't time to leave work, and everyone wants to escape.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/421040
+421830	nickyeow	安德森也很怕狗的。	An1de2sen1 ye3 hen3 pa4 gou3 de5.	Andersen was afraid of dogs, too.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/421830
+429821	GlossaMatik	你是新来的吗？	Ni3 shi4 xin1 lai2 de5 ma5?	Are you new?	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/429821
+452434	nickyeow	我有一個朋友，他的父親是位名鋼琴家。	Wo3 you3 yi1 ge4 peng2you5, ta1 de5 fu4qin1 shi4 wei4 ming2 gang1qin2jia1.	I have a friend whose father is a famous pianist.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/452434
+461548	fucongcong	他们试图冲破敌军防线。	Ta1men5 shi4tu2 chong1po4 di2jun1 fang2xian4.	They attempted to break through the enemy line.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/461548
+464776	fucongcong	我父母不让我和男生约会。	Wo3 fu4mu3 bu4 rang4 wo3 he2 nan2sheng1 yue1hui4.	My parents won't let me date. | My parents won't let me go out with boys.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/464776
+466148	fucongcong	这条路带你们通往火车站。	Zhe4 tiao2 lu4 dai4 ni3men5 tong1wang3 huo3che1zhan4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/466148
+469263	fucongcong	你做了个坏榜样。	Ni3 zuo4 le5 ge4 huai4 bang3yang4.	You've set a bad example.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469263
+469302	fucongcong	你做到啦！	Ni3 zuo4dao4 la1!	You made it!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469302
+469319	fucongcong	我想你要拿到驾照根本不难。	Wo3 xiang3 ni3 yao4 na2 dao4 jia4zhao4 gen1ben3 bu4 nan2.	I think you'll have very little difficulty in getting a driver's license.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469319
+469355	fucongcong	您现在想要什么？	Nin2 xian4zai4 xiang3yao4 shen2me5?	What do you want now?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469355
+469364	fucongcong	你现在想要什么？	Ni3 xian4zai4 xiang3yao4 shen2me5?	What do you want now?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469364
+469383	fucongcong	你不是个懦夫。	Ni3 bu4 shi4 ge4 nuo4fu1.	You are not a coward.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/469383
+471007	fucongcong	这个问题不能以常规方法解决。	Zhe4ge5 wen4ti2 bu4 neng2 yi3 chang2gui1 fang1fa3 jie3jue2.	You cannot solve this problem with the usual method.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/471007
+471309	fucongcong	你要这钱干嘛？	Ni3 yao4 zhe4 qian2 gan4ma2?	What do you need the money for? | Why do you need this money?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/471309
+471380	fucongcong	你该早一点起床。	Ni3 gai1 zao3 yi1dian3 qi3chuang2.	You must get up a little earlier.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/471380
+471411	fucongcong	你们很久前就应该完成了。	Ni3men5 hen3 jiu3 qian2 jiu4 ying1gai1 wan2cheng2 le5.	You should have completed it long ago.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/471411
+476184	fucongcong	我明白怎么解决问题。	Wo3 ming2bai5 zen3me5 jie3jue2 wen4ti2.	I understand how to solve the problem.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/476184
+478517	FeuDRenais	今天我们来揭开英文虚拟式的神秘面纱。	Jin1tian1 wo3men5 lai2 jie1kai1 Ying1wen2 xu1ni3 shi4 de5 shen2mi4 mian4sha1.	Today, we are going to unravel the mystery of the English subjunctive.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/478517
+482688	biglion	在七世纪的时候，印度数学家婆罗摩笈多已经得到了方程x²-92y²=1的最小正整数解。	Zai4 qi1 shi4ji4 de5 shi2hou5, Yin4du4 shu4xue2jia1 po2 luo2 mo2 ji2 duo1 yi3jing1 de2dao4 le5 fang1cheng2 x²-92y²=1 de5 zui4 xiao3 zheng4zheng3shu4 jie3.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/482688
+492891	nickyeow	我很想念我小學的老師。	Wo3 hen3 xiang3nian4 wo3 xiao3xue2 de5 lao3shi1.	I miss my elementary school teachers.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/492891
+498450	nickyeow	祝令尊早日康復。	Zhu4 ling4 zun1 zao3ri4 kang1fu4.	My wishes for your father's rapid recovery.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/498450
+499606	peipei	我很平静，直到我看到了注射器。	Wo3 hen3 ping2jing4, zhi2dao4 wo3 kan4 dao4 le5 zhu4she4qi4.	I was calm until I saw the syringe.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/499606
+501305	fucongcong	最后一个听我说我的主意的人认为我疯了。	Zui4 hou4 yi1 ge4 ting1 wo3 shuo1 wo3 de5 zhu3yi5 de5 ren2 ren4wei2 wo3 feng1 le5.	The last person I told my idea to thought I was nuts.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/501305
+501536	fucongcong	几点了？	Jǐ diǎn le?	What time is it?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/501536
+502739	fucongcong	世界上有10种人：懂二进制和不懂二进制的人。	Shi4jie4 shang4 you3 10 zhong3 ren2: dong3 er4jin4zhi4 he2 bu4 dong3 er4jin4zhi4 de5 ren2.	There are 10 types of people in the world: those who understand binary, and those who don't.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/502739
+503220	fucongcong	他希望抹去不好的记忆。	Ta1 xi1wang4 mo3qu4 bu4 hao3 de5 ji4yi4.	He wishes to erase bad memories.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/503220
+510749	fucongcong	英语不简单，但是很有趣。	Ying1yu3 bu4 jian3dan1, dan4shi4 hen3 you3qu4.	English is not easy, but it is interesting.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/510749
+510899	fucongcong	全世界都渴望和平。	Quan2shi4jie4 dou1 ke3wang4 he2ping2.		True	1		0		False	False	https://tatoeba.org/en/sentences/show/510899
+512201	fucongcong	她每天挣30美元。	Ta1 mei3tian1 zheng1 30 Mei3yuan2.	She earns 30 dollars per day.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/512201
+565301	nickyeow	她有一雙藍色的大眼睛。	Ta1 you3 yi1 shuang1 lan2se4 de5 da4 yan3jing5.	She has large blue eyes.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/565301
+567977	GlossaMatik	我不在意在六点钟起床。	Wo3 bu4 zai4yi4 zai4 liu4 dian3zhong1 qi3chuang2.	I don't mind getting up at six.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/567977
+574526	Zac2333	他是日本最有名的歌手之一。	Ta1 shi4 Ri4ben3 zui4 you3ming2 de5 ge1shou3 zhi1yi1.	He is one of the most famous singers in Japan.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/574526
+574546	Zac2333	她的朋友是歌手。	Ta1 de5 peng2you5 shi4 ge1shou3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/574546
+584976	GlossaMatik	“但请告诉我们，您究竟为了什么杀了他？”　“是为了爱情。”	"""dan4 qing3 gao4su5 wo3men5, nin2 jiu1jing4 wei4le5 shen2me5 sha1 le5 ta1?""　""shi4 wei4le5 ai4qing2."""	"""But tell us, just what did you kill him for?"" ""For love."""	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/584976
+596692	nickyeow	我住的公寓距離車站步行不到五分鐘。	Wo3 zhu4 de5 gong1yu4 ju4li2 che1zhan4 bu4xing2 bu4 dao4 wu3 fen1zhong1.	My apartment is located within five minutes' walk of the station.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/596692
+617746	nickyeow	我很喜歡學外語。	Wo3 hen3 xi3huan5 xue2 wai4yu3.	I like to study foreign languages.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/617746
+661519	mervegorus	我想要一条鱼。	Wo3 xiang3yao4 yi1 tiao2 yu2.	I'd like a fish.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/661519
+661545	mervegorus	我们在中餐厅吃了北京烤鸭。	Wo3men5 zai4 Zhong1can1 ting1 chi1 le5 Bei3jing1kao3ya1.	We ate Peking duck in the Chinese restaurant.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/661545
+674243	sysko	他叫什么名字？	Ta1 jiao4 shen2me5 ming2zi5?	What is his name?	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/674243
+676171	nickyeow	如果你不喜歡我的方法，就用你自己的方法去做吧。	Ru2guo3 ni3 bu4 xi3huan5 wo3 de5 fang1fa3, jiu4 yong4 ni3 zi4ji3 de5 fang1fa3 qu4 zuo4 ba5.	Do it your own way if you don't like my way.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/676171
+677657	aye1995	你有多少姐妹呢？	Ni3 you3 duo1shao5 jie3mei4 ne5?	How many sisters do you have?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/677657
+679403	JSakuragi	這是我的初戀。	Zhe4 shi4 wo3 de5 chu1lian4.	This is my first love.	True	2		0		False	True	https://tatoeba.org/en/sentences/show/679403
+686603	offdare	對不起，我愛你。	Dui4bu5qi3, wo3 ai4 ni3.	I'm sorry, I love you.	True	0		0		True	False	https://tatoeba.org/en/sentences/show/686603
+686616	offdare	钱够吗？	Qian2 gou4 ma5?	Was there enough money?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/686616
+686636	offdare	喀山有地鐵。	Ka1shan1 you3 di4tie3.	There is a metro in Kazan.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/686636
+690087	sysko	我们有多大把握他没骗我们？	Wo3men5 you3 duo1 da4 ba3wo4 ta1 mei2 pian4 wo3men5?		True	0		0	3	True	False	https://tatoeba.org/en/sentences/show/690087
+690500	offdare	被翻譯成多種語言的國際歌，在世界各地仍然是社會鬥爭的象徵。	Bei4 fan1yi4 cheng2 duo1zhong3yu3yan2 de5 Guo2ji4ge1, zai4shi4 jie4 ge4di4 reng2ran2 shi4 she4hui4 dou4zheng1 de5 xiang4zheng1.	Translated into many languages, The International has been and is still singing symbol of social struggles around the world.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/690500
+705554	sysko	我借到香港出差的机会去见你，可谓一举两得啊！	Wo3 jie4 dao4 Xiang1gang3 chu1chai1 de5 ji1hui4 qu4 jian4 ni3, ke3wei4 yi1ju3liang3de2 a1!		True	1		0	3	False	False	https://tatoeba.org/en/sentences/show/705554
+718424	serendipity42	他的名声很好。	Ta1 de5 ming2sheng1 hen3 hao3.	He has a good reputation.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/718424
+721052	sysko	刮胡子时，我把脸刮破了。	Gua1hu2zi5 shi2, wo3 ba3 lian3 gua1 po4 le5.	I cut myself shaving. | I cut myself while shaving.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/721052
+724319	egg0073	而且要記住，從此後不要再到海邊去。（永遠相信，我已經找到最大、最好、最適合我的那一顆。）	Er2qie3 yao4 ji4zhu5, cong2ci3 hou4 bu4 yao4 zai4 dao4 hai3bian1 qu4.（ yong3yuan3 xiang1xin4, wo3 yi3jing1 zhao3dao4 zui4 da4, zui4 hao3, zui4 shi4he2 wo3 de5 na4 yi1 ke1.）	What's more, from now on you must remember that you cannot go to the seaside again (by believing forever that I have already found the biggest, best and most fitting one for me).	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/724319
+729707	sysko	我想知道哪个国家会第一个和谐Tatoeba？	Wo3 xiang3 zhi1dao4 na3ge5 guo2jia1 hui4 di4yi1 ge4 he2xie2 T atoeba?	I wonder which country will be the first to censor Tatoeba.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/729707
+736323	Martha	瑪麗海特本週在紐奧良。	Ma3li4 Hai3te4 ben3 zhou1 zai4 Niu3'ao4liang2.	Mary Hat was in New Orleans this week.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/736323
+736536	yujianing	我掉了颗牙。	Wo3 diao4 le5 ke1 ya2.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/736536
+737314	yujianing	我能借你的刀吗？	Wo3 neng2 jie4 ni3 de5 dao1 ma5?	May I borrow your knife?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/737314
+748762	Shishir	我对他失望了。	Wo3 dui4 ta1 shi1wang4 le5.	I was disappointed in him.	True	0		0	2	False	True	https://tatoeba.org/en/sentences/show/748762
+750198	FeuDRenais	看起来，这是一个你无法理解的东西。	Kan4qi3lai5, zhe4 shi4 yi1 ge4 ni3 wu2fa3 li3jie3 de5 dong1xi5.	It seems this is something you can't comprehend.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/750198
+750610	nickyeow	你的學校在哪裏？	Ni3 de5 xue2xiao4 zai4 na3li3?	Where is your school? | Where's your school?	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/750610
+755892	U2FS	你怎么敢指责我做这种事？我决不会动手打我的儿子。	Ni3 zen3me5 gan3 zhi3ze2 wo3 zuo4 zhe4zhong3 shi4? wo3 jue2bu4 hui4 dong4shou3 da3 wo3 de5 er2zi5.	How can you accuse me of such a thing? I would never lay a hand on my child.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/755892
+760739	Martha	如果我說英語能說得跟你一樣流利的話就好了!	Ru2guo3 wo3 shuo1 Ying1yu3 neng2 shuo1 de5 gen1 ni3 yi1yang4 liu2li4 de5hua4 jiu4 hao3 le5!	If only I could speak English as fluently as you!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/760739
+761970	Martha	什麼都不要做比做錯了好。	Shen2me5 dou1 bu4 yao4 zuo4 bi3zuo4 cuo4 le5 hao3.	It's better to do nothing than to do something poorly.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/761970
+763867	Martha	我希望離開這個村子並且再也不要回來。	Wo3 xi1wang4 li2kai1 zhe4ge5 cun1zi5 bing4qie3 zai4ye3 bu4 yao4 hui2lai5.	I would like to leave this town and never come back. | I'd like to leave this town and never come back.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/763867
+765282	Martha	他不在家。	Ta1 bu4 zai4 jia1.	He's not home. | He isn't at home. | He isn't home.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/765282
+767733	eastasiastudent	他从早吃到晚。	Ta1 cong2 zao3 chi1 dao4 wan3.	He eats non-stop. | He eats around the clock.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/767733
+767803	eastasiastudent	在一些农村地区，互联网主要用于农业信息以及农产品技术和价格信息等特殊目的。	Zai4 yi1xie1 nong2cun1 di4qu1, Hu4lian2wang3 zhu3yao4 yong4yu2 nong2ye4 xin4xi1 yi3ji2 nong2chan3pin3 ji4shu4 he2 jia4ge2 xin4xi1 deng3 te4shu1 mu4di4.	In some rural areas, the Internet is important for agricultural information, as well as being particularly useful for the purposes of agricultural production technologies and pricing.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/767803
+768263	Martha	我不喜歡英語。	Wo3 bu4 xi3huan5 Ying1yu3.	I don't like English.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/768263
+769675	Martha	你最好派人去請醫生來。	Ni3 zui4 hao3 pai4 ren2 qu4 qing3 yi1sheng1 lai2.	You'd better send for a doctor.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/769675
+771411	Martha	我只是到處看看。	Wo3 zhi3shi4 dao4chu4 kan4kan5.	I'm just looking around.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/771411
+771557	Martha	你會游泳嗎?	Ni3 hui4 you2yong3 ma5?	Can you swim? | Are you able to swim?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/771557
+772171	Martha	你最喜歡的句子是哪句？	Ni3 zui4 xi3huan5 de5 ju4zi5 shi4 na3 ju4?	What is your favorite sentence?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/772171
+773030	egg0073	不過，有趣的是，有人因為玩電腦玩出毛病，但也有人因為玩電腦而治好疾病。	Bu4guo4, you3qu4 de5 shi4, you3ren2 yin1wei4 wan2 dian4nao3 wan2 chu1mao2bing4, dan4 ye3 you3ren2 yin1wei4 wan2 dian4nao3 er2 zhi4hao3 ji2bing4.	However, what's interesting is that whilst there are people whose computer use has become a problem, there are also people who have recovered from illness because of using computers.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/773030
+774039	nickyeow	人們送禮通常都不會送錢，但是也會有例外的情況。	Ren2men5 song4li3 tong1chang2 dou1 bu4 hui4 song4 qian2, dan4shi4 ye3 hui4 you3 li4wai4 de5 qing2kuang4.	On gift-giving occasions, people generally avoid giving money, but there are exceptions.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/774039
+775471	Martha	你不许犯法。	Ni3 bu4 xu3 fan4fa3.	You are not to break the law.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/775471
+775730	Martha	我希望你告訴我真相了。	Wo3 xi1wang4 ni3 gao4su5 wo3 zhen1xiang4 le5.	I wish you had told me the truth.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/775730
+775737	Martha	你是個高中生嗎?	Ni3 shi4 ge4 gao1zhong1sheng1 ma5?	Are you a senior high school student?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/775737
+775750	Martha	你做你的部份, 其他的我來做。	Ni3 zuo4 ni3 de5 bu4 fen4,  qi2ta1 de5 wo3 lai2 zuo4.	You do your part and I'll do the rest.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/775750
+775768	Martha	你想做什麼?	Ni3 xiang3 zuo4 shen2me5?	What do you intend to do?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/775768
+777608	eastasiastudent	他让我气得头疼了。	Ta1 rang4 wo3 qi4 de5 tou2teng2 le5.	He made me so angry that I got a headache.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/777608
+780212	Martha	這件事情像是電影情節。	Zhe4 jian4 shi4qing5 xiang4 shi4 dian4ying3 qing2jie2.	That's something like a movie scenario.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/780212
+781080	Martha	大量生產降低許多商品的價格。	Da4liang4 sheng1chan3 jiang4di1 xu3duo1 shang1pin3 de5 jia4ge2.	Mass production reduced the price of many goods.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/781080
+782129	fucongcong	数学是所有科学的基础。	Shu4xue2 shi4 suo3you3 ke1xue2 de5 ji1chu3.	Mathematics are the foundation of all sciences.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/782129
+784868	ednorog	我在母亲节送给我的妈妈一束康乃馨。	Wo3 zai4 Mu3qin1jie2 song4gei3 wo3 de5 ma1ma5 yi1 shu4 kang1nai3xin1.	I gave my mother carnations on Mother's Day.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/784868
+784993	ednorog	杰夫找了三个月以后才找到了一份工作。	Jie2fu1 zhao3 le5 san1 ge4 yue4 yi3hou4 cai2 zhao3dao4 le5 yi1 fen4 gong1zuo4.	Jeff searched for three months before he found a job.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/784993
+785217	egg0073	你也許不同意他們某些重大政策，這可能會影響你的工作關係。	Ni3 ye3xu3 bu4 tong2yi4 ta1men5 mou3xie1 zhong4da4 zheng4ce4, zhe4 ke3neng2 hui4 ying3xiang3 ni3 de5 gong1zuo4 guan1xi5.	You may not agree with some of their major policies and this could affect your working relationship.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/785217
+785988	fucongcong	翻译就像一个女人。她漂亮就会不忠诚；她忠诚就肯定不会漂亮。	Fan1yi4 jiu4 xiang4 yi1 ge4 nv3ren2. ta1 piao4liang5 jiu4 hui4 bu4 zhong1cheng2; ta1 zhong1cheng2 jiu4 ken3ding4 bu4 hui4 piao4liang5.	Translation is like a woman. If it is beautiful, it is not faithful. If it is faithful, it is most certainly not beautiful.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/785988
+789314	Martha	一直向前走！	Yi1zhi2 xiang4qian2 zou3!	Keep going straight ahead!	True	1		0		True	True	https://tatoeba.org/en/sentences/show/789314
+792845	fucongcong	这个钟每天慢三分钟。	Zhe4ge5 zhong1 mei3tian1 man4 san1fen1 zhong1.	This clock loses three minutes a day.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/792845
+793227	Martha	你應該知道的。	Ni3 ying1gai1 zhi1dao4 de5.	You should know it.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/793227
+793929	Martha	這個問題已經完全解決了。	Zhe4ge5 wen4ti2 yi3jing1 wan2quan2 jie3jue2 le5.	The matter is all settled.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/793929
+796157	yutaka	不久他以可怕的苍蝇人的形象展现在了恋人面前。	Bu4 jiu3 ta1 yi3 ke3pa4 de5 cang1ying5 ren2 de5 xing2xiang4 zhan3xian4 zai4 le5 lian4ren2 mian4qian2.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/796157
+796741	fucongcong	如果人生是凸的，那我们可以优化它。	Ru2guo3 ren2sheng1 shi4 tu1 de5, na4 wo3men5 ke3yi3 you1hua4 ta1.	If human life is convex, we can optimize it.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/796741
+797529	FeuDRenais	你要是在Tatoeba上发现什么问题，你应该责备Sysko才对。	Ni3 yao4shi5 zai4 T atoeba shang4 fa1xian4 shen2me5 wen4ti2, ni3 ying1gai1 ze2bei4 Sysko cai2 dui4.	If you discover any problems on Tatoeba, you should go ahead and blame Sysko.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/797529
+798155	Martha	走左邊的道路。	Zou3 zuo3bian5 de5 dao4lu4.	Take the road on the left.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/798155
+798399	Martha	日本上班族工作得非常辛苦。	Ri4ben3 shang4ban1 zu2 gong1zuo4 de5 fei1chang2 xin1ku3.	Japanese office workers work very hard.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/798399
+805728	cherylting	但是Tatoeba專案不是文字天堂，請不要再加文字了。	Dan4shi4 T atoeba zhuan1'an4 bu4 shi4 wen2zi4 tian1tang2, qing3 bu4 yao4 zai4 jia1 wen2zi4 le5.	But Tatoeba Project is not a word heaven. Please stop adding words.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/805728
+806703	cherylting	冬天是一年之中最冷的季節。	Dong1tian1 shi4 yi1 nian2 zhi1zhong1 zui4 leng3 de5 ji4jie2.	Winter is the coldest season of the year. | Winter is the coldest season in a year.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/806703
+809760	Martha	一個好鄰居勝於一個遙遠的朋友。	Yi1 ge4 hao3 lin2ju1 sheng4 yu2 yi1 ge4 yao2yuan3 de5 peng2you5.	A good neighbour is better than a faraway friend.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/809760
+811499	Martha	意大利語是我的母語。	Yi4da4li4yu3 shi4 wo3 de5 mu3yu3.	Italian is my mother tongue.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/811499
+812334	fucongcong	我的手抖得太厉害，没法穿针了。	Wo3 de5 shou3 dou3 de5 tai4 li4hai5, mei2fa3 chuan1 zhen1 le5.	My hands were shaking too much to thread the needle.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/812334
+813320	eastasiastudent	你想喝点儿咖啡或茶吗？	Ni3 xiang3 he1 dian3r5 ka1fei1 huo4 cha2 ma5?	Would you like some tea or coffee?	True	0		0		False	False	https://tatoeba.org/en/sentences/show/813320
+816762	Martha	在海裡游泳並不意味著就擁有大海。	Zai4 hai3 li3 you2yong3 bing4bu4 yi4wei4zhe5 jiu4 yong1you3 da4hai3.	Swimming in the sea doesn't mean owning the sea. | Swimming in the sea does not mean you own the ocean.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/816762
+817295	fucongcong	你解开谜团了吗？	Ni3 jie3kai1 mi2tuan2 le5 ma5?	Have you worked the puzzle out?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/817295
+817300	U2FS	她在她花园里种西红柿。	Ta1 zai4 ta1 hua1yuan2 li3 zhong4 xi1hong2shi4.	She grows tomatoes in her garden.	True	0		0	4	True	True	https://tatoeba.org/en/sentences/show/817300
+818424	tarim222	不要骗我。	Bu4 yao4 pian4 wo3.	Don't deceive me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/818424
+819338	Martha	我繼續唱歌。	Wo3 ji4xu4 chang4 ge1.	I carried on singing. | I continued singing. | I kept singing. | I kept on singing.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/819338
+819452	Martha	不要站在我身邊。	Bu4 yao4 zhan4 zai4 wo3 shen1bian1.	Don't stand near me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/819452
+819484	Martha	她很聰明。	Ta1 hen3 cong1ming5.	She is very clever.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/819484
+819787	fucongcong	罢工妨碍了国家经济。	Ba4gong1 fang2'ai4 le5 guo2jia1 jing1ji4.	The strike affected the nation's economy.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/819787
+824559	Martha	他愛她。	Ta1 ai4 ta1.	He loves her.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/824559
+824597	Martha	我是那樣說的。	Wo3 shi4 na4yang4 shuo1 de5.	I said that.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/824597
+825979	Martha	他成為了一個鋼琴家。	Ta1 cheng2wei2 le5 yi1 ge4 gang1qin2jia1.	He became a pianist.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/825979
+826241	Martha	她愛湯姆。	Ta1 ai4 Tang1mu3.	She loves Tom.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/826241
+832226	U2FS	他们属于哪一个佛教宗派？	Ta1men5 shu3yu2 na3yi1ge5 Fo2jiao4 zong1pai4?	Which Buddhist school of thought do they belong to?	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/832226
+832992	Martha	他的講座很長。	Ta1 de5 jiang3zuo4 hen3 chang2.	His lectures are very long.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/832992
+833005	Martha	你好，蘇珊。你好吗?	Ni3hao3, Su1shan1. ni3 hao3 ma5?	Hi, Susan. How are you?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/833005
+833041	Martha	我無法入睡。	Wo3 wu2fa3 ru4shui4.	I couldn't get to sleep. | I couldn't sleep. | I couldn't fall asleep.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/833041
+833171	Martha	你喜歡莫扎特的音樂嗎？	Ni3 xi3huan5 Mo4zha1te4 de5 yin1yue4 ma5?	Do you like Mozart's music?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/833171
+833216	Martha	他是一個友善的人。	Ta1 shi4 yi1 ge4 you3shan4 de5 ren2.	He is a friendly person.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/833216
+834707	Martha	瑪麗悄悄地關上了門。	Ma3li4 qiao1qiao1 de5 guan1shang4 le5 men2.	Mary closed the door quietly.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/834707
+835651	Martha	我會很樂意幫助你。	Wo3 hui4 hen3 le4yi4 bang1zhu4 ni3.	I will gladly help you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/835651
+836143	Martha	我努力地改善我的成績。	Wo3 nu3li4 de5 gai3shan4 wo3 de5 cheng2ji4.	I made efforts to improve my grades.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/836143
+836334	Martha	請安靜地關門。	Qing3'an1 jing4 de5 guan1men2.	Please close the door quietly.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/836334
+836349	Martha	你曾在哪裡看到過我的眼鏡嗎？	Ni3 ceng2 zai4 na3li3 kan4 dao4 guo5 wo3 de5 yan3jing4 ma5?	Have you seen my glasses anywhere?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/836349
+840653	Martha	你洗過你的手了嗎？	Ni3 xi3 guo5 ni3 de5 shou3 le5 ma5?	Have you washed your hands yet?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/840653
+843553	fucongcong	如果你不懂，那就问。	Ru2guo3 ni3 bu4 dong3, na4 jiu4 wen4.	If you don't understand, ask. | If you do not understand, ask.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/843553
+844116	fucongcong	你今天看上去很苍白。	Ni3 jin1tian1 kan4shang5qu5 hen3 cang1bai2.	You look pale today.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/844116
+844959	nickyeow	今天是星期五，所以我們需要禱告。	Jin1tian1 shi4 Xing1qi1wu3, suo3yi3 wo3men5 xu1yao4 dao3gao4.	It's Friday, and so we have to perform our prayers.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/844959
+845109	fucongcong	我们在找一个漂亮的屋子住。	Wo3men5 zai4 zhao3 yi1 ge4 piao4liang5 de5 wu1zi5 zhu4.	We are looking for a nice house to live in. | We're looking for a nice house to live in.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/845109
+845122	fucongcong	这是我唯一能想到的事了。	Zhe4 shi4 wo3 wei2yi1 neng2 xiang3dao4 de5 shi4 le5.	It's the only thing I can think of.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/845122
+845127	fucongcong	王子继承了王位。	Wang2zi3 ji4cheng2 le5 wang2wei4.	The prince succeeded to the throne.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/845127
+845994	Martha	你的駕駛執照已經過期了。	Ni3 de5 jia4shi3zhi2zhao4 yi3jing1 guo4qi1 le5.	Your driver's license has expired.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/845994
+846066	Martha	他把他的女兒介紹給我認識。	Ta1 ba3 ta1 de5 nv3'er2 jie4shao4 gei3 wo3 ren4shi5.	He introduced his daughter to me.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/846066
+846184	Martha	他習慣在公眾場合說話。	Ta1 xi2guan4 zai4 gong1zhong4 chang3he2 shuo1hua4.	He's used to speaking in public. | He is used to speaking in public.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/846184
+846324	Martha	我難以容忍他的行為。	Wo3 nan2yi3 rong2ren3 ta1 de5 xing2wei2.	I can hardly stand his behavior. | I can barely stand his behavior.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/846324
+846775	fucongcong	你儿子现在成人了。	Ni3 er2zi5 xian4zai4 cheng2ren2 le5.	Your son has come of age.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/846775
+848852	Martha	他的意見不值得聽。	Ta1 de5 yi4jian4 bu4 zhi2de5 ting1.	His opinions aren't worth listening to.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/848852
+849824	Martha	Mayuko騎腳踏車上學。	Mayuko qi2 jiao3ta4che1 shang4xue2.	Mayuko goes to school by bicycle.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/849824
+850308	Martha	她沒有告訴我她的秘密。	Ta1 mei2you3 gao4su5 wo3 ta1 de5 mi4mi4.	She didn't tell me her secret.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/850308
+856392	Martha	警察抓了正在跑的那個男人。	Jing3cha2 zhua1 le5 zheng4zai4 pao3 de5 na4ge5 nan2ren2.	The policeman captured the man who was running.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/856392
+858728	Martha	我的網路連線被切斷了。	Wo3 de5 wang3lu4 lian2xian4 bei4 qie1duan4 le5.	My internet connection was cut off.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/858728
+858924	eastasiastudent	到处都是新建造的楼房。	Dao4chu4 dou1 shi4 xin1jian4 zao4 de5 lou2fang2.	New buildings are being built here, there and everywhere.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/858924
+860565	Martha	她每天早上早起。	Ta1 mei3tian1 zao3shang5 zao3qi3.	She gets up early every morning.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/860565
+860757	Martha	我昨天沒去上班。	Wo3 zuo2tian1 mei2 qu4 shang4ban1.	I was absent from work yesterday.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/860757
+861087	Martha	打牌是一種流行的消遣方式。	Da3pai2 shi4 yi1zhong3 liu2xing2 de5 xiao1qian3 fang1shi4.	Playing cards is a popular pastime.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/861087
+862738	Martha	讓我們找些可以坐在上面的東西。	Rang4 wo3men5 zhao3 xie1 ke3yi3 zuo4 zai4 shang4mian4 de5 dong1xi5.	Let's find something to sit on.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/862738
+864287	Martha	我哥哥是個大學生。	Wo3 ge1ge5 shi4 ge4 da4xue2sheng1.	My brother is a college student.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/864287
+864499	elizabethchan	我们可以有多相信他？	Wo3men5 ke3yi3 you3 duo1 xiang1xin4 ta1?	To what degree can we trust him?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/864499
+869142	ColinG	今天我们有一场数学考试。	Jin1tian1 wo3men5 you3 yi1 chang3 shu4xue2 kao3shi4.	We had an examination in mathematics today.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/869142
+869854	Martha	我們已經結婚五年了。	Wo3men5 yi3jing1 jie2hun1 wu3 nian2 le5.	We've been married for five years.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/869854
+870126	Martha	昨天下大雨。	Zuo2tian1 xia4 da4yu3.	We had a heavy rain yesterday. | It rained heavily yesterday.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/870126
+870323	Martha	你搭公車上下學嗎？	Ni3 da1 gong1che1 shang4xia4 xue2 ma5?	Do you go to school by bus? | Do you commute to school by bus?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/870323
+874158	Martha	根據牙醫，蛀牙並不總是甜食所引起的。	Gen1ju4 ya2yi1, zhu4ya2 bing4bu4 zong3shi4 tian2shi2 suo3 yin3qi3 de5.	According to dentists, tooth decay is not always caused by sweets.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/874158
+874735	Martha	你應該遵照醫生的忠告。	Ni3 ying1gai1 zun1zhao4 yi1sheng1 de5 zhong1gao4.	You should follow the doctor's advice.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/874735
+880292	Martha	除了一人，大家都回家了。	Chu2le5 yi1 ren2, da4jia1 dou1 hui2jia1 le5.	Except for one person, everybody went home.	True	1		0		True	True	https://tatoeba.org/en/sentences/show/880292
+881751	Martha	我搭計程車去的機場。	Wo3 da1 ji4cheng2che1 qu4 de5 ji1chang3.	I went to the airport by taxi.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/881751
+882516	Martha	我一天刷兩次牙。	Wo3 yi1 tian1 shua1 liang3 ci4 ya2.	I brush my teeth twice a day.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/882516
+882538	Martha	我今晚沒地方睡覺。	Wo3 jin1wan3 mei2 di4fang5 shui4jiao4.	I have no place to sleep tonight. | I've nowhere to sleep tonight.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/882538
+883289	Martha	他把他的襯衫穿反了。	Ta1 ba3 ta1 de5 chen4shan1 chuan1fan3 le5.	He had his shirt on inside out.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/883289
+884665	Tajfun	我不相信你有那麼老。	Wo3 bu4 xiang1xin4 ni3 you3 na4me5 lao3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/884665
+884685	Tajfun	學英語需要耐性。	Xue2 Ying1yu3 xu1yao4 nai4xing4.	Learning English requires patience.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/884685
+891767	Martha	她把乾淨的床單鋪在床上。	Ta1 ba3 gan1jing4 de5 chuang2dan1 pu1 zai4 chuang2 shang4.	She put clean sheets on the bed. | She spread the clean bedsheet on the bed.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/891767
+894324	Shishir	你喜欢下雨吗？	Ni3 xi3huan5 xia4yu3 ma5?	Do you like rain?	True	0		0	2	False	True	https://tatoeba.org/en/sentences/show/894324
+895448	Martha	你想跟誰說話？	Ni3 xiang3 gen1 shei2 shuo1hua4?	Who do you want to speak to? | Who do you want to talk to?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/895448
+902034	shanghainese	你最好不要和他来往。	Ni3 zui4 hao3bu4 yao4 he2 ta1 lai2wang3.	You'd better not keep company with him.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/902034
+903324	Martha	為什麼太郎英語可以說得這麼好？	Wei4shen2me5 Tai4lang2 Ying1yu3 ke3yi3 shuo1 de5 zhe4me5 hao3?	Why can Taro speak English so well?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/903324
+904792	kanaorange	她和湯姆一樣忙。	Ta1 he2 Tang1mu3 yi1yang4 mang2.	She's as busy as Tom.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/904792
+905809	Martha	如果用了你的車，你會介意嗎?	Ru2guo3 yong4 le5 ni3 de5 che1, ni3 hui4 jie4yi4 ma5?	Would you mind if I used your car?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/905809
+917855	Martha	我睡不著。	Wo3 shui4 bu4 zhe5.	I couldn't sleep. | I can't fall asleep.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/917855
+917951	Martha	我來自英國。	Wo3 lai2zi4 Ying1guo2.	I come from England. | I'm from England. | I am from England.	True	1		0		True	True	https://tatoeba.org/en/sentences/show/917951
+919661	Martha	我藉由聽音樂來鼓舞我自己。	Wo3 jie4you2 ting1 yin1yue4 lai2 gu3wu3 wo3 zi4ji3.	I cheered myself up by listening to music.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/919661
+926858	Martha	我完全同意。	Wo3 wan2quan2 tong2yi4.	I agree completely. | I totally agree. | I'm in absolutely total agreement.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/926858
+931054	frankou	我想去日本。	Wo3 xiang3 qu4 Ri4ben3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/931054
+931059	frankou	我已經和這位學生說過了。	Wo3 yi3jing1 he2 zhe4wei4 xue2sheng5 shuo1 guo5 le5.	I have already talked with this student.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/931059
+949256	zhaoxin	车取代了自行车。	Che1 qu3dai4 le5 zi4xing2che1.	Cars took the place of bicycles. | The car replaced the bicycle.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/949256
+1006275	sysko	Python脚本的语法很简单。	P ython jiao3ben3 de5 yu3fa3 hen3 jian3dan1.	The syntax of Python scripts is very simple.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1006275
+1020096	joro	那街道非常吵。	Na4 jie1dao4 fei1chang2 chao3.	That street is very noisy.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1020096
+1050439	tatomeimei	看电视吧。	Kan4 dian4shi4 ba5.	Let's watch TV.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1050439
+1054527	Shishir	学校在哪儿？	Xue2xiao4 zai4 na3r5?	Where is the school?	True	0		0	2	False	True	https://tatoeba.org/en/sentences/show/1054527
+1064576	sysko	你真体贴。	Ni3 zhen1 ti3tie1.	You are so considerate.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1064576
+1066752	sysko	我没洗头发。	Wo3 mei2 xi3tou2 fa1.	I haven't washed my hair.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1066752
+1097589	nickyeow	那篇關於佛教的文章再次勾起了我對東方宗教的興趣。	Na4 pian1 guan1yu2 Fo2jiao4 de5 wen2zhang1 zai4ci4 gou1qi3 le5 wo3 dui4 dong1fang1 zong1jiao4 de5 xing4qu4.	The article on Buddhism revived my interest in oriental religions.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1097589
+1133337	carloszo	据我所知，这本书还没被翻译成日语。	Ju4 wo3 suo3 zhi1, zhe4 ben3 shu1 hai2 mei2 bei4 fan1yi4 cheng2 Ri4yu3.	As far as I know, this book has never been translated into Japanese.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1133337
+1133357	carloszo	他们是早上十点还是晚上十点到？	Ta1men5 shi4 zao3shang5 shi2 dian3 hai2shi5 wan3shang5 shi2 dian3 dao4?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/1133357
+1138979	sysko	可是你从来没告诉过我。	Ke3shi4 ni3 cong2lai2mei2 gao4su5 guo5 wo3.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/1138979
+1188965	Shishir	你们在找什么？	Ni3men5 zai4 zhao3 shen2me5?	What are you looking for? | What're you looking for? | What are you searching for?	True	0		0	2	True	True	https://tatoeba.org/en/sentences/show/1188965
+1225638	tsayng	晚餐之後你才可以看電視。	Wan3can1 zhi1hou4 ni3 cai2 ke3yi3 kan4 dian4shi4.	You can watch TV after supper.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/1225638
+1284190	ozidra	我爸爸造就了我。	Wo3 ba4ba5 zao4jiu4 le5 wo3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/1284190
+1315976	shanghainese	你是我的生命当中最重要的人。	Ni3 shi4 wo3 de5 sheng1ming4 dang1zhong1 zui4 zhong4yao4 de5 ren2.	You are the most important person in my life. | You're the most important person in my life.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/1315976
+1324869	vicch	John和我的兄弟同岁。	John he2 wo3 de5 xiong1di4 tong2 sui4.	John is as old as my brother.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1324869
+1325206	vicch	因为闹铃没有响，所以我继续睡下去了。	Yin1wei4 nao4ling2 mei2you3 xiang3, suo3yi3 wo3 ji4xu4 shui4 xia4qu4 le5.	I overslept because my alarm didn't go off.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1325206
+1335295	Saney	你吃饭了没有？	Ni3 chi1fan4 le5 mei2you3?	Have you eaten? | Did you already have a meal or not?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1335295
+1365915	tsayng	不是所有在網路上的東西都能用谷歌搜尋到。	Bu4 shi4 suo3you3 zai4 wang3lu4 shang4 de5 dong1xi5 dou1 neng2 yong4 Gu3ge1 sou1xun2 dao4.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/1365915
+1394862	mtdot	那部叫“鬼影实录”的电影并没那么好。	"Na4 bu4 jiao4 ""gui3 ying3 shi2 lu4 "" de5 dian4ying3 bing4 mei2 na4me5 hao3."	"The movie called ""Paranormal Activity"" was not that much good."	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1394862
+1395051	mtdot	汤姆把他想去的地方列成了一张清单。	Tang1mu3 ba3 ta1 xiang3 qu4 de5 di4fang5 lie4 cheng2le5 yi1 zhang1 qing1dan1.	Tom made a list of places he wants to visit.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1395051
+1408096	wangzi0921	这辆火车时速20英里。	Zhe4 liang4 huo3che1 shi2su4 20 Ying1li3.	The train makes 20 miles an hour.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/1408096
+1416884	U2FS	要是脸书上没有你，你就不存在！	Yao4shi5 Lian3shu1 shang4 mei2you3 ni3, ni3 jiu4 bu4 cun2zai4!	If you're not on Facebook, you don't exist!	True	2		0	4	False	True	https://tatoeba.org/en/sentences/show/1416884
+1438579	asosan	我们几乎被冻死了。	Wo3men5 ji1hu1 bei4 dong4si3 le5.	We were nearly frozen to death.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1438579
+1438615	asosan	我可以把它放在这儿吗？	Wo3 ke3yi3 ba3 ta1 fang4 zai4 zhe4r5 ma5?	May I put it down here? | May I put it here?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1438615
+1455148	nickyeow	你是唯一一個能夠幫我的人。	Ni3 shi4 wei2yi1 yi1 ge4 neng2gou4 bang1 wo3 de5 ren2.	You're the only one who can help me.	True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/1455148
+1471141	bfsutian	宇宙无穷无尽。	Yu3zhou4 wu2qiong2wu2jin4.	The universe is endless.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1471141
+1480125	egg0073	今天是我的生日。	Jin1tian1 shi4 wo3 de5 sheng1ri4.	Today is my birthday.	True	2		0	5	False	True	https://tatoeba.org/en/sentences/show/1480125
+1513569	davjd	我打过他电话了。	Wo3 da3 guo5 ta1 dian4hua4 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/1513569
+1515376	sysko	我下班了，改天聊。	Wo3 xia4ban1 le5, gai3tian1 liao2.	I am leaving work, so let's talk another day.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1515376
+1516097	gonnastop	我还没有洗头。	Wo3 hai2 mei2you3 xi3tou2.	I haven't washed my hair.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1516097
+1516104	gonnastop	教室里没剩下几个学生了。	Jiao4shi4 li3 mei2 sheng4xia4 ji3ge5 xue2sheng5 le5.	There were few students remaining in the classroom. | There aren't many students left in the classroom.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1516104
+1541652	menyo	早日康復！	Zao3ri4 kang1fu4!	Get well soon!	True	1		0	3	True	True	https://tatoeba.org/en/sentences/show/1541652
+1541788	saran	他为了买车向银行借款。	Ta1 wei4le5 mai3 che1 xiang4 yin2hang2 jie4kuan3.	He borrowed money from the bank in order to buy a car.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1541788
+1551880	Gustav249	战火烧到了非洲。	Zhan4huo3 shao1dao4 le5 Fei1zhou1.	The war in Europe was carried into Africa.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1551880
+1551881	Gustav249	无论我们是否喜欢电脑，它在我们的生活中始终起着重要的作用。	Wu2lun4 wo3men5 shi4fou3 xi3huan5 dian4nao3, ta1 zai4 wo3men5 de5 sheng1huo2 zhong1 shi3zhong1 qi3 zhuo2zhong4 yao4 de5 zuo4yong4.	Computers are certainly playing an important role in our life, whether we like it or not.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1551881
+1567745	trieuho	幼儿园老师有时被称为孩子王。	You4'er2yuan2 lao3shi1 you3shi2 bei4 cheng1wei2 hai2zi5 Wang2.	Teachers in kindergarten are sometimes referred to as leaders of children.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/1567745
+1567783	trieuho	学友来看林老师的时候，外边正下着雨呢。	Xue2 you3 lai2kan4 lin2 lao3shi1 de5 shi2hou5, wai4bian5 zheng4 xia4 zhe5 yu3 ne5.	When Xueyou came to see Teacher Lin, it was raining outside.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/1567783
+1584115	trieuho	木棍是土著作为武器投掷的重而直的棍或棒。	Mu4gun4 shi4 tu3zhu4 zuo4wei2 wu3qi4 tou2zhi4 de5 zhong4 er2 zhi2 de5 gun4 huo4 bang4.		True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/1584115
+1644389	fengli	到底躲到哪裏去了？	Dao4di3 duo3 dao4 na3li3 qu4 le5?	Where in the world could it be hiding?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1644389
+1733119	nickyeow	店裏擠滿了年輕人。	Dian4 li3 ji3man3 le5 nian2qing1ren2.	The shop was crowded with young people.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1733119
+1733251	nickyeow	我知道我昨天說的那番話把你弄得很生氣。	Wo3 zhi1dao4 wo3 zuo2tian1 shuo1 de5 na4 fan1 hua4 ba3 ni3 nong4 de5hen3 sheng1qi4.	I know you're probably mad about what I said yesterday.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1733251
+1757253	egg0073	您的意見對我們很重要。	Nin2 de5 yi4jian4 dui4 wo3men5 hen3 zhong4yao4.	Your opinion is very important to us.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/1757253
+1835738	sysko	我也不喜欢他。	Wo3 ye3 bu4 xi3huan5 ta1.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/1835738
+1862249	sysko	你别想骗我！	Ni3 bie2 xiang3 pian4 wo3!	Don't try to pull a fast one on me!	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1862249
+1862259	sysko	他一直都缺钱。	Ta1 yi1zhi2 dou1 que1qian2.	He's always short of money.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1862259
+1862260	sysko	我缺钱。	Wo3 que1qian2.	I am short of money. | I'm short of money. | I'm short of cash. | I'm pushed for cash. | I'm hard up. | I'm strapped for cash.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1862260
+1862268	sysko	他没有钱。	Ta1 mei2you3 qian2.	He had no money.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1862268
+1862315	sysko	他让他的工人在办公室吃饭。	Ta1 rang4 ta1 de5 gong1ren2 zai4 ban4gong1shi4 chi1fan4.	He lets his workers eat meals in the office.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1862315
+1862318	sysko	我想周游世界。	Wo3 xiang3 zhou1you2shi4jie4.	I'd like to travel around the world. | I want to travel around the world. | I would like to travel around the world.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/1862318
+1865131	fercheung	别再往Facebook上发私人照片了。	Bie2 zai4 wang3 Facebook shang4 fa1 si1ren2 zhao4pian4 le5.	You need to stop posting private photos on Facebook.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1865131
+1865391	fercheung	我躲在了床底下。	Wo3 duo3 zai4 le5 chuang2 di3xia5.	I hid myself under the bed.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/1865391
+1866593	fercheung	安德里亚，说话注意点，小心隔墙有耳。	An1 De2li3 ya4, shuo1hua4 zhu4yi4 dian3, xiao3xin1 ge2qiang2you3'er3.	Be careful what you say, Andrea; the walls have ears.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1866593
+1867325	sixtynine	我不喜欢这种糖果。	Wo3 bu4 xi3huan5 zhe4zhong3 tang2guo3.	I don't like these sweets.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1867325
+1869764	street	我们只是朋友。	Wo3men5 zhi3shi4 peng2you5.	We're just friends.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1869764
+1870358	fercheung	这本书是我的。	Zhe4 ben3 shu1 shi4 wo3 de5.	This book is mine.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1870358
+1870639	nickyeow	我想你是我一生中見過最漂亮的女孩。	Wo3 xiang3 ni3 shi4 wo3 yi1sheng1 zhong1 jian4 guo5 zui4 piao4liang5 de5 nv3hai2.	I think you're the most beautiful girl I've ever seen.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/1870639
+1872166	sixtynine	这些东西对健康有害吗？	Zhe4xie1 dong1xi5 dui4 jian4kang1 you3hai4 ma5?	Will this stuff jeopardize my health?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1872166
+1872180	sixtynine	不要担心！	Bu4 yao4 dan1xin1!	Don't worry!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1872180
+1872259	sixtynine	看看！厨房里有一只猫。	Kan4kan5! chu2fang2 li3 you3 yi1 zhi1 mao1.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/1872259
+1872345	sixtynine	汤姆不在这儿。	Tang1mu3 bu4 zai4 zhe4r5.	Tom isn't here. | Tom's not here. | Tom is not here.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1872345
+1873738	sixtynine	你读这本书应该很容易。	Ni3 du2 zhe4 ben3 shu1 ying1gai1 hen3 rong2yi4.	You should be able to read this book easily.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1873738
+1877244	street	我晚上睡觉很早。	Wo3 wan3shang5 shui4jiao4 hen3 zao3.	I go to bed early at night.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1877244
+1878302	fercheung	这首诗是昨晚写的。	Zhe4 shou3 shi1 shi4 zuo2wan3 xie3 de5.	This poem was written last night.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1878302
+1879954	fercheung	要翻译那篇论文，我最少需要三天时间。	Yao4 fan1yi4 na4 pian1 lun4wen2, wo3 zui4 shao3 xu1yao4 san1 tian1shi2 jian1.	I'll need at least three days to translate that thesis.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1879954
+1883656	fercheung	这么拼命工作有什么意义？	Zhe4me5 pin1ming4 gong1zuo4 you3 shen2me5 yi4yi4?	What's the sense of working so hard?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1883656
+1888734	Venki	任何生命都有消逝的那天。	Ren4he2 sheng1ming4 dou1 you3 xiao1shi4 de5 na4tian1.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/1888734
+1898978	sysko	你有一个大鼻子。	Ni3 you3 yi1 ge4 da4 bi2zi5.	You have a big nose.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1898978
+1911459	sysko	我发现你玩绝对不耽误学习。我就不行。	Wo3 fa1xian4 ni3 wan2 jue2dui4 bu4 dan1wu5 xue2xi2. wo3 jiu4 bu4 xing2.	I've noticed that having fun doesn't interfere at all with your studies. I just can't.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1911459
+1926127	Wakano	这是本有教育意义的书。	Zhe4 shi4 ben3 you3 jiao4yu4 yi4yi4 de5 shu1.	This is an instructive book.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1926127
+1928755	EDOBEAR	Suzanne比我大兩歲。	Suzanne bi3 wo3 da4 liang3 sui4.	Suzanne is two years older than me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1928755
+1944847	bigfatpanda	你觉得我能胜任那个工作吗？	Ni3 jue2de5 wo3 neng2 sheng4ren4 na4ge5 gong1zuo4 ma5?	Do you think I'm qualified for that job?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1944847
+1947739	nickyeow	書中滿是遙不可及、沒有科學根據的理論。	Shu1 zhong1 man3 shi4 yao2bu4ke3ji2, mei2you3 ke1xue2 gen1ju4 de5 li3lun4.	The book is full of far-flung theories without any basis in scientific fact.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1947739
+1956506	bdanner	我似乎不太喜欢小米，我觉得小米是屌丝用的手机，就是个山寨机。	Wo3 si4hu1 bu4 tai4 xi3huan5 xiao3mi3, wo3 jue2de5 xiao3mi3 shi4 diao3si1 yong4 de5 shou3ji1, jiu4shi4 ge4 shan1zhai4ji1.	I don't really like Xiaomi phones, and I think that they're for losers. They're like knock-offs.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1956506
+1958159	bigfatpanda	他通通都吃了。	Ta1 tong1tong1 dou1 chi1 le5.	He ate all of it.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1958159
+1962050	sysko	我想改变世界。	Wo3 xiang3 gai3bian4 shi4jie4.	I want to change the world.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/1962050
+1962128	sysko	我依旧相信爱情。	Wo3 yi1jiu4 xiang1xin4 ai4qing2.	I still believe in love.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1962128
+1964261	bigfatpanda	他专心于学习。	Ta1 zhuan1xin1 yu2 xue2xi2.	He concentrated on his studies. | He applied himself to his study. | He focused on his studies.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/1964261
+1964269	bigfatpanda	这个故事是基于真实事件写的。	Zhe4ge5 gu4shi5 shi4 ji1yu2 zhen1shi2 shi4jian4 xie3 de5.	This story is based on actual events.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1964269
+1978354	sysko	我要减肥。	Wo3 yao4 jian3fei2.	I want to lose weight.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/1978354
+1990220	sunnywqing	我以为你想见我呢。	Wo3 yi3wei2 ni3 xiang3jian4 wo3 ne5.	I thought that you wanted to see me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1990220
+1992073	tarim222	这次我们不去好市多可以吗？	Zhe4 ci4 wo3men5 bu4 qu4 Hao3shi4duo1 ke3yi3 ma5?	Is it OK if we don't go to Costco this time?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1992073
+1992253	fercheung	昨天是谁把窗子打破的？	Zuo2tian1 shi4 shei2 ba3 chuang1zi5 da3po4 de5?	Who was it that broke the window yesterday?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1992253
+1994900	fercheung	汤姆不愿意和玛丽一起工作。	Tang1mu3 bu4 yuan4yi4 he2 Ma3li4 yi1qi3 gong1zuo4.	Tom didn't want to work with Mary.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1994900
+1995044	fercheung	一看到甜点，我就无法自拔。	Yi1 kan4 dao4 tian2dian3, wo3 jiu4 wu2fa3 zi4ba2.	When it comes to sweets, I just can't control myself. | The moment I see dessert, I can't hold back.	True	1		0		True	True	https://tatoeba.org/en/sentences/show/1995044
+1995147	fercheung	我们很乐意帮你。	Wo3men5 hen3 le4yi4 bang1 ni3.	We're willing to help you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1995147
+1997127	fercheung	他的眼睛掩饰不了内心的恐慌。	Ta1 de5 yan3jing5 yan3shi4 bu5liao3 nei4xin1 de5 kong3huang1.	His eyes betrayed his fear.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1997127
+1997144	fercheung	在背后说别人坏话不是大丈夫所为。	Zai4 bei4hou4 shuo1 bie2ren5 huai4hua4 bu4 shi4 da4zhang4fu5 suo3wei2.	It is not manly to speak ill of others behind their backs.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/1997144
+1997158	fercheung	别人建议我坐飞机而不是坐船去，于是我选择了坐飞机。	Bie2ren5 jian4yi4 wo3 zuo4 fei1ji1 er2 bu4 shi4 zuo4 chuan2 qu4, yu2shi4 wo3 xuan3ze2 le5 zuo4 fei1ji1.	I was told to go not by boat but by plane, which advice I followed.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/1997158
+1997866	sysko	晚上吃什么？	Wan3shang5 chi1 shen2me5?	What do we eat tonight?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/1997866
+2000088	fercheung	园丁在花园的中央种了一棵玫瑰树。	Yuan2ding1 zai4 hua1yuan2 de5 zhong1yang1 zhong4 le5 yi1 ke1 mei2gui1 shu4.	The gardener planted a rose tree in the middle of the garden.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2000088
+2000269	fercheung	确实，他还年轻，但是很靠得住。	Que4shi2, ta1 hai2 nian2qing1, dan4shi4 hen3 kao4de5zhu4.	It is true that he is young, but he is very reliable.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2000269
+2000277	fercheung	我正在和朋友打电话呢。	Wo3 zheng4zai4 he2 peng2you5 da3dian4hua4 ne5.	I've got my friend on the line right now.	True	0		0		False	False	https://tatoeba.org/en/sentences/show/2000277
+2000287	fercheung	我刚才还碰到他来着。	Wo3 gang1cai2 hai2 peng4dao4 ta1 lai2zhe5.	I met him just now.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2000287
+2002796	tarim222	你有博客吗？	Ni3 you3 bo2ke4 ma5?	Do you have a blog?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2002796
+2002965	sunnywqing	请带一张纸给我。	Qing3 dai4 yi1 zhang1 zhi3 gei3 wo3.	Bring me a sheet of paper, please.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2002965
+2002974	sunnywqing	我屏住了呼吸等待着。	Wo3 bing1 zhu4 le5 hu1xi1 deng3dai4 zhe5.	I held my breath and waited.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2002974
+2002977	sunnywqing	我只是想写一些没有逗号的小句子。	Wo3 zhi3shi4 xiang3 xie3 yi1xie1 mei2you3 dou4hao4 de5 xiao3 ju4zi5.	I'm only going to write small sentences without commas.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2002977
+2003034	fercheung	希望你能尽早回复。	Xi1wang4 ni3 neng2 jin3zao3 hui2fu4.	I hope you will answer me soon. | I hope you'll answer me soon.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2003034
+2003088	fercheung	我就知道你会来。	Wo3 jiu4 zhi1dao4 ni3 hui4 lai2.	I knew you'd come.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2003088
+2003173	fercheung	到目前为止，我们还是相当成功的。	Dao4mu4qian2wei2zhi3, wo3men5 hai2shi5 xiang1dang1 cheng2gong1 de5.	So far we have been quite successful.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2003173
+2003190	fercheung	你必须付三个月的房租作为押金。	Ni3 bi4xu1 fu4 san1 ge4 yue4 de5 fang2zu1 zuo4wei2 ya1jin1.	You have to give three months' rent as a deposit.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2003190
+2003357	fercheung	“可以用一下这部电话吗？”“请随意。”	"""ke3yi3 yong4 yi1xia4 zhe4 bu4 dian4hua4 ma5?""""qing3 sui2yi4."""	"""May I use this telephone?"" ""Go ahead."""	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2003357
+2003361	fercheung	你会用电脑吗？	Ni3 hui4 yong4 dian4nao3 ma5?	Do you know how to use a computer?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2003361
+2003371	fercheung	没有什么可以阻止他。	Mei2you3shen2me5 ke3yi3 zu3zhi3 ta1.	Nothing could stop him.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2003371
+2004549	fercheung	这不是我们的错……大家都是逼不得已才这么做。	Zhe4 bu4 shi4 wo3men5 de5 cuo4 …… da4jia1 dou1 shi4 bi1 bu4de2yi3 cai2 zhe4me5 zuo4.	It wasn't our fault... We all had to do it.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004549
+2004552	fercheung	因为日程安排的问题，我们必须取消明天的会议。	Yin1wei4 ri4cheng2 an1pai2 de5 wen4ti2, wo3men5 bi4xu1 qu3xiao1 ming2tian1 de5 hui4yi4.	We had to nix tomorrow's meeting because of a scheduling problem.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004552
+2004574	tarim222	不要以为我已经忘了你，你在我的脑海中，但我抽不出时间给你写信。	Bu4 yao4 yi3wei2 wo3 yi3jing1 wang4 le5 ni3, ni3 zai4 wo3 de5 nao3hai3 zhong1, dan4 wo3 chou1 bu4 chu1 shi2jian1 gei3 ni3 xie3xin4.	Don't think I've forgotten you already, you've been on my mind, but I haven't been able to take the time to write to you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004574
+2004621	fercheung	双方都有几千人受伤。	Shuang1fang1 dou1 you3 ji3qian1 ren2 shou4shang1.	Many thousands on both sides had been wounded.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004621
+2004624	tarim222	这封信约一个星期左右到达。	Zhe4 feng1 xin4 yue1 yi1 ge4 xing1qi1 zuo3you4 dao4da2.	The letter will arrive in a week or so.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004624
+2004649	fercheung	他为自己的女儿感到骄傲。	Ta1 wei4 zi4ji3 de5 nv3'er2 gan3dao4 jiao1'ao4.	He was proud of his daughter.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004649
+2004674	fercheung	某天晚上，他又累又沮丧地回到了家。	Mou3 tian1 wan3shang5, ta1 you4 lei4 you4 ju3sang4 de5 hui2dao4 le5 jia1.	One night he came home very tired and sad.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004674
+2004681	fercheung	杰克逊从马背上掉了下来。	Jie2ke4xun4 cong2 ma3bei4 shang4 diao4 le5 xia4lai5.	Jackson fell from his horse.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004681
+2004705	fercheung	他连字都不会念，更别说写了。	Ta1 lian2 zi4 dou1 bu4 hui4 nian4, geng4 bie2 shuo1 xie3 le5.	He can't even read, let alone write.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004705
+2004706	fercheung	我妈会杀了我的。	Wo3 ma1 hui4 sha1 le5 wo3 de5.	My mother's going to kill me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2004706
+2005251	fercheung	汤姆认为他听到了几声枪声。	Tang1mu3 ren4wei2 ta1 ting1dao4 le5 ji3 sheng1 qiang1sheng1.	Tom thought he heard some gunshots.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2005251
+2005574	fercheung	火车在他们赶到车站之前就开走了。	Huo3che1 zai4 ta1men5 gan3dao4 che1zhan4 zhi1qian2 jiu4 kai1zou3 le5.	The train left before they got to the station.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2005574
+2006590	jjbraam	他說話夾雜著台灣口音。	Ta1 shuo1hua4 jia1za2 zhe5 Tai2wan1 kou3yin1.	He spoke with a Taiwanese accent mixed in.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2006590
+2014981	fercheung	大伙儿玩得高兴吗？	Da4huo3r5 wan2 de5 gao1xing4 ma5?	You guys having fun? | Are you guys having fun?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/2014981
+2017346	fercheung	猫会爬树，狗不会。	Mao1 hui4 pa2 shu4, gou3 bu4 hui4.	Cats can climb trees, but dogs can't.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2017346
+2026506	fercheung	汤姆太老实了，连撒谎都不会。	Tang1mu3 tai4 lao3shi5 le5, lian2 sa1huang3 dou1 bu4 hui4.	Tom is too honest a boy to tell a lie.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2026506
+2027988	ydcok	严禁吸烟。	Yan2jin4 xi1yan1.	Smoking is strictly prohibited.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2027988
+2028055	ydcok	该实验的每一步都是经过深思熟虑的。	Gai1 shi2yan4 de5 mei3 yi1 bu4 dou1 shi4 jing1guo4 shen1si1shu2lv4 de5.	Every step in the experiment was deliberate.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2028055
+2029411	ydcok	一旦养成坏习惯，就很难改过来。	Yi1dan4 yang3cheng2 huai4 xi2guan4, jiu4 hen3 nan2 gai3guo4 lai2.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/2029411
+2029434	ydcok	他一定会成功。	Ta1 yi1ding4 hui4 cheng2gong1.	He is sure to succeed. | He is bound to succeed. | He'll succeed for sure.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2029434
+2029445	ydcok	那部电影值得一看。	Na4 bu4 dian4ying3 zhi2de5 yi1 kan4.	That movie is worth seeing.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/2029445
+2029454	ydcok	他绝不高傲。	Ta1 jue2bu4 gao1'ao4.	He is free from pride.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/2029454
+2029467	ydcok	因为健康状况不佳，他没去成旅行。	Yin1wei4 jian4kang1zhuang4kuang4 bu4 jia1, ta1 mei2 qu4 cheng2 lv3xing2.	Poor health prohibited him from traveling.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2029467
+2029468	ydcok	本月结束之前请等待。	Ben3yue4 jie2shu4 zhi1qian2 qing3 deng3dai4.	Please wait until the end of this month.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2029468
+2029473	ydcok	谁都希望世界和平。	Shei2 dou1 xi1wang4 shi4jie4he2ping2.	We are all longing for peace in the world.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2029473
+2029478	ydcok	那么晚了，该睡觉了。	Na4me5 wan3 le5, gai1 shui4jiao4 le5.	It's so late; we should go to sleep.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2029478
+2030711	ydcok	因为是学生，所以得好好学习呀。	Yin1wei4 shi4 xue2sheng5, suo3yi3 dei3 hao3hao3 xue2xi2 ya5.		True	0		0	5	True	False	https://tatoeba.org/en/sentences/show/2030711
+2030728	ydcok	这人讲的我完全听不懂。	Zhe4 ren2 jiang3 de5 wo3 wan2quan2 ting1bu5dong3.	What he said was over my head.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/2030728
+2030733	ydcok	广东的夏天很长。	Guang3dong1 de5 xia4tian1 hen3 chang2.	Guangdong summers are long.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/2030733
+2030735	ydcok	山西在陕西的东边。	Shan1xi1 zai4 Shan3xi1 de5 dong1bian5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/2030735
+2032294	ydcok	我家宝宝还不会说话。	Wo3 jia1 bao3bao5 hai2 bu4 hui4 shuo1hua4.	Our baby cannot talk yet. | Our baby can't talk yet.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2032294
+2032308	ydcok	进教室的时候请把帽子摘了。	Jin4 jiao4shi4 de5 shi2hou5 qing3 ba3 mao4zi5 zhai1 le5.	Take off your hat when you enter a classroom.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2032308
+2035068	Venki	天花板上有洞。	Tian1hua1ban3 shang4 you3 dong4.	There's a hole in the ceiling. | There are holes in the ceiling.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2035068
+2035070	Venki	你必须遵守法律。	Ni3 bi4xu1 zun1shou3 fa3lv4.	You must observe the law. | You have to abide by the laws. | You have to obey the law.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/2035070
+2036746	Balamax	母親節快樂!	Mu3qin1jie2 kuai4le4!	Happy Mother's Day!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2036746
+2037131	sysko	最明智的人致力于研究成年人应该知道些什么，可是却不考虑孩子们按其能力可以学到些什么，他们总是把小孩子当大人看待，而不想一想他还没有成人哩。	Zui4 ming2zhi4 de5 ren2 zhi4li4 yu2 yan2jiu1 cheng2nian2ren2 ying1gai1 zhi1dao4 xie1 shen2me5, ke3shi4 que4 bu4 kao3lv4 hai2zi5men5 an4 qi2 neng2li4 ke3yi3 xue2 dao4 xie1 shen2me5, ta1men5 zong3shi4 ba3 xiao3hai2zi5 dang1 da4ren5 kan4dai4, er2 bu4 xiang3 yi1 xiang3 ta1 hai2 mei2you3 cheng2ren2 li3.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2037131
+2037149	sysko	我要叙述的，不是别人的思想，而是我自己的思想。	Wo3 yao4 xu4shu4 de5, bu4 shi4 bie2ren5 de5 si1xiang3, er2shi4 wo3 zi4ji3 de5 si1xiang3.		True	1		0	3	False	False	https://tatoeba.org/en/sentences/show/2037149
+2042142	Gustav249	他命令我立刻离开这个房间。	Ta1 ming4ling4 wo3 li4ke4 li2kai1 zhe4ge5 fang2jian1.	He commanded me to leave the room immediately. | He ordered me to leave the room immediately.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2042142
+2042219	somekinda	昨天没学生去那。	Zuo2tian1 mei2 xue2sheng5 qu4 na4.	No students went there yesterday.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2042219
+2047767	fercheung	没用的！	Mei2yong4 de5!	That won't work!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2047767
+2047769	fercheung	我想打高尔夫。	Wo3 xiang3 da3gao1'er3fu1.	I would like to play golf.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2047769
+2047862	fercheung	她很瞧不起我，认为我没有幽默细胞。	Ta1 hen3 qiao2bu4qi3 wo3, ren4wei2 wo3 mei2you3 you1mo4 xi4bao1.	She looks down on me for not having a sense of humor.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2047862
+2047869	jjbraam	那個小孩子很沒有規矩。	Na4ge5 xiao3hai2zi5 hen3 mei2you3 gui1ju5.	That little kid is quite bratty.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2047869
+2048228	fercheung	如果时间充裕，我可以做得更好的。	Ru2guo3 shi2jian1 chong1yu4, wo3 ke3yi3 zuo4 de5 geng4 hao3 de5.	I could have done better if I had had more time.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2048228
+2048960	User5120	你这是在说什么？	Ni3 zhe4 shi4 zai4 shuo1 shen2me5?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2048960
+2050750	fercheung	我总是觉得压力很大。	Wo3 zong3shi4 jue2de5 ya1li4 hen3 da4.	I'm always under stress. | I'm always stressed out.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2050750
+2050803	KISEKI	喝了一碗热汤，心情舒畅。	He1 le5 yi1 wan3 re4 tang1, xin1qing2 shu1chang4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2050803
+2050940	fercheung	汤姆上了车，启动了发动机。	Tang1mu3 shang4 le5 che1, qi3dong4 le5 fa1dong4ji1.	Tom got in the car and started the engine. | Tom got into the car and started the engine.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2050940
+2050950	fercheung	我早上不喂狗。	Wo3 zao3shang5 bu4 wei4 gou3.	I don't feed my dog in the morning.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/2050950
+2051270	fercheung	去医院要坐哪一路公交？	Qu4 yi1yuan4 yao4 zuo4 na3 yi1lu4 gong1jiao1?	How can I get to the hospital by bus?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2051270
+2051334	fercheung	我以一分之差错过了那趟火车。	Wo3 yi3 yi1 fen1zhi1 cha1cuo4 guo5 le5 na4 tang4 huo3che1.	I missed the train by a hair's breadth.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2051334
+2051339	fercheung	你爱我不如我爱你那么多。	Ni3 ai4 wo3 bu4 ru2 wo3 ai4 ni3 na4me5 duo1.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2051339
+2051363	fercheung	爱要如何爱上爱？	Ai4 yao4 ru2he2 ai4shang4 ai4?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2051363
+2051364	fercheung	上周末我爬山去了。	Shang4zhou1 mo4 wo3 pa2shan1 qu4 le5.	On the weekend, I climbed the mountain.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2051364
+2051370	fercheung	要找人代替像他这么有资历的员工很难。	Yao4 zhao3 ren2 dai4ti4 xiang4 ta1 zhe4me5 you3 zi1li4 de5 yuan2gong1 hen3 nan2.	It is difficult to replace an employee that is as qualified as he is.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2051370
+2051377	fercheung	政府必须采取特别措施应对失业问题。	Zheng4fu3 bi4xu1 cai3qu3 te4bie2 cuo4shi1 ying4dui4 shi1ye4 wen4ti2.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2051377
+2051380	fercheung	很遗憾我无法接受您的邀请。	Hen3 yi2han4 wo3 wu2fa3 jie1shou4 nin2 de5 yao1qing3.	Unfortunately I must decline your invitation.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2051380
+2051381	Gustav249	国会已经在讨论了。	Guo2hui4 yi3jing1 zai4 tao3lun4 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2051381
+2051558	cranewang	这个故事是我朋友写的。	Zhe4ge5 gu4shi5 shi4 wo3 peng2you5 xie3 de5.	This story was written by my friend.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/2051558
+2051563	cranewang	原来他们前天去电影院啦。	Yuan2lai2 ta1men5 qian2tian1 qu4 dian4ying3yuan4 la1.	It turns out that they went to the cinema the day before yesterday.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2051563
+2052114	Gustav249	河越宽，水的流速就越慢。	He2 yue4 kuan1, shui3 de5 liu2su4 jiu4 yue4 man4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052114
+2052115	Gustav249	有一件事我是挺高兴的：人们可以在Tatoeba上吵翻天，却不能动手打死人。毕竟我们相距太遥远了。	You3 yi1 jian4 shi4 wo3 shi4 ting3 gao1xing4 de5: ren2men5 ke3yi3 zai4 T atoeba shang4 chao3 fan1 tian1, que4 bu4 neng2 dong4shou3 da3si3 ren2. bi4jing4 wo3men5 xiang1ju4 tai4 yao2yuan3 le5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052115
+2052135	Gustav249	他们认为，去反驳一个不认识的人有些不礼貌。	Ta1men5 ren4wei2, qu4 fan3bo2 yi1 ge4 bu4 ren4shi5 de5 ren2 you3xie1 bu4 li3mao4.	They consider it impolite to disagree with someone they don't know very well.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2052135
+2052137	Gustav249	他是我见过最小气的家伙。	Ta1 shi4 wo3 jian4 guo5 zui4 xiao3qi4 de5 jia1huo5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052137
+2052229	fercheung	这里的自然景观的特点是山非常多，而且像画一样特别美。	Zhe4li3 de5 zi4ran2 jing3guan1 de5 te4dian3 shi4 shan1 fei1chang2 duo1, er2qie3 xiang4 hua4 yi1yang4 te4bie2 mei3.	The natural landscape is characterised by its large amount of mountains, and it looks as truly beautiful as a painting.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2052229
+2052235	cranewang	您为什么没去办公室？	Nin2 wei4shen2me5 mei2 qu4 ban4gong1shi4?	Why did you not go to the office?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2052235
+2052237	cranewang	不要留下我一个人！	Bu4 yao4 liu2xia4 wo3 yi1ge4ren2!	Don't leave me by myself! | Don't leave me alone!	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2052237
+2052242	cranewang	我有个坏消息。	Wo3 you3 ge5 huai4 xiao1xi5.	I have a bit of bad news.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2052242
+2052246	fercheung	抓贼啊！	Zhua1zei2 a1!	Grab the thief!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2052246
+2052282	fercheung	我七点左右来就可以了吧？	Wo3 qi1 dian3 zuo3you4 lai2 jiu4 ke3yi3 le5 ba5?	Would it suffice if I came around 7?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2052282
+2052285	fercheung	我们还在烧炭取暖。	Wo3men5 hai2 zai4 shao1tan4 qu3nuan3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052285
+2052288	fercheung	能刷卡吗？	Neng2 shua1ka3 ma5?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052288
+2052520	fercheung	根据灯塔的信号灯，船可以找到正确的方向。	Gen1ju4 deng1ta3 de5 xin4hao4deng1, chuan2 ke3yi3 zhao3dao4 zheng4que4 de5 fang1xiang4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2052520
+2054697	fercheung	这台电视机有两年的保修期。	Zhe4 tai2 dian4shi4ji1 you3 liang3 nian2 de5 bao3xiu1qi1.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2054697
+2054806	fercheung	抱歉，我迟到了。	Bao4qian4, wo3 chi2dao4 le5.	Sorry, I'm late.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2054806
+2055645	yuzazaza	时间对一个有智慧的人而言，就如钻石般珍贵；但对愚人来说，却像是一把泥土，一点价值也没有。	Shi2jian1 dui4 yi1 ge4 you3 zhi4hui4 de5 ren2 er2yan2, jiu4 ru2 zuan4shi2 ban1 zhen1gui4; dan4 dui4 yu2ren2 lai2 shuo1, que4 xiang4 shi4 yi1 ba3 ni2tu3, yi1dian3 jia4zhi2 ye3 mei2you3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2055645
+2055711	fercheung	请把这段日文翻译为法文。	Qing3 ba3 zhe4 duan4 Ri4wen2 fan1yi4 wei4 Fa3wen2.	Please translate this text from Japanese to French.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2055711
+2055824	fercheung	您是在哪儿出生的呢？	Nin2 shi4 zai4 na3r5 chu1sheng1 de5 ne5?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2055824
+2055828	fercheung	这娃儿真可爱！	Zhe4 wa2'er2 zhen1 ke3'ai4!	This baby is really cute!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2055828
+2056225	fercheung	要不是他这么磨磨蹭蹭，现在早做完了。	Yao4bu5shi4 ta1 zhe4me5 mo2mo2ceng4ceng4, xian4zai4 zao3 zuo4wan2 le5.	If he hadn't wasted time, he'd be finished by now.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2056225
+2062902	mrtaistoi	笔在那儿。	Bi3 zai4na5r5.	There is a pen.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2062902
+2062916	mrtaistoi	那儿有笔?	Na4r5 you3 bi3?	Where is a pen?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2062916
+2062924	mrtaistoi	香蕉很好吃。	Xiang1jiao1 hen3 hao3chi1.	Bananas are delicious.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2062924
+2062929	mrtaistoi	橙子不是蔬菜。	Cheng2zi5 bu4 shi4 shu1cai4.	Oranges are not vegetables. | Oranges aren't vegetables.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2062929
+2062938	mrtaistoi	有人找你。	You3ren2 zhao3 ni3.	There is someone looking for you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2062938
+2065139	fercheung	你自己的钱，想怎么用就怎么用。	Ni3 zi4ji3 de5 qian2, xiang3 zen3me5 yong4 jiu4 zen3me5 yong4.	You are free to do as you please with your money.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2065139
+2070506	saray	我可以做什么来帮你呢？	Wo3 ke3yi3 zuo4 shen2me5 lai2 bang1 ni3 ne5?	What can I do to help you?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2070506
+2075160	fercheung	吃饭时发出声音是不礼貌的。	Chi1fan4 shi2 fa1chu1 sheng1yin1 shi4 bu4 li3mao4 de5.	It is bad manners to make a noise while you eat.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2075160
+2076255	User5120	请说慢一些。	Qing3 shuo1 man4 yi1xie1.	Please speak slowly.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2076255
+2076264	User5120	你不抽烟还能活长点。	Ni3 bu4 chou1yan1 hai2 neng2 huo2 chang2 dian3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2076264
+2076269	User5120	实际上他根本没有去考试。	Shi2ji4shang4 ta1 gen1ben3 mei2you3 qu4 kao3shi4.	The fact is that he didn't even take the exam.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2076269
+2076280	User5120	尼古拉斯和玛利亚彼此相爱。	Ni2gu3la1si1 he2 Ma3li4ya4 bi3ci3 xiang1'ai4.	Nicholas and Maria love each other.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2076280
+2076291	User5120	我认为我明白了。	Wo3 ren4wei2 wo3 ming2bai5 le5.	I think I understood.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2076291
+2076335	User5120	你是干什么工作的？	Ni3 shi4 gan4shen2me5 gong1zuo4 de5?	What do you do for work?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2076335
+2078427	User5120	他从不喝酒。	Ta1 cong2bu4 he1jiu3.	He never drinks alcohol.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2078427
+2078466	User5120	她的话没有恶意。	Ta1 de5hua4 mei2you3 e4yi4.	There was no malice intended in what she said.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2078466
+2078512	User5120	鲁本有三个孩子。	Lu3 ben3 you3 san1 ge4 hai2zi5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2078512
+2082302	User5120	直子回到了日本。	Zhi2 zi3 hui2dao4 le5 Ri4ben3.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2082302
+2084022	egg0073	他害怕蛇。	Ta1 hai4pa4 she2.	He is afraid of snakes. | He's afraid of snakes.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2084022
+2090263	Gustav249	美食和性是男人的两大欲望。	Mei3shi2 he2 xing4 shi4 nan2ren2 de5 liang3 da4 yu4wang4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2090263
+2091842	liuzhongjun	我们穷，但是很快乐。	Wo3men5 qiong2, dan4shi4 hen3 kuai4le4.	We are poor, but we are happy.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2091842
+2091845	liuzhongjun	他们中有一个人想要拥抱你。	Ta1men5 zhong1 you3 yi1ge4ren2 xiang3yao4 yong1bao4 ni3.	Someone among them wants to hug you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2091845
+2092361	yuzazaza	你今天不是应该在学校的吗？	Ni3 jin1tian1 bu4 shi4 ying1gai1 zai4 xue2xiao4 de5 ma5?	Aren't you supposed to be at school today? | Shouldn't you be at school today?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2092361
+2102024	User5120	Tatoeba上似乎有超过两万个维吾尔语句子了。	T atoeba shang4 si4hu1 you3 chao1guo4 liang3 wan4 ge4 Wei2wu2'er3yu3 ju4zi5 le5.	It looks like there are now over two thousand Uyghur sentences on Tatoeba!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2102024
+2102713	User5120	他不但没帮我，还骂了我。	Ta1 bu4 dan4 mei2 bang1 wo3, hai2 ma4 le5 wo3.	Not only did he refuse to help me, but also he scolded me.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2102713
+2104067	kaenif	我認識的人中就他最懶了。	Wo3 ren4shi5 de5 ren2zhong1 jiu4 ta1 zui4 lan3 le5.	He's the laziest person I know.	True	1		0	4	False	True	https://tatoeba.org/en/sentences/show/2104067
+2104068	kaenif	他是我認識的人中最懶的。	Ta1 shi4 wo3 ren4shi5 de5 ren2zhong1 zui4 lan3 de5.	He's the laziest person I know.	True	1		0	4	False	True	https://tatoeba.org/en/sentences/show/2104068
+2104091	kaenif	他很晚才回家。	Ta1 hen3 wan3 cai2 hui2jia1.		True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/2104091
+2104098	kaenif	有人說他病了。	You3ren2 shuo1 ta1 bing4 le5.		True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/2104098
+2105165	sysko	她的屁股很大。	Ta1 de5 pi4gu5 hen3 da4.	She has a big butt.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2105165
+2105833	jjbraam	媽媽把被單連同床單一起拿去洗了。	Ma1ma5 ba3 bei4dan1 lian2tong2 chuang2dan1 yi1qi3 na2 qu4 xi3 le5.	Mom took the blanket along with the bedsheet to wash.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2105833
+2107438	Vortarulo	龙猫说： “我不会说中文。”	"Long2mao1 shuo1: ""wo3 bu4 hui4 shuo1 Zhong1wen2."""	"Totoro says: ""I can't speak Chinese."""	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2107438
+2110712	Gustav249	我不期望，他们能够支持我的观点。	Wo3 bu4 qi1wang4, ta1men5 neng2gou4 zhi1chi2 wo3 de5 guan1dian3.	I don't expect that they will support my view.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2110712
+2115067	User5120	每条狗都活着。	Mei3 tiao2 gou3 dou1 huo2zhe5.	Every dog is alive. | All the dogs are alive.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2115067
+2117476	joulin	这是他的飞机。	Zhe4 shi4 ta1 de5 fei1ji1.	This is his plane.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2117476
+2118508	sysko	为什么这个他妈的房子没有双层玻璃，我快要冷死了。	Wei4shen2me5 zhe4ge5 ta1ma1de5 fang2zi5 mei2you3 shuang1ceng2 bo1li5, wo3 kuai4yao4 leng3 si3 le5.	How come this fucking apartment has no double-glazing? I'm freezing.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2118508
+2140039	uhasan	你想怎樣？	Ni3 xiang3 zen3yang4?	What do you want to do?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2140039
+2143971	ydcok	小心扒手。	Xiao3xin1 pa2shou3.	Look out for pickpockets. | Beware of pickpockets.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2143971
+2143983	ydcok	我十四岁的时候，父亲死于蛛网膜下出血。	Wo3 shi2si4 sui4 de5 shi2hou5, fu4qin1 si3 yu2 zhu1wang3 mo2 xia4 chu1xue4.	I lost my father to a subarachnoid haemorrhage when I was fourteen. | My father died of a subarachnoid hemorrhage when I was fourteen.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2143983
+2143998	ydcok	我写了封信，叫他早点回。	Wo3 xie3 le5 feng1 xin4, jiao4 ta1 zao3dian3 hui2.	I wrote a letter asking him to return a bit earlier.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2143998
+2144004	ydcok	他有三个哥哥。	Ta1 you3 san1 ge4 ge1ge5.	He has three brothers.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2144004
+2144006	ydcok	他有三名兄长。	Ta1 you3 san1 ming2 xiong1zhang3.	He has three brothers.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/2144006
+2144016	ydcok	这家伙像个狐狸。	Zhe4 jia1huo5 xiang4 ge4 hu2li5.	This guy looks like a fox.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/2144016
+2145222	toughbird	这个国家有四个季节。	Zhe4ge5 guo2jia1 you3 si4 ge4 ji4jie2.	There are four seasons in this country.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2145222
+2145223	toughbird	请让我看一下日程安排！	Qing3 rang4 wo3 kan4 yi1xia4 ri4cheng2 an1pai2!	Please show me the schedule.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/2145223
+2145918	jimmy9pints	公众终于对关于空气污染的意见直言不讳了。	Gong1zhong4 zhong1yu2 dui4 guan1yu2 kong1qi4wu1ran3 de5 yi4jian4 zhi2yan2bu4hui4 le5.	Public feeling against air pollution has at last become vocal.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2145918
+2147632	sysko	我去买面包。	Wo3qu4 mai3 mian4bao1.	I'm going to buy some bread.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2147632
+2161120	sixtynine	它的颜色是红的。	Ta1 de5 yan2se4 shi4 hong2 de5.	Its color is red.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2161120
+2161183	sysko	我去洗个澡。	Wo3qu4 xi3 ge4 zao3.	I'll take a shower. | I'm going to take a shower. | I'm going to have a shower.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/2161183
+2165608	faraway9911	别着急，我们马上就来。	Bie2zhao2ji2, wo3men5 ma3shang4 jiu4 lai2.	Don't worry, we're on our way.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2165608
+2177514	shanghainese	生活多么复杂！	Sheng1huo2 duo1me5 fu4za2!	Life is so complicated.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2177514
+2187593	shanghainese	谁人不知，最爱卖弄的就是他！	Shei2 ren2 bu4 zhi1, zui4 ai4 mai4nong5 de5 jiu4shi4 ta1!	Who doesn't know that if there's someone who loves showing off, it's him?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2187593
+2192667	linzilyu	吉姆喜欢打鼓。	Ji2 mu3 xi3huan5 da3gu3.	Jim likes to play the drum.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2192667
+2192788	linzilyu	母亲从来没有因为我们而不耐烦。	Mu3qin1 cong2lai2mei2you3 yin1wei4 wo3men5 er2 bu4 nai4fan2.	Mother is never impatient with us.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2192788
+2192794	linzilyu	他命令我早点上床睡觉。	Ta1 ming4ling4 wo3 zao3dian3 shang4chuang2 shui4jiao4.	He ordered me to go to bed early.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2192794
+2194241	acbarbosa	机场在哪里？	Ji1chang3 zai4 na3li3?		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2194241
+2194350	User5120	他看起来像个运动员，但是其实是个作家。	Ta1 kan4qi3lai5 xiang4 ge4 yun4dong4yuan2, dan4shi4 qi2shi2 shi4 ge4 zuo4jia1.	He looks like a sportsman, but he is a writer.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2194350
+2195318	linzilyu	我希望离开那个城市，并且不再回来。	Wo3 xi1wang4 li2kai1 na4ge5 cheng2shi4, bing4qie3 bu4 zai4 hui2lai5.	I hope to leave that city, and never come back.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2195318
+2195322	linzilyu	我是猫。	Wo3 shi4 mao1.	I'm a cat. | I am a cat.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/2195322
+2202407	FeuDRenais	不管他是上学还是做生意，我不会反对。	Bu4 guan3 ta1 shi4 shang4xue2 hai2shi5 zuo4sheng1yi4, wo3 bu4 hui4 fan3dui4.	Whether he studies or goes into business, I won't stop him.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2202407
+2217191	FeuDRenais	他很努力工作，所以他的同事们都尊敬他。	Ta1 hen3 nu3li4 gong1zuo4, suo3yi3 ta1 de5 tong2shi4 men5 dou1 zun1jing4 ta1.	He works really hard, and his co-workers respect him for it.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2217191
+2217670	aruhito	那个女人在哪里？	Na4ge5 nv3ren2 zai4 na3li3?	Where is that woman?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2217670
+2217685	aruhito	我的女儿去上学了。	Wo3 de5 nv3'er2 qu4 shang4xue2 le5.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2217685
+2217689	aruhito	请问到京都站怎么走？	Qing3wen4 dao4 Jing1du1 zhan4 zen3me5 zou3?		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2217689
+2223944	Kiwi	你学了几年的汉语？	Ni3 xue2 le5 ji3nian2 de5 Han4yu3?	How many years have you studied Mandarin for? | How many years have you studied Chinese for?	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/2223944
+2225655	Tximist	汤姆不喜欢这个颜色。	Tang1mu3 bu4 xi3huan5 zhe4ge5 yan2se4.	Tom does not like this color.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/2225655
+2233632	aruhito	他关了门。	Ta1 guan1 le5 men2.	He closed the door. | He shut the door.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2233632
+2235418	Tximist	我是埃及人。	Wo3 shi4 Ai1ji2 ren2.	I am Egyptian.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/2235418
+2235467	Vortarulo	爸爸，我爱你！	Ba4ba5, wo3 ai4 ni3!	Daddy, I love you!	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2235467
+2252199	shanghainese	你不是奸细吧？	Ni3 bu4 shi4 jian1xi5 ba5?		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2252199
+2321622	wolfwind	我沒有任何意見。	Wo3 mei2you3 ren4he2 yi4jian4.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/2321622
+2321631	wolfwind	物價在上漲。	Wu4jia4 zai4 shang4zhang3.	Prices are going up. | Prices are rising.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2321631
+2321632	wolfwind	湯姆不知道如何跳舞。	Tang1mu3 bu4 zhi1dao4 ru2he2 tiao4wu3.	Tom doesn't know how to dance.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2321632
+2333714	fercheung	她正在周游世界。	Ta1 zheng4zai4 zhou1you2shi4jie4.	She is traveling around the world.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2333714
+2333716	fercheung	别在我面前再提这事儿。	Bie2 zai4 wo3 mian4qian2 zai4 ti2 zhe4 shi4r5.	I don't want to hear another word about it!	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2333716
+2335946	anndiana	为什么克里斯托弗·哥伦布离婚了 ？	Wei4shen2me5 Ke4li3si1tuo1fu2 · Ge1lun2bu4 li2hun1 le5?	What did Christopher Columbus discover?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2335946
+2335959	anndiana	世界上最美丽的地方在哪里？	Shi4jie4 shang4 zui4 mei3li4 de5 di4fang5 zai4 na3li3?	Where is the most beautiful place in the world?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2335959
+2337133	anndiana	花园离你家有多远？	Hua1yuan2 li2 ni3 jia1 you3 duo1 yuan3?	How far is the garden from your house?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2337133
+2337135	anndiana	这一点儿也不好。	Zhe4 yi1dian3r5 ye3 bu4 hao3.	This is not good at all.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2337135
+2342537	sysko	你在忙什么？	Ni3 zai4 mang2 shen2me5?		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2342537
+2383477	sysko	你不是我的朋友了。	Ni3 bu4 shi4 wo3 de5 peng2you5 le5.	You're not my friend anymore.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2383477
+2383481	sysko	他不会英文，更不要说法语了。	Ta1 bu4 hui4 Ying1wen2, geng4 bu4 yao4shuo1 Fa3yu3 le5.	He can't speak English, much less French.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2383481
+2383499	sysko	这个岗位不合适小姑娘。	Zhe4ge5 gang3wei4 bu4 he2shi4 xiao3 gu1niang2.	The job is not suitable for young girls. | The job isn't suitable for young girls.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/2383499
+2383540	sysko	无论你说什么，我不相信你们。	Wu2lun4 ni3 shuo1 shen2me5, wo3 bu4 xiang1xin4 ni3men5.	I don't believe you, regardless what you say.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2383540
+2390036	sysko	她上个月不在。	Ta1 shang4ge4yue4 bu4 zai4.	She wasn't there last month.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2390036
+2390037	sysko	我以为你想等。	Wo3 yi3wei2 ni3 xiang3 deng3.	I thought you wanted to wait.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2390037
+2390038	sysko	她们只是胡说八道。	Ta1men5 zhi3shi4 hu2shuo1ba1dao4.	They're just talking shit.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2390038
+2390041	sysko	开车差不多需要几个小时？	Kai1che1 cha4bu5duo1 xu1yao4 ji3ge5 xiao3shi2?	About how many hours does it take by car?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2390041
+2390042	sysko	你好像很忙。	Ni3hao3 xiang4 hen3 mang2.	You look busy. | You seem busy.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2390042
+2409607	sysko	我很喜欢狗。	Wo3 hen3 xi3huan5 gou3.	I like dogs very much.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2409607
+2409610	sysko	我很喜欢猫。	Wo3 hen3 xi3huan5 mao1.	I like cats very much.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/2409610
+2410192	FeuDRenais	我们以为他是一个英雄，原来是一个叛徒。	Wo3men5 yi3wei2 ta1 shi4 yi1 ge4 ying1xiong2, yuan2lai2 shi4 yi1 ge4 pan4tu2.	We had thought that he was a hero, but he turned out to be a traitor.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2410192
+2467527	sysko	今天是世界无烟日。	Jin1tian1 shi4 shi4jie4 wu2yan1 ri4.	Today is World No Tobacco Day.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2467527
+2469118	sysko	朕乃国家之第一公仆。	Zhen4 nai3 guo2jia1 zhi1 di4yi1 gong1pu2.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/2469118
+2485701	shanghainese	只有少数的人才懂了我的意思。	Zhi3 you3 shao3shu4 de5 ren2 cai2 dong3 le5 wo3 de5 yi4si5.	Only a few people understood me.	True	0		0	3	True	False	https://tatoeba.org/en/sentences/show/2485701
+2520860	europeanlanguages	旗帜是国家象征。	Qi2zhi4 shi4 guo2jia1 xiang4zheng1.	A flag is a national symbol.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2520860
+2521514	europeanlanguages	我的雪橇是白色的。	Wo3 de5 xue3qiao1 shi4 bai2se4 de5.	My sleigh is white.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2521514
+2561534	svhschinese	我三月二十二号生日。	Wo3 San1yue4 er4shi2 er4hao4 sheng1ri4.	My birthday is on March 22.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2561534
+2585781	svhschinese	买新的电视不会让你幸福。	Mai3 xin1 de5 dian4shi4 bu4 hui4 rang4 ni3 xing4fu2.	Buying a new TV won't make you happy.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2585781
+2620242	sysko	我了解的情况是看韩剧者基本上是一些无所事事的女人。	Wo3 liao3jie3 de5 qing2kuang4 shi4 kan4 Han2 ju4 zhe3 ji1ben3shang5 shi4 yi1xie1 wu2suo3shi4shi4 de5 nv3ren2.	From what I understand, those who watch Korean soap operas basically are women with nothing to do.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2620242
+2635854	cienias	您不應該用鉛筆寫信。	Nin2 bu4 ying1gai1 yong4 qian1bi3 xie3xin4.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/2635854
+2656417	egg0073	瑞典的首都是斯德哥爾摩。	Rui4dian3 de5 shou3du1 shi4 Si1de2ge1'er3mo2.	The capital of Sweden is Stockholm.	True	2		0	5	False	True	https://tatoeba.org/en/sentences/show/2656417
+2757207	cienias	上個禮拜天我剛好有空。	Shang4ge5 Li3bai4tian1 wo3 gang1hao3 you3kong4.	It happened that I was free last Sunday. | I happened to be free last Sunday. | It just so happened that I was free last Sunday.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/2757207
+2794651	sysko	你是一个大懒鬼。	Ni3 shi4 yi1 ge4 da4 lan3gui3.	You are a big slacker.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/2794651
+2843701	shanghainese	革命的时候他被吊死了。	Ge2ming4 de5 shi2hou5 ta1 bei4 diao4si3 le5.	He was hanged during the Revolution.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/2843701
+2884025	Popolon	熊猫是很美的动物。	Xiong2mao1 shi4 hen3 Mei3di2 dong4wu4.	Pandas are beautiful animals.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/2884025
+3029726	visualtoday	问题的根源是，在当今世界，愚人充满了自信，而智者充满了怀疑。	Wen4ti2 de5 gen1yuan2 shi4, zai4 dang1jin1 shi4jie4, yu2ren2 chong1man3 le5 zi4xin4, er2 zhi4zhe3 chong1man3 le5 huai2yi2.	The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt. | The fundamental cause of the problem is that in the modern world, idiots are full of confidence, while the intelligent are full of doubt.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3029726
+3029728	visualtoday	他的人生充满了起起落落。	Ta1 de5 ren2sheng1 chong1man3 le5 qi3 qi3luo4 luo4.	His life was full of ups and downs.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3029728
+3035356	vicch	图书馆是人类的所有梦想交汇的地方。	Tu2shu1guan3 shi4 ren2lei4 de5 suo3you3 meng4xiang3 jiao1hui4 de5 di4fang5.	The library is the meeting place of all human dreams.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3035356
+3035555	vicch	汤姆从他的绘画本上撕下了一页。	Tang1mu3 cong2 ta1 de5 hui4hua4 ben3 shang4 si1 xia4 le5 yi1 ye4.	Tom ripped a page out of his sketch book.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3035555
+3035557	vicch	汤姆绝不是笨。他只是懒而已。	Tang1mu3 jue2bu4 shi4 ben4. ta1 zhi3shi4 lan3 er2yi3.	Tom's definitely not stupid. He's just lazy.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3035557
+3035558	vicch	当有人向我谈起天气的时候，我总是强烈地感觉到他想说的是别的事。这一点让我焦虑不安。	Dang1 you3ren2 xiang4 wo3 tan2 qi3 tian1qi4 de5 shi2hou5, wo3 zong3shi4 qiang2lie4 de5 gan3jue2dao4 ta1 xiang3 shuo1 de5 shi4 bie2de5 shi4. zhe4 yi1dian3 rang4 wo3 jiao1lv4bu4'an1.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/3035558
+3035561	vicch	你不想知道原因吗？	Ni3 bu4 xiang3 zhi1dao4 yuan2yin1 ma5?	Don't you want to know the reason?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3035561
+3035562	vicch	你不想知道为什么吗？	Ni3 bu4 xiang3 zhi1dao4 wei4shen2me5 ma5?	Don't you want to know why? | Don't you want to know the reason?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/3035562
+3035567	vicch	不管训练多么艰苦，她都没有哭过。	Bu4 guan3 xun4lian4 duo1me5 jian1ku3, ta1 dou1 mei2you3 ku1 guo5.	No matter how hard the training was, she never cried.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3035567
+3054543	bailujia	他们的关系有些暧昧。	Ta1men5 de5 guan1xi5 you3xie1 ai4mei4.	Their relationship is dubious.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/3054543
+3060503	trieuho	我就是王伟。	Wo3 jiu4shi4 Wang2 wei3.	I am Wang Wei.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/3060503
+3283113	yangmaster	不用，谢谢，我怀孕了。	Bu4 yong4, xie4xie5, wo3 huai2yun4 le5.	No thanks, I'm pregnant.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3283113
+3303132	nickyeow	我們三小時後見吧。	Wo3men5 san1xiao3 shi2 hou4 jian4 ba5.	We'll meet in three hours.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/3303132
+3321140	cienias	他不只精通語言學，也精通語音學。	Ta1 bu4 zhi3 jing1tong1 yu3yan2xue2, ye3 jing1tong1 yu3yin1xue2.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/3321140
+3322564	cienias	為了錢他背叛了國家。	Wei4le5 qian2 ta1 bei4pan4 le5 guo2jia1.	He sold his country for money.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3322564
+3322676	cienias	許多日本的年輕人吃麵包當作早餐。	Xu3duo1 Ri4ben3 de5 nian2qing1ren2 chi1 mian4bao1 dang4zuo4 zao3can1.	Many young people in Japan eat bread for breakfast.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3322676
+3327522	mrillgrill12345	可以更具体些吗？	Ke3yi3 geng4 ju4ti3 xie1 ma5?	Can you be more specific?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3327522
+3327525	mrillgrill12345	他为了钱背叛了他的朋友们。	Ta1 wei4le5 qian2 bei4pan4 le5 ta1 de5 peng2you5 men5.	He betrayed his friends for money.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3327525
+3327557	mrillgrill12345	我为你而来。	Wo3 wei4 ni3 er2 lai2.	I came for you.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3327557
+3327566	mrillgrill12345	爱和被爱是世上最幸运的事。	Ai4 he2 bei4 ai4 shi4 shi4shang4 zui4 xing4yun4 de5 shi4.	Loving and being loved are the most joyful things in the world.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3327566
+3327571	mrillgrill12345	我这么说的话是不是像个傻瓜？	Wo3 zhe4me5 shuo1 de5hua4 shi4bu4shi4 xiang4 ge4 sha3gua1?	Do I sound like an idiot if I talk like this?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/3327571
+3344552	ngbaanh	越南语真的难学。	Yue4nan2yu3 zhen1 de5 nan2 xue2.	Vietnamese is really hard to learn.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3344552
+3349253	bailujia	你说的对。	Ni3 shuo1 de5 dui4.	You're right. | You're correct. | You are right.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/3349253
+3349274	bailujia	敢情昨天晚上下雪啦?	Gan3qing5 zuo2tian1 wan3shang5 xia4xue3 la1?		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/3349274
+3349286	bailujia	我当然没意见。	Wo3 dang1ran2 mei2 yi4jian4.		True	0		0	3	False	False	https://tatoeba.org/en/sentences/show/3349286
+3350510	feiningyuan	你在哪儿学习？	Ni3 zai4 na3r5 xue2xi2?	Where do you study?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3350510
+3365570	go_oo	我看见一个人，没看见狼。	Wo3 kan4jian4 yi1ge4ren2, mei2 kan4jian4 lang2.	I can see a person, but I can't see any wolves.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3365570
+3365595	go_oo	人生苦短。	Ren2sheng1 ku3 duan3.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/3365595
+3365894	go_oo	我叫山田。	Wo3 jiao4 Shan1tian2.	My name is Yamada.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3365894
+3367336	go_oo	时间不等人。	Shi2jian1 bu4 deng3 ren2.	Time waits for no one.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3367336
+3367342	go_oo	只有一个人能成为世界冠军。问题是：会是谁呢？	Zhi3 you3 yi1ge4ren2 neng2 cheng2wei2 shi4jie4 guan4jun1. wen4ti2 shi4: hui4 shi4 shei2 ne5?	There can only be one world champion. The question is: Who will it be?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3367342
+3378284	GlossaMatik	他们一起去看电影。	Ta1men5 yi1qi3 qu4 kan4 dian4ying3.	They go to movies together.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/3378284
+3483153	sysko	中国有56个民族。	Zhong1guo2 you3 wu3 shi2 liu4 ge4 min2zu2.	There are 56 ethnic groups in China.	True	0		0	3	True	True	https://tatoeba.org/en/sentences/show/3483153
+3488700	sysko	老板就是我。	Lao3ban3 jiu4shi4 wo3.	I'm the boss.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/3488700
+3488735	sysko	她弟弟学习很认真。	Ta1 di4di5 xue2xi2 hen3 ren4zhen1.	Her brother studies hard. | Her brother takes studying very seriously. | Her brother seriously studies.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/3488735
+3488736	sysko	她哥哥学习很认真。	Ta1 ge1ge5 xue2xi2 hen3 ren4zhen1.	Her older brother studies very seriously. | Her brother studies hard. | Her brother takes studying very seriously. | Her brother seriously studies.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/3488736
+3488737	sysko	她哥哥很认真学习。	Ta1 ge1ge5 hen3 ren4zhen1 xue2xi2.	Her older brother studies very seriously. | Her brother studies hard. | Her brother takes studying very seriously. | Her brother seriously studies.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/3488737
+3488738	sysko	她的哥哥很认真学习。	Ta1 de5 ge1ge5 hen3 ren4zhen1 xue2xi2.	Her older brother studies very seriously. | Her brother studies hard. | Her brother takes studying very seriously. | Her brother seriously studies.	True	1		0	3	False	True	https://tatoeba.org/en/sentences/show/3488738
+3521512	robbieheslop	你會說英文嗎？	Ni3 hui4 shuo1 Ying1wen2 ma5?	Can you speak English?	True	1		0		False	True	https://tatoeba.org/en/sentences/show/3521512
+3586059	Tximist	我喜欢做自己的老板。	Wo3 xi3huan5 zuo4zi4ji3 de5 lao3ban3.	I like being my own boss.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/3586059
+3605529	trieuho	当你坐在一把舒适的椅子上的时候，更容易学习。	Dang1 ni3 zuo4 zai4 yi1 ba3 shu1shi4 de5 yi3zi5 shang4 de5 shi2hou5, geng4 rong2yi4 xue2xi2.	It is easier to study when you are sitting in a comfortable chair.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/3605529
+3663355	rokito	他們其中的 75 ％ 以上都擔心技術導致傳統法語的衰落。	Ta1men5 qi2zhong1 de5  75 ％  yi3shang4 dou1 dan1xin1 ji4shu4 dao3zhi4 chuan2tong3 Fa3yu3 de5 shuai1luo4.	More than 75% of them fear that technology impoverishes the traditional French language.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3663355
+3695640	trieuho	他每天早上八点起床。	Ta1 mei3tian1 zao3shang5 ba1 dian3 qi3chuang2.	He gets up at 8 a.m. every morning.	True	1		0	4	False	True	https://tatoeba.org/en/sentences/show/3695640
+3698964	katshi94	这是一封旧的信。	Zhe4 shi4 yi1 feng1 jiu4 de5 xin4.	This is an old letter.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3698964
+3783369	Debbie_Linder	她是正确的吗？	Ta1 shi4 zheng4que4 de5 ma5?	Is she right? | Is she correct?	True	0		0		True	True	https://tatoeba.org/en/sentences/show/3783369
+3783468	Debbie_Linder	我从来没有看到她笑过。	Wo3 cong2lai2mei2you3 kan4 dao4 ta1 xiao4 guo5.	I've never seen her laugh.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3783468
+3784087	Debbie_Linder	她死在他的怀里。	Ta1 si3 zai4 ta1 de5 huai2li3.	She died in his arms.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/3784087
+3804948	rickjiang	我会讲五国语言。	Wo3 hui4 jiang3 wu3 Guo2yu3 yan2.	I can speak five languages.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3804948
+3805030	rickjiang	这些全部都是汤姆的书吗？	Zhe4xie1 quan2bu4 dou1 shi4 Tang1mu3 de5 shu1 ma5?	Are these all Tom's books?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3805030
+3805036	rickjiang	想早些成为大学生呀。	Xiang3 zao3xie1 cheng2wei2 da4xue2sheng1 ya5.		True	0		0		False	False	https://tatoeba.org/en/sentences/show/3805036
+3805044	rickjiang	哇，下雪了！	Wa1, xia4xue3 le5!	Ah! Snow! | Hey, it's snowing. | Oh, it's snowing! | Wow, it's snowing!	True	0		0		True	True	https://tatoeba.org/en/sentences/show/3805044
+3805065	rickjiang	这个座位空着吗？	Zhe4ge5 zuo4wei4 kong1 zhe5 ma5?	Is this seat empty? | Is this seat free?	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3805065
+3805075	rickjiang	春天白昼变长了。	Chun1tian1 bai2zhou4 bian4 chang2 le5.	In spring the days get longer. | In spring, the days become longer. | In spring, the days get longer.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/3805075
+3805085	rickjiang	吃冰激淋吗！	Chi1 bing1 ji1 lin2 ma5!		True	0		0		False	False	https://tatoeba.org/en/sentences/show/3805085
+3805087	rickjiang	汤姆不在。	Tang1mu3 bu4 zai4.	Tom is absent. | Tom isn't here.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3805087
+3805088	rickjiang	这是陈年旧信。	Zhe4 shi4 chen2nian2 jiu4 xin4.	This is an old letter.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/3805088
+3805094	rickjiang	他每天早晨8点起床。	Ta1 mei3tian1 zao3chen2 8 dian3 qi3chuang2.	He gets up at 8 a.m. every morning.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/3805094
+3805154	rickjiang	今天想吃清淡的食物呢。	Jin1tian1 xiang3 chi1 qing1dan4 de5 shi2wu4 ne5.	Today I want to eat something light.	True	0		0		True	True	https://tatoeba.org/en/sentences/show/3805154
+3841891	cienias	我剛剛切到手指了。	Wo3 gang1gang5 qie1 dao4shou3 zhi3 le5.	I just cut my finger.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/3841891
+4071831	egg0073	我將會盡我所能地幫助他。	Wo3 jiang1hui4 jin4 wo3 suo3neng2 de5 bang1zhu4 ta1.	I will help him to the best of my ability.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4071831
+4071833	egg0073	對你的電腦吼一點幫助也沒有。	Dui4 ni3 de5 dian4nao3 hou3 yi1dian3 bang1zhu4 ye3 mei2you3.	Shouting at your computer will not help.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4071833
+4071836	egg0073	我們很遺憾無法幫助他們。	Wo3men5 hen3 yi2han4 wu2fa3 bang1zhu4 ta1men5.	We were very sorry we couldn't help them. | We were very sorry that we couldn't help them.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4071836
+4071839	egg0073	沒有你的幫忙，我無法達成。	Mei2you3 ni3 de5 bang1mang2, wo3 wu2fa3 da2cheng2.	If it were not for your help, I could not succeed.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4071839
+4071841	egg0073	沒有人知道他為何拒絕我幫忙。	Mei2you3 ren2 zhi1dao4 ta1 wei4he2 ju4jue2 wo3 bang1mang2.	Nobody knows why he turns down my help.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4071841
+4080218	jordanlucas	她很喜欢猫。	Ta1 hen3 xi3huan5 mao1.	She adores cats. | She really likes cats.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/4080218
+4080224	jordanlucas	猫很聪明。	Mao1 hen3 cong1ming5.	Cats are smart.	True	1		0		False	True	https://tatoeba.org/en/sentences/show/4080224
+4267421	notabene	不是所有人都能当艺术家的。	Bu4 shi4 suo3you3 ren2 dou1 neng2 dang1 yi4shu4jia1 de5.	Not everybody can be an artist.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4267421
+4270096	notabene	他给他母亲写信。	Ta1 gei3 ta1 mu3qin1 xie3xin4.	He's writing his mother a letter.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270096
+4270097	notabene	他不过是个孩子。	Ta1 bu4guo4 shi4 ge4 hai2zi5.	He is but a child.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270097
+4270098	notabene	这本书我是在车站前的一家书店买的。	Zhe4 ben3 shu1 wo3 shi4 zai4 che1zhan4 qian2 de5 yi1jia1 shu1dian4 mai3 de5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270098
+4270099	notabene	他忘记喂狗了。	Ta1 wang4ji4 wei4 gou3 le5.	He forgot to feed the dog.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270099
+4270100	notabene	我的大儿子是Lech Zaręba。	Wo3 de5 da4 er2zi5 shi4 Lech Zaręba.	My elder son is Lech Zaręba.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270100
+4270101	notabene	他儿子想当律师。	Ta1 er2zi5 xiang3 dang1 lv4shi1.	His son wants to be a lawyer.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270101
+4270102	notabene	汤姆在大学里学的是哲学。	Tang1mu3 zai4 da4xue2 li3 xue2 de5 shi4 zhe2xue2.	Tom studies philosophy at college.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270102
+4270103	notabene	有多少哈萨克人真会讲哈萨克语呢？	You3 duo1shao5 Ha1sa4ke4ren2 zhen1 hui4 jiang3 Ha1sa4ke4yu3 ne5?		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270103
+4270104	notabene	姑娘们在这儿。	Gu1niang5 men5 zai4 zhe4r5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270104
+4270105	notabene	他说话太快了。	Ta1 shuo1hua4 tai4 kuai4 le5.	He talks too fast. | He speaks too fast.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270105
+4270112	notabene	你懂多少种语言，你就有多少种人生。	Ni3 dong3 duo1shao5 zhong3 yu3yan2, ni3 jiu4 you3 duo1shao5 zhong3 ren2sheng1.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270112
+4270129	notabene	你今天想去哪儿呀？	Ni3 jin1tian1 xiang3 qu4 na3r5 ya5?	Where do you want to go today?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270129
+4270132	notabene	这有那么难吗？	Zhe4 you3 na4me5 nan2 ma5?	Is this that hard?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270132
+4270133	notabene	你怎么找到我的房子的？	Ni3 zen3me5 zhao3dao4 wo3 de5 fang2zi5 de5?	How did you find my house?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270133
+4270135	notabene	我就是这么学会英语的。	Wo3 jiu4 shi4 zhe4me5 xue2hui4 Ying1yu3 de5.	That is how I learned English.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270135
+4270137	notabene	我非常喜欢这本书。	Wo3 fei1chang2 xi3huan5 zhe4 ben3 shu1.	I like this book very much.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270137
+4270138	notabene	我继续唱歌。	Wo3 ji4xu4 chang4 ge1.	I carried on singing. | I continued singing. | I kept singing. | I kept on singing.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270138
+4270139	notabene	母亲给我做了一个娃娃。	Mu3qin1 gei3 wo3 zuo4 le5 yi1 ge4 wa2wa5.	Mother made me a doll.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270139
+4270140	notabene	她已经睡下了。	Ta1 yi3jing1 shui4 xia4 le5.	She is already sleeping. | She's already sleeping.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4270140
+4270141	notabene	下一场音乐会将在六月份举办。	Xia4 yi1 chang3 yin1yue4hui4 jiang1 zai4 liu4yue4fen4 ju3ban4.	The next concert will take place in June.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270141
+4270142	notabene	突然间下雨了。	Tu1ran2jian1 xia4yu3 le5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4270142
+4270703	notabene	他回答说他不知道。	Ta1 hui2da2 shuo1 ta1 bu4 zhi1dao4.	He replied that he did not know.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270703
+4270704	notabene	她知道你知道。	Ta1 zhi1dao4 ni3 zhi1dao4.	She knows that you know.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270704
+4270713	notabene	在她的公司里，我感觉很好。	Zai4 ta1 de5 gong1si1 li3, wo3 gan3jue2 hen3 hao3.	I feel happy in her firm.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270713
+4270714	notabene	她是个女程序员吗？	Ta1 shi4 ge4 nv3 cheng2xu4yuan2 ma5?	Is she a computer programmer?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270714
+4270716	notabene	克拉娃嫉妒柳霞。	Ke4la1wa2 ji2du4 Liu3xia2.	Klava envied Lyusya.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270716
+4270717	notabene	她愚弄了他。	Ta1 yu2nong4 le5 ta1.	She fooled him.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270717
+4270718	notabene	他同我说德语。	Ta1 tong2 wo3 shuo1 De2yu3.	He spoke to me in German. | He spoke German with me. | He's speaking German to me.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270718
+4270721	notabene	“为什么日本人必须学英语？倒应该是外国人需要学习日语！”“你说得有道理！”	"""wei4shen2me5 Ri4ben3ren2 bi4xu1 xue2 Ying1yu3? dao3 ying1gai1 shi4 wai4guo2ren2 xu1yao4 xue2xi2 Ri4yu3!""""ni3 shuo1 de5 you3dao4li5!"""	"""Why should Japanese people have to study English? Foreigners should have to study Japanese!"" ""What you say makes sense!"""	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270721
+4270729	notabene	塞尔维亚语是她的母语。	Sai1'er3wei2ya4yu3 shi4 ta1 de5 mu3yu3.	She is a native speaker of Serbian.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270729
+4270731	notabene	新月出来了。	Xin1yue4 chu1lai2 le5.	The new moon came out.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4270731
+4270755	notabene	你觉得这些诗怎么样？	Ni3 jue2de5 zhe4xie1 shi1 zen3me5yang4?	What do you think of these poems? | What do you think about these poems?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270755
+4270758	notabene	那高个儿女人很漂亮。	Na4 gao1 ge4r5 nv3ren2 hen3 piao4liang5.	The tall woman is beautiful.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4270758
+4271755	bailujia	别打岔!	Bie2 da3cha4!	Don't interrupt! | Don't cut in!	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/4271755
+4272234	egg0073	海王星繞行太陽一周要花一百六十五年。	Hai3wang2xing1 rao4xing2 tai4yang5 yi1zhou1 yao4 hua1 yi1 bai3 liu4shi2 wu3 nian2.	It takes 165 years for Neptune to orbit around the sun.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4272234
+4272242	egg0073	從前有個侏儒住在森林裡。	Cong2qian2 you3 ge4 zhu1ru2 zhu4 zai4 sen1lin2 li3.	Once upon a time there was a dwarf that lived in the forest.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4272242
+4272249	egg0073	俄羅斯比冥王星大。	E2luo2si1 bi3 Ming2wang2xing1 da4.	Russia is larger than Pluto. | Russia is bigger than Pluto.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4272249
+4272250	egg0073	當我在你這個年紀時，冥王星是行星。	Dang1 wo3 zai4 ni3 zhe4ge5 nian2ji4 shi2, Ming2wang2xing1 shi4 xing2xing1.	When I was your age, Pluto was a planet.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4272250
+4272257	egg0073	由於軌道是橢圓形的，行星和太陽之間的距離不會總是相同。	You2yu2 gui3dao4 shi4 tuo3yuan2xing2 de5, xing2xing1 he2 tai4yang5 zhi1jian1 de5 ju4li2 bu4 hui4 zong3shi4 xiang1tong2.	Since the orbits are elliptical, the planets do not always have the same distance from the Sun.	True	0		0	5	True	False	https://tatoeba.org/en/sentences/show/4272257
+4273587	bailujia	他不是罗马大学的研究生吗?	Ta1 bu4 shi4 Luo2ma3 da4xue2 de5 yan2jiu1sheng1 ma5?	Isn't he a graduate student at the University of Rome?	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/4273587
+4273635	bailujia	大学毕业以后我也想考研究生。	Da4xue2 bi4ye4 yi3hou4 wo3 ye3 xiang3 kao3yan2 jiu1 sheng1.	After I graduate, I'd like to take the graduate school entrance examination.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/4273635
+4274179	bobomaygo	你们去看啥了？	Ni3men5 qu4 kan4 sha2 le5?	What did you guys go see?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4274179
+4274298	notabene	汤姆是我朋友的朋友。	Tang1mu3 shi4 wo3 peng2you5 de5 peng2you5.	Tom is a friend of my friend's.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4274298
+4274299	notabene	为什么我们不订披萨呢？	Wei4shen2me5 wo3men5 bu4 ding4 pi1sa4 ne5?	Why don't we order pizza? | Why don't we order the pizza?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4274299
+4282794	notabene	我走一步算一步吧。	Wo3 zou3 yi1 bu4 suan4 yi1 bu4 ba5.	I'll see as I walk along.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4282794
+4282850	notabene	这个年轻人是医生。	Zhe4ge5 nian2qing1ren2 shi4 yi1sheng1.	The young man is a doctor.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4282850
+4282851	notabene	中国菜不比法国菜差。	Zhong1guo2cai4 bu4 bi3 Fa3guo2 cai4 cha4.	Chinese food is no less nice than French food is.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4282851
+4282858	notabene	听到消息，她晕倒了。	Ting1dao4 xiao1xi5, ta1 yun1dao3 le5.	On hearing the news, she fainted.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4282858
+4282937	notabene	我觉得我是误删了这个文件。	Wo3 jue2de5 wo3 shi4 wu4 shan1 le5 zhe4ge5 wen2jian4.	I think I mistakenly deleted that file.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4282937
+4282947	notabene	千万别误会我的意思。	Qian1wan4 bie2 wu4hui4 wo3 de5 yi4si5.	Please don't misunderstand me. | Please don't get me wrong. | Please don't mistake my meaning.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4282947
+4287479	notabene	把手举起来！这是抢劫。	Ba3 shou3 ju3qi3 lai2! Zhe4 shi4 qiang3jie2.	Hands up! This is a robbery. | Stick 'em up! This is a robbery!	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4287479
+4287483	notabene	您赞成还是反对他的想法？	Nin2 zan4cheng2 hai2shi5 fan3dui4 ta1 de5 xiang3fa3?	Are you for or against his idea?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4287483
+4287488	notabene	我是为你来的。	Wo3 shi4 wei4 ni3 lai2 de5.	It's you I've come for. | It's for you that I have come.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4287488
+4287494	notabene	我到东京是两个月前。	Wo3 dao4 Dong1jing1 shi4 liang3 ge4 yue4 qian2.	It was two months ago that I arrived in Tokyo.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4287494
+4289997	shanghainese	五乘二等于十。	Wu3 cheng2 er4deng3 yu2 shi2.	Five times two equals ten.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/4289997
+4297290	trieuho	好疼! 停下!	Hao3 teng2!  ting2xia4!	That hurts! Stop it!	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/4297290
+4297294	trieuho	我很抱歉用这种方式把你请来。	Wo3 hen3 bao4qian4 yong4 zhe4zhong3 fang1shi4 ba3 ni3 qing3 lai2.	I apologize for the methods used to get you here.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/4297294
+4297298	trieuho	不关我的事。	Bu4 guan1 wo3 de5 shi4.	I don't care.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/4297298
+4302094	trieuho	羊屁股先生可没告诉我还有搭档。	Yang2 pi4gu5 xian1sheng5 ke3 mei2 gao4su5 wo3 hai2you3 da1dang4.	Mr. Goat Butt never told me there would be a partner.	True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/4302094
+4302106	trieuho	所以别人都不愿意和你合作。	Suo3yi3 bie2ren5 dou1 bu4 yuan4yi4 he2 ni3 he2zuo4.	That's why no one wants to work with you.	True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/4302106
+4302120	trieuho	他是我的手下。	Ta1 shi4 wo3 de5 shou3xia4.	He's my underling.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/4302120
+4302134	trieuho	你该走了。	Ni3 gai1 zou3 le5.	You should go.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/4302134
+4308988	wzhd	湯姆的住宅有一個不錯的花園。	Tang1mu3 de5 zhu4zhai2 you3 yi1 ge4 bu4 cuo4 de5 hua1yuan2.	Tom's house has a nice garden.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4308988
+4308991	wzhd	客人們在廚房裏。	Ke4ren2 men5 zai4 chu2fang2 li3.	The guests are in the kitchen.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4308991
+4308993	wzhd	睡覺前我吃了三片藥來治療感冒。	Shui4jiao4 qian2 wo3 chi1 le5 san1 pian4 yao4 lai2 zhi4liao2 gan3mao4.	Before going to bed, I took three pills to stop a cold.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4308993
+4308996	wzhd	湯姆是英國人。	Tang1mu3 shi4 Ying1guo2ren2.	Tom is a Briton. | Tom is British.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4308996
+4313889	cindycute	我花了好长时间才适应了委内瑞拉的口音。	Wo3 hua1 le5 hao3 chang2 shi2jian1 cai2 shi4ying4 le5 Wei3nei4rui4la1 de5 kou3yin1.	It took a long time for me to get accustomed to the Venezuelan accent.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/4313889
+4313892	cindycute	一个爱花的人坏不到哪里去。	Yi1 ge4 ai4 hua1 de5 ren2 huai4 bu4 dao4 na3li3 qu4.	A person who likes flowers can't be evil.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/4313892
+4313894	cindycute	有人说，玛丽·安托瓦内特对法国大革命有着不可推卸的责任。	You3ren2 shuo1, Ma3li4 · an1 tuo1 wa3 nei4 te4 dui4 Fa3guo2 Da4ge2ming4 you3zhe5 bu4 ke3 tui1xie4 de5 ze2ren4.	They say that Marie Antoinette was responsible for the French Revolution.	True	0		0		False	True	https://tatoeba.org/en/sentences/show/4313894
+4455730	egg0073	發生了什麼好事嗎？	Fa1sheng1 le5 shen2 me5 hao3 shi4 ma5?	Has something good happened?	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4455730
+4546936	murr	我对这种愚蠢的行为表示非常的气愤。	Wo3 dui4 zhe4zhong3 yu2chun3 de5 xing2wei2 biao3shi4 fei1chang2 de5 qi4fen4.	I'm getting endlessly annoyed by this foolishness.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4546936
+4546983	murr	政府将采取强制措施来解决这一问题。	Zheng4fu3 jiang1 cai3qu3 qiang2zhi4 cuo4shi1 lai2 jie3jue2 zhe4 yi1 wen4ti2.	The government will adopt enforcement measures to solve this problem.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4546983
+4547051	murr	世界人口急剧增长。	Shi4jie4 ren2kou3 ji2ju4 zeng1zhang3.	World population has rapidly increased.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4547051
+4547211	murr	天气非常寒冷。	Tian1qi4 fei1chang2 han2leng3.	It's very cold. | The weather is exceptionally frigid. | The weather is unusually cold.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4547211
+4547222	murr	生活支出急剧上涨。	Sheng1huo2 zhi1chu1 ji2ju4 shang4zhang3.	Living costs have increased rapidly.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4547222
+4547227	murr	非常时期需要非常措施。	Fei1chang2 shi2qi1 xu1yao4 fei1chang2 cuo4shi1.	Desperate times call for desperate measures.	True	2		0	5	False	True	https://tatoeba.org/en/sentences/show/4547227
+4548233	murr	我承认，我的用词有点直接。	Wo3 cheng2ren4, wo3 de5 yong4ci2 you3dian3 zhi2jie1.	I admit, my wording is a bit direct.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4548233
+4732052	egg0073	你有紅色的鉛筆嗎？	Ni3 you3 hong2se4 de5 qian1bi3 ma5?	Do you have a red pencil?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732052
+4732054	egg0073	事故發生在轉角。	Shi4gu4 fa1sheng1 zai4 zhuan3jiao3.	The accident took place at that corner.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732054
+4732060	egg0073	孤兒們被帶到這間育幼院。	Gu1'er2 men5 bei4 dai4 dao4 zhe4 jian1 yu4you4yuan4.	The orphans were taken to the orphanage.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732060
+4732062	egg0073	我們買了張舒適的扶手椅。	Wo3men5 mai3 le5 zhang1 shu1shi4 de5 fu2shou3yi3.	We bought a comfortable new armchair.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4732062
+4732065	egg0073	Linda是世上最美的女人。	Linda shi4 shi4shang4 zui4 Mei3di2 nv3ren2.	Linda is the most beautiful woman in the whole world.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732065
+4732066	egg0073	我不太確定要說什麼。	Wo3 bu4 tai4 que4ding4 yao4shuo1 shen2me5.	I wasn't quite sure what to say.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4732066
+4732069	egg0073	所以他沒有去學校。	Suo3yi3 ta1 mei2you3 qu4 xue2xiao4.	So he didn't go to school.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732069
+4732073	egg0073	我借給Tom一本關於德國的書。	Wo3 jie4gei3 T om yi1 ben3 guan1yu2 De2guo2 de5 shu1.	I lent Tom a book about Germany.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732073
+4732087	egg0073	我必須向Tom解釋這個。	Wo3 bi4xu1 xiang4 T om jie3shi4 zhe4ge5.	I have to explain this to Tom.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732087
+4732091	egg0073	在你意識到你的錯誤前，我都不會和你說話。	Zai4 ni3 yi4shi2 dao4 ni3 de5 cuo4wu4 qian2, wo3 dou1 bu4 hui4 he2 ni3 shuo1hua4.	I won't talk to you until you've realized your mistake.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4732091
+4736250	egg0073	你若是傷害別人，你也會傷害到自己。	Ni3 ruo4shi4 shang1hai4 bie2ren5, ni3 ye3 hui4 shang1hai4 dao4 zi4ji3.	When you hurt others, you also hurt yourself.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4736250
+4737561	egg0073	對他好一點。	Dui4 ta1 hao3 yi1dian3.	Treat him well.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4737561
+4737563	egg0073	不給糖就搗蛋。	Bu4 gei3 tang2 jiu4 dao3dan4.	Trick or treat.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4737563
+4746493	egg0073	我們喜歡踢足球。	Wo3men5 xi3huan5 ti1 zu2qiu2.	We like playing soccer. | We like to play soccer.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4746493
+4761360	billt_estates	这是不可忽视的。	Zhe4 shi4 bu4 ke3 hu1shi4 de5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4761360
+4761423	billt_estates	汤姆有两个孩子。	Tang1mu3 you3 liang3 ge4 hai2zi5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4761423
+4761444	billt_estates	我跟我姐在吃饭。	Wo3 gen1 wo3 jie3 zai4 chi1fan4.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4761444
+4761473	billt_estates	食物是冷的。	Shi2wu4 shi4 leng3 de5.	The food is cold.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4761473
+4761852	DrWinters	我们今天吃了很多饭。	Wo3men5 jin1tian1 chi1 le5 hen3 duo1 fan4.	Today we have a lot of food.	True	0		0	3	False	True	https://tatoeba.org/en/sentences/show/4761852
+4789689	400S	没有人知道她在哪儿。	Mei2you3ren2 zhi1dao4 ta1 zai4 na3r5.	Nobody knows where she is. | Nobody knew where she was.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4789689
+4794091	umidake	我正在學習如何駕駛。	Wo3 zheng4zai4 xue2xi2 ru2he2 jia4shi3.	I'm learning how to drive.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4794091
+4797661	CLARET	我必须要换衣服，因为我现在穿的衣服不适合这个环境。	Wo3 bi4xu1 yao4 huan4 yi1fu5, yin1wei4 wo3 xian4zai4 chuan1 de5 yi1fu5 bu4shi4he2 zhe4ge5 huan2jing4.	I had to change clothes because what I was wearing wasn't appropriate for the situation.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4797661
+4799111	CLARET	我不想承担这样一个风险。	Wo3 bu4 xiang3 cheng2dan1 zhe4yang4 yi1 ge5 feng1xian3.	I don't want to take such a risk.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4799111
+4805724	umidake	瑪莉不喜歡跟湯姆一樣吝嗇的男人。	Ma3li4 bu4 xi3huan1 gen1 Tang1mu3 yi1yang4 lin4se4 de5 nan2ren2.	Mary doesn't like men who are stingy like Tom.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805724
+4805729	umidake	你可以告訴我如何到火車站嗎?	Ni3 ke3yi3 gao4su5 wo3 ru2he2 dao4 huo3che1zhan4 ma5?	Can you tell me how to get to the train station?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805729
+4805731	umidake	你可以告訴我要怎麼去火車站嗎?	Ni3 ke3yi3 gao4su5 wo3 yao4 zen3me5 qu4 huo3che1zhan4 ma5?	Can you tell me how to get to the train station?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805731
+4805737	umidake	湯姆被卡車撞到而且當場死亡。	Tang1 mu3 bei4 ka3che1 zhuang4dao4 er2qie3 dang1chang3 si3wang2.	Tom was hit by a truck and died instantly.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805737
+4805740	umidake	瑪莉有很多朋友。	Ma3 li4 you3 hen3 duo1 peng2you5.	Mary has many friends.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805740
+4805775	umidake	湯姆有很多朋友住在波士頓。	Tang1mu3 you3 hen3duo1 peng2you5 zhu4 zai4 bo1shi4dun4.	Tom has many friends living in Boston.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4805775
+4805778	umidake	湯姆已經下定決心要去波士頓唸書。	Tang1mu3 yi3jing1 xia4 ding4 jue2xin1 yao4 qu4 bo1shi4dun4 nian4shu1.	Tom has made up his mind to go to Boston to study.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4805778
+4805780	umidake	湯姆最近變瘦了。	Tang1 mu3 zui4jin4 bian4 shou4 le5.	Tom has lost weight recently.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4805780
+4805785	umidake	湯姆已經失去學習法語的興趣。	Tang1 mu3 yi3jing1 shi1qu4 xue2xi2 fa3yu3 de5 xing4qu5.	Tom has lost interest in studying French. | Tom has lost his interest in studying French.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4805785
+4805789	umidake	湯姆弄丟了他的鑰匙。	Tang1 mu3 nong4diu1 le5 ta1 de5 yao4shi5.	Tom has lost his keys.	True	1		0	5	True	True	https://tatoeba.org/en/sentences/show/4805789
+4805791	umidake	湯姆遺失了他的鑰匙。	Tang1 mu3 yi2shi1 le5 ta1 de5 yao4shi5.	Tom has lost his keys.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805791
+4805794	umidake	湯姆剛從郵局回來。	Tang1 mu3 gang1 cong2 you2ju2 hui2lai5.	Tom has just returned from the post office.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805794
+4805795	umidake	湯姆有他自己的房間。	Tang1 mu3 you3 ta1 zi4ji3 de5 fang2jian1.	Tom has his own bedroom.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4805795
+4809347	umidake	你後悔跟我結婚嗎?	Ni3 hou4hui3 gen1 wo3 jie2hun1 ma5?	Do you regret marrying me?	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4809347
+4809348	umidake	我需要一個會說法語的助理。	Wo3 xu1yao4 yi1 ge5 hui4 shuo1 fa3yu3 de5 zhu4li3.	I need an assistant who speaks French.	True	0		0	5	True	True	https://tatoeba.org/en/sentences/show/4809348
+4844645	pig8322	旧约书中禁止食用贝类等有壳的水生动物。	Jiu4yue1 shu1 zhong1 jin4zhi3 shi2yong4 bei4lei4 deng3 you3 qiao4 de5 shui3sheng1 dong4wu4.	The Old Testament forbids eating shellfish.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844645
+4844652	pig8322	我不会嫁给一个愚蠢的男人。	Wo3 bu4 hui4 jia4 gei3 yi1 ge4 yu2chun3 de5 nan2ren2.	I don't want to marry a stupid man!	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844652
+4844665	pig8322	你自己选择了这份工作，是吗？	Ni3 zi4ji3 xuan3ze2 le5 zhe4 fen4 gong1zuo4, shi4 ma5?	You chose this job yourself, right?	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844665
+4844736	pig8322	不是所有的德国人都喜欢喝啤酒。	Bu4 shi4 suo3you3 de5 De2guo2ren2 dou1 xi3huan5 he1 pi2jiu3.	Not all Germans like to drink beer.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/4844736
+4844747	pig8322	他们决定了远足的日期了。	Ta1men5 jue2ding4 le5 yuan3zu2 de5 ri4qi1 le5.	They decided the date for the trip.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844747
+4844761	pig8322	为什么我要雇佣Tom？	Wei4shen2me5 wo3 yao4 gu4yong1 T om?	Why should I hire Tom?	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844761
+4844787	pig8322	妈妈有一张残缺的脸。	Ma1ma5 you3 yi1 zhang1 can2que1 de5 lian3.	Mama had a crippled face.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844787
+4844791	pig8322	我渴望上大学。	Wo3 ke3wang4 shang4 da4xue2.	I yearn for the university.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844791
+4844792	pig8322	我对于上大学有一种渴望。	Wo3 dui4yu2 shang4 da4xue2 you3 yi1zhong3 ke3wang4.	I feel a yearning for the university.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/4844792
+4844810	pig8322	黑海里的水事实上是黑的吗？	Hei1 Hai3 li3 de5 shui3 shi4shi2shang4 shi4 hei1 de5 ma5?	Is the water in the Black Sea actually black?	True	1		0	5	False	False	https://tatoeba.org/en/sentences/show/4844810
+4844811	pig8322	在安静的晚上，我们沉浸在夜莺悦耳的歌声中。	Zai4 an1jing4 de5 wan3shang5, wo3men5 chen2jin4 zai4 ye4ying1 yue4'er3 de5 ge1sheng1 zhong1.	In the evening quiet, we enjoy the song of the euphonious nightingale.	True	2		0	5	False	True	https://tatoeba.org/en/sentences/show/4844811
+4845117	pig8322	这本字典是我的。	Zhe4 ben3 zi4dian3 shi4 wo3 de5.	This dictionary is mine.	True	2		0	5	False	True	https://tatoeba.org/en/sentences/show/4845117
+4846805	pig8322	汤姆经常去越野滑雪。	Tang1mu3 jing1chang2 qu4 yue4ye3 hua2xue3.	Tom often goes cross-country skiing.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/4846805
+5136702	JimmyUK	汤姆已经把自己的房间打扫好了吗?	Tang1mu3 yi3jing1 ba3 zi4ji3 de5 fang2jian1 da3sao3 hao3 le5 ma5?	Has Tom already cleaned his room?	True	0		0	4	False	False	https://tatoeba.org/en/sentences/show/5136702
+5359475	egg0073	我羨慕Tom和Mary之間的友誼。	Wo3 xian4mu4 T om he2 Mary zhi1jian1 de5 you3yi4.	I envy the friendship Tom and Mary have.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/5359475
+5650456	verdastelo9604	你可以握住我的手。	Ni3 ke3yi3 wo4zhu4 wo3 de5 shou3.	You can hold my hand.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/5650456
+5660041	xjjAstrus	這是一個很重要的新聞。	Zhe4 shi4 yi1 ge4 hen3 zhong4yao4 de5 xin1wen2.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/5660041
+5672775	xjjAstrus	藝術博物館在這附近嗎？	Yi4shu4 bo2wu4guan3 zai4 zhe4 fu4jin4 ma5?	Is the museum of art around here?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/5672775
+5941713	xjjAstrus	他和他的女朋友去中國了。	Ta1 he2 ta1 de5 nv3peng2you5 qu4 Zhong1guo2 le5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/5941713
+5968312	xjjAstrus	這座體育館下藏著一個重要的遺址。	Zhe4 zuo4 ti3yu4guan3 xia4 cang2 zhe5 yi1 ge4 zhong4yao4 de5 yi2zhi3.	There is an important ruin hidden under this gym.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/5968312
+6086864	verdastelo9604	她沒這麼想。	Ta1 mei2 zhe4me5 xiang3.	She didn't think so.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/6086864
+6145387	verdastelo9604	我們在一家小咖啡店吃了午飯。	Wo3men5 zai4 yi1jia1 xiao3 ka1fei1dian4 chi1 le5 wu3fan4.	We had lunch at a little coffee shop.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/6145387
+6169156	verdastelo9604	它可能永遠都不會發生。	Ta1 ke3neng2 yong3yuan3 dou1 bu4 hui4 fa1sheng1.	It may never happen.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/6169156
+6449458	Penny_Bo	汤姆是好人。	Tang1mu3 shi4 hao3 ren2.	Tom is a good person. | Tom is a good guy. | Tom is a decent guy.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/6449458
+6559043	xjjAstrus	請在地圖上指給我看，我想知道自己在什麼地方。	Qing3 zai4di4 tu2 shang4 zhi3 gei3 wo3 kan4, wo3 xiang3 zhi1dao4 zi4ji3 zai4 shen2me5di4fang5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/6559043
+6624653	verdastelo9604	湯姆沒有在做他該做的事。	Tang1mu3 mei2you3 zai4 zuo4 ta1 gai1 zuo4 de5 shi4.	Tom isn't doing what he's supposed to be doing.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/6624653
+8500210	black333	再喝最后一杯，然后就让我送你回家吧。	Zai4 he1 zui4 hou4 yi1 bei1, ran2hou4 jiu4 rang4 wo3 song4 ni3 hui2jia1 ba5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/8500210
+8602039	mikeee	这是一个测试。	Zhe4 shi4 yi1 ge4 ce4shi4.	This is a test.	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/8602039
+8750760	cxpadonis	我的屁股穿这个看起来大吗？	Wo3 de5 pi4gu5 chuan1 zhe4ge5 kan4qi3lai5 da4 ma5?	Does my bum look big in this?	True	0		0	5	False	True	https://tatoeba.org/en/sentences/show/8750760
+8853830	iiujik	她看起来像是饿了。	Ta1 kan4qi3lai5 xiang4 shi4 e4 le5.	She looks like she's hungry.	True	1		0	3	True	True	https://tatoeba.org/en/sentences/show/8853830
+8884144	Rebecca	她为我作钢琴伴奏。	Ta1 wei4 wo3 zuo4 gang1qin2 ban4zou4.	She accompanied me on the piano.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/8884144
+8976065	crescat	我已经写了三封信了。	Wo3 yi3jing1 xie3 le5 san1 feng1 xin4 le5.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/8976065
+9415197	BobbyLee	对不起，我毁了你的婚礼。	Dui4bu5qi3, wo3 hui3 le5 ni3 de5 hun1li3.	I'm sorry I ruined your wedding. | I'm sorry that I ruined your wedding.	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/9415197
+9419166	BobbyLee	你住在哪层楼？	Ni3 zhu4 zai4 na3 ceng2lou2?	What floor do you live on? | Which floor do you live on?	True	0		0	4	False	True	https://tatoeba.org/en/sentences/show/9419166
+9432362	BobbyLee	萨米赚钱不多。	Sa4 mi3 zhuan4qian2 bu4 duo1.	Sami doesn't make that much money.	True	1		0	4	False	True	https://tatoeba.org/en/sentences/show/9432362
+9489473	BobbyLee	我们刚认识。	Wo3men5 gang1 ren4shi5.	We just met. | We've just met.	True	1		0	4	False	True	https://tatoeba.org/en/sentences/show/9489473
+10294552	bobobo123	很多咖啡饮料里面添加香草精。	Hen3 duo1 ka1fei1 yin3liao4 li3mian4 tian1jia1 xiang1cao3jing1.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/10294552
+10294553	bobobo123	河里捞出一具尸体，性别不明。	He2 li3 lao1 chu1 yi1 ju4 shi1ti3, xing4bie2 bu4 ming2.		True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/10294553
+10338222	vetreny	这是我们汉语老师的车。	Zhe4 shi4 wo3men5 Han4yu3 lao3shi1 de5 che1.	This is our Chinese language teacher's car.	True	0		0	1	False	False	https://tatoeba.org/en/sentences/show/10338222
+10501705	SecondInstance	不管天气多么冷，我每天都去公园跑步。	Bu4 guan3 tian1qi4 duo1me5 leng3, wo3 mei3tian1 dou1 qu4 gong1yuan2 pao3bu4.	No matter how cold the weather is, I go to the park every day to run.	True	0		0	2	False	True	https://tatoeba.org/en/sentences/show/10501705
+10511466	Selina	祝您好运。	Zhu4 nin2hao3 yun4.	I wish you good luck. | I wish you luck.	True	1		0	5	False	True	https://tatoeba.org/en/sentences/show/10511466
+10531049	DJ_Saidez	汤姆是你的朋友。	Tang1mu3 shi4 ni3 de5 peng2you5.	Tom is your friend.	True	1		0	0	False	True	https://tatoeba.org/en/sentences/show/10531049
+10565453	DJ_Saidez	我讨厌英语！	Wo3 tao3yan4 Ying1yu3!		True	1		0	0	False	False	https://tatoeba.org/en/sentences/show/10565453
+10621715	DJ_Saidez	蛋黄酱是一种乐器吗？	Dan4huang2jiang4 shi4 yi1zhong3 yue4qi4 ma5?	Is mayonnaise an instrument? | Is mayonnaise a musical instrument?	True	1		0	0	False	True	https://tatoeba.org/en/sentences/show/10621715
+10668579	DJ_Saidez	它还活着吗？	Ta1 hai2 huo2zhe5 ma5?	Is it still alive?	True	1		0	0	False	True	https://tatoeba.org/en/sentences/show/10668579
+11231386	klzlueylx	哦，对！我记得那个。	O2, dui4! wo3 ji4de5 na4ge5.	Oh yeah, I remember that.	True	0		0	5	False	False	https://tatoeba.org/en/sentences/show/11231386
+12168399	DaoSeng	我知道那不是巧合。	Wo3 zhi1dao4 na4 bu4 shi4 qiao3he2.	I knew it wasn't an accident. | I knew that it wasn't an accident.	True	1		1	4	False	True	https://tatoeba.org/en/sentences/show/12168399
+13678185	frpzzd	不要買書了。	Bu4 yao4 mai3 shu1 le5.	Don't buy any more books.	True	1		0	1	False	True	https://tatoeba.org/en/sentences/show/13678185
+13692885	frpzzd	誰在敲門？	Shei2 zai4 qiao1men2?	Who's knocking on the door?	True	0		0	1	False	True	https://tatoeba.org/en/sentences/show/13692885
+13695499	frpzzd	那個東西是甚麽？	Na4ge5 dong1xi5 shi4 shen2me5?	What is that thing?	True	0		0	1	False	True	https://tatoeba.org/en/sentences/show/13695499

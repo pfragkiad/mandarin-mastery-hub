@@ -1,0 +1,190 @@
+{
+  "source": "Official Tatoeba exports",
+  "language": "cmn",
+  "sourceSnapshot": {
+    "audio_metadata": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_with_audio.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:46:35 GMT",
+      "sha256": "9d2fc5c03bc3967473201eb6640ee9196bc9b59acaefad0f2de93fad0677d171"
+    },
+    "english": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences_detailed.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:30:12 GMT",
+      "sha256": "3a0e7a2fdd7cbad76f226de4c28371a15a2fc4d115001617288b16a35c6293db"
+    },
+    "english_tags": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_tags.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:42:44 GMT",
+      "sha256": "f7683a50d9cb56b618a85e6035ba93c7aab18660e6ad920003457f7689a01c23"
+    },
+    "mandarin": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_detailed.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:30:12 GMT",
+      "sha256": "48b42fd1531c8a75c1f586a9b287c07910f3dbc719219e62970bef70cfcd42eb"
+    },
+    "mandarin_english_links": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn-eng_links.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:41:29 GMT",
+      "sha256": "8f576a5de794ccc86ab7f8f4e156e3f37c72b1d24d43e57c50dcd8d35b22443f"
+    },
+    "mandarin_tags": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_tags.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:42:44 GMT",
+      "sha256": "ee4fa249518ae85641b5508d5100f3796c8833502175ae589fde81765c399e96"
+    },
+    "mandarin_user_languages": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_user_languages.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:41:31 GMT",
+      "sha256": "2dd965893bec42183f0e52b97b00a353c6f318b191c63747c9e58a68e4f0ebb2"
+    },
+    "reviews": {
+      "url": "https://downloads.tatoeba.org/exports/users_sentences.csv",
+      "lastModified": "Sat, 21 Nov 2026 06:10:26 GMT",
+      "sha256": "2587042b9589ef0736aa913f0505a23a87f481b1ba5450740abbcfaad31de54f"
+    },
+    "tag_details": {
+      "url": "https://downloads.tatoeba.org/exports/tags_detailed.tar.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:28:17 GMT",
+      "sha256": "d889d52dc0d7681790297a06125f40643028ca8478566ff888d35deb3b41accc"
+    },
+    "tag_metadata": {
+      "url": "https://downloads.tatoeba.org/exports/tag_metadata.csv",
+      "lastModified": "Sat, 21 Nov 2026 06:04:04 GMT",
+      "sha256": "10dfb1341fd1a398c325a41600271ffe864dfe26ccd94004778f44a569eb345d"
+    },
+    "transcriptions": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_transcriptions.tsv.bz2",
+      "lastModified": "Sat, 21 Nov 2026 06:31:38 GMT",
+      "sha256": "bfb4991702fddb71b0d61df91337c566285a6b638468be81bb9f7c11bf7a126d"
+    }
+  },
+  "policy": {
+    "positiveOnly": "Exact OK tag OR at least one user rating +1; no unmarked sentences are candidates.",
+    "held": "Negative ratings, attention tags beginning @, archaic/native-check/correction tags, or all dated positive marks predating the last text edit.",
+    "english": "Direct Mandarin–English links only. Retain translation evidence separately; an English positive mark does not certify Mandarin and vice versa.",
+    "review": "Metadata filtering only; no AI/native/reading/sense certification. Self-reported Mandarin level is prioritization metadata, not a trusted-contributor certificate."
+  },
+  "counts": {
+    "mandarinSentences": 89325,
+    "okTaggedMandarin": 862,
+    "positivelyRatedMandarin": 5518,
+    "bothOkTaggedAndPositivelyRated": 129,
+    "distinctPositiveMarked": 6251,
+    "heldPositiveMarked": 354,
+    "eligiblePositiveMarked": 5897,
+    "eligibleOkTagged": 809,
+    "eligibleWithCleanDirectEnglish": 5167,
+    "eligibleWithPositivelyMarkedCleanDirectEnglish": 3554,
+    "eligibleWithAudioMetadata": 547,
+    "audioRecordingsOnEligibleCandidates": 547,
+    "explicitlyLicensedAudioRecordingsOnEligibleCandidates": 6,
+    "eligibleWithReviewedPinyin": 1177,
+    "possibleAdditionalCharactersByExactOccurrence": 1324,
+    "possibleAdditionalCharactersWithCleanDirectEnglish": 1224
+  },
+  "holds": {
+    "excluded_source_tag": 215,
+    "all_positive_marks_predate_text_edit": 145,
+    "negative_user_review": 1
+  },
+  "excludedTagsOnPositiveMarked": {
+    "@move audio": 1,
+    "@wrong transliteration": 14,
+    "@needs native check": 196,
+    "non-sentence": 1,
+    "@check translation": 4,
+    "@change": 2
+  },
+  "orphanMandarinTags": [
+    {
+      "sentenceId": 3335162,
+      "tag": "OK"
+    },
+    {
+      "sentenceId": 3964720,
+      "tag": "possible copyright violation"
+    },
+    {
+      "sentenceId": 8549015,
+      "tag": "possible copyright violation"
+    },
+    {
+      "sentenceId": 4713268,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4713289,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4713310,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4713316,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4713392,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4717510,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4719523,
+      "tag": "@change"
+    },
+    {
+      "sentenceId": 4719485,
+      "tag": "@change punctuation"
+    },
+    {
+      "sentenceId": 4760206,
+      "tag": "@possible copyright infringement"
+    },
+    {
+      "sentenceId": 3335162,
+      "tag": "@unblock"
+    },
+    {
+      "sentenceId": 4713392,
+      "tag": "@unblock"
+    },
+    {
+      "sentenceId": 4719523,
+      "tag": "@unblock"
+    }
+  ],
+  "audio": {
+    "recordingRows": 5826,
+    "distinctSentenceIdsInAudioExport": 5826,
+    "sentencesPresentInCurrentMandarinExport": 5825,
+    "audioIdsAbsentFromCurrentSentenceExport": [
+      334178
+    ],
+    "licenseCounts": {
+      "(not supplied)": 5742,
+      "CC BY-NC 4.0": 84
+    },
+    "recordingsWithExplicitLicense": 84,
+    "recordingsPermittedForCommercialReuseByListedLicense": 0,
+    "audioSentencesWithExportedPinyin": 5825,
+    "audioSentencesWithReviewedPinyin": 1754,
+    "audioSentencesWithExportedHansConversion": 3680,
+    "audioSentencesWithExportedHantConversion": 2145,
+    "conversionNote": "Hans/Hant are alternative-script conversions, not independently proofread parallel originals. A named pinyin reviewer is a separate mark from sentence OK.",
+    "audioBinariesDownloaded": 0
+  },
+  "eligibleAudioLicenseCounts": {
+    "(not supplied)": 541,
+    "CC BY-NC 4.0": 6
+  },
+  "possibleAdditionalCharacters": "丁丐丘丟並丧丸丹乃乌乔乞乳乾予井亞亡仆仇仲伊伎伐伦伪伯佈佑佣併來侏侦侵係俄俊俯俱個們倔倦倫债倾偏偵傑傘備傢傭傳傷僅僕僵價儀儒儘優兆兒党兜內兩兰兵兼冈冊冥冯凡凱凸函刎別刪剂則削剎剛割創劃劇劍劫劲勃勒動務勝勾勿匈卑協卜卸卻厭參叙叛叠叢叮吉吊吐吓吝吞启吼吾呃呆咋咎咒咕咪哇哑哝哟員哩哺唇唐唬唸問啥啦喀喔喪喬單嗇嗎嗚嗜嗨嘆嘗嘛嘲噓噗噪噬嚇嚎嚴嚷嚼囚囤國圍園圓圖團圣坊坛坦垂垄垒垢埃埔執堅堡堪報場塊塔塞墓墨壓壞壮壳夠夢夥夷夹夾奉奎奏奔奥奧奮奴奸妆妒妙妨妮妳姆姜姻娃娜娶婭媽媾嫁嫉嫌嫩嬰孔孕孟孤孫學宁宅宇宗宙审宫寂寞實寧寨審寫寬寵寶寸寺寿射將專尋對導尖尬尴尷尸尼尿屁屉屌屍屜層屬岔岩峭島崇崖州巷帐帕帖帘帜帝帥師帳帶幣幫幹幻幾庇庙庫廁廂廉廓廚廢廣廳弓弗弦張強彈彌彎归役後徒從御復徵德徹忠忧怒怖恆恥恨悅悦悬悲惑惡惧惨惩惭惹愁愈愚愛愣愤愧態慌慣慨慮慷憂憤應懦懶懷懼戀戈戒截戰戲戳戶扎扑扒托扭扯扼抖抚披抵抹拐拔拜拟拧挖捉捞捲掃掛掩掷揉揍換揭搖搗搭摧摩摯撇撑撒撕撲撿擁擇擊擋擔據擠擾攀攻敗敦敵數斥斬斯斷於旗旷昂昇昌昏昧昼時晕晾暈暧暫書曼會朕朱杀杏杜杰東枕枚枪枯枷柄柏柔柬柳柵核梅條械棄棉棍棕棟業極榜榮槍槽樂樓標樣横樹橇機橢檔檢檬檸櫻欄權欲欺歐歡歲歷残殖殺毀毁毒毫毯氢氣氧氫氮汰決沐沒沖沮沸況波泣泥泻泽洛洩浦浩浮浴涂涌涎涛涯涼淇淋淘淚淨淹添減渡測湊湯溏準溜溫溺滅滋滨滩滿漆漢漲漸潮澤澳濃濕濟灑灘灣災炊炭炮為烏烹焉無焦焰煎煙煤煩熨熱燈燒燙營爆爛爭爵爺爾牆牠牧牲牺犬狀狄狐狠狡狭狱狸狼猛猶猾獄獅獎獨獲獵獸玛珊珠現琳琵琶琼瑚瑞瑟瑪環瓊瓢瓦甘產甩田甸畅畫異當疫症痒痢痪痴瘋瘟瘤瘪瘫瘾療癌癒癢發监盔盗盛盜盟盡監盤盯盲盹眉眾睁督睫睬瞎瞒瞞瞧瞪矩砂砒砸碟確碼磁磅磚磨礁礦祈祕祖祥禍禮禱禿秃秦稠種稱稿穌穩穫穴窃窍窝窟窮競笈笛笼筆筋筍筒箭節範簡簽簾籃粉粹糗糾紀約紅紋納紐紓純紙級紮紹終組絆結絕絡給統絲綁經綠維網綿緊緒線緣編緩縱總績繞繫繼續纱纳纽绅绉绑绘绵绷绸缀缅缉缠缪缸罗罢罪罵羅羨義翁習翰翼耍耕耗耘耶耻耽聋聖聞聯聰聲職聽肢肩胎胞脅脫脹腦腫腳腾膚膜膝膽臂臉臘臥臨舅與興舉舊舌艘艳艾芝芬芭芹苍苏茱茸荒荡荷莉莎莓莫莱莲莺菊菠華菲菸萝萨萬葬葵蒂蒙蒜蒸蒼蓋蔥蕃蕭薩薪薯藉藍藝藤藥藹蘆蘇蘋蘭蘸蘿虐處虛號虱蚁蚂蚊蚱蛀蛛蛮蛾蜂蜒蜗蜘蜚蜜蜿蝇蝕蝙蝠融螢蟲蠅蠢術衛衝衰衷袍袖裂裏裕補裝裡裸製複褐褲襪襯襲見規視親覺觀訂計訊討訕記訪設許訴評詞試詩話該詳詹誌認誕語誠誤說誰課誼調談請論諸諾謂謊講謝謠證識譯議護讀變讓讯讳讶诅诞诡诱诵诸诽谋谎谐谓谜谣谤谧谩谬谷豐豚豪豬貉貓貝財貨責貴買費賀資賓賜賞賢賣質賭賴賺賽贏贪贫贼贿赋赤趁趕趴跌跡踏踐蹭躍車軌較載輕輛輩輪輯輸轉轨辅辜辦辨辩辭辮農迈迪迫逃逊逗這逝連週進逼遊運過達遙遜遞遠遣遥適遲遷選遺遼邁還邊邏邦郁郵鄉鄙鄰酝酪酱酷酿醋醫醬釋野釘針釣鈍鈕鈴鉛鉤鉴銀銅銷鋇鋪鋼錢錯錶鍋鍵鍾鎊鎖鎮鏟鏡鐘鐵鑰钉钓铜铝铺锦镇長門閃閉開閒間闆闊關闪闷阪陕陡陣陰陷陽隊隐隙際隨險隱隸隻雄雅雇雖雙雜雞離難雲雷雹電霜霞霧靈靜靴鞭韓韩響頁頂項順須預頓領頭顆題額顏願顛類顧顯颇颈風飛飢飪飯飲飽餅養餓館餵饥饨馄馋馨馬駕駛駝騎騙驗驚驳骨骯髒體髮鬆鬍鬥鬧鬱鬼魂魔魚鮑鮮鱿鲁鳥鵡鷹鸚鸫鹽鹿麗麥麵麼麽黃黎黏點黨齊龍",
+  "parts": [
+    "marked-001.jsonl",
+    "marked-002.jsonl",
+    "marked-003.jsonl"
+  ]
+}
