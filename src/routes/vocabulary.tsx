@@ -2,7 +2,7 @@ import { shuffleSeed, type LibrarySort } from '@/lib/library-order';
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export type VocabularySearch = { sort?: LibrarySort | undefined; seed?: number | undefined; q?: string; word?: string; tab?: 'word' | 'idiom' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; band?: string };
+export type VocabularySearch = { sort?: LibrarySort | undefined; seed?: number | undefined; q?: string; word?: string; tab?: 'word' | 'idiom' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; band?: string; /** '1' widens the idiom rank band to rank 1..band end ("include lower ranks"). */ bandUpTo?: '1' | undefined };
 export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
   ...(search['sort'] === 'pinyin' || search['sort'] === 'hsk' || search['sort'] === 'random' ? { sort: search['sort'] } : {}),
   ...(shuffleSeed(search['seed']) ? { seed: shuffleSeed(search['seed']) } : {}),
@@ -19,6 +19,9 @@ export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: R
   ...(typeof search['pos'] === 'string' && search['pos'] ? { pos: search['pos'] } : {}),
   ...(typeof search['style'] === 'string' && search['style'] ? { style: search['style'] } : {}),
   ...(typeof search['band'] === 'string' && search['band'] ? { band: search['band'] } : {}),
+  // TanStack parses bare URL numbers into JS numbers and quotes numeric-looking
+  // strings, so the flag can arrive as 1, '1' or '"1"'; all three mean "widen".
+  ...(search['bandUpTo'] === 1 || search['bandUpTo'] === '1' || search['bandUpTo'] === '"1"' || search['bandUpTo'] === true ? { bandUpTo: '1' as const } : {}),
 }), head: () => pageHead('Vocabulary', 'Discover Mandarin words and phrases, listen to pronunciation, and collect vocabulary for everyday life.'), component: VocabularyRoute });
 function VocabularyRoute() {
   const search = Route.useSearch();

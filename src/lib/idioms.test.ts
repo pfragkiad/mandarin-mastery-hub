@@ -26,6 +26,16 @@ describe('idioms helpers', () => {
     expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'Saved words', ['idiom-150']).map(w => w.id)).toEqual(['idiom-150']);
   });
 
+  it('widens a band to every more frequent rank when "include lower ranks" is on', () => {
+    // Rank 1 and 2 sit above the selected 101–300 band; widening pulls them in.
+    expect(matchesIdiomBand(sample[0]!, '101-300', bands, true)).toBe(true);
+    expect(matchesIdiomBand(sample[2]!, '101-300', bands, true)).toBe(true);
+    // Widening never reaches past the selected band's own end.
+    expect(matchesIdiomBand(sample[2]!, '1-100', bands, true)).toBe(false);
+    expect(filterIdioms(sample, bands, '', '101-300', 'All words', [], false, false, true).map(w => w.id)).toEqual(['idiom-1', 'idiom-2', 'idiom-150']);
+    expect(filterIdioms(sample, bands, '', '101-300', 'All words', [], false, false, false).map(w => w.id)).toEqual(['idiom-150']);
+  });
+
   it('orders idioms by frequency rank by default and by pinyin when requested', () => {
     expect(orderIdioms(sample, 'rank').map(w => w.id)).toEqual(['idiom-1', 'idiom-2', 'idiom-150']);
     expect(orderIdioms(sample, 'pinyin').map(w => w.id)).toEqual(['idiom-150', 'idiom-1', 'idiom-2']);

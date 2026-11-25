@@ -83,13 +83,18 @@ export function loadIdioms(): Promise<{ dataset: IdiomDataset; words: Word[] }> 
   return pendingLoad;
 }
 
-/** Match an idiom's frequency rank against a selected rank band (e.g. "1-100"). */
-export function matchesIdiomBand(word: Word, bandId: string, rankClasses: readonly IdiomRankClass[]): boolean {
+/** Match an idiom's frequency rank against a selected rank band (e.g. "1-100").
+ * `upTo` is the libraries' "include lower ranks" widening (usage-frequency
+ * usageRankMatches): the band becomes rank 1..band.to, so every more frequent
+ * idiom above the selected band joins the pool. Ranks are 1-based and every
+ * idiom record carries one, so there is no unranked case to exclude here. */
+export function matchesIdiomBand(word: Word, bandId: string, rankClasses: readonly IdiomRankClass[], upTo = false): boolean {
   if (!bandId || bandId === ALL_IDIOM_BANDS) return true;
   const rank = word.idiomMeta?.rank;
   if (rank == null) return false;
   const band = rankClasses.find(c => c.id === bandId);
   if (!band) return false;
+  if (upTo) return rank <= band.to;
   return rank >= band.from && rank <= band.to;
 }
 
@@ -103,8 +108,10 @@ export function filterIdioms(
   saved: string[],
   pinyinOnly = false,
   exactPinyin = false,
+  /** '1'-style widening: include every more frequent rank above the selected band. */
+  bandUpTo = false,
 ): Word[] {
-  const byBand = band && band !== ALL_IDIOM_BANDS ? idioms.filter(w => matchesIdiomBand(w, band, rankClasses)) : idioms;
+  const byBand = band && band !== ALL_IDIOM_BANDS ? idioms.filter(w => matchesIdiomBand(w, band, rankClasses, bandUpTo)) : idioms;
   return filterWords(byBand, query, 'All collections', 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
 }
 
