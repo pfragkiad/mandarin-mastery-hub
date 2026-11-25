@@ -18,9 +18,10 @@ export type Word = {
   script?: CharacterScript;
   audio?: AudioAttachment | null;
   entry?: Entry;
-  entryKind?: "word" | "phrase";
+  entryKind?: "word" | "idiom" | "phrase";
+  idiomMeta?: { rank: number; traditional?: string; score?: number; docFreq?: number; cumPct?: number; source?: string };
 };
-export const vocabularyKind = (word: Word): "word" | "phrase" => word.entry?.entryKind ?? word.entryKind ?? "word";
+export const vocabularyKind = (word: Word): "word" | "idiom" | "phrase" => word.entry?.entryKind ?? word.entryKind ?? "word";
 // Real vocabulary imported from the Mandarin Tutor database, adapted through the API contract.
 export const words: Word[] = [...vocabularyData.entries, ...sentencePhraseEntries(vocabularyData.entries)].map((e) => entryToWord(e, vocabularyData.categories));
 /** Primary and secondary recorded topics share the same library/game filters. */

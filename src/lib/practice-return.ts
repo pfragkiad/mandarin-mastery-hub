@@ -55,7 +55,7 @@ export function originLabel(href: string | null): string {
   switch (url.pathname) {
     case '/': return 'Start';
     case '/characters': return tab === 'Components' || tab === 'Radicals' || tab === 'Strokes' ? tab : 'Characters';
-    case '/vocabulary': return tab === 'phrase' ? 'Phrases' : 'Words';
+    case '/vocabulary': return tab === 'phrase' ? 'Phrases' : tab === 'idiom' ? 'Idioms' : 'Words';
     case '/flashcards': return 'Flashcards';
     case '/drawing': return 'Drawing game';
     case '/pinyin': return 'Sound chart';

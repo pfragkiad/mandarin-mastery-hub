@@ -14,7 +14,7 @@ import { useWorkspace } from './workspace';
  * (我有八本书。) still groups by the words inside it, not as one block.
  * Ambiguous headwords never match, so no identity is guessed; presentation only.
  */
-export type SentenceWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'phrase'; word: string }; audio: Word['audio'] };
+export type SentenceWord = { hanzi: string; pinyin: string; meaning: string; search: { tab: 'word' | 'idiom' | 'phrase'; word: string }; audio: Word['audio'] };
 
 export function useSentenceWords() {
   const { items } = useWorkspace();

@@ -168,7 +168,7 @@ export function LessonText({ text }: { text: string | null | undefined }) {
   })}</>;
 }
 
-type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'phrase'; word: string }; audio: AudioRequest['audio']; reading?: string };
+type HanziTarget = { kind: 'glyph'; search: ReturnType<typeof libraryDestination> & object } | { kind: 'word'; search: { tab: 'word' | 'idiom' | 'phrase'; word: string }; audio: AudioRequest['audio']; reading?: string };
 
 /** Exact-match destination for one recorded hanzi field, or null. Re-evaluated when the catalogue loads. */
 export function useHanziTarget(hanzi: string): HanziTarget | null {

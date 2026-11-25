@@ -45,11 +45,10 @@ import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
  */
 function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typeof usePhrasePairing> }) {
   const hints = useLessonHints();
-  const phrase = vocabularyKind(word) === 'phrase';
+  const phrase = vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom';
   const chars = Array.from(word.hanzi);
-  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: phrase ? 'phrase' : 'word', word: word.id }, audio: word.audio ?? null };
+  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: vocabularyKind(word), word: word.id }, audio: word.audio ?? null };
   const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
-  // One-character word: nothing to pair, so the lone glyph is the hint target; its popup
   // shows this word (unlinked, the open card) plus the Character/Component/Radical rows.
   if (!phrase && chars.length === 1) return hints?.enabled && isHanziChar(word.hanzi) ? <HintChar glyph={word.hanzi} word={own}/> : <>{word.hanzi}</>;
   if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
@@ -67,9 +66,9 @@ function HeadwordGlyphs({ word, pairing }: { word: Word; pairing: ReturnType<typ
  */
 function useCardHintGlyph(word: Word, pairing: ReturnType<typeof usePhrasePairing>) {
   const hints = useLessonHints();
-  const phrase = vocabularyKind(word) === 'phrase';
+  const phrase = vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom';
   const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(word.hanzi, false, word.hanzi) : null), [hints, phrase, word.hanzi]);
-  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: phrase ? 'phrase' : 'word', word: word.id }, audio: word.audio ?? null };
+  const own: HintWord = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: vocabularyKind(word), word: word.id }, audio: word.audio ?? null };
   return (ch: string, index: number): ReactNode => hints?.enabled && isHanziChar(ch)
     ? <HintChar key={index} glyph={ch} word={phrase ? contexts?.[index] ?? null : own} focusable={false} {...pairing.glyphProps(index)}/>
     : pairing.glyph(ch, index);
@@ -101,23 +100,27 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
   // Same pills as the grid card's top row (word-identity-pills.tsx): merged HSK L<level>/#<id>,
   // gold Radical #N, phrase style; Traditional comes from the title's own `script` pill.
   const hskPill = wordHskPill(word);
-  const hasPills = hskPill !== null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
+  const idiom = word.idiomMeta;
+  const hasPills = hskPill !== null || idiom != null || wordRadicalNumber(word.hanzi) !== undefined || (vocabularyKind(word) === 'phrase' && phraseStyle(word.entry) !== 'Unclassified');
   const topics = wordCollections(word).filter(Boolean);
   // Phrases pair each heading character with its pinyin syllable on hover (as in "In a sentence").
   // Multi-character words pair the same way; single glyphs have nothing to pair.
-  const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
+  const pairing = usePhrasePairing(word.hanzi, word.pinyin, vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom' || Array.from(word.hanzi.replace(/\s/g, '')).length > 1);
   const speaker = <Button variant="ghost" size="icon" className={hasRecording ? '' : 'audio-tts-only'} disabled={!audioAvailable} aria-label={audioAvailable ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={audioAvailable ? `Listen · ${source}` : undefined} onClick={() => listen()}><Volume2/></Button>;
   // Every heading is a hint target: multi-character headings per character, one-character
   // words as a whole, so 八 reaches its Character/Component/Radical cards in one tap.
   const headwordHints = true;
   // One hints provider for the whole card: the heading and "In a sentence" share one popup.
   return <SentenceHints backLabel={word.hanzi}>
-    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
+    <RecordDetailTitle hanzi={word.hanzi} {...(headwordHints ? { glyphContent: <HeadwordGlyphs word={word} pairing={pairing}/> } : {})} {...(pairing.paired ? { pinyinContent: <><span className="pinyin">{pairing.pinyinText}</span>{speaker}</> } : {})} source={<>{idiom?.source ?? word.entry?.sourceName ?? 'Added this session'} · {source}</>} {...(hasPills ? { pill: <WordIdentityPills word={word} traditional={false}/> } : {})}{...(wordInk(word) === 'card-ink-radical' ? { glyphClassName: 'card-ink-radical' } : {})} pinyin={word.pinyin} meaning={word.meaning} script={word.script} audio={speaker}/>
     {audioError && <p role="status" className="library-note">{audioError}{canTts && <> <Button variant="link" size="sm" className="h-auto p-0" onClick={() => listen(true)}>Use Browser TTS</Button></>}</p>}
     {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
         row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
-    {(word.type || topics.length > 0 || !hskPill) && <dl className="catalog-facts">
-      {!hskPill && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
+    {(word.type || topics.length > 0 || (!hskPill && word.level) || idiom) && <dl className="catalog-facts">
+      {idiom && <div><dt>Frequency rank</dt><dd className="catalog-record-value">#{idiom.rank.toLocaleString()}</dd></div>}
+      {idiom?.traditional && <div><dt>Traditional</dt><dd className="catalog-record-value" lang="zh-Hant">{idiom.traditional}</dd></div>}
+      {idiom?.score != null && <div><dt>Frequency score</dt><dd className="catalog-record-value">{idiom.score}</dd></div>}
+      {!hskPill && !idiom && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
       {word.type && <div><dt>Part of speech</dt><dd className="catalog-record-value">{word.type}</dd></div>}
       {topics.length > 0 && <div><dt>{topics.length > 1 ? 'Topics' : 'Topic'}</dt><dd className="catalog-record-value">{topics.join(' · ')}</dd></div>}
     </dl>}
@@ -186,7 +189,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // only the Comfortable class changes the layout around them.
   const headword = vocabularyKind(word) === 'word';
   const singleGlyph = Array.from(word.hanzi.replace(/\s/g, '')).length === 1;
-  const isPhrase = vocabularyKind(word) === 'phrase';
+  const isPhrase = vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom';
   const comfortableWord = preferences.libraryView === 'list' && (headword || isPhrase);
   // Every Comfortable card (words, phrases, session additions) uses the labelled action row, bookmark icon at its right end.
   const comfortableView = preferences.libraryView === 'list';

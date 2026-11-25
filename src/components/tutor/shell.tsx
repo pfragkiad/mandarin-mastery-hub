@@ -9,7 +9,7 @@ import { useSectionStats } from '@/lib/section-switch';
 // Seções indentadas na navegação: as da biblioteca de caracteres (rota simples
 // sem `tab` abre a aba Characters) e as abas Words/Phrases do Vocabulary.
 const characterSections = ['Characters', 'Components', 'Radicals', 'Strokes'] as const;
-const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Phrases', tab: 'phrase' }] as const;
+const vocabularySections = [{ label: 'Words', tab: 'word' }, { label: 'Idioms', tab: 'idiom' }, { label: 'Phrases', tab: 'phrase' }] as const;
 import { Grid3x3, AudioWaveform, ArrowRightLeft, LayoutGrid, BookOpen, BookText, PenLine, Settings, Gamepad2, Library, ArrowUpRight, ChevronRight, X, Search, CircleHelp, ArrowRight, Sun, Moon, AudioLines, PanelLeftClose, PanelLeftOpen, MoreHorizontal } from 'lucide-react';
 import { sectionIcons } from '@/lib/section-icons';
 import { NAV_EXPANDED_KEY, NAV_PHONE_MAX, navModeFor, navSizeFor, phoneTabFor, readNavExpanded, type NavSize, type PhoneTab } from '@/lib/nav-layout';
@@ -72,7 +72,7 @@ export function TutorShell({ children }: { children: React.ReactNode }) {
   // Abas ativas de Glyphs e Vocabulary, para marcar o sub-item correspondente.
   const activeTab = useRouterState({ select: s => new URLSearchParams(s.location.searchStr).get('tab') });
   const charactersTab = activeTab;
-  const vocabularyTab = activeTab === 'phrase' ? 'phrase' : 'word';
+  const vocabularyTab = activeTab === 'phrase' ? 'phrase' : activeTab === 'idiom' ? 'idiom' : 'word';
   // O breadcrumb nomeia a página exata; dentro dos jogos, o nome do jogo.
   // The breadcrumb (and phone title) names the exact page; inside a game, the game.
   const currentGame = [...HANZI_GAMES, ...PINYIN_GAMES].find(g => g.to === path);

@@ -1,4 +1,4 @@
-import { AlignLeft, PenTool, Puzzle, Quote, Sprout, Type } from 'lucide-react';
+import { AlignLeft, PenTool, Puzzle, Quote, ScrollText, Sprout, Type } from 'lucide-react';
 import type { GameIcon } from '@/components/tutor/game-catalog';
 
 /**
@@ -6,6 +6,6 @@ import type { GameIcon } from '@/components/tutor/game-catalog';
  * Start page random cards (overview-discovery.tsx), so a section's icon never
  * differs between the menu and the cards. No state.
  */
-export type SectionName = 'Characters' | 'Components' | 'Radicals' | 'Strokes' | 'Words' | 'Phrases';
+export type SectionName = 'Characters' | 'Components' | 'Radicals' | 'Strokes' | 'Words' | 'Idioms' | 'Phrases';
 
-export const sectionIcons: Record<SectionName, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Phrases: Quote };
+export const sectionIcons: Record<SectionName, GameIcon> = { Characters: Type, Radicals: Sprout, Components: Puzzle, Strokes: PenTool, Words: AlignLeft, Idioms: ScrollText, Phrases: Quote };
