@@ -4700,6 +4700,7 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
    like every section heading. The tab keeps only its bottom padding (room for the open
    underline) and the collapse chevron overhangs the row instead of making it taller. */
 .detail-tabs .stroke-tab { padding-top: 0; }
+.detail-tabs .stroke-tab-item .source-info-trigger { margin-top: -12px; }
 .detail-tabs .stroke-tabs-collapse { margin-block: -10px; }
 
 /* Lesson word/expression cards (lesson-fit-grid.tsx): only when a single full-width card is still
