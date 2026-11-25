@@ -2,9 +2,11 @@
 import csv
 import hashlib
 import importlib.util
+import io
 from pathlib import Path
 import sys
 import unittest
+import zipfile
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
@@ -65,13 +67,35 @@ class ReviewChainTests(unittest.TestCase):
             raw = (module.DIRECTORY / source['file']).read_bytes()
             self.assertEqual(hashlib.sha256(raw).hexdigest(), source['sha256'])
         for path, text in self.outputs.items():
-            self.assertEqual(path.read_text('utf-8'), text)
+            self.assertEqual(path.read_bytes() if isinstance(text, bytes) else path.read_text('utf-8'), text)
         path = module.DIRECTORY / 'batch1-next-review.tsv'
         with path.open(encoding='utf-8', newline='') as stream:
             rows = list(csv.reader(stream, delimiter='\t'))
         self.assertEqual(rows[0], module.FIELDS)
         self.assertEqual(len(rows), 376)
         self.assertTrue(all(len(row) == 4 for row in rows))
+
+    def test_numbered_parts_reconstruct_every_middle_row_and_column(self):
+        original = list(csv.reader(io.StringIO(self.outputs[module.DIRECTORY / 'batch1-final-report.tsv']), delimiter='\t'))
+        pieces = sorted(path for path in self.outputs if path.name.startswith('batch1-final-report-part-'))
+        self.assertEqual(len(pieces), 15)
+        reconstructed = [original[0]]
+        for path in pieces:
+            rows = list(csv.reader(io.StringIO(self.outputs[path]), delimiter='\t'))
+            self.assertEqual(rows[0], original[0])
+            self.assertEqual(len(rows), 26)
+            reconstructed.extend(rows[1:])
+        self.assertEqual(reconstructed, original)
+
+    def test_complete_zip_retains_the_full_report_and_all_parts(self):
+        data = self.outputs[module.DIRECTORY / 'batch1-final-report-complete.zip']
+        with zipfile.ZipFile(io.BytesIO(data)) as archive:
+            self.assertIsNone(archive.testzip())
+            self.assertEqual(archive.read('batch1-final-report.tsv'), self.outputs[module.DIRECTORY / 'batch1-final-report.tsv'].encode('utf-8'))
+            self.assertEqual(len(archive.namelist()), 17)
+            for path, value in self.outputs.items():
+                if path.parent.name == 'batch1-final-report-parts':
+                    self.assertEqual(archive.read(f'batch1-final-report-parts/{path.name}'), value.encode('utf-8'))
 
 
 if __name__ == '__main__':
