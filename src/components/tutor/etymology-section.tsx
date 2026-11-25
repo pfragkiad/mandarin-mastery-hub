@@ -115,7 +115,7 @@ export function ShuowenSection({ entries }: { entries: EtymologyEntry[] }) {
   return <div className={`etymology-entry etymology-entry-shuowen etymology-advanced${open ? ' is-open' : ''}${translated ? ' has-translation' : ''}`}>
     <div className="etymology-entry-head">
       <span className="etymology-source-name">{SOURCE_LABEL.shuowen.name}</span>
-      <span className="etymology-source-kind">{translated ? 'historical dictionary · English: AI draft' : 'historical dictionary'}</span>
+      <span className="etymology-source-kind">historical dictionary</span>
       {translated && <ShuowenReviewNotes entries={entries}/>}
     </div>
     {entries.map(entry => {
