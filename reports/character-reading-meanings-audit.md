@@ -6,7 +6,7 @@ Every Characters row with more than one explicitly recorded reading; no missing 
 
 Editorial review requested by the project owner. Exact imported rows and existing reviewed meanings remain intact. Separate meanings only where cited dictionaries support the exact readings; identical meanings remain grouped. Explicit source-reviewed pronunciation choices are applied only to unchanged original tuples and disclose their original readings and source disagreement. Historical and regional context remains independent of etymology and geometry.
 
-75 records scanned; 74 have source-backed reading meanings: 5 existing, 40 new distinct/overlapping senses, 29 new shared-meaning alternate pronunciations. 1 remain unresolved and retain their original display.
+75 records scanned; 75 have source-backed reading meanings: 5 existing, 41 new distinct/overlapping senses, 29 new shared-meaning alternate pronunciations. Every recorded case now has a sourced disposition; source disagreements and overlapping uses remain disclosed.
 
 ## Source and presentation boundaries
 
@@ -20,13 +20,12 @@ Editorial review requested by the project owner. Exact imported rows and existin
 
 ## Cases requiring exact-reading evidence
 
-- **崾 (yào / yǎo)**: CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.
-  Sources: [Taiwan MOE variant dictionary](https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607).
+None. This describes the reviewed presentation, not universal agreement among dictionaries or regions.
 
 ## Explicit pronunciation choices
 
 - **伲**: original `ní / nǐ` retained; card uses `nì / nǐ`. This card uses dictionary-attested nì / nǐ as an explicit editorial pronunciation choice. The original Unihan ní / nǐ remains preserved: Unicode’s 2023 proposal records a change from nì to ní, whereas CC-CEDICT and Han Dian attach the dialectal I/we/my/our senses to nì. Taiwan MOE identifies nǐ as an old variant meaning you. This is a documented source disagreement, not a claim that Unihan has a typo. Audio uses Mandarin syllables, not a recording of Shanghai dialect speech.
-- **剖**: original `pōu / pǒ` retained; card uses `pōu / pǒu`. This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording.
+- **剖**: original `pōu / pǒ` retained; card uses `pōu / pǒu`. This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording. Mainland pronunciation guidance gives 解剖 as jiě pōu, not jiě pāo; Taiwan MOE independently records jiě pǒu.
 
 ## Complete inventory
 
@@ -51,7 +50,7 @@ Editorial review requested by the project owner. Exact imported rows and existin
 | 噠 | dā / dá | distinct | dā: sound of hoofbeats or clattering; command to a horse / dá: used in 嚈噠, the historical Hephthalite state |
 | 地 | de / dì | existing | de: structural particle marking an adverbial / dì: ground; land; earth; soil; region |
 | 堤 | dī / tí | shared | dī: dike; embankment / tí: dike; embankment |
-| 崾 | yào / yǎo | unresolved | Original combined display retained; see unresolved notes. |
+| 崾 | yào / yǎo | distinct | yào: mountain saddle; pass (in 崾崄; used in place names) / yǎo: name of a mountain; mountain pass (regional) |
 | 差 | chà / chā | distinct | chà: different; wrong; lacking; inferior; nearly / chā: difference; discrepancy; to differ; slightly |
 | 帆 | fān / fán | shared | fān: sail; boat / fán: sail; boat |
 | 干 | gān / gàn | existing | gān: oppose, offend; invade; dried / gàn: trunk of tree or of human body |

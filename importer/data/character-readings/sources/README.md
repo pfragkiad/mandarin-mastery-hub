@@ -15,3 +15,13 @@ historical claims. The separately maintained [review](../review.json) records th
 specific basic, detailed, Guoyu or historical sections used, including disagreements.
 Preserve source bytes and notices. See [the parent guide](../README.md) for licensing,
 consumers, generation and the complete audit outputs.
+
+`5d3e-*-excerpt.json` preserves short attributed evidence for 崾: the official
+MCA Geographical Names Institute article (`yào` in `崾崄`), the official MOE entry
+(`yǎo` mountain name), and the authors' *Cishu Yanjiu* 2025(4) study of regional
+overlap. `5256-pronunciation-excerpt.json` records Beijing's mainland `jiě pōu`
+guidance. These are explicitly labeled extracts, not full article snapshots.
+Capture methods distinguish direct-download fingerprints from browser-verified
+quotations. Each excerpt's exact stored bytes are pinned by the manifest, and
+`.gitattributes` prevents checkout line-ending conversion. No full articles are
+redistributed; URLs retain the complete source context.

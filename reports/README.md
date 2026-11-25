@@ -4,8 +4,9 @@ Keep standalone audit, notes, and report JSON files here unless application load
 
 The [character reading audit](character-reading-meanings-audit.md) and its
 [JSON evidence](character-reading-meanings-audit.json) cover all 75 explicitly
-multi-reading Characters records: 74 sourced mappings and one unresolved
-exact-reading discrepancy. Generated and checked by
+multi-reading Characters records, now all with source-backed dispositions.
+Specialist geographical-name and lexicographic sources resolve 崾 while preserving
+both original readings and disclosing regional overlap. Generated and checked by
 `scripts/import-reading-meanings.py` from the preserved
 [review and source inputs](../importer/data/character-readings/README.md);
 not loaded by the app. The explicit 伲 pronunciation reconciliation preserves its

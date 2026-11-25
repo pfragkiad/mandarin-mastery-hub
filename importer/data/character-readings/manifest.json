@@ -169,7 +169,40 @@
       "sourceBytesSha256": "e3d80fc677cb41206158edc644c1ce0aa1cde7ad92dcbfd47fe43d16ec24808f",
       "sourceBytes": 48991,
       "acquired": "2026-11-25"
+    },
+    "yao-place-names": {
+      "path": "importer/data/character-readings/sources/5d3e-toponymy-excerpt.json",
+      "url": "https://www.cgn-mca.ac.cn/n766/c30087/content.html",
+      "sha256": "11eda68eb90a04bc5585943116e43fcc2d9da946df7ab220f6cd1570a70c5531",
+      "downloadSha256": "90b8fedf1e364588cb864f01ead71d1c78a7e1f8560bb68f4cac8afb2cd0ec02",
+      "sourceBytes": 34904,
+      "format": "attributed-short-excerpt",
+      "acquired": "2026-11-25"
+    },
+    "yao-moe": {
+      "path": "importer/data/character-readings/sources/5d3e-moe-excerpt.json",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607",
+      "sha256": "05baee298b9ff3ae7b21492fa371cb1b12c51dd1191e89e5d9455c8acb872d34",
+      "format": "attributed-short-excerpt",
+      "captureMethod": "published web text",
+      "acquired": "2026-11-25"
+    },
+    "yao-dictionary-study": {
+      "path": "importer/data/character-readings/sources/5d3e-study-excerpt.json",
+      "url": "https://m.fx361.com/news/2025/0803/29390080.html",
+      "sha256": "6525db63ee3be35a75e85ab30b287a24045a49cfde432737fd9bd03cfb8ee523",
+      "format": "attributed-short-excerpt",
+      "captureMethod": "published web text",
+      "acquired": "2026-11-25"
+    },
+    "pou-pronunciation-guide": {
+      "path": "importer/data/character-readings/sources/5256-pronunciation-excerpt.json",
+      "url": "https://zyj.beijing.gov.cn/sy/whkp/201912/t20191219_1309593.html",
+      "sha256": "4d412aeb1af2b3c13b64022f497540f52d8a60ec5a503f43031fc4382aa07b0d",
+      "format": "attributed-short-excerpt",
+      "captureMethod": "published web text",
+      "acquired": "2026-11-25"
     }
   },
-  "reviewSha256": "329ee09613ede1603ab3bc73d96fa0733af44dbc60c0accb59e97122a1410bde"
+  "reviewSha256": "87b7891dedfd08e13ddc4aa549764a522c6055804bb0c841485dfc95d25088d8"
 }

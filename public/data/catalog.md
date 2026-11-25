@@ -110,14 +110,14 @@ is maintained from [preserved sources and explicit editorial mappings](../../imp
 and explicitly reviewed `readingRevisions`
 and the offline audit reports; `--check` verifies reproducibility and exact source/row
 bindings. The 2026-11-25 audit covers all 75 multi-reading Characters tuples:
-74 have sourced mappings, including regional/shared meanings, and one retains
-their combined display because the imported readings differ from the dictionary
-evidence. The explicit 伲 reconciliation uses dictionary `nì / nǐ` at runtime,
+75 have sourced mappings, including regional/shared meanings. Specialist
+geographical-name and lexicographic sources resolve 崾 without changing its
+recorded readings; its landform/name meanings remain qualified by source and region.
+The explicit 伲 reconciliation uses dictionary `nì / nǐ` at runtime,
 retaining original Unihan `ní / nǐ` on disk and disclosing the source disagreement.
 剖 similarly restores dictionary `pǒu` while preserving imported `pǒ`, groups
 its shared meanings with `pōu`, and uses the existing exact `pǒu` recording.
-Existing
-historical/etymology cards, source text, glyph IDs, recordings and geometry stay intact.
+Existing historical/etymology cards, source text, glyph IDs, recordings and geometry stay intact.
 
 | Importer | Catalogue files it reads or updates |
 | --- | --- |

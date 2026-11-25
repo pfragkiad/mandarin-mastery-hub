@@ -100,6 +100,12 @@ def build(root=ROOT):
         case = {'glyph': glyph, 'id': f'Characters:{glyph}', 'recorded': row, 'status': status,
                 'note': item.get('note', item.get('zdic', '')), 'ccCedictEntries': evidence[glyph],
                 'references': item.get('references', [])}
+        if item.get('readingEvidence'):
+            require(set(item['readingEvidence']) == set(readings), f'{glyph}: evidence must cover every exact reading')
+            for reading, source_ids in item['readingEvidence'].items():
+                require(source_ids and all(source_id in manifest['sources'] for source_id in source_ids),
+                        f'{glyph} {reading}: evidence source is not preserved')
+            case['readingEvidence'] = item['readingEvidence']
         if revision:
             case['readingRevision'] = revision
         if status == 'unresolved':
@@ -139,6 +145,13 @@ def build(root=ROOT):
                 'approvedBy': 'project-owner-requested editorial audit',
                 **({'note': item.get('note', item.get('zdic'))} if item.get('note') or item.get('zdic') else {}),
             }
+            # Supplemental specialist sources can supply a reading absent from CC-CEDICT;
+            # attribute that source explicitly instead of implying the export supplied it.
+            if item.get('source'):
+                record['source'] = item['source']
+            if item.get('sourceUrl'):
+                require(any(link['url'] == item['sourceUrl'] for link in links), f'{glyph}: unlinked primary source')
+                record['sourceUrl'] = item['sourceUrl']
         require(record['combined'] == row[2] and set(record['readings']) == set(readings), f'{glyph}: stale reviewed record')
         records[glyph] = record
         case['readings'] = record['readings']
@@ -158,14 +171,16 @@ def build(root=ROOT):
     counts = Counter(case['status'] for case in cases)
     report = {'schemaVersion': 1, 'date': review['date'], 'scope': review['scope'], 'policy': review['policy'],
               'charactersSha256': digest(character_bytes), 'reviewSha256': digest(review_bytes),
-              'sources': manifest['sources'], 'counts': {'total': len(cases), 'covered': len(records), **dict(counts)},
+              'sources': manifest['sources'], 'counts': {'total': len(cases), 'covered': len(records),
+              **{status: counts[status] for status in ('existing', 'distinct', 'shared', 'unresolved')}},
               'cases': cases}
     lines = ['# Character reading and meaning audit', '', f"Audit date: {review['date']}.", '',
              review['scope'], '', review['policy'], '',
              f"{len(cases)} records scanned; {len(records)} have source-backed reading meanings: "
              f"{counts['existing']} existing, {counts['distinct']} new distinct/overlapping senses, "
              f"{counts['shared']} new shared-meaning alternate pronunciations. "
-             f"{counts['unresolved']} remain unresolved and retain their original display.", '',
+             + (f"{counts['unresolved']} remain unresolved and retain their original display." if counts['unresolved'] else
+              'Every recorded case now has a sourced disposition; source disagreements and overlapping uses remain disclosed.'), '',
              '## Source and presentation boundaries', '',
              '- CC-CEDICT supplies dictionary entries that already bind pinyin to English senses; English glosses are edited/adapted under CC BY-SA 4.0.',
              '- Han Dian entries and explicit historical references supplement rare or regional readings; original downloaded bytes and SHA-256 hashes are preserved under the importer source guide.',
@@ -179,6 +194,8 @@ def build(root=ROOT):
         if case['status'] == 'unresolved':
             lines += [f"- **{case['glyph']} ({case['recorded'][1]})**: {case['note']}",
                       '  Sources: ' + ', '.join(f"[{ref['label']}]({ref['url']})" for ref in case['references']) + '.']
+    if not counts['unresolved']:
+        lines.append('None. This describes the reviewed presentation, not universal agreement among dictionaries or regions.')
     lines += ['', '## Explicit pronunciation choices', '']
     for case in cases:
         if case.get('readingRevision'):

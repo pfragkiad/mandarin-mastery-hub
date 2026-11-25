@@ -13,7 +13,7 @@ An explicit owner-requested pronunciation reconciliation may add a guarded runti
 | `review.json` | Editorial decisions requested by the project owner: all 75 exact original tuples, explicit reading-to-meaning mappings, regional/historical notes and unresolved reasons. Existing five reviewed mappings remain intact. | Maintained by source review; read by the importer. |
 | `manifest.json` | Review checksum, exact source URLs, acquisition/release dates, byte counts and SHA-256 bindings. | Recorded at source acquisition and explicit review updates; checked by the importer. |
 | `cedict_1_0_ts_utf-8_mdbg.txt.gz` | Original unmodified MDBG CC-CEDICT export, release 2026-11-24. Its header contains attribution and license notices. | Downloaded from [MDBG](https://www.mdbg.net/chinese/dictionary?page=cedict); read by the importer to retain exact source-entry evidence. |
-| [sources/](sources/README.md) | Exact compressed Han Dian pages and the original Unicode source PDF used for exceptional readings. | Checksum-bound offline evidence; never served or imported by the browser. |
+| [sources/](sources/README.md) | Exact compressed Han Dian pages, original Unicode PDFs, and short attributed specialist/pronunciation evidence excerpts with explicit capture methods. | Checksum-bound offline evidence; never served or imported by the browser. |
 
 CC-CEDICT is published by MDBG and community contributors under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), building on CEDICT
@@ -58,6 +58,24 @@ guarded revision adds the existing `pǒu` / `cmn-syl-pou3` attachment. The popup
 discloses the syllable correction and links all dictionary sources. The source
 archive preserves the Han Dian page; MOE/CNS were verified through their published
 web entries. No historical or etymology text is replaced.
+
+For **崾**, both original readings stay intact. The MCA Geographical Names
+Institute records `yào` in `崾崄 (yàoxiǎn)`, a saddle-shaped landform used in
+northwestern place names; MOE records `yǎo` as a mountain name. The original
+2025(4) *Cishu Yanjiu* study by He Xuemei, Han Zhizhou and Feng Yizhen also
+documents regional `yǎo` landform uses, so the card explains that its meanings
+overlap by source/region. No pronunciation revision or new audio is needed.
+`readingEvidence` explicitly binds each displayed reading to preserved specialist
+evidence; `source`/`sourceUrl` name the supplying sources rather than attributing
+the missing `yào` entry to CC-CEDICT. All 75 audited records now have sourced
+dispositions, with source disagreements still disclosed.
+
+The specialist evidence files retain only short attributed quotations, URLs and
+checksums; full copyrighted articles are not redistributed. Download fingerprints
+are recorded where available, and browser-verified quotations identify their
+capture method. The original Han Dian/Unicode archive bytes remain unchanged.
+剖's existing note also links mainland guidance distinguishing `jiě pōu` from
+the misreading `jiě pāo`, without invalidating the sourced Taiwan `jiě pǒu`.
 
 Related guides: [catalogue contract](../../../public/data/catalog.md),
 [importer inputs](../README.md), [scripts](../../../scripts/README.md).

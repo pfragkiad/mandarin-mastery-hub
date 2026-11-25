@@ -37,9 +37,9 @@ describe('meaning for each reading', () => {
     expect(readingMeanings('了')?.map(item => item.reading)).toEqual(['le', 'liǎo']);
   });
 
-  it('an unresolved exact-reading discrepancy keeps its combined meaning (no split)', () => {
-    expect(readingMeanings('崾')).toBeNull();
-    expect(readingMeaning('崾', 'yào')).toBeUndefined();
+  it('a character without a reviewed reading mapping keeps its combined meaning (no split)', () => {
+    expect(readingMeanings('字')).toBeNull();
+    expect(readingMeaning('字', 'zì')).toBeUndefined();
   });
 
   it('separates common polyphones and preserves historical names and units under their attested reading', () => {
@@ -73,7 +73,9 @@ describe('meaning for each reading', () => {
     expect(readingMeaning('伲', 'ní')).toBeUndefined();
     expect(readingMeaning('伲', 'nǐ')).toBe('you (archaic variant of 你)');
     expect(readingMeaning('伲', 'nì')).toBe('I; we; my; our (dialectal)');
-    expect(readingMeanings('崾')).toBeNull();
+    expect(readingMeaning('崾', 'yào')).toBe('mountain saddle; pass (in 崾崄; used in place names)');
+    expect(readingMeaning('崾', 'yǎo')).toBe('name of a mountain; mountain pass (regional)');
+    expect(catalog.characters.find(row => row[0] === '崾')?.[1]).toBe('yào / yǎo');
   });
 
   it('瞭 liǎo means to understand (as in 瞭解), its first listed sense', () => {

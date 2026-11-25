@@ -129,7 +129,7 @@
     },
     "剖": {
       "status": "shared",
-      "note": "This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording.",
+      "note": "This card uses dictionary-attested pōu / pǒu. CC-CEDICT explicitly identifies pǒu as the Taiwan pronunciation; Taiwan MOE lists pǒu with pōu as an alternate, and CNS11643 records both. They share the cut-open, split and analyze meanings, so the card groups them with separate speakers. The original imported pōu / pǒ remains preserved as source provenance. The restored u changes the syllable: pǒu uses the existing pou3 recording, never the original po3 recording. Mainland pronunciation guidance gives 解剖 as jiě pōu, not jiě pāo; Taiwan MOE independently records jiě pǒu.",
       "references": [
         {
           "label": "Taiwan MOE revised dictionary",
@@ -138,6 +138,10 @@
         {
           "label": "Taiwan CNS11643",
           "url": "https://www.cns11643.gov.tw/wordView.jsp?ID=87112"
+        },
+        {
+          "label": "Beijing mainland pronunciation guidance",
+          "url": "https://zyj.beijing.gov.cn/sy/whkp/201912/t20191219_1309593.html"
         }
       ],
       "recorded": [
@@ -371,12 +375,20 @@
       "status": "shared"
     },
     "崾": {
-      "status": "unresolved",
-      "note": "CC-CEDICT and Taiwan MOE support yǎo in mountain/place names, but do not attest the imported yào reading with an independently assignable meaning. Preserve the original combined record pending exact-reading evidence.",
+      "status": "distinct",
+      "note": "The MCA Geographical Names Institute explicitly records 崾崄 (yàoxiǎn) for a saddle-shaped landform in northwestern place names. Taiwan MOE records yǎo for a mountain name, citing Jiyun. He, Han and Feng’s 2025 dictionary study also documents regional yǎo landform uses. The displayed meanings overlap by source and region; they are not a universal rule separating the two tones. Both original readings and their own recordings are retained. The original Unihan province wording remains visible as imported source text, rather than being silently replaced.",
       "references": [
+        {
+          "label": "MCA Geographical Names Institute",
+          "url": "https://www.cgn-mca.ac.cn/n766/c30087/content.html"
+        },
         {
           "label": "Taiwan MOE variant dictionary",
           "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607"
+        },
+        {
+          "label": "Cishu Yanjiu 2025(4): regional reading study",
+          "url": "https://m.fx361.com/news/2025/0803/29390080.html"
         }
       ],
       "recorded": [
@@ -385,7 +397,22 @@
         "place name in Shanxi province",
         "12 strokes · 山 radical",
         "Common"
-      ]
+      ],
+      "readings": {
+        "yào": "mountain saddle; pass (in 崾崄; used in place names)",
+        "yǎo": "name of a mountain; mountain pass (regional)"
+      },
+      "source": "MCA Geographical Names Institute: yào in 崾崄; Taiwan MOE: yǎo mountain name; He, Han and Feng, Cishu Yanjiu 2025(4): regional overlap. CC-CEDICT supplies additional yǎo place-name evidence. English glosses are editorial adaptations under CC BY-SA 4.0.",
+      "sourceUrl": "https://www.cgn-mca.ac.cn/n766/c30087/content.html",
+      "readingEvidence": {
+        "yào": [
+          "yao-place-names"
+        ],
+        "yǎo": [
+          "yao-moe",
+          "yao-dictionary-study"
+        ]
+      }
     },
     "差": {
       "readings": {

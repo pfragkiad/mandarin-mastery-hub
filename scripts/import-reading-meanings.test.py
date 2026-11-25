@@ -20,10 +20,8 @@ class ReadingAuditTests(unittest.TestCase):
         cls.catalog = json.loads(cls.outputs[module.CATALOG])
 
     def test_all_multi_reading_tuples_have_explicit_dispositions(self):
-        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 74, 'existing': 5, 'distinct': 40, 'unresolved': 1, 'shared': 29})
-        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, {'崾'})
-        for glyph in ('崾',):
-            self.assertNotIn(glyph, self.catalog['readingMeanings'])
+        self.assertEqual(self.report['counts'], {'total': 75, 'covered': 75, 'existing': 5, 'distinct': 41, 'unresolved': 0, 'shared': 29})
+        self.assertEqual({case['glyph'] for case in self.report['cases'] if case['status'] == 'unresolved'}, set())
 
     def test_original_catalogue_fields_and_reviewed_splits_stay_intact(self):
         original = json.loads((module.ROOT / module.CATALOG).read_bytes())
@@ -62,6 +60,19 @@ class ReadingAuditTests(unittest.TestCase):
         meanings = self.catalog['readingMeanings']['剖']['readings']
         self.assertEqual(meanings['pōu'], meanings['pǒu'])
         self.assertNotIn('pǒ', meanings)
+
+    def test_yao_uses_specialist_sources_without_replacing_either_original_reading(self):
+        case = next(case for case in self.report['cases'] if case['glyph'] == '崾')
+        self.assertEqual(case['recorded'][1], 'yào / yǎo')
+        self.assertNotIn('readingRevision', case)
+        self.assertEqual(case['readingEvidence']['yào'], ['yao-place-names'])
+        self.assertIn('yao-moe', case['readingEvidence']['yǎo'])
+        record = self.catalog['readingMeanings']['崾']
+        self.assertEqual(record['sourceUrl'], 'https://www.cgn-mca.ac.cn/n766/c30087/content.html')
+        self.assertIn('MCA Geographical Names Institute', record['source'])
+        self.assertIn('overlap', record['note'])
+        self.assertTrue(record['readings']['yào'].startswith('mountain saddle'))
+        self.assertTrue(record['readings']['yǎo'].startswith('name of a mountain'))
 
     def test_changed_source_bytes_fail_before_generation(self):
         real_read = Path.read_bytes

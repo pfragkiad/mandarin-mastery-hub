@@ -97,5 +97,19 @@ describe('Sources for reading-specific character meanings', () => {
     expect(screen.getByText(/original imported pōu \/ pǒ remains preserved/)).toBeVisible();
     expect(screen.getByRole('link', { name: 'Taiwan MOE revised dictionary' })).toHaveAttribute('href', 'https://dict.revised.moe.edu.tw/dictView.jsp?ID=695');
     expect(screen.getByRole('link', { name: 'Taiwan CNS11643' })).toHaveAttribute('href', 'https://www.cns11643.gov.tw/wordView.jsp?ID=87112');
+    expect(screen.getByText(/jiě pōu, not jiě pāo/)).toBeVisible();
+  });
+
+  it('keeps both 崾 readings with their own recordings and source-qualified meanings', () => {
+    const container = openSource('崾');
+    expect(container.querySelectorAll('.reading-meaning')).toHaveLength(2);
+    expect([...container.querySelectorAll('.reading-meaning-reading .pinyin[lang]')].map(node => node.textContent)).toEqual(['yào', 'yǎo']);
+    expect(within(container).getByRole('button', { name: 'Listen to 崾 yào' })).toHaveAttribute('title', 'Listen to yào · Recording');
+    expect(within(container).getByRole('button', { name: 'Listen to 崾 yǎo' })).toHaveAttribute('title', 'Listen to yǎo · Recording');
+    expect(container.textContent).toContain('mountain saddle; pass');
+    expect(screen.getByRole('link', { name: 'MCA Geographical Names Institute' })).toHaveAttribute('href', 'https://www.cgn-mca.ac.cn/n766/c30087/content.html');
+    expect(screen.getByRole('link', { name: 'Taiwan MOE variant dictionary' })).toHaveAttribute('href', 'https://dict.variants.moe.edu.tw/dictView.jsp?ID=83607');
+    expect(screen.getByText(/meanings overlap by source and region/)).toBeVisible();
+    expect(screen.getByText('Original Unihan definition: place name in Shanxi province')).toBeVisible();
   });
 });
