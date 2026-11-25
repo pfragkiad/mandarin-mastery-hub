@@ -2,9 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { orderLibrary, orderVocabulary, newShuffleSeed, shuffleSeed } from './library-order';
 const deck = Array.from({ length: 100 }, (_, index) => ({ id: `Characters:${index}`, pinyin: 'mā', hsk: 100 - index }));
 describe('library sorting', () => {
-  it('defaults HSK vocabulary to Pinyin while non-HSK entries retain existing order', () => {
-    const entries = [{ id: 'z', pinyin: 'zài', hskId: null }, { id: 'ma', pinyin: 'mā', hskId: 2 }, { id: 'a', pinyin: 'ā', hskId: 1 }, { id: 'b', pinyin: 'bā', hskId: null }];
-    expect(orderVocabulary(entries).map(entry => entry.id)).toEqual(['a', 'ma', 'z', 'b']);
+  it('defaults vocabulary to the recorded HSK index order, non-HSK last in existing order', () => {
+    // hskId 1 is 'mā' and hskId 2 is 'ā', so HSK-index order must differ from Pinyin order.
+    const entries = [{ id: 'z', pinyin: 'zài', hskId: null }, { id: 'ma', pinyin: 'mā', hskId: 1 }, { id: 'a', pinyin: 'ā', hskId: 2 }, { id: 'b', pinyin: 'bā', hskId: null }];
+    expect(orderVocabulary(entries).map(entry => entry.id)).toEqual(['ma', 'a', 'z', 'b']);
+    // An explicit Pinyin pick orders the whole pool, so non-HSK entries interleave.
+    expect(orderVocabulary(entries, 'pinyin').map(entry => entry.id)).toEqual(['a', 'b', 'ma', 'z']);
     expect(orderVocabulary(entries.filter(entry => entry.hskId === null))).toEqual([entries[0], entries[3]]);
   });
   it('defaults to supplied frequency order without inventing ranks', () => { expect(orderLibrary(deck)).toEqual(deck); });

@@ -36,11 +36,12 @@ export function orderLibrary<T extends { id: string; pinyin: string }>(entries: 
   return keyed.map(item => item.entry);
 }
 
-/** Vocabulary's default: recorded HSK entries alphabetically, followed by non-HSK
- * entries in their existing source order. Explicit options order the whole pool. */
+/** Vocabulary's default IS the recorded HSK index order (levelled entries by their
+ * official index, non-HSK entries after them in their existing source order), so the
+ * sort control offers no separate HSK entry. Explicit options order the whole pool. */
 export function orderVocabulary<T extends { id: string; pinyin: string; hskId?: number | null }>(entries: readonly T[], sort: LibrarySort = 'rank', seed = 1): T[] {
   if (sort !== 'rank') return orderLibrary(entries, sort, seed, entry => entry.hskId);
   const hsk = entries.filter(entry => entry.hskId != null);
   const nonHsk = entries.filter(entry => entry.hskId == null);
-  return [...orderLibrary(hsk, 'pinyin'), ...nonHsk];
+  return [...orderLibrary(hsk, 'hsk', 1, entry => entry.hskId), ...nonHsk];
 }

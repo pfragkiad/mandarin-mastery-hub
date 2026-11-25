@@ -93,7 +93,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // leaves only the styles and types recorded at that level.
   const facetBase = useMemo(() => filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kindItems, query, status, saved, py]);
   const unordered = includeSelectedRecord(categoryItems, filterWords(categoryItems, query, collection, level, status, saved, Boolean(py), pos, py === 'exact').filter(w => inSubtopic(w, subtopic)), initialWordId);
-  const wordSort = sort === 'pinyin' || sort === 'hsk' || sort === 'random' ? sort : 'rank';
+  // Legacy URLs may still carry sort=hsk; that is now simply the default order.
+  const wordSort = sort === 'pinyin' || sort === 'random' ? sort : 'rank';
   const filtered = orderVocabulary(unordered, wordSort, seed);
   // Subtopic dropdown only where this tab's records record subtopics at all (Words; phrases have none).
   const hasSubtopics = useMemo(() => kindItems.some(w => wordSubtopicIds(w).length > 0), [kindItems]);
