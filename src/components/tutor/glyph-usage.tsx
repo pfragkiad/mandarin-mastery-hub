@@ -12,7 +12,6 @@ import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
 import { MoreExamples, SentenceHints, SentenceSection } from './sentence-section';
-import { SourceInfo } from './source-info';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -125,12 +124,10 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     </div>)}</div>
   </section>;
   // "In a sentence" always shows for characters, even with no recorded example, so
-  // "Find more examples" (external search of the exact hanzi) is always reachable.
+  // External search of the exact hanzi is always reachable. Imported file names
+  // and review status identifiers are internal metadata, not learner hints.
   const sentenceExamples = examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
-    <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} sourceDetails={<SourceInfo inline className="detail-footnote" label="Sentence source and review details">
-      {(sentence ? word.entry?.examples[0]?.source?.sourceName : undefined) ?? word.entry?.sourceName ?? 'Session workspace example'}<br/>
-      {(sentence ? word.entry?.examples[0]?.reviewStatus : undefined) ?? word.entry?.contentStatus ?? 'Session-only content'}
-    </SourceInfo>}/>
+    <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }}/>
   </div>);
   if (hskExample) sentenceExamples.push(<div className="glyph-usage-example" key="lesson">
       <SentenceExample heading="" sentence={hskExample.sentence} pinyin={hskExample.pinyin} translation={hskExample.translation}/>
@@ -158,29 +155,29 @@ export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
   }, []);
   const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, 2) : []), [idioms, entry.hanzi, entry.script]);
   if (!matches.length) return null;
-  return <section className="glyph-usage-section sentence-section" aria-label="In an idiom">
+  return <section className="glyph-usage-section sentence-section idiom-examples-section" aria-label="In an idiom">
     <div className="sentence-section-head">
       <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
-      <Link className="find-examples-link" to="/vocabulary" search={{ tab: 'idiom', q: entry.hanzi }} title={`Search idioms containing ${entry.hanzi}`}>
+      <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'idiom', q: entry.hanzi }} title={`Search idioms containing ${entry.hanzi}`}>
         Search in idioms<ArrowRight className="find-examples-icon" aria-hidden="true"/>
       </Link>
     </div>
     <SentenceHints backLabel={entry.hanzi}>
       {matches.map(idiom => {
         const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
-        const display = showTrad ? idiom.idiomMeta!.traditional! : idiom.hanzi;
+        const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
         const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;
         return <div className="glyph-usage-example" key={idiom.id}>
+          <div className="idiom-example-meta">
+            <UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>
+            {topicLabel && <span className="glyph-usage-idiom-topic"><span aria-hidden="true">· </span>{topicLabel}</span>}
+          </div>
           <SentenceExample
             heading=""
             sentence={display}
             pinyin={idiom.pinyin}
             translation={idiom.meaning}
             audioRequest={{ text: idiom.hanzi, reading: idiom.pinyin, audio: idiom.audio ?? null }}
-            sourceDetails={<span className="idiom-example-meta">
-              <UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>
-              {topicLabel && <span className="glyph-usage-idiom-topic"><span aria-hidden="true">· </span>{topicLabel}</span>}
-            </span>}
           />
         </div>;
       })}

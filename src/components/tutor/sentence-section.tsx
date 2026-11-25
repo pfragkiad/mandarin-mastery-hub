@@ -22,7 +22,7 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
     <div className="sentence-section-head">
       <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A SENTENCE</h3>
       {source && <a className="find-examples-link" href={source.url} target="_blank" rel="noopener noreferrer" title={`Search ${source.name} for example sentences with ${hanzi} (opens in a new window)`}>
-        Find more examples<ExternalExamplesIcon/>
+        Search on the internet<ExternalExamplesIcon/>
       </a>}
     </div>
     {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example sentence yet.</p></div>}

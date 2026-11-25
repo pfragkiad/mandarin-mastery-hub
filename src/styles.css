@@ -424,7 +424,12 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-facts-row .component-reuse-label { line-height: 14px; }
 .glyph-usage-idiom-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
 html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example-meta) :is(.component-reuse-label, .glyph-usage-idiom-topic) { font-size: 13px; line-height: 1.4; }
-.idiom-example-meta { display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.idiom-example-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
+/* Metadata belongs above its idiom; the quieter inner rule distinguishes examples
+   from the full-weight dividers between different detail sections. */
+.idiom-examples-section .glyph-usage-example { margin-top: 12px; }
+.idiom-examples-section .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); padding-top: 12px; }
+.idiom-examples-section .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
@@ -460,6 +465,7 @@ html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example
 .find-examples-link { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; padding: 3px 8px; border-radius: 7px; color: var(--muted-foreground); font-size: 13px; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: color .15s ease, background .15s ease; }
 .find-examples-link:hover, .find-examples-link:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .find-examples-link .find-examples-icon { color: var(--examples-link); flex: none; width: 15px; height: 15px; }
+.find-examples-link.internal-examples-link .find-examples-icon { color: var(--primary); }
 html[data-display-size='comfortable'] .find-examples-link { font-size: 15px; }
 html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { width: 17px; height: 17px; }
 .characters-library { margin-bottom: 34px; }

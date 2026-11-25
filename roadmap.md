@@ -179,3 +179,7 @@
 - [x] Tatoeba sentence hint: show only public Tatoeba resource (links, contributors, licence, edited originals); no internal review info
 - [x] Tatoeba sentences: replace recorded Tatoeba transcription pinyin with our own per-character pinyin; careful with common-name characters (multi-reading)
 - [x] Tatoeba popover: keep learner-meaningful notes (e.g. lost negative sense); hide only internal review-process chatter
+
+## Example-section consistency
+- [x] Idioms: quieter inner divider, green internal search arrow, rank and subtopic above hanzi on the left
+- [x] External examples: label “Search on the internet”; remove internal file/review hints while retaining public Tatoeba attribution

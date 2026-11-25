@@ -115,7 +115,7 @@ describe('Absent-record notes', () => {
     expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(sentence);
     fireEvent.click(more);
     expect(container.querySelectorAll('.sentence-hanzi')).toHaveLength(2);
-    expect(container.querySelectorAll('.source-info-trigger')).toHaveLength(2);
+    expect(container.querySelectorAll('.source-info-trigger')).toHaveLength(1);
     expect(loadCharacterHskExample).not.toHaveBeenCalled();
   });
 
@@ -146,7 +146,7 @@ describe('Absent-record notes', () => {
     render(<GlyphUsageExamples entry={he} kind="Characters" />);
     expect(screen.getByRole('heading', { level: 3, name: 'IN A SENTENCE' })).toBeInTheDocument();
     expect(screen.getByText('No recorded example sentence yet.')).toBeInTheDocument();
-    const link = screen.getByRole('link', { name: /Find more examples/ });
+    const link = screen.getByRole('link', { name: /Search on the internet/ });
     expect(decodeURI(link.getAttribute('href') ?? '')).toBe('https://www.purpleculture.net/sample-sentences/?word=和');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link.getAttribute('rel')).toContain('noopener');
