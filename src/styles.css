@@ -499,8 +499,8 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
   --banner-ink: oklch(.96 .009 140); --banner-surface: oklch(.19 .008 155); --banner-accent: oklch(.85 .075 65); --traditional: oklch(.81 .12 305);
   /* Cyan Sound chart link: separate from the green (Simplified/link) and purple (Traditional) script colours. */
   --sound-link: oklch(.82 .11 198);
-  /* Blue external-examples arrow: distinct from the cyan Sound chart link, high contrast on dark cards. */
-  --examples-link: oklch(.75 .14 255);
+  /* Blueish-purple external-search colour: shared by the card ↗ link and the detail "Search on the internet" button, distinct from Traditional purple (305) and cyan Sound chart (198). */
+  --examples-link: oklch(.75 .15 278);
   --background: oklch(.19 .008 155); --foreground: oklch(.94 .009 140);
   --card: oklch(.235 .009 155); --sidebar-bg: oklch(.215 .008 155);
   --primary: oklch(.8 .09 158); --primary-foreground: oklch(.19 .022 158);
@@ -2933,11 +2933,14 @@ html[data-display-size='comfortable'] .hint-rows { font-size: 13px; }
 .sound-chart-link.is-tile svg.sound-chart-link-arrow { top: 0; right: 0; width: 6px; height: 6px; }
 /* Card-face external examples icon (Characters/Words), sized like the Sound chart link beside it
    but neutral-coloured, turning accent on hover with a tinted badge. */
-html:not(.dark) { --examples-link: oklch(.5 .18 260); }
+html:not(.dark) { --examples-link: oklch(.48 .18 278); }
 /* Margin matches the Sound chart link's so the speaker → chart → arrow gaps read evenly. */
 .examples-link.is-tile { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; margin-left: -4.5px; border-radius: 5px; color: var(--examples-link); cursor: pointer; transition: color .15s ease, background .15s ease; }
 .examples-link.is-tile svg { width: 12px; height: 12px; }
 .examples-link.is-tile:hover, .examples-link.is-tile:focus-visible { background: color-mix(in oklch, var(--examples-link) 16%, transparent); outline: none; }
+/* Detail-card "Search on the internet" button: shares the blueish-purple --examples-link colour with the card ↗ link so external actions read together and stand apart from internal actions. */
+.word-detail-actions .detail-internet-action { color: var(--examples-link); border-color: color-mix(in oklch, var(--examples-link) 45%, transparent); }
+.word-detail-actions .detail-internet-action:hover, .word-detail-actions .detail-internet-action:focus-visible { color: var(--examples-link); background: color-mix(in oklch, var(--examples-link) 14%, transparent); border-color: color-mix(in oklch, var(--examples-link) 70%, transparent); }
 .library-list-view .examples-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }
 .library-list-view .examples-link.is-tile svg { width: 18px; height: 18px; }
 .library-list-view .sound-chart-link.is-tile { width: 30px; height: 30px; margin-left: -8px; }

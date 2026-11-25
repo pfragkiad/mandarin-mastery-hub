@@ -310,8 +310,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       etymology={{ recordId: bookmarkId, glyph: entry.hanzi, familyId: radicalFamilyRecord?.id, formKey: form?.key ?? radicalFamilyRecord?.forms.find(item => item.character === heading.hanzi)?.key }}/>}
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph).
         The external example search joins this row only where the card shows the "In a phrase"
-        section — Characters records; Components/Radicals show "In a character" instead. */}
-    <div className="detail-reference-row"><DetailRecordActions practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }} hanzi={entry.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(bookmarkId)} similar={kind !== 'Strokes' && finderCoversGlyph(entry.hanzi) ? entry.hanzi : undefined} internetSearch={kind === 'Characters' ? externalExampleSources(entry.hanzi)[0] : undefined}/></div>
+        section (Characters records) and the External search links preference is enabled. */}
+    <div className="detail-reference-row"><DetailRecordActions practice={kind === 'Strokes' ? { stroke: entry.hanzi } : { character: entry.hanzi, ...(form ? { family: heading.kangxiIndex, variant: form.key } : {}) }} hanzi={entry.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(bookmarkId)} similar={kind !== 'Strokes' && finderCoversGlyph(entry.hanzi) ? entry.hanzi : undefined} internetSearch={kind === 'Characters' && preferences.cardExamplesLinks === true ? externalExampleSources(entry.hanzi)[0] : undefined}/></div>
   </section>;
 }
 /** Tiles already show the Kangxi ID badge, so drop the redundant "Kangxi radical N" gloss fragment. */

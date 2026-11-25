@@ -145,8 +145,8 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     <GlyphDetailTabs cardKey={`word-${word.id}`} etymology={etymology}
       decomposition={{ info: <VocabularyDecompositionInfo word={word}/>, body: <VocabularyDecomposition word={word} bare/> }}/>
     {/* Bottom row: Trace/Recall left, Bookmark alone at the right (the source ⓘ sits beside the title glyph).
-        The external example search joins the row exactly when the "In a phrase" section above is shown. */}
-    <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close} internetSearch={word.sentence || vocabularyKind(word) === 'word' ? externalExampleSources(word.hanzi)[0] : undefined}/></div>
+        The external example search joins the row when the "In a phrase" section above is shown and the External search links preference is enabled. */}
+    <div className="detail-reference-row"><DetailRecordActions practice={{ character: word.hanzi }} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} onNavigate={close} internetSearch={preferences.cardExamplesLinks === true && (word.sentence || vocabularyKind(word) === 'word') ? externalExampleSources(word.hanzi)[0] : undefined}/></div>
   </SentenceHints>;
 }
 

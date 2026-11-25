@@ -27,11 +27,12 @@ vi.mock('@tanstack/react-router', () => ({
   Link: ({ children, to, params, search, ...props }: { children?: ReactNode; to?: string; params?: { lessonId?: string }; search?: Record<string, unknown> } & Record<string, unknown>) => <a href={`${to?.replace('$lessonId', params?.lessonId ?? '')}${search ? `?${new URLSearchParams(Object.entries(search).map(([k, v]) => [k, String(v)]))}` : ''}`} {...props}>{children}</a>,
   useNavigate: () => () => {},
 }));
-const workspaceState = vi.hoisted(() => ({ includeTraditional: false, items: [] as Word[] }));
+const workspaceState = vi.hoisted(() => ({ includeTraditional: false, cardExamplesLinks: false, items: [] as Word[] }));
 beforeEach(() => {
   vi.mocked(loadCharacterHskExample).mockReset().mockResolvedValue(null);
   vi.mocked(loadCharacterTatoebaExample).mockReset().mockResolvedValue(null);
   workspaceState.items = [];
+  workspaceState.cardExamplesLinks = false;
 });
 // Controlled catalogue: 鮮 is a Traditional character whose dictionary radical is 魚
 // and whose recorded breakdown contains the exact 魚 form (the family is multi-form).
@@ -56,7 +57,7 @@ vi.mock('@/lib/character-enrichment', async importOriginal => ({
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({
     items: workspaceState.items, saved: [], toggleSaved: () => {},
-    preferences: { includeTraditional: workspaceState.includeTraditional, pinyin: true, slow: false },
+    preferences: { includeTraditional: workspaceState.includeTraditional, cardExamplesLinks: workspaceState.cardExamplesLinks, pinyin: true, slow: false },
     catalogVersion: 0, theme: 'light',
   }),
 }));
@@ -182,8 +183,12 @@ describe('Absent-record notes', () => {
     expect(screen.queryByRole('link', { name: /Search on the internet/ })).toBeNull();
   });
 
-  it('puts the external example search in the detail card\'s action row', () => {
+  it('hides "Search on the internet" in the detail action row when external links are off, and shows it when enabled', () => {
     const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
+    const first = render(<CharacterDetails entry={he} kind="Characters" />);
+    expect(screen.queryByRole('link', { name: /Search on the internet/ })).toBeNull();
+    first.unmount();
+    workspaceState.cardExamplesLinks = true;
     const { container } = render(<CharacterDetails entry={he} kind="Characters" />);
     const link = screen.getByRole('link', { name: /Search on the internet/ });
     expect(decodeURI(link.getAttribute('href') ?? '')).toBe('https://www.purpleculture.net/sample-sentences/?word=和');
