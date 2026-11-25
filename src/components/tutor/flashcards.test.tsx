@@ -282,7 +282,7 @@ describe('What to practise kinds', () => {
     render(<FlashcardsPage />);
     pickOption(screen.getByRole('combobox', { name: 'Category' }), 'Phrases');
     expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
-    expect(optionLabels(screen.getByRole('combobox', { name: 'Topic' }))).toEqual(['All topics', 'Greetings']);
+    expect(optionLabels(screen.getByRole('combobox', { name: 'Topic' }))).toEqual(['All topics', 'Greetings', 'Unclassified']);
     pickOption(screen.getByRole('combobox', { name: 'Category' }), 'Words');
     expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { FilterSelect } from './filter-select';
+import { FilterSelect, orderedFilterItems } from './filter-select';
 
 // Exercise the Radix value callback directly, including its hidden form reset.
 vi.mock('@/components/ui/select', () => ({
@@ -14,6 +14,18 @@ vi.mock('@/components/ui/select', () => ({
 }));
 
 describe('Dropdown defaults are not filter edits', () => {
+  it('puts Unclassified last across ordinary and grouped classification choices', () => {
+    expect(orderedFilterItems([
+      { value: '', label: 'All styles' },
+      { label: 'Styles', options: [{ value: 'missing', label: 'Unclassified' }, { value: 'written', label: 'Written' }] },
+      { value: 'spoken', label: 'Conversational' },
+    ])).toEqual([
+      { value: '', label: 'All styles' },
+      { label: 'Styles', options: [{ value: 'written', label: 'Written' }] },
+      { value: 'spoken', label: 'Conversational' },
+      { value: 'missing', label: 'Unclassified' },
+    ]);
+  });
   it.each([
     ['All collections', 'All topics'],
     ['All types', 'All types'],

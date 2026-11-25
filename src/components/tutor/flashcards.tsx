@@ -19,7 +19,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript } from '@/lib/learning-preferences';
-import { collections as allCollections, filterWords, partOfSpeechList, vocabularyFacetOptions, vocabularyKind, wordCollections, type Word } from '@/lib/mandarin';
+import { collections as allCollections, filterWords, matchesTopic, partOfSpeechList, vocabularyFacetOptions, vocabularyKind, type Word } from '@/lib/mandarin';
 import { ALL_IDIOM_BANDS, filterIdioms, loadIdioms, type IdiomRankClass } from '@/lib/idioms';
 import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions } from '@/lib/vocabulary-subtopics';
 import { libraryFilterOptions } from '@/lib/library-filter-options';
@@ -165,7 +165,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       if (vocabKind === 'idiom') {
         base = filterIdioms(idiomWords, idiomRankClasses, '', f.usage || ALL_IDIOM_BANDS, 'All words', [], false, false, f.usageUpTo === '1', f.collection || 'All collections', f.subtopic || ALL_SUBTOPICS);
       } else {
-        base = items.filter(w => vocabularyKind(w) === vocabKind && (!f.collection || wordCollections(w).includes(f.collection)) && inSubtopic(w, f.subtopic || ALL_SUBTOPICS) && (f.level === 'All levels' || w.level === f.level) && (f.pos === 'All types' || partOfSpeechList(w).includes(f.pos)) && matchesPhraseStyle(w.entry, fStyle));
+        base = items.filter(w => vocabularyKind(w) === vocabKind && matchesTopic(w, f.collection || '') && inSubtopic(w, f.subtopic || ALL_SUBTOPICS) && (f.level === 'All levels' || w.level === f.level) && (f.pos === 'All types' || partOfSpeechList(w).includes(f.pos)) && matchesPhraseStyle(w.entry, fStyle));
       }
     }
     const inLesson = lessonIds(f);

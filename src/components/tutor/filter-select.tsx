@@ -35,6 +35,28 @@ function isGroup(item: FilterSelectItem): item is FilterSelectGroup {
   return 'options' in item;
 }
 
+/** Preserve ordinary ordering and groups; missing-classification choices are always last. */
+export function orderedFilterItems(items: FilterSelectItem[]): FilterSelectItem[] {
+  const missing: FilterSelectOption[] = [];
+  const ordinary = items.flatMap<FilterSelectItem>(item => {
+    if (isGroup(item)) {
+      const options = item.options.filter(option => {
+        if (option.label === 'Unclassified') { missing.push(option); return false; }
+        return true;
+      });
+      return options.length ? [{ ...item, options }] : [];
+    }
+    if (item.label === 'Unclassified') { missing.push(item); return []; }
+    return [item];
+  });
+  return [...ordinary, ...missing];
+}
+
+const optionClassName = (option: FilterSelectOption) => cn(
+  option.nested && 'filter-option-nested', option.parent && 'filter-option-parent',
+  option.label === 'Unclassified' && 'filter-option-unclassified',
+);
+
 function encode(value: string) {
   return value === '' ? EMPTY_SENTINEL : value;
 }
@@ -60,7 +82,8 @@ export function FilterSelect({
   disabled?: boolean;
   className?: string;
 }) {
-  const flat = items.flatMap(item => (isGroup(item) ? item.options : [item]));
+  const orderedItems = orderedFilterItems(items);
+  const flat = orderedItems.flatMap(item => (isGroup(item) ? item.options : [item]));
   // Never render an empty trigger: when `value` is empty (or matches an option with an
   // empty label), fall back to the first labelled option (e.g. "All levels", "All types").
   const hasLabel = (option: FilterSelectOption) => (option.triggerLabel ?? option.label).trim() !== '';
@@ -80,21 +103,21 @@ export function FilterSelect({
   return (
     <Select value={encode(resolvedValue)} onValueChange={changeValue} {...(disabled ? { disabled: true } : {})}>
       <SelectTrigger id={id} className={cn('filter-select gap-3', className)} aria-label={ariaLabel}>
-        <SelectValue>{triggerText}</SelectValue>
+        <SelectValue><span className={selected ? optionClassName(selected) : undefined}>{triggerText}</span></SelectValue>
       </SelectTrigger>
       <SelectContent>
-        {items.map((item, idx) =>
+        {orderedItems.map((item, idx) =>
           isGroup(item) ? (
             <SelectGroup key={`${item.label}-${idx}`}>
               <SelectLabel>{item.label}</SelectLabel>
               {item.options.map(opt => (
-                <SelectItem key={encode(opt.value)} value={encode(opt.value)} className={cn(opt.nested && 'filter-option-nested', opt.parent && 'filter-option-parent')} {...(opt.disabled ? { disabled: true } : {})}>
+                <SelectItem key={encode(opt.value)} value={encode(opt.value)} className={optionClassName(opt)} {...(opt.disabled ? { disabled: true } : {})}>
                   {opt.label}
                 </SelectItem>
               ))}
             </SelectGroup>
           ) : (
-            <SelectItem key={encode(item.value)} value={encode(item.value)} className={cn(item.nested && 'filter-option-nested', item.parent && 'filter-option-parent')} {...(item.disabled ? { disabled: true } : {})}>
+            <SelectItem key={encode(item.value)} value={encode(item.value)} className={optionClassName(item)} {...(item.disabled ? { disabled: true } : {})}>
               {item.label}
             </SelectItem>
           ),

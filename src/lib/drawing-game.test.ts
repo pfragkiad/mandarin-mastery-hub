@@ -29,6 +29,9 @@ describe('drawing game rules', () => {
   it('selects Words by collection', () => {
     expect(drawingWordPool([word, { ...word, id: 'other', collection: 'Food' }], { kind: 'Words', collection: 'Greetings' }, false).map(card => card.id)).toEqual(['word-hello']);
   });
+  it('selects only words with empty topics for Unclassified', () => {
+    expect(drawingWordPool([word, { ...word, id: 'empty', collection: '' }], { kind: 'Words', collection: 'Unclassified' }, false).map(card => card.id)).toEqual(['empty']);
+  });
   it('selects Words by level', () => {
     expect(drawingWordPool([word, { ...word, id: 'other', level: 'HSK 2' }], { kind: 'Words', level: 'HSK 1' }, false).map(card => card.id)).toEqual(['word-hello']);
   });

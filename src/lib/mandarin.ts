@@ -27,6 +27,12 @@ export const vocabularyKind = (word: Word): "word" | "idiom" | "phrase" => word.
 export const words: Word[] = [...vocabularyData.entries, ...sentencePhraseEntries(vocabularyData.entries)].map((e) => entryToWord(e, vocabularyData.categories));
 /** Primary and secondary recorded topics share the same library/game filters. */
 export const wordCollections = (word: Word): string[] => word.collections?.length ? word.collections : [word.collection];
+export const UNCLASSIFIED_TOPIC = 'Unclassified';
+/** Missing topics are an explicit filter, never the empty URL value used for All. */
+export const matchesTopic = (word: Word, topic: string): boolean =>
+  !topic || topic === 'All collections' || (topic === UNCLASSIFIED_TOPIC
+    ? !wordCollections(word).some(label => label.trim())
+    : wordCollections(word).includes(topic));
 export const collections = vocabularyData.categories
   .map((c) => categoryName(c.name))
   .filter((name) => words.some((w) => wordCollections(w).includes(name)))
@@ -34,7 +40,8 @@ export const collections = vocabularyData.categories
   .sort((a, b) => a.localeCompare(b));
 /** Collections that actually contain records of the given list (e.g. only Words or only Phrases), keeping the global order. */
 export const collectionOptions = (items: Word[]): string[] =>
-  collections.filter((name) => items.some((w) => wordCollections(w).includes(name)));
+  [...collections.filter((name) => name && items.some((w) => wordCollections(w).includes(name))),
+    ...(items.some(word => matchesTopic(word, UNCLASSIFIED_TOPIC)) ? [UNCLASSIFIED_TOPIC] : [])];
 /** Keep controlled taxonomy labels intact; legacy labels split combos and sense notes. */
 export const partOfSpeechList = (word: Word): string[] =>
   word.entry?.studyMetadata?.posLabels ?? (word.type ?? "")
@@ -75,7 +82,7 @@ export function filterWords(
   return items.filter(
     (w) =>
       matches(w) &&
-      (collection === "All collections" || wordCollections(w).includes(collection)) &&
+      matchesTopic(w, collection) &&
       (level === "All levels" || w.level === level) &&
       (status === "All words" || saved.includes(w.id)) &&
       (pos === "All types" || partOfSpeechList(w).includes(pos)),
@@ -89,7 +96,7 @@ export function filterWords(
 export function vocabularyFacetOptions(items: Word[], selection: { collection: string; level: string; pos: string; style?: string | undefined }) {
   const { collection, level, pos } = selection;
   const style = selection.style || "All styles";
-  const inCollection = (w: Word) => collection === "All collections" || wordCollections(w).includes(collection);
+  const inCollection = (w: Word) => matchesTopic(w, collection);
   const inLevel = (w: Word) => level === "All levels" || w.level === level;
   const inPos = (w: Word) => pos === "All types" || partOfSpeechList(w).includes(pos);
   const inStyle = (w: Word) => style === "All styles" || phraseStyle(w.entry) === style;

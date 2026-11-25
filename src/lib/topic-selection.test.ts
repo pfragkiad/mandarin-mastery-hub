@@ -16,13 +16,17 @@ describe('Combined topic selection', () => {
   it('restores a child-only legacy URL without mutating its filter', () => {
     expect(topicSelectionValue('', 'animals-wildlife')).toBe('subtopic:animals-wildlife');
     const items = topicSelectionItems([], [], '', 'animals-wildlife');
-    expect(items.map(item => item.value)).toEqual(['', 'topic:Animals & Weather', 'subtopic:animals-wildlife']);
+    expect(items.map(item => item.value)).toEqual(['', 'topic:Animals & Weather', 'subtopic:animals-wildlife', 'topic:Unclassified']);
   });
   it('lists each child immediately after its selectable parent', () => {
     const children = vocabularySubtopics.filter(s => s.parentLabel === 'Animals & Weather');
-    expect(topicSelectionItems(['Animals & Weather', 'Numbers & Quantities'], children, '', '').map(item => item.value)).toEqual(['', 'topic:Animals & Weather', ...children.map(s => `subtopic:${s.id}`), 'topic:Numbers & Quantities']);
+    expect(topicSelectionItems(['Animals & Weather', 'Numbers & Quantities'], children, '', '').map(item => item.value)).toEqual(['', 'topic:Animals & Weather', ...children.map(s => `subtopic:${s.id}`), 'topic:Numbers & Quantities', 'topic:Unclassified']);
   });
   it('rejects unknown child identities', () => {
     expect(topicSelectionFilters('subtopic:unknown', '', '')).toBeUndefined();
+  });
+  it('selects missing topics without confusing them with All or retaining a child', () => {
+    expect(topicSelectionFilters('topic:Unclassified', '', '')).toEqual({ collection: 'Unclassified', subtopic: '' });
+    expect(topicSelectionValue('Unclassified', '')).toBe('topic:Unclassified');
   });
 });

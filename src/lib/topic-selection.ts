@@ -1,4 +1,5 @@
 import { ALL_SUBTOPICS, subtopicById, type VocabularySubtopic } from './vocabulary-subtopics';
+import { UNCLASSIFIED_TOPIC } from './mandarin';
 
 const TOPIC_PREFIX = 'topic:';
 const SUBTOPIC_PREFIX = 'subtopic:';
@@ -21,9 +22,9 @@ export function topicSelectionFilters(value: string, allTopics: string, allSubto
 export function topicSelectionItems(topics: string[], subtopics: VocabularySubtopic[], collection: string, subtopic: string) {
   const picked = subtopicById(subtopic);
   const children = picked && !subtopics.some(s => s.id === picked.id) ? [...subtopics, picked] : subtopics;
-  const parents = [...new Set([...topics.filter(t => t && t !== 'All collections'), ...children.map(s => s.parentLabel), ...(collection && collection !== 'All collections' ? [collection] : [])])];
+  const parents = [...new Set([...topics.filter(t => t && t !== 'All collections'), ...children.map(s => s.parentLabel), ...(collection && collection !== 'All collections' ? [collection] : [])])].filter(t => t !== UNCLASSIFIED_TOPIC);
   return [{ value: '', label: 'All topics' }, ...parents.flatMap(parent => [
     { value: `${TOPIC_PREFIX}${parent}`, label: parent, parent: true },
     ...children.filter(s => s.parentLabel === parent).map(s => ({ value: `${SUBTOPIC_PREFIX}${s.id}`, label: s.label, nested: true })),
-  ])];
+  ]), { value: `${TOPIC_PREFIX}${UNCLASSIFIED_TOPIC}`, label: UNCLASSIFIED_TOPIC }];
 }
