@@ -56,6 +56,7 @@ vi.mock('@/lib/flashcard-lessons', async importOriginal => {
 const pickOption = (trigger: HTMLElement, label: string) => {
   fireEvent.keyDown(trigger, { key: 'ArrowDown' });
   fireEvent.click(screen.getByRole('option', { name: label }));
+  fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
 };
 const optionLabels = (trigger: HTMLElement) => {
   fireEvent.keyDown(trigger, { key: 'ArrowDown' });
@@ -141,6 +142,7 @@ describe('Saved deck', () => {
     await renderWords();
     // Words holds 12 mocked words; only 你好 is bookmarked.
     fireEvent.click(screen.getByRole('button', { name: /^Show only saved cards/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Start · 1 card' }));
     expect(screen.getByRole('button', { name: /Saved · Words · Chinese → English · 1 card/ })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Flip card' }));
@@ -179,7 +181,7 @@ describe('Deck size', () => {
     pickOption(screen.getByRole('combobox', { name: 'Topic' }), 'Greetings');
     await screen.findByRole('button', { name: 'Restart · 1 card' });
     expect(current).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
     await screen.findByRole('button', { name: 'Restart · 10 cards' });
     expect(current).toBeInTheDocument();
   });
@@ -203,12 +205,17 @@ describe('Deck size', () => {
   });
 });
 
- it('applies filter changes immediately and clears immediately with X', async () => {
+ it('updates matches only after Apply and restores them with Reset', async () => {
    await renderWords();
-    pickOption(screen.getByRole('combobox', { name: 'Topic' }), 'Greetings');
+    const topic = screen.getByRole('combobox', { name: 'Topic' });
+    fireEvent.keyDown(topic, { key: 'ArrowDown' });
+    fireEvent.click(screen.getByRole('option', { name: 'Greetings' }));
+    expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
+    expect(optionLabels(topic)).toContain('Numbers');
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
-   fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+   fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
    expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
 

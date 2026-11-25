@@ -57,7 +57,7 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
     onChange(formatStrokeRangeValue(nextLo, max));
   };
 
-  return <div className={`stroke-range-card${active ? ' is-active' : ''}`}>
+  return <div className="game-setting-field stroke-range-field"><span className="game-field-label">Stroke count</span><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
       {/* Keep one control mounted: changing tag exposed only the active label to button sizing rules. */}
@@ -89,5 +89,5 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
           onClick={() => onChange(isSelected ? '' : preset.value)}>{preset.label}</Button>;
       })}
     </div>
-  </div>;
+  </div></div>;
 }

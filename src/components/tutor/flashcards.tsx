@@ -193,6 +193,14 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     return { courses: stale ? [...courses, stale] : courses, lessons: draft.course ? courses.filter(g => g.id === draft.course) : courses };
   };
 
+  // Narrow choices from committed filters only: dragging or drafting must not rescan the catalogue.
+  const appliedKey = JSON.stringify(applied);
+  const setupChoices = useMemo(() => {
+    const filters = JSON.parse(appliedKey) as FlashcardFilters;
+    const refKind = filters.category.startsWith('Ref:') ? libraryKinds[filters.category.slice(4) as ReferenceKind] : undefined;
+    return { facets: vocabularyFacets(filters), glyph: refKind ? glyphFacets(filters, refKind) : undefined, ...lessonChoices(filters) };
+  }, [appliedKey, items, idiomWords, saved, catalogVersion, preferences.includeTraditional]);
+
   const roundSize = deckSize === 'all' ? pool.length : Math.min(deckSize, pool.length);
   const cardsUnit = (n: number) => `${n} ${n === 1 ? 'card' : 'cards'}`;
   // Play-bar summary of the settings a round is dealt with, e.g. "All vocabulary · Chinese → English · 10 cards".
@@ -263,13 +271,13 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
   }, [setSession]);
   const setup = (action: ReactNode, summary: ReactNode) => <>
       <GameSetup summary={summary} action={action} matchCount={pool.length} selection={settingsLabel()}
-        preview={pool[0] && <><span className="pinyin">{pool[0].pinyin}</span><span className={`game-preview-hanzi ${category === 'Radicals' || category === 'Ref:Radical' ? 'card-ink-radical' : ''}`} lang="zh-CN">{pool[0].hanzi}</span></>} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} autoApply onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch }) => { const draftReference = draft.category.startsWith('Ref:'); const draftIdiom = draft.category === 'Idioms'; const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const facets = vocabularyFacets(draft); const glyph = draftRefKind ? glyphFacets(draft, draftRefKind) : undefined; const { courses, lessons } = lessonChoices(draft); const draftSubtopic = draft.subtopic || ALL_SUBTOPICS; return <>
+        preview={pool[0] && <><span className="pinyin">{pool[0].pinyin}</span><span className={`game-preview-hanzi ${category === 'Radicals' || category === 'Ref:Radical' ? 'card-ink-radical' : ''}`} lang="zh-CN">{pool[0].hanzi}</span></>} filters={<DraftFilterForm applied={applied} active={activeFilters} count={pool.length} showCount={false} resetLabel="Reset" onApply={configure} onClear={() => { const empty: FlashcardFilters = { category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', strokes: '' }; configure(empty); return empty; }}>{({ draft, patch }) => { const draftReference = draft.category.startsWith('Ref:'); const draftIdiom = draft.category === 'Idioms'; const draftRefKind = draftReference ? libraryKinds[draft.category.slice(4) as ReferenceKind] : undefined; const { facets, glyph, courses, lessons } = setupChoices; const draftSubtopic = draft.subtopic || ALL_SUBTOPICS; return <>
         {/* Row 1: what kind of card; for Characters the course and the lesson that follows
             it, beside Topic; then the vocabulary collection / level / type. */}
         <div className="game-filter-row">
           <div className="game-kind-groups">{['Glyphs', 'Vocabulary'].map(group => <GameChoices key={group} label={group} value={draft.category}
             options={flashcardKinds.filter(k => group === 'Glyphs' ? k.value.startsWith('Ref:') : !k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label }))}
-            onChange={category => patch({ category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', usageUpTo: undefined, strokes: '', strokesUpTo: undefined, style: undefined, course: undefined, lesson: undefined })}/>)}</div>
+            onChange={category => configure({ category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', usageUpTo: undefined, strokes: '', strokesUpTo: undefined, style: undefined, course: undefined, lesson: undefined })}/>)}</div>
         </div>
         <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection && draft.collection !== 'All collections' ? draft.collection : '', draft.level !== 'All levels' && draft.level, draft.pos !== 'All types' && draft.pos, draft.style !== 'All styles' && draft.style, draft.usage !== ALL_IDIOM_BANDS && draft.usage, draft.strokes, draft.course, draft.lesson, draft.saved].filter(Boolean).length}>
           {/* Characters only: the course narrows the lesson list, and both narrow the deck.

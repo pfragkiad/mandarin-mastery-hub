@@ -1,5 +1,10 @@
 # Roadmap
 
+## Game filter submission
+- [x] Replace automatic game filter updates with Apply and Reset; refresh dependent choices only after submission.
+- [x] Add the shared Stroke count label above the range control.
+- [x] Verify draft changes, submission, reset and next-round behaviour.
+
 ## Game settings redesign
 - [x] Share grouped kind buttons, visible round choices, and collapsible labelled filters across games.
 - [x] Add live match counts, recorded previews, clear Saved labels, and consistent narrow-screen spacing.

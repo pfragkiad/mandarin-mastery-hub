@@ -113,3 +113,26 @@ describe('Auto-applied filter edits (games)', () => {
     expect(screen.queryByRole('button', { name: 'Clear filters' })).not.toBeInTheDocument();
   });
 });
+
+
+describe('Explicit game filters', () => {
+  it('collects all edits into one Apply submission', async () => {
+    const apply = vi.fn();
+    render(<DraftFilterForm applied={{ strokes: '', course: '' }} active={false} count={12} resetLabel="Reset" onApply={apply} onClear={() => ({ strokes: '', course: '' })}>{({ draft, patch }) => <><input aria-label="Range" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}/><input aria-label="Course" value={draft.course} onChange={e => patch({ course: e.target.value })}/></>}</DraftFilterForm>);
+    fireEvent.change(screen.getByLabelText('Range'), { target: { value: '1-14' } });
+    fireEvent.change(screen.getByLabelText('Course'), { target: { value: 'conversational-mandarin' } });
+    expect(apply).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+    await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ strokes: '1-14', course: 'conversational-mandarin' }));
+  });
+  it('Reset discards unapplied changes as well as applied narrowing', async () => {
+    const apply = vi.fn();
+    const clear = vi.fn(() => ({ strokes: '' }));
+    render(<DraftFilterForm applied={{ strokes: '' }} active={false} count={12} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Range" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}/>}</DraftFilterForm>);
+    fireEvent.change(screen.getByLabelText('Range'), { target: { value: '6-10' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    await waitFor(() => expect(clear).toHaveBeenCalledOnce());
+    expect(screen.getByLabelText('Range')).toHaveValue('');
+    expect(apply).not.toHaveBeenCalled();
+  });
+});

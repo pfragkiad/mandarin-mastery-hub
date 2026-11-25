@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useTransition, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react';
-import { Check, Search, X, SlidersHorizontal } from 'lucide-react';
+import { Check, Search, X, SlidersHorizontal, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { useSmallLibraryScreen } from './use-small-library-screen';
@@ -37,7 +37,7 @@ function useWaitCursor(pending: boolean) {
   }, [pending]);
 }
 
-export function FilterForm({ children, onApply, onClear, count, changed, active, autoApply = false, showCount = true }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean }) {
+export function FilterForm({ children, onApply, onClear, count, changed, active, autoApply = false, showCount = true, resetLabel }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean; resetLabel?: string }) {
   const [pending, startTransition] = useTransition();
   useWaitCursor(pending);
   const run = (action: () => void) => {
@@ -53,7 +53,7 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
   return <form className="filter-bar shared-filter-form" aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
     {children}
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
-    {(changed || active) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{active && <Button type="button" size="icon" variant="ghost" className="close-x" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}</div>}
+    {(changed || active) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{(active || (resetLabel && changed)) && <Button type="button" size={resetLabel ? 'sm' : 'icon'} variant="ghost" className={resetLabel ? undefined : 'close-x'} disabled={pending} aria-label={resetLabel ?? 'Clear filters'} title={resetLabel ?? 'Clear filters'} onClick={() => run(onClear)}>{resetLabel ? <><RotateCcw/>{resetLabel}</> : <X/>}</Button>}</div>}
     {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
 }
@@ -64,7 +64,7 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
  * cheap result sets such as the Sound chart's syllables), every edit — keystrokes included —
  * applies synchronously with no wait cursor or frame delay, so the applied value catches
  * up before the next keystroke and the draft-sync effect never rolls typing back. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, children, filterFields, chips = [], searchKey, searchModeKey, saved }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T; /** Search-mode field (Pinyin/Exact) that alone never offers Apply while the search text is empty. */ searchModeKey?: keyof T; /** Saved-only browsing: an immediate toggle (never drafted) after the dropdowns, beside the phone Filters button and first in its drawer. */ saved?: SavedFilter }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, resetLabel, children, filterFields, chips = [], searchKey, searchModeKey, saved }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; resetLabel?: string; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T; /** Search-mode field (Pinyin/Exact) that alone never offers Apply while the search text is empty. */ searchModeKey?: keyof T; /** Saved-only browsing: an immediate toggle (never drafted) after the dropdowns, beside the phone Filters button and first in its drawer. */ saved?: SavedFilter }) {
   const controls = useDraftFilters(applied);
   const formRef = useRef<HTMLFormElement>(null);
   const autoApply = autoApplyProp || live;
@@ -119,5 +119,5 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{saved && <SavedFilterRow {...saved}/>}{filterFields(renderControls)}</div>{/* The actions row is always rendered with a reserved button height, so Apply and
       Clear appearing after an edit never resize the bottom sheet or shift its fields. */}<div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}</div></SheetContent></Sheet>
   </div>;
-  return <FilterForm count={count} showCount={showCount} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
+  return <FilterForm count={count} showCount={showCount} {...(resetLabel ? { resetLabel } : {})} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
 }

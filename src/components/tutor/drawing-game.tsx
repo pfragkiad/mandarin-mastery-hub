@@ -113,6 +113,14 @@ export function DrawingGamePage({
     const stale = draft.course && !courses.some((g) => g.id === draft.course) ? lessonDeckGroups().find((g) => g.id === draft.course) : undefined;
     return { courses: stale ? [...courses, stale] : courses, lessons: draft.course ? courses.filter((g) => g.id === draft.course) : courses };
   };
+  // Committed filters alone refresh the dependent menus, never slider or dropdown drafts.
+  const appliedKey = JSON.stringify(appliedFilters);
+  const setupChoices = useMemo(() => {
+    const filters = JSON.parse(appliedKey) as DrawingSearch;
+    const selectedKind = filters.kind ?? "Characters";
+    return { facets: selectedKind === "Words" ? wordFacets(filters) : undefined,
+      glyph: selectedKind === "Words" ? undefined : glyphFacets(filters, selectedKind), ...lessonChoices(filters) };
+  }, [appliedKey, words, saved, catalogVersion, preferences.includeTraditional]);
   const pool = useMemo(
     () =>
       kind === "Words"
@@ -218,7 +226,7 @@ export function DrawingGamePage({
               active={activeFilters}
               count={pool.length}
               showCount={false}
-              autoApply
+              resetLabel="Reset"
               onApply={configure}
               onClear={() => {
                 const empty: DrawingSearch = {
@@ -236,11 +244,9 @@ export function DrawingGamePage({
                 return empty;
               }}
             >
-              {({ draft, patch, setDraft }) => {
+              {({ draft, patch }) => {
                 const draftKind = draft.kind ?? "Characters";
-                const facets = draftKind === "Words" ? wordFacets(draft) : undefined;
-                const glyph = draftKind === "Words" ? undefined : glyphFacets(draft, draftKind);
-                const { courses, lessons } = lessonChoices(draft);
+                const { facets, glyph, courses, lessons } = setupChoices;
                 const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
                 return (
                   <>
@@ -248,7 +254,7 @@ export function DrawingGamePage({
                     <div className="game-filter-row">
                     <div className="game-kind-groups">{['Glyphs', 'Vocabulary'].map(group => <GameChoices key={group} label={group} value={draftKind}
                       options={drawingKinds.filter(value => group === 'Glyphs' ? value !== 'Words' : value === 'Words').map(value => ({ value, label: value }))}
-                      onChange={value => { const next = drawingKinds.find(k => k === value); if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
+                      onChange={value => { const next = drawingKinds.find(k => k === value); if (next) configure({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
                     </div>
                     <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection, draft.level, draft.pos, draft.course, draft.lesson, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
                     {courses.length > 0 && (
