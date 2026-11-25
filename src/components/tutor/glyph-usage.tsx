@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { Puzzle, ScrollText } from 'lucide-react';
+import { ArrowRight, Puzzle, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
@@ -160,7 +160,12 @@ export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
   const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, 2) : []), [idioms, entry.hanzi, entry.script]);
   if (!matches.length) return null;
   return <section className="glyph-usage-section" aria-label="In an idiom">
-    <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
+    <div className="sentence-section-head">
+      <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
+      <Link className="find-examples-link" to="/vocabulary" search={{ tab: 'idiom', q: entry.hanzi }} title={`Search idioms containing ${entry.hanzi}`}>
+        Search in idioms<ArrowRight className="find-examples-icon" aria-hidden="true"/>
+      </Link>
+    </div>
     <div className="glyph-usage-parents">{matches.map(idiom => {
       const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
       const display = showTrad ? idiom.idiomMeta!.traditional! : idiom.hanzi;
