@@ -160,17 +160,17 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
     <TabsContent value={kind}>
     <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(kind === 'idiom' && band !== ALL_IDIOM_BANDS ? [{ label: appliedBand ? (bandUpTo === '1' ? bandRangeLabel({ from: 1, to: appliedBand.to }) : bandRangeLabel(appliedBand)) : band, clear: { band: ALL_IDIOM_BANDS, bandUpTo: undefined } }] : []), ...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(kind !== 'idiom' && pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(kind === 'phrase' && style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
       if (kind === 'idiom') {
-        const draftBand = idiomRankClasses.find(c => c.id === (draft.band ?? ALL_IDIOM_BANDS));
-        const draftTopic = draft.collection ?? 'All collections';
-        const draftSubtopic = draft.subtopic ?? ALL_SUBTOPICS;
-        const idiomPool = filterIdioms(kindItems, idiomRankClasses, query, draft.band ?? ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1');
-        const idiomTopics = collections.filter(c => c === draftTopic || idiomPool.filter(w => inSubtopic(w, draftSubtopic)).some(w => w.collection === c || w.collections?.includes(c)));
-        const idiomSubtopics = subtopicOptions(filterIdioms(kindItems, idiomRankClasses, query, draft.band ?? ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1', draftTopic), draftTopic, draftSubtopic);
+        const draftBand = idiomRankClasses.find(c => c.id === (draft.band || ALL_IDIOM_BANDS));
+        const draftTopic = draft.collection || 'All collections';
+        const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
+        const idiomPool = filterIdioms(kindItems, idiomRankClasses, query, draft.band || ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1');
+        const idiomTopics = collections.filter(c => c !== 'All collections' && (c === draftTopic || idiomPool.filter(w => inSubtopic(w, draftSubtopic)).some(w => w.collection === c || w.collections?.includes(c))));
+        const idiomSubtopics = subtopicOptions(filterIdioms(kindItems, idiomRankClasses, query, draft.band || ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1', draftTopic), draftTopic, draftSubtopic);
         const pickIdiomTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
         // "Include lower ranks" mirrors the Glyphs rank filter: the selected band widens to
         // rank 1..band end (idioms.ts matchesIdiomBand). Picking "All ranks" drops the widening.
         return <>
-          <span className="filter-field-row"><Select value={draft.band ?? ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>
+          <span className="filter-field-row"><Select value={draft.band || ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>
           <FilterSelect ariaLabel="Topic" value={draftTopic} onValueChange={pickIdiomTopic} items={[{ value: 'All collections', label: 'All topics' }, ...idiomTopics.map(c => ({ value: c, label: c }))]} />
           {hasSubtopics && <FilterSelect ariaLabel="Subtopic" value={draftSubtopic} disabled={!idiomSubtopics.length && draftSubtopic === ALL_SUBTOPICS} onValueChange={subtopic => patch({ subtopic })} items={[
             { value: ALL_SUBTOPICS, label: idiomSubtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics' },
@@ -182,14 +182,14 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       }
       // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed
       // by every other draft pick (topic, level, type) but never by themselves.
-      const draftTopic = draft.collection ?? 'All collections';
-      const draftSubtopic = draft.subtopic ?? ALL_SUBTOPICS;
-      const facets = vocabularyFacetOptions(facetBase.filter(w => inSubtopic(w, draftSubtopic)), { collection: draftTopic, level: draft.level ?? 'All levels', pos: draft.pos ?? 'All types', style: kind === 'phrase' ? draft.style ?? facetStyle : 'All styles' });
-      const subtopics = subtopicOptions(filterWords(facetBase, '', draftTopic, draft.level ?? 'All levels', 'All words', [], false, draft.pos ?? 'All types'), draftTopic, draftSubtopic);
+      const draftTopic = draft.collection || 'All collections';
+      const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
+      const facets = vocabularyFacetOptions(facetBase.filter(w => inSubtopic(w, draftSubtopic)), { collection: draftTopic, level: draft.level || 'All levels', pos: draft.pos || 'All types', style: kind === 'phrase' ? draft.style || facetStyle : 'All styles' });
+      const subtopics = subtopicOptions(filterWords(facetBase, '', draftTopic, draft.level || 'All levels', 'All words', [], false, draft.pos || 'All types'), draftTopic, draftSubtopic);
       // Picking a topic that does not own the current subtopic clears the subtopic.
       const pickTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
       return <>
-      <FilterSelect ariaLabel="Topic" value={draft.collection} onValueChange={pickTopic} items={[{ value: 'All collections', label: 'All topics' }, ...facets.collections.map(c => ({ value: c, label: c }))]} />
+      <FilterSelect ariaLabel="Topic" value={draftTopic} onValueChange={pickTopic} items={[{ value: 'All collections', label: 'All topics' }, ...facets.collections.map(c => ({ value: c, label: c }))]} />
       {hasSubtopics && <FilterSelect ariaLabel="Subtopic" value={draftSubtopic} disabled={!subtopics.length && draftSubtopic === ALL_SUBTOPICS} onValueChange={subtopic => patch({ subtopic })} items={[
         { value: ALL_SUBTOPICS, label: subtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics' },
         ...(draftTopic !== 'All collections'
