@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { openDetailsHint, practiceHint } from '@/lib/tile-hints';
+import { FilterSelect } from './filter-select';
 import { Link } from "@tanstack/react-router";
 import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -204,54 +205,35 @@ export function DrawingGamePage({
                   <>
                     {/* Row 1: what to draw, plus collection / level / type for Words. */}
                     <div className="game-filter-row">
-                    <select
-                      className="filter-select"
-                      aria-label="Drawing category"
+                    <FilterSelect
+                      ariaLabel="Drawing category"
                       value={draftKind}
-                      onChange={(event) => {
-                        const next = drawingKinds.find((value) => value === event.target.value);
+                      onValueChange={(value) => {
+                        const next = drawingKinds.find((k) => k === value);
                         if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) });
                       }}
-                    >
-                      {drawingKinds.map((value) => (
-                        <option key={value}>{value}</option>
-                      ))}
-                    </select>
+                      items={drawingKinds.map((value) => ({ value, label: value }))}
+                    />
                     {draftKind === "Words" && (
                       <>
-                        <select
-                          className="filter-select"
-                          aria-label="Topic"
+                        <FilterSelect
+                          ariaLabel="Topic"
                           value={draft.collection ?? ""}
-                          onChange={(event) => patch({ collection: event.target.value || undefined })}
-                        >
-                          <option value="">All topics</option>
-                          {(facets?.collections ?? []).map((value) => (
-                            <option key={value}>{value}</option>
-                          ))}
-                        </select>
-                        <select
-                          className="filter-select"
-                          aria-label="HSK level"
+                          onValueChange={(value) => patch({ collection: value || undefined })}
+                          items={[{ value: "", label: "All topics" }, ...(facets?.collections ?? []).map((value) => ({ value, label: value }))]}
+                        />
+                        <FilterSelect
+                          ariaLabel="HSK level"
                           value={draft.level ?? ""}
-                          onChange={(event) => patch({ level: event.target.value || undefined })}
-                        >
-                          <option value="">All levels</option>
-                          {(facets?.levels ?? []).map((value) => (
-                            <option key={value}>{value}</option>
-                          ))}
-                        </select>
-                        <select
-                          className="filter-select"
-                          aria-label="Part of speech"
+                          onValueChange={(value) => patch({ level: value || undefined })}
+                          items={[{ value: "", label: "All levels" }, ...(facets?.levels ?? []).map((value) => ({ value, label: value }))]}
+                        />
+                        <FilterSelect
+                          ariaLabel="Part of speech"
                           value={draft.pos ?? ""}
-                          onChange={(event) => patch({ pos: event.target.value || undefined })}
-                        >
-                          <option value="">All types</option>
-                          {(facets?.pos ?? []).map((value) => (
-                            <option key={value}>{value}</option>
-                          ))}
-                        </select>
+                          onValueChange={(value) => patch({ pos: value || undefined })}
+                          items={[{ value: "", label: "All types" }, ...(facets?.pos ?? []).map((value) => ({ value, label: value }))]}
+                        />
                       </>
                     )}
                     </div>
@@ -259,19 +241,12 @@ export function DrawingGamePage({
                     <div className="game-filter-row">
                     {draftKind !== "Words" && (
                       <span className="filter-field-row">
-                        <select
-                          className="filter-select"
-                          aria-label="Frequency"
+                        <FilterSelect
+                          ariaLabel="Frequency"
                           value={draft.usage ?? ""}
-                          onChange={(event) => patch({ usage: parseUsageGroup(draftKind, event.target.value), usageUpTo: undefined })}
-                        >
-                          <option value="">All ranks</option>
-                          {(glyph?.ranks ?? []).map((group) => (
-                            <option key={group.value} value={group.value}>
-                              {usageGroupLabel(group, draftKind, preferences.includeTraditional)}
-                            </option>
-                          ))}
-                        </select>
+                          onValueChange={(value) => patch({ usage: parseUsageGroup(draftKind, value), usageUpTo: undefined })}
+                          items={[{ value: "", label: "All ranks" }, ...(glyph?.ranks ?? []).map((group) => ({ value: group.value, label: usageGroupLabel(group, draftKind, preferences.includeTraditional), triggerLabel: group.label }))]}
+                        />
                         {draft.usage && draft.usage !== UNRANKED && (
                           <FilterWideningToggle
                             active={draft.usageUpTo === "1"}
@@ -284,19 +259,12 @@ export function DrawingGamePage({
                     )}
                     {filtered && (
                       <span className="filter-field-row">
-                        <select
-                          className="filter-select"
-                          aria-label="Stroke count"
+                        <FilterSelect
+                          ariaLabel="Stroke count"
                           value={draft.strokes ?? ""}
-                          onChange={(event) => patch({ strokes: event.target.value || undefined, strokesUpTo: undefined })}
-                        >
-                          <option value="">All stroke counts</option>
-                          {(glyph?.strokes ?? []).map((value) => (
-                              <option key={value} value={value}>
-                                {value} {value === 1 ? "stroke" : "strokes"}
-                              </option>
-                            ))}
-                        </select>
+                          onValueChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
+                          items={[{ value: "", label: "All stroke counts" }, ...(glyph?.strokes ?? []).map((value) => ({ value: String(value), label: `${value} ${value === 1 ? "stroke" : "strokes"}` }))]}
+                        />
                         {draft.strokes && (
                           <FilterWideningToggle
                             active={draft.strokesUpTo === "1"}
@@ -321,21 +289,14 @@ export function DrawingGamePage({
             </DraftFilterForm>
           }
         >
-          <select
-            className="filter-select"
-            aria-label="Deck size"
+          <FilterSelect
+            ariaLabel="Deck size"
             value={String(deckSize)}
-            onChange={(event) => {
-              setDeckSize(event.target.value === "all" ? "all" : Number(event.target.value));
+            onValueChange={(value) => {
+              setDeckSize(value === "all" ? "all" : Number(value));
             }}
-          >
-            {deckSizes.map((n) => (
-              <option key={n} value={n}>
-                {n} cards
-              </option>
-            ))}
-            <option value="all">All cards</option>
-          </select>
+            items={[...deckSizes.map((n) => ({ value: String(n), label: `${n} cards` })), { value: "all", label: "All cards" }]}
+          />
         </GameSetup>
   );
   return (

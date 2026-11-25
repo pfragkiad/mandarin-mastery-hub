@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { DraftFilterForm } from './filter-form';
+import { FilterSelect, type FilterSelectItem } from './filter-select';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
@@ -28,34 +29,38 @@ export type ChartFilters = { q: string; initial: string; final: string };
  */
 export function InitialSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string | null> }) {
   const offered = (initial: string | null) => !available || available.has(initial) || value === (initial ?? 'none');
-  return <select className="filter-select" aria-label="Filter by initial" value={value} onChange={e => onChange(e.target.value)}>
-    <option value="">All initials</option>
-    {INITIAL_GROUPS.map((group, index) => {
-      const groupValue = `group:${index}`;
-      const initials = group.initials.filter(offered);
-      if (!initials.length && value !== groupValue) return null;
-      return <optgroup key={group.label} label={group.label}>
-        <option value={groupValue}>{group.label}{group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}</option>
-        {group.initials[0] !== null && initials.map(initial => <option key={initial} value={initial ?? 'none'}>{initial}</option>)}
-      </optgroup>;
-    })}
-  </select>;
+  const items: FilterSelectItem[] = [{ value: '', label: 'All initials' }];
+  INITIAL_GROUPS.forEach((group, index) => {
+    const groupValue = `group:${index}`;
+    const initials = group.initials.filter(offered);
+    if (!initials.length && value !== groupValue) return;
+    items.push({
+      label: group.label,
+      options: [
+        { value: groupValue, label: `${group.label}${group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}` },
+        ...(group.initials[0] !== null ? initials.map(initial => ({ value: initial ?? 'none', label: initial ?? 'none' })) : []),
+      ],
+    });
+  });
+  return <FilterSelect ariaLabel="Filter by initial" value={value} onValueChange={onChange} items={items} />;
 }
 /** Final dropdown; `available` narrows it exactly as for InitialSelect. */
 export function FinalSelect({ value, onChange, available }: { value: string; onChange: (value: string) => void; available?: ReadonlySet<string> }) {
   const offered = (final: string) => !available || available.has(final) || value === final;
-  return <select className="filter-select" aria-label="Filter by final" value={value} onChange={e => onChange(e.target.value)}>
-    <option value="">All finals</option>
-    {FINAL_GROUPS.map((group, index) => {
-      const groupValue = `group:${index}`;
-      const finals = group.finals.filter(offered);
-      if (!finals.length && value !== groupValue) return null;
-      return <optgroup key={group.label} label={`Finals with ${group.label}`}>
-        <option value={groupValue}>Finals with {group.label}</option>
-        {finals.map(final => <option key={final} value={final}>{final}</option>)}
-      </optgroup>;
-    })}
-  </select>;
+  const items: FilterSelectItem[] = [{ value: '', label: 'All finals' }];
+  FINAL_GROUPS.forEach((group, index) => {
+    const groupValue = `group:${index}`;
+    const finals = group.finals.filter(offered);
+    if (!finals.length && value !== groupValue) return;
+    items.push({
+      label: `Finals with ${group.label}`,
+      options: [
+        { value: groupValue, label: `Finals with ${group.label}` },
+        ...finals.map(final => ({ value: final, label: final })),
+      ],
+    });
+  });
+  return <FilterSelect ariaLabel="Filter by final" value={value} onValueChange={onChange} items={items} />;
 }
 
 /**

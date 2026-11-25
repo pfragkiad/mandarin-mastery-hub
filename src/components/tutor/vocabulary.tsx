@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { FilterSelect, type FilterSelectItem } from './filter-select';
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
@@ -170,13 +171,13 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
         // rank 1..band end (idioms.ts matchesIdiomBand). Picking "All ranks" drops the widening.
         return <>
           <span className="filter-field-row"><Select value={draft.band ?? ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>
-          <select className="filter-select" aria-label="Topic" value={draftTopic} onChange={e => pickIdiomTopic(e.target.value)}><option value="All collections">All topics</option>{idiomTopics.map(c => <option key={c}>{c}</option>)}</select>
-          {hasSubtopics && <select className="filter-select" aria-label="Subtopic" value={draftSubtopic} disabled={!idiomSubtopics.length && draftSubtopic === ALL_SUBTOPICS} onChange={e => patch({ subtopic: e.target.value })}>
-            <option value={ALL_SUBTOPICS}>{idiomSubtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics'}</option>
-            {draftTopic !== 'All collections'
-              ? idiomSubtopics.map(st => <option key={st.id} value={st.id}>{st.label}</option>)
-              : [...new Set(idiomSubtopics.map(st => st.parentLabel))].map(parent => <optgroup key={parent} label={parent}>{idiomSubtopics.filter(st => st.parentLabel === parent).map(st => <option key={st.id} value={st.id}>{st.label}</option>)}</optgroup>)}
-          </select>}
+          <FilterSelect ariaLabel="Topic" value={draftTopic} onValueChange={pickIdiomTopic} items={[{ value: 'All collections', label: 'All topics' }, ...idiomTopics.map(c => ({ value: c, label: c }))]} />
+          {hasSubtopics && <FilterSelect ariaLabel="Subtopic" value={draftSubtopic} disabled={!idiomSubtopics.length && draftSubtopic === ALL_SUBTOPICS} onValueChange={subtopic => patch({ subtopic })} items={[
+            { value: ALL_SUBTOPICS, label: idiomSubtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics' },
+            ...(draftTopic !== 'All collections'
+              ? idiomSubtopics.map(st => ({ value: st.id, label: st.label }))
+              : [...new Set(idiomSubtopics.map(st => st.parentLabel))].map(parent => ({ label: parent, options: idiomSubtopics.filter(st => st.parentLabel === parent).map(st => ({ value: st.id, label: st.label })) })) as FilterSelectItem[]),
+          ]} />}
         </>;
       }
       // The other dropdowns are narrowed by the draft subtopic too; the subtopic choices are narrowed
@@ -188,16 +189,16 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
       // Picking a topic that does not own the current subtopic clears the subtopic.
       const pickTopic = (topic: string) => { const current = subtopicById(draftSubtopic); patch({ collection: topic, ...(current && topic !== 'All collections' && current.parentLabel !== topic ? { subtopic: ALL_SUBTOPICS } : {}) }); };
       return <>
-      <select className="filter-select" aria-label="Topic" value={draft.collection} onChange={e => pickTopic(e.target.value)}><option value="All collections">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>
-      {hasSubtopics && <select className="filter-select" aria-label="Subtopic" value={draftSubtopic} disabled={!subtopics.length && draftSubtopic === ALL_SUBTOPICS} onChange={e => patch({ subtopic: e.target.value })}>
-        <option value={ALL_SUBTOPICS}>{subtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics'}</option>
-        {draftTopic !== 'All collections'
-          ? subtopics.map(st => <option key={st.id} value={st.id}>{st.label}</option>)
-          : [...new Set(subtopics.map(st => st.parentLabel))].map(parent => <optgroup key={parent} label={parent}>{subtopics.filter(st => st.parentLabel === parent).map(st => <option key={st.id} value={st.id}>{st.label}</option>)}</optgroup>)}
-      </select>}
-      <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>
-      <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.pos.map(p => <option key={p}>{p}</option>)}</select>
-      {kind === 'phrase' && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? 'All styles'} onChange={e => patch({ style: e.target.value })}><option>All styles</option>{facets.styles.map(s => <option key={s}>{s}</option>)}</select>}
+      <FilterSelect ariaLabel="Topic" value={draft.collection} onValueChange={pickTopic} items={[{ value: 'All collections', label: 'All topics' }, ...facets.collections.map(c => ({ value: c, label: c }))]} />
+      {hasSubtopics && <FilterSelect ariaLabel="Subtopic" value={draftSubtopic} disabled={!subtopics.length && draftSubtopic === ALL_SUBTOPICS} onValueChange={subtopic => patch({ subtopic })} items={[
+        { value: ALL_SUBTOPICS, label: subtopics.length || draftSubtopic !== ALL_SUBTOPICS ? 'All subtopics' : 'No subtopics' },
+        ...(draftTopic !== 'All collections'
+          ? subtopics.map(st => ({ value: st.id, label: st.label }))
+          : [...new Set(subtopics.map(st => st.parentLabel))].map(parent => ({ label: parent, options: subtopics.filter(st => st.parentLabel === parent).map(st => ({ value: st.id, label: st.label })) })) as FilterSelectItem[]),
+      ]} />}
+      <FilterSelect ariaLabel="HSK level" value={draft.level} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} />
+      <FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.pos.map(p => ({ value: p, label: p }))]} />
+      {kind === 'phrase' && <FilterSelect ariaLabel="Sentence style" value={draft.style ?? 'All styles'} onValueChange={style => patch({ style })} items={[{ value: 'All styles', label: 'All styles' }, ...facets.styles.map(s => ({ value: s, label: s }))]} />}
     </>; }}>{({ draft, patch }) => <>
       <PinyinSearchInput value={draft.q} onChange={q => patch({ q })} py={draft.py} onPyChange={py => patch({ py })} ariaLabel="Search vocabulary" placeholder="Search Chinese, pinyin, or meaning…"/>
     </>}</DraftFilterForm>

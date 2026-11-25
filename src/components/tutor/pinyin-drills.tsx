@@ -10,6 +10,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowRight, Check, Play, RotateCcw, Target, Volume2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FilterSelect } from './filter-select';
 import { Switch } from '@/components/ui/switch';
 import { SPOKEN_TONES, TONE_NAMES, allSounds, checkTyped, finalFilterLabel, findSyllable, initialFilterLabel, hasRecording, isScored, matchesFinal, matchesInitial, soundAlikes, toneMark, type PinyinData, type PinyinSound, type Tone, type TypedVerdict } from '@/lib/pinyin-guide';
 import { ROUND_SIZES, dealRound, mixedRound, reviewRound, shuffle, type RoundSize } from '@/lib/pinyin-round';
@@ -137,9 +138,7 @@ function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round,
         <FinalSelect value={draft.final} onChange={final => patch({ final })} />
       </>}
     </DraftFilterForm>}>
-    <select className="filter-select" aria-label="Round size" value={size} onChange={e => onSize(Number(e.target.value) as RoundSize)}>
-      {ROUND_SIZES.map(n => <option key={n} value={n}>{n} sounds</option>)}
-    </select>
+    <FilterSelect ariaLabel="Round size" value={String(size)} onValueChange={v => onSize(Number(v) as RoundSize)} items={ROUND_SIZES.map(n => ({ value: String(n), label: `${n} sounds` }))} />
     <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
   </GameSetup>;
   const poolSummary = pool.length ? `${unit(roundLength)} of ${pool.length.toLocaleString('en-US')}` : 'No sounds match';

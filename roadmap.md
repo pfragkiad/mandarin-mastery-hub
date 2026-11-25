@@ -186,3 +186,6 @@
 
 ## Glyph quick cards label
 - [x] Rename the hints switch to "Glyph quick cards" (the ring also covers components and radicals, which are not characters); saved choices untouched
+
+## Unified dropdown styling
+- [x] Replace remaining native `<select>` filter/settings dropdowns with one shared `FilterSelect` component (consistent themed popover, arrow inset, and text-to-arrow gap)

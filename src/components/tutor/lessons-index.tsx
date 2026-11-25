@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { lessonCategories, lessonSummaries, lessonSummary, type LessonSummary } from '@/lib/lessons';
 import { courses, projectIndependentLessons, sectionPlacements, type Course } from '@/lib/lesson-curricula';
 import { LessonText } from './lesson-text';
+import { FilterSelect } from './filter-select';
 import { useOneLineTitle } from './one-line-title';
 import { levelFoldId, readLessonFolds, setLessonFold } from '@/lib/lesson-fold';
 import { HintBody, SourceInfo } from './source-info';
@@ -50,10 +51,7 @@ function LessonSearchForm({ q, scope, onApply }: { q: string; scope: string | un
     <DraftFilterForm searchKey="q" searchModeKey="scope" applied={applied} active={q.trim() !== ''} count={0} showCount={false}
       onApply={onApply} onClear={() => { const empty = { q: '', scope: '' }; onApply(empty); return empty; }}
       chips={q.trim() && label ? [{ label, clear: { scope: '' } }] : []}
-      filterFields={({ draft, patch }) => <select className="filter-select" aria-label="Search in" value={draft.scope} onChange={e => patch({ scope: e.target.value })}>
-        <option value="">All lessons</option>
-        {lessonScopes.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
-      </select>}>
+      filterFields={({ draft, patch }) => <FilterSelect ariaLabel="Search in" value={draft.scope} onValueChange={scope => patch({ scope })} items={[{ value: '', label: 'All lessons' }, ...lessonScopes.map(s => ({ value: s.id, label: s.label }))]} />}>
       {({ draft, patch }) => <div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label="Search lessons" placeholder="Search lessons: 学生, xue2sheng1, xuesheng, student…" value={draft.q} onChange={e => patch({ q: e.target.value })}/></div>}
     </DraftFilterForm>
   </div>;
@@ -265,10 +263,7 @@ function TopicView({ category, tag, onSearch, progress }: { category: string | u
   if (unfiled.length) groups.push({ id: 'other', label: 'Other lessons', description: '', lessons: unfiled });
   return <>
     <div className="lesson-topic-filters">
-      <select className="filter-select" aria-label="Filter lessons by topic" value={category ?? ''} onChange={e => onSearch({ view: 'topic', ...(e.target.value ? { category: e.target.value } : {}), ...(tag ? { tag } : {}) })}>
-        <option value="">All topics · {lessonSummaries.length}</option>
-        {used.map(c => <option key={c.id} value={c.id}>{c.label} · {lessonSummaries.filter(s => inTopic(s, c.id)).length}</option>)}
-      </select>
+      <FilterSelect ariaLabel="Filter lessons by topic" value={category ?? ''} onValueChange={v => onSearch({ view: 'topic', ...(v ? { category: v } : {}), ...(tag ? { tag } : {}) })} items={[{ value: '', label: `All topics · ${lessonSummaries.length}` }, ...used.map(c => ({ value: c.id, label: `${c.label} · ${lessonSummaries.filter(s => inTopic(s, c.id)).length}` }))]} />
       {tag && <button type="button" className="lesson-tag-chip is-active" onClick={() => onSearch({ view: 'topic', ...(category ? { category } : {}) })} aria-label={`Remove tag filter ${tag}`}>#{tag}<X aria-hidden="true"/></button>}
     </div>
     {groups.length === 0 && <div className="record-gap"><p>No lessons match this topic and tag.</p></div>}

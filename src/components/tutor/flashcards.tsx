@@ -1,5 +1,6 @@
 import { SavedFilterToggle } from './saved-filter';
 import { DraftFilterForm, FilterWideningToggle } from './filter-form';
+import { FilterSelect } from './filter-select';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
@@ -231,42 +232,35 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
         {/* Row 1: what kind of card; for Characters the course and the lesson that follows
             it, beside Topic; then the vocabulary collection / level / type. */}
         <div className="game-filter-row">
-          <select className="filter-select" aria-label="Category" value={draft.category} onChange={e => patch({ category: e.target.value, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '', course: undefined, lesson: undefined })}>
-            <optgroup label="Glyphs">{flashcardKinds.filter(k => k.value.startsWith('Ref:')).map(k => <option key={k.value} value={k.value}>{k.label}</option>)}</optgroup>
-            <optgroup label="Vocabulary">{flashcardKinds.filter(k => !k.value.startsWith('Ref:')).map(k => <option key={k.value} value={k.value}>{k.label}</option>)}</optgroup>
-          </select>
+          <FilterSelect ariaLabel="Category" value={draft.category} onValueChange={category => patch({ category, collection: '', level: 'All levels', pos: 'All types', usage: '', strokes: '', course: undefined, lesson: undefined })} items={[
+            { label: 'Glyphs', options: flashcardKinds.filter(k => k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label })) },
+            { label: 'Vocabulary', options: flashcardKinds.filter(k => !k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label })) },
+          ]} />
           {/* Characters only: the course narrows the lesson list, and both narrow the deck.
               "All courses" / "All lessons" leave the deck unfiltered by lesson. */}
           {courses.length > 0 && <>
-            <select className="filter-select" aria-label="Course" value={draft.course ?? ''} onChange={e => patch({ course: e.target.value || undefined, lesson: undefined })}>
-              <option value="">All courses</option>{courses.map(g => <option key={g.id} value={g.id}>{g.label}</option>)}
-            </select>
-            <select className="filter-select" aria-label="Lesson" value={draft.lesson ?? ''} onChange={e => patch({ lesson: e.target.value || undefined })}>
-              <option value="">All lessons</option>{lessons.map(g => <optgroup key={g.id} label={g.label}>{g.lessons.map(l => <option key={l.id} value={l.id}>{l.title}</option>)}</optgroup>)}
-            </select>
+            <FilterSelect ariaLabel="Course" value={draft.course ?? ''} onValueChange={v => patch({ course: v || undefined, lesson: undefined })} items={[{ value: '', label: 'All courses' }, ...courses.map(g => ({ value: g.id, label: g.label }))]} />
+            <FilterSelect ariaLabel="Lesson" value={draft.lesson ?? ''} onValueChange={v => patch({ lesson: v || undefined })} items={[{ value: '', label: 'All lessons' }, ...lessons.map(g => ({ label: g.label, options: g.lessons.map(l => ({ value: l.id, label: l.title })) }))]} />
           </>}
           {!draftReference && <>
-            {facets.collections.length > 0 && <select className="filter-select" aria-label="Topic" value={draft.collection ?? ''} onChange={e => patch({ collection: e.target.value })}><option value="">All topics</option>{facets.collections.map(c => <option key={c}>{c}</option>)}</select>}
-            {facets.levels.length > 0 && <select className="filter-select" aria-label="HSK level" value={draft.level} onChange={e => patch({ level: e.target.value })}><option>All levels</option>{facets.levels.map(l => <option key={l}>{l}</option>)}</select>}
-            {facets.posOptions.length > 0 && <select className="filter-select" aria-label="Part of speech" value={draft.pos} onChange={e => patch({ pos: e.target.value })}><option>All types</option>{facets.posOptions.map(p => <option key={p}>{p}</option>)}</select>}
+            {facets.collections.length > 0 && <FilterSelect ariaLabel="Topic" value={draft.collection ?? ''} onValueChange={collection => patch({ collection })} items={[{ value: '', label: 'All topics' }, ...facets.collections.map(c => ({ value: c, label: c }))]} />}
+            {facets.levels.length > 0 && <FilterSelect ariaLabel="HSK level" value={draft.level} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} />}
+            {facets.posOptions.length > 0 && <FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.posOptions.map(p => ({ value: p, label: p }))]} />}
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}
-            {facets.styles.length > 0 && <select className="filter-select" aria-label="Sentence style" value={draft.style ?? ''} onChange={e => patch({ style: e.target.value || undefined })}><option value="">All styles</option>{facets.styles.map(st => <option key={st}>{st}</option>)}</select>}
+            {facets.styles.length > 0 && <FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} />}
           </>}
         </div>
         {/* Row 2: narrowing filters — rank and stroke count (glyphs) and Saved only. */}
         <div className="game-filter-row">
-        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onChange={e => patch({ usage: e.target.value, usageUpTo: undefined })}><option value="">All ranks</option>{(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => <option key={group.value} value={group.value}>{usageGroupLabel(group, draftRefKind, preferences.includeTraditional)}</option>)}</select>{draft.usage && draft.usage !== UNRANKED && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
-        {draftReference && draftRefKind && <span className="filter-field-row"><select className="filter-select" aria-label="Stroke count" value={draft.strokes ?? ''} onChange={e => patch({ strokes: e.target.value, strokesUpTo: undefined })}><option value="">All stroke counts</option>{(glyph?.strokes ?? []).map(n => <option key={n} value={n}>{n} {n === 1 ? 'stroke' : 'strokes'}</option>)}</select>{draft.strokes && <FilterWideningToggle active={draft.strokesUpTo === '1'} onToggle={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })} label="+ fewer strokes" title="Also include every smaller stroke count"/>}</span>}
+        {draftReference && draftRefKind && <span className="filter-field-row"><FilterSelect ariaLabel="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onValueChange={usage => patch({ usage, usageUpTo: undefined })} items={[{ value: '', label: 'All ranks' }, ...(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ value: group.value, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional), triggerLabel: group.label }))]} />{draft.usage && draft.usage !== UNRANKED && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
+        {draftReference && draftRefKind && <span className="filter-field-row"><FilterSelect ariaLabel="Stroke count" value={draft.strokes ?? ''} onValueChange={strokes => patch({ strokes, strokesUpTo: undefined })} items={[{ value: '', label: 'All stroke counts' }, ...(glyph?.strokes ?? []).map(n => ({ value: String(n), label: `${n} ${n === 1 ? 'stroke' : 'strokes'}` }))]} />{draft.strokes && <FilterWideningToggle active={draft.strokesUpTo === '1'} onToggle={() => patch({ strokesUpTo: draft.strokesUpTo ? undefined : '1' })} label="+ fewer strokes" title="Also include every smaller stroke count"/>}</span>}
         {/* Saved-only: the same bookmark + count toggle as the libraries, last in the row; it stays part of the auto-applied draft. */}
         <SavedFilterToggle on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
         </div>
       </>; }}</DraftFilterForm>}>
         <div className="game-option-row">
-        <select className="filter-select" aria-label="Card front" value={direction} onChange={e => patch({ direction: e.target.value as 'zh' | 'en', flipped: false })}><option value="zh">Chinese → English</option><option value="en">English → Chinese</option></select>
-        <select className="filter-select" aria-label="Deck size" value={String(deckSize)} onChange={e => patch({ deckSize: e.target.value === 'all' ? 'all' : Number(e.target.value) })}>
-          {deckSizes.map(n => <option key={n} value={n}>{n} cards</option>)}
-          <option value="all">All cards</option>
-        </select>
+        <FilterSelect ariaLabel="Card front" value={direction} onValueChange={v => patch({ direction: v as 'zh' | 'en', flipped: false })} items={[{ value: 'zh', label: 'Chinese → English' }, { value: 'en', label: 'English → Chinese' }]} />
+        <FilterSelect ariaLabel="Deck size" value={String(deckSize)} onValueChange={v => patch({ deckSize: v === 'all' ? 'all' : Number(v) })} items={[...deckSizes.map(n => ({ value: String(n), label: `${n} cards` })), { value: 'all', label: 'All cards' }]} />
         </div>
         <div className="flash-options">
           <label className={`flash-option ${direction === 'en' ? 'is-disabled' : ''}`}><Switch checked={showFrontPinyin} onCheckedChange={value => patch({ showFrontPinyin: value })} disabled={direction === 'en'} aria-label="Show pinyin on card front" /><span>Show pinyin on front</span></label>
