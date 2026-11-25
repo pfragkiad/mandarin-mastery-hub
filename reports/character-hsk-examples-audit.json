@@ -1,0 +1,368 @@
+{
+  "generator": "scripts/build-character-hsk-examples.py",
+  "scope": "Current HSK Levels 1–5 vocabulary handoffs, active HSK lesson JSON and active editorial Conversational Mandarin lessons; no external corpus, raw transcripts or archived lessons.",
+  "selection": "Exact character occurrence in an existing full sentence/passage. Existing vocabulary examples take priority; recorded paragraphs, pinyin and English stay intact. No sense or character-reading validation is implied.",
+  "review": "Source editorial/draft status is retained; no native-speaker certification or sentence recording is added.",
+  "counts": {
+    "characters": 9537,
+    "vocabularyExampleRecords": 7200,
+    "distinctVocabularySentences": 7195,
+    "unimportedHskSentenceTexts": 0,
+    "charactersWithVocabularySentence": 1632,
+    "hskLessonsScanned": 46,
+    "conversationalLessonsScanned": 17,
+    "conversationalSentenceTriples": 164,
+    "lessonTriplesScanned": 2007,
+    "eligibleLessonSentencePassages": 1739,
+    "charactersFilledFromLessons": 4,
+    "charactersCoveredAfter": 1636,
+    "charactersFilledFromConversational": 2,
+    "charactersStillMissing": 7901
+  },
+  "examplesAdded": {
+    "Characters:刘": {
+      "character": "刘",
+      "sentence": "今天小刘很忙。早上他先打开窗户，再拿来一杯水。",
+      "pinyin": "Jīntiān Xiǎo Liú hěn máng. Zǎoshang tā xiān dǎkāi chuānghu, zài ná lái yì bēi shuǐ.",
+      "translation": "Xiao Liu is busy today. In the morning he opens the window and brings a glass of water.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS.json",
+        "sha256": "5f5edb23f6b89ec2142a8854d34299e3f4f2ed0a84009751568741a68f0da63a",
+        "jsonPointer": "/sections/teaching_plan/reading/paragraphs/0",
+        "lessonId": "topic-helping-with-everyday-tasks",
+        "title": "Daily Actions & Activities — Part 1: Helping with Everyday Tasks",
+        "collection": "HSK Level 2",
+        "hskLevel": 2,
+        "status": "draft"
+      }
+    },
+    "Characters:朗": {
+      "character": "朗",
+      "sentence": "星期六，两个孩子到公园玩。天气很晴朗，鸟儿在树上唱歌。",
+      "pinyin": "Xīngqīliù, liǎng ge háizi dào gōngyuán wán. Tiānqì hěn qínglǎng, niǎor zài shù shang chàng gē.",
+      "translation": "On Saturday, two children play in the park. The weather is clear, and birds sing in the trees.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER/TOPIC_LESSON_ANIMALS_WEATHER.json",
+        "sha256": "86a4206318935b576c3da31400f1ff3f031761cc47cfa61afef6a4dd45c6dfc4",
+        "jsonPointer": "/sections/teaching_plan/reading/paragraphs/0",
+        "lessonId": "topic-nature-and-the-weather",
+        "title": "Nature and the Weather",
+        "collection": "HSK Level 2",
+        "hskLevel": 2,
+        "status": "draft"
+      }
+    },
+    "Characters:英": {
+      "character": "英",
+      "sentence": "有，也有英文报纸。",
+      "pinyin": "Yǒu, yě yǒu Yīngwén bàozhǐ.",
+      "translation": "Yes, and we also have English-language newspapers.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.json",
+        "sha256": "e15733994c70701a08deb7194e2a2522eb805f19e68c7fca407baf23a5f0cdbc",
+        "jsonPointer": "/sections/blocks/1/turns/1",
+        "lessonId": "convm-newspaper-shopping",
+        "title": "Buying a Newspaper",
+        "collection": "Conversational Mandarin",
+        "hskLevel": null,
+        "status": "draft"
+      }
+    },
+    "Characters:陈": {
+      "character": "陈",
+      "sentence": "喂，您好！请问陈小姐在吗？",
+      "pinyin": "Wèi, nín hǎo! Qǐngwèn Chén xiǎojiě zài ma?",
+      "translation": "Hello! Excuse me, is Miss Chen there?",
+      "source": {
+        "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.json",
+        "sha256": "52094cd219d93a4f51a9762c25b431689161c2d818c42a9bf50ad70ba63bd7f0",
+        "jsonPointer": "/sections/blocks/1/turns/0",
+        "lessonId": "convm-phone-invitations",
+        "title": "Arranging Plans by Telephone",
+        "collection": "Conversational Mandarin",
+        "hskLevel": null,
+        "status": "draft"
+      }
+    }
+  },
+  "remainingCharacters": "㐆㐌㐬㐭㐱㒸㒼㓞㔾㕡㝵㠯㡭㢆㢟㣎㥯㧜㬎㲋㳄㼌㿽䍃䕭䙴䜌䠀䧹䰾䴉丁丂丄丌丏丐丕丘丙丞丟並丧丨丩丫丱串丵丶丷丸丹丿乂乃乇乌乍乑乔乖乜乞乩乳乶乹乾乿亂亅予亍亓井亘亙亞亟亠亡亢亥亦亨亩亭亳亵亶亹亼亾仁仂仃仄仆仇仉仌仑仕仗仙仝仞仟仡仨仪仫仰仲仳仵伄伉伊伎伏伐伕伛伢伥伦伧伪伫伯伲伶伺伽伾佃佇佈佉佐佑佔佗佘佚佝佞佟佣佤佥佧佬佯佰佴併佶佻佼佽佾侃侄來侈侉侌侍侏侑侔侖侗侠侣侥侦侧侨侩侪侬侮侯侵侶侷係俄俅俉俊俎俏俐俑俘俚俛俜俞俟俠俣俦俨俪俭俯俱俳俸俺俾倀倆倉個倌倏們倔倖倘倚倜倝倞倠倥倦倨倩倪倫倬倭倮债倻倾偃偈偉偌偎偏偕偬側偵偻偽偾偿傀傈傑傕傖傘備傚傢傣傥傧储傩傭傯傳債傷傺傾傿僂僅僉僑僕僖僚僥僦僧僬僭僮僱僳僵價僻儀儂億儅儆儇儈儉儋儒儕儘償儡優儲儷儸儺儻儼兀兆兇兌兑兒兓兕兖兗党兜兟兢內兩兮兰兵兹兼兽冀冁冂円冈冉冊冋冎冏冑冓冕冖冗冘冝冡冢冣冤冥冪冫冯冱冶冼冽凄凇凈凋凍凑凛凜凝凡凤処凫凯凰凱凳凵凶凸凹凼函凿刁刃刅刈刊刍刎刑刖別刨刪刭刳券刹刽刿剀剁剂剃則削剋剌剎剐剑剔剖剛剜剝剞剡剥剮割剳創剷剽剿劁劂劃劄劇劈劉劊劍劐劑劓劢劦劫劬劭劲劵劼劾勁勃勈勉勋勐勒動勖勘務勛勝勞募勢勦勰勳勵勸勹勻勾勿匀匆匈匊匋匍匏匐匕匚匛匝匡匣匦匧匪匭匮匯匱匸匽匾匿區卂卄卅卉卌卑卒卓協卜卞卟卢卣卤卦卩卬卮卯卵卸卹卺卻卿厃厄厍厓厗厝厣厤厥厩厪厭厮厲厶厷厹厽叀叁參叒叕叙叚叛叟叠叢叨叩叭叮叱叵叹叻叼叽吁吂吆吉吊吋吏吐吒吓吕吖君吝吞吟吠吡吣吩吭吮启吱吲吳吴吶吻吼吾呂呃呆呋呎呐呑呒呓呔呕呖呗呙呛呜呣呤呦呫呱呲呵呶呷呸呻咀咂咄咅咆咋咎咏咐咑咒咔咕咙咚咛咝咠咢咣咤咥咦咧咩咪咫咭咯咴咻咼咾咿哀哂哄哆哇哉哌哏哐哑哒哓哔哕哗哙哚哜哝哞哟員哧哨哩哮哱哳哺哼哽哿唁唄唅唆唇唎唏唐唑唔唚唛唝唠唢唣唤唧唪唫唬唰唳唵唷唸唼唾唿啁啃啄啇啉問啐啓啕啖啚啜啞啟啥啦啧啪啫啬啭啮啰啴啵啶啷啸啻啼啾喀喁喃喆喇喈喉喋喏喑喔喘喙喚喟喧喨喪喬單喱喲喳喵喷喹喼喽喾喿嗄嗅嗆嗇嗉嗊嗌嗍嗎嗐嗑嗒嗓嗔嗖嗚嗜嗝嗟嗡嗣嗤嗥嗦嗨嗩嗪嗫嗬嗲嗳嗵嗶嗷嗾嘀嘁嘅嘆嘈嘌嘍嘎嘏嘔嘖嘗嘘嘚嘛嘜嘞嘟嘢嘣嘤嘧嘩嘬嘭嘮嘯嘰嘱嘲嘶嘸嘹嘻嘼嘽嘿噁噌噍噎噓噔噗噘噙噜噠噢噤噥噦噩噪噫噬噯噱噲噴噶噸噹噻噼嚀嚄嚅嚆嚇嚎嚏嚓嚕嚙嚣嚥嚨嚮嚯嚳嚴嚷嚼囀囂囈囉囊囌囑囔囗囚囝囟囡囤囪囫囱囵囷囹囿圂圃圄圇圉圊國圍園圓圖團圙圜圣圤圩圪圬圭圮圯圳圹圻圼坂坊坌坍坎坑坒坛坜坝坞坟坠坤坦坨坩坪坫坭坯坳坴坶坷坻坼垂垄垅垆垌垒垓垔垚垛垠垡垢垣垤垦垧垩垫垭垮垯垲垴垸埂埃埄埇埋埏埒埔埕埗埘埙埚埝埠埡埤埭埯埲埴埵埶執埸埼埽堀堃堅堇堊堋堍堑堕堙堞堠堡堤堪堯堰報場堿塄塊塋塌塍塔塕塗塚塞塢塥塬塲塵塹塾墀墁墅墉墊墒墓墚墜墟墨墩墮墳墻墼墾壅壇壑壓壕壘壞壟壢壩壬壮壯壳壴壶壹壺壽夂夃夅夆夊夋夌夔夗夙夠夢夤夥夬夭夯夲夷夸夹夼夾奁奂奄奉奎奏奐奓奔奕奘奚奠奢奥奧奩奪奭奮奴奸奼妁妃妄妆妊妍妒妓妖妗妙妝妞妟妣妤妨妩妪妫妮妯妲妳妾姆姊姒姗姘姚姜姝姣姦姪姫姬姮姹姻娃娄娅娆娇娈娉娌娑娓娛娜娟娠娣娥娩娭娲娴娶娼婀婁婉婊婕婢婦婧婪婭婵婶婷婺婿媕媚媛媠媧媪媲媳媵媷媸媽媾嫁嫂嫉嫌嫒嫔嫖嫗嫘嫚嫜嫠嫡嫣嫦嫩嫪嫫嫱嫵嫻嬈嬉嬋嬌嬖嬗嬛嬪嬰嬲嬴嬷嬸孀孃孌孑孓孔孕孚孛孜孝孟孢孤孥孨孪孫孬孰孱孳孵學孺孽孿宀宁宄宅宇宋宏宓宕宗宙宛审宥宦宪宫宮宰宴宵宸寂寅寇寐寝寞寡寢寤寥實寧寨審寫寬寮寰寵寶寸寺寽寿尃射將專尉尋尌對導尕尖尗尘尙尜尞尢尣尥尧尨尬尴尷尸尹尻尼尿屁屃屄屆屈屉屌屍屎屐屑屙屚屜屠屡屢屣層屦屨屬屭屮屯屰屹屺屾屿岂岈岌岍岐岑岔岖岘岙岚岜岡岢岣岩岫岬岭岱岳岵岷岽岿峁峄峇峋峒峙峡峤峥峦峨峪峭峴島峻峽崂崃崆崇崎崑崒崔崖崗崙崛崞崢崤崦崧崩崭崮崴崽崾嵇嵊嵋嵌嵐嵒嵘嵛嵝嵞嵩嵫嵬嵯嵴嶂嶄嶇嶗嶙嶝嶡嶧嶪嶷嶸嶺嶼嶽巂巅巆巍巒巔巖巛川州巠巡巢巤巩巫巯巳巵巷巸巹巽巿帀帆帏帐帑帔帕帖帘帙帚帛帜帝帥帧師帱帳帶帷帻帼幀幂幃幄幌幔幗幛幞幟幡幢幣幫幬幹幺幻幾庀庇庋庐庑庖庙庚庞庠庥庫庳庵庶庸庹庾廁廂廄廈廉廌廑廒廓廖廚廛廝廟廠廡廢廣廥廨廩廪廬廳廴廷廾廿弁弇弈弊弋弑弒弓弔弗弘弛弥弦弧弩弪弭弮弳張強弼彀彆彈彊彌彎彐归彔彖彗彘彙彝彞彟彡彤彥彦彧彪彬彭彰彳彷彸役彿徂径徇徉徊後徐徑徒徕徘徙徜從徠御徨復循徭徯徴徵德徹徼徽忉忌忏忐忑忒忕忖忝忞忠忡忤忧忪忭忮忱忸忻忾忿怂怃怄怅怆怊怍怏怒怔怖怙怛怜怠怡怦怩怫怯怱怵怼怿恁恂恃恆恍恒恓恕恙恚恝恣恤恥恧恨恩恪恫恬恰恳恸恹恺恻恽恿悃悅悌悍悒悖悚悛悝悟悤悦悧悫悬悭悯悱悲悴悵悶悸悻悼悽惆惋惑惓惘惙惚惛惝惟惡惢惦惧惨惩惫惬惭惮惰惱惴惶惹惺惻愀愁愆愈愍愎愕愚愛愜愠愣愤愦愧愫愴愷愾慄慈慊態慌慍慑慘慚慝慟慣慨慪慫慮慳慴慵慶慷慼慾憂憊憋憎憐憑憔憚憝憤憧憨憩憫憬憲憶憷憹懇懈應懊懋懑懔懞懟懣懦懨懮懲懵懶懷懸懺懼懾懿戀戆戇戈戉戊戋戌戍戎戒戔戕戗戛戜戟戠戡戢戤戥戧截戬戮戰戲戳戶戽戾扁扂扃扆扈扉扎扑扒払托扛扢扦扪扭扯扳扼抃抄抉抑抒抖抗抚抛抟抠抡抨披抵抹抻抿拂拄拇拈拊拋拌拎拐拑拓拔拗拘拙拚拜拟拢拣拦拧拭拮拯拱拳拴拶拷拽挈挎挖挚挛挝挞挟挠挢挨挪挫振挲挹挽挾捂捃捅捆捉捋捌捍捎捏捕捞捣捧捨捩捫捭捱捲捶捷捺捻掀掂掃掄掇掊掎掏掐掖掘掙掛掠採掣掩掬掭掮掰掱掳掴掷掸掺掼掾揀揄揆揉揍揎揖揚換揞揠揣揩揪揭揮揲揶揸揽揿搀搁搂搅搋搌損搏搐搒搓搔搖搗搛搠搡搦搪搭搴搶携搽搿摀摁摅摈摊摑摒摞摟摧摩摭摯摳摶摹摺摻摽撂撄撅撇撈撐撑撒撓撕撖撙撣撤撥撩撫撬撮撰撲撳撵撷撸撺撻撼撾撿擀擁擂擄擇擊擋擎擐擒擔擗擘據擞擠擡擢擤擬擯擰擱擲擴擷擺擻擼擾擿攀攆攉攏攒攔攘攙攛攜攝攢攣攤攥攪攫攬攮攴攸攻敃敄敉敕敖敗敘敛敝敞敦敪敫敵敷數敻斂斃斋斌斐斑斓斕斛斟斡斥斦斧斩斫斬斯斲斷於斿旃旄旆旉旋旌旎旒旖旗旡旬旭旮旯旰旱旲旷旺昀昂昃昇昉昊昌昏昔昕昙昜昝昧昫昬昭昱昴昵昶昷昼晁時晃晉晋晌晏晓晔晕晖晗晝晟晡晤晦晬晶晷晾暄暆暇暈暉暋暌暝暠暡暢暧暨暫暮暱暹暾曄曆曇曉曖曙曚曛曜曝曠曦曩曬曰曱曳曷書曹曼朁會朊朐朔朕朦朧札朮朱朴朽朿杀杈杉杌杏杓杖杜杞杠杨杩杪杭杰東杲杳杵杷杼枇枉枋枒枓枕枘枚枞枢枣枥枧枨枪枫枭枯枰枳枵枷枸枼柁柃柄柊柏柑柒柔柘柙柚柝柞柠柢柩柬柯柰柱柳柴柵柽栀栅栈栉栊栌栎栓栖栗栝栩株栱栲栳栴核栽栾桀桁桂桄桅框桉桊桎桐桑桓桔桕桠桡桢桤桦桧桨桩桫桲桴桷桼桿梃梅梆梏梓梔梗條梟梢梣梧梭械梳梵梼梾梿棂棄棉棍棕棗棘棚棟棠棣棥棧棰棱棲棶棹棺棻棼椁椆椋椎椐椒椟椠椤椥椪椭椰椴椹椽椿楂楊楓楔楗楙楛楝楞楠楣楦楨楫業楮楱極楷楸楹榀榄榅榆榇榈榉榍榔榕榘榛榜榧榨榫榭榮榱榲榴榷榻榿槀槁槃槊構槌槍槎槐槓槔槛槜槟槠槤槨槭槲槳槺槽槿樁樂樅樆樊樑樓樗樘標樛樞樟樣樨横樯樱樵樸樹樺樽樾橄橇橈橋橐橛機橢橥橫橱橹橼橾檀檃檄檎檐檑檔檗檜檠檢檩檫檬檮檯檳檵檸檻櫃櫆櫓櫚櫛櫞櫟櫥櫪櫫櫱櫸櫻欄權欒欖欞欤欮欲欶欷欸欹欺欻欽欿歃歆歇歎歐歔歙歛歡歧歨歪歰歲歷歸歹歺歼殁殂殃殄殆殇殉残殍殒殓殖殗殘殚殛殞殡殤殪殫殭殮殯殲殳殴殷殸殹殺殼殽殿毀毁毂毄毅毆毋毌毒毓毖毗毙毚毡毪毫毯毳毵毹毽氂氅氆氇氈氍氐氓氕氖氘氙氚氜氟氡氢氣氤氦氧氨氩氪氫氮氯氰氲氳氶氹氽氾氿汀汆汊汐汒汔汕汛汜汝汞汧汨汩汪汰汲汴汶汹決汾沁沂沅沆沇沈沌沏沐沒沓沔沖沛沣沤沥沦沧沩沪沫沭沮沱沲沸沼沽沾況泄泅泆泊泌泐泓泔泖泗泙泞泠波泣泥泫泮泯泰泱泵泶泷泸泺泻泽泾洄洇洌洎洙洚洛洣津洧洨洩洪洫洮洰洱洳洵洶洹洼洽浃浈浉浊浍浐浑浒浔浙浚浜浞浠浣浦浩浮浯浴浹浼浽涂涅涇涌涎涑涓涔涕涖涛涝涞涟涠涡涣涤涧涩涪涫涮涯液涵涸涼涿淀淄淅淆淇淋淌淑淒淖淘淙淚淝淞淠淤淥淦淨淩淪淫淬淮淯淳淵淶淹淺添淼渊渌渍渎渑渔渖渗渙渚減渝渡渣渤渥渦渫測渭渲渺渾湃湄湉湊湍湎湓湔湘湛湞湟湣湧湫湮湯湴湼湾溃溅溆溉溏準溘溜溝溟溢溥溦溧溪溫溱溲溴溶溷溺溻溽滁滂滄滅滇滊滋滌滎滏滓滔滕滗滞滟滠滢滤滥滦滨滩滬滯滲滴滷滸滹滻滾滿漁漆漉漓漕漚漢漣漤漩漪漬漭漯漱漲漳漵漶漸漼漾漿潆潇潋潍潑潔潘潛潜潞潟潢潤潦潭潮潯潰潲潴潸潺潼潽澀澄澆澇澈澉澌澍澎澗澜澠澤澥澧澱澳澶澹濁濂濃濉濊濑濒濕濘濛濞濟濠濡濤濫濮濯濰濱濺濾瀆瀉瀋瀏瀑瀕瀘瀚瀛瀝瀟瀣瀧瀨瀰瀵瀹瀾灏灑灘灞灣灶灸灼災灿炀炅炆炉炊炏炔炕炖炙炜炝炤炫炬炭炮炯炱炳炷為炻炽烀烁烂烃烊烏烕烘烙烛烜烝烨烩烬烯烴烷烹烽焉焊焌焐焓焕焖焗焘焙焚無焢焦焯焰焱煅煆煉煊煌煎煙煜煞煢煤煥煦煨煩煬煲煳煸煺煽熏熒熔熘熙熜熠熨熰熱熳熵熹熾燅燈燉燎燒燔燕燙燜營燠燥燦燧燬燭燮燴燹燻燼燾爆爇爌爍爐爛爝爨爪爭爯爰爵爹爺爻爽爾爿牆牍牒牖牘牚牝牟牠牡牢牦牧牮牯牲牴牵牸牺牽牾牿犀犁犂犄犊犋犍犎犏犒犟犢犧犪犬犮犰犴犷犸犾狀狁狃狄狈狉狊狍狎狐狒狙狞狠狡狨狩狭狮狯狰狱狲狳狴狷狸狹狺狻狼狽猁猃猇猊猋猎猒猓猕猖猗猙猛猝猞猡猢猥猩猬猱猲猳猵猶猷猸猹猻猾猿獄獅獍獎獐獒獗獠獨獬獭獯獲獵獷獸獻獾玃玄玎玑玓玖玗玛玟玡玢玨玮玲玳玷玺珀珂珈珉珊珏珐珑珙珞珠珤珥珧珩珮珲現琅琉琊琏琐琚琛琢琥琦琨琪琬琮琰琳琵琶琼瑁瑄瑋瑕瑗瑙瑚瑛瑜瑞瑟瑣瑤瑩瑪瑭瑯瑱瑶瑷瑾璀璁璇璋璎璐璚璜璞璣璦璧璨璩環璺璽瓅瓊瓏瓒瓔瓞瓠瓢瓣瓤瓦瓮瓯瓴瓷瓿甄甌甍甏甑甓甕甘甙產産甤甥甦甩甪甫甬甭甯田甴甸甹町甾畀畅畈畋畎畏畐畑畔畚畛畜畝畟畢畦畧畫畬異畲畴當畸畹畺畾畿疃疆疇疊疋疌疏疐疒疔疖疙疚疝疟疠疡疣疤疥疫疬疭疮疰疱疳疴疵疸疹疽痂痃痄症痈痉痊痍痒痔痕痖痘痙痞痢痣痤痦痧痨痪痫痰痱痲痴痹痺痼痾痿瘀瘁瘃瘅瘊瘋瘌瘐瘓瘕瘗瘘瘙瘛瘜瘟瘠瘡瘢瘤瘥瘧瘩瘪瘫瘭瘰瘲瘳瘴瘵瘸瘼瘾瘿癀療癃癆癇癉癌癍癒癔癖癘癜癞癟癡癢癣癥癧癩癫癬癮癯癰癱癲癶癸發皂皃皅皆皇皈皋皎皑皒皓皕皖皙皚皤皦皰皱皲皴皺皻皿盂盃盅盈盍盎盏监盔盗盛盜盞盟盡監盤盥盧盪盯盱盲盹盼眄眇眈眉県眍眔眙眚眢眥眦眨眩眬眭眯眳眵眶眷眸眺眽眾睁睃睇睏睐睑睘睚睜睞睢督睥睦睨睪睫睬睹睽睾睿瞀瞄瞅瞇瞈瞋瞌瞍瞎瞑瞒瞓瞘瞜瞞瞟瞠瞢瞥瞧瞩瞪瞬瞭瞰瞳瞵瞻瞼瞽瞿矇矍矓矚矜矞矢矣矦矧矩矫矬矯矶矸矻矽矾砀砂砉砌砍砑砒砖砗砘砚砜砝砟砣砥砦砧砩砬砭砰砲砷砸砹砺砻砼砾硃硅硇硌硎硐硒硖硗硙硝硪硫硭硯硷硼碇碉碑碓碘碚碛碜碟碡碣碥碧碩碱碲碳碴碹確碼碾磁磅磉磊磋磐磔磕磙磚磨磬磯磲磴磷磺礁礅礎礓礙礞礤礦礬礴祀祁祆祇祈祉祎祓祕祖祗祘祚祛祜祟祠祢祥祧祭祯祷祺祿禀禄禅禊禍禎禕禚禛禦禧禪禮禰禱禳禸禹禺禼禽禾禿秃秆秉秕秝秣秤秦秧秫秭秸秽稀稂稃稅稆稈稔稗稙稚稜稞稟稠稣稨種稱稷稹稻稼稽稿穀穆穌積穎穑穗穡穢穩穫穰穴穵穸穹窀窃窅窆窈窍窑窒窕窖窘窜窝窟窠窣窥窦窨窩窪窬窭窮窯窳窸窺窾窿竄竅竇竈竊竖竘竣竦竭競竺竽竿笃笄笆笈笊笋笏笕笙笛笞笠笤笥笪笫笮笱笳笸笺笼笾筀筅筆筇筊筋筌筍筏筒筕筘筚筛筜筝筠筢筦筮筱筲筵筹筻筼箅箋箍箏箐箓箔箕箜箝箢箦箧箨箩箪箫箬箭箴箸節篁範篆築篋篌篑篓篔篙篚篝篡篤篥篦篩篪篱篳篷篹篼篾簇簉簋簌簏簖簞簟簡簣簦簧簪簫簷簸簹簽簾簿籀籁籃籌籑籙籟籠籤籬籮籲籴籼籽粉粑粒粕粘粜粝粞粟粢粤粥粦粪粱粲粳粵粹粼粽糁糅糇糈糌糍糗糙糜糞糠糢糧糨糬糯糰糲糸糾紀紂約紅紆紇紈紉紊紋納紐紓純紕紗紙級紛紜紡紥紮細紳紹紺紼絀終組絆絎結絓絕絘絛絜絞絡絢給絨絮統絲絳絷絹絻綁綏經綜綠綢綣綦綬維綮綱網綴綵綷綸綹綺綻綽綿緄緊緋緒緘線緝緞締緣編緩緬緯緲練緻縈縉縊縕縛縞縟縣縧縩縫縭縮縱縴縵縷縹縻總績繃繆繇繒織繕繚繞繡繩繪繫繭繯繰繳繹繼繽繾纂纈續纍纏纓纔纖纛纜纠纡纣纤纥纨纩纫纬纭纯纰纱纲纳纴纵纶纹纺纽纾绀绁绂绅绉绊绋绌绎绐绑绒绔绗绘绚绛绞绠绡绢绣绥绦绨绫绮绯绰绱绲绵绶绷绸绺绻绽绾缀缁缂缃缄缅缆缇缈缉缊缋缌缍缎缏缑缒缔缕缗缘缙缚缛缜缝缟缠缡缢缣缤缥缦缧缨缪缫缬缭缮缯缰缱缲缳缴缵缶缸缽罂罄罅罈罌罐罓罔罕罗罘罙罟罡罢罨罩罪罰罱罴罵罷罹罾羁羅羆羈羋羌羍羔羕羚羝羟羥羧羨義羯羰羲羴羸羹羼羿翁翊翌翎翏習翔翕翘翟翠翡翥翦翩翮翰翱翳翹翼耀耂耄耆耋耍耑耒耔耕耖耗耘耙耜耠耢耤耥耦耧耨耩耪耱耴耵耶耷耸耻耽耿聂聃聆聋聍聒聖聞聩聯聰聱聲聳聵聶職聽聾聿肀肄肅肆肇肋肓肘肙肛肜肝肟肠肢肩肪肫肭肮肰肱肷肺肼肽肾肿胀胂胄胍胎胗胙胚胛胝胞胠胤胥胧胨胩胪胫胬胭胯胰胱胲胴胶胸胺胼脂脅脆脈脉脊脍脎脐脒脓脔脘脛脞脢脣脩脫脬脯脲脶脷脹腆腈腊腋腌腎腑腓腔腕腖腙腚腠腥腦腧腩腫腭腮腱腳腴腸腹腺腻腼腽腾膂膃膈膑膕膘膚膛膜膝膠膣膦膨膩膪膫膲膳膺膻膽膾膿臀臁臂臃臆臉臊臌臍臘臚臜臟臠臢臣臤臥臧臨臬臱臲臺臻臼臽臾臿舀舁舂舄舅舆與興舉舊舋舌舐舔舖舛舜舟舡舢舣舨舫舭舯舰舱舲舳舴舵舶舷舸舻舾艄艅艇艉艋艎艏艘艙艚艟艦艨艮艱艳艴艷艸艻艽艾艿芄芈芊芋芍芎芏芑芒芗芘芙芜芝芟芡芤芥芦芨芩芪芫芬芭芮芯芰芳芴芷芸芹芻芾苁苄苇苈苊苋苌苍苎苏苑苒苓苔苕苗苘苛苜苞苟苠苡苣苤苧苫苯苲苴苷苻茀茁茂茅茆茇茈茉茌茎茏茑茔茕茗茚茛茜茧茨茫茬茭茯茱茲茳茴茵茸茹茺茼荀荃荅荆荇荊荏荑荒荔荚荛荜荞荟荠荡荤荥荦荧荨荩荪荫荬荭荮荷荸荻荼荽莅莆莉莊莎莒莓莖莘莛莜莞莠莢莧莨莩莪莫莰莱莲莳莴莶莸莹莺莼莽莿菀菁菅菇菊菌菏菐菔菖菘菝菟菠菡菥菩菪華菰菱菲菸菹菽萁萃萆萊萋萌萍萎萏萑萘萜萝萠萤萦萧萨萬萱萸萼葄葆葉葑葙葚葛葜董葦葩葫葬葭葱葳葵葶葷葸葺蒂蒇蒈蒉蒋蒌蒎蒐蒓蒔蒗蒙蒜蒞蒟蒡蒦蒭蒯蒲蒴蒸蒹蒺蒻蒼蒽蒿蓁蓂蓄蓉蓊蓋蓍蓐蓑蓓蓔蓖蓟蓠蓣蓥蓦蓬蓮蓰蓴蓼蓽蓿蔌蔑蔓蔔蔗蔚蔟蔡蔣蔥蔫蔭蔷蔸蔹蔺蔻蔼蔽蕃蕈蕊蕎蕑蕒蕓蕕蕖蕘蕙蕞蕠蕢蕤蕨蕩蕪蕭蕲蕴蕷蕹蕺蕻蕾薅薇薈薊薌薏薑薔薛薜薤薦薨薩薪薮薯薰薳薶薷薹薺藁藇藉藍藐藒藓藕藘藜藝藤藥藨藩藪藭藹藺藻藿蘄蘅蘆蘇蘊蘋蘑蘖蘘蘚蘞蘢蘧蘩蘭蘵蘸蘺蘼蘿虍虏虐虒虔處虖虘虛虜虞號虢虧虬虮虰虱虹虺虻虼虾虿蚀蚁蚂蚊蚋蚌蚍蚓蚕蚖蚜蚝蚣蚤蚧蚨蚩蚪蚬蚯蚰蚱蚴蚵蚶蚺蛀蛄蛆蛉蛊蛎蛏蛐蛑蛔蛘蛙蛛蛜蛞蛟蛤蛩蛭蛮蛰蛱蛲蛳蛴蛵蛸蛹蛺蛻蛾蜀蜂蜃蜇蜈蜉蜊蜍蜎蜒蜓蜕蜗蜘蜚蜜蜞蜡蜢蜣蜥蜩蜮蜱蜴蜷蜻蜾蜿蝇蝈蝉蝌蝎蝓蝕蝗蝙蝟蝠蝣蝤蝥蝦蝨蝮蝰蝸蝻蝼蝽蝾螂螃螄螅螈螉螋融螓螗螞螟螢螨螫螬螭螮螯螳螵螻螽蟀蟄蟆蟈蟊蟋蟎蟏蟑蟒蟓蟛蟜蟟蟠蟢蟣蟥蟪蟬蟭蟮蟯蟲蟹蟻蟾蠃蠅蠊蠍蠑蠓蠔蠕蠖蠛蠟蠡蠢蠣蠨蠮蠱蠲蠵蠶蠹蠻蠼衄衅衆衊衍術衔衕衖衙衚衛衝衢衩衮衰衲衷衹衽衾衿袁袂袄袅袈袍袒袖袞袟袢袤袭袮袯袱袴袷袼裂裆裇裉裊裎裏裒裔裕裘補裝裟裡裢裣裥裨裰裱裳裴裸裼製裾褂複褊褐褒褓褙褚褛褟褡褥褪褫褰褱褲褳褴褵褶褸褻襁襄襖襞襟襠襢襤襦襪襫襯襲襻襾覃覈見規覓視覘覡覦親覬覲覷覺覽觀觅觇觊觋觌觎觏觐觑觖觚觜觞觥觫觯觱觳觴觸訁訂訃訇計訊訌討訓訕訖託記訚訛訝訟訢訣訥訪設許訴訶診註訾詆詈詐詒詔評詛詞詠詡詢詣試詩詫詬詭詮詰話該詳詹詼詿誅誆誇誉誊誌認誑誒誓誕誘誙誚語誠誡誣誤誦誨說誰課誹誼誾調諂諄談諉請諒論諛諜諠諡諢諤諦諧諫諭諮諱諳諶諷諸諺諾謀謁謂謄謅謇謊謎謐謔謗謙謚講謝謠謦謨謫謬謳謹謾證譎譏譖識譙譚譜譫譬譭譯議譴護譽讀變讌讒讓讕讖讚讞讣讥讦讧讪讫讬讯讳讴讵讶讷讹讼讽诀诂诃诅诋诌诎诏诒诓诔诖诘诙诛诜诞诟诠诡诣诤诧诨诩诫诬诮诰诱诲诳诵诶诸诹诺诼诽诿谀谂谄谆谇谋谌谍谎谏谐谑谒谓谔谕谖谗谘谙谚谛谜谝谟谠谡谣谤谥谦谧谩谪谫谬谭谮谯谰谱谲谳谴谵谶谷谿豁豇豈豉豊豌豎豐豔豕豖豙豚豢豦豩豪豬豱豳豸豹豺豻貂貅貇貉貊貍貓貔貘貝貞負財貢貧貨販貪貫責貯貲貳貴貶買貸費貼貽貿賀賁賂賃賄賅資賈賊賏賑賒賓賙賚賜賞賠賢賣賤賦質賬賭賴賺購賽贄贅贈贊贍贏贓贔贖贗贛贞贤贩贪贫贬贮贯贰贱贲贳贶贸贻贼贽贾贿赀赁赂赃赅赆赇赈赉赊赋赌赍赎赐赑赒赓赕赖赘赙赜赝赡赣赤赦赧赫赭赳赵赸趁趄趑趔趕趙趦趨趯趱趴趵趸趺趼趾趿跂跃跄跆跋跌跎跏跖跗跚跛跞跡跣跪跫跬跶跷跸跹跺跻跽踅踉踊踌踏踐踔踘踝踞踟踣踥踩踬踮踯踱踴踵踶踹踺踽蹀蹁蹂蹄蹇蹉蹊蹋蹌蹑蹒蹙蹚蹟蹡蹣蹤蹦蹧蹩蹬蹭蹯蹰蹲蹴蹶蹺蹼蹿躁躂躅躇躉躊躋躍躏躐躑躓躔躕躚躜躞躡躥躪躬躯軀軃車軋軌軍軎軒軔軛軟軫軲軸軻軼軾輂較載輊輒輓輔輕輛輝輟輥輦輩輪輬輯輸輻輾輿轀轂轄轅轆轉轍轎轗轘轟轡轤轧轨轩轫轭轰轱轲轳轴轵轶轷轸轹轺轼轾轿辁辂辄辅辇辉辊辋辌辍辎辏辐辒辔辕辖辗辘辙辚辜辟辥辦辨辩辫辭辮辯辰辱農辵辽迂迄迈迓迕迢迤迥迦迨迩迪迫迭迮迳迴迶迸逃逄逅逆逊逋逍逑逕逖逗這逝逞逡連逦逭逮逯週進逵逶逸逼逾遀遁遂遄遊運過遏遐遑遒達違遘遙遛遜遞遠遢遣遥遨適遭遮遲遴遷選遺遼遽邁邂邃還邇邈邊邋邏邑邓邕邗邘邙邛邝邠邡邢邦邨邪邬邯邰邱邳邴邵邶邸邹邺邾郁郄郅郇郏郐郑郓郗郛郜郝郟郡郢郤郦郧郫郭郯郴郵郸郾鄂鄄鄆鄉鄋鄒鄖鄙鄞鄢鄣鄦鄧鄭鄯鄰鄱鄲鄴鄹酃酆酉酊酋酌酎酏酐酕酖酗酚酝酞酡酢酣酤酥酦酩酪酬酮酯酰酱酲酴酵酶酷酹酽酾酿醃醄醅醇醋醌醍醐醑醚醛醜醞醢醣醪醫醬醭醮醯醱醴醵醺釀釁釆釉釋野釐釗釘釜針釣釦釧釩釵釺鈀鈄鈆鈉鈍鈎鈔鈕鈞鈣鈦鈬鈴鈷鈺鈽鈾鈿鉀鉄鉅鉉鉗鉚鉛鉞鉤鉧鉴鉸鉻鉾銀銃銅銎銑銓銖銘銚銜銨銬銮銲銳銷銹銼銾鋁鋃鋅鋇鋈鋌鋒鋤鋥鋦鋩鋪鋯鋰鋸鋼錄錐錒錕錘錙錚錠錢錦錨錫錮錯録錳錶錾鍁鍊鍋鍛鍥鍪鍬鍵鍾鎂鎊鎏鎔鎖鎛鎢鎣鎦鎧鎩鎬鎮鎳鏈鏊鏖鏟鏡鏢鏽鐐鐘鐮鐲鐵鐺鐾鑄鑊鑑鑒鑔鑞鑠鑢鑣鑪鑫鑭鑰鑲鑷鑼鑽鑾鑿钆钇钉钊钋钌钍钎钏钐钒钓钔钕钗钙钚钛钜钝钞钠钡钣钤钦钧钨钩钪钫钬钭钯钰钲钳钴钵钶钷钸钹钺钼钽钾钿铀铂铄铆铈铉铊铋铌铍铎铐铑铒铓铕铖铗铘铙铛铜铝铞铟铠铡铢铣铤铥铧铨铩铪铫铬铭铮铯铰铱铲铳铴铵铷铸铹铺铼铽链铿锂锃锄锆锇锈锉锊锋锌锍锎锏锐锑锒锓锔锕锖锗锘锚锛锝锞锟锡锢锣锤锥锦锨锩锪锫锬锭锯锰锱锲锴锵锶锷锸锹锺锼锾锿镀镁镂镄镅镆镇镈镉镊镌镍镎镏镐镑镒镓镔镕镖镗镘镙镚镛镝镞镟镡镢镣镤镥镦镧镨镩镪镫镬镭镯镰镱镲镳镴镶長門閂閃閉開閎閏閑閒間閔閘閡閣閤閥閦閨閩閫閬閭閱閵閶閹閻閼閾闃闆闈闉闊闌闔闕闖關闞闡闢闩闪闫闯闰闱闳闵闶闷闸闺闼闽闾阀阁阂阃阄阆阇阈阉阊阋阌阍阎阏阐阑阒阕阖阗阙阚阜阞阡阢阪阮阱阼阽陀陂陇陉陋陏陔陕陘陛陜陝陞陟陡陣陧陨陬陰陲陳陴陵陶陷陸陽隄隅隆隈隉隊隋隍階隐隕隗隘隙際隡隧隨險隰隱隳隴隶隸隹隺隻隼隽雀雁雄雅雇雈雉雋雌雍雎雏雐雒雔雕雖雙雚雛雜雝雞雠離難雩雯雲雳雷雹電霁霂霄霅霆霈霉霍霎霏霑霓霖霜霝霞霡霢霧霪霭霰霸霹霽霾靂靈靑靓靖靚靛靜靡靥靦靳靴靶靼鞅鞍鞏鞑鞒鞔鞘鞠鞣鞦鞫鞭鞮鞯鞲鞴韁韃韆韋韌韓韙韜韦韧韩韪韫韬韭韰韱韵韶韻響頁頂頃項順須頊頌頏預頑頒頓頗領頜頡頤頦頭頰頷頸頹頻顆題額顎顏顓顗願顙顛類顥顧顫顬顯顰顱顳顴顸顼顽颀颁颂颃颅颇颈颉颊颌颍颏颐颓颔颖颚颛颞颟颠颡颢颤颥颦颧風颭颯颱颳颶颻颼飄飆飐飑飒飓飕飖飘飙飚飛飢飧飨飩飪飫飬飭飯飲飴飼飽飾餃餄餅餉養餌餍餎餑餒餓餕餘餚餛餞餡館餬餮餵餼餾餿饃饅饈饉饊饋饌饑饒饔饕饗饜饞饢饥饧饨饩饪饫饬饯饲饴饵饶饷饸饹饽馀馁馂馄馅馇馊馋馍馏馐馑馓馔馕馗馘馥馨馬馭馮馱馳馴駁駐駑駒駕駙駛駝駟駢駭駮駱駿騁騅騎騖騙騫騭騮騰騶騷騾驀驅驊驌驎驕驗驚驛驟驢驤驥驦驪驭驮驯驰驱驳驴驵驷驸驹驺驻驼驽驿骀骁骅骆骇骈骊骋骏骐骒骓骕骖骘骚骛骜骝骞骟骠骡骢骣骥骦骧骨骯骰骱骶骷骸骺骼髀髁髂髅髋髌髑髒髓體髕髖髟髡髦髫髭髮髯髹髻鬃鬄鬆鬈鬍鬏鬒鬓鬚鬟鬢鬣鬥鬧鬨鬩鬭鬮鬯鬱鬲鬳鬻鬼魁魂魃魄魆魇魈魉魍魎魏魑魔魖魘魚魝魠魯魷鮃鮑鮨鮪鮫鮭鮮鯇鯉鯊鯔鯕鯖鯗鯛鯡鯢鯤鯧鯨鯪鯫鯰鯷鯽鰂鰆鰈鰓鰟鰣鰥鰭鰱鰲鰹鰻鰾鱀鱄鱅鱆鱈鱉鱒鱔鱖鱗鱘鱠鱣鱥鱧鱷鱸鱺鱻鱿鲁鲂鲃鲅鲆鲇鲈鲋鲍鲎鲐鲑鲒鲔鲕鲗鲙鲚鲛鲞鲟鲠鲡鲢鲣鲤鲥鲦鲧鲨鲩鲫鲭鲮鲯鲰鲱鲲鲳鲴鲵鲶鲷鲸鲺鲻鲼鲽鳀鳃鳄鳅鳆鳇鳊鳋鳌鳍鳎鳏鳐鳑鳓鳔鳕鳖鳗鳘鳙鳜鳝鳞鳟鳢鳣鳥鳧鳩鳳鳴鳶鴂鴆鴇鴈鴉鴒鴔鴕鴛鴞鴟鴣鴦鴨鴯鴰鴴鴻鴿鵂鵑鵒鵓鵜鵝鵠鵡鵪鵬鵯鵰鵲鵾鶇鶉鶊鶓鶖鶘鶚鶩鶬鶯鶴鶹鶺鶻鶼鷀鷂鷄鷈鷉鷓鷗鷙鷦鷫鷯鷲鷸鷹鷺鷿鸂鸊鸕鸘鸚鸛鸝鸞鸠鸢鸣鸥鸦鸧鸨鸩鸪鸫鸬鸮鸯鸰鸱鸲鸳鸵鸶鸷鸸鸹鸺鸻鸾鸿鹁鹂鹃鹄鹅鹆鹇鹈鹉鹊鹋鹌鹍鹎鹏鹑鹒鹔鹕鹗鹘鹙鹚鹛鹜鹞鹠鹡鹣鹤鹦鹧鹨鹩鹪鹫鹬鹭鹮鹰鹱鹳鹴鹵鹹鹼鹽鹾鹿麂麃麇麈麋麒麓麗麝麟麥麦麩麯麴麵麸麼麽麾麿黃黉黍黎黏黔黛黜黝點黟黠黢黥黧黨黩黪黯黴黷黹黻黼黽黾黿鼂鼉鼋鼍鼎鼐鼕鼗鼙鼢鼩鼬鼯鼱鼴鼷鼹鼽鼾齄齊齋齌齎齑齒齙齜齟齡齦齧齪齬齮齱齲齵齶齷龀龃龅龆龇龈龉龊龋龌龍龐龔龕龚龛龜龟龠龥龶龹龺",
+  "exampleReviewStatus": {
+    "beginner_editorially_reviewed": 600,
+    "draft_editorially_authored_not_native_certified": 3200,
+    "editorial_not_native_certified": 3400
+  },
+  "sources": [
+    {
+      "file": "importer/hsk/hsk3_level1_1.7.1.json",
+      "sha256": "825b7b60f91fd55dc79b856f419cc240a327b38195936af064113e8efd821c49"
+    },
+    {
+      "file": "importer/hsk/hsk3_level2_1.1.1.json",
+      "sha256": "3b1fdb54b150f48550b8a0276098206fcf80274fcf956f18f9d34f832f804f50"
+    },
+    {
+      "file": "importer/hsk/hsk3_level3_1.1.2.json",
+      "sha256": "d482af00f9c6223aad5af2ee73aec1a087602e69ca38ff609206d36d21c4a434"
+    },
+    {
+      "file": "importer/hsk/hsk3_level4_1.1.1.json",
+      "sha256": "bf7ff1b42c19069f41869e754ad140e1b6110be49b441ae7bfdeaa5583e976c3"
+    },
+    {
+      "file": "importer/hsk/hsk3_level5_1.0.5.json",
+      "sha256": "cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ABILITIES_INTERESTS/TOPIC_LESSON_ABILITIES_INTERESTS.json",
+      "sha256": "44b960a22dda2febc15691022a7cb1e7be7bdc42d784e18586b35cba1a7cb8c1"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_ANIMALS_AND_WEATHER/TOPIC_LESSON_ANIMALS_AND_WEATHER.json",
+      "sha256": "c6a0ad908334ec5e0a3ed30e410e78f38af7893b3e95b98ca405e032f345775f"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_BASIC_NEGATION_PARTICLES/TOPIC_LESSON_BASIC_NEGATION_PARTICLES.json",
+      "sha256": "8b2f92866cc32e5c96bbaaa787ab137b9b60616dce19369a5e500ab705573d34"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CLOCK_AND_DAY/TOPIC_LESSON_CLOCK_AND_DAY.json",
+      "sha256": "d0bde1192f9ca1a5f4f315c17bfba8d1bd8844bb7104e58c462a18cc806e5810"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_CONNECTING_IDEAS/TOPIC_LESSON_CONNECTING_IDEAS.json",
+      "sha256": "030433331bbc0e8aec2ce99de9e6a6a473a4f80192362662787caf0b3ba0f4e8"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_COUNTING_NUMBERS/TOPIC_LESSON_COUNTING_NUMBERS.json",
+      "sha256": "37d932db13217c5ffa9f9a02c9ab1602325c4ffe3b696cda0b8127e543ab5701"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DATES_CALENDAR/TOPIC_LESSON_DATES_CALENDAR.json",
+      "sha256": "023c8243ab757bf089574cc6a41e1813d7ba46adc7adf6d12c3c424fcdf4ce20"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_DESCRIBING_FEELINGS/TOPIC_LESSON_DESCRIBING_FEELINGS.json",
+      "sha256": "7eca0f3546a38a11b1d42b4540d8578f862d877fe366af1c3e362541718c8569"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_EVERYDAY_ACTIONS/TOPIC_LESSON_EVERYDAY_ACTIONS.json",
+      "sha256": "9dac1639aa3325b0b56d080bedc896dbd49bae693e40ddd21f78f52a37b880fb"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FAMILY_AND_FRIENDS/TOPIC_LESSON_FAMILY_AND_FRIENDS.json",
+      "sha256": "9eaa9f51adcb3c96a45f7827729dd63078080dd8aafffd28eb7f60b96d68e521"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_FOOD_AND_MEALS/TOPIC_LESSON_FOOD_AND_MEALS.json",
+      "sha256": "7e3be67538d154d3576160130e1886326b318a0a24529b5e62254805280a12e0"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_GETTING_AROUND/TOPIC_LESSON_GETTING_AROUND.json",
+      "sha256": "19f08dbfc34c2f112cc6aad84aece7da399e61a418baa69e27914103be8748da"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_HEALTH_AND_REST/TOPIC_LESSON_HEALTH_AND_REST.json",
+      "sha256": "00a8a733644148c0ac0af67b3a73e79a23d17e749d31b84007f21b15c7ad6736"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PEOPLE_AND_WORK/TOPIC_LESSON_PEOPLE_AND_WORK.json",
+      "sha256": "89237798857958dffa2206e0becebbab3187c406308a868b9fd4eaa1924f5ee8"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_PERSONAL_PRONOUNS/TOPIC_LESSON_PERSONAL_PRONOUNS.json",
+      "sha256": "c573be2e88641040205326174397053c7791923488a32eb0ebf0d81c90688e9d"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUANTITIES_CLASSIFIERS/TOPIC_LESSON_QUANTITIES_CLASSIFIERS.json",
+      "sha256": "8c718f908bcff79a96925756360766089551f6d07c7ec6a205df0d2506cb2c40"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_QUESTIONS_AND_POINTING/TOPIC_LESSON_QUESTIONS_AND_POINTING.json",
+      "sha256": "9f5c9247183750fa2a9a7e8fedfef382ea97860aa9ebacc3acd2cd6c2db35c01"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES/TOPIC_LESSON_SCHOOL_PEOPLE_PLACES.json",
+      "sha256": "5b926df220b913fe239b16a8f2c15759ad0b4d84fc1c100af6b99ac3b3ee9a99"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SHOPPING_AND_THINGS/TOPIC_LESSON_SHOPPING_AND_THINGS.json",
+      "sha256": "d324df906bfef8fec8b8e6c07070da0a6e4a31a9b8b46b64be86d9f0521e50f8"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_SOCIAL_CONVERSATION/TOPIC_LESSON_SOCIAL_CONVERSATION.json",
+      "sha256": "08ac95e286a4d996ca3678e521adf3b5fc98cd1499b16e82a792c35641fa03b9"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level1/TOPIC_LESSON_STUDYING_AND_LANGUAGE/TOPIC_LESSON_STUDYING_AND_LANGUAGE.json",
+      "sha256": "6392720dff4e147a51e684f923708b8860f4d8c98a7e2aeec7be77adf33cbda9"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ABSTRACT_CONCEPTS/TOPIC_LESSON_ABSTRACT_CONCEPTS.json",
+      "sha256": "27f9671ea02ed7a6d84ad685598093cf48234afbaa5261435bcafe8990be41a8"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER/TOPIC_LESSON_ANIMALS_WEATHER.json",
+      "sha256": "86a4206318935b576c3da31400f1ff3f031761cc47cfa61afef6a4dd45c6dfc4"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_COMMUNICATION_SOCIAL/TOPIC_LESSON_COMMUNICATION_SOCIAL.json",
+      "sha256": "8c8dbe5657ff5368c8dcae01f14f63fb120ddfe9e9ce73caf409eb2b5cbb6d62"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS.json",
+      "sha256": "5f5edb23f6b89ec2142a8854d34299e3f4f2ed0a84009751568741a68f0da63a"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_ROUTINES_AND_PLANS/TOPIC_LESSON_DAILY_ACTIONS_ROUTINES_AND_PLANS.json",
+      "sha256": "da17d860a3e039338bd5e53a0380ffc41349c9d17f48b0cda7fc2ef2ae267b70"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_FAMILY_RELATIONSHIPS/TOPIC_LESSON_FAMILY_RELATIONSHIPS.json",
+      "sha256": "82225f7c4fafa0229d6b18c70c6c55e6a4fa79e8807660eab31c61ad6fb9552a"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_FOOD_DRINK/TOPIC_LESSON_FOOD_DRINK.json",
+      "sha256": "430fe49d026f31b01252abb305c07edbfd4a21d7e7714a2b3e75372eed40f756"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_CONNECTING_IDEAS/TOPIC_LESSON_GRAMMAR_FUNCTIONS_CONNECTING_IDEAS.json",
+      "sha256": "c1f3226ba3e0f9000f46be4d77436ffc923551718d391afc9f554d9b0ba365a8"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_GRAMMAR_FUNCTIONS_PARTICLES_AND_MODIFIERS/TOPIC_LESSON_GRAMMAR_FUNCTIONS_PARTICLES_AND_MODIFIERS.json",
+      "sha256": "f484ba1493d60b7f0da401743bd3aac121ce0558e8d6a971e6da0a6c5ec68dce"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_HEALTH_WELLBEING/TOPIC_LESSON_HEALTH_WELLBEING.json",
+      "sha256": "dc813094ed810398e4dea09e38c65b24645d5036eb9ddb7e583abf42fec83776"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_HOME_OBJECTS/TOPIC_LESSON_HOME_OBJECTS.json",
+      "sha256": "a560106128739fca88456b862583b7a497ed794212d18e01f7be3a000f722c96"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_LEISURE_MEDIA/TOPIC_LESSON_LEISURE_MEDIA.json",
+      "sha256": "f88163dc8d310ca06c4fa72bf9c22e4770651cd4737844345aca0d6011ef1e28"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_NUMBERS_QUANTITIES/TOPIC_LESSON_NUMBERS_QUANTITIES.json",
+      "sha256": "b0fe60ab7ecde2f237c6d9b06aa4512545999686a6f09902535826d10b0445f5"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PEOPLE_IDENTITY/TOPIC_LESSON_PEOPLE_IDENTITY.json",
+      "sha256": "6b77d37a0f8a145df41f14b7aee4274e191b43d23a5f76c6772fbf5f7bca91f5"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_FINDING_THE_WAY/TOPIC_LESSON_PLACES_DIRECTIONS_FINDING_THE_WAY.json",
+      "sha256": "7591447b0d86fead9be707290f0779a5228fc4930eb5eb6a8a8273d9352fdb83"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_LOCATION_AND_DISTANCE/TOPIC_LESSON_PLACES_DIRECTIONS_LOCATION_AND_DISTANCE.json",
+      "sha256": "4b297bc95617f3ac95205584d9ce222c87e8b54eab234550a159b1f49ccb8864"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_PLACES_DIRECTIONS_MOVEMENT_AND_DIRECTION/TOPIC_LESSON_PLACES_DIRECTIONS_MOVEMENT_AND_DIRECTION.json",
+      "sha256": "8d55808b5a7fd010d478a29b2d40d42223de6c45080636aef54cbe67b81c3d93"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_AND_COMPARISON/TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_AND_COMPARISON.json",
+      "sha256": "9f473383fe84fd8e11fac7352a732bd90ff147ec42540450425efb2b00fb8ca7"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_QUALITIES_FEELINGS_OPINIONS_AND_FEELINGS/TOPIC_LESSON_QUALITIES_FEELINGS_OPINIONS_AND_FEELINGS.json",
+      "sha256": "01b9d67627ff344ac677f8a5928b0289742ef2b8aeabfc742b9e1c69eb05eaa2"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_REFERENCE_QUESTIONS/TOPIC_LESSON_REFERENCE_QUESTIONS.json",
+      "sha256": "892191c1a1d8630f8d9fdbcf5d089f14f035c40b196543c170a9c634b6b9b9f1"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SCHOOL_LANGUAGE/TOPIC_LESSON_SCHOOL_LANGUAGE.json",
+      "sha256": "30f44e2db403172f1d7638eccf9a8f019133836c401dbb9e06084c679b10eda7"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SCIENCE_TECHNOLOGY/TOPIC_LESSON_SCIENCE_TECHNOLOGY.json",
+      "sha256": "190b14bcdb0df062d0ac5c97897c655f27cac26171a2492c0bdbf927fb59853f"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_SHOPPING_MONEY/TOPIC_LESSON_SHOPPING_MONEY.json",
+      "sha256": "e4c5d43d22cf22b756bd75da4bb4c9267b08c86494207486da0f5ada57a30e36"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_TIME_CALENDAR/TOPIC_LESSON_TIME_CALENDAR.json",
+      "sha256": "e08fa8d86ab868646358d50e5bcff3965d3a501db1b15d93cc8f9a98f2deb3e0"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_TRAVEL_TRANSPORT/TOPIC_LESSON_TRAVEL_TRANSPORT.json",
+      "sha256": "59ca5ce594a3757424f91cc4d903b4709c6d4ace9cd4cea5c6ee2b558ec825c9"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS/CONVERSATIONAL_LESSON_ASKING_DIRECTIONS.json",
+      "sha256": "d73e3da1d43475c3a664388c17ceb972d72ca5d5433330fe68981668b0c5a4a5"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES/CONVERSATIONAL_LESSON_CHOICES_ALTERNATIVES.json",
+      "sha256": "d2bb6838b4971739059b28d227080732242d5b144b24a2dac04b858918d64c50"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING/CONVERSATIONAL_LESSON_CLOCK_SCHEDULING.json",
+      "sha256": "910f84da4b5be5873bc5adc0d5912c5136c869bac1a0a62aa976df1a4c7f15ee"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_FOOD_DRINKS/CONVERSATIONAL_LESSON_FOOD_DRINKS.json",
+      "sha256": "db3f1e2bfab1794a70f7cb007d9ba72eb998f9408e62efa162e693d498aef277"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS/CONVERSATIONAL_LESSON_GREETINGS_POLITENESS.json",
+      "sha256": "413a66c44e6c2b94ec855d6a2649664243ae4e7562f0a6193fb5d46611f51976"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_MONEY_PRICES/CONVERSATIONAL_LESSON_MONEY_PRICES.json",
+      "sha256": "4f43de1f98e7ca9992b9ca80830fdf3024ea7000f32dbab1f72e45e6846af2c7"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.json",
+      "sha256": "e15733994c70701a08deb7194e2a2522eb805f19e68c7fca407baf23a5f0cdbc"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC/CONVERSATIONAL_LESSON_NUMBERS_ARITHMETIC.json",
+      "sha256": "ea1005526d000e22b3ee7c7f91a4aceb6026d9f43c95a424576550791713a73c"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY/CONVERSATIONAL_LESSON_PEOPLE_IDENTITY.json",
+      "sha256": "628ec3fbbed64941b965b5432613fcea48dff8a4d25e5c32ad7767360d3b5c48"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS/CONVERSATIONAL_LESSON_PERMISSION_REQUESTS.json",
+      "sha256": "9caa54a5be80214bf00a191ec2f8ae4a472fa2e18b2eeefaf84e113512c1f4bc"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.json",
+      "sha256": "52094cd219d93a4f51a9762c25b431689161c2d818c42a9bf50ad70ba63bd7f0"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PLACES_TO_MEET/CONVERSATIONAL_LESSON_PLACES_TO_MEET.json",
+      "sha256": "4575306339bd9c1a2c748393ab5d193d7698afdcea8734bf19d426b65ea95e4e"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES/CONVERSATIONAL_LESSON_SPEAKING_LANGUAGES.json",
+      "sha256": "2662221fc236a185ca16f5ea53fd05d07bf306d845e132c844a7f237aa413370"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER/CONVERSATIONAL_LESSON_TODAY_TOMORROW_LATER.json",
+      "sha256": "e069b433ae0b535f704bf8c8575bb93519432c578207310ad9779636f3fcdb3d"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION/CONVERSATIONAL_LESSON_UNDERSTANDING_CLARIFICATION.json",
+      "sha256": "73b7d475fb1f891199b348d6bbe07fdb2a4eba4a7891e872a1bf6f32e456ebb3"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WANTS_INTENTIONS/CONVERSATIONAL_LESSON_WANTS_INTENTIONS.json",
+      "sha256": "6969ad19ca3970c05e4aaa2955edf44f15d815727638f080d6e1d5728f9fa180"
+    },
+    {
+      "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_WITH_SOMEONE/CONVERSATIONAL_LESSON_WITH_SOMEONE.json",
+      "sha256": "44806d79432e278edf6a0f6a069f7b6eacd29c9b64e24993e9fcb4890df328d5"
+    }
+  ]
+}

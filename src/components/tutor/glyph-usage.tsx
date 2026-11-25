@@ -16,6 +16,24 @@ import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 import { SectionPlaceholder } from './section-placeholder';
+import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
+
+/** Optional sourced lesson fallback, fetched only for a Characters card with no
+ * vocabulary usage. Bind state to the exact record so navigation cannot flash
+ * the previous character's passage while the new lookup is pending.
+ */
+function useHskExample(recordId: string, enabled: boolean) {
+  const [loaded, setLoaded] = useState<{ recordId: string; example: CharacterHskExample | null } | null>(null);
+  useEffect(() => {
+    if (!enabled) return;
+    let cancelled = false;
+    loadCharacterHskExample(recordId).then(example => {
+      if (!cancelled) setLoaded({ recordId, example });
+    });
+    return () => { cancelled = true; };
+  }, [recordId, enabled]);
+  return enabled && loaded?.recordId === recordId ? loaded.example : null;
+}
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
 export function useGSourceParents(entry: LibraryEntry, kind: LibraryKind | null, includeTraditional: boolean, catalogVersion: number): LibraryEntry[] | null {
@@ -50,6 +68,7 @@ export function useRadicalParents(entry: LibraryEntry, kind: LibraryKind, includ
 export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string | undefined }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const hskExample = useHskExample(entry.id, kind === 'Characters' && examples.length === 0);
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;
@@ -83,7 +102,10 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   // "In a sentence" always shows for characters, even with no recorded example, so
   // "Find more examples" (external search of the exact hanzi) is always reachable.
   return <SentenceSection hanzi={entry.hanzi}>
-    {examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
+    {hskExample ? <div className="glyph-usage-example">
+      <SentenceExample heading="" sentence={hskExample.sentence} pinyin={hskExample.pinyin} translation={hskExample.translation}/>
+      <p className="detail-footnote">Source: <Link to="/lessons/$lessonId" params={{ lessonId: hskExample.source.lessonId }}>{hskExample.source.collection} · {hskExample.source.title}</Link>{hskExample.source.status === 'draft' && ' · Draft lesson example'}</p>
+    </div> : examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
       <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} />
     </div>)}
   </SentenceSection>;

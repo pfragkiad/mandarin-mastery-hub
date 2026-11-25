@@ -29,6 +29,13 @@ See [core/README.md](core/README.md) for schemas and templates and
 
 See [lessons/README.md](lessons/README.md) for the directories.
 
+`scripts/build-character-hsk-examples.py` also audits complete recorded HSK and
+Conversational Mandarin sentence triples. For Characters with no vocabulary
+example it extracts an exact lesson passage to the lazy
+[fallback sidecar](../../../public/data/character-hsk-examples.json), retaining its
+text, pinyin, English, draft status, source hash/pointer and lesson link. It never
+rewrites lesson files or turns a text occurrence into a verified reading/sense.
+
 ## Adding a lesson
 
 - Add a new `<KIND>_LESSON_<KEY>` directory under `lessons/` (inside its course folder or `independent/`) with one JSON file, and place it in a course by adding a placement to that course's manifest in `lessons/curricula/`. `lesson_id` must be unique (it is the page address); a duplicate fails the build.

@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "examples": {
+    "Characters:刘": {
+      "character": "刘",
+      "sentence": "今天小刘很忙。早上他先打开窗户，再拿来一杯水。",
+      "pinyin": "Jīntiān Xiǎo Liú hěn máng. Zǎoshang tā xiān dǎkāi chuānghu, zài ná lái yì bēi shuǐ.",
+      "translation": "Xiao Liu is busy today. In the morning he opens the window and brings a glass of water.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS/TOPIC_LESSON_DAILY_ACTIONS_HANDLING_EVERYDAY_TASKS.json",
+        "sha256": "5f5edb23f6b89ec2142a8854d34299e3f4f2ed0a84009751568741a68f0da63a",
+        "jsonPointer": "/sections/teaching_plan/reading/paragraphs/0",
+        "lessonId": "topic-helping-with-everyday-tasks",
+        "title": "Daily Actions & Activities — Part 1: Helping with Everyday Tasks",
+        "collection": "HSK Level 2",
+        "hskLevel": 2,
+        "status": "draft"
+      }
+    },
+    "Characters:朗": {
+      "character": "朗",
+      "sentence": "星期六，两个孩子到公园玩。天气很晴朗，鸟儿在树上唱歌。",
+      "pinyin": "Xīngqīliù, liǎng ge háizi dào gōngyuán wán. Tiānqì hěn qínglǎng, niǎor zài shù shang chàng gē.",
+      "translation": "On Saturday, two children play in the park. The weather is clear, and birds sing in the trees.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER/TOPIC_LESSON_ANIMALS_WEATHER.json",
+        "sha256": "86a4206318935b576c3da31400f1ff3f031761cc47cfa61afef6a4dd45c6dfc4",
+        "jsonPointer": "/sections/teaching_plan/reading/paragraphs/0",
+        "lessonId": "topic-nature-and-the-weather",
+        "title": "Nature and the Weather",
+        "collection": "HSK Level 2",
+        "hskLevel": 2,
+        "status": "draft"
+      }
+    },
+    "Characters:英": {
+      "character": "英",
+      "sentence": "有，也有英文报纸。",
+      "pinyin": "Yǒu, yě yǒu Yīngwén bàozhǐ.",
+      "translation": "Yes, and we also have English-language newspapers.",
+      "source": {
+        "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING/CONVERSATIONAL_LESSON_NEWSPAPER_SHOPPING.json",
+        "sha256": "e15733994c70701a08deb7194e2a2522eb805f19e68c7fca407baf23a5f0cdbc",
+        "jsonPointer": "/sections/blocks/1/turns/1",
+        "lessonId": "convm-newspaper-shopping",
+        "title": "Buying a Newspaper",
+        "collection": "Conversational Mandarin",
+        "hskLevel": null,
+        "status": "draft"
+      }
+    },
+    "Characters:陈": {
+      "character": "陈",
+      "sentence": "喂，您好！请问陈小姐在吗？",
+      "pinyin": "Wèi, nín hǎo! Qǐngwèn Chén xiǎojiě zài ma?",
+      "translation": "Hello! Excuse me, is Miss Chen there?",
+      "source": {
+        "file": "src/data/study_lessons/lessons/conversational/CONVERSATIONAL_LESSON_PHONE_INVITATIONS/CONVERSATIONAL_LESSON_PHONE_INVITATIONS.json",
+        "sha256": "52094cd219d93a4f51a9762c25b431689161c2d818c42a9bf50ad70ba63bd7f0",
+        "jsonPointer": "/sections/blocks/1/turns/0",
+        "lessonId": "convm-phone-invitations",
+        "title": "Arranging Plans by Telephone",
+        "collection": "Conversational Mandarin",
+        "hskLevel": null,
+        "status": "draft"
+      }
+    }
+  }
+}
