@@ -1,6 +1,11 @@
 # Batch 1 — consolidated report and proposed corrections
 
-**Status: pending another review round. No final content has been chosen.**
+**Status: Round 3 partially returned. Content remains under review.**
+
+Round 3 covers Part 1 only: **94 rows: 81 Pass, 12 Minor Review, 1 Needs Fix**.
+The other **281 rows remain pending Round 3**. See the
+[Round 3 check and unresolved cases](batch1-round3-review-check.md).
+Both versions of suggested wording and all supplied decisions are preserved.
 
 This report covers the **375 exact-OK first candidates** (220 source
 sentence pairs), the owner's “super OK” batch. The input file called
@@ -8,7 +13,7 @@ sentence pairs), the owner's “super OK” batch. The input file called
 candidates; Reviewer 2 returns 82 rows across that larger set. Only
 the 375-row OK subset is included in the output here.
 
-| Effective supplied decision | Rows |
+| Reviewer 1/2 decision before Round 3 | Rows |
 | --- | ---: |
 | Pass | 308 |
 | Minor Review | 39 |
@@ -21,24 +26,25 @@ double-pass claims. Original scores, issue labels and notes remain preserved.
 
 ## Files for the next reviewer
 
-- [Full report with originals, decisions and proposed corrections](batch1-final-report.tsv):
-  all 375 rows, both review histories and separate suggested Chinese/English.
-- [Four numbered parts](batch1-final-report-parts/README.md) and
-  [complete ZIP download](batch1-final-report-complete.zip): use these when a
+- [Full report with originals, decisions and proposed corrections](batch1-review-report.tsv):
+  all 375 rows, all returned review histories and separate suggested Chinese/English.
+- [Four numbered parts](batch1-review-report-parts/README.md) and
+  [complete ZIP download](batch1-review-report-complete.zip): use these when a
   viewer truncates the full TSV. Every column and record is retained.
-- [Minimal proposed-content TSV](batch1-next-review.tsv): exactly `id`, `character`,
-  `sentence`, `translation`, using the proposed wording for the next round.
+- [Minimal Round 3 submission](batch1-next-review.tsv): exactly `id`, `character`,
+  `sentence`, `translation`, preserving the pre-Round-3 assistant proposals.
+  New reviewer suggestions appear separately in the full comparison report.
 - [Structured review-chain metadata](batch1-review-chain.json): exact original
   and proposed text hashes, provenance, scoped findings and source/warning markers.
 - [Editable draft proposals](batch1-suggested-corrections.json): 31
   distinct flagged sentence pairs covering 67 rows. Proposals are assistant-authored
-  drafts. No reviewer has approved these proposed edits yet.
+  drafts. Part 1 now has separate Round 3 feedback; remaining parts await review.
 
 The 308 Pass rows carry their source wording forward. Proposed Chinese edits
 affect 32 rows and proposed English edits affect
 35 rows; these counts overlap.
 Every proposed sentence retains its exact target character. Original Tatoeba
-Chinese/English and both supplied report files are unchanged.
+Chinese/English and all three supplied report files are unchanged.
 
 ## Corrections and decisions to check closely
 

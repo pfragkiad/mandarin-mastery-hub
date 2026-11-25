@@ -45,8 +45,34 @@ class ReviewChainTests(unittest.TestCase):
             self.assertIn(row['character'], row['proposal']['sentence'])
             if row['effectiveStatus'] == 'Pass':
                 self.assertEqual((row['proposal']['sentence'], row['proposal']['translation']), (row['sentence'], row['translation']))
-            self.assertEqual(row['proposal']['reviewStatus'], 'pending_round_3')
+            self.assertEqual(row['proposal']['reviewStatus'],
+                             'round3_feedback_returned_pending_owner_decision' if row['reviewer3'] else 'pending_round_3')
             self.assertFalse(row['display']['proposalApproved'])
+
+    def test_round3_is_partial_and_never_inherits_a_missing_decision(self):
+        counts = self.summary['counts']['round3']
+        self.assertEqual((counts['returned'], counts['pending']), (94, 281))
+        self.assertEqual(counts['status'], {'Pass': 81, 'Needs_Fix': 1, 'Minor_Review': 12})
+        for index, row in enumerate(self.summary['rows']):
+            self.assertEqual(row['reviewer3'] is not None, index < 94)
+            self.assertEqual(row['display']['round3Pending'], index >= 94)
+            self.assertEqual(row['latestReturnedStatus'], row['reviewer3']['round3_status'] if index < 94 else row['effectiveStatus'])
+        self.assertEqual((counts['suggestedChineseEdits'], counts['suggestedEnglishEdits']), (1, 10))
+
+    def test_round3_rejects_modified_handoff_wrong_part_and_removed_target(self):
+        reviewed = module.read_tsv(module.DIRECTORY / module.ROUND3_FILE)
+        submitted = [{key: value for key, value in row.items() if key not in module.ROUND3_FIELDS} for row in reviewed]
+        for row in submitted:
+            row['round3_status'] = 'pending'
+        module.validate_round3(reviewed, submitted)
+        for field, value in [('sentence', 'changed source'), ('suggested_translation', 'changed handoff'),
+                             ('round3_suggested_sentence', 'removed target')]:
+            changed = [dict(row) for row in reviewed]
+            changed[0][field] = value
+            with self.assertRaises(ValueError):
+                module.validate_round3(changed, submitted)
+        with self.assertRaises(ValueError):
+            module.validate_round3(reviewed[:-1], submitted)
 
     def test_changed_review_text_and_duplicate_ids_fail_closed(self):
         row = next(iter(self.first.values()))
@@ -76,10 +102,10 @@ class ReviewChainTests(unittest.TestCase):
         self.assertTrue(all(len(row) == 4 for row in rows))
 
     def test_numbered_parts_reconstruct_every_middle_row_and_column(self):
-        original = list(csv.reader(io.StringIO(self.outputs[module.DIRECTORY / 'batch1-final-report.tsv']), delimiter='\t'))
-        pieces = sorted(path for path in self.outputs if path.name.startswith('batch1-final-report-part-'))
+        original = list(csv.reader(io.StringIO(self.outputs[module.DIRECTORY / 'batch1-review-report.tsv']), delimiter='\t'))
+        pieces = sorted(path for path in self.outputs if path.name.startswith('batch1-review-report-part-'))
         self.assertEqual(len(pieces), 4)
-        self.assertEqual(len(list((module.DIRECTORY / 'batch1-final-report-parts').glob('*.tsv'))), 4)
+        self.assertEqual(len(list((module.DIRECTORY / 'batch1-review-report-parts').glob('*.tsv'))), 4)
         reconstructed = [original[0]]
         for index, path in enumerate(pieces):
             rows = list(csv.reader(io.StringIO(self.outputs[path]), delimiter='\t'))
@@ -89,14 +115,14 @@ class ReviewChainTests(unittest.TestCase):
         self.assertEqual(reconstructed, original)
 
     def test_complete_zip_retains_the_full_report_and_all_parts(self):
-        data = self.outputs[module.DIRECTORY / 'batch1-final-report-complete.zip']
+        data = self.outputs[module.DIRECTORY / 'batch1-review-report-complete.zip']
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             self.assertIsNone(archive.testzip())
-            self.assertEqual(archive.read('batch1-final-report.tsv'), self.outputs[module.DIRECTORY / 'batch1-final-report.tsv'].encode('utf-8'))
+            self.assertEqual(archive.read('batch1-review-report.tsv'), self.outputs[module.DIRECTORY / 'batch1-review-report.tsv'].encode('utf-8'))
             self.assertEqual(len(archive.namelist()), 6)
             for path, value in self.outputs.items():
-                if path.parent.name == 'batch1-final-report-parts':
-                    self.assertEqual(archive.read(f'batch1-final-report-parts/{path.name}'), value.encode('utf-8'))
+                if path.parent.name == 'batch1-review-report-parts':
+                    self.assertEqual(archive.read(f'batch1-review-report-parts/{path.name}'), value.encode('utf-8'))
 
 
 if __name__ == '__main__':
