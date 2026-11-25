@@ -17,6 +17,7 @@ SRC_DIR = ROOT / "importer" / "data" / "idioms"
 TSV_PATH = SRC_DIR / "chengyu_all8519_english_review.tsv"
 CUM_PATH = SRC_DIR / "chengyu_cumulative_all8519.json"
 CLASSES_PATH = SRC_DIR / "chengyu_rank_classes.json"
+TOPICS_PATH = SRC_DIR / "chengyu_all8519_topic_classification.json"
 OUT_PATH = ROOT / "public" / "data" / "idioms.json"
 
 
@@ -42,12 +43,23 @@ def build_payload() -> dict:
         cum_data = json.load(f)
     cum_by_rank = {int(e["frequency_rank"]): e for e in cum_data["entries"]}
 
+    with TOPICS_PATH.open("r", encoding="utf-8") as f:
+        topics_data = json.load(f)
+    topic_label_by_id = {t["id"]: t["label"] for t in topics_data["taxonomy"]["topics"]}
+    topics_by_id: dict[str, tuple[str | None, list[str]]] = {}
+    for te in topics_data["entries"]:
+        primary_id = te.get("primaryTopicId")
+        primary_label = topic_label_by_id.get(primary_id) if primary_id else None
+        labels = [topic_label_by_id[tid] for tid in (te.get("topicIds") or []) if tid in topic_label_by_id]
+        topics_by_id[str(te["id"])] = (primary_label, labels)
+
     entries = []
     with TSV_PATH.open("r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             rank = int(row["frequency_rank"])
             cum = cum_by_rank.get(rank)
+            primary_topic, all_topics = topics_by_id.get(str(row["id"]), (None, []))
             entry: dict = {
                 "id": f"idiom-{row['id']}",
                 "rank": rank,
@@ -62,6 +74,10 @@ def build_payload() -> dict:
                 entry["score"] = round(float(cum["frequency_score"]), 2)
                 entry["docFreq"] = int(cum["document_frequency"])
                 entry["cumPct"] = round(float(cum["cumulative_frequency_pct"]), 2)
+            if primary_topic:
+                entry["topic"] = primary_topic
+            if len(all_topics) > 1:
+                entry["topics"] = all_topics
             entries.append(entry)
 
     entries.sort(key=lambda e: e["rank"])

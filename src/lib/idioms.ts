@@ -19,6 +19,8 @@ export type IdiomRecord = {
   score?: number;
   docFreq?: number;
   cumPct?: number;
+  topic?: string;
+  topics?: string[];
 };
 
 export type IdiomDataset = {
@@ -43,7 +45,8 @@ export function idiomToWord(entry: IdiomRecord, source: string): Word {
     pinyin: entry.pinyin,
     meaning: entry.meaning,
     type: '',
-    collection: '',
+    collection: entry.topic ?? '',
+    ...(entry.topics?.length ? { collections: entry.topics } : {}),
     level: '',
     sentence: '',
     translation: '',
@@ -109,7 +112,8 @@ export function filterIdioms(
   exactPinyin = false,
   /** '1'-style widening: include every more frequent rank above the selected band. */
   bandUpTo = false,
+  collection = 'All collections',
 ): Word[] {
   const byBand = band && band !== ALL_IDIOM_BANDS ? idioms.filter(w => matchesIdiomBand(w, band, rankClasses, bandUpTo)) : idioms;
-  return filterWords(byBand, query, 'All collections', 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
+  return filterWords(byBand, query, collection, 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
 }
