@@ -352,3 +352,20 @@ describe('details link beside the Practice title', () => {
   });
 });
 
+describe('multi-character practice tile filtering', () => {
+  afterEach(() => { cleanup(); localStorage.clear(); });
+
+  it('omits punctuation, quotes, and spaces from character tiles', () => {
+    render(<StrokesPage initialCharacter="“学，乙。” 乙。" mode="trace"/>);
+    const tiles = document.querySelectorAll('.word-strip-tile');
+    expect(tiles).toHaveLength(3);
+    const labels = Array.from(document.querySelectorAll('.word-strip-select')).map(el => el.getAttribute('aria-label') ?? '');
+    expect(labels.join(' ')).not.toMatch(/[“”，。]/);
+    expect(labels[0]).toContain('学');
+    expect(labels[1]).toContain('乙');
+    expect(labels[2]).toContain('乙');
+    // First drawable Han character is focused by default, not the opening quote.
+    expect(document.querySelector('.word-strip-tile.is-selected')).toBeTruthy();
+  });
+});
+

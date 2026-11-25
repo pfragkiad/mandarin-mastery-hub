@@ -993,8 +993,12 @@ function decompositionFor(glyph: string): LibraryEntry['decomposition'] {
 
 
 export function StrokesPage({ initialCharacter = '我', focus = 0, family, variant, mode = 'trace', onModeChange, groupingSource = DEFAULT_GROUPING_SOURCE }: { groupingSource?: string; onGroupingSourceChange?: (source: string) => void; mode?: PracticeMode | undefined; onModeChange?: ((mode: PracticeMode) => void) | undefined; initialCharacter?: string; focus?: number; family?: number | undefined; variant?: string | undefined }) {
-  const wordChars = Array.from(initialCharacter);
-  const isWord = wordChars.length > 1;
+  const rawChars = Array.from(initialCharacter);
+  const isWord = rawChars.length > 1;
+  // Multi-character practice strips punctuation, quotes, spaces, and other non-Han
+  // characters that have no handwriting data, keeping only drawable Hanzi tiles.
+  const hanChars = isWord ? rawChars.filter(ch => /\p{Script=Han}/u.test(ch)) : rawChars;
+  const wordChars = hanChars.length > 0 ? hanChars : rawChars;
   const wordFact = isWord ? words.find(w => w.hanzi === initialCharacter) : undefined;
   const { preferences } = useWorkspace();
   const navigate = useNavigate();
@@ -1122,7 +1126,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
     const hit: { kind: LibraryKind; id: string } | undefined = exact ? { kind: kind ?? 'Characters', id: exact.id } : glyphIndex()[character];
     return hit ? { to: '/characters', search: { tab: hit.kind, id: hit.id } } : undefined;
   })();
-  const strip = isWord ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
+  const strip = wordChars.length > 1 ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
   return <div className="page-enter practice-page-content">
     <PracticeHeader glyph={isWord ? initialCharacter : shownGlyph(character)} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
       reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
