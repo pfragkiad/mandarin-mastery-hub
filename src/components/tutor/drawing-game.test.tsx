@@ -1,5 +1,9 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class { observe() {} unobserve() {} disconnect() {} };
+}
 import { DrawingGamePage } from './drawing-game';
 import { DrawingSessionProvider } from './drawing-session';
 import type { LibraryEntry } from '@/lib/character-library';

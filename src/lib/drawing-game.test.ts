@@ -75,7 +75,7 @@ describe('drawing game rules', () => {
     const chars: LibraryEntry[] = [{ id: 'Characters:人', hanzi: '人', pinyin: 'rén', meaning: 'person', note: '' }, { id: 'Characters:的', hanzi: '的', pinyin: 'de', meaning: 'of', note: '' }, { id: 'Characters:龘', hanzi: '龘', pinyin: 'dá', meaning: 'dragons', note: '' }];
     expect(drawingPool(chars, { kind: 'Characters', usage: '1-100' }, false).map(e => e.hanzi)).toEqual(['的', '人']);
     expect(drawingPool(chars, { kind: 'Characters', usage: 'unranked' }, false).map(e => e.hanzi)).toEqual(['龘']);
-    expect(drawingSearch({ kind: 'Characters', strokes: '1', usage: '1-100' })).toEqual({ kind: 'Characters', usage: '1-100' });
+    expect(drawingSearch({ kind: 'Characters', strokes: '1', usage: '1-100' })).toEqual({ kind: 'Characters', strokes: '1', usage: '1-100' });
     expect(drawingSearch({ kind: 'Radicals', usage: '1-100' })).toEqual({ kind: 'Radicals' });
   });
   it('requires recorded pinyin and translation, never fabricated clues', () => {

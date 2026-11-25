@@ -5,7 +5,9 @@ import { Link } from "@tanstack/react-router";
 import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
-import { vocabularyFacetOptions, vocabularyKind } from "@/lib/mandarin";
+import { filterWords, vocabularyFacetOptions, vocabularyKind } from "@/lib/mandarin";
+import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions } from "@/lib/vocabulary-subtopics";
+import { lessonCourseIds, lessonDeckGroups, lessonDeckIds, lessonDeckTitle, type LessonDeckGroup } from "@/lib/flashcard-lessons";
 import { libraryFilterOptions } from "@/lib/library-filter-options";
 import { includeScript } from "@/lib/learning-preferences";
 import { UNRANKED, usageGroupLabel, usageGroups, parseUsageGroup } from "@/lib/usage-frequency";
@@ -22,6 +24,7 @@ import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
 import { SavedFilterToggle } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
 import { GameChoices, GameFilters, GameField, StrokeRangeControl } from "./game-controls";
+import { TopicSelect } from "./topic-select";
 import { formatStrokeRangeLabel } from "@/lib/stroke-range";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
 import { TileBookmark } from "./record-card-footer";
@@ -46,8 +49,11 @@ export function DrawingGamePage({
   const appliedFilters: DrawingSearch = {
     kind,
     collection: search.collection,
+    subtopic: search.subtopic,
     level: search.level,
     pos: search.pos,
+    course: search.course,
+    lesson: search.lesson,
     strokes: search.strokes,
     usage: search.usage,
     saved: search.saved,
@@ -55,7 +61,7 @@ export function DrawingGamePage({
     strokesUpTo: search.strokesUpTo,
   };
   const activeFilters = Boolean(
-    search.collection || search.level || search.pos || search.strokes || search.usage || search.saved,
+    search.collection || search.subtopic || search.level || search.pos || search.course || search.lesson || search.strokes || search.usage || search.saved,
   );
   const [session, setSession] = useDrawingSession();
   const { deckSize, deck, answers, round, board } = session;
@@ -67,21 +73,45 @@ export function DrawingGamePage({
   // libraries' vocabularyFacetOptions over the playable words (script preference
   // and Saved only included); glyph ranks/strokes follow the Glyphs library, which
   // narrows Characters, Components and Radicals alike.
-  const wordFacets = (draft: DrawingSearch) =>
-    vocabularyFacetOptions(
-      words.filter((word) => includeScript(word.script, preferences.includeTraditional) && (!draft.saved || saved.includes(word.id))),
-      { collection: draft.collection || "All collections", level: draft.level || "All levels", pos: draft.pos || "All types" },
-    );
+  const lessonIdsFor = (draft: DrawingSearch) => {
+    const draftKind = draft.kind ?? "Characters";
+    if (draftKind !== "Characters" && draftKind !== "Words") return undefined;
+    if (draft.lesson) return lessonDeckIds(draft.lesson, draftKind, words);
+    return draft.course ? lessonCourseIds(draft.course, draftKind, words) : undefined;
+  };
+  const wordFacets = (draft: DrawingSearch) => {
+    const inLesson = lessonIdsFor(draft);
+    const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
+    const kindItems = words.filter((word) => includeScript(word.script, preferences.includeTraditional) && (!draft.saved || saved.includes(word.id)) && (!inLesson || inLesson.has(word.id)));
+    const facets = vocabularyFacetOptions(kindItems.filter((w) => inSubtopic(w, draftSubtopic)), { collection: draft.collection || "All collections", level: draft.level || "All levels", pos: draft.pos || "All types" });
+    const topicFacets = vocabularyFacetOptions(kindItems, { collection: "All collections", level: draft.level || "All levels", pos: draft.pos || "All types" });
+    const subtopics = subtopicOptions(filterWords(kindItems, "", "All collections", draft.level || "All levels", "All words", [], false, draft.pos || "All types"), "All collections", draftSubtopic);
+    return { collections: topicFacets.collections, levels: facets.levels, pos: facets.pos, subtopics };
+  };
   const glyphFacets = (draft: DrawingSearch, draftKind: Exclude<DrawingSearch["kind"], "Words" | undefined>) => {
-    const all = libraryEntries(draftKind);
-    // Only Radicals and Components rounds filter by strokes (drawingPool), so only
-    // their stroke pick narrows the rank list.
-    const strokeFilter = draftKind === "Components" || draftKind === "Radicals" ? draft.strokes ?? "" : "";
+    const inLesson = draftKind === "Characters" ? lessonIdsFor(draft) : undefined;
+    const all = inLesson ? libraryEntries(draftKind).filter((entry) => inLesson.has(entry.id)) : libraryEntries(draftKind);
+    const strokeFilter = draft.strokes ?? "";
     const options = libraryFilterOptions(all, draftKind, preferences.includeTraditional, draft.usage, strokeFilter, draft.usageUpTo === "1", draft.strokesUpTo === "1");
     // A current pick that no longer matches stays listed so the dropdown still shows it.
     const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
     const ranks = usageGroups(draftKind).filter((group) => group.value === draft.usage || options.ranks.some((option) => option.value === group.value));
     return { strokes, ranks };
+  };
+  const lessonChoices = (draft: DrawingSearch): { courses: LessonDeckGroup[]; lessons: LessonDeckGroup[] } => {
+    const draftKind = draft.kind ?? "Characters";
+    if (draftKind !== "Characters" && draftKind !== "Words") return { courses: [], lessons: [] };
+    const baseSearch: DrawingSearch = { ...draft, kind: draftKind, course: undefined, lesson: undefined };
+    const others = new Set(
+      (draftKind === "Words"
+        ? drawingWordPool(words, baseSearch, preferences.includeTraditional, saved)
+        : drawingPool(libraryEntries(draftKind), baseSearch, preferences.includeTraditional, saved)
+      ).map((card) => card.id),
+    );
+    const withCards = (g: LessonDeckGroup) => ({ ...g, lessons: g.lessons.filter((l) => [...lessonDeckIds(l.id, draftKind, words)].some((id) => others.has(id))) });
+    const courses = lessonDeckGroups().map(withCards).filter((g) => g.lessons.length);
+    const stale = draft.course && !courses.some((g) => g.id === draft.course) ? lessonDeckGroups().find((g) => g.id === draft.course) : undefined;
+    return { courses: stale ? [...courses, stale] : courses, lessons: draft.course ? courses.filter((g) => g.id === draft.course) : courses };
   };
   const pool = useMemo(
     () =>
@@ -121,12 +151,17 @@ export function DrawingGamePage({
   // Play-bar summary of the settings a round is dealt with, e.g. "Characters · Top 100 · 10 cards".
   const settingsLabel = () => {
     const group = kind !== "Words" && search.usage ? usageGroups(kind).find((g) => g.value === search.usage) : undefined;
+    const subtopicLabel = search.subtopic ? subtopicById(search.subtopic)?.label : undefined;
+    const courseName = search.course ? lessonDeckGroups().find((g) => g.id === search.course)?.label ?? search.course : undefined;
     return [
       kind,
       search.saved ? "Saved" : "All",
       ...(kind === "Words" && search.collection ? [search.collection] : []),
+      ...(kind === "Words" && subtopicLabel ? [subtopicLabel] : []),
       ...(kind === "Words" && search.level ? [search.level] : []),
       ...(kind === "Words" && search.pos ? [search.pos] : []),
+      ...(courseName ? [courseName] : []),
+      ...(search.lesson ? [lessonDeckTitle(search.lesson) ?? search.lesson] : []),
       // Only the rank range ("Rank 1–100"); the dropdown's coverage share would crowd the chip.
       ...(group ? [search.usageUpTo === '1' && group.value !== UNRANKED ? `Rank 1–${group.max.toLocaleString("en-US")}` : usageGroupLabel(group, kind as Exclude<typeof kind, "Words">, preferences.includeTraditional).split(" · ")[0]] : []),
       ...(search.strokes ? [formatStrokeRangeLabel(search.strokes, search.strokesUpTo === '1')] : []),
@@ -203,9 +238,10 @@ export function DrawingGamePage({
             >
               {({ draft, patch, setDraft }) => {
                 const draftKind = draft.kind ?? "Characters";
-                const filtered = draftKind === "Radicals" || draftKind === "Components";
                 const facets = draftKind === "Words" ? wordFacets(draft) : undefined;
                 const glyph = draftKind === "Words" ? undefined : glyphFacets(draft, draftKind);
+                const { courses, lessons } = lessonChoices(draft);
+                const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
                 return (
                   <>
                     {/* Row 1: what to draw, plus collection / level / type for Words. */}
@@ -214,14 +250,33 @@ export function DrawingGamePage({
                       options={drawingKinds.filter(value => group === 'Glyphs' ? value !== 'Words' : value === 'Words').map(value => ({ value, label: value }))}
                       onChange={value => { const next = drawingKinds.find(k => k === value); if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
                     </div>
-                    <GameFilters count={[draft.collection, draft.level, draft.pos, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
+                    <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection, draft.level, draft.pos, draft.course, draft.lesson, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
+                    {courses.length > 0 && (
+                      <>
+                        <GameField label="Course"><FilterSelect
+                          ariaLabel="Course"
+                          value={draft.course ?? ""}
+                          onValueChange={(v) => patch({ course: v || undefined, lesson: undefined })}
+                          items={[{ value: "", label: "All courses" }, ...courses.map((g) => ({ value: g.id, label: g.label }))]}
+                        /></GameField>
+                        <GameField label="Lesson"><FilterSelect
+                          ariaLabel="Lesson"
+                          value={draft.lesson ?? ""}
+                          onValueChange={(v) => patch({ lesson: v || undefined })}
+                          items={[{ value: "", label: "All lessons" }, ...lessons.map((g) => ({ label: g.label, options: g.lessons.map((l) => ({ value: l.id, label: l.title, nested: true })) }))]}
+                        /></GameField>
+                      </>
+                    )}
                     {draftKind === "Words" && (
                       <>
-                        <GameField label="Topic"><FilterSelect
-                          ariaLabel="Topic"
-                          value={draft.collection ?? ""}
-                          onValueChange={(value) => patch({ collection: value || undefined })}
-                          items={[{ value: "", label: "All topics" }, ...(facets?.collections ?? []).map((value) => ({ value, label: value }))]}
+                        <GameField label="Topic"><TopicSelect
+                          topics={facets?.collections ?? []}
+                          subtopics={facets?.subtopics ?? []}
+                          collection={draft.collection ?? ""}
+                          subtopic={draftSubtopic}
+                          allTopics=""
+                          allSubtopics=""
+                          onChange={(next) => patch({ collection: next.collection || undefined, subtopic: next.subtopic || undefined })}
                         /></GameField>
                         <GameField label="HSK level"><FilterSelect
                           ariaLabel="HSK level"
@@ -256,7 +311,7 @@ export function DrawingGamePage({
                         )}
                       </span>
                     )}
-                    {filtered && (
+                    {draftKind !== "Words" && (
                       <StrokeRangeControl
                         value={draft.strokes ?? ""}
                         strokesUpTo={draft.strokesUpTo === "1"}
