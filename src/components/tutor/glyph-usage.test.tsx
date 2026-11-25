@@ -112,11 +112,9 @@ describe('Absent-record notes', () => {
     vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
     const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
     const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
-    const more = await screen.findByRole('button', { name: 'Show 1 more example' });
-    expect(container.querySelectorAll('.sentence-hanzi')).toHaveLength(1);
-    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(sentence);
-    fireEvent.click(more);
+    await screen.findByText(example.translation);
     expect(container.querySelectorAll('.sentence-hanzi')).toHaveLength(2);
+    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(sentence);
     expect(container.querySelectorAll('.source-info-trigger')).toHaveLength(1);
     expect(loadCharacterHskExample).not.toHaveBeenCalled();
   });

@@ -1925,9 +1925,30 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   border-top: 1px solid var(--border);
 }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: var(--detail-example-gap);
   border-top: 0;
   padding-top: 0;
   margin-top: 0;
+}
+.detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-hanzi-row {
+  flex: 0 1 auto;
+  align-items: center;
+}
+.detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading {
+  flex: 1 1 200px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-note {
+  flex: 1 0 100%;
+  margin-top: 2px;
 }
 .detail-sheet .sentence-section .more-examples-panel {
   display: grid;

@@ -139,7 +139,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaReadingFor ? ownSentencePinyin(tatoeba.sentence, tatoebaReadingFor) : undefined} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
     </div>);
   return <SentenceSection hanzi={entry.hanzi}>
-    {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples}/> : null}
+    {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples} initialCount={2}/> : null}
   </SentenceSection>;
 }
 

@@ -140,7 +140,7 @@ export function glyphUsage(entry: LibraryEntry, kind: LibraryKind, items: Word[]
       if (!text || !matchedGlyph || seen.has(text) || results.some(result => result.word.id === word.id)) continue;
       seen.add(text);
       results.push({ word, sentence, matchedGlyph });
-      if (results.length === 1) return results;
+      if (results.length === 2) return results;
     }
   }
   return results;

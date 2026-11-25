@@ -40,14 +40,15 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
  * key this by the record so moving to another card starts closed again. Collapsed
  * examples are not rendered at all, so their links and speakers cannot take focus.
  */
-export function MoreExamples({ examples }: { examples: ReactNode[] }) {
+export function MoreExamples({ examples, initialCount = 1 }: { examples: ReactNode[]; initialCount?: number }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
-  const [first, ...rest] = examples;
-  if (!rest.length) return <>{first}</>;
+  const visible = examples.slice(0, initialCount);
+  const rest = examples.slice(initialCount);
+  if (!rest.length) return <>{visible}</>;
   const label = open ? `Show fewer examples` : `Show ${rest.length} more example${rest.length === 1 ? '' : 's'}`;
   return <>
-    {first}
+    {visible}
     {open && <div id={panelId} className="more-examples-panel">{rest}</div>}
     <button type="button" className={`more-examples-toggle${open ? ' is-open' : ''}`} aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={() => setOpen(value => !value)}>
       <ChevronDown className="more-examples-icon" aria-hidden="true"/>{label}

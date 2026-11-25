@@ -47,9 +47,9 @@ describe('Existing glyph usage', () => {
     expect(glyphParentCharacters(glyph('女'), 'Radicals', [parent])).toEqual([]);
     expect(glyphParentCharacters(glyph('女'), 'Radicals', [parent, parent], true).map(row => row.id)).toEqual(['Characters:媽']);
   });
-  it('limits existing glyph usage to a single example', () => {
+  it('limits existing glyph usage to two examples', () => {
     const rows = [word('a', '你一'), word('b', '你二'), word('c', '你三'), word('d', '你四')];
-    expect(glyphUsage(glyph('你'), 'Characters', rows, []).map(row => row.word.id)).toEqual(['a']);
+    expect(glyphUsage(glyph('你'), 'Characters', rows, []).map(row => row.word.id)).toEqual(['a', 'b']);
   });
   it('does not duplicate the same recorded sentence', () => {
     expect(glyphUsage(glyph('你'), 'Characters', [word('a', '你好'), word('b', '你好')], []).map(row => row.word.id)).toEqual(['a']);
