@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "generator": "scripts/import-tatoeba-examples.py",
+  "counts": {
+    "characterAssignments": 1224,
+    "distinctSourcePairs": 877,
+    "latestReviewStatus": {
+      "Pass": 1041,
+      "Minor_Review": 109,
+      "Needs_Fix": 74
+    },
+    "warningTriangles": 183,
+    "round3ReturnedIds": 94,
+    "round3ReviewedPairAssignments": 142,
+    "chineseEditedAssignments": 18,
+    "englishEditedAssignments": 28,
+    "withSourcePinyin": 1206,
+    "importedRecordings": 0,
+    "sourceRecordings": 94,
+    "sourceRecordingsWithoutLicense": 94
+  },
+  "inputs": [
+    {
+      "file": "reports/tatoeba-translation-review.tsv",
+      "sha256": "2f84c01a4b9b06a3ba95d02abae71a8c251a37b9c330e9a356299f4918af7f42",
+      "bytes": 181703
+    },
+    {
+      "file": "reports/tatoeba-chinese-english-review-01-ok.tsv",
+      "sha256": "455b72b0982a3e689303ec1fe165b2bfe23b26be64920ba3439710262633a959",
+      "bytes": 46970
+    },
+    {
+      "file": "public/data/catalog_ids.json",
+      "sha256": "13d6ea6f80a0fbaead3d57bb91e8ecbf4a2d73574e14439a787c938e97a767bf",
+      "bytes": 276598
+    },
+    {
+      "file": "importer/data/tatoeba/manifest.json",
+      "sha256": "5968cd947a996f14e500af3b3cd6620909e80efaebf0f7560cf9567593423cb1",
+      "bytes": 4990
+    },
+    {
+      "file": "reports/tatoeba-positive-inventory.json",
+      "sha256": "19461de97747f7b0a0e908cf757b9b61732b4aa9da10a8079a6649d3763bf774",
+      "bytes": 10723
+    },
+    {
+      "file": "importer/data/tatoeba/selected/marked-001.jsonl",
+      "sha256": "0f5a22628729c35a07a2d42f8e5e1e889ae469e4d7737726e8c344b3102c035f",
+      "bytes": 4995976
+    },
+    {
+      "file": "importer/data/tatoeba/selected/marked-002.jsonl",
+      "sha256": "6b4c7c89c50e03d7b5ccc4c8fc49db5fe26b4f90aa06c1688dcaf13c0be6ae38",
+      "bytes": 4997419
+    },
+    {
+      "file": "importer/data/tatoeba/selected/marked-003.jsonl",
+      "sha256": "f3032496819eee067279e0ea480f1aa54e385220cd7a44bd4f932a0e4f8fc428",
+      "bytes": 4998406
+    },
+    {
+      "file": "importer/data/tatoeba/selected/marked-004.jsonl",
+      "sha256": "59bb0d3c46e3cd71ac9ed29141f2e8e5ef5e70c9c35e6f9b39a00f2cd3f86718",
+      "bytes": 4997483
+    },
+    {
+      "file": "importer/data/tatoeba/selected/marked-005.jsonl",
+      "sha256": "85bec3f77ce7e896dde2ea017e26f2b5ed548eb6d7d5ce2593ffc4dd142c6180",
+      "bytes": 2318715
+    },
+    {
+      "file": "importer/data/tatoeba/reports/tatoeba-quality-report.-batch1.tsv",
+      "sha256": "d85916ee2039a5c21b2166ae07e3fc1279e6db96c55c1a661d1f96f0981ee33e",
+      "bytes": 282252
+    },
+    {
+      "file": "importer/data/tatoeba/reports/tatoeba-quality-report-reviewer2-batch1.tsv",
+      "sha256": "e0fe11032a382a616ebfb380f9c53bf8367b3b688cb9f05bc5de65675b210333",
+      "bytes": 32482
+    },
+    {
+      "file": "importer/data/tatoeba/reports/batch1-final-report-part-01-round3-review.tsv",
+      "sha256": "dc89fed644a4c46211772858fe1271408473733c27b6e292254d216f63feec1d",
+      "bytes": 50477
+    },
+    {
+      "file": "importer/data/tatoeba/reports/batch1-suggested-corrections.json",
+      "sha256": "70588250d91b02d0f6735ffc49dc1f8516fb406cb95fa97e80392e8f0ee591e3",
+      "bytes": 8745
+    },
+    {
+      "file": "public/data/character-hsk-examples.json",
+      "sha256": "d4fb0d2a35052d46a0bf317b11b1f47349563c17e159d682174de41dd6dfb5cf",
+      "bytes": 3406
+    }
+  ],
+  "policy": "Full owner-requested 1224 first candidates. Latest Round 3 pair wording is shared consistently with evidence IDs, without claiming every character ID was returned. Otherwise retain source wording and R2-or-R1 findings. Unresolved flags use warning triangles. No unreviewed assistant-only wording, generated pinyin or imported recordings.",
+  "applicationPriority": "Existing vocabulary examples, then exact HSK/lesson fallback, then exact Tatoeba assignment."
+}

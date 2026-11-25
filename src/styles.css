@@ -1509,7 +1509,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-family-section .detail-footnote { text-align: left; font-size: 9px; line-height: 1.7; overflow-wrap: anywhere; }
 .radical-family-section .detail-footnote a { color: var(--primary); }
 /* Source metadata is always collapsed behind a small (i) button. */
-.source-info-popover { max-width: min(320px, 90vw); }
+.source-info-popover { max-width: min(320px, 90vw); max-height: min(75dvh, var(--radix-popover-content-available-height, 75dvh)); overflow-y: auto; overflow-wrap: anywhere; }
 .source-info-popover > p { margin: 0; border-top: 0; padding-top: 0; text-align: left; }
 /* Global hint rule: every hint (source (i) popovers, tooltips) reads in sentence case.
    The popover reuses its trigger's footnote class, which is uppercase in place, so the
@@ -1531,6 +1531,9 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .library-heading h1 .source-info-trigger svg { width: 12px; height: 12px; }
 .source-info-trigger:hover, .source-info-trigger:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
 .source-info-trigger svg { width: 15px; height: 15px; }
+.sentence-source-marker { flex: none; margin-top: 15px; }
+.sentence-hanzi-row > .source-info-trigger { flex: none; margin-top: 15px; }
+.sentence-source-marker .source-info-trigger[data-variant='warning'] { color: var(--primary); }
 
 /* Practice title is one continuous line; reading belongs to the writing column. */
 .practice-page-content .practice-page-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 18px; margin-bottom: 24px; align-items: center; }

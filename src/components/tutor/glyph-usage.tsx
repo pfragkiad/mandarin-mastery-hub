@@ -8,7 +8,8 @@ import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } fro
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
-import { SentenceSection } from './sentence-section';
+import { MoreExamples, SentenceSection } from './sentence-section';
+import { SourceInfo } from './source-info';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -17,22 +18,29 @@ import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 import { SectionPlaceholder } from './section-placeholder';
 import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
+import { loadCharacterTatoebaExample, tatoebaPinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
+import { TatoebaSentenceSource } from './tatoeba-sentence-source';
 
-/** Optional sourced lesson fallback, fetched only for a Characters card with no
- * vocabulary usage. Bind state to the exact record so navigation cannot flash
- * the previous character's passage while the new lookup is pending.
+/** Optional sourced examples, fetched only for a Characters detail card.
+ * Vocabulary/lessons stay first and Tatoeba may add a separately annotated
+ * sentence. Bind state to the exact record so navigation cannot flash old text.
  */
-function useHskExample(recordId: string, enabled: boolean) {
-  const [loaded, setLoaded] = useState<{ recordId: string; example: CharacterHskExample | null } | null>(null);
+function useFallbackExample(recordId: string, enabled: boolean, lessonEnabled: boolean) {
+  const [loaded, setLoaded] = useState<{ recordId: string; hsk: CharacterHskExample | null; tatoeba: CharacterTatoebaExample | null } | null>(null);
   useEffect(() => {
     if (!enabled) return;
     let cancelled = false;
-    loadCharacterHskExample(recordId).then(example => {
-      if (!cancelled) setLoaded({ recordId, example });
-    });
+    void (async () => {
+      const tatoebaRequest = loadCharacterTatoebaExample(recordId);
+      const hsk = lessonEnabled ? await loadCharacterHskExample(recordId) : null;
+      if (cancelled) return;
+      setLoaded({ recordId, hsk, tatoeba: null });
+      const tatoeba = await tatoebaRequest;
+      if (!cancelled) setLoaded({ recordId, hsk, tatoeba });
+    })();
     return () => { cancelled = true; };
-  }, [recordId, enabled]);
-  return enabled && loaded?.recordId === recordId ? loaded.example : null;
+  }, [recordId, enabled, lessonEnabled]);
+  return enabled && loaded?.recordId === recordId ? loaded : null;
 }
 
 /** Component parents resolve through lazily loaded BabelStone G-source trees; null while loading. */
@@ -68,7 +76,9 @@ export function useRadicalParents(entry: LibraryEntry, kind: LibraryKind, includ
 export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string | undefined }) {
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
-  const hskExample = useHskExample(entry.id, kind === 'Characters' && examples.length === 0);
+  const fallback = useFallbackExample(entry.id, kind === 'Characters', examples.length === 0);
+  const hskExample = fallback?.hsk;
+  const tatoeba = fallback?.tatoeba;
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;
@@ -101,12 +111,20 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   </section>;
   // "In a sentence" always shows for characters, even with no recorded example, so
   // "Find more examples" (external search of the exact hanzi) is always reachable.
-  return <SentenceSection hanzi={entry.hanzi}>
-    {hskExample ? <div className="glyph-usage-example">
+  const sentenceExamples = examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
+    <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} sourceDetails={<SourceInfo inline className="detail-footnote" label="Sentence source and review details">
+      {(sentence ? word.entry?.examples[0]?.source?.sourceName : undefined) ?? word.entry?.sourceName ?? 'Session workspace example'}<br/>
+      {(sentence ? word.entry?.examples[0]?.reviewStatus : undefined) ?? word.entry?.contentStatus ?? 'Session-only content'}
+    </SourceInfo>}/>
+  </div>);
+  if (hskExample) sentenceExamples.push(<div className="glyph-usage-example" key="lesson">
       <SentenceExample heading="" sentence={hskExample.sentence} pinyin={hskExample.pinyin} translation={hskExample.translation}/>
       <p className="detail-footnote">Source: <Link to="/lessons/$lessonId" params={{ lessonId: hskExample.source.lessonId }}>{hskExample.source.collection} · {hskExample.source.title}</Link>{hskExample.source.status === 'draft' && ' · Draft lesson example'}</p>
-    </div> : examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
-      <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }} />
-    </div>)}
+    </div>);
+  if (tatoeba) sentenceExamples.push(<div className="glyph-usage-example" key={tatoeba.id}>
+      <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaPinyin(tatoeba)} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
+    </div>);
+  return <SentenceSection hanzi={entry.hanzi}>
+    {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples}/> : null}
   </SentenceSection>;
 }

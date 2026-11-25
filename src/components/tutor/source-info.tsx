@@ -23,10 +23,10 @@ export function HintBody({ className, children }: { className?: string | undefin
 }
 
 /** Source/verification metadata, collapsed behind a small button; `inline` places it beside a section label. */
-export function SourceInfo({ className, children, inline = false, variant = 'info' }: {
-  className: string; children: ReactNode; inline?: boolean; variant?: 'info' | 'warning';
+export function SourceInfo({ className, children, inline = false, variant = 'info', label = 'Source details' }: {
+  className: string; children: ReactNode; inline?: boolean; variant?: 'info' | 'warning'; label?: string;
 }) {
-  const trigger = <PopoverTrigger className="source-info-trigger" aria-label="Source details">
+  const trigger = <PopoverTrigger className="source-info-trigger" aria-label={label} data-variant={variant} title={label}>
     {variant === 'warning' ? <TriangleAlert aria-hidden="true"/> : <Info aria-hidden="true"/>}
   </PopoverTrigger>;
   return <Popover>

@@ -1,0 +1,5 @@
+# Preserve the generated input/output bytes bound by the sentence import audit.
+catalog_ids.json -text
+character-hsk-examples.json -text
+character-tatoeba-examples.json -text
+character-sentence-index.json -text

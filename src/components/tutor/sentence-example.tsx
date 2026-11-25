@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { MeaningText } from './meaning-text';
@@ -28,7 +28,7 @@ import { useSentenceWords } from './use-sentence-words';
  * On a lesson page (LessonHintsProvider) characters become lesson hint targets instead of
  * links while hints are on, and plain text while they are off; pairing works either way.
  */
-export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null | undefined; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest }) {
+export function SentenceExample({ sentence, pinyin, translation, note, heading = 'IN A SENTENCE', onNavigate, audioRequest, sourceDetails }: { sentence: string; pinyin?: string | undefined; translation?: string; note?: string | null | undefined; heading?: string; onNavigate?: () => void; audioRequest?: AudioRequest; sourceDetails?: ReactNode }) {
   const { preferences } = useWorkspace();
   const hints = useLessonHints();
   // Pairing state: the index of the hovered/focused pair, or null. Both sides
@@ -92,6 +92,7 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
     {heading && <span className="sentence-style-pill">{heading}</span>}
+    {sourceDetails}
     </div>
     <span className="sentence-reading">
       {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">

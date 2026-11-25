@@ -1,2 +1,3 @@
 # User-supplied TSVs retain their original bytes, including CRLF where present.
 *.tsv -text whitespace=cr-at-eol
+batch1-suggested-corrections.json -text

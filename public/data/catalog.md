@@ -14,6 +14,10 @@ This document describes the section-file migration for other engines, importers,
 
 Each active data subdirectory also has its own usage README. This directory split controls packaging and loading, not privacy: data fetched by or bundled into the public app can be downloaded by its users.
 
+Character example sentences remain separate from catalogue identities, readings and
+meanings. The [sentence annotation contract](TATOEBA_SENTENCES.md) describes the lazy
+Tatoeba sidecar, latest review provenance and per-sentence source/warning hints.
+
 ## Migration from the monolithic catalogue
 
 Previously, `public/data/catalog.json` contained `characters`, `radicals`, `components`, and `strokes` arrays together with shared data. Strokes were extracted first. The remaining three row arrays now also live in separate files. `catalog.json` has schema `version: 2` and contains no glyph section arrays.

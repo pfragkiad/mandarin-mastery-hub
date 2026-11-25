@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { readFileSync } from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
 import { GlyphUsageExamples } from './glyph-usage';
@@ -7,6 +8,14 @@ import type { LibraryEntry } from '@/lib/character-library';
 import type { Word } from '@/lib/mandarin';
 import { loadCharacterHskExample } from '@/lib/character-hsk-examples';
 import fallbackData from '../../../public/data/character-hsk-examples.json';
+import { loadCharacterTatoebaExample, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
+
+const tatoebaData = JSON.parse(readFileSync('public/data/character-tatoeba-examples.json', 'utf8')) as { examples: Record<string, CharacterTatoebaExample> };
+vi.mock('@/lib/character-tatoeba-examples', async () => ({
+  ...await vi.importActual<typeof import('@/lib/character-tatoeba-examples')>('@/lib/character-tatoeba-examples'),
+  loadCharacterTatoebaExample: vi.fn(async () => null),
+  loadCharacterSentenceAvailability: vi.fn(async () => false),
+}));
 
 vi.mock('@/lib/character-hsk-examples', () => ({ loadCharacterHskExample: vi.fn(async () => null) }));
 
@@ -16,7 +25,11 @@ vi.mock('@tanstack/react-router', () => ({
   useNavigate: () => () => {},
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false, items: [] as Word[] }));
-beforeEach(() => { vi.mocked(loadCharacterHskExample).mockClear(); workspaceState.items = []; });
+beforeEach(() => {
+  vi.mocked(loadCharacterHskExample).mockReset().mockResolvedValue(null);
+  vi.mocked(loadCharacterTatoebaExample).mockReset().mockResolvedValue(null);
+  workspaceState.items = [];
+});
 // Controlled catalogue: 鮮 is a Traditional character whose dictionary radical is 魚
 // and whose recorded breakdown contains the exact 魚 form (the family is multi-form).
 const catalogState = vi.hoisted(() => ({
@@ -48,6 +61,36 @@ vi.mock('./workspace', () => ({
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
 describe('Absent-record notes', () => {
+  it('renders the latest reviewed wording with its own warning and original-source disclosure', async () => {
+    const example = Object.values(tatoebaData.examples).find(row => row.review.latestRound === 3 && row.review.status === 'Needs_Fix')!;
+    vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
+    const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
+    const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
+    const hint = await screen.findByRole('button', { name: example.display.label });
+    expect(hint).toHaveAttribute('data-variant', 'warning');
+    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(example.sentence);
+    expect(container.querySelector('.sentence-pinyin')).toBeNull();
+    fireEvent.click(hint);
+    expect(await screen.findByRole('link', { name: `Tatoeba · Chinese #${example.source.chinese.id}` })).toHaveAttribute('href', example.source.chinese.url);
+    expect(screen.getByText(example.source.chinese.text)).toBeInTheDocument();
+  });
+
+  it('keeps an existing sentence first and gives an additional Tatoeba sentence a separate hint', async () => {
+    const example = Object.values(tatoebaData.examples)[0]!;
+    const sentence = `${example.character} is the existing recorded example`;
+    workspaceState.items = [{ id: 'existing', hanzi: example.character, sentence, translation: 'Existing translation', pinyin: '', meaning: '', type: '', collection: '', level: '' }];
+    vi.mocked(loadCharacterTatoebaExample).mockResolvedValueOnce(example);
+    const entry: LibraryEntry = { id: `Characters:${example.character}`, hanzi: example.character, pinyin: '', meaning: '', note: '' };
+    const { container } = render(<GlyphUsageExamples entry={entry} kind="Characters"/>);
+    const more = await screen.findByRole('button', { name: 'Show 1 more example' });
+    expect(container.querySelectorAll('.sentence-hanzi')).toHaveLength(1);
+    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(sentence);
+    fireEvent.click(more);
+    expect(container.querySelectorAll('.sentence-hanzi')).toHaveLength(2);
+    expect(container.querySelectorAll('.source-info-trigger')).toHaveLength(2);
+    expect(loadCharacterHskExample).not.toHaveBeenCalled();
+  });
+
   it('keeps an existing vocabulary sentence and does not fetch a lesson fallback', () => {
     const sentence = '今天很晴朗。';
     workspaceState.items = [{ id: 'recorded-word', hanzi: '晴朗', sentence, sentencePinyin: 'Jīntiān hěn qínglǎng.', translation: 'It is clear today.', pinyin: 'qínglǎng', meaning: 'clear', type: '', collection: '', level: '' }];

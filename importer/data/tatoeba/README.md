@@ -1,8 +1,9 @@
 # Tatoeba Mandarin candidate review
 
 Offline `cmn` (Mandarin Chinese) corpus inputs from the official
-[downloads](https://tatoeba.org/en/downloads). Never loaded by the app and never
-treated as approved vocabulary or character examples.
+[downloads](https://tatoeba.org/en/downloads). Files in this directory are never
+loaded by the app. The owner-requested runtime import is generated separately
+under `public/data`, with explicit review flags and attribution.
 
 | Path | Purpose / consumer |
 | --- | --- |
@@ -25,3 +26,12 @@ These are metadata candidates, not a linguistic quality certification.
 An existing download is accepted only with its manifest checksum. Text attribution
 must retain individual sentence IDs and contributor names. Audio licences are
 separate per recording; this stage downloads metadata only, never media files.
+
+Import the full 1,224 first candidates with latest returned review wording using
+`python scripts/import-tatoeba-examples.py --write` (`--check` to verify).
+This preserves these inputs, skips unreviewed assistant-only wording, retains
+unresolved warnings and generates the separately loaded runtime examples and
+availability index. See [the import audit](../../../reports/tatoeba-example-import.md)
+and [frontend sentence annotations](../../../public/data/TATOEBA_SENTENCES.md).
+Existing vocabulary/lesson sentences stay first; Tatoeba can add another separately
+annotated sentence. No recording is attached without exact text and explicit reuse permission.
