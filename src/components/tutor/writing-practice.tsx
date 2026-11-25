@@ -1224,7 +1224,7 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
 // The practised word's own reading and speaker: the word's recorded audio first, then the
 // shared pronunciation pipeline (src/lib/audio.ts) for that exact word reading.
 /** The Practice "Write <glyph>" headword: reciprocal hanzi ↔ pinyin hover pairing for
- *  multi-character words/phrases, plus quick-card character hints when Character hints are on. */
+ *  multi-character words/phrases, plus quick-card targets when Character quick cards are on. */
 function PracticeTitleGlyphs({ text, word, pairing, isWord }: { text: string; word: (typeof words)[number] | undefined; pairing: ReturnType<typeof usePhrasePairing>; isWord: boolean }) {
   const hints = useLessonHints();
   const phrase = word ? vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom' : isWord;

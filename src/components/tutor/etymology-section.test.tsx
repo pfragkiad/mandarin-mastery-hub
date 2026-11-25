@@ -37,7 +37,9 @@ describe("Shuowen source and English disclosure", () => {
   it("shows labeled English while preserving Chinese behind its remembered toggle", () => {
     const { unmount } = render(<ShuowenSection entries={[entry]} />);
     expect(screen.getByText(entry.translation!.text)).toHaveAttribute("lang", "en");
-    expect(screen.getByText(/English: AI draft/)).toBeVisible();
+    // The heading carries no inline draft tag (owner 2026-11-25: it duplicated the (i));
+    // the disclosure appears only inside the source details popover.
+    expect(screen.queryByText(/AI draft/)).toBeNull();
     expect(screen.queryByText(/AI-generated draft, not reviewed/)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Source details" }));
     expect(screen.getByText(/AI-generated draft, not reviewed/)).toBeVisible();

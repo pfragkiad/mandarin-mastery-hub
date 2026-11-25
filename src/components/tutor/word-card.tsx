@@ -39,7 +39,7 @@ import { examplePinyin, orderExamples, phraseStyle } from '@/lib/data-contract';
 /**
  * Detail heading glyphs of a multi-character word or phrase.
  * Inputs: the record and its character ↔ syllable `pairing` (usePhrasePairing).
- * Hover keeps the per-character pairing ring; with the remembered "Character hints" switch
+ * Hover keeps the per-character pairing ring; with the remembered "Character quick cards" switch
  * on, each Han character is also a quick-card target (the same popup as lessons and
  * "In a phrase"), so a tap reaches that character's Characters/Components/Radicals cards.
  * Word context: a word's characters sit in that exact record (shown unlinked, it is the open
@@ -61,7 +61,7 @@ function HeadwordGlyphs({ word, pairing, text = word.hanzi }: { word: Word; pair
 }
 
 /**
- * Grid card headword glyphs with the grids' Character hints (gridHints, provider in the
+ * Grid card headword glyphs with the grids' Character quick cards (gridHints, provider in the
  * Vocabulary results): each Han character becomes a quick-card target — not a tab stop, since
  * it sits inside the card's own button — with the same word context as the detail headword
  * (a word's characters in that exact record, a phrase's characters in the words-first words

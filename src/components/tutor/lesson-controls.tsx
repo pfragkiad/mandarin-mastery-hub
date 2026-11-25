@@ -16,7 +16,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
  *     lesson…". The whole-lesson choice turns the card into an inline confirm ("Reset all M
  *     tasks?" Cancel / Reset) instead of opening a modal, so Reset is never one tap away.
  *   the section list (scrolls on its own), and
- *   StudyToggles + Character hints (pinned bottom): one row of Hanzi / Pinyin / EN toggles.
+ *   StudyToggles + Character quick cards (pinned bottom): one row of Hanzi / Pinyin / EN toggles.
  * Narrow layout (the page's own width, the lesson page's existing layout condition):
  *   PhoneLessonBar — one sticky strip (section in view, Sections and Settings buttons, bar,
  *   "2/15"); the buttons open bottom sheets (the app's tab bar keeps the screen bottom); Settings ends with a red

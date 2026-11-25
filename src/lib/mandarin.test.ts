@@ -1,7 +1,17 @@
 import { describe, it, expect } from 'vitest';
-import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions } from './mandarin';
+import { words, filterWords, collections, partOfSpeechList, partOfSpeechOptions, vocabularyKind } from './mandarin';
+import { vocabularyData } from './data-contract';
 describe('Vocabulary filtering', () => {
- it('loads the 2001 recorded entries plus one phrase per distinct word example sentence', () => { expect(words).toHaveLength(2001 + 3988); });
+ // The count is restated from the loading rule (recorded entries + one phrase per distinct
+ // example sentence) instead of a magic number, so adding material never blanks this test out.
+ it('loads every recorded entry plus one phrase per distinct word example sentence', () => {
+  const recorded = words.filter(w => !w.entry?.sentenceSource);
+  const derived = words.filter(w => w.entry?.sentenceSource);
+  expect(recorded).toHaveLength(vocabularyData.entries.length);
+  const distinctSentences = new Set(recorded.filter(w => vocabularyKind(w) === 'word').flatMap(w => w.entry?.examples.map(e => e.simplified) ?? [])).size;
+  expect(derived).toHaveLength(distinctSentences);
+  expect(derived.every(w => vocabularyKind(w) === 'phrase')).toBe(true);
+ });
  it('finds pinyin without requiring tone marks', () => { expect(filterWords(words,'ni hao').map(w => w.hanzi)).toContain('你好'); });
  it('matches tone-number pinyin even without the pinyin toggle', () => {
    expect(filterWords(words, 'shi4').map(w => w.hanzi)).toContain('是');

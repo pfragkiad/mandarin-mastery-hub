@@ -101,9 +101,10 @@ function ShuowenReviewNotes({ entries }: { entries: EtymologyEntry[] }) {
   </SourceInfo>;
 }
 
-/** Shuowen block, kept deliberately short (owner-requested simplification): visible = title
- *  with a small "AI draft" tag (the handoff requires the draft label to stay visible) and the
- *  review-notes (i), then each English passage (⚠ when uncertain). The unchanged Classical
+/** Shuowen block, kept deliberately short (owner-requested simplification): visible = the
+ *  plain title (no inline draft tag — the owner removed it 2026-11-25 as a third copy of the
+ *  same note) plus the review-notes (i), which carries the "English · AI-generated draft"
+ *  disclosure, then each English passage (⚠ when uncertain). The unchanged Classical
  *  Chinese, plus any editorial Chinese reading, sits behind the remembered Advanced toggle.
  *  Duplicate headwords keep their own source IDs; review headwords never change library
  *  associations, pronunciation or geometry. */

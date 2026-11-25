@@ -47,14 +47,14 @@ import { displayDescription, displaySubtitle, displayTags } from '@/lib/lesson-h
  * are the remembered `lessonFaces` preference, apart from the grids' own; hidden pieces blur and
  * clear one at a time on click (revealClick). Local state: each practice card's revealed answer
  * (reset when the page is left). The
- * "Character hints" side switch is the remembered `lessonHints` preference (absent = on);
+ * "Character quick cards" side switch is the remembered `lessonHints` preference (absent = on);
  * it drives LessonHintsProvider live (lesson-hints.tsx).
  *
  * Narrow layout (the page's own width ≤ 680px, the same threshold as its container
  * queries — a layout condition, never a device): the mobile prototype's design in the
  * site's styling. Sections become collapsible cards (the first open), the section list
  * becomes a sticky row of pills that opens and scrolls to its section, and the Pinyin /
- * Character hints controls float bottom-right (rendered outside .lesson-page, whose
+ * Character quick cards controls float bottom-right (rendered outside .lesson-page, whose
  * container query makes it the containing block of fixed children). Wide layouts keep
  * the side list and always-open sections; Comfortable only enlarges text (styles.css).
  * The pill / side-list highlight follows the section under the sticky header.
@@ -862,7 +862,7 @@ function QuestionCard({ question, index }: { question: LessonQuestion; index: nu
     : multi ? (!answered ? 'Pick every answer that fits, then check.' : null)
     : graded ? (!answered && !open ? 'Pick one.' : null)
     : (!picked.length && !open ? 'Pick one, then compare with the answer.' : null);
-  // Character hints only once the question is answered or its answer shown, so a quick
+  // Character quick cards only once the question is answered or its answer shown, so a quick
   // card's meaning never gives the answer away.
   return <LessonHintsGate enabled={answered || open}><div className={`lesson-card lesson-question${open ? ' is-open' : ''}`}>
     <div className="lesson-card-top"><span className="lesson-register">Question {index} · {plain(question.kind)}</span></div>

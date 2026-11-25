@@ -484,7 +484,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
   // the bookmark drop to a second line.
   useCardFooterFit(footerRef, [entry.id, entry.hanzi, Boolean(onDetails), comfortable, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
   const hanziHidden = !revealed && !revealToFaceView(preferences.cardReveal).hanzi;
-  // Grid Character hints (gridHints, provider around the results): a form drawn as itself is a
+  // Grid Character quick cards (gridHints, provider around the results): a form drawn as itself is a
   // quick-card target (not a tab stop inside the card button); a stand-in drawing (⺴ shown as 冗)
   // stays plain so the hint never names the stand-in instead of the exact form. Strokes never
   // show character hints.

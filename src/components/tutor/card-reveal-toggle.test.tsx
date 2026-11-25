@@ -23,10 +23,10 @@ beforeEach(() => {
 
 const face = (name: 'Hanzi' | 'Pinyin' | 'EN') => screen.getByRole('button', { name: new RegExp(`^(汉|pīn)?\\s*${name}$`) });
 
-describe('grid Character hints switch', () => {
+describe('grid Character quick cards switch', () => {
   it('starts off and turns on only the grids\' own hints, never the lessons\'', () => {
     render(<CardRevealToggle/>);
-    const sw = screen.getByRole('switch', { name: 'Character hints' });
+    const sw = screen.getByRole('switch', { name: 'Character quick cards' });
     expect(sw.getAttribute('aria-checked')).toBe('false');
     fireEvent.click(sw);
     expect(preferences.gridHints).toBe(true);

@@ -200,7 +200,7 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * The selected word, laid out like every other detail card (RecordDetailTitle): hanzi, then
  * pinyin with its speaker and the translation, and the tone-pair pill at the top right.
  * The hanzi get the detail cards' hover pairing with the pinyin and, inside SentenceHints (the
- * remembered Character hints switch), a click opens each character's quick card; the word
+ * remembered Character quick cards switch), a click opens each character's quick card; the word
  * context is the exact Vocabulary record bound to this recording (vocabularyEntryId), never a
  * spelling match. Below: each dictionary syllable as a chip that plays the Sound chart's
  * own recording in place (no navigation). The dictionary → expected tone change lives in
@@ -256,7 +256,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
   </section>;
 }
 
-/** The card's hanzi: hover pairing with the pinyin, plus quick-card targets when Character hints are on. */
+/** The card's hanzi: hover pairing with the pinyin, plus quick-card targets when Character quick cards are on. */
 function ToneHeadword({ headword, word, pairing }: { headword: string; word: Word | null; pairing: ReturnType<typeof usePhrasePairing> }) {
   const hints = useLessonHints();
   const chars = Array.from(headword);
