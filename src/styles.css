@@ -1929,6 +1929,9 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
+.detail-sheet :is(.glyph-parent-card, .kangxi-identity-card) > .glyph-usage-reference {
+  align-items: flex-start;
+}
 @media (max-width: 600px) {
   .detail-sheet .glyph-usage-parents { grid-template-columns: 1fr; }
 }
@@ -1940,7 +1943,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .sentence-section .glyph-usage-example > .sentence {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 14px;
   row-gap: var(--detail-example-gap);
   border-top: 0;
