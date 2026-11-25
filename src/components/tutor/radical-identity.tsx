@@ -6,6 +6,7 @@ import { catalog } from '@/lib/catalog-store';
 import { glyphIndex, libraryDestination } from '@/lib/character-library';
 import { ComponentPronunciation } from './component-pronunciation';
 import { stripKangxiLabel } from './characters-page';
+import { ExampleCardMeta } from './sentence-section';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { cardMeaning } from '@/lib/glyph-presentation';
 import { useWorkspace } from './workspace';
@@ -22,11 +23,14 @@ export function RadicalIdentityNote({ glyph }: { glyph: string }) {
       // fails closed to the recorded text); no related-character pointers on a radical.
       const record = glyphIndex()[radical.glyph];
       const meaning = record?.meaning ? cardMeaning(radical.glyph, record.pinyin, record.meaning) : undefined;
-      // Same shape as the "In a character" rows: the tile, then two lines beside it —
-      // reading + speaker + Radical #N on top, the recorded meaning below.
-      return <div key={radical.id} className="glyph-usage-reference kangxi-identity-item">{destination
-        ? <Button asChild variant="ghost" className="decomposition-glyph is-radical"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(radical.glyph, destination.tab)} aria-label={`Kangxi radical ${radical.number} · ${openDetailsHint(radical.glyph, destination.tab)}`}><strong lang="zh-CN">{radical.glyph}</strong></Link></Button>
-        : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static is-radical">{radical.glyph}</strong>}<span className="glyph-usage-facts"><span className="glyph-usage-facts-row"><ComponentPronunciation glyph={radical.glyph}/><span className="word-hsk-id kangxi-identity-badge">Radical #{radical.number}</span></span>{meaning && <span className="glyph-usage-meaning kangxi-identity-meaning">{stripKangxiLabel(meaning)}</span>}</span></div>;
+      // Same small grid card as "In a character": Radical #N header, then the tile beside
+      // reading + speaker and the recorded meaning.
+      return <div key={radical.id} className="glyph-usage-example kangxi-identity-card">
+        <ExampleCardMeta identity={<span className="word-hsk-id kangxi-identity-badge">Radical #{radical.number}</span>}/>
+        <div className="glyph-usage-reference kangxi-identity-item">{destination
+          ? <Button asChild variant="ghost" className="decomposition-glyph is-radical"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(radical.glyph, destination.tab)} aria-label={`Kangxi radical ${radical.number} · ${openDetailsHint(radical.glyph, destination.tab)}`}><strong lang="zh-CN">{radical.glyph}</strong></Link></Button>
+          : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static is-radical">{radical.glyph}</strong>}<span className="glyph-usage-facts"><span className="glyph-usage-facts-row"><ComponentPronunciation glyph={radical.glyph}/></span>{meaning && <span className="glyph-usage-meaning kangxi-identity-meaning">{stripKangxiLabel(meaning)}</span>}</span></div>
+      </div>;
     })}</div> : <div className="record-gap"><p>Graphical component; no sourced Kangxi radical identity in the imported mappings.</p></div>}
   </div>;
 }

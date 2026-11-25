@@ -267,12 +267,27 @@ function RelatedEtymology({ view, headless }: { view: EtymologyView; headless: b
   </>;
 }
 
+/** Standalone-character notes shown in place for a radical or component whose own record is
+ *  `context-review-required` (owner-requested: mirrors InheritedEtymology without the arrow tile
+ *  because the glyph is the same, keeping attribution to the standalone character). */
+function StandaloneEtymology({ view }: { view: EtymologyView }) {
+  const standalone = useEtymologyView(view.standalone ? { recordId: view.standalone, glyph: view.glyph } : null, Boolean(view.standalone));
+  if (!view.standalone) return null;
+  if (standalone === undefined) return <LoadingLines/>;
+  if (standalone?.status === 'exact-headword' && etymologyHasContent(standalone)) {
+    return <div className="etymology-inherited">
+      <p className="glyph-usage-meaning etymology-inherited-note">These notes are for the standalone character <span lang="zh-CN">{view.glyph}</span> (application to this form has not been reviewed):<EtymologyInfo view={standalone}/></p>
+      <EtymologyPanel view={standalone}/>
+    </div>;
+  }
+  return <div className="glyph-usage-reference"><EtymologyRecordLink id={view.standalone} glyph={view.glyph}/><span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
+}
+
 /** The tab's body; `undefined` (still resolving) shows pulsing text lines. `headless`: see
  *  InheritedEtymology (the caller already shows the simplified → traditional pair). */
 export function EtymologyPanel({ view, headless = false }: { view: EtymologyView | null | undefined; headless?: boolean }) {
   if (view === undefined) return <LoadingLines/>;
   if (!etymologyHasContent(view)) return null;
-  const recordLink = (id: string, target: string) => <EtymologyRecordLink id={id} glyph={target}/>;
   if (view.status === 'exact-headword') {
     const howell = view.entries.filter(entry => entry.sourceId === 'howell');
     const shuowen = view.entries.filter(entry => entry.sourceId === 'shuowen');
@@ -282,7 +297,7 @@ export function EtymologyPanel({ view, headless = false }: { view: EtymologyView
     </div>;
   }
   if (view.status === 'context-review-required') {
-    return view.standalone && <div className="glyph-usage-reference">{recordLink(view.standalone, view.glyph)}<span className="glyph-usage-meaning">The sources describe the standalone character <span lang="zh-CN">{view.glyph}</span>. How that applies to this form hasn’t been reviewed, so its notes stay on the character’s own card.</span></div>;
+    return <StandaloneEtymology view={view}/>;
   }
   return <RelatedEtymology view={view} headless={headless}/>;
 }

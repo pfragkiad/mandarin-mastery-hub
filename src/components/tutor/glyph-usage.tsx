@@ -105,24 +105,25 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</h3>
-    <div className="glyph-usage-parents">{parents.map(parent => <div className="glyph-usage-reference" key={parent.id}>
-      {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
-      <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
-      {/* Two lines beside the tile, as in Decomposition: reading + speaker, then the parent's
-          rank (+ Traditional pill) on top, meaning below. The speaker sits right after the reading
-          instead of in a shared column, so it never drifts away from short readings. The rank is
-          the same label the Sound chart's "In a character" rows use: the parent is a Characters
-          record (its link keeps that record ID), so it is the exact supplied Characters-scope rank,
-          shown only once the lazily loaded usage sidecar is installed — never estimated. */}
-      <span className="glyph-usage-facts">
-        {((preferences.pinyin && parent.pinyin) || usageOrder.loaded || parent.script === 'Traditional') && <span className="glyph-usage-facts-row">
-          {preferences.pinyin && parent.pinyin && <span className="example-pinyin-row">{isMultiReading(parent.pinyin) ? <MultiReadingSpeakers spoken={parent.hanzi} reading={parent.pinyin} variant="example"/> : <><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></>}</span>}
-          {usageOrder.loaded && <UsageLabel rank={usageRank(parent, 'Characters', preferences.includeTraditional)} kind="Characters" compact/>}
-          {parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
-        </span>}
-        <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
-      </span>
-    </div>)}</div>
+    <div className="glyph-usage-parents">{parents.map(parent => {
+      const rank = usageOrder.loaded ? usageRank(parent, 'Characters', preferences.includeTraditional) : null;
+      const hasHeader = rank !== null || parent.script === 'Traditional';
+      return <div className="glyph-usage-example glyph-parent-card" key={parent.id}>
+        <ExampleCardMeta identity={hasHeader ? <>{rank !== null && <UsageLabel rank={rank} kind="Characters" compact/>}{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</> : null}/>
+        <div className="glyph-usage-reference">
+          {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
+          <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
+          {/* Two lines beside the tile: reading + speaker on top, meaning below. Rank (+ Traditional
+              pill) sits in the card header above, matching phrase and idiom small grid cards. */}
+          <span className="glyph-usage-facts">
+            {preferences.pinyin && parent.pinyin && <span className="glyph-usage-facts-row">
+              <span className="example-pinyin-row">{isMultiReading(parent.pinyin) ? <MultiReadingSpeakers spoken={parent.hanzi} reading={parent.pinyin} variant="example"/> : <><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></>}</span>
+            </span>}
+            <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
+          </span>
+        </div>
+      </div>;
+    })}</div>
   </section>;
   // "In a phrase" always shows for characters, even with no recorded example, so
   // External search of the exact hanzi is always reachable. Imported file names

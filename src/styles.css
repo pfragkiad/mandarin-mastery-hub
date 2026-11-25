@@ -1913,14 +1913,24 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 /* Detail-sheet phrase and idiom examples sit in small bordered grid cards (matching
    .lesson-link) so each example's hanzi, pinyin and translation read as one clear unit. */
 .detail-sheet .sentence-section > .sentence-section-head { margin-bottom: 8px; }
-.detail-sheet .sentence-section .glyph-usage-example {
+.detail-sheet .sentence-section .glyph-usage-example,
+.detail-sheet .glyph-parent-card,
+.detail-sheet .kangxi-identity-card {
   display: grid;
   gap: var(--detail-example-gap);
+  align-content: start;
   margin-top: 0;
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: 7px;
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
+}
+.detail-sheet .glyph-usage-parents {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .detail-sheet .glyph-usage-parents { grid-template-columns: 1fr; }
 }
 .detail-sheet .sentence-section .glyph-usage-example + .glyph-usage-example {
   margin-top: 8px;
