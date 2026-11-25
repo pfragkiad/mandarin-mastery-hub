@@ -276,7 +276,11 @@ function StandaloneEtymology({ view }: { view: EtymologyView }) {
   if (standalone === undefined) return <LoadingLines/>;
   if (standalone?.status === 'exact-headword' && etymologyHasContent(standalone)) {
     return <div className="etymology-inherited">
-      <p className="glyph-usage-meaning etymology-inherited-note">These notes are for the standalone character <span lang="zh-CN">{view.glyph}</span> (application to this form has not been reviewed):<EtymologyInfo view={standalone}/></p>
+      <div className="glyph-usage-meaning etymology-inherited-note etymology-standalone-note">
+        <span>These notes are for the standalone character</span>
+        <EtymologyRecordLink id={view.standalone} glyph={view.glyph}/>
+        <EtymologyInfo view={standalone}/>
+      </div>
       <EtymologyPanel view={standalone}/>
     </div>;
   }
