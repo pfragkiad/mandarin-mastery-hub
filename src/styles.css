@@ -240,6 +240,7 @@ article.word-card { touch-action: manipulation; }
  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--foreground); --color-popover: var(--card); --color-popover-foreground: var(--foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--primary); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--primary); --color-destructive: var(--destructive); --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary); --color-terracotta: var(--terracotta); --color-overlay: var(--overlay); --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 8px;
 }
 :root { --background: oklch(.985 .005 135); --foreground: oklch(.29 .035 160); --card: oklch(1 0 0); --primary: oklch(.37 .063 163); --primary-foreground: oklch(.99 .005 140); --secondary: oklch(.947 .018 140); --muted: oklch(.963 .009 135); --muted-foreground: oklch(.48 .017 155); --accent: oklch(.925 .025 145); --destructive: oklch(.55 .16 30); --border: oklch(.914 .012 140); --terracotta: oklch(.49 .082 43); --reveal-ring: oklch(.52 .1 158); --rank-gold: oklch(.58 .125 90); --expert-gold: oklch(.7 .15 85); --sidebar-bg: oklch(.975 .01 135); --banner-ink: oklch(.28 .041 158); --overlay: oklch(.2 .03 160 / .5); --shadow-soft: 0 4px 18px oklch(.3 .03 160 / .035); --shadow-search: 0 2px 14px oklch(.2 0 0 / .12); --shadow-popover: 0 10px 30px oklch(.2 0 0 / .16); --banner-surface: oklch(.947 .018 140); --banner-accent: oklch(.49 .082 43); --hsk-id: oklch(.52 .09 65); --hsk-level: oklch(.52 .19 28); --phrase-style: oklch(.3 0 0); --experimental: oklch(.55 .12 80); --traditional: oklch(.46 .16 305); --sound-link: oklch(.55 .1 200); --writer-outline: oklch(.78 .012 140); color-scheme: light; }
+:root { --component-card-ink: oklch(.52 .006 160); }
 @layer base { * { border-color: var(--border); } body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 14px; letter-spacing: 0; } button,a,input,select { -webkit-tap-highlight-color: transparent; } button,a { touch-action: manipulation; } button { cursor: pointer; } h1,h2,h3,p { margin: 0; } a { text-decoration: none; } input,select { font: inherit; } :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
 .workspace { --sidebar-width: 238px; min-height: 100vh; }
 .workspace.is-collapsed { --sidebar-width: 80px; }
@@ -480,6 +481,7 @@ html[data-display-size='comfortable'] .find-examples-link .find-examples-icon { 
 
 /* Theme roles: body text meets WCAG AA on every surface. */
 :root.dark {
+  --component-card-ink: oklch(.74 .006 160);
   --stroke-selection-ink: oklch(.95 .02 200); --stroke-selection-surface: oklch(.34 0 0); --stroke-selection-border: oklch(.75 .03 200); --stroke-selection-glow: oklch(.85 .09 200 / .55);
   --component-ink-0: oklch(.82 .115 210); --component-ink-1: oklch(.82 .115 50); --component-ink-2: oklch(.82 .115 145); --component-ink-3: oklch(.82 .115 330); --component-ink-4: oklch(.82 .115 85); --component-ink-5: oklch(.82 .115 275); --component-ink-6: oklch(.82 .115 25); --component-ink-7: oklch(.82 .115 175);
   color-scheme: dark;
@@ -1687,7 +1689,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .is-traditional { --card-ink: var(--traditional); }
 .card-ink-radical { --card-ink: var(--hsk-id); }
 .card-ink-character { --card-ink: var(--primary); }
-.card-ink-component { --card-ink: var(--foreground); }
+.card-ink-component { --card-ink: var(--component-card-ink); }
 .word-card.stroke-card { --card-ink: var(--component-ink-0); }
 .word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
 /* Words cards: a one-character word that is a sourced radical (八, 门; card-ink.ts wordInk)
