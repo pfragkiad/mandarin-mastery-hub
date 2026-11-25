@@ -423,7 +423,8 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-facts-row .example-audio-error { flex-basis: 100%; }
 .glyph-usage-facts-row .component-reuse-label { line-height: 14px; }
 .glyph-usage-idiom-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
-html[data-display-size='comfortable'] .glyph-usage-facts-row :is(.component-reuse-label, .glyph-usage-idiom-topic) { font-size: 13px; line-height: 1.4; }
+html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example-meta) :is(.component-reuse-label, .glyph-usage-idiom-topic) { font-size: 13px; line-height: 1.4; }
+.idiom-example-meta { display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
