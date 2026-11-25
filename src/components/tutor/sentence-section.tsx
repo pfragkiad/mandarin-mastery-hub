@@ -32,6 +32,23 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
 }
 
 /**
+ * Header line inside one small example card: the record's own identity label, then its
+ * recorded topic, joined by a middle dot.
+ *
+ * Inputs: `identity` — the already-rendered label for that record (the HSK level/ID pill for
+ * a phrase, the frequency rank for an idiom); `topic` — the primary recorded subtopic label,
+ * or null when the record has none. With neither, nothing renders, so a card never grows an
+ * empty header row, and the dot only appears between two parts that both exist.
+ */
+export function ExampleCardMeta({ identity, topic }: { identity?: ReactNode; topic?: string | null }) {
+  if (!identity && !topic) return null;
+  return <div className="example-card-meta">
+    {identity}
+    {topic && <span className="example-card-topic">{identity ? <span aria-hidden="true">· </span> : null}{topic}</span>}
+  </div>;
+}
+
+/**
  * Show-more drawer for a card's recorded example sentences.
  *
  * Inputs: `examples` — the rendered examples in source order. The first stays visible;

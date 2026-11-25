@@ -6,6 +6,7 @@ import { GlyphUsageExamples } from './glyph-usage';
 import { CharacterDetails } from './characters-page';
 import type { LibraryEntry } from '@/lib/character-library';
 import type { Word } from '@/lib/mandarin';
+import type { Entry } from '@/lib/data-contract';
 import { loadCharacterHskExample } from '@/lib/character-hsk-examples';
 import fallbackData from '../../../public/data/character-hsk-examples.json';
 import { loadCharacterTatoebaExample, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
@@ -126,6 +127,35 @@ describe('Absent-record notes', () => {
     const { container } = render(<GlyphUsageExamples entry={lang} kind="Characters" />);
     expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(sentence);
     expect(loadCharacterHskExample).not.toHaveBeenCalled();
+  });
+
+  it('shows the record\'s HSK index and primary subtopic in the phrase card header', () => {
+    // Only recorded values: hskLevel/hskId come from the entry, the subtopic from its
+    // studyMetadata — the card header must echo exactly those, never an inferred label.
+    workspaceState.items = [{
+      id: 'recorded-word', hanzi: '中文', pinyin: 'Zhōngwén', meaning: 'Chinese', type: '', collection: '', level: '',
+      sentence: '我在大学学习中文。', sentencePinyin: 'wǒ zài dàxué xuéxí Zhōngwén.', translation: 'I study Chinese at university.',
+      hskId: 18,
+      // Only the fields the header reads; the rest of the record shape is irrelevant here.
+      entry: { entryKind: 'word', hskLevel: 1, hsk_index: 18, examples: [], studyMetadata: { primarySubtopicId: 'arts-entertainment' } } as unknown as Entry,
+    }];
+    const zhong: LibraryEntry = { id: 'Characters:中', hanzi: '中', pinyin: 'zhōng', meaning: 'middle', note: '4 strokes' };
+    const { container } = render(<GlyphUsageExamples entry={zhong} kind="Characters" />);
+    const meta = container.querySelector('.example-card-meta');
+    expect(meta?.querySelector('.hsk-level-pill')?.textContent).toBe('HSK L1/#18');
+    // The middle dot rides with the topic label; the visible space before it is the row's flex gap.
+    expect(meta?.querySelector('.example-card-topic')?.textContent).toBe('· Arts & Entertainment');
+    // The header sits inside the same bordered card as its sentence, above it.
+    expect(meta?.parentElement?.className).toContain('glyph-usage-example');
+    expect(meta?.nextElementSibling?.querySelector('.sentence-hanzi')?.textContent).toBe('我在大学学习中文。');
+  });
+
+  it('omits the phrase card header when neither HSK nor subtopic is recorded', () => {
+    workspaceState.items = [{ id: 'plain-word', hanzi: '中文', pinyin: 'Zhōngwén', meaning: 'Chinese', type: '', collection: '', level: '', sentence: '', translation: '' }];
+    const zhong: LibraryEntry = { id: 'Characters:中', hanzi: '中', pinyin: 'zhōng', meaning: 'middle', note: '4 strokes' };
+    const { container } = render(<GlyphUsageExamples entry={zhong} kind="Characters" />);
+    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe('中文');
+    expect(container.querySelector('.example-card-meta')).toBeNull();
   });
 
   it('fills a missing character from its exact lesson passage with attribution and clears it on navigation', async () => {

@@ -11,7 +11,8 @@ import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
-import { MoreExamples, SentenceHints, SentenceSection } from './sentence-section';
+import { MoreExamples, SentenceHints, SentenceSection, ExampleCardMeta } from './sentence-section';
+import { wordHskPill } from './word-identity-pills';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
@@ -126,9 +127,16 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   // "In a phrase" always shows for characters, even with no recorded example, so
   // External search of the exact hanzi is always reachable. Imported file names
   // and review status identifiers are internal metadata, not learner hints.
-  const sentenceExamples = examples.map(({ word, sentence }) => <div className="glyph-usage-example" key={word.id}>
-    <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }}/>
-  </div>);
+  const sentenceExamples = examples.map(({ word, sentence }) => {
+    // Header line inside the card: this record's own HSK level/ID pill and its primary
+    // recorded subtopic, each shown only when recorded (wordHskPill / primarySubtopicLabel
+    // return nothing rather than a guess). Same shape as the idiom cards' rank · topic line.
+    const hsk = wordHskPill(word);
+    return <div className="glyph-usage-example" key={word.id}>
+      <ExampleCardMeta identity={hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>} topic={primarySubtopicLabel(word)}/>
+      <SentenceExample heading="" sentence={sentence ? word.sentence : word.hanzi} pinyin={sentence ? word.sentencePinyin : word.pinyin} translation={sentence ? word.translation : word.meaning} audioRequest={sentence ? { text: word.sentence, reading: word.sentencePinyin ?? null, audio: word.entry?.examples[0]?.audio ?? null } : { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null }}/>
+    </div>;
+  });
   if (hskExample) sentenceExamples.push(<div className="glyph-usage-example" key="lesson">
       <SentenceExample heading="" sentence={hskExample.sentence} pinyin={hskExample.pinyin} translation={hskExample.translation}/>
       <p className="detail-footnote">Source: <Link to="/lessons/$lessonId" params={{ lessonId: hskExample.source.lessonId }}>{hskExample.source.collection} · {hskExample.source.title}</Link>{hskExample.source.status === 'draft' && ' · Draft lesson example'}</p>
@@ -168,10 +176,7 @@ export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
         const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
         const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;
         return <div className="glyph-usage-example" key={idiom.id}>
-          <div className="idiom-example-meta">
-            <UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>
-            {topicLabel && <span className="glyph-usage-idiom-topic"><span aria-hidden="true">· </span>{topicLabel}</span>}
-          </div>
+          <ExampleCardMeta identity={<UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>} topic={topicLabel}/>
           <SentenceExample
             heading=""
             sentence={display}

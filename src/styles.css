@@ -422,12 +422,15 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-facts-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
 .glyph-usage-facts-row .example-audio-error { flex-basis: 100%; }
 .glyph-usage-facts-row .component-reuse-label { line-height: 14px; }
-.glyph-usage-idiom-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
-html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .idiom-example-meta) :is(.component-reuse-label, .glyph-usage-idiom-topic) { font-size: 13px; line-height: 1.4; }
-.idiom-example-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
-/* Metadata belongs above its idiom; the quieter inner rule distinguishes examples
+.example-card-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
+html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .example-card-meta) :is(.component-reuse-label, .example-card-topic) { font-size: 13px; line-height: 1.4; }
+.example-card-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
+/* Metadata belongs above its example; the quieter inner rule distinguishes examples
    from the full-weight dividers between different detail sections. */
 .idiom-examples-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); margin-top: var(--detail-example-gap, 6px); }
+/* Phrase cards stack their header line above the sentence the same way, also outside the
+   floating window (a word opened in the older dialog has no .detail-sheet wrapper). */
+.sentence-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); }
 .idiom-examples-section .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); margin-top: var(--detail-section-gap, 14px); padding-top: var(--detail-section-gap, 14px); }
 .idiom-examples-section .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
