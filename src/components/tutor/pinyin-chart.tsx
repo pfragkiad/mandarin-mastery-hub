@@ -4,7 +4,7 @@
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
-import { ArrowLeft, ListMusic, Square, VolumeX } from 'lucide-react';
+import { ArrowLeft, ListMusic, Square, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
@@ -315,8 +315,8 @@ function toneTileHint(base: string, tone: Tone, playable: boolean): string {
   return `Click to listen to ${toneMark(base, tone)} (recorded sound)${tone <= 4 ? ` · or press ${tone}` : ''}`;
 }
 
-/** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. */
-function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
+/** Selected-syllable player: Back, tone buttons (neutral selectable but never playable), play-all, slow, parts, sound-alikes and characters. Exported for tests. */
+export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone, onPlayAll, onSelect, onLeave, inSheet = false }: {
   data: PinyinData; player: PinyinPlayer; syllable?: PinyinSyllable | undefined; tone: Tone | null; slow: boolean;
   onSlow: (slow: boolean) => void; onTone: (tone: Tone) => void; onPlayAll: () => void; onSelect: (base: string, label: string, current: Tone | null) => void; onLeave: () => void;
   /** Inside the small-screen window, whose bar already carries Back and Close. */
@@ -397,7 +397,22 @@ function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, onTone,
       <div><dt>Final</dt><dd>{syllable.final}</dd></div>
     </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
-    {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => <button key={base} type="button" className="pinyin-alike" onClick={() => onSelect(base, title, current)} lang="zh-Latn-pinyin">{current !== null && findSyllable(data, base)?.tones.includes(current) ? toneMark(base, current) : base}</button>)}</div></div>}
+    {/* Each case is one pill with two regions: the spelling opens that sound (as before), and
+        the speaker plays the same recording in place without leaving the card. The speaker
+        appears only when a tone is chosen and that syllable really has that exact recording —
+        with no tone chosen the pill shows the bare syllable, which matches no single clip, so
+        nothing is guessed. Play-only: a running clip is never stopped by a second click. */}
+    {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => {
+      const tone = current !== null && hasRecording(data, base, current) ? current : null;
+      const label = tone !== null ? toneMark(base, tone) : base;
+      const id = tone !== null ? soundId(base, tone) : null;
+      const playing = id !== null && player.playing === id;
+      return <span key={base} className={`pinyin-alike${playing ? ' is-playing' : ''}`}>
+        <button type="button" className="pinyin-alike-say" onClick={() => onSelect(base, title, current)} lang="zh-Latn-pinyin">{label}</button>
+        {tone !== null && <button type="button" className="pinyin-alike-audio" aria-label={`Listen to ${label}`} title={`Listen to ${label} (recorded sound)`}
+          onClick={() => { if (!playing) void player.play(sound(base, tone)); }}><Volume2 /></button>}
+      </span>;
+    })}</div></div>}
     <SyllableCharacters base={syllable.base} tone={chosen} backLabel={chosen !== null ? toneMark(syllable.base, chosen) : syllable.base} onLeave={onLeave} />
   </aside>;
 }
