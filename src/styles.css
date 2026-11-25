@@ -1454,6 +1454,10 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-family-card { position: relative; }
 .tile-hanzi-row { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-width: 0; }
 .tile-form { display: inline-flex; align-items: center; justify-content: center; width: 1.34em; height: 1.34em; line-height: 1; border: 1px solid var(--border); border-radius: 6px; }
+/* Strokes grid cards: first tile wears Hanzi Writer stroke colour 0 (cyan); second tile draws the realistic brush outline. */
+.tile-form.stroke-glyph-tile { color: var(--component-ink-0); }
+.tile-form.stroke-drawing-tile { padding: 0.08em; color: var(--foreground); }
+.stroke-drawing-svg { width: 100%; height: 100%; display: block; fill: currentColor; }
 .radical-tile-forms { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-width: 0; pointer-events: none; color: var(--muted-foreground); opacity: .7; }
 .radical-family-section { margin: 20px 0; border-top: 1px solid var(--border); padding-top: 18px; }
 .radical-form-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr)); gap: 14px 8px; margin-top: 14px; }
