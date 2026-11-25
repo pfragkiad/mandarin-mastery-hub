@@ -4,7 +4,7 @@ import { MeaningText } from './meaning-text';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, completionWord, finishedResult, mistakeNote, strokeScore, type CharacterResult } from '@/lib/stroke-score';
-import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
+import { Fragment, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { practiceCanvasSize, PRACTICE_CANVAS_MIN, practiceProgressPicture, PRACTICE_PROGRESS_PICTURE_MIN, PRACTICE_PROGRESS_PICTURE_MAX } from '@/lib/learning-preferences';
 import { accuracyGrade, type AccuracyGrade } from '@/lib/accuracy-grade';
 import { componentInk, practiceStrokeGroups, strokeGroupAt, strokeGroupRuns, DEFAULT_GROUPING_SOURCE, type PracticeStrokeGroup } from '@/lib/practice-stroke-groups';
@@ -40,6 +40,10 @@ import { StrokeDirectionHints } from './stroke-direction-hints';
 import type { MedianPoint } from '@/lib/stroke-directions';
 import { useCharacterEnrichment, RecordedDecomposition } from './character-enrichment';
 import { ComponentPronunciation } from './component-pronunciation';
+import { isHanziChar } from '@/lib/sentence-align';
+import { SentenceHints } from './sentence-section';
+import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
+import { usePhrasePairing } from './phrase-pairing';
 import { GlyphReadingSpeaker, MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePerfectCelebration } from './perfect-celebration';
 import { shownGlyph } from '@/lib/radical-display-glyph';
@@ -1127,12 +1131,16 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
     return hit ? { to: '/characters', search: { tab: hit.kind, id: hit.id } } : undefined;
   })();
   const strip = wordChars.length > 1 ? (focusTile: ((word: ProgressTileWord) => ReactNode) | null) => <WordCharacterStrip characters={wordChars} focus={focus} hideGlyphs={recall} mode={mode} progress={wordProgress} onSelect={setCharacter} focusTile={focusTile} onError={message => setAudioError(Boolean(message))}/> : undefined;
+  const pairing = usePhrasePairing(initialCharacter, wordFact?.pinyin, isWord && !recall, true);
+  const titleText = isWord ? initialCharacter : shownGlyph(character);
   return <div className="page-enter practice-page-content">
-    <PracticeHeader glyph={isWord ? initialCharacter : shownGlyph(character)} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
-      reading={isWord ? <WordReading word={wordFact} onError={setAudioError}/> : characterReading}
-      meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : <>{practiceMeaning ? <MeaningText text={practiceMeaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}{fact?.word && fact.word.meaning !== info.meaning && !wordReadingShown && <span className="practice-hsk-word">HSK word{fact.word.pinyin !== info.reading ? <> (<span className="pinyin">{fact.word.pinyin}</span>)</> : null}: {fact.word.meaning}</span>}</>}
-      pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
-      after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
+    <SentenceHints backLabel={recall ? 'Practice' : `Practice (${isWord ? initialCharacter : character})`}>
+      <PracticeHeader glyph={titleText} glyphNode={recall ? undefined : <PracticeTitleGlyphs text={titleText} word={wordFact} pairing={pairing} isWord={isWord}/>} glyphClassName={isWord ? 'card-ink-character' : `${practiceInk}${script === 'Traditional' ? ' traditional-character' : ''}`} hideGlyph={recall}
+        reading={isWord ? <WordReading word={wordFact} pinyin={pairing.pinyinText} onError={setAudioError}/> : characterReading}
+        meaning={isWord ? wordFact?.meaning || <span className="meaning-missing">Word practice</span> : <>{practiceMeaning ? <MeaningText text={practiceMeaning}/> : <span className="meaning-missing">No English meaning recorded yet</span>}{fact?.word && fact.word.meaning !== info.meaning && !wordReadingShown && <span className="practice-hsk-word">HSK word{fact.word.pinyin !== info.reading ? <> (<span className="pinyin">{fact.word.pinyin}</span>)</> : null}: {fact.word.meaning}</span>}</>}
+        pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
+        after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
+    </SentenceHints>
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}
     <div className="practice-layout practice-layout-single"><WritingPractice decomposition={decomposition && decompositionHasContent(decomposition.root, enrichment) ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={enrichment}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;
@@ -1215,10 +1223,25 @@ function WordCharacterStrip({ characters, focus, hideGlyphs, mode, progress, onS
 
 // The practised word's own reading and speaker: the word's recorded audio first, then the
 // shared pronunciation pipeline (src/lib/audio.ts) for that exact word reading.
-function WordReading({ word, onError }: { word: (typeof words)[number] | undefined; onError: (failed: boolean) => void }) {
+/** The Practice "Write <glyph>" headword: reciprocal hanzi ↔ pinyin hover pairing for
+ *  multi-character words/phrases, plus quick-card character hints when Character hints are on. */
+function PracticeTitleGlyphs({ text, word, pairing, isWord }: { text: string; word: (typeof words)[number] | undefined; pairing: ReturnType<typeof usePhrasePairing>; isWord: boolean }) {
+  const hints = useLessonHints();
+  const phrase = word ? vocabularyKind(word) === 'phrase' || vocabularyKind(word) === 'idiom' : isWord;
+  const own: HintWord | null = word ? { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: vocabularyKind(word), word: word.id }, audio: word.audio ?? null } : null;
+  const contexts = useMemo(() => (hints?.enabled && phrase ? hints.wordsFor(text, false, text) : null), [hints, phrase, text]);
+  const chars = Array.from(text);
+  if (!isWord) return hints?.enabled && isHanziChar(text) ? <HintChar glyph={text} word={own}/> : <>{text}</>;
+  if (!hints?.enabled) return <>{chars.map(pairing.glyph)}</>;
+  return <>{chars.map((ch, i) => isHanziChar(ch)
+    ? <HintChar key={i} glyph={ch} word={phrase ? contexts?.[i] ?? null : own} {...pairing.glyphProps(i)}/>
+    : pairing.glyph(ch, i))}</>;
+}
+
+function WordReading({ word, pinyin, onError }: { word: (typeof words)[number] | undefined; pinyin?: ReactNode; onError: (failed: boolean) => void }) {
   const { preferences } = useWorkspace();
   const request = word ? { ...characterAudioRequest(word.hanzi, word.pinyin), audio: word.audio ?? null } : null;
   const available = usePronunciationAvailability(Boolean(request && audioCandidates(request).some(candidate => candidate.kind === 'recording')), word?.pinyin);
   if (!word) return null;
-  return <><span className="pinyin">{word.pinyin}</span><Button variant="ghost" size="icon" className={`practice-listen${available ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={available ? 'Listen to pronunciation' : undefined} onClick={async () => onError(Boolean(audioMessage(await playPronunciation(request!, preferences.slow))))}><Volume2/></Button></>;
+  return <><span className="pinyin">{pinyin ?? word.pinyin}</span><Button variant="ghost" size="icon" className={`practice-listen${available ? '' : ' audio-tts-only'}`} disabled={!available} aria-label={available ? `Listen to ${word.hanzi}` : `No audio available for ${word.hanzi}`} title={available ? 'Listen to pronunciation' : undefined} onClick={async () => onError(Boolean(audioMessage(await playPronunciation(request!, preferences.slow))))}><Volume2/></Button></>;
 }

@@ -72,7 +72,7 @@ const familyFile: RadicalStrokeFile = {
 const practiceHeading = () => screen.getByRole('heading', { name: 'Write 学' });
 const titleGlyph = () => practiceHeading().querySelector('.practice-title-glyph');
 
-const visibleHeadingGlyphs = () => Array.from(practiceHeading().querySelectorAll('span'))
+const visibleHeadingGlyphs = () => Array.from(practiceHeading().querySelectorAll(':scope > span'))
   .filter(node => !node.classList.contains('sr-only'))
   .map(node => node.textContent);
 
@@ -366,6 +366,15 @@ describe('multi-character practice tile filtering', () => {
     expect(labels[2]).toContain('乙');
     // First drawable Han character is focused by default, not the opening quote.
     expect(document.querySelector('.word-strip-tile.is-selected')).toBeTruthy();
+  });
+
+  it('makes Hanzi in the Write title clickable hint targets in Trace, and hides them in Recall', () => {
+    const { unmount } = render(<StrokesPage initialCharacter="“学，乙。”" mode="trace"/>);
+    const hintButtons = document.querySelectorAll('.practice-title-glyph .lesson-hint-char');
+    expect(Array.from(hintButtons).map(el => el.textContent)).toEqual(['学', '乙']);
+    unmount();
+    render(<StrokesPage initialCharacter="“学，乙。”" mode="recall"/>);
+    expect(document.querySelectorAll('.practice-title-glyph .lesson-hint-char')).toHaveLength(0);
   });
 });
 

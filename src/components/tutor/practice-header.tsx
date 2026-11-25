@@ -21,6 +21,8 @@ export type PracticeDetails = { to: '/characters'; search: CharactersSearch } | 
 // it and, when the record has other forms, the form switch below the reading.
 // Inputs:
 // - glyph / glyphClassName: the title glyph and its identity ink (card-ink-*, is-traditional).
+// - glyphNode: optional interactive title content (hanzi ↔ pinyin hover pairing + character hints);
+//   ignored in Recall so the answer stays hidden.
 // - hideGlyph: Recall keeps the glyph only for screen readers so the answer never shows.
 // - reading: pinyin + speaker(s); meaning: the translation; pills: Radical #N / kind pills.
 // - forms: ScriptForms / RadicalForms in their "switch" layout; omitted when there is only
@@ -30,7 +32,7 @@ export type PracticeDetails = { to: '/characters'; search: CharactersSearch } | 
 //   opens it, leaving this practice page as the details window's Back step.
 // State: only Back's label, read from the session origin (practice-return.ts) after mount —
 // the server has no session storage, so reading it during render would mismatch hydration.
-export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, reading, meaning, pills, forms, onPrint, printDisabled = false, after, details }: { details?: PracticeDetails | undefined; glyph: string; glyphClassName?: string; hideGlyph?: boolean; reading: ReactNode; meaning: ReactNode; pills?: ReactNode; forms?: ReactNode; onPrint: () => void; printDisabled?: boolean; after?: ReactNode }) {
+export function PracticeHeader({ glyph, glyphNode, glyphClassName = '', hideGlyph = false, reading, meaning, pills, forms, onPrint, printDisabled = false, after, details }: { details?: PracticeDetails | undefined; glyph: string; glyphNode?: ReactNode; glyphClassName?: string; hideGlyph?: boolean; reading: ReactNode; meaning: ReactNode; pills?: ReactNode; forms?: ReactNode; onPrint: () => void; printDisabled?: boolean; after?: ReactNode }) {
   const navigate = useNavigate();
   const [origin, setOrigin] = useState<string | null>(null);
   useEffect(() => { setOrigin(practiceOrigin()); }, [glyph]);
@@ -49,7 +51,7 @@ export function PracticeHeader({ glyph, glyphClassName = '', hideGlyph = false, 
         pushed right, then the translation on its own line), and the form tiles (when any)
         on a full-width row below the reading. */}
     <div className="practice-title-row">
-      <h1 className="practice-title">Write{' '}<span lang="zh-CN" className={`practice-title-glyph ${glyphClassName}${hideGlyph ? ' sr-only' : ''}`}>{glyph}</span></h1>
+      <h1 className="practice-title">Write{' '}<span lang="zh-CN" className={`practice-title-glyph ${glyphClassName}${hideGlyph ? ' sr-only' : ''}`}>{!hideGlyph && glyphNode !== undefined ? glyphNode : glyph}</span></h1>
       {details && <PracticeDetailsLink details={details} glyph={glyph} hideGlyph={hideGlyph}/>}
     </div>
     <div className="practice-header-main">
