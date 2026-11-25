@@ -2417,8 +2417,8 @@ html[data-display-size='comfortable'] {
   .mobile-search-actions { display: inline-flex; align-items: center; gap: 2px; }
   /* The search-box X sits outside the field at full strength, so it reads clearly without focusing the box. */
   .mobile-search-actions .close-x { opacity: 1; }
-  .mobile-filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
-  .library-page .catalog-tools-row { gap: 6px; margin-top: 8px; margin-bottom: 12px; }
+  .mobile-filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--library-controls-gap, 8px); }
+  .library-page .catalog-tools-row { gap: var(--library-controls-gap, 8px); margin-top: 8px; margin-bottom: 12px; }
   .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
   html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { min-height: 36px; height: auto; font-size: 13px; padding-inline: 8px; }
@@ -3499,7 +3499,7 @@ html :is(.practice-header, .catalog-detail-forms) .form-switch-thumb.is-radical.
    The filter wrapper dissolves into the tab panel's wrapping row; Study and its hidden-face
    chip form one unbreakable group that moves to the next line together when it doesn't fit. */
 @media (max-width: 1280px) {
-  .library-page [role='tabpanel']:has(> .mobile-library-filters) { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 8px; }
+  .library-page [role='tabpanel']:has(> .mobile-library-filters) { --library-controls-gap: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: var(--library-controls-gap); }
   .library-page [role='tabpanel'] > .mobile-library-filters { display: contents; }
   .library-page [role='tabpanel'] > .mobile-library-filters > form { flex: 1 0 100%; min-width: 0; }
   .library-page [role='tabpanel']:has(> .mobile-library-filters) > .catalog-tools-row { flex: 0 1 auto; flex-wrap: nowrap; max-width: 100%; min-width: 0; margin: 0; }
@@ -3736,7 +3736,7 @@ html[data-display-size='comfortable'] .game-setup .saved-filter-toggle { height:
    buttons' 40px height (Details/Trace/Recall), and the bookmark sits with equal 8px space
    on both sides between Filters and Study. */
 @media (max-width: 1280px) {
-  .library-page .mobile-filter-actions { gap: 8px; margin-right: 8px; }
+  .library-page .mobile-filter-actions { gap: var(--library-controls-gap, 8px); margin-right: 0; }
   .library-page .mobile-filter-actions > button, .library-page .catalog-tools-row > button,
   html[data-display-size='comfortable'] .library-page .mobile-filter-actions > button,
   html[data-display-size='comfortable'] .library-page .catalog-tools-row > button { height: 40px; min-height: 40px; }
