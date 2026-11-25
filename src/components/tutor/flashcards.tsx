@@ -276,7 +276,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
               "All courses" / "All lessons" leave the deck unfiltered by lesson. */}
           {courses.length > 0 && <>
             <GameField label="Course"><FilterSelect ariaLabel="Course" value={draft.course ?? ''} onValueChange={v => patch({ course: v || undefined, lesson: undefined })} items={[{ value: '', label: 'All courses' }, ...courses.map(g => ({ value: g.id, label: g.label }))]} /></GameField>
-            <GameField label="Lesson"><FilterSelect ariaLabel="Lesson" value={draft.lesson ?? ''} onValueChange={v => patch({ lesson: v || undefined })} items={[{ value: '', label: 'All lessons' }, ...lessons.map(g => ({ label: g.label, options: g.lessons.map(l => ({ value: l.id, label: l.title })) }))]} /></GameField>
+            <GameField label="Lesson"><FilterSelect ariaLabel="Lesson" value={draft.lesson ?? ''} onValueChange={v => patch({ lesson: v || undefined })} items={[{ value: '', label: 'All lessons' }, ...lessons.map(g => ({ label: g.label, options: g.lessons.map(l => ({ value: l.id, label: l.title, nested: true })) }))]} /></GameField>
           </>}
           {!draftReference && <>
             <GameField label="Topic"><TopicSelect topics={facets.collections} subtopics={facets.subtopics} collection={draft.collection || ''} subtopic={draftSubtopic} allTopics="" allSubtopics="" onChange={patch}/></GameField>
