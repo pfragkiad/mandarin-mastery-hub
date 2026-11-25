@@ -799,6 +799,10 @@ this keeps the number right beside the stroke tile. */
 /* The switch that turns traditional forms on wears the same purple as every traditional
    mark, so the control and what it reveals read as one idea. */
 .settings-row .traditional-switch[data-state='checked'] { background-color: var(--traditional); }
+/* The switch that reveals external search links wears the same blueish-purple as the
+   card ↗ link and the details "Search on the internet" button (see --examples-link),
+   so the control and the two things it turns on read as one idea. */
+.settings-row .examples-switch[data-state='checked'] { background-color: var(--examples-link); }
 /* Detail heading: the Traditional pill shares the pinyin row, pinned to the right. */
 /* One right-aligned group keeps every header pill tight together (Traditional, then the kind/radical pill). */
 .catalog-detail-pills { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
