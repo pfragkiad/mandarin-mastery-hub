@@ -1,5 +1,8 @@
 # Roadmap
 
+## Floating game ranges
+- [x] Anchor Rank and Strokes panels below their buttons, with separate Clear and outside-click dismissal; verify drafts and both games.
+
 ## Expandable game range filters
 - [x] Put the stroke range behind a shared summary dropdown button in Flashcards and Drawing.
 - [x] Add an expandable Frequency panel with custom From/To ranks, slider and presets using recorded rank data.

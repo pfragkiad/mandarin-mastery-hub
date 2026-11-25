@@ -3,6 +3,7 @@ import * as SliderPrimitive from '@radix-ui/react-slider';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { FilterSelect } from './filter-select';
 import { FilterWideningToggle } from './filter-form';
 import { formatRankRange, parseRankRange, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
@@ -39,22 +40,21 @@ export function GameField({ label, children }: { label: string; children: ReactN
   return <div className="game-setting-field"><span className="game-field-label">{label}</span>{children}</div>;
 }
 
-/** A compact range summary opens its editing panel without applying or discarding drafts.
- * Children stay mounted so keyboard editing and secondary disclosure state survive closing. */
+/** Shared anchored popover: outside clicks dismiss it without applying or discarding
+ * parent-owned drafts. Secondary disclosure state lives above the unmounted panel. */
 function GameRangeDisclosure({ label, summary, active, children }: {
   label: string; summary: string; active: boolean; children: ReactNode;
 }) {
-  const id = useId();
   const [open, setOpen] = useState(false);
-  return <div className="game-range-field">
-    <Button type="button" variant="outline" size="sm"
+  return <Popover open={open} onOpenChange={setOpen}>
+    <PopoverTrigger asChild><Button type="button" variant="outline" size="sm"
       className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
-      aria-label={`${label}: ${summary}`} aria-expanded={open} aria-controls={id}
-      onClick={() => setOpen(previous => !previous)}>
+      aria-label={`${label}: ${summary}`}>
       <span>{label}: {summary}</span><ChevronDown className={open ? 'is-open' : ''}/>
-    </Button>
-    <div id={id} hidden={!open}>{children}</div>
-  </div>;
+    </Button></PopoverTrigger>
+    <PopoverContent side="bottom" align="start" sideOffset={4} collisionPadding={12}
+      className="game-range-popover" aria-label={`${label} filter`}>{children}</PopoverContent>
+  </Popover>;
 }
 
 export type GameRankGroup = { value: string; label: string; min: number; max: number };
@@ -120,7 +120,7 @@ const STROKE_PRESETS = [
   { value: '11+', label: '11+' },
 ] as const;
 
-/** Dual-thumb stroke range slider with quick presets (1–5, 6–10, 11+) and an "any: 1 – 20+" reset. */
+/** Dual-thumb stroke range slider with quick presets and a dedicated draft-only Clear. */
 export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
   value: string; strokesUpTo?: boolean; onChange: (value: string) => void;
 }) {
@@ -139,10 +139,10 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
   return <GameRangeDisclosure label="Strokes" summary={active ? formatStrokeRangeLabel(value, strokesUpTo).replace(/ strokes?$/, '') : 'Any'} active={active}><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
-      {/* Keep one control mounted: changing tag exposed only the active label to button sizing rules. */}
+      {/* Clear resets only the stroke draft; the game's Apply still commits it. */}
       <Button type="button" variant="ghost" className={`stroke-range-any${active ? ' is-reset' : ''}`}
-        disabled={!active} onClick={() => onChange('')} aria-label="Reset stroke range to any">
-        any: {STROKE_SLIDER_MIN} – {STROKE_SLIDER_MAX}+
+        disabled={!active} onClick={() => onChange('')}>
+        Clear
       </Button>
     </div>
     <SliderPrimitive.Root

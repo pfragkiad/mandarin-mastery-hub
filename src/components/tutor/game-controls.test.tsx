@@ -37,4 +37,18 @@ describe('expandable game ranges', () => {
     expect(screen.getByRole('spinbutton', { name: 'From rank' })).toHaveValue(37);
     expect(screen.getByRole('spinbutton', { name: 'To rank' })).toHaveValue(300);
   });
+  it('clears only the stroke draft', () => {
+    const change = vi.fn();
+    render(<StrokeRangeControl value="9-15" onChange={change}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^Strokes:/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Clear' }));
+    expect(change).toHaveBeenCalledExactlyOnceWith('');
+  });
+  it('clears the rank draft and widening together', () => {
+    const change = vi.fn();
+    render(<FrequencyRangeControl value="range:254-1000" upTo groups={[]} maxRank={9933} onChange={change}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^Rank:/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Clear' }));
+    expect(change).toHaveBeenCalledExactlyOnceWith('', false);
+  });
 });
