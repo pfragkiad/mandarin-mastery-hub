@@ -11,6 +11,16 @@ describe('sound chart links default', () => {
   });
 });
 
+// Guards the out-of-the-box state of the "External search links" switch: a fresh
+// browser (and Preferences -> Reset preferences, which writes this object) must
+// hide the card ↗ link and the details "Search on the internet" button. Every
+// consumer checks `=== true`, so only an explicit stored `true` shows them.
+describe('external search links default', () => {
+  it('hides external search links for new visitors', () => {
+    expect(defaultPreferences.cardExamplesLinks).toBe(false);
+  });
+});
+
 // The progress tiles' preview box is dragged from the grip under the row. An unsaved
 // preference must stay absent so Compact, Comfortable and phones each keep their own
 // smaller default, and a saved drag must never escape the usable range.
