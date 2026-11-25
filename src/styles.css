@@ -1895,6 +1895,11 @@ html :is(.game-setup, .game-range-popover) .stroke-range-any[data-ui-button]:dis
 .stroke-range-presets button { min-height: 32px; height: auto; padding: 5px 12px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); border-radius: 6px; color: var(--foreground); background: var(--card); font-variant-numeric: tabular-nums; }
 .stroke-range-presets button:hover { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); }
 .stroke-range-presets button.active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); }
+/* Floating range panel footer: quick choices on the left, the small explicit close on the
+   right. Done only dismisses the panel — the game's Apply stays the only commit. */
+.game-range-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--library-controls-gap, 8px); flex-wrap: wrap; }
+html :is(.game-setup, .game-range-popover) .game-range-done[data-ui-button] { margin-left: auto; min-height: 32px; height: auto; padding: 5px 12px; font-size: 12px; font-weight: 500; border-radius: 6px; border-color: color-mix(in oklab, var(--primary) 35%, var(--border)); color: var(--primary); background: var(--card); }
+html :is(.game-setup, .game-range-popover) .game-range-done[data-ui-button]:hover { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); background: var(--secondary); }
 .game-setup .saved-filter-toggle { align-self: end; justify-self: start; }
 .game-setup .game-setting-field > .saved-filter-toggle { align-self: start; }
 .game-setup .saved-filter-toggle[aria-pressed='false']:has(.saved-filter-count) { color: var(--muted-foreground); }

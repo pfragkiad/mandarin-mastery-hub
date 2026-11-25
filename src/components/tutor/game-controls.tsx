@@ -1,4 +1,4 @@
-import { useId, useState, type ReactNode } from 'react';
+import { createContext, useContext, useId, useState, type ReactNode } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -37,12 +37,27 @@ export function GameField({ label, children }: { label: string; children: ReactN
   return <div className="game-setting-field"><span className="game-field-label">{label}</span>{children}</div>;
 }
 
+/** The open panel's own close action. It reaches the disclosure through context so each
+ * range editor can place Done inside its own card layout (beside the presets for
+ * strokes, under the advanced rank controls) instead of outside the bordered card. */
+const GameRangeCloseContext = createContext<() => void>(() => {});
+
+/** Small explicit close for a floating range panel. It commits nothing: the game's Apply
+ * stays the only thing that changes the pool, so Done reads as "finished looking". */
+function GameRangeDone() {
+  const close = useContext(GameRangeCloseContext);
+  return <Button type="button" variant="outline" size="sm" className="game-range-done"
+    title="Close this filter panel" onClick={close}>Done</Button>;
+}
+
 /** Shared anchored popover: outside clicks dismiss it without applying or discarding
- * parent-owned drafts. Secondary disclosure state lives above the unmounted panel. */
+ * parent-owned drafts, and Done closes it the same way from inside. Secondary
+ * disclosure state lives above the unmounted panel. */
 function GameRangeDisclosure({ label, summary, active, children }: {
   label: string; summary: string; active: boolean; children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
   return <Popover open={open} onOpenChange={setOpen}>
     <PopoverTrigger asChild><Button type="button" variant="outline" size="sm"
       className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
@@ -50,7 +65,9 @@ function GameRangeDisclosure({ label, summary, active, children }: {
       <span>{label}: {summary}</span><ChevronDown className={open ? 'is-open' : ''}/>
     </Button></PopoverTrigger>
     <PopoverContent side="bottom" align="start" sideOffset={4} collisionPadding={12}
-      className="game-range-popover" aria-label={`${label} filter`}>{children}</PopoverContent>
+      className="game-range-popover" aria-label={`${label} filter`}>
+      <GameRangeCloseContext.Provider value={close}>{children}</GameRangeCloseContext.Provider>
+    </PopoverContent>
   </Popover>;
 }
 
@@ -107,6 +124,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
         <div className="stroke-range-presets" role="group" aria-label="Rank presets">{presets.map(preset => <Button key={preset.value} type="button" size="sm" variant="ghost"
           className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}>Top {preset.max.toLocaleString('en-US')}</Button>)}</div>
       </div>
+      <div className="game-range-footer"><GameRangeDone/></div>
     </div>
   </GameRangeDisclosure>;
 }
@@ -157,13 +175,17 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
       <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum strokes" />
       <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum strokes" />
     </SliderPrimitive.Root>
-    <div className="stroke-range-presets" role="group" aria-label="Stroke count presets">
-      {STROKE_PRESETS.map(preset => {
-        const isSelected = normalized === preset.value;
-        return <Button key={preset.value} type="button" size="sm" variant="ghost"
-          className={isSelected ? 'active' : ''} aria-pressed={isSelected}
-          onClick={() => onChange(isSelected ? '' : preset.value)}>{preset.label}</Button>;
-      })}
+    {/* Presets and Done share the panel's bottom row: presets pick a range, Done closes it. */}
+    <div className="game-range-footer">
+      <div className="stroke-range-presets" role="group" aria-label="Stroke count presets">
+        {STROKE_PRESETS.map(preset => {
+          const isSelected = normalized === preset.value;
+          return <Button key={preset.value} type="button" size="sm" variant="ghost"
+            className={isSelected ? 'active' : ''} aria-pressed={isSelected}
+            onClick={() => onChange(isSelected ? '' : preset.value)}>{preset.label}</Button>;
+        })}
+      </div>
+      <GameRangeDone/>
     </div>
   </div></GameRangeDisclosure>;
 }

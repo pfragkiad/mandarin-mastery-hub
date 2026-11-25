@@ -51,4 +51,20 @@ describe('expandable game ranges', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Clear' }));
     expect(change).toHaveBeenCalledExactlyOnceWith('', false);
   });
+  it('Done closes the stroke panel and commits nothing', () => {
+    const change = vi.fn();
+    render(<StrokeRangeControl value="4-9" onChange={change}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^Strokes:/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }));
+    expect(screen.queryByRole('slider', { name: 'Minimum strokes' })).toBeNull();
+    expect(change).not.toHaveBeenCalled();
+  });
+  it('Done closes the rank panel and commits nothing', () => {
+    const change = vi.fn();
+    render(<FrequencyRangeControl value="range:37-300" groups={[]} maxRank={9933} onChange={change}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^Rank:/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }));
+    expect(screen.queryByRole('button', { name: 'Advanced' })).toBeNull();
+    expect(change).not.toHaveBeenCalled();
+  });
 });
