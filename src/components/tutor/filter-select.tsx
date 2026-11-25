@@ -65,8 +65,17 @@ export function FilterSelect({
     ?? (!value ? flat.find(hasLabel) : undefined);
   const resolvedValue = selected ? selected.value : value;
   const triggerText = (selected ? (selected.triggerLabel ?? selected.label) : value) || flat.find(hasLabel)?.triggerLabel || flat.find(hasLabel)?.label || '';
+  // Radix's hidden form select can emit an empty reset value while options mount.
+  // That is not an edit when this dropdown has no explicit empty option: keep the
+  // displayed default rather than drafting an invisible, different filter value.
+  const changeValue = (next: string) => {
+    const decoded = decode(next);
+    const option = flat.find(item => item.value === decoded);
+    const nextValue = option ? decoded : !decoded ? resolvedValue : decoded;
+    if (nextValue !== resolvedValue) onValueChange(nextValue);
+  };
   return (
-    <Select value={encode(resolvedValue)} onValueChange={next => onValueChange(decode(next))} {...(disabled ? { disabled: true } : {})}>
+    <Select value={encode(resolvedValue)} onValueChange={changeValue} {...(disabled ? { disabled: true } : {})}>
       <SelectTrigger id={id} className={cn('filter-select gap-3', className)} aria-label={ariaLabel}>
         <SelectValue>{triggerText}</SelectValue>
       </SelectTrigger>

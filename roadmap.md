@@ -189,3 +189,4 @@
 
 ## Unified dropdown styling
 - [x] Replace remaining native `<select>` filter/settings dropdowns with one shared `FilterSelect` component (consistent themed popover, arrow inset, and text-to-arrow gap)
+- [x] Keep unchanged All topics and All types defaults from creating phantom Apply state; retain real edits and explicit empty-option clearing.
