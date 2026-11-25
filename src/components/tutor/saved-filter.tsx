@@ -15,13 +15,13 @@ import { Switch } from '@/components/ui/switch';
  *   desktop dropdowns and beside the phone Filters button.
  * - SavedFilterRow: the "Saved only" switch row that opens the phone Filters drawer.
  */
-export type SavedFilter = { on: boolean; count: number; onToggle: () => void; noun: string };
+export type SavedFilter = { on: boolean; count: number; onToggle: () => void; noun: string; labelled?: boolean };
 
-export function SavedFilterToggle({ on, count, onToggle, noun }: SavedFilter) {
+export function SavedFilterToggle({ on, count, onToggle, noun, labelled = false }: SavedFilter) {
   return <Button type="button" variant="outline" size="sm" className={`saved-filter-toggle${on ? ' selected' : ''}`} aria-pressed={on}
     aria-label={on ? `Show all ${noun} (showing ${count} saved)` : `Show only saved ${noun} (${count})`}
     title={on ? `Showing saved ${noun} only` : `Show only saved ${noun}`} onClick={onToggle}>
-    <Bookmark fill={on ? 'currentColor' : 'none'}/><span className="saved-filter-count">{count.toLocaleString('en-US')}</span>
+    <Bookmark fill={on ? 'currentColor' : 'none'}/>{labelled && <span>Saved ·</span>}<span className="saved-filter-count">{count.toLocaleString('en-US')}</span>
   </Button>;
 }
 

@@ -10,7 +10,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowRight, Check, Play, RotateCcw, Target, Volume2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { FilterSelect } from './filter-select';
+import { GameChoices, GameFilters, GameField } from './game-controls';
 import { Switch } from '@/components/ui/switch';
 import { SPOKEN_TONES, TONE_NAMES, allSounds, checkTyped, finalFilterLabel, findSyllable, initialFilterLabel, hasRecording, isScored, matchesFinal, matchesInitial, soundAlikes, toneMark, type PinyinData, type PinyinSound, type Tone, type TypedVerdict } from '@/lib/pinyin-guide';
 import { ROUND_SIZES, dealRound, mixedRound, reviewRound, shuffle, type RoundSize } from '@/lib/pinyin-round';
@@ -131,14 +131,15 @@ function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round,
   }, []);
   const { deck, current, result, misses, finished, index, answered } = round;
   const setup = (action?: ReactNode, summary?: ReactNode) => <GameSetup summary={summary}
-    action={action}
+    action={action} matchCount={pool.length} unit="sounds" selection={settingsLabel}
+    preview={pool[0] && <span className="game-preview-sound pinyin">{toneMark(pool[0].base, pool[0].tone)}</span>}
     filters={<DraftFilterForm applied={filters} active={active} count={pool.length} showCount={false} autoApply onApply={onFilters} onClear={() => { const empty: DrillFilters = { initial: '', final: '' }; onFilters(empty); return empty; }}>
-      {({ draft, patch }) => <>
-        <InitialSelect value={draft.initial} onChange={initial => patch({ initial })} />
-        <FinalSelect value={draft.final} onChange={final => patch({ final })} />
-      </>}
+      {({ draft, patch }) => <GameFilters count={[draft.initial, draft.final].filter(Boolean).length}>
+        <GameField label="Initial"><InitialSelect value={draft.initial} onChange={initial => patch({ initial })} /></GameField>
+        <GameField label="Final"><FinalSelect value={draft.final} onChange={final => patch({ final })} /></GameField>
+      </GameFilters>}
     </DraftFilterForm>}>
-    <FilterSelect ariaLabel="Round size" value={String(size)} onValueChange={v => onSize(Number(v) as RoundSize)} items={ROUND_SIZES.map(n => ({ value: String(n), label: `${n} sounds` }))} />
+    <GameChoices label="Sounds" value={String(size)} onChange={v => { const next = ROUND_SIZES.find(n => String(n) === v); if (next) onSize(next); }} options={ROUND_SIZES.map(n => ({ value: String(n), label: String(n) }))} />
     <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
   </GameSetup>;
   const poolSummary = pool.length ? `${unit(roundLength)} of ${pool.length.toLocaleString('en-US')}` : 'No sounds match';

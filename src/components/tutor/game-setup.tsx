@@ -1,19 +1,12 @@
 import { useId, type ReactNode } from 'react';
 
-/**
- * Shared game setup box used by every game (Flashcards, Drawing, Tone quiz, Sound-alikes,
- * Type what you hear), so all setups read in one order:
- *   "What to practise" (filters: which records feed the next round)
- *   "How" (round options: direction, deck size, switches)
- *   footer: a plain summary on the left, the start action on the right.
- * Inputs: `filters` (usually a DraftFilterForm with showCount off, since `summary` carries the
- * count), `children` (round options), `summary` (text/nodes) and `action` (the start button;
- * omitted while a Pinyin question is open). Owns no game state: children keep their own
- * draft/session state, so applying filters still only changes the next pool.
- */
-export function GameSetup({ filters, children, summary, action }: { filters: ReactNode; children: ReactNode; summary?: ReactNode; action?: ReactNode }) {
+/** Shared settings and feedback layout for all five games. Filters and round controls
+ * keep their own URL/session state; count, recorded preview, selection and Start share
+ * a feedback column that stacks below settings when the available width is limited. */
+export function GameSetup({ filters, children, summary, action, matchCount, unit = 'cards', preview, selection }: { filters: ReactNode; children: ReactNode; summary?: ReactNode; action?: ReactNode; matchCount?: number; unit?: string; preview?: ReactNode; selection?: ReactNode }) {
   const id = useId();
   return <section className="game-setup" aria-label="Game setup">
+    <div className="game-setup-settings">
     <div className="game-setup-group" role="group" aria-labelledby={`${id}-what`}>
       <h2 className="game-setup-label" id={`${id}-what`}>What to practise</h2>
       {filters}
@@ -22,10 +15,16 @@ export function GameSetup({ filters, children, summary, action }: { filters: Rea
       <h2 className="game-setup-label" id={`${id}-how`}>How</h2>
       <div className="game-options">{children}</div>
     </div>
+    </div>
+    <aside className="game-setup-feedback" aria-label="Selected pool">
+      {preview && <div className="game-setup-preview" aria-label="Preview">{preview}</div>}
+      {matchCount !== undefined && <div className="game-match-count" aria-live="polite"><strong>{matchCount.toLocaleString('en-US')}</strong><span>{unit} match your selection</span></div>}
+      {selection && <p className="game-selection-summary">{selection}</p>}
     {(summary || action) && <div className="game-setup-footer">
       <span className="game-setup-summary" aria-live="polite">{summary}</span>
       {action && <div className="flash-start">{action}</div>}
     </div>}
+    </aside>
   </section>;
 }
 

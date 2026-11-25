@@ -1,5 +1,10 @@
 # Roadmap
 
+## Game settings redesign
+- [x] Share grouped kind buttons, visible round choices, and collapsible labelled filters across games.
+- [x] Add live match counts, recorded previews, clear Saved labels, and consistent narrow-screen spacing.
+- [x] Verify filters, next-round behaviour, and all five games on wide and narrow screens.
+
 - [x] Glyphs: frequency/Pinyin/Shuffle sorting with stable URL-backed order and Reshuffle
 - [x] Words and Phrases: Pinyin/HSK index/Shuffle, Pinyin default for HSK entries, existing default order for non-HSK entries
 - [x] Verify sorting, reshuffle, pagination and browser history

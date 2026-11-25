@@ -66,15 +66,10 @@ it('bookmarks a missed word with its vocabulary ID and reviews the same selected
   expect(fake.create.mock.calls[1]?.[1]).toBe(target);
 });
 
-const pickOption = (trigger: HTMLElement, label: string) => {
-  fireEvent.keyDown(trigger, { key: 'ArrowDown' });
-  fireEvent.click(screen.getByRole('option', { name: label }));
-};
-
 it('shows the filtered total and deals the selected deck size', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   await waitFor(() => expect(screen.getByRole('button', { name: 'Start · 10 cards' })).toBeTruthy());
-  pickOption(screen.getByRole('combobox', { name: 'Deck size' }), '5 cards');
+  fireEvent.click(screen.getByRole('button', { name: '5' }));
   expect(screen.getByRole('button', { name: 'Start · 5 cards' })).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
   expect(await screen.findByText('Card 1 of 5')).toBeTruthy();
@@ -82,8 +77,8 @@ it('shows the filtered total and deals the selected deck size', async () => {
 
 it('deals every filtered card when the deck size is All cards', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
-  await waitFor(() => expect(screen.getByRole('combobox', { name: 'Deck size' })).toBeTruthy());
-  pickOption(screen.getByRole('combobox', { name: 'Deck size' }), 'All cards');
+  await screen.findByRole('button', { name: 'All' });
+  fireEvent.click(screen.getByRole('button', { name: 'All' }));
   fireEvent.click(screen.getByRole('button', { name: 'Start · 12 cards' }));
   expect(await screen.findByText('Card 1 of 12')).toBeTruthy();
 });
@@ -102,7 +97,7 @@ it('the guide returns to hidden on every new card and round', async () => {
 
 it('a review round replays every missed card', async () => {
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
-  pickOption(await screen.findByRole('combobox', { name: 'Deck size' }), '5 cards');
+  fireEvent.click(await screen.findByRole('button', { name: '5' }));
   fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
@@ -119,7 +114,7 @@ it('a review round replays every missed card', async () => {
 
 it('offers a bookmark on every card to review, saving its exact id', async () => {
   const { rerender } = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
-  pickOption(await screen.findByRole('combobox', { name: 'Deck size' }), '5 cards');
+  fireEvent.click(await screen.findByRole('button', { name: '5' }));
   fireEvent.click(screen.getByRole('button', { name: 'Start · 5 cards' }));
   await screen.findByText('Card 1 of 5');
   for (let i = 0; i < 5; i++) {
@@ -139,7 +134,7 @@ it('keeps the active round while filters auto-apply and clears explicitly', asyn
   fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
   await screen.findByText('Card 1 of 10');
   openSettings();
-  pickOption(screen.getByRole('combobox', { name: 'Drawing category' }), 'Words');
+  fireEvent.click(screen.getByRole('button', { name: 'Words' }));
   await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
   view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
@@ -154,7 +149,7 @@ it('changing deck size does not discard drawing progress', async () => {
   fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
   await waitFor(() => expect(fake.create).toHaveBeenCalledTimes(1));
   openSettings();
-  pickOption(screen.getByRole('combobox', { name: 'Deck size' }), '5 cards');
+  fireEvent.click(screen.getByRole('button', { name: '5' }));
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
   expect(fake.create).toHaveBeenCalledTimes(1);
 });

@@ -21,6 +21,7 @@ import {
 import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
 import { SavedFilterToggle } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
+import { GameChoices, GameFilters, GameField } from "./game-controls";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
 import { TileBookmark } from "./record-card-footer";
 import { ExamplePronunciation } from "./example-pronunciation";
@@ -172,6 +173,9 @@ export function DrawingGamePage({
     <GameSetup
           summary={summary}
           action={action}
+          matchCount={pool.length}
+          selection={settingsLabel()}
+          preview={pool[0] && <><span className="pinyin">{pool[0].pinyin}</span><span className={`game-preview-hanzi ${kind === 'Radicals' ? 'card-ink-radical' : ''}`} lang="zh-CN">{pool[0].hanzi}</span></>}
           filters={
             <DraftFilterForm
               applied={appliedFilters}
@@ -205,48 +209,42 @@ export function DrawingGamePage({
                   <>
                     {/* Row 1: what to draw, plus collection / level / type for Words. */}
                     <div className="game-filter-row">
-                    <FilterSelect
-                      ariaLabel="Drawing category"
-                      value={draftKind}
-                      onValueChange={(value) => {
-                        const next = drawingKinds.find((k) => k === value);
-                        if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) });
-                      }}
-                      items={drawingKinds.map((value) => ({ value, label: value }))}
-                    />
+                    <div className="game-kind-groups">{['Glyphs', 'Vocabulary'].map(group => <GameChoices key={group} label={group} value={draftKind}
+                      options={drawingKinds.filter(value => group === 'Glyphs' ? value !== 'Words' : value === 'Words').map(value => ({ value, label: value }))}
+                      onChange={value => { const next = drawingKinds.find(k => k === value); if (next) setDraft({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
+                    </div>
+                    <GameFilters count={[draft.collection, draft.level, draft.pos, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
                     {draftKind === "Words" && (
                       <>
-                        <FilterSelect
+                        <GameField label="Topic"><FilterSelect
                           ariaLabel="Topic"
                           value={draft.collection ?? ""}
                           onValueChange={(value) => patch({ collection: value || undefined })}
                           items={[{ value: "", label: "All topics" }, ...(facets?.collections ?? []).map((value) => ({ value, label: value }))]}
-                        />
-                        <FilterSelect
+                        /></GameField>
+                        <GameField label="HSK level"><FilterSelect
                           ariaLabel="HSK level"
                           value={draft.level ?? ""}
                           onValueChange={(value) => patch({ level: value || undefined })}
                           items={[{ value: "", label: "All levels" }, ...(facets?.levels ?? []).map((value) => ({ value, label: value }))]}
-                        />
-                        <FilterSelect
+                        /></GameField>
+                        <GameField label="Part of speech"><FilterSelect
                           ariaLabel="Part of speech"
                           value={draft.pos ?? ""}
                           onValueChange={(value) => patch({ pos: value || undefined })}
                           items={[{ value: "", label: "All types" }, ...(facets?.pos ?? []).map((value) => ({ value, label: value }))]}
-                        />
+                        /></GameField>
                       </>
                     )}
-                    </div>
-                    {/* Row 2: narrowing filters — rank and stroke count (glyphs) and Saved only. */}
-                    <div className="game-filter-row">
+                    {/* Exact rank and stroke groups; no new range semantics. */}
                     {draftKind !== "Words" && (
                       <span className="filter-field-row">
-                        <FilterSelect
+                        <GameField label="Frequency"><FilterSelect
                           ariaLabel="Frequency"
                           value={draft.usage ?? ""}
                           onValueChange={(value) => patch({ usage: parseUsageGroup(draftKind, value), usageUpTo: undefined })}
                           items={[{ value: "", label: "All ranks" }, ...(glyph?.ranks ?? []).map((group) => ({ value: group.value, label: usageGroupLabel(group, draftKind, preferences.includeTraditional), triggerLabel: group.label }))]}
-                        />
+                        /></GameField>
                         {draft.usage && draft.usage !== UNRANKED && (
                           <FilterWideningToggle
                             active={draft.usageUpTo === "1"}
@@ -259,12 +257,12 @@ export function DrawingGamePage({
                     )}
                     {filtered && (
                       <span className="filter-field-row">
-                        <FilterSelect
+                        <GameField label="Stroke count"><FilterSelect
                           ariaLabel="Stroke count"
                           value={draft.strokes ?? ""}
                           onValueChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
                           items={[{ value: "", label: "All stroke counts" }, ...(glyph?.strokes ?? []).map((value) => ({ value: String(value), label: `${value} ${value === 1 ? "stroke" : "strokes"}` }))]}
-                        />
+                        /></GameField>
                         {draft.strokes && (
                           <FilterWideningToggle
                             active={draft.strokesUpTo === "1"}
@@ -277,26 +275,21 @@ export function DrawingGamePage({
                     )}
                     {/* Saved-only: the libraries' bookmark + count toggle, last in the row; part of the auto-applied draft. */}
                     <SavedFilterToggle
+                      labelled
                       on={Boolean(draft.saved)}
                       count={savedCount}
                       noun="cards"
                       onToggle={() => patch({ saved: draft.saved ? undefined : true })}
                     />
-                    </div>
+                    </GameFilters>
                   </>
                 );
               }}
             </DraftFilterForm>
           }
         >
-          <FilterSelect
-            ariaLabel="Deck size"
-            value={String(deckSize)}
-            onValueChange={(value) => {
-              setDeckSize(value === "all" ? "all" : Number(value));
-            }}
-            items={[...deckSizes.map((n) => ({ value: String(n), label: `${n} cards` })), { value: "all", label: "All cards" }]}
-          />
+          <GameChoices label="Cards" value={String(deckSize)} onChange={value => setDeckSize(value === 'all' ? 'all' : Number(value))}
+            options={[...deckSizes.map(n => ({ value: String(n), label: String(n) })), { value: 'all', label: 'All' }]}/>
         </GameSetup>
   );
   return (

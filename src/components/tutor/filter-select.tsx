@@ -102,7 +102,7 @@ export function FilterSelect({
   };
   return (
     <Select value={encode(resolvedValue)} onValueChange={changeValue} {...(disabled ? { disabled: true } : {})}>
-      <SelectTrigger id={id} className={cn('filter-select gap-3', className)} aria-label={ariaLabel}>
+      <SelectTrigger id={id} className={cn('filter-select gap-3', resolvedValue !== flat[0]?.value && 'filter-select-active', className)} aria-label={ariaLabel}>
         <SelectValue><span className={selected ? optionClassName(selected) : undefined}>{triggerText}</span></SelectValue>
       </SelectTrigger>
       <SelectContent>
