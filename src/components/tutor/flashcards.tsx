@@ -1,4 +1,4 @@
-import { SavedFilterToggle } from './saved-filter';
+import { GameBookmarkCollection } from './saved-filter';
 import { DraftFilterForm, FilterWideningToggle } from './filter-form';
 import { FilterSelect } from './filter-select';
 import { TopicSelect } from './topic-select';
@@ -297,8 +297,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
         {draftIdiom && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={draft.usage || ALL_IDIOM_BANDS} onValueChange={usage => patch({ usage: usage === ALL_IDIOM_BANDS ? '' : usage, usageUpTo: undefined })} items={[{ value: ALL_IDIOM_BANDS, label: 'All ranks' }, ...idiomRankClasses.map(c => ({ value: c.id, label: `${idiomBandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%`, triggerLabel: idiomBandRangeLabel(c) }))]} /></GameField>{draft.usage && draft.usage !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
         {draftReference && draftRefKind && <span className="filter-field-row"><GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={parseUsageGroup(draftRefKind, draft.usage) ?? ''} onValueChange={usage => patch({ usage, usageUpTo: undefined })} items={[{ value: '', label: 'All ranks' }, ...(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ value: group.value, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional), triggerLabel: group.label }))]} /></GameField>{draft.usage && draft.usage !== UNRANKED && <FilterWideningToggle active={draft.usageUpTo === '1'} onToggle={() => patch({ usageUpTo: draft.usageUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>}
         {draftReference && draftRefKind && <StrokeRangeControl value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} onChange={strokes => patch({ strokes, strokesUpTo: undefined })} />}
-        {/* Saved-only: the same bookmark + count toggle as the libraries, last in the row; it stays part of the auto-applied draft. */}
-        <SavedFilterToggle labelled on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
+        {/* Bookmarks narrow the next pool only after Apply, just like other filters. */}
+        <GameBookmarkCollection on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
         </GameFilters>
       </>; }}</DraftFilterForm>}>
         <div className="game-option-row">

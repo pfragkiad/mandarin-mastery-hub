@@ -1,5 +1,9 @@
 # Roadmap
 
+## Game bookmark collection
+- [x] Replace the ambiguous Saved control with a shared Saved collections field and Bookmarks count, matching the mockup without custom collections.
+- [x] Verify empty and selected states and existing saved-deck filtering.
+
 ## Game filter submission
 - [x] Replace automatic game filter updates with Apply and Reset; refresh dependent choices only after submission.
 - [x] Add the shared Stroke count label above the range control.

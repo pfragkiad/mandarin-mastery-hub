@@ -21,7 +21,7 @@ import {
   type DrawingSearch,
 } from "@/lib/drawing-game";
 import { DraftFilterForm, FilterWideningToggle } from "./filter-form";
-import { SavedFilterToggle } from "./saved-filter";
+import { GameBookmarkCollection } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
 import { GameChoices, GameFilters, GameField, StrokeRangeControl } from "./game-controls";
 import { TopicSelect } from "./topic-select";
@@ -324,9 +324,8 @@ export function DrawingGamePage({
                         onChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
                       />
                     )}
-                    {/* Saved-only: the libraries' bookmark + count toggle, last in the row; part of the auto-applied draft. */}
-                    <SavedFilterToggle
-                      labelled
+                    {/* Bookmark selection remains drafted until Apply. */}
+                    <GameBookmarkCollection
                       on={Boolean(draft.saved)}
                       count={savedCount}
                       noun="cards"

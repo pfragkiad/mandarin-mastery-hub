@@ -1876,6 +1876,7 @@ html .game-setup .stroke-range-any[data-ui-button]:disabled { opacity: 1; }
 .stroke-range-presets button:hover { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); }
 .stroke-range-presets button.active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); }
 .game-setup .saved-filter-toggle { align-self: end; justify-self: start; }
+.game-setup .game-setting-field > .saved-filter-toggle { align-self: start; }
 .game-setup .saved-filter-toggle[aria-pressed='false']:has(.saved-filter-count) { color: var(--muted-foreground); }
 .game-setup .flash-options { flex-direction: column; align-items: stretch; gap: 14px; padding: 0; }
 .game-setup .flash-option, .game-setup .pinyin-slow { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: 12px; font-size: 13px; min-height: 30px; color: var(--foreground); }

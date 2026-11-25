@@ -1,6 +1,7 @@
-import { Bookmark } from 'lucide-react';
+import { Bookmark, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import { GameField } from './game-controls';
 
 /**
  * Saved-only browsing control shared by the Glyphs and Vocabulary libraries.
@@ -16,6 +17,21 @@ import { Switch } from '@/components/ui/switch';
  * - SavedFilterRow: the "Saved only" switch row that opens the phone Filters drawer.
  */
 export type SavedFilter = { on: boolean; count: number; onToggle: () => void; noun: string; labelled?: boolean };
+
+/** Games expose the existing session bookmarks as their sole saved collection.
+ * Selection stays in the parent's filter draft; empty collections cannot be newly
+ * selected, but an already selected empty collection can still be deselected. */
+export function GameBookmarkCollection({ on, count, onToggle, noun }: SavedFilter) {
+  return <GameField label="Saved collections">
+    <Button type="button" variant="outline" size="sm"
+      className={`saved-filter-toggle${on ? ' selected' : ''}`}
+      aria-pressed={on} disabled={count === 0 && !on}
+      aria-label={on ? `Show all ${noun} (showing ${count} saved)` : `Show only saved ${noun} (${count})`}
+      onClick={onToggle}>
+      {on ? <Check /> : <Bookmark />}<span>Bookmarks ·</span><span className="saved-filter-count">{count.toLocaleString('en-US')}</span>
+    </Button>
+  </GameField>;
+}
 
 export function SavedFilterToggle({ on, count, onToggle, noun, labelled = false }: SavedFilter) {
   return <Button type="button" variant="outline" size="sm" className={`saved-filter-toggle${on ? ' selected' : ''}`} aria-pressed={on}
