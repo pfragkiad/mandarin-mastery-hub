@@ -183,3 +183,6 @@
 ## Example-section consistency
 - [x] Idioms: quieter inner divider, green internal search arrow, rank and subtopic above hanzi on the left
 - [x] External examples: label “Search on the internet”; remove internal file/review hints while retaining public Tatoeba attribution
+
+## Glyph quick cards label
+- [x] Rename the hints switch to "Glyph quick cards" (the ring also covers components and radicals, which are not characters); saved choices untouched

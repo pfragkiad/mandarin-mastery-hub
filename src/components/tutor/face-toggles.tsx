@@ -32,17 +32,18 @@ export function FaceToggles({ view, onChange, label, size = 'sheet' }: { view: F
 }
 
 /**
- * The one Character quick cards switch (hover ring + click quick card on hanzi), beside
+ * The one Glyph quick cards switch (hover ring + click quick card on any glyph form), beside
  * FaceToggles in lessons and the grids. Inputs: `checked`, `onChange`, `size`: 'toolbar'
  * (switch + one-line label, no frame — the grid tools row and the lesson sidebar share it)
  * or 'sheet' (a phone sheet row: label left, switch right, as in the other sheet rows).
  * Each surface keeps its own saved switch (lessons `lessonHints`, grids `gridHints`).
- * The label names the payoff (a quick card opens), not the gesture, because the switch also
- * decides whether a tapped character reveals its other records (character / component / radical).
+ * "Glyph", not "character": the ring also lands on components and radicals, which are not
+ * characters. The label names the payoff (a quick card opens), not the gesture, because the
+ * switch also decides whether a tapped glyph reveals its other records (character / component / radical).
  */
 export function CharacterHintsToggle({ checked, onChange, size = 'toolbar' }: { checked: boolean; onChange: (on: boolean) => void; size?: 'sheet' | 'toolbar' }) {
-  const control = <Switch checked={checked} onCheckedChange={onChange} aria-label="Character quick cards"/>;
-  return <label className={`lesson-hints-toggle is-${size}`} title="Hover a character for a ring; click or tap it for a quick card with its reading, meaning and other records">
-    {size === 'toolbar' && control}<strong>Character quick cards</strong>{size === 'sheet' && control}
+  const control = <Switch checked={checked} onCheckedChange={onChange} aria-label="Glyph quick cards"/>;
+  return <label className={`lesson-hints-toggle is-${size}`} title="Hover a glyph for a ring; click or tap it for a quick card with its reading, meaning and other records">
+    {size === 'toolbar' && control}<strong>Glyph quick cards</strong>{size === 'sheet' && control}
   </label>;
 }

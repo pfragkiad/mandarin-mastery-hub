@@ -97,7 +97,7 @@ export function TileExamplesLink({ hanzi }: { hanzi: string }) {
 
 /**
  * Detail-card sentences get the same quick-card popups as lessons (one shared
- * LessonHintsProvider, same remembered "Character quick cards" switch, absent = on), so tapping
+ * LessonHintsProvider, same remembered "Glyph quick cards" switch, absent = on), so tapping
  * a character in "In a phrase" opens its mini card with the containing word. Inside a
  * lesson (a provider already above) nothing is added, so there is never a second popup.
  * Word/phrase detail cards wrap their whole content in it (word-card.tsx) so the heading's
