@@ -7,6 +7,7 @@ import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/chara
 import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
 import { idiomsForCharacter, loadIdioms } from '@/lib/idioms';
 import type { Word } from '@/lib/mandarin';
+import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
@@ -163,12 +164,14 @@ export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
     <div className="glyph-usage-parents">{matches.map(idiom => {
       const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
       const display = showTrad ? idiom.idiomMeta!.traditional! : idiom.hanzi;
+      const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;
       return <div className="glyph-usage-reference" key={idiom.id}>
         <Button asChild variant="ghost" className={`decomposition-glyph variant-etymology-word-tile${showTrad ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'idiom', word: idiom.id }} resetScroll={false} title={openDetailsHint(display, 'idiom')} aria-label={openDetailsHint(display, 'idiom')}><strong lang="zh-CN">{display}</strong></Link></Button>
         <span className="glyph-usage-facts">
           <span className="glyph-usage-facts-row">
-            {preferences.pinyin && idiom.pinyin && <span className="pinyin">{idiom.pinyin}</span>}
+            {preferences.pinyin && idiom.pinyin && <span className="example-pinyin-row"><span className="pinyin">{idiom.pinyin}</span><ExamplePronunciation request={{ text: idiom.hanzi, reading: idiom.pinyin, audio: idiom.audio ?? null }} label={`idiom ${display}`}/></span>}
             <UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>
+            {topicLabel && <span className="glyph-usage-idiom-topic"><span aria-hidden="true">· </span>{topicLabel}</span>}
           </span>
           <span className="glyph-usage-meaning"><MeaningText text={idiom.meaning}/></span>
         </span>

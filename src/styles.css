@@ -419,10 +419,11 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
 .glyph-usage-facts { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
-.glyph-usage-facts-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.glyph-usage-facts-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
 .glyph-usage-facts-row .example-audio-error { flex-basis: 100%; }
 .glyph-usage-facts-row .component-reuse-label { line-height: 14px; }
-html[data-display-size='comfortable'] .glyph-usage-facts-row .component-reuse-label { font-size: 13px; line-height: 1.4; }
+.glyph-usage-idiom-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
+html[data-display-size='comfortable'] .glyph-usage-facts-row :is(.component-reuse-label, .glyph-usage-idiom-topic) { font-size: 13px; line-height: 1.4; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
 .example-pinyin-row, .sentence-pinyin:has(.example-listen) { display: flex; align-items: center; gap: 6px; }
