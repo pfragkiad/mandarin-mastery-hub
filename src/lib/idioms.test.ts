@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ALL_IDIOM_BANDS, filterIdioms, idiomToWord, matchesIdiomBand, type IdiomRankClass } from './idioms';
+import { ALL_IDIOM_BANDS, filterIdioms, idiomsForCharacter, idiomToWord, matchesIdiomBand, type IdiomRankClass } from './idioms';
 import { orderLibrary } from './library-order';
 
 const bands: IdiomRankClass[] = [
@@ -46,5 +46,17 @@ describe('idioms helpers', () => {
     expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'All collections', 'emotions-attitudes').map(w => w.id)).toEqual(['idiom-1']);
     expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'Places & Directions', 'position-direction').map(w => w.id)).toEqual(['idiom-2']);
     expect(filterIdioms(sample, bands, '', ALL_IDIOM_BANDS, 'All words', [], false, false, false, 'Time & Calendar', 'emotions-attitudes')).toEqual([]);
+  });
+
+  it('returns the 2 highest-ranked idioms containing a character', () => {
+    const pool = [
+      idiomToWord({ id: 'idiom-300', rank: 300, hanzi: '一举两得', pinyin: 'yī jǔ liǎng dé', meaning: 'kill two birds with one stone' }, 'THUOCL'),
+      idiomToWord({ id: 'idiom-10', rank: 10, hanzi: '一帆风顺', pinyin: 'yī fān fēng shùn', meaning: 'smooth sailing' }, 'THUOCL'),
+      idiomToWord({ id: 'idiom-50', rank: 50, hanzi: '一心一意', pinyin: 'yī xīn yī yì', meaning: 'wholeheartedly' }, 'THUOCL'),
+      ...sample,
+    ];
+    expect(idiomsForCharacter(pool, '一').map(w => w.id)).toEqual(['idiom-10', 'idiom-50']);
+    expect(idiomsForCharacter(pool, '堅', 'Traditional').map(w => w.id)).toEqual(['idiom-1']);
+    expect(idiomsForCharacter(pool, '龍').map(w => w.id)).toEqual([]);
   });
 });

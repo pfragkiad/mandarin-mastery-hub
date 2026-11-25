@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { Puzzle } from 'lucide-react';
+import { Puzzle, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
+import { idiomsForCharacter, loadIdioms } from '@/lib/idioms';
+import type { Word } from '@/lib/mandarin';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
@@ -141,4 +143,36 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   return <SentenceSection hanzi={entry.hanzi}>
     {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples}/> : null}
   </SentenceSection>;
+}
+
+/** Top 2 highest-ranked idioms containing a Characters record, lazily loaded from public/data/idioms.json. */
+export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
+  const { preferences } = useWorkspace();
+  const [idioms, setIdioms] = useState<Word[] | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    loadIdioms()
+      .then(({ words }) => { if (!cancelled) setIdioms(words); })
+      .catch(() => { /* hide section if idioms fail to load */ });
+    return () => { cancelled = true; };
+  }, []);
+  const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, 2) : []), [idioms, entry.hanzi, entry.script]);
+  if (!matches.length) return null;
+  return <section className="glyph-usage-section" aria-label="In an idiom">
+    <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
+    <div className="glyph-usage-parents">{matches.map(idiom => {
+      const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
+      const display = showTrad ? idiom.idiomMeta!.traditional! : idiom.hanzi;
+      return <div className="glyph-usage-reference" key={idiom.id}>
+        <Button asChild variant="ghost" className={`decomposition-glyph variant-etymology-word-tile${showTrad ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'idiom', word: idiom.id }} resetScroll={false} title={openDetailsHint(display, 'idiom')} aria-label={openDetailsHint(display, 'idiom')}><strong lang="zh-CN">{display}</strong></Link></Button>
+        <span className="glyph-usage-facts">
+          <span className="glyph-usage-facts-row">
+            {preferences.pinyin && idiom.pinyin && <span className="pinyin">{idiom.pinyin}</span>}
+            <UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>
+          </span>
+          <span className="glyph-usage-meaning"><MeaningText text={idiom.meaning}/></span>
+        </span>
+      </div>;
+    })}</div>
+  </section>;
 }

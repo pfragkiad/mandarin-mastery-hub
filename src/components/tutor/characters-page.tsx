@@ -42,7 +42,7 @@ import { useWorkspace } from './workspace';
 import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
 import { finderCoversGlyph } from '@/lib/hanzi-finder-records';
 import { TileSpeaker } from './tile-speaker';
-import { GlyphUsageExamples, useGSourceParents } from './glyph-usage';
+import { CharacterIdiomsSection, GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { TileExamplesLink } from './sentence-section';
 import { RecordDetailTitle } from './record-detail-title';
 import { PointedMeaning, PointedParts } from './pointed-meaning';
@@ -295,6 +295,8 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {info.component && !fallback && <p className="catalog-record-note">{info.componentName ? `${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? 'Radical form that is also an ordinary character.' : 'No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Components' || kind === 'Characters') && radicalIdentity(entry.hanzi).radicals.length > 0 && <RadicalIdentityNote glyph={entry.hanzi}/>}
     {kind !== 'Strokes' && <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>}
+    {/* Top 2 highest-ranked idioms containing this character (Characters records only). */}
+    {kind === 'Characters' && <CharacterIdiomsSection entry={entry}/>}
     {/* Lessons whose recorded headword is exactly this character (Characters records only). */}
     {kind === 'Characters' && <CharacterLessonsSection recordId={entry.id} hanzi={entry.hanzi}/>}
     {/* Decomposition | Etymology drawer tabs (detail-tabs.tsx), like Practice's Strokes | Decomposition.

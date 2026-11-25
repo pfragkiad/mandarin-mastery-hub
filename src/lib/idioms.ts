@@ -122,3 +122,12 @@ export function filterIdioms(
   const byWords = filterWords(byBand, query, collection, 'All levels', status, saved, pinyinOnly, 'All types', exactPinyin);
   return subtopic && subtopic !== ALL_SUBTOPICS ? byWords.filter(w => inSubtopic(w, subtopic)) : byWords;
 }
+
+/** Highest-ranked (lowest rank number) idioms containing a given character.
+ *  Traditional character records also match against each idiom's recorded traditional form. */
+export function idiomsForCharacter(idioms: readonly Word[], hanzi: string, script?: string, limit = 2): Word[] {
+  if (!hanzi || limit <= 0) return [];
+  const matches = idioms.filter(w => w.hanzi.includes(hanzi) || (script === 'Traditional' && Boolean(w.idiomMeta?.traditional?.includes(hanzi))));
+  matches.sort((a, b) => (a.idiomMeta?.rank ?? Number.POSITIVE_INFINITY) - (b.idiomMeta?.rank ?? Number.POSITIVE_INFINITY));
+  return matches.slice(0, limit);
+}
