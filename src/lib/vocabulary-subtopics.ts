@@ -48,6 +48,20 @@ export const inSubtopic = (word: Word, subtopic: string | undefined): boolean =>
   !subtopic || subtopic === ALL_SUBTOPICS || wordSubtopicIds(word).includes(subtopic);
 
 /**
+ * The word's primary recorded subtopic as its display label, or null when the record has
+ * no subtopic at all (or only IDs the active taxonomy no longer lists).
+ *
+ * Inputs: `word` — any vocabulary record; idioms carry their subtopic IDs directly
+ * (`word.subtopics`, primary first, from the importer), HSK words via
+ * `studyMetadata.primarySubtopicId`. Used by the Idioms card header, which prefers the
+ * narrower subtopic label and falls back to the parent topic only when no subtopic exists —
+ * never a guessed one.
+ */
+export function primarySubtopicLabel(word: Word): string | null {
+  return subtopicById(wordSubtopicIds(word)[0])?.label ?? null;
+}
+
+/**
  * Dropdown choices: subtopics recorded on at least one of `items`, limited to the chosen
  * topic's own subtopics when a topic is picked. A current pick stays listed so it can be seen
  * and changed even when nothing matches it any more.

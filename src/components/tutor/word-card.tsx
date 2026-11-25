@@ -6,6 +6,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { vocabularyKind, wordCollections, words as vocabularyWords, type Word } from '@/lib/mandarin';
+import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
 import { phraseParts, wordCharacters } from '@/lib/vocabulary-decomposition';
 import { wordEtymologyRequests } from './word-etymology';
 import { matchedWordSpans, phraseTileLines } from '@/lib/phrase-tile-fit';
@@ -215,6 +216,10 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // The Words/Phrases tab already names the kind, so word and phrase cards carry no
   // WORD/PHRASE label; only session additions (neither kind) keep their level label.
   const levelLabel = wordStyleTop ? '' : word.level.toUpperCase();
+  // Idiom cards name their subject in the header: the recorded subtopic when the importer
+  // attached one (primary first), otherwise the parent topic. Nothing is inferred from the
+  // idiom's text, so a record with neither shows no subject label at all.
+  const idiomTopicLabel = vocabularyKind(word) === 'idiom' ? primarySubtopicLabel(word) ?? word.collection : '';
   // Every Words/Phrases card (Compact and Comfortable) puts pinyin+audio and the translation beside
   // the hanzi box when both fit uncut; otherwise useSideFit marks the body data-stacked and CSS
   // stacks box / pinyin+audio / translation, as on glyph cards.
@@ -235,7 +240,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
   // step; the rest use the font steps alone.
   const rowRef = useRef<HTMLSpanElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
-  useCardTopRowFit(rowRef, radicalNumber !== undefined, [word.id, word.type, word.collection, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
+  useCardTopRowFit(rowRef, radicalNumber !== undefined, [word.id, word.type, idiomTopicLabel, word.hskId, hskLevel, word.script, wordStyleTop, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
   // The button row gets its own, independent attempt: a smaller button font before Recall and
   // the bookmark drop to a second line.
   useCardFooterFit(footerRef, [word.id, word.type, word.hskId, hskLevel, word.script, wordStyleTop, comfortableView, preferences.libraryView, preferences.font, preferences.pinyin, preferences.meaning]);
@@ -243,7 +248,7 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     {/* Word cards (Compact and Comfortable): the HSK level is already a filter, so the top row reads
         the type, then one "HSK L<level>/#<id>" pill merging the recorded level and official id, with a sentence indicator on the right
         (like the "In a character" icon on glyph cards). Phrases use the same row in both views. */}
-    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}<WordIdentityPills word={word}/>{vocabularyKind(word) === 'idiom' && word.collection && <CardTopMeta><span className="card-top-pos">{word.collection}</span></CardTopMeta>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
+    {header !== undefined ? header : <div className="word-card-top"><span className="word-level-wrap" ref={rowRef}>{levelLabel && <span className="word-level">{levelLabel}</span>}{word.type && <CardTopMeta lead={!levelLabel}><span className="card-top-pos">{word.type}</span></CardTopMeta>}<WordIdentityPills word={word}/>{vocabularyKind(word) === 'idiom' && idiomTopicLabel && <CardTopMeta><span className="card-top-pos">{idiomTopicLabel}</span></CardTopMeta>}</span>{wordStyleTop && (word.sentence || hasLessons) && <span className="catalog-card-indicators">{hasLessons && <WordLessonIndicator word={word}/>}{word.sentence && <span title="In a sentence available"><Quote className="catalog-source-icon" aria-label="In a sentence available"/></span>}</span>}</div>}
     <Button ref={bodyRef} variant="ghost" className="word-open" onClick={() => setOpen(true)} aria-label={`Study ${word.hanzi}`}><span className="word-character">{preferences.pinyin && <span className="pinyin"><span className="pinyin-text">{pairing.pinyinText ?? word.pinyin}</span><TileSpeaker available={audioAvailable} hasRecording={hasRecording} label={`Listen to ${word.hanzi}`} unavailableLabel={`No audio available for ${word.hanzi}`} title={`Listen · ${source}`} onActivate={() => { void listen(); }}/>{/* Single-character words read exactly like their glyph, so they get the same
     Sound chart link as Glyphs cards (the link renders only for one attested
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
