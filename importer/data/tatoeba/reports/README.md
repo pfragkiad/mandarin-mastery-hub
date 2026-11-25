@@ -11,8 +11,8 @@ Nothing here is application data or final content approval.
 | `.gitattributes` | Preserves supplied/generated TSV bytes across platforms and permits source CRLF line endings without normalization. |
 | [batch1-final-report.md](batch1-final-report.md) | Human-readable final consolidation for the **375 exact-OK candidates**, with the next-round review instructions. This is a final report, not approved final wording. |
 | [batch1-final-report.tsv](batch1-final-report.tsv) | Full 375-row report: original source text, both supplied review decisions/notes, effective decision and separate suggested Chinese/English. |
-| [batch1-final-report-parts/](batch1-final-report-parts/README.md) | 15 numbered TSVs of 25 records, repeating all columns. External-review handoff for clients that truncate the full report; recombining the parts reproduces all 375 records in order. |
-| [batch1-final-report-complete.zip](batch1-final-report-complete.zip) | Deterministic complete download: original full TSV, all 15 parts and their index. No decisions or corrections are omitted. |
+| [batch1-final-report-parts/](batch1-final-report-parts/README.md) | Four numbered TSVs containing 94, 94, 94 and 93 records, repeating all columns. Recombining the parts reproduces all 375 records in order. |
+| [batch1-final-report-complete.zip](batch1-final-report-complete.zip) | Deterministic complete download: original full TSV, all four parts and their index. No decisions or corrections are omitted. |
 | [batch1-next-review.tsv](batch1-next-review.tsv) | Minimal next-round input: `id`, `character`, `sentence`, `translation`; wording is explicitly proposed editorial content. All exact targets and stable row IDs are retained. |
 | `batch1-review-chain.json` | Structured history, owner-specified inheritance rule, original-input SHA-256 hashes, original/proposed text bindings and source/warning marker metadata. |
 | `batch1-suggested-corrections.json` | Editable assistant-authored proposals for 31 flagged pairs, including changes, context questions and supporting dictionary URLs. Pending another review round. |

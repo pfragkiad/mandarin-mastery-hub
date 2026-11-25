@@ -23,7 +23,7 @@ double-pass claims. Original scores, issue labels and notes remain preserved.
 
 - [Full report with originals, decisions and proposed corrections](batch1-final-report.tsv):
   all 375 rows, both review histories and separate suggested Chinese/English.
-- [Numbered 25-record parts](batch1-final-report-parts/README.md) and
+- [Four numbered parts](batch1-final-report-parts/README.md) and
   [complete ZIP download](batch1-final-report-complete.zip): use these when a
   viewer truncates the full TSV. Every column and record is retained.
 - [Minimal proposed-content TSV](batch1-next-review.tsv): exactly `id`, `character`,

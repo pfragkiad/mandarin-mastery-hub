@@ -78,12 +78,13 @@ class ReviewChainTests(unittest.TestCase):
     def test_numbered_parts_reconstruct_every_middle_row_and_column(self):
         original = list(csv.reader(io.StringIO(self.outputs[module.DIRECTORY / 'batch1-final-report.tsv']), delimiter='\t'))
         pieces = sorted(path for path in self.outputs if path.name.startswith('batch1-final-report-part-'))
-        self.assertEqual(len(pieces), 15)
+        self.assertEqual(len(pieces), 4)
+        self.assertEqual(len(list((module.DIRECTORY / 'batch1-final-report-parts').glob('*.tsv'))), 4)
         reconstructed = [original[0]]
-        for path in pieces:
+        for index, path in enumerate(pieces):
             rows = list(csv.reader(io.StringIO(self.outputs[path]), delimiter='\t'))
             self.assertEqual(rows[0], original[0])
-            self.assertEqual(len(rows), 26)
+            self.assertEqual(len(rows), [95, 95, 95, 94][index])
             reconstructed.extend(rows[1:])
         self.assertEqual(reconstructed, original)
 
@@ -92,7 +93,7 @@ class ReviewChainTests(unittest.TestCase):
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             self.assertIsNone(archive.testzip())
             self.assertEqual(archive.read('batch1-final-report.tsv'), self.outputs[module.DIRECTORY / 'batch1-final-report.tsv'].encode('utf-8'))
-            self.assertEqual(len(archive.namelist()), 17)
+            self.assertEqual(len(archive.namelist()), 6)
             for path, value in self.outputs.items():
                 if path.parent.name == 'batch1-final-report-parts':
                     self.assertEqual(archive.read(f'batch1-final-report-parts/{path.name}'), value.encode('utf-8'))

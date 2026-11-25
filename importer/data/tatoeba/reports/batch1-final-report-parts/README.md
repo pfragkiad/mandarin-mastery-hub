@@ -6,21 +6,10 @@ Read or submit one part at a time. No middle rows have been omitted.
 
 | Part | Full-report record range | Records |
 | --- | --- | ---: |
-| [01](batch1-final-report-part-01.tsv) | 1–25 | 25 |
-| [02](batch1-final-report-part-02.tsv) | 26–50 | 25 |
-| [03](batch1-final-report-part-03.tsv) | 51–75 | 25 |
-| [04](batch1-final-report-part-04.tsv) | 76–100 | 25 |
-| [05](batch1-final-report-part-05.tsv) | 101–125 | 25 |
-| [06](batch1-final-report-part-06.tsv) | 126–150 | 25 |
-| [07](batch1-final-report-part-07.tsv) | 151–175 | 25 |
-| [08](batch1-final-report-part-08.tsv) | 176–200 | 25 |
-| [09](batch1-final-report-part-09.tsv) | 201–225 | 25 |
-| [10](batch1-final-report-part-10.tsv) | 226–250 | 25 |
-| [11](batch1-final-report-part-11.tsv) | 251–275 | 25 |
-| [12](batch1-final-report-part-12.tsv) | 276–300 | 25 |
-| [13](batch1-final-report-part-13.tsv) | 301–325 | 25 |
-| [14](batch1-final-report-part-14.tsv) | 326–350 | 25 |
-| [15](batch1-final-report-part-15.tsv) | 351–375 | 25 |
+| [01](batch1-final-report-part-01.tsv) | 1–94 | 94 |
+| [02](batch1-final-report-part-02.tsv) | 95–188 | 94 |
+| [03](batch1-final-report-part-03.tsv) | 189–282 | 94 |
+| [04](batch1-final-report-part-04.tsv) | 283–375 | 93 |
 
 Record ranges exclude the header. Keep IDs unchanged when returning feedback.
 

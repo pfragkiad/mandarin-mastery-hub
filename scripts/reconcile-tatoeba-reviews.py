@@ -68,7 +68,7 @@ def proposal_for(original, proposal):
     return sentence, translation
 
 
-def split_report(text, rows_per_part=25):
+def split_report(text, part_count=4):
     """Small complete review chunks for clients that truncate long TSV previews.
 
     CSV parsing preserves quoted tabs/newlines; repeating the full header never
@@ -76,6 +76,7 @@ def split_report(text, rows_per_part=25):
     """
     parsed = list(csv.reader(io.StringIO(text), delimiter='\t'))
     header, records = parsed[0], parsed[1:]
+    rows_per_part = (len(records) + part_count - 1) // part_count
     outputs = {}
     index = ['# Complete Batch 1 report — numbered parts', '',
              f'All **{len(records)} records** from the full report, in original order.',
@@ -213,7 +214,7 @@ double-pass claims. Original scores, issue labels and notes remain preserved.
 
 - [Full report with originals, decisions and proposed corrections](batch1-final-report.tsv):
   all 375 rows, both review histories and separate suggested Chinese/English.
-- [Numbered 25-record parts](batch1-final-report-parts/README.md) and
+- [Four numbered parts](batch1-final-report-parts/README.md) and
   [complete ZIP download](batch1-final-report-complete.zip): use these when a
   viewer truncates the full TSV. Every column and record is retained.
 - [Minimal proposed-content TSV](batch1-next-review.tsv): exactly `id`, `character`,
@@ -289,6 +290,14 @@ def main():
                 path.write_text(text, encoding='utf-8', newline='\n')
         elif not path.exists() or (path.read_bytes() if isinstance(text, bytes) else path.read_text('utf-8')) != text:
             raise ValueError(f'Stale final report: {path.name}')
+    # Only retire obsolete files in this generator's exact numbered TSV namespace.
+    # No directory traversal, recursive deletion, source reports or custom files.
+    for path in (DIRECTORY / 'batch1-final-report-parts').glob('batch1-final-report-part-[0-9][0-9].tsv'):
+        if path not in outputs:
+            if args.write:
+                path.unlink()
+            else:
+                raise ValueError(f'Obsolete report part: {path.name}')
     print(json.dumps(summary['counts'], indent=2))
 
 
