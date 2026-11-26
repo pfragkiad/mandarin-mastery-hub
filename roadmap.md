@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Global control corners and Bookmarks alignment
+- [x] Extend global rounding to every grid/detail card, panel and tile; verify actual library detail windows on wide and narrow screens.
 - [x] Match the rounded mockup consistently across controls and floating forms.
 - [x] Align game Bookmarks with neighbouring filters in both display sizes; verify wide and narrow layouts.
 
