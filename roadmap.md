@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Stable library range editing
+- [x] Keep rank preset pills and Done on one line: drop the fourth "Top N" pill (Top 2,000) and stop the pill row wrapping; verified both panels at 1458 and 390 widths.
 - [x] Keep Rank/Strokes triggers and Apply space stable while dragging; verified draft-only editing and submission at 1458/1280/390 widths and both display sizes; 18 shared filter/range tests pass.
 - [x] Verified the panel stays anchored when the maximum handle restores Any and Apply disappears at wide/narrow widths.
 

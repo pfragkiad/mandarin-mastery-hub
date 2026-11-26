@@ -125,7 +125,9 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   };
   const ticks = [...new Set([1, ...groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max)).map(g => g.max), max])].filter(n => n <= max).sort((a, b) => a - b);
   const finiteGroups = groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max) && g.max <= max);
-  const presets = finiteGroups.length >= 5 ? [finiteGroups[0], finiteGroups[1], finiteGroups[3], finiteGroups[4]].filter((g): g is GameRankGroup => Boolean(g)) : finiteGroups.slice(0, 4);
+  // Three quick "Top N" choices only: a fourth pill (e.g. Top 2,000) overflows the
+  // 400px panel and pushes Done — or the pill itself — onto a wrapped second line.
+  const presets = finiteGroups.length >= 4 ? [finiteGroups[0], finiteGroups[1], finiteGroups[3]].filter((g): g is GameRankGroup => Boolean(g)) : finiteGroups.slice(0, 3);
   return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)} labelled={labelled}>
     <div className={`stroke-range-card${value ? ' is-active' : ''}`}>
       <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · {summary}</span>
