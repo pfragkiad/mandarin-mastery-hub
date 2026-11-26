@@ -19,6 +19,7 @@ import { TileSpeaker } from './tile-speaker';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { usePronunciationAvailability } from './use-pronunciation-availability';
 import { useWorkspace } from './workspace';
+import { GameChoices } from './game-controls';
 import { loadStrokeGeometry, type StrokeGeometry } from '@/lib/character-enrichment';
 
 /**
@@ -391,11 +392,9 @@ export function HanziFinderPage({ scope, similar, onScope, onLeaveSimilar, onSim
 
   return <div className="finder-page library-page">
     <div className="page-heading library-heading"><div><div className="eyebrow">DRAW · COMPARE · OPEN</div><h1>Hanzi finder<SourceInfo inline className="detail-footnote">Compared with recorded stroke data from Hanzi Writer Data (Make Me a Hanzi), plus AnimCJK outlines for a few radical forms<br/>Glyphs without recorded strokes can’t be found<br/>Percentages show similarity, not certainty</SourceInfo></h1><p className="finder-intro">Draw a character to find it. Each match shows how similar it looks.</p></div></div>
-    <div className="lesson-filter finder-scope" role="group" aria-label="Search in">
-      {FINDER_SCOPES.map(s => <Button key={s.key} size="sm" variant={scope === s.key ? 'default' : 'outline'} aria-pressed={scope === s.key} onClick={() => onScope(s.key)}>{s.label}</Button>)}
-      <span className="finder-cap" role="group" aria-label="Minimum similarity">
-        {FINDER_CAP_OPTIONS.map(c => <Button key={c} size="sm" variant={cap === c ? 'default' : 'outline'} aria-pressed={cap === c} title={`Show matches scoring ${c}% or more`} onClick={() => setCap(c)}>{c}%+</Button>)}
-      </span>
+    <div className="lesson-filter finder-scope">
+      <GameChoices label="Search in" value={scope} options={FINDER_SCOPES.map(s => ({ value: s.key, label: s.label }))} onChange={value => onScope(value as FinderScope)}/>
+      <GameChoices label="Similarity" value={String(cap)} options={FINDER_CAP_OPTIONS.map(c => ({ value: String(c), label: `${c}%+` }))} onChange={value => setCap(Number(value))}/>
     </div>
     {/* "Find similar" banner: names the glyph whose recorded strokes are on the board and opens its card. */}
     {similar && <p className="finder-similar-note">
