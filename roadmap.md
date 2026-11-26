@@ -1,5 +1,8 @@
 # Roadmap
 
+## Small detail-grid alignment and translations
+- [x] Show Unranked in every character-example header and reuse whole-sense trimming after three lines, preserving the sole translation in each card; verified glyph and sound grids and translation-limit tests.
+
 ## Nested sound filters
 - [x] Use shared coloured parent/indented child dropdown styling for Initials and Finals, with one heading such as “Lips · b p m f” (no plain duplicate “Lips”); verified applied selections on wide/narrow Sound chart and hierarchy in all three pinyin games.
 

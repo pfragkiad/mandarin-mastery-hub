@@ -21,11 +21,11 @@ import { readingMeaning } from '@/lib/catalog-store';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
-import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { ExampleCardMeta } from './sentence-section';
 import { useWorkspace } from './workspace';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
+import { SmallGridMeaning } from './small-grid-meaning';
 
 /** Characters shown before "Show all". */
 export const SYLLABLE_CHARACTERS_SHOWN = 5;
@@ -79,13 +79,13 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           // Reuse the parent-example header and tile/facts layout exactly. Reading and
           // speech are deliberately absent: the selected sound already supplies them.
           const metadata = <>
-            {firstRank && (sameRank ? <UsageLabel rank={firstRank.rank} kind={firstRank.kind} compact/>
-              : <span className="pinyin-character-ranks">{ranks.map(({ id, kind, rank }, i) => <span key={id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact/></span>)}</span>)}
+            {firstRank ? (sameRank ? <UsageLabel rank={firstRank.rank} kind={firstRank.kind} compact/>
+              : <span className="pinyin-character-ranks">{ranks.map(({ id, kind, rank }, i) => <span key={id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact/></span>)}</span>) : <UsageLabel rank={null} compact/>}
             {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
             {onlyTraditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
           </>;
           return <div key={key} className="glyph-usage-example glyph-parent-card">
-          <ExampleCardMeta identity={firstRank || radicals.length || onlyTraditional ? metadata : null}/>
+          <ExampleCardMeta identity={metadata}/>
           <div className="glyph-usage-reference">
           {/* Only the hanzi boxes are links (like decomposition tiles), so hover and focus
               outline one box alone; the rank and meaning beside them stay plain, selectable
@@ -107,7 +107,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             </Link></Button>;
           })}</span>
           <span className="glyph-usage-facts">
-            {meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning} /></span>}
+            {meaning && <SmallGridMeaning text={meaning}/>}
           </span>
           </div>
         </div>; })}/>

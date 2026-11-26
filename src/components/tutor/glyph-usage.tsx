@@ -24,6 +24,7 @@ import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/charact
 import { isLearningExample, loadCharacterTatoebaExample, ownSentencePinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
 import { TatoebaSentenceSource } from './tatoeba-sentence-source';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
+import { SmallGridMeaning } from './small-grid-meaning';
 
 /** Optional sourced examples, fetched only for a Characters detail card.
  * Vocabulary/lessons stay first and Tatoeba may add a separately annotated
@@ -108,9 +109,8 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</h3>
     <ExpandableCharacterGrid key={`${kind}:${entry.id}:${familyGlyph ?? ''}:${preferences.includeTraditional}`} initialCount={6} cards={parents.map(parent => {
       const rank = usageOrder.loaded ? usageRank(parent, 'Characters', preferences.includeTraditional) : null;
-      const hasHeader = rank !== null || parent.script === 'Traditional';
       return <div className="glyph-usage-example glyph-parent-card" key={parent.id}>
-        <ExampleCardMeta identity={hasHeader ? <>{rank !== null && <UsageLabel rank={rank} kind="Characters" compact/>}{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</> : null}/>
+        <ExampleCardMeta identity={<><UsageLabel rank={rank} kind="Characters" compact/>{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</>}/>
         <div className="glyph-usage-reference">
           {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
           <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
@@ -120,7 +120,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
             {preferences.pinyin && parent.pinyin && <span className="glyph-usage-facts-row">
               <span className="example-pinyin-row">{isMultiReading(parent.pinyin) ? <MultiReadingSpeakers spoken={parent.hanzi} reading={parent.pinyin} variant="example"/> : <><span className="pinyin">{parent.pinyin}</span><ExamplePronunciation request={characterAudioRequest(parent.hanzi, parent.pinyin)} label={`character ${parent.hanzi}`}/></>}</span>
             </span>}
-            <span className="glyph-usage-meaning"><MeaningText text={parent.meaning}/></span>
+            <SmallGridMeaning text={parent.meaning}/>
           </span>
         </div>
       </div>;

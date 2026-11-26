@@ -65,7 +65,10 @@ export function joinSenses(senses: string[]): string {
 }
 
 function meaningOf(body: HTMLElement | null): HTMLElement | null {
-  return body?.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning') ?? null;
+  // Detail-grid callers measure the translation itself; library callers still
+  // pass their card body. Both keep the same whole-sense trimming rules.
+  const selector = '.word-meaning, .catalog-entry-meaning, .glyph-usage-meaning';
+  return body?.matches(selector) ? body : body?.querySelector<HTMLElement>(selector) ?? null;
 }
 
 function overLimit(meaning: HTMLElement, maxLines: number): boolean {
