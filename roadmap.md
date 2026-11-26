@@ -1,5 +1,9 @@
 # Roadmap
 
+## Global control corners and Bookmarks alignment
+- [x] Match the rounded mockup consistently across controls and floating forms.
+- [x] Align game Bookmarks with neighbouring filters in both display sizes; verify wide and narrow layouts.
+
 ## Done button in floating range panels
 - [x] Add a small Done control to the Rank and Strokes panels that closes them gracefully; outside clicks still only dismiss. Verify both panels, Apply, and phone width.
 - [x] Put Done on the same line as the quick choices in both panels; on phones the rank presets and Done wrap with Done flush right.
