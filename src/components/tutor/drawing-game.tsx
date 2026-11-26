@@ -293,8 +293,8 @@ export function DrawingGamePage({
                           allSubtopics=""
                           onChange={(next) => patch({ collection: next.collection || undefined, subtopic: next.subtopic || undefined })}
                         /></GameField>
-                        <GameField label="Part of speech"><FilterSelect
-                          ariaLabel="Part of speech"
+                        <GameField label="Type"><FilterSelect
+                          ariaLabel="Type"
                           value={draft.pos ?? ""}
                           onValueChange={(value) => patch({ pos: value || undefined })}
                           items={[{ value: "", label: "All types" }, ...(facets?.pos ?? []).map((value) => ({ value, label: value }))]}

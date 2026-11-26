@@ -136,3 +136,22 @@ describe('Explicit game filters', () => {
     expect(apply).not.toHaveBeenCalled();
   });
 });
+
+
+describe('Game Apply and Reset lifecycle', () => {
+  it('hides Apply after submission while Reset remains for applied filters', async () => {
+    const apply = vi.fn();
+    const clear = vi.fn(() => ({ level: '' }));
+    const view = render(<DraftFilterForm applied={{ level: '' }} active={false} count={3596} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Level" value={draft.level} onChange={e => patch({ level: e.target.value })}/>}</DraftFilterForm>);
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Level'), { target: { value: 'HSK 3.0 · 2,HSK 3.0 · 3' } });
+    expect(apply).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+    await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ level: 'HSK 3.0 · 2,HSK 3.0 · 3' }));
+    view.rerender(<DraftFilterForm applied={{ level: 'HSK 3.0 · 2,HSK 3.0 · 3' }} active count={100} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft }) => <input aria-label="Level" value={draft.level} readOnly/>}</DraftFilterForm>);
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument());
+    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    await waitFor(() => expect(clear).toHaveBeenCalledOnce());
+    expect(screen.getByLabelText('Level')).toHaveValue('');
+  });
+});

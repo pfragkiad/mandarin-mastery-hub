@@ -59,7 +59,7 @@ export function GameLevelPills({ levels, value, onChange, emptyValue = '' }: {
           className={`game-level-pill${on ? ' is-selected' : ''}`}
           aria-pressed={on} onClick={() => toggle(level)}>
           {on && <Check aria-hidden="true" />}
-          <span>{level}</span>
+          <span className={level === 'Unclassified' ? 'unclassified-option' : undefined}>{level}</span>
         </Button>;
       })}
     </div>
@@ -87,7 +87,7 @@ function GameRangeDisclosure({ label, summary, active, children }: {
 }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
-  return <Popover open={open} onOpenChange={setOpen}>
+  return <GameField label={label === 'Strokes' ? 'Stroke count' : 'Frequency'}><Popover open={open} onOpenChange={setOpen}>
     <PopoverTrigger asChild><Button type="button" variant="outline" size="sm"
       className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
       aria-label={`${label}: ${summary}`}>
@@ -97,7 +97,7 @@ function GameRangeDisclosure({ label, summary, active, children }: {
       className="game-range-popover" aria-label={`${label} filter`}>
       <GameRangeCloseContext.Provider value={close}>{children}</GameRangeCloseContext.Provider>
     </PopoverContent>
-  </Popover>;
+  </Popover></GameField>;
 }
 
 export type GameRankGroup = { value: string; label: string; min: number; max: number };

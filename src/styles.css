@@ -1840,13 +1840,15 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .catalog-tools-row > button.selected { background: var(--secondary); color: var(--primary); }
 /* Shared game settings: one framed tool, with optional filters and live pool feedback.
    The container switches columns only when both settings and feedback fit. */
-.game-setup { --game-setup-gap: 20px; --game-field-gap: 10px; max-width: var(--game-panel-width); margin-bottom: 24px; border: 1px solid var(--border); border-radius: var(--form-radius); background: var(--card); container-type: inline-size; position: relative; }
+.game-setup { --game-setup-gap: 20px; --game-field-gap: 16px; max-width: var(--game-panel-width); margin-bottom: 24px; border: 1px solid var(--border); border-radius: var(--form-radius); background: var(--card); container-type: inline-size; position: relative; }
 .game-setup-settings { display: flex; flex-direction: column; gap: var(--game-setup-gap); padding: var(--game-setup-gap); min-width: 0; }
 .game-setup-group { display: flex; flex-direction: column; gap: var(--game-field-gap); min-width: 0; }
 .game-setup-label { font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: uppercase; color: var(--muted-foreground); }
 .game-setup .shared-filter-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 0; gap: var(--game-field-gap); width: 100%; }
 .game-setup .shared-filter-form > .game-filter-row { grid-column: 1 / -1; }
-.game-setup .shared-filter-form > .filter-submit { justify-content: flex-end; align-self: end; }
+.game-setup .shared-filter-form > .filter-submit { grid-column: 1 / -1; min-height: var(--game-filter-control-height); justify-content: flex-end; align-self: end; }
+.game-setup .shared-filter-form > .game-filter-disclosure { grid-column: 1 / -1; }
+.game-setup .shared-filter-form[data-filters-changed] .filter-submit button[type='submit'] { border-color: var(--primary); color: var(--primary); }
 /* Vocabulary's level pills need the whole form width. Apply/Reset appear only after a
    draft edit; if they shared the filters' grid row, their arrival narrowed that row and
    wrapped a level even though the level itself had not changed size. */
@@ -1867,9 +1869,11 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-filter-heading > svg.is-open { transform: rotate(180deg); }
 .game-filter-number { justify-self: start; color: var(--primary); font-variant-numeric: tabular-nums; }
 .game-filter-grid { display: flex; flex-wrap: wrap; align-items: end; gap: var(--game-field-gap); padding-top: var(--game-field-gap); }
-.game-filter-grid > .game-setting-field { flex: 0 1 auto; max-width: 100%; }
+.game-filter-grid > .game-setting-field { flex: 1 1 130px; max-width: 100%; }
 .game-filter-grid > .game-level-field { flex: 1 0 100%; width: 100%; }
 .game-level-pills { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); }
+.game-level-pills .unclassified-option { font-style: italic; }
+.game-filter-grid .saved-filter-toggle { width: 100%; justify-content: center; }
 /* Checks occupy the existing left padding, outside flex layout. Both states keep
    identical dimensions and centred labels; only available width can wrap the group. */
 html .game-setup .game-level-pill[data-ui-button] { position: relative; flex: 0 0 auto; height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 20px; gap: 6px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; white-space: nowrap; }
@@ -1884,11 +1888,11 @@ html .game-setup .game-level-pill svg { position: absolute; left: 4px; top: 50%;
 .game-setup .filter-select { width: 100%; max-width: 100%; min-width: 0; height: 40px; }
 .game-setup .filter-select-active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .stroke-range-field { grid-column: 1 / -1; }
-.game-range-popover { --game-field-gap: 12px; width: min(560px, calc(100vw - 24px)); max-height: var(--radix-popover-content-available-height); overflow-y: auto; padding: 0; container-type: inline-size; }
+.game-range-popover { --game-field-gap: 12px; width: min(400px, calc(100vw - 24px)); max-height: var(--radix-popover-content-available-height); overflow-y: auto; padding: 0; container-type: inline-size; }
 .game-range-popover .stroke-range-card { border: 0; border-radius: inherit; }
 .game-range-popover .filter-select { max-width: 100%; min-width: 0; height: 40px; }
 .game-range-popover .filter-select-active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
-.game-setup .game-range-trigger.filter-select { width: fit-content; max-width: 100%; gap: var(--game-field-gap); }
+.game-setup .game-range-trigger.filter-select { width: 100%; max-width: 100%; gap: var(--game-field-gap); }
 .game-range-trigger > span { white-space: normal; text-align: left; }
 .game-range-trigger svg.is-open, .game-range-advanced-toggle svg.is-open { transform: rotate(180deg); }
 .game-range-advanced-toggle { align-self: flex-start; }
@@ -1930,7 +1934,7 @@ html :is(.game-setup, .game-range-popover) .game-range-done[data-ui-button]:hove
 .game-setup .flash-option, .game-setup .pinyin-slow { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: 12px; font-size: 13px; min-height: 30px; color: var(--foreground); }
 .game-setup [role='switch'][data-state='unchecked'] { background: color-mix(in oklab, var(--foreground) 32%, var(--background)); }
 .game-setup-feedback { display: flex; flex-direction: column; justify-content: center; gap: 18px; text-align: center; min-width: 0; padding: var(--game-setup-gap); background: var(--background); border-radius: 0 0 var(--control-radius) var(--control-radius); }
-.game-setup-preview { min-height: 110px; display: flex; flex-direction: column; justify-content: center; gap: 10px; min-width: 0; }
+.game-setup-preview { flex: 1; min-height: 110px; display: flex; flex-direction: column; justify-content: center; gap: 10px; min-width: 0; }
 .game-setup-preview .pinyin { font-size: 13px; overflow-wrap: anywhere; }
 .game-preview-hanzi { font-family: var(--font-hanzi); font-size: 80px; line-height: 1.3; color: var(--primary); overflow-wrap: anywhere; }
 .game-preview-hanzi.card-ink-radical { color: var(--card-ink); }
@@ -1938,6 +1942,9 @@ html :is(.game-setup, .game-range-popover) .game-range-done[data-ui-button]:hove
 .game-match-count { display: flex; flex-direction: column; gap: 6px; }
 .game-match-count strong { font-family: var(--font-display); font-size: 48px; line-height: 1.1; font-weight: 400; color: var(--primary); font-variant-numeric: tabular-nums; }
 .game-match-count span { font-size: 13px; color: var(--foreground); }
+.game-filter-pending { display: none; font-size: 12px; color: var(--muted-foreground); }
+.game-setup:has(.shared-filter-form[data-filters-changed]) .game-filter-pending { display: block; }
+.game-setup:has(.shared-filter-form[data-filters-changed]) .game-match-count :is(strong, span) { color: var(--muted-foreground); }
 .game-selection-summary { font-size: 12px; line-height: 1.6; color: var(--muted-foreground); overflow-wrap: anywhere; }
 .game-setup-footer { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); }
 .game-setup-summary { font-size: 12px; color: var(--muted-foreground); min-width: 0; }

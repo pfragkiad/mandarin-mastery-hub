@@ -17,9 +17,12 @@ export function GameSetup({ filters, children, summary, action, matchCount, unit
     </div>
     </div>
     <aside className="game-setup-feedback" aria-label="Selected pool">
-      {preview && <div className="game-setup-preview" aria-label="Preview">{preview}</div>}
       {matchCount !== undefined && <div className="game-match-count" aria-live="polite"><strong>{matchCount.toLocaleString('en-US')}</strong><span>{unit} match your selection</span></div>}
+      {/* CSS subscribes to the isolated form's draft marker; feedback never re-filters
+          the pool or rerenders its owner while a learner edits the controls. */}
+      <p className="game-filter-pending" role="status">Filters changed · tap Apply to update</p>
       {selection && <p className="game-selection-summary">{selection}</p>}
+      {preview && <div className="game-setup-preview" aria-label="Preview">{preview}</div>}
     {(summary || action) && <div className="game-setup-footer">
       <span className="game-setup-summary" aria-live="polite">{summary}</span>
       {action && <div className="flash-start">{action}</div>}

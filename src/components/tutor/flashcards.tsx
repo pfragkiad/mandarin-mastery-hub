@@ -293,7 +293,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
           {!draftReference && <>
             {facets.levels.length > 0 && <GameLevelPills levels={facets.levels} value={draft.level} emptyValue="All levels" onChange={level => patch({ level })} />}
             <GameField label="Topic"><TopicSelect topics={facets.collections} subtopics={facets.subtopics} collection={draft.collection || ''} subtopic={draftSubtopic} allTopics="" allSubtopics="" onChange={patch}/></GameField>
-            {facets.posOptions.length > 0 && <GameField label="Part of speech"><FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.posOptions.map(p => ({ value: p, label: p }))]} /></GameField>}
+            {facets.posOptions.length > 0 && <GameField label="Type"><FilterSelect ariaLabel="Type" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.posOptions.map(p => ({ value: p, label: p }))]} /></GameField>}
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}
             {facets.styles.length > 0 && <GameField label="Sentence style"><FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} /></GameField>}
           </>}

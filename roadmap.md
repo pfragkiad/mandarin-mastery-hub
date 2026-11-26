@@ -243,3 +243,7 @@
 - [x] Combine Topics/Subtopics in Vocabulary and Flashcards with selectable parents and indented children; preserve existing filters and history.
 - [x] Replace remaining native `<select>` filter/settings dropdowns with one shared `FilterSelect` component (consistent themed popover, arrow inset, and text-to-arrow gap)
 - [x] Keep unchanged All topics and All types defaults from creating phantom Apply state; retain real edits and explicit empty-option clearing.
+
+## Game settings reviewer refinements
+- [x] Balance shared Words/Glyphs game filters, labels, spacing, preview and floating ranges.
+- [x] Distinguish unapplied filters without changing Apply/Reset rules or HSK selection geometry; verified both games at wide/narrow widths and 21 filter tests. Unclassified is offered only where recorded unlevelled entries exist (none in the current Words pool).

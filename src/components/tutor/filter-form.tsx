@@ -50,10 +50,11 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
       startTransition(action);
     });
   };
-  return <form className="filter-bar shared-filter-form" aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
+  return <form className="filter-bar shared-filter-form" data-filters-changed={changed && !autoApply ? '' : undefined} aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
     {children}
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
-    {(changed || active) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{(active || (resetLabel && changed)) && <Button type="button" size={resetLabel ? 'sm' : 'icon'} variant="ghost" className={resetLabel ? undefined : 'close-x'} disabled={pending} aria-label={resetLabel ?? 'Clear filters'} title={resetLabel ?? 'Clear filters'} onClick={() => run(onClear)}>{resetLabel ? <><RotateCcw/>{resetLabel}</> : <X/>}</Button>}</div>}
+    {/* Game actions reserve their row, without displaying Apply until drafts differ. */}
+    {(changed || active || resetLabel) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{(active || (resetLabel && changed)) && <Button type="button" size={resetLabel ? 'sm' : 'icon'} variant="ghost" className={resetLabel ? undefined : 'close-x'} disabled={pending} aria-label={resetLabel ?? 'Clear filters'} title={resetLabel ?? 'Clear filters'} onClick={() => run(onClear)}>{resetLabel ? <><RotateCcw/>{resetLabel}</> : <X/>}</Button>}</div>}
     {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
 }
