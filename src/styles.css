@@ -4900,12 +4900,8 @@ html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { 
 /* :where keeps this at the .vocabulary-parts weight, so Comfortable's shared tile size still wins. */
 :where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph { width: 58px; height: 58px; border-radius: var(--form-radius); }
 :where(.etymology-section .etymology-word-part > .decomposition-part) > .decomposition-glyph strong { font-size: 40px; }
-/* Detail drawer label row: the tab label starts exactly --detail-section-pad below the divider,
-   like every section heading. The tab keeps only its bottom padding (room for the open
-   underline) and the collapse chevron overhangs the row instead of making it taller. */
-.detail-tabs .stroke-tab { padding-top: 0; }
-.detail-tabs .stroke-tab-item .source-info-trigger { margin-top: -12px; }
-.detail-tabs .stroke-tabs-collapse { margin-block: -10px; }
+/* Detail drawers use Practice's shared tab padding and centred controls unchanged.
+   Section spacing belongs to the outer section, never label/icon compensation offsets. */
 
 /* Lesson word/expression cards (lesson-fit-grid.tsx): only when a single full-width card is still
    narrower than a reading may the pinyin line wrap; otherwise the grid drops columns instead. */
