@@ -139,7 +139,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
       <Button type="button" variant="ghost" size="sm" className="game-range-advanced-toggle" aria-expanded={advanced} aria-controls={advancedId} onClick={() => setAdvanced(previous => !previous)}>
         Advanced<ChevronDown className={advanced ? 'is-open' : ''}/>
       </Button>
-      <div id={advancedId} className="game-rank-advanced" hidden={!advanced}>
+      {advanced && <div id={advancedId} className="game-rank-advanced">
         <div className="game-rank-inputs">
           <GameField label="From rank"><Input type="number" aria-label="From rank" min={1} max={max} value={lo} disabled={!maxRank}
             onChange={e => { if (e.target.value) { const next = Math.max(1, Math.min(max, Number(e.target.value))); update(next, Math.max(next, hi)); } }}/></GameField>
@@ -150,10 +150,12 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
         <SliderPrimitive.Root className="stroke-range-slider" min={0} max={Math.max(1, (ticks.length - 1) * 1000)} step={1} disabled={!maxRank}
           value={[rankSliderPosition(lo, ticks), rankSliderPosition(hi, ticks)]} onValueChange={([min, end]) => { if (min !== undefined && end !== undefined) update(sliderPositionRank(min, ticks), sliderPositionRank(end, ticks)); }} aria-label="Frequency rank range">
           <SliderPrimitive.Track className="stroke-range-track"><SliderPrimitive.Range className="stroke-range-fill"/></SliderPrimitive.Track>
-          <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum rank" aria-valuetext={String(lo)}/><SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum rank" aria-valuetext={String(hi)}/>
+          {/* Inner hit layer lets Radix Slider pick the nearest thumb synchronously via pointer position instead of relying on focus timing. */}
+          <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum rank" aria-valuetext={String(lo)}><span className="stroke-range-thumb-hit" aria-hidden="true"/></SliderPrimitive.Thumb>
+          <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum rank" aria-valuetext={String(hi)}><span className="stroke-range-thumb-hit" aria-hidden="true"/></SliderPrimitive.Thumb>
         </SliderPrimitive.Root>
         <div className="game-rank-ticks" aria-hidden="true">{ticks.map(tick => <span key={tick}>{tick.toLocaleString('en-US')}{groups.find(g => g.max === tick)?.label.split(' · ')[1] && <small>{groups.find(g => g.max === tick)?.label.split(' · ')[1]}</small>}</span>)}</div>
-      </div>
+      </div>}
       {/* Presets and Done share the panel's bottom row, exactly like the stroke panel,
           so Done never sits alone on a line of its own. */}
       <div className="game-range-footer">
@@ -208,8 +210,8 @@ export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true
       <SliderPrimitive.Track className="stroke-range-track">
         <SliderPrimitive.Range className="stroke-range-fill" />
       </SliderPrimitive.Track>
-      <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum strokes" />
-      <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum strokes" />
+      <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum strokes"><span className="stroke-range-thumb-hit" aria-hidden="true"/></SliderPrimitive.Thumb>
+      <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum strokes"><span className="stroke-range-thumb-hit" aria-hidden="true"/></SliderPrimitive.Thumb>
     </SliderPrimitive.Root>
     {/* Presets and Done share the panel's bottom row: presets pick a range, Done closes it. */}
     <div className="game-range-footer">

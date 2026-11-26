@@ -1928,6 +1928,7 @@ html :is(.game-setup, .game-range-popover) .stroke-range-any[data-ui-button]:dis
 .stroke-range-fill { position: absolute; height: 100%; border-radius: 999px; background: var(--primary); }
 .stroke-range-thumb { display: block; width: 18px; height: 18px; border-radius: 999px; background: var(--foreground); border: 2px solid var(--background); box-shadow: 0 1px 4px color-mix(in oklab, var(--background) 60%, transparent); cursor: grab; transition: transform .12s; }
 .stroke-range-thumb:hover, .stroke-range-thumb:focus-visible { transform: scale(1.1); outline: 2px solid var(--primary); outline-offset: 2px; }
+.stroke-range-thumb-hit { display: block; width: 100%; height: 100%; border-radius: 999px; }
 .stroke-range-presets { display: flex; flex-wrap: nowrap; gap: 5px; }
 .stroke-range-presets button { min-height: 32px; height: auto; padding: 5px 9px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); border-radius: var(--control-radius); color: var(--foreground); background: var(--card); font-variant-numeric: tabular-nums; }
 .stroke-range-presets button:hover { border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); color: var(--primary); }
