@@ -128,7 +128,7 @@ export function etymologyView(index: EtymologyIndex, request: EtymologyRequest, 
 
 /**
  * The one traditional form whose notes a simplified character without its own entry may show
- * in place (owner-requested, labelled as that form's notes and "suggested, not reviewed"), or
+ * in place (owner-requested, attributed to that form with source-specific review notices), or
  * null. Only a plain one-to-one pair qualifies: exactly one related form with its own exact
  * headword, recorded as Traditional (`isTraditional`, the caller's exact script metadata), and
  * no note other than a plain "traditional" one — so context-dependent pairs (发 → 發 / 髮,

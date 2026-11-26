@@ -228,7 +228,7 @@ const LoadingLines = () => <div className="section-placeholder" aria-busy="true"
  * (owner-requested: saves opening 師 to read 师's history). `form` comes from
  * inheritableCounterpart (one plain simplified → traditional pair only, using exact script
  * metadata), and `inherited` is that form's own resolved view, loaded only while `enabled`.
- * The notes stay attributed to the traditional form and are labelled suggested/unreviewed;
+ * The notes stay attributed to the traditional form; review notices remain source-specific,
  * nothing is copied into the simplified record. `undefined` = still loading.
  */
 export function useInheritedEtymology(view: EtymologyView | null | undefined, enabled: boolean): { form: RelatedForm | null; inherited: EtymologyView | null | undefined } {
@@ -249,7 +249,7 @@ export function ScriptPairArrow({ form }: { form: RelatedForm }) {
 function InheritedEtymology({ view, form, inherited, headless }: { view: EtymologyView; form: RelatedForm; inherited: EtymologyView; headless: boolean }) {
   return <div className="etymology-inherited">
     {!headless && <div className="etymology-inherited-row"><span className="decomposition-glyph decomposition-glyph-static"><strong lang="zh-CN">{view.glyph}</strong></span><ScriptPairArrow form={form}/></div>}
-    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span> (suggested, not reviewed):</p>
+    <p className="glyph-usage-meaning etymology-inherited-note">No entry for <span lang="zh-CN">{view.glyph}</span> in Howell or Shuowen Jiezi. These notes are for its traditional form <span lang="zh-CN" className="traditional-character">{form.glyph}</span>:</p>
     <EtymologyPanel view={inherited}/>
   </div>;
 }
