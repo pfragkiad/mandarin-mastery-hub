@@ -71,15 +71,19 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   const pairClass = (pair: number | null | undefined) =>
     pair != null && hoveredPair === pairKey(pair) ? ' sentence-pair-hover' : '';
 
+  // The pinyin line exists only when the reader shows pinyin and the record has one.
+  const showPinyinLine = Boolean(preferences.pinyin && pinyin);
+
   {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
       the pinyin with its speaker and the translation. The row wraps, so the translation
       shares the pinyin line only when it fits; otherwise it takes its own third line. */}
   return <div className="sentence">
-    {/* When the sentence carries a style pill (Conversational/Written) or source details,
-        they sit in a dedicated header row at the top of the card with the pill top-right. */}
-    {(heading || sourceDetails) && <div className="sentence-card-header">
+    {/* Source details keep their own header row. The style pill (Conversational/Written)
+        rides the pinyin line's far right whenever that line exists — the card has the space
+        there — and only falls back to this row when there is no pinyin line to carry it. */}
+    {(sourceDetails || (heading && !showPinyinLine)) && <div className="sentence-card-header">
       {sourceDetails}
-      {heading && <span className="sentence-style-pill">{heading}</span>}
+      {heading && !showPinyinLine && <span className="sentence-style-pill">{heading}</span>}
     </div>}
     <div className="sentence-hanzi-row">
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
@@ -97,7 +101,7 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
     })}</p>
     </div>
     <span className="sentence-reading">
-      {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
+      {showPinyinLine && <span className="pinyin sentence-pinyin">
         {pairing ? <span>{pairing.tokens.map((t, i) => <span key={i}>
           {i > 0 && ' '}
           {t.leading}
@@ -105,6 +109,9 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
           {t.trailing}
         </span>)}</span> : <span>{pinyin}</span>}
         <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
+        {/* The style label sits at the far right of this same line (the line is already a
+            flex row), so the card keeps one fewer row and the sentence reads uninterrupted. */}
+        {heading && <span className="sentence-style-pill">{heading}</span>}
       </span>}
       {/* The translation ends with the pinyin's terminal mark (. ! ?) — display rule
           from alignSentenceEnding; the recorded text is never rewritten. */}
