@@ -1847,6 +1847,11 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-setup .shared-filter-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 0; gap: var(--game-field-gap); width: 100%; }
 .game-setup .shared-filter-form > .game-filter-row { grid-column: 1 / -1; }
 .game-setup .shared-filter-form > .filter-submit { justify-content: flex-end; align-self: end; }
+/* Vocabulary's level pills need the whole form width. Apply/Reset appear only after a
+   draft edit; if they shared the filters' grid row, their arrival narrowed that row and
+   wrapped a level even though the level itself had not changed size. */
+.game-setup .shared-filter-form:has(.game-level-field) > .game-filter-disclosure,
+.game-setup .shared-filter-form:has(.game-level-field) > .filter-submit { grid-column: 1 / -1; }
 .game-setup-group + .game-setup-group { border-top: 1px solid var(--border); padding-top: var(--game-setup-gap); }
 .game-setup .game-options { display: flex; flex-direction: column; gap: var(--game-setup-gap); margin: 0; min-width: 0; }
 .game-kind-groups, .game-option-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: var(--game-field-gap); width: 100%; }
@@ -1865,10 +1870,15 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-filter-grid > .game-setting-field { flex: 0 1 auto; max-width: 100%; }
 .game-filter-grid > .game-level-field { flex: 1 0 100%; width: 100%; }
 .game-level-pills { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); }
-html .game-setup .game-level-pill[data-ui-button] { height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 14px; gap: 6px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; }
+/* Every pill reserves its check slot, selected or not, so toggling a level never changes
+   the group's width distribution. Compact padding keeps all five levels on one row where
+   the unselected pills already fitted; the whole group may still wrap on narrow screens. */
+html .game-setup .game-level-pill[data-ui-button] { flex: 0 0 auto; height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 4px; gap: 4px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; white-space: nowrap; }
 html .game-setup .game-level-pill[data-ui-button]:hover { border-color: color-mix(in oklab, var(--primary) 40%, var(--border)); }
 html .game-setup .game-level-pill.is-selected[data-ui-button] { background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); }
+html .game-setup .game-level-pill > span { white-space: nowrap; }
 html .game-setup .game-level-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+html .game-setup .game-level-pill svg.is-check-placeholder { visibility: hidden; }
 .game-filter-grid[hidden] { display: none; }
 .game-setting-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .game-field-label { font-size: 12px; font-weight: 500; color: var(--foreground); }
