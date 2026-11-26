@@ -4113,11 +4113,16 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-bank-word .lesson-hanzi.is-linked:hover,
 .lesson-bank-word .lesson-hanzi.is-linked:focus-visible { background: transparent; color: inherit; }
 .lesson-inline-hanzi { font-family: var(--font-hanzi); }
-/* Lesson character hints (lesson-hints.tsx): every hanzi rings on hover/focus and while its
-   quick card is open (data-hint-active). A box-shadow ring, never a border, so text never moves. */
-.lesson-hint-char { cursor: pointer; border-radius: var(--control-radius); transition: box-shadow .12s ease, background .12s ease; }
-.lesson-hint-char:hover, .lesson-hint-char:focus-visible { box-shadow: 0 0 0 1px var(--primary); outline: none; }
-.lesson-hint-char[data-hint-active] { box-shadow: 0 0 0 1px var(--primary); background: color-mix(in oklch, var(--primary) 10%, transparent); }
+/* One neutral inner square for shared glyph hints, independent of font line-box height.
+   The overlay never changes text flow or the enclosing tile's identity-coloured border. */
+:root { --glyph-hint-ink: oklch(1 0 0); --glyph-hint-glow: 0 0 3px color-mix(in oklab, var(--glyph-hint-ink) 65%, transparent); --glyph-hint-frame-size: 1.12em; }
+.lesson-hint-char { position: relative; cursor: pointer; border-radius: var(--control-radius); }
+.lesson-hint-char::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); box-sizing: border-box; border: 1px solid var(--glyph-hint-ink); border-radius: var(--control-radius); box-shadow: var(--glyph-hint-glow); opacity: 0; pointer-events: none; transition: opacity .12s ease; }
+.lesson-hint-char:is(:hover, :focus-visible, [data-hint-active]) { box-shadow: none; background: transparent; outline: none; }
+.lesson-hint-char:is(:hover, :focus-visible, [data-hint-active])::before { opacity: 1; }
+/* Form tiles are 1.34em squares: a 1.12em frame leaves the same inset on every side.
+   Normalise only the inner target, never measured glyph ink or the outer tile. */
+.tile-form .lesson-hint-char { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; line-height: 1; flex: none; }
 .sentence-char.lesson-hint-char:hover, .sentence-char.lesson-hint-char:focus-visible { color: inherit; background: transparent; }
 .lesson-hints-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 /* Sheet size (phone Study / Settings sheets, grids and lessons alike): a sheet row — label left,
