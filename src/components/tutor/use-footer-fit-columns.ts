@@ -1,15 +1,18 @@
 import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
 import { footerItemsWrap } from './use-card-footer-fit';
+import { rowItemsWrap } from './use-card-top-row-fit';
 
 /**
  * Card grids (Glyphs, Words, Phrases, Start's random cards): fewer cards per row rather than
- * wrapped buttons.
+ * wrapped header tokens or footer buttons, plus row-aligned top hanzi edges.
  *
- * Purpose: a card's footer holds Details / Trace / Recall and the bookmark. When the CSS grid
- * packs so many cards into a row that those buttons no longer share one line, this hook drops
- * the grid to fewer columns until they do — the stylesheet's own column rule stays the upper
- * limit, and a single column is the floor (there the footer may still wrap or shrink its font,
- * see use-card-footer-fit.ts).
+ * Purpose: when the CSS grid packs so many cards into a row that a card's header tokens
+ * (.word-level-wrap) or footer buttons (.word-card-bottom) no longer share one line, this hook
+ * drops the grid to fewer columns until they do — the stylesheet's own column rule stays the
+ * upper limit, and a single column is the floor (there the header or footer may still wrap or
+ * shrink its font, see use-card-top-row-fit.ts and use-card-footer-fit.ts). Afterwards, cards in
+ * the same visual row share the tallest header height in that row so their hanzi boxes start at
+ * the same vertical edge.
  *
  * Inputs: `ref` — the grid element; `deps` — whatever changes the cards' buttons or text
  * (display size, font, reveal mode); `choices` — optional allowed column counts (Start's six
@@ -34,18 +37,20 @@ export function useFooterFitColumns(ref: RefObject<HTMLElement | null>, deps: De
       if (!force && width === lastWidth) return;
       lastWidth = width;
       grid.style.gridTemplateColumns = '';
+      clearRowHeaderHeights(grid);
       const natural = resolvedColumnCount(grid);
-      if (natural <= 1) return;
+      if (natural <= 1) { syncRowHeaderHeights(grid); return; }
       const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
       // At most `natural` rounds: every wrap strictly lowers the column count.
       for (let round = 0; round < natural; round += 1) {
         const columns = gridColumnsFor({ natural, width, gap, needed, choices });
         grid.style.gridTemplateColumns = columns < natural ? `repeat(${columns}, minmax(0, 1fr))` : '';
-        if (columns <= 1) return;
+        if (columns <= 1) break;
         const wrapped = widestWrappedCard(grid);
-        if (!wrapped) return;
+        if (!wrapped) break;
         needed = Math.max(needed, wrapped, cardWidth(width, gap, columns));
       }
+      syncRowHeaderHeights(grid);
     };
     const restart = () => { needed = 0; measure(true); };
     restart();
@@ -67,6 +72,7 @@ export function useFooterFitColumns(ref: RefObject<HTMLElement | null>, deps: De
       mutations?.disconnect();
       resize?.disconnect();
       grid.style.gridTemplateColumns = '';
+      clearRowHeaderHeights(grid);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
@@ -96,11 +102,23 @@ function resolvedColumnCount(grid: HTMLElement): number {
 }
 
 /**
- * Width of the widest card whose footer buttons wrap at the view's own size, or 0 when none
- * does. Each footer's font step is lifted for the check and restored straight after.
+ * Width of the widest card whose header tokens or footer buttons wrap at the view's own size,
+ * or 0 when none does. Each card's font/abbreviation step is lifted for the check and restored
+ * straight after so shrinking never stands in for a wider card.
  */
 function widestWrappedCard(grid: HTMLElement): number {
   let widest = 0;
+  for (const row of grid.querySelectorAll<HTMLElement>('.word-card-top .word-level-wrap')) {
+    const card = row.closest<HTMLElement>('.word-card');
+    if (!card) continue;
+    const step = card.dataset['cardHeadStep'];
+    const short = 'radicalShort' in row.dataset;
+    if (step) delete card.dataset['cardHeadStep'];
+    if (short) delete row.dataset['radicalShort'];
+    if (rowItemsWrap(row)) widest = Math.max(widest, card.getBoundingClientRect().width);
+    if (step) card.dataset['cardHeadStep'] = step;
+    if (short) row.dataset['radicalShort'] = '';
+  }
   for (const footer of grid.querySelectorAll<HTMLElement>('.word-card-bottom')) {
     const card = footer.closest<HTMLElement>('.word-card');
     if (!card) continue;
@@ -110,4 +128,41 @@ function widestWrappedCard(grid: HTMLElement): number {
     if (step) card.dataset['cardFootStep'] = step;
   }
   return widest;
+}
+
+/** Clear synced header heights before re-measuring or on teardown. */
+function clearRowHeaderHeights(grid: HTMLElement) {
+  for (const top of grid.querySelectorAll<HTMLElement>('.word-card-top')) {
+    top.style.removeProperty('min-height');
+    top.style.removeProperty('align-items');
+  }
+}
+
+/**
+ * Keep the top edge of the hanzi box aligned across every card in a visual row: whenever cards
+ * share a row and one has a taller `.word-card-top` (e.g. a wrapped header), every header in that
+ * row reserves the row's tallest height and aligns its content to the top.
+ */
+export function syncRowHeaderHeights(grid: HTMLElement) {
+  clearRowHeaderHeights(grid);
+  const rows = new Map<number, { top: HTMLElement; height: number }[]>();
+  for (const card of grid.querySelectorAll<HTMLElement>('.word-card')) {
+    const top = card.querySelector<HTMLElement>(':scope > .word-card-top');
+    if (!top) continue;
+    const key = Math.round(card.getBoundingClientRect().top);
+    const list = rows.get(key) ?? [];
+    list.push({ top, height: top.getBoundingClientRect().height });
+    rows.set(key, list);
+  }
+  for (const items of rows.values()) {
+    if (items.length < 2) continue;
+    const maxHeight = Math.max(...items.map(item => item.height));
+    const minHeight = Math.min(...items.map(item => item.height));
+    if (maxHeight - minHeight <= 1) continue;
+    const px = `${Math.ceil(maxHeight)}px`;
+    for (const item of items) {
+      item.top.style.minHeight = px;
+      item.top.style.alignItems = 'start';
+    }
+  }
 }
