@@ -34,13 +34,12 @@ export function InitialSelect({ value, onChange, available }: { value: string; o
     const groupValue = `group:${index}`;
     const initials = group.initials.filter(offered);
     if (!initials.length && value !== groupValue) return;
-    items.push({
-      label: group.label,
-      options: [
-        { value: groupValue, label: `${group.label}${group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}` },
-        ...(group.initials[0] !== null ? initials.map(initial => ({ value: initial ?? 'none', label: initial ?? 'none' })) : []),
-      ],
-    });
+    // Same explicit parent/child hierarchy as TopicSelect: one selectable group
+    // heading, then indented exact initials, without a second nonselectable label.
+    items.push(
+      { value: groupValue, label: `${group.label}${group.initials[0] ? ` · ${group.initials.join(' ')}` : ''}`, parent: true },
+      ...(group.initials[0] !== null ? initials.map(initial => ({ value: initial ?? 'none', label: initial ?? 'none', nested: true })) : []),
+    );
   });
   return <FilterSelect ariaLabel="Filter by initial" value={value} onValueChange={onChange} items={items} />;
 }
@@ -52,13 +51,10 @@ export function FinalSelect({ value, onChange, available }: { value: string; onC
     const groupValue = `group:${index}`;
     const finals = group.finals.filter(offered);
     if (!finals.length && value !== groupValue) return;
-    items.push({
-      label: `Finals with ${group.label}`,
-      options: [
-        { value: groupValue, label: `Finals with ${group.label}` },
-        ...finals.map(final => ({ value: final, label: final })),
-      ],
-    });
+    items.push(
+      { value: groupValue, label: `Finals with ${group.label}`, parent: true },
+      ...finals.map(final => ({ value: final, label: final, nested: true })),
+    );
   });
   return <FilterSelect ariaLabel="Filter by final" value={value} onValueChange={onChange} items={items} />;
 }

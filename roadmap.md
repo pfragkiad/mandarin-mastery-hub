@@ -1,5 +1,8 @@
 # Roadmap
 
+## Nested sound filters
+- [x] Use shared coloured parent/indented child dropdown styling for Initials and Finals, with one heading such as “Lips · b p m f” (no plain duplicate “Lips”); verified applied selections on wide/narrow Sound chart and hierarchy in all three pinyin games.
+
 ## Expandable character examples
 - [x] Share Show all/Show fewer with bounded scrolling in component and sound detail grids; verified expansion, internal scrolling and collapse at wide and narrow widths.
 
