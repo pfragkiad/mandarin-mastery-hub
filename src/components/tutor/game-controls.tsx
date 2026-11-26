@@ -82,12 +82,12 @@ function GameRangeDone() {
 /** Shared anchored popover: outside clicks dismiss it without applying or discarding
  * parent-owned drafts, and Done closes it the same way from inside. Secondary
  * disclosure state lives above the unmounted panel. */
-function GameRangeDisclosure({ label, summary, active, children }: {
-  label: string; summary: string; active: boolean; children: ReactNode;
+function GameRangeDisclosure({ label, summary, active, labelled = true, children }: {
+  label: string; summary: string; active: boolean; labelled?: boolean; children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
-  return <GameField label={label === 'Strokes' ? 'Stroke count' : 'Frequency'}><Popover open={open} onOpenChange={setOpen}>
+  const popover = <Popover open={open} onOpenChange={setOpen}>
     <PopoverTrigger asChild><Button type="button" variant="outline" size="sm"
       className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
       aria-label={`${label}: ${summary}`}>
@@ -97,7 +97,8 @@ function GameRangeDisclosure({ label, summary, active, children }: {
       className="game-range-popover" aria-label={`${label} filter`}>
       <GameRangeCloseContext.Provider value={close}>{children}</GameRangeCloseContext.Provider>
     </PopoverContent>
-  </Popover></GameField>;
+  </Popover>;
+  return labelled ? <GameField label={label === 'Strokes' ? 'Stroke count' : 'Frequency'}>{popover}</GameField> : popover;
 }
 
 export type GameRankGroup = { value: string; label: string; min: number; max: number };
@@ -105,9 +106,9 @@ export type GameRankGroup = { value: string; label: string; min: number; max: nu
 /** Source-defined rank groups remain the quick choices. Advanced uses exact inclusive
  * numeric ranks (not class positions); unranked is an independent, explicit inclusion.
  * The parent owns URL-backed drafts and Apply; panel state never changes the pool. */
-export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, allowUnranked = true, onChange }: {
+export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, allowUnranked = true, labelled = true, onChange }: {
   value: string; upTo?: boolean; groups: readonly GameRankGroup[]; maxRank: number;
-  allowUnranked?: boolean; onChange: (value: string, upTo: boolean) => void;
+  allowUnranked?: boolean; labelled?: boolean; onChange: (value: string, upTo: boolean) => void;
 }) {
   const [advanced, setAdvanced] = useState(false);
   const advancedId = useId();
@@ -125,7 +126,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   const ticks = [...new Set([1, ...groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max)).map(g => g.max), max])].filter(n => n <= max).sort((a, b) => a - b);
   const finiteGroups = groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max) && g.max <= max);
   const presets = finiteGroups.length >= 5 ? [finiteGroups[0], finiteGroups[1], finiteGroups[3], finiteGroups[4]].filter((g): g is GameRankGroup => Boolean(g)) : finiteGroups.slice(0, 4);
-  return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)}>
+  return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)} labelled={labelled}>
     <div className={`stroke-range-card${value ? ' is-active' : ''}`}>
       <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · {summary}</span>
         <Button type="button" variant="ghost" className="stroke-range-any" disabled={!value} onClick={() => onChange('', false)}>Clear</Button>
@@ -169,8 +170,8 @@ const STROKE_PRESETS = [
 ] as const;
 
 /** Dual-thumb stroke range slider with quick presets and a dedicated draft-only Clear. */
-export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
-  value: string; strokesUpTo?: boolean; onChange: (value: string) => void;
+export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true, onChange }: {
+  value: string; strokesUpTo?: boolean; labelled?: boolean; onChange: (value: string) => void;
 }) {
   const range = parseStrokeRange(value, strokesUpTo);
   const lo = range ? Math.min(STROKE_SLIDER_MAX, Math.max(STROKE_SLIDER_MIN, range.min)) : STROKE_SLIDER_MIN;
@@ -184,7 +185,7 @@ export function StrokeRangeControl({ value, strokesUpTo = false, onChange }: {
     onChange(formatStrokeRangeValue(nextLo, max));
   };
 
-  return <GameRangeDisclosure label="Strokes" summary={active ? formatStrokeRangeLabel(value, strokesUpTo).replace(/ strokes?$/, '') : 'Any'} active={active}><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
+  return <GameRangeDisclosure label="Strokes" summary={active ? formatStrokeRangeLabel(value, strokesUpTo).replace(/ strokes?$/, '') : 'Any'} active={active} labelled={labelled}><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
       {/* Clear resets only the stroke draft; the game's Apply still commits it. */}

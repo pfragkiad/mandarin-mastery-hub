@@ -3,6 +3,7 @@ import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { CharactersPage, type CharactersSearch } from '@/components/tutor/characters-page';
 import { pageHead } from '@/lib/mandarin';
 import { usageGroups } from '@/lib/usage-frequency';
+import { parseRankRange } from '@/lib/rank-range';
 
 const kindValues = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
@@ -14,7 +15,9 @@ export const Route = createFileRoute('/characters')({
     const seed = shuffleSeed(search['seed']); if (seed) out.seed = seed;
     const character = str(search['character']); if (character) out.character = character;
     const tab = kindValues.find(k => k === search['tab']); if (tab) out.tab = tab;
-    const usage = (['Characters', 'Radicals', 'Components'] as const).flatMap(k => usageGroups(k)).find(group => group.value === search['usage']); if (usage) out.usage = usage.value;
+    const rawUsage = str(search['usage']);
+    const usage = rawUsage && (parseRankRange(rawUsage) || (['Characters', 'Radicals', 'Components'] as const).flatMap(k => usageGroups(k)).some(group => group.value === rawUsage)) ? rawUsage : undefined;
+    if (usage) out.usage = usage;
     if (search['status'] === 'saved') out.status = 'saved';
     if (search['py'] === 'pinyin' || search['py'] === 'exact') out.py = search['py'];
     if (search['usageUpTo'] === '1' || search['usageUpTo'] === true) out.usageUpTo = '1';

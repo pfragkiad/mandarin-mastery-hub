@@ -1893,6 +1893,8 @@ html .game-setup .game-level-pill svg { position: absolute; left: 4px; top: 50%;
 .game-range-popover .filter-select { max-width: 100%; min-width: 0; height: 40px; }
 .game-range-popover .filter-select-active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .game-setup .game-range-trigger.filter-select { width: 100%; max-width: 100%; gap: var(--game-field-gap); }
+.filter-bar .game-range-trigger.filter-select { justify-content: space-between; gap: 10px; padding-right: var(--select-arrow-inset); }
+.filter-bar .game-range-trigger.filter-select-active { background: var(--secondary); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .game-range-trigger > span { white-space: normal; text-align: left; }
 .game-range-trigger svg.is-open, .game-range-advanced-toggle svg.is-open { transform: rotate(180deg); }
 .game-range-advanced-toggle { align-self: flex-start; }
