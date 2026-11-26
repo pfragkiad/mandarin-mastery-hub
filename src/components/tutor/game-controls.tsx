@@ -121,10 +121,14 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
           <SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Minimum rank" aria-valuetext={String(lo)}/><SliderPrimitive.Thumb className="stroke-range-thumb" aria-label="Maximum rank" aria-valuetext={String(hi)}/>
         </SliderPrimitive.Root>
         <div className="game-rank-ticks" aria-hidden="true">{ticks.map(tick => <span key={tick}>{tick.toLocaleString('en-US')}{groups.find(g => g.max === tick)?.label.split(' · ')[1] && <small>{groups.find(g => g.max === tick)?.label.split(' · ')[1]}</small>}</span>)}</div>
-        <div className="stroke-range-presets" role="group" aria-label="Rank presets">{presets.map(preset => <Button key={preset.value} type="button" size="sm" variant="ghost"
-          className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}>Top {preset.max.toLocaleString('en-US')}</Button>)}</div>
       </div>
-      <div className="game-range-footer"><GameRangeDone/></div>
+      {/* Presets and Done share the panel's bottom row, exactly like the stroke panel,
+          so Done never sits alone on a line of its own. */}
+      <div className="game-range-footer">
+        {advanced && <div className="stroke-range-presets" role="group" aria-label="Rank presets">{presets.map(preset => <Button key={preset.value} type="button" size="sm" variant="ghost"
+          className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}>Top {preset.max.toLocaleString('en-US')}</Button>)}</div>}
+        <GameRangeDone/>
+      </div>
     </div>
   </GameRangeDisclosure>;
 }

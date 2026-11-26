@@ -2,6 +2,7 @@
 
 ## Done button in floating range panels
 - [x] Add a small Done control to the Rank and Strokes panels that closes them gracefully; outside clicks still only dismiss. Verify both panels, Apply, and phone width.
+- [x] Put Done on the same line as the quick choices in both panels; on phones the rank presets and Done wrap with Done flush right.
 
 ## Compact game setup
 - [x] Bring filters and submission actions together, place switches side by side when they fit, and tighten shared spacing; verify games on wide and narrow screens.
