@@ -142,7 +142,8 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const topPaginationRef = useRef<HTMLDivElement>(null);
   // Fewer cards per row rather than wrapped Details/Trace/Recall buttons (use-footer-fit-columns.ts).
   const gridRef = useRef<HTMLDivElement>(null);
-  useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind]);
+  const resultsReady = gridReady && (kind !== 'idiom' || Boolean(idiomsState) || Boolean(idiomsError));
+  useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind, resultsReady, filtered.length > 0]);
   const lastPageRef = useRef<number | null>(null);
   useEffect(() => {
     const previous = lastPageRef.current;
@@ -153,7 +154,6 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   const reset = () => { const empty = { q: '', collection: 'All collections', subtopic: ALL_SUBTOPICS, level: 'All levels', py: undefined, pos: 'All types', style: 'All styles', band: ALL_IDIOM_BANDS, bandUpTo: undefined }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
   const appliedBand = idiomRankClasses.find(c => c.id === band);
   const bandRangeLabel = (c: { from: number; to: number }) => `Rank ${c.from.toLocaleString('en-US')}–${c.to.toLocaleString('en-US')}`;
-  const resultsReady = gridReady && (kind !== 'idiom' || Boolean(idiomsState) || Boolean(idiomsError));
   const gridKindClass = kind === 'idiom' ? 'vocab-phrase-grid' : `vocab-${kind}-grid`;
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : kind === 'idiom' ? (idiomsState?.dataset.source ?? 'THUOCL chengyu frequency list · unreviewed English glosses') : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}{kind !== 'idiom' && <ExperimentalTag/>}</div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>

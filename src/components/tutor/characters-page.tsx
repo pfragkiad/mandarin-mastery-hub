@@ -611,7 +611,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const paged = libraryPage(filtered, page, density.size, savedOnly ? requestedId : cardSelectedId);
   // Fewer cards per row rather than wrapped Details/Trace/Recall buttons (use-footer-fit-columns.ts).
   const gridRef = useRef<HTMLDivElement>(null);
-  useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind]);
+  useFooterFitColumns(gridRef, [preferences.libraryView, preferences.font, preferences.cardReveal, kind, catalogReady]);
   // Hide modes: a click toggles the card's peek (reveal, then click again to hide);
   // reset on tab/page/filter change.
   const peek = useCardPeek(preferences.cardReveal, `${kind}|${paged.current}|${filtered.length}|${savedOnly}|${JSON.stringify(appliedFilters)}|${sort}|${seed}`, preferences.rememberCardReveals);
