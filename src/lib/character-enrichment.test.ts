@@ -145,4 +145,20 @@ describe('bound character enrichment', () => {
     expect(matchesRecordedGSource(g, { glyph: '⿸', position: 'root', children: [
       { glyph: '？', position: 'upper-left-enclosure' }, { glyph: '日', position: 'inside' }] }, '有')).toBe(false);
   });
+  it('matches 爱’s vertical grouping without changing either source or its checksum', async () => {
+    const original = JSON.parse(readFileSync('public/data/catalog.json', 'utf8')).trees['爱'];
+    const g = gSourceDecompositions(record('爱'))[0]?.tree ?? undefined;
+    const before = JSON.stringify(original);
+    const hash = await treeChecksum(original);
+    expect(matchesRecordedGSource(g, original, '爱')).toBe(true);
+    expect(sameDecompositionTree(g, original)).toBe(false);
+    expect(JSON.stringify(original)).toBe(before);
+    expect(await treeChecksum(original)).toBe(hash);
+  });
+  it('keeps reordered or mixed-axis 爱 parts distinct', () => {
+    const g = parseIdsTree('⿳爫冖友') ?? undefined;
+    expect(matchesRecordedGSource(g, parseIdsTree('⿱⿱冖爫友') ?? undefined, '爱')).toBe(false);
+    expect(matchesRecordedGSource(g, parseIdsTree('⿱⿰爫冖友') ?? undefined, '爱')).toBe(false);
+    expect(matchesRecordedGSource(g, parseIdsTree('⿱⿱爫冖又') ?? undefined, '爱')).toBe(false);
+  });
 });

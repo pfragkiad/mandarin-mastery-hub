@@ -63,7 +63,7 @@ export function sameDecompositionTree(a?: DecompositionNode, b?: DecompositionNo
   return JSON.stringify(a.children?.map(treeEncoding) ?? null) === JSON.stringify(b.children?.map(treeEncoding) ?? null);
 }
 /** Display-only agreement: explicit unknown Hanzi leaves may stand for recorded G-source parts.
- * Known glyphs, branch positions and nesting must still agree; checksums and bindings stay strict.
+ * Known glyphs and order must agree; same-axis layout grouping may differ. Bindings stay strict.
  * With the owner character, two codepoints for one radical form in that character's context
  * (胖: G-source 月, recorded ⺼, both 肉 #130's ⺼) agree — see sameContextualForm. */
 export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: DecompositionNode, owner?: string): boolean {
@@ -71,19 +71,30 @@ export function matchesRecordedGSource(gSource?: DecompositionNode, recorded?: D
 }
 /** Same agreement test, except that two layout operators at the same place may differ
  *  (止: G-source ⿽上丨 "Lower-right wrap", recorded ⿻上丨 "Overlaid"). Returns null when the trees
- *  disagree on parts, child counts or nesting; otherwise the recorded tree's operators that differ
+ *  disagree on parts or non-associative nesting; otherwise the recorded tree's operators that differ
  *  from G-source, in tree order ([] = full agreement). Parts must still be the same tiles in the
  *  same order, so only the layout name is ever set aside — display only, never checksums or bindings. */
 export function recordedLayoutDifferences(gSource?: DecompositionNode, recorded?: DecompositionNode, owner?: string): string[] | null {
   if (!gSource || !recorded) return null;
   const differences: string[] = [];
   const isOperator = (glyph: string) => /^[\u2FF0-\u2FFF\u31EF]$/u.test(glyph);
+  // ⿳ABC and ⿱⿱ABC describe the same vertical sequence (爱); likewise ⿲/⿰.
+  // Flatten only operator nodes on the same axis: lexical components, enclosures,
+  // overlaps and mixed-axis branches remain intact. Never rewrite a source tree.
+  const axis = (glyph: string) => glyph === '⿱' || glyph === '⿳' ? 'vertical'
+    : glyph === '⿰' || glyph === '⿲' ? 'horizontal' : null;
+  function axisChildren(node: DecompositionNode, direction: string): DecompositionNode[] {
+    return (node.children ?? []).flatMap(child => axis(child.glyph) === direction && child.children?.length
+      ? axisChildren(child, direction) : [child]);
+  }
   function matches(g: DecompositionNode, r: DecompositionNode, root = false, current = owner): boolean {
     // Slot names differ between sources (outer/inner vs upper-right-enclosure/inside);
     // structure is fixed by the operator plus child order, so names are not compared.
     if (!r.children?.length && /^[?？]$/.test(r.glyph)) return true;
-    const gChildren = g.children ?? [];
-    const rChildren = r.children ?? [];
+    const direction = axis(g.glyph);
+    const sameAxis = direction !== null && direction === axis(r.glyph);
+    const gChildren = sameAxis ? axisChildren(g, direction) : g.children ?? [];
+    const rChildren = sameAxis ? axisChildren(r, direction) : r.children ?? [];
     if (gChildren.length !== rChildren.length) return false;
     // Two codepoints are one known part when context resolves them to the same family form,
     // or when the radical file records one as an alias of the other's family form (有's G-source
@@ -91,7 +102,7 @@ export function recordedLayoutDifferences(gSource?: DecompositionNode, recorded?
     const samePart = (a: string, b: string) => sameContextualForm(a, b, r.position, current)
       || breakdownDisplayGlyph(a) === breakdownDisplayGlyph(b);
     if (!root || !rChildren.length || (isOperator(g.glyph) && isOperator(r.glyph))) {
-      if (isOperator(g.glyph) && isOperator(r.glyph)) { if (g.glyph !== r.glyph) differences.push(r.glyph); }
+      if (isOperator(g.glyph) && isOperator(r.glyph)) { if (g.glyph !== r.glyph && !sameAxis) differences.push(r.glyph); }
       else if (isOperator(g.glyph) || isOperator(r.glyph) || !samePart(g.glyph, r.glyph)) return false;
     }
     // Inside a real component its own declared radical applies (same rule as the renderer).
