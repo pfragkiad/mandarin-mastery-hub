@@ -407,7 +407,7 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
         appears only when a tone is chosen and that syllable really has that exact recording —
         with no tone chosen the pill shows the bare syllable, which matches no single clip, so
         nothing is guessed. Play-only: a running clip is never stopped by a second click. */}
-    {alikes.length > 0 && <div className="pinyin-alikes"><div className="eyebrow">SOUNDS ALIKE — COMPARE</div><div>{alikes.map(base => {
+    {alikes.length > 0 && <div className="pinyin-alikes"><h3 className="eyebrow"><Volume2 size={13} aria-hidden="true"/>SOUNDS ALIKE — COMPARE</h3><div>{alikes.map(base => {
       const tone = current !== null && hasRecording(data, base, current) ? current : null;
       const label = tone !== null ? toneMark(base, tone) : base;
       const id = tone !== null ? soundId(base, tone) : null;

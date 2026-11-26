@@ -10,6 +10,7 @@
 // with the same recorded meaning share one row (groupScriptForms); each box still opens
 // its own record and different ranks are listed per box.
 import { useEffect, useMemo, useState } from 'react';
+import { Puzzle } from 'lucide-react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -22,6 +23,7 @@ import { characterDestinations, groupScriptForms, radicalDestinations, radicalsF
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
+import { ExampleCardMeta } from './sentence-section';
 import { useWorkspace } from './workspace';
 
 /** Characters shown before "Show all". */
@@ -60,17 +62,33 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const shown = expanded ? rows : rows.slice(0, SYLLABLE_CHARACTERS_SHOWN);
   const rankOf = (entry: (typeof entries)[number]) => rankFor(entry);
 
-  return <section className="pinyin-characters" aria-label="In a character">
-    <div className="eyebrow">IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</div>
+  return <section className="pinyin-characters glyph-usage-section" aria-label="In a character">
+    <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</h3>
     {tone === null ? <p className="pinyin-characters-note">Click a tone to see its characters.</p>
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
-        <ul className="pinyin-character-list">{shown.map(({ key, forms }) => {
+        <div className="glyph-usage-parents">{shown.map(({ key, forms }) => {
           // All forms in a row record the same meaning (groupScriptForms), so one line serves them.
-          const meaning = shownMeaning(forms[0]!);
+          const first = forms[0];
+          if (!first) return null;
+          const meaning = shownMeaning(first);
           const onlyTraditional = forms.every(form => form.script === 'Traditional');
-          return <li key={key} className={`pinyin-character${forms.length > 1 ? ' is-grouped' : ''}`}>
+          const radicals = [...new Map(forms.flatMap(form => radicalIdentity(form.hanzi).radicals).map(radical => [radical.id, radical])).values()];
+          const ranks = usageOrder.loaded ? forms.map(entry => ({ id: entry.id, ...rankOf(entry) })) : [];
+          const firstRank = ranks[0];
+          const sameRank = ranks.every(({ kind, rank }) => kind === firstRank?.kind && rank === firstRank?.rank);
+          // Reuse the parent-example header and tile/facts layout exactly. Reading and
+          // speech are deliberately absent: the selected sound already supplies them.
+          const metadata = <>
+            {firstRank && (sameRank ? <UsageLabel rank={firstRank.rank} kind={firstRank.kind} compact/>
+              : <span className="pinyin-character-ranks">{ranks.map(({ id, kind, rank }, i) => <span key={id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact/></span>)}</span>)}
+            {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
+            {onlyTraditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
+          </>;
+          return <div key={key} className="glyph-usage-example glyph-parent-card">
+          <ExampleCardMeta identity={firstRank || radicals.length || onlyTraditional ? metadata : null}/>
+          <div className="glyph-usage-reference">
           {/* Only the hanzi boxes are links (like decomposition tiles), so hover and focus
               outline one box alone; the rank and meaning beside them stay plain, selectable
               text. A grouped row shows one box per form, each opening its own exact record. */}
@@ -82,37 +100,19 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             // other form opens its own character details — the same rule as destinationFor.
             const kind = radicalCard(entry.hanzi) ? 'Radicals' : 'Characters';
             const target = kind === 'Radicals' ? 'radical details' : 'character details';
-            return <Link key={entry.id} to="/characters" search={destinationFor(entry)}
-              className={`pinyin-character-glyph${traditional ? ' is-traditional' : ''}${kind === 'Radicals' ? ' is-radical' : ''}`} lang={traditional ? 'zh-TW' : 'zh-CN'}
+            return <Button key={entry.id} asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}${kind === 'Radicals' ? ' is-radical' : ''}`}><Link to="/characters" search={destinationFor(entry)} resetScroll={false} lang={traditional ? 'zh-TW' : 'zh-CN'}
               title={openDetailsHint(entry.hanzi, kind)}
               aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its ${target}`}
               // The details window's Back returns to this exact sound (syllable + tone in the URL).
               onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
-              {entry.hanzi}
-            </Link>;
+              <strong>{entry.hanzi}</strong>
+            </Link></Button>;
           })}</span>
-          {/* To the right of the boxes, centred on them: the coloured corpus rank and the
-              meaning styled like the glyph details' "In a character" rows. */}
-          <span className="pinyin-character-text">
-            {/* Top line: rank, then the same pills Decomposition shows — Radical #N only from
-                the exact sourced glyph identity (never shape), Traditional from record metadata
-                (a grouped row's purple box already marks its traditional form). Forms whose own
-                ranks differ list each rank in box order, joined by " / ". */}
-            {(() => {
-              const radicals = [...new Map(forms.flatMap(form => radicalIdentity(form.hanzi).radicals).map(radical => [radical.id, radical])).values()];
-              if (!usageOrder.loaded && !radicals.length && !onlyTraditional) return null;
-              const ranks = usageOrder.loaded ? forms.map(rankOf) : [];
-              const sameRank = ranks.every(({ kind, rank }) => kind === ranks[0]?.kind && rank === ranks[0]?.rank);
-              return <span className="pinyin-character-facts">
-                {ranks.length > 0 && (sameRank ? <UsageLabel rank={ranks[0]!.rank} kind={ranks[0]!.kind} compact />
-                  : <span className="pinyin-character-ranks">{ranks.map(({ kind, rank }, i) => <span key={forms[i]!.id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact /></span>)}</span>)}
-                {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
-                {onlyTraditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
-              </span>;
-            })()}
-            {meaning && <span className="pinyin-character-meaning"><MeaningText text={meaning} /></span>}
+          <span className="glyph-usage-facts">
+            {meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning} /></span>}
           </span>
-        </li>; })}</ul>
+          </div>
+        </div>; })}</div>
         {rows.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
       </>}
   </section>;

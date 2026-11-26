@@ -1987,7 +1987,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .word-detail-actions { margin: 0 0 4px; }
 /* One boundary gap for every detail section, including the first section after facts.
    Example lines use a separate smaller unit, never stacked paragraph margins. */
-.detail-sheet { --detail-section-pad: 14px; --detail-example-gap: 6px; }
+:is(.detail-sheet, .pinyin-characters) { --detail-section-pad: 14px; --detail-example-gap: 6px; }
 /* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
 .detail-sheet .catalog-facts { margin-top: 16px; padding: var(--detail-section-pad) 0 0; }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
@@ -2020,7 +2020,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    .lesson-link) so each example's hanzi, pinyin and translation read as one clear unit. */
 .detail-sheet .sentence-section > .sentence-section-head { margin-bottom: 8px; }
 .detail-sheet .sentence-section .glyph-usage-example,
-.detail-sheet .glyph-parent-card,
+:is(.detail-sheet, .pinyin-characters) .glyph-parent-card,
 .detail-sheet .kangxi-identity-card {
   display: grid;
   gap: var(--detail-example-gap);
@@ -2031,7 +2031,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   border-radius: var(--form-radius);
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
 }
-.detail-sheet .glyph-usage-parents {
+:is(.detail-sheet, .pinyin-characters) .glyph-usage-parents {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
@@ -2041,11 +2041,11 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   flex-wrap: wrap;
   gap: 8px;
 }
-.detail-sheet :is(.glyph-parent-card, .kangxi-identity-card) > .glyph-usage-reference {
+:is(.detail-sheet, .pinyin-characters) :is(.glyph-parent-card, .kangxi-identity-card) > .glyph-usage-reference {
   align-items: flex-start;
 }
 @media (max-width: 600px) {
-  .detail-sheet .glyph-usage-parents { grid-template-columns: 1fr; }
+  :is(.detail-sheet, .pinyin-characters) .glyph-usage-parents { grid-template-columns: 1fr; }
 }
 .detail-sheet .sentence-section .glyph-usage-example + .glyph-usage-example {
   margin-top: 8px;
@@ -2235,8 +2235,8 @@ html[data-display-size='comfortable'] :is(.eyebrow, .sidebar-label, .breadcrumbs
    Shared square boxes enlarge examples, source checks and both breakdown types
    together; only recorded multi-character boxes may grow wider. */
 html[data-display-size='comfortable'] { --reference-glyph-box-size: 64px; --reference-glyph-size: 44px; }
-html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); }
-html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph strong { font-size: var(--reference-glyph-size); }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content, .pinyin-characters) .decomposition-glyph { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); }
+html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content, .pinyin-characters) .decomposition-glyph strong { font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] .detail-sheet { width: min(760px, calc(100% - 32px)); }

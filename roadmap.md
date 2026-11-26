@@ -1,5 +1,9 @@
 # Roadmap
 
+## Sound-card example consistency
+- [x] Reuse component-detail character grid cards in sound cards without redundant reading/audio rows.
+- [x] Match section-label icons and verify exact character links, grouped forms and narrow layout.
+
 ## Global control corners and Bookmarks alignment
 - [x] Extend global rounding to every grid/detail card, panel and tile; verify actual library detail windows on wide and narrow screens.
 - [x] Match the rounded mockup consistently across controls and floating forms.
