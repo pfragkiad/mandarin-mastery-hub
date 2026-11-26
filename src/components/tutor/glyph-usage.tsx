@@ -155,6 +155,12 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
 
 /** Top 2 highest-ranked idioms containing a Characters record, lazily loaded from public/data/idioms.json. */
 export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
+  return <WrittenFormIdiomsSection entry={entry}/>;
+}
+
+/** Shared character/word examples: exact whole written-form containment only,
+ * never a semantic association or a match against individual characters of a word. */
+export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi: string; script?: string | undefined } }) {
   const [idioms, setIdioms] = useState<Word[] | null>(null);
   useEffect(() => {
     let cancelled = false;

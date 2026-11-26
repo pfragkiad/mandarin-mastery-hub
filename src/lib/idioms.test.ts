@@ -76,4 +76,10 @@ describe('idioms helpers', () => {
     expect(randomOverviewIdiom(pool, fourBands, undefined, () => 0.99)?.id).toBe('idiom-500');
     expect(randomOverviewIdiom(pool, fourBands, 'idiom-500', () => 0.5)?.id).toBe('idiom-100');
   });
+  it('matches a whole word in an idiom, not its separated characters', () => {
+    expect(idiomsForCharacter(sample, '坚定').map(w => w.id)).toEqual(['idiom-1']);
+    expect(idiomsForCharacter(sample, '堅定', 'Traditional').map(w => w.id)).toEqual(['idiom-1']);
+    expect(idiomsForCharacter(sample, '随地').map(w => w.id)).toEqual(['idiom-2']);
+    expect(idiomsForCharacter(sample, '时地')).toEqual([]);
+  });
 });

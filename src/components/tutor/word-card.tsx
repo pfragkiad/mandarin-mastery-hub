@@ -21,6 +21,7 @@ import { VocabularyDecomposition, VocabularyDecompositionInfo } from './vocabula
 import { GlyphDetailTabs } from './detail-tabs';
 import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './lesson-links';
 import { SentenceExample } from './sentence-example';
+import { WrittenFormIdiomsSection } from './glyph-usage';
 import { externalExampleSources } from '@/lib/external-examples';
 import { MoreExamples, SentenceHints, SentenceSection, TileExamplesLink } from './sentence-section';
 import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
@@ -141,6 +142,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
         <SentenceExample heading={example.style === 'conversational' ? 'Conversational' : example.style === 'written' ? 'Written' : ''} sentence={example.simplified} pinyin={examplePinyin(example)} translation={example.english} note={example.notes} onNavigate={close} audioRequest={{ text: example.simplified, reading: examplePinyin(example), audio: example.audio ?? null }}/>
       </div>)}/> : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
     </SentenceSection>}
+    {vocabularyKind(word) === 'word' && <WrittenFormIdiomsSection entry={word}/>}
     {/* Course lessons that teach this exact HSK word (recorded entry number, never spelling). */}
     <WordLessonsSection word={word}/>
     {/* Same collapsed Decomposition | Etymology drawer as the character cards (detail-tabs.tsx),
