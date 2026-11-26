@@ -2075,6 +2075,14 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   flex: 0 1 auto;
   align-items: center;
 }
+.sentence-card-header {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.sentence-card-header .sentence-style-pill { margin-top: 0; }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading {
   flex: 1 1 200px;
   min-width: 0;

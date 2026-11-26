@@ -75,8 +75,12 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
       the pinyin with its speaker and the translation. The row wraps, so the translation
       shares the pinyin line only when it fits; otherwise it takes its own third line. */}
   return <div className="sentence">
-    {/* The style label (Conversational/Written) is a pill on the hanzi line's right,
-        not an eyebrow above it, so the sentence block stays hanzi → pinyin → translation. */}
+    {/* When the sentence carries a style pill (Conversational/Written) or source details,
+        they sit in a dedicated header row at the top of the card with the pill top-right. */}
+    {(heading || sourceDetails) && <div className="sentence-card-header">
+      {sourceDetails}
+      {heading && <span className="sentence-style-pill">{heading}</span>}
+    </div>}
     <div className="sentence-hanzi-row">
     <p className="sentence-hanzi" lang="zh-CN">{Array.from(sentence).map((ch, i) => {
       const pair = pairing?.glyphPairs[i] ?? undefined;
@@ -91,8 +95,6 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
         ? <Link key={i} to="/characters" search={dest} className={`sentence-char${pairClass(pair)}`} title={openDetailsHint(ch, dest.tab)} onClick={onNavigate} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</Link>
         : <span key={i} className={pair !== undefined ? `sentence-char-plain${pairClass(pair)}` : undefined} {...(pair !== undefined ? pairHandlers(pair) : {})}>{ch}</span>;
     })}</p>
-    {heading && <span className="sentence-style-pill">{heading}</span>}
-    {sourceDetails}
     </div>
     <span className="sentence-reading">
       {preferences.pinyin && pinyin && <span className="pinyin sentence-pinyin">
