@@ -1870,14 +1870,13 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-filter-grid > .game-setting-field { flex: 0 1 auto; max-width: 100%; }
 .game-filter-grid > .game-level-field { flex: 1 0 100%; width: 100%; }
 .game-level-pills { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); }
-/* Unselected pills pad 20px each side (40px total); selected pills pad 10px each side
-   plus the 14px check and 6px gap (10 + 14 + 6 + 10 = 40px), so content stays centred
-   with even horizontal breathing room and toggling never changes a pill's width. */
-html .game-setup .game-level-pill[data-ui-button] { flex: 0 0 auto; height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 20px; gap: 6px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; white-space: nowrap; }
+/* Checks occupy the existing left padding, outside flex layout. Both states keep
+   identical dimensions and centred labels; only available width can wrap the group. */
+html .game-setup .game-level-pill[data-ui-button] { position: relative; flex: 0 0 auto; height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 20px; gap: 6px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; white-space: nowrap; }
 html .game-setup .game-level-pill[data-ui-button]:hover { border-color: color-mix(in oklab, var(--primary) 40%, var(--border)); }
-html .game-setup .game-level-pill.is-selected[data-ui-button] { padding: 0 10px; background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); }
+html .game-setup .game-level-pill.is-selected[data-ui-button] { background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); }
 html .game-setup .game-level-pill > span { white-space: nowrap; }
-html .game-setup .game-level-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+html .game-setup .game-level-pill svg { position: absolute; left: 4px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; }
 .game-filter-grid[hidden] { display: none; }
 .game-setting-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .game-field-label { font-size: 12px; font-weight: 500; color: var(--foreground); }
