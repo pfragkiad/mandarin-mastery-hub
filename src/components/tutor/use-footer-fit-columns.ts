@@ -1,6 +1,6 @@
 import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
 import { footerItemsWrap } from './use-card-footer-fit';
-import { rowItemsWrap } from './use-card-top-row-fit';
+import { HEAD_FONT_STEPS, rowItemsWrap } from './use-card-top-row-fit';
 
 /**
  * Card grids (Glyphs, Words, Phrases, Start's random cards): fewer cards per row rather than
@@ -22,7 +22,9 @@ import { rowItemsWrap } from './use-card-top-row-fit';
  *
  * Tricky logic: the check is made at the view's own button size — any font step the footer took
  * to avoid wrapping is lifted while measuring and put back afterwards — so shrinking the font
- * never stands in for a wider card. `needed` remembers the widest card width that still wrapped;
+ * never stands in for a wider card. Card headers try their slight font steps (`HEAD_FONT_STEPS`)
+ * first so a slightly smaller header keeps more cards per row before dropping columns. `needed`
+ * remembers the widest card width that still wrapped;
  * it only grows while the content stays the same, so the column count can never flip back and
  * forth. Content changes (new page, shuffled card, web font) start the search afresh.
  */
@@ -102,22 +104,19 @@ function resolvedColumnCount(grid: HTMLElement): number {
 }
 
 /**
- * Width of the widest card whose header tokens or footer buttons wrap at the view's own size,
- * or 0 when none does. Each card's font/abbreviation step is lifted for the check and restored
- * straight after so shrinking never stands in for a wider card.
+ * Width of the widest card whose header tokens still wrap after trying the slight header font
+ * steps, or whose footer buttons wrap at the view's own size, or 0 when none does.
  */
 function widestWrappedCard(grid: HTMLElement): number {
   let widest = 0;
+  const maxHeadStep = String(HEAD_FONT_STEPS[HEAD_FONT_STEPS.length - 1] ?? 2);
   for (const row of grid.querySelectorAll<HTMLElement>('.word-card-top .word-level-wrap')) {
     const card = row.closest<HTMLElement>('.word-card');
     if (!card) continue;
     const step = card.dataset['cardHeadStep'];
-    const short = 'radicalShort' in row.dataset;
-    if (step) delete card.dataset['cardHeadStep'];
-    if (short) delete row.dataset['radicalShort'];
+    card.dataset['cardHeadStep'] = maxHeadStep;
     if (rowItemsWrap(row)) widest = Math.max(widest, card.getBoundingClientRect().width);
-    if (step) card.dataset['cardHeadStep'] = step;
-    if (short) row.dataset['radicalShort'] = '';
+    if (step) card.dataset['cardHeadStep'] = step; else delete card.dataset['cardHeadStep'];
   }
   for (const footer of grid.querySelectorAll<HTMLElement>('.word-card-bottom')) {
     const card = footer.closest<HTMLElement>('.word-card');
