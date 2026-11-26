@@ -58,9 +58,7 @@ export function GameLevelPills({ levels, value, onChange, emptyValue = '' }: {
         return <Button key={level} type="button" size="sm" variant="outline"
           className={`game-level-pill${on ? ' is-selected' : ''}`}
           aria-pressed={on} onClick={() => toggle(level)}>
-          {/* Keep the check's slot in every state: adding it only when selected used to
-              grow that pill and push a later level onto a second row. */}
-          <Check className={on ? undefined : 'is-check-placeholder'} aria-hidden="true" />
+          {on && <Check aria-hidden="true" />}
           <span>{level}</span>
         </Button>;
       })}
