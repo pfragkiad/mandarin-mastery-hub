@@ -20,7 +20,9 @@ describe('stroke range helpers', () => {
     expect(formatStrokeRangeValue(6, 10)).toBe('6-10');
     expect(formatStrokeRangeValue(11, null)).toBe('11+');
     expect(formatStrokeRangeValue(4, 4)).toBe('4');
-    expect(formatStrokeRangeLabel('')).toBe('1 – 20+ strokes');
+    expect(formatStrokeRangeLabel('')).toBe('1 – 20 strokes');
+    expect(formatStrokeRangeLabel('', false, 3, 36)).toBe('3 – 36 strokes');
+    expect(formatStrokeRangeLabel('', false, 7, 7)).toBe('7 strokes');
     expect(formatStrokeRangeLabel('4-9')).toBe('4 – 9 strokes');
     expect(formatStrokeRangeLabel('11+')).toBe('11+ strokes');
     expect(formatStrokeRangeLabel('1')).toBe('1 stroke');

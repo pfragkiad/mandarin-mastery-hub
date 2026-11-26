@@ -67,4 +67,13 @@ describe('expandable game ranges', () => {
     expect(screen.queryByRole('button', { name: 'Advanced' })).toBeNull();
     expect(change).not.toHaveBeenCalled();
   });
+  it('uses dynamic min and max stroke bounds from the available pool', () => {
+    const change = vi.fn();
+    render(<StrokeRangeControl value="" minStrokes={3} maxStrokes={36} onChange={change}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^Strokes:/ }));
+    expect(screen.getByText('3 – 36 strokes')).toBeTruthy();
+    expect(screen.getByRole('slider', { name: 'Minimum strokes' })).toHaveAttribute('aria-valuemin', '3');
+    expect(screen.getByRole('slider', { name: 'Minimum strokes' })).toHaveAttribute('aria-valuemax', '36');
+    expect(screen.getByRole('slider', { name: 'Maximum strokes' })).toHaveAttribute('aria-valuenow', '36');
+  });
 });

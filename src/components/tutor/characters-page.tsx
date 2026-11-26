@@ -585,6 +585,21 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
   const availableOptions = useMemo(() => libraryFilterOptions(entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo, hideRadicals), [entries, kind, preferences.includeTraditional, usage, strokeCount, usageUpTo, strokesUpTo, hideRadicals, catalogVersion]);
   const rankGroups = compatibleFilters ? availableOptions.ranks : usageGroups(kind);
   const maxRank = hasUsage ? usageRankMaximum(kind, preferences.includeTraditional) : 0;
+  // Recalculate stroke slider bounds from the pool matching all other applied filters
+  // (rank, search, saved, hide-radicals, script preference) so min/max always reflect real records.
+  const strokeBounds = useMemo(() => {
+    if (kind === 'Strokes') return { min: undefined as number | undefined, max: undefined as number | undefined };
+    const withoutStrokes = filterLibrary(savedOnly ? entries : browsable, query, '', false, preferences.includeTraditional, usage, savedOnly ? saved : undefined, pinyinOnly, search.py === 'exact', usageUpTo, false);
+    const kept = hideRadicals ? withoutStrokes.filter(entry => !radicalCardRecord(entry, kind, entries, preferences.includeTraditional)) : withoutStrokes;
+    let min = Infinity;
+    let max = -Infinity;
+    for (const entry of kept) {
+      if (entry.strokes === undefined) continue;
+      if (entry.strokes < min) min = entry.strokes;
+      if (entry.strokes > max) max = entry.strokes;
+    }
+    return min <= max ? { min, max } : { min: undefined, max: undefined };
+  }, [kind, savedOnly, entries, browsable, query, preferences.includeTraditional, usage, saved, pinyinOnly, search.py, usageUpTo, hideRadicals]);
   const requestedHeading = entries.find(entry => entry.id === selectedId);
   const requestedForm = requestedHeading?.kangxiIndex ? radicalForm(requestedHeading.kangxiIndex, search.variant) : undefined;
   const requestedId = requestedHeading && requestedForm ? radicalVariantEntry(requestedHeading, requestedForm).id : selectedId;
@@ -738,7 +753,7 @@ export function CharactersPage({ search, onSearch }: { search: CharactersSearch;
       {kinds.map(k => <TabsContent value={k} key={k}>
         <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={savedFilter} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => set({ ...draft, page: 1, id: '', variant: undefined })} onClear={() => { clearFilters(); return { q: '', strokes: '', usage: undefined, py: undefined, usageUpTo: undefined, strokesUpTo: undefined, hideRadicals: undefined }; }} chips={[...(appliedFilters.usage ? [{ label: (() => { const custom = parseRankRange(appliedFilters.usage); if (custom) return `Rank ${rankRangeLabel(custom)}`; return usageUpTo ? `Rank 1–${(usageGroups(kind).find(group => group.value === appliedFilters.usage)?.max ?? 0).toLocaleString('en-US')}` : usageGroups(kind).find(group => group.value === appliedFilters.usage)?.label ?? appliedFilters.usage; })(), clear: { usage: undefined, usageUpTo: undefined } }] : []), ...(appliedFilters.strokes ? [{ label: formatStrokeRangeLabel(appliedFilters.strokes, strokesUpTo), clear: { strokes: '', strokesUpTo: undefined } }] : []), ...(hideRadicals ? [{ label: 'Radicals hidden', clear: { hideRadicals: undefined } }] : [])]} filterFields={({ draft, patch }) => <>
           {hasUsage && <span className="filter-field-row"><FrequencyRangeControl labelled={false} value={parseGameUsageFilter(kind, draft.usage) ?? ''} upTo={draft.usageUpTo === '1'} groups={rankGroups.map(group => ({ ...group, label: usageGroupLabel(group, kind, preferences.includeTraditional) }))} maxRank={maxRank} onChange={(nextUsage, upTo) => patch({ usage: nextUsage || undefined, usageUpTo: upTo ? '1' : undefined })}/></span>}
-          {k !== 'Strokes' && <span className="filter-field-row"><StrokeRangeControl labelled={false} value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} onChange={strokes => patch({ strokes, strokesUpTo: undefined })}/></span>}
+          {k !== 'Strokes' && <span className="filter-field-row"><StrokeRangeControl labelled={false} value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} minStrokes={strokeBounds.min} maxStrokes={strokeBounds.max} onChange={strokes => patch({ strokes, strokesUpTo: undefined })}/></span>}
           {/* Radicals are records of their own here, so the tab can hide them; the switch is a
               drafted filter like the others, applied with Apply/Enter and cleared by the X. */}
           {(k === 'Characters' || k === 'Components') && <span className="filter-field-row"><FilterWideningToggle active={draft.hideRadicals === '1'} onToggle={() => patch({ hideRadicals: draft.hideRadicals ? undefined : '1' })} label="Hide radicals" title="Hide records whose card is a Kangxi radical, such as 刀 or 木"/></span>}

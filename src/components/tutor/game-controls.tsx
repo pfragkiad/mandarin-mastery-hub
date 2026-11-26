@@ -174,24 +174,27 @@ const STROKE_PRESETS = [
 ] as const;
 
 /** Dual-thumb stroke range slider with quick presets and a dedicated draft-only Clear. */
-export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true, onChange }: {
-  value: string; strokesUpTo?: boolean; labelled?: boolean; onChange: (value: string) => void;
+export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true, minStrokes, maxStrokes, onChange }: {
+  value: string; strokesUpTo?: boolean; labelled?: boolean; minStrokes?: number | undefined; maxStrokes?: number | undefined; onChange: (value: string) => void;
 }) {
+  const sliderMin = Math.max(STROKE_SLIDER_MIN, minStrokes ?? STROKE_SLIDER_MIN);
+  const sliderMax = Math.max(sliderMin, maxStrokes ?? STROKE_SLIDER_MAX);
   const range = parseStrokeRange(value, strokesUpTo);
-  const lo = range ? Math.min(STROKE_SLIDER_MAX, Math.max(STROKE_SLIDER_MIN, range.min)) : STROKE_SLIDER_MIN;
-  const hi = range ? (range.max === null ? STROKE_SLIDER_MAX : Math.min(STROKE_SLIDER_MAX, Math.max(lo, range.max))) : STROKE_SLIDER_MAX;
+  const lo = range ? Math.min(sliderMax, Math.max(sliderMin, range.min)) : sliderMin;
+  const hi = range ? (range.max === null ? sliderMax : Math.min(sliderMax, Math.max(lo, range.max))) : sliderMax;
   const normalized = range ? formatStrokeRangeValue(range.min, range.max) : '';
   const active = Boolean(range);
 
   const handleSlider = ([nextLo, nextHi]: number[]) => {
     if (nextLo === undefined || nextHi === undefined) return;
-    const max = nextHi >= STROKE_SLIDER_MAX ? null : nextHi;
+    if (nextLo <= sliderMin && nextHi >= sliderMax) { onChange(''); return; }
+    const max = nextHi >= sliderMax ? null : nextHi;
     onChange(formatStrokeRangeValue(nextLo, max));
   };
 
   return <GameRangeDisclosure label="Strokes" summary={active ? formatStrokeRangeLabel(value, strokesUpTo).replace(/ strokes?$/, '') : 'Any'} active={active} labelled={labelled}><div className={`stroke-range-card${active ? ' is-active' : ''}`}>
     <div className="stroke-range-header">
-      <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo)}</span>
+      <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo, sliderMin, sliderMax)}</span>
       {/* Clear resets only the stroke draft; the game's Apply still commits it. */}
       <Button type="button" variant="ghost" className={`stroke-range-any${active ? ' is-reset' : ''}`}
         disabled={!active} onClick={() => onChange('')}>
@@ -200,10 +203,11 @@ export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true
     </div>
     <SliderPrimitive.Root
       className="stroke-range-slider"
-      min={STROKE_SLIDER_MIN}
-      max={STROKE_SLIDER_MAX}
+      min={sliderMin}
+      max={sliderMax}
       step={1}
       value={[lo, hi]}
+      disabled={sliderMin === sliderMax}
       onValueChange={handleSlider}
       aria-label="Stroke count range"
     >
@@ -218,8 +222,10 @@ export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true
       <div className="stroke-range-presets" role="group" aria-label="Stroke count presets">
         {STROKE_PRESETS.map(preset => {
           const isSelected = normalized === preset.value;
+          const parsed = parseStrokeRange(preset.value);
+          const outOfRange = !isSelected && Boolean(parsed && (parsed.min > sliderMax || (parsed.max !== null && parsed.max < sliderMin)));
           return <Button key={preset.value} type="button" size="sm" variant="ghost"
-            className={isSelected ? 'active' : ''} aria-pressed={isSelected}
+            className={isSelected ? 'active' : ''} aria-pressed={isSelected} disabled={outOfRange}
             onClick={() => onChange(isSelected ? '' : preset.value)}>{preset.label}</Button>;
         })}
       </div>

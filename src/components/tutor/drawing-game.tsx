@@ -312,6 +312,8 @@ export function DrawingGamePage({
                       <StrokeRangeControl
                         value={draft.strokes ?? ""}
                         strokesUpTo={draft.strokesUpTo === "1"}
+                        minStrokes={glyph?.strokes[0]}
+                        maxStrokes={glyph?.strokes[glyph.strokes.length - 1]}
                         onChange={(value) => patch({ strokes: value || undefined, strokesUpTo: undefined })}
                       />
                     )}

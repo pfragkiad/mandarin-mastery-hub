@@ -306,7 +306,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
           groups={(glyph?.ranks ?? usageGroups(draftRefKind)).map(group => ({ ...group, label: usageGroupLabel(group, draftRefKind, preferences.includeTraditional) }))}
           maxRank={usageRankMaximum(draftRefKind, preferences.includeTraditional)}
           onChange={(usage, upTo) => patch({ usage, usageUpTo: upTo ? '1' : undefined })}/>}
-        {draftReference && draftRefKind && <StrokeRangeControl value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} onChange={strokes => patch({ strokes, strokesUpTo: undefined })} />}
+        {draftReference && draftRefKind && <StrokeRangeControl value={draft.strokes ?? ''} strokesUpTo={draft.strokesUpTo === '1'} minStrokes={glyph?.strokes[0]} maxStrokes={glyph?.strokes[glyph.strokes.length - 1]} onChange={strokes => patch({ strokes, strokesUpTo: undefined })} />}
         {/* Bookmarks narrow the next pool only after Apply, just like other filters. */}
         <GameBookmarkCollection on={Boolean(draft.saved)} count={savedCount} noun="cards" onToggle={() => patch({ saved: draft.saved ? undefined : true })}/>
         </GameFilters>

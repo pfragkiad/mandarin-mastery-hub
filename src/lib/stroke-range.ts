@@ -37,9 +37,12 @@ export function formatStrokeRangeValue(min: number, max: number | null): string 
   return lo === hi ? String(lo) : `${lo}-${hi}`;
 }
 
-export function formatStrokeRangeLabel(strokes?: string, strokesUpTo = false): string {
+export function formatStrokeRangeLabel(strokes?: string, strokesUpTo = false, minStrokes = STROKE_SLIDER_MIN, maxStrokes = STROKE_SLIDER_MAX): string {
   const range = parseStrokeRange(strokes, strokesUpTo);
-  if (!range) return `${STROKE_SLIDER_MIN} – ${STROKE_SLIDER_MAX}+ strokes`;
+  if (!range) {
+    if (minStrokes === maxStrokes) return `${minStrokes} ${minStrokes === 1 ? 'stroke' : 'strokes'}`;
+    return `${minStrokes} – ${maxStrokes} strokes`;
+  }
   if (range.max === null) return `${range.min}+ strokes`;
   if (range.min === range.max) return `${range.min} ${range.min === 1 ? 'stroke' : 'strokes'}`;
   return `${range.min} – ${range.max} strokes`;
