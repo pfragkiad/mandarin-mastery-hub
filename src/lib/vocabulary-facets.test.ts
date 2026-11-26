@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { partOfSpeechList, vocabularyFacetOptions, vocabularyKind, wordCollections, words } from './mandarin';
+import { filterWords, formatSelectedLevels, matchesLevel, parseSelectedLevels, partOfSpeechList, vocabularyFacetOptions, vocabularyKind, wordCollections, words } from './mandarin';
 import { phraseStyle } from './data-contract';
 
 const wordItems = words.filter(w => vocabularyKind(w) === 'word');
@@ -33,5 +33,17 @@ describe('vocabularyFacetOptions', () => {
     const unclassifiedLevels = vocabularyFacetOptions(phrases, { ...all, style: 'Unclassified' }).levels;
     for (const l of unclassifiedLevels) expect(phrases.some(w => w.level === l && phraseStyle(w.entry) === 'Unclassified')).toBe(true);
     expect(unclassifiedLevels).not.toContain(level);
+  });
+  it('combines multiple selected HSK levels in filterWords and vocabularyFacetOptions', () => {
+    const combined = formatSelectedLevels(['HSK 3.0 · 1', 'HSK 3.0 · 2']);
+    expect(parseSelectedLevels(combined)).toEqual(['HSK 3.0 · 1', 'HSK 3.0 · 2']);
+    expect(matchesLevel('HSK 3.0 · 1', combined)).toBe(true);
+    expect(matchesLevel('HSK 3.0 · 2', combined)).toBe(true);
+    expect(matchesLevel('HSK 3.0 · 3', combined)).toBe(false);
+    const filtered = filterWords(wordItems, '', 'All collections', combined);
+    const expectedCount = wordItems.filter(w => w.level === 'HSK 3.0 · 1' || w.level === 'HSK 3.0 · 2').length;
+    expect(filtered.length).toBe(expectedCount);
+    const facets = vocabularyFacetOptions(wordItems, { ...all, level: combined });
+    expect(facets.levels).toEqual(vocabularyFacetOptions(wordItems, all).levels);
   });
 });

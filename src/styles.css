@@ -1863,6 +1863,12 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .game-filter-number { justify-self: start; color: var(--primary); font-variant-numeric: tabular-nums; }
 .game-filter-grid { display: flex; flex-wrap: wrap; align-items: end; gap: var(--game-field-gap); padding-top: var(--game-field-gap); }
 .game-filter-grid > .game-setting-field { flex: 0 1 auto; max-width: 100%; }
+.game-filter-grid > .game-level-field { flex: 1 0 100%; width: 100%; }
+.game-level-pills { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); }
+html .game-setup .game-level-pill[data-ui-button] { height: var(--game-filter-control-height); min-height: var(--game-filter-control-height); padding: 0 14px; gap: 6px; border-radius: var(--control-radius); background: var(--card); border-color: var(--border); color: var(--foreground); font-size: 13px; font-weight: 500; }
+html .game-setup .game-level-pill[data-ui-button]:hover { border-color: color-mix(in oklab, var(--primary) 40%, var(--border)); }
+html .game-setup .game-level-pill.is-selected[data-ui-button] { background: var(--secondary); color: var(--primary); border-color: color-mix(in oklab, var(--primary) 50%, var(--border)); }
+html .game-setup .game-level-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
 .game-filter-grid[hidden] { display: none; }
 .game-setting-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .game-field-label { font-size: 12px; font-weight: 500; color: var(--foreground); }

@@ -5,7 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { Play, RotateCcw, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { libraryEntries } from "@/lib/character-library";
-import { filterWords, vocabularyFacetOptions, vocabularyKind } from "@/lib/mandarin";
+import { filterWords, parseSelectedLevels, vocabularyFacetOptions, vocabularyKind } from "@/lib/mandarin";
 import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions } from "@/lib/vocabulary-subtopics";
 import { lessonCourseIds, lessonDeckGroups, lessonDeckIds, lessonDeckTitle, type LessonDeckGroup } from "@/lib/flashcard-lessons";
 import { libraryFilterOptions } from "@/lib/library-filter-options";
@@ -24,7 +24,7 @@ import {
 import { DraftFilterForm } from "./filter-form";
 import { GameBookmarkCollection } from "./saved-filter";
 import { GameSetup, GameReady, deckSummary } from "./game-setup";
-import { GameChoices, GameFilters, GameField, StrokeRangeControl, FrequencyRangeControl } from "./game-controls";
+import { GameChoices, GameFilters, GameField, GameLevelPills, StrokeRangeControl, FrequencyRangeControl } from "./game-controls";
 import { TopicSelect } from "./topic-select";
 import { formatStrokeRangeLabel } from "@/lib/stroke-range";
 import { GamePlayBar, GameResults, MissedTick, ReviewReason, toggleSkipped, useRoundEnd } from "./game-round";
@@ -167,7 +167,7 @@ export function DrawingGamePage({
       search.saved ? "Saved" : "All",
       ...(kind === "Words" && search.collection ? [search.collection] : []),
       ...(kind === "Words" && subtopicLabel ? [subtopicLabel] : []),
-      ...(kind === "Words" && search.level ? [search.level] : []),
+      ...(kind === "Words" && parseSelectedLevels(search.level).length ? [parseSelectedLevels(search.level).join(", ")] : []),
       ...(kind === "Words" && search.pos ? [search.pos] : []),
       ...(courseName ? [courseName] : []),
       ...(search.lesson ? [lessonDeckTitle(search.lesson) ?? search.lesson] : []),
@@ -258,7 +258,14 @@ export function DrawingGamePage({
                       options={drawingKinds.filter(value => group === 'Glyphs' ? value !== 'Words' : value === 'Words').map(value => ({ value, label: value }))}
                       onChange={value => { const next = drawingKinds.find(k => k === value); if (next) configure({ kind: next, ...(draft.saved ? { saved: true } : {}) }); }}/>)}</div>
                     </div>
-                    <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection, draft.level, draft.pos, draft.course, draft.lesson, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
+                    <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection, parseSelectedLevels(draft.level).length > 0, draft.pos, draft.course, draft.lesson, draft.usage, draft.strokes, draft.saved].filter(Boolean).length}>
+                    {draftKind === "Words" && (facets?.levels.length ?? 0) > 0 && (
+                      <GameLevelPills
+                        levels={facets?.levels ?? []}
+                        value={draft.level ?? ""}
+                        onChange={(value) => patch({ level: value || undefined })}
+                      />
+                    )}
                     {draftKind === "Words" && courses.length > 0 && (
                       <>
                         <GameField label="Course"><FilterSelect
@@ -285,12 +292,6 @@ export function DrawingGamePage({
                           allTopics=""
                           allSubtopics=""
                           onChange={(next) => patch({ collection: next.collection || undefined, subtopic: next.subtopic || undefined })}
-                        /></GameField>
-                        <GameField label="HSK level"><FilterSelect
-                          ariaLabel="HSK level"
-                          value={draft.level ?? ""}
-                          onValueChange={(value) => patch({ level: value || undefined })}
-                          items={[{ value: "", label: "All levels" }, ...(facets?.levels ?? []).map((value) => ({ value, label: value }))]}
                         /></GameField>
                         <GameField label="Part of speech"><FilterSelect
                           ariaLabel="Part of speech"

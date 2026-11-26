@@ -52,6 +52,21 @@ export const partOfSpeechList = (word: Word): string[] =>
 export function partOfSpeechOptions(items: Word[]): string[] {
   return [...new Set(items.flatMap(partOfSpeechList))].sort((a, b) => a.localeCompare(b));
 }
+export function parseSelectedLevels(level?: string | null): string[] {
+  if (!level || level === "All levels") return [];
+  return [...new Set(level.split(",").map((part) => part.trim()).filter((part) => part && part !== "All levels"))];
+}
+
+export function formatSelectedLevels(levels: string[], allValue = "All levels"): string {
+  const unique = [...new Set(levels.map((part) => part.trim()).filter((part) => part && part !== "All levels"))];
+  return unique.length ? unique.join(",") : allValue;
+}
+
+export function matchesLevel(wordLevel: string, level?: string | null): boolean {
+  const selected = parseSelectedLevels(level);
+  return selected.length === 0 || selected.includes(wordLevel);
+}
+
 // pinyinExact (only with pinyinOnly) requires the whole tone-stripped reading
 // to equal the query — "yisi" matches 意思, but "yi" no longer does.
 // Tone numbers are accepted too: "yi4si" matches 意思 (yìsi) directly.
@@ -83,7 +98,7 @@ export function filterWords(
     (w) =>
       matches(w) &&
       matchesTopic(w, collection) &&
-      (level === "All levels" || w.level === level) &&
+      matchesLevel(w.level, level) &&
       (status === "All words" || saved.includes(w.id)) &&
       (pos === "All types" || partOfSpeechList(w).includes(pos)),
   );
@@ -97,20 +112,18 @@ export function vocabularyFacetOptions(items: Word[], selection: { collection: s
   const { collection, level, pos } = selection;
   const style = selection.style || "All styles";
   const inCollection = (w: Word) => matchesTopic(w, collection);
-  const inLevel = (w: Word) => level === "All levels" || w.level === level;
+  const inLevel = (w: Word) => matchesLevel(w.level, level);
   const inPos = (w: Word) => pos === "All types" || partOfSpeechList(w).includes(pos);
   const inStyle = (w: Word) => style === "All styles" || phraseStyle(w.entry) === style;
   const keep = (options: string[], current: string, all: string) =>
     current === all || options.includes(current) ? options : [...options, current];
   const levelSort = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
   const styleItems = items.filter((w) => inCollection(w) && inLevel(w) && inPos(w));
+  const availableLevels = [...new Set(items.filter((w) => inCollection(w) && inPos(w) && inStyle(w)).map((w) => w.level).filter(Boolean))].sort(levelSort);
+  const selectedLevels = parseSelectedLevels(level);
   return {
     collections: keep(collectionOptions(items.filter((w) => inLevel(w) && inPos(w) && inStyle(w))), collection, "All collections"),
-    levels: keep(
-      [...new Set(items.filter((w) => inCollection(w) && inPos(w) && inStyle(w)).map((w) => w.level).filter(Boolean))].sort(levelSort),
-      level,
-      "All levels",
-    ),
+    levels: [...availableLevels, ...selectedLevels.filter((l) => !availableLevels.includes(l))],
     pos: keep(partOfSpeechOptions(items.filter((w) => inCollection(w) && inLevel(w) && inStyle(w))), pos, "All types"),
     styles: keep(PHRASE_STYLES.filter((st) => styleItems.some((w) => phraseStyle(w.entry) === st)), style, "All styles"),
   };

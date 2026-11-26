@@ -4,7 +4,7 @@ import { FilterSelect } from './filter-select';
 import { TopicSelect } from './topic-select';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { GameSetup, GameReady, deckSummary } from './game-setup';
-import { GameChoices, GameFilters, GameField, StrokeRangeControl, FrequencyRangeControl } from './game-controls';
+import { GameChoices, GameFilters, GameField, GameLevelPills, StrokeRangeControl, FrequencyRangeControl } from './game-controls';
 import { parseRankRange, rankRangeLabel } from '@/lib/rank-range';
 import { formatStrokeRangeLabel, matchesStrokeFilter } from '@/lib/stroke-range';
 import { GamePlayBar, GameResults, MissedTick, toggleSkipped, useRoundEnd } from './game-round';
@@ -22,7 +22,7 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { includeScript } from '@/lib/learning-preferences';
-import { collections as allCollections, filterWords, matchesTopic, partOfSpeechList, vocabularyFacetOptions, vocabularyKind, type Word } from '@/lib/mandarin';
+import { collections as allCollections, filterWords, matchesLevel, matchesTopic, parseSelectedLevels, partOfSpeechList, vocabularyFacetOptions, vocabularyKind, type Word } from '@/lib/mandarin';
 import { ALL_IDIOM_BANDS, filterIdioms, loadIdioms, type IdiomRankClass } from '@/lib/idioms';
 import { ALL_SUBTOPICS, inSubtopic, subtopicById, subtopicOptions } from '@/lib/vocabulary-subtopics';
 import { libraryFilterOptions } from '@/lib/library-filter-options';
@@ -77,7 +77,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
   const lesson = lessonDeckKind(category) ? applied.lesson ?? '' : '';
   const courseLabel = (id: string) => lessonDeckGroups().find(g => g.id === id)?.label ?? id;
   const savedOnly = Boolean(applied.saved);
-  const activeFilters = Boolean(collection || subtopic || level !== 'All levels' || pos !== 'All types' || style || usage || strokes || savedOnly || course || lesson);
+  const activeFilters = Boolean(collection || subtopic || parseSelectedLevels(level).length > 0 || pos !== 'All types' || style || usage || strokes || savedOnly || course || lesson);
   const configure = (filters: FlashcardFilters) => { setLocalFilters(filters); onFiltersChange?.(filters); };
   // The round lives in root session state so opening a card's Details and pressing
   // Back resumes the same card (still turned over) instead of a fresh setup.
@@ -175,7 +175,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
       if (vocabKind === 'idiom') {
         base = filterIdioms(idiomWords, idiomRankClasses, '', f.usage || ALL_IDIOM_BANDS, 'All words', [], false, false, f.usageUpTo === '1', f.collection || 'All collections', f.subtopic || ALL_SUBTOPICS);
       } else {
-        base = items.filter(w => vocabularyKind(w) === vocabKind && matchesTopic(w, f.collection || '') && inSubtopic(w, f.subtopic || ALL_SUBTOPICS) && (f.level === 'All levels' || w.level === f.level) && (f.pos === 'All types' || partOfSpeechList(w).includes(f.pos)) && matchesPhraseStyle(w.entry, fStyle));
+        base = items.filter(w => vocabularyKind(w) === vocabKind && matchesTopic(w, f.collection || '') && inSubtopic(w, f.subtopic || ALL_SUBTOPICS) && matchesLevel(w.level, f.level) && (f.pos === 'All types' || partOfSpeechList(w).includes(f.pos)) && matchesPhraseStyle(w.entry, fStyle));
       }
     }
     const inLesson = lessonIds(f);
@@ -219,7 +219,8 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     const groupInfo = refKind && group ? usageGroups(refKind).find(g => g.value === group) : undefined;
     const idiomBand = category === 'Idioms' && usage ? idiomRankClasses.find(c => c.id === usage) : undefined;
     const subtopicLabel = subtopic ? subtopicById(subtopic)?.label ?? subtopic : '';
-    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && subtopicLabel ? [subtopicLabel] : []), ...(!isReference && level !== 'All levels' ? [level] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(course ? [courseLabel(course)] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(idiomBand ? [usageUpTo === '1' ? `Rank 1–${idiomBand.to.toLocaleString('en-US')}` : `Rank ${idiomBandRangeLabel(idiomBand)}`] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [formatStrokeRangeLabel(strokes, strokesUpTo === '1')] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
+    const selectedLevels = parseSelectedLevels(level);
+    const parts = [...(savedOnly ? ['Saved'] : []), flashcardKindLabel(category), ...(!isReference && collection ? [collection] : []), ...(!isReference && subtopicLabel ? [subtopicLabel] : []), ...(!isReference && selectedLevels.length ? [selectedLevels.join(', ')] : []), ...(!isReference && pos !== 'All types' ? [pos] : []), ...(style ? [style] : []), ...(course ? [courseLabel(course)] : []), ...(lesson ? [lessonDeckTitle(lesson) ?? lesson] : []), ...(idiomBand ? [usageUpTo === '1' ? `Rank 1–${idiomBand.to.toLocaleString('en-US')}` : `Rank ${idiomBandRangeLabel(idiomBand)}`] : []), ...(refKind && groupInfo ? [usageUpTo === '1' && groupInfo.value !== UNRANKED ? `Rank 1–${groupInfo.max.toLocaleString('en-US')}` : usageGroupLabel(groupInfo, refKind, preferences.includeTraditional)] : []), ...(refKind && strokes ? [formatStrokeRangeLabel(strokes, strokesUpTo === '1')] : []), direction === 'zh' ? 'Chinese → English' : 'English → Chinese'];
     const customRange = parseRankRange(usage);
     return [...parts, ...(customRange ? [`Rank ${rankRangeLabel(customRange)}`] : [])].join(' · ');
   };
@@ -288,10 +289,10 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             options={flashcardKinds.filter(k => group === 'Glyphs' ? k.value.startsWith('Ref:') : !k.value.startsWith('Ref:')).map(k => ({ value: k.value, label: k.label }))}
             onChange={category => configure({ category, collection: '', subtopic: '', level: 'All levels', pos: 'All types', usage: '', usageUpTo: undefined, strokes: '', strokesUpTo: undefined, style: undefined, course: undefined, lesson: undefined })}/>)}</div>
         </div>
-        <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection && draft.collection !== 'All collections' ? draft.collection : '', draft.level !== 'All levels' && draft.level, draft.pos !== 'All types' && draft.pos, draft.style !== 'All styles' && draft.style, draft.usage !== ALL_IDIOM_BANDS && draft.usage, draft.strokes, draft.course, draft.lesson, draft.saved].filter(Boolean).length}>
+        <GameFilters count={[draft.subtopic && draft.subtopic !== ALL_SUBTOPICS ? draft.subtopic : draft.collection && draft.collection !== 'All collections' ? draft.collection : '', parseSelectedLevels(draft.level).length > 0, draft.pos !== 'All types' && draft.pos, draft.style !== 'All styles' && draft.style, draft.usage !== ALL_IDIOM_BANDS && draft.usage, draft.strokes, draft.course, draft.lesson, draft.saved].filter(Boolean).length}>
           {!draftReference && <>
+            {facets.levels.length > 0 && <GameLevelPills levels={facets.levels} value={draft.level} emptyValue="All levels" onChange={level => patch({ level })} />}
             <GameField label="Topic"><TopicSelect topics={facets.collections} subtopics={facets.subtopics} collection={draft.collection || ''} subtopic={draftSubtopic} allTopics="" allSubtopics="" onChange={patch}/></GameField>
-            {facets.levels.length > 0 && <GameField label="HSK level"><FilterSelect ariaLabel="HSK level" value={draft.level} onValueChange={level => patch({ level })} items={[{ value: 'All levels', label: 'All levels' }, ...facets.levels.map(l => ({ value: l, label: l }))]} /></GameField>}
             {facets.posOptions.length > 0 && <GameField label="Part of speech"><FilterSelect ariaLabel="Part of speech" value={draft.pos} onValueChange={pos => patch({ pos })} items={[{ value: 'All types', label: 'All types' }, ...facets.posOptions.map(p => ({ value: p, label: p }))]} /></GameField>}
             {/* Phrases only: the same Sentence style choice as the Phrases library. */}
             {facets.styles.length > 0 && <GameField label="Sentence style"><FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} /></GameField>}

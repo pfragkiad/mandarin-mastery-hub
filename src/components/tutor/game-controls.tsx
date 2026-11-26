@@ -1,6 +1,6 @@
 import { createContext, useContext, useId, useState, type ReactNode } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { ChevronDown, SlidersHorizontal } from 'lucide-react';
+import { Check, ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -8,6 +8,7 @@ import { FilterSelect } from './filter-select';
 import { FilterWideningToggle } from './filter-form';
 import { formatRankRange, parseRankRange, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
 import { STROKE_SLIDER_MAX, STROKE_SLIDER_MIN, formatStrokeRangeLabel, formatStrokeRangeValue, parseStrokeRange } from '@/lib/stroke-range';
+import { formatSelectedLevels, parseSelectedLevels } from '@/lib/mandarin';
 
 /** Single-choice buttons reuse the Preferences segmented control; values remain owned by the game. */
 export function GameChoices({ label, value, options, onChange }: {
@@ -35,6 +36,34 @@ export function GameFilters({ count, children }: { count: number; children: Reac
 /** A visible field label is separate from the selectable values and their screen-reader names. */
 export function GameField({ label, children }: { label: string; children: ReactNode }) {
   return <div className="game-setting-field"><span className="game-field-label">{label}</span>{children}</div>;
+}
+
+/** Multi-select HSK level pills for game setup: sits on its own row above the
+ *  secondary dropdowns so learners can combine levels (e.g. HSK 1 + HSK 2).
+ *  Empty selection means all levels; drafts still commit only on Apply. */
+export function GameLevelPills({ levels, value, onChange, emptyValue = '' }: {
+  levels: string[]; value: string; onChange: (value: string) => void; emptyValue?: string;
+}) {
+  const id = useId();
+  const selected = parseSelectedLevels(value);
+  const toggle = (level: string) => {
+    const next = selected.includes(level) ? selected.filter(l => l !== level) : [...selected, level];
+    onChange(formatSelectedLevels(next, emptyValue));
+  };
+  return <div className="game-setting-field game-level-field">
+    <span className="game-field-label" id={id}>Level</span>
+    <div className="game-level-pills" role="group" aria-labelledby={id}>
+      {levels.map(level => {
+        const on = selected.includes(level);
+        return <Button key={level} type="button" size="sm" variant="outline"
+          className={`game-level-pill${on ? ' is-selected' : ''}`}
+          aria-pressed={on} onClick={() => toggle(level)}>
+          {on && <Check aria-hidden="true" />}
+          <span>{level}</span>
+        </Button>;
+      })}
+    </div>
+  </div>;
 }
 
 /** The open panel's own close action. It reaches the disclosure through context so each

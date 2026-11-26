@@ -1,6 +1,6 @@
 import { filterLibrary, type LibraryEntry } from './character-library';
 import { parseGameUsageFilter } from './usage-frequency';
-import { matchesTopic, partOfSpeechList, vocabularyKind, type Word } from './mandarin';
+import { matchesLevel, matchesTopic, partOfSpeechList, vocabularyKind, type Word } from './mandarin';
 import { includeScript } from './learning-preferences';
 import { isValidStrokeFilter } from './stroke-range';
 import { ALL_SUBTOPICS, inSubtopic } from './vocabulary-subtopics';
@@ -68,7 +68,7 @@ export function drawingWordPool(items: Word[], search: DrawingSearch, includeTra
     && (!search.saved || (savedIds ?? []).includes(word.id))
     && (!inLesson || inLesson.has(word.id))
     && matchesTopic(word, search.collection || '') && inSubtopic(word, search.subtopic || ALL_SUBTOPICS)
-    && (!search.level || word.level === search.level)
+    && matchesLevel(word.level, search.level)
     && (!search.pos || partOfSpeechList(word).includes(search.pos))
     && word.pinyin.trim() && word.meaning.trim() && wordCharacters(word).length > 0)
     .map(word => ({ id: word.id, hanzi: wordCharacters(word)[0]?.hanzi ?? '', pinyin: word.pinyin, meaning: word.meaning, note: '', word }));
