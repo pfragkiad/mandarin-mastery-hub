@@ -1834,6 +1834,14 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .filter-submit button { height: 36px; flex-shrink: 0; }
 /* Only the library's icon-only clear control has a fixed width; game Reset has text. */
 .filter-submit button.close-x { width: 32px; }
+/* Library action slots and range anchors keep the same footprint in every draft
+   state. Neither a changing summary nor the first Apply button can reflow a drag. */
+.library-page .shared-filter-form > .filter-submit { flex: 0 0 148px; min-height: 40px; flex-wrap: nowrap; }
+.library-page .shared-filter-form > .filter-submit .close-x { margin-left: auto; }
+html[data-display-size='comfortable'] .library-page .shared-filter-form > .filter-submit { flex-basis: 164px; min-height: 48px; }
+.library-page .filter-field-row:has(.game-range-trigger) { flex: 0 0 210px; max-width: 100%; }
+.library-page .filter-field-row .game-range-trigger.filter-select { width: 100%; flex: 0 0 100%; }
+.library-page .game-range-trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .shared-filter-form .catalog-results-count { margin-left: auto; font-size: 11px; color: var(--muted-foreground); }
 .catalog-tools-row { gap: 8px; margin-bottom: 12px; }
 .catalog-tools-row > button { height: 32px; font-size: 11px; }

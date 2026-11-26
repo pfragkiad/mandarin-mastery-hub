@@ -1,5 +1,9 @@
 # Roadmap
 
+## Stable library range editing
+- [x] Keep Rank/Strokes triggers and Apply space stable while dragging; verified draft-only editing and submission at 1458/1280/390 widths and both display sizes; 18 shared filter/range tests pass.
+- [x] Verified the panel stays anchored when the maximum handle restores Any and Apply disappears at wide/narrow widths.
+
 ## Small detail-grid alignment and translations
 - [x] Show Unranked in every character-example header and reuse whole-sense trimming after three lines, preserving the sole translation in each card; verified glyph and sound grids and translation-limit tests.
 
