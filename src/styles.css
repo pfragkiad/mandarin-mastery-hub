@@ -4115,7 +4115,7 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-inline-hanzi { font-family: var(--font-hanzi); }
 /* One neutral inner square for shared glyph hints, independent of font line-box height.
    The overlay never changes text flow or the enclosing tile's identity-coloured border. */
-:root { --glyph-hint-ink: oklch(1 0 0); --glyph-hint-glow: 0 0 3px color-mix(in oklab, var(--glyph-hint-ink) 65%, transparent); --glyph-hint-frame-size: 1.12em; }
+:root { --glyph-hint-ink: oklch(1 0 0); --glyph-hint-glow: 0 0 3px var(--glyph-hint-ink), 0 0 8px color-mix(in oklab, var(--glyph-hint-ink) 85%, transparent), 0 0 14px color-mix(in oklab, var(--glyph-hint-ink) 45%, transparent); --glyph-hint-frame-size: 1.12em; }
 .lesson-hint-char { position: relative; cursor: pointer; border-radius: var(--control-radius); }
 .lesson-hint-char::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); box-sizing: border-box; border: 1px solid var(--glyph-hint-ink); border-radius: var(--control-radius); box-shadow: var(--glyph-hint-glow); opacity: 0; pointer-events: none; transition: opacity .12s ease; }
 .lesson-hint-char:is(:hover, :focus-visible, [data-hint-active]) { box-shadow: none; background: transparent; outline: none; }
@@ -4148,7 +4148,6 @@ html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { f
    card you are on keeps its colour, it just isn't a link). */
 .lesson-hint-glyph:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute):not(.traditional-character) { color: var(--card-ink); }
 .lesson-hint-word-hanzi:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute, .is-traditional) { color: var(--card-ink); }
-.lesson-hint-word-link:is(:hover, :focus-visible) .lesson-hint-word-hanzi:is(.card-ink-radical, .card-ink-character, .card-ink-component, .card-ink-substitute, .is-traditional) { box-shadow: 0 0 0 1px var(--card-ink); }
 .lesson-hint-reading { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .lesson-hint-pills { display: flex; flex-wrap: wrap; gap: 4px; }
 .lesson-hint-pill { font-size: 11px; line-height: 18px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted-foreground); white-space: nowrap; }
@@ -4160,15 +4159,15 @@ html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { f
 .lesson-hint-meaning { font-size: 14px; line-height: 1.45; margin: 0; overflow-wrap: anywhere; }
 .lesson-hint-meaning.is-absent { color: var(--muted-foreground); }
 .lesson-hint-facts { font-size: 12px; color: var(--muted-foreground); margin: 0; }
-.lesson-hint-word { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--control-radius); background: var(--secondary); }
+.lesson-hint-word { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 1px solid transparent; border-radius: var(--control-radius); background: var(--secondary); color: var(--foreground); cursor: pointer; text-decoration: none; transition: border-color .12s ease; }
+.lesson-hint-word:is(:hover, :focus-visible) { border-color: var(--glyph-hint-ink); outline: none; }
 .lesson-hint-word-label { font-size: 11px; color: var(--muted-foreground); }
-.lesson-hint-word-row { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+.lesson-hint-word-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .lesson-hint-word-link { display: inline-flex; align-items: baseline; gap: 8px; color: var(--primary); text-decoration: none; border-radius: var(--control-radius); }
-.lesson-hint-word-link:hover .lesson-hint-word-hanzi, .lesson-hint-word-link:focus-visible .lesson-hint-word-hanzi { box-shadow: 0 0 0 1px var(--primary); outline: none; }
 .lesson-hint-word-link:focus-visible { outline: none; }
 .lesson-hint-word-link svg { align-self: center; }
 .lesson-hint-word-hanzi { font-family: var(--font-hanzi); font-size: 22px; line-height: 1.2; border-radius: var(--control-radius); padding: 0 2px; }
-.lesson-hint-word-link .pinyin { font-size: 14px; }
+.lesson-hint-word-link .pinyin, .lesson-hint-word-row .pinyin { font-size: 14px; }
 /* Self-entry: the popup sits on this very card, so the row shows for completeness but is not a link. */
 .lesson-hint-word-link.is-current { color: inherit; cursor: default; }
 .lesson-hint-word-row .example-listen { width: 28px; height: 28px; }
