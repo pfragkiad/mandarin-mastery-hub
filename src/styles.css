@@ -1566,6 +1566,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .source-info-trigger { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; margin-top: 0; vertical-align: middle; border-radius: 999px; color: var(--muted-foreground); }
 .source-info-inline + .source-info-trigger { margin-top: 10px; }
 .eyebrow .source-info-trigger { margin-top: 0; }
+/* Source headings (including BabelStone) centre text and hints without inline baseline offsets. */
 .library-note:has(.source-info-trigger) { display: flex; align-items: center; gap: 6px; }
 .library-note .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 .library-heading h1 .source-info-trigger { width: 16px; height: 16px; margin-top: 0; margin-left: 10px; vertical-align: super; }
@@ -3361,7 +3362,8 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 .stroke-tab-item .source-info-trigger { margin-top: 0; flex-shrink: 0; }
 /* Drawer tab labels match the section eyebrows ("IN A PHRASE", "LESSONS"): small,
    uppercase, wide-tracked, muted; the open tab reads in full colour with its underline. */
-.stroke-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; background: none; border: 0; padding: 10px 2px 12px; font: inherit; font-size: 9px; letter-spacing: 1.65px; font-weight: 600; text-transform: uppercase; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
+/* Symmetric padding keeps the label's centre on the sibling hint icon's centre. */
+.stroke-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; background: none; border: 0; padding: 11px 2px; font: inherit; font-size: 9px; letter-spacing: 1.65px; font-weight: 600; text-transform: uppercase; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
 .stroke-tab:hover:not(:disabled) { color: var(--foreground); }
 .stroke-tab[aria-selected='true'] { color: var(--foreground); }
 .stroke-tab[aria-selected='true']::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--foreground); }
