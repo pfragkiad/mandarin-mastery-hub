@@ -1,4 +1,4 @@
-import { useId, useState, type ReactNode, type SyntheticEvent } from 'react';
+import { useId, useLayoutEffect, useRef, useState, type ReactNode, type SyntheticEvent } from 'react';
 import { ArrowRight, ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { externalExampleSources } from '@/lib/external-examples';
@@ -19,8 +19,53 @@ import { useWorkspace } from './workspace';
  * beside Trace/Recall/Bookmark, as a plain new-window link.
  */
 export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
+  const sectionRef = useRef<HTMLElement>(null);
+  // Judge the natural side layout first, then stack the whole section if any reading
+  // falls below its hanzi. Recheck newly revealed examples and settled web fonts;
+  // height-only observer notifications must not cause reset/stack feedback loops.
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section || !section.closest('.detail-sheet')) return;
+    let alive = true;
+    let width = section.getBoundingClientRect().width;
+    const measure = () => {
+      if (!alive) return;
+      delete section.dataset['sentencesStacked'];
+      const stacked = Array.from(section.querySelectorAll<HTMLElement>('.glyph-usage-example > .sentence')).some(sentence => {
+        const hanziRow = sentence.querySelector<HTMLElement>('.sentence-hanzi-row');
+        const reading = sentence.querySelector<HTMLElement>('.sentence-reading');
+        if (!hanziRow || !reading || !reading.textContent?.trim()) return false;
+        const hanziBox = hanziRow.getBoundingClientRect();
+        const readingBox = reading.getBoundingClientRect();
+        return hanziBox.height > 0 && readingBox.top >= hanziBox.bottom - 1;
+      });
+      if (stacked) section.dataset['sentencesStacked'] = '';
+    };
+    measure();
+    const resize = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => {
+      const nextWidth = section.getBoundingClientRect().width;
+      if (nextWidth === width) return;
+      width = nextWidth;
+      measure();
+    });
+    resize?.observe(section);
+    const mutations = new MutationObserver(measure);
+    mutations.observe(section, { childList: true, subtree: true, characterData: true });
+    // Display size and character style change without necessarily resizing the section.
+    const preferences = new MutationObserver(measure);
+    preferences.observe(document.documentElement, { attributes: true, attributeFilter: ['data-display-size', 'data-character-style'] });
+    void document.fonts?.ready.then(measure);
+    document.fonts?.addEventListener('loadingdone', measure);
+    return () => {
+      alive = false;
+      resize?.disconnect();
+      mutations.disconnect();
+      preferences.disconnect();
+      document.fonts?.removeEventListener('loadingdone', measure);
+    };
+  }, [hanzi, children]);
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
-  return <section className="glyph-usage-section sentence-section" aria-label="In a phrase">
+  return <section ref={sectionRef} className="glyph-usage-section sentence-section" aria-label="In a phrase">
     <div className="sentence-section-head">
       <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A PHRASE</h3>
       <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'phrase', q: hanzi }} title={`Search phrases containing ${hanzi}`}>
