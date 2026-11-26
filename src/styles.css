@@ -417,6 +417,10 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
    (reading + speaker + Traditional pill, then meaning). The speaker follows its
    own reading, so short readings never leave it stranded in a wide column. */
 .glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
+.expandable-character-grid.is-expanded { max-height: min(480px, 55dvh); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-gutter: stable; animation: character-grid-expand .25s ease; }
+@keyframes character-grid-expand { from { max-height: var(--character-grid-preview-height); opacity: .65; } to { max-height: min(480px, 55dvh); opacity: 1; } }
+.expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
+@media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
 .glyph-usage-facts { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
 .glyph-usage-facts-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }

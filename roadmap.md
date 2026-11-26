@@ -1,5 +1,8 @@
 # Roadmap
 
+## Expandable character examples
+- [x] Share Show all/Show fewer with bounded scrolling in component and sound detail grids; verified expansion, internal scrolling and collapse at wide and narrow widths.
+
 ## Sound-card example consistency
 - [x] Reuse component-detail character grid cards in sound cards without redundant reading/audio rows.
 - [x] Match section-label icons and verify exact character links, grouped forms and narrow layout.

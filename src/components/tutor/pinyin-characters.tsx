@@ -9,7 +9,7 @@
 // Simplified + traditional forms of an ordinary script pair that both read this sound
 // with the same recorded meaning share one row (groupScriptForms); each box still opens
 // its own record and different ranks are listed per box.
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Puzzle } from 'lucide-react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
@@ -25,6 +25,7 @@ import { MeaningText } from './meaning-text';
 import { UsageLabel } from './usage-label';
 import { ExampleCardMeta } from './sentence-section';
 import { useWorkspace } from './workspace';
+import { ExpandableCharacterGrid } from './expandable-character-grid';
 
 /** Characters shown before "Show all". */
 export const SYLLABLE_CHARACTERS_SHOWN = 5;
@@ -32,8 +33,6 @@ export const SYLLABLE_CHARACTERS_SHOWN = 5;
 export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: string; tone: Tone | null; backLabel: string; onLeave: () => void }) {
   const { preferences, catalogVersion } = useWorkspace();
   const includeTraditional = preferences.includeTraditional;
-  const [expanded, setExpanded] = useState(false);
-  useEffect(() => { setExpanded(false); }, [base, tone]);
   // catalogVersion is 0 until the lazily fetched catalogue is installed.
   const entries = useMemo(() => (catalogVersion ? libraryEntries('Characters') : []), [catalogVersion]);
   const destinations = useMemo(() => characterDestinations(entries, includeTraditional), [entries, includeTraditional]);
@@ -59,7 +58,6 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   // the same meaning for this reading (groupScriptForms); "Show all" pages by rows, while
   // the eyebrow keeps counting every listed character.
   const rows = useMemo(() => groupScriptForms(matches, shownMeaning), [matches, base, tone]);
-  const shown = expanded ? rows : rows.slice(0, SYLLABLE_CHARACTERS_SHOWN);
   const rankOf = (entry: (typeof entries)[number]) => rankFor(entry);
 
   return <section className="pinyin-characters glyph-usage-section" aria-label="In a character">
@@ -68,7 +66,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
       : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
-        <div className="glyph-usage-parents">{shown.map(({ key, forms }) => {
+        <ExpandableCharacterGrid key={`${base}:${tone}:${includeTraditional}`} initialCount={SYLLABLE_CHARACTERS_SHOWN} totalCount={matches.length} cards={rows.map(({ key, forms }) => {
           // All forms in a row record the same meaning (groupScriptForms), so one line serves them.
           const first = forms[0];
           if (!first) return null;
@@ -112,8 +110,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             {meaning && <span className="glyph-usage-meaning"><MeaningText text={meaning} /></span>}
           </span>
           </div>
-        </div>; })}</div>
-        {rows.length > SYLLABLE_CHARACTERS_SHOWN && <Button variant="link" size="sm" className="pinyin-characters-more" onClick={() => setExpanded(value => !value)}>{expanded ? 'Show fewer' : `Show all ${matches.length}`}</Button>}
+        </div>; })}/>
       </>}
   </section>;
 }

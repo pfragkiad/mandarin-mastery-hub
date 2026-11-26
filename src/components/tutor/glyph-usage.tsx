@@ -23,6 +23,7 @@ import { SectionPlaceholder } from './section-placeholder';
 import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
 import { isLearningExample, loadCharacterTatoebaExample, ownSentencePinyin, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
 import { TatoebaSentenceSource } from './tatoeba-sentence-source';
+import { ExpandableCharacterGrid } from './expandable-character-grid';
 
 /** Optional sourced examples, fetched only for a Characters detail card.
  * Vocabulary/lessons stay first and Tatoeba may add a separately annotated
@@ -85,7 +86,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
   const radicalParents = useRadicalParents(entry, kind, preferences.includeTraditional, catalogVersion, familyGlyph);
   const loadedParents = kind === 'Components' ? gSourceParents : radicalParents;
-  const parents = loadedParents?.slice(0, 6) ?? [];
+  const parents = loadedParents ?? [];
   // Reading lookup for the Tatoeba sentence's own pinyin line: exact glyph → recorded
   // reading, Characters first, then Components and Radicals as fallback. Built only
   // when a Tatoeba example is shown; multi-reading entries keep their " / " join for
@@ -105,7 +106,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
   if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</h3>
-    <div className="glyph-usage-parents">{parents.map(parent => {
+    <ExpandableCharacterGrid key={`${kind}:${entry.id}:${familyGlyph ?? ''}:${preferences.includeTraditional}`} initialCount={6} cards={parents.map(parent => {
       const rank = usageOrder.loaded ? usageRank(parent, 'Characters', preferences.includeTraditional) : null;
       const hasHeader = rank !== null || parent.script === 'Traditional';
       return <div className="glyph-usage-example glyph-parent-card" key={parent.id}>
@@ -123,7 +124,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
           </span>
         </div>
       </div>;
-    })}</div>
+    })}/>
   </section>;
   // "In a phrase" always shows for characters, even with no recorded example, so
   // External search of the exact hanzi is always reachable. Imported file names
