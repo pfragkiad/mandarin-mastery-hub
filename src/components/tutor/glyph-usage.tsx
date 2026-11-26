@@ -11,7 +11,7 @@ import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
 import { useWorkspace } from './workspace';
 import { MeaningText } from './meaning-text';
 import { SentenceExample } from './sentence-example';
-import { MoreExamples, SentenceHints, SentenceSection, ExampleCardMeta } from './sentence-section';
+import { MoreExamples, SentenceHints, SentenceSection, ExampleCardMeta, useSentenceSectionLayout } from './sentence-section';
 import { wordHskPill } from './word-identity-pills';
 import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
@@ -164,8 +164,9 @@ export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
     return () => { cancelled = true; };
   }, []);
   const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, 2) : []), [idioms, entry.hanzi, entry.script]);
+  const sectionRef = useSentenceSectionLayout(entry.id, matches);
   if (!matches.length) return null;
-  return <section className="glyph-usage-section sentence-section idiom-examples-section" aria-label="In an idiom">
+  return <section ref={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section" aria-label="In an idiom">
     <div className="sentence-section-head">
       <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
       <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'idiom', q: entry.hanzi }} title={`Search idioms containing ${entry.hanzi}`}>

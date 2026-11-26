@@ -18,7 +18,8 @@ import { useWorkspace } from './workspace';
  * search ("Search on the internet") sits in the card's action row (DetailRecordActions),
  * beside Trace/Recall/Bookmark, as a plain new-window link.
  */
-export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
+/** Shared measured section layout for phrase and idiom examples; content changes re-arm it. */
+export function useSentenceSectionLayout(recordKey: string, content: unknown) {
   const sectionRef = useRef<HTMLElement>(null);
   // Judge the natural side layout first, then stack the whole section if any reading
   // falls below its hanzi. Recheck newly revealed examples and settled web fonts;
@@ -63,7 +64,12 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
       preferences.disconnect();
       document.fonts?.removeEventListener('loadingdone', measure);
     };
-  }, [hanzi, children]);
+  }, [recordKey, content]);
+  return sectionRef;
+}
+
+export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
+  const sectionRef = useSentenceSectionLayout(hanzi, children);
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
   return <section ref={sectionRef} className="glyph-usage-section sentence-section" aria-label="In a phrase">
     <div className="sentence-section-head">
