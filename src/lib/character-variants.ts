@@ -34,6 +34,11 @@ export type CharacterVariantFile = {
 /** Classifications whose correspondence depends on meaning/context and so never share a card. */
 export const CONTEXT_DEPENDENT = 'context_dependent_not_error';
 
+/** Simplified-radical → Traditional Kangxi radical heading pairs that always share a card
+ *  even when the simplified key also has a context-dependent form (卤 ↔ 鹵 are both Kangxi
+ *  radical #197, while 滷 "gravy/brine" keeps its own card under Related characters). */
+const RADICAL_SCRIPT_PAIRS: Record<string, string> = { 卤: '鹵' };
+
 export const characterVariants = {
   source: '',
   version: '',
@@ -75,8 +80,17 @@ export function hydrateCharacterVariants(file: CharacterVariantFile) {
     const keyNotes = notes[simplified] ?? {};
     const contextual = forms.some(form => keyNotes[form]?.classification === CONTEXT_DEPENDENT);
     if (contextual) {
-      characterVariants.related[simplified] = forms;
-      for (const form of forms) characterVariants.relatedHead[form] = simplified;
+      const radicalPartner = RADICAL_SCRIPT_PAIRS[simplified];
+      const paired = radicalPartner && forms.includes(radicalPartner) ? [radicalPartner] : [];
+      const related = paired.length > 0 ? forms.filter(form => !paired.includes(form)) : forms;
+      if (paired.length > 0) {
+        characterVariants.groups[simplified] = paired;
+        for (const form of paired) characterVariants.head[form] = simplified;
+      }
+      if (related.length > 0) {
+        characterVariants.related[simplified] = related;
+        for (const form of related) characterVariants.relatedHead[form] = simplified;
+      }
       if (forms.some(form => keyNotes[form] && documentsUnchangedUse(simplified, keyNotes[form]))) characterVariants.alsoTraditional.add(simplified);
     } else {
       characterVariants.groups[simplified] = forms;
