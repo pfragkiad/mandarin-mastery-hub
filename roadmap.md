@@ -335,3 +335,5 @@
 - [x] Make the stroke card’s Hanzi name use character quick cards (hover ring + click mini card) instead of immediate links, with the exact record link kept when quick cards are off; 4 new tests plus 37 related tests pass, browser-verified wide and on a phone.
 
 - [x] Detail cards: Character/Component kind pill always top right; Radical #N and Traditional pills added alongside when they apply
+
+- [x] Remove the "In a character" badge from radical grid cards (every Kangxi family has characters); Components/Characters badges and the detail sheet list unchanged; 3 new tests, 1421 pass, browser-verified.
