@@ -434,7 +434,9 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .detail-sheet .expandable-character-grid.example-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-sentence-min-width)), 1fr)); }
 .example-results-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--grid-card-inner-gap); margin-bottom: var(--grid-card-inner-gap); }
 .example-results-toolbar .search-field { flex: 0 1 280px; min-width: 0; }
-.detail-sheet .example-list .glyph-usage-example + .glyph-usage-example { margin-top: 0; }
+/* Grid rows stretch to their tallest card; sequential-example spacing belongs
+   only to examples outside the grid, never to individual grid siblings. */
+.detail-sheet .expandable-character-grid { align-items: stretch; }
 .example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
@@ -463,7 +465,7 @@ html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link sv
 /* Phrase cards stack their header line above the sentence the same way, also outside the
    floating window (a word opened in the older dialog has no .detail-sheet wrapper). */
 .sentence-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); }
-.idiom-examples-section .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); margin-top: var(--detail-section-gap, 14px); padding-top: var(--detail-section-gap, 14px); }
+.idiom-examples-section > .glyph-usage-example + .glyph-usage-example { border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent); margin-top: var(--detail-section-gap, 14px); padding-top: var(--detail-section-gap, 14px); }
 .idiom-examples-section .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
 .glyph-usage-reference .glyph-usage-meaning { min-width: 0; overflow-wrap: anywhere; }
 .glyph-usage-reference > a { font-size: 18px; color: var(--primary); }
@@ -2145,7 +2147,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 @media (max-width: 600px) {
   :is(.detail-sheet, .pinyin-characters) .glyph-usage-parents { grid-template-columns: 1fr; }
 }
-.detail-sheet .sentence-section .glyph-usage-example + .glyph-usage-example {
+.detail-sheet .sentence-section > .glyph-usage-example + .glyph-usage-example {
   margin-top: 8px;
   padding-top: 10px;
   border-top: 1px solid var(--border);
