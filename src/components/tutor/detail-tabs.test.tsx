@@ -31,15 +31,32 @@ const flush = () => act(async () => { await Promise.resolve(); await Promise.res
 describe('Glyph detail drawer tabs', () => {
   beforeEach(() => { localStorage.clear(); etymology.result = null; etymology.calls = 0; etymology.byGlyph = null; });
 
-  it('opens on Decomposition, even after Etymology was chosen on another card', async () => {
+  it('starts collapsed on a first visit, and opening it shows Decomposition', async () => {
+    etymology.result = howellView;
+    render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
+    await flush();
+    // Nothing is expanded until the learner asks (owner's rule: drawers start collapsed).
+    expect(screen.getByRole('button', { name: 'Expand details' })).toBeInTheDocument();
+    expect(screen.queryByText('breakdown body')).toBeNull();
+    expect(screen.queryByText('ancient')).toBeNull();
+    // The Etymology tab is offered because the card's notes resolved in the background,
+    // not because the drawer was opened.
+    expect(screen.getByRole('tab', { name: 'Etymology' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
+  });
+
+  it('opens a new card on Decomposition, not the tab chosen on another card', async () => {
     etymology.result = howellView;
     const { rerender } = render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
-    expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
     fireEvent.click(screen.getByRole('tab', { name: 'Etymology' }));
     expect(screen.getAllByText('ancient').length).toBeGreaterThan(0); // Howell's structured account
     rerender(<GlyphDetailTabs cardKey="Characters:口" decomposition={decomposition} etymology={{ recordId: 'Characters:口', glyph: '口' }}/>);
     await flush();
+    // The drawer stays open across the card switch, but the new card has no remembered tab.
     expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
   });
 
@@ -59,24 +76,27 @@ describe('Glyph detail drawer tabs', () => {
     trail.index = undefined; trail.key = '';
   });
 
-  it('remembers a collapsed drawer and loads nothing while collapsed', async () => {
+  it('stays collapsed after the learner collapses it, and mounts no drawer body', async () => {
     etymology.result = howellView;
     const first = render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
+    expect(screen.getByText('breakdown body')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Collapse details' }));
     first.unmount();
-    etymology.calls = 0;
     render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
     expect(screen.getByRole('button', { name: 'Expand details' })).toBeInTheDocument();
     expect(screen.queryByText('breakdown body')).toBeNull();
-    expect(etymology.calls).toBe(0);
+    // The notes resolved in the background so the tab could be judged, but nothing is mounted.
+    expect(screen.queryByText('ancient')).toBeNull();
   });
 
   it('collapses when the open tab is clicked again, and reopens on the next click', async () => {
     etymology.result = howellView;
     render(<GlyphDetailTabs cardKey="Characters:toggle" decomposition={decomposition} etymology={request}/>);
     await flush();
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
     expect(screen.getByText('breakdown body')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
     expect(screen.queryByText('breakdown body')).toBeNull();
@@ -88,10 +108,12 @@ describe('Glyph detail drawer tabs', () => {
     expect(screen.getAllByText('ancient').length).toBeGreaterThan(0);
   });
 
-  it('hides the Etymology tab once the card turns out to have no notes', async () => {
+  it('hides the Etymology tab once the card turns out to have no notes, while collapsed', async () => {
     render(<GlyphDetailTabs cardKey="Characters:古" decomposition={decomposition} etymology={request}/>);
     await flush();
+    // Resolved in the background: the tab is gone before the learner ever opens the drawer.
     expect(screen.queryByRole('tab', { name: 'Etymology' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Expand details' })).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'Decomposition' })).toBeInTheDocument();
   });
 

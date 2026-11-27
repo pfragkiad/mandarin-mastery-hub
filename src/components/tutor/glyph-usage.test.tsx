@@ -203,6 +203,8 @@ describe('Absent-record notes', () => {
     const mai: LibraryEntry = { id: 'Radicals:麥', hanzi: '麥', pinyin: 'mài', meaning: 'wheat', note: '11 strokes · Radical #199', kangxiIndex: 199, strokes: 11,
       decomposition: { root: { glyph: '⿱', position: 'root', children: [{ glyph: '來', position: 'top' }, { glyph: '夂', position: 'bottom' }] }, source: 'test', status: 'test' } };
     render(<CharacterDetails entry={mai} kind="Radicals" />);
+    // The drawer starts collapsed on a first visit, so the learner opens the breakdown tab.
+    fireEvent.click(screen.getByRole('tab', { name: 'Decomposition' }));
     expect(screen.getByRole('tab', { name: 'Decomposition', selected: true })).toBeInTheDocument();
     expect(screen.getByRole('list', { name: 'Hanzi graphical structure' }).textContent).toContain('來');
   });

@@ -17,15 +17,17 @@ import { WordEtymologyInfo, WordEtymologyPanel } from './word-etymology';
  *   a list (multi-character word cards) shows one block per character (word-etymology.tsx).
  * - `cardKey`: the card's identity (heading ID, so switching forms on one card keeps the tab).
  * State:
- * - open/collapsed is remembered on this device (owner's choice). A card opens on
+ * - open/collapsed is remembered on this device; a first visit starts collapsed (owner's choice,
+ *   like Practice's drawer tabs) and the learner opts in. Once open, a card shows
  *   Decomposition (or the only tab offered) unless (a) it was reached from an Etymology tile
  *   link (requestDetailTab, consumed once by the next card), or (b) its history entry already
  *   had a tab chosen — so Back/Close to the previous card returns to its Etymology tab and
  *   scrolls the tabs into view. A form switch on the same card carries the tab without
  *   scrolling. Choices live in memory per history entry + card, never saved.
- * - Nothing in a collapsed drawer mounts or downloads. While open, etymology resolves even on
- *   the Decomposition tab, so the Etymology tab can hide itself when the card has no notes
- *   (owner's choice: it may vanish a moment after opening). Unresolved, the tab stays offered.
+ * - The drawer body mounts only while open. The etymology view resolves as soon as the
+ *   remembered choice is read, even while collapsed, so the Etymology tab can hide itself
+ *   before the learner clicks it — a tab never promises notes the card doesn't have
+ *   (owner's choice: it may vanish a moment after the card opens). Unresolved, it stays offered.
  * When no tab remains (no breakdown, empty etymology) the whole drawer renders nothing.
  */
 const OPEN_KEY = 'tutor-detail-drawer-open';
@@ -55,11 +57,11 @@ function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefin
 }
 
 /** Remembered open/collapsed flag, read after mount so server and first client render agree.
- *  `known` turns true once the saved choice is read: loading waits for it, so a remembered
- *  collapse never starts a download during the default-open first render. */
+ *  Nothing saved yet means a first visit: the drawer stays collapsed until the learner opens it.
+ *  `known` turns true once the saved choice is read, so the row never flashes the wrong state. */
 function useRememberedOpen(): [boolean, (next: boolean) => void, boolean, () => void] {
-  const [state, setState] = useState({ open: true, known: false });
-  useEffect(() => { let open = true; try { const saved = localStorage.getItem(OPEN_KEY); if (saved !== null) open = saved === '1'; } catch { /* storage unavailable */ } setState({ open, known: true }); }, []);
+  const [state, setState] = useState({ open: false, known: false });
+  useEffect(() => { let open = false; try { const saved = localStorage.getItem(OPEN_KEY); if (saved !== null) open = saved === '1'; } catch { /* storage unavailable */ } setState({ open, known: true }); }, []);
   const update = (next: boolean) => { setState({ open: next, known: true }); try { localStorage.setItem(OPEN_KEY, next ? '1' : '0'); } catch { /* ignore */ } };
   // Show all asks for room without changing the learner's saved drawer preference.
   const collapseForNow = () => setState(current => ({ ...current, open: false }));
@@ -71,7 +73,8 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
   const [open, setOpen, known, collapseForNow] = useRememberedOpen();
   const list = Array.isArray(etymology);
   const requests = useMemo(() => etymology === null ? [] : Array.isArray(etymology) ? etymology : [etymology], [etymology]);
-  const views = useEtymologyViews(requests, known && open);
+  // Resolves while collapsed too, so the Etymology tab can hide itself before the learner clicks.
+  const views = useEtymologyViews(requests, known);
   const view = views === undefined ? undefined : views[0] ?? null;
   // Offered while unresolved; hidden once resolved with nothing to show (for a word: no character has notes).
   const hasEtymology = requests.length > 0 && (views === undefined || views.some(etymologyHasContent));

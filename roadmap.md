@@ -1,5 +1,8 @@
 # Roadmap
 
+## Collapsed drawer defaults
+- [x] Start the detail card's Decomposition | Etymology drawer collapsed on a first visit (remembered afterwards), resolving etymology in the background so the Etymology tab never promises notes the card lacks; 44 drawer tests pass and the live app was checked on a fresh profile.
+
 ## Character word bank
 - [x] Add all exact multi-character Word matches to character details using shared expandable cards; 31 tests pass. Verified 爱 shows all 10 matching words, exact word navigation/history return and Compact/Comfortable narrow layouts.
 
