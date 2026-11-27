@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, BookOpen, Volume2 } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords, type Word } from '@/lib/mandarin';
@@ -179,14 +179,24 @@ function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: 
         ...SECOND_TONES.map(second => {
           const key = `${first}-${second}`;
           const words = pairPool(data, key);
+          const sample = words[0];
           // Pairs whose words change tone in speech (today only 3 + 3) get the neon border,
           // and their tile header shows the change (3 + 3 → 2 + 3).
           const changedWord = words.find(tonesChanged);
           const changes = Boolean(changedWord);
-          return <button key={key} type="button" className={`tone-matrix-cell${pair === key ? ' is-selected' : ''}${changes ? ' is-tone-change' : ''}`} aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words${changes ? '; changes tone in speech' : ''}`} title={changes ? 'Changes tone in speech' : undefined} onClick={() => onPick(key)}>
+          return <div key={key} className={`tone-matrix-cell${pair === key ? ' is-selected' : ''}${changes ? ' is-tone-change' : ''}`} title={changes ? 'Changes tone in speech' : undefined}>
+            <button type="button" className="tone-matrix-cell-trigger" aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words${changes ? '; changes tone in speech' : ''}`} onClick={() => onPick(key)}/>
             <span className="tone-matrix-code"><ToneDigit tone={first} compact/> + <ToneDigit tone={second} compact/>{changedWord && <span className="tone-pair-change"> → <ToneDigit tone={changedWord.expectedSpokenTones[0] ?? first} compact/> + <ToneDigit tone={changedWord.expectedSpokenTones[1] ?? second} compact/></span>}</span>
-            <span className="tone-matrix-word" lang="zh-CN">{hidden ? '••' : words[0]?.headword}</span>
-          </button>;
+            {sample && <span className="tone-matrix-example">
+              <span className="tone-matrix-word" lang="zh-CN">{hidden ? '••' : sample.headword}</span>
+              {!hidden && <span className="tone-matrix-reading">
+                <span className="pinyin">{sample.expectedSpokenSyllables.join(' ')}</span>
+                <span className="tone-matrix-audio" onClick={e => e.stopPropagation()} onKeyDown={e => e.stopPropagation()}>
+                  <ExamplePronunciation request={{ text: sample.headword, audio: sample.audio }} label={sample.headword}/>
+                </span>
+              </span>}
+            </span>}
+          </div>;
         }),
       ])}
     </div>
@@ -238,15 +248,20 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   const pill = <span className="word-hsk-id tone-pair-pill" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
     {digits(row.citationTones)}{changed && <span className="tone-pair-change"> → {digits(row.expectedSpokenTones)}</span>}
   </span>;
+  const wordLink = !hidden && row.vocabularyEntryId
+    ? <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link" title={`Open ${row.headword} in Vocabulary`} aria-label={`Open ${row.headword} in Vocabulary`}><ArrowUpRight aria-hidden="true"/></Link>
+    : undefined;
+  const selectedIndex = pool.findIndex(e => e.id === row.id);
+  const initialCount = 6;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
-    <div className="pinyin-player-head">
-      <span className="eyebrow">{mode === 'pairs' ? 'Tone pair' : 'Tone change'} · {pool.findIndex(e => e.id === row.id) + 1} of {pool.length}</span>
+    {mode === 'changes' && <div className="pinyin-player-head">
+      <span className="eyebrow">Tone change · {selectedIndex + 1} of {pool.length}</span>
       <Button variant="ghost" size="sm" className="tone-sounds-reveal" aria-pressed={hidden} onClick={onReveal}>{hidden ? 'Reveal word' : 'Listen first'}</Button>
-    </div>
+    </div>}
     <SentenceHints backLabel={row.headword}>
       {hidden
         ? <RecordDetailTitle hanzi="••" glyphClassName="tone-sounds-hidden-glyph" pill={pill} pinyinContent={<><span className="pinyin">Listen, then reveal</span>{speaker}</>} meaning="Say back what you hear."/>
-        : <RecordDetailTitle hanzi={row.headword} glyphContent={<ToneHeadword headword={row.headword} word={word} pairing={pairing}/>} pill={pill}
+        : <RecordDetailTitle hanzi={row.headword} glyphContent={<ToneHeadword headword={row.headword} word={word} pairing={pairing}/>} glyphAside={wordLink} pill={pill}
             pinyinContent={<><span className="pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{pairing.paired ? pairing.pinyinText : reading}</span>{speaker}</>} meaning={row.english}/>}
     </SentenceHints>
     {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
@@ -263,13 +278,12 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
             aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : undefined}
             onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>{l.reading}<Volume2/></button>;
         })}</div>
-        {row.vocabularyEntryId && <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link">Open the word card<ArrowRight/></Link>}
       </div>
       {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
     </>}
     <SentenceHints backLabel={row.headword}><section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
       <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
-      <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={6} cards={pool.map((example, index) => {
+      <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
         const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
         const hsk = record ? wordHskPill(record) : null;
         const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;

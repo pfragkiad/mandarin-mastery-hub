@@ -5,13 +5,18 @@ import { Button } from '@/components/ui/button';
 /** Shared detail-card parent grid. Inputs keep exact rendered records and source order;
  * local expansion reveals all rows; the grid uses the window's available screen-height
  * space and owns example scrolling. Key by the selected
- * record/sound so navigation starts compact; hidden rows cannot receive focus. */
-export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length }: { cards: ReactNode[]; initialCount: number; totalCount?: number }) {
-  const [expanded, setExpanded] = useState(false);
+ * record/sound so navigation starts compact; hidden rows cannot receive focus.
+ * `defaultExpanded` opens the list immediately (e.g. when a deep-linked word sits past
+ * `initialCount`) and scrolls any `.is-selected` card into view inside the grid. */
+export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string }) {
+  const [expanded, setExpanded] = useState(defaultExpanded);
   const grid = useRef<HTMLDivElement>(null);
   const [availableHeight, setAvailableHeight] = useState<number>();
   const id = useId();
   const canExpand = cards.length > initialCount;
+  useEffect(() => {
+    if (defaultExpanded && canExpand) setExpanded(true);
+  }, [defaultExpanded, canExpand]);
   useEffect(() => {
     const element = grid.current;
     if (!expanded || !element) return;
@@ -40,6 +45,18 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     window.addEventListener('resize', measure);
     return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
   }, [expanded]);
+  useEffect(() => {
+    const element = grid.current;
+    if (!expanded || !element || !selectedKey) return;
+    const selected = element.querySelector<HTMLElement>('.is-selected');
+    if (!selected) return;
+    // Scroll only inside the grid container so the outer detail sheet stays anchored.
+    const top = selected.offsetTop - element.offsetTop;
+    const bottom = top + selected.offsetHeight;
+    if (top < element.scrollTop || bottom > element.scrollTop + element.clientHeight) {
+      element.scrollTop = Math.max(0, top - Math.floor((element.clientHeight - selected.offsetHeight) / 2));
+    }
+  }, [expanded, availableHeight, selectedKey]);
   return <>
     <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? 'All character examples' : undefined}>
       {(expanded ? cards : cards.slice(0, initialCount))}

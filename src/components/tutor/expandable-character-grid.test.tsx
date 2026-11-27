@@ -21,4 +21,11 @@ describe('Expandable character examples', () => {
     rerender(<ExpandableCharacterGrid key="亻" cards={cards} initialCount={1}/>);
     expect(screen.queryByRole('link', { name: '他' })).toBeNull();
   });
+
+  it('starts expanded when defaultExpanded is true so a deep-linked item beyond initialCount is visible', () => {
+    const cards = ['一', '二', '三'].map(glyph => <a key={glyph} href={`/vocabulary?word=${glyph}`}>{glyph}</a>);
+    render(<ExpandableCharacterGrid cards={cards} initialCount={2} defaultExpanded/>);
+    expect(screen.getByRole('link', { name: '三' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Show fewer' })).toHaveAttribute('aria-expanded', 'true');
+  });
 });
