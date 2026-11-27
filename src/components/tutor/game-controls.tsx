@@ -180,8 +180,8 @@ const STROKE_PRESETS = [
 export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true, minStrokes, maxStrokes, onChange }: {
   value: string; strokesUpTo?: boolean; labelled?: boolean; minStrokes?: number | undefined; maxStrokes?: number | undefined; onChange: (value: string) => void;
 }) {
-  const sliderMin = Math.max(STROKE_SLIDER_MIN, minStrokes ?? STROKE_SLIDER_MIN);
-  const sliderMax = Math.max(sliderMin, maxStrokes ?? STROKE_SLIDER_MAX);
+  const sliderMin = Math.max(STROKE_SLIDER_MIN, typeof minStrokes === 'number' && Number.isFinite(minStrokes) ? minStrokes : STROKE_SLIDER_MIN);
+  const sliderMax = Math.max(sliderMin, typeof maxStrokes === 'number' && Number.isFinite(maxStrokes) ? maxStrokes : STROKE_SLIDER_MAX);
   const range = parseStrokeRange(value, strokesUpTo);
   const lo = range ? Math.min(sliderMax, Math.max(sliderMin, range.min)) : sliderMin;
   const hi = range ? (range.max === null ? sliderMax : Math.min(sliderMax, Math.max(lo, range.max))) : sliderMax;

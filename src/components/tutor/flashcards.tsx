@@ -132,9 +132,10 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
     if (refKind !== 'Characters' && refKind !== 'Components' && refKind !== 'Radicals') return { strokes: allStrokes, ranks: usageGroups(refKind) };
     const options = libraryFilterOptions(entries, refKind, preferences.includeTraditional, parseGameUsageFilter(refKind, draft.usage), draft.strokes ?? '', draft.usageUpTo === '1', draft.strokesUpTo === '1');
     const current = parseGameUsageFilter(refKind, draft.usage);
-    const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
+    // Stroke range bounds come from records matching the other applied filters only
+    // (never appended with Number(draft.strokes), which turns range strings like "1-6" into NaN).
     const ranks = current && !options.ranks.some(g => g.value === current) ? usageGroups(refKind).filter(g => g.value === current || options.ranks.some(o => o.value === g.value)) : options.ranks;
-    return { strokes, ranks };
+    return { strokes: options.strokes, ranks };
   };
   const isReference = category.startsWith('Ref:');
 

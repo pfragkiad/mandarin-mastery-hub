@@ -94,10 +94,10 @@ export function DrawingGamePage({
     const all = inLesson ? libraryEntries(draftKind).filter((entry) => inLesson.has(entry.id)) : libraryEntries(draftKind);
     const strokeFilter = draft.strokes ?? "";
     const options = libraryFilterOptions(all, draftKind, preferences.includeTraditional, draft.usage, strokeFilter, draft.usageUpTo === "1", draft.strokesUpTo === "1");
-    // A current pick that no longer matches stays listed so the dropdown still shows it.
-    const strokes = draft.strokes && !options.strokes.includes(Number(draft.strokes)) ? [...options.strokes, Number(draft.strokes)].sort((a, b) => a - b) : options.strokes;
+    // Stroke range bounds come from records matching the other applied filters only
+    // (never appended with Number(draft.strokes), which turns range strings like "1-6" into NaN).
     const ranks = usageGroups(draftKind).filter((group) => group.value === draft.usage || options.ranks.some((option) => option.value === group.value));
-    return { strokes, ranks };
+    return { strokes: options.strokes, ranks };
   };
   const lessonChoices = (draft: DrawingSearch): { courses: LessonDeckGroup[]; lessons: LessonDeckGroup[] } => {
     const draftKind = draft.kind ?? "Characters";
