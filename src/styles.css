@@ -417,8 +417,11 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
    (reading + speaker + Traditional pill, then meaning). The speaker follows its
    own reading, so short readings never leave it stranded in a wide column. */
 .glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
-.expandable-character-grid.is-expanded { max-height: min(480px, 55dvh); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-gutter: stable; animation: character-grid-expand .25s ease; }
-@keyframes character-grid-expand { from { max-height: var(--character-grid-preview-height); opacity: .65; } to { max-height: min(480px, 55dvh); opacity: 1; } }
+/* Every Show all example grid grows its containing detail window to the available
+   screen height. The window (or page outside a window) owns scrolling, never a
+   second capped example area that leaves unused space underneath the card. */
+.expandable-character-grid.is-expanded { max-height: none; overflow: visible; animation: character-grid-expand .25s ease; }
+@keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
@@ -941,7 +944,7 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
 .global-search-bar { display: flex; align-items: center; gap: 8px; }
 .global-search-bar > .search-field { flex: 1; min-width: 0; }
 .global-search-bar > .global-search-apply { height: 46px; flex-shrink: 0; }
-.global-search.global-search-expanded { width: min(1040px, calc(100% - 24px)); max-width: 1040px; height: min(1100px, calc(100dvh - 32px)); }
+html .global-search.global-search-expanded { width: min(1040px, calc(100% - 24px)); max-width: 1040px; top: 16px; --tw-translate-y: 0px; translate: -50% 0; transform: none; height: calc(100dvh - 32px); }
 .global-search.global-search-expanded .global-search-results { flex: 1; max-height: none; }
 .global-search .search-field input { height: 46px; font-size: 13px; }
 .global-search-results { min-height: 0; max-height: 316px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--border); border-radius: var(--form-radius); }
@@ -5224,9 +5227,6 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
    cards the facts move below the tiles, rather than dropping to one example column. */
 html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px)); }
 .detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
-/* Show all uses the window's own scroll area: grow downward to the available
-   screen edge before scrolling, rather than capping a second nested scroller. */
-.detail-sheet .tone-sounds-bank .expandable-character-grid.is-expanded { max-height: none; overflow: visible; overscroll-behavior: auto; scrollbar-gutter: auto; animation: none; }
 @container tone-card (max-width: 540px) {
   .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }
   .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }

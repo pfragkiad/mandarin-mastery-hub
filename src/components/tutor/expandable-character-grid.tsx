@@ -3,7 +3,8 @@ import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 /** Shared detail-card parent grid. Inputs keep exact rendered records and source order;
- * local expansion reveals all rows in a bounded scrolling area. Key by the selected
+ * local expansion reveals all rows; the containing window grows to its screen-height
+ * limit and owns scrolling, rather than nesting a second capped scroller. Key by the selected
  * record/sound so navigation starts compact; hidden rows cannot receive focus. */
 export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length }: { cards: ReactNode[]; initialCount: number; totalCount?: number }) {
   const [expanded, setExpanded] = useState(false);

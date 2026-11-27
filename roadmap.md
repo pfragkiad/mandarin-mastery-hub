@@ -262,6 +262,7 @@
 - [x] Verify exact card navigation, playback, per-character hints and preference behaviour on wide and narrow screens.
 
 ## Tone pair card examples
+- [x] Apply screen-height expansion consistently to every Show all detail section, not only Tone pairs; shared example grids now use their containing window's scroll area. Verified Sound chart and radical details reach the screen bottom; expanded global/Start search uses full available screen height too. Nine targeted tests pass.
 - [x] Reuse shared Close/Back destinations for Tone pairs opened from a grid or detail card; verified exact grid URL after example changes, originating word detail restoration and local matrix closing. Three focused return-rule tests and 27 existing tests pass.
 - [x] Let Show all expand the tone-pair detail card to the available screen height before scrolling; verified fixed top edge, screen-bottom expansion and one window scroll area at 1161×1362 and 390×844.
 - [x] Float Tone pairs in the shared top-centred sound window, preserve two example columns, and verify navigable character hints on both sound pages; checked exact character navigation, close/reopen, two-column phone layout, expansion and hidden hints in Listen first. All 18 targeted tests pass.
