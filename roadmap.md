@@ -1,5 +1,8 @@
 # Roadmap
 
+## Tone-pair focus animation
+- [x] Animate small-to-focused word cards and neighbouring layout changes, preserving selection and reduced-motion preferences; verified at 1426px and 390px with 14 existing tests passing.
+
 ## Small-card balanced spacing
 - [x] Centre the detail arrow with the HSK pill in both sizes, with equal border-to-header, header-to-tiles and tile-to-bottom spacing; verified 6px small-card gaps and 14px expanded-card gaps, with 20 existing tests passing.
 

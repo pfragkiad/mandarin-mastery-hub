@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -7,12 +7,46 @@ import { Button } from '@/components/ui/button';
  * space and owns example scrolling. Key by the selected
  * record/sound so navigation starts compact; hidden rows cannot receive focus.
  * `defaultExpanded` opens the list immediately (e.g. when a deep-linked word sits past
- * `initialCount`) and scrolls any `.is-selected` card into view inside the grid. */
-export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string }) {
+ * `initialCount`) and scrolls any `.is-selected` card into view inside the grid.
+ * `animateSelection` opts exact `data-layout-key` cards into measured layout motion;
+ * other example grids keep their existing behaviour. */
+export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey, animateSelection = false }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string; animateSelection?: boolean }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const grid = useRef<HTMLDivElement>(null);
   const [availableHeight, setAvailableHeight] = useState<number>();
   const id = useId();
+  const previousLayout = useRef<{ key: string | undefined; width: number; boxes: Map<string, { x: number; y: number; width: number; height: number }> } | null>(null);
+  useLayoutEffect(() => {
+    const element = grid.current;
+    if (!animateSelection || !element) return;
+    const before = previousLayout.current;
+    const boxes = new Map<string, { x: number; y: number; width: number; height: number }>();
+    const bounds = element.getBoundingClientRect();
+    const animations: Animation[] = [];
+    const canAnimate = before && before.key !== selectedKey && Math.abs(before.width - bounds.width) < 1
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // FLIP measures the actual grid, not guessed card dimensions. Coordinates stay
+    // inside its scroll content so selecting an offscreen word never moves the sheet.
+    element.querySelectorAll<HTMLElement>('[data-layout-key]').forEach(card => {
+      const key = card.dataset['layoutKey'];
+      if (!key) return;
+      const rect = card.getBoundingClientRect();
+      const next = { x: rect.left - bounds.left + element.scrollLeft, y: rect.top - bounds.top + element.scrollTop, width: rect.width, height: rect.height };
+      boxes.set(key, next);
+      const old = before?.boxes.get(key);
+      if (!canAnimate || !old || !next.width || !next.height || typeof card.animate !== 'function') return;
+      const dx = old.x - next.x;
+      const dy = old.y - next.y;
+      if (Math.abs(dx) + Math.abs(dy) + Math.abs(old.width - next.width) + Math.abs(old.height - next.height) < 1) return;
+      animations.push(card.animate([
+        { transformOrigin: 'top left', transform: `translate(${dx}px, ${dy}px) scale(${old.width / next.width}, ${old.height / next.height})` },
+        { transformOrigin: 'top left', transform: 'none' },
+      ], { duration: 240, easing: 'cubic-bezier(0.2, 0, 0.2, 1)' }));
+    });
+    previousLayout.current = { key: selectedKey, width: bounds.width, boxes };
+    // Replacement picks and teardown cancel native runs, leaving no stale transforms.
+    return () => { animations.forEach(animation => animation.cancel()); };
+  }, [animateSelection, selectedKey, expanded]);
   const canExpand = cards.length > initialCount;
   useEffect(() => {
     if (defaultExpanded && canExpand) setExpanded(true);

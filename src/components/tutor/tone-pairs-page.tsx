@@ -283,7 +283,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   const initialCount = 6;
   const wordBank = <SentenceHints backLabel={row.headword}><section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
     <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
-    <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
+    <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} animateSelection={mode === 'pairs'} initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
       const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
       const hsk = record ? wordHskPill(record) : null;
       const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
@@ -300,6 +300,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
       return (
       <div
         key={example.id}
+        data-layout-key={example.id}
         className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}${isExpanded ? ' is-expanded' : ''}`}
         onClick={event => {
           // Ignore clicks on handled inner controls (audio speaker, glyph hints, pinyin button).
