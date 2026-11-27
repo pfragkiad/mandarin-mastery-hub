@@ -88,7 +88,7 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
   const sectionRef = useSentenceSectionLayout(hanzi, children);
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
   return <ExampleSection id="phrase" label="In a phrase" icon={Quote} sectionRef={sectionRef} className="glyph-usage-section sentence-section">
-    {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example phrase yet.</p></div>}
+    {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <p className="library-note">No recorded example phrase yet.</p>}
   </ExampleSection>;
 }
 
