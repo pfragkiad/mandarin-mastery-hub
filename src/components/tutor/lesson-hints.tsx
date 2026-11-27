@@ -180,8 +180,8 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
       <div className="lesson-hint-reading">
         {wordLeads && <span className="lesson-hint-word-label">Word</span>}
         {(traditional || hint?.radicalNumber) && <span className="lesson-hint-pills">
-          {traditional && <span className="lesson-hint-pill is-traditional">繁 Traditional</span>}
-          {hint?.radicalNumber && <span className="lesson-hint-pill is-radical">部 Radical #{hint.radicalNumber}</span>}
+          {traditional && <span className="lesson-hint-pill is-traditional">Traditional</span>}
+          {hint?.radicalNumber && <span className="lesson-hint-pill is-radical">Radical #{hint.radicalNumber}</span>}
         </span>}
         {wordLeads && word
           ? <>
