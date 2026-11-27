@@ -1,7 +1,10 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { DetailSheet } from './detail-sheet';
+import { PairMatrix } from './tone-pairs-page';
 import { detailTrail, recordVisit } from '@/lib/detail-trail';
+import data from '@/data/pinyin/tone-pairs.json';
+import type { TonePairData } from '@/lib/tone-pairs';
 
 // Tone pairs uses the existing detail window: exact grid/detail origins survive
 // subsequent word selections, while a card opened on its own page closes locally.
@@ -43,5 +46,14 @@ describe('Tone-pair shared Close destinations', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Close and show card in list' }));
     expect(localClose).toHaveBeenCalledOnce();
     expect(go).not.toHaveBeenCalled();
+  });
+  it('drops an old word-detail return when a matrix cell starts a new browsing session', () => {
+    visit(230, '/pinyin/tone-pairs');
+    detailTrail.replace({ label: '可以', href: window.location.href });
+    const onPick = vi.fn();
+    render(<PairMatrix data={data as unknown as TonePairData} pair="1-1" hidden onPick={onPick}/>);
+    fireEvent.click(screen.getByRole('button', { name: /^3 \+ 3;/ }));
+    expect(onPick).toHaveBeenCalledWith('3-3');
+    expect(detailTrail.get()).toEqual([]);
   });
 });

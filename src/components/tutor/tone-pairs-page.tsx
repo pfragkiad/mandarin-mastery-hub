@@ -51,6 +51,7 @@ import { toneExamplesByHsk } from '@/lib/tone-pair-vocabulary';
 import { wordHskPill } from './word-identity-pills';
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
+import { detailTrail } from '@/lib/detail-trail';
 import { SoundExampleGlyph } from './sound-example-glyph';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
@@ -179,7 +180,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
 }
 
 /** 4 × 5 grid of dictionary tone pairs; each cell shows its first word (hidden in Listen first). */
-function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: string; hidden: boolean; onPick: (pair: string) => void }) {
+export function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: string; hidden: boolean; onPick: (pair: string) => void }) {
   return <section className="tone-matrix-section" aria-label="Tone pairs">
     <h2 className="pinyin-group-title">Choose a tone pair <span>20 pairs · {data.examples.filter(e => e.inPairMatrix).length} words</span></h2>
     <p className="tone-sounds-helper">First tone down the side, second tone across the top.</p>
@@ -197,7 +198,12 @@ function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: 
           const changedWord = words.find(tonesChanged);
           const changes = Boolean(changedWord);
           return <div key={key} className={`tone-matrix-cell${pair === key ? ' is-selected' : ''}${changes ? ' is-tone-change' : ''}`} title={changes ? 'Changes tone in speech' : undefined}>
-            <button type="button" className="tone-matrix-cell-trigger" aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words${changes ? '; changes tone in speech' : ''}`} onClick={() => onPick(key)}/>
+            <button type="button" className="tone-matrix-cell-trigger" aria-pressed={pair === key} aria-label={`${pairLabel(key)}; ${words.length} words${changes ? '; changes tone in speech' : ''}`} onClick={() => {
+              // A matrix click is a new grid-originated browsing session. An old word-detail
+              // return step must not hide the pair arrows or send Close back to Vocabulary.
+              detailTrail.clear();
+              onPick(key);
+            }}/>
             <span className="tone-matrix-code"><ToneDigit tone={first} compact/> + <ToneDigit tone={second} compact/>{changedWord && <span className="tone-pair-change"> → <ToneDigit tone={changedWord.expectedSpokenTones[0] ?? first} compact/> + <ToneDigit tone={changedWord.expectedSpokenTones[1] ?? second} compact/></span>}</span>
             {sample && <span className="tone-matrix-example">
               <span className="tone-matrix-word" lang="zh-CN">{hidden ? '••' : sample.headword}</span>
