@@ -20,6 +20,7 @@ import { SoundChartLink } from './sound-chart-link';
 import { TonePairLink } from './tone-pair-link';
 import { VocabularyDecomposition, VocabularyDecompositionInfo } from './vocabulary-decomposition';
 import { GlyphDetailTabs } from './detail-tabs';
+import { ExampleTabs } from './example-tabs';
 import { WordLessonIndicator, WordLessonsSection, wordLessonCount } from './lesson-links';
 import { SentenceExample } from './sentence-example';
 import { WrittenFormIdiomsSection } from './glyph-usage';
@@ -134,8 +135,9 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       {topics.length > 0 && <div><dt>{topics.length > 1 ? 'Topics' : 'Topic'}</dt><dd className="catalog-record-value">{topics.join(' · ')}</dd></div>}
     </dl>}
     {word.entry?.studyMetadata?.posNote && <p className="library-note">{word.entry.studyMetadata.posNote}</p>}
-    {/* Words always show "In a phrase" (with its search links), even with no recorded
+    {/* Words always offer the phrase tab, even with no recorded
         example; a phrase is itself a sentence, so it shows the section only when one is recorded. */}
+    <ExampleTabs key={word.id}>
     {(word.sentence || vocabularyKind(word) === 'word') && <SentenceSection hanzi={word.hanzi}>
       {/* The first conversational example is always visible (orderExamples, stable);
           further ones open from the show-more arrow. Each keeps its own exact audio and note. */}
@@ -144,6 +146,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
       </div>)}/> : word.sentence && <div className="glyph-usage-example"><SentenceExample heading="" sentence={word.sentence} pinyin={word.sentencePinyin} translation={word.translation} onNavigate={close} audioRequest={{ text: word.sentence, reading: word.sentencePinyin ?? null, audio: null }} /></div>}
     </SentenceSection>}
     {vocabularyKind(word) === 'word' && <WrittenFormIdiomsSection entry={word}/>}
+    </ExampleTabs>
     {/* Course lessons that teach this exact HSK word (recorded entry number, never spelling). */}
     <WordLessonsSection word={word}/>
     {/* Same collapsed Decomposition | Etymology drawer as the character cards (detail-tabs.tsx),

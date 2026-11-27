@@ -26,6 +26,7 @@ vi.mock('@tanstack/react-router', () => ({
   // check the destination's filters (e.g. the phrase section's "Search in phrases").
   Link: ({ children, to, params, search, ...props }: { children?: ReactNode; to?: string; params?: { lessonId?: string }; search?: Record<string, unknown> } & Record<string, unknown>) => <a href={`${to?.replace('$lessonId', params?.lessonId ?? '')}${search ? `?${new URLSearchParams(Object.entries(search).map(([k, v]) => [k, String(v)]))}` : ''}`} {...props}>{children}</a>,
   useNavigate: () => () => {},
+  useSearch: () => ({}),
 }));
 const workspaceState = vi.hoisted(() => ({ includeTraditional: false, cardExamplesLinks: false, items: [] as Word[] }));
 beforeEach(() => {
@@ -172,13 +173,11 @@ describe('Absent-record notes', () => {
     expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
   });
 
-  it('keeps the phrase section with its internal search when a character has no example', () => {
+  it('keeps the phrase section when a character has no example', () => {
     const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
     render(<GlyphUsageExamples entry={he} kind="Characters" />);
     expect(screen.getByRole('heading', { level: 3, name: 'IN A PHRASE' })).toBeInTheDocument();
     expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
-    const link = screen.getByRole('link', { name: /Search in phrases/ });
-    expect(decodeURI(link.getAttribute('href') ?? '')).toBe('/vocabulary?tab=phrase&q=和');
     // The external search is no longer in the section head: it lives in the card's action row.
     expect(screen.queryByRole('link', { name: /Search on the internet/ })).toBeNull();
   });

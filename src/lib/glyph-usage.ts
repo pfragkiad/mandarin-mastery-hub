@@ -138,7 +138,7 @@ export async function radicalParentCharacters(entry: LibraryEntry, characters: L
 }
 
 /** Existing text and explicit source relationships only; no inferred stroke shapes. */
-export function glyphUsage(entry: LibraryEntry, kind: LibraryKind, items: Word[], characters: LibraryEntry[], includeTraditional = false): GlyphUsage[] {
+export function glyphUsage(entry: LibraryEntry, kind: LibraryKind, items: Word[], characters: LibraryEntry[], includeTraditional = false, limit = 2): GlyphUsage[] {
   if (kind === 'Strokes') return [];
   const glyphs = new Set(kind === 'Characters' ? [entry.hanzi] : []);
   if (kind === 'Radicals' || kind === 'Components') {
@@ -154,7 +154,7 @@ export function glyphUsage(entry: LibraryEntry, kind: LibraryKind, items: Word[]
       if (!text || !matchedGlyph || seen.has(text) || results.some(result => result.word.id === word.id)) continue;
       seen.add(text);
       results.push({ word, sentence, matchedGlyph });
-      if (results.length === 2) return results;
+      if (results.length >= limit) return results;
     }
   }
   return results;

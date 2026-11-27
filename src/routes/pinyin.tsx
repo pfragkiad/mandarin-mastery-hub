@@ -2,15 +2,17 @@ import { createFileRoute } from '@tanstack/react-router';
 import { PinyinChartPage } from '@/components/tutor/pinyin-guide';
 import { pageHead } from '@/lib/mandarin';
 import type { Tone } from '@/lib/pinyin-guide';
+import { exampleTabSearch, type ExampleTabSearch } from '@/lib/detail-example-tabs';
 
 // The Sound chart's own page. URL search keeps the selected syllable (s), its
 // chosen tone (t) and the applied chart filters, so history and shared links
 // restore exactly. The three quiz games live on their own routes under /pinyin.
-export type PinyinSearch = { s?: string | undefined; t?: Tone | undefined; q?: string | undefined; initial?: string | undefined; final?: string | undefined };
+export type PinyinSearch = { examples?: ExampleTabSearch | undefined; s?: string | undefined; t?: Tone | undefined; q?: string | undefined; initial?: string | undefined; final?: string | undefined };
 const text = (v: unknown) => (typeof v === 'string' && v.trim() ? v : undefined);
 export const Route = createFileRoute('/pinyin')({
   validateSearch: (search: Record<string, unknown>): PinyinSearch => {
     const out: PinyinSearch = {};
+    const examples = exampleTabSearch(search['examples']); if (examples) out.examples = examples;
     for (const key of ['s', 'q', 'initial', 'final'] as const) { const v = text(search[key]); if (v) out[key] = v; }
     // The router may parse ?t=3 as a number; accept either form, tones 1–5 only, and only with a syllable.
     const tone = Number(search['t']);

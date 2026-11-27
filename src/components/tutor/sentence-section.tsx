@@ -1,26 +1,25 @@
-import { useId, useLayoutEffect, useRef, useState, type ReactNode, type SyntheticEvent } from 'react';
-import { ArrowRight, ArrowUpRight, ChevronDown, Quote } from 'lucide-react';
-import { Link } from '@tanstack/react-router';
+import { useLayoutEffect, useRef, type ReactNode, type SyntheticEvent } from 'react';
+import { ArrowUpRight, Quote } from 'lucide-react';
 import { externalExampleSources } from '@/lib/external-examples';
 import { LessonHintsProvider, useLessonHints } from './lesson-hints';
 import { useWorkspace } from './workspace';
+import { ExampleSection, useExampleTab } from './example-tabs';
+import { ExpandableCharacterGrid } from './expandable-character-grid';
 
 /**
  * The shared "In a phrase" section of word and character detail cards.
  *
  * Inputs: `hanzi` — the exact written form searched; `children` — the
  * recorded examples, or nothing. With no recorded example the section still shows
- * (label + absent note) so the search links are always reachable.
- *
- * The head carries the internal "Search in phrases" link, the same shape as the idiom
- * section's "Search in idioms": a router Link into the Vocabulary Phrases tab filtered
- * by this exact written form, so the results are the app's own records. The external
+ * (tab/label + absent note). The shared examples drawer owns the tab heading;
+ * all recorded examples remain in the bounded Show all scroller. The external
  * search ("Search on the internet") sits in the card's action row (DetailRecordActions),
  * beside Trace/Recall/Bookmark, as a plain new-window link.
  */
 /** Shared measured section layout for phrase and idiom examples; content changes re-arm it. */
 export function useSentenceSectionLayout(recordKey: string, content: unknown) {
   const sectionRef = useRef<HTMLElement>(null);
+  const activeTab = useExampleTab();
   // Judge the natural side layout first, then stack the whole section if any reading
   // falls below its hanzi. Recheck newly revealed examples and settled web fonts;
   // height-only observer notifications must not cause reset/stack feedback loops.
@@ -64,22 +63,16 @@ export function useSentenceSectionLayout(recordKey: string, content: unknown) {
       preferences.disconnect();
       document.fonts?.removeEventListener('loadingdone', measure);
     };
-  }, [recordKey, content]);
+  }, [recordKey, content, activeTab]);
   return sectionRef;
 }
 
 export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
   const sectionRef = useSentenceSectionLayout(hanzi, children);
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
-  return <section ref={sectionRef} className="glyph-usage-section sentence-section" aria-label="In a phrase">
-    <div className="sentence-section-head">
-      <h3 className="eyebrow"><Quote size={13} aria-hidden="true"/>IN A PHRASE</h3>
-      <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'phrase', q: hanzi }} title={`Search phrases containing ${hanzi}`}>
-        Search in phrases<ArrowRight className="find-examples-icon" aria-hidden="true"/>
-      </Link>
-    </div>
+  return <ExampleSection id="phrase" label="In a phrase" icon={Quote} sectionRef={sectionRef} className="glyph-usage-section sentence-section">
     {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <div className="record-gap"><p>No recorded example phrase yet.</p></div>}
-  </section>;
+  </ExampleSection>;
 }
 
 /**
@@ -103,28 +96,11 @@ export function ExampleCardMeta({ identity, topic, link }: { identity?: ReactNod
 }
 
 /**
- * Show-more drawer for a card's recorded example sentences.
- *
- * Inputs: `examples` — the rendered examples in source order. The first stays visible;
- * the rest sit behind one arrow toggle ("Show 1 more example" / "Show fewer examples").
- * State: `open`, local and starting closed, so every detail card opens compact. Callers
- * key this by the record so moving to another card starts closed again. Collapsed
- * examples are not rendered at all, so their links and speakers cannot take focus.
+ * Source-ordered phrase examples, using the same expansion, border and bounded
+ * scrollbar as character/word grids. A single column preserves sentence layout.
  */
 export function MoreExamples({ examples, initialCount = 1 }: { examples: ReactNode[]; initialCount?: number }) {
-  const [open, setOpen] = useState(false);
-  const panelId = useId();
-  const visible = examples.slice(0, initialCount);
-  const rest = examples.slice(initialCount);
-  if (!rest.length) return <>{visible}</>;
-  const label = open ? `Show fewer examples` : `Show ${rest.length} more example${rest.length === 1 ? '' : 's'}`;
-  return <>
-    {visible}
-    {open && <div id={panelId} className="more-examples-panel">{rest}</div>}
-    <button type="button" className={`more-examples-toggle${open ? ' is-open' : ''}`} aria-expanded={open} aria-controls={open ? panelId : undefined} onClick={() => setOpen(value => !value)}>
-      <ChevronDown className="more-examples-icon" aria-hidden="true"/>{label}
-    </button>
-  </>;
+  return <ExpandableCharacterGrid cards={examples} initialCount={initialCount} layout="list" label="All phrase examples"/>;
 }
 
 /** External-search icon shared by the cards' "Examples" button and the detail action row's

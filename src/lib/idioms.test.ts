@@ -82,4 +82,8 @@ describe('idioms helpers', () => {
     expect(idiomsForCharacter(sample, '随地').map(w => w.id)).toEqual(['idiom-2']);
     expect(idiomsForCharacter(sample, '时地')).toEqual([]);
   });
+  it('provides every exact ranked idiom for Show all without the preview limit', () => {
+    const pool = [300, 10, 50, 500].map(rank => idiomToWord({ id: `idiom-${rank}`, rank, hanzi: '一心一意', pinyin: 'yī xīn yī yì', meaning: 'wholeheartedly' }, 'THUOCL'));
+    expect(idiomsForCharacter(pool, '一', undefined, Infinity).map(row => row.id)).toEqual(['idiom-10', 'idiom-50', 'idiom-300', 'idiom-500']);
+  });
 });

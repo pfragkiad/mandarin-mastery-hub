@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
+import { ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { characterWords, glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
@@ -28,6 +28,7 @@ import { SmallGridMeaning } from './small-grid-meaning';
 import { SoundExampleGlyph } from './sound-example-glyph';
 import { sectionIcons } from '@/lib/section-icons';
 import { wordTileFit } from './word-card';
+import { ExampleSection } from './example-tabs';
 
 /** Characters-only word bank from the live workspace. Shared small cards keep
  * exact vocabulary links and whole-word audio independent of character hints;
@@ -36,8 +37,7 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
   const { items, preferences } = useWorkspace();
   const matches = useMemo(() => characterWords(entry.hanzi, items, preferences.includeTraditional), [entry.hanzi, items, preferences.includeTraditional]);
   const WordsIcon = sectionIcons.Words;
-  return <section className="glyph-usage-section" aria-label="In a word">
-    <h3 className="eyebrow"><WordsIcon size={13} aria-hidden="true"/>IN A WORD</h3>
+  return <ExampleSection id="word" label="In a word" icon={WordsIcon}>
     {!matches.length ? <p className="library-note">No recorded multi-character words yet.</p> : <SentenceHints backLabel={entry.hanzi}>
       <ExpandableCharacterGrid key={entry.id} initialCount={6} cards={matches.map(word => {
         const hsk = wordHskPill(word);
@@ -55,7 +55,7 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
         </div>;
       })}/>
     </SentenceHints>}
-  </section>;
+  </ExampleSection>;
 }
 
 /** Optional sourced examples, fetched only for a Characters detail card.
@@ -112,7 +112,7 @@ export function useRadicalParents(entry: LibraryEntry, kind: LibraryKind, includ
 
 export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: LibraryEntry; kind: LibraryKind; familyGlyph?: string | undefined }) {
   const { items, preferences, catalogVersion } = useWorkspace();
-  const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
+  const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional, Infinity), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const fallback = useFallbackExample(entry.id, kind === 'Characters', examples.length === 0);
   const hskExample = fallback?.hsk;
   const tatoeba = fallback?.tatoeba && isLearningExample(fallback.tatoeba) ? fallback.tatoeba : null;
@@ -135,11 +135,8 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   // While the BabelStone sidecars load (up to ~20s on a first component card), show a pulsing
   // placeholder in the section's own shape; once loaded with no sourced parent characters, hide
   // the whole "In a character" section (owner choice).
-  if ((kind === 'Components' || kind === 'Radicals') && loadedParents === null) return <SectionPlaceholder heading={<><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</>} label="In a character" shape="tiles"/>;
-  if ((kind === 'Components' || kind === 'Radicals') && !parents.length) return null;
-  if (kind === 'Components' || kind === 'Radicals') return <section className="glyph-usage-section" aria-label="In a character">
-    <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER</h3>
-    <ExpandableCharacterGrid key={`${kind}:${entry.id}:${familyGlyph ?? ''}:${preferences.includeTraditional}`} initialCount={6} cards={parents.map(parent => {
+  if (kind === 'Components' || kind === 'Radicals') return <ExampleSection id="character" label="In a character" icon={Puzzle} available={loadedParents === null || parents.length > 0}>
+    {loadedParents === null ? <SectionPlaceholder heading={null} label="In a character" shape="tiles"/> : <ExpandableCharacterGrid key={`${kind}:${entry.id}:${familyGlyph ?? ''}:${preferences.includeTraditional}`} initialCount={6} cards={parents.map(parent => {
       const rank = usageOrder.loaded ? usageRank(parent, 'Characters', preferences.includeTraditional) : null;
       return <div className="glyph-usage-example glyph-parent-card" key={parent.id}>
         <ExampleCardMeta identity={<><UsageLabel rank={rank} kind="Characters" compact/>{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</>} link={<Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} className="detail-arrow-link" title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><ArrowUpRight aria-hidden="true"/></Link>}/>
@@ -156,8 +153,8 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
           </span>
         </div>
       </div>;
-    })}/>
-  </section>;
+    })}/>}
+  </ExampleSection>;
   // "In a phrase" always shows for characters, even with no recorded example, so
   // External search of the exact hanzi is always reachable. Imported file names
   // and review status identifiers are internal metadata, not learner hints.
@@ -185,7 +182,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   </SentenceSection>;
 }
 
-/** Top 2 highest-ranked idioms containing a Characters record, lazily loaded from public/data/idioms.json. */
+/** All ranked idioms containing the exact Characters record, loaded lazily. */
 export function CharacterIdiomsSection({ entry }: { entry: LibraryEntry }) {
   return <WrittenFormIdiomsSection entry={entry}/>;
 }
@@ -201,18 +198,11 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
       .catch(() => { /* hide section if idioms fail to load */ });
     return () => { cancelled = true; };
   }, []);
-  const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, 2) : []), [idioms, entry.hanzi, entry.script]);
+  const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, Infinity) : []), [idioms, entry.hanzi, entry.script]);
   const sectionRef = useSentenceSectionLayout(entry.id, matches);
-  if (!matches.length) return null;
-  return <section ref={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section" aria-label="In an idiom">
-    <div className="sentence-section-head">
-      <h3 className="eyebrow"><ScrollText size={13} aria-hidden="true"/>IN AN IDIOM</h3>
-      <Link className="find-examples-link internal-examples-link" to="/vocabulary" search={{ tab: 'idiom', q: entry.hanzi }} title={`Search idioms containing ${entry.hanzi}`}>
-        Search in idioms<ArrowRight className="find-examples-icon" aria-hidden="true"/>
-      </Link>
-    </div>
+  return <ExampleSection id="idiom" label="In an idiom" icon={ScrollText} available={matches.length > 0} sectionRef={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section">
     <SentenceHints backLabel={entry.hanzi}>
-      {matches.map(idiom => {
+      <ExpandableCharacterGrid key={entry.id} initialCount={2} layout="list" label="All idiom examples" cards={matches.map(idiom => {
         const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
         const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
         const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;
@@ -226,7 +216,7 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
             audioRequest={{ text: idiom.hanzi, reading: idiom.pinyin, audio: idiom.audio ?? null }}
           />
         </div>;
-      })}
+      })}/>
     </SentenceHints>
-  </section>;
+  </ExampleSection>;
 }

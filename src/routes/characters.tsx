@@ -4,6 +4,7 @@ import { CharactersPage, type CharactersSearch } from '@/components/tutor/charac
 import { pageHead } from '@/lib/mandarin';
 import { usageGroups } from '@/lib/usage-frequency';
 import { parseRankRange } from '@/lib/rank-range';
+import { exampleTabSearch } from '@/lib/detail-example-tabs';
 
 const kindValues = ['Characters', 'Radicals', 'Components', 'Strokes'] as const;
 const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
@@ -11,6 +12,7 @@ const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
 export const Route = createFileRoute('/characters')({
   validateSearch: (search: Record<string, unknown>): CharactersSearch => {
     const out: CharactersSearch = {};
+    const examples = exampleTabSearch(search['examples']); if (examples) out.examples = examples;
     if (search['sort'] === 'pinyin' || search['sort'] === 'random') out.sort = search['sort'];
     const seed = shuffleSeed(search['seed']); if (seed) out.seed = seed;
     const character = str(search['character']); if (character) out.character = character;

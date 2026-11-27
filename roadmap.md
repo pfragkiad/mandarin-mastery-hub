@@ -1,5 +1,10 @@
 # Roadmap
 
+## Shared detail example tabs
+- [x] Group all In a… detail sections with the existing drawer-tab styling and history-backed selection.
+- [x] Replace phrase/idiom search links and limited lists with shared Show all bounded scrolling.
+- [x] Verify character, vocabulary and sound details, exact links, hover hints, drawer collapse and narrow layouts; 69 affected tests pass.
+
 ## Collapsed drawer defaults
 - [x] Start the detail card's Decomposition | Etymology drawer collapsed on a first visit (remembered afterwards), resolving etymology in the background so the Etymology tab never promises notes the card lacks; 44 drawer tests pass and the live app was checked on a fresh profile.
 

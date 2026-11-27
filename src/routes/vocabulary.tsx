@@ -2,8 +2,10 @@ import { shuffleSeed, type LibrarySort } from '@/lib/library-order';
 import { createFileRoute } from '@tanstack/react-router';
 import { VocabularyPage } from '@/components/tutor/vocabulary';
 import { pageHead } from '@/lib/mandarin';
-export type VocabularySearch = { sort?: LibrarySort | undefined; seed?: number | undefined; q?: string; word?: string; tab?: 'word' | 'idiom' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; band?: string; /** '1' widens the idiom rank band to rank 1..band end ("include lower ranks"). */ bandUpTo?: '1' | undefined };
+import { exampleTabSearch, type ExampleTabSearch } from '@/lib/detail-example-tabs';
+export type VocabularySearch = { examples?: ExampleTabSearch | undefined; sort?: LibrarySort | undefined; seed?: number | undefined; q?: string; word?: string; tab?: 'word' | 'idiom' | 'phrase'; page?: number; collection?: string; subtopic?: string; level?: string; status?: string; py?: 'pinyin' | 'exact' | undefined; pos?: string; style?: string; band?: string; /** '1' widens the idiom rank band to rank 1..band end ("include lower ranks"). */ bandUpTo?: '1' | undefined };
 export const Route = createFileRoute('/vocabulary')({ validateSearch: (search: Record<string, unknown>): VocabularySearch => ({
+  ...(exampleTabSearch(search['examples']) ? { examples: exampleTabSearch(search['examples']) } : {}),
   ...(search['sort'] === 'pinyin' || search['sort'] === 'hsk' || search['sort'] === 'random' ? { sort: search['sort'] } : {}),
   ...(shuffleSeed(search['seed']) ? { seed: shuffleSeed(search['seed']) } : {}),
   ...(search['tab'] === 'word' || search['tab'] === 'idiom' || search['tab'] === 'phrase' ? { tab: search['tab'] } : {}),

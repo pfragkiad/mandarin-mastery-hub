@@ -68,6 +68,10 @@ describe('Existing glyph usage', () => {
     const rows = [word('a', '你一'), word('b', '你二'), word('c', '你三'), word('d', '你四')];
     expect(glyphUsage(glyph('你'), 'Characters', rows, []).map(row => row.word.id)).toEqual(['a', 'b']);
   });
+  it('returns all exact phrase examples when the detail list requests no display limit', () => {
+    const rows = [word('a', '你一'), word('b', '你二'), word('c', '你三'), word('d', '你四'), word('other', '他好')];
+    expect(glyphUsage(glyph('你'), 'Characters', rows, [], false, Infinity).map(row => row.word.id)).toEqual(['a', 'b', 'c', 'd']);
+  });
   it('does not duplicate the same recorded sentence', () => {
     expect(glyphUsage(glyph('你'), 'Characters', [word('a', '你好'), word('b', '你好')], []).map(row => row.word.id)).toEqual(['a']);
   });

@@ -15,6 +15,7 @@ import { PinyinPlayerPanel } from './pinyin-chart';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
   useNavigate: () => () => {},
+  useSearch: () => ({}),
 }));
 vi.mock('./workspace', () => ({
   useWorkspace: () => ({

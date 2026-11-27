@@ -44,6 +44,8 @@ import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-car
 import { finderCoversGlyph } from '@/lib/hanzi-finder-records';
 import { TileSpeaker } from './tile-speaker';
 import { CharacterWordsSection, CharacterIdiomsSection, GlyphUsageExamples, useGSourceParents } from './glyph-usage';
+import { ExampleTabs } from './example-tabs';
+import type { ExampleTabSearch } from '@/lib/detail-example-tabs';
 import { TileExamplesLink } from './sentence-section';
 import { externalExampleSources } from '@/lib/external-examples';
 import { RecordDetailTitle } from './record-detail-title';
@@ -297,10 +299,11 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {info.component && !fallback && <p className="catalog-record-note">{info.componentName ? `${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? 'Radical form that is also an ordinary character.' : 'No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Components' || kind === 'Characters') && radicalIdentity(entry.hanzi).radicals.length > 0 && <RadicalIdentityNote glyph={entry.hanzi}/>}
-    {kind === 'Characters' && <CharacterWordsSection entry={entry}/>}
-    {kind !== 'Strokes' && <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>}
-    {/* Top 2 highest-ranked idioms containing this character (Characters records only). */}
-    {kind === 'Characters' && <CharacterIdiomsSection entry={entry}/>}
+    {kind !== 'Strokes' && <ExampleTabs key={bookmarkId}>
+      {kind === 'Characters' && <CharacterWordsSection entry={entry}/>}
+      <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>
+      {kind === 'Characters' && <CharacterIdiomsSection entry={entry}/>}
+    </ExampleTabs>}
     {/* Lessons whose recorded headword is exactly this character (Characters records only). */}
     {kind === 'Characters' && <CharacterLessonsSection recordId={entry.id} hanzi={entry.hanzi}/>}
     {/* Decomposition | Etymology drawer tabs (detail-tabs.tsx), like Practice's Strokes | Decomposition.
@@ -536,7 +539,7 @@ export function CatalogTile({ entry, kind, selected, onSelect, revealed = false,
 
 const MemoCatalogTile = memo(CatalogTile, (a, b) => a.entry === b.entry && a.kind === b.kind && a.selected === b.selected && a.onSelect === b.onSelect && a.revealed === b.revealed && a.onDetails === b.onDetails);
 
-export type CharactersSearch = { sort?: Sort | undefined; seed?: number | undefined; character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** '1' hides cards whose glyph is a Kangxi radical (Characters and Components tabs). */ hideRadicals?: '1' | undefined };
+export type CharactersSearch = { examples?: ExampleTabSearch | undefined; sort?: Sort | undefined; seed?: number | undefined; character?: string; tab?: LibraryKind; q?: string; strokes?: string; usage?: string | undefined; page?: number; id?: string; status?: 'saved' | undefined; py?: 'pinyin' | 'exact' | undefined; variant?: string | undefined; /** '1' widens the rank group to rank 1..group end ("include lower ranks"). */ usageUpTo?: '1' | undefined; /** '1' widens the stroke count to 1..count ("include fewer strokes"). */ strokesUpTo?: '1' | undefined; /** '1' hides cards whose glyph is a Kangxi radical (Characters and Components tabs). */ hideRadicals?: '1' | undefined };
 
 /** All library state lives in the URL so browser back/forward restores tab, filters, page and selection. */
 export function CharactersPage({ search, onSearch }: { search: CharactersSearch; onSearch: (next: CharactersSearch, replace?: boolean) => void }) {

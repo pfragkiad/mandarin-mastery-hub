@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
  * `initialCount`) and scrolls any `.is-selected` card into view inside the grid.
  * `animateSelection` opts exact `data-layout-key` cards into measured layout motion;
  * other example grids keep their existing behaviour. */
-export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey, animateSelection = false }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string; animateSelection?: boolean }) {
+export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey, animateSelection = false, layout = 'grid', label = 'All character examples' }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string; animateSelection?: boolean; layout?: 'grid' | 'list'; label?: string }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const grid = useRef<HTMLDivElement>(null);
   const [availableHeight, setAvailableHeight] = useState<number>();
@@ -92,7 +92,7 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     }
   }, [expanded, availableHeight, selectedKey]);
   return <>
-    <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? 'All character examples' : undefined}>
+    <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${layout === 'list' ? ' example-list' : ''}${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? label : undefined}>
       {(expanded ? cards : cards.slice(0, initialCount))}
     </div>
     {canExpand && <Button type="button" variant="ghost" size="sm" className={`more-examples-toggle${expanded ? ' is-open' : ''}`} aria-expanded={expanded} aria-controls={id} onClick={() => {

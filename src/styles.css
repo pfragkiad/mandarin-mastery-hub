@@ -422,6 +422,11 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .expandable-character-grid.is-expanded { max-height: var(--character-grid-available-height, 60dvh); overflow-y: auto; align-content: start; scrollbar-gutter: stable; border: 1px solid var(--border); border-radius: var(--form-radius); padding: 10px; background: color-mix(in oklab, var(--background) 45%, transparent); animation: character-grid-expand .25s ease; }
 @keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
+.detail-sheet .expandable-character-grid.example-list { grid-template-columns: minmax(0, 1fr); }
+.detail-sheet .example-list .glyph-usage-example + .glyph-usage-example { margin-top: 0; }
+.example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
+.example-tabs .stroke-tab { height: auto; border-radius: 0; }
+.example-tabs .stroke-tab:hover { background: transparent; }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
 .glyph-usage-facts { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }

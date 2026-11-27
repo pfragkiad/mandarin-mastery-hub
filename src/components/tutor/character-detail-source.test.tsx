@@ -9,6 +9,7 @@ import { CharacterDetails } from './characters-page';
 vi.mock('@tanstack/react-router', () => ({
   Link: ({ children }: { children?: ReactNode }) => <a>{children}</a>,
   useNavigate: () => () => {},
+  useSearch: () => ({}),
 }));
 vi.mock('@/lib/character-enrichment', async importOriginal => ({
   ...(await importOriginal<typeof import('@/lib/character-enrichment')>()),
