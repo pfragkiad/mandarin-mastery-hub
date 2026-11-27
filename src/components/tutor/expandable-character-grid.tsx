@@ -97,7 +97,7 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     }
   }, [expanded, availableHeight, selectedKey]);
   return <>
-    {searching && <div className="example-results-toolbar"><div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label={`Search ${label.toLowerCase()}`} placeholder="Hanzi, pinyin, English…" value={query} onChange={event => { setQuery(event.target.value); if (grid.current) grid.current.scrollTop = 0; }}/></div></div>}
+    {searching && <div className="example-results-toolbar"><span className="catalog-results-count" aria-live="polite">{shown.length.toLocaleString('en-US')} matches</span><div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label={`Search ${label.toLowerCase()}`} placeholder="Hanzi, pinyin, English…" value={query} onChange={event => { setQuery(event.target.value); if (grid.current) grid.current.scrollTop = 0; }}/></div></div>}
     <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${layout === 'list' ? ' example-list' : ''}${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? label : undefined}>
       {shown.length ? shown : <p className="library-note">No matching examples.</p>}
     </div>

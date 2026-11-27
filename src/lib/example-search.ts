@@ -3,7 +3,11 @@ import { isValidElement, type ReactNode } from 'react';
 /** Match recorded Hanzi, pinyin or English without changing record order/identity. */
 const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 export function exampleSearchMatches(text: string, query: string) {
-  return normalize(text).includes(normalize(query));
+  const normalizedQuery = normalize(query);
+  // Count Unicode characters after trimming/normalizing, so a tone mark is not
+  // a second character and supplementary Hanzi are not counted twice.
+  const ready = Array.from(normalizedQuery).length >= 2 || /\p{Script=Han}/u.test(normalizedQuery);
+  return !ready || normalize(text).includes(normalizedQuery);
 }
 
 /** Read only SentenceExample's recorded fields in the existing rendered handoff;

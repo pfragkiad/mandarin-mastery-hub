@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Expanded phrase and idiom search
+- [x] Start pinyin/English filtering at two characters; allow one Hanzi, leaving other shorter searches unfiltered; verified in browser and tests.
+- [x] Show the live match count on the left of the expanded search row; verified count updates and restoration, with 10 related tests passing.
 - [x] Add live Hanzi/pinyin/English search at the top right only when Show all reveals additional phrase/idiom results.
 - [x] Verify filtering, clearing, collapse, unchanged links and bounded scrolling; 33 related tests pass, with wide/narrow browser checks on both sections.
 

@@ -8,9 +8,11 @@ describe('Expandable character examples', () => {
     render(<ExpandableCharacterGrid cards={cards} initialCount={2} label="All phrase examples" searchTexts={['目的地 mùdìdi destination', '学校 xuéxiào school', '家 jiā home']}/>);
     expect(screen.queryByRole('searchbox')).toBeNull();
     fireEvent.click(screen.getByRole('button', { name: 'Show all 3' }));
+    expect(screen.getByText('3 matches')).toBeInTheDocument();
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'mudidi' } });
     expect(screen.getByRole('link', { name: 'destination' })).toHaveAttribute('href', '/vocabulary?word=destination');
     expect(screen.queryByRole('link', { name: 'school' })).toBeNull();
+    expect(screen.getByText('1 matches')).toBeInTheDocument();
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: '' } });
     expect(screen.getAllByRole('link')).toHaveLength(3);
     fireEvent.click(screen.getByRole('button', { name: 'Show fewer' }));
