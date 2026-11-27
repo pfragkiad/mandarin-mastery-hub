@@ -2888,7 +2888,8 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph { width: 1em; min-width: 0; height: 1em; padding: 0; border: 0; border-radius: 0; font-size: inherit; }
 .detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph strong { font-size: inherit; }
 @media(max-width:580px) { html:not([data-display-size='comfortable']) .detail-sheet .word-example-glyphs { font-size: 30px; } }
-.word-example-glyphs .decomposition-glyph.lesson-hint-char::before { inset: auto; width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); transform: translate(-50%, -50%); }
+/* Override the boxed-tile inset without clearing the shared frame's centre anchor. */
+.word-example-glyphs .decomposition-glyph.lesson-hint-char::before { inset: 50% auto auto 50%; width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); transform: translate(-50%, -50%); }
 .word-example-glyphs .decomposition-glyph:is(:hover, :focus-visible) { border-color: transparent; }
 .glyph-usage-reference:has(> .word-example-glyphs) { flex-wrap: wrap; }
 .word-example-glyphs + .glyph-usage-facts { flex-basis: 120px; }
