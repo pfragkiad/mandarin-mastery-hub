@@ -173,16 +173,18 @@ describe('Game Apply and Reset lifecycle', () => {
   });
 });
 
-/** Games place the clear-all on the "Filters" heading line (clearPlacement="heading"), so the
- *  action row below only exists while a draft edit waits for Apply instead of showing a lone X. */
+/** Games place the clear-all on the "Filters" heading line (clearPlacement="heading") while
+ *  keeping the action row below permanently mounted to reserve space for Apply and Reset. */
 describe('Game filter heading clear-all', () => {
-  it('puts the labelled clear on the Filters line with no empty action row', () => {
+  it('puts the labelled clear on the Filters line and keeps permanent space for Apply/Reset', () => {
     render(<DraftFilterForm applied={{ strokes: '1-5' }} active count={12} resetLabel="Reset" clearPlacement="heading" onApply={vi.fn()} onClear={() => ({ strokes: '' })}>{({ draft }) => <><FilterFormClearButton/><input aria-label="Range" value={draft.strokes} readOnly/></>}</DraftFilterForm>);
     expect(screen.getByRole('button', { name: 'Clear filters' })).toBeInTheDocument();
-    expect(document.querySelector('.filter-submit')).toBeNull();
+    expect(document.querySelector('.filter-submit')).not.toBeNull();
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Reset' })).not.toBeInTheDocument();
   });
 
-  it('mounts Apply and Reset only for a pending draft, then clears every applied filter from the heading', async () => {
+  it('shows Apply and Reset for a pending draft, then clears every applied filter from the heading while keeping the reserved row', async () => {
     const apply = vi.fn();
     const clear = vi.fn(() => ({ strokes: '' }));
     const view = render(<DraftFilterForm applied={{ strokes: '1-5' }} active count={12} resetLabel="Reset" clearPlacement="heading" onApply={apply} onClear={clear}>{({ draft, patch }) => <><FilterFormClearButton/><input aria-label="Range" value={draft.strokes} onChange={event => patch({ strokes: event.target.value })}/></>}</DraftFilterForm>);
@@ -193,6 +195,8 @@ describe('Game filter heading clear-all', () => {
     await waitFor(() => expect(clear).toHaveBeenCalledOnce());
     view.rerender(<DraftFilterForm applied={{ strokes: '' }} active={false} count={12} resetLabel="Reset" clearPlacement="heading" onApply={apply} onClear={clear}>{({ draft }) => <><FilterFormClearButton/><input aria-label="Range" value={draft.strokes} readOnly/></>}</DraftFilterForm>);
     expect(screen.queryByRole('button', { name: 'Clear filters' })).not.toBeInTheDocument();
-    expect(document.querySelector('.filter-submit')).toBeNull();
+    expect(document.querySelector('.filter-submit')).not.toBeNull();
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Reset' })).not.toBeInTheDocument();
   });
 });

@@ -68,11 +68,10 @@ export function FilterForm({ children, onApply, onReset, onClear, count, changed
       startTransition(action);
     });
   };
-  // With the clear-all living in a heading (game filters), the action row exists only while a
-  // draft edit waits for Apply: an always-mounted row would leave a blank band under the
-  // filters. It sits on its own grid row below the filter fields, so mounting it on the first
-  // edit cannot move an anchored range panel mid-drag.
-  const showActions = clearPlacement === 'heading' ? changed && !autoApply : !autoApply || changed || active || Boolean(resetLabel);
+  // Keep the action row permanently mounted whenever manual Apply/Reset can appear, including
+  // game filters where clear-all lives in the heading, so the form height never shifts as
+  // edits come and go.
+  const showActions = !autoApply || changed || active || Boolean(resetLabel);
   return <form className="filter-bar shared-filter-form" data-filters-changed={changed && !autoApply ? '' : undefined} aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
     <FilterFormClearContext.Provider value={{ active, pending, clear: () => run(onClear) }}>{children}</FilterFormClearContext.Provider>
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
