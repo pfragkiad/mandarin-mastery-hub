@@ -20,6 +20,18 @@ describe('Expandable character examples', () => {
     expect(screen.getAllByRole('link')).toHaveLength(2);
   });
 
+  it('hides the collapse control while a search filter is typed and restores it when the box empties', () => {
+    const cards = ['destination', 'school', 'home'].map(id => <a key={id} href={`/vocabulary?word=${id}`}>{id}</a>);
+    render(<ExpandableCharacterGrid cards={cards} initialCount={2} label="All phrase examples" searchTexts={['目的地 mùdìdi destination', '学校 xuéxiào school', '家 jiā home']}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Show all 3' }));
+    expect(screen.getByRole('button', { name: 'Show fewer' })).toBeInTheDocument();
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'school' } });
+    expect(screen.queryByRole('button', { name: 'Show fewer' })).toBeNull();
+    expect(screen.getByText('1 matches')).toBeInTheDocument();
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: '' } });
+    expect(screen.getByRole('button', { name: 'Show fewer' })).toBeInTheDocument();
+  });
+
   it('reveals exact remaining destinations only after expansion and hides them again on collapse', () => {
     const cards = ['人', '你', '他'].map(glyph => <a key={glyph} href={`/characters?tab=Characters&id=Characters:${glyph}`}>{glyph}</a>);
     render(<ExpandableCharacterGrid cards={cards} initialCount={2}/>);
@@ -44,5 +56,22 @@ describe('Expandable character examples', () => {
     render(<ExpandableCharacterGrid cards={cards} initialCount={2} defaultExpanded/>);
     expect(screen.getByRole('link', { name: '三' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Show fewer' })).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('frames the expanded list only while it actually scrolls', () => {
+    const cards = ['一', '二', '三'].map(glyph => <a key={glyph} href={`/vocabulary?word=${glyph}`}>{glyph}</a>);
+    render(<ExpandableCharacterGrid cards={cards} initialCount={2}/>);
+    fireEvent.click(screen.getByRole('button', { name: 'Show all 3' }));
+    const grid = screen.getByRole('region', { name: 'All character examples' });
+    // jsdom measures nothing, so the list is treated as fitting: no frame.
+    expect(grid).not.toHaveClass('is-scrollable');
+    // A list taller than its box gets the frame, and losing that height takes it back off.
+    Object.defineProperty(grid, 'scrollHeight', { configurable: true, value: 900 });
+    Object.defineProperty(grid, 'clientHeight', { configurable: true, value: 300 });
+    fireEvent(window, new Event('resize'));
+    expect(grid).toHaveClass('is-scrollable');
+    Object.defineProperty(grid, 'scrollHeight', { configurable: true, value: 300 });
+    fireEvent(window, new Event('resize'));
+    expect(grid).not.toHaveClass('is-scrollable');
   });
 });

@@ -96,12 +96,32 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
       element.scrollTop = Math.max(0, top - Math.floor((element.clientHeight - selected.offsetHeight) / 2));
     }
   }, [expanded, availableHeight, selectedKey]);
+  // The frame around an expanded list exists to say "this scrolls", so it is drawn
+  // only while the grid really overflows; a short list that already shows every
+  // row stays unframed. Overflow is measured, never guessed from the record count:
+  // available height depends on the window, the sheet and the filter results.
+  const [scrollable, setScrollable] = useState(false);
+  useLayoutEffect(() => {
+    const element = grid.current;
+    if (!expanded || !element) { setScrollable(false); return; }
+    const measure = () => setScrollable(element.scrollHeight - element.clientHeight > 1);
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(measure);
+    // The box stops growing once it reaches its max-height, so watch the cards
+    // themselves: filtered results, reflow and late web-font loads change the
+    // content height without changing the element's own size.
+    element.querySelectorAll<HTMLElement>(':scope > *').forEach(child => observer?.observe(child));
+    window.addEventListener('resize', measure);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
+  }, [expanded, availableHeight, query, shown.length, layout]);
   return <>
     {searching && <div className="example-results-toolbar"><span className="catalog-results-count" aria-live="polite">{shown.length.toLocaleString('en-US')} matches</span><div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label={`Search ${label.toLowerCase()}`} placeholder="Hanzi, pinyin, English…" value={query} onChange={event => { setQuery(event.target.value); if (grid.current) grid.current.scrollTop = 0; }}/></div></div>}
-    <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${layout === 'list' ? ' example-list' : ''}${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? label : undefined}>
+    <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${layout === 'list' ? ' example-list' : ''}${expanded ? ' is-expanded' : ''}${expanded && scrollable ? ' is-scrollable' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? label : undefined}>
       {shown.length ? shown : <p className="library-note">No matching examples.</p>}
     </div>
-    {canExpand && <Button type="button" variant="ghost" size="sm" className={`more-examples-toggle${expanded ? ' is-open' : ''}`} aria-expanded={expanded} aria-controls={id} onClick={() => {
+    {/* While a search filter is typed the collapse control is noise: emptying the box
+        brings it back, so the filter row owns the screen on its own. */}
+    {canExpand && !query && <Button type="button" variant="ghost" size="sm" className={`more-examples-toggle${expanded ? ' is-open' : ''}`} aria-expanded={expanded} aria-controls={id} onClick={() => {
       if (expanded && grid.current) grid.current.scrollTop = 0;
       // Ask a Decomposition/Etymology drawer in this card to collapse for the expansion.
       if (!expanded) grid.current?.dispatchEvent(new Event('character-grid-expand', { bubbles: true }));

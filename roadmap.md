@@ -1,5 +1,9 @@
 # Roadmap
 
+## Expanded-list frame only while scrolling
+- [x] Frame the expanded example list only while it really scrolls; a short list that fits and the empty "No matching examples" note stay unframed. Verified 的 "In a word" (7 cards, unframed when it fits, framed when the window shortens it) and the empty search note in the browser; 6 shared tests pass.
+- [x] Hide "Show fewer" while a search filter is typed; it returns when the box is emptied. Verified on 的 idiom and phrase details: filter with matches keeps the frame but drops the button, emptying the box restores it; 526 tutor tests pass.
+
 ## Expanded phrase and idiom search
 - [x] Start pinyin/English filtering at two characters; allow one Hanzi, leaving other shorter searches unfiltered; verified in browser and tests.
 - [x] Show the live match count on the left of the expanded search row; verified count updates and restoration, with 10 related tests passing.

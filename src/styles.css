@@ -419,7 +419,14 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
 /* Show all uses the remaining screen height to grow the card, but only the tile
    grid scrolls; its surrounding headings and Show fewer stay outside that area. */
-.expandable-character-grid.is-expanded { max-height: var(--character-grid-available-height, 60dvh); overflow-y: auto; align-content: start; scrollbar-gutter: stable; border: 1px solid var(--border); border-radius: var(--form-radius); padding: 10px; background: color-mix(in oklab, var(--background) 45%, transparent); animation: character-grid-expand .25s ease; }
+.expandable-character-grid.is-expanded { max-height: var(--character-grid-available-height, 60dvh); overflow-y: auto; align-content: start; scrollbar-gutter: stable; border-radius: var(--form-radius); padding: 10px; animation: character-grid-expand .25s ease; }
+/* The framed box and its recessed background appear only while the list actually
+   scrolls (see the measured is-scrollable state): a short expanded list that shows
+   every row without a scrollbar reads as the ordinary card grid instead. Dropping
+   the inset and the reserved scrollbar gutter in that state is monotone — a wider,
+   unframed box can only fit more content, never less — so the two states never flick. */
+.expandable-character-grid.is-expanded.is-scrollable { border: 1px solid var(--border); background: color-mix(in oklab, var(--background) 45%, transparent); }
+.expandable-character-grid.is-expanded:not(.is-scrollable) { padding: 0; scrollbar-gutter: auto; }
 @keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
 .detail-sheet .expandable-character-grid.example-list { grid-template-columns: minmax(0, 1fr); }
