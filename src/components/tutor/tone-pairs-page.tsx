@@ -50,6 +50,8 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { toneExamplesByHsk } from '@/lib/tone-pair-vocabulary';
 import { wordHskPill } from './word-identity-pills';
 import { UsageLabel } from './usage-label';
+import { PinyinSoundSheet } from './pinyin-sound-sheet';
+import { SoundExampleGlyph } from './sound-example-glyph';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
@@ -78,6 +80,10 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   const [data, setData] = useState<TonePairData | null>(null);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  // Pair selection opens the same top-anchored window as the Sound chart. Bare
+  // page visits show the matrix; direct word links and history restore the window.
+  const [pairOpen, setPairOpen] = useState(Boolean(search.pair || search.example));
+  useEffect(() => { setPairOpen(Boolean(search.pair || search.example)); }, [search.pair, search.example]);
   useEffect(() => { let live = true; setFailed(false); loadTonePairs().then(d => { if (live) setData(d); }, () => { if (live) setFailed(true); }); return () => { live = false; }; }, [attempt]);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, headings[mode]);
@@ -141,13 +147,19 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
       : <div className="tone-sounds-layout">
         <div className="tone-sounds-main">
           {mode === 'pairs'
-            ? <PairMatrix data={data} pair={pair} hidden={hidden} onPick={p => onChange({ pair: p, example: undefined })}/>
+            ? <PairMatrix data={data} pair={pair} hidden={hidden} onPick={p => { setPairOpen(true); onChange({ pair: p, example: undefined }); }}/>
             : <RuleList rule={rule} onPick={r => onChange({ rule: r, example: undefined })}/>}
         </div>
-        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
+        {mode === 'pairs' ? <PinyinSoundSheet open={pairOpen} title={row.headword} position={-1} total={0}
+          onBack={() => { stop(); window.history.back(); }} onClosed={() => {}}
+          onClose={() => { stop(); setPairOpen(false); onChange({ pair: undefined, example: undefined }, true); }}>
+          <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
+            chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
+            onPlay={() => void play()} onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
+        </PinyinSoundSheet> : <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
           chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
-          onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
+          onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>}
       </div>}
   </div>;
 }
@@ -253,19 +265,23 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
       </div>
       {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
     </>}
-    <section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
+    <SentenceHints backLabel={row.headword}><section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
       <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
       <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={6} cards={pool.map((example, index) => {
         const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
         const hsk = record ? wordHskPill(record) : null;
+        const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
         return (
         <div key={example.id} className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}>
           <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
           <span className="glyph-usage-reference">
-            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => <Button key={glyphIndex} variant="ghost" className="decomposition-glyph" aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}, tile ${glyphIndex + 1}` : `Select ${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>)}</span>
+            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
+              const fallback = <Button variant="ghost" className="decomposition-glyph" aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}, tile ${glyphIndex + 1}` : `Select ${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>;
+              return hidden ? <span key={glyphIndex}>{fallback}</span> : <SoundExampleGlyph key={glyphIndex} glyph={glyph} word={own} fallback={fallback}/>;
+            })}</span>
             <span className="glyph-usage-facts">
               <span className="glyph-usage-facts-row"><span className="example-pinyin-row">
-                {!hidden && <span className="pinyin">{example.citationSyllables.join(' ')}</span>}
+                {!hidden && <Button variant="link" className="pinyin" title={`Select ${example.headword}`} onClick={() => onPick(example.id)}>{example.citationSyllables.join(' ')}</Button>}
                 {/* This exact whole-word attachment plays independently of selection. The
                     shared speaker never joins syllables or falls back after a failed clip. */}
                 <ExamplePronunciation request={{ text: example.headword, audio: example.audio }} label={hidden ? `recording ${index + 1}` : example.headword}/>
@@ -275,7 +291,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
           </span>
         </div>
       ); })}/>
-    </section>
+    </section></SentenceHints>
   </section>;
 }
 

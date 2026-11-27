@@ -22,7 +22,8 @@ import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { UsageLabel } from './usage-label';
-import { ExampleCardMeta } from './sentence-section';
+import { ExampleCardMeta, SentenceHints } from './sentence-section';
+import { SoundExampleGlyph } from './sound-example-glyph';
 import { useWorkspace } from './workspace';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
 import { SmallGridMeaning } from './small-grid-meaning';
@@ -60,7 +61,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const rows = useMemo(() => groupScriptForms(matches, shownMeaning), [matches, base, tone]);
   const rankOf = (entry: (typeof entries)[number]) => rankFor(entry);
 
-  return <section className="pinyin-characters glyph-usage-section" aria-label="In a character">
+  return <SentenceHints backLabel={backLabel}><section className="pinyin-characters glyph-usage-section" aria-label="In a character">
     <h3 className="eyebrow"><Puzzle size={13} aria-hidden="true"/>IN A CHARACTER{matches.length ? ` · ${matches.length}` : ''}</h3>
     {tone === null ? <p className="pinyin-characters-note">Click a tone to see its characters.</p>
       : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
@@ -98,13 +99,15 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             // other form opens its own character details — the same rule as destinationFor.
             const kind = radicalCard(entry.hanzi) ? 'Radicals' : 'Characters';
             const target = kind === 'Radicals' ? 'radical details' : 'character details';
-            return <Button key={entry.id} asChild variant="ghost" className={`decomposition-glyph${traditional ? ' traditional-character' : ''}${kind === 'Radicals' ? ' is-radical' : ''}`}><Link to="/characters" search={destinationFor(entry)} resetScroll={false} lang={traditional ? 'zh-TW' : 'zh-CN'}
+            const className = `${traditional ? 'traditional-character' : ''}${kind === 'Radicals' ? ' is-radical' : ''}`;
+            const fallback = <Button asChild variant="ghost" className={`decomposition-glyph ${className}`}><Link to="/characters" search={destinationFor(entry)} resetScroll={false} lang={traditional ? 'zh-TW' : 'zh-CN'}
               title={openDetailsHint(entry.hanzi, kind)}
               aria-label={`${entry.hanzi}${traditional && forms.length > 1 ? ' (traditional form)' : ''}${meaning ? `, ${meaning}` : ''} · open its ${target}`}
               // The details window's Back returns to this exact sound (syllable + tone in the URL).
               onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
               <strong>{entry.hanzi}</strong>
             </Link></Button>;
+            return <SoundExampleGlyph key={entry.id} glyph={entry.hanzi} className={className} fallback={fallback}/>;
           })}</span>
           <span className="glyph-usage-facts">
             {meaning && <SmallGridMeaning text={meaning}/>}
@@ -112,5 +115,5 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           </div>
         </div>; })}/>
       </>}
-  </section>;
+  </section></SentenceHints>;
 }

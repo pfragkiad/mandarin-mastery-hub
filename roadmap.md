@@ -262,6 +262,7 @@
 - [x] Verify exact card navigation, playback, per-character hints and preference behaviour on wide and narrow screens.
 
 ## Tone pair card examples
+- [x] Float Tone pairs in the shared top-centred sound window, preserve two example columns, and verify navigable character hints on both sound pages; checked exact character navigation, close/reopen, two-column phone layout, expansion and hidden hints in Listen first. All 18 targeted tests pass.
 - [x] Move the word bank inside the tone card, reuse sound-card examples, and preserve separate sound pills.
 - [x] Remove listening tips and verify example selection, expansion, Listen first and Tone changes at wide/narrow widths; 15 existing tests pass.
 - [x] Enlarge the tone card with two example columns and independent pinyin/audio beside tiles; verified wide/narrow layouts, recording requests without navigation, and exact tile selection.

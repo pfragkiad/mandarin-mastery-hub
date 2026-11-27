@@ -5178,6 +5178,7 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 .tone-sounds-draft { font-size: 12px; color: var(--muted-foreground); border-left: 2px solid var(--rank-gold, var(--primary)); padding: 2px 0 2px 10px; margin: 0 0 22px; }
 .tone-sounds-draft strong { color: var(--foreground); font-weight: 600; }
 .tone-sounds-layout { display: grid; grid-template-columns: minmax(340px, 2fr) minmax(580px, 3fr); gap: 30px; align-items: start; }
+.tone-sounds-layout:has(.tone-matrix-section) { grid-template-columns: minmax(0, 1fr); }
 @container tone-sounds (max-width: 980px) { .tone-sounds-layout { grid-template-columns: minmax(0, 1fr); } .tone-sounds-card.pinyin-player { position: static; max-height: none; } }
 .tone-sounds-helper { font-size: 12px; color: var(--muted-foreground); line-height: 1.6; margin: 0 0 12px; }
 .tone-sounds-helper strong { color: var(--foreground); font-weight: 600; }
@@ -5219,7 +5220,15 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
 .tone-sounds-card { container: tone-card / inline-size; }
 .tone-sounds-bank { margin-top: 8px; }
 .tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@container tone-card (max-width: 540px) { .tone-sounds-bank .glyph-usage-parents { grid-template-columns: minmax(0, 1fr); } }
+/* Reserve room for two examples in the shared top-centred sound window. On narrow
+   cards the facts move below the tiles, rather than dropping to one example column. */
+html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px)); }
+.detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
+@container tone-card (max-width: 540px) {
+  .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }
+  .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }
+}
+.tone-sounds-example .example-pinyin-row > .pinyin { height: auto; padding: 0; white-space: normal; text-align: left; justify-content: flex-start; font-size: inherit; }
 .tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; }
 .tone-sounds-example.is-selected { border-color: var(--primary); }
 .tone-sounds-example .decomposition-glyph { flex-shrink: 0; }
