@@ -1,5 +1,5 @@
 import { catalog, groupReadingMeanings, readingMeanings } from './catalog-store';
-import { radicalIdentity } from './radical-identities';
+import { radicalIdentity, type RadicalLink } from './radical-identities';
 import { radicalForms } from './radical-strokes';
 
 // Exact Unicode 17.0 NamesList entries; never classify from appearance or missing pinyin.
@@ -50,7 +50,7 @@ export function displayMeaning(meaning: string): string {
  * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
 export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
   const split = cardReadingSplit(glyph, pinyin, meaning);
-  return displayMeaning(split ? groupReadingMeanings(split).map(group => `${group.readings.join(' / ')}: ${group.meaning}`).join(' / ') : meaning);
+  return displayMeaning(split ? groupReadingMeanings(split).map(group => `${group.readings.join(' / ')}: ${group.meaning}`).join(' / ') : radicalNoteMeaning(glyph, meaning) ?? meaning);
 }
 
 /** The reviewed per-reading split a card may show for this exact record, or null (see cardMeaning). */
@@ -71,12 +71,21 @@ export function variantMeaning(glyphs: string[]): string {
   return originals.length ? `${originals.join('; ')}; component form of ${forms}` : `Component form of ${forms}`;
 }
 
-/** A record whose whole meaning is the source note "variant of Kangxi radical N" (耂 → 125,
- * 覀 → 146) reads its family's translation instead, as "old; component form of 老". Only when the
- * glyph is a recorded form of exactly that family (radicalForms, exact code point) and the
- * family heading records a meaning; otherwise null and the note stays as recorded. Display only. */
+/** A Characters record whose entire recorded meaning is a plain "Kangxi radical N" note (訁 → 149)
+ * and whose exact code point is a recorded form of that Kangxi family (radical-strokes.json). */
+export function recordedRadicalNoteFamily(glyph: string, meaning: string): RadicalLink | undefined {
+  const note = meaning.trim().match(/^Kang[xz]i radical\s*#?\s*(\d+)$/i);
+  if (!note) return undefined;
+  const family = radicalForms(glyph).find(item => item.family.id === Number(note[1]) && item.form.character === glyph)?.family;
+  return family ? { id: `kangxi-${family.id}`, number: family.id, glyph: family.kangxiHeading } : undefined;
+}
+
+/** A record whose whole meaning is the source note "(variant of) Kangxi radical N" (耂 → 125,
+ * 覀 → 146, 訁 → 149) reads its family's translation instead, as "old; component form of 老". Only
+ * when the glyph is a recorded form of exactly that family (radicalForms, exact code point) and
+ * the family heading records a meaning; otherwise null and the note stays as recorded. Display only. */
 export function radicalNoteMeaning(glyph: string, meaning: string): string | null {
-  const note = meaning.trim().match(/^variant of (?:the )?Kang[xz]i radical\s*#?\s*(\d+)$/i);
+  const note = meaning.trim().match(/^(?:variant of (?:the )?)?Kang[xz]i radical\s*#?\s*(\d+)$/i);
   if (!note) return null;
   const family = radicalForms(glyph).find(item => item.family.id === Number(note[1]) && item.form.character === glyph)?.family;
   if (!family || family.kangxiHeading === glyph) return null;
@@ -105,9 +114,9 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   // index. Simplified dual forms (门, 马) are variant identities and stay ordinary characters.
   const canonicalRadical = !component && (kind === 'Characters' || kind === 'Character') && identity.kind === 'canonical' && identity.radicals.length > 0 ? identity.radicals[0] : undefined;
   // The Radical #N pill on a Characters card: canonical radicals (一, 心) and the simplified dual
-  // forms (门 #169, 马 #187, 麦 #199), which are Kangxi radical forms in their own right. Unlike
-  // canonicalRadical it never replaces the detail card's dictionary-radical box (麦 keeps 麥).
-  const characterRadical = canonicalRadical ?? (dualGlyph && (kind === 'Characters' || kind === 'Character') && identity.radicals.length === 1 ? identity.radicals[0] : undefined);
+  // forms (门 #169, 马 #187, 麦 #199), plus recorded radical-note forms unmapped in UCD (訁 #149).
+  const noteRadical = !component && (kind === 'Characters' || kind === 'Character') && identity.radicals.length === 0 ? recordedRadicalNoteFamily(glyph, meaning) : undefined;
+  const characterRadical = canonicalRadical ?? (dualGlyph && (kind === 'Characters' || kind === 'Character') && identity.radicals.length === 1 ? identity.radicals[0] : noteRadical);
   const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;

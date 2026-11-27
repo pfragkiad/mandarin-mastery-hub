@@ -201,10 +201,11 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const hasBreakdown = decompositionHasContent(entry.decomposition?.root, unknownTreeRecord);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
   const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
-  const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number;
+  const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number ?? info.characterRadical?.number;
   const radicalFact = (() => {
     if (kind === 'Strokes') return null;
-    if (noteRadical && !(info.canonicalRadical && noteRadical === entry.hanzi)) {
+    const isRecordedRadicalForm = Boolean(info.characterRadical && !info.canonicalRadical && radicalIdentity(entry.hanzi).radicals.length === 0 && noteRadical === info.characterRadical.glyph);
+    if (noteRadical && !(info.canonicalRadical && noteRadical === entry.hanzi) && !isRecordedRadicalForm) {
       const identity = radicalIdentity(entry.hanzi).radicals.find(radical => radical.glyph === noteRadical);
       const destination = libraryDestination(noteRadical, preferences.includeTraditional);
       return <span className="facts-radical">{destination
@@ -303,7 +304,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {/* Etymology audit notes belong to radical variant cards only (below the facts), never the family's main form. */}
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {info.component && !fallback && <p className="catalog-record-note">{info.componentName ? `${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? 'Radical form that is also an ordinary character.' : 'No standalone character pronunciation is assigned to this form.'}</p>}
-    {(kind === 'Components' || kind === 'Characters') && radicalIdentity(entry.hanzi).radicals.length > 0 && <RadicalIdentityNote glyph={entry.hanzi}/>}
+    {(kind === 'Components' || kind === 'Characters') && (radicalIdentity(entry.hanzi).radicals.length > 0 || Boolean(info.characterRadical)) && <RadicalIdentityNote glyph={entry.hanzi} fallbackRadical={info.characterRadical}/>}
     {kind !== 'Strokes' && <ExampleTabs key={bookmarkId}>
       {kind === 'Characters' && <CharacterWordsSection entry={entry}/>}
       <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>

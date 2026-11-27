@@ -61,4 +61,11 @@ describe('simplified radical forms on Characters cards', () => {
   it('leaves ordinary characters without a pill', () => {
     expect(glyphPresentation('好', 'Characters').characterRadical).toBeUndefined();
   });
+
+  it('gives 訁 its Radical #149 identity and family translation instead of "Kangxi radical 149"', () => {
+    const info = glyphPresentation('訁', 'Characters', 'yán', 'Kangxi radical 149');
+    expect(info.characterRadical).toEqual({ id: 'kangxi-149', number: 149, glyph: '言' });
+    expect(info.meaning).toMatch(/words, speech.*component form of 言$/);
+    expect(info.meaning).not.toContain('Kangxi radical 149');
+  });
 });
