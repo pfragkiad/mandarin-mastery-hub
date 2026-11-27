@@ -134,7 +134,8 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)} labelled={labelled}>
     <div className={`stroke-range-card${value ? ' is-active' : ''}`}>
       <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · {summary}</span>
-        <Button type="button" variant="ghost" className="stroke-range-any" disabled={!value} onClick={() => onChange('', false)}>Clear</Button>
+        {/* Clear appears only while a range is drafted; All ranks has nothing to clear. */}
+        {value ? <Button type="button" variant="ghost" className="stroke-range-any" onClick={() => onChange('', false)}>Clear</Button> : null}
       </div>
       <GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={value} onValueChange={v => onChange(v, false)}
         items={[{ value: '', label: 'All ranks' }, ...groups.map(g => ({ value: g.value, label: g.label })), ...(custom ? [{ value, label: `Rank ${rankRangeLabel(custom)}` }] : [])]}/></GameField>
@@ -199,10 +200,9 @@ export function StrokeRangeControl({ value, strokesUpTo = false, labelled = true
     <div className="stroke-range-header">
       <span className="stroke-range-label">{formatStrokeRangeLabel(value, strokesUpTo, sliderMin, sliderMax)}</span>
       {/* Clear resets only the stroke draft; the game's Apply still commits it. */}
-      <Button type="button" variant="ghost" className={`stroke-range-any${active ? ' is-reset' : ''}`}
-        disabled={!active} onClick={() => onChange('')}>
+      {active ? <Button type="button" variant="ghost" className="stroke-range-any is-reset" onClick={() => onChange('')}>
         Clear
-      </Button>
+      </Button> : null}
     </div>
     <SliderPrimitive.Root
       className="stroke-range-slider"
