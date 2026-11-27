@@ -8,10 +8,14 @@ describe('Phone filter sheet', () => {
   it('drafts sheet filters until Apply and removes only the selected applied chip', async () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
     const apply = vi.fn();
-    render(<DraftFilterForm applied={{ q: 'qi', strokes: '10' }} active count={881} onApply={apply} onClear={() => ({ q: '', strokes: '' })} chips={[{ label: '10 strokes', clear: { strokes: '' } }]} filterFields={({ draft, patch }) => <select aria-label="Strokes" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="10">10</option><option value="5">5</option></select>}>{({ draft }) => <input aria-label="Query" value={draft.q} readOnly/>}</DraftFilterForm>);
+    render(<DraftFilterForm applied={{ q: 'qi', strokes: '10' }} active count={881} resetLabel="Reset" onApply={apply} onClear={() => ({ q: '', strokes: '' })} chips={[{ label: '10 strokes', clear: { strokes: '' } }]} filterFields={({ draft, patch }) => <select aria-label="Strokes" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}><option value="10">10</option><option value="5">5</option></select>}>{({ draft }) => <input aria-label="Query" value={draft.q} readOnly/>}</DraftFilterForm>);
     fireEvent.click(screen.getByRole('button', { name: /Filters/ }));
     fireEvent.change(screen.getByLabelText('Strokes'), { target: { value: '5' } });
     expect(apply).not.toHaveBeenCalled();
+    fireEvent.click(screen.getAllByRole('button', { name: 'Reset' }).at(-1) as HTMLElement);
+    expect(screen.getByLabelText('Strokes')).toHaveValue('10');
+    expect(apply).not.toHaveBeenCalled();
+    fireEvent.change(screen.getByLabelText('Strokes'), { target: { value: '5' } });
     fireEvent.click(screen.getAllByRole('button', { name: 'Apply' }).at(-1) as HTMLElement);
     await waitFor(() => expect(apply).toHaveBeenLastCalledWith({ q: 'qi', strokes: '5' }));
     fireEvent.click(screen.getByRole('button', { name: 'Remove 10 strokes filter' }));
@@ -125,21 +129,34 @@ describe('Explicit game filters', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
     await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ strokes: '1-14', course: 'conversational-mandarin' }));
   });
-  it('Reset discards unapplied changes as well as applied narrowing', async () => {
+  it('Reset discards unapplied changes without altering the applied filter', () => {
+    const apply = vi.fn();
+    const clear = vi.fn(() => ({ strokes: '' }));
+    render(<DraftFilterForm applied={{ strokes: '1-5' }} active count={12} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Range" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}/>}</DraftFilterForm>);
+    fireEvent.change(screen.getByLabelText('Range'), { target: { value: '6-10' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    expect(clear).not.toHaveBeenCalled();
+    expect(apply).not.toHaveBeenCalled();
+    expect(screen.getByLabelText('Range')).toHaveValue('1-5');
+    expect(screen.getByRole('button', { name: 'Clear filters' })).toBeInTheDocument();
+  });
+  it('Reset restores an unfiltered draft without applying or clearing anything', () => {
     const apply = vi.fn();
     const clear = vi.fn(() => ({ strokes: '' }));
     render(<DraftFilterForm applied={{ strokes: '' }} active={false} count={12} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Range" value={draft.strokes} onChange={e => patch({ strokes: e.target.value })}/>}</DraftFilterForm>);
     fireEvent.change(screen.getByLabelText('Range'), { target: { value: '6-10' } });
     fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
-    await waitFor(() => expect(clear).toHaveBeenCalledOnce());
-    expect(screen.getByLabelText('Range')).toHaveValue('');
+    expect(clear).not.toHaveBeenCalled();
     expect(apply).not.toHaveBeenCalled();
+    expect(screen.getByLabelText('Range')).toHaveValue('');
+    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Reset' })).not.toBeInTheDocument();
   });
 });
 
 
 describe('Game Apply and Reset lifecycle', () => {
-  it('hides Apply after submission while Reset remains for applied filters', async () => {
+  it('hides Apply and Reset after submission while Clear filters remains', async () => {
     const apply = vi.fn();
     const clear = vi.fn(() => ({ level: '' }));
     const view = render(<DraftFilterForm applied={{ level: '' }} active={false} count={3596} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Level" value={draft.level} onChange={e => patch({ level: e.target.value })}/>}</DraftFilterForm>);
@@ -150,7 +167,8 @@ describe('Game Apply and Reset lifecycle', () => {
     await waitFor(() => expect(apply).toHaveBeenCalledExactlyOnceWith({ level: 'HSK 3.0 · 2,HSK 3.0 · 3' }));
     view.rerender(<DraftFilterForm applied={{ level: 'HSK 3.0 · 2,HSK 3.0 · 3' }} active count={100} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft }) => <input aria-label="Level" value={draft.level} readOnly/>}</DraftFilterForm>);
     await waitFor(() => expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument());
-    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    expect(screen.queryByRole('button', { name: 'Reset' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
     await waitFor(() => expect(clear).toHaveBeenCalledOnce());
     expect(screen.getByLabelText('Level')).toHaveValue('');
   });

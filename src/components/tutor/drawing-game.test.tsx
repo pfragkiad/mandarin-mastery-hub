@@ -133,7 +133,7 @@ it('offers a bookmark on every card to review, saving its exact id', async () =>
   expect(screen.getAllByRole('button', { name: /^Remove bookmark / })).toHaveLength(5);
 });
 
-it('keeps the active round while settings change and filters reset explicitly', async () => {
+it('keeps the active round while settings change and applied filters clear explicitly', async () => {
   const view = render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   fireEvent.click(screen.getByRole('button', { name: 'Start · 10 cards' }));
   await screen.findByText('Card 1 of 10');
@@ -143,7 +143,7 @@ it('keeps the active round while settings change and filters reset explicitly', 
   view.rerender(<DrawingGamePage search={{ kind: 'Words', collection: 'Greetings' }} onSearch={onSearch}/>);
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
   expect(fake.create).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
   await waitFor(() => expect(onSearch).toHaveBeenLastCalledWith({ kind: 'Words' }));
   expect(screen.getByText('Card 1 of 10')).toBeInTheDocument();
 });
@@ -185,6 +185,7 @@ it('asks before ending once the first card is answered, and keeps that card in t
 
 
 it('drafts the stroke range without changing the pool or URL until Apply', async () => {
+  entries.forEach((entry, index) => { entry.strokes = index + 1; });
   render(<DrawingGamePage search={search} onSearch={onSearch}/>);
   expect(screen.queryByRole('button', { name: /^Filters/ })).not.toBeInTheDocument();
   expect(screen.queryByRole('combobox', { name: 'Course' })).not.toBeInTheDocument();

@@ -37,7 +37,7 @@ function useWaitCursor(pending: boolean) {
   }, [pending]);
 }
 
-export function FilterForm({ children, onApply, onClear, count, changed, active, autoApply = false, showCount = true, resetLabel }: { children: ReactNode; onApply: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean; resetLabel?: string }) {
+export function FilterForm({ children, onApply, onReset, onClear, count, changed, active, autoApply = false, showCount = true, resetLabel }: { children: ReactNode; onApply: () => void; onReset: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean; resetLabel?: string }) {
   const [pending, startTransition] = useTransition();
   useWaitCursor(pending);
   const run = (action: () => void) => {
@@ -55,7 +55,13 @@ export function FilterForm({ children, onApply, onClear, count, changed, active,
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
     {/* Reserve explicit-filter action space before edits, without mounting inactive
         buttons: Apply appearing must not move an anchored range panel mid-drag. */}
-    {(!autoApply || changed || active || resetLabel) && <div className="filter-submit">{changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}{(active || (resetLabel && changed)) && <Button type="button" size={resetLabel ? 'sm' : 'icon'} variant="ghost" className={resetLabel ? undefined : 'close-x'} disabled={pending} aria-label={resetLabel ?? 'Clear filters'} title={resetLabel ?? 'Clear filters'} onClick={() => run(onClear)}>{resetLabel ? <><RotateCcw/>{resetLabel}</> : <X/>}</Button>}</div>}
+    {(!autoApply || changed || active || resetLabel) && <div className="filter-submit">
+      {changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}
+      {/* Reset only abandons unapplied edits. Applied filters and the result pool stay
+          untouched; the separate X remains the explicit clear-all action. */}
+      {changed && !autoApply && resetLabel && <Button type="button" size="sm" variant="ghost" disabled={pending} onClick={onReset}><RotateCcw/>{resetLabel}</Button>}
+      {active && <Button type="button" size="icon" variant="ghost" className="close-x" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}
+    </div>}
     {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
 }
@@ -116,10 +122,10 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
   };
   // The same isolated drafts feed either desktop fields or a phone sheet.
   if (small && filterFields) return <div className="mobile-library-filters">
-    <form ref={formRef} className="filter-bar shared-filter-form" aria-label="Search filters" onSubmit={event => { event.preventDefault(); submit(controls.draft); }}>{children(renderControls)}{(changed || draftSearch || appliedSearch) && <span className="mobile-search-actions">{changed && <Button type="submit" variant="ghost" size="sm" disabled={pending}><Check/>Apply</Button>}{(draftSearch || appliedSearch) && <Button type="button" variant="ghost" size="icon" className="close-x" disabled={pending} aria-label="Clear search" title="Clear search" onClick={clearSearch}><X/></Button>}</span>}</form>
+    <form ref={formRef} className="filter-bar shared-filter-form" aria-label="Search filters" onSubmit={event => { event.preventDefault(); submit(controls.draft); }}>{children(renderControls)}{(changed || draftSearch || appliedSearch) && <span className="mobile-search-actions">{changed && <Button type="submit" variant="ghost" size="sm" disabled={pending}><Check/>Apply</Button>}{changed && resetLabel && <Button type="button" variant="ghost" size="sm" disabled={pending} onClick={() => controls.setDraft(applied)}><RotateCcw/>{resetLabel}</Button>}{(draftSearch || appliedSearch) && <Button type="button" variant="ghost" size="icon" className="close-x" disabled={pending} aria-label="Clear search" title="Clear search" onClick={clearSearch}><X/></Button>}</span>}</form>
     <div className="mobile-filter-actions"><Button variant="outline" size="sm" onClick={() => setSheetOpen(true)}><SlidersHorizontal/>Filters{chips.length > 0 && <span className="mobile-filter-count">{chips.length}</span>}</Button>{saved && <SavedFilterToggle {...saved}/>}{chips.map(chip => <Button key={chip.label} variant="ghost" size="sm" className="mobile-state-chip" aria-label={`Remove ${chip.label} filter`} onClick={() => { const next = { ...applied, ...chip.clear }; controls.setDraft(next); submit(next); }}>{chip.label}<X/></Button>)}</div>
-    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{saved && <SavedFilterRow {...saved}/>}{filterFields(renderControls)}</div>{/* The actions row is always rendered with a reserved button height, so Apply and
-      Clear appearing after an edit never resize the bottom sheet or shift its fields. */}<div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}</div></SheetContent></Sheet>
+    <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{saved && <SavedFilterRow {...saved}/>}{filterFields(renderControls)}</div>{/* The actions row is always rendered with a reserved button height, so Apply,
+      Reset and Clear appearing after an edit never resize the sheet or shift its fields. */}<div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}{changed && resetLabel && <Button variant="ghost" disabled={pending} onClick={() => controls.setDraft(applied)}><RotateCcw/>{resetLabel}</Button>}</div></SheetContent></Sheet>
   </div>;
-  return <FilterForm count={count} showCount={showCount} {...(resetLabel ? { resetLabel } : {})} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
+  return <FilterForm count={count} showCount={showCount} {...(resetLabel ? { resetLabel } : {})} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onReset={() => controls.setDraft(applied)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
 }

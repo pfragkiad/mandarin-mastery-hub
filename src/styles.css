@@ -1836,9 +1836,9 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .filter-submit button.close-x { width: 32px; }
 /* Library action slots and range anchors keep the same footprint in every draft
    state. Neither a changing summary nor the first Apply button can reflow a drag. */
-.library-page .shared-filter-form > .filter-submit { flex: 0 0 148px; min-height: 40px; flex-wrap: nowrap; }
+.library-page .shared-filter-form > .filter-submit { flex: 0 0 232px; min-height: 40px; flex-wrap: nowrap; }
 .library-page .shared-filter-form > .filter-submit .close-x { margin-left: auto; }
-html[data-display-size='comfortable'] .library-page .shared-filter-form > .filter-submit { flex-basis: 164px; min-height: 48px; }
+html[data-display-size='comfortable'] .library-page .shared-filter-form > .filter-submit { flex-basis: 248px; min-height: 48px; }
 .library-page .filter-field-row:has(.game-range-trigger) { flex: 0 0 210px; max-width: 100%; }
 .library-page .filter-field-row .game-range-trigger.filter-select { width: 100%; flex: 0 0 100%; }
 .library-page .game-range-trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

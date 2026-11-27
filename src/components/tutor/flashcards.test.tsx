@@ -181,7 +181,7 @@ describe('Deck size', () => {
     pickOption(screen.getByRole('combobox', { name: 'Topic' }), 'Greetings');
     await screen.findByRole('button', { name: 'Restart · 1 card' });
     expect(current).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
     await screen.findByRole('button', { name: 'Restart · 10 cards' });
     expect(current).toBeInTheDocument();
   });
@@ -205,7 +205,7 @@ describe('Deck size', () => {
   });
 });
 
- it('updates matches only after Apply and restores them with Reset', async () => {
+ it('updates matches only after Apply and restores them with Clear filters', async () => {
    await renderWords();
     const topic = screen.getByRole('combobox', { name: 'Topic' });
     fireEvent.keyDown(topic, { key: 'ArrowDown' });
@@ -215,7 +215,7 @@ describe('Deck size', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
    expect(await screen.findByRole('button', { name: 'Start · 1 card' })).toBeInTheDocument();
    expect(screen.queryByRole('button', { name: 'Apply' })).not.toBeInTheDocument();
-   fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+   fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
    expect(await screen.findByRole('button', { name: 'Start · 10 cards' })).toBeInTheDocument();
   });
 
