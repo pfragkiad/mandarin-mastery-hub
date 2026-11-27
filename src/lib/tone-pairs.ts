@@ -76,6 +76,17 @@ export function validateToneChangesSearch(search: Record<string, unknown>): Tone
 
 /** Ordinary matrix examples for one dictionary pair (一/不 examples never appear here). */
 export const pairPool = (data: Pick<TonePairData, 'examples'>, pair: string) => data.examples.filter(e => e.inPairMatrix && e.pair === pair);
+/** Matrix pairs in reading order (first tone down the side, second across the top), limited to
+ * the pairs `hasExamples` reports as non-empty: the card's middle-top ‹ › walk never lands on an
+ * empty cell, so no navigation can show "Loading words…". */
+export function matrixPairOrder(hasExamples: (pair: string) => boolean): string[] {
+  const keys: string[] = [];
+  for (const first of FIRST_TONES) for (const second of SECOND_TONES) {
+    const key = `${first}-${second}`;
+    if (hasExamples(key)) keys.push(key);
+  }
+  return keys;
+}
 /** Examples for one tone change: the two 3 + 3 matrix words, or the 一 / 不 sets. */
 export const rulePool = (data: Pick<TonePairData, 'examples'>, rule: ToneRule) => data.examples.filter(e => e.rule === rule);
 /** The URL's exact example when it belongs to this pool, otherwise the pool's first word. */

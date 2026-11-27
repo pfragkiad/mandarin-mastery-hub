@@ -32,7 +32,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  loadTonePairs, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  loadTonePairs, matrixPairOrder, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -108,6 +108,15 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   const rule = search.rule ?? DEFAULT_RULE;
   const pool = useMemo(() => data ? toneExamplesByHsk(mode === 'pairs' ? pairPool(data, pair) : rulePool(data, rule), vocabularyWords) : [], [data, mode, pair, rule]);
   const row = selectedExample(pool, search.example);
+  /* The window's middle-top ‹ › walk the matrix cells themselves, in the grid's reading order
+     (first tone down the side, second across the top), skipping any pair with no words so a
+     step never lands on an empty cell. DetailSheet offers them only when the window was opened
+     from this page's own grid, so a deep link from a word card keeps Back/Close semantics and no
+     arrows. Stepping clears the chosen word, exactly like clicking another cell. */
+  const pairOrder = useMemo(() => data ? matrixPairOrder(key => pairPool(data, key).length > 0) : [], [data]);
+  const pairIndex = pairOrder.indexOf(pair);
+  const previousPair = pairIndex > 0 ? pairOrder[pairIndex - 1] : undefined;
+  const nextPair = pairIndex >= 0 && pairIndex < pairOrder.length - 1 ? pairOrder[pairIndex + 1] : undefined;
 
   // Any change of what is selected (or leaving the page) stops the current recording.
   const selectionKey = `${mode}|${pair}|${rule}|${row?.id ?? ''}`;
@@ -154,6 +163,9 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             history entry. Close/Back then return to the source grid or details,
             skipping example changes within this same tone-pair window. */}
         {mode === 'pairs' ? pairOpen && <DetailSheet open title={row.headword} label={row.headword}
+          position={pairIndex} total={pairOrder.length} neighbourLabel="tone pair"
+          onPrevious={previousPair ? () => onChange({ pair: previousPair, example: undefined }) : undefined}
+          onNext={nextPair ? () => onChange({ pair: nextPair, example: undefined }) : undefined}
           onClose={() => { stop(); setPairOpen(false); onChange({ pair: undefined, example: undefined }, true); }}>
           <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
             chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}

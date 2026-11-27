@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import data from '@/data/pinyin/tone-pairs.json';
 import { vocabularyData } from './data-contract';
 import inventory from '@/data/pinyin/inventory.json';
-import { FIRST_TONES, SECOND_TONES, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
+import { FIRST_TONES, SECOND_TONES, matrixPairOrder, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
 
 const tp = data as unknown as TonePairData;
 
@@ -13,6 +13,13 @@ describe('tone pair matrix', () => {
   it('has two recorded words in each of the 20 cells (first tone 1–4, second 1–4 or neutral)', () => {
     for (const a of FIRST_TONES) for (const b of SECOND_TONES) expect(pairPool(tp, `${a}-${b}`)).toHaveLength(2);
     expect(tp.examples.filter(e => e.inPairMatrix)).toHaveLength(40);
+  });
+  it('orders the card’s ‹ › pair walk like the grid and skips pairs with no words', () => {
+    const keys = matrixPairOrder(pair => pairPool(tp, pair).length > 0);
+    expect(keys).toEqual(FIRST_TONES.flatMap(a => SECOND_TONES.map(b => `${a}-${b}`)));
+    expect(keys.indexOf('1-5')).toBe(4); // last cell of the first row, before 2 + 1
+    expect(matrixPairOrder(pair => pair === '1-1' || pair === '3-3')).toEqual(['1-1', '3-3']);
+    expect(matrixPairOrder(() => false)).toEqual([]);
   });
   it('keeps 水果 and 可以 in the dictionary 3 + 3 cell while their speech draft is 2 + 3', () => {
     const cell = pairPool(tp, '3-3');

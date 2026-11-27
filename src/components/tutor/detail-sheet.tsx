@@ -60,11 +60,13 @@ export function closeTarget(trail: TrailStep[], openedAt: number | null, current
  *   form switches on the same card are stepped over; opened from the grid it returns to
  *   the grid and focuses this record's card, resetting Back.
  * Inputs: `label` (short glyph shown on Back for the next window), `position`/`total`
- * in the browsed list (position < 0 hides the grid arrows: record not in the list).
+ * in the browsed list (position < 0 hides the grid arrows: record not in the list), and
+ * `neighbourLabel`, what the middle arrows step through ("card", "tone pair"), so their
+ * tooltip never names the wrong thing on a page whose grid holds pairs rather than records.
  * State: `openedAt`, the history index of the entry where this window first appeared.
  */
-export function DetailSheet({ open, title, label, position = -1, total = 0, onClose, onPrevious, onNext, children }: {
-  open: boolean; title: string; label?: string; position?: number; total?: number; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
+export function DetailSheet({ open, title, label, position = -1, total = 0, neighbourLabel = 'card', onClose, onPrevious, onNext, children }: {
+  open: boolean; title: string; label?: string; position?: number; total?: number; neighbourLabel?: string; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
 }) {
   const returnFocus = useRef<HTMLElement | null>(null);
   const body = useRef<HTMLDivElement>(null);
@@ -152,10 +154,10 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, onCl
         <div className="detail-sheet-start">
           {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={goBack}><ArrowLeft/><span>{back.label}</span></Button>}
         </div>
-        {inList && <div className="detail-sheet-nav" role="group" aria-label="Neighbouring cards in this list">
-          <Button variant="ghost" size="icon" aria-label="Previous card in this list" title="Previous card in this list" disabled={!previous} onClick={previous}><ChevronLeft/></Button>
+        {inList && <div className="detail-sheet-nav" role="group" aria-label={`Neighbouring ${neighbourLabel}s in this list`}>
+          <Button variant="ghost" size="icon" aria-label={`Previous ${neighbourLabel} in this list`} title={`Previous ${neighbourLabel} in this list`} disabled={!previous} onClick={previous}><ChevronLeft/></Button>
           <span className="detail-sheet-position">{(position + 1).toLocaleString('en-US')} of {total.toLocaleString('en-US')}</span>
-          <Button variant="ghost" size="icon" aria-label="Next card in this list" title="Next card in this list" disabled={!next} onClick={next}><ChevronRight/></Button>
+          <Button variant="ghost" size="icon" aria-label={`Next ${neighbourLabel} in this list`} title={`Next ${neighbourLabel} in this list`} disabled={!next} onClick={next}><ChevronRight/></Button>
         </div>}
         <div className="detail-sheet-end">
           {inList && <NavigationShortcuts context="records"/>}
