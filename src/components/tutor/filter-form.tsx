@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useTransition, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, useTransition, type KeyboardEvent, type ReactNode, type SetStateAction } from 'react';
 import { Check, Search, X, SlidersHorizontal, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
@@ -8,6 +8,24 @@ import { SavedFilterRow, SavedFilterToggle, type SavedFilter } from './saved-fil
 /** Dashed-outline filter toggle shared by "+ lower ranks", "+ fewer strokes", and "Hide radicals". */
 export function FilterWideningToggle({ active, onToggle, label, title }: { active: boolean; onToggle: () => void; label: string; title: string }) {
   return <button type="button" className={`filter-upto-toggle${active ? ' active' : ''}`} aria-pressed={active} title={title} onClick={onToggle}>{label}</button>;
+}
+
+/** Where the clear-all (X) control lives: in the shared action row beside Apply/Reset
+ *  (libraries, Sound chart) or in a section heading of its own (game filters). */
+export type FilterClearPlacement = 'actions' | 'heading';
+
+/** The form owns applied-filter state and the wait-cursor transition, so a clear-all button
+ *  placed outside the action row can reach both without knowing which page it sits on. */
+const FilterFormClearContext = createContext<{ active: boolean; pending: boolean; clear: () => void } | null>(null);
+
+/** Labelled clear-all for a heading row (games show it on the "Filters" line). It renders
+ *  nothing while no filter is applied, so the heading stays a plain label until there is
+ *  something to undo, and it keeps the same accessible name as the action-row X. */
+export function FilterFormClearButton() {
+  const clear = useContext(FilterFormClearContext);
+  if (!clear?.active) return null;
+  return <Button type="button" size="sm" variant="ghost" className="filter-clear-heading" disabled={clear.pending}
+    title="Clear every applied filter" onClick={clear.clear}><X/>Clear filters</Button>;
 }
 
 /** Shared search input with embedded Pinyin and Exact mode toggles. */
@@ -37,7 +55,7 @@ function useWaitCursor(pending: boolean) {
   }, [pending]);
 }
 
-export function FilterForm({ children, onApply, onReset, onClear, count, changed, active, autoApply = false, showCount = true, resetLabel }: { children: ReactNode; onApply: () => void; onReset: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean; resetLabel?: string }) {
+export function FilterForm({ children, onApply, onReset, onClear, count, changed, active, autoApply = false, showCount = true, resetLabel, clearPlacement = 'actions' }: { children: ReactNode; onApply: () => void; onReset: () => void; onClear: () => void; count: number; changed: boolean; active: boolean; autoApply?: boolean; showCount?: boolean; resetLabel?: string; clearPlacement?: FilterClearPlacement }) {
   const [pending, startTransition] = useTransition();
   useWaitCursor(pending);
   const run = (action: () => void) => {
@@ -50,17 +68,20 @@ export function FilterForm({ children, onApply, onReset, onClear, count, changed
       startTransition(action);
     });
   };
+  // With the clear-all living in a heading (game filters), the action row exists only while a
+  // draft edit waits for Apply: an always-mounted row would leave a blank band under the
+  // filters. It sits on its own grid row below the filter fields, so mounting it on the first
+  // edit cannot move an anchored range panel mid-drag.
+  const showActions = clearPlacement === 'heading' ? changed && !autoApply : !autoApply || changed || active || Boolean(resetLabel);
   return <form className="filter-bar shared-filter-form" data-filters-changed={changed && !autoApply ? '' : undefined} aria-label="Filters" aria-busy={pending} onSubmit={event => { event.preventDefault(); if (changed) run(onApply); }}>
-    {children}
+    <FilterFormClearContext.Provider value={{ active, pending, clear: () => run(onClear) }}>{children}</FilterFormClearContext.Provider>
     {/* Auto-apply mode (games) never shows Apply: every edit submits itself; X still clears. */}
-    {/* Reserve explicit-filter action space before edits, without mounting inactive
-        buttons: Apply appearing must not move an anchored range panel mid-drag. */}
-    {(!autoApply || changed || active || resetLabel) && <div className="filter-submit">
+    {showActions && <div className="filter-submit">
       {changed && !autoApply && <Button type="submit" size="sm" variant="outline" disabled={pending}><Check/>Apply</Button>}
       {/* Reset only abandons unapplied edits. Applied filters and the result pool stay
           untouched; the separate X remains the explicit clear-all action. */}
       {changed && !autoApply && resetLabel && <Button type="button" size="sm" variant="ghost" disabled={pending} onClick={onReset}><RotateCcw/>{resetLabel}</Button>}
-      {active && <Button type="button" size="icon" variant="ghost" className="close-x" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}
+      {active && clearPlacement !== 'heading' && <Button type="button" size="icon" variant="ghost" className="close-x" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}
     </div>}
     {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
@@ -72,7 +93,7 @@ export function FilterForm({ children, onApply, onReset, onClear, count, changed
  * cheap result sets such as the Sound chart's syllables), every edit — keystrokes included —
  * applies synchronously with no wait cursor or frame delay, so the applied value catches
  * up before the next keystroke and the draft-sync effect never rolls typing back. */
-export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, resetLabel, children, filterFields, chips = [], searchKey, searchModeKey, saved }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; resetLabel?: string; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T; /** Search-mode field (Pinyin/Exact) that alone never offers Apply while the search text is empty. */ searchModeKey?: keyof T; /** Saved-only browsing: an immediate toggle (never drafted) after the dropdowns, beside the phone Filters button and first in its drawer. */ saved?: SavedFilter }) {
+export function DraftFilterForm<T extends object>({ applied, active, count, onApply, onClear, autoApply: autoApplyProp = false, live = false, showCount = true, resetLabel, clearPlacement = 'actions', children, filterFields, chips = [], searchKey, searchModeKey, saved }: { applied: T; active: boolean; count: number; onApply: (draft: T) => void; onClear: () => T; autoApply?: boolean; live?: boolean; showCount?: boolean; resetLabel?: string; /** 'heading' lets a section heading (the games' "Filters" line) carry the clear-all instead of the action row. */ clearPlacement?: FilterClearPlacement; children: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; filterFields?: (controls: ReturnType<typeof useDraftFilters<T>>) => ReactNode; chips?: { label: string; clear: Partial<T> }[]; /** Text field cleared by the phone search-box X (only the text; other filters and search modes stay). */ searchKey?: keyof T; /** Search-mode field (Pinyin/Exact) that alone never offers Apply while the search text is empty. */ searchModeKey?: keyof T; /** Saved-only browsing: an immediate toggle (never drafted) after the dropdowns, beside the phone Filters button and first in its drawer. */ saved?: SavedFilter }) {
   const controls = useDraftFilters(applied);
   const formRef = useRef<HTMLFormElement>(null);
   const autoApply = autoApplyProp || live;
@@ -127,5 +148,5 @@ export function DraftFilterForm<T extends object>({ applied, active, count, onAp
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}><SheetContent side="bottom" className="library-control-sheet" aria-describedby={undefined}><SheetTitle>Filters</SheetTitle><div className="library-sheet-fields">{saved && <SavedFilterRow {...saved}/>}{filterFields(renderControls)}</div>{/* The actions row is always rendered with a reserved button height, so Apply,
       Reset and Clear appearing after an edit never resize the sheet or shift its fields. */}<div className="library-sheet-actions">{active && <Button variant="ghost" disabled={pending} onClick={() => { controls.setDraft(onClear()); setSheetOpen(false); }}><X/>Clear filters</Button>}{changed && <Button disabled={pending} onClick={() => { submit(controls.draft); setSheetOpen(false); }}><Check/>Apply</Button>}{changed && resetLabel && <Button variant="ghost" disabled={pending} onClick={() => controls.setDraft(applied)}><RotateCcw/>{resetLabel}</Button>}</div></SheetContent></Sheet>
   </div>;
-  return <FilterForm count={count} showCount={showCount} {...(resetLabel ? { resetLabel } : {})} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onReset={() => controls.setDraft(applied)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
+  return <FilterForm count={count} showCount={showCount} {...(resetLabel ? { resetLabel } : {})} clearPlacement={clearPlacement} active={active} changed={changed} autoApply={autoApply} onApply={() => onApply(controls.draft)} onReset={() => controls.setDraft(applied)} onClear={() => controls.setDraft(onClear())}>{children(renderControls)}{filterFields?.(renderControls)}{saved && <SavedFilterToggle {...saved}/>}</FilterForm>;
 }

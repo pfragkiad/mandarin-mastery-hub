@@ -133,7 +133,7 @@ function DrillFrame({ data: _data, mode: _mode, filters, onFilters, pool, round,
   const setup = (action?: ReactNode, summary?: ReactNode) => <GameSetup summary={summary}
     action={action} matchCount={pool.length} unit="sounds" selection={settingsLabel}
     preview={pool[0] && <span className="game-preview-sound pinyin">{toneMark(pool[0].base, pool[0].tone)}</span>}
-    filters={<DraftFilterForm applied={filters} active={active} count={pool.length} showCount={false} resetLabel="Reset" onApply={onFilters} onClear={() => { const empty: DrillFilters = { initial: '', final: '' }; onFilters(empty); return empty; }}>
+    filters={<DraftFilterForm applied={filters} active={active} count={pool.length} showCount={false} resetLabel="Reset" clearPlacement="heading" onApply={onFilters} onClear={() => { const empty: DrillFilters = { initial: '', final: '' }; onFilters(empty); return empty; }}>
       {({ draft, patch }) => <GameFilters count={[draft.initial, draft.final].filter(Boolean).length}>
         <GameField label="Initial"><InitialSelect value={draft.initial} onChange={initial => patch({ initial })} /></GameField>
         <GameField label="Final"><FinalSelect value={draft.final} onChange={final => patch({ final })} /></GameField>

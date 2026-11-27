@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { FilterSelect } from './filter-select';
-import { FilterWideningToggle } from './filter-form';
+import { FilterFormClearButton, FilterWideningToggle } from './filter-form';
 import { parseRankRange, rankRangeValue, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
 import { STROKE_SLIDER_MAX, STROKE_SLIDER_MIN, formatStrokeRangeLabel, formatStrokeRangeValue, parseStrokeRange } from '@/lib/stroke-range';
 import { formatSelectedLevels, parseSelectedLevels } from '@/lib/mandarin';
@@ -23,11 +23,14 @@ export function GameChoices({ label, value, options, onChange }: {
     </div></div>;
 }
 
-/** All game filters stay visible; only individual range editors float behind their buttons. */
+/** All game filters stay visible; only individual range editors float behind their buttons.
+ *  The clear-all action sits on this heading line (labelled, not an icon on its own row), so
+ *  the action row below only has to carry Apply/Reset while a draft edit is waiting. */
 export function GameFilters({ count, children }: { count: number; children: ReactNode }) {
   return <div className="game-filter-disclosure">
     <div className="game-filter-heading">
       <SlidersHorizontal/><span>Filters</span>{count > 0 && <span className="game-filter-number">{count}</span>}
+      <FilterFormClearButton/>
     </div>
     <div className="game-filter-grid">{children}</div>
   </div>;

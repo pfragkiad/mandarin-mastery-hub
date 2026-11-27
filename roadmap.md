@@ -252,3 +252,6 @@
 ## Game settings reviewer refinements
 - [x] Balance shared Words/Glyphs game filters, labels, spacing, preview and floating ranges.
 - [x] Distinguish unapplied filters without changing Apply/Reset rules or HSK selection geometry; verified both games at wide/narrow widths and 21 filter tests. Unclassified is offered only where recorded unlevelled entries exist (none in the current Words pool).
+
+## Game filter clear-all placement
+- [x] Put the labelled "Clear filters" control on the Filters heading line instead of a lone X in an empty band; Apply/Reset mount only while a draft edit is pending. Verified Flashcards at 1395 and 390 widths: heading clear removes the applied filter, range triggers never move, 51 filter/flashcard/drawing tests pass.

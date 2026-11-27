@@ -1876,6 +1876,11 @@ html[data-display-size='comfortable'] .library-page .shared-filter-form > .filte
 .game-filter-heading > svg:last-child { grid-column: 4; transition: transform .15s; }
 .game-filter-heading > svg.is-open { transform: rotate(180deg); }
 .game-filter-number { justify-self: start; color: var(--primary); font-variant-numeric: tabular-nums; }
+/* The games' clear-all lives on the Filters heading line: labelled, right-aligned, and only
+   mounted while an applied filter exists (see FilterFormClearButton). */
+.game-filter-heading .filter-clear-heading { grid-column: 4; justify-self: end; height: 26px; min-height: 0; padding: 0 8px; gap: 5px; font-size: 12px; font-weight: 500; color: var(--muted-foreground); white-space: nowrap; }
+.game-filter-heading .filter-clear-heading svg { width: 13px; height: 13px; }
+.game-filter-heading .filter-clear-heading:hover { color: var(--foreground); }
 .game-filter-grid { display: flex; flex-wrap: wrap; align-items: end; gap: var(--game-field-gap); padding-top: var(--game-field-gap); }
 .game-filter-grid > .game-setting-field { flex: 1 1 130px; max-width: 100%; }
 .game-filter-grid > .game-level-field { flex: 1 0 100%; width: 100%; }

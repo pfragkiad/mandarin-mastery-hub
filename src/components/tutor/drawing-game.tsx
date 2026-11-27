@@ -229,6 +229,7 @@ export function DrawingGamePage({
               count={pool.length}
               showCount={false}
               resetLabel="Reset"
+              clearPlacement="heading"
               onApply={configure}
               onClear={() => {
                 const empty: DrawingSearch = {
