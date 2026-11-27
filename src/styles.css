@@ -2907,6 +2907,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 /* Wrap only when the actual words cannot fit beside the tile, not at a fixed
    120px reservation which needlessly pushed short translations below three hanzi. */
 .word-example-glyphs + .glyph-usage-facts { flex-basis: min-content; }
+/* The shared grid fit pass stacks only visual row companions after their own
+   shrink attempts; the source-ordered cards in other rows keep their side layout. */
+.glyph-usage-reference[data-stacked] > .glyph-usage-facts { flex-basis: 100%; }
 .word-example-glyphs + .glyph-usage-facts .pinyin { white-space: normal; overflow-wrap: normal; }
 .pinyin-character-glyph { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: var(--control-radius); font-family: var(--font-hanzi); font-size: 22px; color: var(--primary); text-decoration: none; transition: border-color .15s; }
 .pinyin-character-glyph.is-traditional { color: var(--traditional); }

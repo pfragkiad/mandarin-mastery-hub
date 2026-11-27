@@ -170,14 +170,14 @@ describe('Absent-record notes', () => {
     expect(screen.getByText(/Draft lesson example/)).toBeInTheDocument();
     rerender(<GlyphUsageExamples entry={{ ...lang, id: 'Characters:崾', hanzi: '崾' }} kind="Characters" />);
     expect(container.querySelector('.sentence-hanzi')).toBeNull();
-    expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
+    expect(await screen.findByText('No recorded example phrase yet.')).toBeInTheDocument();
   });
 
-  it('keeps the phrase section when a character has no example', () => {
+  it('keeps the phrase section when a character has no example', async () => {
     const he: LibraryEntry = { id: 'Characters:和', hanzi: '和', pinyin: 'hé', meaning: 'harmony; and', note: '8 strokes' };
     render(<GlyphUsageExamples entry={he} kind="Characters" />);
     expect(screen.getByRole('heading', { level: 3, name: 'IN A PHRASE' })).toBeInTheDocument();
-    expect(screen.getByText('No recorded example phrase yet.')).toBeInTheDocument();
+    expect(await screen.findByText('No recorded example phrase yet.')).toBeInTheDocument();
     // The external search is no longer in the section head: it lives in the card's action row.
     expect(screen.queryByRole('link', { name: /Search on the internet/ })).toBeNull();
   });

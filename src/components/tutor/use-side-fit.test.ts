@@ -1,5 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { MAX_TRAILING_WORDS, MEANING_FONT_FLOOR, MEANING_FONT_STEPS, meaningFontSize, trailingWordCount } from './use-side-fit';
+import { MAX_TRAILING_WORDS, MEANING_FONT_FLOOR, MEANING_FONT_STEPS, meaningFontSize, trailingWordCount, synchronizedRowStacks } from './use-side-fit';
+
+describe('shared grid row stacking', () => {
+  it('stacks every companion of a wrapped card without changing other rows', () => {
+    expect(synchronizedRowStacks([
+      { top: 100, stacked: true }, { top: 100.2, stacked: false },
+      { top: 220, stacked: false }, { top: 220, stacked: false },
+    ])).toEqual([true, true, false, false]);
+  });
+
+  it('restores side layouts when no card needs wrapping after resizing or filtering', () => {
+    expect(synchronizedRowStacks([
+      { top: 100, stacked: false }, { top: 100, stacked: false },
+    ])).toEqual([false, false]);
+  });
+});
 
 describe('meaningFontSize', () => {
   it('steps the translation one pixel at a time below the view size', () => {

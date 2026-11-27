@@ -45,6 +45,8 @@ export type SideFitOptions = {
   shrinkText?: boolean;
   /** Stack every card of a grid row once any card in that row needs to stack. */
   rowSync?: boolean;
+  /** Custom natural-layout measurement for small example bodies; true means stacked. */
+  fit?: (el: HTMLElement) => boolean;
 };
 
 export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean, deps: DependencyList, options: SideFitOptions = {}) {
@@ -53,7 +55,7 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
     const el = ref.current;
     if (!el) return;
     if (!enabled) { delete el.dataset['stacked']; resetTextFonts(el); return; }
-    const card: FitCard = { el, shrinkText };
+    const card: FitCard = { el, shrinkText, ...(options.fit ? { fit: options.fit } : {}) };
     let alive = true;
     // Row-synced cards are laid out together per grid (see flushRows); others measure alone.
     const measure = () => { if (!alive) return; if (rowSync) scheduleRow(card); else { fitSelf(card); finishFit(el); } };
@@ -75,14 +77,15 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
   }, [enabled, shrinkText, rowSync, ...deps]);
 }
 
-type FitCard = { el: HTMLElement; shrinkText: boolean };
+type FitCard = { el: HTMLElement; shrinkText: boolean; fit?: (el: HTMLElement) => boolean };
 
 /**
  * One card's own best layout, starting from the side layout: keep it as is, else a smaller
  * translation, else (shrinkText) pinyin and translation together a few pixels smaller, else stack.
  * Returns true when the card had to stack. Leaves the winning font sizes applied.
  */
-function fitSelf({ el, shrinkText }: FitCard): boolean {
+function fitSelf({ el, shrinkText, fit }: FitCard): boolean {
+  if (fit) return fit(el);
   delete el.dataset['stacked'];
   resetTextFonts(el);
   if (sideLayoutFits(el)) return false;
@@ -152,7 +155,7 @@ function sharedObserver(): ResizeObserver | null {
  * holding glyph and word cards side by side, and they sync across it like library cards.
  */
 function gridOf(el: HTMLElement): Element {
-  return el.closest('.overview-discovery-row') ?? el.closest('.word-card')?.parentElement ?? el;
+  return el.closest('.overview-discovery-row') ?? el.closest('.expandable-character-grid') ?? el.closest('.word-card')?.parentElement ?? el;
 }
 
 function scheduleRow(card: FitCard) {
@@ -169,17 +172,23 @@ function flushRows() {
   for (const grid of grids) {
     const cards = Array.from(rowCards).filter(c => c.el.isConnected && gridOf(c.el) === grid);
     const own = new Map(cards.map(c => [c, fitSelf(c)] as const));
-    const stackedRows = new Set(cards.filter(c => own.get(c)).map(rowKey));
-    for (const c of cards) {
-      if (!own.get(c) && stackedRows.has(rowKey(c))) { c.el.dataset['stacked'] = ''; resetTextFonts(c.el); }
+    const stacked = synchronizedRowStacks(cards.map(c => ({ top: rowKey(c), stacked: own.get(c) ?? false })));
+    for (const [index, c] of cards.entries()) {
+      if (!own.get(c) && stacked[index]) { c.el.dataset['stacked'] = ''; resetTextFonts(c.el); }
     }
-    for (const c of cards) finishFit(c.el);
+    for (const c of cards) if (!c.fit) finishFit(c.el);
   }
+}
+
+/** Shared library/example row decision: only visual companions inherit a stacked layout. */
+export function synchronizedRowStacks(cards: readonly { top: number; stacked: boolean }[]): boolean[] {
+  const rows = new Set(cards.filter(card => card.stacked).map(card => Math.round(card.top)));
+  return cards.map(card => rows.has(Math.round(card.top)));
 }
 
 /** Cards of one visual row share their top edge (rounded against sub-pixel layout). */
 function rowKey(card: FitCard): number {
-  return Math.round((card.el.closest('.word-card') ?? card.el).getBoundingClientRect().top);
+  return Math.round((card.el.closest('.word-card, .glyph-usage-example') ?? card.el).getBoundingClientRect().top);
 }
 
 /** At most this share of the view's own size is taken off pinyin + translation to keep the side layout. */
@@ -196,7 +205,7 @@ function pinyinElement(open: HTMLElement): HTMLElement | null {
 
 /** Every reading's pinyin (glyph cards with several readings show one .pinyin-text per reading). */
 function pinyinElements(open: HTMLElement): HTMLElement[] {
-  return Array.from(open.querySelectorAll<HTMLElement>('.pinyin-text'));
+  return Array.from(open.querySelectorAll<HTMLElement>('.pinyin-text, .glyph-usage-facts .pinyin'));
 }
 
 function fontPx(el: HTMLElement | null): number {
@@ -287,7 +296,7 @@ export function trailingWordCount(lastLineWidth: number, lastWordWidths: number[
 }
 
 function meaningElement(open: HTMLElement): HTMLElement | null {
-  return open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning');
+  return open.querySelector<HTMLElement>('.word-meaning, .catalog-entry-meaning, .glyph-usage-meaning');
 }
 
 /** Put the translation one step below the view's size; false when that would cross the floor. */

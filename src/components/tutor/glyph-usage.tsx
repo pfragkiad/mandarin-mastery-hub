@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
@@ -29,7 +29,7 @@ import { SoundExampleGlyph } from './sound-example-glyph';
 import { sectionIcons } from '@/lib/section-icons';
 import { wordTileFit } from './word-card';
 import { ExampleSection } from './example-tabs';
-import { lineCount, MEANING_FONT_FLOOR, sideTextMaxStep } from './use-side-fit';
+import { lineCount, MEANING_FONT_FLOOR, sideTextMaxStep, useSideFit } from './use-side-fit';
 
 /**
  * Before wrapping pinyin or translation (or pushing facts below the hanzi box) on an
@@ -39,21 +39,19 @@ import { lineCount, MEANING_FONT_FLOOR, sideTextMaxStep } from './use-side-fit';
 function WordExampleReference({ word, children }: { word: Word; children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const { preferences } = useWorkspace();
-  useLayoutEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let alive = true;
-    const measure = () => {
-      if (!alive) return;
+  useSideFit(ref, true, [word.id, word.pinyin, word.meaning, preferences.pinyin, preferences.font, preferences.libraryView], {
+    rowSync: true,
+    fit: el => {
       const glyphs = el.querySelector<HTMLElement>('.word-example-glyphs');
       const facts = el.querySelector<HTMLElement>('.glyph-usage-facts');
       const pinyin = facts?.querySelector<HTMLElement>('.pinyin') ?? null;
       const meaning = facts?.querySelector<HTMLElement>('.glyph-usage-meaning') ?? null;
-      if (!glyphs || !facts) return;
+      if (!glyphs || !facts) return false;
       const reset = () => {
         pinyin?.style.removeProperty('font-size');
         meaning?.style.removeProperty('font-size');
       };
+      delete el.dataset['stacked'];
       reset();
       const state = () => {
         const gBox = glyphs.getBoundingClientRect();
@@ -64,7 +62,7 @@ function WordExampleReference({ word, children }: { word: Word; children: React.
         return { wrapped, pinyinLines, meaningLines };
       };
       const initial = state();
-      if (!initial.wrapped && initial.pinyinLines <= 1 && initial.meaningLines <= 1) return;
+      if (!initial.wrapped && initial.pinyinLines <= 1 && initial.meaningLines <= 1) return false;
       const basePinyin = pinyin ? parseFloat(getComputedStyle(pinyin).fontSize) || 0 : 0;
       const baseMeaning = meaning ? parseFloat(getComputedStyle(meaning).fontSize) || 0 : 0;
       const floor = Math.min(MEANING_FONT_FLOOR, 9.5);
@@ -75,30 +73,20 @@ function WordExampleReference({ word, children }: { word: Word; children: React.
         if (pinyin && basePinyin) pinyin.style.fontSize = `${Math.max(floor, basePinyin - step)}px`;
         if (meaning && baseMeaning) meaning.style.fontSize = `${Math.max(floor, baseMeaning - step)}px`;
         const next = state();
-        if (!next.wrapped && next.pinyinLines <= 1 && next.meaningLines <= 1) return;
+        if (!next.wrapped && next.pinyinLines <= 1 && next.meaningLines <= 1) return false;
         if (!bestSideStep && !next.wrapped && next.pinyinLines <= 1) bestSideStep = step;
       }
       if (bestSideStep > 0) {
         if (pinyin && basePinyin) pinyin.style.fontSize = `${Math.max(floor, basePinyin - bestSideStep)}px`;
         if (meaning && baseMeaning) meaning.style.fontSize = `${Math.max(floor, baseMeaning - bestSideStep)}px`;
-        return;
+        return false;
       }
       reset();
-    };
-    measure();
-    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
-    observer?.observe(el);
-    const prefs = new MutationObserver(measure);
-    prefs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-display-size', 'data-character-style'] });
-    void document.fonts?.ready.then(measure);
-    document.fonts?.addEventListener('loadingdone', measure);
-    return () => {
-      alive = false;
-      observer?.disconnect();
-      prefs.disconnect();
-      document.fonts?.removeEventListener('loadingdone', measure);
-    };
-  }, [word.id, word.pinyin, word.meaning, preferences.pinyin, preferences.font]);
+      const wrapped = state().wrapped;
+      if (wrapped) el.dataset['stacked'] = '';
+      return wrapped;
+    },
+  });
   return <div ref={ref} className="glyph-usage-reference">{children}</div>;
 }
 

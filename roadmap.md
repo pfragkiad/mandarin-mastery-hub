@@ -1,5 +1,9 @@
 # Roadmap
 
+## Consistent example-grid rows
+- [x] Reuse common-grid row synchronization after individual word-example shrink attempts, keeping other rows independent.
+- [x] Verified expanded 电 examples in both display sizes, paired wrapping at 700px, single-column layouts at 390px and restoration at 2470px; no runtime errors or horizontal overflow. Run affected regression tests.
+
 ## Expanded-list frame only while scrolling
 - [x] Frame the expanded example list only while it really scrolls; a short list that fits and the empty "No matching examples" note stay unframed. Verified 的 "In a word" (7 cards, unframed when it fits, framed when the window shortens it) and the empty search note in the browser; 6 shared tests pass.
 - [x] Hide "Show fewer" while a search filter is typed; it returns when the box is emptied. Verified on 的 idiom and phrase details: filter with matches keeps the frame but drops the button, emptying the box restores it; 526 tutor tests pass.
