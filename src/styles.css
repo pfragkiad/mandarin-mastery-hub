@@ -5257,7 +5257,9 @@ html[data-display-size='comfortable'] .tone-sounds-example.is-expanded .decompos
 .tone-pair-expanded-info { flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .tone-pair-expanded-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .tone-pair-expanded-pinyin { font-size: 20px; font-weight: 600; line-height: 1.25; }
-.tone-pair-expanded-meaning { margin: 0; font-size: 14px; color: var(--muted-foreground); line-height: 1.4; }
+/* Translation stays the card's normal ink, exactly like the shared small-card
+   meaning (.glyph-usage-meaning); only the characters and pinyin carry tone colour. */
+.tone-pair-expanded-meaning { margin: 0; font-size: 14px; color: var(--foreground); line-height: 1.4; }
 html[data-display-size='comfortable'] .tone-pair-expanded-pinyin { font-size: 23px; }
 html[data-display-size='comfortable'] .tone-pair-expanded-meaning { font-size: 16px; }
 .tone-pair-expanded-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
