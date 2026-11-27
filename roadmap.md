@@ -1,5 +1,9 @@
 # Roadmap
 
+## Detail tab consistency and long idioms
+- [x] Keep In a… tabs identical to Decomposition/Etymology in both sizes, removing conflicting control typography; browser-verified matching font, weight, padding and icons.
+- [x] Move idiom pinyin and translation below Hanzi when a translation exceeds two lines; verified expanded lists at wide/narrow widths in both sizes, with 41 related tests passing.
+
 ## Shared detail example tabs
 - [x] Group all In a… detail sections with the existing drawer-tab styling and history-backed selection.
 - [x] Replace phrase/idiom search links and limited lists with shared Show all bounded scrolling.

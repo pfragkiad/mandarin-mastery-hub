@@ -425,8 +425,6 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .detail-sheet .expandable-character-grid.example-list { grid-template-columns: minmax(0, 1fr); }
 .detail-sheet .example-list .glyph-usage-example + .glyph-usage-example { margin-top: 0; }
 .example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
-.example-tabs .stroke-tab { height: auto; border-radius: 0; }
-.example-tabs .stroke-tab:hover { background: transparent; }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
 .glyph-usage-facts { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
@@ -2315,7 +2313,7 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 html[data-display-size='comfortable'] { --ui-label-size: 13px; --ui-control-size: 15px; }
 /* Shared Button marks both buttons and linked actions, including portalled controls.
    Override fixed-size variants so Comfortable never leaves their text compact. */
-html[data-display-size='comfortable'] [data-ui-button] { font-size: var(--ui-control-size) !important; }
+html[data-display-size='comfortable'] [data-ui-button]:not(.stroke-tab) { font-size: var(--ui-control-size) !important; }
 html[data-display-size='comfortable'] .daily-hero-actions [data-ui-button] { min-height: 40px; height: auto; white-space: normal; text-align: center; }
 html[data-display-size='comfortable'] :is(.filter-select, .filter-upto-toggle, .search-field input, .form-field input, .form-field select, .practice-options select) { font-size: var(--ui-control-size); min-height: 44px; }
 html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a):not([role='switch']) { font-size: var(--ui-control-size); min-height: 40px; }
@@ -3473,7 +3471,9 @@ html[data-display-size='comfortable'] .word-strip-pinyin { font-size: 16px; }
 /* Drawer tab labels match the section eyebrows ("IN A PHRASE", "LESSONS"): small,
    uppercase, wide-tracked, muted; the open tab reads in full colour with its underline. */
 /* Symmetric padding keeps the label's centre on the sibling hint icon's centre. */
-.stroke-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; background: none; border: 0; padding: 11px 2px; font: inherit; font-size: 9px; letter-spacing: 1.65px; font-weight: 600; text-transform: uppercase; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
+.stroke-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; height: auto; border-radius: 0; background: none; border: 0; padding: 11px 2px; font: inherit; font-size: 9px; letter-spacing: 1.65px; font-weight: 600; text-transform: uppercase; color: var(--muted-foreground); cursor: pointer; transition: color .15s; }
+.stroke-tab > svg { width: 13px; height: 13px; }
+.stroke-tab:hover { background: transparent; }
 .stroke-tab:hover:not(:disabled) { color: var(--foreground); }
 .stroke-tab[aria-selected='true'] { color: var(--foreground); }
 .stroke-tab[aria-selected='true']::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--foreground); }

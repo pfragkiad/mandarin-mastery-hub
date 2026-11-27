@@ -21,7 +21,9 @@ export function useSentenceSectionLayout(recordKey: string, content: unknown) {
   const sectionRef = useRef<HTMLElement>(null);
   const activeTab = useExampleTab();
   // Judge the natural side layout first, then stack the whole section if any reading
-  // falls below its hanzi. Recheck newly revealed examples and settled web fonts;
+  // falls below its hanzi, or an idiom translation exceeds two side-column lines.
+  // Pinyin moves with the translation; the existing section-wide stack keeps siblings aligned.
+  // Recheck newly revealed examples and settled web fonts;
   // height-only observer notifications must not cause reset/stack feedback loops.
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -37,6 +39,20 @@ export function useSentenceSectionLayout(recordKey: string, content: unknown) {
         if (!hanziRow || !reading || !reading.textContent?.trim()) return false;
         const hanziBox = hanziRow.getBoundingClientRect();
         const readingBox = reading.getBoundingClientRect();
+        if (section.classList.contains('idiom-examples-section')) {
+          const meaning = reading.querySelector('.sentence-meaning');
+          if (meaning) {
+            // Inline spans can produce several rectangles on one line (styled senses),
+            // so count distinct line tops rather than rectangles or guessed font heights.
+            const range = document.createRange();
+            range.selectNodeContents(meaning);
+            const tops: number[] = [];
+            for (const rect of Array.from(range.getClientRects())) {
+              if (rect.height > 0 && !tops.some(top => Math.abs(top - rect.top) < 2)) tops.push(rect.top);
+            }
+            if (tops.length > 2) return true;
+          }
+        }
         return hanziBox.height > 0 && readingBox.top >= hanziBox.bottom - 1;
       });
       if (stacked) section.dataset['sentencesStacked'] = '';
