@@ -224,4 +224,18 @@ describe('Traditional parent characters', () => {
     expect(tile).toHaveClass('traditional-character');
     workspaceState.includeTraditional = false;
   });
+
+  it('gives the parent card its shared detail arrow to that exact character record', async () => {
+    workspaceState.includeTraditional = true;
+    const radical: LibraryEntry = { id: 'Radicals:魚', hanzi: '魚', pinyin: 'yú', meaning: 'fish; surname', note: '11 strokes · Radical #195', kangxiIndex: 195 };
+    render(<GlyphUsageExamples entry={radical} kind="Radicals" familyGlyph="魚" />);
+    const card = (await screen.findByText('鮮')).closest('.glyph-parent-card');
+    // The arrow is the shared no-background detail link, and it names the exact record it opens.
+    const arrow = card?.querySelector('.example-card-meta > a.detail-arrow-link');
+    expect(arrow).not.toBeNull();
+    expect(arrow).toHaveAttribute('title', "Click to open 鮮's character details");
+    // The router's own encoding keeps the record-id colon as %3A, so compare the exact href.
+    expect(decodeURI(arrow?.getAttribute('href') ?? '')).toBe('/characters?tab=Characters&id=Characters%3A鮮');
+    workspaceState.includeTraditional = false;
+  });
 });

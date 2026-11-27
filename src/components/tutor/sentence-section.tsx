@@ -88,14 +88,17 @@ export function SentenceSection({ hanzi, children }: { hanzi: string; children?:
  *
  * Inputs: `identity` — the already-rendered label for that record (the HSK level/ID pill for
  * a phrase, the frequency rank for an idiom); `topic` — the primary recorded subtopic label,
- * or null when the record has none. With neither, nothing renders, so a card never grows an
- * empty header row, and the dot only appears between two parts that both exist.
+ * or null when the record has none; `link` — the card's shared top-right detail arrow
+ * (`.detail-arrow-link`), rendered at the far right of the same row. With none of the three,
+ * nothing renders, so a card never grows an empty header row, and the dot only appears
+ * between two parts that both exist.
  */
-export function ExampleCardMeta({ identity, topic }: { identity?: ReactNode; topic?: string | null }) {
-  if (!identity && !topic) return null;
+export function ExampleCardMeta({ identity, topic, link }: { identity?: ReactNode; topic?: string | null; link?: ReactNode }) {
+  if (!identity && !topic && !link) return null;
   return <div className="example-card-meta">
     {identity}
     {topic && <span className="example-card-topic">{identity ? <span aria-hidden="true">· </span> : null}{topic}</span>}
+    {link}
   </div>;
 }
 

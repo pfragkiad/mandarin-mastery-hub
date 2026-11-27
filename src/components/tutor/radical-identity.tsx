@@ -1,4 +1,5 @@
 import { SourceInfo } from '@/components/tutor/source-info';
+import { ArrowUpRight } from 'lucide-react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -31,7 +32,10 @@ export function RadicalIdentityNote({ glyph }: { glyph: string }) {
       // Same small grid card as "In a character": Radical #N header, then the tile beside
       // reading + speaker and the recorded meaning.
       return <div key={radical.id} className="glyph-usage-example kangxi-identity-card">
-        <ExampleCardMeta identity={<span className="word-hsk-id kangxi-identity-badge">Radical #{radical.number}</span>}/>
+        <ExampleCardMeta identity={<span className="word-hsk-id kangxi-identity-badge">Radical #{radical.number}</span>} link={destination
+          // The shared top-right arrow opens the same radical card the tile does.
+          ? <Link to="/characters" search={destination} resetScroll={false} className="detail-arrow-link" title={openDetailsHint(radical.glyph, destination.tab)} aria-label={openDetailsHint(radical.glyph, destination.tab)}><ArrowUpRight aria-hidden="true"/></Link>
+          : undefined}/>
         <div className="glyph-usage-reference kangxi-identity-item">{destination
           ? <Button asChild variant="ghost" className="decomposition-glyph is-radical"><Link to="/characters" search={destination} resetScroll={false} title={openDetailsHint(radical.glyph, destination.tab)} aria-label={`Kangxi radical ${radical.number} · ${openDetailsHint(radical.glyph, destination.tab)}`}><strong lang="zh-CN">{radical.glyph}</strong></Link></Button>
           : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static is-radical">{radical.glyph}</strong>}<span className="glyph-usage-facts"><span className="glyph-usage-facts-row"><ComponentPronunciation glyph={radical.glyph}/></span>{meaning && <span className="glyph-usage-meaning kangxi-identity-meaning">{stripKangxiLabel(meaning)}</span>}</span></div>

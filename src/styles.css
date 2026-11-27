@@ -431,6 +431,12 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .example-card-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
 html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .example-card-meta) :is(.component-reuse-label, .example-card-topic) { font-size: 13px; line-height: 1.4; }
 .example-card-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
+/* The shared detail arrow (styles.css .detail-arrow-link) rides at the far right of a small
+   grid card's header row, vertically centred on the label line, in both display sizes. */
+.example-card-meta > .detail-arrow-link { margin-left: auto; align-self: center; margin-top: 0; width: 26px; height: 26px; flex: none; }
+.example-card-meta > .detail-arrow-link svg { width: 15px; height: 15px; }
+html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link { width: 30px; height: 30px; }
+html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link svg { width: 17px; height: 17px; }
 /* Metadata belongs above its example; the quieter inner rule distinguishes examples
    from the full-weight dividers between different detail sections. */
 .idiom-examples-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); margin-top: var(--detail-example-gap, 6px); }

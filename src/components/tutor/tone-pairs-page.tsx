@@ -287,6 +287,12 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
       const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
       const hsk = record ? wordHskPill(record) : null;
       const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
+      // Each collapsed card carries its own arrow to its own exact word record, never the
+      // selected row's, so the header arrow always names the card it sits in.
+      const ownHint = record ? openDetailsHint(record.hanzi, 'word') : '';
+      const ownLink = !hidden && record
+        ? <Link to="/vocabulary" search={{ word: record.id }} className="detail-arrow-link" title={ownHint} aria-label={ownHint}><ArrowUpRight aria-hidden="true"/></Link>
+        : undefined;
       const isExpanded = mode === 'pairs' && example.id === row.id;
       const coloredPinyin = example.citationSyllables.map((syl, sylIndex) => (
         <span key={sylIndex} className={`tone-pair-syllable tone-${example.citationTones[sylIndex] ?? 5}`}>{sylIndex > 0 ? ' ' : ''}{syl}</span>
@@ -337,7 +343,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
           </div>
           {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
         </> : <>
-          <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
+          <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={ownLink}/>
           <span className="glyph-usage-reference">
             <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
               const tone = example.citationTones[glyphIndex];

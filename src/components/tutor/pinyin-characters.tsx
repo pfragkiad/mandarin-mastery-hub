@@ -10,7 +10,7 @@
 // with the same recorded meaning share one row (groupScriptForms); each box still opens
 // its own record and different ranks are listed per box.
 import { useMemo } from 'react';
-import { Puzzle } from 'lucide-react';
+import { ArrowUpRight, Puzzle } from 'lucide-react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
@@ -85,8 +85,17 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             {radicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}
             {onlyTraditional && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
           </>;
+          // The card's top-right arrow opens the row's primary form (the form whose rank heads
+          // the card), so the hint names exactly that glyph. It records the same return trail
+          // as the tile links, so the details window's Back comes back to this sound.
+          const primaryKind = radicalCard(first.hanzi) ? 'Radicals' : 'Characters';
+          const primaryHint = openDetailsHint(first.hanzi, primaryKind);
+          const arrow = <Link to="/characters" search={destinationFor(first)} resetScroll={false} className="detail-arrow-link" title={primaryHint} aria-label={primaryHint}
+            onClick={() => { onLeave(); detailTrail.replace({ label: backLabel, href: window.location.href }); }}>
+            <ArrowUpRight aria-hidden="true"/>
+          </Link>;
           return <div key={key} className="glyph-usage-example glyph-parent-card">
-          <ExampleCardMeta identity={metadata}/>
+          <ExampleCardMeta identity={metadata} link={arrow}/>
           <div className="glyph-usage-reference">
           {/* Only the hanzi boxes are links (like decomposition tiles), so hover and focus
               outline one box alone; the rank and meaning beside them stay plain, selectable

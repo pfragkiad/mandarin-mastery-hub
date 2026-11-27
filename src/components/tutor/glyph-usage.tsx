@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Puzzle, ScrollText } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
 import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
@@ -110,7 +110,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
     <ExpandableCharacterGrid key={`${kind}:${entry.id}:${familyGlyph ?? ''}:${preferences.includeTraditional}`} initialCount={6} cards={parents.map(parent => {
       const rank = usageOrder.loaded ? usageRank(parent, 'Characters', preferences.includeTraditional) : null;
       return <div className="glyph-usage-example glyph-parent-card" key={parent.id}>
-        <ExampleCardMeta identity={<><UsageLabel rank={rank} kind="Characters" compact/>{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</>}/>
+        <ExampleCardMeta identity={<><UsageLabel rank={rank} kind="Characters" compact/>{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</>} link={<Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} className="detail-arrow-link" title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><ArrowUpRight aria-hidden="true"/></Link>}/>
         <div className="glyph-usage-reference">
           {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
           <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
