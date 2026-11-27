@@ -2325,7 +2325,7 @@ html[data-display-size='comfortable'] .library-page .search-field .search-toggle
 .practice-intro .practice-text .pinyin { align-self: center; line-height: 1.2; }
 .practice-intro .practice-listen { align-self: center; margin-top: 0; }
 .practice-intro .practice-listen { transform: translateY(-3px); }
-.catalog-detail-pill { display: inline-flex; }
+.catalog-detail-pill { display: inline-flex; align-items: center; gap: 6px; }
 
 /* Large library rows reuse exact record content and reveal rules. The body
    always stacks pinyin, hanzi and meaning in that order at every width.
