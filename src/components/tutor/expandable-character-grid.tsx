@@ -46,6 +46,8 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     </div>
     {canExpand && <Button type="button" variant="ghost" size="sm" className={`more-examples-toggle${expanded ? ' is-open' : ''}`} aria-expanded={expanded} aria-controls={id} onClick={() => {
       if (expanded && grid.current) grid.current.scrollTop = 0;
+      // Ask a Decomposition/Etymology drawer in this card to collapse for the expansion.
+      if (!expanded) grid.current?.dispatchEvent(new Event('character-grid-expand', { bubbles: true }));
       setExpanded(value => !value);
     }}>
       <ChevronDown className="more-examples-icon" aria-hidden="true"/>{expanded ? 'Show fewer' : `Show all ${totalCount}`}

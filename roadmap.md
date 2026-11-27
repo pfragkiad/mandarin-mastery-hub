@@ -262,6 +262,7 @@
 - [x] Verify exact card navigation, playback, per-character hints and preference behaviour on wide and narrow screens.
 
 ## Tone pair card examples
+- [x] Show all collapses an open Decomposition/Etymology drawer below it without changing the saved drawer preference.
 - [x] Keep Show all scrolling inside the expanded tile grid while allowing the detail card to grow to the available screen height; verified Components, Tone pairs and Sound chart, internal scrolling and collapse on wide/narrow screens; two shared expansion tests pass.
 - [x] Apply screen-height expansion consistently to every Show all detail section, not only Tone pairs; shared example grids now use their containing window's scroll area. Verified Sound chart and radical details reach the screen bottom; expanded global/Start search uses full available screen height too. Nine targeted tests pass.
 - [x] Reuse shared Close/Back destinations for Tone pairs opened from a grid or detail card; verified exact grid URL after example changes, originating word detail restoration and local matrix closing. Three focused return-rule tests and 27 existing tests pass.

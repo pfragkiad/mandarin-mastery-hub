@@ -57,16 +57,18 @@ function useEntryTab(cardKey: string): { entry: string; tab: DetailTab | undefin
 /** Remembered open/collapsed flag, read after mount so server and first client render agree.
  *  `known` turns true once the saved choice is read: loading waits for it, so a remembered
  *  collapse never starts a download during the default-open first render. */
-function useRememberedOpen(): [boolean, (next: boolean) => void, boolean] {
+function useRememberedOpen(): [boolean, (next: boolean) => void, boolean, () => void] {
   const [state, setState] = useState({ open: true, known: false });
   useEffect(() => { let open = true; try { const saved = localStorage.getItem(OPEN_KEY); if (saved !== null) open = saved === '1'; } catch { /* storage unavailable */ } setState({ open, known: true }); }, []);
   const update = (next: boolean) => { setState({ open: next, known: true }); try { localStorage.setItem(OPEN_KEY, next ? '1' : '0'); } catch { /* ignore */ } };
-  return [state.open, update, state.known];
+  // Show all asks for room without changing the learner's saved drawer preference.
+  const collapseForNow = () => setState(current => ({ ...current, open: false }));
+  return [state.open, update, state.known, collapseForNow];
 }
 
 export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decomposition: { info: ReactNode; body: ReactNode } | null; etymology: EtymologyRequest | EtymologyRequest[] | null; cardKey: string }) {
   const drawerId = `detail-drawer-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
-  const [open, setOpen, known] = useRememberedOpen();
+  const [open, setOpen, known, collapseForNow] = useRememberedOpen();
   const list = Array.isArray(etymology);
   const requests = useMemo(() => etymology === null ? [] : Array.isArray(etymology) ? etymology : [etymology], [etymology]);
   const views = useEtymologyViews(requests, known && open);
@@ -79,6 +81,14 @@ export function GlyphDetailTabs({ decomposition, etymology, cardKey }: { decompo
   const [, rerender] = useState(0);
   const tab: DetailTab | undefined = remembered.tab && offered.includes(remembered.tab) ? remembered.tab : offered[0];
   const rootRef = useRef<HTMLDivElement>(null);
+  // An expanded example grid in the same card collapses the drawer below it, giving
+  // the tile scroller room; the next card still follows the remembered preference.
+  useEffect(() => {
+    const card = rootRef.current?.closest('.detail-sheet-body') ?? rootRef.current?.parentElement;
+    if (!card) return;
+    card.addEventListener('character-grid-expand', collapseForNow);
+    return () => card.removeEventListener('character-grid-expand', collapseForNow);
+  });
   // Returning to a card left on Etymology: bring the tabs back into view once its notes resolve.
   const scrolledFor = useRef('');
   const returnedToEtymology = remembered.returned && remembered.tab === 'etymology' && tab === 'etymology' && views !== undefined;
