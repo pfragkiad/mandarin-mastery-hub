@@ -300,6 +300,10 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
         }}
       >
         {isExpanded ? <>
+          <div className="tone-pair-expanded-meta">
+            {hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}
+            {wordLink}
+          </div>
           <div className="tone-pair-expanded-top">
             <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
               const tone = example.citationTones[glyphIndex];
@@ -307,10 +311,6 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
               return <span key={glyphIndex} className={tone ? `tone-pair-glyph tone-${tone}` : undefined}>{hidden ? fallback : <SoundExampleGlyph glyph={glyph} word={own} fallback={fallback}/>}</span>;
             })}</span>
             <div className="tone-pair-expanded-info">
-              <div className="tone-pair-expanded-meta">
-                {hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}
-                {wordLink}
-              </div>
               {!hidden && <div className="tone-pair-expanded-pinyin" lang="zh-Latn-pinyin">{coloredPinyin}</div>}
               {!hidden && <p className="tone-pair-expanded-meaning">{example.english}</p>}
               {hidden && <p className="tone-pair-expanded-meaning">Listen, then reveal to see the word.</p>}
