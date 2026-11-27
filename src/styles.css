@@ -5251,11 +5251,11 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
 .tone-sounds-reveal.tone-sounds-reveal { height: 28px; padding: 0 10px; font-size: 12px; }
 .tone-sounds-status { min-height: 18px; font-size: 12px; color: var(--muted-foreground); margin: 0; }
 .tone-sounds-links { display: flex; flex-direction: column; gap: 8px; }
-/* Syllable tiles reuse the Sound Details .pinyin-tone-button card; fixed minimum width keeps 2 tiles balanced. */
+/* Syllable tiles and pair-header tiles share one square size so top and bottom match. */
 .tone-sounds-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.tone-sounds-tile { min-width: 78px; padding: 7px 10px 6px; }
+.tone-sounds-tile, .tone-pair-tile { width: 78px; height: 78px; justify-content: center; padding: 6px; }
 .tone-sounds-tile:disabled { cursor: default; }
-html[data-display-size='comfortable'] .tone-sounds-tile { min-width: 94px; padding: 9px 12px 7px; }
+html[data-display-size='comfortable'] :is(.tone-sounds-tile, .tone-pair-tile) { width: 94px; height: 94px; padding: 8px; }
 /* The word card reuses the detail heading (RecordDetailTitle); only its outer margin and the
    tone-pair pill are local. The pill's digits keep their tone colours. */
 .tone-sounds-card .catalog-detail-title { margin: 2px 0 0; }
@@ -5268,11 +5268,13 @@ html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding
 .tone-pair-hero-group { display: inline-flex; align-items: center; gap: 8px; }
 .tone-pair-tile-step { display: inline-flex; align-items: center; gap: 8px; }
 .tone-pair-tile-arrow { width: 15px; height: 15px; color: var(--muted-foreground); flex-shrink: 0; }
-.tone-pair-tile { min-width: 74px; padding: 7px 10px 6px; cursor: default; pointer-events: none; }
+.tone-pair-tile { cursor: default; pointer-events: none; gap: 5px; }
 .tone-pair-tile.tone-5 { color: var(--muted-foreground); }
 .tone-pair-spoken-sep { font-size: 11px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.06em; padding: 0 2px; }
 .tone-pair-selected { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
-html[data-display-size='comfortable'] .tone-pair-tile { min-width: 88px; padding: 9px 12px 7px; }
+.tone-pair-selected-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.tone-pair-selected-main { flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.tone-pair-selected-row .tone-sounds-links { flex-shrink: 0; }
 html[data-display-size='comfortable'] .tone-pair-tile-arrow { width: 18px; height: 18px; }
 html[data-display-size='comfortable'] .tone-pair-spoken-sep { font-size: 12px; }
 .tone-sounds-word-link { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--radius-control); color: var(--primary); text-decoration: none; align-self: flex-start; margin-top: 4px; transition: background-color 140ms ease, color 140ms ease; }
