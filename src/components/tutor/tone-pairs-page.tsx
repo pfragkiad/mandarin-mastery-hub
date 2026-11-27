@@ -285,32 +285,74 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
       const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
       const hsk = record ? wordHskPill(record) : null;
       const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
+      const isExpanded = mode === 'pairs' && example.id === row.id;
+      const coloredPinyin = example.citationSyllables.map((syl, sylIndex) => (
+        <span key={sylIndex} className={`tone-pair-syllable tone-${example.citationTones[sylIndex] ?? 5}`}>{sylIndex > 0 ? ' ' : ''}{syl}</span>
+      ));
       return (
       <div
         key={example.id}
-        className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}
+        className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}${isExpanded ? ' is-expanded' : ''}`}
         onClick={event => {
           // Ignore clicks on handled inner controls (audio speaker, glyph hints, pinyin button).
           if ((event.target as Element | null)?.closest('button, a, [role="button"]')) return;
           onPick(example.id);
         }}
       >
-        <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
-        <span className="glyph-usage-reference">
-          <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
-            const fallback = <Button variant="ghost" className="decomposition-glyph" aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}, tile ${glyphIndex + 1}` : `Select ${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>;
-            return hidden ? <span key={glyphIndex}>{fallback}</span> : <SoundExampleGlyph key={glyphIndex} glyph={glyph} word={own} fallback={fallback}/>;
-          })}</span>
-          <span className="glyph-usage-facts">
-            <span className="glyph-usage-facts-row"><span className="example-pinyin-row">
-              {!hidden && <Button variant="link" className="pinyin" title={`Select ${example.headword}`} onClick={() => onPick(example.id)}>{example.citationSyllables.join(' ')}</Button>}
-              {/* This exact whole-word attachment plays independently of selection. The
-                  shared speaker never joins syllables or falls back after a failed clip. */}
-              <ExamplePronunciation request={{ text: example.headword, audio: example.audio }} label={hidden ? `recording ${index + 1}` : example.headword}/>
-            </span></span>
-            {!hidden && <SmallGridMeaning text={example.english}/>}
+        {isExpanded ? <>
+          <div className="tone-pair-expanded-top">
+            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
+              const tone = example.citationTones[glyphIndex];
+              const fallback = <Button variant="ghost" className="decomposition-glyph" aria-pressed={true} aria-label={hidden ? `Selected recording ${index + 1}, tile ${glyphIndex + 1}` : `${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>;
+              return <span key={glyphIndex} className={tone ? `tone-pair-glyph tone-${tone}` : undefined}>{hidden ? fallback : <SoundExampleGlyph glyph={glyph} word={own} fallback={fallback}/>}</span>;
+            })}</span>
+            <div className="tone-pair-expanded-info">
+              <div className="tone-pair-expanded-meta">
+                {hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}
+                {wordLink}
+              </div>
+              {!hidden && <div className="tone-pair-expanded-pinyin" lang="zh-Latn-pinyin">{coloredPinyin}</div>}
+              {!hidden && <p className="tone-pair-expanded-meaning">{example.english}</p>}
+              {hidden && <p className="tone-pair-expanded-meaning">Listen, then reveal to see the word.</p>}
+            </div>
+          </div>
+          <div className="tone-pair-expanded-actions">
+            {!hidden && <div className="tone-pair-syllable-group">{example.chartLinks.map((l, i) => {
+              const id = soundId(l.base, l.tone);
+              const recorded = chips.data ? hasRecording(chips.data, l.base, l.tone) : false;
+              const on = chips.player.playing === id;
+              return <button key={`${id}-${i}`} type="button" className={`tone-pair-syllable-btn tone-${l.tone}${recorded ? '' : ' is-unrecorded'}${on ? ' is-playing' : ''}`} disabled={!recorded}
+                aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : 'No Sound chart recording'}
+                onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>
+                {recorded ? <Volume2 aria-hidden="true"/> : <VolumeX aria-hidden="true"/>}
+                <span className="tone-pair-syllable-pinyin" lang="zh-Latn-pinyin">{l.reading}</span>
+                <span className="tone-pair-syllable-tone">{toneCaption(l.tone)}</span>
+              </button>;
+            })}</div>}
+            <Button type="button" className="tone-pair-play-word" aria-label={`Play ${hidden ? 'the recording' : example.headword}`} title={`Play word · ${example.audio.speaker}`} onClick={onPlay}>
+              <Volume2 aria-hidden="true"/>Play word
+            </Button>
+          </div>
+          {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
+        </> : <>
+          <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
+          <span className="glyph-usage-reference">
+            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
+              const tone = example.citationTones[glyphIndex];
+              const fallback = <Button variant="ghost" className="decomposition-glyph" aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}, tile ${glyphIndex + 1}` : `Select ${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>;
+              return <span key={glyphIndex} className={tone ? `tone-pair-glyph tone-${tone}` : undefined}>{hidden ? fallback : <SoundExampleGlyph glyph={glyph} word={own} fallback={fallback}/>}</span>;
+            })}</span>
+            <span className="glyph-usage-facts">
+              <span className="glyph-usage-facts-row"><span className="example-pinyin-row">
+                {!hidden && <Button variant="link" className="pinyin" title={`Select ${example.headword}`} onClick={() => onPick(example.id)}>{coloredPinyin}</Button>}
+                {/* This exact whole-word attachment plays independently of selection. The
+                    shared speaker never joins syllables or falls back after a failed clip. */}
+                <ExamplePronunciation request={{ text: example.headword, audio: example.audio }} label={hidden ? `recording ${index + 1}` : example.headword}/>
+              </span></span>
+              {!hidden && <SmallGridMeaning text={example.english}/>}
+            </span>
           </span>
-        </span>
+        </>}
       </div>
     ); })}/>
   </section></SentenceHints>;
@@ -352,7 +394,6 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
         </>}
       </header>
       {wordBank}
-      <div className="tone-pair-selected">{selectedWord}</div>
     </> : <>
       <div className="pinyin-player-head">
         <span className="eyebrow">Tone change · {selectedIndex + 1} of {pool.length}</span>

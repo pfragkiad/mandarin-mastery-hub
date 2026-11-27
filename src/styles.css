@@ -5246,6 +5246,33 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
 .tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; cursor: pointer; }
 .tone-sounds-example.is-selected { border-color: var(--primary); }
 .tone-sounds-example .decomposition-glyph { flex-shrink: 0; }
+.tone-pair-glyph .decomposition-glyph strong, .tone-pair-glyph .decomposition-glyph, .tone-pair-glyph strong { color: var(--tone-ink, var(--foreground)); }
+.tone-pair-syllable { color: var(--tone-ink, var(--muted-foreground)); }
+/* In-place expanded word card in Tone pairs: spans full width with larger hanzi/pinyin and play controls. */
+.tone-sounds-example.is-expanded { grid-column: 1 / -1; padding: 16px 18px; gap: 14px; cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.tone-pair-expanded-top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.tone-sounds-example.is-expanded .pinyin-character-glyphs { gap: 6px; }
+.tone-sounds-example.is-expanded .decomposition-glyph { min-width: 52px; height: 52px; padding: 0 6px; font-size: 38px; line-height: 1; }
+html[data-display-size='comfortable'] .tone-sounds-example.is-expanded .decomposition-glyph { min-width: 60px; height: 60px; font-size: 44px; }
+.tone-pair-expanded-info { flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.tone-pair-expanded-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tone-pair-expanded-pinyin { font-size: 20px; font-weight: 600; line-height: 1.25; }
+.tone-pair-expanded-meaning { margin: 0; font-size: 14px; color: var(--muted-foreground); line-height: 1.4; }
+html[data-display-size='comfortable'] .tone-pair-expanded-pinyin { font-size: 23px; }
+html[data-display-size='comfortable'] .tone-pair-expanded-meaning { font-size: 16px; }
+.tone-pair-expanded-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.tone-pair-syllable-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tone-pair-syllable-btn { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 40%, var(--border)); background: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 8%, var(--card)); color: var(--tone-ink, var(--muted-foreground)); font-size: 13px; cursor: pointer; transition: background-color 140ms ease, border-color 140ms ease; }
+.tone-pair-syllable-btn:hover:not(:disabled), .tone-pair-syllable-btn:focus-visible:not(:disabled) { border-color: var(--tone-ink, var(--foreground)); background: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 16%, var(--card)); outline: none; }
+.tone-pair-syllable-btn.is-playing { border-color: var(--tone-ink, var(--foreground)); background: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 22%, var(--card)); }
+.tone-pair-syllable-btn:disabled { opacity: 0.45; cursor: default; }
+.tone-pair-syllable-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+.tone-pair-syllable-pinyin { font-weight: 600; }
+.tone-pair-syllable-tone { font-size: 12px; color: var(--muted-foreground); }
+.tone-pair-play-word.tone-pair-play-word { border-radius: 999px; min-height: 36px; padding: 0 18px; gap: 8px; font-weight: 600; }
+html[data-display-size='comfortable'] .tone-pair-syllable-btn { min-height: 40px; padding: 7px 16px; font-size: 15px; }
+html[data-display-size='comfortable'] .tone-pair-syllable-tone { font-size: 13px; }
+html[data-display-size='comfortable'] .tone-pair-play-word.tone-pair-play-word { min-height: 40px; padding: 0 20px; font-size: 15px; }
 
 /* Selected word card. */
 .tone-sounds-reveal.tone-sounds-reveal { height: 28px; padding: 0 10px; font-size: 12px; }
