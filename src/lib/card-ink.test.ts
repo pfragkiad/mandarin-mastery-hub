@@ -26,6 +26,12 @@ describe('glyphTitleInk', () => {
   it('retains the component title classification', () => {
     expect(glyphTitleInk({ hanzi: '龴' }, 'Components')).toBe('card-ink-component');
   });
+  it('gives the Traditional radical form 訁 the radical ink so its title wears Traditional+radical', () => {
+    expect(glyphTitleInk({ hanzi: '訁', script: 'Traditional' }, 'Characters')).toBe('card-ink-radical');
+  });
+  it('keeps a plain Traditional character title purple only', () => {
+    expect(glyphTitleInk({ hanzi: '們', script: 'Traditional' }, 'Characters')).toBe('');
+  });
 });
 
 // Owner rule: radicals are always gold, everywhere — including one-character words that are

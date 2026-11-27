@@ -62,10 +62,13 @@ export function wordInk(word: { hanzi: string; script?: LibraryEntry['script'] |
 /**
  * Ink for a glyph detail title's single hanzi (Characters/Components), matching its grid
  * record classification instead of falling back to the vocabulary foreground. Traditional records keep their
- * own purple (RecordDetailTitle adds it), so this returns '' for them — Traditional wins, as
- * on the cards. Radicals detail titles have their own family/form ink in characters-page.tsx.
+ * own purple (RecordDetailTitle adds it); a Traditional record that is itself a recorded radical
+ * form (訁) additionally gets card-ink-radical so the shared CSS paints the combined
+ * Traditional+radical colour, as its grid card does. Other Traditional records return ''.
+ * Radicals detail titles have their own family/form ink in characters-page.tsx.
  */
 export function glyphTitleInk(entry: Pick<LibraryEntry, 'hanzi' | 'radicalVariant' | 'kangxiIndex' | 'script'>, kind: LibraryKind): CardInk {
-  if (entry.script === 'Traditional' || (kind !== 'Characters' && kind !== 'Components')) return '';
+  if (kind !== 'Characters' && kind !== 'Components') return '';
+  if (entry.script === 'Traditional') return isRadicalGlyph(entry, kind) ? 'card-ink-radical' : '';
   return glyphCardInk(kind, entry.script, isRadicalGlyph(entry, kind));
 }
