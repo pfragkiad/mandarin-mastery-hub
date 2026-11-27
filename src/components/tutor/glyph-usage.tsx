@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { glyphRadicalLinks } from '@/lib/glyph-presentation';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
@@ -17,7 +18,6 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { MultiReadingSpeakers, isMultiReading } from './reading-speakers';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
-import { radicalIdentity } from '@/lib/radical-identities';
 import { UsageLabel } from './usage-label';
 import { SectionPlaceholder } from './section-placeholder';
 import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
@@ -203,7 +203,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
         <ExampleCardMeta identity={<><UsageLabel rank={rank} kind="Characters" compact/>{parent.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}</>} link={<Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} className="detail-arrow-link" title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><ArrowUpRight aria-hidden="true"/></Link>}/>
         <div className="glyph-usage-reference">
           {/* Traditional parents keep the purple tile used everywhere else; script comes from exact record metadata, never shape inference. A parent that is itself a sourced Kangxi radical wears the gold 部 stamp. */}
-          <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(parent.hanzi).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
+          <Button asChild variant="ghost" className={`decomposition-glyph${parent.script === 'Traditional' ? ' traditional-character' : ''}${glyphRadicalLinks(parent.hanzi).length ? ' is-radical' : ''}`}><Link to="/characters" search={{ tab: 'Characters', id: parent.id }} resetScroll={false} title={openDetailsHint(parent.hanzi, 'Characters')} aria-label={openDetailsHint(parent.hanzi, 'Characters')}><strong lang="zh-CN">{parent.hanzi}</strong></Link></Button>
           {/* Two lines beside the tile: reading + speaker on top, meaning below. Rank (+ Traditional
               pill) sits in the card header above, matching phrase and idiom small grid cards. */}
           <span className="glyph-usage-facts">

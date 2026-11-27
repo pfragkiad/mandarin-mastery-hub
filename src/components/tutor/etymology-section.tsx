@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useId, useState } from 'react';
+import { glyphRadicalLinks } from '@/lib/glyph-presentation';
 import { requestDetailTab } from '@/lib/detail-tab-memory';
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, ChevronDown, History, TriangleAlert } from 'lucide-react';
@@ -6,7 +7,6 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Button } from '@/components/ui/button';
 import { HintBody, SourceInfo } from './source-info';
 import { HowellEntry, HowellKeyInfo } from './howell-entry';
-import { radicalIdentity } from '@/lib/radical-identities';
 import { useWorkspace } from './workspace';
 import { glyphScript, libraryDestination } from '@/lib/character-library';
 import { openDetailsHint } from '@/lib/tile-hints';
@@ -218,7 +218,7 @@ export function EtymologyRecordLink({ id, glyph }: { id: string; glyph: string }
   const destination = libraryDestination(glyph, preferences.includeTraditional);
   const search = destination && destination.id === id ? destination : { tab, id };
   const hint = openDetailsHint(glyph, tab);
-  return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(glyph) === 'Traditional' ? ' traditional-character' : ''}${radicalIdentity(glyph).radicals.length ? ' is-radical' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>;
+  return <Button asChild variant="ghost" className={`decomposition-glyph${glyphScript(glyph) === 'Traditional' ? ' traditional-character' : ''}${glyphRadicalLinks(glyph).length ? ' is-radical' : ''}`}><Link to="/characters" search={search} resetScroll={false} onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) requestDetailTab('etymology'); }} title={hint} aria-label={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>;
 }
 
 const LoadingLines = () => <div className="section-placeholder" aria-busy="true"><span className="sr-only">Loading etymology…</span><div className="section-placeholder-lines" aria-hidden="true">{[34, 92, 58].map((width, i) => <span className="section-placeholder-block" key={i} style={{ width: `${width}%` }}/>)}</div></div>;

@@ -1,5 +1,5 @@
 import { glyphIndex, libraryDestination } from '@/lib/character-library';
-import { radicalIdentity } from '@/lib/radical-identities';
+import { glyphRadicalLinks } from '@/lib/glyph-presentation';
 import { characterAudioRequest } from '@/lib/catalog-store';
 import { openDetailsHint } from '@/lib/tile-hints';
 import type { EtymologyRequest, EtymologyView } from '@/lib/etymology';
@@ -34,7 +34,7 @@ function CharacterHeading({ glyph, hasNotes, counterpart }: { glyph: string; has
   const facts = glyphIndex()[glyph];
   const reading = facts?.pinyin ?? '';
   const destination = libraryDestination(glyph, preferences.includeTraditional);
-  const rad = radicalIdentity(glyph).radicals.length ? ' is-radical' : '';
+  const rad = glyphRadicalLinks(glyph).length ? ' is-radical' : '';
   const tile = hasNotes
     ? <EtymologyRecordLink id={`Characters:${glyph}`} glyph={glyph}/>
     : destination

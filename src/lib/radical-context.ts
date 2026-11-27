@@ -14,6 +14,7 @@
  */
 import { catalog } from './catalog-store';
 import { radicalIdentity, type RadicalLink } from './radical-identities';
+import { glyphRadicalLinks } from './glyph-presentation';
 import type { DecompositionNode } from './character-library';
 
 export type ContextualRadical = {
@@ -63,7 +64,7 @@ export function contextualRadical(glyph: string, position: string, owner?: strin
   const identity = radicalIdentity(glyph);
   const shared = catalog.radicalIdentities.sharedForms?.[glyph];
   const candidates = shared ? shared.families.map(family => family.number) : identity.radicals.map(radical => radical.number);
-  if (candidates.length < 2) return { radicals: identity.radicals };
+  if (candidates.length < 2) return { radicals: glyphRadicalLinks(glyph) };
   const declared = declaredRadical(owner);
   const byDeclared = declared !== undefined && candidates.includes(declared) ? declared : undefined;
   const byPosition = byDeclared === undefined && owner ? shared?.positions?.[position] : undefined;

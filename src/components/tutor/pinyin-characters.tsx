@@ -10,13 +10,13 @@
 // with the same recorded meaning share one row (groupScriptForms); each box still opens
 // its own record and different ranks are listed per box.
 import { useMemo } from 'react';
+import { glyphRadicalLinks } from '@/lib/glyph-presentation';
 import { ArrowUpRight, Puzzle } from 'lucide-react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
-import { radicalIdentity } from '@/lib/radical-identities';
 import { readingMeaning } from '@/lib/catalog-store';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
@@ -73,7 +73,7 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           if (!first) return null;
           const meaning = shownMeaning(first);
           const onlyTraditional = forms.every(form => form.script === 'Traditional');
-          const radicals = [...new Map(forms.flatMap(form => radicalIdentity(form.hanzi).radicals).map(radical => [radical.id, radical])).values()];
+          const radicals = [...new Map(forms.flatMap(form => glyphRadicalLinks(form.hanzi)).map(radical => [radical.id, radical])).values()];
           const ranks = usageOrder.loaded ? forms.map(entry => ({ id: entry.id, ...rankOf(entry) })) : [];
           const firstRank = ranks[0];
           const sameRank = ranks.every(({ kind, rank }) => kind === firstRank?.kind && rank === firstRank?.rank);

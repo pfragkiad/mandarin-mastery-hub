@@ -82,6 +82,17 @@ export function recordedRadicalNoteFamily(glyph: string, meaning = ''): RadicalL
   return family ? { id: `kangxi-${family.id}`, number: family.id, glyph: family.kangxiHeading } : undefined;
 }
 
+/** Every Kangxi radical an exact glyph stands for: its sourced radical identities, or, for a
+ * recorded radical form whose dictionary note is exactly "Kangxi radical N" (訁 → 149), that
+ * recorded family. One rule for pills and radical ink everywhere (cards, breakdown tiles, sound
+ * chart, etymology links), so a radical form is never gold in one view and plain in another. */
+export function glyphRadicalLinks(glyph: string): RadicalLink[] {
+  const sourced = radicalIdentity(glyph).radicals;
+  if (sourced.length) return sourced;
+  const note = recordedRadicalNoteFamily(glyph);
+  return note ? [note] : [];
+}
+
 /** A record whose whole meaning is the source note "(variant of) Kangxi radical N" (耂 → 125,
  * 覀 → 146, 訁 → 149) reads its family's translation instead, as "old; component form of 老". Only
  * when the glyph is a recorded form of exactly that family (radicalForms, exact code point) and

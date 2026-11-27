@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { displayMeaning, glyphPresentation } from './glyph-presentation';
+import { displayMeaning, glyphPresentation, glyphRadicalLinks } from './glyph-presentation';
 
 // Displayed translations never repeat the Kangxi index — the card already shows it
 // as the "Radical #N" pill. The source data also carries the misspelling "Kangzi"
@@ -67,5 +67,16 @@ describe('simplified radical forms on Characters cards', () => {
     expect(info.characterRadical).toEqual({ id: 'kangxi-149', number: 149, glyph: '言' });
     expect(info.meaning).toMatch(/words, speech.*component form of 言$/);
     expect(info.meaning).not.toContain('Kangxi radical 149');
+  });
+});
+
+// Owner rule: a recorded radical form is a radical everywhere it appears (sound chart,
+// breakdowns, etymology links), not only on its own card.
+describe('glyphRadicalLinks', () => {
+  it('names Kangxi radical #149 for the recorded form 訁', () => {
+    expect(glyphRadicalLinks('訁').map(radical => radical.number)).toEqual([149]);
+  });
+  it('names nothing for the plain character 们', () => {
+    expect(glyphRadicalLinks('们')).toEqual([]);
   });
 });
