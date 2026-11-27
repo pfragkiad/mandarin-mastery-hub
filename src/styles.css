@@ -5243,7 +5243,7 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
   .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }
 }
 .tone-sounds-example .example-pinyin-row > .pinyin { height: auto; padding: 0; white-space: normal; text-align: left; justify-content: flex-start; font-size: inherit; }
-.tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; }
+.tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; cursor: pointer; }
 .tone-sounds-example.is-selected { border-color: var(--primary); }
 .tone-sounds-example .decomposition-glyph { flex-shrink: 0; }
 

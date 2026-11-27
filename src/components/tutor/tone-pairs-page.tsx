@@ -261,7 +261,15 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
       const hsk = record ? wordHskPill(record) : null;
       const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
       return (
-      <div key={example.id} className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}>
+      <div
+        key={example.id}
+        className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}
+        onClick={event => {
+          // Ignore clicks on handled inner controls (audio speaker, glyph hints, pinyin button).
+          if ((event.target as Element | null)?.closest('button, a, [role="button"]')) return;
+          onPick(example.id);
+        }}
+      >
         <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
         <span className="glyph-usage-reference">
           <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
