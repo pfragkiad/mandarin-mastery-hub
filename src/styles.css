@@ -5224,6 +5224,9 @@ button.lesson-sheet-row { padding: 0; border: 0; border-top: 1px solid var(--bor
    cards the facts move below the tiles, rather than dropping to one example column. */
 html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px)); }
 .detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
+/* Show all uses the window's own scroll area: grow downward to the available
+   screen edge before scrolling, rather than capping a second nested scroller. */
+.detail-sheet .tone-sounds-bank .expandable-character-grid.is-expanded { max-height: none; overflow: visible; overscroll-behavior: auto; scrollbar-gutter: auto; animation: none; }
 @container tone-card (max-width: 540px) {
   .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }
   .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }

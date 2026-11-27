@@ -50,7 +50,7 @@ import { ExamplePronunciation } from './example-pronunciation';
 import { toneExamplesByHsk } from '@/lib/tone-pair-vocabulary';
 import { wordHskPill } from './word-identity-pills';
 import { UsageLabel } from './usage-label';
-import { PinyinSoundSheet } from './pinyin-sound-sheet';
+import { DetailSheet } from './detail-sheet';
 import { SoundExampleGlyph } from './sound-example-glyph';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
@@ -150,13 +150,15 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             ? <PairMatrix data={data} pair={pair} hidden={hidden} onPick={p => { setPairOpen(true); onChange({ pair: p, example: undefined }); }}/>
             : <RuleList rule={rule} onPick={r => onChange({ rule: r, example: undefined })}/>}
         </div>
-        {mode === 'pairs' ? <PinyinSoundSheet open={pairOpen} title={row.headword} position={-1} total={0}
-          onBack={() => { stop(); window.history.back(); }} onClosed={() => {}}
+        {/* Mount only while open so the shared window records the actual opening
+            history entry. Close/Back then return to the source grid or details,
+            skipping example changes within this same tone-pair window. */}
+        {mode === 'pairs' ? pairOpen && <DetailSheet open title={row.headword} label={row.headword}
           onClose={() => { stop(); setPairOpen(false); onChange({ pair: undefined, example: undefined }, true); }}>
           <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
             chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
             onPlay={() => void play()} onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
-        </PinyinSoundSheet> : <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
+        </DetailSheet> : <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
           chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
           onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>}
