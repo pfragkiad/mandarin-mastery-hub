@@ -11,9 +11,9 @@ export type CardInk = 'is-traditional' | 'card-ink-radical' | 'card-ink-characte
  * that is itself a sourced Kangxi radical (白, 口, 刀). Exact source identities only,
  * never shape — so Characters/Components that are radicals wear gold too.
  */
-export function isRadicalGlyph(entry: Pick<LibraryEntry, 'hanzi' | 'radicalVariant' | 'kangxiIndex'> & { meaning?: string | undefined }, kind: LibraryKind): boolean {
+export function isRadicalGlyph(entry: Pick<LibraryEntry, 'hanzi' | 'radicalVariant' | 'kangxiIndex'>, kind: LibraryKind): boolean {
   const family = kind === 'Radicals' && !entry.radicalVariant && entry.kangxiIndex ? radicalFamily(entry.kangxiIndex) : undefined;
-  return Boolean(family) || radicalIdentity(entry.hanzi).radicals.length > 0 || Boolean(entry.meaning && recordedRadicalNoteFamily(entry.hanzi, entry.meaning));
+  return Boolean(family) || radicalIdentity(entry.hanzi).radicals.length > 0 || Boolean(recordedRadicalNoteFamily(entry.hanzi));
 }
 
 /**

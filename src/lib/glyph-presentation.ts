@@ -71,10 +71,12 @@ export function variantMeaning(glyphs: string[]): string {
   return originals.length ? `${originals.join('; ')}; component form of ${forms}` : `Component form of ${forms}`;
 }
 
-/** A Characters record whose entire recorded meaning is a plain "Kangxi radical N" note (訁 → 149)
- * and whose exact code point is a recorded form of that Kangxi family (radical-strokes.json). */
-export function recordedRadicalNoteFamily(glyph: string, meaning: string): RadicalLink | undefined {
-  const note = meaning.trim().match(/^Kang[xz]i radical\s*#?\s*(\d+)$/i);
+/** A Characters record whose entire raw recorded meaning is a plain "Kangxi radical N" note (訁 → 149)
+ * and whose exact code point is a recorded form of that Kangxi family (radical-strokes.json).
+ * Reads the raw catalog row so callers passing an already-transformed display meaning still match. */
+export function recordedRadicalNoteFamily(glyph: string, meaning = ''): RadicalLink | undefined {
+  const raw = catalog.characters.find(row => row[0] === glyph)?.[2] ?? meaning;
+  const note = raw.trim().match(/^Kang[xz]i radical\s*#?\s*(\d+)$/i);
   if (!note) return undefined;
   const family = radicalForms(glyph).find(item => item.family.id === Number(note[1]) && item.form.character === glyph)?.family;
   return family ? { id: `kangxi-${family.id}`, number: family.id, glyph: family.kangxiHeading } : undefined;
