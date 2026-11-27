@@ -48,9 +48,10 @@ describe('custom game rank ranges', () => {
     expect(matchesIdiomBand(word, 'range:38-300', [])).toBe(false);
   });
   it('stores a full rank selection as All ranks', () => {
-    expect(rankRangeValue(1, 8519, 8519, false, false)).toBe('');
-    expect(rankRangeValue(1, 9933, 9933, true, true)).toBe('');
-    expect(rankRangeValue(1, 9933, 9933, false, true)).toBe('range:1-9933');
-    expect(rankRangeValue(2, 8519, 8519, false, false)).toBe('range:2-8519');
+    expect(rankRangeValue(1, 8519, 8519, false)).toBe('');
+    expect(rankRangeValue(1, 9933, 9933, true)).toBe('');
+    expect(rankRangeValue(1, 9933, 9933, false)).toBe('');
+    expect(rankRangeValue(2, 8519, 8519, false)).toBe('range:2-8519');
+    expect(rankRangeValue(1, 300, 8519, true)).toBe('range:1-300+unranked');
   });
 });

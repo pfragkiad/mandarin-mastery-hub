@@ -121,7 +121,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   const summary = custom ? rankRangeLabel(custom) : value === 'unranked' ? 'Unranked' : group ? Number.isFinite(group.max) ? `${upTo ? 1 : group.min}–${group.max}` : `${upTo ? 1 : group.min}+` : 'Any';
   const update = (min: number, end: number, include = unranked) => {
     if (!Number.isFinite(min) || !Number.isFinite(end)) return;
-    onChange(rankRangeValue(Math.max(1, Math.min(max, Math.round(min))), Math.max(1, Math.min(max, Math.round(end))), max, include, allowUnranked), false);
+    onChange(rankRangeValue(Math.max(1, Math.min(max, Math.round(min))), Math.max(1, Math.min(max, Math.round(end))), max, include), false);
   };
   const ticks = [...new Set([1, ...groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max)).map(g => g.max), max])].filter(n => n <= max).sort((a, b) => a - b);
   const finiteGroups = groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max) && g.max <= max);
