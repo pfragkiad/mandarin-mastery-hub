@@ -417,10 +417,9 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
    (reading + speaker + Traditional pill, then meaning). The speaker follows its
    own reading, so short readings never leave it stranded in a wide column. */
 .glyph-usage-parents { display: grid; gap: var(--record-tile-gap); margin-top: var(--record-tile-gap); }
-/* Every Show all example grid grows its containing detail window to the available
-   screen height. The window (or page outside a window) owns scrolling, never a
-   second capped example area that leaves unused space underneath the card. */
-.expandable-character-grid.is-expanded { max-height: none; overflow: visible; animation: character-grid-expand .25s ease; }
+/* Show all uses the remaining screen height to grow the card, but only the tile
+   grid scrolls; its surrounding headings and Show fewer stay outside that area. */
+.expandable-character-grid.is-expanded { max-height: var(--character-grid-available-height, 60dvh); overflow-y: auto; align-content: start; scrollbar-gutter: stable; animation: character-grid-expand .25s ease; }
 @keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
