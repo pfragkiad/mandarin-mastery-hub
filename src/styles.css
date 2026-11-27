@@ -1773,7 +1773,8 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .word-card.card-ink .tile-hanzi-row > .tile-form:not(.traditional-character) { color: var(--card-ink); }
 /* Words cards: a one-character word that is a sourced radical (八, 门; card-ink.ts wordInk)
    wears the radical gold on its headword, like its Characters card. */
-.word-card.card-ink.card-ink-radical .word-hanzi-tile { color: var(--card-ink); }
+/* Vocabulary glyph ink is independent of its radical badge and interaction accent. */
+.word-card .word-hanzi-tile:not(.traditional-character) { color: var(--foreground); }
 .word-card:is(.card-ink, .stroke-card):hover { border-color: var(--card-ink); }
 .word-card:is(.card-ink, .stroke-card).is-selected { border-color: var(--card-ink); box-shadow: 0 0 0 1px var(--card-ink); }
 .word-card:is(.card-ink, .stroke-card).is-revealed:not(.is-selected) { outline-color: var(--card-ink); }
@@ -2068,7 +2069,8 @@ html :is(.game-setup, .game-range-popover) .game-range-done[data-ui-button]:hove
 .catalog-detail-glyph-row > .source-info-trigger svg { width: 18px; height: 18px; }
 /* Radical detail cards: the single title hanzi wears its form's gold radical ink; Traditional
    radical forms take the mixed --trad-radical ink, matching their switch tile and Practice. */
-.catalog-detail-glyph-row > strong.card-ink-radical:not(.traditional-character) { color: var(--card-ink); }
+.catalog-detail-glyph-row > strong:is(.card-ink-radical, .card-ink-character, .card-ink-component):not(.traditional-character) { color: var(--card-ink); }
+.catalog-detail-glyph-row > strong.vocabulary-hanzi:not(.traditional-character) { color: var(--foreground); }
 html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character { color: var(--trad-radical); }
 /* Radical detail cards: Practice's form switch on its own full-width row under the meaning
    (record-detail-title.tsx formSwitch). The tray reuses the Practice switch styles above via
@@ -2912,6 +2914,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyphs { height: 82px; font-size: var(--tile-size, 60px); }
 .detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph { width: 1em; min-width: 0; height: 1em; padding: 0; border: 0; border-radius: 0; font-size: inherit; }
 .detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph strong { font-size: inherit; }
+/* Exact character hints remain clickable, but these glyphs present a Vocabulary word,
+   not a decomposition: never inherit the shared character-link green. */
+.detail-sheet .word-example-glyphs .decomposition-glyph:not(.traditional-character) strong { color: var(--foreground); }
 @media(max-width:580px) { html:not([data-display-size='comfortable']) .detail-sheet .word-example-glyphs { font-size: 30px; } }
 /* Override the boxed-tile inset without clearing the shared frame's centre anchor. */
 .word-example-glyphs .decomposition-glyph.lesson-hint-char::before { inset: 50% auto auto 50%; width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); transform: translate(-50%, -50%); }

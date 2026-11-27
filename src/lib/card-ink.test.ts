@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { glyphCardInk, wordInk, wordRadicalNumber } from './card-ink';
+import { glyphCardInk, glyphTitleInk, wordInk, wordRadicalNumber } from './card-ink';
 
 describe('glyphCardInk', () => {
   it('colours traditional records purple before anything else', () => {
@@ -16,6 +16,15 @@ describe('glyphCardInk', () => {
   });
   it('leaves strokes uncoloured', () => {
     expect(glyphCardInk('Strokes', undefined, false)).toBe('');
+  });
+});
+
+describe('glyphTitleInk', () => {
+  it('classifies the plain character 们 title as a character, not vocabulary', () => {
+    expect(glyphTitleInk({ hanzi: '们', script: 'Simplified' }, 'Characters')).toBe('card-ink-character');
+  });
+  it('retains the component title classification', () => {
+    expect(glyphTitleInk({ hanzi: '龴' }, 'Components')).toBe('card-ink-component');
   });
 });
 

@@ -33,7 +33,7 @@ export function glyphCardInk(kind: LibraryKind, script: LibraryEntry['script'], 
 /** The one written form of a Vocabulary headword, or null for multi-character words/phrases. */
 function singleGlyph(hanzi: string): string | null {
   const glyphs = Array.from(hanzi.replace(/\s/g, ''));
-  return glyphs.length === 1 ? glyphs[0]! : null;
+  return glyphs.length === 1 ? glyphs[0] ?? null : null;
 }
 
 /**
@@ -60,12 +60,12 @@ export function wordInk(word: { hanzi: string; script?: LibraryEntry['script'] |
 }
 
 /**
- * Ink for a glyph detail title's single hanzi (Characters/Components): radical gold when the
- * glyph is a sourced Kangxi radical, matching its grid card. Traditional records keep their
+ * Ink for a glyph detail title's single hanzi (Characters/Components), matching its grid
+ * record classification instead of falling back to the vocabulary foreground. Traditional records keep their
  * own purple (RecordDetailTitle adds it), so this returns '' for them — Traditional wins, as
  * on the cards. Radicals detail titles have their own family/form ink in characters-page.tsx.
  */
 export function glyphTitleInk(entry: Pick<LibraryEntry, 'hanzi' | 'radicalVariant' | 'kangxiIndex' | 'script'>, kind: LibraryKind): CardInk {
   if (entry.script === 'Traditional' || (kind !== 'Characters' && kind !== 'Components')) return '';
-  return isRadicalGlyph(entry, kind) ? 'card-ink-radical' : '';
+  return glyphCardInk(kind, entry.script, isRadicalGlyph(entry, kind));
 }

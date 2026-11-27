@@ -325,3 +325,5 @@
 - [x] Remove listening tips and verify example selection, expansion, Listen first and Tone changes at wide/narrow widths; 15 existing tests pass.
 - [x] Enlarge the tone card with two example columns and independent pinyin/audio beside tiles; verified wide/narrow layouts, recording requests without navigation, and exact tile selection.
 - [x] Show recorded HSK index badges and sort ascending by exact vocabulary ID, with entries missing indices last (confirmed by the owner); 16 targeted tests pass.
+
+- [x] Correct Hanzi-only colours in detail headings and In a word examples; preserve sound-pair colours and non-Hanzi styling. Verified green 们 and white 你们; 26 focused tests pass.
