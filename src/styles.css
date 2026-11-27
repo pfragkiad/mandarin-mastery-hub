@@ -2095,11 +2095,13 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .sentence-section .glyph-usage-example,
 :is(.detail-sheet, .pinyin-characters) .glyph-parent-card,
 .detail-sheet .kangxi-identity-card {
+  /* Match vertical spacing to the tile's existing horizontal inset. */
+  --detail-example-gap: 12px;
   display: grid;
   gap: var(--detail-example-gap);
   align-content: start;
   margin-top: 0;
-  padding: var(--detail-example-gap) 12px;
+  padding: var(--detail-example-gap);
   border: 1px solid var(--border);
   border-radius: var(--form-radius);
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
@@ -5266,7 +5268,7 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
 .tone-pair-glyph .decomposition-glyph strong, .tone-pair-glyph .decomposition-glyph, .tone-pair-glyph strong { color: var(--tone-ink, var(--foreground)); }
 .tone-pair-syllable { color: var(--tone-ink, var(--muted-foreground)); }
 /* In-place expanded word card in Tone pairs: spans full width with larger hanzi/pinyin and play controls. */
-.tone-sounds-example.is-expanded { --detail-example-gap: 14px; grid-column: 1 / -1; padding: var(--detail-example-gap) 18px; gap: var(--detail-example-gap); cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.tone-sounds-example.is-expanded { --detail-example-gap: 18px; grid-column: 1 / -1; padding: var(--detail-example-gap); gap: var(--detail-example-gap); cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .tone-pair-expanded-top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .tone-sounds-example.is-expanded .pinyin-character-glyphs { gap: 6px; }
 .tone-sounds-example.is-expanded .decomposition-glyph { min-width: 52px; height: 52px; padding: 0 6px; font-size: 38px; line-height: 1; }

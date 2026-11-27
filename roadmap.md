@@ -4,7 +4,7 @@
 - [x] Animate small-to-focused word cards and neighbouring layout changes, preserving selection and reduced-motion preferences; verified at 1426px and 390px with 14 existing tests passing.
 
 ## Small-card balanced spacing
-- [x] Centre the detail arrow with the HSK pill in both sizes, with equal border-to-header, header-to-tiles and tile-to-bottom spacing; verified 6px small-card gaps and 14px expanded-card gaps, with 20 existing tests passing.
+- [x] Centre the detail arrow with the HSK pill in both sizes; match vertical gaps to the existing left inset (12px small cards, 18px expanded cards), verified in the browser.
 
 ## Stable library range editing
 - [x] Keep rank preset pills and Done on one line: drop the fourth "Top N" pill (Top 2,000) and stop the pill row wrapping; verified both panels at 1458 and 390 widths.
