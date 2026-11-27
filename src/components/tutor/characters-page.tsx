@@ -46,7 +46,8 @@ import { TileSpeaker } from './tile-speaker';
 import { CharacterWordsSection, CharacterIdiomsSection, GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { ExampleTabs } from './example-tabs';
 import type { ExampleTabSearch } from '@/lib/detail-example-tabs';
-import { TileExamplesLink } from './sentence-section';
+import { SentenceHints, TileExamplesLink } from './sentence-section';
+import { SoundExampleGlyph } from './sound-example-glyph';
 import { externalExampleSources } from '@/lib/external-examples';
 import { RecordDetailTitle } from './record-detail-title';
 import { PointedMeaning, PointedParts } from './pointed-meaning';
@@ -216,14 +217,16 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     if (kind !== 'Strokes') return null;
     const { name } = strokeSpeech(entry);
     if (!name) return null;
-    // A stroke name is one word: reuse the shared Vocabulary box and foreground
-    // ink while preserving each exact character's independent record link.
-    return <div><dt>Name</dt><dd><span className="pinyin-character-glyphs word-example-glyphs">{[...name].map((glyph, index) => {
+    // A stroke name is one word: the shared Vocabulary box and foreground ink, with each
+    // exact character offered as a quick-card hint target (the same behaviour every other
+    // word gets) instead of an immediate link. With quick cards turned off, the original
+    // per-character record link remains, so navigation is never lost.
+    return <div><dt>Name</dt><dd><SentenceHints backLabel={entry.hanzi}><span className="pinyin-character-glyphs word-example-glyphs">{[...name].map((glyph, index) => {
       const destination = libraryDestination(glyph, preferences.includeTraditional);
-      return destination
-        ? <Button asChild key={index} variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open the record for ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button>
-        : <strong key={index} lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>;
-    })}</span></dd></div>;
+      return <SoundExampleGlyph key={index} glyph={glyph} fallback={destination
+        ? <Button asChild variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open the record for ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button>
+        : <strong lang="zh-CN" className="decomposition-glyph decomposition-glyph-static">{glyph}</strong>}/>;
+    })}</span></SentenceHints></dd></div>;
   })();
   const bookmarkId = form ? radicalVariantEntry(heading, form).id : heading.id;
   const bookmarked = saved.includes(bookmarkId);

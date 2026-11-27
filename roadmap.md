@@ -332,3 +332,4 @@
 - [x] Present each stroke’s Hanzi name in one white word-style box; verified exact links, wide/narrow rendering and eight related tests.
 
 - [x] Explain missing representative brush examples for 横折折, 撇钩, 圈 and 竖弯左: missing verified mappings do not establish that a stroke is unused.
+- [x] Make the stroke card’s Hanzi name use character quick cards (hover ring + click mini card) instead of immediate links, with the exact record link kept when quick cards are off; 4 new tests plus 37 related tests pass, browser-verified wide and on a phone.
