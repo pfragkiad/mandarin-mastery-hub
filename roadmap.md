@@ -260,3 +260,7 @@
 - [x] Enrich the tone bank with exact recorded two-character words and shared character associations.
 - [x] Reuse sound-wave links in word grids/details and the shared glyph/word preference.
 - [x] Verify exact card navigation, playback, per-character hints and preference behaviour on wide and narrow screens.
+
+## Tone pair card examples
+- [x] Move the word bank inside the tone card, reuse sound-card examples, and preserve separate sound pills.
+- [x] Remove listening tips and verify example selection, expansion, Listen first and Tone changes at wide/narrow widths; 15 existing tests pass.

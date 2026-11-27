@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, Volume2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords, type Word } from '@/lib/mandarin';
@@ -32,7 +32,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  listeningTip, loadTonePairs, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  loadTonePairs, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -43,6 +43,9 @@ import { HintChar, useLessonHints, type HintWord } from './lesson-hints';
 import { usePhrasePairing } from './phrase-pairing';
 import { useWorkspace } from './workspace';
 import { useOneLineTitle } from './one-line-title';
+import { ExpandableCharacterGrid } from './expandable-character-grid';
+import { SmallGridMeaning } from './small-grid-meaning';
+import { ExampleCardMeta } from './sentence-section';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
@@ -136,17 +139,8 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
           {mode === 'pairs'
             ? <PairMatrix data={data} pair={pair} hidden={hidden} onPick={p => onChange({ pair: p, example: undefined })}/>
             : <RuleList rule={rule} onPick={r => onChange({ rule: r, example: undefined })}/>}
-          <section className="tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
-            <h2 className="pinyin-group-title">{mode === 'pairs' ? <>Words in this pair <span>{pairLabel(pair)}</span></> : <>Examples <span>{TONE_RULES[rule].title}</span></>}</h2>
-            <div className="tone-sounds-words">
-              {pool.map((e, index) => <button key={e.id} type="button" className={`tone-sounds-word${e.id === row.id ? ' is-selected' : ''}`} aria-pressed={e.id === row.id} onClick={() => onChange({ example: e.id })}>
-                {hidden ? <><span className="tone-sounds-word-hanzi" aria-hidden="true">••</span><span className="tone-sounds-word-reading">Recording {index + 1}</span></>
-                  : <><span className="tone-sounds-word-hanzi" lang="zh-CN">{e.headword}</span><span className="tone-sounds-word-reading pinyin">{e.citationSyllables.join(' ')}</span></>}
-              </button>)}
-            </div>
-          </section>
         </div>
-        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status}
+        <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
           chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
           onPlay={() => void play()}
           onReveal={() => onChange({ listen: hidden ? undefined : true }, true)}/>
@@ -205,12 +199,14 @@ function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) =
  * spelling match. Below: each dictionary syllable as a chip that plays the Sound chart's
  * own recording in place (no navigation). The dictionary → expected tone change lives in
  * the pill and the matrix tile header, not in a separate compare block.
+ * The word bank uses the Sound chart's shared small example cards and expandable grid inside
+ * this card. Selecting an exact example changes the URL, not the recording source or hints.
  * Both speakers are play-only and the card carries no playback label: nothing appears while
  * a recording loads, plays or ends, and only a failure adds an error line.
  */
-function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips }: {
+function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPick, chips }: {
   row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
-  onPlay: () => void; onReveal: () => void; chips: SyllableChips;
+  onPlay: () => void; onReveal: () => void; onPick: (id: string) => void; chips: SyllableChips;
 }) {
   const changed = tonesChanged(row);
   const reading = row.expectedSpokenSyllables.join(' ');
@@ -234,7 +230,6 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
         : <RecordDetailTitle hanzi={row.headword} glyphContent={<ToneHeadword headword={row.headword} word={word} pairing={pairing}/>} pill={pill}
             pinyinContent={<><span className="pinyin" title={changed ? 'Expected in speech · draft' : undefined}>{pairing.paired ? pairing.pinyinText : reading}</span>{speaker}</>} meaning={row.english}/>}
     </SentenceHints>
-    <p className="pinyin-player-tip">{hidden ? 'Play the complete word. Reveal it when you’re ready to compare.' : listeningTip(row)}</p>
     {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
     {hidden ? <p className="tone-sounds-helper">Reveal the word to hear its syllables one by one.</p> : <>
       <div className="tone-sounds-links">
@@ -253,6 +248,18 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, chips
       </div>
       {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
     </>}
+    <section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
+      <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
+      <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={5} cards={pool.map((example, index) =>
+        <Button key={example.id} variant="ghost" className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`} aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}` : `Select ${example.headword}`} onClick={() => onPick(example.id)}>
+          <ExampleCardMeta identity={<span className={hidden ? undefined : 'pinyin'}>{hidden ? `Recording ${index + 1}` : example.citationSyllables.join(' ')}</span>}/>
+          <span className="glyph-usage-reference">
+            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, index) => <span key={index} className="decomposition-glyph"><strong>{glyph}</strong></span>)}</span>
+            {!hidden && <span className="glyph-usage-facts"><SmallGridMeaning text={example.english}/></span>}
+          </span>
+        </Button>
+      )}/>
+    </section>
   </section>;
 }
 
