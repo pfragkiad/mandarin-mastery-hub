@@ -9,9 +9,10 @@ import { Search, Plus, BookOpen, Check, FlaskConical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { FilterSelect } from './filter-select';
 import { TopicSelect } from './topic-select';
+import { FrequencyRangeControl } from './game-controls';
+import { parseRankRange, rankRangeLabel } from '@/lib/rank-range';
 import { useWorkspace } from './workspace';
 import { WordCard, WordDetailContent } from './word-card';
 import { collections, filterWords, vocabularyFacetOptions, vocabularyKind } from '@/lib/mandarin';
@@ -25,7 +26,7 @@ import { useRecordScroll, focusRecordCard } from '@/lib/selection-scroll';
 import { includeSelectedRecord } from '@/lib/record-selection';
 import { DetailLoading, useDetailLoading } from './detail-loading';
 import { GridCardPlaceholder } from './section-placeholder';
-import { DraftFilterForm, FilterWideningToggle, PinyinSearchInput } from './filter-form';
+import { DraftFilterForm, PinyinSearchInput } from './filter-form';
 import { LibraryTools } from './library-tools';
 import { cardRevealClass } from './card-reveal-toggle';
 import { LessonHintsProvider } from './lesson-hints';
@@ -112,6 +113,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   // each other from the form's current (draft) picks, so e.g. choosing a level
   // leaves only the styles and types recorded at that level.
   const idiomRankClasses = idiomsState?.dataset.rankClasses ?? [];
+  const idiomMaxRank = useMemo(() => kind === 'idiom' ? Math.max(0, ...kindItems.map(word => word.idiomMeta?.rank ?? 0)) : 0, [kind, kindItems]);
   const facetBase = useMemo(() => kind === 'idiom' ? [] : filterWords(kindItems, query, 'All collections', 'All levels', status, saved, Boolean(py), 'All types', py === 'exact'), [kind, kindItems, query, status, saved, py]);
   const unordered = kind === 'idiom'
     ? includeSelectedRecord(kindItems, filterIdioms(kindItems, idiomRankClasses, query, band, status, saved, Boolean(py), py === 'exact', bandUpTo === '1', collection, subtopic), initialWordId)
@@ -153,23 +155,24 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
   }, [page, initialWordId]);
   const reset = () => { const empty = { q: '', collection: 'All collections', subtopic: ALL_SUBTOPICS, level: 'All levels', py: undefined, pos: 'All types', style: 'All styles', band: ALL_IDIOM_BANDS, bandUpTo: undefined }; onFiltersChange?.({ ...empty, status: 'All words' }); return empty; };
   const appliedBand = idiomRankClasses.find(c => c.id === band);
+  const appliedCustomBand = parseRankRange(band);
   const bandRangeLabel = (c: { from: number; to: number }) => `Rank ${c.from.toLocaleString('en-US')}–${c.to.toLocaleString('en-US')}`;
   const gridKindClass = kind === 'idiom' ? 'vocab-phrase-grid' : `vocab-${kind}-grid`;
   return <div className="page-enter library-page"><div className="page-heading library-heading"><div><div className="eyebrow library-eyebrow">{vocabularyMotto}</div><h1 ref={titleRef}>Get to know the {label}.<SourceInfo inline className="detail-footnote">{kind === 'phrase' ? 'Phrases · levels and syllabus IDs as recorded in the source' : kind === 'idiom' ? (idiomsState?.dataset.source ?? 'THUOCL chengyu frequency list · unreviewed English glosses') : <>HSK 3.0 vocabulary · levels as recorded in the source<br/>Level 1 examples are editorially reviewed, not native-speaker certified.</>}</SourceInfo></h1></div>{ADD_WORD_ENABLED && <Button onClick={() => setAdding(true)}><Plus/>Add word</Button>}{kind !== 'idiom' && <ExperimentalTag/>}</div>
     <Tabs className="catalog-tabs vocabulary-tabs" value={kind}>
     <TabsContent value={kind}>
-    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(kind === 'idiom' && band !== ALL_IDIOM_BANDS ? [{ label: appliedBand ? (bandUpTo === '1' ? bandRangeLabel({ from: 1, to: appliedBand.to }) : bandRangeLabel(appliedBand)) : band, clear: { band: ALL_IDIOM_BANDS, bandUpTo: undefined } }] : []), ...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(kind !== 'idiom' && pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(kind === 'phrase' && style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
+    <DraftFilterForm showCount={false} searchKey="q" searchModeKey="py" saved={{ on: status === 'Saved words', count: categoryItems.filter(w => saved.includes(w.id)).length, onToggle: () => setStatus(status === 'Saved words' ? 'All words' : 'Saved words'), noun: label }} applied={appliedFilters} active={activeFilters} count={filtered.length} onApply={draft => onFiltersChange?.(draft)} onClear={reset} chips={[...(kind === 'idiom' && band !== ALL_IDIOM_BANDS ? [{ label: appliedCustomBand ? `Rank ${rankRangeLabel(appliedCustomBand)}` : appliedBand ? (bandUpTo === '1' ? bandRangeLabel({ from: 1, to: appliedBand.to }) : bandRangeLabel(appliedBand)) : band, clear: { band: ALL_IDIOM_BANDS, bandUpTo: undefined } }] : []), ...(collection !== 'All collections' ? [{ label: collection, clear: { collection: 'All collections', subtopic: ALL_SUBTOPICS } }] : []), ...(subtopic !== ALL_SUBTOPICS ? [{ label: appliedSubtopic?.label ?? subtopic, clear: { subtopic: ALL_SUBTOPICS } }] : []), ...(kind !== 'idiom' && level !== 'All levels' ? [{ label: level, clear: { level: 'All levels' } }] : []), ...(kind !== 'idiom' && pos !== 'All types' ? [{ label: pos, clear: { pos: 'All types' } }] : []), ...(kind === 'phrase' && style !== 'All styles' ? [{ label: style, clear: { style: 'All styles' } }] : [])]} filterFields={({ draft, patch }) => {
       if (kind === 'idiom') {
-        const draftBand = idiomRankClasses.find(c => c.id === (draft.band || ALL_IDIOM_BANDS));
         const draftTopic = draft.collection || 'All collections';
         const draftSubtopic = draft.subtopic || ALL_SUBTOPICS;
         const idiomPool = filterIdioms(kindItems, idiomRankClasses, query, draft.band || ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1');
         const idiomTopics = collections.filter(c => c !== 'All collections' && (c === draftTopic || idiomPool.some(w => w.collection === c || w.collections?.includes(c))));
         const idiomSubtopics = subtopicOptions(filterIdioms(kindItems, idiomRankClasses, query, draft.band || ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1'), 'All collections', draftSubtopic);
-        // "Include lower ranks" mirrors the Glyphs rank filter: the selected band widens to
-        // rank 1..band end (idioms.ts matchesIdiomBand). Picking "All ranks" drops the widening.
         return <>
-          <span className="filter-field-row"><Select value={draft.band || ALL_IDIOM_BANDS} onValueChange={value => patch({ band: value, ...(value === ALL_IDIOM_BANDS ? { bandUpTo: undefined } : {}) })}><SelectTrigger className="filter-select reuse-filter" aria-label="Filter by frequency"><SelectValue>{draftBand ? bandRangeLabel(draftBand) : 'All ranks'}</SelectValue></SelectTrigger><SelectContent><SelectItem value={ALL_IDIOM_BANDS}>All ranks</SelectItem>{idiomRankClasses.map(c => <SelectItem key={c.id} value={c.id}>{bandRangeLabel(c)} · {c.cumulativePct.toFixed(1)}%</SelectItem>)}</SelectContent></Select>{draft.band && draft.band !== ALL_IDIOM_BANDS && <FilterWideningToggle active={draft.bandUpTo === '1'} onToggle={() => patch({ bandUpTo: draft.bandUpTo ? undefined : '1' })} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}</span>
+          <span className="filter-field-row"><FrequencyRangeControl labelled={false} value={draft.band === ALL_IDIOM_BANDS ? '' : (draft.band ?? '')} upTo={draft.bandUpTo === '1'} allowUnranked={false}
+            groups={idiomRankClasses.map(c => ({ value: c.id, min: c.from, max: c.to, label: `${bandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%` }))}
+            maxRank={idiomMaxRank}
+            onChange={(nextBand, upTo) => patch({ band: nextBand || ALL_IDIOM_BANDS, bandUpTo: upTo ? '1' : undefined })}/></span>
           <TopicSelect topics={idiomTopics} subtopics={idiomSubtopics} collection={draftTopic} subtopic={draftSubtopic} onChange={patch}/>
         </>;
       }
