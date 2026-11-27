@@ -1,5 +1,8 @@
 # Roadmap
 
+## Word example early wrapping
+- [x] Keep word-example pinyin and translation beside Hanzi whenever their actual content fits, rather than reserving an arbitrary text-column width; verified destination in both sizes and no narrow overflow, with 16 related tests passing.
+
 ## Detail tab consistency and long idioms
 - [x] Keep In a… tabs identical to Decomposition/Etymology in both sizes, removing conflicting control typography; browser-verified matching font, weight, padding and icons.
 - [x] Move idiom pinyin and translation below Hanzi when a translation exceeds two lines; verified expanded lists at wide/narrow widths in both sizes, with 41 related tests passing.
