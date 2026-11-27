@@ -432,11 +432,22 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .example-card-meta) :is(.component-reuse-label, .example-card-topic) { font-size: 13px; line-height: 1.4; }
 .example-card-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
 /* The shared detail arrow (styles.css .detail-arrow-link) rides at the far right of a small
-   grid card's header row, vertically centred on the label line, in both display sizes. */
-.example-card-meta > .detail-arrow-link { margin-left: auto; align-self: center; margin-top: 0; width: 26px; height: 26px; flex: none; }
+   grid card's header row, vertically centred on the label line, in both display sizes.
+   Its square hit target is taller than the label line, so negative block margins keep it from
+   stretching the row: the row stays exactly as tall as the rank/topic text, and the arrow
+   overhangs into the card's own padding instead of pushing the hanzi tile and meaning down. */
+.example-card-meta > .detail-arrow-link { margin-left: auto; align-self: center; margin-block: -5px; width: 26px; height: 26px; flex: none; }
 .example-card-meta > .detail-arrow-link svg { width: 15px; height: 15px; }
-html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link { width: 30px; height: 30px; }
+html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link { margin-block: -6px; width: 30px; height: 30px; }
 html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link svg { width: 17px; height: 17px; }
+/* The identity pills (Radical #N, HSK level, Traditional) are bordered boxes taller than the
+   rank/topic text beside them, so the same overhang trick keeps them from stretching the header
+   row: the row stays exactly one text line tall and the pill spills into the card's own padding,
+   leaving the hanzi tile the shared --detail-example-gap below the label instead of further.
+   The pill also keeps the compact box metrics at both display sizes: a taller comfortable pill
+   would reach down into the tile's 部 corner stamp (see the .glyph-parent-card stamp override). */
+.example-card-meta > .word-hsk-id.word-hsk-id { margin-block: -1px; line-height: 14px; padding-block: 1px; }
+html[data-display-size='comfortable'] .example-card-meta > .word-hsk-id.word-hsk-id { margin-block: -4px; line-height: 14px; padding-block: 1px; }
 /* Metadata belongs above its example; the quieter inner rule distinguishes examples
    from the full-weight dividers between different detail sections. */
 .idiom-examples-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); margin-top: var(--detail-example-gap, 6px); }
@@ -934,6 +945,10 @@ html[data-display-size='comfortable'] :is(.tile-form.traditional-character,
   border-color: color-mix(in oklch, var(--hsk-id) 62%, transparent);
 }
 .tile-form.is-radical::after { transform: translate(58%, -58%); }
+/* Inside a small card that already carries a header row (.glyph-parent-card), the 部 stamp rises
+   less above the tile: the header's Radical #N pill sits only --detail-example-gap above the tile,
+   and a full-height straddle would meet that pill's border. The stamp still reads as a corner pin. */
+.glyph-parent-card :is(.decomposition-glyph, .pinyin-character-glyph, .tile-form, .radical-form-choice).is-radical:not(.traditional-character):not(.is-traditional)::after { transform: translate(46%, -24%); }
 :is(.decomposition-glyph.is-radical,
     .pinyin-character-glyph.is-radical,
     .tile-form.is-radical,
