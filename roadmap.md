@@ -255,3 +255,8 @@
 
 ## Game filter clear-all placement
 - [x] Put the labelled "Clear filters" control on the Filters heading line instead of a lone X in an empty band; Apply/Reset mount only while a draft edit is pending. Verified Flashcards at 1395 and 390 widths: heading clear removes the applied filter, range triggers never move, 51 filter/flashcard/drawing tests pass.
+
+## Recorded vocabulary tone pairs
+- [x] Enrich the tone bank with exact recorded two-character words and shared character associations.
+- [x] Reuse sound-wave links in word grids/details and the shared glyph/word preference.
+- [x] Verify exact card navigation, playback, per-character hints and preference behaviour on wide and narrow screens.

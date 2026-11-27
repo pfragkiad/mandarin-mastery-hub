@@ -157,7 +157,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
 /** 4 × 5 grid of dictionary tone pairs; each cell shows its first word (hidden in Listen first). */
 function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData; pair: string; hidden: boolean; onPick: (pair: string) => void }) {
   return <section className="tone-matrix-section" aria-label="Tone pairs">
-    <h2 className="pinyin-group-title">Choose a tone pair <span>20 pairs · 40 words</span></h2>
+    <h2 className="pinyin-group-title">Choose a tone pair <span>20 pairs · {data.examples.filter(e => e.inPairMatrix).length} words</span></h2>
     <p className="tone-sounds-helper">First tone down the side, second tone across the top.</p>
     <div className="tone-matrix" role="group" aria-label="Tone pairs by dictionary tones">
       <span className="tone-matrix-corner" aria-hidden="true"/>

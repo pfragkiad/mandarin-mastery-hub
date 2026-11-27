@@ -24,7 +24,7 @@ export type TonePairExample = {
   pair: string; rule: ToneRule | null; inPairMatrix: boolean; english: string;
   reviewStatus: string; vocabularyEntryId: string | null;
   chartLinks: { reading: string; base: string; tone: PairTone }[];
-  audio: { url: string; upstreamUrl: string; speaker: string; source: string; license: string; licenseUrl: string; recordingKind: string; sha256: string };
+  audio: { url: string; upstreamUrl?: string; speaker: string; source: string; license: string; licenseUrl: string; recordingKind: string; sha256?: string };
 };
 export type TonePairData = {
   reviewStatus: string; acquiredOn: string;
@@ -105,6 +105,10 @@ export function listeningTip(e: TonePairExample): string {
 let loading: Promise<TonePairData> | null = null;
 /** Lazily load the sidecar; a failed load can be retried. */
 export function loadTonePairs(): Promise<TonePairData> {
-  loading ??= import('@/data/pinyin/tone-pairs.json').then(m => m.default as unknown as TonePairData).catch(error => { loading = null; throw error; });
+  loading ??= Promise.all([
+    import('@/data/pinyin/tone-pairs.json'), import('./mandarin'),
+    import('./pinyin-guide').then(m => m.loadSyllableInventory()), import('./tone-pair-vocabulary'),
+  ]).then(([m, vocabulary, syllables, adapter]) => adapter.enrichTonePairs(m.default as unknown as TonePairData, vocabulary.words, syllables))
+    .catch(error => { loading = null; throw error; });
   return loading;
 }
