@@ -4960,6 +4960,9 @@ html[data-display-size='comfortable'] :is(.howell-glyph-reading, .howell-glyph-r
 .section-placeholder-block { display: block; height: 10px; border-radius: 999px; background: color-mix(in oklch, var(--muted-foreground) 20%, transparent); animation: section-placeholder-pulse 1.4s ease-in-out infinite; }
 .section-placeholder-tile { width: 46px; height: 46px; flex-shrink: 0; border-radius: var(--control-radius); }
 html[data-display-size='comfortable'] .detail-sheet .section-placeholder-tile { width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); }
+.section-placeholder-cards { display: grid; gap: var(--grid-card-inner-gap); }
+.section-placeholder-card { display: grid; gap: 9px; padding: var(--grid-card-pad); border: 1px solid var(--border); border-radius: var(--card-radius); }
+.section-placeholder-card:nth-child(2) .section-placeholder-block { animation-delay: .15s; }
 .section-placeholder .section-placeholder-row:nth-child(2) .section-placeholder-block { animation-delay: .15s; }
 .section-placeholder .section-placeholder-row:nth-child(3) .section-placeholder-block { animation-delay: .3s; }
 @keyframes section-placeholder-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }

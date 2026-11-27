@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
@@ -29,6 +29,78 @@ import { SoundExampleGlyph } from './sound-example-glyph';
 import { sectionIcons } from '@/lib/section-icons';
 import { wordTileFit } from './word-card';
 import { ExampleSection } from './example-tabs';
+import { lineCount, MEANING_FONT_FLOOR, sideTextMaxStep } from './use-side-fit';
+
+/**
+ * Before wrapping pinyin or translation (or pushing facts below the hanzi box) on an
+ * "In a word" card, shrink both fonts together by up to the shared side-fit budget.
+ * Reverts to the view's own sizes if shrinking cannot prevent wrapping.
+ */
+function WordExampleReference({ word, children }: { word: Word; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { preferences } = useWorkspace();
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let alive = true;
+    const measure = () => {
+      if (!alive) return;
+      const glyphs = el.querySelector<HTMLElement>('.word-example-glyphs');
+      const facts = el.querySelector<HTMLElement>('.glyph-usage-facts');
+      const pinyin = facts?.querySelector<HTMLElement>('.pinyin') ?? null;
+      const meaning = facts?.querySelector<HTMLElement>('.glyph-usage-meaning') ?? null;
+      if (!glyphs || !facts) return;
+      const reset = () => {
+        pinyin?.style.removeProperty('font-size');
+        meaning?.style.removeProperty('font-size');
+      };
+      reset();
+      const state = () => {
+        const gBox = glyphs.getBoundingClientRect();
+        const fBox = facts.getBoundingClientRect();
+        const wrapped = gBox.height > 0 && fBox.top >= gBox.bottom - 1;
+        const pinyinLines = pinyin ? lineCount(pinyin) : 1;
+        const meaningLines = meaning ? lineCount(meaning) : 1;
+        return { wrapped, pinyinLines, meaningLines };
+      };
+      const initial = state();
+      if (!initial.wrapped && initial.pinyinLines <= 1 && initial.meaningLines <= 1) return;
+      const basePinyin = pinyin ? parseFloat(getComputedStyle(pinyin).fontSize) || 0 : 0;
+      const baseMeaning = meaning ? parseFloat(getComputedStyle(meaning).fontSize) || 0 : 0;
+      const floor = Math.min(MEANING_FONT_FLOOR, 9.5);
+      const base = basePinyin || baseMeaning;
+      const max = Math.max(sideTextMaxStep(base), Math.min(4, Math.max(0, base - floor)));
+      let bestSideStep = 0;
+      for (let step = 0.5; step <= max + 0.001; step += 0.5) {
+        if (pinyin && basePinyin) pinyin.style.fontSize = `${Math.max(floor, basePinyin - step)}px`;
+        if (meaning && baseMeaning) meaning.style.fontSize = `${Math.max(floor, baseMeaning - step)}px`;
+        const next = state();
+        if (!next.wrapped && next.pinyinLines <= 1 && next.meaningLines <= 1) return;
+        if (!bestSideStep && !next.wrapped && next.pinyinLines <= 1) bestSideStep = step;
+      }
+      if (bestSideStep > 0) {
+        if (pinyin && basePinyin) pinyin.style.fontSize = `${Math.max(floor, basePinyin - bestSideStep)}px`;
+        if (meaning && baseMeaning) meaning.style.fontSize = `${Math.max(floor, baseMeaning - bestSideStep)}px`;
+        return;
+      }
+      reset();
+    };
+    measure();
+    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    observer?.observe(el);
+    const prefs = new MutationObserver(measure);
+    prefs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-display-size', 'data-character-style'] });
+    void document.fonts?.ready.then(measure);
+    document.fonts?.addEventListener('loadingdone', measure);
+    return () => {
+      alive = false;
+      observer?.disconnect();
+      prefs.disconnect();
+      document.fonts?.removeEventListener('loadingdone', measure);
+    };
+  }, [word.id, word.pinyin, word.meaning, preferences.pinyin, preferences.font]);
+  return <div ref={ref} className="glyph-usage-reference">{children}</div>;
+}
 
 /** Characters-only word bank from the live workspace. Shared small cards keep
  * exact vocabulary links and whole-word audio independent of character hints;
@@ -45,13 +117,13 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
         const own = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: 'word' as const, word: word.id }, audio: word.audio };
         return <div className="glyph-usage-example glyph-parent-card" key={word.id}>
           <ExampleCardMeta identity={hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={<Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} className="detail-arrow-link" title={hint} aria-label={hint}><ArrowUpRight aria-hidden="true"/></Link>}/>
-          <div className="glyph-usage-reference">
+          <WordExampleReference word={word}>
             <span className="pinyin-character-glyphs word-example-glyphs" style={wordTileFit(word.hanzi).style}>{Array.from(word.hanzi).map((glyph, index) => <SoundExampleGlyph key={index} glyph={glyph} word={own} className={word.script === 'Traditional' ? 'traditional-character' : ''} fallback={<Button asChild variant="ghost" className={`decomposition-glyph${word.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} title={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>}/>)}</span>
             <span className="glyph-usage-facts">
               {preferences.pinyin && word.pinyin && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{word.pinyin}</span><ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/></span></span>}
               <SmallGridMeaning text={word.meaning}/>
             </span>
-          </div>
+          </WordExampleReference>
         </div>;
       })}/>
     </SentenceHints>}
@@ -63,7 +135,7 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
  * sentence. Bind state to the exact record so navigation cannot flash old text.
  */
 function useFallbackExample(recordId: string, enabled: boolean, lessonEnabled: boolean) {
-  const [loaded, setLoaded] = useState<{ recordId: string; hsk: CharacterHskExample | null; tatoeba: CharacterTatoebaExample | null } | null>(null);
+  const [loaded, setLoaded] = useState<{ recordId: string; hsk: CharacterHskExample | null; tatoeba: CharacterTatoebaExample | null; done: boolean } | null>(null);
   useEffect(() => {
     if (!enabled) return;
     let cancelled = false;
@@ -71,9 +143,9 @@ function useFallbackExample(recordId: string, enabled: boolean, lessonEnabled: b
       const tatoebaRequest = loadCharacterTatoebaExample(recordId);
       const hsk = lessonEnabled ? await loadCharacterHskExample(recordId) : null;
       if (cancelled) return;
-      setLoaded({ recordId, hsk, tatoeba: null });
+      setLoaded({ recordId, hsk, tatoeba: null, done: false });
       const tatoeba = await tatoebaRequest;
-      if (!cancelled) setLoaded({ recordId, hsk, tatoeba });
+      if (!cancelled) setLoaded({ recordId, hsk, tatoeba, done: true });
     })();
     return () => { cancelled = true; };
   }, [recordId, enabled, lessonEnabled]);
@@ -114,6 +186,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
   const { items, preferences, catalogVersion } = useWorkspace();
   const examples = useMemo(() => glyphUsage(entry, kind, items, libraryEntries('Characters'), preferences.includeTraditional, Infinity), [entry, kind, items, preferences.includeTraditional, catalogVersion]);
   const fallback = useFallbackExample(entry.id, kind === 'Characters', examples.length === 0);
+  const fallbackLoading = kind === 'Characters' && !fallback?.done;
   const hskExample = fallback?.hsk;
   const tatoeba = fallback?.tatoeba && isLearningExample(fallback.tatoeba) ? fallback.tatoeba : null;
   const gSourceParents = useGSourceParents(entry, kind, preferences.includeTraditional, catalogVersion);
@@ -178,7 +251,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaReadingFor ? ownSentencePinyin(tatoeba.sentence, tatoebaReadingFor) : undefined} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
     </div>);
   return <SentenceSection hanzi={entry.hanzi}>
-    {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples} initialCount={2}/> : null}
+    {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples} initialCount={2}/> : fallbackLoading ? <SectionPlaceholder heading={null} label="In a phrase" shape="cards" rows={2}/> : null}
   </SentenceSection>;
 }
 
@@ -195,13 +268,13 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
     let cancelled = false;
     loadIdioms()
       .then(({ words }) => { if (!cancelled) setIdioms(words); })
-      .catch(() => { /* hide section if idioms fail to load */ });
+      .catch(() => { if (!cancelled) setIdioms([]); });
     return () => { cancelled = true; };
   }, []);
   const matches = useMemo(() => (idioms ? idiomsForCharacter(idioms, entry.hanzi, entry.script, Infinity) : []), [idioms, entry.hanzi, entry.script]);
   const sectionRef = useSentenceSectionLayout(entry.id, matches);
-  return <ExampleSection id="idiom" label="In an idiom" icon={ScrollText} available={matches.length > 0} sectionRef={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section">
-    <SentenceHints backLabel={entry.hanzi}>
+  return <ExampleSection id="idiom" label="In an idiom" icon={ScrollText} available={idioms === null || matches.length > 0} sectionRef={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section">
+    {idioms === null ? <SectionPlaceholder heading={null} label="In an idiom" shape="cards" rows={2}/> : <SentenceHints backLabel={entry.hanzi}>
       <ExpandableCharacterGrid key={entry.id} initialCount={2} layout="list" label="All idiom examples" searchTexts={matches.map(idiom => `${idiom.hanzi} ${idiom.idiomMeta?.traditional ?? ''} ${idiom.pinyin} ${idiom.meaning}`)} cards={matches.map(idiom => {
         const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
         const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
@@ -217,6 +290,6 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
           />
         </div>;
       })}/>
-    </SentenceHints>
+    </SentenceHints>}
   </ExampleSection>;
 }
