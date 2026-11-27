@@ -169,7 +169,7 @@ export function VocabularyPage({ initialQuery = '', initialWordId = '', tab, pag
         const idiomTopics = collections.filter(c => c !== 'All collections' && (c === draftTopic || idiomPool.some(w => w.collection === c || w.collections?.includes(c))));
         const idiomSubtopics = subtopicOptions(filterIdioms(kindItems, idiomRankClasses, query, draft.band || ALL_IDIOM_BANDS, status, saved, Boolean(py), py === 'exact', draft.bandUpTo === '1'), 'All collections', draftSubtopic);
         return <>
-          <span className="filter-field-row"><FrequencyRangeControl labelled={false} value={draft.band === ALL_IDIOM_BANDS ? '' : (draft.band ?? '')} upTo={draft.bandUpTo === '1'} allowUnranked={false}
+          <span className="filter-field-row"><FrequencyRangeControl labelled={false} scale="idiom" value={draft.band === ALL_IDIOM_BANDS ? '' : (draft.band ?? '')} upTo={draft.bandUpTo === '1'} allowUnranked={false}
             groups={idiomRankClasses.map(c => ({ value: c.id, min: c.from, max: c.to, label: `${bandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%` }))}
             maxRank={idiomMaxRank}
             onChange={(nextBand, upTo) => patch({ band: nextBand || ALL_IDIOM_BANDS, bandUpTo: upTo ? '1' : undefined })}/></span>

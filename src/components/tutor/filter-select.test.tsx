@@ -8,7 +8,7 @@ vi.mock('@/components/ui/select', () => ({
   SelectContent: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   SelectTrigger: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   SelectValue: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  SelectItem: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  SelectItem: ({ children, className }: { children: React.ReactNode; className?: string }) => <div className={className}>{children}</div>,
   SelectGroup: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   SelectLabel: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
@@ -58,5 +58,22 @@ describe('Dropdown defaults are not filter edits', () => {
     expect(change).not.toHaveBeenCalled();
     fireEvent.click(screen.getByText('Empty option'));
     expect(change).toHaveBeenCalledExactlyOnceWith('');
+  });
+
+  it('carries a rank option colour onto the menu row and the closed trigger', () => {
+    render(<FilterSelect value="301-500" onValueChange={vi.fn()} items={[
+      { value: '', label: 'All ranks' },
+      { value: '1-100', label: 'Rank 1–100', className: 'usage-top' },
+      { value: '301-500', label: 'Rank 301–500', className: 'usage-mid' },
+    ]}/>);
+    // Menu rows keep their own tier colour (the trigger shares the selected one).
+    const menuRows = screen.getAllByText('Rank 301–500').filter(node => node.tagName === 'DIV');
+    expect(menuRows).toHaveLength(1);
+    expect(menuRows[0]?.className).toContain('usage-mid');
+    expect(screen.getByText('Rank 1–100').className).toContain('usage-top');
+    // The closed control repeats the selected range's colour so both agree.
+    expect(screen.getAllByText('Rank 301–500').some(node => node.tagName === 'SPAN' && node.className.includes('usage-mid'))).toBe(true);
+    // Options without a colour (All ranks) inherit the dropdown's own text colour.
+    expect(screen.getByText('All ranks').className).not.toContain('usage-');
   });
 });

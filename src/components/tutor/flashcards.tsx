@@ -299,7 +299,7 @@ export function FlashcardsPage({ category: controlledCategory, collection: contr
             {facets.styles.length > 0 && <GameField label="Sentence style"><FilterSelect ariaLabel="Sentence style" value={draft.style ?? ''} onValueChange={v => patch({ style: v || undefined })} items={[{ value: '', label: 'All styles' }, ...facets.styles.map(st => ({ value: st, label: st }))]} /></GameField>}
           </>}
         {/* Rank filter retains its exact recorded groups; stroke count uses a dual-thumb range. */}
-        {draftIdiom && <FrequencyRangeControl value={draft.usage === ALL_IDIOM_BANDS ? '' : draft.usage} upTo={draft.usageUpTo === '1'} allowUnranked={false}
+        {draftIdiom && <FrequencyRangeControl scale="idiom" value={draft.usage === ALL_IDIOM_BANDS ? '' : draft.usage} upTo={draft.usageUpTo === '1'} allowUnranked={false}
           groups={idiomRankClasses.map(c => ({ value: c.id, min: c.from, max: c.to, label: `${idiomBandRangeLabel(c)} · ${c.cumulativePct.toFixed(1)}%` }))}
           maxRank={Math.max(0, ...idiomWords.map(word => word.idiomMeta?.rank ?? 0))}
           onChange={(usage, upTo) => patch({ usage, usageUpTo: upTo ? '1' : undefined })}/>}

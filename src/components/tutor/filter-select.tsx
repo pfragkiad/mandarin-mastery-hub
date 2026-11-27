@@ -22,6 +22,9 @@ export interface FilterSelectOption {
   /** Explicit hierarchy only: ordinary grouped options retain their flat styling. */
   nested?: boolean;
   parent?: boolean;
+  /** Value-specific colour (frequency rank tiers). Carried on the trigger as well, so the
+   * closed control reads in the same colour as the choice it currently holds. */
+  className?: string;
 }
 
 export interface FilterSelectGroup {
@@ -54,7 +57,7 @@ export function orderedFilterItems(items: FilterSelectItem[]): FilterSelectItem[
 
 const optionClassName = (option: FilterSelectOption) => cn(
   option.nested && 'filter-option-nested', option.parent && 'filter-option-parent',
-  option.label === 'Unclassified' && 'filter-option-unclassified',
+  option.label === 'Unclassified' && 'filter-option-unclassified', option.className,
 );
 
 function encode(value: string) {

@@ -14,6 +14,13 @@ export function usageRankTier(rank: number | null, scale: 'default' | 'idiom' = 
   return rank <= 300 ? 'top' : rank <= 500 ? 'inter' : rank <= 1000 ? 'mid' : 'low';
 }
 
+/** Colour class for a rank tier, shared by cards, rank filter dropdowns and range controls.
+ * `null` (unranked records) keeps the surrounding text colour — never a guessed tier. */
+export function rankTierClass(rank: number | null, scale: 'default' | 'idiom' = 'default'): string | undefined {
+  const tier = usageRankTier(rank, scale);
+  return tier === 'none' ? undefined : `usage-${tier}`;
+}
+
 export function UsageLabel({ rank, kind, scale = 'default', compact = false, prefix, groupLabel, title }: { rank: number | null; kind?: LibraryKind; scale?: 'default' | 'idiom'; compact?: boolean; prefix?: string; groupLabel?: string | undefined; title?: string }) {
   const group = groupLabel ?? (kind ? usageGroupFor(kind, rank)?.label : undefined);
   const tier = usageRankTier(rank, scale);

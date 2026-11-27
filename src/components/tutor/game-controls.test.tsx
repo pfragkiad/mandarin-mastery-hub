@@ -77,3 +77,32 @@ describe('expandable game ranges', () => {
     expect(screen.getByRole('slider', { name: 'Maximum strokes' })).toHaveAttribute('aria-valuenow', '36');
   });
 });
+const RANK_GROUPS = [
+  { value: '1-100', label: 'Rank 1–100', min: 1, max: 100 },
+  { value: '101-300', label: 'Rank 101–300', min: 101, max: 300 },
+  { value: '301-500', label: 'Rank 301–500', min: 301, max: 500 },
+  { value: '501-1000', label: 'Rank 501–1,000', min: 501, max: 1000 },
+  { value: '1001-2000', label: 'Rank 1,001–2,000', min: 1001, max: 2000 },
+  { value: 'unranked', label: 'Unranked', min: 0, max: 0 },
+];
+
+describe('rank colour tiers in the frequency control', () => {
+  it('tints the Rank summary with the tier of the range it currently holds', () => {
+    const { container } = render(<FrequencyRangeControl value="1001-2000" groups={RANK_GROUPS} maxRank={9933} onChange={() => undefined}/>);
+    expect(screen.getByRole('button', { name: /^Rank: / })).toBeTruthy();
+    expect(container.querySelector('span.usage-low')).toBeTruthy();
+  });
+  it('uses the flatter idiom tiers so 1,001–2,000 reads gold, not grey', () => {
+    const { container } = render(<FrequencyRangeControl value="1001-2000" scale="idiom" groups={RANK_GROUPS} maxRank={9933} onChange={() => undefined}/>);
+    expect(container.querySelector('span.usage-inter')).toBeTruthy();
+    expect(container.querySelector('span.usage-low')).toBeNull();
+  });
+  it('colours a custom advanced range by its last recorded rank', () => {
+    const { container } = render(<FrequencyRangeControl value="range:254-1000" groups={[]} maxRank={9933} onChange={() => undefined}/>);
+    expect(container.querySelector('span.usage-mid')).toBeTruthy();
+  });
+  it('leaves All ranks and the recorded Unranked group untinted', () => {
+    expect(render(<FrequencyRangeControl value="" groups={RANK_GROUPS} maxRank={9933} onChange={() => undefined}/>).container.querySelector('[class*="usage-"]')).toBeNull();
+    expect(render(<FrequencyRangeControl value="unranked" groups={RANK_GROUPS} maxRank={9933} onChange={() => undefined}/>).container.querySelector('[class*="usage-"]')).toBeNull();
+  });
+});

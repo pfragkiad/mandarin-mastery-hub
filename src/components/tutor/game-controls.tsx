@@ -7,6 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { FilterSelect } from './filter-select';
 import { FilterFormClearButton, FilterWideningToggle } from './filter-form';
 import { parseRankRange, rankRangeValue, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
+import { rankTierClass } from './usage-label';
 import { STROKE_SLIDER_MAX, STROKE_SLIDER_MIN, formatStrokeRangeLabel, formatStrokeRangeValue, parseStrokeRange } from '@/lib/stroke-range';
 import { formatSelectedLevels, parseSelectedLevels } from '@/lib/mandarin';
 
@@ -84,9 +85,10 @@ function GameRangeDone() {
 
 /** Shared anchored popover: outside clicks dismiss it without applying or discarding
  * parent-owned drafts, and Done closes it the same way from inside. Secondary
- * disclosure state lives above the unmounted panel. */
-function GameRangeDisclosure({ label, summary, active, labelled = true, children }: {
-  label: string; summary: string; active: boolean; labelled?: boolean; children: ReactNode;
+ * disclosure state lives above the unmounted panel. `summaryClass` tints only the value
+ * part of the trigger, so a selected frequency range reads in its own rank colour. */
+function GameRangeDisclosure({ label, summary, active, labelled = true, summaryClass, children }: {
+  label: string; summary: string; active: boolean; labelled?: boolean; summaryClass?: string; children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
@@ -94,7 +96,7 @@ function GameRangeDisclosure({ label, summary, active, labelled = true, children
     <PopoverTrigger asChild><Button type="button" variant="outline" size="sm"
       className={`filter-select game-range-trigger${active ? ' filter-select-active' : ''}`}
       aria-label={`${label}: ${summary}`}>
-      <span>{label}: {summary}</span><ChevronDown className={open ? 'is-open' : ''}/>
+      <span>{label}: <span className={summaryClass}>{summary}</span></span><ChevronDown className={open ? 'is-open' : ''}/>
     </Button></PopoverTrigger>
     <PopoverContent side="bottom" align="start" sideOffset={4} collisionPadding={12}
       className="game-range-popover" aria-label={`${label} filter`}>
@@ -108,10 +110,13 @@ export type GameRankGroup = { value: string; label: string; min: number; max: nu
 
 /** Source-defined rank groups remain the quick choices. Advanced uses exact inclusive
  * numeric ranks (not class positions); unranked is an independent, explicit inclusion.
- * The parent owns URL-backed drafts and Apply; panel state never changes the pool. */
-export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, allowUnranked = true, labelled = true, onChange }: {
+ * The parent owns URL-backed drafts and Apply; panel state never changes the pool.
+ * `scale` selects the colour bands (`'idiom'` has the flatter head recorded for chengyu):
+ * every choice, the trigger and the presets take the colour of the least frequent rank
+ * inside them, exactly like the rank labels on the cards they filter. */
+export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, allowUnranked = true, labelled = true, scale = 'default', onChange }: {
   value: string; upTo?: boolean; groups: readonly GameRankGroup[]; maxRank: number;
-  allowUnranked?: boolean; labelled?: boolean; onChange: (value: string, upTo: boolean) => void;
+  allowUnranked?: boolean; labelled?: boolean; scale?: 'default' | 'idiom'; onChange: (value: string, upTo: boolean) => void;
 }) {
   const [advanced, setAdvanced] = useState(false);
   const advancedId = useId();
@@ -131,14 +136,21 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   // Three quick "Top N" choices only: a fourth pill (e.g. Top 2,000) overflows the
   // 400px panel and pushes Done — or the pill itself — onto a wrapped second line.
   const presets = finiteGroups.length >= 4 ? [finiteGroups[0], finiteGroups[1], finiteGroups[3]].filter((g): g is GameRankGroup => Boolean(g)) : finiteGroups.slice(0, 3);
-  return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)} labelled={labelled}>
+  // Rank colours come from the exact recorded tier of the least frequent rank a choice
+  // covers, so the dropdown, the trigger and the presets agree with the card labels.
+  // The recorded "Unranked" group has no rank at all and stays in the plain colour.
+  const groupTone = (g: GameRankGroup) => g.value === 'unranked' ? undefined : rankTierClass(g.max, scale);
+  const customTone = custom ? rankTierClass(custom.max, scale) : undefined;
+  const summaryTone = custom ? customTone : group && group.value !== 'unranked' ? rankTierClass(group.max, scale) : undefined;
+  return <GameRangeDisclosure label="Rank" summary={summary} active={Boolean(value)} labelled={labelled}
+    {...(summaryTone ? { summaryClass: summaryTone } : {})}>
     <div className={`stroke-range-card${value ? ' is-active' : ''}`}>
-      <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · {summary}</span>
+      <div className="stroke-range-header"><span className="stroke-range-label">Frequency rank · <span className={summaryTone}>{summary}</span></span>
         {/* Clear appears only while a range is drafted; All ranks has nothing to clear. */}
         {value ? <Button type="button" variant="ghost" className="stroke-range-any" onClick={() => onChange('', false)}>Clear</Button> : null}
       </div>
       <GameField label="Frequency"><FilterSelect ariaLabel="Frequency" value={value} onValueChange={v => onChange(v, false)}
-        items={[{ value: '', label: 'All ranks' }, ...groups.map(g => ({ value: g.value, label: g.label })), ...(custom ? [{ value, label: `Rank ${rankRangeLabel(custom)}` }] : [])]}/></GameField>
+        items={[{ value: '', label: 'All ranks' }, ...groups.map(g => { const tone = groupTone(g); return { value: g.value, label: g.label, ...(tone ? { className: tone } : {}) }; }), ...(custom ? [{ value, label: `Rank ${rankRangeLabel(custom)}`, ...(customTone ? { className: customTone } : {}) }] : [])]}/></GameField>
       {group && group.value !== 'unranked' && <FilterWideningToggle active={upTo} onToggle={() => onChange(value, !upTo)} label="+ lower ranks" title="Also include every more frequent rank above the selected group"/>}
       <Button type="button" variant="ghost" size="sm" className="game-range-advanced-toggle" aria-expanded={advanced} aria-controls={advancedId} onClick={() => setAdvanced(previous => !previous)}>
         Advanced<ChevronDown className={advanced ? 'is-open' : ''}/>
@@ -164,7 +176,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
           so Done never sits alone on a line of its own. */}
       <div className="game-range-footer">
         {advanced && <div className="stroke-range-presets" role="group" aria-label="Rank presets">{presets.map(preset => <Button key={preset.value} type="button" size="sm" variant="ghost"
-          className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}>Top {preset.max.toLocaleString('en-US')}</Button>)}</div>}
+          className={lo === 1 && hi === preset.max && Boolean(value) ? 'active' : ''} onClick={() => update(1, preset.max)}><span className={rankTierClass(preset.max, scale)}>Top {preset.max.toLocaleString('en-US')}</span></Button>)}</div>}
         <GameRangeDone/>
       </div>
     </div>
