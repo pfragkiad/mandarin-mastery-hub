@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowUpRight, BookOpen, Volume2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords, type Word } from '@/lib/mandarin';
@@ -263,7 +263,13 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   const speaker = <Button variant="ghost" size="icon" aria-label={`Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} onClick={onPlay}><Volume2/></Button>;
   // The header pill names the pair; when speech changes the tones it shows the change too (3 + 3 → 2 + 3).
   const digits = (tones: readonly number[]) => tones.map((t, i) => <span key={i}>{i > 0 && ' + '}<ToneDigit tone={t}/></span>);
-  const contours = (tones: readonly Tone[]) => tones.map((t, i) => <span key={i} className={`tone-pair-contour tone-${t}`}><ToneContour tone={t}/></span>);
+  const toneCaption = (t: Tone) => (t === 5 ? 'Neutral' : `Tone ${t}`);
+  // Static Sound-Details-style tone tiles for the pair header (contour + label, no pinyin),
+  // linked by an arrow between the first and second syllable.
+  const toneTiles = (tones: readonly Tone[]) => tones.map((t, i) => <span key={i} className="tone-pair-tile-step">
+    {i > 0 && <ArrowRight className="tone-pair-tile-arrow" aria-hidden="true"/>}
+    <span className={`pinyin-tone-button tone-${t} tone-pair-tile`}><ToneContour tone={t}/><small>{toneCaption(t)}</small></span>
+  </span>);
   const pill = <span className="word-hsk-id tone-pair-pill" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
     {digits(row.citationTones)}{changed && <span className="tone-pair-change"> → {digits(row.expectedSpokenTones)}</span>}
   </span>;
@@ -323,10 +329,13 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
           const recorded = chips.data ? hasRecording(chips.data, l.base, l.tone) : false;
           const on = chips.player.playing === id;
           // Play-only, like every other speaker: the icon never becomes a stop button and a
-          // tap while sounding does nothing. The tint only marks which syllable is sounding.
-          return <button key={`${id}-${i}`} type="button" className={`tone-sounds-chip tone-${l.tone}${on ? ' is-playing' : ''}`} disabled={!recorded}
-            aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : undefined}
-            onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>{l.reading}<Volume2/></button>;
+          // tap while sounding does nothing. Reuses the Sound Details tone-tile layout.
+          return <button key={`${id}-${i}`} type="button" className={`pinyin-tone-button tone-${l.tone} tone-sounds-tile${recorded ? '' : ' is-unrecorded'}${on ? ' is-current is-playing' : ''}`} disabled={!recorded}
+            aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : 'No Sound chart recording'}
+            onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>
+            {!recorded && <span className="pinyin-tone-norec" aria-hidden="true"><VolumeX/></span>}
+            <ToneContour tone={l.tone}/><span lang="zh-Latn-pinyin">{l.reading}</span><small>{toneCaption(l.tone)}</small>
+          </button>;
         })}</div>
       </div>
       {/* No per-word source footer: recording and licence details live only in the page title's (i). */}
@@ -335,11 +344,11 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
     {mode === 'pairs' ? <>
       <header className="tone-pair-hero" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
-        <div className="tone-pair-hero-digits">{digits(row.citationTones)}{changed && <span className="tone-pair-change"> → {digits(row.expectedSpokenTones)}</span>}</div>
-        <div className="tone-pair-hero-contours" aria-hidden="true">
-          <span className="tone-pair-contour-group">{contours(row.citationTones)}</span>
-          {changed && <><span className="tone-pair-change">→</span><span className="tone-pair-contour-group">{contours(row.expectedSpokenTones)}</span></>}
-        </div>
+        <div className="tone-pair-hero-group" aria-label={`Dictionary tones: ${toneLabel(row.citationTones)}`}>{toneTiles(row.citationTones)}</div>
+        {changed && <>
+          <span className="tone-pair-spoken-sep">spoken</span>
+          <div className="tone-pair-hero-group" aria-label={`Expected in speech: ${toneLabel(row.expectedSpokenTones)}`}>{toneTiles(row.expectedSpokenTones)}</div>
+        </>}
       </header>
       {wordBank}
       <div className="tone-pair-selected">{selectedWord}</div>
