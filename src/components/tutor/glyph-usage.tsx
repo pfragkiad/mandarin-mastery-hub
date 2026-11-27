@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowRight, ArrowUpRight, Puzzle, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { libraryEntries, type LibraryEntry, type LibraryKind } from '@/lib/character-library';
-import { glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
+import { characterWords, glyphUsage, glyphParentCharactersGSource, radicalParentCharacters } from '@/lib/glyph-usage';
 import { idiomsForCharacter, loadIdioms } from '@/lib/idioms';
 import type { Word } from '@/lib/mandarin';
 import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
@@ -25,6 +25,37 @@ import { isLearningExample, loadCharacterTatoebaExample, ownSentencePinyin, type
 import { TatoebaSentenceSource } from './tatoeba-sentence-source';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
 import { SmallGridMeaning } from './small-grid-meaning';
+import { SoundExampleGlyph } from './sound-example-glyph';
+import { sectionIcons } from '@/lib/section-icons';
+
+/** Characters-only word bank from the live workspace. Shared small cards keep
+ * exact vocabulary links and whole-word audio independent of character hints;
+ * Show all reveals every matching record inside the shared bounded scroller. */
+export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
+  const { items, preferences } = useWorkspace();
+  const matches = useMemo(() => characterWords(entry.hanzi, items, preferences.includeTraditional), [entry.hanzi, items, preferences.includeTraditional]);
+  const WordsIcon = sectionIcons.Words;
+  return <section className="glyph-usage-section" aria-label="In a word">
+    <h3 className="eyebrow"><WordsIcon size={13} aria-hidden="true"/>IN A WORD</h3>
+    {!matches.length ? <p className="library-note">No recorded multi-character words yet.</p> : <SentenceHints backLabel={entry.hanzi}>
+      <ExpandableCharacterGrid key={entry.id} initialCount={6} cards={matches.map(word => {
+        const hsk = wordHskPill(word);
+        const hint = openDetailsHint(word.hanzi, 'word');
+        const own = { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning, search: { tab: 'word' as const, word: word.id }, audio: word.audio };
+        return <div className="glyph-usage-example glyph-parent-card" key={word.id}>
+          <ExampleCardMeta identity={hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={<Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} className="detail-arrow-link" title={hint} aria-label={hint}><ArrowUpRight aria-hidden="true"/></Link>}/>
+          <div className="glyph-usage-reference">
+            <span className="pinyin-character-glyphs flex-wrap">{Array.from(word.hanzi).map((glyph, index) => <SoundExampleGlyph key={index} glyph={glyph} word={own} className={word.script === 'Traditional' ? 'traditional-character' : ''} fallback={<Button asChild variant="ghost" className={`decomposition-glyph${word.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} title={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>}/>)}</span>
+            <span className="glyph-usage-facts">
+              {preferences.pinyin && word.pinyin && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{word.pinyin}</span><ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/></span></span>}
+              <SmallGridMeaning text={word.meaning}/>
+            </span>
+          </div>
+        </div>;
+      })}/>
+    </SentenceHints>}
+  </section>;
+}
 
 /** Optional sourced examples, fetched only for a Characters detail card.
  * Vocabulary/lessons stay first and Tatoeba may add a separately annotated

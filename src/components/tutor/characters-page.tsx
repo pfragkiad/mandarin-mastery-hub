@@ -43,7 +43,7 @@ import { useWorkspace } from './workspace';
 import { CardTopMeta, DetailRecordActions, RecordCardFooter } from './record-card-footer';
 import { finderCoversGlyph } from '@/lib/hanzi-finder-records';
 import { TileSpeaker } from './tile-speaker';
-import { CharacterIdiomsSection, GlyphUsageExamples, useGSourceParents } from './glyph-usage';
+import { CharacterWordsSection, CharacterIdiomsSection, GlyphUsageExamples, useGSourceParents } from './glyph-usage';
 import { TileExamplesLink } from './sentence-section';
 import { externalExampleSources } from '@/lib/external-examples';
 import { RecordDetailTitle } from './record-detail-title';
@@ -297,6 +297,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {info.component && !fallback && <p className="catalog-record-note">{info.componentName ? `${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? 'Radical form that is also an ordinary character.' : 'No standalone character pronunciation is assigned to this form.'}</p>}
     {(kind === 'Components' || kind === 'Characters') && radicalIdentity(entry.hanzi).radicals.length > 0 && <RadicalIdentityNote glyph={entry.hanzi}/>}
+    {kind === 'Characters' && <CharacterWordsSection entry={entry}/>}
     {kind !== 'Strokes' && <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>}
     {/* Top 2 highest-ranked idioms containing this character (Characters records only). */}
     {kind === 'Characters' && <CharacterIdiomsSection entry={entry}/>}

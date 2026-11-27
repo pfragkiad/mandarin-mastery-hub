@@ -2,12 +2,26 @@ import { radicalFamily, radicalForms } from './radical-strokes';
 import type { DecompositionNode, LibraryEntry, LibraryKind } from './character-library';
 import { gSourceDecompositions, loadRecord, type CharacterEnrichment } from './character-enrichment';
 import { includeScript } from './learning-preferences';
-import type { Word } from './mandarin';
+import { vocabularyKind, type Word } from './mandarin';
 import { sortByUsage } from './usage-frequency';
 import { breakdownUsesForm } from './radical-context';
 import { breakdownDisplayGlyph, radicalIdentity } from './radical-identities';
 
 export type GlyphUsage = { word: Word; sentence: boolean; matchedGlyph: string };
+
+/** All exact multi-character Word headwords containing this character. Preserve
+ * source order and record identities; sentences, phrases and script substitutes
+ * never create matches, and this collection has no example-count limit. */
+export function characterWords(glyph: string, items: Word[], includeTraditional = false): Word[] {
+  if (Array.from(glyph).length !== 1) return [];
+  const seen = new Set<string>();
+  return items.filter(word => {
+    if (vocabularyKind(word) !== 'word' || !includeScript(word.script, includeTraditional)
+      || Array.from(word.hanzi).length < 2 || !word.hanzi.includes(glyph) || seen.has(word.id)) return false;
+    seen.add(word.id);
+    return true;
+  });
+}
 const containsComponent = (node: DecompositionNode, glyph: string): boolean => node.glyph === glyph || Boolean(node.children?.some(child => containsComponent(child, glyph)));
 
 export type EnrichmentLoader = (character: string) => Promise<CharacterEnrichment | null>;

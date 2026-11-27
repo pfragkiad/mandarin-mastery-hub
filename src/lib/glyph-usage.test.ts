@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { glyphUsage, glyphParentCharacters, glyphParentCharactersGSource, radicalParentCharacters } from './glyph-usage';
+import { characterWords, glyphUsage, glyphParentCharacters, glyphParentCharactersGSource, radicalParentCharacters } from './glyph-usage';
 import type { LibraryEntry } from './character-library';
 import type { CharacterEnrichment } from './character-enrichment';
 import type { Word } from './mandarin';
@@ -13,6 +13,23 @@ const gSourceRecord = (expression: string, directG = true): CharacterEnrichment 
 const loaderFor = (records: Record<string, CharacterEnrichment | null>) => async (character: string) => records[character] ?? null;
 
 describe('Existing glyph usage', () => {
+  it('includes every multi-character word containing the exact character, without an example limit', () => {
+    const rows = ['爱好', '爱情', '可爱', '热爱', '亲爱', '爱人', '爱心'].map(text => word(text, ''));
+    expect(characterWords('爱', rows).map(row => row.id)).toEqual(rows.map(row => row.id));
+  });
+  it('excludes single-character words, phrase/idiom entries and sentence-only matches', () => {
+    const rows = [word('爱', ''), { ...word('爱你', ''), entryKind: 'phrase' as const },
+      { ...word('爱不释手', ''), entryKind: 'idiom' as const }, word('喜欢', '我爱你'), word('爱好', '')];
+    expect(characterWords('爱', rows).map(row => row.id)).toEqual(['爱好']);
+  });
+  it('keeps exact forms and distinct word IDs without duplicate records', () => {
+    const first = word('爱好', '');
+    const other = { ...first, id: 'another-reading' };
+    const traditional = { ...word('愛好', ''), script: 'Traditional' as const };
+    expect(characterWords('爱', [first, first, other, traditional], true).map(row => row.id)).toEqual(['爱好', 'another-reading']);
+    expect(characterWords('愛', [traditional], true).map(row => row.id)).toEqual(['愛好']);
+    expect(characterWords('愛', [traditional], false)).toEqual([]);
+  });
   it.each(['Components', 'Radicals'] as const)('selects the six most frequent parent examples before limiting %s', async kind => {
     hydrateUsageOrder(usage as UsageOrderFile);
     const parents = ['龘', '人', '一', '了', '是', '不', '的', '在'].map(hanzi => ({
