@@ -1871,14 +1871,14 @@ html[data-display-size='comfortable'] .library-page .shared-filter-form > .filte
 .game-setup .game-choice-options button { border-radius: var(--control-radius); min-height: 36px; height: auto; min-width: 36px; flex: 1 0 auto; padding: 8px; font-size: 12px; font-weight: 500; white-space: normal; }
 .game-setup .game-choice-options button.active { background: var(--primary); color: var(--primary-foreground); }
 .game-filter-disclosure { width: 100%; min-width: 0; border-top: 1px solid var(--border); padding-top: var(--game-field-gap); }
-.game-setup .game-filter-heading { width: 100%; display: grid; grid-template-columns: auto auto minmax(0,1fr) auto; justify-content: start; padding: 6px 0; gap: 8px; color: var(--foreground); font-size: 13px; }
+.game-setup .game-filter-heading { width: 100%; display: grid; grid-template-columns: auto auto minmax(0,1fr) auto; align-items: center; min-height: 26px; justify-content: start; padding: 6px 0; gap: 8px; color: var(--foreground); font-size: 13px; }
 .game-filter-heading > svg { width: 16px; height: 16px; }
 .game-filter-heading > svg:last-child { grid-column: 4; transition: transform .15s; }
 .game-filter-heading > svg.is-open { transform: rotate(180deg); }
 .game-filter-number { justify-self: start; color: var(--primary); font-variant-numeric: tabular-nums; }
 /* The games' clear-all lives on the Filters heading line: labelled, right-aligned, and only
    mounted while an applied filter exists (see FilterFormClearButton). */
-.game-filter-heading .filter-clear-heading { grid-column: 4; justify-self: end; height: 26px; min-height: 0; padding: 0 8px; gap: 5px; font-size: 12px; font-weight: 500; color: var(--muted-foreground); white-space: nowrap; }
+html .game-filter-heading .filter-clear-heading[data-ui-button] { grid-column: 4; justify-self: end; height: 26px; min-height: 0; padding: 0 8px; gap: 5px; font-size: 12px; font-weight: 500; color: var(--muted-foreground); white-space: nowrap; }
 .game-filter-heading .filter-clear-heading svg { width: 13px; height: 13px; }
 .game-filter-heading .filter-clear-heading:hover { color: var(--foreground); }
 .game-filter-grid { display: flex; flex-wrap: wrap; align-items: end; gap: var(--game-field-gap); padding-top: var(--game-field-gap); }
