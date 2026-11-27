@@ -1,5 +1,8 @@
 # Roadmap
 
+## Small-card balanced spacing
+- [x] Centre the detail arrow with the HSK pill in both sizes, with equal border-to-header, header-to-tiles and tile-to-bottom spacing; verified 6px small-card gaps and 14px expanded-card gaps, with 20 existing tests passing.
+
 ## Stable library range editing
 - [x] Keep rank preset pills and Done on one line: drop the fourth "Top N" pill (Top 2,000) and stop the pill row wrapping; verified both panels at 1458 and 390 widths.
 - [x] Keep Rank/Strokes triggers and Apply space stable while dragging; verified draft-only editing and submission at 1458/1280/390 widths and both display sizes; 18 shared filter/range tests pass.

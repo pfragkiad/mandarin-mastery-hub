@@ -430,7 +430,7 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .glyph-usage-facts-row .component-reuse-label { line-height: 14px; }
 .example-card-topic { font-size: 11px; line-height: 14px; color: var(--muted-foreground); }
 html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .example-card-meta) :is(.component-reuse-label, .example-card-topic) { font-size: 13px; line-height: 1.4; }
-.example-card-meta { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; text-align: left; }
+.example-card-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; text-align: left; }
 /* The shared detail arrow (styles.css .detail-arrow-link) rides at the far right of a small
    grid card's header row, vertically centred on the label line, in both display sizes.
    Its square hit target is taller than the label line, so negative block margins keep it from
@@ -440,14 +440,9 @@ html[data-display-size='comfortable'] :is(.glyph-usage-facts-row, .example-card-
 .example-card-meta > .detail-arrow-link svg { width: 15px; height: 15px; }
 html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link { margin-block: -6px; width: 30px; height: 30px; }
 html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link svg { width: 17px; height: 17px; }
-/* The identity pills (Radical #N, HSK level, Traditional) are bordered boxes taller than the
-   rank/topic text beside them, so the same overhang trick keeps them from stretching the header
-   row: the row stays exactly one text line tall and the pill spills into the card's own padding,
-   leaving the hanzi tile the shared --detail-example-gap below the label instead of further.
-   The pill also keeps the compact box metrics at both display sizes: a taller comfortable pill
-   would reach down into the tile's 部 corner stamp (see the .glyph-parent-card stamp override). */
-.example-card-meta > .word-hsk-id.word-hsk-id { margin-block: -1px; line-height: 14px; padding-block: 1px; }
-html[data-display-size='comfortable'] .example-card-meta > .word-hsk-id.word-hsk-id { margin-block: -4px; line-height: 14px; padding-block: 1px; }
+/* Pills participate in the centred header instead of overhanging it asymmetrically.
+   Compact box metrics preserve clearance above the radical tile's corner stamp. */
+.example-card-meta > .word-hsk-id.word-hsk-id { margin-block: 0; line-height: 14px; padding-block: 1px; }
 /* Metadata belongs above its example; the quieter inner rule distinguishes examples
    from the full-weight dividers between different detail sections. */
 .idiom-examples-section .glyph-usage-example { display: grid; gap: var(--detail-example-gap, 6px); margin-top: var(--detail-example-gap, 6px); }
@@ -2104,7 +2099,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   gap: var(--detail-example-gap);
   align-content: start;
   margin-top: 0;
-  padding: 10px 12px;
+  padding: var(--detail-example-gap) 12px;
   border: 1px solid var(--border);
   border-radius: var(--form-radius);
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
@@ -5271,7 +5266,7 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
 .tone-pair-glyph .decomposition-glyph strong, .tone-pair-glyph .decomposition-glyph, .tone-pair-glyph strong { color: var(--tone-ink, var(--foreground)); }
 .tone-pair-syllable { color: var(--tone-ink, var(--muted-foreground)); }
 /* In-place expanded word card in Tone pairs: spans full width with larger hanzi/pinyin and play controls. */
-.tone-sounds-example.is-expanded { grid-column: 1 / -1; padding: 16px 18px; gap: 14px; cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.tone-sounds-example.is-expanded { --detail-example-gap: 14px; grid-column: 1 / -1; padding: var(--detail-example-gap) 18px; gap: var(--detail-example-gap); cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .tone-pair-expanded-top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .tone-sounds-example.is-expanded .pinyin-character-glyphs { gap: 6px; }
 .tone-sounds-example.is-expanded .decomposition-glyph { min-width: 52px; height: 52px; padding: 0 6px; font-size: 38px; line-height: 1; }

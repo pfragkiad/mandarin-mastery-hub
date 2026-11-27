@@ -308,10 +308,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
         }}
       >
         {isExpanded ? <>
-          <div className="tone-pair-expanded-meta">
-            {hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}
-            {wordLink}
-          </div>
+          <ExampleCardMeta identity={hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={wordLink}/>
           <div className="tone-pair-expanded-top">
             <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
               const tone = example.citationTones[glyphIndex];
