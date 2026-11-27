@@ -423,6 +423,8 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 @keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
 .detail-sheet .expandable-character-grid.example-list { grid-template-columns: minmax(0, 1fr); }
+.example-results-toolbar { display: flex; justify-content: flex-end; margin-bottom: var(--grid-card-inner-gap); }
+.example-results-toolbar .search-field { flex: 0 1 280px; min-width: 0; }
 .detail-sheet .example-list .glyph-usage-example + .glyph-usage-example { margin-top: 0; }
 .example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }

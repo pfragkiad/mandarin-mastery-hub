@@ -3,6 +3,21 @@ import { describe, expect, it } from 'vitest';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
 
 describe('Expandable character examples', () => {
+  it('filters only expanded results and restores the original preview on collapse', () => {
+    const cards = ['destination', 'school', 'home'].map(id => <a key={id} href={`/vocabulary?word=${id}`}>{id}</a>);
+    render(<ExpandableCharacterGrid cards={cards} initialCount={2} label="All phrase examples" searchTexts={['目的地 mùdìdi destination', '学校 xuéxiào school', '家 jiā home']}/>);
+    expect(screen.queryByRole('searchbox')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Show all 3' }));
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'mudidi' } });
+    expect(screen.getByRole('link', { name: 'destination' })).toHaveAttribute('href', '/vocabulary?word=destination');
+    expect(screen.queryByRole('link', { name: 'school' })).toBeNull();
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: '' } });
+    expect(screen.getAllByRole('link')).toHaveLength(3);
+    fireEvent.click(screen.getByRole('button', { name: 'Show fewer' }));
+    expect(screen.queryByRole('searchbox')).toBeNull();
+    expect(screen.getAllByRole('link')).toHaveLength(2);
+  });
+
   it('reveals exact remaining destinations only after expansion and hides them again on collapse', () => {
     const cards = ['人', '你', '他'].map(glyph => <a key={glyph} href={`/characters?tab=Characters&id=Characters:${glyph}`}>{glyph}</a>);
     render(<ExpandableCharacterGrid cards={cards} initialCount={2}/>);

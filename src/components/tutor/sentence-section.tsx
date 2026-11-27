@@ -5,6 +5,7 @@ import { LessonHintsProvider, useLessonHints } from './lesson-hints';
 import { useWorkspace } from './workspace';
 import { ExampleSection, useExampleTab } from './example-tabs';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
+import { exampleSearchText } from '@/lib/example-search';
 
 /**
  * The shared "In a phrase" section of word and character detail cards.
@@ -116,7 +117,7 @@ export function ExampleCardMeta({ identity, topic, link }: { identity?: ReactNod
  * scrollbar as character/word grids. A single column preserves sentence layout.
  */
 export function MoreExamples({ examples, initialCount = 1 }: { examples: ReactNode[]; initialCount?: number }) {
-  return <ExpandableCharacterGrid cards={examples} initialCount={initialCount} layout="list" label="All phrase examples"/>;
+  return <ExpandableCharacterGrid cards={examples} searchTexts={examples.map(exampleSearchText)} initialCount={initialCount} layout="list" label="All phrase examples"/>;
 }
 
 /** External-search icon shared by the cards' "Examples" button and the detail action row's

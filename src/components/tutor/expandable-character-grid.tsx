@@ -1,6 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { exampleSearchMatches } from '@/lib/example-search';
 
 /** Shared detail-card parent grid. Inputs keep exact rendered records and source order;
  * local expansion reveals all rows; the grid uses the window's available screen-height
@@ -10,8 +11,10 @@ import { Button } from '@/components/ui/button';
  * `initialCount`) and scrolls any `.is-selected` card into view inside the grid.
  * `animateSelection` opts exact `data-layout-key` cards into measured layout motion;
  * other example grids keep their existing behaviour. */
-export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey, animateSelection = false, layout = 'grid', label = 'All character examples' }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string; animateSelection?: boolean; layout?: 'grid' | 'list'; label?: string }) {
+export function ExpandableCharacterGrid({ cards, initialCount, totalCount = cards.length, defaultExpanded = false, selectedKey, animateSelection = false, layout = 'grid', label = 'All character examples', searchTexts }: { cards: ReactNode[]; initialCount: number; totalCount?: number; defaultExpanded?: boolean; selectedKey?: string; animateSelection?: boolean; layout?: 'grid' | 'list'; label?: string; searchTexts?: string[] }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
+  // Opt-in phrase/idiom search is local to this expanded list, never a library filter.
+  const [query, setQuery] = useState('');
   const grid = useRef<HTMLDivElement>(null);
   const [availableHeight, setAvailableHeight] = useState<number>();
   const id = useId();
@@ -48,6 +51,8 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     return () => { animations.forEach(animation => animation.cancel()); };
   }, [animateSelection, selectedKey, expanded]);
   const canExpand = cards.length > initialCount;
+  const searching = expanded && canExpand && searchTexts !== undefined;
+  const shown = expanded ? cards.filter((_, index) => !searching || exampleSearchMatches(searchTexts?.[index] ?? '', query)) : cards.slice(0, initialCount);
   useEffect(() => {
     if (defaultExpanded && canExpand) setExpanded(true);
   }, [defaultExpanded, canExpand]);
@@ -92,14 +97,16 @@ export function ExpandableCharacterGrid({ cards, initialCount, totalCount = card
     }
   }, [expanded, availableHeight, selectedKey]);
   return <>
+    {searching && <div className="example-results-toolbar"><div className="search-field"><Search aria-hidden="true"/><input type="search" aria-label={`Search ${label.toLowerCase()}`} placeholder="Hanzi, pinyin, English…" value={query} onChange={event => { setQuery(event.target.value); if (grid.current) grid.current.scrollTop = 0; }}/></div></div>}
     <div ref={grid} id={id} style={expanded && availableHeight !== undefined ? { '--character-grid-available-height': `${availableHeight}px` } as CSSProperties : undefined} className={`glyph-usage-parents expandable-character-grid${layout === 'list' ? ' example-list' : ''}${expanded ? ' is-expanded' : ''}`} tabIndex={expanded ? 0 : undefined} role={expanded ? 'region' : undefined} aria-label={expanded ? label : undefined}>
-      {(expanded ? cards : cards.slice(0, initialCount))}
+      {shown.length ? shown : <p className="library-note">No matching examples.</p>}
     </div>
     {canExpand && <Button type="button" variant="ghost" size="sm" className={`more-examples-toggle${expanded ? ' is-open' : ''}`} aria-expanded={expanded} aria-controls={id} onClick={() => {
       if (expanded && grid.current) grid.current.scrollTop = 0;
       // Ask a Decomposition/Etymology drawer in this card to collapse for the expansion.
       if (!expanded) grid.current?.dispatchEvent(new Event('character-grid-expand', { bubbles: true }));
       setExpanded(value => !value);
+      setQuery('');
     }}>
       <ChevronDown className="more-examples-icon" aria-hidden="true"/>{expanded ? 'Show fewer' : `Show all ${totalCount}`}
     </Button>}

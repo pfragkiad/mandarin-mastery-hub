@@ -202,7 +202,7 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
   const sectionRef = useSentenceSectionLayout(entry.id, matches);
   return <ExampleSection id="idiom" label="In an idiom" icon={ScrollText} available={matches.length > 0} sectionRef={sectionRef} className="glyph-usage-section sentence-section idiom-examples-section">
     <SentenceHints backLabel={entry.hanzi}>
-      <ExpandableCharacterGrid key={entry.id} initialCount={2} layout="list" label="All idiom examples" cards={matches.map(idiom => {
+      <ExpandableCharacterGrid key={entry.id} initialCount={2} layout="list" label="All idiom examples" searchTexts={matches.map(idiom => `${idiom.hanzi} ${idiom.idiomMeta?.traditional ?? ''} ${idiom.pinyin} ${idiom.meaning}`)} cards={matches.map(idiom => {
         const showTrad = entry.script === 'Traditional' && Boolean(idiom.idiomMeta?.traditional?.includes(entry.hanzi));
         const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
         const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;

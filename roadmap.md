@@ -1,5 +1,9 @@
 # Roadmap
 
+## Expanded phrase and idiom search
+- [x] Add live Hanzi/pinyin/English search at the top right only when Show all reveals additional phrase/idiom results.
+- [x] Verify filtering, clearing, collapse, unchanged links and bounded scrolling; 33 related tests pass, with wide/narrow browser checks on both sections.
+
 ## Word example early wrapping
 - [x] Keep word-example pinyin and translation beside Hanzi whenever their actual content fits, rather than reserving an arbitrary text-column width; verified destination in both sizes and no narrow overflow, with 16 related tests passing.
 
