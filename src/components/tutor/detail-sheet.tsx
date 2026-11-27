@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, GripVertical, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,65 @@ import { detailTrail, historyEntry, historyPosition, visitAt, type TrailStep } f
 
 /** How long a form switch may hold the previous content height (see DetailSheet). */
 const HOLD_MS = 1500;
+
+/** Clamp an adjustable, centred window to the available screen, never clipping its edges. */
+export function detailSheetWidth(width: number, viewport: number): number {
+  const available = Math.max(0, viewport - 32);
+  return Math.round(Math.min(available, Math.max(Math.min(360, available), width)));
+}
+
+/** Shared display-only resize state. Dragging writes a CSS variable directly so
+ * record content stays mounted; only release saves the preferred width. Browser
+ * storage is restored after hydration, and CSS caps it on smaller screens. */
+function useDetailSheetResize() {
+  const sheet = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; width: number } | null>(null);
+  const [width, setWidth] = useState<number | null>(null);
+  useEffect(() => {
+    try {
+      const stored = Number(localStorage.getItem('tutor-detail-width'));
+      if (Number.isFinite(stored) && stored >= 360) setWidth(stored);
+    } catch { /* display storage is optional */ }
+  }, []);
+  const save = (next: number | null) => {
+    setWidth(next);
+    if (next === null) sheet.current?.style.removeProperty('--detail-sheet-width');
+    try {
+      if (next === null) localStorage.removeItem('tutor-detail-width');
+      else localStorage.setItem('tutor-detail-width', String(next));
+    } catch { /* keep the current window usable without storage */ }
+  };
+  const apply = (next: number) => {
+    const clamped = detailSheetWidth(next, window.innerWidth);
+    sheet.current?.style.setProperty('--detail-sheet-width', `${clamped}px`);
+    return clamped;
+  };
+  return { sheet, width, reset: () => save(null),
+    start: (event: React.PointerEvent<HTMLButtonElement>) => {
+      if (event.button !== 0 || !sheet.current) return;
+      event.preventDefault();
+      drag.current = { x: event.clientX, width: sheet.current.getBoundingClientRect().width };
+      event.currentTarget.setPointerCapture(event.pointerId);
+    },
+    move: (event: React.PointerEvent<HTMLButtonElement>) => {
+      if (drag.current) apply(drag.current.width + 2 * (event.clientX - drag.current.x));
+    },
+    end: (event: React.PointerEvent<HTMLButtonElement>) => {
+      if (!drag.current) return;
+      save(apply(drag.current.width + 2 * (event.clientX - drag.current.x)));
+      drag.current = null;
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    },
+    key: (event: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (!sheet.current) return;
+      if (event.key === 'Home') { event.preventDefault(); save(null); return; }
+      if (!['ArrowLeft', 'ArrowRight', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'End' ? window.innerWidth : sheet.current.getBoundingClientRect().width + (event.key === 'ArrowRight' ? 32 : -32);
+      save(apply(next));
+    },
+  };
+}
 
 /** True below the width where the library's side detail column stacks under the cards. */
 export function useNarrowLibrary(maxWidth = 850) {
@@ -68,6 +127,7 @@ export function closeTarget(trail: TrailStep[], openedAt: number | null, current
 export function DetailSheet({ open, title, label, position = -1, total = 0, neighbourLabel = 'card', onClose, onPrevious, onNext, children }: {
   open: boolean; title: string; label?: string; position?: number; total?: number; neighbourLabel?: string; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
 }) {
+  const resize = useDetailSheetResize();
   const returnFocus = useRef<HTMLElement | null>(null);
   const body = useRef<HTMLDivElement>(null);
   const trail = useSyncExternalStore(detailTrail.subscribe, detailTrail.get, detailTrail.get);
@@ -129,7 +189,8 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, neig
   const inList = fromGrid && position >= 0 && total > 0;
   const closeLabel = target ? `Close and return to ${target.label ?? 'the previous page'}` : 'Close and show card in list';
   return <Dialog modal open={open} onOpenChange={value => { if (!value) close(); }}>
-    <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet"
+    <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet" ref={resize.sheet}
+      style={resize.width === null ? undefined : { ['--detail-sheet-width' as string]: `${resize.width}px` }}
       onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
       onCloseAutoFocus={event => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
       // A click on the dimmed backdrop closes the window (via onOpenChange).
@@ -179,6 +240,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, neig
         detailTrail.push({ label: label ?? title, href: historyEntry(), ...(sameCard ? { sameCard: true } : {}) });
       }}><div ref={content}>{children}</div>
       </div>
+      <Button variant="ghost" size="icon" className="writer-resize-handle detail-sheet-resize" role="slider" aria-label="Resize detail window" aria-orientation="horizontal" aria-valuemin={360} aria-valuenow={resize.width ?? undefined} title="Drag to resize · double-click to reset" onPointerDown={resize.start} onPointerMove={resize.move} onPointerUp={resize.end} onPointerCancel={resize.end} onDoubleClick={resize.reset} onKeyDown={resize.key}><GripVertical aria-hidden="true"/></Button>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
 }

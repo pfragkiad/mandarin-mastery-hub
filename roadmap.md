@@ -1,5 +1,9 @@
 # Roadmap
 
+## Adjustable detail windows
+- [x] Add a shared drag-to-resize grip with keyboard adjustment, remembered width and reset; constrain windows to the screen. Verified actual pointer drag from 720px to 1320px, reload restoration, keyboard adjustment without navigation, double-click reset and 390px screen fit.
+- [x] Allow extra cards per row only in In a word and In a character as the window widens; keep phrases and idioms in single-column lists and other grids unchanged. Verified five word columns, six character columns, phrase/idiom single columns, larger-text layout and no browser errors; 37 affected tests pass.
+
 ## Grid-wide detail wrapping
 - [x] Make every card in each detail example grid stack when any visible card stacks; reconsider on Show fewer, preserving library row behavior.
 - [x] Verified real 电 detail expansion stacks all 18 cards and Show fewer restores the six fitting cards; checked 2742/700/600/390px with no browser errors. All 34 affected tests pass.

@@ -1698,7 +1698,12 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .catalog-detail .catalog-detail-title { margin-bottom: 0; }
 .catalog-detail .word-detail-actions { margin: 14px 0 20px; }
 .catalog-detail .catalog-facts { padding-top: 20px; }
-.detail-sheet { position: fixed; z-index: 50; top: 24px; left: 50%; transform: translateX(-50%); width: min(560px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); border-radius: var(--form-radius); gap: 0; overflow: hidden; }
+.detail-sheet { position: fixed; z-index: 50; top: 24px; left: 50%; transform: translateX(-50%); --detail-sheet-default-width: 720px; --detail-example-min-width: 220px; width: min(var(--detail-sheet-width, var(--detail-sheet-default-width)), calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); border-radius: var(--form-radius); gap: 0; overflow: hidden; }
+/* Reuse the writing-square grip's appearance; the window stays centred, so a
+   right-edge drag changes both sides equally. The hit target never covers text. */
+.detail-sheet .detail-sheet-resize { right: 1px; bottom: 50%; width: 12px; height: 40px; cursor: ew-resize; border: 0; box-shadow: none; background: transparent; color: var(--muted-foreground); }
+.detail-sheet .detail-sheet-resize:hover, .detail-sheet .detail-sheet-resize:focus-visible { transform: none; color: var(--primary); }
+.detail-sheet .detail-sheet-resize svg { width: 12px; height: 20px; }
 .detail-sheet-bar { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; flex-shrink: 0; border-bottom: 1px solid var(--border); }
 .detail-sheet-bar { display: grid; grid-template-columns: 1fr auto 1fr; }
 .detail-sheet-start { display: flex; justify-content: flex-start; min-width: 0; }
@@ -1804,6 +1809,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
   .library-page .catalog-entry-grid, .library-page .vocab-word-grid:not(.list-view), .library-page .vocab-phrase-grid:not(.list-view) { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
   .detail-sheet { top: 16px; width: calc(100% - 24px); max-height: calc(100dvh - 32px); }
   .detail-sheet-body { padding: 16px 16px 20px; }
+  .detail-sheet .detail-sheet-resize { display: none; }
   /* The sheet is full width here, so the header row is the tight one: the neighbour pill
      shrinks (smaller arrows, tighter position text) and the row stops centring it, so the
      back label, the pill and the close control each get the width they need in turn. */
@@ -2122,6 +2128,9 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
+/* Detail columns follow the actual resized window, not a two-column ceiling.
+   Phrase/idiom list layouts retain their explicit single-column rule. */
+.detail-sheet :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
 .etymology-standalone-note {
   display: flex;
   align-items: center;
@@ -2344,7 +2353,7 @@ html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content,
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content, .pinyin-characters) .decomposition-glyph strong { font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
-html[data-display-size='comfortable'] .detail-sheet { width: min(760px, calc(100% - 32px)); }
+html[data-display-size='comfortable'] .detail-sheet { --detail-sheet-default-width: 960px; --detail-example-min-width: 300px; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-note, .decomposition-layout small, .catalog-facts dd) { font-size: 16px; line-height: 1.6; }
@@ -5299,7 +5308,7 @@ html[data-display-size='comfortable'] .tone-matrix { max-width: 1120px; }
 .tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 /* Reserve room for two examples in the shared top-centred sound window. On narrow
    cards the facts move below the tiles, rather than dropping to one example column. */
-html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px)); }
+html .detail-sheet:has(.tone-sounds-card) { --detail-sheet-default-width: 960px; }
 .detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
 @container tone-card (max-width: 540px) {
   .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }

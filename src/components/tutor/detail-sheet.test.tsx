@@ -1,10 +1,21 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { DetailSheet } from './detail-sheet';
+import { DetailSheet, detailSheetWidth } from './detail-sheet';
 import { detailTrail, recordVisit } from '@/lib/detail-trail';
 import type { ReactNode } from 'react';
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+
+describe('detail window width', () => {
+  it('allows wider windows within the available screen', () => {
+    expect(detailSheetWidth(1200, 1600)).toBe(1200);
+    expect(detailSheetWidth(2000, 1600)).toBe(1568);
+  });
+  it('keeps a usable minimum without overflowing a narrow screen', () => {
+    expect(detailSheetWidth(100, 1600)).toBe(360);
+    expect(detailSheetWidth(1200, 390)).toBe(358);
+  });
+});
 
 function setup() {
   const onClose = vi.fn();
