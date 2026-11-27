@@ -2666,7 +2666,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .word-grid:not(.library-list-view) .word-card.headword-card .catalog-source-icon { position: static; display: block; width: 13px; height: 13px; color: var(--primary); }
 /* Compact word headwords get the same thin box as Compact glyph tiles (.tile-form:
    1.34em square, same radius); longer words widen it on one line. */
-.word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 1.34em; height: 1.34em; padding: 0 calc(.17em - 1px); line-height: 1; border: 1px solid var(--border); border-radius: var(--form-radius); box-sizing: border-box; white-space: nowrap; }
+.word-grid:not(.library-list-view):not(.vocab-phrase-grid) .word-card .word-hanzi-tile,
+.pinyin-character-glyphs.word-example-glyphs { display: inline-flex; align-items: center; justify-content: center; min-width: 1.34em; height: 1.34em; padding: 0 calc(.17em - 1px); line-height: 1; border: 1px solid var(--border); border-radius: var(--form-radius); box-sizing: border-box; white-space: nowrap; }
 .word-card .word-hanzi-forms { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; max-width: 100%; }
 .catalog-detail-glyph-row > .idiom-traditional-glyph { font-family: var(--font-hanzi); font-weight: 400; }
 .library-list-view .word-card.comfortable-word-card .card-top-meta { display: inline; margin-left: -3px; font-size: 12px; letter-spacing: 0; color: var(--muted-foreground); }
@@ -2678,7 +2679,8 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
    matching the glyph cards' hanzi tile (same minimum size and radius); long phrases
    simply widen or wrap inside it. The part of speech after "WORD ·" is fainter than
    the dot so it doesn't read as part of the WORD label. */
-.library-list-view .word-card .word-hanzi-tile { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 10px; line-height: 1; border: 1px solid var(--border); border-radius: var(--form-radius); box-sizing: border-box; }
+.library-list-view .word-card .word-hanzi-tile,
+html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyphs { display: inline-flex; align-items: center; justify-content: center; min-width: 82px; min-height: 82px; padding: 10px; line-height: 1; border: 1px solid var(--border); border-radius: var(--form-radius); box-sizing: border-box; }
 .library-list-view .word-card .card-top-pos { color: color-mix(in oklab, var(--muted-foreground) 70%, transparent); }
 /* Phrases stack their headword under the pinyin; the box hugs the characters instead of spanning the card. */
 .library-list-view.vocab-phrase-grid .word-card .word-hanzi-tile { align-self: flex-start; width: fit-content; max-width: 100%; }
@@ -2881,8 +2883,12 @@ html[data-display-size='comfortable'] .practice-intro .practice-meaning:has(> .p
 .pinyin-character-glyphs { display: flex; gap: 6px; }
 /* Word examples share one outer form box; exact character hint targets stay separate
    inside it. Other sound tiles and decomposition boxes retain their own borders. */
-.pinyin-character-glyphs.word-example-glyphs { gap: 0; flex-shrink: 0; border: 1px solid var(--border); border-radius: var(--form-radius); }
-.word-example-glyphs .decomposition-glyph { border-color: transparent; }
+.detail-sheet .pinyin-character-glyphs.word-example-glyphs { gap: 0; flex-shrink: 0; font-family: var(--font-hanzi); font-size: 36px; }
+html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyphs { height: 82px; font-size: var(--tile-size, 60px); }
+.detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph { width: 1em; min-width: 0; height: 1em; padding: 0; border: 0; border-radius: 0; font-size: inherit; }
+.detail-sheet .word-example-glyphs .decomposition-glyph.decomposition-glyph strong { font-size: inherit; }
+@media(max-width:580px) { html:not([data-display-size='comfortable']) .detail-sheet .word-example-glyphs { font-size: 30px; } }
+.word-example-glyphs .decomposition-glyph.lesson-hint-char::before { inset: auto; width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); transform: translate(-50%, -50%); }
 .word-example-glyphs .decomposition-glyph:is(:hover, :focus-visible) { border-color: transparent; }
 .glyph-usage-reference:has(> .word-example-glyphs) { flex-wrap: wrap; }
 .word-example-glyphs + .glyph-usage-facts { flex-basis: 120px; }

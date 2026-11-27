@@ -27,6 +27,7 @@ import { ExpandableCharacterGrid } from './expandable-character-grid';
 import { SmallGridMeaning } from './small-grid-meaning';
 import { SoundExampleGlyph } from './sound-example-glyph';
 import { sectionIcons } from '@/lib/section-icons';
+import { wordTileFit } from './word-card';
 
 /** Characters-only word bank from the live workspace. Shared small cards keep
  * exact vocabulary links and whole-word audio independent of character hints;
@@ -45,7 +46,7 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
         return <div className="glyph-usage-example glyph-parent-card" key={word.id}>
           <ExampleCardMeta identity={hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={<Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} className="detail-arrow-link" title={hint} aria-label={hint}><ArrowUpRight aria-hidden="true"/></Link>}/>
           <div className="glyph-usage-reference">
-            <span className="pinyin-character-glyphs word-example-glyphs">{Array.from(word.hanzi).map((glyph, index) => <SoundExampleGlyph key={index} glyph={glyph} word={own} className={word.script === 'Traditional' ? 'traditional-character' : ''} fallback={<Button asChild variant="ghost" className={`decomposition-glyph${word.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} title={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>}/>)}</span>
+            <span className="pinyin-character-glyphs word-example-glyphs" style={wordTileFit(word.hanzi).style}>{Array.from(word.hanzi).map((glyph, index) => <SoundExampleGlyph key={index} glyph={glyph} word={own} className={word.script === 'Traditional' ? 'traditional-character' : ''} fallback={<Button asChild variant="ghost" className={`decomposition-glyph${word.script === 'Traditional' ? ' traditional-character' : ''}`}><Link to="/vocabulary" search={{ tab: 'word', word: word.id }} resetScroll={false} title={hint}><strong lang="zh-CN">{glyph}</strong></Link></Button>}/>)}</span>
             <span className="glyph-usage-facts">
               {preferences.pinyin && word.pinyin && <span className="glyph-usage-facts-row"><span className="example-pinyin-row"><span className="pinyin">{word.pinyin}</span><ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/></span></span>}
               <SmallGridMeaning text={word.meaning}/>
