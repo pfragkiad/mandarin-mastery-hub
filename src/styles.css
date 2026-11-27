@@ -4192,6 +4192,9 @@ a.lesson-word-link { text-decoration: none; }
 .lesson-hint-char::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: var(--glyph-hint-frame-size); height: var(--glyph-hint-frame-size); box-sizing: border-box; border: 1px solid var(--glyph-hint-ink); border-radius: var(--control-radius); box-shadow: var(--glyph-hint-glow); opacity: 0; pointer-events: none; transition: opacity .12s ease; }
 .lesson-hint-char:is(:hover, :focus-visible, [data-hint-active]) { box-shadow: none; background: transparent; outline: none; }
 .lesson-hint-char:is(:hover, :focus-visible, [data-hint-active])::before { opacity: 1; }
+/* Decomposition/example tiles carry their glyph size on an inner <strong>, so 1em on the outer
+   span would collapse ::before into a tiny circle. Frame the tile itself with a clean inset. */
+.decomposition-glyph.lesson-hint-char::before { inset: 3px; width: auto; height: auto; transform: none; }
 /* Form tiles are 1.34em squares: a 1.12em frame leaves the same inset on every side.
    Normalise only the inner target, never measured glyph ink or the outer tile. */
 .tile-form .lesson-hint-char { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; line-height: 1; flex: none; }
@@ -5263,6 +5266,18 @@ html[data-display-size='comfortable'] .tone-sounds-chip svg { width: 16px; heigh
 .tone-pair-pill { color: var(--foreground); border-color: var(--border); font-size: 11px; letter-spacing: 0; padding: 2px 8px; }
 .tone-pair-pill .tone-pair-change { color: var(--muted-foreground); }
 html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding: 3px 10px; }
+/* Symbolic tone-pair header (no hanzi at top): coloured digits above tone contour marks. */
+.tone-pair-hero { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 2px 0 8px; }
+.tone-pair-hero-digits { font-size: 20px; font-weight: 600; color: var(--muted-foreground); letter-spacing: 0.02em; line-height: 1.2; }
+.tone-pair-hero-digits .tone-pair-change { color: var(--muted-foreground); }
+.tone-pair-hero-contours { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--muted-foreground); }
+.tone-pair-contour-group { display: inline-flex; align-items: center; gap: 6px; }
+.tone-pair-contour { display: inline-flex; align-items: center; color: var(--tone-ink, var(--muted-foreground)); }
+.tone-pair-contour.tone-5 { --tone-ink: var(--muted-foreground); }
+.tone-pair-contour .tone-contour { width: 28px; height: 18px; }
+.tone-pair-selected { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+html[data-display-size='comfortable'] .tone-pair-hero-digits { font-size: 24px; }
+html[data-display-size='comfortable'] .tone-pair-contour .tone-contour { width: 32px; height: 20px; }
 .tone-sounds-chip:hover, .tone-sounds-chip:focus-visible { background: color-mix(in oklch, var(--tone-ink, var(--primary)) 14%, transparent); outline: none; }
 .tone-sounds-chip.tone-5 { --tone-ink: var(--muted-foreground); }
 .tone-sounds-word-link { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--radius-control); color: var(--primary); text-decoration: none; align-self: flex-start; margin-top: 4px; transition: background-color 140ms ease, color 140ms ease; }
