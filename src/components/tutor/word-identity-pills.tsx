@@ -23,7 +23,7 @@ export function WordIdentityPills({ word, traditional = true }: { word: Word; tr
   const idiomRank = word.idiomMeta?.rank;
   return <>
     {hsk && <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span>}
-    {idiomRank != null && <UsageLabel rank={idiomRank} compact title={`Frequency rank #${idiomRank.toLocaleString('en-US')} in the THUOCL chengyu corpus`}/>}
+    {idiomRank != null && <UsageLabel rank={idiomRank} scale="idiom" compact title={`Frequency rank #${idiomRank.toLocaleString('en-US')} in the THUOCL chengyu corpus`}/>}
     {radicalNumber !== undefined && <RadicalPill number={radicalNumber} title="Sourced Kangxi radical identity of this character"/>}
     {traditional && word.script === 'Traditional' && <span className="word-hsk-id traditional-pill" title="Traditional-form record">Traditional</span>}
     {isPhrase && <PhraseStylePill word={word}/>}

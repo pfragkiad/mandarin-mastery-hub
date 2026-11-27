@@ -127,7 +127,7 @@ export function WordDetailContent({ word, onNavigate }: { word: Word; onNavigate
     {/* Facts use the grid's and filters' names: the HSK level lives in the top-right pill, so the
         row reads Part of speech and Topic(s); only records without an HSK pill keep a Level fact. */}
     {(word.type || topics.length > 0 || (!hskPill && word.level) || idiom) && <dl className="catalog-facts">
-      {idiom && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">Corpus frequency rank · THUOCL chengyu frequency list · Percentage is the cumulative share of idiom occurrences up to this rank.</SourceInfo></dt><dd><UsageLabel rank={idiom.rank} groupLabel={idiomBand}/></dd></div>}
+      {idiom && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">Corpus frequency rank · THUOCL chengyu frequency list · Percentage is the cumulative share of idiom occurrences up to this rank.</SourceInfo></dt><dd><UsageLabel rank={idiom.rank} scale="idiom" groupLabel={idiomBand}/></dd></div>}
       {idiom?.cumPct != null && <div><dt>Corpus frequency</dt><dd>{formatUsagePercentage(idiom.cumPct)}</dd></div>}
       {!hskPill && !idiom && word.level && <div><dt>Level</dt><dd className="catalog-record-value">{word.level}</dd></div>}
       {word.type && <div><dt>Part of speech</dt><dd className="catalog-record-value">{word.type}</dd></div>}

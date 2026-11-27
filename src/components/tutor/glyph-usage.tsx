@@ -185,7 +185,7 @@ export function WrittenFormIdiomsSection({ entry }: { entry: { id: string; hanzi
         const display = showTrad ? (idiom.idiomMeta?.traditional ?? idiom.hanzi) : idiom.hanzi;
         const topicLabel = primarySubtopicLabel(idiom) ?? idiom.collection;
         return <div className="glyph-usage-example" key={idiom.id}>
-          <ExampleCardMeta identity={<UsageLabel rank={idiom.idiomMeta?.rank ?? null} compact/>} topic={topicLabel}/>
+          <ExampleCardMeta identity={<UsageLabel rank={idiom.idiomMeta?.rank ?? null} scale="idiom" compact/>} topic={topicLabel}/>
           <SentenceExample
             heading=""
             sentence={display}
