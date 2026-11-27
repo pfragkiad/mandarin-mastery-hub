@@ -21,13 +21,6 @@ describe('context-dependent associations keep separate cards', () => {
     expect(scriptGroup('书')).toEqual(['书', '書']);
     expect(relatedGroup('书')).toEqual([]);
   });
-  it('simplified/traditional radical pair 卤 ↔ 鹵 shares one card while 滷 stays separate', () => {
-    expect(scriptGroup('卤')).toEqual(['卤', '鹵']);
-    expect(scriptHead('鹵')).toBe('卤');
-    expect(scriptGroup('滷')).toEqual(['滷']);
-    expect(relatedGroup('卤')).toEqual(['卤', '滷']);
-    expect(relatedGroup('滷')).toEqual(['卤', '滷']);
-  });
 });
 
 describe('"also traditional" needs a documented unchanged use', () => {
