@@ -1832,13 +1832,22 @@ html[data-display-size='comfortable'] .saved-filter-toggle svg { width: 18px; he
 .saved-filter-row-count { color: var(--muted-foreground); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .filter-submit { display: flex; flex-wrap: wrap; gap: var(--library-controls-gap, 8px); align-items: center; }
 .filter-submit button { height: 36px; flex-shrink: 0; }
-/* Only the library's icon-only clear control has a fixed width; game Reset has text. */
-.filter-submit button.close-x { width: 32px; }
+/* Labelled clear-all: one control (filter-form.tsx) used by grid action rows and, via
+   FilterFormClearButton, by the games' Filters heading, so "clear everything" reads and
+   looks the same everywhere. Muted so Apply stays the loudest action. */
+.filter-clear-heading { color: var(--muted-foreground); white-space: nowrap; }
+.filter-clear-heading:hover:not(:disabled), .filter-clear-heading:focus-visible:not(:disabled) { background: transparent; color: var(--foreground); }
+.filter-clear-heading svg { width: 14px; height: 14px; }
 /* Library action slots and range anchors keep the same footprint in every draft
-   state. Neither a changing summary nor the first Apply button can reflow a drag. */
-.library-page .shared-filter-form > .filter-submit { flex: 0 0 232px; min-height: 40px; flex-wrap: nowrap; }
-.library-page .shared-filter-form > .filter-submit .close-x { margin-left: auto; }
-html[data-display-size='comfortable'] .library-page .shared-filter-form > .filter-submit { flex-basis: 248px; min-height: 48px; }
+   state. Neither a changing summary nor the first Apply button can reflow a drag, so the
+   slot is wide enough for its widest state: Apply + Reset + Clear filters on one line. */
+.library-page .shared-filter-form > .filter-submit { flex: 0 0 296px; min-height: 40px; flex-wrap: nowrap; }
+/* The action slot is wide enough for Apply + Reset + Clear filters, so the search box starts
+   shrinking earlier: with the old 220px basis the whole toolbar wrapped onto a second line a
+   little over 1500px, leaving the labelled clear alone across the page. */
+.library-page .shared-filter-form > .search-field { flex: 1 1 190px; min-width: 150px; }
+html[data-display-size='comfortable'] .library-page .shared-filter-form > .search-field { flex-basis: 220px; }
+html[data-display-size='comfortable'] .library-page .shared-filter-form > .filter-submit { flex-basis: 330px; min-height: 48px; }
 .library-page .filter-field-row:has(.game-range-trigger) { flex: 0 0 210px; max-width: 100%; }
 .library-page .filter-field-row .game-range-trigger.filter-select { width: 100%; flex: 0 0 100%; }
 .library-page .game-range-trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

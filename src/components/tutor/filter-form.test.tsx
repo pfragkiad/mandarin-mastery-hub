@@ -173,6 +173,29 @@ describe('Game Apply and Reset lifecycle', () => {
   });
 });
 
+/** Grid libraries keep the clear-all in the action row instead of a section heading, but it
+ *  must still read as a labelled action and sit beside Apply/Reset: a bare icon-only X far to
+ *  the right was read as "close the panel" and looked unrelated to the filters it undid. */
+describe('Grid action-row clear-all', () => {
+  it('labels the clear-all, keeps it beside Reset and never renders an icon-only X', async () => {
+    const apply = vi.fn();
+    const clear = vi.fn(() => ({ level: '' }));
+    const view = render(<DraftFilterForm applied={{ level: 'HSK 3.0 · 1' }} active count={10} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft, patch }) => <input aria-label="Level" value={draft.level} onChange={event => patch({ level: event.target.value })}/>}</DraftFilterForm>);
+    const clearButton = screen.getByRole('button', { name: 'Clear filters' });
+    expect(clearButton).toHaveTextContent('Clear filters');
+    expect(clearButton.className).toContain('filter-clear-heading');
+    expect(document.querySelector('.filter-submit .close-x')).toBeNull();
+    fireEvent.change(screen.getByLabelText('Level'), { target: { value: 'HSK 3.0 · 2' } });
+    const labels = [...document.querySelectorAll('.filter-submit button')].map(button => button.textContent);
+    expect(labels).toEqual(['Apply', 'Reset', 'Clear filters']);
+    fireEvent.click(clearButton);
+    await waitFor(() => expect(clear).toHaveBeenCalledOnce());
+    expect(apply).not.toHaveBeenCalled();
+    view.rerender(<DraftFilterForm applied={{ level: '' }} active={false} count={10} resetLabel="Reset" onApply={apply} onClear={clear}>{({ draft }) => <input aria-label="Level" value={draft.level} readOnly/>}</DraftFilterForm>);
+    expect(screen.queryByRole('button', { name: 'Clear filters' })).not.toBeInTheDocument();
+  });
+});
+
 /** Games place the clear-all on the "Filters" heading line (clearPlacement="heading") while
  *  keeping the action row below permanently mounted to reserve space for Apply and Reset. */
 describe('Game filter heading clear-all', () => {

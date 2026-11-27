@@ -10,8 +10,8 @@ export function FilterWideningToggle({ active, onToggle, label, title }: { activ
   return <button type="button" className={`filter-upto-toggle${active ? ' active' : ''}`} aria-pressed={active} title={title} onClick={onToggle}>{label}</button>;
 }
 
-/** Where the clear-all (X) control lives: in the shared action row beside Apply/Reset
- *  (libraries, Sound chart) or in a section heading of its own (game filters). */
+/** Where the labelled clear-all lives: in the shared action row beside Apply/Reset
+ *  (grid libraries, Sound chart, Lessons) or in a section heading of its own (game filters). */
 export type FilterClearPlacement = 'actions' | 'heading';
 
 /** The form owns applied-filter state and the wait-cursor transition, so a clear-all button
@@ -80,7 +80,10 @@ export function FilterForm({ children, onApply, onReset, onClear, count, changed
       {/* Reset only abandons unapplied edits. Applied filters and the result pool stay
           untouched; the separate X remains the explicit clear-all action. */}
       {changed && !autoApply && resetLabel && <Button type="button" size="sm" variant="ghost" disabled={pending} onClick={onReset}><RotateCcw/>{resetLabel}</Button>}
-      {active && clearPlacement !== 'heading' && <Button type="button" size="icon" variant="ghost" className="close-x" disabled={pending} aria-label="Clear filters" title="Clear filters" onClick={() => run(onClear)}><X/></Button>}
+      {/* Clear-all is labelled everywhere (grid pages here, game "Filters" headings via
+          FilterFormClearButton), because a bare X was read as "close the panel" and sat far
+          from the filters it undoes. Shared .filter-clear-heading keeps one look. */}
+      {active && clearPlacement !== 'heading' && <Button type="button" size="sm" variant="ghost" className="filter-clear-heading" disabled={pending} title="Clear every applied filter" onClick={() => run(onClear)}><X/>Clear filters</Button>}
     </div>}
     {showCount && <span className="catalog-results-count" aria-live="polite">{count.toLocaleString('en-US')} matches</span>}
   </form>;
