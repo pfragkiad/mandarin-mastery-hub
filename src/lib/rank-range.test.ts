@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatRankRange, parseRankRange, rankRangeMatches, rankSliderPosition, sliderPositionRank } from './rank-range';
+import { formatRankRange, parseRankRange, rankRangeValue, rankRangeMatches, rankSliderPosition, sliderPositionRank } from './rank-range';
 import { parseGameUsageFilter, parseUsageGroup, usageRankMatches } from './usage-frequency';
 import { drawingSearch } from './drawing-game';
 import { matchesIdiomBand, idiomToWord } from './idioms';
@@ -46,5 +46,11 @@ describe('custom game rank ranges', () => {
     const word = idiomToWord({ id: 'idiom:record', hanzi: '一心一意', pinyin: 'yī xīn yī yì', meaning: 'single-minded', rank: 37 }, 'Recorded source');
     expect(matchesIdiomBand(word, 'range:37-300', [])).toBe(true);
     expect(matchesIdiomBand(word, 'range:38-300', [])).toBe(false);
+  });
+  it('stores a full rank selection as All ranks', () => {
+    expect(rankRangeValue(1, 8519, 8519, false, false)).toBe('');
+    expect(rankRangeValue(1, 9933, 9933, true, true)).toBe('');
+    expect(rankRangeValue(1, 9933, 9933, false, true)).toBe('range:1-9933');
+    expect(rankRangeValue(2, 8519, 8519, false, false)).toBe('range:2-8519');
   });
 });

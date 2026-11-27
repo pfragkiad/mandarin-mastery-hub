@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { FilterSelect } from './filter-select';
 import { FilterWideningToggle } from './filter-form';
-import { formatRankRange, parseRankRange, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
+import { parseRankRange, rankRangeValue, rankRangeLabel, rankSliderPosition, sliderPositionRank } from '@/lib/rank-range';
 import { STROKE_SLIDER_MAX, STROKE_SLIDER_MIN, formatStrokeRangeLabel, formatStrokeRangeValue, parseStrokeRange } from '@/lib/stroke-range';
 import { formatSelectedLevels, parseSelectedLevels } from '@/lib/mandarin';
 
@@ -121,7 +121,7 @@ export function FrequencyRangeControl({ value, upTo = false, groups, maxRank, al
   const summary = custom ? rankRangeLabel(custom) : value === 'unranked' ? 'Unranked' : group ? Number.isFinite(group.max) ? `${upTo ? 1 : group.min}–${group.max}` : `${upTo ? 1 : group.min}+` : 'Any';
   const update = (min: number, end: number, include = unranked) => {
     if (!Number.isFinite(min) || !Number.isFinite(end)) return;
-    onChange(formatRankRange(Math.max(1, Math.min(max, Math.round(min))), Math.max(1, Math.min(max, Math.round(end))), include), false);
+    onChange(rankRangeValue(Math.max(1, Math.min(max, Math.round(min))), Math.max(1, Math.min(max, Math.round(end))), max, include, allowUnranked), false);
   };
   const ticks = [...new Set([1, ...groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max)).map(g => g.max), max])].filter(n => n <= max).sort((a, b) => a - b);
   const finiteGroups = groups.filter(g => g.value !== 'unranked' && Number.isFinite(g.max) && g.max <= max);

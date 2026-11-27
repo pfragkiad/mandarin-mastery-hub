@@ -16,6 +16,13 @@ export function formatRankRange(min: number, max: number, unranked = false): str
   return `range:${min}-${max}${unranked ? '+unranked' : ''}`;
 }
 
+/** A draft covering every rank — and unranked records too, when the control offers them —
+ * filters nothing, so it is stored as the empty "All ranks" value instead of a range. */
+export function rankRangeValue(min: number, max: number, maxRank: number, unranked: boolean, allowUnranked: boolean): string {
+  if (min <= 1 && max >= maxRank && (unranked || !allowUnranked)) return '';
+  return formatRankRange(min, max, unranked);
+}
+
 export function rankRangeMatches(rank: number | null | undefined, range: RankRange): boolean {
   return rank == null ? range.unranked : rank >= range.min && rank <= range.max;
 }
