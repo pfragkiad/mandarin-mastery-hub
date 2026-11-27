@@ -1,5 +1,8 @@
 # Roadmap
 
+## Consistent grid-card gaps
+- [x] Share balanced header/footer insets and view-specific inner gaps across library and example grids; remove extra Compact body height. Verified Words/Phrases/Idioms, Characters/Components/Radicals/Strokes and sound examples at 1426px/390px in both sizes; 25 existing tests pass.
+
 ## Tone-pair focus animation
 - [x] Animate small-to-focused word cards and neighbouring layout changes, preserving selection and reduced-motion preferences; verified at 1426px and 390px with 14 existing tests passing.
 

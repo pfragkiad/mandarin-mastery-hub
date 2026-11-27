@@ -2095,13 +2095,13 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .sentence-section .glyph-usage-example,
 :is(.detail-sheet, .pinyin-characters) .glyph-parent-card,
 .detail-sheet .kangxi-identity-card {
-  /* Match vertical spacing to the tile's existing horizontal inset. */
-  --detail-example-gap: 12px;
+  /* Small example grids share the view's inner gap and balanced outer insets. */
+  --detail-example-gap: var(--grid-card-inner-gap);
   display: grid;
   gap: var(--detail-example-gap);
   align-content: start;
   margin-top: 0;
-  padding: var(--detail-example-gap);
+  padding: var(--grid-card-edge-gap) 12px;
   border: 1px solid var(--border);
   border-radius: var(--form-radius);
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
@@ -3967,14 +3967,14 @@ html .game-setup :is(.filter-select, .saved-filter-toggle) { height: var(--game-
    container width until up to six boxes fit, keeping the square box and glyph-to-box ratio.
    --forms-per-row comes from the card (min(6, forms)); --form-ratio is box width / row font. */
 .library-page .word-card { --form-gap: 9px; --form-ratio: 1.34; }
-.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 12px; row-gap: 2px; align-items: center; align-content: start; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
+.library-page .word-card .word-open { container: card-body / inline-size; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; align-content: start; justify-content: stretch; justify-items: start; text-align: left; min-height: 0; }
 .library-page .word-card .word-open .word-character { display: contents; }
 /* Boxes hug the top (not centred against a taller two-line translation) so every card's
    boxes start the same distance below the label row. */
-.library-page .word-card .word-open :is(.tile-hanzi-row, .word-hanzi-tile) { grid-column: 1; grid-row: 1 / -1; align-self: start; margin: 0; }
+.library-page .word-card .word-open :is(.tile-hanzi-row, .word-hanzi-tile) { grid-column: 1; grid-row: 1 / span 2; align-self: start; margin: 0; }
 /* Pinyin starts level with the top of the box(es) and the translation follows it with the
-   same row gap as the stacked layout; the trailing 1fr row absorbs any extra height (a taller
-   box, or a card stretched by a taller neighbour), so the pinyin never drifts down. */
+   same row gap as the stacked layout. Two intrinsic rows size a spanning tile only once;
+   the outer card's body track absorbs taller neighbours without moving the tile down. */
 .library-page .word-card .word-open .pinyin { grid-column: 2; grid-row: 1; align-self: start; margin: 0; }
 .library-page .word-card .word-open :is(.word-meaning, .catalog-entry-meaning) { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
 .library-page .word-card .word-open .tile-hanzi-row { --forms: var(--forms-per-row, 1); flex-wrap: nowrap; gap: var(--form-gap); max-width: none; }
@@ -4559,8 +4559,15 @@ html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { f
    The footer buttons set the size (Compact 11px, Comfortable 15px). Fixed px line-heights
    and a top row whose height equals the pill's own height keep the row identical whether
    or not a card carries a pill; only a row too long for its card wraps (content-driven). */
-:root { --card-head-size: 11px; --card-head-line: 14px; --card-foot-size: 11px; --card-pill-pad-y: 2px; --card-pill-pad-x: 6px; }
-html[data-display-size='comfortable'] { --card-head-size: 15px; --card-head-line: 20px; --card-foot-size: 15px; --card-pill-pad-y: 2px; --card-pill-pad-x: 9px; }
+:root { --grid-card-edge-gap: 10px; --grid-card-inner-gap: 10px; --card-head-size: 11px; --card-head-line: 14px; --card-foot-size: 11px; --card-pill-pad-y: 2px; --card-pill-pad-x: 6px; }
+html[data-display-size='comfortable'] { --grid-card-edge-gap: 18px; --grid-card-inner-gap: 14px; --card-head-size: 15px; --card-head-line: 20px; --card-foot-size: 15px; --card-pill-pad-y: 2px; --card-pill-pad-x: 9px; }
+/* One spacing contract for every library/discovery grid, independent of record kind and
+   viewport. Preserve horizontal insets; equal outer edges frame content-sized bodies.
+   Extra height from longer neighbours stays in the body, keeping tiles and footers aligned. */
+html :is(.word-grid, .catalog-entry-grid) .word-card.word-card > .word-card-top { padding-top: var(--grid-card-edge-gap); }
+html :is(.word-grid, .catalog-entry-grid) .word-card.word-card > .word-open.word-open { height: auto; padding-top: var(--grid-card-inner-gap); padding-bottom: var(--grid-card-inner-gap); }
+html :is(.word-grid, .catalog-entry-grid) .word-card.word-card > .word-card-bottom { padding-bottom: var(--grid-card-edge-gap); }
+html :is(.word-grid, .catalog-entry-grid) .word-card.word-card.stroke-card > .word-open { padding-top: var(--grid-card-edge-gap); }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-level-wrap, .card-top-meta, .component-reuse-label, .usage-strokes, .usage-strokes *, .card-top-pos, .word-level, .word-hsk-id, .practice-kind) { font-size: var(--card-head-size); line-height: var(--card-head-line); letter-spacing: 0; }
 html :is(.catalog-entry-grid, .vocab-grid) .word-card.word-card .word-card-top :is(.word-hsk-id, .practice-kind) { padding: var(--card-pill-pad-y) var(--card-pill-pad-x); }
 /* Pill height = line + 2 × padding + 2 × 1px border; every top row reserves exactly that. */
@@ -5268,7 +5275,7 @@ html .detail-sheet:has(.tone-sounds-card) { width: min(820px, calc(100% - 24px))
 .tone-pair-glyph .decomposition-glyph strong, .tone-pair-glyph .decomposition-glyph, .tone-pair-glyph strong { color: var(--tone-ink, var(--foreground)); }
 .tone-pair-syllable { color: var(--tone-ink, var(--muted-foreground)); }
 /* In-place expanded word card in Tone pairs: spans full width with larger hanzi/pinyin and play controls. */
-.tone-sounds-example.is-expanded { --detail-example-gap: 18px; grid-column: 1 / -1; padding: var(--detail-example-gap); gap: var(--detail-example-gap); cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
+.tone-sounds-example.is-expanded { --detail-example-gap: var(--grid-card-inner-gap); grid-column: 1 / -1; padding: var(--grid-card-edge-gap) 18px; gap: var(--detail-example-gap); cursor: default; background: color-mix(in oklab, var(--primary) 10%, var(--card)); border-color: color-mix(in oklab, var(--primary) 55%, var(--border)); }
 .tone-pair-expanded-top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .tone-sounds-example.is-expanded .pinyin-character-glyphs { gap: 6px; }
 .tone-sounds-example.is-expanded .decomposition-glyph { min-width: 52px; height: 52px; padding: 0 6px; font-size: 38px; line-height: 1; }
