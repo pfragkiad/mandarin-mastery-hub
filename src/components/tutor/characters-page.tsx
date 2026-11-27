@@ -61,7 +61,7 @@ import { EtymologyIndicator } from './etymology-section';
 import { radicalIdentity } from '@/lib/radical-identities';
 import { glyphTitleInk, isRadicalGlyph } from '@/lib/card-ink';
 import { glyphRecordInk } from '@/lib/record-ink';
-import { cardMeaning, cardReadingSplit, glyphPresentation } from '@/lib/glyph-presentation';
+import { cardMeaning, cardReadingSplit, glyphPresentation, glyphRadicalLinks } from '@/lib/glyph-presentation';
 import { historicalRadicalHeading, orderedRadicalForms, radicalStrokes, radicalFamily, radicalForm } from '@/lib/radical-strokes';
 import { isRadicalSubstitute, radicalSubstituteEntries } from '@/lib/radical-substitute';
 import { DetailLoading, useDetailLoading } from './detail-loading';
@@ -199,7 +199,11 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const unknownTreeRecord = useCharacterEnrichment(entry.hanzi, entry.decomposition && !hasKnownDecomposition(entry.decomposition.root) ? entry.decomposition.root : undefined);
   const hasBreakdown = decompositionHasContent(entry.decomposition?.root, unknownTreeRecord);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
-  const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
+  // A radical form's own exact Kangxi identity outranks its dictionary indexing radical.
+  // For example 卤 is family #197 even though its imported dictionary index is 卜 (#25).
+  // Do not consult decomposition; ambiguous family identities retain the recorded index.
+  const ownRadicals = glyphRadicalLinks(entry.hanzi);
+  const noteRadical = (ownRadicals.length === 1 ? ownRadicals[0]?.glyph : undefined) ?? entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
   const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number ?? info.characterRadical?.number;
   const radicalFact = (() => {
     if (kind === 'Strokes') return null;
