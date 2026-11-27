@@ -264,3 +264,5 @@
 ## Tone pair card examples
 - [x] Move the word bank inside the tone card, reuse sound-card examples, and preserve separate sound pills.
 - [x] Remove listening tips and verify example selection, expansion, Listen first and Tone changes at wide/narrow widths; 15 existing tests pass.
+- [x] Enlarge the tone card with two example columns and independent pinyin/audio beside tiles; verified wide/narrow layouts, recording requests without navigation, and exact tile selection.
+- [x] Show recorded HSK index badges and sort ascending by exact vocabulary ID, with entries missing indices last (confirmed by the owner); 16 targeted tests pass.

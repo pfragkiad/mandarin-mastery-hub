@@ -6,6 +6,17 @@ import { soundChartTarget, toneMark, type PinyinSyllable } from './pinyin-guide'
 import { vocabularyKind, type Word } from './mandarin';
 import type { TonePairData, TonePairExample, PairTone } from './tone-pairs';
 
+/** Presentation-only HSK ordering resolves exact vocabulary IDs; missing indices remain
+ * last in source order, never borrowing an index from another word of the same spelling. */
+export function toneExamplesByHsk(examples: readonly TonePairExample[], words: readonly Word[]): TonePairExample[] {
+  const indices = new Map(words.map(word => [word.id, word.hskId ?? Infinity]));
+  const index = (row: TonePairExample) => row.vocabularyEntryId ? indices.get(row.vocabularyEntryId) ?? Infinity : Infinity;
+  return [...examples].sort((a, b) => {
+    const left = index(a); const right = index(b);
+    return left === right ? 0 : left < right ? -1 : 1;
+  });
+}
+
 export function vocabularyToneExample(word: Word, syllables: PinyinSyllable[]): TonePairExample | null {
   if (vocabularyKind(word) !== 'word' || !/^\p{Script=Han}{2}$/u.test(word.hanzi) || /[一不]/u.test(word.hanzi)) return null;
   const audio = word.audio;

@@ -46,6 +46,10 @@ import { useOneLineTitle } from './one-line-title';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
 import { SmallGridMeaning } from './small-grid-meaning';
 import { ExampleCardMeta } from './sentence-section';
+import { ExamplePronunciation } from './example-pronunciation';
+import { toneExamplesByHsk } from '@/lib/tone-pair-vocabulary';
+import { wordHskPill } from './word-identity-pills';
+import { UsageLabel } from './usage-label';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
@@ -96,7 +100,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   chipStop.current = chipPlayer.stop;
   const pair = search.pair ?? DEFAULT_PAIR;
   const rule = search.rule ?? DEFAULT_RULE;
-  const pool = data ? (mode === 'pairs' ? pairPool(data, pair) : rulePool(data, rule)) : [];
+  const pool = useMemo(() => data ? toneExamplesByHsk(mode === 'pairs' ? pairPool(data, pair) : rulePool(data, rule), vocabularyWords) : [], [data, mode, pair, rule]);
   const row = selectedExample(pool, search.example);
 
   // Any change of what is selected (or leaving the page) stops the current recording.
@@ -212,6 +216,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   const reading = row.expectedSpokenSyllables.join(' ');
   const pairing = usePhrasePairing(row.headword, reading, !hidden);
   const word = useMemo(() => (row.vocabularyEntryId ? vocabularyWords.find(w => w.id === row.vocabularyEntryId) ?? null : null), [row.vocabularyEntryId]);
+  const wordsById = useMemo(() => new Map(vocabularyWords.map(word => [word.id, word])), []);
   // Play-only speaker, consistent with every other card: no stop state, no icon swap.
   const speaker = <Button variant="ghost" size="icon" aria-label={`Listen to ${hidden ? 'the recording' : row.headword}`} title={`Listen · ${row.audio.speaker}`} onClick={onPlay}><Volume2/></Button>;
   // The header pill names the pair; when speech changes the tones it shows the change too (3 + 3 → 2 + 3).
@@ -250,15 +255,26 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
     </>}
     <section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
       <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
-      <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={5} cards={pool.map((example, index) =>
-        <Button key={example.id} variant="ghost" className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`} aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}` : `Select ${example.headword}`} onClick={() => onPick(example.id)}>
-          <ExampleCardMeta identity={<span className={hidden ? undefined : 'pinyin'}>{hidden ? `Recording ${index + 1}` : example.citationSyllables.join(' ')}</span>}/>
+      <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={6} cards={pool.map((example, index) => {
+        const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
+        const hsk = record ? wordHskPill(record) : null;
+        return (
+        <div key={example.id} className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}>
+          <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>}/>
           <span className="glyph-usage-reference">
-            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, index) => <span key={index} className="decomposition-glyph"><strong>{glyph}</strong></span>)}</span>
-            {!hidden && <span className="glyph-usage-facts"><SmallGridMeaning text={example.english}/></span>}
+            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => <Button key={glyphIndex} variant="ghost" className="decomposition-glyph" aria-pressed={example.id === row.id} aria-label={hidden ? `Select recording ${index + 1}, tile ${glyphIndex + 1}` : `Select ${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>)}</span>
+            <span className="glyph-usage-facts">
+              <span className="glyph-usage-facts-row"><span className="example-pinyin-row">
+                {!hidden && <span className="pinyin">{example.citationSyllables.join(' ')}</span>}
+                {/* This exact whole-word attachment plays independently of selection. The
+                    shared speaker never joins syllables or falls back after a failed clip. */}
+                <ExamplePronunciation request={{ text: example.headword, audio: example.audio }} label={hidden ? `recording ${index + 1}` : example.headword}/>
+              </span></span>
+              {!hidden && <SmallGridMeaning text={example.english}/>}
+            </span>
           </span>
-        </Button>
-      )}/>
+        </div>
+      ); })}/>
     </section>
   </section>;
 }

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import inventory from '@/data/pinyin/inventory.json';
 import authored from '@/data/pinyin/tone-pairs.json';
 import { words, type Word } from './mandarin';
-import { enrichTonePairs, vocabularyToneExample } from './tone-pair-vocabulary';
+import { enrichTonePairs, toneExamplesByHsk, vocabularyToneExample } from './tone-pair-vocabulary';
 import type { TonePairData } from './tone-pairs';
 import type { PinyinSyllable } from './pinyin-guide';
 
@@ -10,6 +10,14 @@ const data = authored as unknown as TonePairData;
 const syllables = inventory.syllables as PinyinSyllable[];
 const base: Word = { id: 'test-word', hanzi: '你好', pinyin: 'nǐhǎo', meaning: 'hello', type: '', collection: '', level: '', sentence: '', translation: '', entryKind: 'word', audio: { url: 'https://example.test/exact.mp3', source: 'Shtooka / Yue Tan', license: 'CC BY-SA 3.0' } };
 describe('recorded two-character tone associations', () => {
+  it('sorts exact words by recorded HSK index, with missing indices last and source rows untouched', () => {
+    const row = vocabularyToneExample(base, syllables);
+    if (!row) throw new Error('Expected a recorded tone example');
+    const examples = ['missing-a', 'later', 'missing-b', 'early'].map(id => ({ ...row, id, vocabularyEntryId: id }));
+    const records = [{ ...base, id: 'later', hskId: 20 }, { ...base, id: 'early', hskId: 5 }];
+    expect(toneExamplesByHsk(examples, records).map(row => row.id)).toEqual(['early', 'later', 'missing-a', 'missing-b']);
+    expect(examples.map(row => row.id)).toEqual(['missing-a', 'later', 'missing-b', 'early']);
+  });
   it('pairs each character with its own recorded syllable and preserves the whole-word audio', () => {
     const row = vocabularyToneExample(base, syllables);
     expect(row?.chartLinks.map(l => l.reading)).toEqual(['nǐ', 'hǎo']);
