@@ -216,7 +216,9 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
     if (kind !== 'Strokes') return null;
     const { name } = strokeSpeech(entry);
     if (!name) return null;
-    return <div><dt>Name</dt><dd><span className="facts-radical">{[...name].map((glyph, index) => {
+    // A stroke name is one word: reuse the shared Vocabulary box and foreground
+    // ink while preserving each exact character's independent record link.
+    return <div><dt>Name</dt><dd><span className="pinyin-character-glyphs word-example-glyphs">{[...name].map((glyph, index) => {
       const destination = libraryDestination(glyph, preferences.includeTraditional);
       return destination
         ? <Button asChild key={index} variant="ghost" className="decomposition-glyph"><Link to="/characters" search={destination} resetScroll={false} aria-label={`Open the record for ${glyph}`}><strong lang="zh-CN">{glyph}</strong></Link></Button>

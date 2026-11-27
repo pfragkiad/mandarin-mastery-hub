@@ -327,3 +327,8 @@
 - [x] Show recorded HSK index badges and sort ascending by exact vocabulary ID, with entries missing indices last (confirmed by the owner); 16 targeted tests pass.
 
 - [x] Correct Hanzi-only colours in detail headings and In a word examples; preserve sound-pair colours and non-Hanzi styling. Verified green 们 and white 你们; 26 focused tests pass.
+
+- [x] Investigate missing brush-stroke drawings: source requests succeeded and all ten visible mapped tiles rendered at the reported window size; no drawing-code change needed.
+- [x] Present each stroke’s Hanzi name in one white word-style box; verified exact links, wide/narrow rendering and eight related tests.
+
+- [x] Explain missing representative brush examples for 横折折, 撇钩, 圈 and 竖弯左: missing verified mappings do not establish that a stroke is unused.
