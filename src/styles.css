@@ -989,7 +989,7 @@ html .global-search.global-search-expanded { width: min(1040px, calc(100% - 24px
 .babelstone-component-facts { display: flex; flex-direction: column; gap: 3px; }
 .babelstone-component-source { display: flex; align-items: center; gap: 6px; color: var(--muted-foreground); font-size: 10px; }
 .babelstone-component-source .source-info-trigger { margin-top: 0; flex-shrink: 0; }
-.decomposition-glyph strong { font-size: 32px; font-weight: 400; }
+.decomposition-glyph strong { font-family: var(--font-hanzi); font-size: 32px; font-weight: 400; }
 /* A clickable character says so with the link colour, never an underline; the box itself stays neutral. */
 .decomposition-glyph:not(.decomposition-glyph-static) strong { color: var(--primary); }
 .decomposition-glyph.traditional-character strong { color: var(--traditional); }
