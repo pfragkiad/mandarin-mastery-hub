@@ -43,7 +43,7 @@ import { useLayoutEffect, type DependencyList, type RefObject } from 'react';
 export type SideFitOptions = {
   /** Before stacking, also try the pinyin and translation together a few pixels smaller. */
   shrinkText?: boolean;
-  /** Stack every card of a grid row once any card in that row needs to stack. */
+  /** Stack visual rows in libraries, or the entire detail-example grid, when one card stacks. */
   rowSync?: boolean;
   /** Custom natural-layout measurement for small example bodies; true means stacked. */
   fit?: (el: HTMLElement) => boolean;
@@ -71,7 +71,13 @@ export function useSideFit(ref: RefObject<HTMLElement | null>, enabled: boolean,
       alive = false;
       document.fonts?.removeEventListener('loadingdone', measure);
       observer?.disconnect();
-      if (rowSync) { rowCards.delete(card); sharedObserver()?.unobserve(el); }
+      if (rowSync) {
+        rowCards.delete(card);
+        sharedObserver()?.unobserve(el);
+        // Show fewer removes the extra cards: reconsider the remaining grid even
+        // when none of those cards changes width or triggers ResizeObserver.
+        scheduleRow(card);
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, shrinkText, rowSync, ...deps]);
@@ -172,7 +178,12 @@ function flushRows() {
   for (const grid of grids) {
     const cards = Array.from(rowCards).filter(c => c.el.isConnected && gridOf(c.el) === grid);
     const own = new Map(cards.map(c => [c, fitSelf(c)] as const));
-    const stacked = synchronizedRowStacks(cards.map(c => ({ top: rowKey(c), stacked: own.get(c) ?? false })));
+    const natural = cards.map(c => ({ top: rowKey(c), stacked: own.get(c) ?? false }));
+    // Detail examples share one layout across every visible row. Main library
+    // grids retain their existing per-row policy; each grid is measured separately.
+    const stacked = grid.matches('.expandable-character-grid')
+      ? synchronizedGridStacks(natural)
+      : synchronizedRowStacks(natural);
     for (const [index, c] of cards.entries()) {
       if (!own.get(c) && stacked[index]) { c.el.dataset['stacked'] = ''; resetTextFonts(c.el); }
     }
@@ -180,7 +191,13 @@ function flushRows() {
   }
 }
 
-/** Shared library/example row decision: only visual companions inherit a stacked layout. */
+/** Detail-grid decision, recomputed from the currently mounted cards after expansion/collapse. */
+export function synchronizedGridStacks(cards: readonly { stacked: boolean }[]): boolean[] {
+  const stacked = cards.some(card => card.stacked);
+  return cards.map(() => stacked);
+}
+
+/** Library row decision: only visual companions inherit a stacked layout. */
 export function synchronizedRowStacks(cards: readonly { top: number; stacked: boolean }[]): boolean[] {
   const rows = new Set(cards.filter(card => card.stacked).map(card => Math.round(card.top)));
   return cards.map(card => rows.has(Math.round(card.top)));

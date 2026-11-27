@@ -1,5 +1,19 @@
 import { describe, expect, it } from 'vitest';
-import { MAX_TRAILING_WORDS, MEANING_FONT_FLOOR, MEANING_FONT_STEPS, meaningFontSize, trailingWordCount, synchronizedRowStacks } from './use-side-fit';
+import { MAX_TRAILING_WORDS, MEANING_FONT_FLOOR, MEANING_FONT_STEPS, meaningFontSize, trailingWordCount, synchronizedRowStacks, synchronizedGridStacks } from './use-side-fit';
+
+describe('detail grid stacking', () => {
+  it('stacks every card, including other rows, when any card needs to wrap', () => {
+    expect(synchronizedGridStacks([
+      { stacked: false }, { stacked: false }, { stacked: true }, { stacked: false },
+    ])).toEqual([true, true, true, true]);
+  });
+
+  it('reconsiders the visible cards after Show fewer removes the wrapping card', () => {
+    const visible = [{ stacked: false }, { stacked: false }];
+    expect(synchronizedGridStacks([...visible, { stacked: true }])).toEqual([true, true, true]);
+    expect(synchronizedGridStacks(visible)).toEqual([false, false]);
+  });
+});
 
 describe('shared grid row stacking', () => {
   it('stacks every companion of a wrapped card without changing other rows', () => {

@@ -1,5 +1,9 @@
 # Roadmap
 
+## Grid-wide detail wrapping
+- [x] Make every card in each detail example grid stack when any visible card stacks; reconsider on Show fewer, preserving library row behavior.
+- [x] Verified real 电 detail expansion stacks all 18 cards and Show fewer restores the six fitting cards; checked 2742/700/600/390px with no browser errors. All 34 affected tests pass.
+
 ## Consistent example-grid rows
 - [x] Reuse common-grid row synchronization after individual word-example shrink attempts, keeping other rows independent.
 - [x] Verified expanded 电 examples in both display sizes, paired wrapping at 700px, single-column layouts at 390px and restoration at 2470px; no runtime errors or horizontal overflow. Run affected regression tests.
