@@ -429,7 +429,9 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .expandable-character-grid.is-expanded:not(.is-scrollable) { padding: 0; scrollbar-gutter: auto; }
 @keyframes character-grid-expand { from { opacity: .65; } to { opacity: 1; } }
 .expandable-character-grid.is-expanded:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: var(--form-radius); }
-.detail-sheet .expandable-character-grid.example-list { grid-template-columns: minmax(0, 1fr); }
+/* Phrase and idiom cards are whole sentences, so their column floor is wider than a word
+   card's; the list still wraps to as many columns as the (resizable) window really has. */
+.detail-sheet .expandable-character-grid.example-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-sentence-min-width)), 1fr)); }
 .example-results-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--grid-card-inner-gap); margin-bottom: var(--grid-card-inner-gap); }
 .example-results-toolbar .search-field { flex: 0 1 280px; min-width: 0; }
 .detail-sheet .example-list .glyph-usage-example + .glyph-usage-example { margin-top: 0; }
@@ -1698,7 +1700,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .catalog-detail .catalog-detail-title { margin-bottom: 0; }
 .catalog-detail .word-detail-actions { margin: 14px 0 20px; }
 .catalog-detail .catalog-facts { padding-top: 20px; }
-.detail-sheet { position: fixed; z-index: 50; top: 24px; left: 50%; transform: translateX(-50%); --detail-sheet-default-width: 720px; --detail-example-min-width: 220px; width: min(var(--detail-sheet-width, var(--detail-sheet-default-width)), calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); border-radius: var(--form-radius); gap: 0; overflow: hidden; }
+.detail-sheet { position: fixed; z-index: 50; top: 24px; left: 50%; transform: translateX(-50%); --detail-sheet-default-width: 720px; --detail-example-min-width: 220px; --detail-sentence-min-width: 360px; width: min(var(--detail-sheet-width, var(--detail-sheet-default-width)), calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--card); color: var(--foreground); box-shadow: var(--shadow-soft); border-radius: var(--form-radius); gap: 0; overflow: hidden; }
 /* Reuse the writing-square grip's appearance; the window stays centred, so a
    right-edge drag changes both sides equally. The hit target never covers text. */
 .detail-sheet .detail-sheet-resize { right: 1px; bottom: 50%; width: 12px; height: 40px; cursor: ew-resize; border: 0; box-shadow: none; background: transparent; color: var(--muted-foreground); }
@@ -2129,7 +2131,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   gap: 8px;
 }
 /* Detail columns follow the actual resized window, not a two-column ceiling.
-   Phrase/idiom list layouts retain their explicit single-column rule. */
+   Phrase/idiom lists wrap on their own floor (--detail-sentence-min-width) above. */
 .detail-sheet :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
 .etymology-standalone-note {
   display: flex;
@@ -2353,7 +2355,7 @@ html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content,
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content, .pinyin-characters) .decomposition-glyph strong { font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
-html[data-display-size='comfortable'] .detail-sheet { --detail-sheet-default-width: 960px; --detail-example-min-width: 300px; }
+html[data-display-size='comfortable'] .detail-sheet { --detail-sheet-default-width: 960px; --detail-example-min-width: 300px; --detail-sentence-min-width: 440px; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-note, .decomposition-layout small, .catalog-facts dd) { font-size: 16px; line-height: 1.6; }
@@ -3303,16 +3305,21 @@ html .practice-title-glyph.is-radical.is-traditional { color: var(--trad-radical
    tiles (glyph beside label + strokes) in one tray. Recall blanks the glyph box. */
 .form-switch { margin: 0; border: 0; padding: 0; }
 .form-switch .radical-form-list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 6px; border: 1px solid var(--border); border-radius: var(--form-radius); background: color-mix(in oklab, var(--background) 45%, var(--card)); }
-/* Switch trays carry --form-cols (form-switch-columns.ts) once forms wrap: an equal-width
-   grid whose column count balances the rows, so five forms wrap 3+2 instead of 4+1 and no
-   tile stretches wider than its siblings. The tray spans the header's full width (the
-   forms section is a full-width row below the reading) so the tiles keep their usual size
-   instead of collapsing to min-width. Phones keep the flex wrap below. */
-.form-switch .radical-form-list[style] { display: grid; grid-template-columns: repeat(var(--form-cols), minmax(0, 1fr)); width: 100%; }
+/* The selector keeps one maximum tile width (--form-switch-tile-max) and the tray hugs that
+   cap: --form-switch-cols (form-switch-columns.ts) is the tile count of the tray's widest row,
+   so a two-form picker stops at two capped tiles instead of stretching one tile per form
+   across a wide (resized) detail window. The tiles themselves grow equally from a zero basis,
+   so every form in the tray is exactly as wide as its siblings. */
+.form-switch .radical-form-list { --form-switch-tile-max: 300px; max-width: calc(var(--form-switch-cols, 2) * (var(--form-switch-tile-max) + 6px) + 8px); }
+html[data-display-size='comfortable'] .form-switch .radical-form-list { --form-switch-tile-max: 340px; }
+/* Trays with more forms than fit one row (form-switch-columns.ts) become an equal-width grid
+   whose column count balances the rows, so five forms wrap 3+2 instead of 4+1 and no tile
+   stretches wider than its siblings. Phones keep the flex wrap below. */
+.form-switch .radical-form-list.is-balanced { display: grid; grid-template-columns: repeat(var(--form-switch-cols), minmax(0, 1fr)); width: 100%; }
 /* Grid tracks size the tiles now, so the flex era's 150px minimum must not hold them
    (it would overflow phone widths); the column count already keeps the rows balanced. */
-.form-switch .radical-form-list[style] .radical-form-choice { min-width: 0; }
-html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 auto; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: var(--form-radius); background: transparent; color: var(--foreground); }
+.form-switch .radical-form-list.is-balanced .radical-form-choice { min-width: 0; }
+html :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice { position: relative; z-index: 1; flex: 1 1 0; height: auto; min-height: 0; min-width: 150px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 8px 18px 8px 12px; border-color: transparent; border-radius: var(--form-radius); background: transparent; color: var(--foreground); }
 :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-traditional):not(.is-radical) strong { color: var(--primary); }
 :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice strong { font-size: 34px; line-height: 1.1; flex-shrink: 0; }
 :is(.practice-header, .catalog-detail-forms) .form-switch .radical-form-choice:not(.is-selected) strong { opacity: .8; }

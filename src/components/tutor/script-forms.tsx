@@ -58,10 +58,12 @@ export function ScriptForms({ glyph, kind = 'Characters', destination = 'referen
   const formLabel = (hanzi: string, script: string | undefined) => script === 'Traditional' ? 'Traditional' : family ? (hanzi === family.head ? 'Main form' : 'Variant') : 'Simplified';
   return <div className={`radical-family-section script-forms${layout === 'switch' ? ' form-switch' : ''}`}>
     {!hideLabel && <h3 className="eyebrow flex-wrap"><span>{family ? 'COMPONENT FORMS' : 'SCRIPT FORMS'}</span><SourceInfo inline className="detail-footnote"><ScriptFormsNote forms={forms} family={family}/></SourceInfo></h3>}
-    {/* Switch trays with more forms than fit one row set --form-cols so wrapped rows stay
-        balanced and equal-width (formSwitchColumns: five forms wrap 3+2, never 4+1); the
-        CSS also gives those trays the header's full width so the tiles keep their size. */}
-    <div className="radical-form-list" role="group" aria-label={`Script forms of ${glyph}`} style={layout === 'switch' && forms.length > 4 ? { '--form-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
+    {/* Switch trays carry --form-switch-cols (formSwitchColumns: five forms wrap 3+2, never
+        4+1) so the tray's CSS cap — one maximum width per tile — matches its own widest row:
+        the selector stops growing there instead of stretching two forms into banners across a
+        wide (resized) detail window. Trays with more forms than fit one row (.is-balanced)
+        become an equal-width grid whose column count balances the rows. */}
+    <div className={`radical-form-list${layout === 'switch' && forms.length > 4 ? ' is-balanced' : ''}`} role="group" aria-label={`Script forms of ${glyph}`} style={layout === 'switch' ? { '--form-switch-cols': formSwitchColumns(forms.length) } as CSSProperties : undefined}>
       {/* Practice's tray: one frame that slides to the chosen form instead of a border appearing. */}
       {layout === 'switch' && <FormSwitchThumb/>}
       {forms.map(entry => {

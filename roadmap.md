@@ -1,5 +1,9 @@
 # Roadmap
 
+## Capped variant selector and wrapping phrase/idiom lists
+- [x] Keep one maximum width for the Simplified/Traditional (and other variant) selector tiles, always equal for every form, so a widened detail window never stretches them into banners. Verified 300px tiles at the default and widest Compact window, 340px in Comfortable, five-form radical picker 3+2 at equal 215px, phones 156px with no overflow.
+- [x] Let “In a phrase” and “In an idiom” lists wrap into more columns as the window widens, on a wider sentence floor than word cards. Verified 1 column at the default 670px content, 4 at 1510px Compact, 3 at 1510px Comfortable, single column at 390px, with hanzi/pinyin/translation readable in every column; 65 affected tests pass.
+
 ## Adjustable detail windows
 - [x] Add a shared drag-to-resize grip with keyboard adjustment, remembered width and reset; constrain windows to the screen. Verified actual pointer drag from 720px to 1320px, reload restoration, keyboard adjustment without navigation, double-click reset and 390px screen fit.
 - [x] Allow extra cards per row only in In a word and In a character as the window widens; keep phrases and idioms in single-column lists and other grids unchanged. Verified five word columns, six character columns, phrase/idiom single columns, larger-text layout and no browser errors; 37 affected tests pass.
