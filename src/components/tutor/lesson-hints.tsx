@@ -6,6 +6,7 @@ import { Popover, PopoverAnchor, PopoverContent } from '@/components/ui/popover'
 import { detailTrail, historyEntry } from '@/lib/detail-trail';
 import { lessonGlyphHint, lessonGlyphHintById, lessonGlyphHints } from '@/lib/lesson-hints';
 import { vocabularyKind, type Word } from '@/lib/mandarin';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { wordInk } from '@/lib/card-ink';
 import { useSentenceWords } from './use-sentence-words';
 import { useWorkspace } from './workspace';
@@ -187,7 +188,7 @@ function HintCard({ glyph, word, onClose }: { glyph: string; word: HintWord | nu
             <span className="lesson-hint-pinyin">
               {wordIsCurrent
                 ? <span className="pinyin">{word.pinyin}</span>
-                : <Link to="/vocabulary" search={word.search} className="lesson-hint-word-link" title={`Open the word ${word.hanzi}`} onClick={rememberReturn}><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
+                : <Link to="/vocabulary" search={word.search} className="detail-arrow-link lesson-hint-word-link" title={openDetailsHint(word.hanzi, 'word')} aria-label={openDetailsHint(word.hanzi, 'word')} onClick={rememberReturn}><span className="pinyin">{word.pinyin}</span><ArrowUpRight size={13} aria-hidden="true"/></Link>}
               {/* Speaker stays outside the link so listening never navigates. */}
               {word.pinyin && <ExamplePronunciation request={{ text: word.hanzi, reading: word.pinyin, audio: word.audio ?? null }} label={word.hanzi}/>}
             </span>

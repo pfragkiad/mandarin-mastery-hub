@@ -3206,9 +3206,11 @@ html[data-display-size='comfortable'] .practice-translation-line .practice-trans
 /* "Write <glyph>" with the details icon right beside it (practice-header.tsx). */
 .practice-title-row { display: flex; align-items: center; gap: 6px 12px; min-width: 0; }
 .practice-title-row > .practice-title { min-width: 0; }
-.practice-details-link { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; color: var(--muted-foreground); transition: color .15s, background-color .15s; }
+/* Shared top-right / inline detail-card arrow links: no hover background fill, highlight the arrow only. */
+.detail-arrow-link { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--primary); text-decoration: none; opacity: 0.78; transition: color 140ms ease, opacity 140ms ease; }
+.detail-arrow-link:hover, .detail-arrow-link:focus-visible { background: transparent; color: var(--primary); opacity: 1; outline: none; }
+.practice-details-link { flex-shrink: 0; width: 40px; height: 40px; border-radius: 999px; color: var(--muted-foreground); opacity: 1; }
 .practice-details-link svg { width: 24px; height: 24px; }
-.practice-details-link:hover { color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
 .practice-details-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 html[data-display-size='comfortable'] .practice-details-link { width: 44px; height: 44px; }
 html[data-display-size='comfortable'] .practice-details-link svg { width: 28px; height: 28px; }
@@ -4238,8 +4240,7 @@ html[data-display-size='comfortable'] .lesson-hints-toggle.is-toolbar strong { f
 .lesson-hint-word:is(:hover, :focus-visible) { border-color: var(--glyph-hint-ink); outline: none; }
 .lesson-hint-word-label { font-size: 11px; color: var(--muted-foreground); }
 .lesson-hint-word-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.lesson-hint-word-link { display: inline-flex; align-items: baseline; gap: 8px; color: var(--primary); text-decoration: none; border-radius: var(--control-radius); }
-.lesson-hint-word-link:focus-visible { outline: none; }
+.lesson-hint-word-link { align-items: baseline; gap: 8px; border-radius: var(--control-radius); }
 .lesson-hint-word-link svg { align-self: center; }
 .lesson-hint-word-hanzi { font-family: var(--font-hanzi); font-size: 22px; line-height: 1.2; border-radius: var(--control-radius); padding: 0 2px; }
 .lesson-hint-word-link .pinyin, .lesson-hint-word-row .pinyin { font-size: 14px; }
@@ -5306,8 +5307,7 @@ html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding
 .tone-pair-selected-row .tone-sounds-links { flex-shrink: 0; }
 html[data-display-size='comfortable'] .tone-pair-tile-arrow { width: 18px; height: 18px; }
 html[data-display-size='comfortable'] .tone-pair-spoken-sep { font-size: 12px; }
-.tone-sounds-word-link { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--radius-control); color: var(--primary); text-decoration: none; align-self: flex-start; margin-top: 4px; transition: background-color 140ms ease, color 140ms ease; }
-.tone-sounds-word-link:hover, .tone-sounds-word-link:focus-visible { background: color-mix(in oklab, var(--primary) 14%, transparent); outline: none; }
+.tone-sounds-word-link { width: 28px; height: 28px; border-radius: var(--radius-control); align-self: flex-start; margin-top: 4px; }
 .tone-sounds-word-link svg { width: 16px; height: 16px; }
 html[data-display-size='comfortable'] .tone-matrix-code { font-size: 13px; }
 html[data-display-size='comfortable'] .tone-matrix-word { font-size: 30px; }

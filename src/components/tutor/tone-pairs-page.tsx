@@ -28,6 +28,7 @@ import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords, type Word } from '@/lib/mandarin';
 import { isHanziChar } from '@/lib/sentence-align';
+import { openDetailsHint } from '@/lib/tile-hints';
 import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
@@ -274,8 +275,9 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onReveal, onPic
   const pill = <span className="word-hsk-id tone-pair-pill" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
     {digits(row.citationTones)}{changed && <span className="tone-pair-change"> → {digits(row.expectedSpokenTones)}</span>}
   </span>;
+  const wordHint = openDetailsHint(row.headword, 'word');
   const wordLink = !hidden && row.vocabularyEntryId
-    ? <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="tone-sounds-word-link" title={`Open ${row.headword} in Vocabulary`} aria-label={`Open ${row.headword} in Vocabulary`}><ArrowUpRight aria-hidden="true"/></Link>
+    ? <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="detail-arrow-link tone-sounds-word-link" title={wordHint} aria-label={wordHint}><ArrowUpRight aria-hidden="true"/></Link>
     : undefined;
   const selectedIndex = pool.findIndex(e => e.id === row.id);
   const initialCount = 6;

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { focusEntryCard, originLabel, practiceOrigin } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
+import { openDetailsHint } from '@/lib/tile-hints';
 import type { CharactersSearch } from './characters-page';
 import type { VocabularySearch } from '@/routes/vocabulary';
 import { DetailsIcon } from './practice-icons';
@@ -69,9 +70,10 @@ export function PracticeHeader({ glyph, glyphNode, glyphClassName = '', hideGlyp
 // hidden until the learner chooses to open the card. Clicking leaves this practice page as
 // the only details-trail step, so the window's Back returns here (as Decomposition links do).
 function PracticeDetailsLink({ details, glyph, hideGlyph }: { details: PracticeDetails; glyph: string; hideGlyph: boolean }) {
-  const hint = hideGlyph ? 'Open the detail card' : `Open the detail card for ${glyph}`;
+  const kind = details.to === '/vocabulary' ? (details.search.tab ?? 'word') : (details.search.tab ?? 'Characters');
+  const hint = hideGlyph ? 'Click to open details' : openDetailsHint(glyph, kind);
   const note = () => detailTrail.replace({ label: hideGlyph ? 'Practice' : `Practice (${glyph})`, href: window.location.href });
-  const common = { className: 'practice-details-link', title: hint, 'aria-label': hint, onClick: note, children: <DetailsIcon aria-hidden="true"/> };
+  const common = { className: 'detail-arrow-link practice-details-link', title: hint, 'aria-label': hint, onClick: note, children: <DetailsIcon aria-hidden="true"/> };
   return details.to === '/characters'
     ? <Link to="/characters" search={details.search} {...common}/>
     : <Link to="/vocabulary" search={details.search} {...common}/>;
