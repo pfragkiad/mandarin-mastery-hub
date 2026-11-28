@@ -363,3 +363,7 @@
 ## All detail windows share width resizing
 - [x] Reuse the same resizing control for Sound chart details and standalone Word/Phrase/Idiom details, preserving their navigation.
 - [x] Verify actual drag on Words, Phrases, Idioms, Characters, Components, Radicals, Strokes, Sound chart and Tone pairs; shared saved width/reset and 390px fit pass, with 40 regression tests and no browser errors.
+
+## Tone changes matches Tone pairs
+- [x] Use the same floating, resizable detail window, tone header and expanded selected-word card for Tone changes.
+- [x] Verify rule navigation, exact-word selection and 一定 recording playback, Close to rules, 390px/1600px layout and resizing; 42 tests pass and preview build is clean.
