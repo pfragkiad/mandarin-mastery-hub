@@ -2374,6 +2374,11 @@ html[data-display-size='comfortable'] .detail-sheet .kangxi-identity-card .examp
    (reading + speaker), so the pill only needs the trailing space. In the detail card the
    reading column stacks its lines, so the pinyin line stretches to the column's width. */
 .sentence-pinyin .sentence-style-pill { margin-top: 0; margin-left: auto; }
+/* The note's (i) and the style pill are one unit: the pair travels to the line's right
+   edge together and wraps to the next line as a pair, so the (i) is never stranded away
+   from the pill it belongs to (two auto margins would split the gap instead). */
+.sentence-pinyin .sentence-card-tail { flex: none; margin-left: auto; display: inline-flex; align-items: center; gap: 6px; }
+.sentence-pinyin .sentence-card-tail .sentence-style-pill { margin-left: 0; }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading > .sentence-pinyin { align-self: stretch; }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading {
   flex: 1 1 200px;

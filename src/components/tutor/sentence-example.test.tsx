@@ -1,7 +1,8 @@
 // ============= Test file =============
 // The recorded editorial note on an example sentence must never be a fourth text line in
-// the card: it stays verbatim but collapses behind the shared (i) trigger in the card's
-// header row, exactly like the sentence-source marker and the spelling-note evidence.
+// the card: it stays verbatim but collapses behind the shared (i) trigger sitting
+// immediately left of the Conversational/Written pill — on the pill's own line, whether
+// that is the pinyin line or the header row that carries the fallback pill.
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ReactNode } from 'react';
@@ -30,7 +31,7 @@ function renderSentence(props: { sentence: string; pinyin?: string; translation?
 }
 
 describe('Recorded sentence notes collapse behind the card (i)', () => {
-  it('keeps the note out of the card body and offers it behind one (i) in the header row', () => {
+  it('keeps the note out of the card body and offers it behind one (i) left of the style pill', () => {
     const container = renderSentence({
       sentence: '别逼他马上回答。', pinyin: 'Bié bī tā mǎ shàng huí dá.',
       translation: "Don't force him to answer immediately.", note: NOTE,
@@ -39,8 +40,20 @@ describe('Recorded sentence notes collapse behind the card (i)', () => {
     expect(container.textContent).not.toContain(NOTE);
     const triggers = container.querySelectorAll('.source-info-trigger');
     expect(triggers).toHaveLength(1);
-    expect(triggers[0]!.closest('.sentence-card-header')).not.toBeNull();
+    // The (i) rides the pinyin line, immediately left of the Conversational pill.
+    expect(triggers[0]!.closest('.sentence-pinyin')).not.toBeNull();
+    expect(triggers[0]!.nextElementSibling?.className).toContain('sentence-style-pill');
     expect(triggers[0]).toHaveAttribute('aria-label', 'About this sentence');
+  });
+
+  it('keeps the (i) left of the pill when the card has no pinyin line', () => {
+    const container = renderSentence({
+      sentence: '别逼他马上回答。', translation: "Don't force him to answer immediately.", note: NOTE,
+    });
+    const triggers = container.querySelectorAll('.source-info-trigger');
+    expect(triggers).toHaveLength(1);
+    expect(triggers[0]!.closest('.sentence-card-header')).not.toBeNull();
+    expect(triggers[0]!.nextElementSibling?.className).toContain('sentence-style-pill');
   });
 
   it('reveals the recorded note word-for-word when the (i) is opened', () => {

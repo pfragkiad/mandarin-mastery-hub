@@ -82,6 +82,10 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   const noteInfo = note
     ? <SourceInfo inline className="detail-footnote" label="About this sentence" align="end">{note}</SourceInfo>
     : null;
+  // The note's (i) always reads as the pill's companion: it sits immediately left of the
+  // Conversational/Written pill, on the pill's own line (the pinyin line when it exists,
+  // otherwise the header row that carries the fallback pill).
+  const headerNote = showPinyinLine ? null : noteInfo;
 
   {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
       the pinyin with its speaker and the translation. The row wraps, so the translation
@@ -89,10 +93,11 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   return <div className="sentence">
     {/* Source details keep their own header row. The style pill (Conversational/Written)
         rides the pinyin line's far right whenever that line exists — the card has the space
-        there — and only falls back to this row when there is no pinyin line to carry it. */}
-    {(sourceDetails || noteInfo || (heading && !showPinyinLine)) && <div className="sentence-card-header">
+        there — and only falls back to this row when there is no pinyin line to carry it;
+        the note's (i) falls back with it, staying on the pill's left. */}
+    {(sourceDetails || headerNote || (heading && !showPinyinLine)) && <div className="sentence-card-header">
       {sourceDetails}
-      {noteInfo}
+      {headerNote}
       {heading && !showPinyinLine && <span className="sentence-style-pill">{heading}</span>}
     </div>}
     <div className="sentence-hanzi-row">
@@ -119,9 +124,13 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
           {t.trailing}
         </span>)}</span> : <span>{pinyin}</span>}
         <ExamplePronunciation request={audioRequest ?? { text: sentence, reading: pinyin ?? null, audio: null }} label={`sentence ${sentence}`}/>
-        {/* The style label sits at the far right of this same line (the line is already a
-            flex row), so the card keeps one fewer row and the sentence reads uninterrupted. */}
-        {heading && <span className="sentence-style-pill">{heading}</span>}
+        {/* The note's (i) and the style label are one unit at the line's right edge: the
+            (i) first, so it reads as the pill's companion, and the pair wraps together so
+            a narrow card never strands the (i) away from the pill it explains. */}
+        {(noteInfo || heading) && <span className="sentence-card-tail">
+          {noteInfo}
+          {heading && <span className="sentence-style-pill">{heading}</span>}
+        </span>}
       </span>}
       {/* The translation ends with the pinyin's terminal mark (. ! ?) — display rule
           from alignSentenceEnding; the recorded text is never rewritten. */}
