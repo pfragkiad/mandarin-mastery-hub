@@ -66,6 +66,10 @@ The [component metadata patch guide](../../importer/data/components/README.md)
 records five Unicode-backed family identities and the separate descriptive label
 for 龶. These are presentation metadata; source rows, lexical readings, dictionary
 radicals, IDS and geometry stay intact. No new family form keys are generated.
+The same guide documents a separate four-record meaning-first form-reference
+subset under `src/data/`: three exact same-reading old variants reuse their linked
+record's meaning, while 龹 exposes related 卷 context with independent pronunciation.
+The browser validates both source and target tuples before showing those annotations.
 
 For lesson authoring and external consumers, [catalog_ids.json](catalog_ids.json)
 exports the exact selectable Characters records as `{ "characters": { "次": "Characters:次" } }`.

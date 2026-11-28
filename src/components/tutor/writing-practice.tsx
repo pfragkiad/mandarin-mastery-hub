@@ -1,6 +1,7 @@
 import { practiceOrigin } from '@/lib/practice-return';
 import { detailTrail } from '@/lib/detail-trail';
 import { MeaningText } from './meaning-text';
+import { ComponentFormReference } from './component-form-reference';
 import { strokeSpeed } from '@/lib/practice-speed';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { characterScore, completionWord, finishedResult, mistakeNote, strokeScore, type CharacterResult } from '@/lib/stroke-score';
@@ -1141,6 +1142,7 @@ export function StrokesPage({ initialCharacter = '我', focus = 0, family, varia
         pills={isWord ? undefined : characterPills} forms={forms} details={details} onPrint={() => setSheet(true)}
         after={audioError ? <p role="status" className="meaning-missing">Audio isn’t available in this browser.</p> : undefined}/>
     </SentenceHints>
+    {!isWord && !recall && <ComponentFormReference glyph={character}/>}
     {/* One centred column: the breakdown no longer has its own column but opens in the Strokes
         panel's drawer via the Decomposition pill (never for radical practice, which has none). */}
     <div className="practice-layout practice-layout-single"><WritingPractice decomposition={decomposition && decompositionHasContent(decomposition.root, enrichment) ? { info: <SourceInfo inline className="detail-footnote decomposition-footnote">Breakdowns follow source priority · BabelStone G-source first, then the recorded Hanzi graphical structure when it differs.<br/>IDS describes graphical structure only · not verified etymology or stroke geometry.<br/>Components link to their library cards.</SourceInfo>, body: <div className="decomposition-section" onClickCapture={noteDecompositionReturn}><RecordedDecomposition character={character} tree={decomposition.root} source={decomposition.source} status={decomposition.status} record={enrichment}/></div> } : null} key={isWord ? focus : undefined} character={character} enrichment={showEnrichment ? enrichment : null} groupingSource={groupingSource} radicalSelection={radicalSelection} mode={mode} onModeChange={onModeChange} strip={strip} savedProgress={isWord ? wordProgress[focus] : undefined} onProgress={isWord ? progress => setWordProgress(prev => ({ ...prev, [focus]: progress })) : undefined} onResetAll={isWord ? () => setWordProgress({}) : undefined} progressInk={isWord ? undefined : practiceInk} reading={!isWord && info.speech && info.reading ? { spoken: info.speech, reading: info.reading, onError: message => setAudioError(Boolean(message)) } : undefined}/>{sheet && <PracticeSheet text={initialCharacter} pinyin={wordFact?.pinyin ?? info.reading} meaning={wordFact?.meaning ?? info.meaning} onClose={() => setSheet(false)}/>}</div></div>;

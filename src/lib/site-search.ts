@@ -7,6 +7,7 @@ import { relatedGroup } from './character-variants';
 import { cardMeaning, cardReadingSplit } from './glyph-presentation';
 import { characterMeaning } from './vocabulary-meaning';
 import { pinyinReadingMatches } from './pinyin-tones';
+import { componentFormMeaning } from './component-form-references';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
@@ -29,6 +30,9 @@ const wordSearchText = (w: Word) => {
 type RowText = { source: string[]; text: string; normalizedPinyin: string; readings: string[]; meaning: string; written: string };
 const rowText = new WeakMap<object, RowText>();
 const rowSearchText = (row: object, hanzi: string, pinyin: string, meaning: string, note: string) => {
+  // Exact reviewed variant meanings are searchable just as they are in the library.
+  // A linked character's different pronunciation never enters this record's readings.
+  meaning = componentFormMeaning(hanzi, pinyin, meaning) ?? meaning;
   const glyphs = radicalSearchGlyphs(hanzi).join(' ');
   // Related characters (干 ↔ 乾 / 幹) are written forms of one recorded association set.
   const related = relatedGroup(hanzi).join(' ');

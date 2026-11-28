@@ -1,6 +1,7 @@
 import { catalog, groupReadingMeanings, readingMeanings } from './catalog-store';
 import { radicalIdentity, type RadicalLink } from './radical-identities';
 import { radicalForms } from './radical-strokes';
+import { componentFormMeaning, componentFormReference } from './component-form-references';
 
 // Exact Unicode 17.0 NamesList entries and attributed component descriptions;
 // never classify from appearance or missing pinyin.
@@ -55,7 +56,7 @@ export function displayMeaning(meaning: string): string {
  * and exactly the reviewed readings (readingMeanings), so no sense is paired by inference. */
 export function cardMeaning(glyph: string, pinyin: string, meaning: string): string {
   const split = cardReadingSplit(glyph, pinyin, meaning);
-  return displayMeaning(split ? groupReadingMeanings(split).map(group => `${group.readings.join(' / ')}: ${group.meaning}`).join(' / ') : radicalNoteMeaning(glyph, meaning) ?? meaning);
+  return displayMeaning(split ? groupReadingMeanings(split).map(group => `${group.readings.join(' / ')}: ${group.meaning}`).join(' / ') : componentFormMeaning(glyph, pinyin, meaning) ?? radicalNoteMeaning(glyph, meaning) ?? meaning);
 }
 
 /** The reviewed per-reading split a card may show for this exact record, or null (see cardMeaning). */
@@ -138,6 +139,7 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;
+  const formReference = componentFormReference(glyph);
   const source = reviewed?.source ?? (reviewed?.unicodeName || supplement || kangxiSymbol
     ? `Unicode NamesList 17.0.0${reviewed?.unicodeName ? ` · ${reviewed.unicodeName}` : ''}`
     : 'Recorded exact Kangxi identity · see source records');
@@ -145,9 +147,9 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
     label, canonicalRadical, characterRadical, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
     readingFallback: component ? 'Component name not recorded' : 'Pinyin not recorded',
-    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : radicalNoteMeaning(glyph, meaning) ?? displayMeaning(meaning),
+    meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : componentFormMeaning(glyph, pinyin, meaning) ?? radicalNoteMeaning(glyph, meaning) ?? displayMeaning(meaning),
     speech: pureForm ? componentName?.text ?? null : glyph,
     codePoint: codePoint === undefined ? '' : `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')}`,
-    source: pureForm ? `${source}${componentName ? ` · ${componentName.source}` : ''}` : null,
+    source: formReference ? `${formReference.evidence.source}. Meaning and reading of the linked ${formReference.target.glyph} record are shown with the original form note; this form's own recorded reading is retained.` : pureForm ? `${source}${componentName ? ` · ${componentName.source}` : ''}` : null,
   };
 }

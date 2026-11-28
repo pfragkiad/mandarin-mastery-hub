@@ -20,7 +20,9 @@ For component reading/meaning proposals, follow the
 handoff and defines exact-record review, source evidence, shared presentation/family
 fallback rules and validation. Five explicitly selected Unicode-backed family
 identities are imported by `scripts/import-radical-identities.py`; 龶 has a separate
-attributed descriptive label. The remaining suggestions are not automatically imported.
+attributed descriptive label. A separate four-record form-reference review compiles
+meaning-first variant presentation and related-record context through
+`scripts/import-component-form-references.py`. The remaining suggestions are not automatically imported.
 
 `scripts/import-radical-identities.py` reads these pinned inputs from `importer/data/radical-identities/`:
 

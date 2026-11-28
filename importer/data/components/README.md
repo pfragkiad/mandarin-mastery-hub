@@ -11,6 +11,7 @@ The handoff is a review queue, not an executable patch or verified dictionary.
 | [.gitattributes](.gitattributes) | Preserves checksum-bound source/review bytes across Git checkouts. | Git; maintained with the inputs. |
 | [cjk_component_metadata_patch.md](cjk_component_metadata_patch.md) | Original owner-supplied suggestions: 26 components missing both fields, four missing pinyin, 30 missing translations, and six proposed resolver mappings that overlap those lists. | Offline agent/editor review; the identity importer checks its SHA-256 but never parses its suggestions. Preserve its supplied bytes. |
 | [radical-family-metadata-review.json](radical-family-metadata-review.json) | Explicit selection of five exact Unicode symbol/ideograph pairs and a separate descriptive-only decision for 龶, with source/proposal checksums. | `scripts/import-radical-identities.py` validates the selected pairs against the pinned Unicode property and each symbol's independently recorded family. 龶's attributed description is maintained in the shared presentation adapter. |
+| [form-reference-review.json](form-reference-review.json) | Four exact source/target tuple bindings, dictionary relationship evidence and explicit shared-meaning versus related-only decisions. | `scripts/import-component-form-references.py` compiles a small browser-safe presentation subset into `src/data/component-form-references.json`. |
 | [README.md](README.md) | Application workflow, evidence requirements and validation for that handoff. | Maintainers and agents; maintained manually. |
 
 The supplied patch's SHA-256 is
@@ -48,13 +49,53 @@ once in Components; its raw Characters row remains stored, but is excluded from
 Characters presentation. Regenerate `public/data/catalog_ids.json` with
 `node scripts/export-catalog-ids.mjs` when changing that membership.
 Other gloss/reading proposals in the supplied patch remain outside this applied
-six-component resolver review.
+six-component resolver review. The additional four-record review below is separate.
 
 Generate the identity sidecar with `python scripts/import-radical-identities.py`;
 verify it without writing with `python scripts/import-radical-identities.py --check`.
 The importer checks the original component tuples, original patch and Unicode file
 hashes, each selected property pair and each symbol's exact NamesList family. It records the review hash
 in the sidecar coverage and both Unicode source identities on each new variant.
+
+## Meaning-first form references
+
+Nonempty definitions can still contain only a relationship description. The
+owner-requested [form reference review](form-reference-review.json) addresses four
+such records without replacing their imported tuples or inferring Kangxi identities:
+
+| Form | Linked exact Characters record | Presentation |
+| --- | --- | --- |
+| 歨 bù | 步 bù | Lead with “step, pace; walk, stroll”; retain the original old-variant note as secondary information. |
+| 毌 guàn | 貫 guàn | Lead with “a string of 1000 coins; to go through”; retain the original form/component notes as secondary information. |
+| 丷 bā | 八 bā | Lead with “eight; all around, all sides”; retain the complete original component/historical/Korean note as secondary information. |
+| 龹 quǎn | 卷 juǎn | Show the linked meaning with an explicit “Related 卷” label. Keep the phonetic-component description secondary and both records' pronunciations independent. This relationship does not license lexical inheritance or a reading correction. |
+
+CC-CEDICT's pinned exact old-variant entries support the first three links. Their
+existing readings already match the linked records and stay unchanged. 龹's link
+uses its recorded component description for contextual navigation only. Its
+recorded quǎn is retained, not newly verified; the linked 卷 reading is not a
+replacement for it. No root, shape or decomposition inference is involved.
+
+The shared `component-form-references.ts` adapter validates every original source
+tuple and target tuple before applying the presentation. Changed tuples fail
+closed to their current data, and references never recursively borrow from other
+references. The existing shared glyph/meaning adapters apply the same display in
+libraries, search, lesson hints, games and Practice. `ComponentFormReference` adds
+an exact Characters link and a separate speaker for the linked record in Glyph
+details and guided Practice; the extra row stays hidden in Recall.
+
+Generate/check this subset from the repository root:
+
+```sh
+python scripts/import-component-form-references.py --write
+python scripts/import-component-form-references.py --check
+python scripts/import-component-form-references.test.py
+```
+
+The input review is checksum-bound by the output. Dictionary archives and exact
+source entries remain offline; only the four reviewed tuple bindings, attribution
+and decisions are bundled. These links do not alter readings, audio attachments,
+library membership, script metadata, source trees, family form keys or geometry.
 
 ## Agent workflow
 
@@ -134,4 +175,5 @@ own readings stay intact, family fallbacks remain contextual, ambiguous/unknown
 forms stay unresolved, and Reference/Practice retain the exact selected identity.
 See [catalog.md](../../../public/data/catalog.md) for full-suite and environment
 instructions. Only the selected family identities and descriptive decision above
-are implemented; do not describe the rest of the supplied suggestions as imported.
+and the four reviewed form references are implemented; do not describe the rest
+of the supplied suggestions as imported.

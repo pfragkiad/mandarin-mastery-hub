@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "reviewSha256": "0d33471f7f30e6d74ea630386010c567efef10b2a68c8fc53f749669007435d2",
+  "references": {
+    "歨": {
+      "glyph": "歨",
+      "relation": "old-variant",
+      "recordedRows": {
+        "Characters": [
+          "歨",
+          "bù",
+          "Old variant of 步",
+          "8 strokes · 止 radical",
+          "Common"
+        ],
+        "Components": [
+          "歨",
+          "bù",
+          "Old variant of 步",
+          "8 strokes · Component",
+          "Common"
+        ]
+      },
+      "targetKind": "Characters",
+      "targetRow": [
+        "步",
+        "bù",
+        "step, pace; walk, stroll",
+        "7 strokes · 止 radical",
+        "Common"
+      ],
+      "meaningMode": "shared",
+      "description": "Old variant of 步",
+      "evidence": {
+        "source": "MDBG / CC-CEDICT contributors; CC BY-SA 4.0",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=cedict",
+        "sourceFile": "../character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+        "sourceSha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+        "sourceEntry": "歨 歨 [bu4] /old variant of 步[bu4]/"
+      }
+    },
+    "毌": {
+      "glyph": "毌",
+      "relation": "old-variant",
+      "recordedRows": {
+        "Characters": [
+          "毌",
+          "guàn",
+          "old form of 貫; component in 贯,貫,實, etc.; not to be confused with 毋",
+          "4 strokes · 毋 radical",
+          "Common"
+        ],
+        "Components": [
+          "毌",
+          "guàn",
+          "old form of 貫; component in 贯,貫,實, etc.; not to be confused with 毋",
+          "4 strokes · Component",
+          "Common"
+        ]
+      },
+      "targetKind": "Characters",
+      "targetRow": [
+        "貫",
+        "guàn",
+        "a string of 1000 coins; to go through",
+        "11 strokes · 貝 radical",
+        "Traditional"
+      ],
+      "meaningMode": "shared",
+      "description": "old form of 貫; component in 贯,貫,實, etc.; not to be confused with 毋",
+      "evidence": {
+        "source": "MDBG / CC-CEDICT contributors; CC BY-SA 4.0",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=cedict",
+        "sourceFile": "../character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+        "sourceSha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+        "sourceEntry": "毌 毌 [guan4] /old variant of 貫|贯[guan4]/"
+      }
+    },
+    "丷": {
+      "glyph": "丷",
+      "relation": "old-variant",
+      "recordedRows": {
+        "Characters": [
+          "丷",
+          "bā",
+          "“ears-out” component used in some Chinese characters (for example, 兑); archaic form of 八; kwukyel, an archaic hanja-based writing system used in Korea before the invention of hangul",
+          "2 strokes · 丶 radical",
+          "Common"
+        ],
+        "Components": [
+          "丷",
+          "bā",
+          "“ears-out” component used in some Chinese characters (for example, 兑); archaic form of 八; kwukyel, an archaic hanja-based writing system used in Korea before the invention of hangul",
+          "2 strokes · Component",
+          "Common"
+        ]
+      },
+      "targetKind": "Characters",
+      "targetRow": [
+        "八",
+        "bā",
+        "eight; all around, all sides",
+        "2 strokes · 八 radical",
+        "Common"
+      ],
+      "meaningMode": "shared",
+      "description": "“ears-out” component used in some Chinese characters (for example, 兑); archaic form of 八; kwukyel, an archaic hanja-based writing system used in Korea before the invention of hangul",
+      "evidence": {
+        "source": "MDBG / CC-CEDICT contributors; CC BY-SA 4.0",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?page=cedict",
+        "sourceFile": "../character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+        "sourceSha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+        "sourceEntry": "丷 丷 [ba1] /\"eight\" component in Chinese characters/old variant of 八[ba1]/"
+      }
+    },
+    "龹": {
+      "glyph": "龹",
+      "relation": "phonetic-component",
+      "recordedRows": {
+        "Characters": [
+          "龹",
+          "quǎn",
+          "Form of 卷 used as a phonetic component",
+          "6 strokes · 八 radical",
+          "Common"
+        ],
+        "Components": [
+          "龹",
+          "quǎn",
+          "Form of 卷 used as a phonetic component",
+          "6 strokes · Component",
+          "Common"
+        ]
+      },
+      "targetKind": "Characters",
+      "targetRow": [
+        "卷",
+        "juǎn",
+        "scroll; curl; make a comeback",
+        "8 strokes · 卩 radical",
+        "Simplified"
+      ],
+      "meaningMode": "related-only",
+      "description": "Form of 卷 used as a phonetic component",
+      "evidence": {
+        "source": "Recorded Make Me a Hanzi component description; related-record context only",
+        "sourceUrl": "https://github.com/skishore/makemeahanzi",
+        "scope": "The source records a phonetic component relationship. It does not establish shared lexical meaning or pronunciation. Preserve the recorded reading; show the linked record independently."
+      }
+    }
+  }
+}

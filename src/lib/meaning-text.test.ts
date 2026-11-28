@@ -14,6 +14,14 @@ describe('meaningParts', () => {
     expect(parts[1]).toMatch(/^component form of/i);
   });
 
+  it('keeps a secondary source note with nested parentheses together without changing text', () => {
+    const note = '(component in characters (for example, 兑); old variant of 八)';
+    const text = `eight; ${note}`;
+    const parts = meaningParts(text);
+    expect(parts).toContain(note);
+    expect(parts.join('')).toBe(text);
+  });
+
   it('treats text without parentheses or descriptions as a single part', () => {
     expect(meaningParts('friend, companion; fraternity')).toEqual(['friend, companion; fraternity']);
   });

@@ -9,6 +9,7 @@ import { CharacterLessonIndicator, CharacterLessonsSection } from './lesson-link
 import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { HintBody, SourceInfo } from '@/components/tutor/source-info';
+import { ComponentFormReference } from './component-form-reference';
 import { Fragment, memo, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useSideFit } from './use-side-fit';
 import { useSenseTrim } from './use-sense-trim';
@@ -299,6 +300,7 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       // Beside the speaker: this exact reading's Sound chart card (Glyphs only, never Strokes).
       chartLink={kind !== 'Strokes' && reading ? <SoundChartLink reading={reading} from={entry.hanzi} variant="header"/> : undefined}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
+    {(kind === 'Characters' || kind === 'Components') && <ComponentFormReference glyph={entry.hanzi}/>}
     {/* Facts follow the title's variant selector; owning Kangxi identity follows facts,
         before related characters. All exact script forms share this one detail template. */}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? (kind === 'Strokes' ? 1 : 'Not recorded')}</dd></div>{strokeNameFact}{radicalFact && kind !== 'Radicals' && <div><dt>Radical</dt><dd>{radicalFact}</dd></div>}{kind === 'Strokes' && <div><dt>Record</dt><dd className="catalog-record-value">{info.label}</dd></div>}{(kind === 'Characters' || kind === 'Components' || kind === 'Radicals') && usageOrder.loaded && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">{kind === 'Characters' ? 'Corpus frequency rank' : `Estimated ${kind === 'Radicals' ? 'radical assignment' : 'component exposure'} rank, derived from character frequencies`} · {usageOrder.data?.source.provider ?? 'Jun Da Modern Chinese corpus'}{kind === 'Characters' ? ' · Percentage is this character’s share of corpus tokens.' : kind === 'Components' ? ' · Percentage is this component’s share of weighted known-leaf occurrences; not character corpus coverage.' : kind === 'Radicals' ? ' · Share of matched corpus tokens assigned to this Kangxi family, not graphical radical occurrences.' : ''}</SourceInfo></dt><dd><UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/></dd></div>}{percentage !== null && <div><dt>{kind === 'Characters' ? 'Corpus frequency' : kind === 'Radicals' ? 'Radical assignment share' : 'Occurrence share'}</dt><dd>{formatUsagePercentage(percentage)}</dd></div>}</dl>

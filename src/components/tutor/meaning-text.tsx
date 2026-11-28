@@ -1,7 +1,7 @@
 import { vocabularyData } from '@/lib/data-contract';
 
 /** Split points: form descriptions and parenthesised spans are not lexical translations. */
-const SPLIT = /(component form of[^;·\n]*|[（(][^（）()·\n]*[）)])/gi;
+const SPLIT = /(component form of[^;·\n]*|[（(](?:[^（）()·\n]|[（(][^（）()·\n]*[）)])*[）)])/gi;
 
 /** Pure splitter so the italic rule is testable without rendering. */
 export function meaningParts(text: string): string[] {
