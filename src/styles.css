@@ -2289,6 +2289,9 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .catalog-detail .catalog-facts { border-bottom: 1px solid var(--border); padding-bottom: var(--detail-section-pad); }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section, .detail-sheet .radical-family-section, .detail-sheet .catalog-detail .detail-tabs { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
 .detail-examples .example-tab-panel.glyph-usage-section { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
+/* The sound cards' own flex gap is already the section gap above the drawer, so the
+   shared stroke-guide margin must not stack a second one on top of it. */
+.detail-examples .example-tabs { margin-top: 0; }
 .detail-sheet .catalog-detail .catalog-facts + :not(.detail-reference-row) { margin-top: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .detail-reference-row { margin-top: var(--detail-section-pad); padding-top: var(--detail-section-pad); }
 /* A trailing "Show N more examples" toggle keeps its padded click area, but that padding must not
@@ -3018,10 +3021,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 /* ===== Pinyin guide (/pinyin): sound chart, player panel and listening quizzes ===== */
 .pinyin-page .library-heading { align-items: end; }
 .pinyin-body { margin-top: 22px; }
-/* The selected-sound card widens with the window (capped) so rows holding two or three
-   script forms still leave their meanings room to breathe. */
-.pinyin-chart-host { container: pinyin-chart / inline-size; }
-.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px); gap: 30px; align-items: start; }
+/* The selected-sound card always opens in the floating window (.pinyin-sound-sheet), so
+   the grid keeps the chart's whole width at every screen size. */
+.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
 .pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
 /* Phones wrap the search and Filters button in .mobile-library-filters, whose inner form has no
    margin; give the wrapper the same gap so the first syllable group never touches Filters. */
@@ -3243,7 +3245,6 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
    (beside the grid, or in the small-screen window that already shares .detail-sheet) grows
    with the same tokens the Glyphs/Vocabulary details use — 13px labels, 16px readings and
    notes, the shared reference hanzi box — and the grid tiles simply get larger. */
-html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) clamp(400px, 34vw, 620px); }
 html[data-display-size='comfortable'] .pinyin-group-title { font-size: 12px; letter-spacing: 1px; }
 html[data-display-size='comfortable'] .pinyin-group-title span { font-size: 14px; }
 html[data-display-size='comfortable'] .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; }
@@ -3407,20 +3408,6 @@ html:not(.dark) { --examples-link: oklch(.48 .18 278); }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link { width: 40px; height: 40px; margin-left: -12px; }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link svg { width: 16px; height: 16px; }
 
-/* Selected sound card: beside the grid only while the chart (its width after the side menu)
-   leaves the grid column enough room for a usable search box and two dropdowns; otherwise
-   the card opens in the centred window (.pinyin-sound-sheet), like the Glyphs details, and
-   the grid takes the full width. Comfortable controls are larger, so they switch sooner.
-   The beside-the-grid card is hidden here even before hydration; pinyin-chart.tsx reads
-   --pinyin-sound-window back so the JavaScript choice always matches these thresholds. */
-@container pinyin-chart (max-width: 1199px) {
-  .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
-  .pinyin-chart-layout > .pinyin-player { display: none; }
-}
-@container pinyin-chart (max-width: 1399px) {
-  html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
-  html[data-display-size='comfortable'] .pinyin-chart-layout > .pinyin-player { display: none; }
-}
 /* Preferences → Character style: the 永 picker at a comfortable tap size, with the
    preview line tucked directly under its row so each tap shows the new face. */
 .settings-row .font-toggle button { width: 46px; height: 38px; font-size: 20px; }
