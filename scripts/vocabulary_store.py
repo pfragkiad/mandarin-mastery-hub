@@ -1,7 +1,8 @@
 """Read/write the vocabulary as one object while storing it split by HSK level.
 
 src/data/vocabulary/ holds index.json (every top-level key except entries, plus the
-ordered `parts` list) and one part per HSK level (level-N.json, unlevelled.json for
+ordered `parts` list) and one part per HSK level (level-N.json, or two
+level-N-part-*.json files when the compact level reaches 9 MB; unlevelled.json for
 entries without a level). Parts are ordered by each level's first appearance; an
 optional entryOrder preserves the original order when levels are interleaved.
 
@@ -16,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DIRECTORY = ROOT / 'src/data/vocabulary'
+MAX_PART_BYTES = 9_000_000
 
 
 def part_name(entry):
@@ -31,6 +33,24 @@ def dump_entries(entries):
     # One compact JSON entry per line; still a plain JSON array for every reader.
     lines = ',\n'.join(json.dumps(entry, ensure_ascii=False, separators=(',', ':')) for entry in entries)
     return '[\n' + lines + '\n]\n' if entries else '[]\n'
+
+
+def vocabulary_parts(entries):
+    """Match the Node writer: split oversized levels into two ordered parts."""
+    levels = {}
+    for entry in entries:
+        levels.setdefault(part_name(entry), []).append(entry)
+    parts = {}
+    for name, rows in levels.items():
+        if len(dump_entries(rows).encode('utf-8')) < MAX_PART_BYTES:
+            parts[name] = rows
+        else:
+            middle = (len(rows) + 1) // 2
+            for index, half in enumerate((rows[:middle], rows[middle:]), 1):
+                if not half or len(dump_entries(half).encode('utf-8')) >= MAX_PART_BYTES:
+                    raise ValueError(f'Vocabulary part exceeds {MAX_PART_BYTES} bytes: {name}')
+                parts[f'{name[:-5]}-part-{index}.json'] = half
+    return parts
 
 
 def read_vocabulary(path=DIRECTORY):
@@ -55,11 +75,9 @@ def read_vocabulary(path=DIRECTORY):
 def write_vocabulary(data, path=DIRECTORY):
     path = Path(path)
     if path.suffix == '.json':
-        path.write_text(dump(data), 'utf-8')
+        path.write_bytes(dump(data).encode('utf-8'))
         return
-    parts = {}
-    for entry in data['entries']:
-        parts.setdefault(part_name(entry), []).append(entry)
+    parts = vocabulary_parts(data['entries'])
     order = [entry['id'] for entry in data['entries']]
     if any(not isinstance(entry_id, str) for entry_id in order) or len(set(order)) != len(order):
         raise ValueError('Vocabulary entries must have unique string IDs')
@@ -68,12 +86,15 @@ def write_vocabulary(data, path=DIRECTORY):
     for stale in set(p.name for p in path.glob('*.json')) - set(parts) - {'index.json'}:
         (path / stale).unlink()
     for name, entries in parts.items():
-        (path / name).write_text(dump_entries(entries), 'utf-8')
+        target, content = path / name, dump_entries(entries)
+        # Match the Node writer while preserving unchanged checkout line endings.
+        if not target.exists() or target.read_text('utf-8') != content:
+            target.write_bytes(content.encode('utf-8'))
     index = {key: value for key, value in data.items() if key != 'entries'}
     index['parts'] = list(parts)
     if grouped != order:
         index['entryOrder'] = order
-    (path / 'index.json').write_text(dump(index), 'utf-8')
+    (path / 'index.json').write_bytes(dump(index).encode('utf-8'))
 
 
 def read_text(path=DIRECTORY):

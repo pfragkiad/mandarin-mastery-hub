@@ -2,7 +2,7 @@
 
 The split files contain the browser-consumed Mandarin Tutor vocabulary. `index.json`
 holds shared categories, other top-level metadata, and the ordered part filenames.
-`level-1.json` through `level-5.json` hold the corresponding HSK entries;
+`level-1.json` through `level-5.json` and the two `level-6-part-*.json` files hold the corresponding HSK entries;
 `unlevelled.json` holds entries without a level. When levels are interleaved,
 the index also records `entryOrder` as exact entry IDs. This split follows the
 recorded `hskLevel`, not whether a source is official.
@@ -48,7 +48,37 @@ remain unchanged; 1,957 example IDs are retained. See the [Level 4 audit](../../
 
 Level files are written one compact entry per line by `scripts/vocabulary_store.py` / `scripts/vocabulary-store.mjs` (byte-identical), so each stays under the repository's 10 MB per-file limit; `index.json` stays indented. Both are ordinary JSON arrays for every reader.
 
+The writers measure UTF-8 bytes before writing. A level reaching 9,000,000 bytes
+is split into two ordered `level-N-part-1.json` / `level-N-part-2.json` files;
+each must remain below that threshold. The index registers both filenames, and
+all readers preserve the exact record order and audio attachments. Unchanged
+parts retain their existing checkout line endings.
+
 The v1.0.5 Level 5 part is **7,515,284 bytes (7.52 MB)**, below the strict
 10,000,000-byte limit. It retains one compact JSON entry per line, without
 indentation, and preserves all record identities and 1,306 word-audio attachments.
 The Level 5 data test checks the size and compact line structure.
+
+Level 6 follows [the 1.0.0 handoff](../../../importer/hsk/hsk3_level6_1.0.0.json):
+1,800 word records (IDs 3601–5400) and 3,600 examples. The full compact level
+would be 9,874,642 bytes, so it is stored as two ordinary JSON arrays:
+
+| Part | Entries | UTF-8 bytes |
+| --- | ---: | ---: |
+| [level-6-part-1.json](level-6-part-1.json) | 900 | 4,871,280 |
+| [level-6-part-2.json](level-6-part-2.json) | 900 | 5,003,365 |
+
+Generate with `node scripts/import-hsk-level6.mjs --write` from the repository
+root; omit `--write` for an audit, and add `--report <path>` to save it. The
+[import audit](../../../reports/hsk-level6-1.0.0-import.json) records identities,
+readings, output hashes and preservation checks. Field-level dictionary
+attribution, corpus credits and revision evidence are retained. One invisible
+leading U+00AD in example 4491/written is removed from Chinese and pinyin during
+import, with an explicit normalization note; the source file remains unchanged.
+The literal slash in 5257/conversational remains punctuation.
+
+Level 6 word and sentence audio remain unattached. Accepted replacement statuses
+and language-review-needed statuses remain distinct; all entries remain drafts.
+The [font audit](../../../reports/hsk-level6-1.0.0-fonts.json) records public font
+coverage additions. `.gitattributes` preserves the Level 6 part bytes across
+platform checkouts so the audit checksums remain stable.

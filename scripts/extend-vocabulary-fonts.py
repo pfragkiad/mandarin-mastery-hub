@@ -94,11 +94,29 @@ def extend(cache, label):
                 if count % 20 == 0 or count == len(faces):
                     print(f'{family}: verified {count}/{len(faces)} public slices', flush=True)
         actual = set().union(*(points(face['unicodeRange']) for face in verified))
+        fallback_requests = []
+        # Noto Serif SC omits some traditional forms retained in source evidence.
+        # Use recorded TC slices only for exact uncovered code points in this style.
+        if missing - actual and family == 'Tutor Vocabulary Serif':
+            fallback_request = 'https://fonts.googleapis.com/css2?' + urllib.parse.urlencode({'family': 'Noto Serif TC:wght@400'})
+            fallback_requests.append(fallback_request)
+            fallback_sheet = fetch(fallback_request).decode()
+            fallback_faces = []
+            for block in re.findall(r'@font-face\s*\{([^}]+)\}', fallback_sheet):
+                url = re.search(r'url\((https[^)]+)\)', block)
+                ranges = re.search(r'unicode-range:\s*([^;]+);', block)
+                wanted = points(ranges[1]) & (missing - actual) if ranges else set()
+                if url and wanted:
+                    fallback_faces.append((url[1], ranges[1], wanted))
+            verified.extend(verify(face) for face in fallback_faces)
+            actual = set().union(*(points(face['unicodeRange']) for face in verified))
         if not missing <= actual:
-            raise ValueError('Public font coverage incomplete')
+            missing_points = ', '.join(f'U+{point:X}' for point in sorted(missing - actual))
+            raise ValueError(f'Public font coverage incomplete for {family}: {missing_points}')
         for face in verified:
             rules.append(f"@font-face {{ font-family: '{family}'; src: url('{face['url']}') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: {face['addedUnicodeRange']}; }}")
         reports.append({'family': family, 'newCharacters': len(missing), 'stylesheetRequest': request,
+                        **({'fallbackStylesheetRequests': fallback_requests} if fallback_requests else {}),
                         'allNewGlyphsVerified': True, 'slices': verified})
     if rules:
         addition = f'/* {label}: public font slices; new glyphs verified locally without text-subset requests. */\n' + '\n'.join(rules) + '\n'

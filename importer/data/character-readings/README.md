@@ -24,6 +24,13 @@ Unchanged Unihan definitions and existing MOE-reviewed records retain their own
 attribution. Han Dian and Unicode snapshots retain their source notices and are
 evidence only; they are not added as learner-facing historical narratives.
 
+The same unchanged CC-CEDICT archive also supplies attributed, POS-focused gloss
+drafts for the added 1,700 entries in the offline
+[Level 6 handoff](../../hsk/hsk3_level6_0.1.0.json). Each entry retains its exact
+dictionary evidence and archive checksum; `scripts/validate-hsk-level6.mjs`
+verifies both. Recorded syllabus readings remain independent of dictionary
+readings. This handoff does not update application vocabulary or this directory.
+
 Run from the repository root:
 
 ```text

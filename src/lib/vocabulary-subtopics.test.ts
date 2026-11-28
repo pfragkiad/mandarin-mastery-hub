@@ -10,14 +10,14 @@ describe('vocabulary subtopics', () => {
     expect(vocabularySubtopics.some(s => s.id === 'animals')).toBe(false);
     expect(vocabularySubtopics.find(s => s.id === 'digital-technology')).toMatchObject({ label: 'Digital Technology', parentLabel: 'Science & Technology' });
   });
-  it('Digital technology keeps exactly the recorded words across Levels 1–5', () => {
+  it('Digital technology keeps exactly the recorded words across Levels 1–6', () => {
     // Headwords only: derived sentence phrases inherit their parent word's subtopic, so they
     // join the same filter but never change the recorded word count.
     const hits = words.filter(w => inSubtopic(w, 'digital-technology') && vocabularyKind(w) === 'word');
-    expect(hits.length).toBe(32);
+    expect(hits.length).toBe(44);
     expect(hits.map(w => w.hanzi)).toEqual(expect.arrayContaining(['电脑', '手机', '软件']));
     expect(hits.every(w => wordSubtopicIds(w).includes('digital-technology'))).toBe(true);
-    expect(words.filter(w => inSubtopic(w, 'digital-technology') && vocabularyKind(w) === 'phrase').length).toBe(64);
+    expect(words.filter(w => inSubtopic(w, 'digital-technology') && vocabularyKind(w) === 'phrase').length).toBe(88);
   });
   it('a picked topic lists only its own subtopics', () => {
     expect(subtopicOptions(words, 'Science & Technology').map(s => s.id).sort()).toEqual(['digital-technology', 'engineering-devices', 'science-research']);

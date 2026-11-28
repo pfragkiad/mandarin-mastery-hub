@@ -39,3 +39,10 @@ sidecar and availability index are version 2. See [the import audit](../../../re
 and [frontend sentence annotations](../../../public/data/TATOEBA_SENTENCES.md).
 Existing vocabulary/lesson sentences stay first; Tatoeba can add another separately
 annotated sentence. No recording is attached without exact text and explicit reuse permission.
+
+The offline [Level 6 handoff](../../hsk/hsk3_level6_0.1.0.json) also selects exact
+Chinese/direct-English pairs from this checksum-bound snapshot. Each selected
+example retains both sentence IDs, authors, links and CC BY 2.0 FR attribution;
+assisted sentence pinyin and the conversational/written labels are editorial
+drafts. These selections do not change this corpus, its review results or runtime
+examples, and are not limited to the separately reviewed positive-only collection.

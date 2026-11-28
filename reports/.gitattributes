@@ -17,3 +17,14 @@ tatoeba-chinese-english-review-01-ok.tsv -text
 tatoeba-positive-inventory.json -text
 tatoeba-example-import.json -text
 tatoeba-example-import.md -text
+# Level 6 release inputs and generated audits are checksum-bound or byte-checked.
+hsk-level6-0.1.0-sentence-review.md -text
+hsk-level6-0.1.0-sentence-review.tsv -text whitespace=cr-at-eol
+hsk-level6-0.1.0-suggested-replacements.md -text
+hsk-level6-0.1.0-suggested-replacements-review.md -text
+hsk-level6-0.1.0-round2-validation.md -text
+hsk-level6-1.0.0-build.md -text
+hsk-level6-1.0.0-build.json -text
+hsk-level6-1.0.0-example-changes.tsv -text
+hsk-level6-1.0.0-import.json -text
+hsk-level6-1.0.0-fonts.json -text whitespace=cr-at-eol

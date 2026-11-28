@@ -1,0 +1,3 @@
+# Preserve the checksum-bound transcription across platform checkouts.
+syllabus-2025-11.json -text
+release-1.0.0-revisions.json -text

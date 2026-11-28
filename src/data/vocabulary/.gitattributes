@@ -1,0 +1,2 @@
+# Preserve the Level 6 output checksums and one-entry-per-line layout.
+level-6*.json -text

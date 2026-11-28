@@ -10,6 +10,8 @@ export type Example = {
   id: string; simplified: string; tokens: TextToken[]; english: string; notes?: string | null; audio?: AudioAttachment | null;
   pinyinDisplay?: string; source?: SourceRef; style?: 'conversational' | 'written'; register?: string;
   reviewStatus?: string; provenance?: string; linguisticSource?: string;
+  /** Exact handoff evidence for corpus credits and editorial revision history. */
+  sourceReference?: Record<string, unknown>; revision?: Record<string, unknown>; importNormalization?: string;
 };
 export type Category = { id: string; name: string; description?: string };
 export type Entry = {
@@ -30,6 +32,7 @@ export type Entry = {
     exampleImportPolicy?: 'terms_only_preserve_existing';
     posNote: string | null; verificationStatus: string;
     syllabusHeadword?: string; syllabusPosZh?: string;
+    meaningSource?: Record<string, unknown>; classificationStatus?: string;
   };
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };

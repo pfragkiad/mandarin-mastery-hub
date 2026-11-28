@@ -7,6 +7,7 @@ metadata/coverage reports enter the repository; MP3s and ZIPs remain external ar
 import argparse
 from collections import Counter
 import concurrent.futures
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -39,6 +40,16 @@ def fetch(url):
             time.sleep(attempt + 1)
 
 
+def handoff_entry_id(hsk_id, level):
+    # Matches the deterministic UUIDv5 namespace used by scripts/import-hsk-level1.mjs.
+    namespace = bytes.fromhex('6ba7b8119dad11d180b400c04fd430c8')
+    digest = bytearray(hashlib.sha1(namespace + f'mandarin-tutor:hsk3-level{level}:entry:{hsk_id}'.encode()).digest()[:16])
+    digest[6] = (digest[6] & 0x0f) | 0x50
+    digest[8] = (digest[8] & 0x3f) | 0x80
+    hex_str = digest.hex()
+    return f'{hex_str[:8]}-{hex_str[8:12]}-{hex_str[12:16]}-{hex_str[16:20]}-{hex_str[20:]}'
+
+
 def prepare(cache, output):
     cache, output = external(cache), external(output)
     index_raw = (audio.INPUT / 'cmn-caen-tan-index.xml.bz2').read_bytes()
@@ -49,8 +60,15 @@ def prepare(cache, output):
     handoff = audio.read(audio.HANDOFF)
     vocabulary = audio.base.vocabulary_store.read_vocabulary(audio.VOCABULARY)
     entries = [entry for entry in vocabulary['entries'] if entry['hskLevel'] == audio.LEVEL]
-    if len(entries) != audio.SIZE or {(e['hsk_index'], e['simplified'], e['pinyinDisplay']) for e in entries} != {
-            (e['id'], e['headword'], e['pinyin']) for e in handoff['entries']}:
+    if entries:
+        if len(entries) != audio.SIZE or {(e['hsk_index'], e['simplified'], e['pinyinDisplay']) for e in entries} != {
+                (e['id'], e['headword'], e['pinyin']) for e in handoff['entries']}:
+            raise ValueError('Import the exact level handoff before preparing its audio')
+    elif audio.LEVEL == 6 and len(handoff['entries']) == audio.SIZE:
+        entries = [{'id': handoff_entry_id(e['id'], audio.LEVEL), 'hsk_index': e['id'],
+                    'simplified': e['headword'], 'pinyinDisplay': e['pinyin']}
+                   for e in handoff['entries']]
+    else:
         raise ValueError('Import the exact level handoff before preparing its audio')
     tree = json.loads(fetch(f'https://api.github.com/repos/hugolpz/audio-cmn/git/trees/{audio.base.COMMIT}?recursive=1'))
     if tree.get('truncated') or 'tree' not in tree:
@@ -146,7 +164,7 @@ python scripts/prepare-hsk-word-audio.py --level {audio.LEVEL} --cache <external
     report = {'level': audio.LEVEL, 'handoff': manifest['handoff'], 'source': manifest['source'],
               'entries': len(entries), 'counts': counts, 'uniqueClips': len(unique),
               'package': {'file': output.name, 'bytes': output.stat().st_size, 'sha256': audio.sha256(output.read_bytes())},
-              'state': 'Verified ZIP prepared for owner CDN upload; no Level 5 audio attached.',
+              'state': f'Verified ZIP prepared for owner CDN upload; no Level {audio.LEVEL} audio attached.',
               'exclusions': [row for row in rows if row['status'] != 'matched']}
     return report
 

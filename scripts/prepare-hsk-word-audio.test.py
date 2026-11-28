@@ -71,6 +71,28 @@ class AudioPackageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'outside the repository'):
             prepare.external(prepare.audio.ROOT / 'recordings')
 
+    def test_level6_prepares_from_handoff_when_not_yet_in_vocabulary(self):
+        with tempfile.TemporaryDirectory(prefix='hsk-audio-package-l6-') as directory:
+            audio = prepare.audio
+            root, metadata, handoff, _, clip, blob, tree, index = self.fixture(directory)
+            output = root / 'hsk-level-6-audio.zip'
+
+            def fetch(url):
+                return json.dumps(tree).encode() if 'git/trees/' in url else clip
+
+            with patch.multiple(audio, INPUT=metadata, HANDOFF=handoff, MANIFEST=metadata / 'level6-manifest.json', LEVEL=6, SIZE=2), \
+                    patch.object(audio.base, 'source_index', return_value=index), \
+                    patch.object(audio.base.vocabulary_store, 'read_vocabulary', return_value={'entries': []}), \
+                    patch.object(prepare, 'fetch', side_effect=fetch):
+                report = prepare.prepare(root / 'recordings', output)
+
+            self.assertEqual((report['level'], report['entries'], report['counts']['matched'], report['uniqueClips']), (6, 2, 2, 1))
+            self.assertIn('Level 6', report['state'])
+            with zipfile.ZipFile(output) as package:
+                manifest = json.loads(package.read('level6-manifest.json'))
+                self.assertEqual([row['entryId'] for row in manifest['entries']],
+                                 [prepare.handoff_entry_id(2001, 6), prepare.handoff_entry_id(2002, 6)])
+
 
 if __name__ == '__main__':
     unittest.main()

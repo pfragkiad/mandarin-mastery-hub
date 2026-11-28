@@ -14,6 +14,7 @@ Keep source files required only for offline data generation here, grouped by dat
 | [lessons/](lessons/README.md) | Original owner-supplied HSK Level 1 lesson and canonical Core v3.2.0 ZIPs; validated by the lesson/Core import scripts. Never loaded by the app. |
 | [lessons/conversational-mandarin/](lessons/conversational-mandarin/README.md) | The 16 user-provided audio transcripts and the 880-row extraction audit index behind the Conversational Mandarin lessons. Editorial/source material only; never learner data or app input. |
 | [hsk-audio/](hsk-audio/README.md) | Pinned Shtooka metadata and exact Level 2 audio-cmn recording manifest; its recordings are attached as Lovable CDN URLs (the temporary MP3 handoff has been removed). |
+| [hsk-level6/](hsk-level6/README.md) | Exact public November 2025 Level 6 transcription and frozen, checksum-bound revision ledger for the offline [1.0.0 release](../hsk/hsk3_level6_1.0.0.json). Consumed by `scripts/build-hsk-level6-release.py` and `scripts/validate-hsk-level6.mjs`; no runtime import. |
 
 Preserve raw source bytes, encoding, line endings, version information, and provenance: several output identities include SHA-256 hashes of these files. Importer scripts currently live under `scripts/`; this directory contains their inputs.
 

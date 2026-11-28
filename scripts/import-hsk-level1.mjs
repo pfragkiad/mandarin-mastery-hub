@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Adapt the versioned HSK example-pairs handoff to the vocabulary API shape.
- * Shared boundary for the pinned Level 1–5 handoffs; the CLI defaults to Level 1.
+ * Shared boundary for the pinned Level 1–6 handoffs; the CLI defaults to Level 1.
  * Audits by default; --write replaces the selected level's study content.
  * Recorded UUIDs, syllabus identities and audio survive exact ID/headword matches.
  * Pinyin tokenization uses the same fail-closed alignment as sentence rendering.
@@ -41,10 +41,10 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5' };
+  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5', 6: '1.0.0' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
-  const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600 }[level];
-  const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001 }[level], lastId = firstId + count - 1;
+  const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600, 6: 1800 }[level];
+  const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001, 6: 3601 }[level], lastId = firstId + count - 1;
   const source = read(sourcePath), taxonomy = read(topicsPath), original = readVocabulary(vocabularyPath);
   const { topics, subtopics } = taxonomy;
   const data = structuredClone(original);
@@ -77,6 +77,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const sourceRef = id => ({ sourceName: basename(sourcePath), sourceVersion: source.data_version, sourceId: String(id) });
   const inputSha256 = hash(sourcePath);
   const importedAt = new Date().toISOString();
+  const exampleNormalizations = [];
   const topicCategories = topics.map(t => ({ id: identity(`topic:${t.id}`), name: t.label, description: t.description }));
   const categoryMap = new Map(topics.map((t, i) => [t.id, topicCategories[i].id]));
   // Sentence alternatives are accepted only when the same exact two readings are
@@ -94,13 +95,18 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   function tokens(text, pinyin, context) {
     // The handoff's standalone erhua r joins its preceding syllable for alignment only.
     const alignmentPinyin = pinyin.replace(/-/g, ' ').replace(/(\p{L})\s+r(?=[\s\p{P}]|$)/gu, '$1r');
+    // A slash recorded in the Chinese sentence separates literal words (复制/粘贴),
+    // rather than offering alternative readings of a single character.
+    const literalSlashes = (text.match(/\//g) ?? []).length;
+    if (literalSlashes) requireThat(literalSlashes === (alignmentPinyin.match(/\//g) ?? []).length, `Mismatched literal slashes: ${context}`);
     const alternativesPattern = /(?<![\p{L}\p{M}])([\p{L}\p{M}]+)\s*\/\s*([\p{L}\p{M}]+)(?![\p{L}\p{M}])/gu;
-    const alternatives = [...alignmentPinyin.matchAll(alternativesPattern)].map(match => {
+    const alternatives = (literalSlashes ? [] : [...alignmentPinyin.matchAll(alternativesPattern)]).map(match => {
       const glyphs = readingAlternatives.get(`${compactReading(match[1])}/${compactReading(match[2])}`);
       requireThat(glyphs?.size === 1, `Unrecorded or ambiguous reading alternatives: ${context}`);
       return [...glyphs][0];
     });
     const chooseReadings = (selected = -1) => {
+      if (literalSlashes) return alignmentPinyin;
       let index = 0;
       return alignmentPinyin.replace(alternativesPattern, (_raw, first, second) => index++ === selected ? second : first);
     };
@@ -148,7 +154,15 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     requireThat(readings.some(r => compactReading(r) === compactReading(old.pinyinDisplay.split('/')[0])), `Changed lexical reading for ${e.id}; existing audio needs review`);
     if (includeExamples) requireThat(e.examples.length === 2 && e.examples[0].style === 'conversational' && e.examples[1].style === 'written', `Expected two ordered example styles: ${e.id}`);
     // Explicit terms-only imports preserve existing examples; current handoffs import examples by default.
-    const examples = includeExamples ? e.examples.map(ex => {
+    const examples = includeExamples ? e.examples.map(recordedExample => {
+      // One legacy corpus sentence has an invisible leading soft hyphen in both
+      // fields. Bind this import-only normalization to its exact source identity/text.
+      const normalizeSoftHyphen = level === 6 && e.id === 4491 && recordedExample.style === 'written' &&
+        recordedExample.hanzi === '\u00ad很多人学日语是为了看漫画。' &&
+        recordedExample.pinyin === '\u00ad hěn duō rén xué rìyǔ shì wèile kàn mànhuà.';
+      const ex = normalizeSoftHyphen ? { ...recordedExample, hanzi: recordedExample.hanzi.slice(1), pinyin: recordedExample.pinyin.slice(2) } : recordedExample;
+      if (normalizeSoftHyphen) exampleNormalizations.push({ entryId: e.id, style: ex.style,
+        fields: ['hanzi', 'pinyin'], change: 'Removed leading U+00AD soft hyphen; source bytes preserved.' });
       requireThat(ex.hanzi?.trim() && ex.english?.trim() && ex.pinyin?.trim(), `Incomplete example: ${e.id}/${ex.style}`);
       const correction = spacingCorrections[`${level}:${e.id}:${ex.style}`];
       const pinyin = correction && ex.hanzi === correction[0] && ex.pinyin === correction[1] ? correction[2] : ex.pinyin;
@@ -163,6 +177,9 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         audio: previous?.pinyinDisplay === pinyin ? previous.audio ?? null : null,
         source: sourceRef(e.id), style: ex.style, register: ex.register,
         reviewStatus: ex.review_status, provenance: ex.provenance, linguisticSource: ex.linguistic_source,
+        ...(ex.source_reference ? { sourceReference: ex.source_reference } : {}),
+        ...(ex.revision ? { revision: ex.revision } : {}),
+        ...(normalizeSoftHyphen ? { importNormalization: 'Removed leading U+00AD from Chinese and pinyin; source handoff unchanged.' } : {}),
       };
     }) : old.examples;
     const result = {
@@ -181,6 +198,8 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         ...(!includeExamples ? { exampleImportPolicy: 'terms_only_preserve_existing' } : {}),
         ...(e.syllabus_headword != null ? { syllabusHeadword: e.syllabus_headword } : {}),
         ...(e.syllabus_pos_zh != null ? { syllabusPosZh: e.syllabus_pos_zh } : {}),
+        ...(e.meaning_source ? { meaningSource: e.meaning_source } : {}),
+        ...(e.classification_status ? { classificationStatus: e.classification_status } : {}),
       },
     };
     // Importing an unchanged handoff twice must not churn modification timestamps.
@@ -220,6 +239,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     assignedPrimarySubtopics: source.entries.filter(e => e.primary_subtopic_id !== null).length,
     secondaryTopicWords: source.entries.filter(e => e.topic_ids.length > 1).length,
     verification: source.verification,
+    ...(level === 6 ? { exampleNormalizations } : {}),
   };
   return { data, report };
 }

@@ -1,6 +1,6 @@
-# HSK Level 1–5 handoffs
+# HSK Level 1–6 handoffs
 
-These owner-supplied source files retain their original UTF-8 bytes and versioned filenames. All five levels use the shared topic sidecar `hsk3_topics.json`. They are offline inputs read by the importers and compatibility tests, never imported by browser modules. Previous checksum-bound inputs are retained in [archive/](archive/README.md).
+The owner-supplied Level 1–5 source files retain their original UTF-8 bytes and versioned filenames. Level 6 retains the completed 0.1.0 baseline alongside the 1.0.0 release built from accepted reviews and additional requested rewrites. All six levels use the shared topic sidecar `hsk3_topics.json`. These are offline handoffs, never imported by browser modules. Levels 1–6 have import CLIs; Level 6 also has a release builder and standalone validator. Previous checksum-bound inputs are retained in [archive/](archive/README.md).
 
 | File | Purpose and consumers | Producer |
 | --- | --- | --- |
@@ -9,6 +9,8 @@ These owner-supplied source files retain their original UTF-8 bytes and versione
 | [hsk3_level3_1.1.2.json](hsk3_level3_1.1.2.json) | 500 syllabus entries (501–1000), meanings, readings and 1,000 examples; v1.1.2 revises 23 examples across 21 entries. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.2. |
 | [hsk3_level4_1.1.1.json](hsk3_level4_1.1.1.json) | 1,000 syllabus entries (1001–2000) and 2,000 examples; v1.1.1 revises 43 examples across 38 entries. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
 | [hsk3_level5_1.0.5.json](hsk3_level5_1.0.5.json) | 1,600 draft syllabus terms (2001–3600) and 3,200 draft examples; v1.0.5 revises 190 examples and 69 meanings. | Supplied `hsk-example-pairs/1.3.0`, data version 1.0.5. |
+| [hsk3_level6_0.1.0.json](hsk3_level6_0.1.0.json) | Complete 1,800-headword Level 6 draft (3601–5400), with 3,600 examples: one conversational and one written per entry. Checked by `scripts/validate-hsk-level6.mjs`; not imported into application vocabulary. | Owner-requested completion of the first 100 entries; `hsk-example-pairs/1.3.0`, draft data version 0.1.0. |
+| [hsk3_level6_1.0.0.json](hsk3_level6_1.0.0.json) | Current Level 6 release: 1,800 entries and 3,600 examples, with 704 replacements and 17 pinyin-only fixes. Consumed by `scripts/import-hsk-level6.mjs`; imported vocabulary occupies two compact parts. | `scripts/build-hsk-level6-release.py` from the frozen review ledger; `hsk-example-pairs/1.3.0`, data version 1.0.0. |
 | [hsk3_topics.json](hsk3_topics.json) | Versioned shared taxonomy with 22 parent topics and 25 subtopics; all importers require exact agreement with both embedded registries. | Supplied `hsk-topics/2.0.0` sidecar, version 2.0.0. |
 | `.gitattributes` | Disables Git line-ending conversion for current and archived checksum-bound sources. | Maintained alongside the pinned inputs. |
 
@@ -19,6 +21,8 @@ Source SHA-256 values:
 - Level 3: `d482af00f9c6223aad5af2ee73aec1a087602e69ca38ff609206d36d21c4a434`
 - Level 4: `bf7ff1b42c19069f41869e754ad140e1b6110be49b441ae7bfdeaa5583e976c3`
 - Level 5: `cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727`
+- Level 6 v0.1.0: `359d066fbc59138dcc88cdb00cb054bb8c85a64cfb99d2ba7bb912bd8b6cbc47`
+- Level 6 v1.0.0: `60f9241380ca88cae9c506cbe60bbf16f2d11e5093e1872f93834f1f12554a0d`
 - Topics: `d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f`
 
 From the repository root:
@@ -124,3 +128,63 @@ The current release revises 190 example sentences across 166 entries and 69 mean
 The target `src/data/vocabulary/level-5.json` uses the existing compact-per-entry format and is **7,515,284 bytes**, below the strict 10,000,000-byte limit. Both storage writers retain that format for future imports, and the runtime data test guards the size and line count. The raw source is unchanged; the previous v1.0.1 source is archived byte-for-byte. Audio compatibility is checksum-bound to the new handoff after validating every exact ID/headword/reading. See [the import audit](../../reports/hsk-level5-1.0.5-import.json).
 
 The revised examples add 灌 and 骤 beyond prior vocabulary font coverage. Both vocabulary font families include verified public slices for these two exact code points; [the font audit](../../reports/hsk-level5-1.0.5-fonts.json) records the URLs and checksums. No vocabulary text is sent in font requests.
+
+## Level 6 v0.1.0 draft completion
+
+The supplied first 100 entries (3601–3700), including all 200 examples and metadata,
+remain unchanged. The completed file adds IDs 3701–5400 with exact headwords,
+readings, original POS labels and homograph suffixes from the
+[checksum-bound transcription](../data/hsk-level6/README.md). The shared topics,
+subtopics and POS taxonomy remain unchanged; added classifications are drafts.
+
+Each added entry has two distinct examples ordered as `conversational` /
+`neutral_spoken`, then `written` / `plain_written`, with Hanzi, assisted pinyin and
+English. The 3,400 added examples comprise 1,793 newly authored contexts, 188 exact
+Chinese/English examples from earlier HSK handoffs, and 1,419 exact Tatoeba
+Chinese/direct-English pairs. Source examples retain individual attribution and
+licensing; their style labels are editorial selections. Reused sentence pinyin is
+resegmented for this draft and is not claimed as a corpus recording. The added
+1,700 meanings are POS-focused CC-CEDICT adaptations under CC BY-SA 4.0, with exact
+dictionary evidence and its source checksum on every entry.
+
+Run `node scripts/validate-hsk-level6.mjs --source importer/hsk/hsk3_level6_0.1.0.json` from the repository root. It verifies all
+1,800 source tuples, the original 100-entry checksum, taxonomy references, ordered
+example pairs, dictionary evidence and earlier-handoff text, and 5,400 structural
+pinyin alignments. Corpus text, author and direct-link matches were separately
+checked against the pinned local exports. Native language review, contextual
+polyphony/sandhi review and strict HSK vocabulary-boundary certification remain
+outstanding. The official PDF has not been independently retranscribed. This
+completion does not change application vocabulary, audio or earlier-level inputs;
+the Level 1–5 import CLIs still reject Level 6.
+
+## Level 6 v1.0.0 release
+
+The new release incorporates all 69 accepted proposals, including the final-round
+overrides, plus 635 additional contextual rewrites requested by the owner. All
+693 originally flagged examples are replaced. Seventeen further examples receive
+contextual pinyin corrections while retaining their Chinese and English. Every
+entry keeps its exact ID, headword, lexical reading, meaning, POS and taxonomy;
+the 0.1.0 baseline and review files remain unchanged.
+
+New sentences have editorial provenance without inherited corpus IDs or audio.
+The 635 additional rewrites retain a language-review-needed status, distinct from
+the 69 accepted replacements. Structural checks do not certify native language
+review or strict HSK vocabulary boundaries. See the [build report](../../reports/hsk-level6-1.0.0-build.md),
+[before/after change sheet](../../reports/hsk-level6-1.0.0-example-changes.tsv) and
+[frozen revision input guide](../data/hsk-level6/README.md).
+
+From the repository root:
+
+```sh
+python scripts/build-hsk-level6-release.py --write
+python scripts/build-hsk-level6-release.py --check
+node scripts/validate-hsk-level6.mjs
+node scripts/import-hsk-level6.mjs --write
+```
+
+The builder reproduces the release and audit artifacts without network access.
+The validator checks all 5,400 readings, exact lexical preservation, source
+checksums, review coverage and uniqueness of all 3,600 sentences. The
+[application import audit](../../reports/hsk-level6-1.0.0-import.json) records two
+900-entry vocabulary parts (4.87 MB and 5.00 MB), with every entry on its own
+line. Existing levels and recordings remain exact; Level 6 audio is unattached.
