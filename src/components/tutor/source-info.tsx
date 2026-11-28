@@ -22,15 +22,17 @@ export function HintBody({ className, children }: { className?: string | undefin
   return <ul className={`hint-rows ${className ?? ''}`}>{rows.map((row, index) => <li key={index}>{row}</li>)}</ul>;
 }
 
-/** Source/verification metadata, collapsed behind a small button; `inline` places it beside a section label. */
-export function SourceInfo({ className, children, inline = false, variant = 'info', label = 'Source details' }: {
-  className: string; children: ReactNode; inline?: boolean; variant?: 'info' | 'warning'; label?: string;
+/** Source/verification metadata, collapsed behind a small button; `inline` places it beside a section label.
+ *  `align` picks which edge of the trigger the popover hangs from, so a trigger near a card's
+ *  right border (sentence headers) opens inwards instead of overflowing the card. */
+export function SourceInfo({ className, children, inline = false, variant = 'info', label = 'Source details', align = 'start' }: {
+  className: string; children: ReactNode; inline?: boolean; variant?: 'info' | 'warning'; label?: string; align?: 'start' | 'center' | 'end';
 }) {
   const trigger = <PopoverTrigger className="source-info-trigger" aria-label={label} data-variant={variant} title={label}>
     {variant === 'warning' ? <TriangleAlert aria-hidden="true"/> : <Info aria-hidden="true"/>}
   </PopoverTrigger>;
   return <Popover>
     {inline ? trigger : <><p className={`${className} source-info-inline`}>{children}</p>{trigger}</>}
-    <PopoverContent className="source-info-popover" align="start"><HintBody>{children}</HintBody></PopoverContent>
+    <PopoverContent className="source-info-popover" align={align}><HintBody>{children}</HintBody></PopoverContent>
   </Popover>;
 }

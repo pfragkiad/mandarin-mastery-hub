@@ -653,9 +653,6 @@ html[data-display-size='comfortable'] .example-card-meta > .detail-arrow-link sv
 .sentence-section-head > .eyebrow { margin: 0; }
 /* The label row is a div too, so :first-of-type above misses the first example here. */
 .sentence-section > .sentence-section-head + .glyph-usage-example > .sentence { border-top: 0; padding-top: 0; margin-top: 0; }
-/* Editorial note under a recorded sentence: quiet, readable, set off by a thin accent rule. */
-.sentence > .sentence-note { display: block; margin-top: 10px; padding: 6px 0 6px 10px; border-left: 2px solid color-mix(in oklch, var(--primary) 45%, var(--border)); color: var(--muted-foreground); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }
-.sentence-note-label { display: inline-block; margin-right: 6px; color: var(--foreground); font-size: 12px; font-weight: 600; }
 /* Show-more arrow under the first example; the chevron turns when the drawer is open. */
 .more-examples-toggle { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 4px 10px 4px 6px; border-radius: var(--control-radius); color: var(--muted-foreground); font-size: 13px; line-height: 1.4; background: transparent; transition: color .15s ease, background .15s ease; }
 .more-examples-toggle:hover, .more-examples-toggle:focus-visible { color: var(--primary); background: color-mix(in oklch, var(--primary) 12%, transparent); outline: none; }
@@ -2390,10 +2387,6 @@ html[data-display-size='comfortable'] .detail-sheet .kangxi-identity-card .examp
 .detail-sheet .sentence-section[data-sentences-stacked] .glyph-usage-example > .sentence > :is(.sentence-hanzi-row, .sentence-reading) {
   flex-basis: 100%;
   width: 100%;
-}
-.detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-note {
-  flex: 1 0 100%;
-  margin-top: 2px;
 }
 .detail-sheet .sentence-section .more-examples-panel {
   display: grid;

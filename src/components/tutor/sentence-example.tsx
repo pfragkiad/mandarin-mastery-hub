@@ -12,11 +12,13 @@ import { alignSentenceEnding } from '@/lib/data-contract';
 import { alignSentence } from '@/lib/phrase-pinyin-align';
 import { useSyllableInventory } from './use-syllable-inventory';
 import { useSentenceWords } from './use-sentence-words';
+import { SourceInfo } from './source-info';
 
 /**
  * One recorded example sentence: pinyin line with its speaker, the hanzi line
  * (each known character linked to its record), the translation and, when the source
- * records one, its editorial note (`note`).
+ * records one, its editorial note (`note`) collapsed behind the card's shared (i)
+ * trigger instead of a fourth text line.
  *
  * Cross-highlight: hovering (or keyboard-focusing) a hanzi character or a pinyin
  * syllable draws a small border around its counterpart, using alignSentence: one
@@ -74,6 +76,13 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
   // The pinyin line exists only when the reader shows pinyin and the record has one.
   const showPinyinLine = Boolean(preferences.pinyin && pinyin);
 
+  // The source's editorial note stays verbatim (never generated, never trimmed), but it
+  // collapses behind the shared (i) trigger in the card's header row — the same treatment
+  // sentence sources and spelling notes use — so the card body shows only the sentence.
+  const noteInfo = note
+    ? <SourceInfo inline className="detail-footnote" label="About this sentence" align="end">{note}</SourceInfo>
+    : null;
+
   {/* Line order follows the shared sentence pattern: hanzi first, then a row holding
       the pinyin with its speaker and the translation. The row wraps, so the translation
       shares the pinyin line only when it fits; otherwise it takes its own third line. */}
@@ -81,8 +90,9 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
     {/* Source details keep their own header row. The style pill (Conversational/Written)
         rides the pinyin line's far right whenever that line exists — the card has the space
         there — and only falls back to this row when there is no pinyin line to carry it. */}
-    {(sourceDetails || (heading && !showPinyinLine)) && <div className="sentence-card-header">
+    {(sourceDetails || noteInfo || (heading && !showPinyinLine)) && <div className="sentence-card-header">
       {sourceDetails}
+      {noteInfo}
       {heading && !showPinyinLine && <span className="sentence-style-pill">{heading}</span>}
     </div>}
     <div className="sentence-hanzi-row">
@@ -117,8 +127,5 @@ export function SentenceExample({ sentence, pinyin, translation, note, heading =
           from alignSentenceEnding; the recorded text is never rewritten. */}
       {translation && <span className="sentence-meaning"><MeaningText text={pinyin ? alignSentenceEnding(pinyin, translation) : translation} sentence/></span>}
     </span>
-    {/* The source's editorial note for this sentence, shown exactly as recorded (never
-        generated). A div, not a span/p, so the translation keeps its own styling rules. */}
-    {note && <div className="sentence-note"><span className="sentence-note-label">Note</span>{note}</div>}
   </div>;
 }

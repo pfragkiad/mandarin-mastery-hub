@@ -33,7 +33,12 @@ describe('Level 6 imported vocabulary', () => {
       expect(entry.studyMetadata?.meaningSource).toEqual(recorded.meaning_source);
       expect(entry.studyMetadata?.subtopicIds).toEqual(recorded.subtopic_ids);
       expect(entry.contentStatus).toBe('draft');
-      expect(entry.audio).toBeNull();
+      // Word recordings come only from the owner's HSK 6 audio package: an entry either
+      // carries its attached CDN recording or stays unrecorded (never TTS-substituted).
+      if (entry.audio) {
+        expect(entry.audio.recordingKind).toBe('word');
+        expect(entry.audio.url).toMatch(/^\/__l5e\/assets-v1\//);
+      }
       for (const [j, ex] of entry.examples.entries()) {
         const original = recorded.examples[j];
         expect(ex.simplified).toBe(original.hanzi.replace(/^\u00ad/, ''));
@@ -47,6 +52,8 @@ describe('Level 6 imported vocabulary', () => {
       }
     }
     expect(level6.flatMap(e => e.examples)).toHaveLength(3600);
+    // The package's manifest attached exactly 1,313 of the 1,800 Level 6 records.
+    expect(level6.filter(e => e.audio).length).toBe(1313);
     expect(level6.find(e => e.hsk_index === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
   });
 
