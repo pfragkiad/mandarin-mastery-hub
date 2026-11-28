@@ -343,3 +343,4 @@
 
 - [x] Place stroke/radical facts below the variant selector, then Kangxi identity, then Related characters; verified wide/narrow and actual form switching.
 - [x] Hide In a word/In a phrase tabs when both have no recorded examples; retain other available example sections. Verified empty 卤/鹵, recorded 你 examples and 39 tests.
+- [x] Cap Related characters and size Kangxi Identity cards to content; verified left-aligned widths in a widened detail window and fit at 390px with recorded text and corner stamps preserved.

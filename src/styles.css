@@ -1544,6 +1544,7 @@ p.source-note { color: var(--muted-foreground); font-size: 9px; line-height: 1.7
 .radical-form-choice.is-selected { background: var(--secondary); border-color: var(--primary); color: var(--primary); }
 .radical-form-choice.is-traditional strong { color: var(--traditional); }
 /* Related written forms (context-dependent associations) and recorded pair notes. */
+.detail-sheet .related-forms { max-width: min(100%, calc(2 * var(--detail-example-min-width))); }
 .related-form-choice { height: auto; min-height: 100px; }
 .association-notes { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
 .association-note { font-size: 13px; line-height: 1.45; }
@@ -2130,6 +2131,10 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
   border-radius: var(--form-radius);
   background: color-mix(in oklch, var(--secondary) 40%, transparent);
 }
+/* Identity cards hug the recorded reading/meaning rather than stretching across
+   a resized detail sheet; the available width still bounds long translations. */
+.detail-sheet .kangxi-identity-card { width: fit-content; max-width: 100%; min-width: 0; }
+.detail-sheet .kangxi-identity-rows { min-width: 0; justify-items: start; }
 :is(.detail-sheet, .pinyin-characters) .glyph-usage-parents {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
