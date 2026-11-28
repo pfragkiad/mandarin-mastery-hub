@@ -1,5 +1,10 @@
 # Roadmap
 
+## Second supplemental recording batch
+- [ ] Preserve and verify all 79 supplied clips and exact current record identities.
+- [ ] Review the 65 word and 3 character candidates before attaching approved recordings; retain unresolved gaps.
+- [ ] Upload approved clips to the CDN, verify playback and import checks, and deliver `reports/missing-audio-v2-import.json`.
+
 ## Detail neighbour labels at every width
 - [x] Apply the clarified every-width choice, keeping narrow headers bounded.
 - [x] Add exact previous/next Hanzi, sound syllables and tone-group labels using shared card navigation; leave phrases unchanged.
