@@ -1,13 +1,33 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { toTopicContent, buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, type LessonQuestion } from './lessons';
+import { toTopicContent, buildLessonIndex, correctLessonChoices, lessonCategories, lessonCharacterRefs, lessonKindFor, lessonSummaries, lessonsForCharacterRecord, loadLesson, summarizeLesson, syllabusEntryFor, syllabusIndexForReference, type LessonQuestion } from './lessons';
 import { lessonGlyphHintById } from './lesson-hints';
 
 // Rules for the study lessons: kinds come from the explicit schema id, categories only from
 // the shared registry, lesson IDs are unique, and a lesson attaches to a Characters record
 // only through its recorded catalog ID or, without one, its exact headword.
 const cats = [{ id: 'time-frequency-repetition', label: 'Time, Frequency & Repetition', description: '' }];
+
+describe('versioned syllabus references', () => {
+  const moved = { id: 'preserved-word-id', simplified: '电脑', entryKind: 'word', hskVersion: '3.0', hsk_index: 35,
+    studyMetadata: { numberingRevision: { name: 'official-site-1219', previousId: 36 } } };
+
+  it('resolves an immutable lesson reference through its recorded previous ID', () => {
+    const item = { hanzi: '电脑', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 36 }] };
+    const other = { ...moved, id: 'different-word', simplified: '电影', hsk_index: 36,
+      studyMetadata: { numberingRevision: { name: 'official-site-1219', previousId: 35 } } };
+    expect(syllabusEntryFor(item, [other, moved])).toBe(moved);
+    expect(syllabusEntryFor({ ...item, hanzi: '电影' }, [other, moved])).toBeNull();
+    expect(syllabusIndexForReference(moved, 'hsk3-2025')).toBe(36);
+  });
+
+  it('rejects unknown revisions and curricula instead of reusing the current serial', () => {
+    expect(syllabusIndexForReference({ ...moved, studyMetadata: { numberingRevision: { name: 'unrecognized', previousId: 36 } } }, 'hsk3-2025')).toBeNull();
+    expect(syllabusIndexForReference(moved, 'unknown-curriculum')).toBeNull();
+    expect(syllabusIndexForReference({ ...moved, studyMetadata: undefined }, 'hsk3-2025')).toBe(35);
+  });
+});
 const raw = (over: Record<string, unknown> = {}) => ({ schema_version: 'mandarin-character-lesson/2.4.0', lesson_id: 'char-6B21', lesson: { title: 'Talking About Times', categories: ['time-frequency-repetition'], primary_category_id: 'time-frequency-repetition', tags: [] }, metadata: { status: 'reviewed', catalog_character_id: null }, headword: { hanzi: '次', pinyin: 'cì' }, ...over });
 
 describe('lesson kinds', () => {

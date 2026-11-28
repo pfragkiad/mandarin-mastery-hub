@@ -1,0 +1,3796 @@
+{
+  "version": 1,
+  "level": 1,
+  "kind": "preserved_existing_attachments_inventory",
+  "handoff": {
+    "file": "hsk3_level1_1.7.2.json",
+    "sha256": "a73c915ecb87a42e90fc410f49107d1feaef09548fa192ae6a26e0821aa47c10"
+  },
+  "provenance": {
+    "bindings_path": "importer/data/hsk-level1-5-numbering/legacy-bindings.json",
+    "sha256": "b0d53f2f5e2fff3a5065fbf5deb6469e7445edb0c6585e805bf56b0e1960ea5d",
+    "note": "Preserves existing attributed attachments; not a new source-reading or listening certification."
+  },
+  "entries": [
+    {
+      "entryId": "41d48b35-b3b9-4d8c-878f-174bd46a0b65",
+      "hskIndex": 1,
+      "previousHskIndex": 1,
+      "headword": "爱",
+      "reading": "ài",
+      "audio": {
+        "url": "/__l5e/assets-v1/f5d87e9f-67ec-469f-950c-85dceeef95e6/cmn-39c77e6f4428.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2a0c90e7-06ff-4346-bb1a-008b573f523d",
+      "hskIndex": 2,
+      "previousHskIndex": 2,
+      "headword": "八",
+      "reading": "bā",
+      "audio": {
+        "url": "/__l5e/assets-v1/ea618a6e-2a11-46af-8eac-d4218f3e33ae/cmn-e197fe2616a3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "383b3f58-e897-4f6b-8086-f309538e1d3d",
+      "hskIndex": 3,
+      "previousHskIndex": 3,
+      "headword": "爸爸",
+      "reading": "bàba",
+      "audio": {
+        "url": "/__l5e/assets-v1/0dfa9d6a-28c4-4037-a6dc-b174bad70ef4/cmn-784013ff3b45.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c06da4c3-0c8a-42bd-833a-665644ee97ee",
+      "hskIndex": 4,
+      "previousHskIndex": 4,
+      "headword": "吧",
+      "reading": "ba",
+      "audio": {
+        "url": "/__l5e/assets-v1/af5e76e9-3291-422a-9031-dca3e7b45c5a/cmn-5e672cf35336.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1f128597-e64a-4421-998b-3f748bd0dae0",
+      "hskIndex": 5,
+      "previousHskIndex": 5,
+      "headword": "白天",
+      "reading": "báitiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/04b3c0d2-9ea6-43b7-866e-0d076e0ebc11/cmn-9302c992cef6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1ea6fada-c348-47d2-a187-2a8eafc11946",
+      "hskIndex": 6,
+      "previousHskIndex": 6,
+      "headword": "百",
+      "reading": "bǎi",
+      "audio": {
+        "url": "/__l5e/assets-v1/706f3c5c-939e-4d45-adc0-c9a8bb3ad127/cmn-77b74c33b030.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "05277237-d3de-43af-bba7-92d9251ebca5",
+      "hskIndex": 7,
+      "previousHskIndex": 7,
+      "headword": "半",
+      "reading": "bàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/1b62de3c-461b-4040-9640-31580d99b71c/cmn-c4a0e0c53f79.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5145a31f-6ec3-48ec-b325-1ded70240957",
+      "hskIndex": 8,
+      "previousHskIndex": 8,
+      "headword": "包子",
+      "reading": "bāozi",
+      "audio": {
+        "url": "/__l5e/assets-v1/b40e8086-095b-4ade-9a5d-de72c8a64425/cmn-1f64668205e4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "21c0a107-9cf8-41fd-863b-cb2dd7a8bc26",
+      "hskIndex": 9,
+      "previousHskIndex": 9,
+      "headword": "杯子",
+      "reading": "bēizi",
+      "audio": {
+        "url": "/__l5e/assets-v1/b1068fa6-10e5-4b92-be76-f4a3f8e23f36/cmn-8063c48a2d83.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c6086439-02b1-43cf-bcd8-b3211723a755",
+      "hskIndex": 10,
+      "previousHskIndex": 10,
+      "headword": "本",
+      "reading": "běn",
+      "audio": {
+        "url": "/__l5e/assets-v1/9853447b-5054-4923-aa49-9e8b28aa4bb7/cmn-f92acd999109.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a670890b-de8f-470c-87e5-7f792be4bbf6",
+      "hskIndex": 11,
+      "previousHskIndex": 11,
+      "headword": "边",
+      "reading": "biān",
+      "audio": {
+        "url": "/__l5e/assets-v1/ca764d47-23c6-441d-8627-6e26915af98a/cmn-59c142800dcc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "328dcdd5-bfe4-4ede-b7ef-126e6b7d5649",
+      "hskIndex": 12,
+      "previousHskIndex": 12,
+      "headword": "病",
+      "reading": "bìng",
+      "audio": {
+        "url": "/__l5e/assets-v1/55ffc4fa-7c80-42a5-9c6b-00bcb8df30c5/cmn-dd29cdfcc4e5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4f85f3b3-2661-4ce9-8235-1a7ca5775bd9",
+      "hskIndex": 13,
+      "previousHskIndex": 13,
+      "headword": "不",
+      "reading": "bù",
+      "audio": {
+        "url": "/__l5e/assets-v1/a9c761d7-30f3-404d-a86a-9a1b3025b4b6/cmn-5287714d38ca.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+      "hskIndex": 14,
+      "previousHskIndex": 14,
+      "headword": "不客气",
+      "reading": "bú kèqi",
+      "audio": null
+    },
+    {
+      "entryId": "e1c41fde-ff57-4cfd-af6a-632a17896fb4",
+      "hskIndex": 15,
+      "previousHskIndex": 15,
+      "headword": "不要",
+      "reading": "búyào",
+      "audio": {
+        "url": "/__l5e/assets-v1/a9f454fb-5e03-43f1-94bd-4eff699df2a1/cmn-9d9f065a799e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3816c261-7a7b-45a3-b56a-492c642b2d89",
+      "hskIndex": 16,
+      "previousHskIndex": 16,
+      "headword": "菜",
+      "reading": "cài",
+      "audio": {
+        "url": "/__l5e/assets-v1/cd672611-b82c-45d3-a0ee-705a290d9fd4/cmn-10cd51d57521.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "20120884-b882-435a-a6fc-9e87bcbb5350",
+      "hskIndex": 17,
+      "previousHskIndex": 17,
+      "headword": "茶",
+      "reading": "chá",
+      "audio": {
+        "url": "/__l5e/assets-v1/45b4b69b-81f4-406c-b868-e804fb962dfd/cmn-b0edd73cdc2a.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "933e5b36-7fe5-44e9-a25e-6e3b1788bba2",
+      "hskIndex": 18,
+      "previousHskIndex": 18,
+      "headword": "唱",
+      "reading": "chàng",
+      "audio": {
+        "url": "/__l5e/assets-v1/01ff224a-615c-4cf9-9cc8-19ed733339d3/cmn-89175d3c81e1.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "657ca811-f14a-4f37-9e6a-9e7ae33b8c54",
+      "hskIndex": 19,
+      "previousHskIndex": 19,
+      "headword": "超市",
+      "reading": "chāoshì",
+      "audio": null
+    },
+    {
+      "entryId": "94517d4b-2a07-4a89-8edc-4e4b3f7a2473",
+      "hskIndex": 20,
+      "previousHskIndex": 20,
+      "headword": "车",
+      "reading": "chē",
+      "audio": {
+        "url": "/__l5e/assets-v1/93420e3c-79f6-4819-b72f-a58915f3c114/cmn-126310659bb7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "602c051d-b44b-4cfb-b39c-1bd3311c64d5",
+      "hskIndex": 21,
+      "previousHskIndex": 21,
+      "headword": "吃",
+      "reading": "chī",
+      "audio": {
+        "url": "/__l5e/assets-v1/d893a0b8-73a9-44af-a475-eb7b7d56e648/cmn-4912ca8b7fbe.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2ed5d019-02ae-4274-83ce-6b5231110fd2",
+      "hskIndex": 22,
+      "previousHskIndex": 22,
+      "headword": "出租车",
+      "reading": "chūzūchē",
+      "audio": null
+    },
+    {
+      "entryId": "5a765874-829a-42c7-8b3b-abacbe8d7d53",
+      "hskIndex": 23,
+      "previousHskIndex": 23,
+      "headword": "穿",
+      "reading": "chuān",
+      "audio": {
+        "url": "/__l5e/assets-v1/b5db24f0-3c78-464e-b451-a7e5256530c6/cmn-7e2a626bbd13.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "73f39a58-bf9a-40ad-b7f3-0536a32f4b29",
+      "hskIndex": 24,
+      "previousHskIndex": 24,
+      "headword": "打电话",
+      "reading": "dǎ diànhuà",
+      "audio": null
+    },
+    {
+      "entryId": "74879336-702d-4a1a-aaf7-e34817f53728",
+      "hskIndex": 25,
+      "previousHskIndex": 25,
+      "headword": "大",
+      "reading": "dà",
+      "audio": {
+        "url": "/__l5e/assets-v1/241838ac-fc5e-4bb5-9cf8-daccf8c02a94/cmn-7987cff402f8.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ba4c4602-58a2-40cd-8657-2548189c6e3a",
+      "hskIndex": 26,
+      "previousHskIndex": 26,
+      "headword": "大家",
+      "reading": "dàjiā",
+      "audio": {
+        "url": "/__l5e/assets-v1/d8b786ac-4048-4889-b970-8f9bdf2bbcad/cmn-85197217e364.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "507cb0ba-6780-4d06-9011-579155d0a85d",
+      "hskIndex": 27,
+      "previousHskIndex": 27,
+      "headword": "大学",
+      "reading": "dàxué",
+      "audio": {
+        "url": "/__l5e/assets-v1/c4f619f6-44b4-4866-9a51-d62f8554cfae/cmn-ec61d59ae98e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a80f1e77-1665-4731-9884-981b89c92f41",
+      "hskIndex": 28,
+      "previousHskIndex": 28,
+      "headword": "大学生",
+      "reading": "dàxuéshēng",
+      "audio": null
+    },
+    {
+      "entryId": "71284140-9b70-4815-a023-e80be74f92a6",
+      "hskIndex": 29,
+      "previousHskIndex": 29,
+      "headword": "到",
+      "reading": "dào",
+      "audio": {
+        "url": "/__l5e/assets-v1/2178f044-eae2-4ee9-a304-30ad778f84bc/cmn-c25f3891c387.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b9ae6bdc-ce00-41d3-921f-ba24971fea05",
+      "hskIndex": 30,
+      "previousHskIndex": 30,
+      "headword": "的",
+      "reading": "de",
+      "audio": {
+        "url": "/__l5e/assets-v1/c7d12ab7-0c28-4e44-b8eb-3a4cc840e9d6/cmn-6b192093367f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "83d9be17-14cf-44b7-b6e8-522ace096871",
+      "hskIndex": 31,
+      "previousHskIndex": 32,
+      "headword": "弟弟",
+      "reading": "dìdi",
+      "audio": {
+        "url": "/__l5e/assets-v1/09cd175b-6f43-49d8-b0ec-02a7fc130347/cmn-29c988522e1f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a800c6ff-9c7d-4e76-8540-66df22f69f68",
+      "hskIndex": 32,
+      "previousHskIndex": 31,
+      "headword": "第",
+      "reading": "dì",
+      "audio": {
+        "url": "/__l5e/assets-v1/f4098c9b-63b9-4442-a13f-eeb2b89f524d/cmn-128ea49c56e5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "aaf3ed61-665f-4388-bf1f-2607308a96a4",
+      "hskIndex": 33,
+      "previousHskIndex": 33,
+      "headword": "点",
+      "reading": "diǎn",
+      "audio": {
+        "url": "/__l5e/assets-v1/b427e155-f200-4d41-b45a-e6f51e7061d7/cmn-f3ec06a631ad.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "60b97887-c631-4ad4-85ad-27b00daedb37",
+      "hskIndex": 34,
+      "previousHskIndex": 35,
+      "headword": "电话",
+      "reading": "diànhuà",
+      "audio": {
+        "url": "/__l5e/assets-v1/6e0a8086-712d-4dd1-92c0-dafb79c9c30e/cmn-9aac08e420a0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "0f42a458-efda-421b-a4ad-dd6dd87a45f5",
+      "hskIndex": 35,
+      "previousHskIndex": 36,
+      "headword": "电脑",
+      "reading": "diànnǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/5d8640f2-0b55-4be9-b8f4-e9a10bbae0c3/cmn-79f6301250fa.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c21b2287-7ab3-4d85-9278-46f113103acb",
+      "hskIndex": 36,
+      "previousHskIndex": 37,
+      "headword": "电视",
+      "reading": "diànshì",
+      "audio": {
+        "url": "/__l5e/assets-v1/b4fa1d29-f306-4b63-aca5-7e8c025ab43e/cmn-9d0945119989.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f5d31b4f-ee15-47a5-a93a-96cc71554248",
+      "hskIndex": 37,
+      "previousHskIndex": 38,
+      "headword": "电影",
+      "reading": "diànyǐng",
+      "audio": {
+        "url": "/__l5e/assets-v1/00d2eb83-216a-47fa-af9c-65d46be642a9/cmn-e65c74439de9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "01855ec7-b918-4e55-bb86-f6fc66cf4e8c",
+      "hskIndex": 38,
+      "previousHskIndex": 39,
+      "headword": "电影院",
+      "reading": "diànyǐngyuàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/4d409fac-4ac0-4fdd-89d8-5dd2f7b48167/cmn-740681d3de53.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b06249e2-fbd3-4e09-bf5d-26892998a3d9",
+      "hskIndex": 39,
+      "previousHskIndex": 34,
+      "headword": "店",
+      "reading": "diàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/3b7b596f-0ac5-4c73-85e1-e287c460f5cb/cmn-4639178d46bb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1181eb1a-9a7d-41b6-a3e4-c9e20dcdae24",
+      "hskIndex": 40,
+      "previousHskIndex": 40,
+      "headword": "东西",
+      "reading": "dōngxi",
+      "audio": {
+        "url": "/__l5e/assets-v1/84c7f0f7-966b-4116-8381-5bb8a67c7614/cmn-033da4ca6153.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8657991a-e01a-483b-b82f-19b1b616dca0",
+      "hskIndex": 41,
+      "previousHskIndex": 41,
+      "headword": "都",
+      "reading": "dōu",
+      "audio": {
+        "url": "/__l5e/assets-v1/52a655d8-7689-4b4f-90c0-4d770c2d9f69/cmn-d5e71cc10bb3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a48ed278-a2c2-450d-94b4-c82698bb4108",
+      "hskIndex": 42,
+      "previousHskIndex": 42,
+      "headword": "读",
+      "reading": "dú",
+      "audio": {
+        "url": "/__l5e/assets-v1/ddd1cdca-fe1e-4f9b-9e33-0d4e38873014/cmn-27521690c740.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d81e4b25-1fcf-4bd9-87b3-acce496200de",
+      "hskIndex": 43,
+      "previousHskIndex": 43,
+      "headword": "读书",
+      "reading": "dúshū",
+      "audio": {
+        "url": "/__l5e/assets-v1/70fc2c67-5779-4148-9748-64fce94f1063/cmn-60eacd49c333.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5763ee88-8687-426c-bf1f-a05c12974746",
+      "hskIndex": 44,
+      "previousHskIndex": 44,
+      "headword": "对",
+      "reading": "duì",
+      "audio": {
+        "url": "/__l5e/assets-v1/0a2c0bb6-16c2-42d9-8413-8e3c130ad75a/cmn-21381fa260ad.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "63c1deda-9818-4fe8-b2f4-c867f31248d3",
+      "hskIndex": 45,
+      "previousHskIndex": 45,
+      "headword": "对不起",
+      "reading": "duìbuqǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/6c8e680a-6178-40fa-afce-9e02eed4f0c6/cmn-f657c3a81469.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "98ccfa59-2c9b-490a-8543-83409f4dc28b",
+      "hskIndex": 46,
+      "previousHskIndex": 46,
+      "headword": "多",
+      "reading": "duō",
+      "audio": {
+        "url": "/__l5e/assets-v1/70f2aa82-96c3-415a-a326-52d4c036d910/cmn-e8ced1c1a5fe.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c7207cff-36fe-408e-92e5-2de1afde0a5a",
+      "hskIndex": 47,
+      "previousHskIndex": 47,
+      "headword": "多少",
+      "reading": "duōshao",
+      "audio": {
+        "url": "/__l5e/assets-v1/134aba5d-e02f-4041-9ee4-44a22e695206/cmn-71d06d45264c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6f1fdd07-0f3c-498b-9d35-c442ad502355",
+      "hskIndex": 48,
+      "previousHskIndex": 48,
+      "headword": "儿子",
+      "reading": "érzi",
+      "audio": {
+        "url": "/__l5e/assets-v1/e09d5b48-1fbd-4aa5-92a7-c43a83a398d4/cmn-bfc096512a92.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f951069d-7596-4365-8943-5ea14175773d",
+      "hskIndex": 49,
+      "previousHskIndex": 49,
+      "headword": "二",
+      "reading": "èr",
+      "audio": {
+        "url": "/__l5e/assets-v1/a312e263-b51e-4f22-879d-69d770ce7bbb/cmn-15b910e3baa8.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "92cdfb0d-f68e-4674-9021-5079eb59cf44",
+      "hskIndex": 50,
+      "previousHskIndex": 50,
+      "headword": "饭",
+      "reading": "fàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/d0a266a6-26af-4e7e-b3e0-2f3ccf01e9b1/cmn-3cede9b1d9a5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "96ab4342-9677-41a6-b567-757250c0a1f1",
+      "hskIndex": 51,
+      "previousHskIndex": 51,
+      "headword": "饭店",
+      "reading": "fàndiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/62b9bd03-5e6c-4a1e-89a6-47b32ed0ee23/cmn-f8f8805cb022.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5079d30c-6bcc-45cc-ba31-6dc5700d6104",
+      "hskIndex": 52,
+      "previousHskIndex": 52,
+      "headword": "房间",
+      "reading": "fángjiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/7c6dfd08-378a-4dec-9bb3-4608102ab248/cmn-78c03607e5c4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3d960996-e3c3-42e5-990b-77f739e3775f",
+      "hskIndex": 53,
+      "previousHskIndex": 54,
+      "headword": "飞机",
+      "reading": "fēijī",
+      "audio": {
+        "url": "/__l5e/assets-v1/b4a9c2ef-2f7d-405c-9b1c-e3991ec23c47/cmn-2ad06019bb98.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c1d01f89-6de7-418d-8e9e-15d410ad6e4e",
+      "hskIndex": 54,
+      "previousHskIndex": 53,
+      "headword": "非常",
+      "reading": "fēicháng",
+      "audio": {
+        "url": "/__l5e/assets-v1/bc312eb0-f95d-4a0d-94cd-6349118af11d/cmn-8fac3caa2870.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ce69f263-556d-4cb2-bff5-c28b65362009",
+      "hskIndex": 55,
+      "previousHskIndex": 55,
+      "headword": "分",
+      "reading": "fēn",
+      "audio": {
+        "url": "/__l5e/assets-v1/e9412ec4-d6e2-46ee-8f75-f9fdf914d62e/cmn-f87178b14490.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "11163df4-a034-4e85-aa01-88ba71d6eb74",
+      "hskIndex": 56,
+      "previousHskIndex": 56,
+      "headword": "分钟",
+      "reading": "fēnzhōng",
+      "audio": {
+        "url": "/__l5e/assets-v1/770f96ea-975d-431e-8092-24952588b4dc/cmn-d4c4700748a5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6784b97e-cb67-42ee-a7dd-45ad3f668ce5",
+      "hskIndex": 57,
+      "previousHskIndex": 57,
+      "headword": "高兴",
+      "reading": "gāoxìng",
+      "audio": {
+        "url": "/__l5e/assets-v1/9a49fad4-d7a8-4818-8abc-835e96e6cf8e/cmn-4d826d36f64c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b23b1f9f-782f-475e-ac00-cb08e3a33e03",
+      "hskIndex": 58,
+      "previousHskIndex": 59,
+      "headword": "哥哥",
+      "reading": "gēge",
+      "audio": {
+        "url": "/__l5e/assets-v1/793766cc-04f2-4f54-9ecd-d041b5c3417b/cmn-1818560ceff6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a66630e1-9e62-441c-b294-7035352198ad",
+      "hskIndex": 59,
+      "previousHskIndex": 58,
+      "headword": "歌",
+      "reading": "gē",
+      "audio": {
+        "url": "/__l5e/assets-v1/96a0dd64-db3a-4f12-802c-ee97f11a8047/cmn-638fb020bd58.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "60fc1178-66e4-44f3-bfd6-9397efdff366",
+      "hskIndex": 60,
+      "previousHskIndex": 60,
+      "headword": "个",
+      "reading": "gè",
+      "audio": {
+        "url": "/__l5e/assets-v1/05370071-ceef-4de0-830b-c90145298cf5/cmn-b2ca9b50d988.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "afc14ac9-ef28-4051-8619-1fb6ec934ae3",
+      "hskIndex": 61,
+      "previousHskIndex": 61,
+      "headword": "给",
+      "reading": "gěi",
+      "audio": {
+        "url": "/__l5e/assets-v1/5340a58b-92d8-4dab-ad1e-de2c6e35276d/cmn-c34c3bacaf9f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "779b9fae-6033-4f39-9ed4-6df54856643a",
+      "hskIndex": 62,
+      "previousHskIndex": 63,
+      "headword": "工作",
+      "reading": "gōngzuò",
+      "audio": {
+        "url": "/__l5e/assets-v1/5af6dd8c-afe8-41aa-8401-9d7cae086808/cmn-7e11989e5fd3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ec2f08cc-e0f4-42d2-b32b-bd2c96ed3fbe",
+      "hskIndex": 63,
+      "previousHskIndex": 62,
+      "headword": "公司",
+      "reading": "gōngsī",
+      "audio": {
+        "url": "/__l5e/assets-v1/2106e5cb-9602-434d-b924-dbd37cbd43cf/cmn-b39112a23c2d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a83a17a4-6efa-4c7c-bbe3-088fdcc66c38",
+      "hskIndex": 64,
+      "previousHskIndex": 64,
+      "headword": "狗",
+      "reading": "gǒu",
+      "audio": {
+        "url": "/__l5e/assets-v1/241829c8-71cf-461c-98a9-605c95ba1bad/cmn-36f6e73a1a1a.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3a8047d8-ace9-4dc5-97b5-166e97f02a0f",
+      "hskIndex": 65,
+      "previousHskIndex": 65,
+      "headword": "贵",
+      "reading": "guì",
+      "audio": {
+        "url": "/__l5e/assets-v1/5148c562-1028-4f5f-980a-71a3f9ac3992/cmn-c4a7d06da482.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c983b8dd-d417-4405-ac89-8218a6d831f6",
+      "hskIndex": 66,
+      "previousHskIndex": 66,
+      "headword": "国",
+      "reading": "guó",
+      "audio": {
+        "url": "/__l5e/assets-v1/bc30ec01-44e9-47a5-8bd4-8e77aba22439/cmn-f46d62359ba2.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f1edeb1a-b87b-47b7-9da9-69accf1d2eb9",
+      "hskIndex": 67,
+      "previousHskIndex": 67,
+      "headword": "还",
+      "reading": "hái",
+      "audio": {
+        "url": "/__l5e/assets-v1/98dc819c-9845-4174-a9ed-d899133f5316/cmn-5d26e0f8d773.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "462f627f-5663-4990-a525-c57bdd134b4e",
+      "hskIndex": 68,
+      "previousHskIndex": 68,
+      "headword": "孩子",
+      "reading": "háizi",
+      "audio": {
+        "url": "/__l5e/assets-v1/531b50f7-a4af-48ba-acb9-d8ef0fee440f/cmn-117e2e9e5d0b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5c6b65e8-702e-4774-b116-1488e5ed25a0",
+      "hskIndex": 69,
+      "previousHskIndex": 69,
+      "headword": "汉语",
+      "reading": "Hànyǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/02dcf792-718a-4205-86e7-b8f751beb249/cmn-18e9cb97ac98.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "69863c15-806a-4256-9b4d-38bde233262a",
+      "hskIndex": 70,
+      "previousHskIndex": 70,
+      "headword": "汉字",
+      "reading": "Hànzì",
+      "audio": {
+        "url": "/__l5e/assets-v1/5aac126a-230b-42c5-8ac6-9b1c2718ca66/cmn-3fdd8aca125c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "34bcd925-9a55-49c7-a8e4-3cfe88126e14",
+      "hskIndex": 71,
+      "previousHskIndex": 71,
+      "headword": "好",
+      "reading": "hǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/852da9bc-032f-492b-bc0c-a6263fcdbff7/cmn-94a36ee02e1e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ab8eae33-90dc-4b9c-90d9-fcda766994ad",
+      "hskIndex": 72,
+      "previousHskIndex": 72,
+      "headword": "好吃",
+      "reading": "hǎochī",
+      "audio": {
+        "url": "/__l5e/assets-v1/4f5f8d14-ffbc-4c1f-a405-625f27e36cde/cmn-5f767cb27186.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d126c577-b416-432d-96d6-326ad8bf844a",
+      "hskIndex": 73,
+      "previousHskIndex": 73,
+      "headword": "好看",
+      "reading": "hǎokàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/ec521dcb-ff36-4fb4-87c2-b868d792015d/cmn-5b50d0c477e4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "0f6c2b77-3a42-41db-a949-0471411c9ca8",
+      "hskIndex": 74,
+      "previousHskIndex": 74,
+      "headword": "好听",
+      "reading": "hǎotīng",
+      "audio": {
+        "url": "/__l5e/assets-v1/fb15e9b7-3849-419f-8d47-b118d5292294/cmn-b9b490824a49.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d6efe859-da02-4287-bd86-7bf4c546d2db",
+      "hskIndex": 75,
+      "previousHskIndex": 75,
+      "headword": "好玩儿",
+      "reading": "hǎowánr",
+      "audio": {
+        "url": "/__l5e/assets-v1/a9f09902-b65a-487c-bd2c-0802bed67353/cmn-f5a845ff37c7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "aae2f66c-bb5f-463a-8110-1859b3bae12a",
+      "hskIndex": 76,
+      "previousHskIndex": 76,
+      "headword": "号",
+      "reading": "hào",
+      "audio": {
+        "url": "/__l5e/assets-v1/79f96a4f-853d-4e83-aff4-4d4381de7a46/cmn-118ec703cc63.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "495a8982-1df1-44da-acad-1de05d8e0279",
+      "hskIndex": 77,
+      "previousHskIndex": 77,
+      "headword": "喝",
+      "reading": "hē",
+      "audio": {
+        "url": "/__l5e/assets-v1/0903c876-8479-4074-b0af-044942da6007/cmn-15a3aef7f0d9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f3b46df5-3ac5-45ad-a1be-97aa2b799748",
+      "hskIndex": 78,
+      "previousHskIndex": 78,
+      "headword": "和",
+      "reading": "hé",
+      "audio": {
+        "url": "/__l5e/assets-v1/b2a8ab4a-ae90-448f-a973-23ca5c072479/cmn-1741ecbbfea4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4f259002-7418-4112-8ea5-71acc49190df",
+      "hskIndex": 79,
+      "previousHskIndex": 79,
+      "headword": "很",
+      "reading": "hěn",
+      "audio": {
+        "url": "/__l5e/assets-v1/88d6ea63-e181-46e8-bdf3-f4f934b363b0/cmn-cc91fc5139b3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "459b96f1-a7c7-4e9b-85ba-095d6317013b",
+      "hskIndex": 80,
+      "previousHskIndex": 80,
+      "headword": "后",
+      "reading": "hòu",
+      "audio": {
+        "url": "/__l5e/assets-v1/3f240502-4606-48f4-b387-1e8aaf0f077c/cmn-e5d1116578b6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2488dc8d-adb4-48fc-b544-58c8262b5ced",
+      "hskIndex": 81,
+      "previousHskIndex": 81,
+      "headword": "回",
+      "reading": "huí",
+      "audio": {
+        "url": "/__l5e/assets-v1/5d281c72-b92b-43d9-93dc-0feaa3311784/cmn-d41fa468d7bc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "998e52c5-1bac-4a99-b50a-39fc604faf25",
+      "hskIndex": 82,
+      "previousHskIndex": 82,
+      "headword": "会",
+      "reading": "huì",
+      "audio": {
+        "url": "/__l5e/assets-v1/efeeb172-7289-4a55-b382-9b2cb9987551/cmn-4e3bfc9d0751.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c6d79db7-6ce1-4692-b290-89d518caaf09",
+      "hskIndex": 83,
+      "previousHskIndex": 83,
+      "headword": "火车",
+      "reading": "huǒchē",
+      "audio": {
+        "url": "/__l5e/assets-v1/10c04f68-13af-4daf-b621-4ff4f5f0aef8/cmn-bb9224fe254b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "dc0c54d6-8790-4b7f-b0f0-09f3b004c3ec",
+      "hskIndex": 84,
+      "previousHskIndex": 84,
+      "headword": "鸡蛋",
+      "reading": "jīdàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/f7e8ee80-9e29-403b-9762-0658566f4823/cmn-5a77e17f8e23.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7b3a016d-0b0d-41c6-a61f-ddb78bb77f43",
+      "hskIndex": 85,
+      "previousHskIndex": 85,
+      "headword": "几",
+      "reading": "jǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/5f4dd3b9-8713-42cf-83db-8aded5c13c6d/cmn-0134265850e6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d864d89c-8698-48ae-9483-154a6039fdec",
+      "hskIndex": 86,
+      "previousHskIndex": 86,
+      "headword": "家",
+      "reading": "jiā",
+      "audio": {
+        "url": "/__l5e/assets-v1/bd22d77f-6fa4-4c89-9bf8-95d053ab08b7/cmn-a3bddafb432b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1cea09e5-ac83-4759-93db-0273d15b63b3",
+      "hskIndex": 87,
+      "previousHskIndex": 87,
+      "headword": "家人",
+      "reading": "jiārén",
+      "audio": null
+    },
+    {
+      "entryId": "3f415f7d-91b8-433f-92d4-329a10a87b63",
+      "hskIndex": 88,
+      "previousHskIndex": 88,
+      "headword": "见",
+      "reading": "jiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/42b14506-fea0-46c0-b71e-d37bb1dcde17/cmn-b25c08dec786.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "88b4734f-f4d1-4be2-adc7-e9017b14a6a0",
+      "hskIndex": 89,
+      "previousHskIndex": 89,
+      "headword": "件",
+      "reading": "jiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/c681522b-2c88-4ade-a7f1-ecdcdda908e1/cmn-47ca3e7d00d7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b6c7e3f6-261b-4572-9c94-8ae77b00b353",
+      "hskIndex": 90,
+      "previousHskIndex": 90,
+      "headword": "饺子",
+      "reading": "jiǎozi",
+      "audio": {
+        "url": "/__l5e/assets-v1/9dfd89a1-655a-43bf-a233-89c6719f8b49/cmn-f5b5b35202d0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "96f15623-d7bd-45f4-a71c-19b77e0aa0ed",
+      "hskIndex": 91,
+      "previousHskIndex": 91,
+      "headword": "叫",
+      "reading": "jiào",
+      "audio": {
+        "url": "/__l5e/assets-v1/084d3e46-f5b9-492f-a092-1c88d3d99489/cmn-6ffa189ad8bc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5dd0d97e-260a-473e-ad80-873b2fd1bf6a",
+      "hskIndex": 92,
+      "previousHskIndex": 92,
+      "headword": "姐姐",
+      "reading": "jiějie",
+      "audio": {
+        "url": "/__l5e/assets-v1/3ee1d221-7454-487b-a2a0-fe97e90ea94a/cmn-fd419eea8879.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f2850964-e337-4355-876a-f3c4f3c4aa2e",
+      "hskIndex": 93,
+      "previousHskIndex": 93,
+      "headword": "今年",
+      "reading": "jīnnián",
+      "audio": {
+        "url": "/__l5e/assets-v1/c03caf60-9c65-477b-af84-439b437a3b81/cmn-00bacbbbed92.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8a5f1991-088a-41a1-a9cb-d853d5a10a2f",
+      "hskIndex": 94,
+      "previousHskIndex": 94,
+      "headword": "今天",
+      "reading": "jīntiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/cbeb1629-6385-4248-9575-fea7bfcf05ec/cmn-7d1e7a63b3d1.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d61683d2-71df-4f38-ada2-319d83750bb3",
+      "hskIndex": 95,
+      "previousHskIndex": 95,
+      "headword": "九",
+      "reading": "jiǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/c9ef5154-f76f-42db-abac-1638e2f2a2f3/cmn-1344586f2822.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "16ba283f-d85d-4304-9886-d6c78ce79e88",
+      "hskIndex": 96,
+      "previousHskIndex": 96,
+      "headword": "觉得",
+      "reading": "juéde",
+      "audio": {
+        "url": "/__l5e/assets-v1/7cf9ffca-accf-48f5-aff2-1567d9b90581/cmn-0e57579d5377.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3cf02ed3-a1ad-417c-aa51-785b524fe660",
+      "hskIndex": 97,
+      "previousHskIndex": 97,
+      "headword": "开",
+      "reading": "kāi",
+      "audio": {
+        "url": "/__l5e/assets-v1/88544b3b-adb0-4566-98aa-c10eaf1a3238/cmn-d6b6456bddd1.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8ed85f5d-67cb-4bb4-8f1f-18935a4ee3f9",
+      "hskIndex": 98,
+      "previousHskIndex": 98,
+      "headword": "开车",
+      "reading": "kāichē",
+      "audio": null
+    },
+    {
+      "entryId": "f8eea6b9-e73b-4370-93f7-42c35e276023",
+      "hskIndex": 99,
+      "previousHskIndex": 99,
+      "headword": "看",
+      "reading": "kàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/1ee239d5-6a85-4b83-a612-f62096b8921d/cmn-f42c1f642ec7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7304d942-5d57-4748-9950-a0afad5aec11",
+      "hskIndex": 100,
+      "previousHskIndex": 100,
+      "headword": "看病",
+      "reading": "kànbìng",
+      "audio": {
+        "url": "/__l5e/assets-v1/710c7d6d-0343-475e-8254-e3c342904951/cmn-7cf86fd5b469.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7b3d4d42-3245-43d3-9eba-3ec21cfb10dc",
+      "hskIndex": 101,
+      "previousHskIndex": 101,
+      "headword": "看见",
+      "reading": "kànjiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/77b66c46-40de-48dd-809b-8ca5ce996aa0/cmn-1241f667394a.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "68e068b9-cc35-4635-be95-32391ffd8d3a",
+      "hskIndex": 102,
+      "previousHskIndex": 102,
+      "headword": "可以",
+      "reading": "kěyǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/51c7e962-55cd-4d02-9602-e05ed87561ce/cmn-a339e2380c16.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3ca61ca2-3bfd-46a2-b27e-4c66fc2960fd",
+      "hskIndex": 103,
+      "previousHskIndex": 103,
+      "headword": "课",
+      "reading": "kè",
+      "audio": {
+        "url": "/__l5e/assets-v1/639c6a6c-459b-4e78-95f6-68a04e9d794d/cmn-43a9de4123a1.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f3523bc6-496e-4335-b878-4d5ad277e47d",
+      "hskIndex": 104,
+      "previousHskIndex": 104,
+      "headword": "口",
+      "reading": "kǒu",
+      "audio": {
+        "url": "/__l5e/assets-v1/85317f8d-6a63-4c30-96ea-c1ac8e062bfe/cmn-18262f081661.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6f927870-2ac3-4d3d-8455-c95ea373caf5",
+      "hskIndex": 105,
+      "previousHskIndex": 105,
+      "headword": "块",
+      "reading": "kuài",
+      "audio": {
+        "url": "/__l5e/assets-v1/fc8f182f-e31a-4ad1-a0ed-7b46ff764245/cmn-661240acc846.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7b64d5bb-27b6-4f11-a445-1e89c0619773",
+      "hskIndex": 106,
+      "previousHskIndex": 106,
+      "headword": "来",
+      "reading": "lái",
+      "audio": {
+        "url": "/__l5e/assets-v1/67a024b2-5b4d-40b2-b280-bf79b05861db/cmn-aaf0d26cbb55.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a960dc1c-23bc-472e-b07a-9203bca99aa9",
+      "hskIndex": 107,
+      "previousHskIndex": 107,
+      "headword": "老师",
+      "reading": "lǎoshī",
+      "audio": {
+        "url": "/__l5e/assets-v1/be08289f-eb92-42b9-9e98-5fdc99f78d23/cmn-6c689a764797.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4acf54bb-a35e-41cf-8844-51c11d4af89f",
+      "hskIndex": 108,
+      "previousHskIndex": 108,
+      "headword": "了",
+      "reading": "le",
+      "audio": null
+    },
+    {
+      "entryId": "85ad8fec-2226-46af-8135-5c604de96121",
+      "hskIndex": 109,
+      "previousHskIndex": 109,
+      "headword": "冷",
+      "reading": "lěng",
+      "audio": {
+        "url": "/__l5e/assets-v1/8501c03e-134f-41e4-a24e-63ce885908ab/cmn-2d8ddc2927db.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "76038684-5117-4e5c-b406-612a3b34d5a2",
+      "hskIndex": 110,
+      "previousHskIndex": 110,
+      "headword": "里",
+      "reading": "lǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/43fe444f-f07f-48ee-b821-3f1980d0f8b9/cmn-00c95f74dace.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "0cc702da-8d31-4837-84d6-51de8f17f52a",
+      "hskIndex": 111,
+      "previousHskIndex": 111,
+      "headword": "两",
+      "reading": "liǎng",
+      "audio": {
+        "url": "/__l5e/assets-v1/f31a8138-a049-4a96-9cef-a3de3a52aeab/cmn-e73856eec14b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1e09f6f6-66ec-4f9b-84c8-d13cc8b0ddcd",
+      "hskIndex": 112,
+      "previousHskIndex": 112,
+      "headword": "零",
+      "reading": "líng",
+      "audio": {
+        "url": "/__l5e/assets-v1/a6057d02-c276-4a7b-b3f6-a16a9e996f2e/cmn-ed20a0041ee5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "9aa8a182-08de-47b3-8929-5224c2ac456b",
+      "hskIndex": 113,
+      "previousHskIndex": 113,
+      "headword": "六",
+      "reading": "liù",
+      "audio": {
+        "url": "/__l5e/assets-v1/cc7c27d2-f72e-48bc-9693-a88c2ed8b07f/cmn-2176d2a61a59.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "98afb004-d77f-417d-ac03-d0d4e554763f",
+      "hskIndex": 114,
+      "previousHskIndex": 114,
+      "headword": "妈妈",
+      "reading": "māma",
+      "audio": {
+        "url": "/__l5e/assets-v1/57fa1572-db59-4fa1-a8bb-c4f5a2f3dab0/cmn-7c3329713167.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "150f43ba-52b6-4e4d-be24-70c5c75b40e4",
+      "hskIndex": 115,
+      "previousHskIndex": 115,
+      "headword": "吗",
+      "reading": "ma",
+      "audio": {
+        "url": "/__l5e/assets-v1/e0610f8e-adfb-4609-a7eb-178012c3f232/cmn-efb8320d2b52.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "192d88b4-1e87-45cc-8ef0-0e16017fd043",
+      "hskIndex": 116,
+      "previousHskIndex": 116,
+      "headword": "买",
+      "reading": "mǎi",
+      "audio": {
+        "url": "/__l5e/assets-v1/94e174b4-c7ac-4c7d-bb75-cd047b1b6130/cmn-ee144eca29a6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d397434e-0bdb-4a1d-ba69-5e2ac31d1a2b",
+      "hskIndex": 117,
+      "previousHskIndex": 117,
+      "headword": "卖",
+      "reading": "mài",
+      "audio": {
+        "url": "/__l5e/assets-v1/afbe8004-ed40-43e9-8eb8-5854f7487744/cmn-8a4ec6dc924e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f0be9e07-2f7a-40dd-9ff5-72732fba470d",
+      "hskIndex": 118,
+      "previousHskIndex": 118,
+      "headword": "忙",
+      "reading": "máng",
+      "audio": {
+        "url": "/__l5e/assets-v1/9ce2f440-719e-4180-bd34-9b11ce53df5d/cmn-6c90b55ff6ab.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "dba0d8e6-eb19-464b-9c76-32e826e209a2",
+      "hskIndex": 119,
+      "previousHskIndex": 119,
+      "headword": "猫",
+      "reading": "māo",
+      "audio": {
+        "url": "/__l5e/assets-v1/771c3d8a-bc89-4967-bda8-1f124fe3fb2a/cmn-1dfca6b20458.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "aa34fd11-179c-4ad4-8abf-8e0fe8df1a3f",
+      "hskIndex": 120,
+      "previousHskIndex": 120,
+      "headword": "没关系",
+      "reading": "méi guānxi",
+      "audio": {
+        "url": "/__l5e/assets-v1/d72f0eea-1cda-4258-8fde-f6de651c593e/cmn-df6cb8a8be01.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2fe19023-ac74-4b8d-9561-ae8d3d6f4545",
+      "hskIndex": 121,
+      "previousHskIndex": 121,
+      "headword": "没事",
+      "reading": "méishì",
+      "audio": null
+    },
+    {
+      "entryId": "344de6da-967d-4b73-be0e-4c50afb60628",
+      "hskIndex": 122,
+      "previousHskIndex": 122,
+      "headword": "没有",
+      "reading": "méiyǒu",
+      "audio": {
+        "url": "/__l5e/assets-v1/4121f515-c4ab-4fe6-94e4-e80087e0909f/cmn-f755587542d7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "016279a0-6b8b-467d-9bdf-d1776e74839a",
+      "hskIndex": 123,
+      "previousHskIndex": 123,
+      "headword": "妹妹",
+      "reading": "mèimei",
+      "audio": {
+        "url": "/__l5e/assets-v1/c7ae89d5-e2e9-438d-93df-4ea9d096d80f/cmn-c2601d0ae9f5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a1467d3c-3d2a-4323-ace1-e1e9fce3f586",
+      "hskIndex": 124,
+      "previousHskIndex": 124,
+      "headword": "们",
+      "reading": "men",
+      "audio": {
+        "url": "/__l5e/assets-v1/a5d30d73-9f40-4f2e-9cbf-aea7816fb5d2/cmn-6cd0858600a9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7b2d7d12-09c3-4373-8704-4092e1ef82a9",
+      "hskIndex": 125,
+      "previousHskIndex": 125,
+      "headword": "米饭",
+      "reading": "mǐfàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/9af525db-6608-435b-a771-c01d6c5f506e/cmn-2866d4394430.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d954da9d-8810-4ae8-ba37-5de5185482a2",
+      "hskIndex": 126,
+      "previousHskIndex": 126,
+      "headword": "面包",
+      "reading": "miànbāo",
+      "audio": {
+        "url": "/__l5e/assets-v1/87cd96f2-3ba5-4323-bfbe-0b4ff7c053c3/cmn-a7fc3ba91b6d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "9155660b-de1b-48ab-b42f-d958878e9706",
+      "hskIndex": 127,
+      "previousHskIndex": 127,
+      "headword": "面条儿",
+      "reading": "miàntiáor",
+      "audio": {
+        "url": "/__l5e/assets-v1/ca7d75f8-cb7c-419a-8849-f536c1310c1d/cmn-0cde6fff20f8.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f6b30a45-5503-472c-80a2-fb224c883e6c",
+      "hskIndex": 128,
+      "previousHskIndex": 130,
+      "headword": "名字",
+      "reading": "míngzi",
+      "audio": {
+        "url": "/__l5e/assets-v1/8d76651c-cf06-4a73-8c6c-becdb6e3069e/cmn-4e76158d315c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f83303a5-3556-43c2-8b75-6870aaa1f31e",
+      "hskIndex": 129,
+      "previousHskIndex": 128,
+      "headword": "明年",
+      "reading": "míngnián",
+      "audio": {
+        "url": "/__l5e/assets-v1/8a95d298-3f74-4a04-8854-b46e3d14d5c4/cmn-92514b32fb46.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "9c87270a-5199-455b-8ac3-1541010ca2d7",
+      "hskIndex": 130,
+      "previousHskIndex": 129,
+      "headword": "明天",
+      "reading": "míngtiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/603e131f-be04-4f8d-b297-a956658c9adf/cmn-ccd7c164df58.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ed0d9145-b21f-4046-8a0f-a06187f9d3c0",
+      "hskIndex": 131,
+      "previousHskIndex": 131,
+      "headword": "哪",
+      "reading": "nǎ",
+      "audio": {
+        "url": "/__l5e/assets-v1/1a8844e7-a43b-4f39-a203-35eff4e79a42/cmn-dd32c3731346.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5a0aaee5-d6c9-45b7-9115-8c2dfdb55b99",
+      "hskIndex": 132,
+      "previousHskIndex": 132,
+      "headword": "哪个",
+      "reading": "nǎge",
+      "audio": {
+        "url": "/__l5e/assets-v1/4e5537f0-be62-4d66-9b3d-2f5a211d0cec/cmn-da55f9e93321.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ccd071ad-4a1c-4541-a7a4-5d6aad9eb372",
+      "hskIndex": 133,
+      "previousHskIndex": 133,
+      "headword": "哪里",
+      "reading": "nǎlǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/3c3b9d43-ae41-4153-a873-bf505ec10682/cmn-21aa6170b294.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "abb62726-cb42-41ec-b903-2139b4b9f5a7",
+      "hskIndex": 134,
+      "previousHskIndex": 134,
+      "headword": "哪儿",
+      "reading": "nǎr",
+      "audio": null
+    },
+    {
+      "entryId": "90bebc3c-6177-480f-9b4d-e55774a1def9",
+      "hskIndex": 135,
+      "previousHskIndex": 135,
+      "headword": "哪些",
+      "reading": "nǎxiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/43fa0007-cd05-4570-ae28-ee54d74cf3f6/cmn-693eb116a04c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "06ba664a-aa7d-4847-9494-e44a612c5397",
+      "hskIndex": 136,
+      "previousHskIndex": 136,
+      "headword": "那",
+      "reading": "nà",
+      "audio": {
+        "url": "/__l5e/assets-v1/e838bb5c-1a52-4026-82b5-b0f0359ac022/cmn-19a428807749.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "cbd2397f-9702-49f6-8986-92eac3660d47",
+      "hskIndex": 137,
+      "previousHskIndex": 137,
+      "headword": "那边",
+      "reading": "nàbiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/9f2aee9a-b7d5-466e-8287-0f26d7832f0d/cmn-7a41a9bfa82f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c7fbb288-c1b8-44fc-898b-1f23138d4318",
+      "hskIndex": 138,
+      "previousHskIndex": 138,
+      "headword": "那个",
+      "reading": "nàge",
+      "audio": {
+        "url": "/__l5e/assets-v1/fdcc912d-2264-4f65-8c1f-645a81892622/cmn-15b0032dedd1.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2bfd4583-6c98-43f6-9968-2b0eb3f27089",
+      "hskIndex": 139,
+      "previousHskIndex": 139,
+      "headword": "那里",
+      "reading": "nàlǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/cea55078-d179-420e-9cf8-082c6340c8b0/cmn-e0e372847e45.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "cc10af09-acce-403f-80db-5d8feb2ccdae",
+      "hskIndex": 140,
+      "previousHskIndex": 140,
+      "headword": "那儿",
+      "reading": "nàr",
+      "audio": null
+    },
+    {
+      "entryId": "9f5124ae-43d0-4d6e-9797-2ec7d7e83c51",
+      "hskIndex": 141,
+      "previousHskIndex": 141,
+      "headword": "那些",
+      "reading": "nàxiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/ae810933-b96f-4573-9e53-149244837f11/cmn-5b8854925679.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a6438cff-5853-455f-865a-057a82a24fd8",
+      "hskIndex": 142,
+      "previousHskIndex": 142,
+      "headword": "男",
+      "reading": "nán",
+      "audio": {
+        "url": "/__l5e/assets-v1/a0f72cb1-b534-42ba-8289-0b12a968d267/cmn-c32a44649dbe.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1d15164e-2d52-45a9-97d6-5e238b7f8e03",
+      "hskIndex": 143,
+      "previousHskIndex": 143,
+      "headword": "男朋友",
+      "reading": "nánpéngyou",
+      "audio": null
+    },
+    {
+      "entryId": "80b55e5a-78b0-46df-b319-82c201292838",
+      "hskIndex": 144,
+      "previousHskIndex": 144,
+      "headword": "呢",
+      "reading": "ne",
+      "audio": {
+        "url": "/__l5e/assets-v1/34eb9036-7ec2-4e05-a516-d50ddea3a514/cmn-deeff7093f30.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5b200980-bd74-4875-9a3a-b93abdf3d64d",
+      "hskIndex": 145,
+      "previousHskIndex": 145,
+      "headword": "能",
+      "reading": "néng",
+      "audio": {
+        "url": "/__l5e/assets-v1/bb2fc633-b3e2-44f2-9a16-c44c6f8e6387/cmn-3dbac320250e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b8a2c1ac-66c9-424f-bb24-8a691784f6af",
+      "hskIndex": 146,
+      "previousHskIndex": 146,
+      "headword": "你",
+      "reading": "nǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/a4c12c11-0d5a-425f-af20-e56eb1a8c4fb/cmn-3dcf6615eb01.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+      "hskIndex": 147,
+      "previousHskIndex": 147,
+      "headword": "你好",
+      "reading": "nǐ hǎo",
+      "audio": null
+    },
+    {
+      "entryId": "92638d10-a7cd-450b-af28-d7f911b472f1",
+      "hskIndex": 148,
+      "previousHskIndex": 148,
+      "headword": "你们",
+      "reading": "nǐmen",
+      "audio": {
+        "url": "/__l5e/assets-v1/99f433d9-d319-4b7b-8a2f-f55d106754c1/cmn-ab7766d11400.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "99d733f9-235a-46dd-bd6f-33bb5fd21778",
+      "hskIndex": 149,
+      "previousHskIndex": 149,
+      "headword": "年",
+      "reading": "nián",
+      "audio": {
+        "url": "/__l5e/assets-v1/9b00cc97-d15e-4deb-988a-4b5d34b48a3a/cmn-7fcb3ba25f5c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4fc695bf-a55c-4231-a9da-0db43af57d48",
+      "hskIndex": 150,
+      "previousHskIndex": 150,
+      "headword": "您",
+      "reading": "nín",
+      "audio": {
+        "url": "/__l5e/assets-v1/da7fc646-1eb7-45f7-a0c5-3da2d9ed9346/cmn-4205d79c5994.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ca6f3d0f-c4d9-486f-8b82-b9d2af1722aa",
+      "hskIndex": 151,
+      "previousHskIndex": 151,
+      "headword": "牛奶",
+      "reading": "niúnǎi",
+      "audio": {
+        "url": "/__l5e/assets-v1/02d190ac-d744-46b8-bbeb-c2b612935071/cmn-0b5ca74fd9cd.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c5952d57-29b7-4ba0-9157-ff7d2304361a",
+      "hskIndex": 152,
+      "previousHskIndex": 152,
+      "headword": "女",
+      "reading": "nǚ",
+      "audio": {
+        "url": "/__l5e/assets-v1/4e1c09dc-2747-41fa-90a4-09f20deec6fb/cmn-e257b755d36b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c20c9fab-0902-4949-95b7-4fa81f1bb7b0",
+      "hskIndex": 153,
+      "previousHskIndex": 153,
+      "headword": "女儿",
+      "reading": "nǚ'ér",
+      "audio": {
+        "url": "/__l5e/assets-v1/d6f1790d-8714-4ba5-9d57-ddd43172fe86/cmn-72a191fc22a0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "84b74d20-471f-4137-87a3-aae850f5c8d0",
+      "hskIndex": 154,
+      "previousHskIndex": 154,
+      "headword": "女朋友",
+      "reading": "nǚpéngyou",
+      "audio": null
+    },
+    {
+      "entryId": "75efc1cb-2014-4825-9aee-05571d15635d",
+      "hskIndex": 155,
+      "previousHskIndex": 155,
+      "headword": "女士",
+      "reading": "nǚshì",
+      "audio": {
+        "url": "/__l5e/assets-v1/a173e07d-b2c1-4263-9912-6697d94b0268/cmn-b42c445c40b6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "48b9494d-5882-4161-ad8c-ad1224347af9",
+      "hskIndex": 156,
+      "previousHskIndex": 156,
+      "headword": "朋友",
+      "reading": "péngyou",
+      "audio": {
+        "url": "/__l5e/assets-v1/2b484ac9-fc2a-4168-af1c-156a83bacfb8/cmn-8b991442f12d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2a527f4d-3ae7-4004-a82b-b3f7b4bccf23",
+      "hskIndex": 157,
+      "previousHskIndex": 157,
+      "headword": "便宜",
+      "reading": "piányi",
+      "audio": {
+        "url": "/__l5e/assets-v1/d5aca7e5-d074-41e3-8be2-f9640df894da/cmn-2cbb4346cd12.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "fda3d980-019d-4cbe-93a8-2599bafa5891",
+      "hskIndex": 158,
+      "previousHskIndex": 158,
+      "headword": "漂亮",
+      "reading": "piàoliang",
+      "audio": {
+        "url": "/__l5e/assets-v1/3fc8dde1-2e5f-4c26-a42d-a568f956e639/cmn-41a058048537.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e042e8de-f355-4606-8307-0564dcd396f0",
+      "hskIndex": 159,
+      "previousHskIndex": 159,
+      "headword": "苹果",
+      "reading": "píngguǒ",
+      "audio": {
+        "url": "/__l5e/assets-v1/e433814e-88f5-4e90-9954-c5801c3ed23d/cmn-75ed77db6548.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "97690f27-8156-41e9-80da-b9fc41d2a2a2",
+      "hskIndex": 160,
+      "previousHskIndex": 160,
+      "headword": "七",
+      "reading": "qī",
+      "audio": {
+        "url": "/__l5e/assets-v1/be01d0f9-7a9b-41a7-8b20-f402b9fd38be/cmn-f76f67f0fd4b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "7051b512-cc07-4dd9-a3da-6d8346d65b89",
+      "hskIndex": 161,
+      "previousHskIndex": 161,
+      "headword": "起床",
+      "reading": "qǐchuáng",
+      "audio": {
+        "url": "/__l5e/assets-v1/68aef4f0-bd8a-4657-b2fe-3c1afe6c4914/cmn-93ccb3ecc3bc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "93e8a8bd-cd90-4708-a6de-461967e4ac2b",
+      "hskIndex": 162,
+      "previousHskIndex": 162,
+      "headword": "千",
+      "reading": "qiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/d04f28e4-ac74-4488-9b6a-bb5e2672170b/cmn-e748e32e301d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b6df9aa4-abba-4a42-8bc7-f048ad7a6559",
+      "hskIndex": 163,
+      "previousHskIndex": 163,
+      "headword": "前",
+      "reading": "qián",
+      "audio": {
+        "url": "/__l5e/assets-v1/1fbaa911-91f6-4641-841d-bad347ec6397/cmn-ae6b39a6cd19.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "80ea1734-4140-4f88-a6f7-648cdf4c2e31",
+      "hskIndex": 164,
+      "previousHskIndex": 164,
+      "headword": "钱",
+      "reading": "qián",
+      "audio": {
+        "url": "/__l5e/assets-v1/ab5168d2-4eba-4df3-b4f4-4927acfa8302/cmn-839a3bc486a3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "373f987c-77f7-4381-807a-a3b891ab61c6",
+      "hskIndex": 165,
+      "previousHskIndex": 165,
+      "headword": "请",
+      "reading": "qǐng",
+      "audio": {
+        "url": "/__l5e/assets-v1/6c0f3c17-f952-424d-a1c9-7577ebfdc298/cmn-a4be13a86ce9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b4abbad4-22dc-4815-bded-b7ee7aac1dbb",
+      "hskIndex": 166,
+      "previousHskIndex": 166,
+      "headword": "请问",
+      "reading": "qǐngwèn",
+      "audio": {
+        "url": "/__l5e/assets-v1/760dda46-04d9-4cf6-a242-a6677a45fed5/cmn-68f486239e14.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "68b2a8d7-d128-42b0-9d47-afaf93dcb547",
+      "hskIndex": 167,
+      "previousHskIndex": 167,
+      "headword": "去",
+      "reading": "qù",
+      "audio": {
+        "url": "/__l5e/assets-v1/46c7df20-79bd-4010-a283-93a1e5d50773/cmn-3ea6be6a237f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "df4cb9f2-ff53-41a2-9b0a-8a91912010da",
+      "hskIndex": 168,
+      "previousHskIndex": 168,
+      "headword": "去年",
+      "reading": "qùnián",
+      "audio": {
+        "url": "/__l5e/assets-v1/f7f1b8cf-5697-4875-ae2c-2285707025ac/cmn-3937ae48b571.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "49dea630-6db2-4f4e-9f80-521a3358285a",
+      "hskIndex": 169,
+      "previousHskIndex": 169,
+      "headword": "热",
+      "reading": "rè",
+      "audio": {
+        "url": "/__l5e/assets-v1/2a2541b5-3a83-47ae-93cb-21caf6f7ed5a/cmn-05d6d615772e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e98c4817-4069-4fc6-984a-7386f04d857b",
+      "hskIndex": 170,
+      "previousHskIndex": 170,
+      "headword": "人",
+      "reading": "rén",
+      "audio": {
+        "url": "/__l5e/assets-v1/21183b18-056e-4632-8d68-af658f9bc6e1/cmn-b33a44d856e7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "cde22d92-e185-4c3e-b14c-bb9574928dfe",
+      "hskIndex": 171,
+      "previousHskIndex": 171,
+      "headword": "认识",
+      "reading": "rènshi",
+      "audio": {
+        "url": "/__l5e/assets-v1/1d43ff8d-8e4e-49a7-ac8c-4fb39d3e39d7/cmn-4cec67eac2df.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3fb7e4ce-faf4-45b3-8f69-d728fdcae237",
+      "hskIndex": 172,
+      "previousHskIndex": 172,
+      "headword": "日",
+      "reading": "rì",
+      "audio": {
+        "url": "/__l5e/assets-v1/6bdafd48-fc77-4033-975e-c24b58a9e5ef/cmn-fe1021477e4f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ff829961-99a7-46b2-8424-9befce741bb5",
+      "hskIndex": 173,
+      "previousHskIndex": 173,
+      "headword": "三",
+      "reading": "sān",
+      "audio": {
+        "url": "/__l5e/assets-v1/f8ee07a2-5393-4cd2-8c35-c06de2dcd61f/cmn-741eceffe3fb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2166bd5e-8b80-4df6-abd9-e571210abdb3",
+      "hskIndex": 174,
+      "previousHskIndex": 174,
+      "headword": "商店",
+      "reading": "shāngdiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/73d3b769-c06d-48b1-aff9-0f9152d9b922/cmn-fab026c3bc96.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "59ecd964-5775-417b-8275-d7274a22e45c",
+      "hskIndex": 175,
+      "previousHskIndex": 175,
+      "headword": "上",
+      "reading": "shàng",
+      "audio": {
+        "url": "/__l5e/assets-v1/a089c16b-9d0a-46e4-8793-808df9f92a1e/cmn-51b8556e70b0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e557bdb3-8665-421d-a487-993061ac490f",
+      "hskIndex": 176,
+      "previousHskIndex": 176,
+      "headword": "上班",
+      "reading": "shàngbān",
+      "audio": {
+        "url": "/__l5e/assets-v1/b247a910-2b8c-48bc-9a97-c1ea4a8d09b3/cmn-e1f6f5676cf4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3655f86a-1242-42e9-8f2c-109bc29bafdd",
+      "hskIndex": 177,
+      "previousHskIndex": 177,
+      "headword": "上课",
+      "reading": "shàngkè",
+      "audio": {
+        "url": "/__l5e/assets-v1/cb04663a-2565-4cd8-b9c5-e490475c158d/cmn-efa89f00102e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "33bbe312-bdd9-4b08-8ffd-f58b3b384c7a",
+      "hskIndex": 178,
+      "previousHskIndex": 178,
+      "headword": "上午",
+      "reading": "shàngwǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/87cc1de7-4d19-4da1-8a1f-c500d8107346/cmn-f578ef413789.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "409ed1e2-2b22-4b11-a9f3-f12bde0e07d7",
+      "hskIndex": 179,
+      "previousHskIndex": 179,
+      "headword": "上学",
+      "reading": "shàngxué",
+      "audio": {
+        "url": "/__l5e/assets-v1/f2e72e27-4d66-4cce-8ea7-6d96b70d8f68/cmn-69264aa0c93d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "28168fd8-41fa-4b70-826a-6c551f9b61a2",
+      "hskIndex": 180,
+      "previousHskIndex": 180,
+      "headword": "少",
+      "reading": "shǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/4f883324-0db6-46c2-8bc3-806714c1dac4/cmn-c829554d8ccc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e14e979e-4882-4b9b-af5a-e9895ba09048",
+      "hskIndex": 181,
+      "previousHskIndex": 181,
+      "headword": "谁",
+      "reading": "shéi / shuí",
+      "audio": {
+        "url": "/__l5e/assets-v1/04b2b469-31b5-4b53-aaaf-f382f8481411/cmn-808cfdb76fb0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4f004639-fc92-4c35-bede-75eb807dd186",
+      "hskIndex": 182,
+      "previousHskIndex": 182,
+      "headword": "什么",
+      "reading": "shénme",
+      "audio": {
+        "url": "/__l5e/assets-v1/25a545aa-3b05-4bf1-9aa9-6497321e079c/cmn-5805c3978d83.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "227374fb-3ebd-4a80-a2ec-24da37897677",
+      "hskIndex": 183,
+      "previousHskIndex": 183,
+      "headword": "生病",
+      "reading": "shēngbìng",
+      "audio": {
+        "url": "/__l5e/assets-v1/d5c6ac34-232e-4e49-8b5c-2d33246246fd/cmn-01428b0a32fb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a125706b-debe-4ea3-bc6c-aa485a98738a",
+      "hskIndex": 184,
+      "previousHskIndex": 184,
+      "headword": "十",
+      "reading": "shí",
+      "audio": {
+        "url": "/__l5e/assets-v1/b388adc8-37b3-402e-8626-90b2eecb3500/cmn-2edcf8d04e9d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2798dad4-537f-4b0d-941f-c1c4b60b936d",
+      "hskIndex": 185,
+      "previousHskIndex": 185,
+      "headword": "时候",
+      "reading": "shíhou",
+      "audio": {
+        "url": "/__l5e/assets-v1/2d5348a4-d28f-4592-9adc-64b4ef5fab0c/cmn-c7e7206dca7b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ef6a19e4-e53c-4789-b461-0b879adf3109",
+      "hskIndex": 186,
+      "previousHskIndex": 186,
+      "headword": "时间",
+      "reading": "shíjiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/c7c78b5f-8071-4c22-bd2f-698d05c38c86/cmn-f218648e6979.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6980b66d-5b6d-4d09-b1f9-e09332542db7",
+      "hskIndex": 187,
+      "previousHskIndex": 187,
+      "headword": "事",
+      "reading": "shì",
+      "audio": {
+        "url": "/__l5e/assets-v1/894ff780-a9e3-48db-b8b5-eaba42ffd452/cmn-90f33e8c533e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "cd93eabd-f367-4967-965d-515344db1fb9",
+      "hskIndex": 188,
+      "previousHskIndex": 188,
+      "headword": "是",
+      "reading": "shì",
+      "audio": {
+        "url": "/__l5e/assets-v1/32ddb17d-48f3-4902-9f40-e11ddb442d6d/cmn-f453454aa9e4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2a832bcc-5e97-4e8b-8c6d-24ff9971abc7",
+      "hskIndex": 189,
+      "previousHskIndex": 189,
+      "headword": "手机",
+      "reading": "shǒujī",
+      "audio": null
+    },
+    {
+      "entryId": "84f4d67e-a081-4c28-bb87-2dcf8f9e90bd",
+      "hskIndex": 190,
+      "previousHskIndex": 190,
+      "headword": "书",
+      "reading": "shū",
+      "audio": {
+        "url": "/__l5e/assets-v1/d88394b4-477d-4c53-8483-c7da96dd2d22/cmn-39b5a5d4bf87.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2348f73c-7353-419a-b3cf-01878943c850",
+      "hskIndex": 191,
+      "previousHskIndex": 191,
+      "headword": "书店",
+      "reading": "shūdiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/e4ccf762-d9d5-4b2c-921d-78d374a4c6cf/cmn-7b3d062437c3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "241420f7-ef96-46df-a77d-8fdd663d0a09",
+      "hskIndex": 192,
+      "previousHskIndex": 192,
+      "headword": "水",
+      "reading": "shuǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/c80f8e96-d0d5-4c4f-a394-cf01f6977cb5/cmn-cc9afbd8c219.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d9ee3408-28f7-4028-a515-1009fa23ffbd",
+      "hskIndex": 193,
+      "previousHskIndex": 193,
+      "headword": "水果",
+      "reading": "shuǐguǒ",
+      "audio": {
+        "url": "/__l5e/assets-v1/2aca1b5a-ab68-44e1-bdf0-10e170dc41fa/cmn-9584d2c00189.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8b91f898-803e-4e5a-8e47-92c0c74762e0",
+      "hskIndex": 194,
+      "previousHskIndex": 194,
+      "headword": "睡",
+      "reading": "shuì",
+      "audio": {
+        "url": "/__l5e/assets-v1/52e75018-cb72-4483-a7bf-4833ec730263/cmn-a7b9a136a76f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "3a9c51b7-10a2-4863-959f-64a2b7e0e1f0",
+      "hskIndex": 195,
+      "previousHskIndex": 195,
+      "headword": "睡觉",
+      "reading": "shuìjiào",
+      "audio": {
+        "url": "/__l5e/assets-v1/fb3a1a91-8cac-4cef-b9d3-ac55078ca958/cmn-b1e749ac0c95.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "95ed9415-79ae-4f7b-a53e-d00cabfbf783",
+      "hskIndex": 196,
+      "previousHskIndex": 196,
+      "headword": "说",
+      "reading": "shuō",
+      "audio": {
+        "url": "/__l5e/assets-v1/e40de12e-d166-4141-85fe-59cd7edcd2ac/cmn-98fe4c40be8b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4ceaeb0b-8fdc-453e-a1fd-c88c7555bb4f",
+      "hskIndex": 197,
+      "previousHskIndex": 197,
+      "headword": "说话",
+      "reading": "shuōhuà",
+      "audio": null
+    },
+    {
+      "entryId": "e8139835-74d6-4b46-9458-2b70930a3c16",
+      "hskIndex": 198,
+      "previousHskIndex": 198,
+      "headword": "四",
+      "reading": "sì",
+      "audio": {
+        "url": "/__l5e/assets-v1/e85223ea-b8f8-41eb-a317-0a759651d435/cmn-bea1a8924803.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4a98ef4d-6bc0-4a1e-b953-cd3a2bfee5d2",
+      "hskIndex": 199,
+      "previousHskIndex": 199,
+      "headword": "岁",
+      "reading": "suì",
+      "audio": {
+        "url": "/__l5e/assets-v1/2e8b9563-ac00-411c-b782-24c2aaed919a/cmn-a353eec75310.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "bf50756d-9e5c-4430-9164-f8e84b571bf3",
+      "hskIndex": 200,
+      "previousHskIndex": 200,
+      "headword": "他",
+      "reading": "tā",
+      "audio": {
+        "url": "/__l5e/assets-v1/0d7329b1-3d32-4ae3-a79f-d5f9fecae2c0/cmn-f6cce3b6d605.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "57a0b13d-a998-407d-9b93-dbf93d45476e",
+      "hskIndex": 201,
+      "previousHskIndex": 203,
+      "headword": "他们",
+      "reading": "tāmen",
+      "audio": {
+        "url": "/__l5e/assets-v1/c37f72ec-0991-442a-8229-bddb88d5c337/cmn-7204eaf4651b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8d86c4e6-410a-432c-9263-42c136d955c9",
+      "hskIndex": 202,
+      "previousHskIndex": 201,
+      "headword": "它",
+      "reading": "tā",
+      "audio": {
+        "url": "/__l5e/assets-v1/150f2c28-f29b-432c-b869-f5d45851ec23/cmn-b3a33a483c8c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "89d6d0a8-130c-45f5-9f8e-d0b30c2f3870",
+      "hskIndex": 203,
+      "previousHskIndex": 204,
+      "headword": "它们",
+      "reading": "tāmen",
+      "audio": {
+        "url": "/__l5e/assets-v1/20d7b24e-4f66-41f3-8aaf-6a3cdc7dca77/cmn-527930ea5e62.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1b74f847-b2c1-45d2-969f-c88ec97bad56",
+      "hskIndex": 204,
+      "previousHskIndex": 202,
+      "headword": "她",
+      "reading": "tā",
+      "audio": {
+        "url": "/__l5e/assets-v1/bae81c60-915a-406e-9881-1e2b02a3e099/cmn-8b8871cba308.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4e046db1-6020-4502-9e7d-8be5f0803e34",
+      "hskIndex": 205,
+      "previousHskIndex": 205,
+      "headword": "她们",
+      "reading": "tāmen",
+      "audio": {
+        "url": "/__l5e/assets-v1/f7b486f7-d4f3-416c-97ba-23b0ae7177b3/cmn-d41cf3b02095.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d0710b35-6636-41d6-8157-b4627a81a388",
+      "hskIndex": 206,
+      "previousHskIndex": 206,
+      "headword": "太",
+      "reading": "tài",
+      "audio": {
+        "url": "/__l5e/assets-v1/793e438f-7641-4513-8a8a-dfaa10beade2/cmn-cb5769315667.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8b1d34c8-d412-4aff-92c2-e97289af26bc",
+      "hskIndex": 207,
+      "previousHskIndex": 207,
+      "headword": "天",
+      "reading": "tiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/cc4d437b-550f-422b-8841-83ce98e88854/cmn-8a31f06d71c6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f328c7fd-0a0c-4fff-ab0d-73ab38802fda",
+      "hskIndex": 208,
+      "previousHskIndex": 208,
+      "headword": "天气",
+      "reading": "tiānqì",
+      "audio": {
+        "url": "/__l5e/assets-v1/e950e37e-4071-49c2-a10b-dcbb7f18f42a/cmn-20197678191f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d7a80ffd-d688-42b4-8dbc-1d3922df0318",
+      "hskIndex": 209,
+      "previousHskIndex": 209,
+      "headword": "听",
+      "reading": "tīng",
+      "audio": {
+        "url": "/__l5e/assets-v1/2e1627f2-9fc5-4094-a99f-4fcd812cea50/cmn-668ec4ae48db.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "050e1f42-4ef4-46d9-8b7e-2f4d2de6d45b",
+      "hskIndex": 210,
+      "previousHskIndex": 210,
+      "headword": "听见",
+      "reading": "tīngjiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/d20ecb0a-03c3-4536-ab94-9816bcc1ba41/cmn-d4c796cafc42.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "781fa3ca-d749-4156-b0fe-114c79a98fd9",
+      "hskIndex": 211,
+      "previousHskIndex": 211,
+      "headword": "同学",
+      "reading": "tóngxué",
+      "audio": {
+        "url": "/__l5e/assets-v1/76a125fb-8dd2-416d-9f62-f99115d0e8a8/cmn-ad3cf4dc3019.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "0c5929ea-9329-4a90-8021-1b4cb8c9e7cd",
+      "hskIndex": 212,
+      "previousHskIndex": 212,
+      "headword": "外",
+      "reading": "wài",
+      "audio": {
+        "url": "/__l5e/assets-v1/0535171f-afd0-4844-88a2-e9e184605f12/cmn-194a9a590346.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f8890ce0-5a36-4ac5-9862-4d5d99f0ade0",
+      "hskIndex": 213,
+      "previousHskIndex": 213,
+      "headword": "外边",
+      "reading": "wàibian",
+      "audio": {
+        "url": "/__l5e/assets-v1/191557ca-6b2d-4788-ac3d-8f2d31ebb379/cmn-4fe8fbb04e87.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ac8528a5-fc62-48c0-84ea-5a7bc91875d3",
+      "hskIndex": 214,
+      "previousHskIndex": 214,
+      "headword": "玩",
+      "reading": "wán",
+      "audio": null
+    },
+    {
+      "entryId": "1f450f6c-1497-4b69-bd9f-70d2a2bdaabc",
+      "hskIndex": 215,
+      "previousHskIndex": 215,
+      "headword": "晚",
+      "reading": "wǎn",
+      "audio": {
+        "url": "/__l5e/assets-v1/917a34ff-d27f-4a64-becf-588368678721/cmn-7eaa74b8d67e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "966817c9-1c27-4d14-b6c5-1a7e5845cc5f",
+      "hskIndex": 216,
+      "previousHskIndex": 216,
+      "headword": "晚饭",
+      "reading": "wǎnfàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/754796b5-fac4-4a1e-b689-52dbc3100ed7/cmn-07207e2563f7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "fdf04c29-9a09-4037-b4ab-7d152a5e2cc9",
+      "hskIndex": 217,
+      "previousHskIndex": 217,
+      "headword": "晚上",
+      "reading": "wǎnshang",
+      "audio": {
+        "url": "/__l5e/assets-v1/6f59d87b-0bc5-460c-a290-75a05b9bb1df/cmn-3d41dae87666.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1279a8ee-e887-426f-a219-0f7c519483f9",
+      "hskIndex": 218,
+      "previousHskIndex": 218,
+      "headword": "喂",
+      "reading": "wèi",
+      "audio": {
+        "url": "/__l5e/assets-v1/28e3550f-48db-4d36-8023-a7ab6fc3a0b2/cmn-4365fa3f0b3b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "70a21c54-cda8-48f3-95b1-130b7b1920c5",
+      "hskIndex": 219,
+      "previousHskIndex": 219,
+      "headword": "问",
+      "reading": "wèn",
+      "audio": {
+        "url": "/__l5e/assets-v1/3a1b8134-46b5-4feb-90f7-0bb7fd0491f2/cmn-b723acdd8bac.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ba339c0a-5077-460e-aed7-b5397ec53b8b",
+      "hskIndex": 220,
+      "previousHskIndex": 220,
+      "headword": "问题",
+      "reading": "wèntí",
+      "audio": {
+        "url": "/__l5e/assets-v1/7803bf95-d7b8-4849-9250-75f4064cc466/cmn-0436487f5ef4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "57e9db8b-b309-49f7-bb8e-893c2a1e59eb",
+      "hskIndex": 221,
+      "previousHskIndex": 221,
+      "headword": "我",
+      "reading": "wǒ",
+      "audio": {
+        "url": "/__l5e/assets-v1/40ce1954-8878-48ea-9087-f041475e0a16/cmn-c813cb16f7ea.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b7339cc1-0af4-43f5-b7de-90ce791e5444",
+      "hskIndex": 222,
+      "previousHskIndex": 222,
+      "headword": "我们",
+      "reading": "wǒmen",
+      "audio": {
+        "url": "/__l5e/assets-v1/82166290-df6f-487d-b42f-b84209571cde/cmn-2c13f5fa0837.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "23a06fa6-c050-45d5-9b35-4a63639db1f6",
+      "hskIndex": 223,
+      "previousHskIndex": 223,
+      "headword": "五",
+      "reading": "wǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/843a8752-f0f4-466d-b5a6-f8cf3d4b6511/cmn-62319bde26ee.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "76221e64-2bfc-458d-bef0-5184d09737c4",
+      "hskIndex": 224,
+      "previousHskIndex": 224,
+      "headword": "午饭",
+      "reading": "wǔfàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/5390c146-be34-42c3-b779-73c68518b89d/cmn-3c1f64326671.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "013b851c-3cab-4592-b2ac-dc3d234d070f",
+      "hskIndex": 225,
+      "previousHskIndex": 225,
+      "headword": "喜欢",
+      "reading": "xǐhuan",
+      "audio": {
+        "url": "/__l5e/assets-v1/ae85b909-edca-46c6-a3c8-056a9e6ae38b/cmn-de922b2bc4f3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8f3f9072-442b-4590-aa84-0c0ff9b2c26a",
+      "hskIndex": 226,
+      "previousHskIndex": 226,
+      "headword": "下",
+      "reading": "xià",
+      "audio": {
+        "url": "/__l5e/assets-v1/45f27078-b148-4f5f-a7df-5047a939b5a7/cmn-28ae21e2f637.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a4b1117a-b853-4fea-b022-6068e198189b",
+      "hskIndex": 227,
+      "previousHskIndex": 228,
+      "headword": "下班",
+      "reading": "xiàbān",
+      "audio": {
+        "url": "/__l5e/assets-v1/d090b39b-1f6a-40c9-bd4b-41de753f5a76/cmn-51269b9d317d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "06116243-4413-4950-9ad1-f5889b6c0a07",
+      "hskIndex": 228,
+      "previousHskIndex": 229,
+      "headword": "下课",
+      "reading": "xiàkè",
+      "audio": {
+        "url": "/__l5e/assets-v1/236127e4-efa9-496e-bbe5-4cd1a4dbb52f/cmn-9f9dfe8ebf4c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "1910c231-2eb9-4c0a-a8ef-712f0c634b73",
+      "hskIndex": 229,
+      "previousHskIndex": 230,
+      "headword": "下午",
+      "reading": "xiàwǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/426e7e4c-f55c-4361-9fcc-909fc755fd59/cmn-d5a7dd9567ca.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "80f3c1fa-83e0-4b8e-9e07-df69e67ba4b3",
+      "hskIndex": 230,
+      "previousHskIndex": 227,
+      "headword": "下雨",
+      "reading": "xià yǔ",
+      "audio": null
+    },
+    {
+      "entryId": "ddb9ee86-b3f9-4a65-bd94-52ac6ba7df60",
+      "hskIndex": 231,
+      "previousHskIndex": 231,
+      "headword": "先生",
+      "reading": "xiānsheng",
+      "audio": {
+        "url": "/__l5e/assets-v1/6100bd3e-84ba-4807-ab50-ac1c0af8438e/cmn-31b583183be9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "72e5129d-5540-4b27-b878-468bf8f808ff",
+      "hskIndex": 232,
+      "previousHskIndex": 232,
+      "headword": "现在",
+      "reading": "xiànzài",
+      "audio": {
+        "url": "/__l5e/assets-v1/94d7d095-42f0-45e5-af2e-aeabb6ad4cdf/cmn-8587595727e6.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "bb815872-f7b9-4a86-870e-502f63c9c4b6",
+      "hskIndex": 233,
+      "previousHskIndex": 233,
+      "headword": "想",
+      "reading": "xiǎng",
+      "audio": {
+        "url": "/__l5e/assets-v1/60b89c3c-53a7-4137-9469-179b35ddbf15/cmn-4754398432f3.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "03683109-b89d-4f8e-b763-eab5ff13284d",
+      "hskIndex": 234,
+      "previousHskIndex": 234,
+      "headword": "小",
+      "reading": "xiǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/6b428ca4-dae1-462b-85cf-23e14aefe0a0/cmn-3eeb61b8cd57.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "d5e2666c-6d9e-4eb9-88f4-1919bb85c07e",
+      "hskIndex": 235,
+      "previousHskIndex": 235,
+      "headword": "小朋友",
+      "reading": "xiǎopéngyou",
+      "audio": {
+        "url": "/__l5e/assets-v1/4e5160bc-761b-48e2-b929-9342a212116c/cmn-d7cd36610081.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "571bcac8-b614-4a47-b378-2047f6226bf3",
+      "hskIndex": 236,
+      "previousHskIndex": 236,
+      "headword": "小时",
+      "reading": "xiǎoshí",
+      "audio": {
+        "url": "/__l5e/assets-v1/c607b9c6-b302-48b9-a763-1229d3566454/cmn-716f26baac2a.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "234eed24-032c-4e2d-9588-6557d1dde3da",
+      "hskIndex": 237,
+      "previousHskIndex": 237,
+      "headword": "小学",
+      "reading": "xiǎoxué",
+      "audio": {
+        "url": "/__l5e/assets-v1/e978bc5a-c348-42f0-bd2c-09736896ac19/cmn-681d867c1ea4.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ba519e0d-6f08-4e51-ae5f-c97431a81b7c",
+      "hskIndex": 238,
+      "previousHskIndex": 238,
+      "headword": "小学生",
+      "reading": "xiǎoxuéshēng",
+      "audio": {
+        "url": "/__l5e/assets-v1/fc5eb22a-3449-46ff-bd8d-2afc8c07d8d3/cmn-77b84644bb7e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5d7fbdbc-b1b1-4756-8cc2-462483f45ab1",
+      "hskIndex": 239,
+      "previousHskIndex": 239,
+      "headword": "些",
+      "reading": "xiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/ca53fee1-4a70-4ec4-92b2-5d67ea107ef9/cmn-1150f294f962.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "35048eb8-c15b-4469-a16e-d2b1d8654ff0",
+      "hskIndex": 240,
+      "previousHskIndex": 240,
+      "headword": "写",
+      "reading": "xiě",
+      "audio": {
+        "url": "/__l5e/assets-v1/1058151c-b8ff-4cf0-800f-992cce37f34f/cmn-41c2c2788b44.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "33d56a5c-fb9f-4e41-987e-12f668f07c14",
+      "hskIndex": 241,
+      "previousHskIndex": 241,
+      "headword": "谢谢",
+      "reading": "xièxie",
+      "audio": {
+        "url": "/__l5e/assets-v1/f697c3ca-7f46-49bb-8968-fb43a2b7c946/cmn-bbbfed127ab5.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f98c4a19-2761-4942-b9fe-781a3c732b36",
+      "hskIndex": 242,
+      "previousHskIndex": 242,
+      "headword": "新",
+      "reading": "xīn",
+      "audio": {
+        "url": "/__l5e/assets-v1/8529d06f-f9da-45e2-851e-3b7536d8ccf2/cmn-970ce4d3fd03.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "33ebcd60-9c0c-4b32-b324-eda1082fc059",
+      "hskIndex": 243,
+      "previousHskIndex": 243,
+      "headword": "星期",
+      "reading": "xīngqī",
+      "audio": {
+        "url": "/__l5e/assets-v1/6b53011b-a229-4ecb-9392-e3176f1f55af/cmn-b47ec4c78709.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a6ae660a-6f42-4022-9f78-77c1b53a4735",
+      "hskIndex": 244,
+      "previousHskIndex": 244,
+      "headword": "星期日",
+      "reading": "xīngqīrì",
+      "audio": {
+        "url": "/__l5e/assets-v1/77aab500-75d3-4f5b-b6ef-51dd609783f8/cmn-d393d4a8781f.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e765e374-7407-48a1-8bdd-2128f7bcc70e",
+      "hskIndex": 245,
+      "previousHskIndex": 245,
+      "headword": "星期天",
+      "reading": "xīngqītiān",
+      "audio": null
+    },
+    {
+      "entryId": "cff04e4e-15e4-4db3-8fa3-5d84981e8ff3",
+      "hskIndex": 246,
+      "previousHskIndex": 246,
+      "headword": "休息",
+      "reading": "xiūxi",
+      "audio": {
+        "url": "/__l5e/assets-v1/8bc1a1cc-8963-420c-b6b0-f2c308b6bc8c/cmn-7bd8bb69addb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "ee1597dd-fdda-485f-be1f-9c370fd31dbb",
+      "hskIndex": 247,
+      "previousHskIndex": 247,
+      "headword": "学",
+      "reading": "xué",
+      "audio": {
+        "url": "/__l5e/assets-v1/04be8548-d8f8-4d57-91be-eccef7f063cc/cmn-c78566ff64fc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "9077b44b-e5aa-423f-bbaf-09c817a71af4",
+      "hskIndex": 248,
+      "previousHskIndex": 248,
+      "headword": "学生",
+      "reading": "xuéshēng",
+      "audio": {
+        "url": "/__l5e/assets-v1/18f7c7c9-555e-485f-8003-5640c6bbc5a5/cmn-a3b8bd97eaaa.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "75fedfcf-59a6-444e-87a5-77b3250a4d57",
+      "hskIndex": 249,
+      "previousHskIndex": 249,
+      "headword": "学习",
+      "reading": "xuéxí",
+      "audio": {
+        "url": "/__l5e/assets-v1/a25f501b-68ff-4a61-abf4-a849395a846f/cmn-d6284889f91e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "941fa3e1-b9de-4389-84ba-50cc0808325a",
+      "hskIndex": 250,
+      "previousHskIndex": 250,
+      "headword": "学校",
+      "reading": "xuéxiào",
+      "audio": {
+        "url": "/__l5e/assets-v1/45004b2c-0039-4b9b-8028-3df938269530/cmn-81da32fed8e9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "0438da3e-9437-49f2-bdc4-b3fe7be79671",
+      "hskIndex": 251,
+      "previousHskIndex": 251,
+      "headword": "雪",
+      "reading": "xuě",
+      "audio": {
+        "url": "/__l5e/assets-v1/1d925284-8e8f-474f-8e87-94b1040b1492/cmn-e91a46aa04ad.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "74f39afd-00ac-4b9d-aa9f-963648300fc8",
+      "hskIndex": 252,
+      "previousHskIndex": 252,
+      "headword": "要",
+      "reading": "yào",
+      "audio": {
+        "url": "/__l5e/assets-v1/b5dee2bb-1b5d-4b66-be20-6369af894b71/cmn-7c9531779186.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "bd417b98-6a5c-4d1d-9096-777bc132ecb6",
+      "hskIndex": 253,
+      "previousHskIndex": 253,
+      "headword": "也",
+      "reading": "yě",
+      "audio": {
+        "url": "/__l5e/assets-v1/952c5b08-8445-42b5-9650-df28aa3860b4/cmn-94cbe52e4e1d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "bfb1c18d-6884-40e3-b7ef-711423b6abc3",
+      "hskIndex": 254,
+      "previousHskIndex": 254,
+      "headword": "一",
+      "reading": "yī",
+      "audio": {
+        "url": "/__l5e/assets-v1/e744cdd0-1b48-4e1e-958d-6067b512f060/cmn-5fc05612f0d0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "065a2ca2-bcf6-4314-b6b8-2e8f88ca87d5",
+      "hskIndex": 255,
+      "previousHskIndex": 258,
+      "headword": "一半",
+      "reading": "yíbàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/a5f6e4c2-d636-485a-b553-b68b2fda5d37/cmn-d6226e994503.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "760a0c23-5fc3-40fe-aca8-d2e6563265e2",
+      "hskIndex": 256,
+      "previousHskIndex": 261,
+      "headword": "一点儿",
+      "reading": "yìdiǎnr",
+      "audio": {
+        "url": "/__l5e/assets-v1/a0f20139-3d3e-4436-9db1-78df2f952a9e/cmn-e62e083c2435.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8c34175c-de86-452f-86cb-f4b40670f013",
+      "hskIndex": 257,
+      "previousHskIndex": 259,
+      "headword": "一下",
+      "reading": "yíxià",
+      "audio": {
+        "url": "/__l5e/assets-v1/51e6e964-55b9-4097-aca5-2cfcb0d63315/cmn-29e9fe251391.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8a844a8d-8dc6-4e05-bda6-e82f4aa219ac",
+      "hskIndex": 258,
+      "previousHskIndex": 262,
+      "headword": "一些",
+      "reading": "yìxiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/da8a180b-0d69-4062-a09b-54f3fef84b88/cmn-76e477afe304.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "978da3b0-318e-4009-b64b-acbf5f08893d",
+      "hskIndex": 259,
+      "previousHskIndex": 255,
+      "headword": "衣服",
+      "reading": "yīfu",
+      "audio": {
+        "url": "/__l5e/assets-v1/46a43642-c70c-418d-9c93-17682d5ef8e8/cmn-2e11b37501cb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "85ad2b80-79de-4b47-be3f-941462c2b149",
+      "hskIndex": 260,
+      "previousHskIndex": 256,
+      "headword": "医生",
+      "reading": "yīshēng",
+      "audio": {
+        "url": "/__l5e/assets-v1/149792f1-6c7d-4c37-8f7d-91be0c945d0c/cmn-075083eeca6e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "8cf95d97-9d07-44b0-9c93-286991f40c20",
+      "hskIndex": 261,
+      "previousHskIndex": 257,
+      "headword": "医院",
+      "reading": "yīyuàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/53a7abd8-d93b-413c-854f-d95bd3a78a1f/cmn-aa16ac07a046.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c82a8af3-7288-42ab-8d89-8223f2726064",
+      "hskIndex": 262,
+      "previousHskIndex": 260,
+      "headword": "椅子",
+      "reading": "yǐzi",
+      "audio": {
+        "url": "/__l5e/assets-v1/91dd9e83-19cd-4b4f-8b66-9a244c0dfcb9/cmn-a1ff6cf36d82.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "aec261c9-e0f3-45a4-bd37-00141ec4b108",
+      "hskIndex": 263,
+      "previousHskIndex": 263,
+      "headword": "有",
+      "reading": "yǒu",
+      "audio": {
+        "url": "/__l5e/assets-v1/17b35b5e-bb5d-48a3-9986-eb0a9f8eaf84/cmn-c5cd4d298d10.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "28391941-9607-4eb1-bc70-62879822535b",
+      "hskIndex": 264,
+      "previousHskIndex": 264,
+      "headword": "有的",
+      "reading": "yǒude",
+      "audio": {
+        "url": "/__l5e/assets-v1/40f5c747-14b5-4a65-a003-026b114a481c/cmn-5e4b0c24b087.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6dfb0355-8be0-467e-bc15-6b5c801ccd44",
+      "hskIndex": 265,
+      "previousHskIndex": 265,
+      "headword": "有点儿",
+      "reading": "yǒudiǎnr",
+      "audio": {
+        "url": "/__l5e/assets-v1/7f89f691-9816-4e26-851f-7c6001ee8ea8/cmn-4747212c50b0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "e27cab72-123b-4b41-8c30-c8354c305562",
+      "hskIndex": 266,
+      "previousHskIndex": 266,
+      "headword": "有些",
+      "reading": "yǒuxiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/32836083-2687-4229-b246-43a4ec319a7d/cmn-a5312d99c43d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "c1fdc031-b615-40aa-a3bd-9fd8800e1e75",
+      "hskIndex": 267,
+      "previousHskIndex": 267,
+      "headword": "雨",
+      "reading": "yǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/05eeaf5b-41b8-4c39-ac9d-9a95008436b5/cmn-48f19c6589c0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "94f195a1-b8bb-4bd0-90cc-3606dbd96e61",
+      "hskIndex": 268,
+      "previousHskIndex": 268,
+      "headword": "元",
+      "reading": "yuán",
+      "audio": {
+        "url": "/__l5e/assets-v1/db75234f-9867-4cf9-919f-6f708080726c/cmn-160a7a781353.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "82133a8c-e257-4b29-8023-fccf3958137f",
+      "hskIndex": 269,
+      "previousHskIndex": 269,
+      "headword": "月",
+      "reading": "yuè",
+      "audio": {
+        "url": "/__l5e/assets-v1/d86305e2-da55-452b-8e4a-792ccb8778ea/cmn-a16ea2c47380.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "05797fd7-0be3-402b-93ff-6b8063f8001d",
+      "hskIndex": 270,
+      "previousHskIndex": 270,
+      "headword": "再",
+      "reading": "zài",
+      "audio": {
+        "url": "/__l5e/assets-v1/d0eddc89-4a49-45cc-8d0e-f1ca22dd57e5/cmn-0c743d798c30.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a782e3af-f10d-4bcb-9d0b-d17b81ed846d",
+      "hskIndex": 271,
+      "previousHskIndex": 272,
+      "headword": "再见",
+      "reading": "zàijiàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/697f7077-8118-4b30-b281-7ec216dc8c52/cmn-cc34d6f90adb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "033ca5f9-d88d-48f2-8b2e-abffbbc2e727",
+      "hskIndex": 272,
+      "previousHskIndex": 271,
+      "headword": "在",
+      "reading": "zài",
+      "audio": {
+        "url": "/__l5e/assets-v1/ca082fe7-d413-437c-b1ef-10568d9096b6/cmn-694e0a14820d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "50c11776-0825-4614-bade-d972ad7c9ca9",
+      "hskIndex": 273,
+      "previousHskIndex": 273,
+      "headword": "早",
+      "reading": "zǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/e42f78b7-477a-4366-a174-1179d3bd69c7/cmn-45d168a4bdad.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "31cbc956-c569-481e-a035-119ac14166ae",
+      "hskIndex": 274,
+      "previousHskIndex": 274,
+      "headword": "早饭",
+      "reading": "zǎofàn",
+      "audio": {
+        "url": "/__l5e/assets-v1/4262a60d-d0f5-427c-98bf-0777f74acb34/cmn-a4573e44f7f2.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5adc8ab3-b1c5-4f5a-a4ec-f8d184f0cce1",
+      "hskIndex": 275,
+      "previousHskIndex": 275,
+      "headword": "早上",
+      "reading": "zǎoshang",
+      "audio": null
+    },
+    {
+      "entryId": "ada09d73-3614-42ad-a89a-48f245716392",
+      "hskIndex": 276,
+      "previousHskIndex": 276,
+      "headword": "怎么",
+      "reading": "zěnme",
+      "audio": {
+        "url": "/__l5e/assets-v1/46381c4a-433e-4d01-9ba1-e30fce8870f1/cmn-ce3c967ea2c7.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "18e9b4ba-bdc6-486a-8914-08b8ad6324b4",
+      "hskIndex": 277,
+      "previousHskIndex": 277,
+      "headword": "怎么样",
+      "reading": "zěnmeyàng",
+      "audio": {
+        "url": "/__l5e/assets-v1/c3847072-0aeb-4bad-a489-93750ab3d84c/cmn-14f25f179689.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "6c5c7737-aea5-4087-9fc6-2bdbbb67177f",
+      "hskIndex": 278,
+      "previousHskIndex": 278,
+      "headword": "找",
+      "reading": "zhǎo",
+      "audio": {
+        "url": "/__l5e/assets-v1/45c366c7-69bc-4920-8fb6-9f54e7e39ba6/cmn-895f0ed017ce.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "fba5df14-18e3-415a-bbc0-f37bfa0db04e",
+      "hskIndex": 279,
+      "previousHskIndex": 279,
+      "headword": "这",
+      "reading": "zhè",
+      "audio": {
+        "url": "/__l5e/assets-v1/eeecb7e6-defb-4df5-bbf0-c987c91d93a0/cmn-ac4cf8aa30da.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a6bf5061-d160-4be3-9085-1b313d340722",
+      "hskIndex": 280,
+      "previousHskIndex": 280,
+      "headword": "这边",
+      "reading": "zhèbiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/c693aa74-809b-4e1d-ac69-9eebcd7168a6/cmn-861f4609dd78.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "041dcc52-3f70-421f-8450-2ea65bc4587b",
+      "hskIndex": 281,
+      "previousHskIndex": 281,
+      "headword": "这个",
+      "reading": "zhège",
+      "audio": {
+        "url": "/__l5e/assets-v1/33127217-783b-4ddd-bee2-f724f3b31473/cmn-8d7bdd3ffed0.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "62d7bf52-f550-4639-9900-1a135fe16e0e",
+      "hskIndex": 282,
+      "previousHskIndex": 282,
+      "headword": "这里",
+      "reading": "zhèlǐ",
+      "audio": {
+        "url": "/__l5e/assets-v1/cad4a219-b140-42c2-8d38-522faa6a4469/cmn-88d205a45d7b.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "67f8e27d-0059-4045-9222-6a243bbfea30",
+      "hskIndex": 283,
+      "previousHskIndex": 283,
+      "headword": "这儿",
+      "reading": "zhèr",
+      "audio": null
+    },
+    {
+      "entryId": "6231d43d-b9bb-4635-bb38-25523c251321",
+      "hskIndex": 284,
+      "previousHskIndex": 284,
+      "headword": "这些",
+      "reading": "zhèxiē",
+      "audio": {
+        "url": "/__l5e/assets-v1/5f5afe72-f446-4ffc-bcb3-b151a5fbe662/cmn-8fad2cc8178e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "314b378d-7544-4de6-91e2-088f060485b9",
+      "hskIndex": 285,
+      "previousHskIndex": 285,
+      "headword": "真",
+      "reading": "zhēn",
+      "audio": {
+        "url": "/__l5e/assets-v1/d49c09f5-f067-4871-973b-afda682b3cc9/cmn-178aa232905e.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "18f064d5-2f8f-4e54-81f5-6910f838cd91",
+      "hskIndex": 286,
+      "previousHskIndex": 286,
+      "headword": "正在",
+      "reading": "zhèngzài",
+      "audio": {
+        "url": "/__l5e/assets-v1/45c71d50-44f2-44b6-b86b-d9ca4e7e7394/cmn-f219ea6e2c63.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "602ea2e6-b6d9-4827-8e22-41b23e44575d",
+      "hskIndex": 287,
+      "previousHskIndex": 287,
+      "headword": "只",
+      "reading": "zhī",
+      "audio": {
+        "url": "/__l5e/assets-v1/9c7c4d8f-ec3d-46b7-899a-a44aa7bf65c6/cmn-97e234dd55bd.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "72acfaec-6659-487b-bfb1-f0191be8486a",
+      "hskIndex": 288,
+      "previousHskIndex": 288,
+      "headword": "知道",
+      "reading": "zhīdào",
+      "audio": {
+        "url": "/__l5e/assets-v1/94b34c0c-1f91-43dc-b944-41d329ac5c3b/cmn-e97f0865bbcc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "2619f3bf-a6c2-490c-9f0b-dd529ee29746",
+      "hskIndex": 289,
+      "previousHskIndex": 289,
+      "headword": "中国",
+      "reading": "Zhōngguó",
+      "audio": null
+    },
+    {
+      "entryId": "8e71dd8f-1032-4cbc-9484-7a6efd83c50b",
+      "hskIndex": 290,
+      "previousHskIndex": 290,
+      "headword": "中文",
+      "reading": "Zhōngwén",
+      "audio": {
+        "url": "/__l5e/assets-v1/0acb0bae-9232-404f-a0e3-787faf96e9fb/cmn-3ecf2345ac8d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "5ec52baf-7f41-408b-92c8-1e1db373ceff",
+      "hskIndex": 291,
+      "previousHskIndex": 291,
+      "headword": "中午",
+      "reading": "zhōngwǔ",
+      "audio": {
+        "url": "/__l5e/assets-v1/aaf9aba2-ce73-47f9-8b01-9101ed82fd26/cmn-6356250bd60c.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "b14e749f-2c50-435a-8531-5f66cc8cb87e",
+      "hskIndex": 292,
+      "previousHskIndex": 292,
+      "headword": "中学",
+      "reading": "zhōngxué",
+      "audio": {
+        "url": "/__l5e/assets-v1/36566a5d-9257-4a0c-988a-107078e7e323/cmn-eee3860aec29.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "4f57b9ca-c982-40a7-a981-59e6f6eb933e",
+      "hskIndex": 293,
+      "previousHskIndex": 293,
+      "headword": "中学生",
+      "reading": "zhōngxuéshēng",
+      "audio": null
+    },
+    {
+      "entryId": "72e6d5a0-648d-402b-8fe3-254c7cb1d61a",
+      "hskIndex": 294,
+      "previousHskIndex": 294,
+      "headword": "住",
+      "reading": "zhù",
+      "audio": {
+        "url": "/__l5e/assets-v1/132374f6-cb7a-4e9e-ba15-899aa9ff11ff/cmn-f456045345fb.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "681f6299-e20b-41cc-9761-fa631d316684",
+      "hskIndex": 295,
+      "previousHskIndex": 295,
+      "headword": "桌子",
+      "reading": "zhuōzi",
+      "audio": {
+        "url": "/__l5e/assets-v1/302d35e8-6bb5-4faf-a0f4-8103eb62a66c/cmn-9f3a867c0c31.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "111f46a5-860c-4781-910a-8a65ef36eb0b",
+      "hskIndex": 296,
+      "previousHskIndex": 296,
+      "headword": "字",
+      "reading": "zì",
+      "audio": {
+        "url": "/__l5e/assets-v1/475fd5fe-e0a1-4d4f-b842-f392d236573d/cmn-78527a07b7fc.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "f0441047-941b-4881-8103-bc0c4597cc1d",
+      "hskIndex": 297,
+      "previousHskIndex": 297,
+      "headword": "昨天",
+      "reading": "zuótiān",
+      "audio": {
+        "url": "/__l5e/assets-v1/1efbd717-9d69-49dc-bac3-c416939d025e/cmn-57e7d84e8eb2.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a7896023-dc62-463a-b967-7030a0253fc2",
+      "hskIndex": 298,
+      "previousHskIndex": 298,
+      "headword": "坐",
+      "reading": "zuò",
+      "audio": {
+        "url": "/__l5e/assets-v1/b2bf59dd-35b0-4ddb-8c08-a9c4f32a8263/cmn-28a485823e8d.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "a797fc72-f6bf-4717-8a86-33479b570310",
+      "hskIndex": 299,
+      "previousHskIndex": 299,
+      "headword": "做",
+      "reading": "zuò",
+      "audio": {
+        "url": "/__l5e/assets-v1/91c54b45-0450-4f3d-a6fc-6e0abf753e7f/cmn-c845286083e9.mp3",
+        "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+        "license": "CC BY-SA 3.0 US",
+        "recordingKind": "word"
+      }
+    },
+    {
+      "entryId": "abd59ed5-cb7d-43d8-a6f2-4c2f86f1e076",
+      "hskIndex": 300,
+      "previousHskIndex": 300,
+      "headword": "做饭",
+      "reading": "zuò fàn",
+      "audio": null
+    }
+  ]
+}

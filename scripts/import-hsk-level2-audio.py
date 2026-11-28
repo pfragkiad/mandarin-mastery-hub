@@ -30,7 +30,8 @@ import vocabulary_store  # noqa: E402  (split-by-level vocabulary reader/writer)
 ROOT = Path(__file__).resolve().parent.parent
 INPUT = ROOT / 'importer/data/hsk-audio'
 VOCABULARY = vocabulary_store.DIRECTORY
-HANDOFF = ROOT / 'importer/hsk/archive/hsk3_level2_1.0.2.json'
+HANDOFF = ROOT / 'importer/hsk/hsk3_level2_1.1.2.json'
+MANIFEST = INPUT / 'level2-manifest-1.1.2.json'
 COMMIT = 'f759a0f18f27690742957619e1248ed91e9b3f2c'
 BASE = 'https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/'
 INDEX_SHA256 = '59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6'
@@ -131,12 +132,12 @@ def prepare(cache):
                 'metadataUrl': BASE + 'mp3/index.xml', 'metadataSha256': sha256(index_raw),
                 'noticeUrl': BASE + 'readme.txt', 'noticeSha256': sha256(notice)},
                 'handoffSha256': sha256(HANDOFF.read_bytes()), 'entries': rows}
-    (INPUT / 'level2-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', 'utf-8')
     return manifest
 
 
 def load_manifest():
-    manifest = read(INPUT / 'level2-manifest.json')
+    manifest = read(MANIFEST)
     index = source_index((INPUT / 'cmn-caen-tan-index.xml.bz2').read_bytes())
     if manifest['source']['commit'] != COMMIT or manifest['handoffSha256'] != sha256(HANDOFF.read_bytes()):
         raise ValueError('Manifest source/handoff differs from the pinned inputs')

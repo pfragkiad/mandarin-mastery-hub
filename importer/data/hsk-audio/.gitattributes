@@ -3,3 +3,4 @@ cmn-caen-tan-index.xml.bz2 -text
 # The original license notice includes trailing spaces; preserve them byte for byte.
 cmn-caen-tan-readme.txt -text -whitespace
 level6-manifest-1.0.1.json -text
+level*-manifest-*.json -text

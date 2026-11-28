@@ -18,6 +18,7 @@ Shuowen review exports and supplied originals in this directory stay local and u
 
 | File | Use |
 | --- | --- |
+| [hsk-level1-5-official-id-crosscheck-validation.md](hsk-level1-5-official-id-crosscheck-validation.md), [complete validation/mappings](hsk-level1-5-official-id-crosscheck-validation.json) | Independent check of all 1,092 supplied JSON remaps and all 3,600 runtime entries. Corrects two Markdown ID typos, distinguishes five Level 3 data defects from the official 白 POS-scope revision, records the 小朋友 recording-reading disagreement and inventories lesson-binding migration needs. Generated/checked by `python scripts/review-hsk-level1-5-ids.py --write` / `--check`; no study data changes. |
 | [hsk-level1-5-official-id-crosscheck.md](hsk-level1-5-official-id-crosscheck.md), [JSON mapping](hsk-level1-5-official-id-crosscheck.json) | Read-only cross-check of all 3,600 Levels 1–5 entries (IDs `1–3600`) against the active `chinesetest.cn` official syllabus PDF (`新版HSK考试大纲1219.pdf`, HTTP `Last-Modified: Fri, 30 Oct 2026 08:04:38 GMT`): exact 1-to-1 headword+pinyin bijection within every level, `2,508` exact ID matches, `1,092` within-level ID shifts, `3` Level 1 pinyin diffs, `2` Level 4 homograph-tag diffs, and `6` `syllabus_pos_zh` diffs. No runtime or handoff files modified. |
 | [hsk-level6-0.1.0-sentence-review.md](hsk-level6-0.1.0-sentence-review.md), [item-level TSV](hsk-level6-0.1.0-sentence-review.tsv) | Written/conversational sentence review for draft [HSK Level 6 (`0.1.0`)](../importer/hsk/hsk3_level6_0.1.0.json): length, register, sense-match, duplication, content hygiene, and mechanical pinyin checks across all 1,800 entries / 3,600 examples. |
 | [hsk-level6-0.1.0-suggested-replacements.md](hsk-level6-0.1.0-suggested-replacements.md) | Validation report limited to the other reviewer's explicit replacement wording and alternative constructions: 25 current examples, assessments and complete candidate replacements with proposed pinyin and English. Decisions remain pending; no source JSON changes. |
@@ -80,3 +81,11 @@ Shuowen review exports and supplied originals in this directory stay local and u
 The exception is [public/data/radical_variant_etymology_audit.json](../public/data/radical_variant_etymology_audit.json): `src/components/tutor/radical-variant-etymology.tsx` fetches it lazily for variant details. It also supplies the offline contextual-identity importer and its provenance tests, so its public URL remains unchanged.
 
 Files such as `character-variants-v1.4.0.json` contain runtime associations and notes, and the enrichment sidecars contain runtime annotations. They remain in the data directories; descriptive fields inside a loaded dataset do not make the whole dataset an offline report. Historical provenance filenames in source datasets remain recorded text rather than new fetch URLs.
+
+## Levels 1-5 official-numbering migration
+
+[Migration report](hsk-level1-5-official-numbering-migration.md),
+[source/audio build audit](hsk-level1-5-official-numbering-migration.json) and
+[runtime import audit](hsk-level1-5-official-numbering-import.json) record the
+owner-approved migration of all 3,600 entries, 1,092 changed official IDs,
+POS/example corrections and preserved UUIDs/audio/lesson bindings.

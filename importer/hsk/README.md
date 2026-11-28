@@ -4,10 +4,10 @@ The owner-supplied Level 1–5 source files retain their original UTF-8 bytes an
 
 | File | Purpose and consumers | Producer |
 | --- | --- | --- |
-| [hsk3_level1_1.7.1.json](hsk3_level1_1.7.1.json) | 300 headwords and 600 examples; v1.7.1 revises 33 sentences across 32 entries. Read by the Level 1 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.7.1. |
-| [hsk3_level2_1.1.1.json](hsk3_level2_1.1.1.json) | 200 syllabus entries (301–500) and 400 examples; v1.1.1 updates 25 examples, including 10 revised sentence texts. Read by the Level 2 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
-| [hsk3_level3_1.1.2.json](hsk3_level3_1.1.2.json) | 500 syllabus entries (501–1000), meanings, readings and 1,000 examples; v1.1.2 revises 23 examples across 21 entries. Read by the Level 3 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.2. |
-| [hsk3_level4_1.1.1.json](hsk3_level4_1.1.1.json) | 1,000 syllabus entries (1001–2000) and 2,000 examples; v1.1.1 revises 43 examples across 38 entries. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
+| [hsk3_level1_1.7.1.json](hsk3_level1_1.7.1.json) | 300 headwords and 600 examples; v1.7.1 revises 33 sentences across 32 entries. Preserved historical handoff; current import uses 1.7.2. | Supplied `hsk-example-pairs/1.3.0`, data version 1.7.1. |
+| [hsk3_level2_1.1.1.json](hsk3_level2_1.1.1.json) | 200 syllabus entries (301–500) and 400 examples; v1.1.1 updates 25 examples, including 10 revised sentence texts. Preserved historical handoff; current import uses 1.1.2. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
+| [hsk3_level3_1.1.2.json](hsk3_level3_1.1.2.json) | 500 syllabus entries (501–1000), meanings, readings and 1,000 examples; v1.1.2 revises 23 examples across 21 entries. Preserved historical handoff; current import uses 1.1.3. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.2. |
+| [hsk3_level4_1.1.1.json](hsk3_level4_1.1.1.json) | 1,000 syllabus entries (1001–2000) and 2,000 examples; v1.1.1 revises 43 examples across 38 entries. Preserved historical handoff; current import uses 1.1.2. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
 | [hsk3_level5_1.0.5.json](hsk3_level5_1.0.5.json) | 1,600 draft syllabus terms (2001–3600) and 3,200 draft examples; v1.0.5 revises 190 examples and 69 meanings. | Supplied `hsk-example-pairs/1.3.0`, data version 1.0.5. |
 | [hsk3_level6_0.1.0.json](hsk3_level6_0.1.0.json) | Complete 1,800-headword Level 6 draft (3601–5400), with 3,600 examples: one conversational and one written per entry. Checked by `scripts/validate-hsk-level6.mjs`; not imported into application vocabulary. | Owner-requested completion of the first 100 entries; `hsk-example-pairs/1.3.0`, draft data version 0.1.0. |
 | [hsk3_level6_1.0.0.json](hsk3_level6_1.0.0.json) | Preserved reviewed Level 6 baseline: 1,800 entries and 3,600 examples, with 704 replacements and 17 pinyin-only fixes. Its official numbering follows the earlier PDF. | `scripts/build-hsk-level6-release.py` from the frozen review ledger; `hsk-example-pairs/1.3.0`, data version 1.0.0. |
@@ -71,7 +71,7 @@ Two owner-approved example pinyin spacing corrections remain applied by the impo
 
 Reimports match the existing syllabus ID **and exact headword**, retaining entry UUIDs, explicit word/phrase kinds, compatible entry recordings and existing syllabus provenance. Levels 3–5 create stable UUIDs from syllabus IDs and treat the supplied headwords as word entries, without inferring phrase kinds from length. They record the handoff itself as the syllabus source, rather than claiming independently verified primary-source provenance. Other levels remain unchanged; shared topics keep the same category UUIDs across all levels.
 
-Level 1's handoff explicitly does not independently certify official serial numbers. It retains example UUIDs/audio for unchanged sentence text and gives new sentences deterministic UUIDs. Its former unofficial phrases are removed.
+The historical Level 1 handoff explicitly did not independently certify official serial numbers; current serials are checked against the frozen official PDF. It retains example UUIDs/audio for unchanged sentence text and gives new sentences deterministic UUIDs. Its former unofficial phrases are removed.
 
 Level 2 retains all 200 existing syllabus entries, including the four explicit phrases 不好意思, 没意思, 为什么 and 有意思. Separate 过 and 花 records retain their exact IDs and readings; displayed headwords are not unique identities. All 200 legacy examples are replaced by 400 newly sourced example records, even where the new handoff contains the same text. Their deterministic IDs use a Level 2 namespace; later imports preserve recordings only for that exact new ID, text and reading. The initial source has no audio. Old spreadsheet POS provenance stays in `secondarySources`; `studyMetadata` records the source checksum, taxonomy, POS notes, original syllabus headword/POS labels and verification status. The handoff claims syllabus transcription; examples, meanings, translations and sentence pinyin remain editorial, without native-speaker certification.
 
@@ -238,3 +238,31 @@ The [numbering audit](../../reports/hsk-level6-1.0.1-numbering.json) and
 recordings. The versioned audio manifest uses the new official IDs with the same
 recording identities and unchanged `level6-uploads.json` pointers. Historical
 reports and source references keep their recorded version-specific IDs.
+
+## Current Levels 1-5 official numbering
+
+| Level | Current handoff | Changed official IDs | Preserved word recordings |
+| --- | --- | ---: | ---: |
+| 1 | [hsk3_level1_1.7.2.json](hsk3_level1_1.7.2.json) | 35 | 276 |
+| 2 | [hsk3_level2_1.1.2.json](hsk3_level2_1.1.2.json) | 15 | 166 |
+| 3 | [hsk3_level3_1.1.3.json](hsk3_level3_1.1.3.json) | 108 | 443 |
+| 4 | [hsk3_level4_1.1.2.json](hsk3_level4_1.1.2.json) | 317 | 797 |
+| 5 | [hsk3_level5_1.0.6.json](hsk3_level5_1.0.6.json) | 617 | 1306 |
+
+These releases supersede the historical Level 1-5 handoffs listed above for active
+imports. Build/check with `python scripts/reconcile-hsk-level1-5-numbering.py --write`
+/ `--check`. All 3,600 UUIDs, entry order and 2,988 word recordings are preserved.
+Five Level 3 POS assignments are corrected; Level 5 adverbial 白 has its meaning
+and two examples replaced. The official citation reading for 小朋友 is retained in
+`syllabus_pinyin`; its existing neutral-tone lexical reading and matching recording
+remain exact, with an explicit pronunciation note. Official and historical IDs
+remain separately recorded. Canonical lesson packages resolve their original
+version-bound serials through the explicit mapping without rewriting source bytes.
+See the [migration report](../../reports/hsk-level1-5-official-numbering-migration.md).
+
+Current handoff SHA-256 values:
+- Level 1 v1.7.2: `a73c915ecb87a42e90fc410f49107d1feaef09548fa192ae6a26e0821aa47c10`
+- Level 2 v1.1.2: `570c01067ae3262d112ac096e990cc54b06ab336f6df7e342f4084135c67199d`
+- Level 3 v1.1.3: `0013c3aab12f576f2334db92e5e7aa135b0029e3e64302dbd89cdc9f8de38a4e`
+- Level 4 v1.1.2: `11e78e9f9774229c2d2d985b158bdf09af6ce125d81c208d9c94a1f4a4c3eabd`
+- Level 5 v1.0.6: `e3c39b5c543f52aed90ae9c9cd0f2bd5be50879839513ebf6a171eeda35c29d1`

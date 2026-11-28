@@ -86,3 +86,15 @@ frontend: `ReviewSetItem` in `src/lib/lessons.ts`, labelled notes in
 `KeyExpressionCard`, and tests in `lesson-page.test.tsx`. Pattern cards also hide
 headings/notes that only repeat their examples/functions. The new three-line
 pattern contract and legacy fallbacks still follow the migration report above.
+
+## Official numbering compatibility
+
+The canonical `hsk3-2025` packages retain their original version-bound HSK serials.
+Vocabulary now displays the current official serials. `syllabusIndexForReference`
+in `src/lib/lessons.ts` resolves lesson and curriculum references through each
+word's explicit `studyMetadata.numberingRevision.previousId`; exact headwords and
+record UUIDs stay required. Unknown numbering revisions fail closed. Curriculum
+placements and flashcard pools use the same resolver. The active Python lesson
+importer validates through `scripts/hsk_numbering.py`'s read-only legacy view.
+Source packages, lesson/question/placement IDs and progress identities stay exact.
+See the [numbering migration](../../../reports/hsk-level1-5-official-numbering-migration.md).

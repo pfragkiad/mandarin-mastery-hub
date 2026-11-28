@@ -83,3 +83,11 @@ Do not move shared runtime files merely because an importer also reads them. For
 Level 5 terms and the owner-approved rewritten v1.0.1 draft examples are imported by `scripts/import-hsk-level5.mjs`. Level 1 now uses v1.7.1. Verified word-audio ZIPs are generated outside the repository by `scripts/prepare-hsk-word-audio.py`, with manifests in [the audio metadata directory](data/hsk-audio/README.md).
 
 The [lesson handoff guide](data/lessons/README.md) records the owner-supplied HSK Level 1 v3.2.0 lesson bundle (vocabulary v1.7.1) and canonical Core v3.2.0 Project Sources. Their import scripts validate exact lesson/vocabulary identities and preserve the original ZIPs and extracted source bytes.
+
+## Current Levels 1-5 ID migration
+
+Levels 1-5 now use new versioned handoffs (1.7.2 / 1.1.2 / 1.1.3 / 1.1.2 / 1.0.6)
+from the validated current official mapping. The [frozen binding guide](data/hsk-level1-5-numbering/README.md)
+and [migration report](../reports/hsk-level1-5-official-numbering-migration.md)
+record 1,092 changed serials, corrected POS/adverbial examples and preservation of
+all 3,600 UUIDs and 2,988 recordings. Historical handoffs/packages remain exact.

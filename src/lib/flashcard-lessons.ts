@@ -14,7 +14,7 @@
  * naming its HSK number; character: lessons about that record), reusing lessons.ts and
  * lesson-curricula.ts so the Flashcards links agree with the detail cards.
  */
-import { SYLLABUS_VERSION, characterLessons, lessonCharacterRefs, lessonSummaries, type LessonSummary } from './lessons';
+import { SYLLABUS_VERSION, syllabusIndexForReference, characterLessons, lessonCharacterRefs, lessonSummaries, type LessonSummary } from './lessons';
 import { courses as projectCourses, lessonsForWord, projectIndependentLessons, sectionPlacements, type Course, type SyllabusWord } from './lesson-curricula';
 
 /**
@@ -37,13 +37,13 @@ export function lessonDeckIds(lessonId: string, kind: LessonDeckKind, records: r
   const wanted = all.flatMap(course => {
     const version = SYLLABUS_VERSION[course.id];
     if (!version) return [];
-    return course.sections.flatMap(sectionPlacements).filter(p => p.lesson.id === lessonId).map(p => ({ version, ids: new Set([...p.introducedEntryIds, ...p.reviewedEntryIds]) }));
+    return course.sections.flatMap(sectionPlacements).filter(p => p.lesson.id === lessonId).map(p => ({ version, curriculumId: course.id, ids: new Set([...p.introducedEntryIds, ...p.reviewedEntryIds]) }));
   });
   if (!wanted.length) return new Set();
   return new Set(records.flatMap(r => {
     const e = r.entry;
     if (!e || e.entryKind !== 'word' || e.hsk_index == null || !e.hskVersion) return [];
-    return wanted.some(w => w.version === e.hskVersion && w.ids.has(e.hsk_index as number)) ? [r.id] : [];
+    return wanted.some(w => w.version === e.hskVersion && w.ids.has(syllabusIndexForReference(e, w.curriculumId) ?? -1)) ? [r.id] : [];
   }));
 }
 

@@ -1,6 +1,7 @@
 /** Level 2 import boundaries: exact identities, complete replacement and shared taxonomy. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -8,7 +9,7 @@ import { importLevel2 } from './import-hsk-level2.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.1.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.2.json', 'utf8');
 const source = JSON.parse(sourceRaw), topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
 
@@ -20,7 +21,11 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.1.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  if (JSON.stringify(inputs.source) !== JSON.stringify(source)) {
+    const pin = createHash('sha256').update(JSON.stringify(inputs.source)).digest('hex');
+    for (const e of inputs.vocabulary.entries.filter(e => e.hskLevel === 2)) e.studyMetadata.sourceSha256 = pin;
+  }
+  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.2.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }

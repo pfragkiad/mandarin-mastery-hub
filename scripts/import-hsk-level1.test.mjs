@@ -1,6 +1,7 @@
 /** Import boundary tests: bad identity, taxonomy or readings must never reach runtime data. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -8,7 +9,7 @@ import { importLevel1 } from './import-hsk-level1.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.7.1.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level1_1.7.2.json', 'utf8');
 const source = JSON.parse(sourceRaw);
 const topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
@@ -21,7 +22,13 @@ function fixture(t, edit = () => {}) {
   });
   const inputs = structuredClone({ source, topics, vocabulary });
   edit(inputs);
-  const paths = { sourcePath: join(directory, 'hsk3_level1_1.7.1.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  // Deliberately bind edited test payloads so semantic guards, rather than the
+  // independent source-checksum guard, are the boundary exercised below.
+  if (JSON.stringify(inputs.source) !== JSON.stringify(source)) {
+    const pin = createHash('sha256').update(JSON.stringify(inputs.source)).digest('hex');
+    for (const e of inputs.vocabulary.entries.filter(e => e.hskLevel === 1)) e.studyMetadata.sourceSha256 = pin;
+  }
+  const paths = { sourcePath: join(directory, 'hsk3_level1_1.7.2.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }
@@ -99,9 +106,9 @@ for (const [name, edit, error] of invalidSubtopics) test(`rejects ${name} before
 
 test('preserves an approved spacing correction and its exact recording on reimport', t => {
   const paths = fixture(t, inputs => {
-    inputs.vocabulary.entries.find(e => e.hsk_index === 36).examples[0].audio = { url: 'corrected-recording' };
+    inputs.vocabulary.entries.find(e => e.simplified === '电脑').examples[0].audio = { url: 'corrected-recording' };
   });
-  const example = importLevel1(paths).data.entries.find(e => e.hsk_index === 36).examples[0];
+  const example = importLevel1(paths).data.entries.find(e => e.simplified === '电脑').examples[0];
   assert.equal(example.pinyinDisplay, 'wǒ zài diànnǎo shàng xuéxí.');
   assert.deepEqual(example.audio, { url: 'corrected-recording' });
 });

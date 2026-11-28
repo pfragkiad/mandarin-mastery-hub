@@ -41,7 +41,7 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5', 6: '1.0.1' };
+  const versions = { 1: '1.7.2', 2: '1.1.2', 3: '1.1.3', 4: '1.1.2', 5: '1.0.6', 6: '1.0.1' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
   const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600, 6: 1800 }[level];
   const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001, 6: 3601 }[level], lastId = firstId + count - 1;
@@ -72,17 +72,18 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const oldLevel = original.entries.filter(e => e.hskLevel === level);
   const oldEntries = level === 1 ? oldLevel.filter(e => e.entryKind === 'word') : oldLevel;
   const inputSha256 = hash(sourcePath);
-  const renumbered = level === 6 && source.data_version === '1.0.1';
+  const renumbered = Boolean(source.verification.numbering_revision);
   const byLegacyId = new Map(source.entries.map(e => [e.legacy_syllabus_id, e]));
   // Swapped serials must never match another word's UUID/audio. Accept only the
   // exact old handoff checksum or this current handoff before choosing an ID map.
   const mappedId = old => {
     if (!renumbered || old.studyMetadata?.sourceSha256 === inputSha256) return old.hsk_index;
     requireThat(old.studyMetadata?.sourceSha256 === source.verification.numbering_revision.baseline.sha256,
-      'Unknown Level 6 numbering source; manual identity review required');
+      `Unknown Level ${level} numbering source; manual identity review required`);
     const target = byLegacyId.get(old.hsk_index);
     requireThat(target?.headword === old.simplified && target.pinyin === old.pinyinDisplay &&
-      target.syllabus_headword === old.studyMetadata.syllabusHeadword && target.syllabus_pos_zh === old.studyMetadata.syllabusPosZh,
+      (old.studyMetadata.syllabusHeadword == null || (target.legacy_syllabus_headword ?? target.syllabus_headword) === old.studyMetadata.syllabusHeadword) &&
+      (old.studyMetadata.syllabusPosZh == null || (target.legacy_syllabus_pos_zh ?? target.syllabus_pos_zh) === old.studyMetadata.syllabusPosZh),
       `ID/headword mismatch for legacy ${old.hsk_index}; manual identity review required`);
     return target.id;
   };
@@ -155,8 +156,14 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
       pinyinDisplay: e.pinyin, audio: null, examples: [], createdAt: importedAt, updatedAt: importedAt,
     } : undefined);
     requireThat(old?.simplified === e.headword, `ID/headword mismatch for ${e.id}; manual identity review required`);
-    if (renumbered && old.studyMetadata) requireThat(old.studyMetadata.syllabusHeadword === e.syllabus_headword &&
-      old.studyMetadata.syllabusPosZh === e.syllabus_pos_zh, `ID/headword mismatch for ${e.id}; source identity differs`);
+    if (renumbered && old.studyMetadata) {
+      const currentNumbering = old.studyMetadata.sourceSha256 === inputSha256;
+      const expectedHeadword = currentNumbering ? e.syllabus_headword : (e.legacy_syllabus_headword ?? e.syllabus_headword);
+      const expectedPos = currentNumbering ? e.syllabus_pos_zh : (e.legacy_syllabus_pos_zh ?? e.syllabus_pos_zh);
+      requireThat((old.studyMetadata.syllabusHeadword == null || old.studyMetadata.syllabusHeadword === expectedHeadword) &&
+        (old.studyMetadata.syllabusPosZh == null || old.studyMetadata.syllabusPosZh === expectedPos),
+      `ID/headword mismatch for ${e.id}; source identity differs`);
+    }
     requireThat(e.meaning_en?.trim() && e.pinyin?.trim(), `Missing meaning or reading: ${e.id}`);
     for (const [key, primary, map] of [['topic_ids', 'primary_topic_id', topicMap], ['pos_ids', 'primary_pos_id', posMap]]) {
       requireThat(e[key]?.length && e[key].includes(e[primary]) && (key !== 'topic_ids' || e[key][0] === e[primary]) && new Set(e[key]).size === e[key].length && e[key].every(id => map.has(id)), `Invalid ${key}: ${e.id}`);
@@ -180,7 +187,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
       if (normalizeSoftHyphen) exampleNormalizations.push({ entryId: e.id, style: ex.style,
         fields: ['hanzi', 'pinyin'], change: 'Removed leading U+00AD soft hyphen; source bytes preserved.' });
       requireThat(ex.hanzi?.trim() && ex.english?.trim() && ex.pinyin?.trim(), `Incomplete example: ${e.id}/${ex.style}`);
-      const correction = spacingCorrections[`${level}:${e.id}:${ex.style}`];
+      const correction = spacingCorrections[`${level}:${e.legacy_syllabus_id ?? e.id}:${ex.style}`];
       const pinyin = correction && ex.hanzi === correction[0] && ex.pinyin === correction[1] ? correction[2] : ex.pinyin;
       // Level 2 replaces legacy examples even when text matches. Only recordings already
       // attached to this handoff's exact sentence ID and reading survive a later import.
@@ -216,6 +223,8 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         ...(!includeExamples ? { exampleImportPolicy: 'terms_only_preserve_existing' } : {}),
         ...(e.syllabus_headword != null ? { syllabusHeadword: e.syllabus_headword } : {}),
         ...(e.syllabus_pos_zh != null ? { syllabusPosZh: e.syllabus_pos_zh } : {}),
+        ...(e.syllabus_pinyin != null ? { syllabusPinyin: e.syllabus_pinyin } : {}),
+        ...(e.pronunciation_note ? { pronunciationNote: e.pronunciation_note } : {}),
         ...(e.meaning_source ? { meaningSource: e.meaning_source } : {}),
         ...(e.classification_status ? { classificationStatus: e.classification_status } : {}),
         ...(renumbered ? { numberingRevision: { name: 'official-site-1219', previousId: e.legacy_syllabus_id } } : {}),
@@ -273,7 +282,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   }
   const vocabularyPath = resolve(options.vocabulary ?? VOCABULARY_DIRECTORY);
   const { data, report } = importLevel1({
-    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level1_1.7.1.json'),
+    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level1_1.7.2.json'),
     topicsPath: resolve(options.topics ?? 'importer/hsk/hsk3_topics.json'), vocabularyPath,
   });
   if (options.write) writeVocabulary(resolve(options.output ?? vocabularyPath), data);

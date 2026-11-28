@@ -20,8 +20,8 @@ primary/secondary subtopic IDs are retained in `studyMetadata` alongside the
 version and source checksum. The [migration audit](../../../reports/hsk-topics-v2-import.json)
 records classification changes and preservation checks for all 2,000 entries.
 
-`level-1.json` now follows v1.7.1, including 33 revised sentence examples.
-`level-5.json` now follows v1.0.5: 1,600 draft terms and 3,200 draft examples.
+The preceding Level 1 release v1.7.1, including 33 revised sentence examples.
+The preceding Level 5 release v1.0.5 contains 1,600 draft terms and 3,200 draft examples.
 Relative to v1.0.1, 190 examples and 69 meanings are revised. The initial v1.0.0 sentence deferral is historical.
 All source verification limits, exact word IDs, compatible recordings and original
 syllabus provenance remain attached. Optional terms-only imports preserve existing
@@ -34,15 +34,15 @@ Draft example sentences have no recordings. No local media paths are runtime aud
 attachments. See the [Level 1 audit](../../../reports/hsk-level1-1.7.1-import.json)
 and [Level 5 audit](../../../reports/hsk-level5-1.0.5-import.json).
 
-`level-2.json` follows v1.1.1, with 25 updated examples (10 changed sentence texts
+The preceding Level 2 release v1.1.1 included with 25 updated examples (10 changed sentence texts
 and 15 pinyin-only revisions). Word/phrase identities, lexical content and all
 166 word recordings are preserved. See the [Level 2 audit](../../../reports/hsk-level2-1.1.1-import.json).
 
-`level-3.json` follows v1.1.2, with 23 revised examples across 21 entries. All
+The preceding Level 3 release v1.1.2 included with 23 revised examples across 21 entries. All
 500 word identities, lexical fields and 443 word recordings remain exact; 977
 example IDs are preserved. See the [Level 3 audit](../../../reports/hsk-level3-1.1.2-import.json).
 
-`level-4.json` follows v1.1.1: only sentence examples change (43 examples across
+The preceding Level 4 release v1.1.1: only sentence examples change (43 examples across
 38 entries). All 1,000 word IDs, lexical fields, topics and 797 word recordings
 remain unchanged; 1,957 example IDs are retained. See the [Level 4 audit](../../../reports/hsk-level4-1.1.1-import.json).
 
@@ -91,3 +91,18 @@ for each word. Current `hskSource`, source references and `studyMetadata.source`
 point to 1.0.1, while `secondarySources` retains versioned earlier references.
 Repeat imports recognize the exact old/current source checksum and preserve the
 same word's UUID/audio when two official serials swap positions.
+
+## Current Levels 1-5 numbering migration
+
+Active source versions are Level 1 **1.7.2**, Level 2 **1.1.2**, Level 3 **1.1.3**,
+Level 4 **1.1.2** and Level 5 **1.0.6**. Earlier version descriptions above record
+the preceding sentence-review releases. The current files update 1,092 official
+indices while preserving every UUID, order, lexical reading and all 2,988 word
+recordings. Six POS assignments and the two adverbial 白 examples are corrected.
+`studyMetadata.numberingRevision.previousId` supports exact legacy lesson bindings;
+`syllabusPinyin` preserves official citation readings separately from recorded speech.
+
+Each entry occupies one compact JSON line. UTF-8 sizes are 1,336,375 / 883,093 /
+2,082,880 / 4,275,718 / 7,800,726 bytes for Levels 1-5; no split is needed.
+The Level 6 parts remain unchanged. See the [runtime import audit](../../../reports/hsk-level1-5-official-numbering-import.json)
+and [migration report](../../../reports/hsk-level1-5-official-numbering-migration.md).

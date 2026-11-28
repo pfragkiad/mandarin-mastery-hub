@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { vocabularyData, sentencePhraseEntries } from './data-contract';
 import { vocabularyFacetOptions, vocabularyKind, words } from './mandarin';
 
-const raw = readFileSync('importer/hsk/hsk3_level5_1.0.5.json');
+const raw = readFileSync('importer/hsk/hsk3_level5_1.0.6.json');
 const source = JSON.parse(raw.toString());
 const level5 = vocabularyData.entries.filter(e => e.hskLevel === 5);
 
@@ -16,7 +16,7 @@ describe('Level 5 draft terms', () => {
   });
   it('exposes every exact syllabus identity and its recorded draft fields', () => {
     expect(level5).toHaveLength(1600);
-    expect(level5.map(e => e.hsk_index)).toEqual(source.entries.map((e: { id: number }) => e.id));
+    expect(level5.map(e => e.hsk_index).sort((a, b) => a! - b!)).toEqual(source.entries.map((e: { id: number }) => e.id));
     for (const entry of level5) {
       const recorded = source.entries.find((e: { id: number }) => e.id === entry.hsk_index);
       expect(entry.simplified).toBe(recorded.headword);
@@ -30,7 +30,7 @@ describe('Level 5 draft terms', () => {
     }
   });
   it('attaches word audio only to the 1,306 exact word-and-reading matches', () => {
-    const manifest = JSON.parse(readFileSync('importer/data/hsk-audio/level5-manifest.json', 'utf-8'));
+    const manifest = JSON.parse(readFileSync('importer/data/hsk-audio/level5-manifest-1.0.6.json', 'utf-8'));
     const rows = new Map<number, { status: string; recording?: { sha256: string } }>(
       manifest.entries.map((row: { hskIndex: number }) => [row.hskIndex, row]));
     let attached = 0;

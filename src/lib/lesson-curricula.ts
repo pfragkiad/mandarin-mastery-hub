@@ -16,7 +16,7 @@
  * manifests; the Lessons pages and the Vocabulary word cards (lessonsForWord: which course
  * lessons teach this exact HSK word) import this module.
  */
-import { SYLLABUS_VERSION, isSyllabusRecord, lessonSummaries, lessonSummary, type LessonSummary, type SyllabusRecordFields } from './lessons';
+import { SYLLABUS_VERSION, isSyllabusRecord, syllabusIndexForReference, lessonSummaries, lessonSummary, type LessonSummary, type SyllabusRecordFields } from './lessons';
 
 /** Syllabus edition each course teaches, by course (curriculum) ID. The HSK 3.0 levels are
  *  one course (hsk3-2025) whose sections are the levels (Level 1, Level 2, …) and teach the
@@ -110,16 +110,19 @@ export type WordLessonPlacement = LessonPosition & { introduced: boolean };
  */
 export function wordLessonPlacements(all: Course[], word: SyllabusWord): WordLessonPlacement[] {
   if (!isSyllabusRecord(word)) return [];
-  const id = word.hsk_index!;
-  return all.filter(c => COURSE_SYLLABUS[c.id] === word.hskVersion).flatMap(course => course.sections.flatMap(section => {
-    const flat = sectionPlacements(section);
-    return flat.flatMap((placement, i): WordLessonPlacement[] => {
-      const introduced = placement.introducedEntryIds.includes(id);
-      if (!introduced && !placement.reviewedEntryIds.includes(id)) return [];
-      const unit = section.units.find(u => u.placements.includes(placement))!;
-      return [{ course, section, unit, placement, index: i + 1, total: flat.length, previous: flat[i - 1]?.lesson ?? null, next: flat[i + 1]?.lesson ?? null, introduced }];
+  return all.filter(c => COURSE_SYLLABUS[c.id] === word.hskVersion).flatMap(course => {
+    const id = syllabusIndexForReference(word, course.id);
+    if (id == null) return [];
+    return course.sections.flatMap(section => {
+      const flat = sectionPlacements(section);
+      return flat.flatMap((placement, i): WordLessonPlacement[] => {
+        const introduced = placement.introducedEntryIds.includes(id);
+        if (!introduced && !placement.reviewedEntryIds.includes(id)) return [];
+        const unit = section.units.find(u => u.placements.includes(placement))!;
+        return [{ course, section, unit, placement, index: i + 1, total: flat.length, previous: flat[i - 1]?.lesson ?? null, next: flat[i + 1]?.lesson ?? null, introduced }];
+      });
     });
-  }));
+  });
 }
 
 /* ---------- Project data ---------- */

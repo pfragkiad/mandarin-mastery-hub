@@ -6,7 +6,7 @@ import { alignPhrasePinyin } from './phrase-pinyin-align';
 import { partOfSpeechList, words } from './mandarin';
 import { drawingWordPool } from './drawing-game';
 
-const raw = readFileSync('importer/hsk/hsk3_level1_1.7.1.json', 'utf8');
+const raw = readFileSync('importer/hsk/hsk3_level1_1.7.2.json', 'utf8');
 const source = JSON.parse(raw) as { data_version: string; taxonomy: { topics: { id: string; label: string }[] }; entries: { id: number; headword: string; pinyin: string; meaning_en: string; primary_topic_id: string; topic_ids: string[]; examples: { hanzi: string; pinyin: string; english: string; style: string; note: string; register: string }[] }[] };
 const inventory = new Set((JSON.parse(readFileSync('src/data/pinyin/inventory.json', 'utf8')) as { syllables: { base: string }[] }).syllables.map(s => s.base));
 const level1 = vocabularyData.entries.filter(e => e.hskLevel === 1);
@@ -38,7 +38,7 @@ describe('Versioned Level 1 handoff', () => {
         const original = recorded.examples[index]!;
         expect(example.simplified).toBe(original.hanzi);
         expect(example.english).toBe(original.english);
-        const fix = corrections[`${recorded.id}:${index}`];
+        const fix = corrections[`${recorded.legacy_syllabus_id ?? recorded.id}:${index}`];
         if (fix) expect(original.pinyin).toBe(fix.source);
         expect(examplePinyin(example)).toBe(fix ? fix.corrected : original.pinyin);
         expect(example.style).toBe(original.style);

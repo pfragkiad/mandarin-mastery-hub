@@ -37,7 +37,7 @@ class AudioImportTests(unittest.TestCase):
         # Clear later levels too: their entries now carry reusable Level 2 clips, and this
         # fixture models the state before any Level 2 upload (only Level 1 reusable).
         for entry in before['entries']:
-            if entry['hskLevel'] in (2, 3, 4):
+            if entry['hskLevel'] is not None and entry['hskLevel'] >= 2:
                 entry['audio'] = None
         data, report = audio.import_audio(before, self.manifest)
         self.assertEqual(report['attached'], 1)
@@ -97,7 +97,8 @@ class AudioImportTests(unittest.TestCase):
         self.assertEqual((report['attached'], report['changed'], report['pendingUpload']), (166, 0, []))
         attached = {entry['hsk_index'] for entry in self.vocabulary['entries'] if entry['hskLevel'] == 2 and entry.get('audio')}
         for hsk_index in (301, 314, 332, 333, 351, 352, 356, 419, 426, 430, 447, 459, 472, 303, 496):
-            self.assertNotIn(hsk_index, attached)
+            row = next(row for row in self.manifest['entries'] if row.get('previousHskIndex', row['hskIndex']) == hsk_index)
+            self.assertNotIn(row['hskIndex'], attached)
 
 
 if __name__ == '__main__':

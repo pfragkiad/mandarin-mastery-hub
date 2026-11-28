@@ -32,6 +32,7 @@ export type Entry = {
     exampleImportPolicy?: 'terms_only_preserve_existing';
     posNote: string | null; verificationStatus: string;
     syllabusHeadword?: string; syllabusPosZh?: string;
+    syllabusPinyin?: string; pronunciationNote?: string;
     meaningSource?: Record<string, unknown>; classificationStatus?: string;
     numberingRevision?: { name: string; previousId: number };
   };

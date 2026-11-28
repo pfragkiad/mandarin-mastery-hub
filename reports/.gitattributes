@@ -33,3 +33,8 @@ hsk-level7-0.0.1-official-source-audit.json -text
 hsk-level6-official-numbering-crosswalk.tsv -text
 hsk-level6-1.0.1-numbering.json -text
 hsk-level6-1.0.1-import.json -text
+hsk-level1-5-official-id-crosscheck-validation.md -text
+hsk-level1-5-official-id-crosscheck-validation.json -text
+hsk-level1-5-official-numbering-migration.json -text
+hsk-level1-5-official-numbering-migration.md -text
+hsk-level1-5-official-numbering-import.json -text

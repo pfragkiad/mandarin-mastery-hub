@@ -13,6 +13,7 @@ that the official list belongs to Level 7 alone.
 | `official-syllabus-pages.json` | Page-labelled text extracted from the current official PDF with pypdf 6.21.4, using layout extraction; no OCR or dictionary reconstruction. |
 | `hsk-syllabus-2025-11-previous-reference.pdf` | Exact earlier official PDF cited by the existing Level 6 release; 330 PDF pages. Both PDFs identify the November 2025 syllabus edition. |
 | `previous-reference-level6-pages.json` | Layout text from PDF pages 94–138 of that earlier PDF, covering all 1,800 Level 6 records. |
+| `review-level1-5-previous-pages.json` | Layout text from earlier official PDF pages 9, 20, 21 and 54, supporting the separate [Levels 1–5 report validation](../../../reports/hsk-level1-5-official-id-crosscheck-validation.md). Confirms the five Level 3 POS defects predate the latest numbering and that 白 had a broader POS scope in the earlier PDF. |
 | `source-manifest.json` | Retrieval URLs, byte sizes, SHA-256 checksums, PDF versions and extraction details. |
 | `official-vocabulary.json` | Generated transcription of all 11,000 current official vocabulary rows, preserving serials, level annotations, homograph suffixes, readings, blank POS fields and source pages. |
 | `.gitattributes` | Preserves checksum-bound source bytes and generated JSON line endings. |

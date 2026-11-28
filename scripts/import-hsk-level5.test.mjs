@@ -1,13 +1,14 @@
 /** Level 5 draft terms/examples: exact identities, recorded readings, safe repeat imports. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { importLevel5 } from './import-hsk-level5.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level5_1.0.5.json';
+const sourcePath = 'importer/hsk/hsk3_level5_1.0.6.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
 
@@ -21,8 +22,13 @@ function fixture(t, edit = () => {}, editSource) {
   let inputPath = sourcePath;
   if (editSource) {
     const next = structuredClone(source); editSource(next);
-    inputPath = join(directory, 'hsk3_level5_1.0.5.json');
+    inputPath = join(directory, 'hsk3_level5_1.0.6.json');
     writeFileSync(inputPath, JSON.stringify(next));
+  }
+  if (editSource) {
+    const pin = createHash('sha256').update(readFileSync(inputPath)).digest('hex');
+    for (const e of data.entries.filter(e => e.hskLevel === 5)) e.studyMetadata.sourceSha256 = pin;
+    writeFileSync(vocabularyPath, JSON.stringify(data));
   }
   return { sourcePath: inputPath, topicsPath: 'importer/hsk/hsk3_topics.json', vocabularyPath };
 }
@@ -85,7 +91,7 @@ test('reimport retains exact word and sentence recording attachments', t => {
 test('keeps both displayed alternatives and binds the first sourced reading to its exact glyph', t => {
   const { data } = importLevel5(fixture(t));
   for (const [id, style, glyph, reading] of [[2084, 'conversational', '谁', 'shéi'], [2449, 'written', '熟', 'shú']]) {
-    const example = data.entries.find(e => e.hsk_index === id).examples.find(ex => ex.style === style);
+    const example = data.entries.find(e => e.studyMetadata?.numberingRevision?.previousId === id).examples.find(ex => ex.style === style);
     assert.ok(example.pinyinDisplay.includes('/'));
     assert.equal(example.tokens.find(token => token.text === glyph).pinyin, reading);
   }
