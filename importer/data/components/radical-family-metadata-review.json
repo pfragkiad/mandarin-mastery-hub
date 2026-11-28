@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "scope": "Exact radical-family presentation only; no lexical readings, dictionary radical assignments, source-tree changes or stroke bindings.",
+  "sourceFile": "../radical-identities/EquivalentUnifiedIdeograph.txt",
+  "sourceSha256": "38619c05a17e771554000fe604afee92e10eb49e0616ecf0c87af3c1eb0f4320",
+  "proposalFile": "cjk_component_metadata_patch.md",
+  "proposalSha256": "7d8e5e353cf712367aa3761586dcf4787712261907858b7ca8978be3ebd27d3b",
+  "mappings": [
+    { "glyph": "𡯂", "symbol": "⺑", "family": 43, "recordedComponentRow": ["𡯂", "", "", "3 strokes · Component", "Common"] },
+    { "glyph": "𦍋", "symbol": "⺸", "family": 123, "recordedComponentRow": ["𦍋", "", "", "6 strokes · Component", "Common"] },
+    { "glyph": "𧢲", "symbol": "⻇", "family": 148, "recordedComponentRow": ["𧢲", "", "", "7 strokes · Component", "Common"] },
+    { "glyph": "𨸏", "symbol": "⻕", "family": 170, "recordedComponentRow": ["𨸏", "", "", "8 strokes · Component", "Common"] },
+    { "glyph": "𩠐", "symbol": "⻡", "family": 185, "recordedComponentRow": ["𩠐", "", "", "9 strokes · Component", "Common"] }
+  ],
+  "descriptiveOnly": [
+    {
+      "glyph": "龶",
+      "recordedComponentRow": ["龶", "", "", "4 strokes · Component", "Common"],
+      "recordedCharacterRow": ["龶", "", "", "4 strokes · 土 radical", "Common"],
+      "description": "Top component of 青 (青字头)",
+      "decision": "Component description only; no 青 family identity, lexical meaning or pronunciation is inherited.",
+      "crossCheck": {
+        "sourceFile": "../character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+        "sourceSha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+        "sourceEntry": "青字頭 青字头 [qing1 zi4 tou2] /Chinese character component 龶, used in 青, 毒, 素 etc/",
+        "sourceUrl": "https://www.mdbg.net/chinese/dictionary?wdqb=%E9%9D%92",
+        "license": "CC BY-SA 4.0; MDBG and CC-CEDICT contributors",
+        "scope": "Confirms the component name and its use in 青; the entry's reading names 青字头, not a standalone lexical reading of 龶. The runtime description retains attribution to the supplied patch."
+      }
+    }
+  ]
+}

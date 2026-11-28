@@ -15,8 +15,8 @@ export type LibraryKind = 'Characters' | 'Radicals' | 'Components' | 'Strokes';
 export type DecompositionNode = { glyph: string; position: string; children?: DecompositionNode[] };
 export type LibraryEntry = { id: string; hanzi: string; pinyin: string; meaning: string; note: string; script?: CharacterScript; kangxiIndex?: number; radicalVariant?: string; radicalHeadingId?: string; strokes?: number | undefined; decomposition?: { root: DecompositionNode; source: string; status: string } };
 // Planned counts are the loading labels; the Characters tab keeps ordinary characters —
-// 9575 rows minus 38 pure component forms that exist only in the Components tab.
-export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9537 };
+// 9575 rows minus 39 pure component forms that exist only in the Components tab.
+export const plannedCounts: Record<LibraryKind, number> = { Strokes: 38, Radicals: 214, Components: 1843, Characters: 9536 };
 // Catalogue rows as raw tuples, grouped for search, flashcard decks and practice facts.
 export type ReferenceKind = 'Radical' | 'Component' | 'Character';
 export const referenceCatalog: { kind: ReferenceKind; entries: CatalogRow[] }[] = [

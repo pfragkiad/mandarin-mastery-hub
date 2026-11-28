@@ -55,7 +55,7 @@ describe('Catalogue requirements', () => {
     }
   });
   it('imports all 1843 components', () => expect(libraryEntries('Components')).toHaveLength(1843));
-  it('imports 9537 character records after moving pure component forms to Components', () => expect(libraryEntries('Characters')).toHaveLength(9537));
+  it('imports 9536 character records after moving pure component forms to Components', () => expect(libraryEntries('Characters')).toHaveLength(9536));
   it('keeps dual radical forms as characters and never repeats pure component forms', () => {
     const characters = libraryEntries('Characters');
     expect(characters.find(entry => entry.hanzi === '门')?.pinyin).toBe('mén');

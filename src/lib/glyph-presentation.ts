@@ -2,9 +2,10 @@ import { catalog, groupReadingMeanings, readingMeanings } from './catalog-store'
 import { radicalIdentity, type RadicalLink } from './radical-identities';
 import { radicalForms } from './radical-strokes';
 
-// Exact Unicode 17.0 NamesList entries; never classify from appearance or missing pinyin.
+// Exact Unicode 17.0 NamesList entries and attributed component descriptions;
+// never classify from appearance or missing pinyin.
 // https://www.unicode.org/Public/17.0.0/ucd/NamesList.txt
-const descriptions: Record<string, { unicodeName: string; meaning: string; variant: boolean; name?: { text: string; pinyin: string; source: string } }> = {
+const descriptions: Record<string, { unicodeName?: string; source?: string; componentOnly?: boolean; meaning: string; variant: boolean; name?: { text: string; pinyin: string; source: string } }> = {
   '⺀': { unicodeName: 'CJK RADICAL REPEAT', meaning: 'Two-dot component; Unicode radical repeat', variant: false },
   '⺈': { unicodeName: 'CJK RADICAL KNIFE ONE', meaning: 'Top-position knife component (刀 family)', variant: true, name: { text: '斜刀头', pinyin: 'xiédāotóu', source: 'User-reviewed component name' } },
   '⺊': { unicodeName: 'CJK RADICAL DIVINATION', meaning: 'Top-position component of 卜', variant: true },
@@ -12,6 +13,9 @@ const descriptions: Record<string, { unicodeName: string; meaning: string; varia
   '⺍': { unicodeName: 'CJK RADICAL SMALL TWO', meaning: 'Top-position component of 小', variant: true },
   '⺗': { unicodeName: 'CJK RADICAL HEART TWO', meaning: 'Bottom-position heart component (心 family)', variant: true },
   '⺮': { unicodeName: 'CJK RADICAL BAMBOO', meaning: 'Bamboo component (竹 family)', variant: true, name: { text: '竹头', pinyin: 'zhútóu', source: 'User-reviewed component name' } },
+  // Owner-supplied descriptive label, not a radical equivalent or lexical sense.
+  // See importer/data/components/radical-family-metadata-review.json.
+  '龶': { source: 'Owner-supplied CJK component metadata patch · descriptive label only', componentOnly: true, meaning: 'Top component of 青 (青字头)', variant: false },
 };
 
 // Identity-variant glyphs that are also recorded ordinary characters — each carries a
@@ -28,6 +32,7 @@ export function pureComponentForm(glyph: string): boolean {
   if (Array.from(glyph).length !== 1 || codePoint === undefined) return false;
   if (codePoint >= 0x2e80 && codePoint <= 0x2eff) return true; // CJK Radicals Supplement
   if (codePoint >= 0x2f00 && codePoint <= 0x2fd5) return true; // Kangxi Radicals
+  if (descriptions[glyph]?.componentOnly) return true;
   return radicalIdentity(glyph).kind === 'variant' && !DUAL_CHARACTERS.has(glyph);
 }
 
@@ -117,7 +122,7 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   const identity = radicalIdentity(glyph);
   const reviewed = descriptions[glyph];
   const dualGlyph = !supplement && !kangxiSymbol && identity.kind === 'variant' && DUAL_CHARACTERS.has(glyph);
-  const pureForm = supplement || kangxiSymbol || (identity.kind === 'variant' && !dualGlyph);
+  const pureForm = pureComponentForm(glyph);
   // Pure forms keep component presentation everywhere; dual forms only take the component
   // role where the record is browsed as a component.
   const component = pureForm || (dualGlyph && (kind === 'Components' || kind === 'Component'));
@@ -133,6 +138,9 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
   const label = kind === 'Strokes' || kind === 'Stroke' ? 'Stroke' : component ? (variant ? 'Component variant' : 'Component') : kind.replace(/s$/, '');
   const componentName = pureForm ? reviewed?.name : undefined;
   const characterPinyin = pureForm ? '' : pinyin;
+  const source = reviewed?.source ?? (reviewed?.unicodeName || supplement || kangxiSymbol
+    ? `Unicode NamesList 17.0.0${reviewed?.unicodeName ? ` · ${reviewed.unicodeName}` : ''}`
+    : 'Recorded exact Kangxi identity · see source records');
   return {
     label, canonicalRadical, characterRadical, component, componentName, characterPinyin,
     reading: componentName?.pinyin ?? characterPinyin,
@@ -140,6 +148,6 @@ export function glyphPresentation(glyph: string, kind: string, pinyin = '', mean
     meaning: pureForm ? reviewed?.meaning ?? (identity.radicals.length ? variantMeaning(identity.radicals.map(item => item.glyph)) : 'Component form; meaning not recorded') : radicalNoteMeaning(glyph, meaning) ?? displayMeaning(meaning),
     speech: pureForm ? componentName?.text ?? null : glyph,
     codePoint: codePoint === undefined ? '' : `U+${codePoint.toString(16).toUpperCase().padStart(4, '0')}`,
-    source: pureForm ? `Unicode NamesList 17.0.0${reviewed ? ` · ${reviewed.unicodeName}` : ''}${componentName ? ` · ${componentName.source}` : ''}` : null,
+    source: pureForm ? `${source}${componentName ? ` · ${componentName.source}` : ''}` : null,
   };
 }

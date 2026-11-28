@@ -30,7 +30,7 @@ Deploy the shared file and all section files together with the updated loader. C
 
 | File | Top-level content | Purpose |
 | --- | --- | --- |
-| `public/data/characters.json` | `{ "characters": [...] }` | 9,575 raw character rows at migration time. Presentation excludes the 38 pure component forms, leaving 9,537 Characters entries. |
+| `public/data/characters.json` | `{ "characters": [...] }` | 9,575 raw character rows at migration time. Presentation now excludes 39 pure component forms, including the reviewed 龶 fragment, leaving 9,536 Characters entries. |
 | `public/data/components.json` | `{ "components": [...] }` | 1,843 raw component rows at migration time. |
 | `public/data/radicals.json` | `{ "radicals": [...] }` | Exactly 214 Kangxi heading rows; variants remain in their family sidecars. |
 | `public/data/strokes.json` | `{ "strokes": [...] }` | 38 stroke-type rows, including recorded symbols, readings, descriptions, and source notes. These are not handwriting paths. |
@@ -61,6 +61,11 @@ Each section uses the same `CatalogRow` tuple:
 Preserve tuple positions, optional fields, exact Unicode strings, and source ordering. A missing reading stays missing; component names and family readings are not lexical pronunciations. Use recorded script metadata rather than character shape or normalization.
 
 The library still creates record IDs as `${kind}:${glyph}`, where `kind` is `Characters`, `Components`, `Radicals`, or `Strokes`. Do not merge same-glyph records across kinds. A saved radical variant additionally retains its heading and exact family form key. File separation must never change bookmarks, URL selections, record links, or variant identities.
+
+The [component metadata patch guide](../../importer/data/components/README.md)
+records five Unicode-backed family identities and the separate descriptive label
+for 龶. These are presentation metadata; source rows, lexical readings, dictionary
+radicals, IDS and geometry stay intact. No new family form keys are generated.
 
 For lesson authoring and external consumers, [catalog_ids.json](catalog_ids.json)
 exports the exact selectable Characters records as `{ "characters": { "次": "Characters:次" } }`.

@@ -15,6 +15,13 @@ The [tone pairs source](data/tone-pairs/README.md) pins the 48 Tone pairs / Tone
 
 ## Radical identities
 
+For component reading/meaning proposals, follow the
+[component metadata patch guide](data/components/README.md). It preserves the supplied
+handoff and defines exact-record review, source evidence, shared presentation/family
+fallback rules and validation. Five explicitly selected Unicode-backed family
+identities are imported by `scripts/import-radical-identities.py`; 龶 has a separate
+attributed descriptive label. The remaining suggestions are not automatically imported.
+
 `scripts/import-radical-identities.py` reads these pinned inputs from `importer/data/radical-identities/`:
 
 | File | Purpose |
@@ -25,6 +32,12 @@ The [tone pairs source](data/tone-pairs/README.md) pins the 48 Tone pairs / Tone
 | [Unihan-kRSUnicode-supplement.txt](data/radical-identities/Unihan-kRSUnicode-supplement.txt) | Recorded residual-zero radical assignments, including its upstream Unihan checksum. |
 
 These four pinned inputs previously lived under `scripts/data/radical-identities/` and now live together under `importer/data/radical-identities/`. Relocation preserves file bytes and provenance. Preserve encoding and line endings when handling checksum-bound sources.
+
+The same directory additionally pins Unicode 17's `EquivalentUnifiedIdeograph.txt`.
+The importer uses only the pairs selected by the component metadata review and
+validates their exact symbol families; NamesList cross-references alone remain
+insufficient. `python scripts/import-radical-identities.py --check` verifies output
+without writing it.
 
 Run `python scripts/import-radical-identities.py` from the repository root to generate `public/data/radical-identities.json`. The script also reads the current character/radical rows, shared catalogue metadata, and the radical-stroke sidecar. It never serves these importer-only inputs to the browser.
 
