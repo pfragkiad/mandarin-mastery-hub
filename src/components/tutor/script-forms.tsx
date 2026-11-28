@@ -211,13 +211,14 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
     <h3 className="eyebrow flex-wrap"><ArrowLeftRight size={13} aria-hidden="true"/><span>RELATED CHARACTERS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
+    {/* Reuse the selector's capped row and text stack, retaining each exact form's own reading/rank. */}
     <div className="radical-form-list" role="group" aria-label={`Related characters of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
         const rank = usageOrder.loaded ? usageRank(entry, kind, preferences.includeTraditional) : null;
         // "Also traditional" only when a note documents the key unchanged in traditional writing.
         const alsoTraditional = entry.hanzi === head && entry.script === 'Simplified' && characterVariants.alsoTraditional.has(head);
-        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span>{entry.pinyin || 'Pinyin not recorded'}</span><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{alsoTraditional && <><br/>Simplified &amp; Traditional</>}</small></>;
+        const content = <><strong lang="zh-CN">{entry.hanzi}</strong><span className="form-switch-text"><b>{entry.pinyin || 'Pinyin not recorded'}</b><small>{label(entry)}{usageOrder.loaded && <> · {rank === null ? 'Unranked' : `Rank #${rank.toLocaleString('en-US')}`}</>}{alsoTraditional && <><br/>Simplified &amp; Traditional</>}</small></span></>;
         return <Button key={entry.id} asChild variant="ghost" className={`radical-form-choice related-form-choice ${entry.script === 'Traditional' ? 'is-traditional' : ''} ${selected ? 'is-selected' : ''}`}>
           {selected
             ? <span aria-current="true" title={switchFormHint(entry.hanzi, true)}>{content}</span>
