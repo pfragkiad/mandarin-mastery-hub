@@ -1,5 +1,33 @@
 # Roadmap
 
+## Unified sound-card mockup layout
+- [x] Reuse Sound chart's playback row and shared Slower switch above In a word in both tone details; verified natural exact-word playback at shared 0.65 speed, persistence into Sound chart, 390px/2294px fit, 14 regression tests and clean preview.
+- [x] Share title/description/pill layout across Sound chart, Tone pairs and Tone changes, retaining current site styles.
+- [x] Stack written and spoken tone rows above the shared In a word drawer; preserve exact recordings, links, selection and resizing.
+- [x] Verify all three cards at 390px/2294px in Compact/Comfortable, drawer collapse/reopen, exact example selection and natural whole-word playback; 30 regression tests pass and preview build OK. The owner's playback-row clarification is implemented above.
+
+## Start grid hints and latest-audio review
+- [x] Enable existing glyph quick cards on Start grid cards, independent of library hint preferences; verified all six library categories in the live wide Start view, no navigation/errors, and 23 focused tests passed.
+- [x] Reassess the latest package's 40 held word candidates and 3 character-reading slots against exact readings, pinned source tags and transcription evidence; all source tags agree with supplied metadata, but no additional acoustic approval is claimed.
+- [x] Deliver readable latest-audio Markdown, CSV and JSON reports listing 25 installed recordings, all 43 held targets/50 candidate references, alternatives and specific blockers. Remaining attachments still require qualified listening as recorded below.
+
+## Second supplemental recording batch
+- [x] Preserve original metadata/notices and verify SHA-256/Git-blob/bytes of all 79 supplied clips and current exact word identities.
+- [x] Source/automatic-transcription screen all clips; attach only 25 explicit initial 一/不 sandhi-correspondence words (HSK 3/4/5/6: 2/5/5/13), not acoustic/native-speaker certified.
+- [x] Upload those 25 to the CDN and verify all retrieved SHA-256 hashes; play four new words from their real detail-card speakers to natural completion; retain exact IDs, readings, examples, order and prior audio.
+- [x] Deliver `reports/missing-audio-v2-import.json` for every clip; preserve 831 uncovered words and 27 uncovered character slots.
+- [x] Passed 1,473 application regression tests, 32 recording-import tests, both official-ID validators, idempotent repeat import and preview build checks.
+- [ ] Attach any of the remaining 40 candidate words / 3 character-reading slots only after native-speaker listening resolves neutral/citation, partial-reading, interjection or transcript disagreements. Blocker: qualified listening decisions, not provided by automatic transcription.
+
+## Detail neighbour labels at every width
+- [x] Apply the clarified every-width choice, keeping narrow headers bounded.
+- [x] Add exact previous/next Hanzi, sound syllables and tone-group labels using shared card navigation; leave phrases unchanged.
+- [x] Verified glyph/sound/tone-group Next navigation, word labels and phrase exclusion, Compact/Comfortable header fit at 320/390/1086px; 40 regression tests pass and preview build OK.
+
+## Sound-detail example styling
+- [x] Match Sound chart's In a character tab, panel spacing, notes and card grid to shared detail examples, including the docked view.
+- [x] Verified identical computed tab/card/box styling and 14px panel gap in Compact/Comfortable, 390px/1800px fit, drawer collapse/reopen and exact 仁 navigation; 23 regression tests pass and build OK.
+
 ## Official-ID sync and supplemental recordings
 - [x] Reconcile all 318 supplied clips (307 word-referenced, 19 character-referenced, 8 shared): 8 exact + 196 reviewed word records, 25 reviewed yán replacements, 21 unresolved words and non-neutral 呀 held; no reading inference.
 - [x] Deliver the final 318-row per-file report at `reports/missing-audio-import.json`, with accepted/rejected/alternative statuses, unresolved references and exact CDN attachments; no pending uploads or media binaries.
@@ -359,3 +387,11 @@
 
 ## Sentence notes behind the (i)
 - [x] Move each recorded example-sentence note out of the card body and behind the shared (i) in the card header row (verbatim, never generated); the (i) opens inwards so it never overflows the detail window; 3 new tests, browser-verified on an HSK 6 phrase card.
+
+## All detail windows share width resizing
+- [x] Reuse the same resizing control for Sound chart details and standalone Word/Phrase/Idiom details, preserving their navigation.
+- [x] Verify actual drag on Words, Phrases, Idioms, Characters, Components, Radicals, Strokes, Sound chart and Tone pairs; shared saved width/reset and 390px fit pass, with 40 regression tests and no browser errors.
+
+## Tone changes matches Tone pairs
+- [x] Use the same floating, resizable detail window, tone header and expanded selected-word card for Tone changes.
+- [x] Verify rule navigation, exact-word selection and 一定 recording playback, Close to rules, 390px/1600px layout and resizing; 42 tests pass and preview build is clean.

@@ -3,18 +3,21 @@
 // player, the applied URL filters and the URL-selected syllable and tone (both live
 // in the URL, so browser Back and the card's own Back restore them exactly).
 // The card's Back trail (soundTrail) remembers syllables opened from inside the card.
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
+// The chosen syllable always opens in the floating window (PinyinSoundSheet) — at every
+// width — so the grid below keeps its full width and the card only ever grows downward.
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { ArrowLeft, ListMusic, Square, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
+import { SoundPlaybackRow } from './sound-playback-row';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { DraftFilterForm } from './filter-form';
 import { FilterSelect, type FilterSelectItem } from './filter-select';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
+import { SoundDetailHeading } from './sound-detail-heading';
 import { focusRecordCard, soundOrigin } from '@/lib/selection-scroll';
-import { historyEntry, historyPosition, soundChartArrival, soundTrail, visitAt } from '@/lib/detail-trail';
+import { historyEntry, historyPosition, soundTrail, visitAt } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
 
 /** The Sound card's five fixed tone slots, in column order. */
@@ -142,20 +145,11 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
   // A tile hidden by the current filters simply isn't found and nothing moves.
   const chartRef = useRef<HTMLDivElement>(null);
   const revealRef = useRef<string | null>(null);
-  // `align` (arrival from a glyph's Sound chart link, wide screens): scroll so the tile's top
-  // lines up with the sticky Selected sound card's top. The browser clamps the scroll, so a
-  // tile near the page end simply ends up visible lower down, and one near the start stays put.
-  const revealTile = (base: string, behavior: ScrollBehavior, align = false) => {
+  const revealTile = (base: string, behavior: ScrollBehavior) => {
     const tile = chartRef.current?.querySelector<HTMLElement>(`.pinyin-tile[data-base="${CSS.escape(base)}"]`);
     if (!tile) return;
-    // While the small-screen window is open, focus stays inside it (the tile is only scrolled to).
+    // While the window is open, focus stays inside it (the tile is only scrolled to).
     if (!document.querySelector('.pinyin-sound-sheet')) tile.focus({ preventScroll: true });
-    const player = align ? chartRef.current?.querySelector<HTMLElement>('.pinyin-chart-layout > .pinyin-player') : null;
-    if (player && player.offsetParent) {
-      const top = parseFloat(getComputedStyle(player).top) || 84;
-      window.scrollTo({ top: window.scrollY + tile.getBoundingClientRect().top - top, behavior });
-      return;
-    }
     // Scroll only when the tile is not fully visible below the sticky header
     // (84px, matching .pinyin-player's top), so visible tiles never move;
     // then centre it in the visible band.
@@ -173,15 +167,11 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
   // brings that syllable's tile into view and focus. The reveal waits two frames so
   // the router's scroll restoration runs first and cannot scroll the tile away again.
   const revealOnMount = useRef(true);
-  // Arrival from a glyph's Sound chart link lines the tile up with the card (taken once, so a
-  // development double-mount keeps it for the run that actually reveals).
-  const alignOnMount = useRef<boolean | null>(null);
   useEffect(() => {
     if (!revealOnMount.current || !selected) return;
     // Cleared only once the reveal runs, so a development double-mount (which cancels
     // the first frame) still reveals on the second run.
-    alignOnMount.current ??= soundChartArrival.take();
-    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { revealOnMount.current = false; revealTile(selected, 'auto', alignOnMount.current ?? false); }); });
+    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => { revealOnMount.current = false; revealTile(selected, 'auto'); }); });
     return () => cancelAnimationFrame(frame);
   }, []);
   // A sound-alike is a link inside the card: remember the sound being left for Back,
@@ -194,12 +184,11 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     if (keep !== undefined && hasRecording(data, base, keep)) void player.play(sound(base, keep));
   };
 
-  const windowLayout = useSoundWindowLayout(chartRef);
   // Arrival from another page (Start, a glyph card or details, a lesson…) with a syllable
-  // already chosen: the card opens in the window at every width, like a details window,
-  // and Close returns through history to the page it came from. Decided once per mount
-  // from the history entry just before this one (recorded by the root), so later picks
-  // inside the window keep it open and Close still knows where to go back to.
+  // already chosen: the window behaves like a details window, and Close returns through
+  // history to the page it came from. Decided once per mount from the history entry just
+  // before this one (recorded by the root), so later picks inside the window keep it open
+  // and Close still knows where to go back to.
   const [arrival, setArrival] = useState<number | null>(null);
   useEffect(() => {
     const index = historyPosition().index;
@@ -207,21 +196,21 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     const before = visitAt(index - 1);
     if (before && before.pathname !== window.location.pathname) setArrival(index - 1);
   }, []);
-  const narrow = windowLayout || arrival !== null;
   // Arrived from another page: the window behaves like a details window, so it shows no
-  // centred Previous/Next — those belong only to the chart's own small-screen window.
+  // centred Previous/Next — those belong only to the chart's own window.
   const detailsMode = arrival !== null;
   const trail = useSyncExternalStore(soundTrail.subscribe, soundTrail.get, soundTrail.get);
-  // Previous/Next in the small-screen window walk the cards the grid shows, in grid order;
+  // Previous/Next in the window walk the cards the grid shows, in grid order;
   // like a grid click they start a fresh Back trail.
   const ordered = useMemo(() => groups.flatMap(group => group.items), [groups]);
   const position = syllable ? ordered.findIndex(s => s.base === syllable.base) : -1;
   const step = (index: number) => { const target = ordered[index]; if (!target) return; player.stop(); soundTrail.clear(); revealRef.current = target.base; onSelect(target.base); };
   const closedBase = useRef<string | null>(null);
-  // The tile whose small-screen window was just closed keeps the hover look (.is-recent)
+  // The tile whose window was just closed keeps the hover look (.is-recent)
   // so the eye finds it again; pointing at another tile, or choosing any tile, drops it.
   const [recent, setRecent] = useState<string | null>(null);
-  const panel = (inSheet: boolean) => <PinyinPlayerPanel data={data} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone} inSheet={inSheet}
+  // The card's own content; the window's bar already carries Back and Close.
+  const panel = <PinyinPlayerPanel data={data} player={player} syllable={syllable} tone={tone} slow={slow} onSlow={onSlow} onTone={chooseTone} inSheet
     onPlayAll={() => { if (!syllable) return; onTone(undefined); void player.sequence(syllable.tones.filter(t => hasRecording(data, syllable.base, t)).map(t => sound(syllable.base, t))); }}
     onSelect={selectAlike} onLeave={() => { player.stop(); leftForCharacter = true; }} />;
 
@@ -262,48 +251,19 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
         })}</div>
       </section>)}
     </div>
-    {/* Wide screens: the card sits beside the grid. Small screens: the same card opens in a
-        top-anchored modal window (like the Glyphs details) only while a syllable is chosen. */}
-    {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={detailsMode ? -1 : position} total={detailsMode ? 0 : ordered.length}
+    {/* The chosen syllable always opens in the floating window (the same top-anchored
+        modal as the Glyphs details), at every width, so the grid keeps its full width. */}
+    <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={detailsMode ? -1 : position} total={detailsMode ? 0 : ordered.length}
+        previousLabel={position > 0 ? ordered[position - 1]?.base : undefined} nextLabel={position >= 0 ? ordered[position + 1]?.base : undefined}
         onBack={() => { player.stop(); window.history.back(); }}
         onPrevious={!detailsMode && position > 0 ? () => step(position - 1) : undefined} onNext={!detailsMode && position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);
         // once the window is gone, the syllable's grid card comes into view with focus.
         onClose={() => { player.stop(); const now = historyPosition().index; if (arrival !== null && now !== undefined && now > arrival) { soundTrail.clear(); const origin = soundOrigin.take(); window.history.go(arrival - now); if (origin) focusRecordCard(origin); return; } setArrival(null); closedBase.current = syllable?.base ?? null; soundTrail.clear(); onSelect(undefined); }}
         onClosed={() => { const base = closedBase.current; closedBase.current = null; if (base) { setRecent(base); requestAnimationFrame(() => revealTile(base, 'auto')); } }}>
-        {panel(true)}
+        {panel}
       </PinyinSoundSheet>
-      : panel(false)}
-    {narrow && !windowLayout && <PinyinPlayerPanel data={data} player={player} syllable={undefined} tone={null} slow={slow} onSlow={onSlow} onTone={chooseTone} onPlayAll={() => {}} onSelect={selectAlike} onLeave={() => {}}/>}
   </div></div>;
-}
-
-/**
- * Whether the Selected sound card should open in the centred window instead of beside the grid.
- *
- * The decision is made in CSS only (src/styles.css, `@container pinyin-chart`): the card goes
- * into the window whenever the chart's own width — what is left after the side menu — would
- * squeeze the grid column and its search box; Comfortable size needs more room than Compact.
- * The container query sets `--pinyin-sound-window: 1` on the layout, and this hook simply reads
- * it back, so the server render (card beside the grid, hidden by CSS when narrow) and the
- * hydrated choice can never disagree. Re-read on any chart resize (window, side menu pinned or
- * hidden) and when the Compact/Comfortable size changes on <html>.
- */
-function useSoundWindowLayout(layoutRef: RefObject<HTMLDivElement | null>) {
-  const [windowed, setWindowed] = useState(false);
-  useEffect(() => {
-    const layout = layoutRef.current;
-    const host = layout?.parentElement;
-    if (!layout || !host) return;
-    const update = () => setWindowed(getComputedStyle(layout).getPropertyValue('--pinyin-sound-window').trim() === '1');
-    update();
-    const resize = new ResizeObserver(update);
-    resize.observe(host);
-    const size = new MutationObserver(update);
-    size.observe(document.documentElement, { attributes: true, attributeFilter: ['data-display-size'] });
-    return () => { resize.disconnect(); size.disconnect(); };
-  }, [layoutRef]);
-  return windowed;
 }
 
 /**
@@ -352,13 +312,10 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
     {/* Title row: the big syllable with the heard/chosen tone's pill ("1st tone" … "Neutral
         tone") top-aligned at its right, in that tone's own colour (tone-N sets --tone-ink;
         the neutral tone has none, so it falls back to grey like its tone card). */}
-    <div className="pinyin-player-title-row">
-      <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
-      {current !== null && <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span>}
-    </div>
+    <SoundDetailHeading title={title} pill={current !== null ? <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span> : undefined}
+      description={current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}/>
     {/* The tone's description; an unrecorded tone adds an italic "no recording" here
         rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
-    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}</p>
     {/* Five fixed slots (Tone 1–4, Neutral) so every tone keeps its column. A tone the
         syllable inventory doesn't list gets a quiet slashed, non-interactive slot — only the
         inventory decides this, never a guess — and number keys skip it (no recording). */}
@@ -383,20 +340,19 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
         <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
       </button>;
     })}</div>
-    <div className="pinyin-player-actions">
+    <dl className="pinyin-parts">
+      <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
+      <div><dt>Final</dt><dd>{syllable.final}</dd></div>
+    </dl>
+    <SoundPlaybackRow slow={slow} onSlow={onSlow}>
       {/* One button whose two labels share a grid cell: the hidden one still
           reserves its width, so switching Play all ⇄ Stop never resizes it. */}
       <Button variant="outline" size="sm" className="pinyin-playall" disabled={!sequencePlaying && recorded.length === 0} onClick={sequencePlaying ? player.stop : onPlayAll}>
         <span className={sequencePlaying ? 'is-hidden' : undefined} aria-hidden={sequencePlaying}><ListMusic />Play all</span>
         <span className={sequencePlaying ? undefined : 'is-hidden'} aria-hidden={!sequencePlaying}><Square />Stop</span>
       </Button>
-      <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
-    </div>
+    </SoundPlaybackRow>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
-    <dl className="pinyin-parts">
-      <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
-      <div><dt>Final</dt><dd>{syllable.final}</dd></div>
-    </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
     {/* Each case is one pill with two regions: the spelling opens that sound (as before), and
         the speaker plays the same recording in place without leaving the card. The speaker

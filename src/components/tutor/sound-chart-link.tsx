@@ -1,7 +1,7 @@
 import { type MouseEvent, type SyntheticEvent } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { ArrowUpRight, AudioLines } from 'lucide-react';
-import { historyEntry, soundChartArrival, soundTrail } from '@/lib/detail-trail';
+import { historyEntry, soundTrail } from '@/lib/detail-trail';
 import { soundChartTarget, toneMark } from '@/lib/pinyin-guide';
 import { soundOrigin } from '@/lib/selection-scroll';
 import { useSyllableInventory } from './use-syllable-inventory';
@@ -17,8 +17,7 @@ import { useSyllableInventory } from './use-syllable-inventory';
 // State: the lazily loaded syllable inventory (module cache shared by every card). Until it
 // arrives, or when the reading is no single attested syllable + tone, nothing renders.
 // Back: following the link replaces soundTrail with one step pointing at this history entry,
-// so the Sound card shows "← 了" and its Back (browser history) returns to the card/details;
-// it also asks the chart to line the syllable's grid card up with the Selected sound card.
+// so the Sound card shows "← 了" and its Back (browser history) returns to the card/details.
 
 const plainClick = (event: MouseEvent) => event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 
@@ -29,7 +28,7 @@ export function SoundChartLink({ reading, from, variant }: { reading: string; fr
   if (!target) return null;
   const label = `Open ${toneMark(target.base, target.tone)} in Sound chart`;
   const search = { s: target.base, t: target.tone };
-  const remember = () => { soundTrail.replace({ label: from, href: historyEntry(), lang: 'zh-CN' }); soundChartArrival.request(); };
+  const remember = () => { soundTrail.replace({ label: from, href: historyEntry(), lang: 'zh-CN' }); };
   if (variant === 'tile') {
     // Inside the card's own <button> a real <a> is invalid markup, so this is a role="link"
     // span that swallows activation (like TileSpeaker) and navigates through the router.

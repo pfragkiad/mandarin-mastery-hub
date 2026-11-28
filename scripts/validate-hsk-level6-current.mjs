@@ -31,21 +31,24 @@ export function validateCurrentLevel6(sourcePath) {
   assert.equal(audio.handoff.sha256, digest(bytes));
   const entries = new Map(data.entries.filter(e => e.hskLevel === 6).map(e => [e.id, e]));
   const review = JSON.parse(readFileSync('importer/data/missing-audio/listening-review.json', 'utf8'));
-  const reviewed = new Map(review.words.filter(e => e.hskLevel === 6).map(e => [e.entryId, e]));
+  const roundTwo = JSON.parse(readFileSync('importer/data/missing-audio/v2/review.json', 'utf8'));
+  const roundTwoClips = JSON.parse(readFileSync('importer/data/missing-audio/v2/manifest.json', 'utf8')).clips;
+  const reviewed = new Map([...review.words, ...roundTwo.words].filter(e => e.hskLevel === 6).map(e => [e.entryId, e]));
   const missingManifest = JSON.parse(readFileSync('importer/data/missing-audio/manifest.json', 'utf8'));
   for (const row of audio.entries) {
     const e = entries.get(row.entryId), supplement = reviewed.get(row.entryId);
     assert.deepEqual([e.hsk_index, e.simplified, e.pinyinDisplay], [row.hskIndex, row.headword, row.reading]);
     assert.equal(Boolean(e.audio), row.status === 'matched' || Boolean(supplement));
     if (supplement) {
-      const clip = missingManifest.clips[supplement.clipId];
+      const clip = missingManifest.clips[supplement.clipId] ?? roundTwoClips[supplement.clipId];
       assert.match(e.audio.url, new RegExp(`/missing-${clip.sha256.slice(0, 16)}\\.(mp3|wav)$`));
       assert.equal(e.audio.recordingKind, 'word');
     }
   }
-  assert.equal(reviewed.size, 65);
-  assert.equal([...entries.values()].filter(e => e.audio).length, 1378);
+  assert.equal(reviewed.size, 78);
+  assert.equal([...entries.values()].filter(e => e.audio).length, 1391);
   console.log(JSON.stringify({ version: '1.0.1', entries: 1800, updatedOfficialIds: 850,
-    preservedExampleIds: report.preservedExampleIds, wordRecordings: report.preservedWordRecordings, listeningReviewedWordRecordings: 65, totalWordRecordings: 1378,
+    preservedExampleIds: report.preservedExampleIds, wordRecordings: report.preservedWordRecordings, listeningReviewedWordRecordings: 65,
+    sourceTranscriptionScreenedSandhiWordRecordings: 13, totalWordRecordings: 1391,
     alignedReadings: report.alignedHeadwords + report.alignedExamples, repeatImportIdempotent: true }, null, 2));
 }

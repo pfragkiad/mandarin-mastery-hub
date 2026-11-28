@@ -1,0 +1,788 @@
+{
+  "schemaVersion": 2,
+  "sourceManifestSha256": "b03fc5ca50445fe55a6699957258c15dfbf54319fb645d8d0d9cc3091526c0e6",
+  "reviewMethod": "Ordered automatic speech transcription via document parser, independently checked pinned source headword/reading tags and explicit initial 一/不 citation-to-sandhi equivalence. This is automated/source screening, not native-speaker listening or measured acoustic tone certification. Neutral/citation differences, partial readings, ambiguous interjections and n/ng disagreement remain held.",
+  "words": [
+    {
+      "entryId": "9c560fee-d783-5763-9409-861504878b27",
+      "hskLevel": 3,
+      "hskIndex": 539,
+      "simplified": "不见",
+      "pinyinDisplay": "bújiàn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df9bcd84.mp3",
+      "transcript": "不见"
+    },
+    {
+      "entryId": "91852f7b-20a6-5201-98cd-838aee616376",
+      "hskLevel": 3,
+      "hskIndex": 923,
+      "simplified": "一边",
+      "pinyinDisplay": "yìbiān",
+      "clipId": "shtooka-cmn-caen-tan:cmn-9ef304df.mp3",
+      "transcript": "一边"
+    },
+    {
+      "entryId": "e7c9bbb5-60cf-5b2d-ad4a-1e1fda9f0c51",
+      "hskLevel": 4,
+      "hskIndex": 1043,
+      "simplified": "不必",
+      "pinyinDisplay": "búbì",
+      "clipId": "shtooka-cmn-caen-tan:cmn-52350297.mp3",
+      "transcript": "不必"
+    },
+    {
+      "entryId": "8c4d5caf-84c2-5436-9252-b4918caeae92",
+      "hskLevel": 4,
+      "hskIndex": 1046,
+      "simplified": "不断",
+      "pinyinDisplay": "búduàn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-21808bdf.mp3",
+      "transcript": "不断"
+    },
+    {
+      "entryId": "03820184-9383-5afe-a296-0e1af362eab6",
+      "hskLevel": 4,
+      "hskIndex": 1047,
+      "simplified": "不够",
+      "pinyinDisplay": "búgòu",
+      "clipId": "shtooka-cmn-caen-tan:cmn-06613077.mp3",
+      "transcript": "不够"
+    },
+    {
+      "entryId": "35514391-1ef1-5e8d-bef4-2ca95b72ea60",
+      "hskLevel": 4,
+      "hskIndex": 1052,
+      "simplified": "不论",
+      "pinyinDisplay": "búlùn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-bf529fe9.mp3",
+      "transcript": "不论"
+    },
+    {
+      "entryId": "50068fc4-c7e7-501a-bbb1-861b2955480c",
+      "hskLevel": 4,
+      "hskIndex": 1866,
+      "simplified": "一生",
+      "pinyinDisplay": "yìshēng",
+      "clipId": "shtooka-cmn-caen-tan:cmn-28c90a37.mp3",
+      "transcript": "一生"
+    },
+    {
+      "entryId": "953dcefe-a06f-53a1-9d65-1dfc96767dd2",
+      "hskLevel": 5,
+      "hskIndex": 2076,
+      "simplified": "不利",
+      "pinyinDisplay": "búlì",
+      "clipId": "shtooka-cmn-caen-tan:cmn-f0eace40.mp3",
+      "transcript": "不利"
+    },
+    {
+      "entryId": "f11c728e-20a1-59fd-b98d-cb246eeb4787",
+      "hskLevel": 5,
+      "hskIndex": 2079,
+      "simplified": "不幸",
+      "pinyinDisplay": "búxìng",
+      "clipId": "shtooka-cmn-caen-tan:cmn-5c07e900.mp3",
+      "transcript": "不幸"
+    },
+    {
+      "entryId": "36877778-35ce-591f-ae66-cd7f4fed6c8b",
+      "hskLevel": 5,
+      "hskIndex": 2080,
+      "simplified": "不要紧",
+      "pinyinDisplay": "búyàojǐn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-59223b3c.mp3",
+      "transcript": "不要紧"
+    },
+    {
+      "entryId": "0b057acf-ad30-51e9-a327-ddf2a641766e",
+      "hskLevel": 5,
+      "hskIndex": 3348,
+      "simplified": "一旦",
+      "pinyinDisplay": "yídàn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-5d23bbcb.mp3",
+      "transcript": "一旦"
+    },
+    {
+      "entryId": "930c4098-8ca6-5cf2-a59f-7d812b53e75f",
+      "hskLevel": 5,
+      "hskIndex": 3351,
+      "simplified": "一致",
+      "pinyinDisplay": "yízhì",
+      "clipId": "shtooka-cmn-caen-tan:cmn-eec6f5d8.mp3",
+      "transcript": "一致"
+    },
+    {
+      "entryId": "55575cf4-a4a1-5055-b7c7-f6ae95ed55f9",
+      "hskLevel": 6,
+      "hskIndex": 3679,
+      "simplified": "不料",
+      "pinyinDisplay": "búliào",
+      "clipId": "shtooka-cmn-caen-tan:cmn-00347f6a.mp3",
+      "transcript": "不料"
+    },
+    {
+      "entryId": "f7f73d7c-1972-5bff-802f-c9f6a4f4c392",
+      "hskLevel": 6,
+      "hskIndex": 3687,
+      "simplified": "不至于",
+      "pinyinDisplay": "búzhìyú",
+      "clipId": "shtooka-cmn-caen-tan:cmn-21d60619.mp3",
+      "transcript": "不至于"
+    },
+    {
+      "entryId": "bfc46d3c-e808-5b62-9f48-4752b4136ed8",
+      "hskLevel": 6,
+      "hskIndex": 5136,
+      "simplified": "一辈子",
+      "pinyinDisplay": "yíbèizi",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3554114c.mp3",
+      "transcript": "一辈子"
+    },
+    {
+      "entryId": "49fb8713-09d0-51bd-b87d-2edf0d5bf28f",
+      "hskLevel": 6,
+      "hskIndex": 5137,
+      "simplified": "一带",
+      "pinyinDisplay": "yídài",
+      "clipId": "shtooka-cmn-caen-tan:cmn-4d793dff.mp3",
+      "transcript": "一代"
+    },
+    {
+      "entryId": "bf836f54-45d9-5769-a762-c0645e274b75",
+      "hskLevel": 6,
+      "hskIndex": 5138,
+      "simplified": "一道",
+      "pinyinDisplay": "yídào",
+      "clipId": "shtooka-cmn-caen-tan:cmn-1c548d02.mp3",
+      "transcript": "一道"
+    },
+    {
+      "entryId": "2cea3533-4d4b-5f8c-809a-ba9b0ff5cd3b",
+      "hskLevel": 6,
+      "hskIndex": 5141,
+      "simplified": "一口气",
+      "pinyinDisplay": "yìkǒuqì",
+      "clipId": "shtooka-cmn-caen-tan:cmn-98ffadc7.mp3",
+      "transcript": "一口气"
+    },
+    {
+      "entryId": "2c2b2bcb-9f3e-5491-8804-bf3f0deb592f",
+      "hskLevel": 6,
+      "hskIndex": 5143,
+      "simplified": "一律",
+      "pinyinDisplay": "yílǜ",
+      "clipId": "shtooka-cmn-caen-tan:cmn-5efcc60c.mp3",
+      "transcript": "一律"
+    },
+    {
+      "entryId": "c9b90f63-1035-5874-bc1a-35cb7a6add5b",
+      "hskLevel": 6,
+      "hskIndex": 5146,
+      "simplified": "一时",
+      "pinyinDisplay": "yìshí",
+      "clipId": "shtooka-cmn-caen-tan:cmn-4094abaf.mp3",
+      "transcript": "一时"
+    },
+    {
+      "entryId": "f937ef9d-ae37-51a0-ba58-f9e735318a6c",
+      "hskLevel": 6,
+      "hskIndex": 5147,
+      "simplified": "一同",
+      "pinyinDisplay": "yìtóng",
+      "clipId": "shtooka-cmn-caen-tan:cmn-cb9f5a83.mp3",
+      "transcript": "一瞳"
+    },
+    {
+      "entryId": "773a4357-a9fd-50fb-aace-e10d083953f2",
+      "hskLevel": 6,
+      "hskIndex": 5148,
+      "simplified": "一系列",
+      "pinyinDisplay": "yíxìliè",
+      "clipId": "shtooka-cmn-caen-tan:cmn-a89b7523.mp3",
+      "transcript": "一系列"
+    },
+    {
+      "entryId": "6e593e97-f748-5ad7-9436-ef8a7fcff096",
+      "hskLevel": 6,
+      "hskIndex": 5149,
+      "simplified": "一向",
+      "pinyinDisplay": "yíxiàng",
+      "clipId": "shtooka-cmn-caen-tan:cmn-a899365a.mp3",
+      "transcript": "一项"
+    },
+    {
+      "entryId": "e4fed18b-d80f-5983-b19f-67f857321ea4",
+      "hskLevel": 6,
+      "hskIndex": 5151,
+      "simplified": "一再",
+      "pinyinDisplay": "yízài",
+      "clipId": "shtooka-cmn-caen-tan:cmn-a000dfc2.mp3",
+      "transcript": "一再"
+    },
+    {
+      "entryId": "83a9b2fe-7db0-564f-a3aa-81bcdce6f4f8",
+      "hskLevel": 6,
+      "hskIndex": 5152,
+      "simplified": "一阵",
+      "pinyinDisplay": "yízhèn",
+      "clipId": "shtooka-cmn-caen-tan:cmn-5559a1e7.mp3",
+      "transcript": "一阵"
+    }
+  ],
+  "characters": [],
+  "transcripts": [
+    {
+      "clipId": "audio-cmn:cmn-_m2.mp3",
+      "sha256": "7ccb1cdbaf89caf0d88eb6857a6fde570934d418c9c96331dfd424d0a7ee5c64",
+      "batch": 0,
+      "position": 0,
+      "transcript": "嗯"
+    },
+    {
+      "clipId": "audio-cmn:cmn-_ng4.mp3",
+      "sha256": "5afb2c33395169183d4eccf6ea3ef6f8c26a62422475be408ad1df9a1bccc75c",
+      "batch": 0,
+      "position": 1,
+      "transcript": "嗯"
+    },
+    {
+      "clipId": "shtooka-cmn-balm-hsk1:cmn-1e5f0f3c.mp3",
+      "sha256": "c534c9d00b6beaa9d97e5d979d70a32f5078d94152ebbf8191ca20d85a716b26",
+      "batch": 0,
+      "position": 2,
+      "transcript": "精神"
+    },
+    {
+      "clipId": "shtooka-cmn-balm-hsk1:cmn-66dbff9d.mp3",
+      "sha256": "49ea11888d586b5a5a0792abddef6edd8e1af9d44e29660fc9d8ec3af51a432b",
+      "batch": 0,
+      "position": 3,
+      "transcript": "痛快"
+    },
+    {
+      "clipId": "shtooka-cmn-balm-hsk1:cmn-91802df3.mp3",
+      "sha256": "4e1dca1ce81bffc9c5b999880024f4e16229a895c4dfea43e9f46303509f1d6e",
+      "batch": 0,
+      "position": 4,
+      "transcript": "嗯"
+    },
+    {
+      "clipId": "shtooka-cmn-balm-hsk1:cmn-bfafdca6.mp3",
+      "sha256": "99fdf694c287bc4cee9b2248eca768e83f6cd29e5dbccac72e5137045e42cc73",
+      "batch": 0,
+      "position": 5,
+      "transcript": "已经"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-00347f6a.mp3",
+      "sha256": "375405f1911d2821d5d4bc2aa18ccbfdb3044b4eee6c8dfbc4f3a0580ea0ccf3",
+      "batch": 0,
+      "position": 6,
+      "transcript": "不料"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-04da1ef4.mp3",
+      "sha256": "de0494427c330acfcd24362003edd5bdc7759efcd1b10e057605e333b6c49fa7",
+      "batch": 0,
+      "position": 7,
+      "transcript": "买卖"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-04e0a75c.mp3",
+      "sha256": "395661d24d302af10a8f6e03641bf226ead21f760009896bfd586102ffa1640f",
+      "batch": 0,
+      "position": 8,
+      "transcript": "周到"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-06613077.mp3",
+      "sha256": "518f603fa3e4bb59ed2b72178bf2f521cb47366e310a5ae3929e8321001c8644",
+      "batch": 0,
+      "position": 9,
+      "transcript": "不够"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-07b1f484.mp3",
+      "sha256": "7233a7ad55bf4989b9f51d44e73cafc99cfc9434de75e27c0f12db5af3893cb5",
+      "batch": 1,
+      "position": 0,
+      "transcript": "佩服"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-07dbc24b.mp3",
+      "sha256": "225da9d77d898b676b029e56ce87e0f3ce677e67d8a1476352d24abf27526d19",
+      "batch": 1,
+      "position": 1,
+      "transcript": "位置"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-0926b093.mp3",
+      "sha256": "52e46f4cbc0896b5331fe94b237912676823e570ec45c86e885f18562b493b91",
+      "batch": 1,
+      "position": 2,
+      "transcript": "一生"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-0955cdac.mp3",
+      "sha256": "fc9da13baa22f4612ef392aa27e742ea4a123e46782bb418e15d168ed91b9ad5",
+      "batch": 1,
+      "position": 3,
+      "transcript": "当地"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-13622fc2.mp3",
+      "sha256": "d5e3d38d0c49a9e6889acf7be3393937607171c18ccc90cd29304816d059c979",
+      "batch": 1,
+      "position": 4,
+      "transcript": "地道"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-1c548d02.mp3",
+      "sha256": "976ca8157444d13cf379760523680d1e1d9101236498db34592196d688394409",
+      "batch": 1,
+      "position": 5,
+      "transcript": "一道"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-21808bdf.mp3",
+      "sha256": "aea97d871127c335a463a2db42d64da74096acc854575585eec8feee219de95e",
+      "batch": 1,
+      "position": 6,
+      "transcript": "不断"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-21d60619.mp3",
+      "sha256": "3166319fa43cc566c52ca5866fc6bc0449f39c11ec66f1beadc203f98546f190",
+      "batch": 1,
+      "position": 7,
+      "transcript": "不至于"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-280169fd.mp3",
+      "sha256": "0ed2cd6fa47cbe900e9ec2712a5c6b89c97241c007a0d124112eb1552a489da6",
+      "batch": 1,
+      "position": 8,
+      "transcript": "嗯"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-28c90a37.mp3",
+      "sha256": "6882cb664041d455b35004f020543e7e38cdee84adb995d729a0541e08408015",
+      "batch": 1,
+      "position": 9,
+      "transcript": "一生"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-344c5660.mp3",
+      "sha256": "374765340736ddb71e2c0e6ddeac9bf36a368758f8e726f371121511e393937f",
+      "batch": 2,
+      "position": 0,
+      "transcript": "已经"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-34c6c50c.mp3",
+      "sha256": "b237e0d475a30a84d4f83f307c5fa3ee35b3042d744c1ff7d796d6c25f804f1a",
+      "batch": 2,
+      "position": 1,
+      "transcript": "合同"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-3554114c.mp3",
+      "sha256": "991635dcc4cc512f8021e2b83e293e03fe523285d7fa802ed7a2e7aa3b2832cb",
+      "batch": 2,
+      "position": 2,
+      "transcript": "一辈子"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-3e94cd60.mp3",
+      "sha256": "604fd765b2083d8777db5c7b268d6defcda28597edf311e4e42dc62810e2e8dc",
+      "batch": 2,
+      "position": 3,
+      "transcript": "痛快"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-4094abaf.mp3",
+      "sha256": "f2d7d9058234540213bfc8bd0be50bf5544c00e8c8b037790d723e90d21a70b6",
+      "batch": 2,
+      "position": 4,
+      "transcript": "一时"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-4543d88e.mp3",
+      "sha256": "ac4fd6ef8fc44435b9e3e972430bf28bfff796ff8c0f58e96e577ec5d1714f98",
+      "batch": 2,
+      "position": 5,
+      "transcript": "精神"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-45ff8bb4.mp3",
+      "sha256": "fe10bd636b9319542911b5e0a01527f96607b5c2b2d42a8e2c2048f7138ff41f",
+      "batch": 2,
+      "position": 6,
+      "transcript": "面积"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-4d793dff.mp3",
+      "sha256": "15e1eea4cf6afb2b77b17febf054d885120b0b092d1ca320a3ba57c33aa52b06",
+      "batch": 2,
+      "position": 7,
+      "transcript": "一代"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-52350297.mp3",
+      "sha256": "8dd878313fc88f1923aa5101fbed1ad1a6969aa742b194c01a37df98ed729704",
+      "batch": 2,
+      "position": 8,
+      "transcript": "不必"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-53e931da.mp3",
+      "sha256": "3f3060d0d180e2e90e408090a8253a9fbdcc4df643c5f314aebf9b1ae3d13ae0",
+      "batch": 2,
+      "position": 9,
+      "transcript": "常处"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-5559a1e7.mp3",
+      "sha256": "cd6e540c76cdbb78fbc204473f972d814c845c0aab34dd3701050d9a1c03996f",
+      "batch": 3,
+      "position": 0,
+      "transcript": "一阵"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-59223b3c.mp3",
+      "sha256": "77cf8dbf299db35a00b9651565817b80c7e812a5a8dbbda007da2f804057eb5a",
+      "batch": 3,
+      "position": 1,
+      "transcript": "不要紧"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-5b117e90.mp3",
+      "sha256": "1099a12b553cc59a5e5ac3d6651446b42d9bd123c2e72d8ec9d8d65b7e688ea9",
+      "batch": 3,
+      "position": 2,
+      "transcript": "看来"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-5c07e900.mp3",
+      "sha256": "be5b5e6f3ee365513690d534e5a2f3a51ee818ee51f4c644e574b2f4ae425c61",
+      "batch": 3,
+      "position": 3,
+      "transcript": "不幸"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-5d23bbcb.mp3",
+      "sha256": "8850f2c9f019a4b4e801c6f54f18b3a24e782bd5e3b4f13b299060b45c706540",
+      "batch": 3,
+      "position": 4,
+      "transcript": "一旦"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-5efcc60c.mp3",
+      "sha256": "5a2b5d48004622de95ab0d44f346ccc8a7aff32186d0f8022e9565a2405d885a",
+      "batch": 3,
+      "position": 5,
+      "transcript": "一律"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-71cf1036.mp3",
+      "sha256": "ba0ee4c8e30e110f7dc70c295161d11d270131628907f5b570269749a19aa527",
+      "batch": 3,
+      "position": 6,
+      "transcript": "后面"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-7cfc5764.mp3",
+      "sha256": "fdc85d2cef3fe2e428840c816157398c61787756be60993ed58e8bf93c32dd61",
+      "batch": 3,
+      "position": 7,
+      "transcript": "下面"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-828737bc.mp3",
+      "sha256": "7cb1d963366fb8c8d188b5f24b0c20448bc62b3e2f02c0a409c90520fe3a4127",
+      "batch": 3,
+      "position": 8,
+      "transcript": "价钱"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-8add3313.mp3",
+      "sha256": "731f6882e4b5a25f31f92005c07207056714f51d08340c71e77e08ab39a572da",
+      "batch": 3,
+      "position": 9,
+      "transcript": "黄瓜"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-8daf5e7f.mp3",
+      "sha256": "14fd970aceb5499f12caf2907f8a1c62b38be6c1a07230b1d6d6a9c44e49fb2b",
+      "batch": 4,
+      "position": 0,
+      "transcript": "用人"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-97639058.mp3",
+      "sha256": "b99929638b15a8d58aaffb6e8f2d5d66cb252b886d5cf560807ebd710a35ab80",
+      "batch": 4,
+      "position": 1,
+      "transcript": "教训"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-97c276c3.mp3",
+      "sha256": "65b8b5dce247b191fa29e71b48d40c792092d9459bb829486b14ea1ec783accf",
+      "batch": 4,
+      "position": 2,
+      "transcript": "身份"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-98ffadc7.mp3",
+      "sha256": "d861c7553b595e9cb6855cf156a713d413f94068795dbc6b5057efff1deb8dd9",
+      "batch": 4,
+      "position": 3,
+      "transcript": "一口气"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-994d163c.mp3",
+      "sha256": "05721a59a1ffc3f73b1cbaad55bd2f710a6d28870604a0185f29aed14a486035",
+      "batch": 4,
+      "position": 4,
+      "transcript": "用处"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-9ed2ac6b.mp3",
+      "sha256": "00c42a90f98fddb7b776b3b8663b4c357aec0559bfc18c4a0751d06494174dc6",
+      "batch": 4,
+      "position": 5,
+      "transcript": "近视"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-9ef304df.mp3",
+      "sha256": "b8c1e164f8ebf2bc5871cd66423f2a3d36a4937a5a80eebed7d5aa6dc7b402a7",
+      "batch": 4,
+      "position": 6,
+      "transcript": "一边"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-9fbc5659.mp3",
+      "sha256": "c19c012bfa32bf5b7a4f9d15ab1b8043a4025e27d388c03cc05f2614c1e3a035",
+      "batch": 4,
+      "position": 7,
+      "transcript": "响声"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-a000dfc2.mp3",
+      "sha256": "b9d5715edcf5965191d954dadb3ce2088ce5e6114e3d00f0f9c6b92d27534359",
+      "batch": 4,
+      "position": 8,
+      "transcript": "一再"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-a1a3331c.mp3",
+      "sha256": "d3a8b6f8171e75243ca9b5ca8b8d68fb1c1d3af22a0898c2085147e308509952",
+      "batch": 4,
+      "position": 9,
+      "transcript": "逻辑"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-a899365a.mp3",
+      "sha256": "81dbe3eb7e6b4678c3936226e3d51549d7c03cdfd11b0f7a069a21aab74f8710",
+      "batch": 5,
+      "position": 0,
+      "transcript": "一项"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-a89b7523.mp3",
+      "sha256": "f135e01b972197d0177ed07a6bc9d9dd357187ee82df86dd04d32b53bfc67432",
+      "batch": 5,
+      "position": 1,
+      "transcript": "一系列"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-accf872a.mp3",
+      "sha256": "69e7cfe6766240abf08a11a77be276ee841e5d4950f4d1db38bbc68a8d3b94b8",
+      "batch": 5,
+      "position": 2,
+      "transcript": "心理"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-af653569.mp3",
+      "sha256": "92204416cd87240e0c34d3fac189301a2f4a18155a38ec48de19e2b4cb2f82b2",
+      "batch": 5,
+      "position": 3,
+      "transcript": "费用"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-bf529fe9.mp3",
+      "sha256": "a3764961854ce4ff9da9800128c8e4a33f4b3fc2566a65629d1891d510a872a3",
+      "batch": 5,
+      "position": 4,
+      "transcript": "不论"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-c56b5ece.mp3",
+      "sha256": "f5acdc9de5d32e25479d988ed4ba852fe6a1843dedb162dda246193078a6a37f",
+      "batch": 5,
+      "position": 5,
+      "transcript": "要不是"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-c5775937.mp3",
+      "sha256": "b8b0814920b6cfbff9b55d60bf1dc1f6b5a616d54f550d784cb0a1e8ff93689e",
+      "batch": 5,
+      "position": 6,
+      "transcript": "打交道"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-c81cc9e2.mp3",
+      "sha256": "e4fb3e6190fb82d6e5454372ffbd62335fa07a43b66bcfe1dc751cfec635e01a",
+      "batch": 5,
+      "position": 7,
+      "transcript": "徒弟"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-c950df64.mp3",
+      "sha256": "fa20de759223879617265ee5fa0c791e150ff6b2a1bead78f94964b9d0ee275d",
+      "batch": 5,
+      "position": 8,
+      "transcript": "说法"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-c9aa9e16.mp3",
+      "sha256": "9d9f7cd04badd9f4ce9b4e5b09ea95b524972fd1ddddca7b7d44269505fa6e15",
+      "batch": 5,
+      "position": 9,
+      "transcript": "力量"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-cb9f5a83.mp3",
+      "sha256": "5a2503edca5fd9818b6df312c43af79df2f4ee2947305e22226807acccd882ad",
+      "batch": 6,
+      "position": 0,
+      "transcript": "一瞳"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-d943d71f.mp3",
+      "sha256": "5fd901aaf099bbc39f4af9971412339602abb1ddf8330591e48348dd3d9a61c3",
+      "batch": 6,
+      "position": 1,
+      "transcript": "短处"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-da89bfe1.mp3",
+      "sha256": "042ffa7397717bc7c9ddd54059e70107fcf10b6c40c45f6281fc0ab7d1665f15",
+      "batch": 6,
+      "position": 2,
+      "transcript": "口袋"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-df9bcd84.mp3",
+      "sha256": "1c0062e3613db108ef9bc7575212913e57b213e64b1353b390f3714ee52f1c31",
+      "batch": 6,
+      "position": 3,
+      "transcript": "不见"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-e47042c1.mp3",
+      "sha256": "2afa1d85e38f252b964425d3aac31b845a8a77c32df2706a70b592d3f4d0692f",
+      "batch": 6,
+      "position": 4,
+      "transcript": "坏处"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-e6969a89.mp3",
+      "sha256": "d8a8e526edf111c0bbafa4a778b29f9c89d75f097881d5358eb15fc6d644f61e",
+      "batch": 6,
+      "position": 5,
+      "transcript": "毛病"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-e6b35276.mp3",
+      "sha256": "d1e9accd126236884f07c1e4838ced04d70a7f58580a5bdd1d1b722085b948f4",
+      "batch": 6,
+      "position": 6,
+      "transcript": "其父"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-eec6f5d8.mp3",
+      "sha256": "9f740f5c7c5c13e342e61d7fd87735cdac378b2cc25b0aedfe95ca450a4b6fec",
+      "batch": 6,
+      "position": 7,
+      "transcript": "一致"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-f0eace40.mp3",
+      "sha256": "36073bed4b1e7bc1c3bd98f2002719e993ddf324f7dab35cdbf59a8155d164a9",
+      "batch": 6,
+      "position": 8,
+      "transcript": "不利"
+    },
+    {
+      "clipId": "shtooka-cmn-caen-tan:cmn-fd484bf9.mp3",
+      "sha256": "5b7b330bd6825c9736270c28004bebc79337b587bbf0ec10090197465ce1fdf9",
+      "batch": 6,
+      "position": 9,
+      "transcript": "老室"
+    },
+    {
+      "clipId": "wiktionary:01f3157bb7f6",
+      "sha256": "9f1867e7ff0cba8b5abd88c207ff6b525b30af79bb3c60284ae2224eb7e78881",
+      "batch": 7,
+      "position": 0,
+      "transcript": "打交道"
+    },
+    {
+      "clipId": "wiktionary:04300b62c94a",
+      "sha256": "9213cbd614fc7990d7c1165e56c8e256e84bd981df5dc7430c6ff8be5976f9d5",
+      "batch": 7,
+      "position": 1,
+      "transcript": "补料"
+    },
+    {
+      "clipId": "wiktionary:6613a20a9bac",
+      "sha256": "3f44a7e11792305b1c13ce3b8c7a19402af0fe2cf35b4c6119234ae5fac855e6",
+      "batch": 7,
+      "position": 2,
+      "transcript": "地道"
+    },
+    {
+      "clipId": "wiktionary:667f7e75ea5a",
+      "sha256": "adae4b1a592d78c6709021dab6ac4cd605a23cc0b3d59cb6e9c8dd3b2745f57a",
+      "batch": 7,
+      "position": 3,
+      "transcript": "不必"
+    },
+    {
+      "clipId": "wiktionary:6d2c55ed5dad",
+      "sha256": "8ed7a5d6685bc8d099cd4637567279aa35fe1f23bcdbff389f24dff5f47c6105",
+      "batch": 7,
+      "position": 4,
+      "transcript": "一再"
+    },
+    {
+      "clipId": "wiktionary:718d02b6f079",
+      "sha256": "0c8575f8872a6c9017f897bee104510b47998a9f74bc682392bf1b5cc0aa0c39",
+      "batch": 7,
+      "position": 5,
+      "transcript": "一律"
+    },
+    {
+      "clipId": "wiktionary:9a66289d388b",
+      "sha256": "4538131935bd3155b6d91156693b3ba877c9ca1212e688dd20aeed1dc54d64c8",
+      "batch": 7,
+      "position": 6,
+      "transcript": "一向"
+    },
+    {
+      "clipId": "wiktionary:b22eddb99085",
+      "sha256": "b9459da4b1724aebeb8aefdee524c7b46c27bfa2644d3b832d441ffddb6005d2",
+      "batch": 7,
+      "position": 7,
+      "transcript": "一旦"
+    },
+    {
+      "clipId": "wiktionary:c33066690214",
+      "sha256": "d366008078cc1ff4912844d36f46b29672e6026b23d3843e4c04fc23c75298c0",
+      "batch": 7,
+      "position": 8,
+      "transcript": "熟"
+    }
+  ]
+}

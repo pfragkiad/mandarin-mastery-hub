@@ -4,7 +4,7 @@ import { useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'r
 import { Volume2, Quote } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { DetailSheet } from './detail-sheet';
 import { vocabularyKind, wordCollections, words as vocabularyWords, type Word } from '@/lib/mandarin';
 import { primarySubtopicLabel } from '@/lib/vocabulary-subtopics';
 import { phraseParts, wordCharacters } from '@/lib/vocabulary-decomposition';
@@ -71,7 +71,7 @@ function HeadwordGlyphs({ word, pairing, text = word.hanzi }: { word: Word; pair
  * Vocabulary results): each Han character becomes a quick-card target — not a tab stop, since
  * it sits inside the card's own button — with the same word context as the detail headword
  * (a word's characters in that exact record, a phrase's characters in the words-first words
- * it contains). Hints off or outside a provider (Start page cards): the plain pairing glyphs.
+ * it contains). Hints off or outside a provider: the plain pairing glyphs.
  */
 function useCardHintGlyph(word: Word, pairing: ReturnType<typeof usePhrasePairing>) {
   const hints = useLessonHints();
@@ -270,5 +270,5 @@ export function WordCard({ word, list = false, initiallyOpen = false, open: cont
     syllable + tone, and honours the "Sound chart links on cards" setting). */}
     {singleGlyph && preferences.soundChartLinks !== false && <SoundChartLink reading={word.pinyin} from={word.hanzi} variant="tile"/>}{!singleGlyph && headword && preferences.soundChartLinks !== false && <TonePairLink word={word} variant="tile"/>}{!isPhrase && preferences.cardExamplesLinks === true && <TileExamplesLink hanzi={word.hanzi}/>}</span>}{isPhrase ? <span lang="zh-CN" className="word-hanzi-tile phrase-hanzi-tile" style={{ '--tile-per-line': phraseLongest } as CSSProperties}>{phraseLines.map((line, index) => <span key={index} className="word-hanzi-line">{pairing.paired || hintsOn ? Array.from(line).map((ch, i) => cardGlyph(ch, lineStarts[index]! + i)) : line}</span>)}</span> : idiomTraditional ? <span className="tile-hanzi-row word-hanzi-forms"><span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span><span lang="zh-Hant" className={`word-hanzi-tile traditional-character tile-stamp-traditional${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style} title="Traditional form">{(() => { const tradFit = wordTileFit(idiomTraditional); const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tradFit.lines === 2 ? <><span className="word-hanzi-line">{g(tradFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tradFit.parts[1]!, Array.from(tradFit.parts[0]!).length)}</span></> : g(idiomTraditional, 0); })()}</span></span> : <span lang="zh-CN" className={`word-hanzi-tile${tileFit.lines === 2 ? ' is-two-line' : ''}`} style={tileFit.style}>{(() => { const g = (text: string, start: number) => pairing.paired || hintsOn ? Array.from(text).map((ch, i) => cardGlyph(ch, start + i)) : text; return tileFit.lines === 2 ? <><span className="word-hanzi-line">{g(tileFit.parts[0]!, 0)}</span><span className="word-hanzi-line">{g(tileFit.parts[1]!, Array.from(tileFit.parts[0]!).length)}</span></> : g(word.hanzi, 0); })()}</span>}</span>{preferences.meaning && <span className="word-meaning" title={word.meaning}><MeaningText text={cardMeaning}/></span>}</Button>
     <RecordCardFooter footerRef={footerRef} metadata={word.type} hanzi={word.hanzi} bookmarked={bookmarked} onBookmark={() => toggleSaved(word.id)} comfortable={comfortableView} onOpen={() => setOpen(true)} {...(onDetails ? { onDetails } : {})}/>
-  </article>{!panel && <Dialog open={open} onOpenChange={setOpen}><DialogContent className="word-dialog"><DialogTitle className="sr-only">{word.meaning}</DialogTitle><DialogDescription className="sr-only">{word.hanzi} · {word.pinyin}</DialogDescription><WordDetailContent word={word} onNavigate={() => setOpen(false)} /></DialogContent></Dialog>}</>;
+  </article>{!panel && open && <DetailSheet open title={`Details for ${word.hanzi}`} label={word.hanzi} onClose={() => setOpen(false)}><section className="catalog-detail word-detail-panel"><WordDetailContent word={word} onNavigate={() => setOpen(false)}/></section></DetailSheet>}</>;
 }

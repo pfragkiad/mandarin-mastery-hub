@@ -601,7 +601,7 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .example-results-toolbar .search-field { flex: 0 1 280px; min-width: 0; }
 /* Grid rows stretch to their tallest card; sequential-example spacing belongs
    only to examples outside the grid, never to individual grid siblings. */
-.detail-sheet .expandable-character-grid { align-items: stretch; }
+:is(.detail-sheet, .detail-examples) .expandable-character-grid { align-items: stretch; }
 .example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
@@ -1903,6 +1903,12 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .detail-sheet-back:hover { background: transparent; color: var(--primary); }
 .detail-sheet-nav { display: flex; align-items: center; gap: 2px; grid-column: 2; border: 1px solid var(--border); border-radius: 999px; padding: 0 2px; }
 .detail-sheet-position { font-size: 12px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; padding: 0 6px; white-space: nowrap; }
+.detail-neighbour-label { display: inline; min-width: 0; max-width: 5em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--foreground); }
+.detail-neighbour-hanzi { font-family: var(--font-hanzi); }
+.detail-neighbour-pinyin { color: var(--terracotta); }
+.detail-sheet-nav { min-width: 0; max-width: 100%; }
+.detail-sheet-nav .detail-neighbour-button { width: auto; min-width: 0; flex-shrink: 1; gap: 4px; padding-inline: 6px; }
+.detail-sheet-nav .detail-neighbour-button > svg { flex: none; }
 /* No scroll trap here, on any device: the modal already locks the page behind
    (Radix remove-scroll), so `contain` could never protect the grid — it only
    blocked the pan that a zoomed reader needs to reach the header X. */
@@ -2004,6 +2010,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
   .detail-sheet-back { font-size: 13px; gap: 4px; padding-inline: 6px; }
   .detail-sheet-nav { gap: 0; padding: 0 1px; }
   .detail-sheet-nav button { width: 28px; height: 28px; }
+  .detail-sheet-nav .detail-neighbour-button { width: auto; gap: 2px; padding-inline: 4px; }
   .detail-sheet-position { font-size: 11px; padding: 0 3px; }
   .detail-sheet-end { gap: 0; }
 }
@@ -2266,7 +2273,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .word-detail-actions { margin: 0 0 4px; }
 /* One boundary gap for every detail section, including the first section after facts.
    Example lines use a separate smaller unit, never stacked paragraph margins. */
-:is(.detail-sheet, .pinyin-characters) { --detail-section-pad: 14px; --detail-example-gap: 6px; }
+:is(.detail-sheet, .detail-examples) { --detail-section-pad: 14px; --detail-example-gap: 6px; --detail-example-min-width: 220px; }
 /* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
 .detail-sheet .catalog-facts { margin-top: 16px; padding: var(--detail-section-pad) 0 0; }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
@@ -2278,9 +2285,13 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    extra hairline. One unit, --detail-section-pad, sets every boundary distance:
      facts content ↔ its lines, facts line → first section, last section → action line,
      action line → buttons and between sections: the same gap (--detail-section-gap). */
-.detail-sheet { --detail-section-gap: var(--detail-section-pad); }
+:is(.detail-sheet, .detail-examples) { --detail-section-gap: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .catalog-facts { border-bottom: 1px solid var(--border); padding-bottom: var(--detail-section-pad); }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section, .detail-sheet .radical-family-section, .detail-sheet .catalog-detail .detail-tabs { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
+.detail-examples .example-tab-panel.glyph-usage-section { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
+/* The sound cards' own flex gap is already the section gap above the drawer, so the
+   shared stroke-guide margin must not stack a second one on top of it. */
+.detail-examples .example-tabs { margin-top: 0; }
 .detail-sheet .catalog-detail .catalog-facts + :not(.detail-reference-row) { margin-top: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .detail-reference-row { margin-top: var(--detail-section-pad); padding-top: var(--detail-section-pad); }
 /* A trailing "Show N more examples" toggle keeps its padded click area, but that padding must not
@@ -2330,7 +2341,7 @@ html[data-display-size='comfortable'] .detail-sheet .kangxi-identity-card .examp
 }
 /* Detail columns follow the actual resized window, not a two-column ceiling.
    Phrase/idiom lists wrap on their own floor (--detail-sentence-min-width) above. */
-.detail-sheet :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
+:is(.detail-sheet, .detail-examples) :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
 .etymology-standalone-note {
   display: flex;
   align-items: center;
@@ -2374,6 +2385,11 @@ html[data-display-size='comfortable'] .detail-sheet .kangxi-identity-card .examp
    (reading + speaker), so the pill only needs the trailing space. In the detail card the
    reading column stacks its lines, so the pinyin line stretches to the column's width. */
 .sentence-pinyin .sentence-style-pill { margin-top: 0; margin-left: auto; }
+/* The note's (i) and the style pill are one unit: the pair travels to the line's right
+   edge together and wraps to the next line as a pair, so the (i) is never stranded away
+   from the pill it belongs to (two auto margins would split the gap instead). */
+.sentence-pinyin .sentence-card-tail { flex: none; margin-left: auto; display: inline-flex; align-items: center; gap: 6px; }
+.sentence-pinyin .sentence-card-tail .sentence-style-pill { margin-left: 0; }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading > .sentence-pinyin { align-self: stretch; }
 .detail-sheet .sentence-section .glyph-usage-example > .sentence > .sentence-reading {
   flex: 1 1 200px;
@@ -2532,7 +2548,7 @@ html[data-display-size='comfortable'] .daily-hero-actions [data-ui-button] { min
 html[data-display-size='comfortable'] :is(.filter-select, .filter-upto-toggle, .search-field input, .form-field input, .form-field select, .practice-options select) { font-size: var(--ui-control-size); min-height: 44px; }
 html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a):not([role='switch']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] :is(.catalog-results-count, .catalog-tab-count, .catalog-pagination, .pagination-jump, .pagination-per-page, .form-field, .settings-row label, .practice-kind, .writer-status, .stroke-guide-top, .drawing-status, .drawing-board-meta, .drawing-rule, .flash-options, .game-setup label, .game-ready, .catalog-facts dt, .catalog-record-note, .library-note, .detail-reference-label) { font-size: var(--ui-label-size); line-height: 1.6; }
-html[data-display-size='comfortable'] .library-page [role='tab'] { font-size: var(--ui-control-size); }
+html[data-display-size='comfortable'] .library-page [role='tab']:not(.stroke-tab) { font-size: var(--ui-control-size); }
 html[data-display-size='comfortable'] .library-page [role='tab'] .catalog-tab-count { font-size: inherit; }
 html[data-display-size='comfortable'] :is(.settings-row p, .settings-notice, .help-content p, .practice-info > p, .drawing-results > p, .game-source-note) { font-size: 14px; line-height: 1.7; }
 html[data-display-size='comfortable'] .settings-row label { font-size: 16px; line-height: 1.6; }
@@ -2550,6 +2566,7 @@ html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content,
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] .detail-sheet { --detail-sheet-default-width: 960px; --detail-example-min-width: 300px; --detail-sentence-min-width: 440px; }
+html[data-display-size='comfortable'] .detail-examples { --detail-example-min-width: 300px; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-note, .decomposition-layout small, .catalog-facts dd) { font-size: 16px; line-height: 1.6; }
@@ -3004,10 +3021,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 /* ===== Pinyin guide (/pinyin): sound chart, player panel and listening quizzes ===== */
 .pinyin-page .library-heading { align-items: end; }
 .pinyin-body { margin-top: 22px; }
-/* The selected-sound card widens with the window (capped) so rows holding two or three
-   script forms still leave their meanings room to breathe. */
-.pinyin-chart-host { container: pinyin-chart / inline-size; }
-.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 30vw, 520px); gap: 30px; align-items: start; }
+/* The selected-sound card always opens in the floating window (.pinyin-sound-sheet), so
+   the grid keeps the chart's whole width at every screen size. */
+.pinyin-chart-layout { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
 .pinyin-chart-main .shared-filter-form { margin-bottom: 18px; }
 /* Phones wrap the search and Filters button in .mobile-library-filters, whose inner form has no
    margin; give the wrapper the same gap so the first syllable group never touches Filters. */
@@ -3048,7 +3064,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
 /* padding-right narrows the five tiles slightly so the no-recording stamp, which hangs off a
    tile's top-right corner, always has room inside the card instead of being clipped at its edge. */
-.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; padding-right: 10px; }
+.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; padding-right: 10px;
+  /* Same ceiling as the tone-pair header tiles: 5 × 148px + 4 × 5px gaps + the 10px stamp room. */
+  max-width: 770px; }
 /* A tone the syllable doesn't use: a quiet slot with one thin diagonal slash across it.
    Its contour and spelling are invisible spacers, so it matches the other tiles' height. */
 .pinyin-tone-button.is-absent { --slash: color-mix(in oklab, var(--muted-foreground) 45%, transparent); cursor: default; border-color: color-mix(in oklab, var(--border) 60%, transparent);
@@ -3085,13 +3103,15 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
 /* The chosen tone's pill sits at the top right of the syllable row, its top level with the
    syllable's letters, coloured like the selected tone card (grey for the neutral tone). */
-.pinyin-player-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.sound-detail-heading { display: grid; gap: 10px; min-width: 0; }
+.sound-detail-heading .pinyin-player-tone { margin: 0; line-height: 1.5; }
+.pinyin-player-title-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px; }
+.pinyin-player-title-row > h2 { min-width: 0; overflow-wrap: anywhere; }
 .sound-tone-pill { margin-left: auto; margin-top: 6px; color: var(--tone-ink, var(--muted-foreground)); border-color: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 45%, transparent); white-space: nowrap; }
 .pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px 0 -4px -8px; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-back:hover { color: var(--primary); }
 .pinyin-player-back svg { width: 14px; height: 14px; }
-.pinyin-characters { display: flex; flex-direction: column; gap: 8px; }
-.pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
+.pinyin-characters { display: block; }
 /* Rows share the list's two columns (subgrid), so every meaning starts at the same x even
    when some rows hold two or three form boxes. */
 .pinyin-character-list { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 4px; list-style: none; margin: 0; padding: 0; }
@@ -3136,6 +3156,11 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
 /* The card inside the small-screen window: no frame of its own, no sticky/scroll (the window body scrolls). */
 .pinyin-player.in-sheet { position: static; max-height: none; overflow: visible; border: 0; border-radius: 0; background: transparent; padding: 0; }
+/* The sound card's window opens narrower than the record details: its content is one five-tile
+   row plus short left-aligned rows, so a 560px window (720px comfortable) keeps it compact.
+   The shared resize handle still grows it, and the tone tiles stop at the tone-pair tile width. */
+.pinyin-sound-sheet { --detail-sheet-default-width: 560px; }
+html[data-display-size='comfortable'] .pinyin-sound-sheet { --detail-sheet-default-width: 720px; }
 .pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 /* Play all / Stop: both labels overlap in one cell so the button width stays fixed. */
 .pinyin-playall { display: inline-grid; justify-items: center; }
@@ -3227,7 +3252,6 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
    (beside the grid, or in the small-screen window that already shares .detail-sheet) grows
    with the same tokens the Glyphs/Vocabulary details use — 13px labels, 16px readings and
    notes, the shared reference hanzi box — and the grid tiles simply get larger. */
-html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr) clamp(400px, 34vw, 620px); }
 html[data-display-size='comfortable'] .pinyin-group-title { font-size: 12px; letter-spacing: 1px; }
 html[data-display-size='comfortable'] .pinyin-group-title span { font-size: 14px; }
 html[data-display-size='comfortable'] .pinyin-tiles { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; }
@@ -3242,6 +3266,8 @@ html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 4
 html[data-display-size='comfortable'] .pinyin-player-tone { font-size: 13px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-player-back.pinyin-player-back { height: 32px; font-size: 13px; }
 html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 8px 4px 6px; gap: 3px; }
+/* Comfortable tone-pair tiles are 168px wide: 5 × 168px + 4 × 5px gaps + the 10px stamp room. */
+html[data-display-size='comfortable'] .pinyin-tone-buttons { max-width: 870px; }
 html[data-display-size='comfortable'] .pinyin-tone-button small { font-size: 12px; }
 html[data-display-size='comfortable'] .pinyin-tone-button .tone-contour { width: 40px; height: 26px; }
 html[data-display-size='comfortable'] .pinyin-player-actions { gap: 10px; }
@@ -3250,7 +3276,7 @@ html[data-display-size='comfortable'] :is(.pinyin-slow, .pinyin-audio-error) { f
 html[data-display-size='comfortable'] .pinyin-parts { gap: 6px 18px; padding-top: 14px; }
 html[data-display-size='comfortable'] .pinyin-parts dt { font-size: 12px; letter-spacing: 0; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-parts dd { font-size: 16px; line-height: 1.5; }
-html[data-display-size='comfortable'] :is(.pinyin-note, .pinyin-characters-note) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-note { font-size: 16px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; }
 html[data-display-size='comfortable'] .pinyin-alike-say { padding: 5px 14px; }
 html[data-display-size='comfortable'] .pinyin-alike-audio { padding: 0 12px 0 2px; }
@@ -3391,20 +3417,6 @@ html:not(.dark) { --examples-link: oklch(.48 .18 278); }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link { width: 40px; height: 40px; margin-left: -12px; }
 html[data-display-size='comfortable'] .discovery-record-pinyin .sound-chart-link svg { width: 16px; height: 16px; }
 
-/* Selected sound card: beside the grid only while the chart (its width after the side menu)
-   leaves the grid column enough room for a usable search box and two dropdowns; otherwise
-   the card opens in the centred window (.pinyin-sound-sheet), like the Glyphs details, and
-   the grid takes the full width. Comfortable controls are larger, so they switch sooner.
-   The beside-the-grid card is hidden here even before hydration; pinyin-chart.tsx reads
-   --pinyin-sound-window back so the JavaScript choice always matches these thresholds. */
-@container pinyin-chart (max-width: 1199px) {
-  .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
-  .pinyin-chart-layout > .pinyin-player { display: none; }
-}
-@container pinyin-chart (max-width: 1399px) {
-  html[data-display-size='comfortable'] .pinyin-chart-layout { grid-template-columns: minmax(0, 1fr); gap: 0; --pinyin-sound-window: 1; }
-  html[data-display-size='comfortable'] .pinyin-chart-layout > .pinyin-player { display: none; }
-}
 /* Preferences → Character style: the 永 picker at a comfortable tap size, with the
    preview line tucked directly under its row so each tap shows the new face. */
 .settings-row .font-toggle button { width: 46px; height: 38px; font-size: 20px; }
@@ -5510,16 +5522,12 @@ html[data-display-size='comfortable'] .tone-matrix { max-width: 1120px; }
 /* Two shared example cards fit the wider tone card; collapse only when the card itself
    cannot fit two tile/reading rows, independent of the navigation or window width. */
 .tone-sounds-card { container: tone-card / inline-size; }
-.tone-sounds-bank { margin-top: 8px; }
-.tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tone-sounds-bank { margin-top: 0; }
+.tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 /* Reserve room for two examples in the shared top-centred sound window. On narrow
    cards the facts move below the tiles, rather than dropping to one example column. */
 html .detail-sheet:has(.tone-sounds-card) { --detail-sheet-default-width: 960px; }
 .detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
-@container tone-card (max-width: 540px) {
-  .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }
-  .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }
-}
 .tone-sounds-example .example-pinyin-row > .pinyin { height: auto; padding: 0; white-space: normal; text-align: left; justify-content: flex-start; font-size: inherit; }
 .tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; cursor: pointer; }
 .tone-sounds-example.is-selected { border-color: var(--primary); }
@@ -5571,19 +5579,30 @@ html[data-display-size='comfortable'] :is(.tone-sounds-tile, .tone-pair-tile) { 
 .tone-pair-pill .tone-pair-change { color: var(--muted-foreground); }
 html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding: 3px 10px; }
 /* Symbolic tone-pair header (no hanzi at top): Sound-Details-style tone tiles linked by an arrow. */
-.tone-pair-hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; padding: 4px 0 10px; }
-.tone-pair-hero-group { display: inline-flex; align-items: center; gap: 8px; }
+.tone-pair-hero { display: grid; gap: 12px; padding: 4px 0; }
+.tone-pair-contour-row { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 12px; }
+.tone-pair-contour-row > .eyebrow { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.tone-pair-hero-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 304px; }
+.tone-pair-hero .tone-pair-tile { width: 100%; height: auto; min-height: 84px; background: var(--secondary); }
+.tone-pair-hero .tone-pair-tile.is-changed { border-color: var(--rank-gold); box-shadow: inset 0 0 0 1px var(--rank-gold); }
+.tone-pair-hero .tone-pair-tile.is-current { border-color: var(--tone-ink); box-shadow: inset 0 0 0 1px var(--tone-ink); background: color-mix(in oklch, var(--tone-ink) 14%, var(--secondary)); }
+.tone-pair-hero .tone-pair-tile.tone-5.is-current { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); background: color-mix(in oklch, var(--primary) 14%, var(--secondary)); }
+.tone-row-reading.pinyin { font-size: 12px; line-height: 1.4; }
+html[data-display-size='comfortable'] .tone-pair-hero-group { max-width: 344px; }
+html[data-display-size='comfortable'] .tone-pair-hero .tone-pair-tile { width: 100%; height: auto; min-height: 98px; }
+html[data-display-size='comfortable'] .tone-row-reading.pinyin { font-size: 14px; }
 .tone-pair-tile-step { display: inline-flex; align-items: center; gap: 8px; }
 .tone-pair-tile-arrow { width: 15px; height: 15px; color: var(--muted-foreground); flex-shrink: 0; }
-.tone-pair-tile { cursor: default; pointer-events: none; gap: 5px; }
+.tone-pair-tile { gap: 5px; }
+.tone-pair-tile:disabled { cursor: default; }
 .tone-pair-tile.tone-5 { color: var(--muted-foreground); }
-.tone-pair-spoken-sep { font-size: 11px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.06em; padding: 0 2px; }
+.tone-pair-spoken-sep { display: flex; align-items: center; justify-content: center; gap: 4px; margin-left: 88px; max-width: 304px; font-size: 11px; color: var(--muted-foreground); }
 .tone-pair-selected { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
 .tone-pair-selected-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px; }
 .tone-pair-selected-main { flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
 .tone-pair-selected-row .tone-sounds-links { flex-shrink: 0; }
 html[data-display-size='comfortable'] .tone-pair-tile-arrow { width: 18px; height: 18px; }
-html[data-display-size='comfortable'] .tone-pair-spoken-sep { font-size: 12px; }
+html[data-display-size='comfortable'] .tone-pair-spoken-sep { font-size: 12px; max-width: 344px; }
 .tone-sounds-word-link { width: 28px; height: 28px; border-radius: var(--radius-control); align-self: flex-start; margin-top: 4px; }
 .tone-sounds-word-link svg { width: 16px; height: 16px; }
 html[data-display-size='comfortable'] .tone-matrix-code { font-size: 13px; }

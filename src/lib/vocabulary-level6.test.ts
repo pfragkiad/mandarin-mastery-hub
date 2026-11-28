@@ -52,16 +52,26 @@ describe('Level 6 imported vocabulary', () => {
       }
     }
     expect(level6.flatMap(e => e.examples)).toHaveLength(3600);
-    // 1,313 original package matches plus 65 individually reviewed missing-audio candidates.
-    expect(level6.filter(e => e.audio).length).toBe(1378);
+    // 1,313 originals + 65 first-round reviews + 13 source/transcription-screened sandhi clips.
+    expect(level6.filter(e => e.audio).length).toBe(1391);
     const review = JSON.parse(readFileSync('importer/data/missing-audio/listening-review.json', 'utf8'));
     const clips = JSON.parse(readFileSync('importer/data/missing-audio/manifest.json', 'utf8')).clips;
     const reviewed = review.words.filter((row: { hskLevel: number }) => row.hskLevel === 6);
     expect(reviewed).toHaveLength(65);
     for (const selected of reviewed) {
-      const entry = level6.find(e => e.id === selected.entryId)!;
+      const entry = level6.find(e => e.id === selected.entryId);
+      if (!entry) throw new Error(`Missing reviewed word ${selected.entryId}`);
       expect(entry.audio?.url).toContain(`missing-${clips[selected.clipId].sha256.slice(0, 16)}`);
       expect(entry.audio?.recordingKind).toBe('word');
+    }
+    const roundTwo = JSON.parse(readFileSync('importer/data/missing-audio/v2/review.json', 'utf8'));
+    const roundTwoClips = JSON.parse(readFileSync('importer/data/missing-audio/v2/manifest.json', 'utf8')).clips;
+    const selectedRoundTwo = roundTwo.words.filter((row: { hskLevel: number }) => row.hskLevel === 6);
+    expect(selectedRoundTwo).toHaveLength(13);
+    for (const selected of selectedRoundTwo) {
+      const entry = level6.find(e => e.id === selected.entryId);
+      expect(entry?.pinyinDisplay).toBe(selected.pinyinDisplay);
+      expect(entry?.audio?.url).toContain(`missing-${roundTwoClips[selected.clipId].sha256.slice(0, 16)}`);
     }
     expect(level6.find(e => e.studyMetadata?.numberingRevision?.previousId === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
   });

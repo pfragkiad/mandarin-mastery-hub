@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight, GripVertical, X } from 'lucide-react';
+import { ArrowLeft, GripVertical, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { NavigationShortcuts } from './navigation-shortcuts';
+import { DetailNeighbours } from './detail-neighbours';
 import { detailTrail, historyEntry, historyPosition, visitAt, type TrailStep } from '@/lib/detail-trail';
 
 /** How long a form switch may hold the previous content height (see DetailSheet). */
@@ -18,7 +19,7 @@ export function detailSheetWidth(width: number, viewport: number): number {
 /** Shared display-only resize state. Dragging writes a CSS variable directly so
  * record content stays mounted; only release saves the preferred width. Browser
  * storage is restored after hydration, and CSS caps it on smaller screens. */
-function useDetailSheetResize() {
+export function useDetailSheetResize() {
   const sheet = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; width: number } | null>(null);
   const [width, setWidth] = useState<number | null>(null);
@@ -66,6 +67,11 @@ function useDetailSheetResize() {
       save(apply(next));
     },
   };
+}
+
+/** Identical width control for every reference window; receives the shared resize state. */
+export function DetailSheetResizeHandle({ resize }: { resize: ReturnType<typeof useDetailSheetResize> }) {
+  return <Button variant="ghost" size="icon" className="writer-resize-handle detail-sheet-resize" role="slider" aria-label="Resize detail window" aria-orientation="horizontal" aria-valuemin={360} aria-valuenow={resize.width ?? undefined} title="Drag to resize · double-click to reset" onPointerDown={resize.start} onPointerMove={resize.move} onPointerUp={resize.end} onPointerCancel={resize.end} onDoubleClick={resize.reset} onKeyDown={resize.key}><GripVertical aria-hidden="true"/></Button>;
 }
 
 /** True below the width where the library's side detail column stacks under the cards. */
@@ -124,8 +130,8 @@ export function closeTarget(trail: TrailStep[], openedAt: number | null, current
  * tooltip never names the wrong thing on a page whose grid holds pairs rather than records.
  * State: `openedAt`, the history index of the entry where this window first appeared.
  */
-export function DetailSheet({ open, title, label, position = -1, total = 0, neighbourLabel = 'card', onClose, onPrevious, onNext, children }: {
-  open: boolean; title: string; label?: string; position?: number; total?: number; neighbourLabel?: string; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
+export function DetailSheet({ open, title, label, position = -1, total = 0, neighbourLabel = 'card', previousLabel, nextLabel, neighbourKind = 'hanzi', onClose, onPrevious, onNext, children }: {
+  open: boolean; title: string; label?: string; position?: number; total?: number; neighbourLabel?: string; previousLabel?: string | undefined; nextLabel?: string | undefined; neighbourKind?: 'hanzi' | 'pinyin' | 'text'; onClose: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; children: ReactNode;
 }) {
   const resize = useDetailSheetResize();
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -215,11 +221,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, neig
         <div className="detail-sheet-start">
           {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={goBack}><ArrowLeft/><span>{back.label}</span></Button>}
         </div>
-        {inList && <div className="detail-sheet-nav" role="group" aria-label={`Neighbouring ${neighbourLabel}s in this list`}>
-          <Button variant="ghost" size="icon" aria-label={`Previous ${neighbourLabel} in this list`} title={`Previous ${neighbourLabel} in this list`} disabled={!previous} onClick={previous}><ChevronLeft/></Button>
-          <span className="detail-sheet-position">{(position + 1).toLocaleString('en-US')} of {total.toLocaleString('en-US')}</span>
-          <Button variant="ghost" size="icon" aria-label={`Next ${neighbourLabel} in this list`} title={`Next ${neighbourLabel} in this list`} disabled={!next} onClick={next}><ChevronRight/></Button>
-        </div>}
+        {inList && <DetailNeighbours position={position} total={total} neighbourLabel={neighbourLabel} previousLabel={previousLabel} nextLabel={nextLabel} labelKind={neighbourKind} onPrevious={previous} onNext={next}/>}
         <div className="detail-sheet-end">
           {inList && <NavigationShortcuts context="records"/>}
           <Button variant="ghost" size="icon" className="close-x" aria-label={closeLabel} title={closeLabel} onClick={close}><X/></Button>
@@ -240,7 +242,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, neig
         detailTrail.push({ label: label ?? title, href: historyEntry(), ...(sameCard ? { sameCard: true } : {}) });
       }}><div ref={content}>{children}</div>
       </div>
-      <Button variant="ghost" size="icon" className="writer-resize-handle detail-sheet-resize" role="slider" aria-label="Resize detail window" aria-orientation="horizontal" aria-valuemin={360} aria-valuenow={resize.width ?? undefined} title="Drag to resize · double-click to reset" onPointerDown={resize.start} onPointerMove={resize.move} onPointerUp={resize.end} onPointerCancel={resize.end} onDoubleClick={resize.reset} onKeyDown={resize.key}><GripVertical aria-hidden="true"/></Button>
+      <DetailSheetResizeHandle resize={resize}/>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
 }

@@ -19,6 +19,11 @@ class MissingAudioImportTest(unittest.TestCase):
         cls.vocabulary = MODULE.vocabulary_store.read_vocabulary()
         cls.catalog = MODULE.read(MODULE.CATALOG)
         cls.review = MODULE.read(MODULE.REVIEW)
+        # This fixture reconstructs round one; later source-screened attachments
+        # must not make its formerly unresolved rows appear approved by round one.
+        round_two = MODULE.read(MODULE.INPUT / 'v2/review.json')
+        for selected in round_two['words']:
+            next(item for item in cls.vocabulary['entries'] if item['id'] == selected['entryId'])['audio'] = None
         words, characters = MODULE.exact_rows(cls.manifest)
         # Reconstruct the pre-import boundary even when testing an already imported tree.
         for row in words:
