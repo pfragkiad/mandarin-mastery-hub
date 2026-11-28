@@ -359,3 +359,7 @@
 
 ## Sentence notes behind the (i)
 - [x] Move each recorded example-sentence note out of the card body and behind the shared (i) in the card header row (verbatim, never generated); the (i) opens inwards so it never overflows the detail window; 3 new tests, browser-verified on an HSK 6 phrase card.
+
+## All detail windows share width resizing
+- [x] Reuse the same resizing control for Sound chart details and standalone Word/Phrase/Idiom details, preserving their navigation.
+- [x] Verify actual drag on Words, Phrases, Idioms, Characters, Components, Radicals, Strokes, Sound chart and Tone pairs; shared saved width/reset and 390px fit pass, with 40 regression tests and no browser errors.

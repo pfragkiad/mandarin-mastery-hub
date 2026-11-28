@@ -1,4 +1,4 @@
-// Small-screen (≤850px) home of the Sound chart's selected-syllable card: the same modal,
+// Floating home of the Sound chart's selected-syllable card: the same modal,
 // top-anchored window as the Glyphs/Vocabulary details (shared .detail-sheet styles), so
 // the card's top edge never moves when a tone adds or removes its "In a character" list —
 // only its bottom grows, and the body scrolls on its own.
@@ -13,17 +13,20 @@ import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { DetailSheetResizeHandle, useDetailSheetResize } from './detail-sheet';
 
 export function PinyinSoundSheet({ open, title, back, position, total, onBack, onPrevious, onNext, onClose, onClosed, children }: {
   open: boolean; title: string; back?: { label: string; lang?: string | undefined } | undefined; position: number; total: number;
   onBack: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; onClose: () => void; onClosed: () => void; children: ReactNode;
 }) {
+  const resize = useDetailSheetResize();
   const body = useRef<HTMLDivElement>(null);
   // A different syllable starts at the top of the window; tone changes keep the scroll.
   useEffect(() => { body.current?.scrollTo?.({ top: 0 }); }, [title]);
   const inList = position >= 0 && total > 0;
   return <Dialog modal open={open} onOpenChange={value => { if (!value) onClose(); }}>
-    <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet pinyin-sound-sheet"
+    <DialogPortal><DialogOverlay/><DialogPrimitive.Content className="detail-sheet pinyin-sound-sheet" ref={resize.sheet}
+      style={resize.width === null ? undefined : { ['--detail-sheet-width' as string]: `${resize.width}px` }}
       onCloseAutoFocus={event => { event.preventDefault(); onClosed(); }}
       // A click on the dimmed backdrop closes the window (via onOpenChange);
       // clicks inside portaled popovers or on a toast must not.
@@ -54,6 +57,7 @@ export function PinyinSoundSheet({ open, title, back, position, total, onBack, o
         </div>
       </div>
       <div ref={body} className="detail-sheet-body">{children}</div>
+      <DetailSheetResizeHandle resize={resize}/>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
 }

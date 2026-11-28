@@ -18,7 +18,7 @@ export function detailSheetWidth(width: number, viewport: number): number {
 /** Shared display-only resize state. Dragging writes a CSS variable directly so
  * record content stays mounted; only release saves the preferred width. Browser
  * storage is restored after hydration, and CSS caps it on smaller screens. */
-function useDetailSheetResize() {
+export function useDetailSheetResize() {
   const sheet = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; width: number } | null>(null);
   const [width, setWidth] = useState<number | null>(null);
@@ -66,6 +66,11 @@ function useDetailSheetResize() {
       save(apply(next));
     },
   };
+}
+
+/** Identical width control for every reference window; receives the shared resize state. */
+export function DetailSheetResizeHandle({ resize }: { resize: ReturnType<typeof useDetailSheetResize> }) {
+  return <Button variant="ghost" size="icon" className="writer-resize-handle detail-sheet-resize" role="slider" aria-label="Resize detail window" aria-orientation="horizontal" aria-valuemin={360} aria-valuenow={resize.width ?? undefined} title="Drag to resize · double-click to reset" onPointerDown={resize.start} onPointerMove={resize.move} onPointerUp={resize.end} onPointerCancel={resize.end} onDoubleClick={resize.reset} onKeyDown={resize.key}><GripVertical aria-hidden="true"/></Button>;
 }
 
 /** True below the width where the library's side detail column stacks under the cards. */
@@ -240,7 +245,7 @@ export function DetailSheet({ open, title, label, position = -1, total = 0, neig
         detailTrail.push({ label: label ?? title, href: historyEntry(), ...(sameCard ? { sameCard: true } : {}) });
       }}><div ref={content}>{children}</div>
       </div>
-      <Button variant="ghost" size="icon" className="writer-resize-handle detail-sheet-resize" role="slider" aria-label="Resize detail window" aria-orientation="horizontal" aria-valuemin={360} aria-valuenow={resize.width ?? undefined} title="Drag to resize · double-click to reset" onPointerDown={resize.start} onPointerMove={resize.move} onPointerUp={resize.end} onPointerCancel={resize.end} onDoubleClick={resize.reset} onKeyDown={resize.key}><GripVertical aria-hidden="true"/></Button>
+      <DetailSheetResizeHandle resize={resize}/>
     </DialogPrimitive.Content></DialogPortal>
   </Dialog>;
 }
