@@ -3064,7 +3064,9 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .pinyin-player-tone { font-size: 12px; color: var(--foreground); margin-top: -6px; }
 /* padding-right narrows the five tiles slightly so the no-recording stamp, which hangs off a
    tile's top-right corner, always has room inside the card instead of being clipped at its edge. */
-.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; padding-right: 10px; }
+.pinyin-tone-buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; padding-right: 10px;
+  /* Same ceiling as the tone-pair header tiles: 5 × 148px + 4 × 5px gaps + the 10px stamp room. */
+  max-width: 770px; }
 /* A tone the syllable doesn't use: a quiet slot with one thin diagonal slash across it.
    Its contour and spelling are invisible spacers, so it matches the other tiles' height. */
 .pinyin-tone-button.is-absent { --slash: color-mix(in oklab, var(--muted-foreground) 45%, transparent); cursor: default; border-color: color-mix(in oklab, var(--border) 60%, transparent);
@@ -3154,6 +3156,11 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .tone-contour .tone-contour-base { stroke: var(--border); stroke-width: 3; }
 /* The card inside the small-screen window: no frame of its own, no sticky/scroll (the window body scrolls). */
 .pinyin-player.in-sheet { position: static; max-height: none; overflow: visible; border: 0; border-radius: 0; background: transparent; padding: 0; }
+/* The sound card's window opens narrower than the record details: its content is one five-tile
+   row plus short left-aligned rows, so a 560px window (720px comfortable) keeps it compact.
+   The shared resize handle still grows it, and the tone tiles stop at the tone-pair tile width. */
+.pinyin-sound-sheet { --detail-sheet-default-width: 560px; }
+html[data-display-size='comfortable'] .pinyin-sound-sheet { --detail-sheet-default-width: 720px; }
 .pinyin-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 /* Play all / Stop: both labels overlap in one cell so the button width stays fixed. */
 .pinyin-playall { display: inline-grid; justify-items: center; }
@@ -3259,6 +3266,8 @@ html[data-display-size='comfortable'] .pinyin-player-title.pinyin { font-size: 4
 html[data-display-size='comfortable'] .pinyin-player-tone { font-size: 13px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-player-back.pinyin-player-back { height: 32px; font-size: 13px; }
 html[data-display-size='comfortable'] .pinyin-tone-button { font-size: 16px; padding: 8px 4px 6px; gap: 3px; }
+/* Comfortable tone-pair tiles are 168px wide: 5 × 168px + 4 × 5px gaps + the 10px stamp room. */
+html[data-display-size='comfortable'] .pinyin-tone-buttons { max-width: 870px; }
 html[data-display-size='comfortable'] .pinyin-tone-button small { font-size: 12px; }
 html[data-display-size='comfortable'] .pinyin-tone-button .tone-contour { width: 40px; height: 26px; }
 html[data-display-size='comfortable'] .pinyin-player-actions { gap: 10px; }
