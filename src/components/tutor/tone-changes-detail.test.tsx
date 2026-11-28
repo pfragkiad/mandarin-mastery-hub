@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ToneSoundsPage, RuleList } from './tone-pairs-page';
 import { detailTrail } from '@/lib/detail-trail';
@@ -26,7 +26,8 @@ vi.mock('@/lib/pinyin-guide', async () => {
   const actual = await vi.importActual<typeof import('@/lib/pinyin-guide')>('@/lib/pinyin-guide');
   return { ...actual, loadPinyinData: async () => chartDataMock.current };
 });
-vi.mock('./pinyin-shared', () => ({ ToneContour: () => null, sound: vi.fn(), usePinyinPlayer: () => ({ stop: vi.fn(), clearError: vi.fn(), error: '', playing: null }) }));
+const chipPlayMock = vi.hoisted(() => vi.fn());
+vi.mock('./pinyin-shared', () => ({ ToneContour: () => null, sound: (base: string, tone: number) => ({ base, tone }), usePinyinPlayer: () => ({ play: chipPlayMock, stop: vi.fn(), clearError: vi.fn(), error: '', playing: null }) }));
 vi.mock('@/lib/audio', () => ({ playRecordingAt: vi.fn(async () => true), stopRecording: vi.fn(), NORMAL_RATE: 1, SLOW_RATE: 0.65 }));
 
 afterEach(() => { cleanup(); detailTrail.clear(); vi.clearAllMocks(); sharedSpeed.slow = false; chartDataMock.current = null; });
@@ -101,5 +102,27 @@ describe('Tone changes shared detail navigation', () => {
     await vi.waitFor(() => {
       expect(played).toEqual(['https://cdn.example/bu4.mp3', 'https://cdn.example/cuo4.mp3', row.audio.url]);
     }, { timeout: 2000 });
+  });
+
+  it('clicking a tone tile in Tone pairs plays that exact syllable recording', async () => {
+    chartDataMock.current = {
+      recordings: {
+        ke3: { url: 'https://cdn.example/ke3.mp3' },
+        ke2: { url: 'https://cdn.example/ke2.mp3' },
+        yi3: { url: 'https://cdn.example/yi3.mp3' },
+      },
+    };
+    render(<ToneSoundsPage mode="pairs" search={{ pair: '3-3' }} onChange={vi.fn()}/>);
+    const hero = await vi.waitFor(() => {
+      const el = document.querySelector<HTMLElement>('.tone-pair-hero');
+      if (!el) throw new Error('waiting for hero');
+      return el;
+    });
+    const writtenTile = await within(hero).findByRole('button', { name: 'Play kě' });
+    fireEvent.click(writtenTile);
+    expect(chipPlayMock).toHaveBeenCalledWith({ base: 'ke', tone: 3 });
+    const spokenTile = within(hero).getByRole('button', { name: 'Play ké' });
+    fireEvent.click(spokenTile);
+    expect(chipPlayMock).toHaveBeenCalledWith({ base: 'ke', tone: 2 });
   });
 });

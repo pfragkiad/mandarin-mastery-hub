@@ -218,7 +218,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
           onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule: undefined, example: undefined }, true); }}>
           <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} activeCard={activeCard} onPick={id => onChange({ example: id })}
             slow={slow} onSlow={value => setPreferences({ ...preferences, slow: value })}
-            chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
+            chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); setActiveCard(null); void chipPlayer.play(sound(base, tone)); } }}
             onPlay={() => void play()}/>
         </DetailSheet>}
       </div>}
@@ -305,10 +305,19 @@ function PracticeCard({ row, pool, mode, hidden, status, activeCard, onPlay, onP
   // review or a separately recorded syllable. Whole-word playback stays unchanged.
   const toneTiles = (tones: readonly Tone[], syllables: readonly string[], spoken = false) => tones.map((t, i) => {
     const rowKind = spoken ? 'spoken' : 'written';
-    const playing = activeCard !== null && activeCard.row === rowKind && (activeCard.index === 'all' || activeCard.index === i);
-    return <span key={i} className={`pinyin-tone-button tone-${t} tone-pair-tile${spoken && row.citationTones[i] !== t ? ' is-changed' : ''}${playing ? ' is-current' : ''}`}>
+    const base = row.chartLinks[i]?.base;
+    const id = base ? soundId(base, t) : null;
+    const recorded = Boolean(base && chips.data && hasRecording(chips.data, base, t));
+    const on = Boolean(id && chips.player.playing === id);
+    const playing = (activeCard !== null && activeCard.row === rowKind && (activeCard.index === 'all' || activeCard.index === i)) || on;
+    const label = hidden ? toneCaption(t) : (base ? toneMark(base, t) : (syllables[i] ?? toneCaption(t)));
+    return <button key={i} type="button" disabled={!recorded}
+      aria-label={recorded ? `Play ${label}` : `No recording for ${label}`}
+      title={recorded ? `Play ${label}` : `No recording for ${label}`}
+      className={`pinyin-tone-button tone-${t} tone-pair-tile${spoken && row.citationTones[i] !== t ? ' is-changed' : ''}${playing ? ' is-current' : ''}`}
+      onClick={() => { if (base && recorded && !on) chips.onPlay(base, t); }}>
       <ToneContour tone={t}/><small>{toneCaption(t)}</small>{!hidden && <span className="pinyin tone-row-reading" lang="zh-Latn-pinyin">{syllables[i]}</span>}
-    </span>;
+    </button>;
   });
   const groupTitle = mode === 'changes' && row.rule && row.rule !== 'third'
     ? <>{TONE_RULES[row.rule].symbol} + {toneCaption(row.citationTones[1] ?? 5).toLowerCase()}</>

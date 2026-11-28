@@ -5584,7 +5584,8 @@ html[data-display-size='comfortable'] .tone-pair-hero .tone-pair-tile { width: 1
 html[data-display-size='comfortable'] .tone-row-reading.pinyin { font-size: 14px; }
 .tone-pair-tile-step { display: inline-flex; align-items: center; gap: 8px; }
 .tone-pair-tile-arrow { width: 15px; height: 15px; color: var(--muted-foreground); flex-shrink: 0; }
-.tone-pair-tile { cursor: default; pointer-events: none; gap: 5px; }
+.tone-pair-tile { gap: 5px; }
+.tone-pair-tile:disabled { cursor: default; }
 .tone-pair-tile.tone-5 { color: var(--muted-foreground); }
 .tone-pair-spoken-sep { display: flex; align-items: center; justify-content: center; gap: 4px; margin-left: 88px; max-width: 304px; font-size: 11px; color: var(--muted-foreground); }
 .tone-pair-selected { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
