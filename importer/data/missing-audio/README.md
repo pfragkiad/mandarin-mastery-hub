@@ -1,5 +1,7 @@
 # Missing Mandarin audio package
 
+The [second-round package](v2/README.md) is preserved separately, with its own screening decisions, CDN pointers and report; first-round evidence below remains unchanged.
+
 Owner-supplied `missing-audio-package.zip` (generated 2026-11-28), preserved here without its 318 media files. `manifest.json`, `ATTRIBUTION.md`, `PACKAGE_README.md` (the package's original `README.md`) and `notices/` retain their original bytes. The manifest binds current post-migration vocabulary UUIDs/official HSK IDs/readings and character `(glyph, reading)` slots to candidate recordings, checksums and source attribution.
 
 ## Import and listening-review boundary

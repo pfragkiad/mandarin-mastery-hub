@@ -1,9 +1,11 @@
 # Roadmap
 
 ## Second supplemental recording batch
-- [ ] Preserve and verify all 79 supplied clips and exact current record identities.
-- [ ] Review the 65 word and 3 character candidates before attaching approved recordings; retain unresolved gaps.
-- [ ] Upload approved clips to the CDN, verify playback and import checks, and deliver `reports/missing-audio-v2-import.json`.
+- [x] Preserve original metadata/notices and verify SHA-256/Git-blob/bytes of all 79 supplied clips and current exact word identities.
+- [x] Source/automatic-transcription screen all clips; attach only 25 explicit initial 一/不 sandhi-correspondence words (HSK 3/4/5/6: 2/5/5/13), not acoustic/native-speaker certified.
+- [x] Upload those 25 to the CDN and verify all retrieved SHA-256 hashes; play four new words from their real detail-card speakers to natural completion; retain exact IDs, readings, examples, order and prior audio.
+- [x] Deliver `reports/missing-audio-v2-import.json` for every clip; preserve 831 uncovered words and 27 uncovered character slots.
+- [ ] Attach any of the remaining 40 candidate words / 3 character-reading slots only after native-speaker listening resolves neutral/citation, partial-reading, interjection or transcript disagreements. Blocker: qualified listening decisions, not provided by automatic transcription.
 
 ## Detail neighbour labels at every width
 - [x] Apply the clarified every-width choice, keeping narrow headers bounded.

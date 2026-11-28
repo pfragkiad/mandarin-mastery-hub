@@ -77,7 +77,9 @@ class Level3AudioImportTests(unittest.TestCase):
         review = audio.read(audio.ROOT / 'importer/data/missing-audio/listening-review.json')
         supplemental_indices = {row['hskIndex'] for row in supplement['words'] if row['status'] == 'matched_exact_reading'}
         supplemental_indices.update(row['hskIndex'] for row in review['words'] if row['hskLevel'] == 3)
-        self.assertEqual(len(attached), 460)  # 443 original + 得 dé + 16 listening-reviewed additions.
+        round_two = audio.read(audio.ROOT / 'importer/data/missing-audio/v2/review.json')
+        supplemental_indices.update(row['hskIndex'] for row in round_two['words'] if row['hskLevel'] == 3)
+        self.assertEqual(len(attached), 462)  # 443 original + 得 dé + 16 first-round + 2 sandhi-screened additions.
         self.assertFalse(attached & (unmatched - supplemental_indices))
 
     def test_committed_upload_map_attaches_every_matched_entry_from_a_clean_level(self):
@@ -184,7 +186,9 @@ class Level6AudioImportTests(unittest.TestCase):
         unmatched = {row['hskIndex'] for row in self.manifest['entries'] if row['status'] != 'matched'}
         review = audio.read(audio.ROOT / 'importer/data/missing-audio/listening-review.json')
         reviewed_indices = {row['hskIndex'] for row in review['words'] if row['hskLevel'] == 6}
-        self.assertEqual(len(attached), 1378)
+        round_two = audio.read(audio.ROOT / 'importer/data/missing-audio/v2/review.json')
+        reviewed_indices.update(row['hskIndex'] for row in round_two['words'] if row['hskLevel'] == 6)
+        self.assertEqual(len(attached), 1391)
         self.assertFalse(attached & (unmatched - reviewed_indices))
 
     def test_committed_upload_map_attaches_every_matched_entry_from_a_clean_level(self):

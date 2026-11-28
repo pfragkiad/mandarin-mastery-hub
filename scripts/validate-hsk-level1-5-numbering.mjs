@@ -13,11 +13,14 @@ const builds = read('reports/hsk-level1-5-official-numbering-migration.json').le
 const baseline = read('importer/data/hsk-level1-5-numbering/legacy-bindings.json').entries;
 const missingManifest = read('importer/data/missing-audio/manifest.json');
 const listeningReview = read('importer/data/missing-audio/listening-review.json');
+const roundTwo = read('importer/data/missing-audio/v2/review.json');
+const roundTwoClips = read('importer/data/missing-audio/v2/manifest.json').clips;
 const supplemental = [
   ...missingManifest.words.filter(row => row.status === 'matched_exact_reading').map(row => ({
     ...row, clipId: row.candidateClips.find(clip => clip.matchKind === 'exact_headword_and_reading').clipId,
   })),
   ...listeningReview.words.filter(row => row.hskLevel <= 5),
+  ...roundTwo.words.filter(row => row.hskLevel <= 5),
 ];
 const supplementalById = new Map(supplemental.map(row => [row.entryId, row]));
 const official = new Map(read('importer/data/hsk-level7/official-vocabulary.json').map(e => [e.id, e]));
@@ -44,7 +47,7 @@ for (const build of builds) {
         [supplement.hskLevel, supplement.hskIndex, supplement.simplified, supplement.pinyinDisplay]);
       assert.equal(entry.audio?.recordingKind, 'word');
       assert.match(entry.audio?.url ?? '', /^\/__l5e\/assets-v1\//);
-      const clip = missingManifest.clips[supplement.clipId];
+      const clip = missingManifest.clips[supplement.clipId] ?? roundTwoClips[supplement.clipId];
       assert.match(entry.audio?.url ?? '', new RegExp(`/missing-${clip.sha256.slice(0, 16)}\\.(mp3|wav)$`));
       supplementalRecordings += 1;
     } else assert.deepEqual(entry.audio, old.audio);
@@ -73,9 +76,10 @@ for (const build of builds) {
   assert.ok(Buffer.byteLength(raw) < 9_000_000);
 }
 assert.equal(changed, 1092);
-assert.equal(recordings, 3127);
-assert.equal(supplementalRecordings, 139);
+assert.equal(recordings, 3139);
+assert.equal(supplementalRecordings, 151);
 console.log(JSON.stringify({ entries: 3600, updatedOfficialIds: changed, preservedWordRecordings: recordings - supplementalRecordings,
   sourceExactWordRecordings: 8, listeningReviewedWordRecordings: 131,
+  sourceTranscriptionScreenedSandhiWordRecordings: 12,
   supplementalWordRecordings: supplementalRecordings, totalWordRecordings: recordings,
   preservedUuidsOrderReadingsAndPriorAudio: true, repeatImportsIdempotent: true, compactPartsBelow9MB: true }, null, 2));
