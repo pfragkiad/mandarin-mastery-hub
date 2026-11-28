@@ -62,10 +62,12 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
   const rows = useMemo(() => groupScriptForms(matches, shownMeaning), [matches, base, tone]);
   const rankOf = (entry: (typeof entries)[number]) => rankFor(entry);
 
-  return <SentenceHints backLabel={backLabel}><ExampleTabs key={`${base}:${tone}`}><ExampleSection id="character" label="In a character" icon={Puzzle} className="pinyin-characters glyph-usage-section">
-    {tone === null ? <p className="pinyin-characters-note">Click a tone to see its characters.</p>
-      : !catalogVersion ? <p className="pinyin-characters-note">Loading characters…</p>
-      : !matches.length ? <p className="pinyin-characters-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
+  // Keep tab + panel in one block, as in record details: the player's flex gap must
+  // not add another boundary gap. The shared example scope also styles docked cards.
+  return <SentenceHints backLabel={backLabel}><div className="pinyin-characters detail-examples"><ExampleTabs key={`${base}:${tone}`}><ExampleSection id="character" label="In a character" icon={Puzzle}>
+    {tone === null ? <p className="library-note">Click a tone to see its characters.</p>
+      : !catalogVersion ? <p className="library-note">Loading characters…</p>
+      : !matches.length ? <p className="library-note">No character in the dictionary reads <span lang="zh-Latn-pinyin">{toneMark(base, tone)}</span>.</p>
       : <>
         <ExpandableCharacterGrid key={`${base}:${tone}:${includeTraditional}`} initialCount={SYLLABLE_CHARACTERS_SHOWN} totalCount={matches.length} cards={rows.map(({ key, forms }) => {
           // All forms in a row record the same meaning (groupScriptForms), so one line serves them.
@@ -124,5 +126,5 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           </div>
         </div>; })}/>
       </>}
-  </ExampleSection></ExampleTabs></SentenceHints>;
+  </ExampleSection></ExampleTabs></div></SentenceHints>;
 }

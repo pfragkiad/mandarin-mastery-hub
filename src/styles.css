@@ -601,7 +601,7 @@ html .workspace.is-collapsed .help-link svg:last-child { display: none; }
 .example-results-toolbar .search-field { flex: 0 1 280px; min-width: 0; }
 /* Grid rows stretch to their tallest card; sequential-example spacing belongs
    only to examples outside the grid, never to individual grid siblings. */
-.detail-sheet .expandable-character-grid { align-items: stretch; }
+:is(.detail-sheet, .detail-examples) .expandable-character-grid { align-items: stretch; }
 .example-tab-panel.glyph-usage-section { margin-top: var(--grid-card-inner-gap); }
 @media (prefers-reduced-motion: reduce) { .expandable-character-grid.is-expanded { animation: none; } }
 .glyph-usage-reference { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--primary); }
@@ -2266,7 +2266,7 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
 .detail-sheet .word-detail-actions { margin: 0 0 4px; }
 /* One boundary gap for every detail section, including the first section after facts.
    Example lines use a separate smaller unit, never stacked paragraph margins. */
-:is(.detail-sheet, .pinyin-characters) { --detail-section-pad: 14px; --detail-example-gap: 6px; }
+:is(.detail-sheet, .detail-examples) { --detail-section-pad: 14px; --detail-example-gap: 6px; --detail-example-min-width: 220px; }
 /* Facts block: no extra bottom padding — the gap below it is the shared rhythm. */
 .detail-sheet .catalog-facts { margin-top: 16px; padding: var(--detail-section-pad) 0 0; }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section { margin-top: var(--detail-section-gap); padding-top: var(--detail-section-pad); }
@@ -2278,9 +2278,10 @@ html .catalog-detail-glyph-row > strong.card-ink-radical.traditional-character {
    extra hairline. One unit, --detail-section-pad, sets every boundary distance:
      facts content ↔ its lines, facts line → first section, last section → action line,
      action line → buttons and between sections: the same gap (--detail-section-gap). */
-.detail-sheet { --detail-section-gap: var(--detail-section-pad); }
+:is(.detail-sheet, .detail-examples) { --detail-section-gap: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .catalog-facts { border-bottom: 1px solid var(--border); padding-bottom: var(--detail-section-pad); }
 .detail-sheet .glyph-usage-section, .detail-sheet .decomposition-section, .detail-sheet .radical-family-section, .detail-sheet .catalog-detail .detail-tabs { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
+.detail-examples .example-tab-panel.glyph-usage-section { border-top: 0; padding-top: 0; margin-top: var(--detail-section-gap); }
 .detail-sheet .catalog-detail .catalog-facts + :not(.detail-reference-row) { margin-top: var(--detail-section-pad); }
 .detail-sheet .catalog-detail .detail-reference-row { margin-top: var(--detail-section-pad); padding-top: var(--detail-section-pad); }
 /* A trailing "Show N more examples" toggle keeps its padded click area, but that padding must not
@@ -2330,7 +2331,7 @@ html[data-display-size='comfortable'] .detail-sheet .kangxi-identity-card .examp
 }
 /* Detail columns follow the actual resized window, not a two-column ceiling.
    Phrase/idiom lists wrap on their own floor (--detail-sentence-min-width) above. */
-.detail-sheet :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
+:is(.detail-sheet, .detail-examples) :is(section[aria-label='In a word'], section[aria-label='In a character']) .glyph-usage-parents:not(.example-list) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--detail-example-min-width)), 1fr)); }
 .etymology-standalone-note {
   display: flex;
   align-items: center;
@@ -2537,7 +2538,7 @@ html[data-display-size='comfortable'] .daily-hero-actions [data-ui-button] { min
 html[data-display-size='comfortable'] :is(.filter-select, .filter-upto-toggle, .search-field input, .form-field input, .form-field select, .practice-options select) { font-size: var(--ui-control-size); min-height: 44px; }
 html[data-display-size='comfortable'] :is(.filter-bar button, .catalog-tools-row button, .vocabulary-saved-filter button, .catalog-pagination button, .catalog-pagination input, .writer-controls button, .writer-controls a, .writer-controls-arranged button, .drawing-actions button, .drawing-board-meta button, .game-setup button, .game-ready button, .settings-row button, .word-detail-actions button, .word-detail-actions a):not([role='switch']) { font-size: var(--ui-control-size); min-height: 40px; }
 html[data-display-size='comfortable'] :is(.catalog-results-count, .catalog-tab-count, .catalog-pagination, .pagination-jump, .pagination-per-page, .form-field, .settings-row label, .practice-kind, .writer-status, .stroke-guide-top, .drawing-status, .drawing-board-meta, .drawing-rule, .flash-options, .game-setup label, .game-ready, .catalog-facts dt, .catalog-record-note, .library-note, .detail-reference-label) { font-size: var(--ui-label-size); line-height: 1.6; }
-html[data-display-size='comfortable'] .library-page [role='tab'] { font-size: var(--ui-control-size); }
+html[data-display-size='comfortable'] .library-page [role='tab']:not(.stroke-tab) { font-size: var(--ui-control-size); }
 html[data-display-size='comfortable'] .library-page [role='tab'] .catalog-tab-count { font-size: inherit; }
 html[data-display-size='comfortable'] :is(.settings-row p, .settings-notice, .help-content p, .practice-info > p, .drawing-results > p, .game-source-note) { font-size: 14px; line-height: 1.7; }
 html[data-display-size='comfortable'] .settings-row label { font-size: 16px; line-height: 1.6; }
@@ -2555,6 +2556,7 @@ html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content,
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .decomposition-glyph-wide { width: auto; min-width: var(--reference-glyph-box-size); }
 html[data-display-size='comfortable'] :is(.detail-sheet, .practice-page-content) .source-glyph-box { min-width: var(--reference-glyph-box-size); height: var(--reference-glyph-box-size); font-size: var(--reference-glyph-size); }
 html[data-display-size='comfortable'] .detail-sheet { --detail-sheet-default-width: 960px; --detail-example-min-width: 300px; --detail-sentence-min-width: 440px; }
+html[data-display-size='comfortable'] .detail-examples { --detail-example-min-width: 300px; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head .pinyin { font-size: 20px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet .catalog-detail-head h2 { font-size: 21px; line-height: 1.5; }
 html[data-display-size='comfortable'] .detail-sheet :is(.decomposition-note, .decomposition-layout small, .catalog-facts dd) { font-size: 16px; line-height: 1.6; }
@@ -3095,8 +3097,7 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px 0 -4px -8px; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-back:hover { color: var(--primary); }
 .pinyin-player-back svg { width: 14px; height: 14px; }
-.pinyin-characters { display: flex; flex-direction: column; gap: 8px; }
-.pinyin-characters-note { font-size: 12px; line-height: 1.6; color: var(--foreground); }
+.pinyin-characters { display: block; }
 /* Rows share the list's two columns (subgrid), so every meaning starts at the same x even
    when some rows hold two or three form boxes. */
 .pinyin-character-list { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 4px; list-style: none; margin: 0; padding: 0; }
@@ -3255,7 +3256,7 @@ html[data-display-size='comfortable'] :is(.pinyin-slow, .pinyin-audio-error) { f
 html[data-display-size='comfortable'] .pinyin-parts { gap: 6px 18px; padding-top: 14px; }
 html[data-display-size='comfortable'] .pinyin-parts dt { font-size: 12px; letter-spacing: 0; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-parts dd { font-size: 16px; line-height: 1.5; }
-html[data-display-size='comfortable'] :is(.pinyin-note, .pinyin-characters-note) { font-size: 16px; line-height: 1.6; }
+html[data-display-size='comfortable'] .pinyin-note { font-size: 16px; line-height: 1.6; }
 html[data-display-size='comfortable'] .pinyin-alike { font-size: 15px; }
 html[data-display-size='comfortable'] .pinyin-alike-say { padding: 5px 14px; }
 html[data-display-size='comfortable'] .pinyin-alike-audio { padding: 0 12px 0 2px; }

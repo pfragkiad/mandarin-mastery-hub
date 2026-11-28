@@ -1,5 +1,9 @@
 # Roadmap
 
+## Sound-detail example styling
+- [x] Match Sound chart's In a character tab, panel spacing, notes and card grid to shared detail examples, including the docked view.
+- [x] Verified identical computed tab/card/box styling and 14px panel gap in Compact/Comfortable, 390px/1800px fit, drawer collapse/reopen and exact 仁 navigation; 23 regression tests pass and build OK.
+
 ## Official-ID sync and supplemental recordings
 - [x] Reconcile all 318 supplied clips (307 word-referenced, 19 character-referenced, 8 shared): 8 exact + 196 reviewed word records, 25 reviewed yán replacements, 21 unresolved words and non-neutral 呀 held; no reading inference.
 - [x] Deliver the final 318-row per-file report at `reports/missing-audio-import.json`, with accepted/rejected/alternative statuses, unresolved references and exact CDN attachments; no pending uploads or media binaries.
