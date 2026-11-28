@@ -71,7 +71,7 @@ function HeadwordGlyphs({ word, pairing, text = word.hanzi }: { word: Word; pair
  * Vocabulary results): each Han character becomes a quick-card target — not a tab stop, since
  * it sits inside the card's own button — with the same word context as the detail headword
  * (a word's characters in that exact record, a phrase's characters in the words-first words
- * it contains). Hints off or outside a provider (Start page cards): the plain pairing glyphs.
+ * it contains). Hints off or outside a provider: the plain pairing glyphs.
  */
 function useCardHintGlyph(word: Word, pairing: ReturnType<typeof usePhrasePairing>) {
   const hints = useLessonHints();

@@ -1,5 +1,10 @@
 # Roadmap
 
+## Start grid hints and latest-audio review
+- [x] Enable existing glyph quick cards on Start grid cards, independent of library hint preferences; verified all six library categories in the live wide Start view, no navigation/errors, and 23 focused tests passed.
+- [x] Reassess the latest package's 40 held word candidates and 3 character-reading slots against exact readings, pinned source tags and transcription evidence; all source tags agree with supplied metadata, but no additional acoustic approval is claimed.
+- [x] Deliver readable latest-audio Markdown, CSV and JSON reports listing 25 installed recordings, all 43 held targets/50 candidate references, alternatives and specific blockers. Remaining attachments still require qualified listening as recorded below.
+
 ## Second supplemental recording batch
 - [x] Preserve original metadata/notices and verify SHA-256/Git-blob/bytes of all 79 supplied clips and current exact word identities.
 - [x] Source/automatic-transcription screen all clips; attach only 25 explicit initial 一/不 sandhi-correspondence words (HSK 3/4/5/6: 2/5/5/13), not acoustic/native-speaker certified.

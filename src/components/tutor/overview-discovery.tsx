@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { CatalogTile } from './characters-page';
 import { WordCard } from './word-card';
+import { LessonHintsProvider } from './lesson-hints';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { Bookmark, ChevronDown, ChevronRight, Shuffle, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -245,6 +246,9 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
 
   return (
     <section className={`discovery-tile${open ? ' is-open' : ''}`} aria-label={`${meta.label}: ${count ?? '…'} records`}>
+      {/* Start grid cards always offer the shared quick cards, independently of the
+          library/lesson switches; their existing hint targets keep clicks in place. */}
+      <LessonHintsProvider enabled backLabel="Start">
       <div className="library-page discovery-card-host">
         {word ? <div className={`word-grid vocab-grid vocab-${category}-grid${comfortable ? ' list-view library-list-view' : ''}`}>
           <WordCard word={word} panel open={false} onOpenChange={next => { if (next) openRecord(); }} onDetails={openRecord} header={header}/>
@@ -254,6 +258,7 @@ export function DiscoveryTile({ category, open = false, onToggle = () => {} }: {
           <article className="word-card discovery-card-loading">{header}<p className="library-note">Loading {meta.label.toLowerCase()}…</p></article>
         </div>}
       </div>
+      </LessonHintsProvider>
       {/* Phones only: the open row's detail (hidden on wider screens, where the card above shows it). */}
       <div className="discovery-tile-body" id={bodyId}>
       {record && recordLink ? (
