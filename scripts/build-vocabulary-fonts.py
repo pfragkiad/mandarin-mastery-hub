@@ -12,6 +12,7 @@ Then upload each file with lovable-assets, and paste the printed unicode-range i
 'Tutor Vocabulary' @font-face rules in src/styles.css (src/lib/vocabulary-fonts.test.ts fails
 when the vocabulary gains a character the files lack)."""
 import io, re, sys, pathlib, urllib.parse, urllib.request
+from fontTools.merge import Merger
 
 out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(pathlib.Path(__file__).parent)); sys.dont_write_bytecode = True
@@ -25,11 +26,24 @@ def keep(c: str) -> bool:
 chars = "".join(sorted({c for c in text if keep(c)}))
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36"  # woff2 response
 for family, name in (("LXGW+WenKai+TC", "vocabulary-kai.woff2"), ("Noto+Serif+SC", "vocabulary-serif.woff2")):
-    url = f"https://fonts.googleapis.com/css2?family={family}&text=" + urllib.parse.quote(chars)
-    css = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA})).read().decode()
-    data = urllib.request.urlopen(re.search(r"url\((https[^)]+)\)", css).group(1)).read()
+    # Google's text= endpoint rejects an overlong URL. Disjoint chunks use the same
+    # upstream font design; merge them back into the one subset the browser expects.
+    chunks = [chars[i:i + 1200] for i in range(0, len(chars), 1200)]
+    parts = []
+    for chunk in chunks:
+        url = f"https://fonts.googleapis.com/css2?family={family}&text=" + urllib.parse.quote(chunk)
+        css = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA})).read().decode()
+        parts.append(io.BytesIO(urllib.request.urlopen(re.search(r"url\((https[^)]+)\)", css).group(1)).read()))
+    if len(parts) == 1:
+        data = parts[0].getvalue()
+    else:
+        font = Merger().merge(parts)
+        font.flavor = "woff2"
+        target = io.BytesIO()
+        font.save(target)
+        data = target.getvalue()
     (out / name).write_bytes(data)
-    print(name, len(data), "bytes")
+    print(name, len(data), "bytes", f"({len(chunks)} source chunks)")
 
 # Collapse the code points into the shortest unicode-range list.
 points, ranges = sorted(ord(c) for c in chars), []

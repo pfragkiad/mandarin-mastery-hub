@@ -7,7 +7,7 @@ import { partOfSpeechList, words } from './mandarin';
 import { drawingWordPool } from './drawing-game';
 
 const raw = readFileSync('importer/hsk/hsk3_level1_1.7.2.json', 'utf8');
-const source = JSON.parse(raw) as { data_version: string; taxonomy: { topics: { id: string; label: string }[] }; entries: { id: number; headword: string; pinyin: string; meaning_en: string; primary_topic_id: string; topic_ids: string[]; examples: { hanzi: string; pinyin: string; english: string; style: string; note: string; register: string }[] }[] };
+const source = JSON.parse(raw) as { data_version: string; taxonomy: { topics: { id: string; label: string }[] }; entries: { id: number; legacy_syllabus_id?: number; headword: string; pinyin: string; meaning_en: string; primary_topic_id: string; topic_ids: string[]; examples: { hanzi: string; pinyin: string; english: string; style: string; note: string; register: string }[] }[] };
 const inventory = new Set((JSON.parse(readFileSync('src/data/pinyin/inventory.json', 'utf8')) as { syllables: { base: string }[] }).syllables.map(s => s.base));
 const level1 = vocabularyData.entries.filter(e => e.hskLevel === 1);
 

@@ -6,7 +6,7 @@ import { WorkspaceProvider, useWorkspace } from './workspace';
 vi.mock('@/lib/catalog-store', () => ({ loadCatalog: () => Promise.resolve(), catalog: { version: 1 } }));
 afterEach(cleanup);
 
-it('drops the disputed 了 recording when imported data changes without losing session words', async () => {
+it('replaces a stale disputed 了 recording with the current exact import without losing session words', async () => {
   const index = words.findIndex(word => word.id === '4acf54bb-a35e-41cf-8844-51c11d4af89f');
   const original = words[index];
   if (!original) throw new Error('Missing neutral-tone 了');
@@ -22,7 +22,8 @@ it('drops the disputed 了 recording when imported data changes without losing s
     words[index] = original;
     view.rerender(<WorkspaceProvider><Probe /></WorkspaceProvider>);
     expect(workspace?.items.find(word => word.id === original.id)?.pinyin).toBe('le');
-    expect(workspace?.items.find(word => word.id === original.id)?.audio).toBeNull();
+    expect(workspace?.items.find(word => word.id === original.id)?.audio).toEqual(original.audio);
+    expect(workspace?.items.find(word => word.id === original.id)?.audio?.url).not.toBe('/disputed-le.mp3');
     expect(workspace?.items.find(word => word.id === sessionWord.id)).toEqual(sessionWord);
   } finally { words[index] = original; }
 });

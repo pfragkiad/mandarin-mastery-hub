@@ -110,8 +110,10 @@ describe('neutral-tone recordings', () => {
 });
 
 describe('neutral-audio.json', () => {
-  it('lists exactly the six single-character words recorded in a neutral reading', async () => {
+  it('lists exactly the thirteen single-character words recorded in a neutral reading', async () => {
     const neutral = (await import('@/data/pinyin/neutral-audio.json')).default.recordings as Record<string, { word: string }>;
-    expect(Object.fromEntries(Object.entries(neutral).map(([id, r]) => [id, r.word]))).toEqual({ ba5: '吧', de5: '的', ma5: '吗', men5: '们', ne5: '呢', zhe5: '着' });
+    expect(Object.fromEntries(Object.entries(neutral).map(([id, r]) => [id, r.word]))).toEqual({
+      a5: '啊', ba5: '吧', de5: '的', guo5: '过', la5: '啦', le5: '了', ma5: '吗', men5: '们', ne5: '呢', tou5: '头', wa5: '哇', zhe5: '着', zi5: '子',
+    });
   });
 });

@@ -29,14 +29,33 @@ describe('Level 5 draft terms', () => {
           [ex.hanzi, ex.pinyin, ex.english, ex.note, ex.register]));
     }
   });
-  it('attaches word audio only to the 1,306 exact word-and-reading matches', () => {
+  it('attaches word audio only to exact source matches and reviewed supplemental clips', () => {
     const manifest = JSON.parse(readFileSync('importer/data/hsk-audio/level5-manifest-1.0.6.json', 'utf-8'));
     const rows = new Map<number, { status: string; recording?: { sha256: string } }>(
       manifest.entries.map((row: { hskIndex: number }) => [row.hskIndex, row]));
+    const supplement = JSON.parse(readFileSync('importer/data/missing-audio/manifest.json', 'utf-8'));
+    const review = JSON.parse(readFileSync('importer/data/missing-audio/listening-review.json', 'utf-8'));
+    const exactIds = new Set<string>(supplement.words.filter((row: { status: string }) => row.status === 'matched_exact_reading').map((row: { entryId: string }) => row.entryId));
+    const reviewed = new Map<string, { clipId: string }>(review.words.filter((row: { hskLevel: number }) => row.hskLevel === 5).map((row: { entryId: string; clipId: string }) => [row.entryId, row]));
+    const supplementalIds = new Set<string>([...exactIds, ...reviewed.keys()]);
     let attached = 0;
     for (const entry of level5) {
       const row = entry.hsk_index === null ? undefined : rows.get(entry.hsk_index);
-      if (row?.status !== 'matched') { expect(entry.audio).toBeNull(); continue; }
+      if (row?.status !== 'matched') {
+        if (!supplementalIds.has(entry.id)) { expect(entry.audio).toBeNull(); continue; }
+        if (exactIds.has(entry.id)) {
+          // 为 wéi (official ID 3183) comes from exact-tagged cmn-balm-hsk1.
+          expect(entry.hsk_index).toBe(3183);
+          expect(entry.pinyinDisplay).toBe('wéi');
+          expect(entry.audio?.source).toBe('Shtooka Project (cmn-balm-hsk1) / Wei Gao');
+        } else {
+          const clip = supplement.clips[reviewed.get(entry.id)!.clipId];
+          expect(entry.audio?.url).toContain(`missing-${clip.sha256.slice(0, 16)}`);
+          expect(entry.audio?.recordingKind).toBe('word');
+        }
+        attached += 1;
+        continue;
+      }
       attached += 1;
       expect(entry.audio?.source).toBe('audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan');
       expect(entry.audio?.recordingKind).toBe('word');
@@ -44,7 +63,7 @@ describe('Level 5 draft terms', () => {
       // Reused earlier-level clips keep their own names; new Level 5 uploads are named by the clip's checksum.
       if (entry.audio?.url.includes('/hsk5-')) expect(entry.audio.url).toContain(row.recording!.sha256.slice(0, 16));
     }
-    expect(attached).toBe(1306);
+    expect(attached).toBe(1351);
     for (const example of level5.flatMap(e => e.examples)) expect(example.audio ?? null).toBeNull();
   });
   it('offers Level 5 word and sentence pools while retaining source readings and draft status', () => {

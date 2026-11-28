@@ -24,7 +24,22 @@
    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
    "license": "CC BY-SA 3.0 US",
    "recordingKind": "word",
+   "alsoRecordedIn": [
+    "地",
+    "得"
+   ],
    "ms": 750
+  },
+  "le5": {
+   "word": "了",
+   "reading": "le",
+   "entryId": "4acf54bb-a35e-41cf-8844-51c11d4af89f",
+   "hskIndex": 108,
+   "url": "/__l5e/assets-v1/2f52f606-bd1b-4161-b1de-420edbd0f04f/missing-e2dafa559bf7224a.mp3",
+   "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+   "license": "CC BY 2.0 FR",
+   "recordingKind": "word",
+   "ms": 600
   },
   "ma5": {
    "word": "吗",
@@ -35,6 +50,9 @@
    "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
    "license": "CC BY-SA 3.0 US",
    "recordingKind": "word",
+   "alsoRecordedIn": [
+    "嘛"
+   ],
    "ms": 850
   },
   "men5": {
@@ -59,6 +77,28 @@
    "recordingKind": "word",
    "ms": 800
   },
+  "a5": {
+   "word": "啊",
+   "reading": "a",
+   "entryId": "086f1411-69df-4023-b750-b7328a2c5b2c",
+   "hskIndex": 301,
+   "url": "/__l5e/assets-v1/de159d62-b01d-4a58-b191-d6f83f0ad54b/missing-863b8ff6668e7500.mp3",
+   "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+   "license": "CC BY 2.0 FR",
+   "recordingKind": "word",
+   "ms": 900
+  },
+  "guo5": {
+   "word": "过",
+   "reading": "guo",
+   "entryId": "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+   "hskIndex": 351,
+   "url": "/__l5e/assets-v1/83297d32-3a1b-4465-96e6-d885e653e226/missing-9c307f8facc8ed33.wav",
+   "source": "Wikimedia Lingua Libre / Jouketou",
+   "license": "CC BY-SA 4.0",
+   "recordingKind": "word",
+   "ms": 797
+  },
   "zhe5": {
    "word": "着",
    "reading": "zhe",
@@ -69,6 +109,50 @@
    "license": "CC BY-SA 3.0 US",
    "recordingKind": "word",
    "ms": 800
+  },
+  "zi5": {
+   "word": "子",
+   "reading": "zi",
+   "entryId": "960eeb9c-6af7-577d-adba-8ec1925fe409",
+   "hskIndex": 990,
+   "url": "/__l5e/assets-v1/67252210-1034-4628-9e79-fe05b67c5db2/missing-9f8f3b7d09397ffd.wav",
+   "source": "Wikimedia Lingua Libre / Jouketou",
+   "license": "CC BY-SA 4.0",
+   "recordingKind": "word",
+   "ms": 995
+  },
+  "tou5": {
+   "word": "头",
+   "reading": "tou",
+   "entryId": "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+   "hskIndex": 3147,
+   "url": "/__l5e/assets-v1/b0853ef9-7357-4539-b55b-a07f35148d31/missing-a33030eb56958295.wav",
+   "source": "Wikimedia Lingua Libre / 雲角",
+   "license": "CC BY-SA 4.0",
+   "recordingKind": "word",
+   "ms": 1036
+  },
+  "la5": {
+   "word": "啦",
+   "reading": "la",
+   "entryId": "3e2cea87-8135-529b-8725-d380564391c8",
+   "hskIndex": 4412,
+   "url": "/__l5e/assets-v1/8a32feb7-6bcf-46d3-8ada-56810b9ac0a7/hsk6-6ba151632e3cadb6.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 800
+  },
+  "wa5": {
+   "word": "哇",
+   "reading": "wa",
+   "entryId": null,
+   "hskIndex": null,
+   "url": "/__l5e/assets-v1/61249709-9255-4d1f-a78c-224a44fb5a2b/missing-8f80d73d89eea3e0.mp3",
+   "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+   "license": "CC BY-SA 3.0 US",
+   "recordingKind": "word",
+   "ms": 850
   }
  }
 }

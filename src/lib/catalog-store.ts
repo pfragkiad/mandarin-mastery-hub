@@ -3,7 +3,7 @@
 // Rows are mutated in place so synchronous readers retain their array references.
 import type { CharacterScript } from './learning-preferences';
 import { playPronunciation, audioMessage, recordingCandidates, type AudioAttachment, type AudioRequest, type CharacterReadingAudio } from './audio';
-// Tiny (six-entry) sidecar shared with the Sound chart: exact neutral-tone word recordings.
+// Tiny sidecar shared with the Sound chart: exact neutral-tone word recordings.
 import neutralAudio from '@/data/pinyin/neutral-audio.json';
 import type { DecompositionNode } from './character-library';
 import type { RadicalIdentityFile } from './radical-identities';
@@ -142,9 +142,9 @@ export function loadCatalog(): Promise<void> {
 
 /** Audio request for a single character, offering its exact-reading recording when one exists.
  * With no pinyin recorded, no tone is guessed; UI availability still requires a known reading for TTS. */
-// This shared yán clip was reported to pronounce mén. Quarantine the asset ID
-// across every glyph binding until its source audio is corrected; preserve raw
-// imported provenance and choose labelled Mandarin TTS before playback instead.
+// The legacy shared yán clip was reported to pronounce mén. Its 25 bindings have
+// been replaced by reviewed Yue Tan recordings; keep the old asset ID quarantined
+// defensively so stale data can never reintroduce it, and preserve raw provenance.
 const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
 // Neutral-tone syllables (no tone mark, e.g. 吧 ba, 地 de) never play the catalogue's
 // syllable bindings: the imported tone-5 clips turned out to be unrelated French speech
@@ -153,7 +153,7 @@ const excludedCharacterRecordings = new Set(['cmn-syl-yan2']);
 // reading). Like the toned syllable clips every glyph shares, that clip IS the chart's
 // neutral syllable, so any glyph whose recorded reading is exactly that toneless syllable
 // speaks it (地 de and 的 de both play the chart's "de"); a toned reading never borrows
-// it, and neutral syllables with no recording (le, a, guo…) stay labelled TTS.
+// it, and neutral syllables with no recording (me, ya…) stay labelled TTS.
 const TONE_MARK = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]|[\u0304\u0301\u030C\u0300]/i;
 type NeutralRecording = { word: string; reading: string; url: string; source: string; license: string; recordingKind?: string };
 /** Neutral syllable recordings keyed by their exact toneless syllable (lower-case NFC), the

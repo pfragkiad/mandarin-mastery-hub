@@ -92,13 +92,21 @@ class AudioImportTests(unittest.TestCase):
             self.assertEqual([entry for entry in data['entries'] if entry['hskLevel'] != 2],
                              [entry for entry in before['entries'] if entry['hskLevel'] != 2])
 
-    def test_committed_attachments_cover_exactly_the_eligible_entries(self):
+    def test_committed_attachments_cover_original_and_supplemental_exact_entries(self):
         _, report = audio.import_audio(self.vocabulary, self.manifest)
         self.assertEqual((report['attached'], report['changed'], report['pendingUpload']), (166, 0, []))
         attached = {entry['hsk_index'] for entry in self.vocabulary['entries'] if entry['hskLevel'] == 2 and entry.get('audio')}
+        self.assertEqual(len(attached), 179)  # 166 original + 4 exact + 9 listening-reviewed additions.
+        supplement = audio.read(audio.ROOT / 'importer/data/missing-audio/manifest.json')
+        review = audio.read(audio.ROOT / 'importer/data/missing-audio/listening-review.json')
+        supplemental_ids = {row['entryId'] for row in supplement['words'] if row['status'] == 'matched_exact_reading'}
+        supplemental_ids.update(row['entryId'] for row in review['words'] if row['hskLevel'] == 2)
         for hsk_index in (301, 314, 332, 333, 351, 352, 356, 419, 426, 430, 447, 459, 472, 303, 496):
             row = next(row for row in self.manifest['entries'] if row.get('previousHskIndex', row['hskIndex']) == hsk_index)
-            self.assertNotIn(row['hskIndex'], attached)
+            if row['entryId'] in supplemental_ids:
+                self.assertIn(row['hskIndex'], attached)
+            else:
+                self.assertNotIn(row['hskIndex'], attached)
 
 
 if __name__ == '__main__':

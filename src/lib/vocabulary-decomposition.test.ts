@@ -12,13 +12,16 @@ describe('vocabulary decomposition', () => {
     expect(matched?.word?.pinyin).toBe('yìsi');
     expect(matched?.word && wordCharacters(matched.word).map(part => part.text)).toEqual(['意', '思']);
   });
-  it('does not offer the disputed recording for neutral-tone 了 in 我受够了', () => {
+  it('offers the exact verified recording for neutral-tone 了 in 我受够了', () => {
     const phrase = words.find(item => item.hanzi === '我受够了');
     if (!phrase) throw new Error('Missing 我受够了');
     const particle = phraseParts(phrase, words).find(part => part.text === '了')?.word;
     expect(particle?.id).toBe('4acf54bb-a35e-41cf-8844-51c11d4af89f');
     expect(particle?.pinyin).toBe('le');
-    expect(particle?.audio).toBeNull();
+    expect(particle?.audio).toMatchObject({
+      recordingKind: 'word', source: 'Shtooka Project (cmn-balm-hsk1) / Wei Gao', license: 'CC BY 2.0 FR',
+    });
+    expect(particle?.audio?.url).toMatch(/\/missing-e2dafa559bf7224a\.mp3$/);
   });
   it('preserves repeated characters and their contextual readings in 爸爸', () => {
     const word = words.find(item => item.hanzi === '爸爸');

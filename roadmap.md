@@ -1,5 +1,14 @@
 # Roadmap
 
+## Official-ID sync and supplemental recordings
+- [x] Reconcile all 318 supplied clips (307 word-referenced, 19 character-referenced, 8 shared): 8 exact + 196 reviewed word records, 25 reviewed yán replacements, 21 unresolved words and non-neutral 呀 held; no reading inference.
+- [x] Deliver the final 318-row per-file report at `reports/missing-audio-import.json`, with accepted/rejected/alternative statuses, unresolved references and exact CDN attachments; no pending uploads or media binaries.
+- [x] Confirm the Levels 1–6 official-ID migrations preserve UUIDs, entry order, examples and prior audio; current totals are 291 / 179 / 460 / 846 / 1,351 / 1,378.
+- [x] Verify and preserve the supplied manifest, notices and checksum-bound clip identities; all 318 external clips passed checksum validation.
+- [x] Regenerate thirteen neutral-tone records and both vocabulary font subsets; pass the official-ID, legacy-import and pronunciation-audit checks.
+- [x] Verify reviewed 不客气 MP3, 家人 WAV, replacement 言 yán and neutral 哇 wa playback in the browser with no console errors.
+- [x] Complete the final full application test suite after the audio and generated-font updates: 1,464 tests across 169 files pass; automatic build is clean.
+
 ## Capped variant selector and wrapping phrase/idiom lists
 - [x] Keep one maximum width for the Simplified/Traditional (and other variant) selector tiles, always equal for every form, so a widened detail window never stretches them into banners. Verified 300px tiles at the default and widest Compact window, 340px in Comfortable, five-form radical picker 3+2 at equal 215px, phones 156px with no overflow.
 - [x] Let “In a phrase” and “In an idiom” lists wrap into more columns as the window widens, on a wider sentence floor than word cards. Verified 1 column at the default 670px content, 4 at 1510px Compact, 3 at 1510px Comfortable, single column at 390px, with hanzi/pinyin/translation readable in every column; 65 affected tests pass.

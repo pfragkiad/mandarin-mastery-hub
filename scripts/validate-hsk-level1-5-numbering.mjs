@@ -11,9 +11,18 @@ const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const digest = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const builds = read('reports/hsk-level1-5-official-numbering-migration.json').levels;
 const baseline = read('importer/data/hsk-level1-5-numbering/legacy-bindings.json').entries;
+const missingManifest = read('importer/data/missing-audio/manifest.json');
+const listeningReview = read('importer/data/missing-audio/listening-review.json');
+const supplemental = [
+  ...missingManifest.words.filter(row => row.status === 'matched_exact_reading').map(row => ({
+    ...row, clipId: row.candidateClips.find(clip => clip.matchKind === 'exact_headword_and_reading').clipId,
+  })),
+  ...listeningReview.words.filter(row => row.hskLevel <= 5),
+];
+const supplementalById = new Map(supplemental.map(row => [row.entryId, row]));
 const official = new Map(read('importer/data/hsk-level7/official-vocabulary.json').map(e => [e.id, e]));
 const vocabulary = readVocabulary();
-let changed = 0, recordings = 0;
+let changed = 0, recordings = 0, supplementalRecordings = 0;
 
 for (const build of builds) {
   assert.equal(digest(build.current_source), build.sha256);
@@ -26,7 +35,19 @@ for (const build of builds) {
     const old = bindings[i], handoff = byLegacy.get(old.legacy_id), row = official.get(handoff.id);
     assert.deepEqual([handoff.id, handoff.syllabus_headword, handoff.syllabus_pinyin, handoff.syllabus_pos_zh],
       [row.id, row.entry, row.pinyin, row.part_of_speech]);
-    assert.deepEqual([entry.simplified, entry.pinyinDisplay, entry.audio], [old.headword, old.pinyin, old.audio]);
+    assert.deepEqual([entry.simplified, entry.pinyinDisplay], [old.headword, old.pinyin]);
+    const supplement = supplementalById.get(entry.id);
+    if (old.audio === null && supplement) {
+      // The frozen ledger stays immutable. Only exact source-tagged or explicitly
+      // listening-reviewed additions may differ; prior attachments remain byte-identical.
+      assert.deepEqual([entry.hskLevel, entry.hsk_index, entry.simplified, entry.pinyinDisplay],
+        [supplement.hskLevel, supplement.hskIndex, supplement.simplified, supplement.pinyinDisplay]);
+      assert.equal(entry.audio?.recordingKind, 'word');
+      assert.match(entry.audio?.url ?? '', /^\/__l5e\/assets-v1\//);
+      const clip = missingManifest.clips[supplement.clipId];
+      assert.match(entry.audio?.url ?? '', new RegExp(`/missing-${clip.sha256.slice(0, 16)}\\.(mp3|wav)$`));
+      supplementalRecordings += 1;
+    } else assert.deepEqual(entry.audio, old.audio);
     assert.equal(entry.hsk_index, handoff.id);
     assert.equal(entry.hskSource.sourceId, String(handoff.id));
     assert.equal(entry.hskSource.sourceName, build.current_source.split('/').at(-1));
@@ -52,6 +73,9 @@ for (const build of builds) {
   assert.ok(Buffer.byteLength(raw) < 9_000_000);
 }
 assert.equal(changed, 1092);
-assert.equal(recordings, 2988);
-console.log(JSON.stringify({ entries: 3600, updatedOfficialIds: changed, preservedWordRecordings: recordings,
-  preservedUuidsOrderReadingsAndAudio: true, repeatImportsIdempotent: true, compactPartsBelow9MB: true }, null, 2));
+assert.equal(recordings, 3127);
+assert.equal(supplementalRecordings, 139);
+console.log(JSON.stringify({ entries: 3600, updatedOfficialIds: changed, preservedWordRecordings: recordings - supplementalRecordings,
+  sourceExactWordRecordings: 8, listeningReviewedWordRecordings: 131,
+  supplementalWordRecordings: supplementalRecordings, totalWordRecordings: recordings,
+  preservedUuidsOrderReadingsAndPriorAudio: true, repeatImportsIdempotent: true, compactPartsBelow9MB: true }, null, 2));

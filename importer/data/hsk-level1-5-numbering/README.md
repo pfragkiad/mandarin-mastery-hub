@@ -4,6 +4,10 @@
 recorded reading, source identity and exact audio attachment for all 3,600
 Level 1–5 entries. It is an offline migration input, never application data.
 The existing versioned handoffs and audio manifests retain their original bytes.
+The later [supplemental audio package](../missing-audio/README.md) does not
+rewrite this frozen ledger: its validator explicitly permits only the 8 source-exact
+and 131 listening-reviewed new attachments while requiring every pre-existing audio
+object to remain identical (139 additions across Levels 1–5).
 
 The migration uses the [current official PDF extraction](../hsk-level7/README.md)
 and the [validated mapping](../../../reports/hsk-level1-5-official-id-crosscheck-validation.md).

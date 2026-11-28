@@ -73,8 +73,12 @@ class Level3AudioImportTests(unittest.TestCase):
         self.assertEqual((report['attached'], report['changed']), (443, 0))
         attached = {e['hsk_index'] for e in self.vocabulary['entries'] if e['hskLevel'] == 3 and e.get('audio')}
         unmatched = {row['hskIndex'] for row in self.manifest['entries'] if row['status'] != 'matched'}
-        self.assertEqual(len(attached), 443)
-        self.assertFalse(attached & unmatched)
+        supplement = audio.read(audio.ROOT / 'importer/data/missing-audio/manifest.json')
+        review = audio.read(audio.ROOT / 'importer/data/missing-audio/listening-review.json')
+        supplemental_indices = {row['hskIndex'] for row in supplement['words'] if row['status'] == 'matched_exact_reading'}
+        supplemental_indices.update(row['hskIndex'] for row in review['words'] if row['hskLevel'] == 3)
+        self.assertEqual(len(attached), 460)  # 443 original + 得 dé + 16 listening-reviewed additions.
+        self.assertFalse(attached & (unmatched - supplemental_indices))
 
     def test_committed_upload_map_attaches_every_matched_entry_from_a_clean_level(self):
         fresh = copy.deepcopy(self.vocabulary)
@@ -178,8 +182,10 @@ class Level6AudioImportTests(unittest.TestCase):
         self.assertEqual((report['attached'], report['changed']), (1313, 0))
         attached = {e['hsk_index'] for e in self.vocabulary['entries'] if e['hskLevel'] == 6 and e.get('audio')}
         unmatched = {row['hskIndex'] for row in self.manifest['entries'] if row['status'] != 'matched'}
-        self.assertEqual(len(attached), 1313)
-        self.assertFalse(attached & unmatched)
+        review = audio.read(audio.ROOT / 'importer/data/missing-audio/listening-review.json')
+        reviewed_indices = {row['hskIndex'] for row in review['words'] if row['hskLevel'] == 6}
+        self.assertEqual(len(attached), 1378)
+        self.assertFalse(attached & (unmatched - reviewed_indices))
 
     def test_committed_upload_map_attaches_every_matched_entry_from_a_clean_level(self):
         fresh = copy.deepcopy(self.vocabulary)

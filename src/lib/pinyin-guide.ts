@@ -16,7 +16,7 @@ export const SPOKEN_TONES = [1, 2, 3, 4] as const;
 export type PinyinSyllable = { base: string; initial: string | null; final: string; tones: Tone[]; note: string | null };
 export type PinyinRecording = { url: string; ms: number };
 /** A neutral-tone sound: the exact recording of one single-character word read in that toneless syllable. */
-export type NeutralRecording = PinyinRecording & { word: string; reading: string; entryId: string; hskIndex: number | null; source: string; license: string; recordingKind: string; alsoRecordedIn?: string[] };
+export type NeutralRecording = PinyinRecording & { word: string; reading: string; entryId: string | null; hskIndex: number | null; source: string; license: string; recordingKind: string; alsoRecordedIn?: string[] };
 export type PinyinSource = { name: string; url: string; license: string; [key: string]: unknown };
 export type PinyinData = {
   syllables: PinyinSyllable[];

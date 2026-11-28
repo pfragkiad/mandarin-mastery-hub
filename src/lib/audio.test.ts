@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
 import { audioCandidates, pickMandarinVoice, clampRate, SLOW_RATE, pronunciationAvailable } from './audio';
 import { characterAudioRequest, characterRecording, hydrateCatalog, isNeutralReading } from './catalog-store';
 const rec = { url: '/api/media/a.mp3', source: 'Shtooka', license: 'CC BY-SA 3.0 US', recordingKind: 'word' };
@@ -51,11 +52,27 @@ describe('Character recording lookup', () => {
   });
 });
 
+describe('Reviewed yán replacements', () => {
+  it('replaces every quarantined binding with its selected Yue Tan word recording', () => {
+    const catalog = JSON.parse(readFileSync('public/data/catalog.json', 'utf8'));
+    const review = JSON.parse(readFileSync('importer/data/missing-audio/listening-review.json', 'utf8'));
+    const clips = JSON.parse(readFileSync('importer/data/missing-audio/manifest.json', 'utf8')).clips;
+    expect(review.characters).toHaveLength(25);
+    for (const selected of review.characters) {
+      const id = catalog.readingAudio[selected.glyph]?.[selected.reading];
+      expect(id).not.toBe('cmn-syl-yan2');
+      expect(catalog.audio[id]?.source).toBe('audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan');
+      expect(catalog.audio[id]?.url).toContain(`missing-${clips[selected.clipId].sha256.slice(0, 16)}`);
+      expect(catalog.audio[id]?.recordingKind).toBe('word');
+    }
+  });
+});
+
 describe('Neutral-tone character readings', () => {
   it('never plays the catalogue binding for a neutral-tone reading', () => {
     hydrateCatalog({ version: 1, source: 'test', characters: [], radicals: [], components: [], trees: {}, readingAudio: { '吧': { 'ba': 'cmn-syl-ba5', 'bā': 'cmn-syl-ba1' } }, audio: { 'cmn-syl-ba5': { url: '/french.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' }, 'cmn-syl-ba1': { url: '/ba1.mp3', source: 'audio-cmn', license: 'CC BY-SA 3.0' } } });
     expect(characterRecording('吧', 'ba')?.url).not.toBe('/french.mp3');
-    expect(audioCandidates(characterAudioRequest('了', 'le')).map(c => c.kind)).toEqual(['tts']);
+    expect(audioCandidates(characterAudioRequest('了', 'le')).map(c => c.kind)).toEqual(['recording', 'tts']);
     expect(characterRecording('吧', 'bā')?.url).toBe('/ba1.mp3');
     expect(isNeutralReading('ba')).toBe(true);
     expect(isNeutralReading('bā')).toBe(false);
@@ -74,8 +91,15 @@ describe('Neutral-tone character readings', () => {
     expect(characterRecording('地', 'dì')?.url).toBe('/di4.mp3');
     // A toned reading never borrows the neutral recording.
     expect(characterRecording('吧', 'bā')).toBeNull();
-    // Neutral syllables with no recording stay on TTS.
-    expect(characterRecording('了', 'le')).toBeNull();
-    expect(characterRecording('过', 'guo')).toBeNull();
+    // Exact word recordings supply le / a / la / wa and the three newly reviewed neutral readings.
+    expect(characterRecording('了', 'le')?.url).toMatch(/missing-e2dafa559bf7224a\.mp3$/);
+    expect(characterRecording('啊', 'a')?.url).toMatch(/missing-863b8ff6668e7500\.mp3$/);
+    expect(characterRecording('啦', 'la')?.url).toMatch(/hsk6-6ba151632e3cadb6\.mp3$/);
+    expect(characterRecording('哇', 'wa')?.url).toMatch(/missing-8f80d73d89eea3e0\.mp3$/);
+    expect(characterRecording('哇', 'wā')).toBeNull();
+    expect(characterRecording('过', 'guo')?.url).toMatch(/missing-9c307f8facc8ed33\.wav$/);
+    expect(characterRecording('头', 'tou')?.url).toMatch(/missing-/);
+    expect(characterRecording('子', 'zi')?.url).toMatch(/missing-/);
+    expect(characterRecording('呀', 'ya')).toBeNull();
   });
 });

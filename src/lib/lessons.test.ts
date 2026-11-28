@@ -25,7 +25,8 @@ describe('versioned syllabus references', () => {
   it('rejects unknown revisions and curricula instead of reusing the current serial', () => {
     expect(syllabusIndexForReference({ ...moved, studyMetadata: { numberingRevision: { name: 'unrecognized', previousId: 36 } } }, 'hsk3-2025')).toBeNull();
     expect(syllabusIndexForReference(moved, 'unknown-curriculum')).toBeNull();
-    expect(syllabusIndexForReference({ ...moved, studyMetadata: undefined }, 'hsk3-2025')).toBe(35);
+    const { studyMetadata: _studyMetadata, ...unrevised } = moved;
+    expect(syllabusIndexForReference(unrevised, 'hsk3-2025')).toBe(35);
   });
 });
 const raw = (over: Record<string, unknown> = {}) => ({ schema_version: 'mandarin-character-lesson/2.4.0', lesson_id: 'char-6B21', lesson: { title: 'Talking About Times', categories: ['time-frequency-repetition'], primary_category_id: 'time-frequency-repetition', tags: [] }, metadata: { status: 'reviewed', catalog_character_id: null }, headword: { hanzi: '次', pinyin: 'cì' }, ...over });

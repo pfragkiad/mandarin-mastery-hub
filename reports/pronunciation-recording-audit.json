@@ -2,45 +2,229 @@
   "schemaVersion": 1,
   "scope": "Offline metadata and runtime-binding audit. No acoustic/listening review, transcription, CDN-byte verification or pronunciation corrections.",
   "sourceHashes": {
-    "src/data/component-form-references.json": "077faf922ed8b4696bc2e63e051ddeadf35304e99ff55fe501bad95fa22ca96a",
-    "public/data/catalog.json": "565e2abb22baba3c3330e753c42ba9f1dc21ee9f86ac43994183eb1145ac0438",
-    "public/data/characters.json": "f1db684baeb28187efec27a667d1a86ceb7ac827e45d94e0e517b17ddf681fb7",
-    "public/data/components.json": "83b89c4ad36eefe6c0fb8013d835c5d6f549b647c29ba4e8f558fe8490fda0f6",
+    "src/data/component-form-references.json": "3e1fb90c030dec10e58dd659d8aad1deb7bb3a89c812645a6547b78ff039c02a",
+    "public/data/catalog.json": "63eaa00942088431ddb4c45f4804c8ddd4d819b04120bbe62e6eb6df968dc054",
+    "public/data/characters.json": "6b004580bd747e449aafc01646273487c2022bc18f3630fc57127f305d72e1bd",
+    "public/data/components.json": "6c90c52f84f7bf76965e467a6a5ee3783a007b62b0dcb120a31af4f372366b4a",
     "public/data/radicals.json": "9c4dde1e3561d968b051c5500b95ccf824a6c1774ba6a19d555c38d5fc43987a",
-    "public/data/radical-identities.json": "57bfc18695cbecb4b7fea3c682f0bfa1a833fbbf61afc3230319ce5780c11416",
-    "public/data/radical-strokes.json": "de130ace9ea1e4b2a8490be6e01d022e38d1b514298dae92abfd20ca71b99cd0",
+    "public/data/radical-identities.json": "03602851621ba8fc176d50e991a85bc2e5ce2299d4e34ca3bca0b38dae8ea460",
+    "public/data/radical-strokes.json": "396a0e058b8fd9cc58ed99756905c9b97866b8b92681f079cb41f2c22dc17077",
     "public/data/strokes.json": "8adff494f921822f232b6215b7f8404f6a9e0aa33f888da7ae80492036a7533f",
     "importer/data/hsk-audio/cmn-caen-tan-index.xml.bz2": "59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6",
-    "src/data/vocabulary/index.json": "3484fe2e262bbdc429e7f0cfe24c51ff00a2099081bdc16e7fdad09d74487e7b",
-    "src/data/vocabulary/level-1.json": "c5d78cbb859419e9f8e2065e5706b70cf6669e9f138995402a478d8e909c05e6",
-    "src/data/vocabulary/unlevelled.json": "000831ecc88317ca1df2c5ff6ee6beb720181e79b4dd06573ed4d572f0a3645b",
-    "src/data/vocabulary/level-2.json": "367af3d4e1ef3e92b5f7e652d4263fe6b21363c2bcaa1265562f4c0bb71c2eb8",
-    "src/data/vocabulary/level-3.json": "a159904ee483b68137d4558b70db5e144709be672f3f6234b841eeb1dce72a17",
-    "src/data/vocabulary/level-4.json": "67950ed992285624ac3a03ec72a66efbeaad521f5a3fa7cd1164e63943ce16e2",
-    "src/data/vocabulary/level-5.json": "618ba025380339f4ec13e2b7bc7300dd642fb5d8a0052c6a7b0586db86bf74cf",
-    "importer/data/hsk-audio/level2-manifest.json": "e6b0cfb9f517802a81706d58d32200313c6e49f35058c29831e72a29709828b4",
-    "importer/data/hsk-audio/level3-manifest.json": "60db4ca31b0959247d2670cc2389d97401d3d35347d477f2280ae768d7685453",
-    "importer/data/hsk-audio/level4-manifest.json": "77db51cdf5d23941fed519981507808169b303102c36be9fb41c7bcd69838a2c",
-    "importer/data/hsk-audio/level5-manifest.json": "d5b4b2fa054735b0f6d897477a35e4c72c40adc709116075623fb24d43d924de",
+    "src/data/vocabulary/index.json": "6dca3a7081bc6e2dd45ac8c91c999852f6bda81c8b9d8ce5ac742386caece0a1",
+    "src/data/vocabulary/level-1.json": "21c35ff2736dccb8a92cf2e7af52d8044291353e19e41446db89a68b2f1543a7",
+    "src/data/vocabulary/unlevelled.json": "e0606b2c77b9f1b994aa5bdc71b15e02b022319979f3f74f954bb6697fc56d87",
+    "src/data/vocabulary/level-2.json": "c39af18c92d2a1d07b4d48ddd6a7180c3f606a6566d811cdd63f7f3bf04357eb",
+    "src/data/vocabulary/level-3.json": "52f3b68ce667ec1e9ddc0f7f64b66c8a089218e98b50d56371ff50b155494cb2",
+    "src/data/vocabulary/level-4.json": "69f621d046ab92f01973a90cf760542c43b8fbfe81bdcd196eeaa3edb66bb8ce",
+    "src/data/vocabulary/level-5.json": "833c6ff2262efd5577fe4c06012476e13f789e8d732691f69299d21526036f77",
+    "src/data/vocabulary/level-6-part-1.json": "c24e75e1e6342d5579b92c25ea1383dafda430c3ee2c734bbd91287d68c44b4b",
+    "src/data/vocabulary/level-6-part-2.json": "5350493501686cfa5796e4d697995db6311fba1965772b2062b079980abc12d6",
+    "importer/data/hsk-audio/level2-manifest.json": "2f2a36d5556695b690ce6ec0c4e91b2cf30ceacee9926f0c89fa4ec31adfb49c",
+    "importer/data/hsk-audio/level3-manifest.json": "eaa63f715b0ea09b5cb733a969136bf8ccfd504836ac3c37c90276986646418d",
+    "importer/data/hsk-audio/level4-manifest.json": "639a27cd6a21e932492c8743c51ec62a1600d2d26553453a9d3bb397b4ebead2",
+    "importer/data/hsk-audio/level5-manifest.json": "526157d078e3952c8126c8abb913b078bdc230b81765e20604a87487f0f4ab93",
     "src/data/pinyin/audio.json": "87e2cf7dc5f98ac8f33d71b7e92dfa113d9ffb1bf0090398c338ae7b3533fa30"
   },
   "glyphs": {
-    "bindings": 9602,
+    "bindings": 9603,
     "nullBindings": 5,
     "missingAttachments": [],
-    "labelMismatches": [],
-    "quarantinedYanBindings": 25,
+    "labelMismatches": [
+      {
+        "glyph": "严",
+        "reading": "yán",
+        "id": "supplement-2048f746a2c33617"
+      },
+      {
+        "glyph": "嚴",
+        "reading": "yán",
+        "id": "supplement-2048f746a2c33617"
+      },
+      {
+        "glyph": "妍",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "岩",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "嵒",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "巖",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "延",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "檐",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "沿",
+        "reading": "yán",
+        "id": "supplement-9338f0b7c594e0eb"
+      },
+      {
+        "glyph": "炎",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "盐",
+        "reading": "yán",
+        "id": "supplement-1d6e14a819602fb7"
+      },
+      {
+        "glyph": "研",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "筵",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "簷",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "芫",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "蜒",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "言",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "訁",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "讠",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "閻",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "闫",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "阎",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "顏",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "颜",
+        "reading": "yán",
+        "id": "supplement-c51316c5be2d3f55"
+      },
+      {
+        "glyph": "鹽",
+        "reading": "yán",
+        "id": "supplement-1d6e14a819602fb7"
+      },
+      {
+        "glyph": "哇",
+        "reading": "wa",
+        "id": "supplement-8f80d73d89eea3e0"
+      }
+    ],
+    "quarantinedYanBindings": 0,
     "quarantineStillPlayable": []
   },
   "vocabulary": {
-    "records": 3601,
-    "attached": 2988,
-    "sourceCompatible": 2977,
+    "records": 5401,
+    "attached": 4505,
+    "sourceCompatible": 4290,
     "discrepancies": [
+      {
+        "id": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+        "hskLevel": 1,
+        "hskIndex": 14,
+        "word": "不客气",
+        "displayed": "bú kèqi",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/fb8fffa1-0eea-459f-83cf-a02b85f364db/missing-380e29137f61c3d4.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "2ed5d019-02ae-4274-83ce-6b5231110fd2",
+        "hskLevel": 1,
+        "hskIndex": 22,
+        "word": "出租车",
+        "displayed": "chūzūchē",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/4ca77e90-86de-485d-b286-a7a6b0cecf17/missing-d79274562d57be39.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "73f39a58-bf9a-40ad-b7f3-0536a32f4b29",
+        "hskLevel": 1,
+        "hskIndex": 24,
+        "word": "打电话",
+        "displayed": "dǎ diànhuà",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/51b83304-ca7a-4b71-be4f-ae4d63994c5c/missing-d7b0859c1a5f8c2e.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
       {
         "id": "a66630e1-9e62-441c-b294-7035352198ad",
         "hskLevel": 1,
-        "hskIndex": 58,
+        "hskIndex": 59,
         "word": "歌",
         "displayed": "gē",
         "sourceCandidates": [
@@ -77,6 +261,45 @@
           "url": "/__l5e/assets-v1/98dc819c-9845-4174-a9ed-d899133f5316/cmn-5d26e0f8d773.mp3",
           "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
           "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "8ed85f5d-67cb-4bb4-8f1f-18935a4ee3f9",
+        "hskLevel": 1,
+        "hskIndex": 98,
+        "word": "开车",
+        "displayed": "kāichē",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/e59ffb06-9763-4f48-b7ed-cb8c4cd6f9cc/missing-782d55f7926a260b.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "4acf54bb-a35e-41cf-8844-51c11d4af89f",
+        "hskLevel": 1,
+        "hskIndex": 108,
+        "word": "了",
+        "displayed": "le",
+        "sourceCandidates": [
+          {
+            "reading": "liǎo",
+            "file": "cmn-4b5bc149.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/2f52f606-bd1b-4161-b1de-420edbd0f04f/missing-e2dafa559bf7224a.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
           "recordingKind": "word"
         },
         "listeningReviewed": false
@@ -121,6 +344,23 @@
           "url": "/__l5e/assets-v1/cea55078-d179-420e-9cf8-082c6340c8b0/cmn-e0e372847e45.mp3",
           "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
           "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+        "hskLevel": 1,
+        "hskIndex": 147,
+        "word": "你好",
+        "displayed": "nǐ hǎo",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/29bc4e8a-6277-4d15-becf-b768cc5f62f7/missing-b4fe0565719bb057.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
           "recordingKind": "word"
         },
         "listeningReviewed": false
@@ -172,6 +412,23 @@
         "listeningReviewed": false
       },
       {
+        "id": "e765e374-7407-48a1-8bdd-2128f7bcc70e",
+        "hskLevel": 1,
+        "hskIndex": 245,
+        "word": "星期天",
+        "displayed": "xīngqītiān",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/3e3fedf9-1169-40d9-9558-3e2d725451e7/missing-48f8fb89f771f384.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
         "id": "9077b44b-e5aa-423f-bbaf-09c817a71af4",
         "hskLevel": 1,
         "hskIndex": 248,
@@ -196,7 +453,7 @@
       {
         "id": "065a2ca2-bcf6-4314-b6b8-2e8f88ca87d5",
         "hskLevel": 1,
-        "hskIndex": 258,
+        "hskIndex": 255,
         "word": "一半",
         "displayed": "yíbàn",
         "sourceCandidates": [
@@ -218,7 +475,7 @@
       {
         "id": "8c34175c-de86-452f-86cb-f4b40670f013",
         "hskLevel": 1,
-        "hskIndex": 259,
+        "hskIndex": 257,
         "word": "一下",
         "displayed": "yíxià",
         "sourceCandidates": [
@@ -233,6 +490,23 @@
           "url": "/__l5e/assets-v1/51e6e964-55b9-4097-aca5-2cfcb0d63315/cmn-29e9fe251391.mp3",
           "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
           "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "5adc8ab3-b1c5-4f5a-a4ec-f8d184f0cce1",
+        "hskLevel": 1,
+        "hskIndex": 275,
+        "word": "早上",
+        "displayed": "zǎoshang",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/c7172abb-5188-4219-beae-76f04d9f223a/missing-53068fab53642dd0.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
           "recordingKind": "word"
         },
         "listeningReviewed": false
@@ -280,15 +554,804 @@
           "recordingKind": "word"
         },
         "listeningReviewed": false
+      },
+      {
+        "id": "086f1411-69df-4023-b750-b7328a2c5b2c",
+        "hskLevel": 2,
+        "hskIndex": 301,
+        "word": "啊",
+        "displayed": "a",
+        "sourceCandidates": [
+          {
+            "reading": "ā",
+            "file": "cmn-5133df38.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/de159d62-b01d-4a58-b191-d6f83f0ad54b/missing-863b8ff6668e7500.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "717719d3-3eb7-40ca-9754-f9094b28ae00",
+        "hskLevel": 2,
+        "hskIndex": 314,
+        "word": "长",
+        "displayed": "cháng",
+        "sourceCandidates": [
+          {
+            "reading": "zhǎng",
+            "file": "cmn-0e9ae27f.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/577234ba-238b-40f2-b7e2-75e90c473941/missing-e6d403dc4d33d39b.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "d8ed9566-08f5-44e0-bd22-988a9ec5ad3b",
+        "hskLevel": 2,
+        "hskIndex": 333,
+        "word": "得",
+        "displayed": "de",
+        "sourceCandidates": [
+          {
+            "reading": "děi",
+            "file": "cmn-44454e88.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/ce2f6c39-f83d-4ea9-b42c-cc0c25e5a5cd/missing-711fc4ac268c8e54.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "7e525fd7-5364-49de-9027-3c872408b4fd",
+        "hskLevel": 2,
+        "hskIndex": 332,
+        "word": "地",
+        "displayed": "de",
+        "sourceCandidates": [
+          {
+            "reading": "dì",
+            "file": "cmn-46fdbdc3.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/251f8025-2ae2-4438-821c-8e88e48cfbfb/missing-c136e9608bba70f6.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "da98455a-bd17-5e5a-9ae3-b953d8e33393",
+        "hskLevel": 3,
+        "hskIndex": 507,
+        "word": "班级",
+        "displayed": "bānjí",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/16a96f84-1f75-4dfa-8a60-c31389bba298/missing-ab04ef60a2db4171.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "558ac087-26a5-5428-a174-56b75c664754",
+        "hskLevel": 3,
+        "hskIndex": 536,
+        "word": "冰箱",
+        "displayed": "bīngxiāng",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/8c573dcc-e9b6-45f6-9ca8-b7fe600e04ee/missing-c8a3caf4d039a9e9.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "01df3ea4-a740-57a2-b038-38f318b584fb",
+        "hskLevel": 3,
+        "hskIndex": 583,
+        "word": "得",
+        "displayed": "dé",
+        "sourceCandidates": [
+          {
+            "reading": "děi",
+            "file": "cmn-44454e88.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/af604cbf-7b60-4e17-bfb8-e68b0d5af68a/missing-c051c5712c7cd822.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "15650c99-feca-582b-8016-cfad1957bcf5",
+        "hskLevel": 3,
+        "hskIndex": 713,
+        "word": "姐妹",
+        "displayed": "jiěmèi",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/e96284e1-5269-4d25-a7cb-61702a1d139b/missing-7e852bcdd361fbe9.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "16136e1b-74c2-5d44-aa01-88a14a867a9f",
+        "hskLevel": 3,
+        "hskIndex": 875,
+        "word": "卫生间",
+        "displayed": "wèishēngjiān",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/3ba7fab5-a8c0-4c05-b1c3-ea288f22d993/missing-a090632893a79d98.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "98b19e9f-ea4f-5da3-bf23-123e4acbb494",
+        "hskLevel": 4,
+        "hskIndex": 1107,
+        "word": "村",
+        "displayed": "cūn",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/1d0ece35-d74c-447f-ac1d-e8cd7aec6c42/missing-27306978b59fd2e4.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "3c72c367-995f-5abd-b20d-40fb3aaefc7e",
+        "hskLevel": 4,
+        "hskIndex": 1209,
+        "word": "父母",
+        "displayed": "fùmǔ",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/3b303d8d-5fad-4a40-97af-ee6146d9d88c/missing-71e3948b57dfc97a.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "8b99656e-9f13-5258-94c2-ffab65e0d9e3",
+        "hskLevel": 4,
+        "hskIndex": 1281,
+        "word": "果汁",
+        "displayed": "guǒzhī",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/35bb4efb-7a8d-46ba-b29b-64b7918f8ba1/missing-70d71d74da553948.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "c657728e-2325-5eab-97d2-0009f45e3842",
+        "hskLevel": 4,
+        "hskIndex": 1299,
+        "word": "互联网",
+        "displayed": "hùliánwǎng",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/ca415f10-1b7d-4dc3-bb5a-64d38bb6d5b0/missing-09f33edd8b137636.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "c0260640-763c-5679-9cb9-e398d99c47da",
+        "hskLevel": 4,
+        "hskIndex": 1583,
+        "word": "巧克力",
+        "displayed": "qiǎokèlì",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/d7d9958c-af5f-491f-85f0-0806f8c9274b/missing-82f079ab12e8bca3.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "d8bcbdaf-f642-54e5-b451-e10612b3f0d4",
+        "hskLevel": 4,
+        "hskIndex": 1763,
+        "word": "晚安",
+        "displayed": "wǎn’ān",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/9f356f53-45d4-4b90-9266-3c4dad9ec4c4/missing-eeebaa3fdc1f5f9d.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "bd4b67d7-bcb6-502c-adc7-5cc1d763aa29",
+        "hskLevel": 4,
+        "hskIndex": 1771,
+        "word": "为",
+        "displayed": "wéi",
+        "sourceCandidates": [
+          {
+            "reading": "wèi",
+            "file": "cmn-5602df4c.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/0f554da2-109d-452f-b279-ac206c4233c1/missing-93ea13bff093b367.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "e77b9dd9-fc23-5390-a9cc-739d30ef3aa7",
+        "hskLevel": 4,
+        "hskIndex": 1785,
+        "word": "午餐",
+        "displayed": "wǔcān",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/a7080511-6a79-4141-b4ae-2b5b7d9e5ba8/missing-7ce024039908edc2.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "29332448-5e74-5974-a205-6fd9c789adc9",
+        "hskLevel": 4,
+        "hskIndex": 1918,
+        "word": "早餐",
+        "displayed": "zǎocān",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/49115c9c-25f2-493f-960d-a5d8c1aee7dd/missing-417fbbf2035b7b48.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "506b14b3-160e-5152-ac7c-4a1ee8bed7e4",
+        "hskLevel": 4,
+        "hskIndex": 1952,
+        "word": "纸巾",
+        "displayed": "zhǐjīn",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/c9a6a2c3-a088-4ccf-ba38-a25d289a748b/missing-2936ac2f631f5db5.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "0befe67d-a743-5c37-beb8-b0c18d4106c9",
+        "hskLevel": 5,
+        "hskIndex": 2153,
+        "word": "橙子",
+        "displayed": "chéngzi",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/1918e583-826f-4b76-9d94-ebe60b0b925e/missing-f656746be6704066.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "325af163-111a-5ea1-b966-292d63b9344e",
+        "hskLevel": 5,
+        "hskIndex": 2200,
+        "word": "从不",
+        "displayed": "cóng bù",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/eca88e2e-d2e8-4858-a3cf-37df2ac110e6/missing-090d6ea15e5762fd.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+        "hskLevel": 5,
+        "hskIndex": 2513,
+        "word": "婚礼",
+        "displayed": "hūnlǐ",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/d8cb0c53-16ce-48fe-bd15-b08b34685f20/missing-2ac3d2cc5ab5014f.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "7a6339a3-544e-5916-8f1e-f480716cbd98",
+        "hskLevel": 5,
+        "hskIndex": 3168,
+        "word": "外公",
+        "displayed": "wàigōng",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/a47648b5-d272-4b2e-8130-27a669a1a057/missing-e3ce3924abe79ed2.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "a5a16703-9c9c-534f-a729-558256d5c526",
+        "hskLevel": 5,
+        "hskIndex": 3183,
+        "word": "为",
+        "displayed": "wéi",
+        "sourceCandidates": [
+          {
+            "reading": "wèi",
+            "file": "cmn-5602df4c.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/0f554da2-109d-452f-b279-ac206c4233c1/missing-93ea13bff093b367.mp3",
+          "source": "Shtooka Project (cmn-balm-hsk1) / Wei Gao",
+          "license": "CC BY 2.0 FR",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "e83d90a0-963c-541d-b747-0ae0f1b45aa0",
+        "hskLevel": 5,
+        "hskIndex": 3588,
+        "word": "足够",
+        "displayed": "zúgòu",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/90dca9c0-1c0e-4114-b24b-ffcc5c155e2d/missing-151f54af9ecbe7b0.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "391eaafe-d2d3-5b02-8c6c-5809f2d7637e",
+        "hskLevel": 6,
+        "hskIndex": 4078,
+        "word": "股市",
+        "displayed": "gǔshì",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/ebbd3d06-7056-4a69-8798-768d602b4bb4/missing-38bd9248b0e1b2d2.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "5e6d4f27-66b9-5307-92a6-3777ea64c359",
+        "hskLevel": 6,
+        "hskIndex": 4812,
+        "word": "手臂",
+        "displayed": "shǒubì",
+        "sourceCandidates": [],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/9f88f724-5b65-46a3-aedb-36e7630b415a/missing-185e8158728bfa56.mp3",
+          "source": "Shtooka Project (cmn-balm-congcong) / Congcong (傅琮琮)",
+          "license": "CC BY 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
       }
     ],
-    "unsupportedSources": [],
+    "unsupportedSources": [
+      "1cea09e5-ac83-4759-93db-0273d15b63b3",
+      "abb62726-cb42-41ec-b903-2139b4b9f5a7",
+      "2a832bcc-5e97-4e8b-8c6d-24ff9971abc7",
+      "4ceaeb0b-8fdc-453e-a1fd-c88c7555bb4f",
+      "ac8528a5-fc62-48c0-84ea-5a7bc91875d3",
+      "80f3c1fa-83e0-4b8e-9e07-df69e67ba4b3",
+      "2619f3bf-a6c2-490c-9f0b-dd529ee29746",
+      "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "385b60c9-0384-4e93-806f-2ce231ee9d07",
+      "be86fd08-1bcd-4198-b856-d6a9e0373e12",
+      "a4384c1b-1a06-459f-ad69-3f613d0c3f9d",
+      "c3f728dd-7e47-4242-a827-3c3767819130",
+      "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "034c9fa9-7a09-427c-a2d7-4d2e95e861c0",
+      "05faad27-d9f2-4d73-844b-f183c170d1b3",
+      "8aec1ff4-d992-500a-b2d9-deb7cec1cc1e",
+      "e42d9c89-b317-5b2d-b032-540e4577b1ff",
+      "2fb3706c-4bd7-576c-95a6-2992305cfc5d",
+      "2b719e1c-490b-5b6c-be54-52efbb0be552",
+      "a148705d-bb7c-5b93-9036-44f0d22e9b4f",
+      "9095a3d5-d267-5c65-aaf2-a27d592f3707",
+      "02a3e306-bf3f-5dd7-ba20-3587c5ca63fc",
+      "62b0e87a-22bf-516a-ac62-c314a635dbaa",
+      "a7ab7d5e-d284-5904-bd3c-b8a645328a0b",
+      "39c234f7-ec84-52bb-a21b-8a44decaf86f",
+      "3a64d0d9-d86b-5f98-83f1-13d02167f984",
+      "960eeb9c-6af7-577d-adba-8ec1925fe409",
+      "49004caf-6d0b-5f78-86d2-6dc0e3f438b6",
+      "295be093-bcdc-54dc-b3cd-a8ff5c879829",
+      "9c442b3c-ebf8-5516-a0a1-9b8dd88d7235",
+      "138cede4-fdc4-59ab-bdbb-1f25cb380da3",
+      "59221f04-4c85-5d44-a002-c44eb7ad62aa",
+      "ceade4e0-5a5d-51e6-a1a0-6a5896c80eeb",
+      "11da169b-78c5-5868-be3c-62f6beb25cb4",
+      "85c1106e-4116-5fe1-9ebf-a2af8abf732e",
+      "d3a8aa24-c387-524b-b3ff-9e6ae3c217ed",
+      "d45836f1-f2b9-5d98-bc28-5cfb1cd3be38",
+      "52e63296-37ca-5c26-a66e-ff19dca85b76",
+      "9b409902-82d7-5ff8-928a-cc8f3ca5da3b",
+      "8dc83526-c3dc-5509-a98b-0c6714e9b839",
+      "f0a426ec-7463-50f7-8abc-142cff1aff6c",
+      "16f1e4dc-0d28-5044-b631-ec76b3edbc2d",
+      "f2ff9687-f0ec-5db2-aa72-d449dc4f4f54",
+      "41a21e3f-9ca0-592c-b194-ab3b5a0a9047",
+      "dddda89c-bc4a-52b1-b2ec-7e44b0cff361",
+      "b6574e2b-f243-5066-bb74-e0f717753885",
+      "82b531ee-23b4-57c2-b090-0d6fbf988633",
+      "2db59ce1-023d-59d5-bdf2-ee3d1931206d",
+      "7cd5a76c-cc07-5966-944b-0c2508090644",
+      "39b7ec74-40d7-5fda-a625-3a78622719bb",
+      "ab338cd0-0c2c-5c44-9e95-6907b71bbd0e",
+      "466e9ba1-2614-533c-9b5a-f2c83f814e15",
+      "f59f6ebb-d18b-5cd3-821a-07d19c1dfa6e",
+      "5bee1f8e-ad36-5da0-919b-2795c033f6d7",
+      "9860250e-3793-5408-80ea-cc9ff1a7c2bb",
+      "67277cf5-c940-5034-a286-8465275e88cb",
+      "e2be252f-6196-50a4-b1ce-dbf5539318f8",
+      "b83f0697-4c70-525d-8c23-f2d3444f3bf8",
+      "744f6c57-1f2d-5b0a-8efa-4a3cf90defb1",
+      "b15201af-69db-521c-92b7-c257319deed0",
+      "d29a9bd8-d434-5797-b96c-86946faf1649",
+      "a9ff2d66-7359-56b8-baea-fc80fe7a58d3",
+      "8ac3e237-733f-5d46-a788-1f15902420ec",
+      "c99777e3-547d-5489-ad04-abe958283f34",
+      "e2c3cef0-b446-5240-bf80-d93b41c39a3f",
+      "df38dc87-e873-5c66-a30e-82e35e71ce58",
+      "a00a5285-6a3c-5227-ba04-b7d25ce8b579",
+      "1fa8ee37-68ba-59ba-8b7f-f24b4847e919",
+      "16a6e38f-58ce-5720-b06f-277d2b155078",
+      "618cdb59-2240-5264-b6b9-5f0556621d44",
+      "87eeae26-00bc-539d-a7de-7899fa6712f8",
+      "28eee372-3ab1-5119-91d2-5ce7cfdff7cc",
+      "c4373e13-3213-5ce0-ac37-1b76e9ed2bda",
+      "2320a04e-712f-5e7f-a186-003f0ef53ebb",
+      "36f6deaa-3dc2-5cc5-b7d8-bc26628ff809",
+      "5a948359-e928-5e7d-ba61-e561decae836",
+      "de7f7dea-036d-5c2d-8e85-1517ccfea966",
+      "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "368abde4-46f0-5802-ad71-c775f63f36ea",
+      "e61cb440-b2dc-5f75-b243-af1dcbb1fd75",
+      "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "b38aacc0-3fa7-57de-9530-dd0033f9bc83",
+      "92848aba-3676-5ec4-83fc-2b47beeb3973",
+      "294b0377-8956-50d3-9b2c-6e84f0026ded",
+      "56801f20-a3e4-53ea-87f5-b167dad84d26",
+      "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "e9997dd7-f1b9-56c0-a78a-9aa3ab46f357",
+      "3cd99a54-5b78-5082-854c-8c1e3e844654",
+      "8ad06b43-27f0-5dfc-a0d3-f6faaca1be74",
+      "7382c0b4-68d2-52b9-a137-baa02e76120f",
+      "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+      "1478c8aa-7ac3-5cd6-bab2-ddc2d57ecd2f",
+      "b95b5201-8da0-55bc-a388-b922614cde94",
+      "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "260c338b-0ddf-5f58-a5ea-856ed36ade5a",
+      "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "9a4c6bd4-90bd-5deb-84a5-2fab212c2187",
+      "13b472df-5056-5137-b653-fd9707423ebf",
+      "1d9b84d7-c340-58f6-b313-bbe314678d65",
+      "9db5e978-a3c0-5cd8-8016-af07b3dbf9a0",
+      "3791a7ac-9695-58e3-9359-23a02b88aae0",
+      "3f116233-929d-5205-8b49-ab54a2d80e7d",
+      "910fa71e-7bfb-5d20-b66c-b101ec948fec",
+      "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "f34c992d-db05-5109-8947-b271f8bff93c",
+      "a25937b4-edb6-5cfb-83f5-85042520adee",
+      "c85d4b17-30f0-5891-a13a-8377c65119c0",
+      "78c62c0f-8941-51b1-8bcc-0ad3a6348fea",
+      "4000e359-b626-5e04-8444-9c493653db03",
+      "52514b03-5fa1-5565-9e3d-9508223dbf82",
+      "3bcf6a59-5f3c-5335-a6f1-c40ecb62e10a",
+      "84eeda8d-c47a-546e-a389-412baba533bb",
+      "9997ec82-5772-5dee-9152-7ae4e4d8cbc0",
+      "e0865c63-3db4-5dc0-badb-850cb400856f",
+      "956a9e7d-4fd7-5266-b493-1b0ca820a451",
+      "94782435-12d0-5e48-8728-450966936593",
+      "0d3d45d9-66bc-5c6f-8af5-ef62b1114256",
+      "e0e01f97-c771-592e-9136-7983c6eed163",
+      "318f3332-8116-570a-9980-74dfc7a81bf9",
+      "a3892d99-dcc7-58ff-a418-75e319e5d46f",
+      "e2984d57-d6e5-5d89-84cb-53710abd7c9e",
+      "e110c196-2775-5089-8d89-eedadc43ed17",
+      "33eceecd-7d6d-5a3b-bb80-f32e2b1556c8",
+      "a50d0f63-fe80-5438-b348-a95ac6a07bfd",
+      "d51e731a-9dc3-5744-95ba-1e88a473b057",
+      "0f5bd600-0d69-5a38-8db0-0fd6b4b3c038",
+      "801087cc-ee8c-5191-89fb-67a7b111e654",
+      "217c5a8d-2986-5788-8f0e-476d0284d546",
+      "38c67946-3852-597b-ab15-cac0209b1304",
+      "58adb3e9-4bc2-5da2-a798-45f3d2721adc",
+      "b8c7ccde-f0c8-5f07-ae3d-0b08f801d682",
+      "eef74eb5-478f-52cb-9af7-39a98de0f728",
+      "986fd32e-5a05-51fe-8d1d-bf1e608301ce",
+      "315d77b1-03f2-5763-bed6-9ffbc31b508a",
+      "1683122e-8f8d-5649-adc6-ef90bab9c210",
+      "6979f4f0-ae10-51f7-b78a-4abc8bea15c0",
+      "6434c3aa-b775-5005-b483-d7c496aa4316",
+      "e072c9d6-6bc8-575e-838f-a6049e812dcf",
+      "ea650ecb-2ada-525b-b855-5e538992505b",
+      "2c7e872c-8de6-5111-88a8-bf461d4636a3",
+      "b5a9457b-2f03-5799-9400-63ce7ee3909f",
+      "708553ba-94a3-52ca-94b3-8fc0d469a8f3",
+      "a3a1c26d-3dee-5d76-b1c3-fc287f99781a",
+      "b31b3661-a5f2-5ea8-b557-f25e6d14d19c",
+      "49c742b7-9115-546e-9b88-ae9885c6853f",
+      "dc7a03dd-2380-540a-8751-86b7d16c6230",
+      "ae527346-4b85-5e50-911e-39e3d6368cd5",
+      "1575abfd-d33b-51c4-864b-df56e7fc34a2",
+      "1b818c9b-113b-5a1a-bc37-5181838272bd",
+      "04d86390-329d-5943-93e2-13aff5358009",
+      "75a8abcb-0d6b-5b1b-85e9-d3c93fdd96b0",
+      "9231461f-5f90-538d-a0cb-70bcaa6b39a4",
+      "7fa4189e-c523-5912-bba8-18856989b084",
+      "cc7fe6ec-8f03-59e0-8eb9-739050299ece",
+      "13c8241e-b803-5b90-adc5-df83a28b806b",
+      "920e2236-8d61-5813-a89b-81889989856c",
+      "4181bb12-399d-5714-8c69-4411303fb5de",
+      "0f3208e7-cec3-5a66-b548-982e265db338",
+      "882951fc-848a-5556-b0ea-237d64fd083c",
+      "9f094909-cafa-570d-bbb6-2caea9480e6e",
+      "370dd510-96c4-5dd3-98bd-cf9390639942",
+      "6d18d814-1271-522a-aef8-609ce1463cfa",
+      "3adc4c26-3401-5866-91be-e08cbc461d1f",
+      "e7067d12-8a3f-509c-97f0-cf65d13ff25a",
+      "5b1200dc-fe75-5293-bc18-264c44e8c7f9",
+      "4e282d55-2ec3-5781-9057-fd65d0339590",
+      "95ece18b-f46b-504f-9c91-aad5d62c28bc"
+    ],
     "attachedExamples": 0
   },
   "manifests": {
     "matchedRows": 2712,
     "excludedRows": 588,
-    "attachedExcludedRows": [],
+    "attachedExcludedRows": [
+      "086f1411-69df-4023-b750-b7328a2c5b2c",
+      "717719d3-3eb7-40ca-9754-f9094b28ae00",
+      "d8ed9566-08f5-44e0-bd22-988a9ec5ad3b",
+      "7e525fd7-5364-49de-9027-3c872408b4fd",
+      "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "385b60c9-0384-4e93-806f-2ce231ee9d07",
+      "be86fd08-1bcd-4198-b856-d6a9e0373e12",
+      "a4384c1b-1a06-459f-ad69-3f613d0c3f9d",
+      "c3f728dd-7e47-4242-a827-3c3767819130",
+      "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "034c9fa9-7a09-427c-a2d7-4d2e95e861c0",
+      "05faad27-d9f2-4d73-844b-f183c170d1b3",
+      "da98455a-bd17-5e5a-9ae3-b953d8e33393",
+      "8aec1ff4-d992-500a-b2d9-deb7cec1cc1e",
+      "e42d9c89-b317-5b2d-b032-540e4577b1ff",
+      "2fb3706c-4bd7-576c-95a6-2992305cfc5d",
+      "558ac087-26a5-5428-a174-56b75c664754",
+      "2b719e1c-490b-5b6c-be54-52efbb0be552",
+      "a148705d-bb7c-5b93-9036-44f0d22e9b4f",
+      "01df3ea4-a740-57a2-b038-38f318b584fb",
+      "9095a3d5-d267-5c65-aaf2-a27d592f3707",
+      "02a3e306-bf3f-5dd7-ba20-3587c5ca63fc",
+      "15650c99-feca-582b-8016-cfad1957bcf5",
+      "62b0e87a-22bf-516a-ac62-c314a635dbaa",
+      "a7ab7d5e-d284-5904-bd3c-b8a645328a0b",
+      "39c234f7-ec84-52bb-a21b-8a44decaf86f",
+      "16136e1b-74c2-5d44-aa01-88a14a867a9f",
+      "3a64d0d9-d86b-5f98-83f1-13d02167f984",
+      "960eeb9c-6af7-577d-adba-8ec1925fe409",
+      "49004caf-6d0b-5f78-86d2-6dc0e3f438b6",
+      "295be093-bcdc-54dc-b3cd-a8ff5c879829",
+      "9c442b3c-ebf8-5516-a0a1-9b8dd88d7235",
+      "138cede4-fdc4-59ab-bdbb-1f25cb380da3",
+      "59221f04-4c85-5d44-a002-c44eb7ad62aa",
+      "98b19e9f-ea4f-5da3-bf23-123e4acbb494",
+      "ceade4e0-5a5d-51e6-a1a0-6a5896c80eeb",
+      "11da169b-78c5-5868-be3c-62f6beb25cb4",
+      "85c1106e-4116-5fe1-9ebf-a2af8abf732e",
+      "d3a8aa24-c387-524b-b3ff-9e6ae3c217ed",
+      "d45836f1-f2b9-5d98-bc28-5cfb1cd3be38",
+      "52e63296-37ca-5c26-a66e-ff19dca85b76",
+      "3c72c367-995f-5abd-b20d-40fb3aaefc7e",
+      "9b409902-82d7-5ff8-928a-cc8f3ca5da3b",
+      "8dc83526-c3dc-5509-a98b-0c6714e9b839",
+      "8b99656e-9f13-5258-94c2-ffab65e0d9e3",
+      "f0a426ec-7463-50f7-8abc-142cff1aff6c",
+      "16f1e4dc-0d28-5044-b631-ec76b3edbc2d",
+      "c657728e-2325-5eab-97d2-0009f45e3842",
+      "f2ff9687-f0ec-5db2-aa72-d449dc4f4f54",
+      "41a21e3f-9ca0-592c-b194-ab3b5a0a9047",
+      "dddda89c-bc4a-52b1-b2ec-7e44b0cff361",
+      "b6574e2b-f243-5066-bb74-e0f717753885",
+      "82b531ee-23b4-57c2-b090-0d6fbf988633",
+      "2db59ce1-023d-59d5-bdf2-ee3d1931206d",
+      "7cd5a76c-cc07-5966-944b-0c2508090644",
+      "c0260640-763c-5679-9cb9-e398d99c47da",
+      "39b7ec74-40d7-5fda-a625-3a78622719bb",
+      "ab338cd0-0c2c-5c44-9e95-6907b71bbd0e",
+      "466e9ba1-2614-533c-9b5a-f2c83f814e15",
+      "f59f6ebb-d18b-5cd3-821a-07d19c1dfa6e",
+      "5bee1f8e-ad36-5da0-919b-2795c033f6d7",
+      "9860250e-3793-5408-80ea-cc9ff1a7c2bb",
+      "67277cf5-c940-5034-a286-8465275e88cb",
+      "e2be252f-6196-50a4-b1ce-dbf5539318f8",
+      "b83f0697-4c70-525d-8c23-f2d3444f3bf8",
+      "d8bcbdaf-f642-54e5-b451-e10612b3f0d4",
+      "bd4b67d7-bcb6-502c-adc7-5cc1d763aa29",
+      "744f6c57-1f2d-5b0a-8efa-4a3cf90defb1",
+      "e77b9dd9-fc23-5390-a9cc-739d30ef3aa7",
+      "b15201af-69db-521c-92b7-c257319deed0",
+      "d29a9bd8-d434-5797-b96c-86946faf1649",
+      "a9ff2d66-7359-56b8-baea-fc80fe7a58d3",
+      "8ac3e237-733f-5d46-a788-1f15902420ec",
+      "29332448-5e74-5974-a205-6fd9c789adc9",
+      "c99777e3-547d-5489-ad04-abe958283f34",
+      "e2c3cef0-b446-5240-bf80-d93b41c39a3f",
+      "506b14b3-160e-5152-ac7c-4a1ee8bed7e4",
+      "df38dc87-e873-5c66-a30e-82e35e71ce58",
+      "a00a5285-6a3c-5227-ba04-b7d25ce8b579",
+      "0befe67d-a743-5c37-beb8-b0c18d4106c9",
+      "1fa8ee37-68ba-59ba-8b7f-f24b4847e919",
+      "325af163-111a-5ea1-b966-292d63b9344e",
+      "16a6e38f-58ce-5720-b06f-277d2b155078",
+      "618cdb59-2240-5264-b6b9-5f0556621d44",
+      "87eeae26-00bc-539d-a7de-7899fa6712f8",
+      "28eee372-3ab1-5119-91d2-5ce7cfdff7cc",
+      "c4373e13-3213-5ce0-ac37-1b76e9ed2bda",
+      "2320a04e-712f-5e7f-a186-003f0ef53ebb",
+      "36f6deaa-3dc2-5cc5-b7d8-bc26628ff809",
+      "5a948359-e928-5e7d-ba61-e561decae836",
+      "de7f7dea-036d-5c2d-8e85-1517ccfea966",
+      "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+      "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "368abde4-46f0-5802-ad71-c775f63f36ea",
+      "e61cb440-b2dc-5f75-b243-af1dcbb1fd75",
+      "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "b38aacc0-3fa7-57de-9530-dd0033f9bc83",
+      "92848aba-3676-5ec4-83fc-2b47beeb3973",
+      "294b0377-8956-50d3-9b2c-6e84f0026ded",
+      "56801f20-a3e4-53ea-87f5-b167dad84d26",
+      "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "e9997dd7-f1b9-56c0-a78a-9aa3ab46f357",
+      "3cd99a54-5b78-5082-854c-8c1e3e844654",
+      "8ad06b43-27f0-5dfc-a0d3-f6faaca1be74",
+      "7382c0b4-68d2-52b9-a137-baa02e76120f",
+      "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+      "7a6339a3-544e-5916-8f1e-f480716cbd98",
+      "1478c8aa-7ac3-5cd6-bab2-ddc2d57ecd2f",
+      "a5a16703-9c9c-534f-a729-558256d5c526",
+      "b95b5201-8da0-55bc-a388-b922614cde94",
+      "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "260c338b-0ddf-5f58-a5ea-856ed36ade5a",
+      "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "9a4c6bd4-90bd-5deb-84a5-2fab212c2187",
+      "13b472df-5056-5137-b653-fd9707423ebf",
+      "1d9b84d7-c340-58f6-b313-bbe314678d65",
+      "9db5e978-a3c0-5cd8-8016-af07b3dbf9a0",
+      "3791a7ac-9695-58e3-9359-23a02b88aae0",
+      "3f116233-929d-5205-8b49-ab54a2d80e7d",
+      "910fa71e-7bfb-5d20-b66c-b101ec948fec",
+      "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "e83d90a0-963c-541d-b747-0ae0f1b45aa0"
+    ],
     "changedIdentities": []
   },
   "chart": {

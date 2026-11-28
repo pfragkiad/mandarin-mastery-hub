@@ -30,4 +30,6 @@ Level 3 follows v1.1.2: 23 revised examples across 21 entries; lexical content, 
 
 Level 4 follows v1.1.1: 43 revised sentence examples across 38 entries. Lexical content, categories, all 1,000 word IDs and 797 word recordings remain unchanged.
 
+The later [supplemental audio import](../../importer/data/missing-audio/README.md) adds 8 source-exact and 196 listening-reviewed word recordings. Current per-level totals are 291 / 179 / 460 / 846 / 1,351 / 1,378 (Levels 1–6), plus standalone 哇 wa and 25 reviewed yán replacements in the public catalogue. Twenty-one mismatched words and non-neutral 呀 remain unattached. Historical source-version statements, official IDs, UUIDs, readings and examples stay unchanged.
+
 The HSK Level 1 lessons now use the supplied v3.2.0 package and canonical Core v3.2.0 authoring contract: the same 21 lesson IDs and teaching plans, synchronized to all 600 vocabulary v1.7.1 examples. The source ZIPs and importer commands are documented under [lesson handoffs](../../importer/data/lessons/README.md).

@@ -52,8 +52,17 @@ describe('Level 6 imported vocabulary', () => {
       }
     }
     expect(level6.flatMap(e => e.examples)).toHaveLength(3600);
-    // The package's manifest attached exactly 1,313 of the 1,800 Level 6 records.
-    expect(level6.filter(e => e.audio).length).toBe(1313);
+    // 1,313 original package matches plus 65 individually reviewed missing-audio candidates.
+    expect(level6.filter(e => e.audio).length).toBe(1378);
+    const review = JSON.parse(readFileSync('importer/data/missing-audio/listening-review.json', 'utf8'));
+    const clips = JSON.parse(readFileSync('importer/data/missing-audio/manifest.json', 'utf8')).clips;
+    const reviewed = review.words.filter((row: { hskLevel: number }) => row.hskLevel === 6);
+    expect(reviewed).toHaveLength(65);
+    for (const selected of reviewed) {
+      const entry = level6.find(e => e.id === selected.entryId)!;
+      expect(entry.audio?.url).toContain(`missing-${clips[selected.clipId].sha256.slice(0, 16)}`);
+      expect(entry.audio?.recordingKind).toBe('word');
+    }
     expect(level6.find(e => e.studyMetadata?.numberingRevision?.previousId === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
   });
 

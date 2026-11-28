@@ -27,9 +27,10 @@ All source verification limits, exact word IDs, compatible recordings and origin
 syllabus provenance remain attached. Optional terms-only imports preserve existing
 examples; normal imports use the current source examples.
 
-Level 5 word recordings are on the Lovable CDN: all 1,306 exact word/reading
-matches are attached (42 different recorded readings and 252 missing words stay
-without audio; see the [Level 5 audio report](../../../reports/hsk-level5-audio.md)).
+Level 5 word recordings are on the Lovable CDN: 1,351 are attached (the original
+1,306, exact supplemental 为 wéi and 44 listening-reviewed additions; the original
+collection's other different readings and still-unverified words stay without audio;
+see the [Level 5 audio report](../../../reports/hsk-level5-audio.md)).
 Draft example sentences have no recordings. No local media paths are runtime audio
 attachments. See the [Level 1 audit](../../../reports/hsk-level1-1.7.1-import.json)
 and [Level 5 audit](../../../reports/hsk-level5-1.0.5-import.json).
@@ -62,14 +63,14 @@ The Level 5 data test checks the size and compact line structure.
 Level 6 follows [the 1.0.1 handoff](../../../importer/hsk/hsk3_level6_1.0.1.json):
 1,800 word records (IDs 3601–5400) and 3,600 examples. The 850 changed official
 serials are reconciled to the PDF currently linked by the official HSK site.
-UUIDs, record order, example IDs/content and all 1,313 attached word recordings
-remain exact. The full compact level would be 10,396,738 bytes, so it is stored
+UUIDs, record order, example IDs/content and all 1,313 original word recordings
+remain exact; 65 reviewed supplemental recordings are added. The full compact level is stored
 as two ordinary JSON arrays:
 
 | Part | Entries | UTF-8 bytes |
 | --- | ---: | ---: |
-| [level-6-part-1.json](level-6-part-1.json) | 900 | 5,132,424 |
-| [level-6-part-2.json](level-6-part-2.json) | 900 | 5,264,317 |
+| [level-6-part-1.json](level-6-part-1.json) | 900 | 5,138,154 |
+| [level-6-part-2.json](level-6-part-2.json) | 900 | 5,270,502 |
 
 Generate with `node scripts/import-hsk-level6.mjs --write` from the repository
 root; omit `--write` for an audit, and add `--report <path>` to save it. The
@@ -80,7 +81,7 @@ leading U+00AD in example 4491/written is removed from Chinese and pinyin during
 import, with an explicit normalization note; the source file remains unchanged.
 The literal slash in 5257/conversational remains punctuation.
 
-Level 6 has 1,313 exact word recordings; sentence audio remains unattached. Accepted replacement statuses
+Level 6 has 1,378 word recordings (1,313 original + 65 reviewed); sentence audio remains unattached. Accepted replacement statuses
 and language-review-needed statuses remain distinct; all entries remain drafts.
 The [font audit](../../../reports/hsk-level6-1.0.0-fonts.json) records public font
 coverage additions. `.gitattributes` preserves the Level 6 part bytes across
@@ -97,12 +98,27 @@ same word's UUID/audio when two official serials swap positions.
 Active source versions are Level 1 **1.7.2**, Level 2 **1.1.2**, Level 3 **1.1.3**,
 Level 4 **1.1.2** and Level 5 **1.0.6**. Earlier version descriptions above record
 the preceding sentence-review releases. The current files update 1,092 official
-indices while preserving every UUID, order, lexical reading and all 2,988 word
+indices while preserving every UUID, order, lexical reading and all 2,988 pre-migration word
 recordings. Six POS assignments and the two adverbial 白 examples are corrected.
 `studyMetadata.numberingRevision.previousId` supports exact legacy lesson bindings;
 `syllabusPinyin` preserves official citation readings separately from recorded speech.
 
-Each entry occupies one compact JSON line. UTF-8 sizes are 1,336,375 / 883,093 /
-2,082,880 / 4,275,718 / 7,800,726 bytes for Levels 1-5; no split is needed.
-The Level 6 parts remain unchanged. See the [runtime import audit](../../../reports/hsk-level1-5-official-numbering-import.json)
+Each entry occupies one compact JSON line. After the supplemental audio import,
+UTF-8 sizes are 1,339,280 / 885,524 / 2,086,082 / 4,284,656 / 7,808,910 bytes for
+Levels 1-5; no split is needed. See the
+[runtime import audit](../../../reports/hsk-level1-5-official-numbering-import.json)
 and [migration report](../../../reports/hsk-level1-5-official-numbering-migration.md).
+
+## Supplemental exact and reviewed recordings
+
+The [missing-audio package](../../../importer/data/missing-audio/README.md) adds eight
+source-index exact attachments after the ID migration: 了 le (Level 1); 啊 a, 长 cháng,
+地 de and 得 de (Level 2); 得 dé (Level 3); 为 wéi (Levels 4 and 5). Listening review
+then adds 14 / 9 / 16 / 48 / 44 / 65 recordings across Levels 1–6. Current totals are
+291 / 179 / 460 / 846 / 1,351 / 1,378 respectively: 3,127 across Levels 1–5 and 4,505 overall.
+
+啦 la reuses its existing Level 6 recording; standalone 哇 wa is bound in the
+catalogue. The neutral-tone sidecar has thirteen exact word recordings, including reviewed 过 guo, 头 tou and 子 zi. Twenty-one words
+without a pronunciation match and both non-neutral 呀 candidates remain unattached;
+25 reviewed yán slots replace the old quarantined clip. Repeat imports and both
+official-ID validators preserve these additions and every older attachment.

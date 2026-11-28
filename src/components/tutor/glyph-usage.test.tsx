@@ -7,8 +7,7 @@ import { CharacterDetails } from './characters-page';
 import type { LibraryEntry } from '@/lib/character-library';
 import type { Word } from '@/lib/mandarin';
 import type { Entry } from '@/lib/data-contract';
-import { loadCharacterHskExample } from '@/lib/character-hsk-examples';
-import fallbackData from '../../../public/data/character-hsk-examples.json';
+import { loadCharacterHskExample, type CharacterHskExample } from '@/lib/character-hsk-examples';
 import { loadCharacterTatoebaExample, type CharacterTatoebaExample } from '@/lib/character-tatoeba-examples';
 
 const tatoebaData = JSON.parse(readFileSync('public/data/character-tatoeba-examples.json', 'utf8')) as { examples: Record<string, CharacterTatoebaExample> };
@@ -62,6 +61,18 @@ vi.mock('./workspace', () => ({
     catalogVersion: 0, theme: 'light',
   }),
 }));
+
+// Isolated exact-passage fixture: the official-ID migration emptied the runtime sidecar.
+const langExample: CharacterHskExample = {
+  character: '朗', sentence: '星期六，两个孩子到公园玩。天气很晴朗，鸟儿在树上唱歌。',
+  pinyin: 'Xīngqīliù, liǎng ge háizi dào gōngyuán wán. Tiānqì hěn qínglǎng, niǎor zài shù shang chàng gē.',
+  translation: 'On Saturday, two children play in the park. The weather is clear, and birds sing in the trees.',
+  source: {
+    file: 'src/data/study_lessons/lessons/hsk3/level2/TOPIC_LESSON_ANIMALS_WEATHER/TOPIC_LESSON_ANIMALS_WEATHER.json',
+    sha256: '86a4206318935b576c3da31400f1ff3f031761cc47cfa61afef6a4dd45c6dfc4', jsonPointer: '/sections/teaching_plan/reading/paragraphs/0',
+    lessonId: 'topic-nature-and-the-weather', title: 'Nature and the Weather', collection: 'HSK Level 2', hskLevel: 2, status: 'draft',
+  },
+};
 
 const strokeForm: LibraryEntry = { id: 'Strokes:㇐', hanzi: '㇐', pinyin: '', meaning: 'Horizontal', note: 'Unicode stroke form', strokes: 1 };
 
@@ -161,12 +172,12 @@ describe('Absent-record notes', () => {
   });
 
   it('fills a missing character from its exact lesson passage with attribution and clears it on navigation', async () => {
-    vi.mocked(loadCharacterHskExample).mockResolvedValueOnce(fallbackData.examples['Characters:朗']);
+    vi.mocked(loadCharacterHskExample).mockResolvedValueOnce(langExample);
     const lang: LibraryEntry = { id: 'Characters:朗', hanzi: '朗', pinyin: 'lǎng', meaning: 'clear', note: '' };
     const { container, rerender } = render(<GlyphUsageExamples entry={lang} kind="Characters" />);
     expect(await screen.findByRole('link', { name: 'HSK Level 2 · Nature and the Weather' })).toHaveAttribute('href', '/lessons/topic-nature-and-the-weather');
-    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(fallbackData.examples['Characters:朗'].sentence);
-    expect(container.querySelector('.sentence-meaning')?.textContent).toBe(fallbackData.examples['Characters:朗'].translation);
+    expect(container.querySelector('.sentence-hanzi')?.textContent).toBe(langExample.sentence);
+    expect(container.querySelector('.sentence-meaning')?.textContent).toBe(langExample.translation);
     expect(screen.getByText(/Draft lesson example/)).toBeInTheDocument();
     rerender(<GlyphUsageExamples entry={{ ...lang, id: 'Characters:崾', hanzi: '崾' }} kind="Characters" />);
     expect(container.querySelector('.sentence-hanzi')).toBeNull();

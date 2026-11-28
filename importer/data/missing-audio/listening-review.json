@@ -1,0 +1,6807 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-28T11:44:20.236773Z",
+  "reviewMethod": "Ordered ASR listening transcription plus pypinyin 0.55.0 default-reading syllable/tone comparison. Homophones require matching bases and tones; 一/不 sandhi and neutral-versus-citation notation are explicit exceptions. Alternate dictionary readings never pass a homograph. Both 呀 candidates were rejected as yā/yà, not neutral ya.",
+  "sourceManifestSha256": "7639b4df354c877d7f30c2720ea0f84f5ff2eceef7d6666f196ef744f87e5a9d",
+  "summary": {
+    "candidateClipsReviewed": 296,
+    "candidateEvaluations": 392,
+    "acceptedEvaluations": 352,
+    "rejectedEvaluations": 40,
+    "wordsApproved": 196,
+    "wordsUnresolved": 21,
+    "characterSlotsApproved": 25,
+    "characterSlotsUnresolved": 1
+  },
+  "words": [
+    {
+      "entryId": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+      "hskLevel": 1,
+      "hskIndex": 14,
+      "simplified": "不客气",
+      "pinyinDisplay": "bú kèqi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-bd35add6.mp3",
+      "transcript": "不客气",
+      "transcriptPinyin": "bu2 ke4 qi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2ed5d019-02ae-4274-83ce-6b5231110fd2",
+      "hskLevel": 1,
+      "hskIndex": 22,
+      "simplified": "出租车",
+      "pinyinDisplay": "chūzūchē",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-ae198259.mp3",
+      "transcript": "出租车",
+      "transcriptPinyin": "chu1 zu1 che1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "73f39a58-bf9a-40ad-b7f3-0536a32f4b29",
+      "hskLevel": 1,
+      "hskIndex": 24,
+      "simplified": "打电话",
+      "pinyinDisplay": "dǎ diànhuà",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-38cac41a.mp3",
+      "transcript": "打电话",
+      "transcriptPinyin": "da3 dian4 hua4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1cea09e5-ac83-4759-93db-0273d15b63b3",
+      "hskLevel": 1,
+      "hskIndex": 87,
+      "simplified": "家人",
+      "pinyinDisplay": "jiārén",
+      "clipId": "commons:5e056f9a92ab",
+      "transcript": "家人",
+      "transcriptPinyin": "jia1 ren2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8ed85f5d-67cb-4bb4-8f1f-18935a4ee3f9",
+      "hskLevel": 1,
+      "hskIndex": 98,
+      "simplified": "开车",
+      "pinyinDisplay": "kāichē",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-060a2f8c.mp3",
+      "transcript": "开车",
+      "transcriptPinyin": "kai1 che1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "abb62726-cb42-41ec-b903-2139b4b9f5a7",
+      "hskLevel": 1,
+      "hskIndex": 134,
+      "simplified": "哪儿",
+      "pinyinDisplay": "nǎr",
+      "clipId": "commons:f350a4f6fdbd",
+      "transcript": "哪儿",
+      "transcriptPinyin": "na3 er2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+      "hskLevel": 1,
+      "hskIndex": 147,
+      "simplified": "你好",
+      "pinyinDisplay": "nǐ hǎo",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-50a2b841.mp3",
+      "transcript": "你好",
+      "transcriptPinyin": "ni3 hao3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2a832bcc-5e97-4e8b-8c6d-24ff9971abc7",
+      "hskLevel": 1,
+      "hskIndex": 189,
+      "simplified": "手机",
+      "pinyinDisplay": "shǒujī",
+      "clipId": "commons:b7bc28543bff",
+      "transcript": "手机",
+      "transcriptPinyin": "shou3 ji1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "4ceaeb0b-8fdc-453e-a1fd-c88c7555bb4f",
+      "hskLevel": 1,
+      "hskIndex": 197,
+      "simplified": "说话",
+      "pinyinDisplay": "shuōhuà",
+      "clipId": "commons:2961ebc42d45",
+      "transcript": "说话",
+      "transcriptPinyin": "shuo1 hua4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "ac8528a5-fc62-48c0-84ea-5a7bc91875d3",
+      "hskLevel": 1,
+      "hskIndex": 214,
+      "simplified": "玩",
+      "pinyinDisplay": "wán",
+      "clipId": "commons:c2416b599967",
+      "transcript": "玩",
+      "transcriptPinyin": "wan2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "80f3c1fa-83e0-4b8e-9e07-df69e67ba4b3",
+      "hskLevel": 1,
+      "hskIndex": 230,
+      "simplified": "下雨",
+      "pinyinDisplay": "xià yǔ",
+      "clipId": "commons:9744ed16d16a",
+      "transcript": "下雨",
+      "transcriptPinyin": "xia4 yu3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e765e374-7407-48a1-8bdd-2128f7bcc70e",
+      "hskLevel": 1,
+      "hskIndex": 245,
+      "simplified": "星期天",
+      "pinyinDisplay": "xīngqītiān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-b140f6c8.mp3",
+      "transcript": "星期天",
+      "transcriptPinyin": "xing1 qi1 tian1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5adc8ab3-b1c5-4f5a-a4ec-f8d184f0cce1",
+      "hskLevel": 1,
+      "hskIndex": 275,
+      "simplified": "早上",
+      "pinyinDisplay": "zǎoshang",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-ad00c241.mp3",
+      "transcript": "早上",
+      "transcriptPinyin": "zao3 shang4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2619f3bf-a6c2-490c-9f0b-dd529ee29746",
+      "hskLevel": 1,
+      "hskIndex": 289,
+      "simplified": "中国",
+      "pinyinDisplay": "Zhōngguó",
+      "clipId": "commons:8d01b49c2935",
+      "transcript": "中国",
+      "transcriptPinyin": "zhong1 guo2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "hskLevel": 2,
+      "hskIndex": 351,
+      "simplified": "过",
+      "pinyinDisplay": "guo",
+      "clipId": "commons:76362f4cb3a0",
+      "transcript": "过",
+      "transcriptPinyin": "guo4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "hskLevel": 2,
+      "hskIndex": 352,
+      "simplified": "还是",
+      "pinyinDisplay": "háishi",
+      "clipId": "commons:06feea936eed",
+      "transcript": "还是",
+      "transcriptPinyin": "hai2 shi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "385b60c9-0384-4e93-806f-2ce231ee9d07",
+      "hskLevel": 2,
+      "hskIndex": 355,
+      "simplified": "红色",
+      "pinyinDisplay": "hóngsè",
+      "clipId": "commons:62c20f54c2e4",
+      "transcript": "红色",
+      "transcriptPinyin": "hong2 se4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "be86fd08-1bcd-4198-b856-d6a9e0373e12",
+      "hskLevel": 2,
+      "hskIndex": 395,
+      "simplified": "绿茶",
+      "pinyinDisplay": "lǜchá",
+      "clipId": "commons:8ee012657de2",
+      "transcript": "绿茶",
+      "transcriptPinyin": "lü4 cha2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a4384c1b-1a06-459f-ad69-3f613d0c3f9d",
+      "hskLevel": 2,
+      "hskIndex": 419,
+      "simplified": "前面",
+      "pinyinDisplay": "qiánmiàn",
+      "clipId": "commons:d79e9574c095",
+      "transcript": "前面",
+      "transcriptPinyin": "qian2 mian4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c3f728dd-7e47-4242-a827-3c3767819130",
+      "hskLevel": 2,
+      "hskIndex": 426,
+      "simplified": "上面",
+      "pinyinDisplay": "shàngmiàn",
+      "clipId": "commons:41a4d9574eaa",
+      "transcript": "上面",
+      "transcriptPinyin": "shang4 mian4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "hskLevel": 2,
+      "hskIndex": 428,
+      "simplified": "上网",
+      "pinyinDisplay": "shàngwǎng",
+      "clipId": "commons:23bffa13c673",
+      "transcript": "上网",
+      "transcriptPinyin": "shang4 wang3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "034c9fa9-7a09-427c-a2d7-4d2e95e861c0",
+      "hskLevel": 2,
+      "hskIndex": 430,
+      "simplified": "生日",
+      "pinyinDisplay": "shēngrì",
+      "clipId": "commons:8217796b3bea",
+      "transcript": "生日",
+      "transcriptPinyin": "sheng1 ri4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "05faad27-d9f2-4d73-844b-f183c170d1b3",
+      "hskLevel": 2,
+      "hskIndex": 447,
+      "simplified": "外面",
+      "pinyinDisplay": "wàimiàn",
+      "clipId": "commons:cc52322c56f8",
+      "transcript": "外面",
+      "transcriptPinyin": "wai4 mian4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "da98455a-bd17-5e5a-9ae3-b953d8e33393",
+      "hskLevel": 3,
+      "hskIndex": 507,
+      "simplified": "班级",
+      "pinyinDisplay": "bānjí",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-cc01da5e.mp3",
+      "transcript": "班级",
+      "transcriptPinyin": "ban1 ji2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8aec1ff4-d992-500a-b2d9-deb7cec1cc1e",
+      "hskLevel": 3,
+      "hskIndex": 524,
+      "simplified": "笔记本",
+      "pinyinDisplay": "bǐjìběn",
+      "clipId": "commons:ad0e9ba6475a",
+      "transcript": "笔记本",
+      "transcriptPinyin": "bi3 ji4 ben3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e42d9c89-b317-5b2d-b032-540e4577b1ff",
+      "hskLevel": 3,
+      "hskIndex": 532,
+      "simplified": "别人",
+      "pinyinDisplay": "biérén",
+      "clipId": "commons:8a3426be8156",
+      "transcript": "别人",
+      "transcriptPinyin": "bie2 ren2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2fb3706c-4bd7-576c-95a6-2992305cfc5d",
+      "hskLevel": 3,
+      "hskIndex": 535,
+      "simplified": "冰激凌",
+      "pinyinDisplay": "bīngjīlíng",
+      "clipId": "commons:c95423840512",
+      "transcript": "冰激凌",
+      "transcriptPinyin": "bing1 ji1 ling2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "558ac087-26a5-5428-a174-56b75c664754",
+      "hskLevel": 3,
+      "hskIndex": 536,
+      "simplified": "冰箱",
+      "pinyinDisplay": "bīngxiāng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-f4d0f462.mp3",
+      "transcript": "冰箱",
+      "transcriptPinyin": "bing1 xiang1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2b719e1c-490b-5b6c-be54-52efbb0be552",
+      "hskLevel": 3,
+      "hskIndex": 566,
+      "simplified": "除了",
+      "pinyinDisplay": "chúle",
+      "clipId": "commons:ea4888e11531",
+      "transcript": "除了",
+      "transcriptPinyin": "chu2 le5",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a148705d-bb7c-5b93-9036-44f0d22e9b4f",
+      "hskLevel": 3,
+      "hskIndex": 570,
+      "simplified": "聪明",
+      "pinyinDisplay": "cōngmíng",
+      "clipId": "commons:0f93894da9f7",
+      "transcript": "聪明",
+      "transcriptPinyin": "cong1 ming2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9095a3d5-d267-5c65-aaf2-a27d592f3707",
+      "hskLevel": 3,
+      "hskIndex": 628,
+      "simplified": "分开",
+      "pinyinDisplay": "fēnkāi",
+      "clipId": "commons:abd9090743ad",
+      "transcript": "分开",
+      "transcriptPinyin": "fen1 kai1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "02a3e306-bf3f-5dd7-ba20-3587c5ca63fc",
+      "hskLevel": 3,
+      "hskIndex": 654,
+      "simplified": "关系",
+      "pinyinDisplay": "guānxì",
+      "clipId": "commons:2338e885cb8e",
+      "transcript": "关系",
+      "transcriptPinyin": "guan1 xi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "15650c99-feca-582b-8016-cfad1957bcf5",
+      "hskLevel": 3,
+      "hskIndex": 713,
+      "simplified": "姐妹",
+      "pinyinDisplay": "jiěmèi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-6dc58bbc.mp3",
+      "transcript": "姐妹",
+      "transcriptPinyin": "jie3 mei4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "62b0e87a-22bf-516a-ac62-c314a635dbaa",
+      "hskLevel": 3,
+      "hskIndex": 736,
+      "simplified": "客人",
+      "pinyinDisplay": "kèrén",
+      "clipId": "commons:153b839bf84d",
+      "transcript": "客人",
+      "transcriptPinyin": "ke4 ren2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a7ab7d5e-d284-5904-bd3c-b8a645328a0b",
+      "hskLevel": 3,
+      "hskIndex": 742,
+      "simplified": "矿泉水",
+      "pinyinDisplay": "kuàngquánshuǐ",
+      "clipId": "commons:d0a1c53bbc9d",
+      "transcript": "矿泉水",
+      "transcriptPinyin": "kuang4 quan2 shui3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "39c234f7-ec84-52bb-a21b-8a44decaf86f",
+      "hskLevel": 3,
+      "hskIndex": 873,
+      "simplified": "网站",
+      "pinyinDisplay": "wǎngzhàn",
+      "clipId": "commons:6aaf2d580c3c",
+      "transcript": "网站",
+      "transcriptPinyin": "wang3 zhan4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "16136e1b-74c2-5d44-aa01-88a14a867a9f",
+      "hskLevel": 3,
+      "hskIndex": 875,
+      "simplified": "卫生间",
+      "pinyinDisplay": "wèishēngjiān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-85e11cea.mp3",
+      "transcript": "卫生间",
+      "transcriptPinyin": "wei4 sheng1 jian1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3a64d0d9-d86b-5f98-83f1-13d02167f984",
+      "hskLevel": 3,
+      "hskIndex": 907,
+      "simplified": "信用卡",
+      "pinyinDisplay": "xìnyòngkǎ",
+      "clipId": "commons:0c33457c06e7",
+      "transcript": "信用卡",
+      "transcriptPinyin": "xin4 yong4 ka3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "960eeb9c-6af7-577d-adba-8ec1925fe409",
+      "hskLevel": 3,
+      "hskIndex": 990,
+      "simplified": "子",
+      "pinyinDisplay": "zi",
+      "clipId": "commons:5be88c00b231",
+      "transcript": "子",
+      "transcriptPinyin": "zi5",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "49004caf-6d0b-5f78-86d2-6dc0e3f438b6",
+      "hskLevel": 4,
+      "hskIndex": 1034,
+      "simplified": "表格",
+      "pinyinDisplay": "biǎogé",
+      "clipId": "commons:28a42a795548",
+      "transcript": "表格",
+      "transcriptPinyin": "biao3 ge2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "295be093-bcdc-54dc-b3cd-a8ff5c879829",
+      "hskLevel": 4,
+      "hskIndex": 1050,
+      "simplified": "不过",
+      "pinyinDisplay": "búguò",
+      "clipId": "commons:428189fd2199",
+      "transcript": "不过",
+      "transcriptPinyin": "bu4 guo4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9c442b3c-ebf8-5516-a0a1-9b8dd88d7235",
+      "hskLevel": 4,
+      "hskIndex": 1083,
+      "simplified": "乘坐",
+      "pinyinDisplay": "chéngzuò",
+      "clipId": "commons:2b694c724278",
+      "transcript": "乘坐",
+      "transcriptPinyin": "cheng2 zuo4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "138cede4-fdc4-59ab-bdbb-1f25cb380da3",
+      "hskLevel": 4,
+      "hskIndex": 1086,
+      "simplified": "重",
+      "pinyinDisplay": "chóng",
+      "clipId": "commons:9346fde093c8",
+      "transcript": "虫",
+      "transcriptPinyin": "chong2",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "59221f04-4c85-5d44-a002-c44eb7ad62aa",
+      "hskLevel": 4,
+      "hskIndex": 1098,
+      "simplified": "词语",
+      "pinyinDisplay": "cíyǔ",
+      "clipId": "commons:ac2cc883f4ce",
+      "transcript": "词语",
+      "transcriptPinyin": "ci2 yu3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "98b19e9f-ea4f-5da3-bf23-123e4acbb494",
+      "hskLevel": 4,
+      "hskIndex": 1107,
+      "simplified": "村",
+      "pinyinDisplay": "cūn",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-11c92285.mp3",
+      "transcript": "村",
+      "transcriptPinyin": "cun1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "ceade4e0-5a5d-51e6-a1a0-6a5896c80eeb",
+      "hskLevel": 4,
+      "hskIndex": 1116,
+      "simplified": "打工",
+      "pinyinDisplay": "dǎgōng",
+      "clipId": "commons:846a31cc637e",
+      "transcript": "打工",
+      "transcriptPinyin": "da3 gong1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "11da169b-78c5-5868-be3c-62f6beb25cb4",
+      "hskLevel": 4,
+      "hskIndex": 1118,
+      "simplified": "打印",
+      "pinyinDisplay": "dǎyìn",
+      "clipId": "commons:063a5be59804",
+      "transcript": "打印",
+      "transcriptPinyin": "da3 yin4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "85c1106e-4116-5fe1-9ebf-a2af8abf732e",
+      "hskLevel": 4,
+      "hskIndex": 1121,
+      "simplified": "打折",
+      "pinyinDisplay": "dǎzhé",
+      "clipId": "commons:5ad75955bda0",
+      "transcript": "打折",
+      "transcriptPinyin": "da3 zhe2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "d3a8aa24-c387-524b-b3ff-9e6ae3c217ed",
+      "hskLevel": 4,
+      "hskIndex": 1141,
+      "simplified": "倒",
+      "pinyinDisplay": "dào",
+      "clipId": "commons:e19a4ea033f2",
+      "transcript": "倒",
+      "transcriptPinyin": "dao4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "d45836f1-f2b9-5d98-bc28-5cfb1cd3be38",
+      "hskLevel": 4,
+      "hskIndex": 1169,
+      "simplified": "堵车",
+      "pinyinDisplay": "dǔchē",
+      "clipId": "commons:4f371a7a215e",
+      "transcript": "堵车",
+      "transcriptPinyin": "du3 che1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "52e63296-37ca-5c26-a66e-ff19dca85b76",
+      "hskLevel": 4,
+      "hskIndex": 1172,
+      "simplified": "短信",
+      "pinyinDisplay": "duǎnxìn",
+      "clipId": "commons:fd644ad3d9fe",
+      "transcript": "短信",
+      "transcriptPinyin": "duan3 xin4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3c72c367-995f-5abd-b20d-40fb3aaefc7e",
+      "hskLevel": 4,
+      "hskIndex": 1209,
+      "simplified": "父母",
+      "pinyinDisplay": "fùmǔ",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-14f59325.mp3",
+      "transcript": "父母",
+      "transcriptPinyin": "fu4 mu3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9b409902-82d7-5ff8-928a-cc8f3ca5da3b",
+      "hskLevel": 4,
+      "hskIndex": 1261,
+      "simplified": "购物",
+      "pinyinDisplay": "gòuwù",
+      "clipId": "commons:0baf1fda56ea",
+      "transcript": "购物",
+      "transcriptPinyin": "gou4 wu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8dc83526-c3dc-5509-a98b-0c6714e9b839",
+      "hskLevel": 4,
+      "hskIndex": 1273,
+      "simplified": "管理",
+      "pinyinDisplay": "guǎnlǐ",
+      "clipId": "commons:ebb52a0f5cd8",
+      "transcript": "管理",
+      "transcriptPinyin": "guan3 li3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8b99656e-9f13-5258-94c2-ffab65e0d9e3",
+      "hskLevel": 4,
+      "hskIndex": 1281,
+      "simplified": "果汁",
+      "pinyinDisplay": "guǒzhī",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-22711e0c.mp3",
+      "transcript": "果汁",
+      "transcriptPinyin": "guo3 zhi1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "f0a426ec-7463-50f7-8abc-142cff1aff6c",
+      "hskLevel": 4,
+      "hskIndex": 1290,
+      "simplified": "好处",
+      "pinyinDisplay": "hǎochù",
+      "clipId": "commons:e54fcb883cbe",
+      "transcript": "好处",
+      "transcriptPinyin": "hao3 chu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "16f1e4dc-0d28-5044-b631-ec76b3edbc2d",
+      "hskLevel": 4,
+      "hskIndex": 1294,
+      "simplified": "盒子",
+      "pinyinDisplay": "hézi",
+      "clipId": "commons:c7e45572392a",
+      "transcript": "盒子",
+      "transcriptPinyin": "he2 zi5",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c657728e-2325-5eab-97d2-0009f45e3842",
+      "hskLevel": 4,
+      "hskIndex": 1299,
+      "simplified": "互联网",
+      "pinyinDisplay": "hùliánwǎng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-80cfaa0f.mp3",
+      "transcript": "互联网",
+      "transcriptPinyin": "hu4 lian2 wang3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "f2ff9687-f0ec-5db2-aa72-d449dc4f4f54",
+      "hskLevel": 4,
+      "hskIndex": 1313,
+      "simplified": "活泼",
+      "pinyinDisplay": "huópō",
+      "clipId": "commons:5183ce19aa44",
+      "transcript": "活泼",
+      "transcriptPinyin": "huo2 po1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "dddda89c-bc4a-52b1-b2ec-7e44b0cff361",
+      "hskLevel": 4,
+      "hskIndex": 1340,
+      "simplified": "加油站",
+      "pinyinDisplay": "jiāyóuzhàn",
+      "clipId": "commons:7dbfc5a6e087",
+      "transcript": "加油站",
+      "transcriptPinyin": "jia1 you2 zhan4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "41a21e3f-9ca0-592c-b194-ab3b5a0a9047",
+      "hskLevel": 4,
+      "hskIndex": 1341,
+      "simplified": "家具",
+      "pinyinDisplay": "jiājù",
+      "clipId": "commons:b5ddc709b919",
+      "transcript": "家具",
+      "transcriptPinyin": "jia1 ju4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b6574e2b-f243-5066-bb74-e0f717753885",
+      "hskLevel": 4,
+      "hskIndex": 1353,
+      "simplified": "健身",
+      "pinyinDisplay": "jiànshēn",
+      "clipId": "commons:0a95821a5ea1",
+      "transcript": "健身",
+      "transcriptPinyin": "jian4 shen1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "82b531ee-23b4-57c2-b090-0d6fbf988633",
+      "hskLevel": 4,
+      "hskIndex": 1507,
+      "simplified": "密码",
+      "pinyinDisplay": "mìmǎ",
+      "clipId": "commons:66c08f9a0d9e",
+      "transcript": "密码",
+      "transcriptPinyin": "mi4 ma3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2db59ce1-023d-59d5-bdf2-ee3d1931206d",
+      "hskLevel": 4,
+      "hskIndex": 1518,
+      "simplified": "目的",
+      "pinyinDisplay": "mùdì",
+      "clipId": "commons:86597b54fd7f",
+      "transcript": "目的",
+      "transcriptPinyin": "mu4 di4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "7cd5a76c-cc07-5966-944b-0c2508090644",
+      "hskLevel": 4,
+      "hskIndex": 1552,
+      "simplified": "皮鞋",
+      "pinyinDisplay": "píxié",
+      "clipId": "commons:83a3a32fe461",
+      "transcript": "皮鞋",
+      "transcriptPinyin": "pi2 xie2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c0260640-763c-5679-9cb9-e398d99c47da",
+      "hskLevel": 4,
+      "hskIndex": 1583,
+      "simplified": "巧克力",
+      "pinyinDisplay": "qiǎokèlì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-c4d84efb.mp3",
+      "transcript": "巧克力",
+      "transcriptPinyin": "qiao3 ke4 li4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "39b7ec74-40d7-5fda-a625-3a78622719bb",
+      "hskLevel": 4,
+      "hskIndex": 1649,
+      "simplified": "生意",
+      "pinyinDisplay": "shēngyi",
+      "clipId": "commons:2b9ad3368d7d",
+      "transcript": "生意",
+      "transcriptPinyin": "sheng1 yi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "ab338cd0-0c2c-5c44-9e95-6907b71bbd0e",
+      "hskLevel": 4,
+      "hskIndex": 1666,
+      "simplified": "使",
+      "pinyinDisplay": "shǐ",
+      "clipId": "commons:3a558a91f456",
+      "transcript": "屎",
+      "transcriptPinyin": "shi3",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "466e9ba1-2614-533c-9b5a-f2c83f814e15",
+      "hskLevel": 4,
+      "hskIndex": 1673,
+      "simplified": "视频",
+      "pinyinDisplay": "shìpín",
+      "clipId": "commons:cd1cc69da5d2",
+      "transcript": "视频",
+      "transcriptPinyin": "shi4 pin2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "f59f6ebb-d18b-5cd3-821a-07d19c1dfa6e",
+      "hskLevel": 4,
+      "hskIndex": 1684,
+      "simplified": "受不了",
+      "pinyinDisplay": "shòubuliǎo",
+      "clipId": "commons:167d732590db",
+      "transcript": "受不了",
+      "transcriptPinyin": "shou4 bu4 liao3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5bee1f8e-ad36-5da0-919b-2795c033f6d7",
+      "hskLevel": 4,
+      "hskIndex": 1689,
+      "simplified": "熟悉",
+      "pinyinDisplay": "shúxi",
+      "clipId": "commons:f5681091bc60",
+      "transcript": "熟悉",
+      "transcriptPinyin": "shu2 xi1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9860250e-3793-5408-80ea-cc9ff1a7c2bb",
+      "hskLevel": 4,
+      "hskIndex": 1702,
+      "simplified": "硕士",
+      "pinyinDisplay": "shuòshì",
+      "clipId": "commons:68bc503d24d2",
+      "transcript": "硕士",
+      "transcriptPinyin": "shuo4 shi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "67277cf5-c940-5034-a286-8465275e88cb",
+      "hskLevel": 4,
+      "hskIndex": 1717,
+      "simplified": "态度",
+      "pinyinDisplay": "tàidù",
+      "clipId": "commons:c2b6b91843a1",
+      "transcript": "态度",
+      "transcriptPinyin": "tai4 du4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e2be252f-6196-50a4-b1ce-dbf5539318f8",
+      "hskLevel": 4,
+      "hskIndex": 1737,
+      "simplified": "听力",
+      "pinyinDisplay": "tīnglì",
+      "clipId": "commons:a49c9bdc51d5",
+      "transcript": "听力",
+      "transcriptPinyin": "ting1 li4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b83f0697-4c70-525d-8c23-f2d3444f3bf8",
+      "hskLevel": 4,
+      "hskIndex": 1761,
+      "simplified": "外套",
+      "pinyinDisplay": "wàitào",
+      "clipId": "commons:098db916335a",
+      "transcript": "外套",
+      "transcriptPinyin": "wai4 tao4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "d8bcbdaf-f642-54e5-b451-e10612b3f0d4",
+      "hskLevel": 4,
+      "hskIndex": 1763,
+      "simplified": "晚安",
+      "pinyinDisplay": "wǎn’ān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-74fda535.mp3",
+      "transcript": "晚安",
+      "transcriptPinyin": "wan3 an1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "744f6c57-1f2d-5b0a-8efa-4a3cf90defb1",
+      "hskLevel": 4,
+      "hskIndex": 1774,
+      "simplified": "味道",
+      "pinyinDisplay": "wèidào",
+      "clipId": "commons:0001c98b1f9a",
+      "transcript": "味道",
+      "transcriptPinyin": "wei4 dao4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e77b9dd9-fc23-5390-a9cc-739d30ef3aa7",
+      "hskLevel": 4,
+      "hskIndex": 1785,
+      "simplified": "午餐",
+      "pinyinDisplay": "wǔcān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-0a87c0e3.mp3",
+      "transcript": "午餐",
+      "transcriptPinyin": "wu3 can1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b15201af-69db-521c-92b7-c257319deed0",
+      "hskLevel": 4,
+      "hskIndex": 1812,
+      "simplified": "小吃",
+      "pinyinDisplay": "xiǎochī",
+      "clipId": "commons:39c6c2f0aff0",
+      "transcript": "小吃",
+      "transcriptPinyin": "xiao3 chi1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "d29a9bd8-d434-5797-b96c-86946faf1649",
+      "hskLevel": 4,
+      "hskIndex": 1832,
+      "simplified": "兄弟",
+      "pinyinDisplay": "xiōngdì",
+      "clipId": "commons:30721a2f92c6",
+      "transcript": "兄弟",
+      "transcriptPinyin": "xiong1 di4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a9ff2d66-7359-56b8-baea-fc80fe7a58d3",
+      "hskLevel": 4,
+      "hskIndex": 1842,
+      "simplified": "亚洲",
+      "pinyinDisplay": "Yàzhōu",
+      "clipId": "commons:1190eafcdc40",
+      "transcript": "亚洲",
+      "transcriptPinyin": "ya4 zhou1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8ac3e237-733f-5d46-a788-1f15902420ec",
+      "hskLevel": 4,
+      "hskIndex": 1876,
+      "simplified": "应聘",
+      "pinyinDisplay": "yìngpìn",
+      "clipId": "commons:9d23d3bee8cf",
+      "transcript": "应聘",
+      "transcriptPinyin": "ying4 pin4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "29332448-5e74-5974-a205-6fd9c789adc9",
+      "hskLevel": 4,
+      "hskIndex": 1918,
+      "simplified": "早餐",
+      "pinyinDisplay": "zǎocān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-becdf535.mp3",
+      "transcript": "早餐",
+      "transcriptPinyin": "zao3 can1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c99777e3-547d-5489-ad04-abe958283f34",
+      "hskLevel": 4,
+      "hskIndex": 1925,
+      "simplified": "着火",
+      "pinyinDisplay": "zháohuǒ",
+      "clipId": "commons:9bd6d1d28a59",
+      "transcript": "着火",
+      "transcriptPinyin": "zhao2 huo3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e2c3cef0-b446-5240-bf80-d93b41c39a3f",
+      "hskLevel": 4,
+      "hskIndex": 1948,
+      "simplified": "值得",
+      "pinyinDisplay": "zhídé",
+      "clipId": "commons:25f88ef8298f",
+      "transcript": "值得",
+      "transcriptPinyin": "zhi2 de5",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "506b14b3-160e-5152-ac7c-4a1ee8bed7e4",
+      "hskLevel": 4,
+      "hskIndex": 1952,
+      "simplified": "纸巾",
+      "pinyinDisplay": "zhǐjīn",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-104648e6.mp3",
+      "transcript": "纸巾",
+      "transcriptPinyin": "zhi3 jin1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "df38dc87-e873-5c66-a30e-82e35e71ce58",
+      "hskLevel": 4,
+      "hskIndex": 1970,
+      "simplified": "转",
+      "pinyinDisplay": "zhuǎn",
+      "clipId": "commons:bff0728bfd9f",
+      "transcript": "转",
+      "transcriptPinyin": "zhuan3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a00a5285-6a3c-5227-ba04-b7d25ce8b579",
+      "hskLevel": 5,
+      "hskIndex": 2033,
+      "simplified": "报警",
+      "pinyinDisplay": "bàojǐng",
+      "clipId": "commons:376067e9cb4d",
+      "transcript": "报警",
+      "transcriptPinyin": "bao4 jing3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "0befe67d-a743-5c37-beb8-b0c18d4106c9",
+      "hskLevel": 5,
+      "hskIndex": 2153,
+      "simplified": "橙子",
+      "pinyinDisplay": "chéngzi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-882f495e.mp3",
+      "transcript": "橙子",
+      "transcriptPinyin": "cheng2 zi5",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1fa8ee37-68ba-59ba-8b7f-f24b4847e919",
+      "hskLevel": 5,
+      "hskIndex": 2166,
+      "simplified": "宠物",
+      "pinyinDisplay": "chǒngwù",
+      "clipId": "commons:cbbc21e08b87",
+      "transcript": "宠物",
+      "transcriptPinyin": "chong3 wu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "325af163-111a-5ea1-b966-292d63b9344e",
+      "hskLevel": 5,
+      "hskIndex": 2200,
+      "simplified": "从不",
+      "pinyinDisplay": "cóng bù",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-4778a36b.mp3",
+      "transcript": "从部",
+      "transcriptPinyin": "cong2 bu4",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "16a6e38f-58ce-5720-b06f-277d2b155078",
+      "hskLevel": 5,
+      "hskIndex": 2214,
+      "simplified": "打包",
+      "pinyinDisplay": "dǎbāo",
+      "clipId": "commons:15a87757d1ee",
+      "transcript": "打包",
+      "transcriptPinyin": "da3 bao1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "618cdb59-2240-5264-b6b9-5f0556621d44",
+      "hskLevel": 5,
+      "hskIndex": 2228,
+      "simplified": "大象",
+      "pinyinDisplay": "dàxiàng",
+      "clipId": "commons:5a79250fa52f",
+      "transcript": "大象",
+      "transcriptPinyin": "da4 xiang4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "87eeae26-00bc-539d-a7de-7899fa6712f8",
+      "hskLevel": 5,
+      "hskIndex": 2262,
+      "simplified": "登录",
+      "pinyinDisplay": "dēnglù",
+      "clipId": "commons:bfffb9cf3716",
+      "transcript": "登录",
+      "transcriptPinyin": "deng1 lu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "28eee372-3ab1-5119-91d2-5ce7cfdff7cc",
+      "hskLevel": 5,
+      "hskIndex": 2347,
+      "simplified": "非洲",
+      "pinyinDisplay": "Fēizhōu",
+      "clipId": "commons:1c42eb6d617d",
+      "transcript": "非洲",
+      "transcriptPinyin": "fei1 zhou1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c4373e13-3213-5ce0-ac37-1b76e9ed2bda",
+      "hskLevel": 5,
+      "hskIndex": 2353,
+      "simplified": "分手",
+      "pinyinDisplay": "fēnshǒu",
+      "clipId": "commons:6fd7abd10e25",
+      "transcript": "分手",
+      "transcriptPinyin": "fen1 shou3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "36f6deaa-3dc2-5cc5-b7d8-bc26628ff809",
+      "hskLevel": 5,
+      "hskIndex": 2415,
+      "simplified": "公寓",
+      "pinyinDisplay": "gōngyù",
+      "clipId": "commons:30dd933274de",
+      "transcript": "公寓",
+      "transcriptPinyin": "gong1 yu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2320a04e-712f-5e7f-a186-003f0ef53ebb",
+      "hskLevel": 5,
+      "hskIndex": 2417,
+      "simplified": "恭喜",
+      "pinyinDisplay": "gōngxǐ",
+      "clipId": "commons:5215f5979709",
+      "transcript": "恭喜",
+      "transcriptPinyin": "gong1 xi3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5a948359-e928-5e7d-ba61-e561decae836",
+      "hskLevel": 5,
+      "hskIndex": 2459,
+      "simplified": "哈",
+      "pinyinDisplay": "hā",
+      "clipId": "commons:ecea1d79be7b",
+      "transcript": "哈",
+      "transcriptPinyin": "ha1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "de7f7dea-036d-5c2d-8e85-1517ccfea966",
+      "hskLevel": 5,
+      "hskIndex": 2478,
+      "simplified": "合影",
+      "pinyinDisplay": "héyǐng",
+      "clipId": "commons:a6c8b0242bf7",
+      "transcript": "合影",
+      "transcriptPinyin": "he2 ying3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+      "hskLevel": 5,
+      "hskIndex": 2513,
+      "simplified": "婚礼",
+      "pinyinDisplay": "hūnlǐ",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-fc9097da.mp3",
+      "transcript": "婚礼",
+      "transcriptPinyin": "hun1 li3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "hskLevel": 5,
+      "hskIndex": 2525,
+      "simplified": "及",
+      "pinyinDisplay": "jí",
+      "clipId": "commons:c5d06abb5626",
+      "transcript": "急",
+      "transcriptPinyin": "ji2",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "368abde4-46f0-5802-ad71-c775f63f36ea",
+      "hskLevel": 5,
+      "hskIndex": 2557,
+      "simplified": "嘉宾",
+      "pinyinDisplay": "jiābīn",
+      "clipId": "commons:b34297949ac7",
+      "transcript": "嘉宾",
+      "transcriptPinyin": "jia1 bin1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e61cb440-b2dc-5f75-b243-af1dcbb1fd75",
+      "hskLevel": 5,
+      "hskIndex": 2567,
+      "simplified": "减肥",
+      "pinyinDisplay": "jiǎnféi",
+      "clipId": "commons:c7f06860ae67",
+      "transcript": "减肥",
+      "transcriptPinyin": "jian3 fei2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "hskLevel": 5,
+      "hskIndex": 2670,
+      "simplified": "客户",
+      "pinyinDisplay": "kèhù",
+      "clipId": "commons:95b3aa6c8866",
+      "transcript": "客户",
+      "transcriptPinyin": "ke4 hu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "hskLevel": 5,
+      "hskIndex": 2675,
+      "simplified": "口味",
+      "pinyinDisplay": "kǒuwèi",
+      "clipId": "commons:c56f6ff8130c",
+      "transcript": "口味",
+      "transcriptPinyin": "kou3 wei4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b38aacc0-3fa7-57de-9530-dd0033f9bc83",
+      "hskLevel": 5,
+      "hskIndex": 2760,
+      "simplified": "魅力",
+      "pinyinDisplay": "mèilì",
+      "clipId": "commons:e367c130a4fb",
+      "transcript": "魅力",
+      "transcriptPinyin": "mei4 li4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "92848aba-3676-5ec4-83fc-2b47beeb3973",
+      "hskLevel": 5,
+      "hskIndex": 2763,
+      "simplified": "迷路",
+      "pinyinDisplay": "mílù",
+      "clipId": "commons:23fc212cafc9",
+      "transcript": "迷路",
+      "transcriptPinyin": "mi2 lu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "294b0377-8956-50d3-9b2c-6e84f0026ded",
+      "hskLevel": 5,
+      "hskIndex": 2775,
+      "simplified": "名片",
+      "pinyinDisplay": "míngpiàn",
+      "clipId": "commons:02e0209a8e6c",
+      "transcript": "名片",
+      "transcriptPinyin": "ming2 pian4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "56801f20-a3e4-53ea-87f5-b167dad84d26",
+      "hskLevel": 5,
+      "hskIndex": 2808,
+      "simplified": "欧洲",
+      "pinyinDisplay": "Ōuzhōu",
+      "clipId": "commons:ca3b72643d26",
+      "transcript": "欧洲",
+      "transcriptPinyin": "ou1 zhou1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "hskLevel": 5,
+      "hskIndex": 2831,
+      "simplified": "拼音",
+      "pinyinDisplay": "pīnyīn",
+      "clipId": "commons:5c2f623c244a",
+      "transcript": "拼音",
+      "transcriptPinyin": "pin1 yin1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e9997dd7-f1b9-56c0-a78a-9aa3ab46f357",
+      "hskLevel": 5,
+      "hskIndex": 2847,
+      "simplified": "屏幕",
+      "pinyinDisplay": "píngmù",
+      "clipId": "commons:89f31691c022",
+      "transcript": "屏幕",
+      "transcriptPinyin": "ping2 mu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3cd99a54-5b78-5082-854c-8c1e3e844654",
+      "hskLevel": 5,
+      "hskIndex": 2950,
+      "simplified": "删除",
+      "pinyinDisplay": "shānchú",
+      "clipId": "commons:5bd714965e52",
+      "transcript": "删除",
+      "transcriptPinyin": "shan1 chu2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "8ad06b43-27f0-5dfc-a0d3-f6faaca1be74",
+      "hskLevel": 5,
+      "hskIndex": 2960,
+      "simplified": "商务",
+      "pinyinDisplay": "shāngwù",
+      "clipId": "commons:5fc5895aa454",
+      "transcript": "商务",
+      "transcriptPinyin": "shang1 wu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "7382c0b4-68d2-52b9-a137-baa02e76120f",
+      "hskLevel": 5,
+      "hskIndex": 2977,
+      "simplified": "社区",
+      "pinyinDisplay": "shèqū",
+      "clipId": "commons:de4aaf2d56ef",
+      "transcript": "社区",
+      "transcriptPinyin": "she4 qu1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+      "hskLevel": 5,
+      "hskIndex": 3147,
+      "simplified": "头",
+      "pinyinDisplay": "tou",
+      "clipId": "commons:63ed8e0f49ff",
+      "transcript": "投",
+      "transcriptPinyin": "tou2",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "7a6339a3-544e-5916-8f1e-f480716cbd98",
+      "hskLevel": 5,
+      "hskIndex": 3168,
+      "simplified": "外公",
+      "pinyinDisplay": "wàigōng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-dc7a3d3a.mp3",
+      "transcript": "外公",
+      "transcriptPinyin": "wai4 gong1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1478c8aa-7ac3-5cd6-bab2-ddc2d57ecd2f",
+      "hskLevel": 5,
+      "hskIndex": 3178,
+      "simplified": "网络",
+      "pinyinDisplay": "wǎngluò",
+      "clipId": "commons:a73ea3f621e5",
+      "transcript": "网络",
+      "transcriptPinyin": "wang3 luo4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b95b5201-8da0-55bc-a388-b922614cde94",
+      "hskLevel": 5,
+      "hskIndex": 3189,
+      "simplified": "唯一",
+      "pinyinDisplay": "wéiyī",
+      "clipId": "commons:2e6265c8d6fd",
+      "transcript": "唯一",
+      "transcriptPinyin": "wei2 yi1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "hskLevel": 5,
+      "hskIndex": 3230,
+      "simplified": "下载",
+      "pinyinDisplay": "xiàzài",
+      "clipId": "commons:735b36dadef3",
+      "transcript": "下载",
+      "transcriptPinyin": "xia4 zai4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "260c338b-0ddf-5f58-a5ea-856ed36ade5a",
+      "hskLevel": 5,
+      "hskIndex": 3269,
+      "simplified": "小姐",
+      "pinyinDisplay": "xiǎojiě",
+      "clipId": "commons:ef71a1f05cba",
+      "transcript": "小姐",
+      "transcriptPinyin": "xiao3 jie3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "hskLevel": 5,
+      "hskIndex": 3300,
+      "simplified": "休闲",
+      "pinyinDisplay": "xiūxián",
+      "clipId": "commons:dcbc7d45625c",
+      "transcript": "休闲",
+      "transcriptPinyin": "xiu1 xian2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9a4c6bd4-90bd-5deb-84a5-2fab212c2187",
+      "hskLevel": 5,
+      "hskIndex": 3320,
+      "simplified": "压岁钱",
+      "pinyinDisplay": "yāsuìqián",
+      "clipId": "commons:820767712d13",
+      "transcript": "压岁钱",
+      "transcriptPinyin": "ya1 sui4 qian2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "13b472df-5056-5137-b653-fd9707423ebf",
+      "hskLevel": 5,
+      "hskIndex": 3367,
+      "simplified": "意识",
+      "pinyinDisplay": "yìshí",
+      "clipId": "commons:d39bc56f8b7c",
+      "transcript": "意识",
+      "transcriptPinyin": "yi4 shi2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1d9b84d7-c340-58f6-b313-bbe314678d65",
+      "hskLevel": 5,
+      "hskIndex": 3429,
+      "simplified": "员工",
+      "pinyinDisplay": "yuángōng",
+      "clipId": "commons:a1fccd9b1f60",
+      "transcript": "员工",
+      "transcriptPinyin": "yuan2 gong1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9db5e978-a3c0-5cd8-8016-af07b3dbf9a0",
+      "hskLevel": 5,
+      "hskIndex": 3466,
+      "simplified": "展示",
+      "pinyinDisplay": "zhǎnshì",
+      "clipId": "commons:6fc0d8c264eb",
+      "transcript": "展示",
+      "transcriptPinyin": "zhan3 shi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3791a7ac-9695-58e3-9359-23a02b88aae0",
+      "hskLevel": 5,
+      "hskIndex": 3469,
+      "simplified": "占线",
+      "pinyinDisplay": "zhànxiàn",
+      "clipId": "commons:155bb3364b94",
+      "transcript": "战线",
+      "transcriptPinyin": "zhan4 xian4",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "3f116233-929d-5205-8b49-ab54a2d80e7d",
+      "hskLevel": 5,
+      "hskIndex": 3476,
+      "simplified": "账户",
+      "pinyinDisplay": "zhànghù",
+      "clipId": "commons:2c891b777124",
+      "transcript": "账户",
+      "transcriptPinyin": "zhang4 hu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "910fa71e-7bfb-5d20-b66c-b101ec948fec",
+      "hskLevel": 5,
+      "hskIndex": 3510,
+      "simplified": "志愿者",
+      "pinyinDisplay": "zhìyuànzhě",
+      "clipId": "commons:5fe716fe64d9",
+      "transcript": "志愿者",
+      "transcriptPinyin": "zhi4 yuan4 zhe3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "hskLevel": 5,
+      "hskIndex": 3523,
+      "simplified": "中介",
+      "pinyinDisplay": "zhōngjiè",
+      "clipId": "commons:6d7a72af7adc",
+      "transcript": "中介",
+      "transcriptPinyin": "zhong1 jie4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e83d90a0-963c-541d-b747-0ae0f1b45aa0",
+      "hskLevel": 5,
+      "hskIndex": 3588,
+      "simplified": "足够",
+      "pinyinDisplay": "zúgòu",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-de67c1ff.mp3",
+      "transcript": "足够",
+      "transcriptPinyin": "zu2 gou4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a25937b4-edb6-5cfb-83f5-85042520adee",
+      "hskLevel": 6,
+      "hskIndex": 3602,
+      "simplified": "按摩",
+      "pinyinDisplay": "ànmó",
+      "clipId": "commons:0f15cfd037a3",
+      "transcript": "按摩",
+      "transcriptPinyin": "an4 mo2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "f34c992d-db05-5109-8947-b271f8bff93c",
+      "hskLevel": 6,
+      "hskIndex": 3603,
+      "simplified": "案例",
+      "pinyinDisplay": "ànlì",
+      "clipId": "commons:df8b3d8e020b",
+      "transcript": "案例",
+      "transcriptPinyin": "an4 li4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "c85d4b17-30f0-5891-a13a-8377c65119c0",
+      "hskLevel": 6,
+      "hskIndex": 3617,
+      "simplified": "版本",
+      "pinyinDisplay": "bǎnběn",
+      "clipId": "commons:e373e9dba260",
+      "transcript": "版本",
+      "transcriptPinyin": "ban3 ben3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "78c62c0f-8941-51b1-8bcc-0ad3a6348fea",
+      "hskLevel": 6,
+      "hskIndex": 3637,
+      "simplified": "北极",
+      "pinyinDisplay": "běijí",
+      "clipId": "commons:c31edd77dbba",
+      "transcript": "北极",
+      "transcriptPinyin": "bei3 ji2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "52514b03-5fa1-5565-9e3d-9508223dbf82",
+      "hskLevel": 6,
+      "hskIndex": 3677,
+      "simplified": "不顾",
+      "pinyinDisplay": "búgù",
+      "clipId": "commons:e4c56a93c63e",
+      "transcript": "不顾",
+      "transcriptPinyin": "bu4 gu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "4000e359-b626-5e04-8444-9c493653db03",
+      "hskLevel": 6,
+      "hskIndex": 3680,
+      "simplified": "不耐烦",
+      "pinyinDisplay": "bú nàifán",
+      "clipId": "commons:fe36a2386046",
+      "transcript": "不耐烦",
+      "transcriptPinyin": "bu4 nai4 fan2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3bcf6a59-5f3c-5335-a6f1-c40ecb62e10a",
+      "hskLevel": 6,
+      "hskIndex": 3704,
+      "simplified": "彩虹",
+      "pinyinDisplay": "cǎihóng",
+      "clipId": "commons:08a15cac1f43",
+      "transcript": "彩虹",
+      "transcriptPinyin": "cai3 hong2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "84eeda8d-c47a-546e-a389-412baba533bb",
+      "hskLevel": 6,
+      "hskIndex": 3705,
+      "simplified": "彩票",
+      "pinyinDisplay": "cǎipiào",
+      "clipId": "commons:8678496605f8",
+      "transcript": "彩票",
+      "transcriptPinyin": "cai3 piao4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9997ec82-5772-5dee-9152-7ae4e4d8cbc0",
+      "hskLevel": 6,
+      "hskIndex": 3714,
+      "simplified": "策略",
+      "pinyinDisplay": "cèlüè",
+      "clipId": "commons:6c40f1b2bcea",
+      "transcript": "策略",
+      "transcriptPinyin": "ce4 lüe4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e0865c63-3db4-5dc0-badb-850cb400856f",
+      "hskLevel": 6,
+      "hskIndex": 3764,
+      "simplified": "承诺",
+      "pinyinDisplay": "chéngnuò",
+      "clipId": "commons:cc59a602630f",
+      "transcript": "承诺",
+      "transcriptPinyin": "cheng2 nuo4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "956a9e7d-4fd7-5266-b493-1b0ca820a451",
+      "hskLevel": 6,
+      "hskIndex": 3772,
+      "simplified": "尺寸",
+      "pinyinDisplay": "chǐcùn",
+      "clipId": "commons:4d42a0652222",
+      "transcript": "尺寸",
+      "transcriptPinyin": "chi3 cun4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "94782435-12d0-5e48-8728-450966936593",
+      "hskLevel": 6,
+      "hskIndex": 3773,
+      "simplified": "冲动",
+      "pinyinDisplay": "chōngdòng",
+      "clipId": "commons:4ec2eb539aad",
+      "transcript": "冲动",
+      "transcriptPinyin": "chong1 dong4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "0d3d45d9-66bc-5c6f-8af5-ef62b1114256",
+      "hskLevel": 6,
+      "hskIndex": 3789,
+      "simplified": "出示",
+      "pinyinDisplay": "chūshì",
+      "clipId": "commons:01336d2f86c7",
+      "transcript": "出事",
+      "transcriptPinyin": "chu1 shi4",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "e0e01f97-c771-592e-9136-7983c6eed163",
+      "hskLevel": 6,
+      "hskIndex": 3892,
+      "simplified": "地方",
+      "pinyinDisplay": "dìfāng",
+      "clipId": "commons:4786fca90554",
+      "transcript": "地方",
+      "transcriptPinyin": "di4 fang1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "318f3332-8116-570a-9980-74dfc7a81bf9",
+      "hskLevel": 6,
+      "hskIndex": 3905,
+      "simplified": "钓鱼",
+      "pinyinDisplay": "diàoyú",
+      "clipId": "commons:18a9c44536cd",
+      "transcript": "钓鱼",
+      "transcriptPinyin": "diao4 yu2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a3892d99-dcc7-58ff-a418-75e319e5d46f",
+      "hskLevel": 6,
+      "hskIndex": 3970,
+      "simplified": "方位",
+      "pinyinDisplay": "fāngwèi",
+      "clipId": "commons:23f12c46da77",
+      "transcript": "方位",
+      "transcriptPinyin": "fang1 wei4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e2984d57-d6e5-5d89-84cb-53710abd7c9e",
+      "hskLevel": 6,
+      "hskIndex": 3997,
+      "simplified": "夫人",
+      "pinyinDisplay": "fūrén",
+      "clipId": "commons:3f9713aa610b",
+      "transcript": "夫人",
+      "transcriptPinyin": "fu1 ren2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e110c196-2775-5089-8d89-eedadc43ed17",
+      "hskLevel": 6,
+      "hskIndex": 4022,
+      "simplified": "尴尬",
+      "pinyinDisplay": "gāngà",
+      "clipId": "commons:6bb402b88912",
+      "transcript": "尴尬",
+      "transcriptPinyin": "gan1 ga4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "33eceecd-7d6d-5a3b-bb80-f32e2b1556c8",
+      "hskLevel": 6,
+      "hskIndex": 4059,
+      "simplified": "公元",
+      "pinyinDisplay": "gōngyuán",
+      "clipId": "commons:98fd474cbf7c",
+      "transcript": "公园",
+      "transcriptPinyin": "gong1 yuan2",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "a50d0f63-fe80-5438-b348-a95ac6a07bfd",
+      "hskLevel": 6,
+      "hskIndex": 4060,
+      "simplified": "公正",
+      "pinyinDisplay": "gōngzhèng",
+      "clipId": "commons:0056ef29a868",
+      "transcript": "公正",
+      "transcriptPinyin": "gong1 zheng4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "d51e731a-9dc3-5744-95ba-1e88a473b057",
+      "hskLevel": 6,
+      "hskIndex": 4062,
+      "simplified": "公主",
+      "pinyinDisplay": "gōngzhǔ",
+      "clipId": "commons:01b379291450",
+      "transcript": "公主",
+      "transcriptPinyin": "gong1 zhu3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "391eaafe-d2d3-5b02-8c6c-5809f2d7637e",
+      "hskLevel": 6,
+      "hskIndex": 4078,
+      "simplified": "股市",
+      "pinyinDisplay": "gǔshì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-f5a77129.mp3",
+      "transcript": "股市",
+      "transcriptPinyin": "gu3 shi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "0f5bd600-0d69-5a38-8db0-0fd6b4b3c038",
+      "hskLevel": 6,
+      "hskIndex": 4106,
+      "simplified": "棍",
+      "pinyinDisplay": "gùn",
+      "clipId": "commons:7d619e14df54",
+      "transcript": "棍",
+      "transcriptPinyin": "gun4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "801087cc-ee8c-5191-89fb-67a7b111e654",
+      "hskLevel": 6,
+      "hskIndex": 4156,
+      "simplified": "忽略",
+      "pinyinDisplay": "hūlüè",
+      "clipId": "commons:dd3080243aae",
+      "transcript": "忽略",
+      "transcriptPinyin": "hu1 lüe4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "217c5a8d-2986-5788-8f0e-476d0284d546",
+      "hskLevel": 6,
+      "hskIndex": 4170,
+      "simplified": "话筒",
+      "pinyinDisplay": "huàtǒng",
+      "clipId": "commons:6b51195324ff",
+      "transcript": "话筒",
+      "transcriptPinyin": "hua4 tong3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "38c67946-3852-597b-ab15-cac0209b1304",
+      "hskLevel": 6,
+      "hskIndex": 4184,
+      "simplified": "回报",
+      "pinyinDisplay": "huíbào",
+      "clipId": "commons:5ca4fea60412",
+      "transcript": "回报",
+      "transcriptPinyin": "hui2 bao4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "58adb3e9-4bc2-5da2-a798-45f3d2721adc",
+      "hskLevel": 6,
+      "hskIndex": 4210,
+      "simplified": "基因",
+      "pinyinDisplay": "jīyīn",
+      "clipId": "commons:1dee0e2c31c4",
+      "transcript": "基因",
+      "transcriptPinyin": "ji1 yin1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b8c7ccde-f0c8-5f07-ae3d-0b08f801d682",
+      "hskLevel": 6,
+      "hskIndex": 4250,
+      "simplified": "兼职",
+      "pinyinDisplay": "jiānzhí",
+      "clipId": "commons:d5016be71eac",
+      "transcript": "兼职",
+      "transcriptPinyin": "jian1 zhi2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "eef74eb5-478f-52cb-9af7-39a98de0f728",
+      "hskLevel": 6,
+      "hskIndex": 4260,
+      "simplified": "剑",
+      "pinyinDisplay": "jiàn",
+      "clipId": "commons:0fa7b04eec4d",
+      "transcript": "见",
+      "transcriptPinyin": "jian4",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "986fd32e-5a05-51fe-8d1d-bf1e608301ce",
+      "hskLevel": 6,
+      "hskIndex": 4484,
+      "simplified": "码头",
+      "pinyinDisplay": "mǎtóu",
+      "clipId": "commons:590f05a8ff74",
+      "transcript": "码头",
+      "transcriptPinyin": "ma3 tou2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "315d77b1-03f2-5763-bed6-9ffbc31b508a",
+      "hskLevel": 6,
+      "hskIndex": 4491,
+      "simplified": "漫画",
+      "pinyinDisplay": "mànhuà",
+      "clipId": "commons:cff3163f468d",
+      "transcript": "漫画",
+      "transcriptPinyin": "man4 hua4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1683122e-8f8d-5649-adc6-ef90bab9c210",
+      "hskLevel": 6,
+      "hskIndex": 4501,
+      "simplified": "迷人",
+      "pinyinDisplay": "mírén",
+      "clipId": "commons:8e7f3c152296",
+      "transcript": "迷人",
+      "transcriptPinyin": "mi2 ren2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "6979f4f0-ae10-51f7-b78a-4abc8bea15c0",
+      "hskLevel": 6,
+      "hskIndex": 4509,
+      "simplified": "免疫",
+      "pinyinDisplay": "miǎnyì",
+      "clipId": "commons:606b1f2f69d5",
+      "transcript": "免疫",
+      "transcriptPinyin": "mian3 yi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "6434c3aa-b775-5005-b483-d7c496aa4316",
+      "hskLevel": 6,
+      "hskIndex": 4539,
+      "simplified": "母语",
+      "pinyinDisplay": "mǔyǔ",
+      "clipId": "commons:d51946ccad11",
+      "transcript": "母语",
+      "transcriptPinyin": "mu3 yu3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e072c9d6-6bc8-575e-838f-a6049e812dcf",
+      "hskLevel": 6,
+      "hskIndex": 4549,
+      "simplified": "内涵",
+      "pinyinDisplay": "nèihán",
+      "clipId": "commons:b306e422d259",
+      "transcript": "内涵",
+      "transcriptPinyin": "nei4 han2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "ea650ecb-2ada-525b-b855-5e538992505b",
+      "hskLevel": 6,
+      "hskIndex": 4565,
+      "simplified": "偶像",
+      "pinyinDisplay": "ǒuxiàng",
+      "clipId": "commons:9a485f40368d",
+      "transcript": "偶像",
+      "transcriptPinyin": "ou3 xiang4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "2c7e872c-8de6-5111-88a8-bf461d4636a3",
+      "hskLevel": 6,
+      "hskIndex": 4568,
+      "simplified": "排练",
+      "pinyinDisplay": "páiliàn",
+      "clipId": "commons:5d949960784d",
+      "transcript": "排练",
+      "transcriptPinyin": "pai2 lian4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b5a9457b-2f03-5799-9400-63ce7ee3909f",
+      "hskLevel": 6,
+      "hskIndex": 4628,
+      "simplified": "气质",
+      "pinyinDisplay": "qìzhì",
+      "clipId": "commons:8d17cbca73d5",
+      "transcript": "气质",
+      "transcriptPinyin": "qi4 zhi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "708553ba-94a3-52ca-94b3-8fc0d469a8f3",
+      "hskLevel": 6,
+      "hskIndex": 4690,
+      "simplified": "热门",
+      "pinyinDisplay": "rèmén",
+      "clipId": "commons:6cc09928bb43",
+      "transcript": "热门",
+      "transcriptPinyin": "re4 men2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "a3a1c26d-3dee-5d76-b1c3-fc287f99781a",
+      "hskLevel": 6,
+      "hskIndex": 4695,
+      "simplified": "人家",
+      "pinyinDisplay": "rénjia",
+      "clipId": "commons:67aa64c602d2",
+      "transcript": "人家",
+      "transcriptPinyin": "ren2 jia1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "b31b3661-a5f2-5ea8-b557-f25e6d14d19c",
+      "hskLevel": 6,
+      "hskIndex": 4798,
+      "simplified": "势力",
+      "pinyinDisplay": "shìlì",
+      "clipId": "commons:5ebb10427d69",
+      "transcript": "势力",
+      "transcriptPinyin": "shi4 li4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "49c742b7-9115-546e-9b88-ae9885c6853f",
+      "hskLevel": 6,
+      "hskIndex": 4802,
+      "simplified": "试图",
+      "pinyinDisplay": "shìtú",
+      "clipId": "commons:764adebe3bf8",
+      "transcript": "试图",
+      "transcriptPinyin": "shi4 tu2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5e6d4f27-66b9-5307-92a6-3777ea64c359",
+      "hskLevel": 6,
+      "hskIndex": 4812,
+      "simplified": "手臂",
+      "pinyinDisplay": "shǒubì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-27f4d77d.mp3",
+      "transcript": "手臂",
+      "transcriptPinyin": "shou3 bi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "dc7a03dd-2380-540a-8751-86b7d16c6230",
+      "hskLevel": 6,
+      "hskIndex": 4838,
+      "simplified": "瞬间",
+      "pinyinDisplay": "shùnjiān",
+      "clipId": "commons:fcb4b2606a42",
+      "transcript": "瞬间",
+      "transcriptPinyin": "shun4 jian1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "ae527346-4b85-5e50-911e-39e3d6368cd5",
+      "hskLevel": 6,
+      "hskIndex": 4876,
+      "simplified": "特长",
+      "pinyinDisplay": "tècháng",
+      "clipId": "commons:6f2291a11265",
+      "transcript": "特长",
+      "transcriptPinyin": "te4 chang2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1575abfd-d33b-51c4-864b-df56e7fc34a2",
+      "hskLevel": 6,
+      "hskIndex": 4914,
+      "simplified": "童话",
+      "pinyinDisplay": "tónghuà",
+      "clipId": "commons:29167e7e5862",
+      "transcript": "童话",
+      "transcriptPinyin": "tong2 hua4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "1b818c9b-113b-5a1a-bc37-5181838272bd",
+      "hskLevel": 6,
+      "hskIndex": 4920,
+      "simplified": "投诉",
+      "pinyinDisplay": "tóusù",
+      "clipId": "commons:60db4b32e598",
+      "transcript": "投诉",
+      "transcriptPinyin": "tou2 su4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "04d86390-329d-5943-93e2-13aff5358009",
+      "hskLevel": 6,
+      "hskIndex": 4924,
+      "simplified": "透露",
+      "pinyinDisplay": "tòulù",
+      "clipId": "commons:53f2aca28d1b",
+      "transcript": "透露",
+      "transcriptPinyin": "tou4 lu4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "75a8abcb-0d6b-5b1b-85e9-d3c93fdd96b0",
+      "hskLevel": 6,
+      "hskIndex": 4944,
+      "simplified": "托运",
+      "pinyinDisplay": "tuōyùn",
+      "clipId": "commons:184e814c5f03",
+      "transcript": "托运",
+      "transcriptPinyin": "tuo1 yun4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9231461f-5f90-538d-a0cb-70bcaa6b39a4",
+      "hskLevel": 6,
+      "hskIndex": 4948,
+      "simplified": "哇",
+      "pinyinDisplay": "wā",
+      "clipId": "commons:215322f9d59e",
+      "transcript": "挖",
+      "transcriptPinyin": "wa1",
+      "matchKind": "homophone_transcript"
+    },
+    {
+      "entryId": "7fa4189e-c523-5912-bba8-18856989b084",
+      "hskLevel": 6,
+      "hskIndex": 4960,
+      "simplified": "王子",
+      "pinyinDisplay": "wángzǐ",
+      "clipId": "commons:ce75023c839a",
+      "transcript": "王子",
+      "transcriptPinyin": "wang2 zi3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "cc7fe6ec-8f03-59e0-8eb9-739050299ece",
+      "hskLevel": 6,
+      "hskIndex": 4983,
+      "simplified": "胃口",
+      "pinyinDisplay": "wèikǒu",
+      "clipId": "commons:91f7a4ef2eb8",
+      "transcript": "胃口",
+      "transcriptPinyin": "wei4 kou3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "13c8241e-b803-5b90-adc5-df83a28b806b",
+      "hskLevel": 6,
+      "hskIndex": 5018,
+      "simplified": "夏令营",
+      "pinyinDisplay": "xiàlìngyíng",
+      "clipId": "commons:7dfdde87e0b2",
+      "transcript": "夏令营",
+      "transcriptPinyin": "xia4 ling4 ying2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "920e2236-8d61-5813-a89b-81889989856c",
+      "hskLevel": 6,
+      "hskIndex": 5047,
+      "simplified": "消防",
+      "pinyinDisplay": "xiāofáng",
+      "clipId": "commons:dcd4d07ca9c0",
+      "transcript": "消防",
+      "transcriptPinyin": "xiao1 fang2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "4181bb12-399d-5714-8c69-4411303fb5de",
+      "hskLevel": 6,
+      "hskIndex": 5051,
+      "simplified": "小气",
+      "pinyinDisplay": "xiǎoqi",
+      "clipId": "commons:d228b14236aa",
+      "transcript": "小气",
+      "transcriptPinyin": "xiao3 qi4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "0f3208e7-cec3-5a66-b548-982e265db338",
+      "hskLevel": 6,
+      "hskIndex": 5072,
+      "simplified": "薪水",
+      "pinyinDisplay": "xīnshui",
+      "clipId": "commons:cb95f06a9ca4",
+      "transcript": "薪水",
+      "transcriptPinyin": "xin1 shui3",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "9f094909-cafa-570d-bbb6-2caea9480e6e",
+      "hskLevel": 6,
+      "hskIndex": 5140,
+      "simplified": "一贯",
+      "pinyinDisplay": "yíguàn",
+      "clipId": "commons:1b7ceaac34a4",
+      "transcript": "一贯",
+      "transcriptPinyin": "yi2 guan4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "882951fc-848a-5556-b0ea-237d64fd083c",
+      "hskLevel": 6,
+      "hskIndex": 5142,
+      "simplified": "一流",
+      "pinyinDisplay": "yīliú",
+      "clipId": "commons:535d49c87aee",
+      "transcript": "一流",
+      "transcriptPinyin": "yi4 liu2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "370dd510-96c4-5dd3-98bd-cf9390639942",
+      "hskLevel": 6,
+      "hskIndex": 5184,
+      "simplified": "隐私",
+      "pinyinDisplay": "yǐnsī",
+      "clipId": "commons:1037558cfa5b",
+      "transcript": "隐私",
+      "transcriptPinyin": "yin3 si1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "6d18d814-1271-522a-aef8-609ce1463cfa",
+      "hskLevel": 6,
+      "hskIndex": 5209,
+      "simplified": "羽绒服",
+      "pinyinDisplay": "yǔróngfú",
+      "clipId": "commons:5536f5ccfabf",
+      "transcript": "羽绒服",
+      "transcriptPinyin": "yu3 rong2 fu2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "3adc4c26-3401-5866-91be-e08cbc461d1f",
+      "hskLevel": 6,
+      "hskIndex": 5266,
+      "simplified": "长辈",
+      "pinyinDisplay": "zhǎngbèi",
+      "clipId": "commons:9c5541eb6a7d",
+      "transcript": "长辈",
+      "transcriptPinyin": "zhang3 bei4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "e7067d12-8a3f-509c-97f0-cf65d13ff25a",
+      "hskLevel": 6,
+      "hskIndex": 5302,
+      "simplified": "职位",
+      "pinyinDisplay": "zhíwèi",
+      "clipId": "commons:3d3aff804505",
+      "transcript": "职位",
+      "transcriptPinyin": "zhi2 wei4",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "5b1200dc-fe75-5293-bc18-264c44e8c7f9",
+      "hskLevel": 6,
+      "hskIndex": 5311,
+      "simplified": "指责",
+      "pinyinDisplay": "zhǐzé",
+      "clipId": "commons:d47568c5cfde",
+      "transcript": "指责",
+      "transcriptPinyin": "zhi3 ze2",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "4e282d55-2ec3-5781-9057-fd65d0339590",
+      "hskLevel": 6,
+      "hskIndex": 5337,
+      "simplified": "周边",
+      "pinyinDisplay": "zhōubiān",
+      "clipId": "commons:c4169333cd09",
+      "transcript": "周边",
+      "transcriptPinyin": "zhou1 bian1",
+      "matchKind": "exact_transcript"
+    },
+    {
+      "entryId": "95ece18b-f46b-504f-9c91-aad5d62c28bc",
+      "hskLevel": 6,
+      "hskIndex": 5387,
+      "simplified": "总裁",
+      "pinyinDisplay": "zǒngcái",
+      "clipId": "commons:3f074f25ba85",
+      "transcript": "总裁",
+      "transcriptPinyin": "zong3 cai2",
+      "matchKind": "exact_transcript"
+    }
+  ],
+  "characters": [
+    {
+      "glyph": "严",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "严"
+    },
+    {
+      "glyph": "嚴",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "严"
+    },
+    {
+      "glyph": "妍",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "岩",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "嵒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "巖",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "延",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "檐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "沿",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "沿"
+    },
+    {
+      "glyph": "炎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "盐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "盐"
+    },
+    {
+      "glyph": "研",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "筵",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "簷",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "芫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "蜒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "言",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "訁",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "讠",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "閻",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "闫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "阎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "顏",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "颜",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "言"
+    },
+    {
+      "glyph": "鹽",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "recordedTerm": "盐"
+    }
+  ],
+  "unresolvedWords": [
+    {
+      "entryId": "91c84838-e29e-5dde-9092-504d062666b9",
+      "hskLevel": 3,
+      "hskIndex": 678,
+      "simplified": "还",
+      "pinyinDisplay": "huán",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "91c84838-e29e-5dde-9092-504d062666b9",
+          "expected": "还",
+          "reading": "huán",
+          "clipId": "commons:14d94e3b57b5",
+          "transcript": "还",
+          "transcriptPinyin": "hai2",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "91c84838-e29e-5dde-9092-504d062666b9",
+          "expected": "还",
+          "reading": "huán",
+          "clipId": "commons:3ede92ca707c",
+          "transcript": "排",
+          "transcriptPinyin": "pai2",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "04570f57-d2de-5566-8f0f-29af72e8e5ec",
+      "hskLevel": 3,
+      "hskIndex": 839,
+      "simplified": "受到",
+      "pinyinDisplay": "shòudào",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "04570f57-d2de-5566-8f0f-29af72e8e5ec",
+          "expected": "受到",
+          "reading": "shòudào",
+          "clipId": "commons:1d7992e65f11",
+          "transcript": "受导",
+          "transcriptPinyin": "shou4 dao3",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "a237a77f-1151-58df-aaad-b6a37356db7b",
+      "hskLevel": 4,
+      "hskIndex": 1020,
+      "simplified": "背",
+      "pinyinDisplay": "bēi",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "a237a77f-1151-58df-aaad-b6a37356db7b",
+          "expected": "背",
+          "reading": "bēi",
+          "clipId": "commons:0da48191f9c6",
+          "transcript": "背",
+          "transcriptPinyin": "bei4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "ea6d3aad-23e1-5dc7-b91a-059aa7e3e5d1",
+      "hskLevel": 4,
+      "hskIndex": 1220,
+      "simplified": "干",
+      "pinyinDisplay": "gān",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "ea6d3aad-23e1-5dc7-b91a-059aa7e3e5d1",
+          "expected": "干",
+          "reading": "gān",
+          "clipId": "commons:b2ec173757db",
+          "transcript": "杠",
+          "transcriptPinyin": "gang1",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "58d83241-e73a-5d95-8348-78ffe8408d1e",
+      "hskLevel": 4,
+      "hskIndex": 1439,
+      "simplified": "空",
+      "pinyinDisplay": "kòng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "58d83241-e73a-5d95-8348-78ffe8408d1e",
+          "expected": "空",
+          "reading": "kòng",
+          "clipId": "commons:ab9a6e4feae0",
+          "transcript": "空",
+          "transcriptPinyin": "kong1",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "8c774fc7-ea01-51dd-a57d-455441efb224",
+      "hskLevel": 4,
+      "hskIndex": 1640,
+      "simplified": "摄氏度",
+      "pinyinDisplay": "shèshìdù",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "8c774fc7-ea01-51dd-a57d-455441efb224",
+          "expected": "摄氏度",
+          "reading": "shèshìdù",
+          "clipId": "commons:afd99ff2259f",
+          "transcript": "测试度",
+          "transcriptPinyin": "ce4 shi4 du4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "9fdc742e-6d7b-5027-8834-ee8644981655",
+      "hskLevel": 4,
+      "hskIndex": 1688,
+      "simplified": "熟",
+      "pinyinDisplay": "shú/shóu",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "9fdc742e-6d7b-5027-8834-ee8644981655",
+          "expected": "熟",
+          "reading": "shú/shóu",
+          "clipId": "shtooka-cmn-caen-tan:cmn-5e85ae2f.mp3",
+          "transcript": "竹",
+          "transcriptPinyin": "zhu2",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "7f64a5f6-cb4a-5e82-8809-875640994e31",
+      "hskLevel": 4,
+      "hskIndex": 1959,
+      "simplified": "种",
+      "pinyinDisplay": "zhòng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "7f64a5f6-cb4a-5e82-8809-875640994e31",
+          "expected": "种",
+          "reading": "zhòng",
+          "clipId": "commons:2e537ddb3987",
+          "transcript": "中",
+          "transcriptPinyin": "zhong1",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "7f64a5f6-cb4a-5e82-8809-875640994e31",
+          "expected": "种",
+          "reading": "zhòng",
+          "clipId": "commons:34f903a9459e",
+          "transcript": "种",
+          "transcriptPinyin": "zhong3",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+      "hskLevel": 5,
+      "hskIndex": 2250,
+      "simplified": "当",
+      "pinyinDisplay": "dàng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+          "expected": "当",
+          "reading": "dàng",
+          "clipId": "commons:22fbb8b457cd",
+          "transcript": "包",
+          "transcriptPinyin": "bao1",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+          "expected": "当",
+          "reading": "dàng",
+          "clipId": "commons:b3719a8a423a",
+          "transcript": "当",
+          "transcriptPinyin": "dang1",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+      "hskLevel": 5,
+      "hskIndex": 2467,
+      "simplified": "行",
+      "pinyinDisplay": "háng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+          "expected": "行",
+          "reading": "háng",
+          "clipId": "commons:3bced4c0ff3a",
+          "transcript": "行",
+          "transcriptPinyin": "xing2",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+          "expected": "行",
+          "reading": "háng",
+          "clipId": "commons:eef56e2cc4ab",
+          "transcript": "行",
+          "transcriptPinyin": "xing2",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+      "hskLevel": 5,
+      "hskIndex": 2472,
+      "simplified": "好",
+      "pinyinDisplay": "hào",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+          "expected": "好",
+          "reading": "hào",
+          "clipId": "commons:1727f03c984e",
+          "transcript": "好",
+          "transcriptPinyin": "hao3",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+          "expected": "好",
+          "reading": "hào",
+          "clipId": "commons:bc015e57b216",
+          "transcript": "好",
+          "transcriptPinyin": "hao3",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+      "hskLevel": 5,
+      "hskIndex": 2549,
+      "simplified": "系",
+      "pinyinDisplay": "jì",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+          "expected": "系",
+          "reading": "jì",
+          "clipId": "commons:bd43896b2977",
+          "transcript": "戏",
+          "transcriptPinyin": "xi4",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+          "expected": "系",
+          "reading": "jì",
+          "clipId": "commons:d8dab180d30e",
+          "transcript": "气",
+          "transcriptPinyin": "qi4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+      "hskLevel": 5,
+      "hskIndex": 2657,
+      "simplified": "看",
+      "pinyinDisplay": "kān",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+          "expected": "看",
+          "reading": "kān",
+          "clipId": "commons:506c584d8e8c",
+          "transcript": "看",
+          "transcriptPinyin": "kan4",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+          "expected": "看",
+          "reading": "kān",
+          "clipId": "commons:56d88770516f",
+          "transcript": "看",
+          "transcriptPinyin": "kan4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "0a20dacf-f41a-5a05-b405-b64e973d1209",
+      "hskLevel": 6,
+      "hskIndex": 4008,
+      "simplified": "附件",
+      "pinyinDisplay": "fùjiàn",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "0a20dacf-f41a-5a05-b405-b64e973d1209",
+          "expected": "附件",
+          "reading": "fùjiàn",
+          "clipId": "commons:3e2d27e02591",
+          "transcript": "附近",
+          "transcriptPinyin": "fu4 jin4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "f9866bdf-6931-5502-8136-2843cd575856",
+      "hskLevel": 6,
+      "hskIndex": 4282,
+      "simplified": "结果",
+      "pinyinDisplay": "jiēguǒ",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "f9866bdf-6931-5502-8136-2843cd575856",
+          "expected": "结果",
+          "reading": "jiēguǒ",
+          "clipId": "commons:22a2b7da7055",
+          "transcript": "结果",
+          "transcriptPinyin": "jie2 guo3",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "word",
+          "owner": "f9866bdf-6931-5502-8136-2843cd575856",
+          "expected": "结果",
+          "reading": "jiēguǒ",
+          "clipId": "commons:def9d46b0387",
+          "transcript": "结果",
+          "transcriptPinyin": "jie2 guo3",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "417868c1-a241-5b66-a18c-8b9c6d6aaa19",
+      "hskLevel": 6,
+      "hskIndex": 4323,
+      "simplified": "颈椎",
+      "pinyinDisplay": "jǐngzhuī",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "417868c1-a241-5b66-a18c-8b9c6d6aaa19",
+          "expected": "颈椎",
+          "reading": "jǐngzhuī",
+          "clipId": "commons:b1f55455dd00",
+          "transcript": "颈椎",
+          "transcriptPinyin": "jing3 chui2",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "b1b666d5-7b57-51aa-9068-98c573014199",
+      "hskLevel": 6,
+      "hskIndex": 4354,
+      "simplified": "卷",
+      "pinyinDisplay": "juàn",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "b1b666d5-7b57-51aa-9068-98c573014199",
+          "expected": "卷",
+          "reading": "juàn",
+          "clipId": "commons:1b72aaca9e51",
+          "transcript": "卷",
+          "transcriptPinyin": "juan3",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "40418782-3954-5bfc-be0e-18f1674b6825",
+      "hskLevel": 6,
+      "hskIndex": 4410,
+      "simplified": "落",
+      "pinyinDisplay": "là",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "40418782-3954-5bfc-be0e-18f1674b6825",
+          "expected": "落",
+          "reading": "là",
+          "clipId": "commons:4da87fdef74e",
+          "transcript": "步",
+          "transcriptPinyin": "bu4",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "59a58c66-95e9-5d08-8d6e-0d15c4447fdf",
+      "hskLevel": 6,
+      "hskIndex": 4934,
+      "simplified": "吐",
+      "pinyinDisplay": "tǔ",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "59a58c66-95e9-5d08-8d6e-0d15c4447fdf",
+          "expected": "吐",
+          "reading": "tǔ",
+          "clipId": "commons:0d08088ba157",
+          "transcript": "图",
+          "transcriptPinyin": "tu2",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "6e593e97-f748-5ad7-9436-ef8a7fcff096",
+      "hskLevel": 6,
+      "hskIndex": 5149,
+      "simplified": "一向",
+      "pinyinDisplay": "yíxiàng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "6e593e97-f748-5ad7-9436-ef8a7fcff096",
+          "expected": "一向",
+          "reading": "yíxiàng",
+          "clipId": "commons:818b38f3dbaf",
+          "transcript": "衣箱",
+          "transcriptPinyin": "yi1 xiang1",
+          "verdict": "rejected"
+        }
+      ]
+    },
+    {
+      "entryId": "f8188f75-4620-5db4-a1f2-8d73ef241956",
+      "hskLevel": 6,
+      "hskIndex": 5328,
+      "simplified": "中",
+      "pinyinDisplay": "zhòng",
+      "rejected": [
+        {
+          "kind": "word",
+          "owner": "f8188f75-4620-5db4-a1f2-8d73ef241956",
+          "expected": "中",
+          "reading": "zhòng",
+          "clipId": "commons:5f607e9ec5f7",
+          "transcript": "钟",
+          "transcriptPinyin": "zhong1",
+          "verdict": "rejected"
+        }
+      ]
+    }
+  ],
+  "unresolvedCharacters": [
+    {
+      "glyph": "呀",
+      "reading": "ya",
+      "rejected": [
+        {
+          "kind": "character",
+          "owner": "呀",
+          "expected": "呀",
+          "reading": "ya",
+          "clipId": "commons:89d94eb1171b",
+          "transcript": "亚",
+          "transcriptPinyin": "ya4",
+          "verdict": "rejected"
+        },
+        {
+          "kind": "character",
+          "owner": "呀",
+          "expected": "呀",
+          "reading": "ya",
+          "clipId": "commons:d7b1378fa6fc",
+          "transcript": "压",
+          "transcriptPinyin": "ya1",
+          "verdict": "rejected"
+        }
+      ]
+    }
+  ],
+  "outcomes": [
+    {
+      "kind": "word",
+      "owner": "744f6c57-1f2d-5b0a-8efa-4a3cf90defb1",
+      "expected": "味道",
+      "reading": "wèidào",
+      "clipId": "commons:0001c98b1f9a",
+      "transcript": "味道",
+      "transcriptPinyin": "wei4 dao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a50d0f63-fe80-5438-b348-a95ac6a07bfd",
+      "expected": "公正",
+      "reading": "gōngzhèng",
+      "clipId": "commons:0056ef29a868",
+      "transcript": "公正",
+      "transcriptPinyin": "gong1 zheng4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "138cede4-fdc4-59ab-bdbb-1f25cb380da3",
+      "expected": "重",
+      "reading": "chóng",
+      "clipId": "commons:00c8deaec1ad",
+      "transcript": "重",
+      "transcriptPinyin": "zhong4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "0d3d45d9-66bc-5c6f-8af5-ef62b1114256",
+      "expected": "出示",
+      "reading": "chūshì",
+      "clipId": "commons:01336d2f86c7",
+      "transcript": "出事",
+      "transcriptPinyin": "chu1 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d51e731a-9dc3-5744-95ba-1e88a473b057",
+      "expected": "公主",
+      "reading": "gōngzhǔ",
+      "clipId": "commons:01b379291450",
+      "transcript": "公主",
+      "transcriptPinyin": "gong1 zhu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c657728e-2325-5eab-97d2-0009f45e3842",
+      "expected": "互联网",
+      "reading": "hùliánwǎng",
+      "clipId": "commons:02cbad80ce52",
+      "transcript": "互联网",
+      "transcriptPinyin": "hu4 lian2 wang3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "294b0377-8956-50d3-9b2c-6e84f0026ded",
+      "expected": "名片",
+      "reading": "míngpiàn",
+      "clipId": "commons:02e0209a8e6c",
+      "transcript": "名片",
+      "transcriptPinyin": "ming2 pian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "11da169b-78c5-5868-be3c-62f6beb25cb4",
+      "expected": "打印",
+      "reading": "dǎyìn",
+      "clipId": "commons:063a5be59804",
+      "transcript": "打印",
+      "transcriptPinyin": "da3 yin4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "expected": "还是",
+      "reading": "háishi",
+      "clipId": "commons:06feea936eed",
+      "transcript": "还是",
+      "transcriptPinyin": "hai2 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3bcf6a59-5f3c-5335-a6f1-c40ecb62e10a",
+      "expected": "彩虹",
+      "reading": "cǎihóng",
+      "clipId": "commons:08a15cac1f43",
+      "transcript": "彩虹",
+      "transcriptPinyin": "cai3 hong2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b83f0697-4c70-525d-8c23-f2d3444f3bf8",
+      "expected": "外套",
+      "reading": "wàitào",
+      "clipId": "commons:098db916335a",
+      "transcript": "外套",
+      "transcriptPinyin": "wai4 tao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b6574e2b-f243-5066-bb74-e0f717753885",
+      "expected": "健身",
+      "reading": "jiànshēn",
+      "clipId": "commons:0a95821a5ea1",
+      "transcript": "健身",
+      "transcriptPinyin": "jian4 shen1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9b409902-82d7-5ff8-928a-cc8f3ca5da3b",
+      "expected": "购物",
+      "reading": "gòuwù",
+      "clipId": "commons:0baf1fda56ea",
+      "transcript": "购物",
+      "transcriptPinyin": "gou4 wu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3a64d0d9-d86b-5f98-83f1-13d02167f984",
+      "expected": "信用卡",
+      "reading": "xìnyòngkǎ",
+      "clipId": "commons:0c33457c06e7",
+      "transcript": "信用卡",
+      "transcriptPinyin": "xin4 yong4 ka3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "59a58c66-95e9-5d08-8d6e-0d15c4447fdf",
+      "expected": "吐",
+      "reading": "tǔ",
+      "clipId": "commons:0d08088ba157",
+      "transcript": "图",
+      "transcriptPinyin": "tu2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "a237a77f-1151-58df-aaad-b6a37356db7b",
+      "expected": "背",
+      "reading": "bēi",
+      "clipId": "commons:0da48191f9c6",
+      "transcript": "背",
+      "transcriptPinyin": "bei4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "a25937b4-edb6-5cfb-83f5-85042520adee",
+      "expected": "按摩",
+      "reading": "ànmó",
+      "clipId": "commons:0f15cfd037a3",
+      "transcript": "按摩",
+      "transcriptPinyin": "an4 mo2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a148705d-bb7c-5b93-9036-44f0d22e9b4f",
+      "expected": "聪明",
+      "reading": "cōngmíng",
+      "clipId": "commons:0f93894da9f7",
+      "transcript": "聪明",
+      "transcriptPinyin": "cong1 ming2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "eef74eb5-478f-52cb-9af7-39a98de0f728",
+      "expected": "剑",
+      "reading": "jiàn",
+      "clipId": "commons:0fa7b04eec4d",
+      "transcript": "见",
+      "transcriptPinyin": "jian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "370dd510-96c4-5dd3-98bd-cf9390639942",
+      "expected": "隐私",
+      "reading": "yǐnsī",
+      "clipId": "commons:1037558cfa5b",
+      "transcript": "隐私",
+      "transcriptPinyin": "yin3 si1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a9ff2d66-7359-56b8-baea-fc80fe7a58d3",
+      "expected": "亚洲",
+      "reading": "Yàzhōu",
+      "clipId": "commons:1190eafcdc40",
+      "transcript": "亚洲",
+      "transcriptPinyin": "ya4 zhou1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a50d0f63-fe80-5438-b348-a95ac6a07bfd",
+      "expected": "公正",
+      "reading": "gōngzhèng",
+      "clipId": "commons:12947a86f443",
+      "transcript": "公正",
+      "transcriptPinyin": "gong1 zheng4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ab338cd0-0c2c-5c44-9e95-6907b71bbd0e",
+      "expected": "使",
+      "reading": "shǐ",
+      "clipId": "commons:14b0f5b5d521",
+      "transcript": "实",
+      "transcriptPinyin": "shi2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "91c84838-e29e-5dde-9092-504d062666b9",
+      "expected": "还",
+      "reading": "huán",
+      "clipId": "commons:14d94e3b57b5",
+      "transcript": "还",
+      "transcriptPinyin": "hai2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "a9ff2d66-7359-56b8-baea-fc80fe7a58d3",
+      "expected": "亚洲",
+      "reading": "Yàzhōu",
+      "clipId": "commons:15375e7fc802",
+      "transcript": "亚洲",
+      "transcriptPinyin": "ya4 zhou1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "62b0e87a-22bf-516a-ac62-c314a635dbaa",
+      "expected": "客人",
+      "reading": "kèrén",
+      "clipId": "commons:153b839bf84d",
+      "transcript": "客人",
+      "transcriptPinyin": "ke4 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3791a7ac-9695-58e3-9359-23a02b88aae0",
+      "expected": "占线",
+      "reading": "zhànxiàn",
+      "clipId": "commons:155bb3364b94",
+      "transcript": "战线",
+      "transcriptPinyin": "zhan4 xian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "16a6e38f-58ce-5720-b06f-277d2b155078",
+      "expected": "打包",
+      "reading": "dǎbāo",
+      "clipId": "commons:15a87757d1ee",
+      "transcript": "打包",
+      "transcriptPinyin": "da3 bao1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f59f6ebb-d18b-5cd3-821a-07d19c1dfa6e",
+      "expected": "受不了",
+      "reading": "shòubuliǎo",
+      "clipId": "commons:167d732590db",
+      "transcript": "受不了",
+      "transcriptPinyin": "shou4 bu4 liao3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+      "expected": "好",
+      "reading": "hào",
+      "clipId": "commons:1727f03c984e",
+      "transcript": "好",
+      "transcriptPinyin": "hao3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "75a8abcb-0d6b-5b1b-85e9-d3c93fdd96b0",
+      "expected": "托运",
+      "reading": "tuōyùn",
+      "clipId": "commons:184e814c5f03",
+      "transcript": "托运",
+      "transcriptPinyin": "tuo1 yun4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "318f3332-8116-570a-9980-74dfc7a81bf9",
+      "expected": "钓鱼",
+      "reading": "diàoyú",
+      "clipId": "commons:18a9c44536cd",
+      "transcript": "钓鱼",
+      "transcriptPinyin": "diao4 yu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b1b666d5-7b57-51aa-9068-98c573014199",
+      "expected": "卷",
+      "reading": "juàn",
+      "clipId": "commons:1b72aaca9e51",
+      "transcript": "卷",
+      "transcriptPinyin": "juan3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "9f094909-cafa-570d-bbb6-2caea9480e6e",
+      "expected": "一贯",
+      "reading": "yíguàn",
+      "clipId": "commons:1b7ceaac34a4",
+      "transcript": "一贯",
+      "transcriptPinyin": "yi2 guan4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "28eee372-3ab1-5119-91d2-5ce7cfdff7cc",
+      "expected": "非洲",
+      "reading": "Fēizhōu",
+      "clipId": "commons:1c42eb6d617d",
+      "transcript": "非洲",
+      "transcriptPinyin": "fei1 zhou1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "04570f57-d2de-5566-8f0f-29af72e8e5ec",
+      "expected": "受到",
+      "reading": "shòudào",
+      "clipId": "commons:1d7992e65f11",
+      "transcript": "受导",
+      "transcriptPinyin": "shou4 dao3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "58adb3e9-4bc2-5da2-a798-45f3d2721adc",
+      "expected": "基因",
+      "reading": "jīyīn",
+      "clipId": "commons:1dee0e2c31c4",
+      "transcript": "基因",
+      "transcriptPinyin": "ji1 yin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9231461f-5f90-538d-a0cb-70bcaa6b39a4",
+      "expected": "哇",
+      "reading": "wā",
+      "clipId": "commons:215322f9d59e",
+      "transcript": "挖",
+      "transcriptPinyin": "wa1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f9866bdf-6931-5502-8136-2843cd575856",
+      "expected": "结果",
+      "reading": "jiēguǒ",
+      "clipId": "commons:22a2b7da7055",
+      "transcript": "结果",
+      "transcriptPinyin": "jie2 guo3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+      "expected": "当",
+      "reading": "dàng",
+      "clipId": "commons:22fbb8b457cd",
+      "transcript": "包",
+      "transcriptPinyin": "bao1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "02a3e306-bf3f-5dd7-ba20-3587c5ca63fc",
+      "expected": "关系",
+      "reading": "guānxì",
+      "clipId": "commons:2338e885cb8e",
+      "transcript": "关系",
+      "transcriptPinyin": "guan1 xi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "expected": "上网",
+      "reading": "shàngwǎng",
+      "clipId": "commons:23bffa13c673",
+      "transcript": "上网",
+      "transcriptPinyin": "shang4 wang3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a3892d99-dcc7-58ff-a418-75e319e5d46f",
+      "expected": "方位",
+      "reading": "fāngwèi",
+      "clipId": "commons:23f12c46da77",
+      "transcript": "方位",
+      "transcriptPinyin": "fang1 wei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "92848aba-3676-5ec4-83fc-2b47beeb3973",
+      "expected": "迷路",
+      "reading": "mílù",
+      "clipId": "commons:23fc212cafc9",
+      "transcript": "迷路",
+      "transcriptPinyin": "mi2 lu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e2c3cef0-b446-5240-bf80-d93b41c39a3f",
+      "expected": "值得",
+      "reading": "zhídé",
+      "clipId": "commons:25f88ef8298f",
+      "transcript": "值得",
+      "transcriptPinyin": "zhi2 de5",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "49004caf-6d0b-5f78-86d2-6dc0e3f438b6",
+      "expected": "表格",
+      "reading": "biǎogé",
+      "clipId": "commons:28a42a795548",
+      "transcript": "表格",
+      "transcriptPinyin": "biao3 ge2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1575abfd-d33b-51c4-864b-df56e7fc34a2",
+      "expected": "童话",
+      "reading": "tónghuà",
+      "clipId": "commons:29167e7e5862",
+      "transcript": "童话",
+      "transcriptPinyin": "tong2 hua4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4ceaeb0b-8fdc-453e-a1fd-c88c7555bb4f",
+      "expected": "说话",
+      "reading": "shuōhuà",
+      "clipId": "commons:2961ebc42d45",
+      "transcript": "说话",
+      "transcriptPinyin": "shuo1 hua4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9c442b3c-ebf8-5516-a0a1-9b8dd88d7235",
+      "expected": "乘坐",
+      "reading": "chéngzuò",
+      "clipId": "commons:2b694c724278",
+      "transcript": "乘坐",
+      "transcriptPinyin": "cheng2 zuo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "39b7ec74-40d7-5fda-a625-3a78622719bb",
+      "expected": "生意",
+      "reading": "shēngyi",
+      "clipId": "commons:2b9ad3368d7d",
+      "transcript": "生意",
+      "transcriptPinyin": "sheng1 yi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3f116233-929d-5205-8b49-ab54a2d80e7d",
+      "expected": "账户",
+      "reading": "zhànghù",
+      "clipId": "commons:2c891b777124",
+      "transcript": "账户",
+      "transcriptPinyin": "zhang4 hu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7f64a5f6-cb4a-5e82-8809-875640994e31",
+      "expected": "种",
+      "reading": "zhòng",
+      "clipId": "commons:2e537ddb3987",
+      "transcript": "中",
+      "transcriptPinyin": "zhong1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "b95b5201-8da0-55bc-a388-b922614cde94",
+      "expected": "唯一",
+      "reading": "wéiyī",
+      "clipId": "commons:2e6265c8d6fd",
+      "transcript": "唯一",
+      "transcriptPinyin": "wei2 yi1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2ed5d019-02ae-4274-83ce-6b5231110fd2",
+      "expected": "出租车",
+      "reading": "chūzūchē",
+      "clipId": "commons:3068de2eca38",
+      "transcript": "出租车",
+      "transcriptPinyin": "chu1 zu1 che1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d29a9bd8-d434-5797-b96c-86946faf1649",
+      "expected": "兄弟",
+      "reading": "xiōngdì",
+      "clipId": "commons:30721a2f92c6",
+      "transcript": "兄弟",
+      "transcriptPinyin": "xiong1 di4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "36f6deaa-3dc2-5cc5-b7d8-bc26628ff809",
+      "expected": "公寓",
+      "reading": "gōngyù",
+      "clipId": "commons:30dd933274de",
+      "transcript": "公寓",
+      "transcriptPinyin": "gong1 yu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7f64a5f6-cb4a-5e82-8809-875640994e31",
+      "expected": "种",
+      "reading": "zhòng",
+      "clipId": "commons:34f903a9459e",
+      "transcript": "种",
+      "transcriptPinyin": "zhong3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "84eeda8d-c47a-546e-a389-412baba533bb",
+      "expected": "彩票",
+      "reading": "cǎipiào",
+      "clipId": "commons:36af6263535a",
+      "transcript": "机器彩票",
+      "transcriptPinyin": "ji1 qi4 cai3 piao4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "9231461f-5f90-538d-a0cb-70bcaa6b39a4",
+      "expected": "哇",
+      "reading": "wā",
+      "clipId": "commons:36ff4c857dfd",
+      "transcript": "挖",
+      "transcriptPinyin": "wa1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a00a5285-6a3c-5227-ba04-b7d25ce8b579",
+      "expected": "报警",
+      "reading": "bàojǐng",
+      "clipId": "commons:376067e9cb4d",
+      "transcript": "报警",
+      "transcriptPinyin": "bao4 jing3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b15201af-69db-521c-92b7-c257319deed0",
+      "expected": "小吃",
+      "reading": "xiǎochī",
+      "clipId": "commons:39c6c2f0aff0",
+      "transcript": "小吃",
+      "transcriptPinyin": "xiao3 chi1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ab338cd0-0c2c-5c44-9e95-6907b71bbd0e",
+      "expected": "使",
+      "reading": "shǐ",
+      "clipId": "commons:3a558a91f456",
+      "transcript": "屎",
+      "transcriptPinyin": "shi3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+      "expected": "行",
+      "reading": "háng",
+      "clipId": "commons:3bced4c0ff3a",
+      "transcript": "行",
+      "transcriptPinyin": "xing2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "e7067d12-8a3f-509c-97f0-cf65d13ff25a",
+      "expected": "职位",
+      "reading": "zhíwèi",
+      "clipId": "commons:3d3aff804505",
+      "transcript": "职位",
+      "transcriptPinyin": "zhi2 wei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "0a20dacf-f41a-5a05-b405-b64e973d1209",
+      "expected": "附件",
+      "reading": "fùjiàn",
+      "clipId": "commons:3e2d27e02591",
+      "transcript": "附近",
+      "transcriptPinyin": "fu4 jin4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "91c84838-e29e-5dde-9092-504d062666b9",
+      "expected": "还",
+      "reading": "huán",
+      "clipId": "commons:3ede92ca707c",
+      "transcript": "排",
+      "transcriptPinyin": "pai2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "95ece18b-f46b-504f-9c91-aad5d62c28bc",
+      "expected": "总裁",
+      "reading": "zǒngcái",
+      "clipId": "commons:3f074f25ba85",
+      "transcript": "总裁",
+      "transcriptPinyin": "zong3 cai2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e2984d57-d6e5-5d89-84cb-53710abd7c9e",
+      "expected": "夫人",
+      "reading": "fūrén",
+      "clipId": "commons:3f9713aa610b",
+      "transcript": "夫人",
+      "transcriptPinyin": "fu1 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c3f728dd-7e47-4242-a827-3c3767819130",
+      "expected": "上面",
+      "reading": "shàngmiàn",
+      "clipId": "commons:41a4d9574eaa",
+      "transcript": "上面",
+      "transcriptPinyin": "shang4 mian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "295be093-bcdc-54dc-b3cd-a8ff5c879829",
+      "expected": "不过",
+      "reading": "búguò",
+      "clipId": "commons:428189fd2199",
+      "transcript": "不过",
+      "transcriptPinyin": "bu4 guo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c657728e-2325-5eab-97d2-0009f45e3842",
+      "expected": "互联网",
+      "reading": "hùliánwǎng",
+      "clipId": "commons:4430cc9f97a8",
+      "transcript": "互联网",
+      "transcriptPinyin": "hu4 lian2 wang3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e0e01f97-c771-592e-9136-7983c6eed163",
+      "expected": "地方",
+      "reading": "dìfāng",
+      "clipId": "commons:4786fca90554",
+      "transcript": "地方",
+      "transcriptPinyin": "di4 fang1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8ed85f5d-67cb-4bb4-8f1f-18935a4ee3f9",
+      "expected": "开车",
+      "reading": "kāichē",
+      "clipId": "commons:4bd1f871989c",
+      "transcript": "开车",
+      "transcriptPinyin": "kai1 che1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "956a9e7d-4fd7-5266-b493-1b0ca820a451",
+      "expected": "尺寸",
+      "reading": "chǐcùn",
+      "clipId": "commons:4d42a0652222",
+      "transcript": "尺寸",
+      "transcriptPinyin": "chi3 cun4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "40418782-3954-5bfc-be0e-18f1674b6825",
+      "expected": "落",
+      "reading": "là",
+      "clipId": "commons:4da87fdef74e",
+      "transcript": "步",
+      "transcriptPinyin": "bu4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "94782435-12d0-5e48-8728-450966936593",
+      "expected": "冲动",
+      "reading": "chōngdòng",
+      "clipId": "commons:4ec2eb539aad",
+      "transcript": "冲动",
+      "transcriptPinyin": "chong1 dong4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d45836f1-f2b9-5d98-bc28-5cfb1cd3be38",
+      "expected": "堵车",
+      "reading": "dǔchē",
+      "clipId": "commons:4f371a7a215e",
+      "transcript": "堵车",
+      "transcriptPinyin": "du3 che1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+      "expected": "看",
+      "reading": "kān",
+      "clipId": "commons:506c584d8e8c",
+      "transcript": "看",
+      "transcriptPinyin": "kan4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "f2ff9687-f0ec-5db2-aa72-d449dc4f4f54",
+      "expected": "活泼",
+      "reading": "huópō",
+      "clipId": "commons:5183ce19aa44",
+      "transcript": "活泼",
+      "transcriptPinyin": "huo2 po1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3a64d0d9-d86b-5f98-83f1-13d02167f984",
+      "expected": "信用卡",
+      "reading": "xìnyòngkǎ",
+      "clipId": "commons:5189e0bead35",
+      "transcript": "信用卡",
+      "transcriptPinyin": "xin4 yong4 ka3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2320a04e-712f-5e7f-a186-003f0ef53ebb",
+      "expected": "恭喜",
+      "reading": "gōngxǐ",
+      "clipId": "commons:5215f5979709",
+      "transcript": "恭喜",
+      "transcriptPinyin": "gong1 xi3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "882951fc-848a-5556-b0ea-237d64fd083c",
+      "expected": "一流",
+      "reading": "yīliú",
+      "clipId": "commons:535d49c87aee",
+      "transcript": "一流",
+      "transcriptPinyin": "yi4 liu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "04d86390-329d-5943-93e2-13aff5358009",
+      "expected": "透露",
+      "reading": "tòulù",
+      "clipId": "commons:53f2aca28d1b",
+      "transcript": "透露",
+      "transcriptPinyin": "tou4 lu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "6d18d814-1271-522a-aef8-609ce1463cfa",
+      "expected": "羽绒服",
+      "reading": "yǔróngfú",
+      "clipId": "commons:5536f5ccfabf",
+      "transcript": "羽绒服",
+      "transcriptPinyin": "yu3 rong2 fu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "58066796-f5fb-5e90-bdd2-df429be8e6f4",
+      "expected": "看",
+      "reading": "kān",
+      "clipId": "commons:56d88770516f",
+      "transcript": "看",
+      "transcriptPinyin": "kan4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "expected": "及",
+      "reading": "jí",
+      "clipId": "commons:58c9b448cf29",
+      "transcript": "鸡",
+      "transcriptPinyin": "ji1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "986fd32e-5a05-51fe-8d1d-bf1e608301ce",
+      "expected": "码头",
+      "reading": "mǎtóu",
+      "clipId": "commons:590f05a8ff74",
+      "transcript": "码头",
+      "transcriptPinyin": "ma3 tou2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "618cdb59-2240-5264-b6b9-5f0556621d44",
+      "expected": "大象",
+      "reading": "dàxiàng",
+      "clipId": "commons:5a79250fa52f",
+      "transcript": "大象",
+      "transcriptPinyin": "da4 xiang4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "85c1106e-4116-5fe1-9ebf-a2af8abf732e",
+      "expected": "打折",
+      "reading": "dǎzhé",
+      "clipId": "commons:5ad75955bda0",
+      "transcript": "打折",
+      "transcriptPinyin": "da3 zhe2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3cd99a54-5b78-5082-854c-8c1e3e844654",
+      "expected": "删除",
+      "reading": "shānchú",
+      "clipId": "commons:5bd714965e52",
+      "transcript": "删除",
+      "transcriptPinyin": "shan1 chu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "960eeb9c-6af7-577d-adba-8ec1925fe409",
+      "expected": "子",
+      "reading": "zi",
+      "clipId": "commons:5be88c00b231",
+      "transcript": "子",
+      "transcriptPinyin": "zi5",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "expected": "拼音",
+      "reading": "pīnyīn",
+      "clipId": "commons:5c2f623c244a",
+      "transcript": "拼音",
+      "transcriptPinyin": "pin1 yin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "38c67946-3852-597b-ab15-cac0209b1304",
+      "expected": "回报",
+      "reading": "huíbào",
+      "clipId": "commons:5ca4fea60412",
+      "transcript": "回报",
+      "transcriptPinyin": "hui2 bao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2c7e872c-8de6-5111-88a8-bf461d4636a3",
+      "expected": "排练",
+      "reading": "páiliàn",
+      "clipId": "commons:5d949960784d",
+      "transcript": "排练",
+      "transcriptPinyin": "pai2 lian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1cea09e5-ac83-4759-93db-0273d15b63b3",
+      "expected": "家人",
+      "reading": "jiārén",
+      "clipId": "commons:5e056f9a92ab",
+      "transcript": "家人",
+      "transcriptPinyin": "jia1 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e2984d57-d6e5-5d89-84cb-53710abd7c9e",
+      "expected": "夫人",
+      "reading": "fūrén",
+      "clipId": "commons:5e89fad83aa4",
+      "transcript": "夫人",
+      "transcriptPinyin": "fu1 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b31b3661-a5f2-5ea8-b557-f25e6d14d19c",
+      "expected": "势力",
+      "reading": "shìlì",
+      "clipId": "commons:5ebb10427d69",
+      "transcript": "势力",
+      "transcriptPinyin": "shi4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f8188f75-4620-5db4-a1f2-8d73ef241956",
+      "expected": "中",
+      "reading": "zhòng",
+      "clipId": "commons:5f607e9ec5f7",
+      "transcript": "钟",
+      "transcriptPinyin": "zhong1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "8ad06b43-27f0-5dfc-a0d3-f6faaca1be74",
+      "expected": "商务",
+      "reading": "shāngwù",
+      "clipId": "commons:5fc5895aa454",
+      "transcript": "商务",
+      "transcriptPinyin": "shang1 wu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "910fa71e-7bfb-5d20-b66c-b101ec948fec",
+      "expected": "志愿者",
+      "reading": "zhìyuànzhě",
+      "clipId": "commons:5fe716fe64d9",
+      "transcript": "志愿者",
+      "transcriptPinyin": "zhi4 yuan4 zhe3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "6979f4f0-ae10-51f7-b78a-4abc8bea15c0",
+      "expected": "免疫",
+      "reading": "miǎnyì",
+      "clipId": "commons:606b1f2f69d5",
+      "transcript": "免疫",
+      "transcriptPinyin": "mian3 yi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b95b5201-8da0-55bc-a388-b922614cde94",
+      "expected": "唯一",
+      "reading": "wéiyī",
+      "clipId": "commons:60bbeda04be4",
+      "transcript": "回忆",
+      "transcriptPinyin": "hui2 yi4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "1b818c9b-113b-5a1a-bc37-5181838272bd",
+      "expected": "投诉",
+      "reading": "tóusù",
+      "clipId": "commons:60db4b32e598",
+      "transcript": "投诉",
+      "transcriptPinyin": "tou2 su4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "385b60c9-0384-4e93-806f-2ce231ee9d07",
+      "expected": "红色",
+      "reading": "hóngsè",
+      "clipId": "commons:62c20f54c2e4",
+      "transcript": "红色",
+      "transcriptPinyin": "hong2 se4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "cec2adfc-74bd-51c0-ba8c-837b0aa1b9e9",
+      "expected": "头",
+      "reading": "tou",
+      "clipId": "commons:63ed8e0f49ff",
+      "transcript": "投",
+      "transcriptPinyin": "tou2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b6574e2b-f243-5066-bb74-e0f717753885",
+      "expected": "健身",
+      "reading": "jiànshēn",
+      "clipId": "commons:6446692db503",
+      "transcript": "健身",
+      "transcriptPinyin": "jian4 shen1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "82b531ee-23b4-57c2-b090-0d6fbf988633",
+      "expected": "密码",
+      "reading": "mìmǎ",
+      "clipId": "commons:66c08f9a0d9e",
+      "transcript": "密码",
+      "transcriptPinyin": "mi4 ma3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a3a1c26d-3dee-5d76-b1c3-fc287f99781a",
+      "expected": "人家",
+      "reading": "rénjia",
+      "clipId": "commons:67aa64c602d2",
+      "transcript": "人家",
+      "transcriptPinyin": "ren2 jia1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9860250e-3793-5408-80ea-cc9ff1a7c2bb",
+      "expected": "硕士",
+      "reading": "shuòshì",
+      "clipId": "commons:68bc503d24d2",
+      "transcript": "硕士",
+      "transcriptPinyin": "shuo4 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "39c234f7-ec84-52bb-a21b-8a44decaf86f",
+      "expected": "网站",
+      "reading": "wǎngzhàn",
+      "clipId": "commons:6aaf2d580c3c",
+      "transcript": "网站",
+      "transcriptPinyin": "wang3 zhan4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "217c5a8d-2986-5788-8f0e-476d0284d546",
+      "expected": "话筒",
+      "reading": "huàtǒng",
+      "clipId": "commons:6b51195324ff",
+      "transcript": "话筒",
+      "transcriptPinyin": "hua4 tong3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e110c196-2775-5089-8d89-eedadc43ed17",
+      "expected": "尴尬",
+      "reading": "gāngà",
+      "clipId": "commons:6bb402b88912",
+      "transcript": "尴尬",
+      "transcriptPinyin": "gan1 ga4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9997ec82-5772-5dee-9152-7ae4e4d8cbc0",
+      "expected": "策略",
+      "reading": "cèlüè",
+      "clipId": "commons:6c40f1b2bcea",
+      "transcript": "策略",
+      "transcriptPinyin": "ce4 lüe4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "708553ba-94a3-52ca-94b3-8fc0d469a8f3",
+      "expected": "热门",
+      "reading": "rèmén",
+      "clipId": "commons:6cc09928bb43",
+      "transcript": "热门",
+      "transcriptPinyin": "re4 men2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "expected": "中介",
+      "reading": "zhōngjiè",
+      "clipId": "commons:6d7a72af7adc",
+      "transcript": "中介",
+      "transcriptPinyin": "zhong1 jie4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ae527346-4b85-5e50-911e-39e3d6368cd5",
+      "expected": "特长",
+      "reading": "tècháng",
+      "clipId": "commons:6f2291a11265",
+      "transcript": "特长",
+      "transcriptPinyin": "te4 chang2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9db5e978-a3c0-5cd8-8016-af07b3dbf9a0",
+      "expected": "展示",
+      "reading": "zhǎnshì",
+      "clipId": "commons:6fc0d8c264eb",
+      "transcript": "展示",
+      "transcriptPinyin": "zhan3 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c4373e13-3213-5ce0-ac37-1b76e9ed2bda",
+      "expected": "分手",
+      "reading": "fēnshǒu",
+      "clipId": "commons:6fd7abd10e25",
+      "transcript": "分手",
+      "transcriptPinyin": "fen1 shou3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b753da4c-154c-5fa4-b053-5a73906f82af",
+      "expected": "拼音",
+      "reading": "pīnyīn",
+      "clipId": "commons:7288c2229ec7",
+      "transcript": "拼音",
+      "transcriptPinyin": "pin1 yin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "expected": "下载",
+      "reading": "xiàzài",
+      "clipId": "commons:735b36dadef3",
+      "transcript": "下载",
+      "transcriptPinyin": "xia4 zai4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e0e01f97-c771-592e-9136-7983c6eed163",
+      "expected": "地方",
+      "reading": "dìfāng",
+      "clipId": "commons:73eef9842b4c",
+      "transcript": "地方",
+      "transcriptPinyin": "di4 fang1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "expected": "过",
+      "reading": "guo",
+      "clipId": "commons:76362f4cb3a0",
+      "transcript": "过",
+      "transcriptPinyin": "guo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "49c742b7-9115-546e-9b88-ae9885c6853f",
+      "expected": "试图",
+      "reading": "shìtú",
+      "clipId": "commons:764adebe3bf8",
+      "transcript": "试图",
+      "transcriptPinyin": "shi4 tu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e765e374-7407-48a1-8bdd-2128f7bcc70e",
+      "expected": "星期天",
+      "reading": "xīngqītiān",
+      "clipId": "commons:7917660bb464",
+      "transcript": "星期天",
+      "transcriptPinyin": "xing1 qi1 tian1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "0f5bd600-0d69-5a38-8db0-0fd6b4b3c038",
+      "expected": "棍",
+      "reading": "gùn",
+      "clipId": "commons:7d619e14df54",
+      "transcript": "棍",
+      "transcriptPinyin": "gun4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "dddda89c-bc4a-52b1-b2ec-7e44b0cff361",
+      "expected": "加油站",
+      "reading": "jiāyóuzhàn",
+      "clipId": "commons:7dbfc5a6e087",
+      "transcript": "加油站",
+      "transcriptPinyin": "jia1 you2 zhan4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "expected": "过",
+      "reading": "guo",
+      "clipId": "commons:7dd634066293",
+      "transcript": "过",
+      "transcriptPinyin": "guo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "13c8241e-b803-5b90-adc5-df83a28b806b",
+      "expected": "夏令营",
+      "reading": "xiàlìngyíng",
+      "clipId": "commons:7dfdde87e0b2",
+      "transcript": "夏令营",
+      "transcriptPinyin": "xia4 ling4 ying2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "49c742b7-9115-546e-9b88-ae9885c6853f",
+      "expected": "试图",
+      "reading": "shìtú",
+      "clipId": "commons:7feda3a2af27",
+      "transcript": "试图",
+      "transcriptPinyin": "shi4 tu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e77b9dd9-fc23-5390-a9cc-739d30ef3aa7",
+      "expected": "午餐",
+      "reading": "wǔcān",
+      "clipId": "commons:8096c51de4f1",
+      "transcript": "午餐",
+      "transcriptPinyin": "wu3 can1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "744f6c57-1f2d-5b0a-8efa-4a3cf90defb1",
+      "expected": "味道",
+      "reading": "wèidào",
+      "clipId": "commons:8133b925cc93",
+      "transcript": "味道",
+      "transcriptPinyin": "wei4 dao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "6e593e97-f748-5ad7-9436-ef8a7fcff096",
+      "expected": "一向",
+      "reading": "yíxiàng",
+      "clipId": "commons:818b38f3dbaf",
+      "transcript": "衣箱",
+      "transcriptPinyin": "yi1 xiang1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "9a4c6bd4-90bd-5deb-84a5-2fab212c2187",
+      "expected": "压岁钱",
+      "reading": "yāsuìqián",
+      "clipId": "commons:820767712d13",
+      "transcript": "压岁钱",
+      "transcriptPinyin": "ya1 sui4 qian2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "034c9fa9-7a09-427c-a2d7-4d2e95e861c0",
+      "expected": "生日",
+      "reading": "shēngrì",
+      "clipId": "commons:8217796b3bea",
+      "transcript": "生日",
+      "transcriptPinyin": "sheng1 ri4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7cd5a76c-cc07-5966-944b-0c2508090644",
+      "expected": "皮鞋",
+      "reading": "píxié",
+      "clipId": "commons:83a3a32fe461",
+      "transcript": "皮鞋",
+      "transcriptPinyin": "pi2 xie2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "expected": "上网",
+      "reading": "shàngwǎng",
+      "clipId": "commons:8457666bc6ac",
+      "transcript": "上网",
+      "transcriptPinyin": "shang4 wang3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ceade4e0-5a5d-51e6-a1a0-6a5896c80eeb",
+      "expected": "打工",
+      "reading": "dǎgōng",
+      "clipId": "commons:846a31cc637e",
+      "transcript": "打工",
+      "transcriptPinyin": "da3 gong1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5adc8ab3-b1c5-4f5a-a4ec-f8d184f0cce1",
+      "expected": "早上",
+      "reading": "zǎoshang",
+      "clipId": "commons:8623573f59d2",
+      "transcript": "早上",
+      "transcriptPinyin": "zao3 shang4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2db59ce1-023d-59d5-bdf2-ee3d1931206d",
+      "expected": "目的",
+      "reading": "mùdì",
+      "clipId": "commons:86597b54fd7f",
+      "transcript": "目的",
+      "transcriptPinyin": "mu4 di4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "84eeda8d-c47a-546e-a389-412baba533bb",
+      "expected": "彩票",
+      "reading": "cǎipiào",
+      "clipId": "commons:8678496605f8",
+      "transcript": "彩票",
+      "transcriptPinyin": "cai3 piao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "呀",
+      "expected": "呀",
+      "reading": "ya",
+      "clipId": "commons:89d94eb1171b",
+      "transcript": "亚",
+      "transcriptPinyin": "ya4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "e9997dd7-f1b9-56c0-a78a-9aa3ab46f357",
+      "expected": "屏幕",
+      "reading": "píngmù",
+      "clipId": "commons:89f31691c022",
+      "transcript": "屏幕",
+      "transcriptPinyin": "ping2 mu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e42d9c89-b317-5b2d-b032-540e4577b1ff",
+      "expected": "别人",
+      "reading": "biérén",
+      "clipId": "commons:8a3426be8156",
+      "transcript": "别人",
+      "transcriptPinyin": "bie2 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2619f3bf-a6c2-490c-9f0b-dd529ee29746",
+      "expected": "中国",
+      "reading": "Zhōngguó",
+      "clipId": "commons:8d01b49c2935",
+      "transcript": "中国",
+      "transcriptPinyin": "zhong1 guo2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b5a9457b-2f03-5799-9400-63ce7ee3909f",
+      "expected": "气质",
+      "reading": "qìzhì",
+      "clipId": "commons:8d17cbca73d5",
+      "transcript": "气质",
+      "transcriptPinyin": "qi4 zhi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1683122e-8f8d-5649-adc6-ef90bab9c210",
+      "expected": "迷人",
+      "reading": "mírén",
+      "clipId": "commons:8e7f3c152296",
+      "transcript": "迷人",
+      "transcriptPinyin": "mi2 ren2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "be86fd08-1bcd-4198-b856-d6a9e0373e12",
+      "expected": "绿茶",
+      "reading": "lǜchá",
+      "clipId": "commons:8ee012657de2",
+      "transcript": "绿茶",
+      "transcriptPinyin": "lü4 cha2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1b818c9b-113b-5a1a-bc37-5181838272bd",
+      "expected": "投诉",
+      "reading": "tóusù",
+      "clipId": "commons:91311fe93a81",
+      "transcript": "投诉",
+      "transcriptPinyin": "tou2 su4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "cc7fe6ec-8f03-59e0-8eb9-739050299ece",
+      "expected": "胃口",
+      "reading": "wèikǒu",
+      "clipId": "commons:91f7a4ef2eb8",
+      "transcript": "胃口",
+      "transcriptPinyin": "wei4 kou3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "138cede4-fdc4-59ab-bdbb-1f25cb380da3",
+      "expected": "重",
+      "reading": "chóng",
+      "clipId": "commons:9346fde093c8",
+      "transcript": "虫",
+      "transcriptPinyin": "chong2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "expected": "客户",
+      "reading": "kèhù",
+      "clipId": "commons:95b3aa6c8866",
+      "transcript": "客户",
+      "transcriptPinyin": "ke4 hu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "80f3c1fa-83e0-4b8e-9e07-df69e67ba4b3",
+      "expected": "下雨",
+      "reading": "xià yǔ",
+      "clipId": "commons:9744ed16d16a",
+      "transcript": "下雨",
+      "transcriptPinyin": "xia4 yu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "33eceecd-7d6d-5a3b-bb80-f32e2b1556c8",
+      "expected": "公元",
+      "reading": "gōngyuán",
+      "clipId": "commons:98fd474cbf7c",
+      "transcript": "公园",
+      "transcriptPinyin": "gong1 yuan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "df38dc87-e873-5c66-a30e-82e35e71ce58",
+      "expected": "转",
+      "reading": "zhuǎn",
+      "clipId": "commons:99f4a603f6b7",
+      "transcript": "爪子",
+      "transcriptPinyin": "zhua3 zi5",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "ea650ecb-2ada-525b-b855-5e538992505b",
+      "expected": "偶像",
+      "reading": "ǒuxiàng",
+      "clipId": "commons:9a485f40368d",
+      "transcript": "偶像",
+      "transcriptPinyin": "ou3 xiang4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "882951fc-848a-5556-b0ea-237d64fd083c",
+      "expected": "一流",
+      "reading": "yīliú",
+      "clipId": "commons:9b5a9edef97b",
+      "transcript": "一流",
+      "transcriptPinyin": "yi4 liu2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c99777e3-547d-5489-ad04-abe958283f34",
+      "expected": "着火",
+      "reading": "zháohuǒ",
+      "clipId": "commons:9bd6d1d28a59",
+      "transcript": "着火",
+      "transcriptPinyin": "zhao2 huo3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4000e359-b626-5e04-8444-9c493653db03",
+      "expected": "不耐烦",
+      "reading": "bú nàifán",
+      "clipId": "commons:9c0a319b3eb1",
+      "transcript": "无奈烦",
+      "transcriptPinyin": "wu2 nai4 fan2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "3adc4c26-3401-5866-91be-e08cbc461d1f",
+      "expected": "长辈",
+      "reading": "zhǎngbèi",
+      "clipId": "commons:9c5541eb6a7d",
+      "transcript": "长辈",
+      "transcriptPinyin": "zhang3 bei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8ac3e237-733f-5d46-a788-1f15902420ec",
+      "expected": "应聘",
+      "reading": "yìngpìn",
+      "clipId": "commons:9d23d3bee8cf",
+      "transcript": "应聘",
+      "transcriptPinyin": "ying4 pin4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "23d64a8e-e5a6-5856-8639-a453ec0bafe3",
+      "expected": "中介",
+      "reading": "zhōngjiè",
+      "clipId": "commons:a006929c7b6d",
+      "transcript": "中介",
+      "transcriptPinyin": "zhong1 jie4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d3a8aa24-c387-524b-b3ff-9e6ae3c217ed",
+      "expected": "倒",
+      "reading": "dào",
+      "clipId": "commons:a106308bb311",
+      "transcript": "到",
+      "transcriptPinyin": "dao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1d9b84d7-c340-58f6-b313-bbe314678d65",
+      "expected": "员工",
+      "reading": "yuángōng",
+      "clipId": "commons:a1fccd9b1f60",
+      "transcript": "员工",
+      "transcriptPinyin": "yuan2 gong1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+      "expected": "你好",
+      "reading": "nǐ hǎo",
+      "clipId": "commons:a364a38d8f7c",
+      "transcript": "你好",
+      "transcriptPinyin": "ni3 hao3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e2be252f-6196-50a4-b1ce-dbf5539318f8",
+      "expected": "听力",
+      "reading": "tīnglì",
+      "clipId": "commons:a49c9bdc51d5",
+      "transcript": "听力",
+      "transcriptPinyin": "ting1 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9c442b3c-ebf8-5516-a0a1-9b8dd88d7235",
+      "expected": "乘坐",
+      "reading": "chéngzuò",
+      "clipId": "commons:a52cda456a89",
+      "transcript": "乘坐",
+      "transcriptPinyin": "cheng2 zuo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ceade4e0-5a5d-51e6-a1a0-6a5896c80eeb",
+      "expected": "打工",
+      "reading": "dǎgōng",
+      "clipId": "commons:a65a95d050bb",
+      "transcript": "打工",
+      "transcriptPinyin": "da3 gong1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "de7f7dea-036d-5c2d-8e85-1517ccfea966",
+      "expected": "合影",
+      "reading": "héyǐng",
+      "clipId": "commons:a6c8b0242bf7",
+      "transcript": "合影",
+      "transcriptPinyin": "he2 ying3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1478c8aa-7ac3-5cd6-bab2-ddc2d57ecd2f",
+      "expected": "网络",
+      "reading": "wǎngluò",
+      "clipId": "commons:a73ea3f621e5",
+      "transcript": "网络",
+      "transcriptPinyin": "wang3 luo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "90934821-1a0c-51c3-8056-caba94b3cd6e",
+      "expected": "下载",
+      "reading": "xiàzài",
+      "clipId": "commons:aaf27acdf56c",
+      "transcript": "下载",
+      "transcriptPinyin": "xia4 zai4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "58d83241-e73a-5d95-8348-78ffe8408d1e",
+      "expected": "空",
+      "reading": "kòng",
+      "clipId": "commons:ab9a6e4feae0",
+      "transcript": "空",
+      "transcriptPinyin": "kong1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "38c67946-3852-597b-ab15-cac0209b1304",
+      "expected": "回报",
+      "reading": "huíbào",
+      "clipId": "commons:ab9d5faa02af",
+      "transcript": "回报",
+      "transcriptPinyin": "hui2 bao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9095a3d5-d267-5c65-aaf2-a27d592f3707",
+      "expected": "分开",
+      "reading": "fēnkāi",
+      "clipId": "commons:abd9090743ad",
+      "transcript": "分开",
+      "transcriptPinyin": "fen1 kai1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "59221f04-4c85-5d44-a002-c44eb7ad62aa",
+      "expected": "词语",
+      "reading": "cíyǔ",
+      "clipId": "commons:ac2cc883f4ce",
+      "transcript": "词语",
+      "transcriptPinyin": "ci2 yu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8aec1ff4-d992-500a-b2d9-deb7cec1cc1e",
+      "expected": "笔记本",
+      "reading": "bǐjìběn",
+      "clipId": "commons:ad0e9ba6475a",
+      "transcript": "笔记本",
+      "transcriptPinyin": "bi3 ji4 ben3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8c774fc7-ea01-51dd-a57d-455441efb224",
+      "expected": "摄氏度",
+      "reading": "shèshìdù",
+      "clipId": "commons:afd99ff2259f",
+      "transcript": "测试度",
+      "transcriptPinyin": "ce4 shi4 du4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "417868c1-a241-5b66-a18c-8b9c6d6aaa19",
+      "expected": "颈椎",
+      "reading": "jǐngzhuī",
+      "clipId": "commons:b1f55455dd00",
+      "transcript": "颈椎",
+      "transcriptPinyin": "jing3 chui2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "ea6d3aad-23e1-5dc7-b91a-059aa7e3e5d1",
+      "expected": "干",
+      "reading": "gān",
+      "clipId": "commons:b2ec173757db",
+      "transcript": "杠",
+      "transcriptPinyin": "gang1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "e072c9d6-6bc8-575e-838f-a6049e812dcf",
+      "expected": "内涵",
+      "reading": "nèihán",
+      "clipId": "commons:b306e422d259",
+      "transcript": "内涵",
+      "transcriptPinyin": "nei4 han2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b1f38513-3021-5848-be78-4abc77b32fe9",
+      "expected": "客户",
+      "reading": "kèhù",
+      "clipId": "commons:b315bd0bf67b",
+      "transcript": "客户",
+      "transcriptPinyin": "ke4 hu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "368abde4-46f0-5802-ad71-c775f63f36ea",
+      "expected": "嘉宾",
+      "reading": "jiābīn",
+      "clipId": "commons:b34297949ac7",
+      "transcript": "嘉宾",
+      "transcriptPinyin": "jia1 bin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1bb4d13a-214e-5f12-9f1d-7fdc38b409e2",
+      "expected": "当",
+      "reading": "dàng",
+      "clipId": "commons:b3719a8a423a",
+      "transcript": "当",
+      "transcriptPinyin": "dang1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "2619f3bf-a6c2-490c-9f0b-dd529ee29746",
+      "expected": "中国",
+      "reading": "Zhōngguó",
+      "clipId": "commons:b54ce0c7e805",
+      "transcript": "中国",
+      "transcriptPinyin": "zhong1 guo2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c0260640-763c-5679-9cb9-e398d99c47da",
+      "expected": "巧克力",
+      "reading": "qiǎokèlì",
+      "clipId": "commons:b5723d331472",
+      "transcript": "巧克力",
+      "transcriptPinyin": "qiao3 ke4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "41a21e3f-9ca0-592c-b194-ab3b5a0a9047",
+      "expected": "家具",
+      "reading": "jiājù",
+      "clipId": "commons:b5ddc709b919",
+      "transcript": "家具",
+      "transcriptPinyin": "jia1 ju4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "295be093-bcdc-54dc-b3cd-a8ff5c879829",
+      "expected": "不过",
+      "reading": "búguò",
+      "clipId": "commons:b60891f76cfd",
+      "transcript": "无过",
+      "transcriptPinyin": "wu2 guo4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "73f39a58-bf9a-40ad-b7f3-0536a32f4b29",
+      "expected": "打电话",
+      "reading": "dǎ diànhuà",
+      "clipId": "commons:b71c1b86748d",
+      "transcript": "打电话",
+      "transcriptPinyin": "da3 dian4 hua4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2a832bcc-5e97-4e8b-8c6d-24ff9971abc7",
+      "expected": "手机",
+      "reading": "shǒujī",
+      "clipId": "commons:b7bc28543bff",
+      "transcript": "手机",
+      "transcriptPinyin": "shou3 ji1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "16136e1b-74c2-5d44-aa01-88a14a867a9f",
+      "expected": "卫生间",
+      "reading": "wèishēngjiān",
+      "clipId": "commons:b7d13dcc559b",
+      "transcript": "卫生巾",
+      "transcriptPinyin": "wei4 sheng1 jin1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "33eceecd-7d6d-5a3b-bb80-f32e2b1556c8",
+      "expected": "公元",
+      "reading": "gōngyuán",
+      "clipId": "commons:bb0b1f7c5c32",
+      "transcript": "公园",
+      "transcriptPinyin": "gong1 yuan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "84fe6dca-39fd-5431-a04d-0608e5984b92",
+      "expected": "好",
+      "reading": "hào",
+      "clipId": "commons:bc015e57b216",
+      "transcript": "好",
+      "transcriptPinyin": "hao3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+      "expected": "系",
+      "reading": "jì",
+      "clipId": "commons:bd43896b2977",
+      "transcript": "戏",
+      "transcriptPinyin": "xi4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "df38dc87-e873-5c66-a30e-82e35e71ce58",
+      "expected": "转",
+      "reading": "zhuǎn",
+      "clipId": "commons:bff0728bfd9f",
+      "transcript": "转",
+      "transcriptPinyin": "zhuan3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "87eeae26-00bc-539d-a7de-7899fa6712f8",
+      "expected": "登录",
+      "reading": "dēnglù",
+      "clipId": "commons:bfffb9cf3716",
+      "transcript": "登录",
+      "transcriptPinyin": "deng1 lu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ac8528a5-fc62-48c0-84ea-5a7bc91875d3",
+      "expected": "玩",
+      "reading": "wán",
+      "clipId": "commons:c2416b599967",
+      "transcript": "玩",
+      "transcriptPinyin": "wan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "58adb3e9-4bc2-5da2-a798-45f3d2721adc",
+      "expected": "基因",
+      "reading": "jīyīn",
+      "clipId": "commons:c295cf9364d6",
+      "transcript": "基因",
+      "transcriptPinyin": "ji1 yin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+      "expected": "婚礼",
+      "reading": "hūnlǐ",
+      "clipId": "commons:c2b60371ade0",
+      "transcript": "婚礼",
+      "transcriptPinyin": "hun1 li3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "67277cf5-c940-5034-a286-8465275e88cb",
+      "expected": "态度",
+      "reading": "tàidù",
+      "clipId": "commons:c2b6b91843a1",
+      "transcript": "态度",
+      "transcriptPinyin": "tai4 du4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "78c62c0f-8941-51b1-8bcc-0ad3a6348fea",
+      "expected": "北极",
+      "reading": "běijí",
+      "clipId": "commons:c31edd77dbba",
+      "transcript": "北极",
+      "transcriptPinyin": "bei3 ji2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4e282d55-2ec3-5781-9057-fd65d0339590",
+      "expected": "周边",
+      "reading": "zhōubiān",
+      "clipId": "commons:c4169333cd09",
+      "transcript": "周边",
+      "transcriptPinyin": "zhou1 bian1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "expected": "口味",
+      "reading": "kǒuwèi",
+      "clipId": "commons:c56f6ff8130c",
+      "transcript": "口味",
+      "transcriptPinyin": "kou3 wei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+      "expected": "不客气",
+      "reading": "bú kèqi",
+      "clipId": "commons:c5b2c456bf6a",
+      "transcript": "不客气",
+      "transcriptPinyin": "bu2 ke4 qi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3f26e1d1-82b9-5832-bbcb-2f444e9958e2",
+      "expected": "及",
+      "reading": "jí",
+      "clipId": "commons:c5d06abb5626",
+      "transcript": "急",
+      "transcriptPinyin": "ji2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "16f1e4dc-0d28-5044-b631-ec76b3edbc2d",
+      "expected": "盒子",
+      "reading": "hézi",
+      "clipId": "commons:c7e45572392a",
+      "transcript": "盒子",
+      "transcriptPinyin": "he2 zi5",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e61cb440-b2dc-5f75-b243-af1dcbb1fd75",
+      "expected": "减肥",
+      "reading": "jiǎnféi",
+      "clipId": "commons:c7f06860ae67",
+      "transcript": "减肥",
+      "transcriptPinyin": "jian3 fei2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2fb3706c-4bd7-576c-95a6-2992305cfc5d",
+      "expected": "冰激凌",
+      "reading": "bīngjīlíng",
+      "clipId": "commons:c95423840512",
+      "transcript": "冰激凌",
+      "transcriptPinyin": "bing1 ji1 ling2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "56801f20-a3e4-53ea-87f5-b167dad84d26",
+      "expected": "欧洲",
+      "reading": "Ōuzhōu",
+      "clipId": "commons:ca3b72643d26",
+      "transcript": "欧洲",
+      "transcriptPinyin": "ou1 zhou1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "85c1106e-4116-5fe1-9ebf-a2af8abf732e",
+      "expected": "打折",
+      "reading": "dǎzhé",
+      "clipId": "commons:ca910e09e628",
+      "transcript": "打折",
+      "transcriptPinyin": "da3 zhe2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "0f3208e7-cec3-5a66-b548-982e265db338",
+      "expected": "薪水",
+      "reading": "xīnshui",
+      "clipId": "commons:cb95f06a9ca4",
+      "transcript": "薪水",
+      "transcriptPinyin": "xin1 shui3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "1fa8ee37-68ba-59ba-8b7f-f24b4847e919",
+      "expected": "宠物",
+      "reading": "chǒngwù",
+      "clipId": "commons:cbbc21e08b87",
+      "transcript": "宠物",
+      "transcriptPinyin": "chong3 wu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "05faad27-d9f2-4d73-844b-f183c170d1b3",
+      "expected": "外面",
+      "reading": "wàimiàn",
+      "clipId": "commons:cc52322c56f8",
+      "transcript": "外面",
+      "transcriptPinyin": "wai4 mian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e0865c63-3db4-5dc0-badb-850cb400856f",
+      "expected": "承诺",
+      "reading": "chéngnuò",
+      "clipId": "commons:cc59a602630f",
+      "transcript": "承诺",
+      "transcriptPinyin": "cheng2 nuo4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "466e9ba1-2614-533c-9b5a-f2c83f814e15",
+      "expected": "视频",
+      "reading": "shìpín",
+      "clipId": "commons:cd1cc69da5d2",
+      "transcript": "视频",
+      "transcriptPinyin": "shi4 pin2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7fa4189e-c523-5912-bba8-18856989b084",
+      "expected": "王子",
+      "reading": "wángzǐ",
+      "clipId": "commons:ce75023c839a",
+      "transcript": "王子",
+      "transcriptPinyin": "wang2 zi3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "315d77b1-03f2-5763-bed6-9ffbc31b508a",
+      "expected": "漫画",
+      "reading": "mànhuà",
+      "clipId": "commons:cff3163f468d",
+      "transcript": "漫画",
+      "transcriptPinyin": "man4 hua4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a7ab7d5e-d284-5904-bd3c-b8a645328a0b",
+      "expected": "矿泉水",
+      "reading": "kuàngquánshuǐ",
+      "clipId": "commons:d0a1c53bbc9d",
+      "transcript": "矿泉水",
+      "transcriptPinyin": "kuang4 quan2 shui3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+      "expected": "你好",
+      "reading": "nǐ hǎo",
+      "clipId": "commons:d19f06c26681",
+      "transcript": "你好",
+      "transcriptPinyin": "ni3 hao3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4181bb12-399d-5714-8c69-4411303fb5de",
+      "expected": "小气",
+      "reading": "xiǎoqi",
+      "clipId": "commons:d228b14236aa",
+      "transcript": "小气",
+      "transcriptPinyin": "xiao3 qi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "13b472df-5056-5137-b653-fd9707423ebf",
+      "expected": "意识",
+      "reading": "yìshí",
+      "clipId": "commons:d39bc56f8b7c",
+      "transcript": "意识",
+      "transcriptPinyin": "yi4 shi2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5b1200dc-fe75-5293-bc18-264c44e8c7f9",
+      "expected": "指责",
+      "reading": "zhǐzé",
+      "clipId": "commons:d47568c5cfde",
+      "transcript": "指责",
+      "transcriptPinyin": "zhi3 ze2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b8c7ccde-f0c8-5f07-ae3d-0b08f801d682",
+      "expected": "兼职",
+      "reading": "jiānzhí",
+      "clipId": "commons:d5016be71eac",
+      "transcript": "兼职",
+      "transcriptPinyin": "jian1 zhi2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "6434c3aa-b775-5005-b483-d7c496aa4316",
+      "expected": "母语",
+      "reading": "mǔyǔ",
+      "clipId": "commons:d51946ccad11",
+      "transcript": "母语",
+      "transcriptPinyin": "mu3 yu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7a6339a3-544e-5916-8f1e-f480716cbd98",
+      "expected": "外公",
+      "reading": "wàigōng",
+      "clipId": "commons:d664296b3b04",
+      "transcript": "外公",
+      "transcriptPinyin": "wai4 gong1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "13b472df-5056-5137-b653-fd9707423ebf",
+      "expected": "意识",
+      "reading": "yìshí",
+      "clipId": "commons:d779ceaef919",
+      "transcript": "意识",
+      "transcriptPinyin": "yi4 shi2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a4384c1b-1a06-459f-ad69-3f613d0c3f9d",
+      "expected": "前面",
+      "reading": "qiánmiàn",
+      "clipId": "commons:d79e9574c095",
+      "transcript": "前面",
+      "transcriptPinyin": "qian2 mian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "呀",
+      "expected": "呀",
+      "reading": "ya",
+      "clipId": "commons:d7b1378fa6fc",
+      "transcript": "压",
+      "transcriptPinyin": "ya1",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "1e88b27f-2844-5387-a4ae-4c4fb584c7a1",
+      "expected": "系",
+      "reading": "jì",
+      "clipId": "commons:d8dab180d30e",
+      "transcript": "气",
+      "transcriptPinyin": "qi4",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "expected": "休闲",
+      "reading": "xiūxián",
+      "clipId": "commons:dcbc7d45625c",
+      "transcript": "休闲",
+      "transcriptPinyin": "xiu1 xian2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "920e2236-8d61-5813-a89b-81889989856c",
+      "expected": "消防",
+      "reading": "xiāofáng",
+      "clipId": "commons:dcd4d07ca9c0",
+      "transcript": "消防",
+      "transcriptPinyin": "xiao1 fang2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "ea650ecb-2ada-525b-b855-5e538992505b",
+      "expected": "偶像",
+      "reading": "ǒuxiàng",
+      "clipId": "commons:dcf8a82aa19c",
+      "transcript": "偶像",
+      "transcriptPinyin": "ou3 xiang4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "801087cc-ee8c-5191-89fb-67a7b111e654",
+      "expected": "忽略",
+      "reading": "hūlüè",
+      "clipId": "commons:dd3080243aae",
+      "transcript": "忽略",
+      "transcriptPinyin": "hu1 lüe4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "6979f4f0-ae10-51f7-b78a-4abc8bea15c0",
+      "expected": "免疫",
+      "reading": "miǎnyì",
+      "clipId": "commons:ddc59ecb17bb",
+      "transcript": "免疫",
+      "transcriptPinyin": "mian3 yi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7382c0b4-68d2-52b9-a137-baa02e76120f",
+      "expected": "社区",
+      "reading": "shèqū",
+      "clipId": "commons:de4aaf2d56ef",
+      "transcript": "社区",
+      "transcriptPinyin": "she4 qu1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f9866bdf-6931-5502-8136-2843cd575856",
+      "expected": "结果",
+      "reading": "jiēguǒ",
+      "clipId": "commons:def9d46b0387",
+      "transcript": "结果",
+      "transcriptPinyin": "jie2 guo3",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "f34c992d-db05-5109-8947-b271f8bff93c",
+      "expected": "案例",
+      "reading": "ànlì",
+      "clipId": "commons:df8b3d8e020b",
+      "transcript": "案例",
+      "transcriptPinyin": "an4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d3a8aa24-c387-524b-b3ff-9e6ae3c217ed",
+      "expected": "倒",
+      "reading": "dào",
+      "clipId": "commons:e19a4ea033f2",
+      "transcript": "倒",
+      "transcriptPinyin": "dao4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c0260640-763c-5679-9cb9-e398d99c47da",
+      "expected": "巧克力",
+      "reading": "qiǎokèlì",
+      "clipId": "commons:e2b84d7d3a09",
+      "transcript": "巧克力",
+      "transcriptPinyin": "qiao3 ke4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "b38aacc0-3fa7-57de-9530-dd0033f9bc83",
+      "expected": "魅力",
+      "reading": "mèilì",
+      "clipId": "commons:e367c130a4fb",
+      "transcript": "魅力",
+      "transcriptPinyin": "mei4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c85d4b17-30f0-5891-a13a-8377c65119c0",
+      "expected": "版本",
+      "reading": "bǎnběn",
+      "clipId": "commons:e373e9dba260",
+      "transcript": "版本",
+      "transcriptPinyin": "ban3 ben3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "52514b03-5fa1-5565-9e3d-9508223dbf82",
+      "expected": "不顾",
+      "reading": "búgù",
+      "clipId": "commons:e4c56a93c63e",
+      "transcript": "不顾",
+      "transcriptPinyin": "bu4 gu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f0a426ec-7463-50f7-8abc-142cff1aff6c",
+      "expected": "好处",
+      "reading": "hǎochù",
+      "clipId": "commons:e54fcb883cbe",
+      "transcript": "好处",
+      "transcriptPinyin": "hao3 chu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "466e9ba1-2614-533c-9b5a-f2c83f814e15",
+      "expected": "视频",
+      "reading": "shìpín",
+      "clipId": "commons:e7c427a35675",
+      "transcript": "视频",
+      "transcriptPinyin": "shi4 pin2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "expected": "还是",
+      "reading": "háishi",
+      "clipId": "commons:e95b5a0bf362",
+      "transcript": "还是",
+      "transcriptPinyin": "hai2 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2b719e1c-490b-5b6c-be54-52efbb0be552",
+      "expected": "除了",
+      "reading": "chúle",
+      "clipId": "commons:ea4888e11531",
+      "transcript": "除了",
+      "transcriptPinyin": "chu2 le5",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8dc83526-c3dc-5509-a98b-0c6714e9b839",
+      "expected": "管理",
+      "reading": "guǎnlǐ",
+      "clipId": "commons:ebb52a0f5cd8",
+      "transcript": "管理",
+      "transcriptPinyin": "guan3 li3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5a948359-e928-5e7d-ba61-e561decae836",
+      "expected": "哈",
+      "reading": "hā",
+      "clipId": "commons:ecea1d79be7b",
+      "transcript": "哈",
+      "transcriptPinyin": "ha1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "a986ed7e-3eca-5511-86ce-030c14b89b6c",
+      "expected": "行",
+      "reading": "háng",
+      "clipId": "commons:eef56e2cc4ab",
+      "transcript": "行",
+      "transcriptPinyin": "xing2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "word",
+      "owner": "260c338b-0ddf-5f58-a5ea-856ed36ade5a",
+      "expected": "小姐",
+      "reading": "xiǎojiě",
+      "clipId": "commons:ef71a1f05cba",
+      "transcript": "小姐",
+      "transcriptPinyin": "xiao3 jie3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "29332448-5e74-5974-a205-6fd9c789adc9",
+      "expected": "早餐",
+      "reading": "zǎocān",
+      "clipId": "commons:f0e5d5ad3acd",
+      "transcript": "早餐",
+      "transcriptPinyin": "zao3 can1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "80f3c1fa-83e0-4b8e-9e07-df69e67ba4b3",
+      "expected": "下雨",
+      "reading": "xià yǔ",
+      "clipId": "commons:f2e9f0bd737a",
+      "transcript": "下雨",
+      "transcriptPinyin": "xia4 yu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "abb62726-cb42-41ec-b903-2139b4b9f5a7",
+      "expected": "哪儿",
+      "reading": "nǎr",
+      "clipId": "commons:f350a4f6fdbd",
+      "transcript": "哪儿",
+      "transcriptPinyin": "na3 er2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "68b99499-368a-56eb-acc6-ef6f217a9dcb",
+      "expected": "休闲",
+      "reading": "xiūxián",
+      "clipId": "commons:f426eb20b1b7",
+      "transcript": "休闲",
+      "transcriptPinyin": "xiu1 xian2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "558ac087-26a5-5428-a174-56b75c664754",
+      "expected": "冰箱",
+      "reading": "bīngxiāng",
+      "clipId": "commons:f493193395aa",
+      "transcript": "冰箱",
+      "transcriptPinyin": "bing1 xiang1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5bee1f8e-ad36-5da0-919b-2795c033f6d7",
+      "expected": "熟悉",
+      "reading": "shúxi",
+      "clipId": "commons:f5681091bc60",
+      "transcript": "熟悉",
+      "transcriptPinyin": "shu2 xi1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8b99656e-9f13-5258-94c2-ffab65e0d9e3",
+      "expected": "果汁",
+      "reading": "guǒzhī",
+      "clipId": "commons:f64961d0bbe0",
+      "transcript": "果汁",
+      "transcriptPinyin": "guo3 zhi1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d51e731a-9dc3-5744-95ba-1e88a473b057",
+      "expected": "公主",
+      "reading": "gōngzhǔ",
+      "clipId": "commons:f80d92acc67f",
+      "transcript": "公主",
+      "transcriptPinyin": "gong1 zhu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "eef74eb5-478f-52cb-9af7-39a98de0f728",
+      "expected": "剑",
+      "reading": "jiàn",
+      "clipId": "commons:f8246f922d95",
+      "transcript": "健",
+      "transcriptPinyin": "jian4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "12d01ce5-d7d6-5bbd-ba20-71acbde7586a",
+      "expected": "口味",
+      "reading": "kǒuwèi",
+      "clipId": "commons:f9232eaee28a",
+      "transcript": "口味",
+      "transcriptPinyin": "kou3 wei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "94782435-12d0-5e48-8728-450966936593",
+      "expected": "冲动",
+      "reading": "chōngdòng",
+      "clipId": "commons:fa31a5c709aa",
+      "transcript": "冲动",
+      "transcriptPinyin": "chong1 dong4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "78c62c0f-8941-51b1-8bcc-0ad3a6348fea",
+      "expected": "北极",
+      "reading": "běijí",
+      "clipId": "commons:fa510856ca79",
+      "transcript": "北极",
+      "transcriptPinyin": "bei3 ji2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+      "expected": "不客气",
+      "reading": "bú kèqi",
+      "clipId": "commons:fb64140d1569",
+      "transcript": "不客气",
+      "transcriptPinyin": "bu2 ke4 qi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "dc7a03dd-2380-540a-8751-86b7d16c6230",
+      "expected": "瞬间",
+      "reading": "shùnjiān",
+      "clipId": "commons:fcb4b2606a42",
+      "transcript": "瞬间",
+      "transcriptPinyin": "shun4 jian1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "52e63296-37ca-5c26-a66e-ff19dca85b76",
+      "expected": "短信",
+      "reading": "duǎnxìn",
+      "clipId": "commons:fd644ad3d9fe",
+      "transcript": "短信",
+      "transcriptPinyin": "duan3 xin4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "4000e359-b626-5e04-8444-9c493653db03",
+      "expected": "不耐烦",
+      "reading": "bú nàifán",
+      "clipId": "commons:fe36a2386046",
+      "transcript": "不耐烦",
+      "transcriptPinyin": "bu4 nai4 fan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8ed85f5d-67cb-4bb4-8f1f-18935a4ee3f9",
+      "expected": "开车",
+      "reading": "kāichē",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-060a2f8c.mp3",
+      "transcript": "开车",
+      "transcriptPinyin": "kai1 che1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e77b9dd9-fc23-5390-a9cc-739d30ef3aa7",
+      "expected": "午餐",
+      "reading": "wǔcān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-0a87c0e3.mp3",
+      "transcript": "午餐",
+      "transcriptPinyin": "wu3 can1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "506b14b3-160e-5152-ac7c-4a1ee8bed7e4",
+      "expected": "纸巾",
+      "reading": "zhǐjīn",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-104648e6.mp3",
+      "transcript": "纸巾",
+      "transcriptPinyin": "zhi3 jin1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "98b19e9f-ea4f-5da3-bf23-123e4acbb494",
+      "expected": "村",
+      "reading": "cūn",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-11c92285.mp3",
+      "transcript": "村",
+      "transcriptPinyin": "cun1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "3c72c367-995f-5abd-b20d-40fb3aaefc7e",
+      "expected": "父母",
+      "reading": "fùmǔ",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-14f59325.mp3",
+      "transcript": "父母",
+      "transcriptPinyin": "fu4 mu3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8b99656e-9f13-5258-94c2-ffab65e0d9e3",
+      "expected": "果汁",
+      "reading": "guǒzhī",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-22711e0c.mp3",
+      "transcript": "果汁",
+      "transcriptPinyin": "guo3 zhi1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5e6d4f27-66b9-5307-92a6-3777ea64c359",
+      "expected": "手臂",
+      "reading": "shǒubì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-27f4d77d.mp3",
+      "transcript": "手臂",
+      "transcriptPinyin": "shou3 bi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "73f39a58-bf9a-40ad-b7f3-0536a32f4b29",
+      "expected": "打电话",
+      "reading": "dǎ diànhuà",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-38cac41a.mp3",
+      "transcript": "打电话",
+      "transcriptPinyin": "da3 dian4 hua4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "325af163-111a-5ea1-b966-292d63b9344e",
+      "expected": "从不",
+      "reading": "cóng bù",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-4778a36b.mp3",
+      "transcript": "从部",
+      "transcriptPinyin": "cong2 bu4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "f940fef3-4da3-4fb1-a4e5-765bb7e44cc5",
+      "expected": "你好",
+      "reading": "nǐ hǎo",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-50a2b841.mp3",
+      "transcript": "你好",
+      "transcriptPinyin": "ni3 hao3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "15650c99-feca-582b-8016-cfad1957bcf5",
+      "expected": "姐妹",
+      "reading": "jiěmèi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-6dc58bbc.mp3",
+      "transcript": "姐妹",
+      "transcriptPinyin": "jie3 mei4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "d8bcbdaf-f642-54e5-b451-e10612b3f0d4",
+      "expected": "晚安",
+      "reading": "wǎn’ān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-74fda535.mp3",
+      "transcript": "晚安",
+      "transcriptPinyin": "wan3 an1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c657728e-2325-5eab-97d2-0009f45e3842",
+      "expected": "互联网",
+      "reading": "hùliánwǎng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-80cfaa0f.mp3",
+      "transcript": "互联网",
+      "transcriptPinyin": "hu4 lian2 wang3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "16136e1b-74c2-5d44-aa01-88a14a867a9f",
+      "expected": "卫生间",
+      "reading": "wèishēngjiān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-85e11cea.mp3",
+      "transcript": "卫生间",
+      "transcriptPinyin": "wei4 sheng1 jian1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "0befe67d-a743-5c37-beb8-b0c18d4106c9",
+      "expected": "橙子",
+      "reading": "chéngzi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-882f495e.mp3",
+      "transcript": "橙子",
+      "transcriptPinyin": "cheng2 zi5",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5adc8ab3-b1c5-4f5a-a4ec-f8d184f0cce1",
+      "expected": "早上",
+      "reading": "zǎoshang",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-ad00c241.mp3",
+      "transcript": "早上",
+      "transcriptPinyin": "zao3 shang4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "2ed5d019-02ae-4274-83ce-6b5231110fd2",
+      "expected": "出租车",
+      "reading": "chūzūchē",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-ae198259.mp3",
+      "transcript": "出租车",
+      "transcriptPinyin": "chu1 zu1 che1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e765e374-7407-48a1-8bdd-2128f7bcc70e",
+      "expected": "星期天",
+      "reading": "xīngqītiān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-b140f6c8.mp3",
+      "transcript": "星期天",
+      "transcriptPinyin": "xing1 qi1 tian1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "8eb3fad9-24a7-45e1-ac3e-441e5a162541",
+      "expected": "不客气",
+      "reading": "bú kèqi",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-bd35add6.mp3",
+      "transcript": "不客气",
+      "transcriptPinyin": "bu2 ke4 qi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "29332448-5e74-5974-a205-6fd9c789adc9",
+      "expected": "早餐",
+      "reading": "zǎocān",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-becdf535.mp3",
+      "transcript": "早餐",
+      "transcriptPinyin": "zao3 can1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "c0260640-763c-5679-9cb9-e398d99c47da",
+      "expected": "巧克力",
+      "reading": "qiǎokèlì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-c4d84efb.mp3",
+      "transcript": "巧克力",
+      "transcriptPinyin": "qiao3 ke4 li4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "da98455a-bd17-5e5a-9ae3-b953d8e33393",
+      "expected": "班级",
+      "reading": "bānjí",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-cc01da5e.mp3",
+      "transcript": "班级",
+      "transcriptPinyin": "ban1 ji2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "7a6339a3-544e-5916-8f1e-f480716cbd98",
+      "expected": "外公",
+      "reading": "wàigōng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-dc7a3d3a.mp3",
+      "transcript": "外公",
+      "transcriptPinyin": "wai4 gong1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "e83d90a0-963c-541d-b747-0ae0f1b45aa0",
+      "expected": "足够",
+      "reading": "zúgòu",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-de67c1ff.mp3",
+      "transcript": "足够",
+      "transcriptPinyin": "zu2 gou4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "558ac087-26a5-5428-a174-56b75c664754",
+      "expected": "冰箱",
+      "reading": "bīngxiāng",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-f4d0f462.mp3",
+      "transcript": "冰箱",
+      "transcriptPinyin": "bing1 xiang1",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "391eaafe-d2d3-5b02-8c6c-5809f2d7637e",
+      "expected": "股市",
+      "reading": "gǔshì",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-f5a77129.mp3",
+      "transcript": "股市",
+      "transcriptPinyin": "gu3 shi4",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "5a6a975c-d8fa-536b-8a4e-8eeea4c9faca",
+      "expected": "婚礼",
+      "reading": "hūnlǐ",
+      "clipId": "shtooka-cmn-balm-congcong:cmn-fc9097da.mp3",
+      "transcript": "婚礼",
+      "transcriptPinyin": "hun1 li3",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "严",
+      "expected": "严",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嚴",
+      "expected": "嚴",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "妍",
+      "expected": "妍",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "岩",
+      "expected": "岩",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嵒",
+      "expected": "嵒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "巖",
+      "expected": "巖",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "延",
+      "expected": "延",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "檐",
+      "expected": "檐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "沿",
+      "expected": "沿",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "炎",
+      "expected": "炎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "盐",
+      "expected": "盐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "研",
+      "expected": "研",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "筵",
+      "expected": "筵",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "簷",
+      "expected": "簷",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "芫",
+      "expected": "芫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "蜒",
+      "expected": "蜒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "言",
+      "expected": "言",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "訁",
+      "expected": "訁",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "讠",
+      "expected": "讠",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "閻",
+      "expected": "閻",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "闫",
+      "expected": "闫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "阎",
+      "expected": "阎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "顏",
+      "expected": "顏",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "颜",
+      "expected": "颜",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "鹽",
+      "expected": "鹽",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-3156dfa2.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "word",
+      "owner": "9fdc742e-6d7b-5027-8834-ee8644981655",
+      "expected": "熟",
+      "reading": "shú/shóu",
+      "clipId": "shtooka-cmn-caen-tan:cmn-5e85ae2f.mp3",
+      "transcript": "竹",
+      "transcriptPinyin": "zhu2",
+      "verdict": "rejected"
+    },
+    {
+      "kind": "character",
+      "owner": "严",
+      "expected": "严",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嚴",
+      "expected": "嚴",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "妍",
+      "expected": "妍",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "岩",
+      "expected": "岩",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嵒",
+      "expected": "嵒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "巖",
+      "expected": "巖",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "延",
+      "expected": "延",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "檐",
+      "expected": "檐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "沿",
+      "expected": "沿",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "炎",
+      "expected": "炎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "盐",
+      "expected": "盐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "研",
+      "expected": "研",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "筵",
+      "expected": "筵",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "簷",
+      "expected": "簷",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "芫",
+      "expected": "芫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "蜒",
+      "expected": "蜒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "言",
+      "expected": "言",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "訁",
+      "expected": "訁",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "讠",
+      "expected": "讠",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "閻",
+      "expected": "閻",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "闫",
+      "expected": "闫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "阎",
+      "expected": "阎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "顏",
+      "expected": "顏",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "颜",
+      "expected": "颜",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "鹽",
+      "expected": "鹽",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-d3d6edcb.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "严",
+      "expected": "严",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嚴",
+      "expected": "嚴",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "妍",
+      "expected": "妍",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "岩",
+      "expected": "岩",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嵒",
+      "expected": "嵒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "巖",
+      "expected": "巖",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "延",
+      "expected": "延",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "檐",
+      "expected": "檐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "沿",
+      "expected": "沿",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "炎",
+      "expected": "炎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "盐",
+      "expected": "盐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "研",
+      "expected": "研",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "筵",
+      "expected": "筵",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "簷",
+      "expected": "簷",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "芫",
+      "expected": "芫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "蜒",
+      "expected": "蜒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "言",
+      "expected": "言",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "訁",
+      "expected": "訁",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "讠",
+      "expected": "讠",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "閻",
+      "expected": "閻",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "闫",
+      "expected": "闫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "阎",
+      "expected": "阎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "顏",
+      "expected": "顏",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "颜",
+      "expected": "颜",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "鹽",
+      "expected": "鹽",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-db0ad2b9.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "严",
+      "expected": "严",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嚴",
+      "expected": "嚴",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "妍",
+      "expected": "妍",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "岩",
+      "expected": "岩",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "嵒",
+      "expected": "嵒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "巖",
+      "expected": "巖",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "延",
+      "expected": "延",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "檐",
+      "expected": "檐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "沿",
+      "expected": "沿",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "炎",
+      "expected": "炎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "盐",
+      "expected": "盐",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "研",
+      "expected": "研",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "筵",
+      "expected": "筵",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "簷",
+      "expected": "簷",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "芫",
+      "expected": "芫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "蜒",
+      "expected": "蜒",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "言",
+      "expected": "言",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "訁",
+      "expected": "訁",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "讠",
+      "expected": "讠",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "閻",
+      "expected": "閻",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "闫",
+      "expected": "闫",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "阎",
+      "expected": "阎",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "顏",
+      "expected": "顏",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "颜",
+      "expected": "颜",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    },
+    {
+      "kind": "character",
+      "owner": "鹽",
+      "expected": "鹽",
+      "reading": "yán",
+      "clipId": "shtooka-cmn-caen-tan:cmn-df031727.mp3",
+      "transcript": "言",
+      "transcriptPinyin": "yan2",
+      "verdict": "accepted"
+    }
+  ]
+}
