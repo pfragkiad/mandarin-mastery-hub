@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-28",
+  "scope": "External lexical and phonological cross-check of the 11 offline audit candidates. No independent listening, transcription, CDN-byte verification or runtime changes.",
+  "inputAuditSha256": "f1e9b4d459fc77a278407fe0248e925f12be53d9efe2c5f6d415b5528516ce85",
+  "sources": {
+    "moe_ge": {
+      "title": "Taiwan MOE Revised Mandarin Dictionary: 歌",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3940&la=0&powerMode=0",
+      "evidence": "Lists gē for the song/sing entry.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_hai": {
+      "title": "Taiwan MOE character learning dictionary: 還",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=36996",
+      "evidence": "Distinguishes hái (still/also) from huán (return/give back).",
+      "capture": "Web dictionary entry"
+    },
+    "moe_zhi_classifier": {
+      "title": "Taiwan MOE Mini Dictionary: 隻",
+      "url": "https://dict.mini.moe.edu.tw/SearchIndex/word_detail?wordID=D0001146",
+      "evidence": "Lists zhī for the animal/object classifier.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_zhi_only": {
+      "title": "Taiwan MOE Mini Dictionary: 只",
+      "url": "https://dict.mini.moe.edu.tw/SearchIndex/word_detail?wordID=D0002782",
+      "evidence": "Lists zhǐ for only/merely.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_na": {
+      "title": "Taiwan MOE character learning dictionary: 哪",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=21738&la=0",
+      "evidence": "Distinguishes interrogative nǎ from neutral na as a particle/interjection.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_shei": {
+      "title": "Taiwan MOE Revised Mandarin Dictionary: 誰",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=8878&la=0&powerMode=0",
+      "evidence": "Records both shéi and shuí.",
+      "capture": "Web dictionary entry"
+    },
+    "yi_sandhi": {
+      "title": "Shanxi Finance and Taxation College: 一 and 不 tone sandhi",
+      "url": "https://www.sxftc.edu.cn/cjc/info/1228/2997.htm",
+      "evidence": "Before a fourth-tone syllable, 一 is pronounced with second tone; written pinyin may retain the citation tone.",
+      "capture": "College pronunciation teaching page"
+    },
+    "mainland_students": {
+      "title": "Sichuan College of Science and Technology: Mandarin test pronunciation guidance",
+      "url": "https://www.scst.edu.cn/yywz/50/8d/c1942a20621/page.htm",
+      "evidence": "Includes 学生 xuésheng in the neutral-tone word list.",
+      "capture": "College language teaching page"
+    },
+    "moe_students": {
+      "title": "Taiwan MOE Concise Mandarin Dictionary: 學生",
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=28513",
+      "evidence": "Records xué shēng.",
+      "capture": "Web dictionary entry"
+    },
+    "mainland_locations_2010": {
+      "title": "PRC Ministry of Education GF 0015-2010 vocabulary table",
+      "url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201010/W020220124393643101738.pdf",
+      "evidence": "Indexed entries 1149 and 2063 list 那里 nàli and 这里 zhèli. This attests the forms without claiming a newer standard.",
+      "capture": "Web-indexed primary PDF table extracts; full PDF was not inspected"
+    },
+    "mainland_waibian_2021": {
+      "title": "PRC Ministry of Education GF 0025-2021 vocabulary table",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/W020210329527301787356.pdf",
+      "evidence": "Indexed vocabulary entry 368 lists 外边 wàibian.",
+      "capture": "Web-indexed primary PDF table extract"
+    },
+    "moe_waibian": {
+      "title": "Taiwan MOE Revised Mandarin Dictionary: 外邊",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=160380&la=0&powerMode=0",
+      "evidence": "Records wài biān.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_nali": {
+      "title": "Taiwan MOE Revised Mandarin Dictionary: 那裡",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=56269&la=0&powerMode=0",
+      "evidence": "Includes nà lǐ for there.",
+      "capture": "Web dictionary entry"
+    },
+    "moe_zheli": {
+      "title": "Taiwan MOE Revised Mandarin Dictionary: 這裡",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=115043&la=0&powerMode=0",
+      "evidence": "Records zhè lǐ for here.",
+      "capture": "Web dictionary entry"
+    }
+  },
+  "findings": [
+    {
+      "id": "a66630e1-9e62-441c-b294-7035352198ad",
+      "hskIndex": 58,
+      "word": "歌",
+      "displayed": "gē",
+      "sourceReadings": [
+        "gēge"
+      ],
+      "status": "priority_clip_review",
+      "externalReadingAssessment": "gē",
+      "assessment": "The displayed reading is dictionary-supported. gēge is not the dictionary reading of the single song entry; this can be an index typo or a wrong/multi-syllable clip. Listen before deciding.",
+      "sourceIds": [
+        "moe_ge"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "f1edeb1a-b87b-47b7-9da9-69accf1d2eb9",
+      "hskIndex": 67,
+      "word": "还",
+      "displayed": "hái",
+      "sourceReadings": [
+        "huàn"
+      ],
+      "status": "priority_clip_review",
+      "externalReadingAssessment": "hái for still/also; huán for return",
+      "assessment": "The displayed hái fits this adverb entry. The source huàn label does not fit that sense; do not change the word to match this label.",
+      "sourceIds": [
+        "moe_hai"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "ed0d9145-b21f-4046-8a0f-a06187f9d3c0",
+      "hskIndex": 131,
+      "word": "哪",
+      "displayed": "nǎ",
+      "sourceReadings": [
+        "na"
+      ],
+      "status": "priority_clip_review",
+      "externalReadingAssessment": "nǎ for which; na for the particle",
+      "assessment": "This is a meaning-dependent reading distinction, not a harmless neutral-tone substitution for the interrogative entry.",
+      "sourceIds": [
+        "moe_na"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "2bfd4583-6c98-43f6-9968-2b0eb3f27089",
+      "hskIndex": 139,
+      "word": "那里",
+      "displayed": "nàlǐ",
+      "sourceReadings": [
+        "nàli"
+      ],
+      "status": "attested_reading_variants",
+      "externalReadingAssessment": "nàli / nàlǐ",
+      "assessment": "Both neutral and full-tone forms are attested. Label and bind whichever reading the clip actually uses.",
+      "sourceIds": [
+        "mainland_locations_2010",
+        "moe_nali"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "e14e979e-4882-4b9b-af5a-e9895ba09048",
+      "hskIndex": 181,
+      "word": "谁",
+      "displayed": "shéi / shuí",
+      "sourceReadings": [
+        "sheí"
+      ],
+      "status": "alternate_reading_audio_coverage",
+      "externalReadingAssessment": "shéi / shuí",
+      "assessment": "Both readings are valid. The source spelling sheí represents the same second-tone syllable as shéi with noncanonical mark placement. It does not document shuí coverage.",
+      "sourceIds": [
+        "moe_shei"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "f8890ce0-5a36-4ac5-9862-4d5d99f0ade0",
+      "hskIndex": 213,
+      "word": "外边",
+      "displayed": "wàibian",
+      "sourceReadings": [
+        "wàibiān"
+      ],
+      "status": "attested_reading_variants",
+      "externalReadingAssessment": "wàibian / wàibiān",
+      "assessment": "Both forms are attested. This requires variant-specific audio/display consistency, not automatic rejection as incorrect Mandarin.",
+      "sourceIds": [
+        "mainland_waibian_2021",
+        "moe_waibian"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "9077b44b-e5aa-423f-bbaf-09c817a71af4",
+      "hskIndex": 248,
+      "word": "学生",
+      "displayed": "xuéshēng",
+      "sourceReadings": [
+        "xuésheng"
+      ],
+      "status": "attested_reading_variants",
+      "externalReadingAssessment": "xuésheng / xuéshēng",
+      "assessment": "Neutral-tone sheng is supported by Mainland teaching guidance; full-tone shēng is recorded by Taiwan MOE. Label the reading actually heard.",
+      "sourceIds": [
+        "mainland_students",
+        "moe_students"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "065a2ca2-bcf6-4314-b6b8-2e8f88ca87d5",
+      "hskIndex": 258,
+      "word": "一半",
+      "displayed": "yíbàn",
+      "sourceReadings": [
+        "yībàn"
+      ],
+      "status": "expected_tone_sandhi",
+      "externalReadingAssessment": "citation yībàn; spoken yíbàn",
+      "assessment": "Applying the documented rule to fourth-tone bàn gives second-tone yí. A citation-tone source label alone is not a recording error.",
+      "sourceIds": [
+        "yi_sandhi"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "8c34175c-de86-452f-86cb-f4b40670f013",
+      "hskIndex": 259,
+      "word": "一下",
+      "displayed": "yíxià",
+      "sourceReadings": [
+        "yīxià"
+      ],
+      "status": "expected_tone_sandhi",
+      "externalReadingAssessment": "citation yīxià; spoken yíxià",
+      "assessment": "Applying the documented rule to fourth-tone xià gives second-tone yí. Keep citation and spoken notation distinct.",
+      "sourceIds": [
+        "yi_sandhi"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "62d7bf52-f550-4639-9900-1a135fe16e0e",
+      "hskIndex": 282,
+      "word": "这里",
+      "displayed": "zhèlǐ",
+      "sourceReadings": [
+        "zhèli"
+      ],
+      "status": "attested_reading_variants",
+      "externalReadingAssessment": "zhèli / zhèlǐ",
+      "assessment": "Both forms are attested. Check the actual clip and intended pronunciation convention before changing either.",
+      "sourceIds": [
+        "mainland_locations_2010",
+        "moe_zheli"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    },
+    {
+      "id": "602ea2e6-b6d9-4827-8e22-41b23e44575d",
+      "hskIndex": 287,
+      "word": "只",
+      "displayed": "zhī",
+      "sourceReadings": [
+        "zhǐ"
+      ],
+      "status": "priority_clip_review",
+      "externalReadingAssessment": "zhī for classifier; zhǐ for only",
+      "assessment": "The entry is tagged classifier, so zhī fits. The source label zhǐ belongs to only. The current meanings also include only under zhī; that sense needs separate correction/review.",
+      "sourceIds": [
+        "moe_zhi_classifier",
+        "moe_zhi_only"
+      ],
+      "audioListeningReviewed": false,
+      "runtimeChanged": false
+    }
+  ]
+}
