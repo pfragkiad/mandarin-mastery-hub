@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, ArrowUpRight, BookOpen, Volume2, VolumeX } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, BookOpen, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords } from '@/lib/mandarin';
@@ -51,6 +51,8 @@ import { UsageLabel } from './usage-label';
 import { DetailSheet } from './detail-sheet';
 import { detailTrail } from '@/lib/detail-trail';
 import { SoundExampleGlyph } from './sound-example-glyph';
+import { SoundDetailHeading } from './sound-detail-heading';
+import { ExampleSection, ExampleTabs } from './example-tabs';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
@@ -259,20 +261,26 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips }
   const changed = tonesChanged(row);
   const wordsById = useMemo(() => new Map(vocabularyWords.map(word => [word.id, word])), []);
   const toneCaption = (t: Tone) => (t === 5 ? 'Neutral' : `Tone ${t}`);
-  // Static Sound-Details-style tone tiles for the pair header (contour + label, no pinyin),
-  // linked by an arrow between the first and second syllable.
-  const toneTiles = (tones: readonly Tone[]) => tones.map((t, i) => <span key={i} className="tone-pair-tile-step">
-    {i > 0 && <ArrowRight className="tone-pair-tile-arrow" aria-hidden="true"/>}
-    <span className={`pinyin-tone-button tone-${t} tone-pair-tile`}><ToneContour tone={t}/><small>{toneCaption(t)}</small></span>
-  </span>);
+  // Written and spoken rows stay aligned by syllable occurrence. Only the authored
+  // draft supplies spoken contours/readings; a changed tile never implies listening
+  // review or a separately recorded syllable. Whole-word playback stays unchanged.
+  const toneTiles = (tones: readonly Tone[], syllables: readonly string[], spoken = false) => tones.map((t, i) =>
+    <span key={i} className={`pinyin-tone-button tone-${t} tone-pair-tile${spoken && row.citationTones[i] !== t ? ' is-changed' : ''}`}>
+      <ToneContour tone={t}/><small>{toneCaption(t)}</small>{!hidden && <span className="pinyin tone-row-reading" lang="zh-Latn-pinyin">{syllables[i]}</span>}
+    </span>);
+  const groupTitle = mode === 'changes' && row.rule && row.rule !== 'third'
+    ? <>{TONE_RULES[row.rule].symbol} + {toneCaption(row.citationTones[1] ?? 5).toLowerCase()}</>
+    : toneLabel(row.citationTones);
+  const description = changed
+    ? `${toneLabel(row.citationTones)} → ${toneLabel(row.expectedSpokenTones)} · Expected in speech · draft`
+    : `Dictionary tones: ${toneLabel(row.citationTones)}`;
   const wordHint = openDetailsHint(row.headword, 'word');
   const wordLink = !hidden && row.vocabularyEntryId
     ? <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="detail-arrow-link tone-sounds-word-link" title={wordHint} aria-label={wordHint}><ArrowUpRight aria-hidden="true"/></Link>
     : undefined;
   const selectedIndex = pool.findIndex(e => e.id === row.id);
   const initialCount = 6;
-  const wordBank = <SentenceHints backLabel={row.headword}><section className="pinyin-characters glyph-usage-section tone-sounds-bank" aria-label={mode === 'pairs' ? 'Words in this pair' : 'Examples for this change'}>
-    <h3 className="eyebrow"><BookOpen size={13} aria-hidden="true"/>{mode === 'pairs' ? 'WORDS IN THIS PAIR' : 'EXAMPLES'} · {pool.length}</h3>
+  const wordBank = <SentenceHints backLabel={row.headword}><div className="pinyin-characters detail-examples tone-sounds-bank"><ExampleTabs><ExampleSection id="word" label={`In a word · ${pool.length}`} icon={BookOpen}>
     <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} animateSelection initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
       const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
       const hsk = record ? wordHskPill(record) : null;
@@ -351,15 +359,23 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips }
         </>}
       </div>
     ); })}/>
-  </section></SentenceHints>;
+  </ExampleSection></ExampleTabs></div></SentenceHints>;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
-      <header className="tone-pair-hero" title={changed ? `Dictionary tones: ${toneLabel(row.citationTones)} · expected in speech: ${toneLabel(row.expectedSpokenTones)} (draft)` : `Dictionary tones: ${toneLabel(row.citationTones)}`}>
-        <div className="tone-pair-hero-group" aria-label={`Dictionary tones: ${toneLabel(row.citationTones)}`}>{toneTiles(row.citationTones)}</div>
+      <SoundDetailHeading title={groupTitle} description={description}
+        pill={<span className="word-hsk-id sound-tone-pill">{mode === 'pairs' ? 'Tone pair' : 'Tone change'}</span>}/>
+      <div className="tone-pair-hero">
+        <div className="tone-pair-contour-row" aria-label={`Dictionary tones: ${toneLabel(row.citationTones)}`}>
+          <span className="eyebrow">Written</span>
+          <div className="tone-pair-hero-group">{toneTiles(row.citationTones, row.citationSyllables)}</div>
+        </div>
         {changed && <>
-          <span className="tone-pair-spoken-sep">spoken</span>
-          <div className="tone-pair-hero-group" aria-label={`Expected in speech: ${toneLabel(row.expectedSpokenTones)}`}>{toneTiles(row.expectedSpokenTones)}</div>
+          <span className="tone-pair-spoken-sep"><ArrowDown size={12} aria-hidden="true"/>becomes</span>
+          <div className="tone-pair-contour-row" aria-label={`Expected in speech: ${toneLabel(row.expectedSpokenTones)}`}>
+            <span className="eyebrow">Spoken <SourceInfo inline className="detail-footnote">Expected in speech · draft. These contours are teaching labels, not listening-reviewed; playback uses the selected word’s unchanged whole-word recording.</SourceInfo></span>
+            <div className="tone-pair-hero-group">{toneTiles(row.expectedSpokenTones, row.expectedSpokenSyllables, true)}</div>
+          </div>
         </>}
-      </header>
+      </div>
       {wordBank}
   </section>;
 }

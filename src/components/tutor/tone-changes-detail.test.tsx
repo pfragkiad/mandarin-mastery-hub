@@ -19,7 +19,7 @@ vi.mock('./sound-example-glyph', () => ({ SoundExampleGlyph: ({ fallback }: { fa
 vi.mock('./expandable-character-grid', () => ({ ExpandableCharacterGrid: ({ cards }: { cards: ReactNode[] }) => cards }));
 vi.mock('./example-pronunciation', () => ({ ExamplePronunciation: () => null }));
 vi.mock('./small-grid-meaning', () => ({ SmallGridMeaning: () => null }));
-vi.mock('@tanstack/react-router', () => ({ Link: ({ children }: { children: ReactNode }) => <span>{children}</span> }));
+vi.mock('@tanstack/react-router', () => ({ Link: ({ children }: { children: ReactNode }) => <span>{children}</span>, useSearch: () => ({}), useNavigate: () => vi.fn() }));
 vi.mock('@/lib/pinyin-guide', async () => {
   const actual = await vi.importActual<typeof import('@/lib/pinyin-guide')>('@/lib/pinyin-guide');
   return { ...actual, loadPinyinData: async () => null };

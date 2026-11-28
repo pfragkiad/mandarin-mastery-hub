@@ -13,6 +13,7 @@ import { FilterSelect, type FilterSelectItem } from './filter-select';
 import { ToneContour, sound, type PinyinPlayer } from './pinyin-shared';
 import { SyllableCharacters } from './pinyin-characters';
 import { PinyinSoundSheet } from './pinyin-sound-sheet';
+import { SoundDetailHeading } from './sound-detail-heading';
 import { focusRecordCard, soundOrigin } from '@/lib/selection-scroll';
 import { historyEntry, historyPosition, soundChartArrival, soundTrail, visitAt } from '@/lib/detail-trail';
 import { Search } from 'lucide-react';
@@ -353,13 +354,10 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
     {/* Title row: the big syllable with the heard/chosen tone's pill ("1st tone" … "Neutral
         tone") top-aligned at its right, in that tone's own colour (tone-N sets --tone-ink;
         the neutral tone has none, so it falls back to grey like its tone card). */}
-    <div className="pinyin-player-title-row">
-      <h2 className="pinyin-player-title pinyin" lang="zh-Latn-pinyin">{title}</h2>
-      {current !== null && <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span>}
-    </div>
+    <SoundDetailHeading title={title} pill={current !== null ? <span className={`word-hsk-id sound-tone-pill tone-${current}`}>{TONE_NAMES[current]}</span> : undefined}
+      description={current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}/>
     {/* The tone's description; an unrecorded tone adds an italic "no recording" here
         rather than on its tile, so every tile keeps a one-line caption and the same low height. */}
-    <p className="pinyin-player-tone">{current !== null ? <>{TONE_HINTS[current]}{!hasRecording(data, syllable.base, current) ? <> · <em>no recording</em></> : neutralNote}</> : 'Click a tone to hear it'}</p>
     {/* Five fixed slots (Tone 1–4, Neutral) so every tone keeps its column. A tone the
         syllable inventory doesn't list gets a quiet slashed, non-interactive slot — only the
         inventory decides this, never a guess — and number keys skip it (no recording). */}
@@ -384,6 +382,10 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
         <ToneContour tone={t} /><span lang="zh-Latn-pinyin">{toneMark(syllable.base, t)}</span><small>{t === 5 ? 'Neutral' : `Tone ${t}`}</small>
       </button>;
     })}</div>
+    <dl className="pinyin-parts">
+      <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
+      <div><dt>Final</dt><dd>{syllable.final}</dd></div>
+    </dl>
     <div className="pinyin-player-actions">
       {/* One button whose two labels share a grid cell: the hidden one still
           reserves its width, so switching Play all ⇄ Stop never resizes it. */}
@@ -394,10 +396,6 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
       <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
     </div>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
-    <dl className="pinyin-parts">
-      <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
-      <div><dt>Final</dt><dd>{syllable.final}</dd></div>
-    </dl>
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
     {/* Each case is one pill with two regions: the spelling opens that sound (as before), and
         the speaker plays the same recording in place without leaving the card. The speaker

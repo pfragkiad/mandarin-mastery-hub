@@ -3099,7 +3099,10 @@ html[data-display-size='comfortable'] .pinyin-character-glyphs.word-example-glyp
 .pinyin-player-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 20px; }
 /* The chosen tone's pill sits at the top right of the syllable row, its top level with the
    syllable's letters, coloured like the selected tone card (grey for the neutral tone). */
-.pinyin-player-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.sound-detail-heading { display: grid; gap: 10px; min-width: 0; }
+.sound-detail-heading .pinyin-player-tone { margin: 0; line-height: 1.5; }
+.pinyin-player-title-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px; }
+.pinyin-player-title-row > h2 { min-width: 0; overflow-wrap: anywhere; }
 .sound-tone-pill { margin-left: auto; margin-top: 6px; color: var(--tone-ink, var(--muted-foreground)); border-color: color-mix(in oklab, var(--tone-ink, var(--muted-foreground)) 45%, transparent); white-space: nowrap; }
 .pinyin-player-back.pinyin-player-back { height: 24px; margin: -4px 0 -4px -8px; padding: 0 8px; gap: 4px; font-size: 12px; color: var(--muted-foreground); }
 .pinyin-player-back:hover { color: var(--primary); }
@@ -5523,16 +5526,12 @@ html[data-display-size='comfortable'] .tone-matrix { max-width: 1120px; }
 /* Two shared example cards fit the wider tone card; collapse only when the card itself
    cannot fit two tile/reading rows, independent of the navigation or window width. */
 .tone-sounds-card { container: tone-card / inline-size; }
-.tone-sounds-bank { margin-top: 8px; }
-.tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tone-sounds-bank { margin-top: 0; }
+.tone-sounds-bank .glyph-usage-parents { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 /* Reserve room for two examples in the shared top-centred sound window. On narrow
    cards the facts move below the tiles, rather than dropping to one example column. */
 html .detail-sheet:has(.tone-sounds-card) { --detail-sheet-default-width: 960px; }
 .detail-sheet .tone-sounds-card.pinyin-player { position: static; max-height: none; overflow: visible; padding: 0; border: 0; background: transparent; }
-@container tone-card (max-width: 540px) {
-  .tone-sounds-example .glyph-usage-reference { flex-wrap: wrap; }
-  .tone-sounds-example .glyph-usage-facts { flex-basis: 100%; }
-}
 .tone-sounds-example .example-pinyin-row > .pinyin { height: auto; padding: 0; white-space: normal; text-align: left; justify-content: flex-start; font-size: inherit; }
 .tone-sounds-example.tone-sounds-example { grid-template-columns: minmax(0, 1fr); height: auto; width: 100%; white-space: normal; text-align: left; font-weight: 400; cursor: pointer; }
 .tone-sounds-example.is-selected { border-color: var(--primary); }
@@ -5584,13 +5583,20 @@ html[data-display-size='comfortable'] :is(.tone-sounds-tile, .tone-pair-tile) { 
 .tone-pair-pill .tone-pair-change { color: var(--muted-foreground); }
 html[data-display-size='comfortable'] .tone-pair-pill { font-size: 13px; padding: 3px 10px; }
 /* Symbolic tone-pair header (no hanzi at top): Sound-Details-style tone tiles linked by an arrow. */
-.tone-pair-hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; padding: 4px 0 10px; }
-.tone-pair-hero-group { display: inline-flex; align-items: center; gap: 8px; }
+.tone-pair-hero { display: grid; gap: 12px; padding: 4px 0; }
+.tone-pair-contour-row { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 12px; }
+.tone-pair-contour-row > .eyebrow { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.tone-pair-hero-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tone-pair-hero .tone-pair-tile { width: 100%; height: auto; min-height: 84px; background: var(--secondary); }
+.tone-pair-hero .tone-pair-tile.is-changed { border-color: var(--rank-gold); box-shadow: inset 0 0 0 1px var(--rank-gold); }
+.tone-row-reading.pinyin { font-size: 12px; line-height: 1.4; }
+html[data-display-size='comfortable'] .tone-pair-hero .tone-pair-tile { width: 100%; height: auto; min-height: 98px; }
+html[data-display-size='comfortable'] .tone-row-reading.pinyin { font-size: 14px; }
 .tone-pair-tile-step { display: inline-flex; align-items: center; gap: 8px; }
 .tone-pair-tile-arrow { width: 15px; height: 15px; color: var(--muted-foreground); flex-shrink: 0; }
 .tone-pair-tile { cursor: default; pointer-events: none; gap: 5px; }
 .tone-pair-tile.tone-5 { color: var(--muted-foreground); }
-.tone-pair-spoken-sep { font-size: 11px; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.06em; padding: 0 2px; }
+.tone-pair-spoken-sep { display: flex; align-items: center; justify-content: center; gap: 4px; margin-left: 88px; font-size: 11px; color: var(--muted-foreground); }
 .tone-pair-selected { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
 .tone-pair-selected-row { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px; }
 .tone-pair-selected-main { flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }

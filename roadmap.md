@@ -1,5 +1,10 @@
 # Roadmap
 
+## Unified sound-card mockup layout
+- [x] Share title/description/pill layout across Sound chart, Tone pairs and Tone changes, retaining current site styles.
+- [x] Stack written and spoken tone rows above the shared In a word drawer; preserve exact recordings, links, selection and resizing.
+- [x] Verify all three cards at 390px/2294px in Compact/Comfortable, drawer collapse/reopen, exact example selection and natural whole-word playback; 30 regression tests pass and preview build OK. Existing playback controls retained pending the optional mockup playback-row answer.
+
 ## Start grid hints and latest-audio review
 - [x] Enable existing glyph quick cards on Start grid cards, independent of library hint preferences; verified all six library categories in the live wide Start view, no navigation/errors, and 23 focused tests passed.
 - [x] Reassess the latest package's 40 held word candidates and 3 character-reading slots against exact readings, pinned source tags and transcription evidence; all source tags agree with supplied metadata, but no additional acoustic approval is claimed.
