@@ -1,5 +1,10 @@
 # Roadmap
 
+## Tone example focus and title Hanzi
+- [x] Keep selected Tone pairs / Tone changes examples at the shared grid size with the existing selection border.
+- [x] Show the selected exact word beside both tone-detail titles; preserve hints, recordings and Listen first.
+- [x] Verified unchanged grid-card dimensions after selection, exact title updates and 390px/2418px layouts in both tone details; 18 related tests pass and preview build OK.
+
 ## Unified sound-card mockup layout
 - [x] Reuse Sound chart's playback row and shared Slower switch above In a word in both tone details; verified natural exact-word playback at shared 0.65 speed, persistence into Sound chart, 390px/2294px fit, 14 regression tests and clean preview.
 - [x] Share title/description/pill layout across Sound chart, Tone pairs and Tone changes, retaining current site styles.

@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowDown, ArrowUpRight, BookOpen, Play, Volume2, VolumeX } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, BookOpen, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords } from '@/lib/mandarin';
@@ -284,7 +284,7 @@ export function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: Tone
 
 /**
  * Shared Tone pairs / Tone changes card: recorded dictionary and draft spoken contours
- * above the word bank, with the exact selected word expanded in place. Character hints
+ * above the word bank, with the exact selected word highlighted without reflow. Character hints
  * retain vocabularyEntryId context; independent syllable buttons play only recorded
  * Sound chart clips. Rule changes never rewrite readings or audio bindings.
  * The word bank uses the Sound chart's shared small example cards and expandable grid inside
@@ -325,24 +325,28 @@ function PracticeCard({ row, pool, mode, hidden, status, activeCard, onPlay, onP
   const description = changed
     ? `${toneLabel(row.citationTones)} → ${toneLabel(row.expectedSpokenTones)} · Expected in speech · draft`
     : `Dictionary tones: ${toneLabel(row.citationTones)}`;
-  const wordHint = openDetailsHint(row.headword, 'word');
-  const wordLink = !hidden && row.vocabularyEntryId
-    ? <Link to="/vocabulary" search={{ word: row.vocabularyEntryId }} className="detail-arrow-link tone-sounds-word-link" title={wordHint} aria-label={wordHint}><ArrowUpRight aria-hidden="true"/></Link>
-    : undefined;
+  const selectedRecord = row.vocabularyEntryId ? wordsById.get(row.vocabularyEntryId) : undefined;
+  const selectedWord: HintWord | null = selectedRecord ? { hanzi: selectedRecord.hanzi, pinyin: selectedRecord.pinyin, meaning: selectedRecord.meaning, search: { tab: 'word', word: selectedRecord.id }, audio: selectedRecord.audio ?? null } : null;
+  // Keep the selected word beside the group title; use the same exact-form hints
+  // and tone colours as its grid card, and reveal nothing in Listen first.
+  const titleWord = !hidden && <span className="pinyin-character-glyphs" lang="zh">
+    {Array.from(row.headword).map((glyph, index) => <span key={index} className={`tone-pair-glyph tone-${row.citationTones[index] ?? 5}`}>
+      <SoundExampleGlyph glyph={glyph} word={selectedWord} fallback={<span className="decomposition-glyph decomposition-glyph-static"><strong>{glyph}</strong></span>}/>
+    </span>)}
+  </span>;
   const selectedIndex = pool.findIndex(e => e.id === row.id);
   const initialCount = 6;
   const wordBank = <SentenceHints backLabel={row.headword}><div className="pinyin-characters detail-examples tone-sounds-bank"><ExampleTabs><ExampleSection id="word" label={`In a word · ${pool.length}`} icon={BookOpen}>
-    <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} animateSelection initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
+    <ExpandableCharacterGrid key={`${mode}:${pool[0]?.id}:${hidden}`} initialCount={initialCount} defaultExpanded={selectedIndex >= initialCount} selectedKey={row.id} cards={pool.map((example, index) => {
       const record = example.vocabularyEntryId ? wordsById.get(example.vocabularyEntryId) : undefined;
       const hsk = record ? wordHskPill(record) : null;
       const own: HintWord | null = record ? { hanzi: record.hanzi, pinyin: record.pinyin, meaning: record.meaning, search: { tab: 'word', word: record.id }, audio: record.audio ?? null } : null;
-      // Each collapsed card carries its own arrow to its own exact word record, never the
+      // Each grid card carries its own arrow to its own exact word record, never the
       // selected row's, so the header arrow always names the card it sits in.
       const ownHint = record ? openDetailsHint(record.hanzi, 'word') : '';
       const ownLink = !hidden && record
         ? <Link to="/vocabulary" search={{ word: record.id }} className="detail-arrow-link" title={ownHint} aria-label={ownHint}><ArrowUpRight aria-hidden="true"/></Link>
         : undefined;
-      const isExpanded = example.id === row.id;
       const coloredPinyin = example.citationSyllables.map((syl, sylIndex) => (
         <span key={sylIndex} className={`tone-pair-syllable tone-${example.citationTones[sylIndex] ?? 5}`}>{sylIndex > 0 ? ' ' : ''}{syl}</span>
       ));
@@ -350,42 +354,13 @@ function PracticeCard({ row, pool, mode, hidden, status, activeCard, onPlay, onP
       <div
         key={example.id}
         data-layout-key={example.id}
-        className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}${isExpanded ? ' is-expanded' : ''}`}
+        className={`glyph-usage-example glyph-parent-card tone-sounds-example${example.id === row.id ? ' is-selected' : ''}`}
         onClick={event => {
           // Ignore clicks on handled inner controls (audio speaker, glyph hints, pinyin button).
           if ((event.target as Element | null)?.closest('button, a, [role="button"]')) return;
           onPick(example.id);
         }}
       >
-        {isExpanded ? <>
-          <ExampleCardMeta identity={hidden ? <span className="eyebrow">Recording {index + 1}</span> : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={wordLink}/>
-          <div className="tone-pair-expanded-top">
-            <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
-              const tone = example.citationTones[glyphIndex];
-              const fallback = <Button variant="ghost" className="decomposition-glyph" aria-pressed={true} aria-label={hidden ? `Selected recording ${index + 1}, tile ${glyphIndex + 1}` : `${example.headword}, tile ${glyphIndex + 1}`} onClick={() => onPick(example.id)}><strong>{glyph}</strong></Button>;
-              return <span key={glyphIndex} className={tone ? `tone-pair-glyph tone-${tone}` : undefined}>{hidden ? fallback : <SoundExampleGlyph glyph={glyph} word={own} fallback={fallback}/>}</span>;
-            })}</span>
-            <div className="tone-pair-expanded-info">
-              {!hidden && <div className="tone-pair-expanded-pinyin" lang="zh-Latn-pinyin">{coloredPinyin}</div>}
-              {!hidden && <p className="tone-pair-expanded-meaning">{example.english}</p>}
-              {hidden && <p className="tone-pair-expanded-meaning">Listen, then reveal to see the word.</p>}
-            </div>
-          </div>
-          <div className="tone-pair-expanded-actions">
-            {!hidden && <div className="tone-pair-syllable-group">{example.chartLinks.map((l, i) => {
-              const id = soundId(l.base, l.tone);
-              const recorded = chips.data ? hasRecording(chips.data, l.base, l.tone) : false;
-              const on = chips.player.playing === id;
-              return <button key={`${id}-${i}`} type="button" className={`tone-pair-syllable-btn tone-${l.tone}${recorded ? '' : ' is-unrecorded'}${on ? ' is-playing' : ''}`} disabled={!recorded}
-                aria-label={recorded ? `Play ${toneMark(l.base, l.tone)}` : `No recording for ${toneMark(l.base, l.tone)}`} title={recorded ? 'Sound chart recording' : 'No Sound chart recording'}
-                onClick={() => { if (!on) chips.onPlay(l.base, l.tone); }}>
-                {recorded ? <Volume2 aria-hidden="true"/> : <VolumeX aria-hidden="true"/>}
-                <span className="tone-pair-syllable-pinyin" lang="zh-Latn-pinyin">{l.reading}</span>
-                <span className="tone-pair-syllable-tone">{toneCaption(l.tone)}</span>
-              </button>;
-            })}</div>}
-          </div>
-        </> : <>
           <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={ownLink}/>
           <span className="glyph-usage-reference">
             <span className="pinyin-character-glyphs">{Array.from(hidden ? '••' : example.headword).map((glyph, glyphIndex) => {
@@ -403,12 +378,11 @@ function PracticeCard({ row, pool, mode, hidden, status, activeCard, onPlay, onP
               {!hidden && <SmallGridMeaning text={example.english}/>}
             </span>
           </span>
-        </>}
       </div>
     ); })}/>
   </ExampleSection></ExampleTabs></div></SentenceHints>;
   return <section className="pinyin-player tone-sounds-card" aria-label="Selected recording">
-      <SoundDetailHeading title={groupTitle} description={description}
+      <SoundDetailHeading title={<><span>{groupTitle}</span>{titleWord}</>} description={description}
         pill={<span className="word-hsk-id sound-tone-pill">{mode === 'pairs' ? 'Tone pair' : 'Tone change'}</span>}/>
       <div className="tone-pair-hero">
         <div className="tone-pair-contour-row" aria-label={`Dictionary tones: ${toneLabel(row.citationTones)}`}>
