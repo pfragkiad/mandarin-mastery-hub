@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "scope": "Offline metadata and runtime-binding audit. No acoustic/listening review, transcription, CDN-byte verification or pronunciation corrections.",
+  "sourceHashes": {
+    "src/data/component-form-references.json": "077faf922ed8b4696bc2e63e051ddeadf35304e99ff55fe501bad95fa22ca96a",
+    "public/data/catalog.json": "565e2abb22baba3c3330e753c42ba9f1dc21ee9f86ac43994183eb1145ac0438",
+    "public/data/characters.json": "f1db684baeb28187efec27a667d1a86ceb7ac827e45d94e0e517b17ddf681fb7",
+    "public/data/components.json": "83b89c4ad36eefe6c0fb8013d835c5d6f549b647c29ba4e8f558fe8490fda0f6",
+    "public/data/radicals.json": "9c4dde1e3561d968b051c5500b95ccf824a6c1774ba6a19d555c38d5fc43987a",
+    "public/data/radical-identities.json": "57bfc18695cbecb4b7fea3c682f0bfa1a833fbbf61afc3230319ce5780c11416",
+    "public/data/radical-strokes.json": "de130ace9ea1e4b2a8490be6e01d022e38d1b514298dae92abfd20ca71b99cd0",
+    "public/data/strokes.json": "8adff494f921822f232b6215b7f8404f6a9e0aa33f888da7ae80492036a7533f",
+    "importer/data/hsk-audio/cmn-caen-tan-index.xml.bz2": "59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6",
+    "src/data/vocabulary/index.json": "3484fe2e262bbdc429e7f0cfe24c51ff00a2099081bdc16e7fdad09d74487e7b",
+    "src/data/vocabulary/level-1.json": "c5d78cbb859419e9f8e2065e5706b70cf6669e9f138995402a478d8e909c05e6",
+    "src/data/vocabulary/unlevelled.json": "000831ecc88317ca1df2c5ff6ee6beb720181e79b4dd06573ed4d572f0a3645b",
+    "src/data/vocabulary/level-2.json": "367af3d4e1ef3e92b5f7e652d4263fe6b21363c2bcaa1265562f4c0bb71c2eb8",
+    "src/data/vocabulary/level-3.json": "a159904ee483b68137d4558b70db5e144709be672f3f6234b841eeb1dce72a17",
+    "src/data/vocabulary/level-4.json": "67950ed992285624ac3a03ec72a66efbeaad521f5a3fa7cd1164e63943ce16e2",
+    "src/data/vocabulary/level-5.json": "618ba025380339f4ec13e2b7bc7300dd642fb5d8a0052c6a7b0586db86bf74cf",
+    "importer/data/hsk-audio/level2-manifest.json": "e6b0cfb9f517802a81706d58d32200313c6e49f35058c29831e72a29709828b4",
+    "importer/data/hsk-audio/level3-manifest.json": "60db4ca31b0959247d2670cc2389d97401d3d35347d477f2280ae768d7685453",
+    "importer/data/hsk-audio/level4-manifest.json": "77db51cdf5d23941fed519981507808169b303102c36be9fb41c7bcd69838a2c",
+    "importer/data/hsk-audio/level5-manifest.json": "d5b4b2fa054735b0f6d897477a35e4c72c40adc709116075623fb24d43d924de",
+    "src/data/pinyin/audio.json": "87e2cf7dc5f98ac8f33d71b7e92dfa113d9ffb1bf0090398c338ae7b3533fa30"
+  },
+  "glyphs": {
+    "bindings": 9602,
+    "nullBindings": 5,
+    "missingAttachments": [],
+    "labelMismatches": [],
+    "quarantinedYanBindings": 25,
+    "quarantineStillPlayable": []
+  },
+  "vocabulary": {
+    "records": 3601,
+    "attached": 2988,
+    "sourceCompatible": 2977,
+    "discrepancies": [
+      {
+        "id": "a66630e1-9e62-441c-b294-7035352198ad",
+        "hskLevel": 1,
+        "hskIndex": 58,
+        "word": "歌",
+        "displayed": "gē",
+        "sourceCandidates": [
+          {
+            "reading": "gēge",
+            "file": "cmn-ad8978af.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/96a0dd64-db3a-4f12-802c-ee97f11a8047/cmn-638fb020bd58.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "f1edeb1a-b87b-47b7-9da9-69accf1d2eb9",
+        "hskLevel": 1,
+        "hskIndex": 67,
+        "word": "还",
+        "displayed": "hái",
+        "sourceCandidates": [
+          {
+            "reading": "huàn",
+            "file": "cmn-c539f10b.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "syllable_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/98dc819c-9845-4174-a9ed-d899133f5316/cmn-5d26e0f8d773.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "ed0d9145-b21f-4046-8a0f-a06187f9d3c0",
+        "hskLevel": 1,
+        "hskIndex": 131,
+        "word": "哪",
+        "displayed": "nǎ",
+        "sourceCandidates": [
+          {
+            "reading": "na",
+            "file": "cmn-3c075876.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/1a8844e7-a43b-4f39-a203-35eff4e79a42/cmn-dd32c3731346.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "2bfd4583-6c98-43f6-9968-2b0eb3f27089",
+        "hskLevel": 1,
+        "hskIndex": 139,
+        "word": "那里",
+        "displayed": "nàlǐ",
+        "sourceCandidates": [
+          {
+            "reading": "nàli",
+            "file": "cmn-228e9458.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/cea55078-d179-420e-9cf8-082c6340c8b0/cmn-e0e372847e45.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "e14e979e-4882-4b9b-af5a-e9895ba09048",
+        "hskLevel": 1,
+        "hskIndex": 181,
+        "word": "谁",
+        "displayed": "shéi / shuí",
+        "sourceCandidates": [
+          {
+            "reading": "sheí",
+            "file": "cmn-26ca4504.mp3"
+          }
+        ],
+        "coveredAlternates": [
+          "shéi"
+        ],
+        "category": "partial_alternate_reading_coverage",
+        "audio": {
+          "url": "/__l5e/assets-v1/04b2b469-31b5-4b53-aaaf-f382f8481411/cmn-808cfdb76fb0.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "f8890ce0-5a36-4ac5-9862-4d5d99f0ade0",
+        "hskLevel": 1,
+        "hskIndex": 213,
+        "word": "外边",
+        "displayed": "wàibian",
+        "sourceCandidates": [
+          {
+            "reading": "wàibiān",
+            "file": "cmn-85cda5ba.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/191557ca-6b2d-4788-ac3d-8f2d31ebb379/cmn-4fe8fbb04e87.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "9077b44b-e5aa-423f-bbaf-09c817a71af4",
+        "hskLevel": 1,
+        "hskIndex": 248,
+        "word": "学生",
+        "displayed": "xuéshēng",
+        "sourceCandidates": [
+          {
+            "reading": "xuésheng",
+            "file": "cmn-cecc3182.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/18f7c7c9-555e-485f-8003-5640c6bbc5a5/cmn-a3b8bd97eaaa.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "065a2ca2-bcf6-4314-b6b8-2e8f88ca87d5",
+        "hskLevel": 1,
+        "hskIndex": 258,
+        "word": "一半",
+        "displayed": "yíbàn",
+        "sourceCandidates": [
+          {
+            "reading": "yībàn",
+            "file": "cmn-dd9093aa.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "possible_citation_vs_sandhi",
+        "audio": {
+          "url": "/__l5e/assets-v1/a5f6e4c2-d636-485a-b553-b68b2fda5d37/cmn-d6226e994503.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "8c34175c-de86-452f-86cb-f4b40670f013",
+        "hskLevel": 1,
+        "hskIndex": 259,
+        "word": "一下",
+        "displayed": "yíxià",
+        "sourceCandidates": [
+          {
+            "reading": "yīxià",
+            "file": "cmn-09640bbd.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "possible_citation_vs_sandhi",
+        "audio": {
+          "url": "/__l5e/assets-v1/51e6e964-55b9-4097-aca5-2cfcb0d63315/cmn-29e9fe251391.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "62d7bf52-f550-4639-9900-1a135fe16e0e",
+        "hskLevel": 1,
+        "hskIndex": 282,
+        "word": "这里",
+        "displayed": "zhèlǐ",
+        "sourceCandidates": [
+          {
+            "reading": "zhèli",
+            "file": "cmn-2ff5230f.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "neutral_tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/cad4a219-b140-42c2-8d38-522faa6a4469/cmn-88d205a45d7b.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      },
+      {
+        "id": "602ea2e6-b6d9-4827-8e22-41b23e44575d",
+        "hskLevel": 1,
+        "hskIndex": 287,
+        "word": "只",
+        "displayed": "zhī",
+        "sourceCandidates": [
+          {
+            "reading": "zhǐ",
+            "file": "cmn-da70052b.mp3"
+          }
+        ],
+        "coveredAlternates": [],
+        "category": "tone_difference",
+        "audio": {
+          "url": "/__l5e/assets-v1/9c7c4d8f-ec3d-46b7-899a-a44aa7bf65c6/cmn-97e234dd55bd.mp3",
+          "source": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+          "license": "CC BY-SA 3.0 US",
+          "recordingKind": "word"
+        },
+        "listeningReviewed": false
+      }
+    ],
+    "unsupportedSources": [],
+    "attachedExamples": 0
+  },
+  "manifests": {
+    "matchedRows": 2712,
+    "excludedRows": 588,
+    "attachedExcludedRows": [],
+    "changedIdentities": []
+  },
+  "chart": {
+    "recordings": 1288,
+    "labelMismatches": []
+  },
+  "references": [
+    {
+      "glyph": "歨",
+      "ownReading": "bù",
+      "relatedGlyph": "步",
+      "relatedReading": "bù",
+      "ownRecording": [
+        "/__l5e/assets-v1/a434ed74-4497-4506-8321-68858f16aad0/cmn-1f4c47696634.mp3"
+      ],
+      "relatedRecording": [
+        "/__l5e/assets-v1/a434ed74-4497-4506-8321-68858f16aad0/cmn-1f4c47696634.mp3"
+      ]
+    },
+    {
+      "glyph": "毌",
+      "ownReading": "guàn",
+      "relatedGlyph": "貫",
+      "relatedReading": "guàn",
+      "ownRecording": [
+        "/__l5e/assets-v1/da5d5982-f133-4bb0-ad20-dbf4cf36ac0c/cmn-151c9924a494.mp3"
+      ],
+      "relatedRecording": [
+        "/__l5e/assets-v1/da5d5982-f133-4bb0-ad20-dbf4cf36ac0c/cmn-151c9924a494.mp3"
+      ]
+    },
+    {
+      "glyph": "丷",
+      "ownReading": "bā",
+      "relatedGlyph": "八",
+      "relatedReading": "bā",
+      "ownRecording": [
+        "/__l5e/assets-v1/5a95d0fc-33a0-41e6-8882-410a79f54e5d/cmn-a8a6b84dca90.mp3"
+      ],
+      "relatedRecording": [
+        "/__l5e/assets-v1/5a95d0fc-33a0-41e6-8882-410a79f54e5d/cmn-a8a6b84dca90.mp3"
+      ]
+    },
+    {
+      "glyph": "龹",
+      "ownReading": "quǎn",
+      "relatedGlyph": "卷",
+      "relatedReading": "juǎn",
+      "ownRecording": [
+        "/__l5e/assets-v1/8c25eb0b-c99f-41c6-9d66-1a19873e7e67/cmn-8516e36fcfac.mp3"
+      ],
+      "relatedRecording": [
+        "/__l5e/assets-v1/60998b64-1fbd-4fbc-89c4-83e6dd9edfc7/cmn-e53a6315988e.mp3"
+      ]
+    }
+  ]
+}
