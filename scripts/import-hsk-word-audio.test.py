@@ -42,11 +42,11 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest)
-        # Any other level's clip for the same word and reading counts, including Level 5's 才 cái (#2083).
-        self.assertEqual(report['reusedExisting'], 4)
+        # Any other level's clip for the same word and reading counts, including Level 5's 才 cái (#2083) and Level 6's 该 gāi.
+        self.assertEqual(report['reusedExisting'], 5)
         reused = sorted(entry['hsk_index'] for entry in data['entries'] if entry['hskLevel'] == 3 and entry.get('audio'))
-        self.assertEqual(reused, [544, 660, 683, 966])  # 才 cái, 过去 guòqù, 会 huì, 站 zhàn
-        self.assertEqual(len(report['pendingUpload']), 439)
+        self.assertEqual(reused, [544, 635, 660, 683, 966])  # 才 cái, 该 gāi, 过去 guòqù, 会 huì, 站 zhàn
+        self.assertEqual(len(report['pendingUpload']), 438)
 
     def test_only_audio_and_timestamp_change_and_only_on_level_3(self):
         fresh = copy.deepcopy(self.vocabulary)
@@ -82,7 +82,7 @@ class Level3AudioImportTests(unittest.TestCase):
             if entry['hskLevel'] == 3:
                 entry['audio'] = None
         data, report = audio.import_audio(fresh, self.manifest, audio.INPUT / 'level3-uploads.json')
-        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 4, []))
+        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (443, 5, []))
         self.assertEqual(sum(1 for e in data['entries'] if e['hskLevel'] == 3 and e.get('audio')), 443)
 
 
@@ -162,6 +162,35 @@ class Level5AudioCompatibilityTests(unittest.TestCase):
         with patch.object(audio, 'read', side_effect=lambda path: manifest if path == audio.MANIFEST else original_read(path)):
             with self.assertRaisesRegex(ValueError, 'identities differ'):
                 audio.load_manifest()
+
+
+class Level6AudioImportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        audio.configure(6)
+        cls.manifest = audio.load_manifest()
+        cls.vocabulary = audio.base.vocabulary_store.read_vocabulary()
+
+    def setUp(self):
+        audio.configure(6)
+
+    def test_committed_attachments_cover_exactly_the_matched_entries(self):
+        _, report = audio.import_audio(self.vocabulary, self.manifest)
+        self.assertEqual(report['pendingUpload'], [])
+        self.assertEqual((report['attached'], report['changed']), (1313, 0))
+        attached = {e['hsk_index'] for e in self.vocabulary['entries'] if e['hskLevel'] == 6 and e.get('audio')}
+        unmatched = {row['hskIndex'] for row in self.manifest['entries'] if row['status'] != 'matched'}
+        self.assertEqual(len(attached), 1313)
+        self.assertFalse(attached & unmatched)
+
+    def test_committed_upload_map_attaches_every_matched_entry_from_a_clean_level(self):
+        fresh = copy.deepcopy(self.vocabulary)
+        for entry in fresh['entries']:
+            if entry['hskLevel'] == 6:
+                entry['audio'] = None
+        data, report = audio.import_audio(fresh, self.manifest, audio.INPUT / 'level6-uploads.json')
+        self.assertEqual((report['attached'], report['reusedExisting'], report['pendingUpload']), (1313, 6, []))
+        self.assertEqual(sum(1 for e in data['entries'] if e['hskLevel'] == 6 and e.get('audio')), 1313)
 
 
 if __name__ == '__main__':
