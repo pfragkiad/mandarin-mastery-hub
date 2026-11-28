@@ -57,7 +57,7 @@ import { SoundPlaybackRow } from './sound-playback-row';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
-export type ToneSoundsPatch = { pair?: string | undefined; rule?: ToneRule | undefined; example?: string | undefined; listen?: true | undefined };
+export type ToneSoundsPatch = { pair?: string | undefined; rule?: ToneRule | undefined; example?: string | undefined; listen?: true | undefined; closed?: true | undefined };
 /** The Sound chart recordings behind the card's syllable chips (lazy), and their player. */
 type SyllableChips = { data: PinyinData | null; player: PinyinPlayer; error: string; onPlay: (base: string, tone: Tone) => void };
 
@@ -88,7 +88,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   // page visits show the matrix or rules; direct word links and history restore the window.
   // Derived directly from URL search (never local state before navigation) so DetailSheet
   // mounts on the pushed history entry and never mistakes the page before the grid as its origin.
-  const detailOpen = Boolean((mode === 'pairs' ? search.pair : search.rule) || search.example);
+  const detailOpen = Boolean((mode === 'pairs' ? search.pair : search.rule) || search.example) && !(mode === 'changes' && search.closed);
   useEffect(() => { let live = true; setFailed(false); loadTonePairs().then(d => { if (live) setData(d); }, () => { if (live) setFailed(true); }); return () => { live = false; }; }, [attempt]);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useOneLineTitle(titleRef, headings[mode]);
@@ -129,7 +129,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   const nextGroup = groupIndex >= 0 && groupIndex < groupOrder.length - 1 ? groupOrder[groupIndex + 1] : undefined;
   const pickGroup = (key: string) => {
     if (mode === 'pairs') onChange({ pair: key, example: undefined });
-    else { const target = ruleOrder.find(value => value === key); if (target) onChange({ rule: target, example: undefined }); }
+    else { const target = ruleOrder.find(value => value === key); if (target) onChange({ rule: target, example: undefined, closed: undefined }); }
   };
 
   // Any change of what is selected (or leaving the page) stops the current recording.
@@ -204,7 +204,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
         <div className="tone-sounds-main">
           {mode === 'pairs'
             ? <PairMatrix data={data} pair={pair} hidden={hidden} onPick={p => onChange({ pair: p, example: undefined })}/>
-            : <RuleList rule={rule} onPick={r => onChange({ rule: r, example: undefined })}/>}
+            : <RuleList rule={rule} onPick={r => onChange({ rule: r, example: r === rule ? search.example : undefined, closed: undefined })}/>}
         </div>
         {/* Mount only while open so the shared window records the actual opening
             history entry. Close/Back then return to the source grid or details,
@@ -215,7 +215,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
           nextLabel={nextGroup ? (mode === 'pairs' ? pairLabel(nextGroup) : TONE_RULES[ruleOrder[groupIndex + 1] ?? DEFAULT_RULE].symbol) : undefined}
           onPrevious={previousGroup ? () => pickGroup(previousGroup) : undefined}
           onNext={nextGroup ? () => pickGroup(nextGroup) : undefined}
-          onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule: undefined, example: undefined }, true); }}>
+          onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule, closed: true }, true); }}>
           <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} activeCard={activeCard} onPick={id => onChange({ example: id })}
             slow={slow} onSlow={value => setPreferences({ ...preferences, slow: value })}
             chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); setActiveCard(null); void chipPlayer.play(sound(base, tone)); } }}

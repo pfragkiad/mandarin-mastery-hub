@@ -51,7 +51,7 @@ export const isRule = (value: unknown): value is ToneRule => value === 'third' |
 
 export type ToneSoundsSearch = { example?: string | undefined; listen?: true | undefined };
 export type TonePairsSearch = ToneSoundsSearch & { pair?: string | undefined };
-export type ToneChangesSearch = ToneSoundsSearch & { rule?: ToneRule | undefined };
+export type ToneChangesSearch = ToneSoundsSearch & { rule?: ToneRule | undefined; closed?: true | undefined };
 
 /** Shared part of both validators: unknown values are dropped, never guessed. */
 function common(search: Record<string, unknown>): ToneSoundsSearch {
@@ -71,6 +71,8 @@ export function validateTonePairsSearch(search: Record<string, unknown>): TonePa
 export function validateToneChangesSearch(search: Record<string, unknown>): ToneChangesSearch {
   const out: ToneChangesSearch = common(search);
   if (isRule(search['rule'])) out.rule = search['rule'];
+  // Closing hides the window without discarding the URL's exact rule/example.
+  if (search['closed'] === true || search['closed'] === 1 || search['closed'] === '1') out.closed = true;
   return out;
 }
 

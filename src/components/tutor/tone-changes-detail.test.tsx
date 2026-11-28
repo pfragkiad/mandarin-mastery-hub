@@ -48,14 +48,23 @@ describe('Tone changes shared detail navigation', () => {
     const onChange = vi.fn();
     render(<ToneSoundsPage mode="changes" search={{ rule: 'third' }} onChange={onChange}/>);
     fireEvent.click(await screen.findByRole('button', { name: 'Next tone change in this list' }));
-    expect(onChange).toHaveBeenCalledWith({ rule: 'yi', example: undefined });
+    expect(onChange).toHaveBeenCalledWith({ rule: 'yi', example: undefined, closed: undefined });
   });
 
-  it('closes back to the rules without leaving a selected example', async () => {
+  it.each(['yi', 'bu'] as const)('keeps the current %s rule and exact example when closing and reopening', async rule => {
     const onChange = vi.fn();
-    render(<ToneSoundsPage mode="changes" search={{ rule: 'yi' }} onChange={onChange}/>);
+    const row = rulePool(data as unknown as TonePairData, rule)[1];
+    if (!row) throw new Error(`Missing ${rule} example fixture`);
+    const view = render(<ToneSoundsPage mode="changes" search={{ rule, example: row.id }} onChange={onChange}/>);
     fireEvent.click(await screen.findByRole('button', { name: 'Close and show card in list' }));
-    expect(onChange).toHaveBeenCalledWith({ rule: undefined, example: undefined }, true);
+    expect(onChange).toHaveBeenCalledWith({ rule, closed: true }, true);
+    view.rerender(<ToneSoundsPage mode="changes" search={{ rule, example: row.id, closed: true }} onChange={onChange}/>);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    const selectedRule = screen.getByRole('button', { name: rule === 'yi' ? /The tone of 一/ : /The tone of 不/ });
+    expect(selectedRule).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('button', { name: /Two third tones/ })).toHaveAttribute('aria-pressed', 'false');
+    fireEvent.click(selectedRule);
+    expect(onChange).toHaveBeenLastCalledWith({ rule, example: row.id, closed: undefined });
   });
 
   it('plays the exact selected word attachment, not the previous rule recording', async () => {

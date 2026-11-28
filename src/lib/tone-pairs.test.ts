@@ -65,6 +65,11 @@ describe('exact bindings', () => {
 });
 
 describe('URL search', () => {
+  it('retains the current tone-change rule and example in a closed window URL', () => {
+    expect(validateToneChangesSearch({ rule: 'bu', example: 'exact-word', closed: true })).toEqual({ rule: 'bu', example: 'exact-word', closed: true });
+    expect(validateToneChangesSearch({ rule: 'yi', closed: '1' })).toEqual({ rule: 'yi', closed: true });
+    expect(validateToneChangesSearch({ rule: 'yi', closed: 'yes' })).toEqual({ rule: 'yi' });
+  });
   it('drops unknown pairs, rules and modes instead of guessing', () => {
     expect(validateTonePairsSearch({ pair: '5-1', listen: 'yes', speed: 'fast' })).toEqual({});
     expect(validateTonePairsSearch({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: 1, speed: 'slow' })).toEqual({ pair: '4-5', example: 'shtooka:cmn-799ef867', listen: true });
