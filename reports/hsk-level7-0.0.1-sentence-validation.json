@@ -1,0 +1,22 @@
+{
+  "schema_version": "hsk-level7-sentence-validation/0.0.1",
+  "output": {
+    "path": "importer/hsk/hsk3_level7_0.0.1.json",
+    "bytes": 4383316,
+    "sha256": "10d1074d3630ce7b43be21f63e8cee7577ed27a9b896fd1c364b21ebbd47a9a3",
+    "split_needed": false
+  },
+  "official_entries": 5600,
+  "examples": 5600,
+  "styles": {
+    "conversational": 2111,
+    "written": 3489
+  },
+  "unique_chinese_sentences": 5600,
+  "unique_english_translations": 5600,
+  "aligned_readings": 5600,
+  "exact_official_identities_preserved": true,
+  "sentences_with_reading_review_flags": 1020,
+  "status": "editorial_draft_needs_language_review",
+  "runtime_import_ready": false
+}

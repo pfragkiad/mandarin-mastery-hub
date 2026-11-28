@@ -57,12 +57,21 @@
     "level6_changed_official_serials": 850,
     "level6_unchanged_official_serials": 950,
     "runtime_data_changed": false,
-    "examples_written": 0
+    "examples_written": 5600,
+    "example_styles": {
+      "conversational": 2111,
+      "written": 3489
+    },
+    "example_review_status": "editorial_draft_needs_language_review",
+    "sentence_manifest": {
+      "path": "importer/data/hsk-level7/sentence-manifest.json",
+      "sha256": "2ea3857098c428b87f915bbdd138ce7f3f750e1919505926f0bbad3e16b3b221"
+    }
   },
   "output": {
     "path": "importer/hsk/hsk3_level7_0.0.1.json",
-    "bytes": 1356352,
-    "sha256": "e5cfacd062714f67a25cce10c261e00b47d3f5759ca9760667be39a2ee687e40",
+    "bytes": 4383316,
+    "sha256": "10d1074d3630ce7b43be21f63e8cee7577ed27a9b896fd1c364b21ebbd47a9a3",
     "format": "one compact entry per line",
     "split_needed": false
   },

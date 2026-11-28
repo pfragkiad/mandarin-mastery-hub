@@ -16,7 +16,9 @@ The [Level 2 word-audio handoff](data/hsk-audio/README.md) pins the original Sht
 The [Level 7 working seed](hsk/hsk3_level7_0.0.1.json) preserves the current
 official syllabus's shared **Levels 7–9** band: all 5,600 rows, serials 5401–11000,
 with readings, raw POS and PDF page references. It contains no invented separate
-Level 7 allocation, English glosses or examples. Generate/check with
+Level 7 allocation or English word glosses. Each entry now includes one newly
+authored conversational or written example with assisted pinyin and English.
+Generate/check with
 `python scripts/prepare-hsk-level7.py --write` / `--check`; see the
 [official-source guide](data/hsk-level7/README.md) and
 [source/Level 6 numbering audit](../reports/hsk-level7-0.0.1-official-source-audit.md).

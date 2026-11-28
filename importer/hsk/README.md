@@ -12,7 +12,7 @@ The owner-supplied Level 1–5 source files retain their original UTF-8 bytes an
 | [hsk3_level6_0.1.0.json](hsk3_level6_0.1.0.json) | Complete 1,800-headword Level 6 draft (3601–5400), with 3,600 examples: one conversational and one written per entry. Checked by `scripts/validate-hsk-level6.mjs`; not imported into application vocabulary. | Owner-requested completion of the first 100 entries; `hsk-example-pairs/1.3.0`, draft data version 0.1.0. |
 | [hsk3_level6_1.0.0.json](hsk3_level6_1.0.0.json) | Preserved reviewed Level 6 baseline: 1,800 entries and 3,600 examples, with 704 replacements and 17 pinyin-only fixes. Its official numbering follows the earlier PDF. | `scripts/build-hsk-level6-release.py` from the frozen review ledger; `hsk-example-pairs/1.3.0`, data version 1.0.0. |
 | [hsk3_level6_1.0.1.json](hsk3_level6_1.0.1.json) | Current Level 6 release with 850 official IDs reconciled to the currently linked official PDF. All meanings, classifications and examples remain exact. Imported through `scripts/import-hsk-level6.mjs`, retaining UUIDs and 1,313 word recordings. | `scripts/reconcile-hsk-level6-numbering.py`; data version 1.0.1, official-site-1219 numbering. |
-| [hsk3_level7_0.0.1.json](hsk3_level7_0.0.1.json) | Source-only seed containing all 5,600 official shared Levels 7–9 rows (5401–11000). The requested Level 7 filename is a local working name; the official band is 7–9. Meanings, topic assignments and examples are pending; not accepted by the runtime importer. | `scripts/prepare-hsk-level7.py` from the [preserved official PDFs and text](../data/hsk-level7/README.md); separate `hsk-official-vocabulary-seed/0.0.1` schema. |
+| [hsk3_level7_0.0.1.json](hsk3_level7_0.0.1.json) | Working handoff containing all 5,600 official shared Levels 7–9 rows (5401–11000), each with one conversational or written editorial example, assisted pinyin and English. The requested Level 7 filename is a local working name; the official band is 7–9. English word meanings and topic assignments remain pending; not accepted by the runtime importer. | `scripts/prepare-hsk-level7.py` from the [preserved official PDFs and text](../data/hsk-level7/README.md); separate `hsk-official-vocabulary-seed/0.0.1` schema. |
 | [hsk3_topics.json](hsk3_topics.json) | Versioned shared taxonomy with 22 parent topics and 25 subtopics; all importers require exact agreement with both embedded registries. | Supplied `hsk-topics/2.0.0` sidecar, version 2.0.0. |
 | `.gitattributes` | Disables Git line-ending conversion for current and archived checksum-bound sources. | Maintained alongside the pinned inputs. |
 
@@ -26,7 +26,7 @@ Source SHA-256 values:
 - Level 6 v0.1.0: `359d066fbc59138dcc88cdb00cb054bb8c85a64cfb99d2ba7bb912bd8b6cbc47`
 - Level 6 v1.0.0: `60f9241380ca88cae9c506cbe60bbf16f2d11e5093e1872f93834f1f12554a0d`
 - Level 6 v1.0.1: `83a6880398e6a19d7cda846620ac00138877944561bdbcd4a5cc026d266846f3`
-- Official 7–9 seed v0.0.1: `e5cfacd062714f67a25cce10c261e00b47d3f5759ca9760667be39a2ee687e40`
+- Advanced 7–9 handoff v0.0.1: `10d1074d3630ce7b43be21f63e8cee7577ed27a9b896fd1c364b21ebbd47a9a3`
 - Topics: `d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f`
 
 From the repository root:

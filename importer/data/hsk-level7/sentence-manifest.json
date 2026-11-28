@@ -1,0 +1,38 @@
+{
+  "schema_version": "hsk-level7-sentence-inputs/0.0.1",
+  "authorship": "Owner-requested individually authored editorial drafts, with assisted pinyin; no official or independent native-review claim.",
+  "drafts": [
+    {
+      "path": "importer/data/hsk-level7/sentence-drafts/5401-7267.jsonl",
+      "bytes": 349489,
+      "sha256": "3e95913a7648bde4f4d5f6d6ad775d3e7390cf8832e703a855061bf7f780aee5",
+      "id_range": [
+        5401,
+        7267
+      ]
+    },
+    {
+      "path": "importer/data/hsk-level7/sentence-drafts/7268-9134.jsonl",
+      "bytes": 329699,
+      "sha256": "c7cc0ca4f0f2e681268e063e7284c45f287276866515462f935d2dab749e8b49",
+      "id_range": [
+        7268,
+        9134
+      ]
+    },
+    {
+      "path": "importer/data/hsk-level7/sentence-drafts/9135-11000.jsonl",
+      "bytes": 380722,
+      "sha256": "e76f46e3b0d780a43aa122474181ca0a4026f4d04254f1d22f4df6402b5124eb",
+      "id_range": [
+        9135,
+        11000
+      ]
+    }
+  ],
+  "pinyin": {
+    "path": "importer/data/hsk-level7/sentence-drafts/pinyin-0.0.1.json",
+    "bytes": 4585767,
+    "sha256": "6993947fd8e8bf0fbca1591b171a42f8161061a5efb5d4367f03428a47691b47"
+  }
+}

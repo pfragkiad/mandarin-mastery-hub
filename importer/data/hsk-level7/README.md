@@ -36,7 +36,29 @@ python scripts/prepare-hsk-level7.py --check
 python scripts/prepare-hsk-level7.py --extract
 ```
 
-The seed contains official words, pinyin and raw POS only. English meanings,
-topic assignments and examples are pending, and it uses a separate seed schema
-so it cannot masquerade as a complete example-pair handoff. See the
+The handoff preserves official words, pinyin and raw POS, and now includes one
+newly authored example per entry, with assisted pinyin and English. English word
+meanings, topic assignments and application entry kinds remain pending; the
+separate seed schema keeps it outside the runtime importer. See the
 [source audit](../../../reports/hsk-level7-0.0.1-official-source-audit.md).
+
+## Sentence inputs and assembly
+
+[sentence-drafts/](sentence-drafts/README.md) holds three nonoverlapping, individually
+authored JSONL ranges and a reproducible assisted-pinyin overlay.
+[sentence-manifest.json](sentence-manifest.json) pins their exact UTF-8 bytes and
+checksums. `scripts/hsk_level7_sentences.py` validates these inputs before the
+preparation script embeds one example in each of the 5,600 entries. The ordinary
+JSON handoff retains one compact entry per line and stays below 9 MB.
+
+`node scripts/validate-hsk-level7.mjs` independently checks official identities,
+coverage, language fields, uniqueness and all 5,600 readings through the shared
+frontend aligner. [Sentence review](../../../reports/hsk-level7-0.0.1-sentence-review.md)
+and [validation](../../../reports/hsk-level7-0.0.1-sentence-validation.json) record
+findings. All examples remain editorial drafts needing language review; no
+recordings or runtime vocabulary are created. If the local historical Level 6
+1.0.0 file is absent, preparation verifies its exact bytes from recorded Git
+commit `2bbef1ddb3bdd5b5aefa2374a94aeed65df2f0a5` without restoring it.
+
+The completed handoff contains **5,600 examples** (2,111 conversational / 3,489 written)
+and is **4,383,316 UTF-8 bytes**, below the 9 MB split threshold.

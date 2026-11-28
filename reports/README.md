@@ -90,3 +90,11 @@ Files such as `character-variants-v1.4.0.json` contain runtime associations and 
 [runtime import audit](hsk-level1-5-official-numbering-import.json) record the
 owner-approved migration of all 3,600 entries, 1,092 changed official IDs,
 POS/example corrections and preserved UUIDs/audio/lesson bindings.
+
+## Shared Levels 7-9 examples
+
+The [sentence review](hsk-level7-0.0.1-sentence-review.md) records whole-list
+mechanical checks, targeted language corrections and remaining source cautions.
+The [sentence validation](hsk-level7-0.0.1-sentence-validation.json) records all
+5,600 examples, styles, alignment results and handoff size/checksum. Examples
+remain editorial drafts and English word meanings/classifications remain pending.

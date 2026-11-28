@@ -3,7 +3,8 @@
 
 Normal builds use only the standard library and frozen PDF text snapshots.
 --extract requires pypdf 6.21.4 and reproduces those snapshots from preserved PDFs.
-No English, classification, example language or runtime identities are inferred.
+English word meanings, classifications and runtime identities remain pending.
+Sentence drafts are assembled from separately checksum-bound editorial inputs.
 """
 import argparse
 from collections import Counter
@@ -13,6 +14,9 @@ import io
 import json
 from pathlib import Path
 import re
+import subprocess
+
+from hsk_level7_sentences import load_sentences
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = Path('importer/data/hsk-level7')
@@ -21,6 +25,7 @@ TRANSCRIPTION = INPUT / 'official-vocabulary.json'
 AUDIT = Path('reports/hsk-level7-0.0.1-official-source-audit.json')
 REPORT = Path('reports/hsk-level7-0.0.1-official-source-audit.md')
 CROSSWALK = Path('reports/hsk-level6-official-numbering-crosswalk.tsv')
+LEVEL6_BASELINE_COMMIT = '2bbef1ddb3bdd5b5aefa2374a94aeed65df2f0a5'
 
 
 def sha(raw):
@@ -91,7 +96,11 @@ def build():
     prior_level6 = parse_pages(previous)
     assert [row['id'] for row in prior_level6] == list(range(3601, 5401))
 
-    level6_raw = (ROOT / manifest['existing_level6']['path']).read_bytes()
+    baseline_path = ROOT / manifest['existing_level6']['path']
+    # A local historical-source cleanup must not require restoring deleted files.
+    # Read the same checksum-bound committed bytes if that local file is absent.
+    level6_raw = (baseline_path.read_bytes() if baseline_path.exists() else
+                  subprocess.check_output(['git', 'show', LEVEL6_BASELINE_COMMIT + ':' + manifest['existing_level6']['path']], cwd=ROOT))
     assert sha(level6_raw) == manifest['existing_level6']['sha256']
     level6 = json.loads(level6_raw)['entries']
     for stored, official in zip(level6, prior_level6):
@@ -118,12 +127,13 @@ def build():
 
     advanced = [row for row in rows if row['level'] == '7-9']
     assert [row['id'] for row in advanced] == list(range(5401, 11001))
+    examples, sentence_provenance = load_sentences(advanced)
     entries = [{
         'id': row['id'], 'official_level_label': row['level_label'],
         'headword': row['hanzi'], 'pinyin': row['pinyin'],
         'syllabus_headword': row['entry'], 'syllabus_pos_zh': row['part_of_speech'],
         'homograph': row['homograph'], 'source_pdf_page': row['source_pdf_page'],
-        'meaning_en': None, 'examples': [], 'classification_status': 'pending',
+        'meaning_en': None, 'examples': examples[row['id']], 'classification_status': 'pending',
     } for row in advanced]
     metadata = {
         'schema_version': 'hsk-official-vocabulary-seed/0.0.1', 'data_version': '0.0.1',
@@ -135,7 +145,7 @@ def build():
             'filename_note': 'The Level 7 filename is the owner-requested local working name for the combined advanced band.',
         },
         'verification': {
-            'status': 'official_pdf_word_list_seed_enrichment_pending', 'import_ready': False,
+            'status': 'official_pdf_word_list_with_editorial_sentence_drafts', 'import_ready': False,
             'retrieved_on': manifest['retrieved_on'],
             'official_page': manifest['official_page']['url'],
             'official_pdf': {'url': manifest['current_pdf']['url'], 'sha256': manifest['current_pdf']['sha256'],
@@ -144,7 +154,8 @@ def build():
             'extraction': manifest['extractor'],
             'coverage': 'All 5,600 printed rows retained in official serial order, including homographs and 443 blank POS cells.',
             'pending': ['English meanings', 'Topic and subtopic assignments', 'Application entry kinds',
-                        'Conversational and written examples', 'Language review', 'Recordings'],
+                        'Language review', 'Recordings'],
+            'sentences': sentence_provenance,
             'identity_policy': 'Keep official 7-9 labels and exact version-bound serials. No fabricated separate Level 7 allocation; no changes to existing vocabulary UUIDs or syllabus identities.',
             'level6_comparison': {'headword_reading_pos_tuples_match': 1800,
                                   'existing_release_matches_previous_official_pdf': True,
@@ -173,7 +184,10 @@ def build():
         'level6_existing_release_matches_previous_official_pdf': True,
         'level6_headword_reading_pos_tuples_match_current_pdf': 1800,
         'level6_changed_official_serials': changed, 'level6_unchanged_official_serials': 1800 - changed,
-        'runtime_data_changed': False, 'examples_written': 0,
+        'runtime_data_changed': False, 'examples_written': 5600,
+        'example_styles': dict(Counter(e['examples'][0]['style'] for e in entries)),
+        'example_review_status': 'editorial_draft_needs_language_review',
+        'sentence_manifest': sentence_provenance['manifest'],
     }
     audit = {
         'schema_version': 'hsk-official-source-audit/0.0.1',
@@ -196,8 +210,11 @@ The [requested seed](../{OUTPUT.as_posix()}) preserves every advanced row, readi
 raw POS value, homograph suffix and PDF page. Its filename retains the owner's
 Level 7 working name, while its metadata explicitly identifies the shared band.
 There are 443 blank official POS cells and 5,585 distinct written forms; repeated
-forms remain separate records. English meanings, classifications and examples
-are pending. The seed uses a distinct schema and is not ready for the runtime importer.
+forms remain separate records. Each entry now includes one newly authored example,
+either conversational or written, with assisted pinyin and an English translation.
+The [sentence review](hsk-level7-0.0.1-sentence-review.md) records checks and remaining
+reading/POS questions. English word meanings and classifications are pending.
+The seed uses a distinct schema and is not ready for the runtime importer.
 
 ## Level 6 comparison
 
@@ -231,7 +248,8 @@ All 11,000 current official serials were parsed in order without gaps or merges.
 Counts are 300 / 200 / 500 / 1,000 / 1,600 / 1,800 / 5,600 for Levels 1–6 and 7–9.
 The [machine audit](hsk-level7-0.0.1-official-source-audit.json) records the checks
 and output checksum. The seed is {len(output):,} bytes and needs no split at this
-source-only stage; its entries each occupy one line.
+stage; its entries each occupy one line. All 5,600 example readings pass the shared
+structural aligner; examples remain editorial drafts needing language review.
 
 ```sh
 python scripts/prepare-hsk-level7.py --write

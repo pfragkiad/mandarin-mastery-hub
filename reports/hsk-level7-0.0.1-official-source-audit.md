@@ -10,8 +10,11 @@ The [requested seed](../importer/hsk/hsk3_level7_0.0.1.json) preserves every adv
 raw POS value, homograph suffix and PDF page. Its filename retains the owner's
 Level 7 working name, while its metadata explicitly identifies the shared band.
 There are 443 blank official POS cells and 5,585 distinct written forms; repeated
-forms remain separate records. English meanings, classifications and examples
-are pending. The seed uses a distinct schema and is not ready for the runtime importer.
+forms remain separate records. Each entry now includes one newly authored example,
+either conversational or written, with assisted pinyin and an English translation.
+The [sentence review](hsk-level7-0.0.1-sentence-review.md) records checks and remaining
+reading/POS questions. English word meanings and classifications are pending.
+The seed uses a distinct schema and is not ready for the runtime importer.
 
 ## Level 6 comparison
 
@@ -44,8 +47,9 @@ for column boundaries, Level 6 order and the shared 7–9 label.
 All 11,000 current official serials were parsed in order without gaps or merges.
 Counts are 300 / 200 / 500 / 1,000 / 1,600 / 1,800 / 5,600 for Levels 1–6 and 7–9.
 The [machine audit](hsk-level7-0.0.1-official-source-audit.json) records the checks
-and output checksum. The seed is 1,356,352 bytes and needs no split at this
-source-only stage; its entries each occupy one line.
+and output checksum. The seed is 4,383,316 bytes and needs no split at this
+stage; its entries each occupy one line. All 5,600 example readings pass the shared
+structural aligner; examples remain editorial drafts needing language review.
 
 ```sh
 python scripts/prepare-hsk-level7.py --write

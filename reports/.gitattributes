@@ -38,3 +38,5 @@ hsk-level1-5-official-id-crosscheck-validation.json -text
 hsk-level1-5-official-numbering-migration.json -text
 hsk-level1-5-official-numbering-migration.md -text
 hsk-level1-5-official-numbering-import.json -text
+hsk-level7-0.0.1-sentence-review.md -text
+hsk-level7-0.0.1-sentence-validation.json -text
