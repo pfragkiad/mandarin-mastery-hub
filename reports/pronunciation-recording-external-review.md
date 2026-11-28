@@ -44,4 +44,3 @@ The Mainland and Taiwan sources attest different pronunciation conventions for s
 The [structured review](pronunciation-recording-external-review.json) retains each exact vocabulary ID, source-index reading, disposition and supporting URLs, bound to the input audit's SHA-256. Ministry PDF table claims here came from indexed primary-source extracts; the complete 2010 PDF was not inspected. The 2021 PDF was downloaded temporarily but was not used for a full-page visual review.
 
 No clip was independently listened to or transcribed. No runtime readings, meanings, IDs, audio URLs, source tuples or imported data were changed by this external review.
-
