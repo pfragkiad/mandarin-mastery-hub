@@ -44,4 +44,31 @@ describe('Detail example selection', () => {
     expect(['character', 'word', 'phrase', 'idiom', 'off'].map(exampleTabSearch)).toEqual(['character', 'word', 'phrase', 'idiom', 'off']);
     expect(exampleTabSearch('etymology')).toBeUndefined();
   });
+  it('hides both word/phrase tabs and their empty bodies when both sources are empty', () => {
+    render(<ExampleTabs hideEmptyWordPhrase>
+      <ExampleSection id="word" label="In a word" icon={Puzzle} hasContent={false}>empty word</ExampleSection>
+      <ExampleSection id="phrase" label="In a phrase" icon={Quote} hasContent={false}>empty phrase</ExampleSection>
+    </ExampleTabs>);
+    expect(screen.queryByRole('tablist')).toBeNull();
+    expect(screen.queryByText('empty word')).toBeNull();
+    expect(screen.queryByText('empty phrase')).toBeNull();
+  });
+  it('keeps both tabs while either source has content or is still loading', () => {
+    render(<ExampleTabs hideEmptyWordPhrase>
+      <ExampleSection id="word" label="In a word" icon={Puzzle} hasContent={false}>empty word</ExampleSection>
+      <ExampleSection id="phrase" label="In a phrase" icon={Quote} hasContent>recorded phrase</ExampleSection>
+    </ExampleTabs>);
+    expect(screen.getAllByRole('tab')).toHaveLength(2);
+  });
+  it('retains an available idiom when the word/phrase pair is hidden', () => {
+    state.search.examples = 'word';
+    render(<ExampleTabs hideEmptyWordPhrase>
+      <ExampleSection id="word" label="In a word" icon={Puzzle} hasContent={false}>empty word</ExampleSection>
+      <ExampleSection id="phrase" label="In a phrase" icon={Quote} hasContent={false}>empty phrase</ExampleSection>
+      <ExampleSection id="idiom" label="In an idiom" icon={Quote}>recorded idiom</ExampleSection>
+    </ExampleTabs>);
+    expect(screen.getAllByRole('tab')).toHaveLength(1);
+    expect(screen.getByRole('tab', { name: 'In an idiom', selected: true })).toBeTruthy();
+    expect(screen.getByText('recorded idiom')).toBeTruthy();
+  });
 });

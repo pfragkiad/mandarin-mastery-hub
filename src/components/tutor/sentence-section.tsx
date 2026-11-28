@@ -84,10 +84,10 @@ export function useSentenceSectionLayout(recordKey: string, content: unknown) {
   return sectionRef;
 }
 
-export function SentenceSection({ hanzi, children }: { hanzi: string; children?: ReactNode }) {
+export function SentenceSection({ hanzi, children, hasContent }: { hanzi: string; children?: ReactNode; hasContent?: boolean }) {
   const sectionRef = useSentenceSectionLayout(hanzi, children);
   const hasExamples = Array.isArray(children) ? children.length > 0 : Boolean(children);
-  return <ExampleSection id="phrase" label="In a phrase" icon={Quote} sectionRef={sectionRef} className="glyph-usage-section sentence-section">
+  return <ExampleSection id="phrase" label="In a phrase" icon={Quote} hasContent={hasContent ?? hasExamples} sectionRef={sectionRef} className="glyph-usage-section sentence-section">
     {hasExamples ? <SentenceHints backLabel={hanzi}>{children}</SentenceHints> : <p className="library-note">No recorded example phrase yet.</p>}
   </ExampleSection>;
 }

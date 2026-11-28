@@ -97,7 +97,7 @@ export function CharacterWordsSection({ entry }: { entry: LibraryEntry }) {
   const { items, preferences } = useWorkspace();
   const matches = useMemo(() => characterWords(entry.hanzi, items, preferences.includeTraditional), [entry.hanzi, items, preferences.includeTraditional]);
   const WordsIcon = sectionIcons.Words;
-  return <ExampleSection id="word" label="In a word" icon={WordsIcon}>
+  return <ExampleSection id="word" label="In a word" icon={WordsIcon} hasContent={matches.length > 0}>
     {!matches.length ? <p className="library-note">No recorded multi-character words yet.</p> : <SentenceHints backLabel={entry.hanzi}>
       <ExpandableCharacterGrid key={entry.id} initialCount={6} cards={matches.map(word => {
         const hsk = wordHskPill(word);
@@ -216,9 +216,9 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
       </div>;
     })}/>}
   </ExampleSection>;
-  // "In a phrase" always shows for characters, even with no recorded example, so
-  // External search of the exact hanzi is always reachable. Imported file names
-  // and review status identifiers are internal metadata, not learner hints.
+  // Register actual content separately from loading, so the shared detail drawer can
+  // hide word/phrase tabs only after both exact sources settle empty. External search
+  // remains in the independent action row.
   const sentenceExamples = examples.map(({ word, sentence }) => {
     // Header line inside the card: this record's own HSK level/ID pill and its primary
     // recorded subtopic, each shown only when recorded (wordHskPill / primarySubtopicLabel
@@ -238,7 +238,7 @@ export function GlyphUsageExamples({ entry, kind, familyGlyph }: { entry: Librar
           (ownSentencePinyin), never the Tatoeba transcription. */}
       <SentenceExample heading="" sentence={tatoeba.sentence} pinyin={tatoebaReadingFor ? ownSentencePinyin(tatoeba.sentence, tatoebaReadingFor) : undefined} translation={tatoeba.translation} sourceDetails={<TatoebaSentenceSource example={tatoeba}/>}/>
     </div>);
-  return <SentenceSection hanzi={entry.hanzi}>
+  return <SentenceSection hanzi={entry.hanzi} hasContent={sentenceExamples.length > 0 || fallbackLoading}>
     {sentenceExamples.length > 0 ? <MoreExamples key={entry.id} examples={sentenceExamples} initialCount={2}/> : fallbackLoading ? <SectionPlaceholder heading={null} label="In a phrase" shape="cards" rows={2}/> : null}
   </SentenceSection>;
 }

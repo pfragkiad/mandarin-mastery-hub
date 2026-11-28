@@ -199,16 +199,15 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
   const unknownTreeRecord = useCharacterEnrichment(entry.hanzi, entry.decomposition && !hasKnownDecomposition(entry.decomposition.root) ? entry.decomposition.root : undefined);
   const hasBreakdown = decompositionHasContent(entry.decomposition?.root, unknownTreeRecord);
   const info = glyphPresentation(entry.hanzi, kind, entry.pinyin, entry.meaning);
-  // A radical form's own exact Kangxi identity outranks its dictionary indexing radical.
-  // For example 卤 is family #197 even though its imported dictionary index is 卜 (#25).
-  // Do not consult decomposition; ambiguous family identities retain the recorded index.
+  // Every radical character/form shows its own family pill, like the canonical Traditional
+  // form. Dictionary indexing and decomposition cannot replace that top-level identity.
   const ownRadicals = glyphRadicalLinks(entry.hanzi);
-  const noteRadical = (ownRadicals.length === 1 ? ownRadicals[0]?.glyph : undefined) ?? entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
+  const noteRadical = entry.note.match(/·\s*(.+?) radical$/)?.[1] ?? (kind === 'Components' ? catalog.componentRadicals[entry.hanzi] : undefined);
   const kangxiNumber = kind === 'Radicals' ? heading.kangxiIndex : radicalIdentity(entry.hanzi).radicals[0]?.number ?? info.characterRadical?.number;
   const radicalFact = (() => {
     if (kind === 'Strokes') return null;
-    const isRecordedRadicalForm = Boolean(info.characterRadical && !info.canonicalRadical && radicalIdentity(entry.hanzi).radicals.length === 0 && noteRadical === info.characterRadical.glyph);
-    if (noteRadical && !(info.canonicalRadical && noteRadical === entry.hanzi) && !isRecordedRadicalForm) {
+    if (ownRadicals.length) return <>{ownRadicals.map(radical => <span key={radical.id} className="word-hsk-id radical-tag">Radical #{radical.number}</span>)}</>;
+    if (noteRadical) {
       const identity = radicalIdentity(entry.hanzi).radicals.find(radical => radical.glyph === noteRadical);
       const destination = libraryDestination(noteRadical, preferences.includeTraditional);
       return <span className="facts-radical">{destination
@@ -300,15 +299,16 @@ export function CharacterDetails({ entry: input, kind, variant }: { entry: Libra
       // Beside the speaker: this exact reading's Sound chart card (Glyphs only, never Strokes).
       chartLink={kind !== 'Strokes' && reading ? <SoundChartLink reading={reading} from={entry.hanzi} variant="header"/> : undefined}/>
     {audioError && <p role="status" className="library-note">{audioError}</p>}
-    {/* Facts sit directly under the title on every glyph detail card, before variant spelling and etymology notes. */}
+    {/* Facts follow the title's variant selector; owning Kangxi identity follows facts,
+        before related characters. All exact script forms share this one detail template. */}
     <dl className="catalog-facts"><div><dt>Stroke count</dt><dd>{entry.strokes ?? (kind === 'Strokes' ? 1 : 'Not recorded')}</dd></div>{strokeNameFact}{radicalFact && kind !== 'Radicals' && <div><dt>Radical</dt><dd>{radicalFact}</dd></div>}{kind === 'Strokes' && <div><dt>Record</dt><dd className="catalog-record-value">{info.label}</dd></div>}{(kind === 'Characters' || kind === 'Components' || kind === 'Radicals') && usageOrder.loaded && <div><dt className="catalog-rank-label">Rank<SourceInfo inline className="detail-footnote">{kind === 'Characters' ? 'Corpus frequency rank' : `Estimated ${kind === 'Radicals' ? 'radical assignment' : 'component exposure'} rank, derived from character frequencies`} · {usageOrder.data?.source.provider ?? 'Jun Da Modern Chinese corpus'}{kind === 'Characters' ? ' · Percentage is this character’s share of corpus tokens.' : kind === 'Components' ? ' · Percentage is this component’s share of weighted known-leaf occurrences; not character corpus coverage.' : kind === 'Radicals' ? ' · Share of matched corpus tokens assigned to this Kangxi family, not graphical radical occurrences.' : ''}</SourceInfo></dt><dd><UsageLabel rank={usageRank(heading, kind, preferences.includeTraditional)} kind={kind}/></dd></div>}{percentage !== null && <div><dt>{kind === 'Characters' ? 'Corpus frequency' : kind === 'Radicals' ? 'Radical assignment share' : 'Occurrence share'}</dt><dd>{formatUsagePercentage(percentage)}</dd></div>}</dl>
+    {(kind === 'Components' || kind === 'Characters') && ownRadicals.length > 0 && <RadicalIdentityNote glyph={entry.hanzi} fallbackRadical={ownRadicals[0]}/>}
     {/* Context-dependent simplified/traditional associations keep separate cards; Related characters links them with the recorded explanation. */}
     {(kind === 'Characters' || kind === 'Components') && <RelatedWrittenForms glyph={entry.hanzi} kind={kind}/>}
     {/* Etymology audit notes belong to radical variant cards only (below the facts), never the family's main form. */}
     {kind === 'Radicals' && form && heading.kangxiIndex && form.character !== heading.hanzi && <RadicalVariantEtymology familyId={heading.kangxiIndex} formKey={form.key} reading={fallback?.pinyin ?? info.reading}/>}
     {info.component && !fallback && <p className="catalog-record-note">{info.componentName ? `${info.componentName.text} is a component name, not a standalone character reading.` : info.characterPinyin ? 'Radical form that is also an ordinary character.' : 'No standalone character pronunciation is assigned to this form.'}</p>}
-    {(kind === 'Components' || kind === 'Characters') && (radicalIdentity(entry.hanzi).radicals.length > 0 || Boolean(info.characterRadical)) && <RadicalIdentityNote glyph={entry.hanzi} fallbackRadical={info.characterRadical}/>}
-    {kind !== 'Strokes' && <ExampleTabs key={bookmarkId}>
+    {kind !== 'Strokes' && <ExampleTabs key={bookmarkId} hideEmptyWordPhrase={kind === 'Characters'}>
       {kind === 'Characters' && <CharacterWordsSection entry={entry}/>}
       <GlyphUsageExamples entry={entry} kind={kind} familyGlyph={kind === 'Radicals' ? heading.hanzi : undefined}/>
       {kind === 'Characters' && <CharacterIdiomsSection entry={entry}/>}

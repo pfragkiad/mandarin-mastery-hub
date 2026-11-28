@@ -53,7 +53,7 @@
 
 - Practice uses a continuous full-width title with the print action, then a reading intro above the writing card in the left column and a separate decomposition/detail column; shared scoped styles preserve phone reading → writing → details order.
 - Vocabulary and Glyphs share a modal top-centred DetailSheet at every width, with a shared blurred overlay, independently scrolling content and a fixed-position navigation bar; locking background interaction preserves list scroll and URL-backed selections. Its Left/Right keys invoke the same navigation callbacks as the arrow buttons, excluding editable controls and modified keys so editing and browser shortcuts stay intact.
-- Component dictionary radicals come only from Unihan kRSUnicode via scripts/import-component-radicals.py (catalog componentRadicals, residual>0 only), matching how Characters' radicals are sourced — never inferred from shape or IDS.
+- Detail facts/identity use glyphRadicalLinks before dictionary indexing (Unihan, never IDS). ExampleTabs registers settled content separately from availability, hiding empty paired sections without losing other sources.
 
 - Session radical-variant bookmarks use validated family-heading/form-key identities resolved through character-library adapters; expose variants only in Saved views and restore family-qualified URLs without expanding the 214-card reference catalogue.
 

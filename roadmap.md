@@ -337,3 +337,9 @@
 - [x] Detail cards: Character/Component kind pill always top right; Radical #N and Traditional pills added alongside when they apply
 
 - [x] Remove the "In a character" badge from radical grid cards (every Kangxi family has characters); Components/Characters badges and the detail sheet list unchanged; 3 new tests, 1421 pass, browser-verified.
+
+## Shared radical-character detail rule
+- [x] Verify every recorded radical Character/Component uses its owning Radical pill and Kangxi identity section; all 214 families covered in both libraries, Simplified/Traditional browser comparison passed.
+
+- [x] Place stroke/radical facts below the variant selector, then Kangxi identity, then Related characters; verified wide/narrow and actual form switching.
+- [x] Hide In a word/In a phrase tabs when both have no recorded examples; retain other available example sections. Verified empty 卤/鹵, recorded 你 examples and 39 tests.
