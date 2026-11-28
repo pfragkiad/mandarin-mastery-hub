@@ -1,0 +1,172 @@
+{
+  "schema_version": "hsk-official-source-audit/0.0.1",
+  "source_manifest": {
+    "path": "importer/data/hsk-level7/source-manifest.json",
+    "sha256": "e551a99cb35522527a75bbcab936a284fb67830fa67d7fde8bc8b8bbec4b9b09"
+  },
+  "current_official_pdf": {
+    "path": "hsk-syllabus-2025-11-official-1219.pdf",
+    "bytes": 4943759,
+    "sha256": "d8b6646599bc9a0c9616a4cb06d4b37461f8792f70a3171016d00fcd8eda09ad",
+    "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+    "pdf_pages": 406,
+    "vocabulary_pdf_pages": [
+      80,
+      354
+    ],
+    "http_last_modified": "Fri, 30 Oct 2026 08:04:38 GMT",
+    "pdf_creation_date": "D:20251217135342+08'00'",
+    "pdf_modification_date": "D:20261030123002+08'00'"
+  },
+  "previous_official_pdf": {
+    "path": "hsk-syllabus-2025-11-previous-reference.pdf",
+    "bytes": 3696686,
+    "sha256": "a4544ceb385349a0ea078cccecb9319c7338a0cbd8308fa08d47d6d4d3bba023",
+    "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2%EF%BC%88%E8%AF%8D%E6%B1%87%E3%80%81%E6%B1%89%E5%AD%97%E3%80%81%E8%AF%AD%E6%B3%95%EF%BC%89.pdf",
+    "pdf_pages": 330,
+    "level6_pdf_pages": [
+      94,
+      138
+    ],
+    "http_last_modified": "Thu, 25 Dec 2025 05:43:20 GMT"
+  },
+  "summary": {
+    "current_official_vocabulary_rows": 11000,
+    "level_counts": {
+      "1": 300,
+      "2": 200,
+      "3": 500,
+      "4": 1000,
+      "5": 1600,
+      "6": 1800,
+      "7-9": 5600
+    },
+    "advanced_entries": 5600,
+    "advanced_id_range": [
+      5401,
+      11000
+    ],
+    "advanced_pdf_pages": [
+      215,
+      354
+    ],
+    "advanced_blank_pos": 443,
+    "advanced_unique_written_forms": 5585,
+    "level6_existing_release_matches_previous_official_pdf": true,
+    "level6_headword_reading_pos_tuples_match_current_pdf": 1800,
+    "level6_changed_official_serials": 850,
+    "level6_unchanged_official_serials": 950,
+    "runtime_data_changed": false,
+    "examples_written": 0
+  },
+  "output": {
+    "path": "importer/hsk/hsk3_level7_0.0.1.json",
+    "bytes": 1356352,
+    "sha256": "e5cfacd062714f67a25cce10c261e00b47d3f5759ca9760667be39a2ee687e40",
+    "format": "one compact entry per line",
+    "split_needed": false
+  },
+  "level6_numbering_crosswalk": "reports/hsk-level6-official-numbering-crosswalk.tsv",
+  "numbering_change_examples": [
+    {
+      "headword": "案例",
+      "pinyin": "ànlì",
+      "pos_zh": "名",
+      "previous_official_id": 3602,
+      "current_official_id": 3603,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "按摩",
+      "pinyin": "ànmó",
+      "pos_zh": "动",
+      "previous_official_id": 3603,
+      "current_official_id": 3602,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "摆",
+      "pinyin": "bǎi",
+      "pos_zh": "动",
+      "previous_official_id": 3608,
+      "current_official_id": 3610,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "摆放",
+      "pinyin": "bǎifàng",
+      "pos_zh": "动",
+      "previous_official_id": 3609,
+      "current_official_id": 3611,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "百分点",
+      "pinyin": "bǎifēndiǎn",
+      "pos_zh": "名",
+      "previous_official_id": 3610,
+      "current_official_id": 3608,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "百货",
+      "pinyin": "bǎihuò",
+      "pos_zh": "名",
+      "previous_official_id": 3611,
+      "current_official_id": 3609,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "伴随",
+      "pinyin": "bànsuí",
+      "pos_zh": "动",
+      "previous_official_id": 3618,
+      "current_official_id": 3619,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "扮演",
+      "pinyin": "bànyǎn",
+      "pos_zh": "动",
+      "previous_official_id": 3619,
+      "current_official_id": 3618,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "爆",
+      "pinyin": "bào",
+      "pos_zh": "动",
+      "previous_official_id": 3627,
+      "current_official_id": 3631,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    },
+    {
+      "headword": "爆发",
+      "pinyin": "bàofā",
+      "pos_zh": "动",
+      "previous_official_id": 3628,
+      "current_official_id": 3632,
+      "previous_pdf_page": 94,
+      "current_pdf_page": 170,
+      "status": "renumbered"
+    }
+  ]
+}

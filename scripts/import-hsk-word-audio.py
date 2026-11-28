@@ -36,7 +36,7 @@ INPUT = base.INPUT
 VOCABULARY = base.VOCABULARY
 # Per-level inputs: manifest and upload map live beside the shared Shtooka index.
 LEVELS = {3: ('archive/hsk3_level3_1.0.4.json', 500), 4: ('archive/hsk3_level4_1.0.3.json', 1000),
-          5: ('hsk3_level5_1.0.5.json', 1600), 6: ('hsk3_level6_0.1.0.json', 1800)}
+          5: ('hsk3_level5_1.0.5.json', 1600), 6: ('hsk3_level6_1.0.1.json', 1800)}
 LEVEL = SIZE = MANIFEST = HANDOFF = UPLOAD_MAP = None
 
 
@@ -44,7 +44,7 @@ def configure(level):
     global LEVEL, SIZE, MANIFEST, HANDOFF, UPLOAD_MAP
     handoff, SIZE = LEVELS[level]
     LEVEL = level
-    MANIFEST = INPUT / f'level{level}-manifest.json'
+    MANIFEST = INPUT / ('level6-manifest-1.0.1.json' if level == 6 else f'level{level}-manifest.json')
     HANDOFF = ROOT / 'importer/hsk' / handoff
     UPLOAD_MAP = INPUT / f'level{level}-uploads.json'
 

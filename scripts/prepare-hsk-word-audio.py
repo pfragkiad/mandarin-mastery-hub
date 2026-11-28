@@ -65,7 +65,7 @@ def prepare(cache, output):
                 (e['id'], e['headword'], e['pinyin']) for e in handoff['entries']}:
             raise ValueError('Import the exact level handoff before preparing its audio')
     elif audio.LEVEL == 6 and len(handoff['entries']) == audio.SIZE:
-        entries = [{'id': handoff_entry_id(e['id'], audio.LEVEL), 'hsk_index': e['id'],
+        entries = [{'id': handoff_entry_id(e.get('legacy_syllabus_id', e['id']), audio.LEVEL), 'hsk_index': e['id'],
                     'simplified': e['headword'], 'pinyinDisplay': e['pinyin']}
                    for e in handoff['entries']]
     else:

@@ -1,0 +1,4 @@
+# Preserve raw source evidence and generated transcription checksums.
+*.pdf -text
+*.html -text
+*.json -text

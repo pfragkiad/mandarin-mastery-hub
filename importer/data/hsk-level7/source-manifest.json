@@ -1,0 +1,84 @@
+{
+  "schema_version": "hsk-official-source-manifest/0.0.1",
+  "retrieved_on": "2026-11-28",
+  "issuer": "Center for Language Education and Cooperation; official distribution through Chinese Testing International / chinesetest.cn",
+  "edition": "2025-11",
+  "effective_date_as_printed": "2026-07",
+  "official_page": {
+    "path": "official-download-page.html",
+    "bytes": 625497,
+    "sha256": "f7f7bd6739810769c886c297bc813e29bb8a2c97b56ea6028ac654c6b22fb3ad",
+    "url": "https://www.chinesetest.cn/",
+    "link_label": "HSK3.0 / Test Syllabus"
+  },
+  "current_pdf": {
+    "path": "hsk-syllabus-2025-11-official-1219.pdf",
+    "bytes": 4943759,
+    "sha256": "d8b6646599bc9a0c9616a4cb06d4b37461f8792f70a3171016d00fcd8eda09ad",
+    "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+    "pdf_pages": 406,
+    "vocabulary_pdf_pages": [
+      80,
+      354
+    ],
+    "http_last_modified": "Fri, 30 Oct 2026 08:04:38 GMT",
+    "pdf_creation_date": "D:20251217135342+08'00'",
+    "pdf_modification_date": "D:20261030123002+08'00'"
+  },
+  "previous_pdf": {
+    "path": "hsk-syllabus-2025-11-previous-reference.pdf",
+    "bytes": 3696686,
+    "sha256": "a4544ceb385349a0ea078cccecb9319c7338a0cbd8308fa08d47d6d4d3bba023",
+    "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2%EF%BC%88%E8%AF%8D%E6%B1%87%E3%80%81%E6%B1%89%E5%AD%97%E3%80%81%E8%AF%AD%E6%B3%95%EF%BC%89.pdf",
+    "pdf_pages": 330,
+    "level6_pdf_pages": [
+      94,
+      138
+    ],
+    "http_last_modified": "Thu, 25 Dec 2025 05:43:20 GMT"
+  },
+  "extractions": {
+    "current": {
+      "path": "official-syllabus-pages.json",
+      "bytes": 1126016,
+      "sha256": "a5968c56ac770f1d4e1908a5da9d6798eb50fa84c7f2bd938d0a9446bccad2a1",
+      "source_pdf": "current_pdf",
+      "pdf_pages": [
+        1,
+        406
+      ]
+    },
+    "previous_level6": {
+      "path": "previous-reference-level6-pages.json",
+      "bytes": 138150,
+      "sha256": "4cb8d3e26ad6b5e76266b68533d75bea84d53b97f903b206adf9c96549adec09",
+      "source_pdf": "previous_pdf",
+      "pdf_pages": [
+        94,
+        138
+      ]
+    }
+  },
+  "extractor": {
+    "name": "pypdf",
+    "version": "6.21.4",
+    "mode": "layout",
+    "ocr_used": false
+  },
+  "visual_checks": {
+    "renderer": "PyMuPDF 2.2",
+    "pdf_pages": [
+      170,
+      215
+    ],
+    "observations": [
+      "Current Level 6 begins with 3601 shore, 3602 massage, 3603 case; table column boundaries checked.",
+      "Advanced table is labelled 7-9 and begins at 5401; blank POS cells remain blank."
+    ]
+  },
+  "existing_level6": {
+    "path": "importer/hsk/hsk3_level6_1.0.0.json",
+    "sha256": "60f9241380ca88cae9c506cbe60bbf16f2d11e5093e1872f93834f1f12554a0d"
+  },
+  "numbering_policy": "Official serials are version-bound source identities. Never overwrite existing application UUIDs or legacy syllabus mappings implicitly."
+}

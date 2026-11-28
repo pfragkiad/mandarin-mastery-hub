@@ -28,3 +28,8 @@ hsk-level6-1.0.0-build.json -text
 hsk-level6-1.0.0-example-changes.tsv -text
 hsk-level6-1.0.0-import.json -text
 hsk-level6-1.0.0-fonts.json -text whitespace=cr-at-eol
+hsk-level7-0.0.1-official-source-audit.md -text
+hsk-level7-0.0.1-official-source-audit.json -text
+hsk-level6-official-numbering-crosswalk.tsv -text
+hsk-level6-1.0.1-numbering.json -text
+hsk-level6-1.0.1-import.json -text

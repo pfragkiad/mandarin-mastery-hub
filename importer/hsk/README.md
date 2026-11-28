@@ -1,4 +1,4 @@
-# HSK Level 1–6 handoffs
+# HSK Level 1–6 handoffs and the official 7–9 seed
 
 The owner-supplied Level 1–5 source files retain their original UTF-8 bytes and versioned filenames. Level 6 retains the completed 0.1.0 baseline alongside the 1.0.0 release built from accepted reviews and additional requested rewrites. All six levels use the shared topic sidecar `hsk3_topics.json`. These are offline handoffs, never imported by browser modules. Levels 1–6 have import CLIs; Level 6 also has a release builder and standalone validator. Previous checksum-bound inputs are retained in [archive/](archive/README.md).
 
@@ -10,7 +10,9 @@ The owner-supplied Level 1–5 source files retain their original UTF-8 bytes an
 | [hsk3_level4_1.1.1.json](hsk3_level4_1.1.1.json) | 1,000 syllabus entries (1001–2000) and 2,000 examples; v1.1.1 revises 43 examples across 38 entries. Read by the Level 4 importer and tests. | Supplied `hsk-example-pairs/1.3.0`, data version 1.1.1. |
 | [hsk3_level5_1.0.5.json](hsk3_level5_1.0.5.json) | 1,600 draft syllabus terms (2001–3600) and 3,200 draft examples; v1.0.5 revises 190 examples and 69 meanings. | Supplied `hsk-example-pairs/1.3.0`, data version 1.0.5. |
 | [hsk3_level6_0.1.0.json](hsk3_level6_0.1.0.json) | Complete 1,800-headword Level 6 draft (3601–5400), with 3,600 examples: one conversational and one written per entry. Checked by `scripts/validate-hsk-level6.mjs`; not imported into application vocabulary. | Owner-requested completion of the first 100 entries; `hsk-example-pairs/1.3.0`, draft data version 0.1.0. |
-| [hsk3_level6_1.0.0.json](hsk3_level6_1.0.0.json) | Current Level 6 release: 1,800 entries and 3,600 examples, with 704 replacements and 17 pinyin-only fixes. Consumed by `scripts/import-hsk-level6.mjs`; imported vocabulary occupies two compact parts. | `scripts/build-hsk-level6-release.py` from the frozen review ledger; `hsk-example-pairs/1.3.0`, data version 1.0.0. |
+| [hsk3_level6_1.0.0.json](hsk3_level6_1.0.0.json) | Preserved reviewed Level 6 baseline: 1,800 entries and 3,600 examples, with 704 replacements and 17 pinyin-only fixes. Its official numbering follows the earlier PDF. | `scripts/build-hsk-level6-release.py` from the frozen review ledger; `hsk-example-pairs/1.3.0`, data version 1.0.0. |
+| [hsk3_level6_1.0.1.json](hsk3_level6_1.0.1.json) | Current Level 6 release with 850 official IDs reconciled to the currently linked official PDF. All meanings, classifications and examples remain exact. Imported through `scripts/import-hsk-level6.mjs`, retaining UUIDs and 1,313 word recordings. | `scripts/reconcile-hsk-level6-numbering.py`; data version 1.0.1, official-site-1219 numbering. |
+| [hsk3_level7_0.0.1.json](hsk3_level7_0.0.1.json) | Source-only seed containing all 5,600 official shared Levels 7–9 rows (5401–11000). The requested Level 7 filename is a local working name; the official band is 7–9. Meanings, topic assignments and examples are pending; not accepted by the runtime importer. | `scripts/prepare-hsk-level7.py` from the [preserved official PDFs and text](../data/hsk-level7/README.md); separate `hsk-official-vocabulary-seed/0.0.1` schema. |
 | [hsk3_topics.json](hsk3_topics.json) | Versioned shared taxonomy with 22 parent topics and 25 subtopics; all importers require exact agreement with both embedded registries. | Supplied `hsk-topics/2.0.0` sidecar, version 2.0.0. |
 | `.gitattributes` | Disables Git line-ending conversion for current and archived checksum-bound sources. | Maintained alongside the pinned inputs. |
 
@@ -23,6 +25,8 @@ Source SHA-256 values:
 - Level 5: `cd99c18acccc6f0fe8a882d806b6e152ed884ecbf6dda686b635e69519956727`
 - Level 6 v0.1.0: `359d066fbc59138dcc88cdb00cb054bb8c85a64cfb99d2ba7bb912bd8b6cbc47`
 - Level 6 v1.0.0: `60f9241380ca88cae9c506cbe60bbf16f2d11e5093e1872f93834f1f12554a0d`
+- Level 6 v1.0.1: `83a6880398e6a19d7cda846620ac00138877944561bdbcd4a5cc026d266846f3`
+- Official 7–9 seed v0.0.1: `e5cfacd062714f67a25cce10c261e00b47d3f5759ca9760667be39a2ee687e40`
 - Topics: `d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f`
 
 From the repository root:
@@ -187,4 +191,50 @@ The validator checks all 5,400 readings, exact lexical preservation, source
 checksums, review coverage and uniqueness of all 3,600 sentences. The
 [application import audit](../../reports/hsk-level6-1.0.0-import.json) records two
 900-entry vocabulary parts (4.87 MB and 5.00 MB), with every entry on its own
-line. Existing levels and recordings remain exact; Level 6 audio is unattached.
+line. That initial import supplied no Level 6 audio; the owner subsequently
+uploaded and attached all 1,313 exact word matches, retained by 1.0.1 below.
+
+## Official advanced list: 0.0.1 seed
+
+The [official HSK website](https://www.chinesetest.cn/) currently links a
+November 2025 syllabus PDF whose advanced vocabulary band is **7–9**, covering
+5,600 entries, serials 5401–11000. The source-only Level 7 working file preserves
+the exact shared-band label, printed readings, homographs, blank POS cells and
+PDF page references. It has one compact entry per line and remains below 9 MB.
+No separate official Level 7 allocation or editorial examples are invented.
+
+```sh
+python scripts/prepare-hsk-level7.py --write
+python scripts/prepare-hsk-level7.py --check
+```
+
+The [source audit](../../reports/hsk-level7-0.0.1-official-source-audit.md) also
+compares Level 6 directly with both official PDFs. The existing Level 6 release
+matches the earlier official PDF's IDs, headwords, readings and POS exactly.
+The current PDF has the same 1,800 headword/reading/POS tuples, with 850 serials
+renumbered. The [crosswalk](../../reports/hsk-level6-official-numbering-crosswalk.tsv)
+preserves both source-number mappings. The 1.0.1 migration below updates current
+HSK indices while preserving application UUIDs and the historical references.
+
+## Level 6 v1.0.1 official-number migration
+
+The owner-approved migration updates `hsk_index`, current handoff references and
+the audio manifest to the latest official serials. `legacy_syllabus_id` preserves
+the old identity in the new handoff. The importer binds the previous or current
+source checksum before matching, keeping polyphonic and numbered homographs
+separate. Existing UUIDs and record order remain exact; fresh imports derive
+UUIDs from the legacy serial to match the already uploaded recordings.
+
+```sh
+python scripts/reconcile-hsk-level6-numbering.py --write
+python scripts/reconcile-hsk-level6-numbering.py --check
+node scripts/import-hsk-level6.mjs --write
+node scripts/validate-hsk-level6.mjs
+```
+
+The [numbering audit](../../reports/hsk-level6-1.0.1-numbering.json) and
+[import audit](../../reports/hsk-level6-1.0.1-import.json) record 850 changed IDs,
+950 unchanged IDs, all 3,600 preserved example IDs and all 1,313 preserved word
+recordings. The versioned audio manifest uses the new official IDs with the same
+recording identities and unchanged `level6-uploads.json` pointers. Historical
+reports and source references keep their recorded version-specific IDs.

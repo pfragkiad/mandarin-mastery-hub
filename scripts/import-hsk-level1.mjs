@@ -41,7 +41,7 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5', 6: '1.0.0' };
+  const versions = { 1: '1.7.1', 2: '1.1.1', 3: '1.1.2', 4: '1.1.1', 5: '1.0.5', 6: '1.0.1' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
   const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600, 6: 1800 }[level];
   const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001, 6: 3601 }[level], lastId = firstId + count - 1;
@@ -71,11 +71,25 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   requireThat(subtopics.every(t => topicMap.has(t.parent_topic_id)), 'Unknown subtopic parent');
   const oldLevel = original.entries.filter(e => e.hskLevel === level);
   const oldEntries = level === 1 ? oldLevel.filter(e => e.entryKind === 'word') : oldLevel;
-  const byId = new Map(oldEntries.map(e => [e.hsk_index, e]));
+  const inputSha256 = hash(sourcePath);
+  const renumbered = level === 6 && source.data_version === '1.0.1';
+  const byLegacyId = new Map(source.entries.map(e => [e.legacy_syllabus_id, e]));
+  // Swapped serials must never match another word's UUID/audio. Accept only the
+  // exact old handoff checksum or this current handoff before choosing an ID map.
+  const mappedId = old => {
+    if (!renumbered || old.studyMetadata?.sourceSha256 === inputSha256) return old.hsk_index;
+    requireThat(old.studyMetadata?.sourceSha256 === source.verification.numbering_revision.baseline.sha256,
+      'Unknown Level 6 numbering source; manual identity review required');
+    const target = byLegacyId.get(old.hsk_index);
+    requireThat(target?.headword === old.simplified && target.pinyin === old.pinyinDisplay &&
+      target.syllabus_headword === old.studyMetadata.syllabusHeadword && target.syllabus_pos_zh === old.studyMetadata.syllabusPosZh,
+      `ID/headword mismatch for legacy ${old.hsk_index}; manual identity review required`);
+    return target.id;
+  };
+  const byId = new Map(oldEntries.map(e => [mappedId(e), e]));
   requireThat(byId.size === oldEntries.length && (level >= 3 ? oldEntries.length === 0 || oldEntries.length === count : oldEntries.length === count), `Existing Level ${level} identities must be complete and unique`);
   requireThat(original.entries.every(e => e.hskLevel === level || e.hsk_index == null || e.hsk_index < firstId || e.hsk_index > lastId), `Level ${level} syllabus IDs already belong to another level`);
   const sourceRef = id => ({ sourceName: basename(sourcePath), sourceVersion: source.data_version, sourceId: String(id) });
-  const inputSha256 = hash(sourcePath);
   const importedAt = new Date().toISOString();
   const exampleNormalizations = [];
   const topicCategories = topics.map(t => ({ id: identity(`topic:${t.id}`), name: t.label, description: t.description }));
@@ -134,13 +148,15 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
 
   const entries = source.entries.map(e => {
     const old = byId.get(e.id) ?? (level >= 3 && oldEntries.length === 0 ? {
-      id: identity(`entry:${e.id}`, level),
+      id: identity(`entry:${e.legacy_syllabus_id ?? e.id}`, level),
       sourceId: String(e.id), sourceName: basename(sourcePath), sourceVersion: source.data_version,
       simplified: e.headword, traditional: null, entryKind: 'word', hskLevel: level,
       hskVersion: '3.0', hsk_index: e.id, hskSource: sourceRef(e.id),
       pinyinDisplay: e.pinyin, audio: null, examples: [], createdAt: importedAt, updatedAt: importedAt,
     } : undefined);
     requireThat(old?.simplified === e.headword, `ID/headword mismatch for ${e.id}; manual identity review required`);
+    if (renumbered && old.studyMetadata) requireThat(old.studyMetadata.syllabusHeadword === e.syllabus_headword &&
+      old.studyMetadata.syllabusPosZh === e.syllabus_pos_zh, `ID/headword mismatch for ${e.id}; source identity differs`);
     requireThat(e.meaning_en?.trim() && e.pinyin?.trim(), `Missing meaning or reading: ${e.id}`);
     for (const [key, primary, map] of [['topic_ids', 'primary_topic_id', topicMap], ['pos_ids', 'primary_pos_id', posMap]]) {
       requireThat(e[key]?.length && e[key].includes(e[primary]) && (key !== 'topic_ids' || e[key][0] === e[primary]) && new Set(e[key]).size === e[key].length && e[key].every(id => map.has(id)), `Invalid ${key}: ${e.id}`);
@@ -157,7 +173,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     const examples = includeExamples ? e.examples.map(recordedExample => {
       // One legacy corpus sentence has an invisible leading soft hyphen in both
       // fields. Bind this import-only normalization to its exact source identity/text.
-      const normalizeSoftHyphen = level === 6 && e.id === 4491 && recordedExample.style === 'written' &&
+      const normalizeSoftHyphen = level === 6 && (e.legacy_syllabus_id ?? e.id) === 4491 && recordedExample.style === 'written' &&
         recordedExample.hanzi === '\u00ad很多人学日语是为了看漫画。' &&
         recordedExample.pinyin === '\u00ad hěn duō rén xué rìyǔ shì wèile kàn mànhuà.';
       const ex = normalizeSoftHyphen ? { ...recordedExample, hanzi: recordedExample.hanzi.slice(1), pinyin: recordedExample.pinyin.slice(2) } : recordedExample;
@@ -184,6 +200,8 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     }) : old.examples;
     const result = {
       ...old, pinyinDisplay: e.pinyin, tokens: tokens(e.headword, readings[0], `${e.id}/headword`),
+      ...(renumbered ? { hsk_index: e.id, hskSource: sourceRef(e.id), sourceId: String(e.id),
+        sourceName: basename(sourcePath), sourceVersion: source.data_version } : {}),
       meanings: e.meaning_en.split(';').map(s => s.trim()).filter(Boolean),
       categoryId: categoryMap.get(e.primary_topic_id), categoryIds: e.topic_ids.map(id => categoryMap.get(id)),
       partOfSpeech: e.pos_ids.map(id => posMap.get(id).label).join(' / '), partOfSpeechSource: sourceRef(e.id),
@@ -200,6 +218,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         ...(e.syllabus_pos_zh != null ? { syllabusPosZh: e.syllabus_pos_zh } : {}),
         ...(e.meaning_source ? { meaningSource: e.meaning_source } : {}),
         ...(e.classification_status ? { classificationStatus: e.classification_status } : {}),
+        ...(renumbered ? { numberingRevision: { name: 'official-site-1219', previousId: e.legacy_syllabus_id } } : {}),
       },
     };
     // Importing an unchanged handoff twice must not churn modification timestamps.

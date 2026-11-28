@@ -17,8 +17,13 @@ const sourceBytes = readFileSync(resolve(root, 'importer/data/hsk-level6/syllabu
 const source = JSON.parse(sourceBytes);
 const args = process.argv.slice(2);
 assert.ok(args.length === 0 || (args.length === 2 && args[0] === '--source'), 'Usage: node scripts/validate-hsk-level6.mjs [--source path]');
-const handoffPath = args[1] ?? 'importer/hsk/hsk3_level6_1.0.0.json';
+const handoffPath = args[1] ?? 'importer/hsk/hsk3_level6_1.0.1.json';
 const handoff = read(handoffPath);
+if (handoff.data_version === '1.0.1') {
+  const { validateCurrentLevel6 } = await import('./validate-hsk-level6-current.mjs');
+  validateCurrentLevel6(resolve(root, handoffPath));
+  process.exit(0);
+}
 assert.ok(['0.1.0', '1.0.0'].includes(handoff.data_version), 'Unsupported Level 6 handoff version');
 const isRelease = handoff.data_version === '1.0.0';
 const topics = read('importer/hsk/hsk3_topics.json');

@@ -1,0 +1,174 @@
+{
+  "source": {
+    "path": "importer/hsk/hsk3_level6_1.0.1.json",
+    "sha256": "83a6880398e6a19d7cda846620ac00138877944561bdbcd4a5cc026d266846f3",
+    "dataVersion": "1.0.1"
+  },
+  "topics": {
+    "path": "importer/hsk/hsk3_topics.json",
+    "sha256": "d828f350196951cbe931e1e8ae7be3ab4ce71c3e32aaaa8a38cf1164040d3d3f",
+    "version": "2.0.0",
+    "count": 22,
+    "subtopicCount": 25,
+    "matchesEmbeddedTaxonomy": true
+  },
+  "beforeEntries": 5401,
+  "afterEntries": 5401,
+  "replacedWords": 1800,
+  "replacedEntries": 1800,
+  "replacedPhrases": 0,
+  "removedLegacyExamples": 0,
+  "preservedWordRecordings": 1313,
+  "preservedExampleIds": 3600,
+  "examples": 3600,
+  "alignedHeadwords": 1800,
+  "alignedExamples": 3600,
+  "primaryTopicCounts": {
+    "numbers-quantities": 61,
+    "time-calendar": 75,
+    "family-relationships": 31,
+    "people-identity": 12,
+    "reference-questions": 6,
+    "food-drink": 32,
+    "school-language": 55,
+    "work-jobs": 30,
+    "shopping-money": 100,
+    "home-objects": 68,
+    "travel-transport": 35,
+    "health-wellbeing": 95,
+    "animals-weather": 70,
+    "daily-actions": 288,
+    "leisure-media": 90,
+    "places-directions": 47,
+    "communication-social": 94,
+    "qualities-feelings": 221,
+    "grammar-functions": 42,
+    "abstract-concepts": 138,
+    "science-technology": 95,
+    "society-government-law": 115
+  },
+  "assignedPrimarySubtopics": 1094,
+  "secondaryTopicWords": 0,
+  "verification": {
+    "status": "complete_review_rewrite_with_owner_accepted_revisions",
+    "gloss_source": "Original 100 editorial glosses unchanged; remaining 1,700 glosses adapted from the checksum-bound local MDBG CC-CEDICT snapshot, with per-entry attribution and CC BY-SA 4.0 licensing.",
+    "sentence_policy": "Two examples per headword, conversational then written. All 693 originally flagged examples have new wording; the 69 accepted proposals and final overrides are retained. Every new sentence has editorial provenance, with no inherited corpus IDs or audio.",
+    "pinyin_policy": "Accepted transcriptions remain exact. New sentences use recorded HSK lexical readings, source-bound target readings and pypinyin-assisted readings for other words; citation third tones, contextual 一/不 changes and neutral joined experiential 过 are retained. No ICU or arbitrary dictionary-longest-phrase fallback is used. Pronunciation remains subject to independent language review.",
+    "vocabulary_boundary_policy": "No strict Level 1–6 compositional boundary certification. Corpus selections may contain vocabulary beyond Level 6.",
+    "taxonomy_policy": "Exact unchanged hsk3_topics.json 2.0.0 topics/subtopics and existing POS taxonomy. Added assignments are editorial drafts, using thematic review and existing semantic rules; no earlier-level files modified.",
+    "review_limitations": "The 69 reviewed replacements were accepted by the owner; 635 further rewrites were requested by the owner and remain newly authored editorial drafts. Structural, source-identity, length and duplication checks do not certify native-speaker review or a strict HSK vocabulary boundary. Other unflagged legacy examples retain their recorded review status.",
+    "sources": {
+      "cc_cedict": {
+        "path": "../data/character-readings/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+        "sha256": "dbb9d79208dec5149c73834c10ec7cb21cf3cd96d7f8b2a7b53d701a3bdcece8",
+        "license": "CC BY-SA 4.0"
+      },
+      "tatoeba": {
+        "manifest": "../data/tatoeba/manifest.json",
+        "manifest_sha256": "5968cd947a996f14e500af3b3cd6620909e80efaebf0f7560cf9567593423cb1",
+        "license": "CC BY 2.0 FR"
+      }
+    },
+    "baseline": {
+      "path": "hsk3_level6_0.1.0.json",
+      "sha256": "359d066fbc59138dcc88cdb00cb054bb8c85a64cfb99d2ba7bb912bd8b6cbc47"
+    },
+    "revision_manifest": {
+      "path": "../data/hsk-level6/release-1.0.0-revisions.json",
+      "sha256": "d4cc80dee1181a1aa7370f1a987eb436fb4c5a7a0b7c9f519412baa63558adad"
+    },
+    "example_provenance_counts": {
+      "newly_authored": 2603,
+      "selected_corpus_example": 851,
+      "reused_editorial_example": 146
+    },
+    "review_resolution": {
+      "entries": 1800,
+      "examples": 3600,
+      "accepted_replacements": 69,
+      "new_editorial_rewrites": 635,
+      "replaced_examples": 704,
+      "pinyin_only_corrections": 17,
+      "changed_examples": 721,
+      "changed_entries": 604,
+      "unchanged_examples": 2879,
+      "baseline_flagged_examples": 693,
+      "baseline_flagged_examples_replaced": 693,
+      "duplicate_sentence_texts": 0,
+      "lexical_fields_unchanged": true
+    },
+    "previous_numbering_sources": {
+      "word_id_source": "November 2025 official HSK 3.0 examination syllabus (as transcribed in the cited open reference)",
+      "transcription_reference": "https://github.com/uranbekanarbaev/hsk-3.0-vocabulary-dataset/blob/main/word-lists/hsk-6.md",
+      "transcription_git_blob_sha": "e78ac686a04b1eb83aeffb18802e43b829fe20b9",
+      "reference_url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2%EF%BC%88%E8%AF%8D%E6%B1%87%E3%80%81%E6%B1%89%E5%AD%97%E3%80%81%E8%AF%AD%E6%B3%95%EF%BC%89.pdf",
+      "transcription_json_reference": "https://github.com/uranbekanarbaev/hsk-3.0-vocabulary-dataset/blob/main/data/by-level/hsk-6.json",
+      "transcription_json_git_blob_sha": "353902200bb7a08d6e568e173fb8a67da7ed3891",
+      "transcription_json_sha256": "ed62e2e01e712e5ec579467d789473eb44e64180e4b9a26bc02ca84e66dfb835"
+    },
+    "word_id_source": "Direct extraction of the November 2025 official PDF currently linked by chinesetest.cn; official-site-1219 numbering.",
+    "reference_url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+    "numbering_revision": {
+      "name": "official-site-1219",
+      "date": "2026-11-28",
+      "official_pdf_sha256": "d8b6646599bc9a0c9616a4cb06d4b37461f8792f70a3171016d00fcd8eda09ad",
+      "baseline": {
+        "path": "importer/hsk/hsk3_level6_1.0.0.json",
+        "sha256": "60f9241380ca88cae9c506cbe60bbf16f2d11e5093e1872f93834f1f12554a0d"
+      },
+      "changed_ids": 850,
+      "unchanged_ids": 950,
+      "crosswalk": "../../reports/hsk-level6-official-numbering-crosswalk.tsv",
+      "uuid_policy": "Derive new record UUIDs from legacy_syllabus_id; preserve existing UUIDs, examples and recordings during migration."
+    }
+  },
+  "exampleNormalizations": [
+    {
+      "entryId": 4491,
+      "style": "written",
+      "fields": [
+        "hanzi",
+        "pinyin"
+      ],
+      "change": "Removed leading U+00AD soft hyphen; source bytes preserved."
+    }
+  ],
+  "output": {
+    "format": "one compact entry per line",
+    "entries": 1800,
+    "unsplitBytes": 10396738,
+    "maxBytesExclusive": 9000000,
+    "parts": [
+      {
+        "path": "src/data/vocabulary/level-6-part-1.json",
+        "entries": 900,
+        "bytes": 5132424,
+        "sha256": "e2e5e260e42e21403a5af863bac7a6a5768c6f3fce16478a2c39422d08e653a5"
+      },
+      {
+        "path": "src/data/vocabulary/level-6-part-2.json",
+        "entries": 900,
+        "bytes": 5264317,
+        "sha256": "001a31c7a90af7405cfb4e65d8341a9a1e6524a1c9d942ecbc1dcbe6e1771eb5"
+      }
+    ]
+  },
+  "numberingMigration": {
+    "changedHskIds": 850,
+    "unchangedHskIds": 950,
+    "wordRecordingsPreserved": 1313,
+    "exampleIdsPreserved": 3600,
+    "recordIdsAndOrderPreserved": true,
+    "uploadMapByteIdentical": true,
+    "otherLevelsByteIdentical": true,
+    "repeatImportIdempotent": true
+  },
+  "validation": {
+    "importerAndStorageTests": 49,
+    "audioImportTests": 16,
+    "audioPreparationTests": 4,
+    "vocabularyAndSentenceUiTests": 34,
+    "sourceAndNumberingChecks": "passed",
+    "productionBuild": "passed"
+  }
+}

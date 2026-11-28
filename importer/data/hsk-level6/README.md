@@ -36,3 +36,10 @@ node scripts/validate-hsk-level6.mjs --source importer/hsk/hsk3_level6_0.1.0.jso
 The checks do not certify the transcription, native language review or strict
 HSK vocabulary boundaries. Preserve the frozen inputs and historical reviews;
 future revisions should use a new versioned manifest.
+
+The current 1.0.1 handoff is generated separately by
+`python scripts/reconcile-hsk-level6-numbering.py --write` / `--check`, using the
+[preserved current official PDF extraction](../hsk-level7/README.md). It updates
+850 official serials without changing the 1.0.0 baseline, lexical fields or
+examples. The importer retains runtime UUIDs and all uploaded recordings; see the
+[migration audit](../../../reports/hsk-level6-1.0.1-import.json).

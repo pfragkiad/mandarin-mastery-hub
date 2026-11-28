@@ -14,7 +14,7 @@ Start with [catalog.md](public/data/catalog.md) for the split glyph catalogue, J
 | `src/data/` | [Data imported through TypeScript](src/data/README.md) |
 | `src/assets/mnemonics/` | [Memory pictures and their naming](src/assets/mnemonics/README.md) |
 | `importer/data/` | [Importer-only source inputs](importer/data/README.md) |
-| `importer/hsk/` | [HSK Level 1–5 handoffs, Level 6 releases and import commands](importer/hsk/README.md) |
+| `importer/hsk/` | [HSK Level 1–6 handoffs, official 7–9 seed and import commands](importer/hsk/README.md) |
 | `reports/` | [Offline audits, reports, and notes](reports/README.md) |
 | `scripts/` | [Importers and font builders](scripts/README.md) |
 

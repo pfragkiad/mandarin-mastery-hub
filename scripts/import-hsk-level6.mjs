@@ -33,7 +33,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   }
   const vocabularyPath = resolve(options.vocabulary ?? VOCABULARY_DIRECTORY);
   const { data, report } = importLevel6({
-    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level6_1.0.0.json'),
+    sourcePath: resolve(options.source ?? 'importer/hsk/hsk3_level6_1.0.1.json'),
     topicsPath: resolve(options.topics ?? 'importer/hsk/hsk3_topics.json'), vocabularyPath,
   });
   if (options.write) writeVocabulary(resolve(options.output ?? vocabularyPath), data);

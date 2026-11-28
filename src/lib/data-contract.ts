@@ -33,6 +33,7 @@ export type Entry = {
     posNote: string | null; verificationStatus: string;
     syllabusHeadword?: string; syllabusPosZh?: string;
     meaningSource?: Record<string, unknown>; classificationStatus?: string;
+    numberingRevision?: { name: string; previousId: number };
   };
 };
 export type Page<T> = { items: T[]; total: number; page: number; pageSize: number };

@@ -4,12 +4,12 @@ import { describe, expect, it } from 'vitest';
 import { sentencePhraseEntries, vocabularyData } from './data-contract';
 import { vocabularyFacetOptions, vocabularyKind, words } from './mandarin';
 
-const raw = readFileSync('importer/hsk/hsk3_level6_1.0.0.json');
+const raw = readFileSync('importer/hsk/hsk3_level6_1.0.1.json');
 const source = JSON.parse(raw.toString());
 const level6 = vocabularyData.entries.filter(e => e.hskLevel === 6);
 
 describe('Level 6 imported vocabulary', () => {
-  it('loads both compact parts below 9 MB in exact syllabus order', () => {
+  it('loads both compact parts below 9 MB with all current official IDs', () => {
     const index = JSON.parse(readFileSync('src/data/vocabulary/index.json', 'utf8'));
     const names = index.parts.filter((name: string) => name.startsWith('level-6'));
     expect(names).toEqual(['level-6-part-1.json', 'level-6-part-2.json']);
@@ -20,13 +20,13 @@ describe('Level 6 imported vocabulary', () => {
       expect(JSON.parse(bytes.toString())).toHaveLength(900);
     }
     expect(level6).toHaveLength(1800);
-    expect(level6.map(e => e.hsk_index)).toEqual(source.entries.map((e: { id: number }) => e.id));
+    expect(level6.map(e => e.hsk_index).sort((a, b) => a! - b!)).toEqual(source.entries.map((e: { id: number }) => e.id));
   });
 
   it('retains handoff fields, review statuses and field-level source evidence', () => {
     const hash = createHash('sha256').update(raw).digest('hex');
-    for (const [i, entry] of level6.entries()) {
-      const recorded = source.entries[i];
+    for (const entry of level6) {
+      const recorded = source.entries.find((row: { id: number }) => row.id === entry.hsk_index);
       expect(entry.simplified).toBe(recorded.headword);
       expect(entry.pinyinDisplay).toBe(recorded.pinyin);
       expect(entry.studyMetadata?.sourceSha256).toBe(hash);
@@ -54,7 +54,7 @@ describe('Level 6 imported vocabulary', () => {
     expect(level6.flatMap(e => e.examples)).toHaveLength(3600);
     // The package's manifest attached exactly 1,313 of the 1,800 Level 6 records.
     expect(level6.filter(e => e.audio).length).toBe(1313);
-    expect(level6.find(e => e.hsk_index === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
+    expect(level6.find(e => e.studyMetadata?.numberingRevision?.previousId === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
   });
 
   it('offers the new level in word and sentence pools', () => {
