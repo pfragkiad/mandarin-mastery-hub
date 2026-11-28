@@ -172,6 +172,8 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             skipping example changes within this same tone-pair window. */}
         {detailOpen && <DetailSheet open title={row.headword} label={row.headword}
           position={groupIndex} total={groupOrder.length} neighbourLabel={mode === 'pairs' ? 'tone pair' : 'tone change'}
+          neighbourKind="text" previousLabel={previousGroup ? (mode === 'pairs' ? pairLabel(previousGroup) : TONE_RULES[ruleOrder[groupIndex - 1] ?? DEFAULT_RULE].symbol) : undefined}
+          nextLabel={nextGroup ? (mode === 'pairs' ? pairLabel(nextGroup) : TONE_RULES[ruleOrder[groupIndex + 1] ?? DEFAULT_RULE].symbol) : undefined}
           onPrevious={previousGroup ? () => pickGroup(previousGroup) : undefined}
           onNext={nextGroup ? () => pickGroup(nextGroup) : undefined}
           onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule: undefined, example: undefined }, true); }}>

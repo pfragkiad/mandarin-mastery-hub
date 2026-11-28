@@ -265,6 +265,7 @@ export function PinyinChart({ data, player, filters, selected, tone, slow, onSlo
     {/* Wide screens: the card sits beside the grid. Small screens: the same card opens in a
         top-anchored modal window (like the Glyphs details) only while a syllable is chosen. */}
     {narrow ? <PinyinSoundSheet open={Boolean(syllable)} title={syllable?.base ?? ''} back={trail.at(-1)} position={detailsMode ? -1 : position} total={detailsMode ? 0 : ordered.length}
+        previousLabel={position > 0 ? ordered[position - 1]?.base : undefined} nextLabel={position >= 0 ? ordered[position + 1]?.base : undefined}
         onBack={() => { player.stop(); window.history.back(); }}
         onPrevious={!detailsMode && position > 0 ? () => step(position - 1) : undefined} onNext={!detailsMode && position >= 0 && position < ordered.length - 1 ? () => step(position + 1) : undefined}
         // Close: stop the sound, forget the card's Back steps and deselect (URL replace);

@@ -1903,6 +1903,12 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .detail-sheet-back:hover { background: transparent; color: var(--primary); }
 .detail-sheet-nav { display: flex; align-items: center; gap: 2px; grid-column: 2; border: 1px solid var(--border); border-radius: 999px; padding: 0 2px; }
 .detail-sheet-position { font-size: 12px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; padding: 0 6px; white-space: nowrap; }
+.detail-neighbour-label { display: inline; min-width: 0; max-width: 5em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--foreground); }
+.detail-neighbour-hanzi { font-family: var(--font-hanzi); }
+.detail-neighbour-pinyin { color: var(--terracotta); }
+.detail-sheet-nav { min-width: 0; max-width: 100%; }
+.detail-sheet-nav .detail-neighbour-button { width: auto; min-width: 0; flex-shrink: 1; gap: 4px; padding-inline: 6px; }
+.detail-sheet-nav .detail-neighbour-button > svg { flex: none; }
 /* No scroll trap here, on any device: the modal already locks the page behind
    (Radix remove-scroll), so `contain` could never protect the grid — it only
    blocked the pan that a zoomed reader needs to reach the header X. */
@@ -2004,6 +2010,7 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
   .detail-sheet-back { font-size: 13px; gap: 4px; padding-inline: 6px; }
   .detail-sheet-nav { gap: 0; padding: 0 1px; }
   .detail-sheet-nav button { width: 28px; height: 28px; }
+  .detail-sheet-nav .detail-neighbour-button { width: auto; gap: 2px; padding-inline: 4px; }
   .detail-sheet-position { font-size: 11px; padding: 0 3px; }
   .detail-sheet-end { gap: 0; }
 }

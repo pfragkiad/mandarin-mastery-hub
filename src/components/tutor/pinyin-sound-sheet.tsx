@@ -9,14 +9,16 @@
 // Left/Right keys step like the arrow buttons, except inside editable controls or with
 // modifier keys, exactly like DetailSheet.
 import { useEffect, useRef, type ReactNode } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Dialog, DialogPortal, DialogOverlay, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { DetailSheetResizeHandle, useDetailSheetResize } from './detail-sheet';
+import { DetailNeighbours } from './detail-neighbours';
 
-export function PinyinSoundSheet({ open, title, back, position, total, onBack, onPrevious, onNext, onClose, onClosed, children }: {
+export function PinyinSoundSheet({ open, title, back, position, total, previousLabel, nextLabel, onBack, onPrevious, onNext, onClose, onClosed, children }: {
   open: boolean; title: string; back?: { label: string; lang?: string | undefined } | undefined; position: number; total: number;
+  previousLabel?: string | undefined; nextLabel?: string | undefined;
   onBack: () => void; onPrevious?: (() => void) | undefined; onNext?: (() => void) | undefined; onClose: () => void; onClosed: () => void; children: ReactNode;
 }) {
   const resize = useDetailSheetResize();
@@ -47,11 +49,7 @@ export function PinyinSoundSheet({ open, title, back, position, total, onBack, o
         <div className="detail-sheet-start">
           {back && <Button variant="ghost" size="sm" className="detail-sheet-back" title={`Back to ${back.label}`} aria-label={`Back to ${back.label}`} onClick={onBack}><ArrowLeft/><span lang={back.lang ?? 'zh-Latn-pinyin'}>{back.label}</span></Button>}
         </div>
-        {inList && <div className="detail-sheet-nav" role="group" aria-label="Neighbouring syllables in the chart">
-          <Button variant="ghost" size="icon" aria-label="Previous syllable" title="Previous syllable" disabled={!onPrevious} onClick={onPrevious}><ChevronLeft/></Button>
-          <span className="detail-sheet-position">{(position + 1).toLocaleString('en-US')} of {total.toLocaleString('en-US')}</span>
-          <Button variant="ghost" size="icon" aria-label="Next syllable" title="Next syllable" disabled={!onNext} onClick={onNext}><ChevronRight/></Button>
-        </div>}
+        {inList && <DetailNeighbours position={position} total={total} neighbourLabel="syllable" previousLabel={previousLabel} nextLabel={nextLabel} labelKind="pinyin" onPrevious={onPrevious} onNext={onNext}/>}
         <div className="detail-sheet-end">
           <Button variant="ghost" size="icon" className="close-x" aria-label="Close and show the syllable in the chart" title="Close" onClick={onClose}><X/></Button>
         </div>

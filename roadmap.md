@@ -1,5 +1,10 @@
 # Roadmap
 
+## Detail neighbour labels at every width
+- [x] Apply the clarified every-width choice, keeping narrow headers bounded.
+- [x] Add exact previous/next Hanzi, sound syllables and tone-group labels using shared card navigation; leave phrases unchanged.
+- [x] Verified glyph/sound/tone-group Next navigation, word labels and phrase exclusion, Compact/Comfortable header fit at 320/390/1086px; 40 regression tests pass and preview build OK.
+
 ## Sound-detail example styling
 - [x] Match Sound chart's In a character tab, panel spacing, notes and card grid to shared detail examples, including the docked view.
 - [x] Verified identical computed tab/card/box styling and 14px panel gap in Compact/Comfortable, 390px/1800px fit, drawer collapse/reopen and exact 仁 navigation; 23 regression tests pass and build OK.
